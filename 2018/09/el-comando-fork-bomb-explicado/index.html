@@ -1,0 +1,539 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños emojis es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando fork bomb para el intérprete de comandos bash. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>El comando fork bomb explicado</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/09/el-comando-fork-bomb-explicado/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/09/el-comando-fork-bomb-explicado/" hreflang="es" title="El comando fork bomb explicado">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/09/el-comando-fork-bomb-explicado/index-amp.html" hreflang="es" title="El comando fork bomb explicado">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="El comando fork bomb explicado">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/09/el-comando-fork-bomb-explicado/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños emojis es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando fork bomb para el intérprete de comandos bash. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="El comando fork bomb explicado">
+<meta name="twitter:description" content="El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños emojis es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando fork bomb para el intérprete de comandos bash. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/09/el-comando-fork-bomb-explicado/"
+    },
+    "headline": "El comando fork bomb explicado",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png"
+        
+      },
+    "datePublished": "2018-09-16T11:00:00+02:00",
+    "dateModified": "2018-09-16T11:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "514",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños emojis es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando fork bomb para el intérprete de comandos bash."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>El comando fork bomb explicado</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>16/09/2018</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/09/el-comando-fork-bomb-explicado/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/09/el-comando-fork-bomb-explicado/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños <em>emojis</em> es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando <a href="https://en.wikipedia.org/wiki/Fork_bomb">fork bomb</a> para el intérprete de comandos <a href="https://es.wikipedia.org/wiki/Bash">bash</a>.</p>
+<blockquote>
+<p>:(){ :|:&amp; };:</p>
+</blockquote>
+<p>Analizando detalladamente este conjunto de caracteres es un comando <em>bash</em> que se compone de:</p>
+<ul>
+<li>La definición de una función de nombre <em>:</em>.</li>
+<li>Los paréntesis <em>( )</em> definen la función.</li>
+<li>En su cuerpo entre las llaves <em>{ }</em> recursivamente se llama a si misma dos veces con un <em>pipeline |</em> que ejecuta el primer comando enviando su salida al segundo, con el caracter <em>&amp;</em> no se espera a que termine y los pone en segundo plano de modo no se puedan terminar con lo que seguirán consumiendo recursos. Cada uno de los procesos de la función se llama de nuevo a la función recursivamente y repitiendo el proceso. Como consecuencia el número de procesos del sistema crece de forma exponencial que en poco tiempo termina por agotar los recursos del sistema.</li>
+<li>A continuación de la función se encuentra el comando <em>:</em> que realiza la primera llamada a la función que desencadena el <em>fork bomb</em>. Esta llamada inicial está separada de la definición de la función por el caracter <em>;</em> que sirve para escribir varios comandos uno a continuación de otro en una misma línea. El primer comando es la definición de la función y el segundo hace la llamada a la función e inicia el <em>fork bomb</em>.</li>
+</ul>
+<p>Este <em>fork bomb</em> crea procesos en el sistema de forma exponencial (1, 2, 4, 8, 16, 32, &hellip;, 2^n) hasta que el sistema agota los recursos de procesador o memoria en un periodo de tiempo muy corto, menos de unos pocos segundos desde su inicio dada la capacidad de procesamiento de los sistemas actuales. Como consecuencia el sistema requerirá un reinicio.</p>
+<p>Y este ejemplo no es de las peores maldades que se pueden realizar, más aún si para ejecutar un comando se le conceden permisos de superusuario que literalmente le permiten realizar cualquier cosa en el sistema como formatear el sistema de almacenamiento o eliminar cualesquiera archivos del sistema.</p>
+<p>Dado el problema que causa este aparente comando u otro similar una buena recomendación a seguir es no ejecutar ningún comando obtenido de internet que no se sepa lo que hace y de igual modo ningún programa o <em>script</em> de <em>shell</em> no obtenido de una fuente de confianza. En las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> la fuentes confiables son los repositorios oficiales.</p>
+<p>Para GNU/Linux y los sistemas operativos en general uno de sus requisitos es que sean seguros e implementan medidas para que así sean incluso con el apoyo de los procesadores a nivel de hardware pero hacen lo que se les dice y no están a salvo de las estupideces por desconocimiento que pueda cometer el usuario.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/Q9Mdy7H8Qmc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Fork_bomb">Fork Bomb</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie" title="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie" class="" loading="lazy">
+                <h3>Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Personalizar el prompt del sistema del intérprete de comandos Bash" title="Personalizar el prompt del sistema del intérprete de comandos Bash" class="" loading="lazy">
+                <h3>Personalizar el prompt del sistema del intérprete de comandos Bash</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash" title="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash" class="" loading="lazy">
+                <h3>Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/macos.svg" width="326" height="125" alt="Tú con tu Mac, yo con mi GNU/Linux" title="Tú con tu Mac, yo con mi GNU/Linux" class="" loading="lazy">
+                <h3>Tú con tu Mac, yo con mi GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM" title="7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM" class="" loading="lazy">
+                <h3>7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-347';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2018\/09\/el-comando-fork-bomb-explicado\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

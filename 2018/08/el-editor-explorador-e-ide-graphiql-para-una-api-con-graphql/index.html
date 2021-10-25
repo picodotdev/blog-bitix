@@ -1,0 +1,510 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
+Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>El editor, explorador e IDE GraphiQL para una API con GraphQL</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/" hreflang="es" title="El editor, explorador e IDE GraphiQL para una API con GraphQL">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/index-amp.html" hreflang="es" title="El editor, explorador e IDE GraphiQL para una API con GraphQL">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="El editor, explorador e IDE GraphiQL para una API con GraphQL">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
+Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="El editor, explorador e IDE GraphiQL para una API con GraphQL">
+<meta name="twitter:description" content="Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
+Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/"
+    },
+    "headline": "El editor, explorador e IDE GraphiQL para una API con GraphQL",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png"
+        
+      },
+    "datePublished": "2018-08-19T11:00:00+02:00",
+    "dateModified": "2019-06-15T01:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "384",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Hace ya un tiempo escribí una serie de artículos sobre GraphQL para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con GraphQL usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.
+Uno de esas posibilidades de GraphQL es la herramienta GraphiQL que es un editor interactivo para construir consultas y explorar la API."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>El editor, explorador e IDE GraphiQL para una API con GraphQL</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>19/08/2018</time>, actualizado el <time>15/06/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+</div>
+<p>Hace ya un tiempo escribí una <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> para desarrollar una API en una aplicación como alternativa a desarrollarla basada en REST. En esa serie de artículos explicaba varios conceptos básicos e introductorios pero suficientes para desarrollar una API completamente funcional con <a href="https://graphql.org/">GraphQL</a> usando el lenguaje de programación Java. Sin embargo, sobre algunos otros conceptos y posibilidades de GraphQL no había escrito.</p>
+<p>Uno de esas posibilidades de GraphQL es la herramienta <a href="https://github.com/graphql/graphiql">GraphiQL</a> que es un editor interactivo para construir consultas y explorar la API. Una de sus mayores ventajas es que ofrece asistencia contextual y proporciona mensajes de error en caso de que la sintaxis de la consulta sea errónea. En los artículos que escribí con anterioridad los ejemplos los hice usando el comando <em>curl</em>. Ahora que he visto y aprendido algunas pocas cosas más de GraphQL en este artículo explico como usar la herramienta GraphiQL como alternativa a <em>curl</em>.</p>
+<p>GraphiQL en casi un IDE para crear consultas de GraphQL, está basado en JavaScript, se ejecutan en el navegador y para su funcionamiento solo hay que proporcionarle el <em>endpoint</em> de la API a probar.</p>
+<p>En la página de este tutorial se explica cual es el <a href="https://www.howtographql.com/graphql-java/2-queries/">código HTML necesario para el editor GraphiQL</a>. Básicamente es un HTML que hay colocar en el caso de una aplicación Java en el directorio web de la aplicación, utilizando la página por defecto <em>index.html</em> se carga al acceder a la dirección <em>http://localhost:8080/graphiql</em>. Basta con incluir la dependencia de <em>graphiql-spring-boot-starter</em> en el archivo de construcción del proyecto para que el <em>endpoint</em> quede accesible.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;java&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;org.springframework.boot&#39;</span> <span class="n">version</span> <span class="s1">&#39;2.2.5.RELEASE&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.graphql.Main&#39;</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">jcenter</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-dependencies:2.2.5.RELEASE&#34;</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter-web&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;com.graphql-java-kickstart:graphql-spring-boot-starter:6.0.1&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;com.graphql-java-kickstart:graphiql-spring-boot-starter:6.0.1&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;com.graphql-java-kickstart:graphql-java-tools:6.0.0&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;org.apache.commons:commons-lang3:3.7&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;commons-io:commons-io:2.6&#34;</span><span class="o">)</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>Varias de las mismas consultas que hacía con <em>curl</em> en otros artículos es posible lanzarlas con GraphiQL. Es posible formatear correctamente una consulta con el botón <em>prettify</em>. Con en el enlace de documentación se puede explorar los tipos definidos en la API. Con funciones similares a un IDE ofrece errores de sintaxis, asistencia contextual e historial de consultas, en definitiva es una gran mejora sobre <em>curl</em> y su incorporación a la aplicación es muy sencilla.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/images/graphiql-1_hub17033c598fe961cee2ca5c7c9b5d724_50874_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consulta"><img src="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/images/graphiql-1_hub17033c598fe961cee2ca5c7c9b5d724_50874_300x200_fit_box_3.png" width="300" height="196" alt="Consulta" title="Consulta" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/images/graphiql-2_huf5961c2d8b848fa3c772f961c0eabd32_59885_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistencia contextual"><img src="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/images/graphiql-2_huf5961c2d8b848fa3c772f961c0eabd32_59885_300x200_fit_box_3.png" width="300" height="196" alt="Asistencia contextual" title="Asistencia contextual" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/images/graphiql-3_hufa268e523c44a0248642d5f0037371eb_81898_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Explorador del esquema"><img src="/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/images/graphiql-3_hufa268e523c44a0248642d5f0037371eb_81898_300x200_fit_box_3.png" width="300" height="196" alt="Explorador del esquema" title="Explorador del esquema" class="" loading="lazy"></a></p>
+<figcaption>El editor GraphiQL para una API con GraphQL</figcaption>
+</figure>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GraphQL">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>graphql</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/">Devolver mensajes de error descriptivos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/">Usar un resolver para recuperar propiedades en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/">Consultas con parámetros para filtrar datos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/paginacion-usando-cursores-en-graphql-y-java/">Paginación usando cursores en GraphQL y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/12/definir-nuevos-tipos-de-datos-escalares-en-graphql/">Definir nuevos tipos de datos escalares en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">El editor, explorador e IDE GraphiQL para una API con GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/">Usando directivas en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/los-fragmentos-en-graphql/">Los fragmentos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/06/metadatos-e-introspeccion-en-graphql/">Metadatos e introspección en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Recuperar datos eficientemente en GraphQL usando batching con data loaders</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">Renombrar campos del esquema en las consultas GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/">Añadir descripciones y documentar los campos de GraphQL</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-340';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2018\/08\/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

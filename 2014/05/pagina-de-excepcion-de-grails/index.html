@@ -1,0 +1,545 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="No es la primera vez que comento algo similar (I, II) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Página de excepción de Grails</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/" hreflang="es" title="Página de excepción de Grails">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/index-amp.html" hreflang="es" title="Página de excepción de Grails">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Página de excepción de Grails">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/grails-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="No es la primera vez que comento algo similar (I, II) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/grails-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Página de excepción de Grails">
+<meta name="twitter:description" content="No es la primera vez que comento algo similar (I, II) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/"
+    },
+    "headline": "Página de excepción de Grails",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/grails-750.png"
+        
+      },
+    "datePublished": "2014-05-23T20:00:19+02:00",
+    "dateModified": "2014-05-30T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "542",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "No es la primera vez que comento algo similar (I, II) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Página de excepción de Grails</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>23/05/2014</time>, actualizado el <time>30/05/2014</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails" class="" loading="false"></p>
+</div>
+<p>No es la primera vez que comento algo similar (<a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">II</a>) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.</p>
+<p>La página de error de <a href="https://grails.org/">Grails</a> por defecto da poca información, a poco más da la traza de la excepción y un extracto de los archivos relacionados donde se ha producido, podría ser mejor. Podría informar de los parámetros que se enviaron en la petición, las cabeceras http o las cookies además de los parámetros de sesión, a veces esta información nos puede servir para identificar la causa más rápidamente ya que la excepción puede estar produciéndose con el valor de un determinado parámetro o un determinado navegador, esta información no la tenemos en una simple traza de la excepción.</p>
+<p>En este artículo crearé una página de excepción para Grails con los parámetros de la petición y sesión, cabeceras HTTP y las cookies enviadas además de la traza de la excepción. Los parámetros, las cookies y cabeceras HTTP se pueden obtener de la request y los atributos de la sesión del objeto session. El código del ejemplo de página de excepción es el siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span><span class="lnt">66&#10;</span><span class="lnt">67&#10;</span><span class="lnt">68&#10;</span><span class="lnt">69&#10;</span><span class="lnt">70&#10;</span><span class="lnt">71&#10;</span><span class="lnt">72&#10;</span><span class="lnt">73&#10;</span><span class="lnt">74&#10;</span><span class="lnt">75&#10;</span><span class="lnt">76&#10;</span><span class="lnt">77&#10;</span><span class="lnt">78&#10;</span><span class="lnt">79&#10;</span><span class="lnt">80&#10;</span><span class="lnt">81&#10;</span><span class="lnt">82&#10;</span><span class="lnt">83&#10;</span><span class="lnt">84&#10;</span><span class="lnt">85&#10;</span><span class="lnt">86&#10;</span><span class="lnt">87&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">&lt;%@ page import=&#34;java.text.SimpleDateFormat&#34; %&gt;&#10;&lt;%&#10;	SimpleDateFormat sdf = new SimpleDateFormat(&#34;dd/MM/yyyy HH:mm:ss Z&#34;)&#10;%&gt;&#10;&lt;!DOCTYPE html&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name=&#34;layout&#34; content=&#34;main&#34; /&gt;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Excepción&lt;/title&gt;&#10;	&lt;g:if env=&#34;development&#34;&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;${resource(dir: &#39;css&#39;, file: &#39;errors.css&#39;)}&#34; type=&#34;text/css&#34;&gt;&lt;/g:if&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;	&lt;div&gt;&#10;		&lt;div&gt;&#10;			&lt;h1&gt;Detalles del error&lt;/h1&gt;	&#10;			&lt;g:renderException exception=&#34;${exception}&#34;/&gt;&#10;			&#10;			&lt;pre&gt;&lt;g:each in=&#34;${exception.stackTraceLines}&#34;&gt;${it.encodeAsHTML()}&lt;/g:each&gt;&lt;/pre&gt;&#10;	&#10;			&lt;div&gt;&#10;				&lt;div&gt;&#10;					&lt;h2&gt;Parámetros&lt;/h2&gt;&#10;					&lt;g:if test=&#34;params&#34;&gt;&#10;						&lt;g:set var=&#34;paramsKeys&#34; value=&#34;${params.keySet()}&#34;/&gt;&#10;						&lt;% paramsKeys.removeAll([&#39;action&#39;, &#39;controller&#39;]) %&gt;&#10;						&lt;ul style=&#34;list-style-type: none;&#34;&gt;&#10;							&lt;g:each in=&#34;${paramsKeys}&#34; var=&#34;param&#34;&gt;&#10;								&lt;g:if test=&#34;${params.list(param).size() == 1}&#34;&gt;&#10;									&lt;li class=&#34;list-group-item&#34;&gt;&lt;b&gt;${param}&lt;/b&gt;: ${params.get(param)}&lt;/li&gt;&#10;								&lt;/g:if&gt;&#10;								&lt;g:else&gt;&#10;									&lt;li class=&#34;list-group-item&#34;&gt;&lt;b&gt;${param}&lt;/b&gt;: ${params.list(param)}&lt;/li&gt;&#10;								&lt;/g:else&gt;&#10;							&lt;/g:each&gt;&#10;						&lt;/ul&gt;&#10;					&lt;/g:if&gt;&#10;				&lt;/div&gt;	&#10;				&lt;div&gt;&#10;					&lt;h2&gt;Cabeceras&lt;/h2&gt;&#10;					&lt;g:if test=&#34;request.headerNames &#34;&gt;&#10;						&lt;g:set var=&#34;headers&#34; value=&#34;${request.headerNames}&#34;/&gt;&#10;						&lt;% &#10;							headers = Collections.list(headers)&#10;							headers.removeAll([&#39;cookie&#39;])&#10;						%&gt;&#10;						&lt;ul style=&#34;list-style-type: none;&#34;&gt;&#10;							&lt;g:each in=&#34;${headers}&#34; var=&#34;header&#34;&gt;&#10;								&lt;li class=&#34;list-group-item&#34;&gt;&lt;b&gt;${header}&lt;/b&gt;: ${request.getHeader(header)}&lt;/li&gt;&#10;							&lt;/g:each&gt;&#10;						&lt;/ul&gt;&#10;					&lt;/g:if&gt;&#10;				&lt;/div&gt;&#10;				&lt;div&gt;&#10;					&lt;h2&gt;Cookies&lt;/h2&gt;&#10;					&lt;g:if test=&#34;request.cookies&#34;&gt;&#10;						&lt;g:set var=&#34;cookies&#34; value=&#34;${request.cookies}&#34;/&gt;&#10;						&lt;ul style=&#34;list-style-type: none;&#34;&gt;&#10;							&lt;g:each in=&#34;${cookies}&#34; var=&#34;cookie&#34;&gt;&#10;								&lt;li class=&#34;list-group-item&#34;&gt;&lt;b&gt;${cookie.name}&lt;/b&gt;: ${cookie.value}&lt;/li&gt;&#10;							&lt;/g:each&gt;&#10;						&lt;/ul&gt;&#10;					&lt;/g:if&gt;&#10;				&lt;/div&gt;&#10;			&lt;/div&gt;&#10;			&lt;div&gt;&#10;				&lt;div&gt;&#10;					&lt;h2&gt;Sesión&lt;/h2&gt;&#10;					&lt;ul style=&#34;list-style-type: none;&#34;&gt;&#10;						&lt;li class=&#34;list-group-item&#34;&gt;&lt;b&gt;Fecha creación&lt;/b&gt;: ${sdf.format(new Date(session.getCreationTime()))}&lt;/li&gt;&#10;					&lt;/ul&gt; &#10;					&lt;g:if test=&#34;reqeust.getSession(false)&#34;&gt;&#10;						&lt;g:set var=&#34;sessionKeys&#34; value=&#34;${session.getAttributeNames()}&#34;/&gt;&#10;						&lt;ul style=&#34;list-style-type: none;&#34;&gt;&#10;							&lt;g:each in=&#34;${sessionKeys}&#34; var=&#34;s&#34;&gt;&#10;								&lt;li class=&#34;list-group-item&#34;&gt;&lt;b&gt;${s}&lt;/b&gt;: ${session.getAttribute(s)}&lt;/li&gt;&#10;							&lt;/g:each&gt;&#10;						&lt;/ul&gt;&#10;					&lt;/g:if&gt;&#10;					&lt;g:else&gt;&#10;						No hay sesión&#10;					&lt;/g:else&gt;&#10;				&lt;/div&gt;&#10;			&lt;/div&gt;&#10;		&lt;/div&gt;&#10;	&lt;/div&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>exception.gsp</span>
+    </div>
+</div>
+<p>Para hacer uso de la página de excepción deberemos configurar el archivo UrlMappings para que Grails use esta página de excepción.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="kd">class</span> <span class="nc">UrlMappings</span> <span class="o">{</span>&#10;&#10;	<span class="kd">static</span> <span class="n">mappings</span> <span class="o">=</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;/$controller/$action?/$id?(.$format)?&#34;</span><span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">constraints</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// apply constraints here&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;/&#34;</span><span class="o">(</span><span class="nl">view:</span><span class="s2">&#34;/index&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;500&#34;</span><span class="o">(</span><span class="nl">view:</span><span class="s1">&#39;/error&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;500&#34;</span><span class="o">(</span><span class="nl">controller:</span><span class="s2">&#34;test&#34;</span><span class="o">,</span> <span class="nl">action:</span><span class="s2">&#34;exception&#34;</span><span class="o">,</span> <span class="nl">exception:</span><span class="n">Exception</span><span class="o">)</span>&#10;	<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>UrlMappings.groovy</span>
+    </div>
+</div>
+<p>El resultado se puede ver en la siguiente captura de pantalla.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de error por defecto de Grails"><img src="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_300x200_fit_box_3.png" width="300" height="166" alt="Página de error por defecto de Grails" title="Página de error por defecto de Grails" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de error personalizada de Grails"><img src="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_300x200_fit_box_3.png" width="211" height="200" alt="Página de error personalizada de Grails" title="Página de error personalizada de Grails" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<p>Los estilos mostrados en las capturas de pantalla podrían ser mejores pero la esencia está en la información que se muestra. En otro artículo publicaré como <a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">obtener estadísticas de Hibernate para detectar problemas de N+1 u obtener las consultas sql que se están realizando en cada página de una aplicación Grails</a>, esta información nos puede ayudar bastante y no es excesivamente complicado hacerla. Con ambas conseguiremos que las aplicaciones que desarrollemos con Grails sean un poco más informativas.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">Detectar problema N+1 y obtener estadísticas de Hibernate con Grails</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">
+                <img src="/blog-bitix/assets/images/logotypes/blogstack.png" width="326" height="125" alt="Arquitectura y hospedaje de Blog Stack" title="Arquitectura y hospedaje de Blog Stack" class="" loading="lazy">
+                <h3>Arquitectura y hospedaje de Blog Stack</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Novedades y nuevas características de Java 8" title="Novedades y nuevas características de Java 8" class="" loading="lazy">
+                <h3>Novedades y nuevas características de Java 8</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Introducción y ejemplo sencillo de Java Message Service (JMS)" title="Introducción y ejemplo sencillo de Java Message Service (JMS)" class="" loading="lazy">
+                <h3>Introducción y ejemplo sencillo de Java Message Service (JMS)</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Libro sobre desarrollo de aplicaciones con Apache Tapestry" title="Libro sobre desarrollo de aplicaciones con Apache Tapestry" class="" loading="lazy">
+                <h3>Libro sobre desarrollo de aplicaciones con Apache Tapestry</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
+                <h3>Presentación sobre Apache Tapestry</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">
+                <img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="326" height="125" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly" class="" loading="lazy">
+                <h3>El servidor de aplicaciones JBoss/WildFly</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-25';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2014\/05\/pagina-de-excepcion-de-grails\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

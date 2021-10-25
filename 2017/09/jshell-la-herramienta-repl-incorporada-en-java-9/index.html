@@ -1,0 +1,557 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Una de las novedades de Java 9 es la incorporación de una herramienta Read-Evaluation-Print-Loop o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>JShell la herramienta REPL incorporada en Java 9</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/" hreflang="es" title="JShell la herramienta REPL incorporada en Java 9">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/index-amp.html" hreflang="es" title="JShell la herramienta REPL incorporada en Java 9">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="JShell la herramienta REPL incorporada en Java 9">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Una de las novedades de Java 9 es la incorporación de una herramienta Read-Evaluation-Print-Loop o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="JShell la herramienta REPL incorporada en Java 9">
+<meta name="twitter:description" content="Una de las novedades de Java 9 es la incorporación de una herramienta Read-Evaluation-Print-Loop o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/"
+    },
+    "headline": "JShell la herramienta REPL incorporada en Java 9",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2017-09-29T21:00:00+02:00",
+    "dateModified": "2017-09-29T22:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "372",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Una de las novedades de Java 9 es la incorporación de una herramienta Read-Evaluation-Print-Loop o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>JShell la herramienta REPL incorporada en Java 9</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>29/09/2017</time>, actualizado el <time>29/09/2017</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Una de las <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java2-los-modulos/">novedades de Java 9</a> es la incorporación de una herramienta <em>Read-Evaluation-Print-Loop</em> o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java.</p>
+<p>El comando de la herramienta <a href="https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm">JShell</a> es <em>jshell</em> que inicia un símbolo del sistema donde empezar a introducir las expresiones, se sale de <em>jshell</em> con el comando <code>/exit</code>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="JShell"><img src="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_300x200_fit_box_3.png" width="300" height="187" alt="JShell" title="JShell" class="" loading="lazy"></a></p>
+<figcaption>JShell</figcaption>
+</figure>
+</div>
+<p>Se pueden crear variables, crear y modificar definiciones de métodos y clases. Cada una de estas expresiones crea un <em>snippet</em> de código que pueden listarse con el comando <code>/list</code>. Al introducir las expresiones se soporta completado y asistencia de código con la tecla tabulador como ayuda para saber que métodos tiene un objeto.</p>
+<p>Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci implementada con un <a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html">Stream</a> de la cual se muestran los elementos de la serie menores que el número 100.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Expresiones"><img src="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_300x200_fit_box_3.png" width="300" height="187" alt="Expresiones" title="Expresiones" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistencia de código"><img src="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_300x200_fit_box_3.png" width="300" height="187" alt="Asistencia de código" title="Asistencia de código" class="" loading="lazy"></a></p>
+<figcaption>Expresiones y asistencia de código</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Serie de Fibonacci con un Stream en un método"><img src="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_300x200_fit_box_3.png" width="300" height="129" alt="Serie de Fibonacci con un Stream en un método" title="Serie de Fibonacci con un Stream en un método" class="" loading="lazy"></a></p>
+<figcaption>Serie de Fibonacci con un Stream en un método</figcaption>
+</figure>
+</div>
+<p>Para diferenciar las expresiones de código de los comandos estos últimos son precedidos por el caracter <em>/</em>. Hay varios como los ya citados para listar los <em>snippets</em> de código y salir de <em>jshell</em>, otros son para listar las definiciones de variables con <code>/vars</code>, métodos con <code>/methods</code>, tipos con <code>/types</code> e <em>imports</em> con <code>/imports</code>. La lista completa de comandos puede obtenerse pulsando la tecla tabulador después de la barra de comando.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comandos"><img src="/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_300x200_fit_box_3.png" width="300" height="187" alt="Comandos" title="Comandos" class="" loading="lazy"></a></p>
+<figcaption>Comandos</figcaption>
+</figure>
+</div>
+<p>Para los <em>snippets</em> multilínea o algo complejos puede utilizarse un editor externo con el comando <code>/edit</code>. El editor de nuestra preferencia se establece con el comando <code>/set</code>.</p>
+<p>También se pueden <a href="https://docs.oracle.com/javase/9/jshell/external-code.htm">añadir módulos o librerías</a> para usar las clases y tipos que contengan con el comando <code>/env</code> y las opciones <code>\-\-add-modules</code>  <code>\-\-module-path</code> y <code>\-\-class-path</code>. Los <em>snippets</em> creados en una sesión pueden guardarse en un archivo con el comando <code>/save</code> y ser cargados al inicio de JShell o con el comando <code>/open</code>.</p>
+<p>En la <a href="https://docs.oracle.com/javase/9/jshell/toc.htm">guía oficial de JShell</a> se comenta algunas opciones más de esta nueva herramienta.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.pluralsight.com/guides/getting-started-with-jshell-part-1">Getting Started with JShell</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Novedades de Java 9, más allá de la modularidad" title="Novedades de Java 9, más allá de la modularidad" class="" loading="lazy">
+                <h3>Novedades de Java 9, más allá de la modularidad</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Novedades y nuevas características de Java 9, los módulos" title="Novedades y nuevas características de Java 9, los módulos" class="" loading="lazy">
+                <h3>Novedades y nuevas características de Java 9, los módulos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cambiar y personalizar los estilos de la documentación Javadoc" title="Cambiar y personalizar los estilos de la documentación Javadoc" class="" loading="lazy">
+                <h3>Cambiar y personalizar los estilos de la documentación Javadoc</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear anotaciones de Javadoc personalizadas con taglets" title="Crear anotaciones de Javadoc personalizadas con taglets" class="" loading="lazy">
+                <h3>Crear anotaciones de Javadoc personalizadas con taglets</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/09/como-generar-la-documentacion-javadoc-con-gradle/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo generar la documentación Javadoc con Gradle" title="Cómo generar la documentación Javadoc con Gradle" class="" loading="lazy">
+                <h3>Cómo generar la documentación Javadoc con Gradle</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La herramienta de documentación Javadoc de Java" title="La herramienta de documentación Javadoc de Java" class="" loading="lazy">
+                <h3>La herramienta de documentación Javadoc de Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-265';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2017\/09\/jshell-la-herramienta-repl-incorporada-en-java-9\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

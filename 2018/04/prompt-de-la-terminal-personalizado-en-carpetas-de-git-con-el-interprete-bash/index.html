@@ -1,0 +1,552 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Uno de los sistemas de control de versiones más utilizado es Git. Bash es el intérprete de comandos por defecto en la mayoría de distribuciones GNU/Linux. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o prompt. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/" hreflang="es" title="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/index-amp.html" hreflang="es" title="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Uno de los sistemas de control de versiones más utilizado es Git. Bash es el intérprete de comandos por defecto en la mayoría de distribuciones GNU/Linux. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o prompt. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash">
+<meta name="twitter:description" content="Uno de los sistemas de control de versiones más utilizado es Git. Bash es el intérprete de comandos por defecto en la mayoría de distribuciones GNU/Linux. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o prompt. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/"
+    },
+    "headline": "Prompt de la terminal personalizado en carpetas de git con el intérprete Bash",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png"
+        
+      },
+    "datePublished": "2018-04-14T00:30:00+02:00",
+    "dateModified": "2018-04-14T00:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "414",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Uno de los sistemas de control de versiones más utilizado es Git. Bash es el intérprete de comandos por defecto en la mayoría de distribuciones GNU/Linux. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o prompt."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>14/04/2018</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>Uno de los sistemas de control de versiones más utilizado es <a href="https://git-scm.com/">Git</a>. <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> es el intérprete de comandos por defecto en la mayoría de distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o <em>prompt</em>.</p>
+<p>El intérprete <a href="https://zsh.sourceforge.net/">Zsh</a> y <a href="https://ohmyz.sh/">Oh-My-Zsh</a> ofrece mediante sus temas soporte para los repositorios de git modificando el símbolo del sistema para mostrar más información acerca del estado. En Bash también es posible añadir soporte para que muestre información como la rama actual en la que se está trabajando, si hay archivos modificados o no añadidos al control de versiones, si hay archivos en el <em>stash</em> y una comparación entre la rama actual y la del origen o <em>upstream</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal por defecto"><img src="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal en carpeta git"><img src="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal en carpeta git" title="Prompt de la terminal en carpeta git" class="" loading="lazy"></a></p>
+<figcaption>Prompt de la terminal por defecto y en carpeta de git</figcaption>
+</figure>
+</div>
+<ul>
+<li>* la presencia de este caracter indica que hay cambios en alguno de los archivos bajo el control de versiones.</li>
+<li>+ indica que hay archivos añadidos al <em>stash</em></li>
+<li><em>=</em> indica que la rama está en el mismo estado que en <em>upstream</em>, en su lugar puede mostrarse el caracter <em>&gt;</em> para indicar que la rama en local está por delante de la rama en remoto o mostrarse <em>&lt;</em> para lo contrario.</li>
+</ul>
+<p>El <em>script</em> necesario para añadir el soporte a repositorios git en Bash es <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh">git-prompt.sh</a>. Una vez descargado su funcionalidad se personaliza con varias variables de entorno tal y como está documentado en el comentario al inicio de este <em>script</em> que se añaden en el archivo de perfil del usuario de inicio <em>.bashrc</em>. Añadidas unas variables de entorno que empiezan por <em>GIT_PS1</em> y hecho el <em>source</em> del script junto con la utilización de la variable <em>PROMPT_COMMAND</em> en lugar de <em>PS1</em> para posibilitar la información de estado con colores al estar en un directorio git se muestra el <em>prompt</em> del ejemplo anterior.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ wget -O ~/.git-prompt.sh https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install.sh</span>
+    </div>
+</div>
+<p>Este es el archivo <em>.bashrc</em> completo de la distribución <a href="https://www.archlinux.org/">Arch Linux</a> con el soporte para el <em>script</em> <em>git-prompt.sh</em> y algunas opciones personalizadas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">#&#10;# ~/.bashrc&#10;#&#10;&#10;# If not running interactively, don&#39;t do anything&#10;[[ $- != *i* ]] &amp;&amp; return&#10;&#10;alias ls=&#39;ls --color=auto&#39;&#10;&#10;#&#10;GIT_PS1_SHOWDIRTYSTATE=&#34;true&#34;&#10;GIT_PS1_SHOWSTASHSTATE=&#34;true&#34;&#10;GIT_PS1_SHOWUNTRACKEDFILES=&#34;true&#34;&#10;GIT_PS1_SHOWUPSTREAM=&#34;true&#34;&#10;GIT_PS1_SHOWCOLORHINTS=&#34;true&#34;&#10;source ~/.git-prompt.sh&#10;&#10;PS1=&#39;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W]\$ &#39;&#10;PROMPT_COMMAND=&#39;__git_ps1 &#34;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>bashrc</span>
+    </div>
+</div>
+<p>La documentación completa con todas las opciones de personalización están en las primeras líneas de comentario del <em>script</em>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/macos.svg" width="326" height="125" alt="Tú con tu Mac, yo con mi GNU/Linux" title="Tú con tu Mac, yo con mi GNU/Linux" class="" loading="lazy">
+                <h3>Tú con tu Mac, yo con mi GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM" title="7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM" class="" loading="lazy">
+                <h3>7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">
+                <img src="/blog-bitix/assets/images/logotypes/lakka.png" width="326" height="125" alt="Consola de juegos retro con Lakka y una Raspberry Pi" title="Consola de juegos retro con Lakka y una Raspberry Pi" class="" loading="lazy">
+                <h3>Consola de juegos retro con Lakka y una Raspberry Pi</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Como eliminar metainformación de las fotos en GNU/Linux" title="Como eliminar metainformación de las fotos en GNU/Linux" class="" loading="lazy">
+                <h3>Como eliminar metainformación de las fotos en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/peliculas-sobre-tecnologia-o-informatica-series-documentales-videos-libros-gnu-linux-y-software-libre/">
+                <img src="/blog-bitix/2017/12/peliculas-sobre-tecnologia-o-informatica-series-documentales-videos-libros-gnu-linux-y-software-libre/images/black-mirror_huf50dee2f57cd1502b4d93b3af0346b90_11019_875x0_resize_q90_box.jpg" width="326" height="125" alt="Películas sobre tecnología o informática, series, documentales, vídeos, libros, GNU/Linux y software libre" title="Películas sobre tecnología o informática, series, documentales, vídeos, libros, GNU/Linux y software libre" class="" loading="lazy">
+                <h3>Películas sobre tecnología o informática, series, documentales, vídeos, libros, GNU/Linux y software libre</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-312';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2018\/04\/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

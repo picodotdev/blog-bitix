@@ -1,0 +1,567 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Para trabajar y desde que empecé a usar un generador estático para el blog primero con Octopress y luego con Hugo he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es Sublime Text con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar Atom, sin embargo, al estar este basado en Electron que en realidad es un navegador Chrome y JavaScript con Node su rendimiento se nota pobre. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>El editor de archivos e IDE minimalista Visual Studio Code</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/" hreflang="es" title="El editor de archivos e IDE minimalista Visual Studio Code">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/index-amp.html" hreflang="es" title="El editor de archivos e IDE minimalista Visual Studio Code">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="El editor de archivos e IDE minimalista Visual Studio Code">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/visual-studio-code-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Para trabajar y desde que empecé a usar un generador estático para el blog primero con Octopress y luego con Hugo he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es Sublime Text con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar Atom, sin embargo, al estar este basado en Electron que en realidad es un navegador Chrome y JavaScript con Node su rendimiento se nota pobre. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/visual-studio-code-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="El editor de archivos e IDE minimalista Visual Studio Code">
+<meta name="twitter:description" content="Para trabajar y desde que empecé a usar un generador estático para el blog primero con Octopress y luego con Hugo he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es Sublime Text con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar Atom, sin embargo, al estar este basado en Electron que en realidad es un navegador Chrome y JavaScript con Node su rendimiento se nota pobre. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/"
+    },
+    "headline": "El editor de archivos e IDE minimalista Visual Studio Code",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/visual-studio-code-750.png"
+        
+      },
+    "datePublished": "2018-09-09T11:00:00+02:00",
+    "dateModified": "2018-09-09T11:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "718",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Para trabajar y desde que empecé a usar un generador estático para el blog primero con Octopress y luego con Hugo he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es Sublime Text con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar Atom, sin embargo, al estar este basado en Electron que en realidad es un navegador Chrome y JavaScript con Node su rendimiento se nota pobre."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>El editor de archivos e IDE minimalista Visual Studio Code</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/09/2018</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/visual-studio-code.svg" width="200" height="199" alt="Visual Studio Code" title="Visual Studio Code" class="" loading="false"></p>
+</div>
+<p>Para trabajar y desde que empecé a usar un generador estático para el blog primero con <a href="http://octopress.org/">Octopress</a> y luego con <a href="https://gohugo.io/">Hugo</a> he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es <a href="https://www.sublimetext.com/">Sublime Text</a> con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar <a href="https://atom.io/">Atom</a>, sin embargo, al estar este basado en <a href="https://electronjs.org/">Electron</a> que en realidad es un navegador <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> y <a href="https://es.wikipedia.org/wiki/JavaScript">JavaScript</a> con <a href="https://nodejs.org/en/">Node</a> su rendimiento se nota pobre. Buscando más alternativas la gente mencionaba bastante a menudo <a href="https://code.visualstudio.com/">Visual Studio Code</a>, lo probé, es el que más me ha gustado de todos y el que uso ahora.</p>
+<p>Visual Studio Code es un editor de archivos de texto avanzado orientado a desarrolladores sin llegar a ser un IDE pero con algunas funcionalidades de estos. Visual Studio Code se nota mucho más rápido que Atom y soporta al igual que Sublime Text varias combinaciones de teclas para trabajar rápido con los archivos. Soporta numerosos formatos de archivos con resaltado de sintaxis entre ellos <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a>, <a href="https://www.yaml.org/">Yaml</a>, HTML, CSS, imágenes <em>png</em> y fotos <em>jpg</em> que son los formatos de archivo que utilizo para crear los artículos del blog. Permite visualizar imágenes y fotos sin necesidad de ir a la aplicación del sistema operativo para visualizarlas. Dada la popularidad que está alcanzando soporta un gran número de complementos o <em>plugins</em> que entre otros añaden resaltado de sintaxis para otros formatos de archivos que por defecto no soporta, como <a href="https://www.oracle.com/technetwork/java/index.html">Java</a>. En el caso del <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java"><em>plugin</em> para Java</a> también permite asistencia de código y detectar errores de compilación, aunque no llegue a las capacidades de un IDE como <a href="https://www.jetbrains.com/idea/">IntelliJ</a>, <a href="https://eclipse.org">eclipse</a> o <a href="https://visualstudio.microsoft.com/">Visual Studio</a> sirve para editar ocasionalmente archivos de código fuente Java sin necesidad de abrir el IDE y su proyecto. Hay complementos para <a href="https://www.python.org/">Python</a>, <a href="https://www.ruby-lang.org/es/">Ruby</a>, <a href="https://golang.org/">Go</a>, <a href="https://www.rust-lang.org/">Rust</a> o <a href="https://gradle.org/">Gradle</a> entre otros muchos, y por supuesto JavaScript o <a href="https://www.typescriptlang.org/">TypeScript</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/visual-studio-code-1_hu8172c8a741f24521f7cd7f3616353770_673782_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Visual Studio Code"><img src="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/visual-studio-code-1_hu8172c8a741f24521f7cd7f3616353770_673782_300x200_fit_box_3.png" width="300" height="183" alt="Visual Studio Code" title="Visual Studio Code" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/visual-studio-code-2_hu8172c8a741f24521f7cd7f3616353770_704519_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Visual Studio Code"><img src="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/visual-studio-code-2_hu8172c8a741f24521f7cd7f3616353770_704519_300x200_fit_box_3.png" width="300" height="183" alt="Visual Studio Code" title="Visual Studio Code" class="" loading="lazy"></a></p>
+<figcaption>Visual Studio Code</figcaption>
+</figure>
+</div>
+<p>Incluye una <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">terminal integrada</a> para ejecutar comandos sin necesidad de salir del editor a la terminal del sistema. Soporta <a href="https://code.visualstudio.com/docs/editor/emmet">Emmet</a> para crear código con <em>snippets</em> en los tipos de archivos que los soporten entre ellos HTML y CSS. También incluye soporte para el sistema de <a href="https://code.visualstudio.com/docs/editor/versioncontrol">control de versiones Git</a> y otros con <em>plugins</em> que permiten ver las modificaciones realizadas en los archivos y los archivos modificados, hay gran cantidad de complementos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/git_hu8172c8a741f24521f7cd7f3616353770_1363988_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Git integrado"><img src="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/git_hu8172c8a741f24521f7cd7f3616353770_1363988_300x200_fit_box_3.png" width="300" height="183" alt="Git integrado" title="Git integrado" class="" loading="lazy"></a></p>
+<figcaption>Git integrado</figcaption>
+</figure>
+</div>
+<p>Con la combinación <code>Ctrl + P</code> se abre una ventana emergente para abrir archivos por su nombre. Introduciendo <code>?</code> se obtienen las posibles acciones que se pueden realizar. Otra muy utilizada es <code>Ctrl + G</code> para ir a una línea específica del archivo, también se puede hacer desde la ventana emergente e introduciendo el carácter <code>:</code>. Con <code>Ctrl + Shift + O</code> se va a los símbolos detectados por editor según el tipo de archivo. Posee una buena <a href="https://code.visualstudio.com/docs">documentación</a> con la que ir aprendiendo a medida que se usa el mayor provecho posible.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/ventana-emergente_hu8172c8a741f24521f7cd7f3616353770_1615659_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ventana emergente de acciones rápidas"><img src="/blog-bitix/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/images/ventana-emergente_hu8172c8a741f24521f7cd7f3616353770_1615659_300x200_fit_box_3.png" width="300" height="183" alt="Ventana emergente de acciones rápidas" title="Ventana emergente de acciones rápidas" class="" loading="lazy"></a></p>
+<figcaption>Ventana emergente de acciones rápidas</figcaption>
+</figure>
+</div>
+<p>En definitiva tiene una buena cantidad de opciones que como desarrolladores son muy útiles. Otras funcionalidades que tiene son:</p>
+<ul>
+<li>Minimapa del archivo abierto.</li>
+<li>Ajuste de linea.</li>
+<li>Buscar y reemplazar usando expresiones regulares.</li>
+<li>Espacios de trabajo con múltiples directorios raíz.</li>
+<li>Ampliar, reducir el tamaño del texto y ajuste automático de linea.</li>
+<li>Diseño de archivos abiertos en columnas, filas y rejilla.</li>
+<li>Soporte de secuencia final de línea Windows y Unix, con soporte para UTF-8.</li>
+<li>Depurador de código.</li>
+<li>Tiene un ritmo de actualización muy alto y en cada nueva versión se añaden numerosas funcionalidades o se mejoran las existentes.</li>
+</ul>
+<p>Por otro lado ocupa menos que los 260 MiB de Atom contra los 180 MiB de Visual Studio Code y está disponible en las plataformas más utilizadas <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/es/mac/">Mac</a> e incluso <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> aún siendo un producto de <a href="https://www.microsoft.com/">Microsoft</a>. Microsoft proporcionando software para la plataforma del pingüino, quien lo diría hace unas décadas.</p>
+<p>En los sistemas Unix habrá gente que prefiera <a href="https://www.vim.org/">Vim</a> por sus enormes posibilidades, bajo consumo de memoria y exprimir al máximo cada megaherzio del procesador pero este requiere un tiempo de aprendizaje elevado inicial comparado con cualquiera de los editores anteriores.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/setup/setup-overview">Setup</a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/codebasics">Basics</a></li>
+<li><a href="https://code.visualstudio.com/Docs/editor/tasks">Tasks</a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/editingevolved">Edition evolved</a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/integrated-terminal">Integrated terminal</a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/emmet">Emmet</a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/extension-gallery">Extension gallery</a></li>
+<li><a href="https://code.visualstudio.com/docs/java/java-tutorial">Java tutorial</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/hemeroteca-11/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
+                <h3>Hemeroteca #11</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/12/hemeroteca-10/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #10" title="Hemeroteca #10" class="" loading="lazy">
+                <h3>Hemeroteca #10</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/07/hemeroteca-9/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #9" title="Hemeroteca #9" class="" loading="lazy">
+                <h3>Hemeroteca #9</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/el-lenguaje-de-programacion-framework-y-librerias-importan/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="El lenguaje de programación, framework y librerías importan" title="El lenguaje de programación, framework y librerías importan" class="" loading="lazy">
+                <h3>El lenguaje de programación, framework y librerías importan</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-345';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2018\/09\/el-editor-de-archivos-e-ide-minimalista-visual-studio-code\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

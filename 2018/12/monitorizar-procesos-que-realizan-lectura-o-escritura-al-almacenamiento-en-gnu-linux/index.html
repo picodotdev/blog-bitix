@@ -1,0 +1,614 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Hoy día los precios de los SSD son asequibles y a cada mes que pasa su coste por GB se reduce de forma significativa, son mucho más rápidos que un disco duro mecánico y es una de las mejores mejoras que se le pueden hacer a un ordenador para aumentar el rendimiento si el problema es la tasa de transferencia del almacenamiento. El sistema se inicia mucho más rápido, en segundos en vez de minutos, y las aplicaciones también tardan mucho menos en cargarse. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/" hreflang="es" title="Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/index-amp.html" hreflang="es" title="Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Hoy día los precios de los SSD son asequibles y a cada mes que pasa su coste por GB se reduce de forma significativa, son mucho más rápidos que un disco duro mecánico y es una de las mejores mejoras que se le pueden hacer a un ordenador para aumentar el rendimiento si el problema es la tasa de transferencia del almacenamiento. El sistema se inicia mucho más rápido, en segundos en vez de minutos, y las aplicaciones también tardan mucho menos en cargarse. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux">
+<meta name="twitter:description" content="Hoy día los precios de los SSD son asequibles y a cada mes que pasa su coste por GB se reduce de forma significativa, son mucho más rápidos que un disco duro mecánico y es una de las mejores mejoras que se le pueden hacer a un ordenador para aumentar el rendimiento si el problema es la tasa de transferencia del almacenamiento. El sistema se inicia mucho más rápido, en segundos en vez de minutos, y las aplicaciones también tardan mucho menos en cargarse. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/"
+    },
+    "headline": "Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png"
+        
+      },
+    "datePublished": "2018-12-17T11:00:00+01:00",
+    "dateModified": "2018-12-17T11:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1228",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Hoy día los precios de los SSD son asequibles y a cada mes que pasa su coste por GB se reduce de forma significativa, son mucho más rápidos que un disco duro mecánico y es una de las mejores mejoras que se le pueden hacer a un ordenador para aumentar el rendimiento si el problema es la tasa de transferencia del almacenamiento. El sistema se inicia mucho más rápido, en segundos en vez de minutos, y las aplicaciones también tardan mucho menos en cargarse."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>17/12/2018</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/firefox.svg" width="200" height="188" alt="Firefox" title="Firefox" class="" loading="false"></p>
+</div>
+<p>Hoy día los precios de los SSD son asequibles y a cada mes que pasa su coste por GB se reduce de forma significativa, son mucho más rápidos que un disco duro mecánico y es una de las mejores mejoras que se le pueden hacer a un ordenador para aumentar el rendimiento si el problema es la tasa de transferencia del almacenamiento. El sistema se inicia mucho más rápido, en segundos en vez de minutos, y las aplicaciones también tardan mucho menos en cargarse. Cambiar a un SSD significa aumentar el rendimiento notablemente y parecer que se tiene equipo nuevo.</p>
+<p>Aunque los SSD son muchísimo más rápidos que los discos duros mecánicos tradicionales tanto en lectura como en escritura adolecen de un tiempo de vida de unos 1000 ciclos de escritura por cada celda. Aunque 1000 ciclos de escritura pueden parecer pocos son más que suficientes para que el disco SSD y equipo se quede obsoleto antes de que pueda fallar según el ritmo al que avanza la tecnología. Aunque en un principio no debamos preocuparnos demasiado de la fiabilidad no está demás cuidarlo en lo posible.</p>
+<p>Según Samsung la cantidad de datos que se pueden escribir en un <a href="https://www.samsung.com/semiconductor/minisite/ssd/product/consumer/860evo/">860 EVO</a> y <a href="https://www.samsung.com/es/memory-storage/ssd-970-evo/MZ-V7E500BW/">970 EVO</a> son según la capacidad 250, 500 GB y 1 TB de 150 TBW, 300 y 600 respectivamente (TBW = Terabytes escritos, 1 TB = 1000 GB). La esperanza de vida estimada antes de que se empiecen a producir fallos para el SSD de 250 GB es de de unos 20 años estimando unos 20 GB de escritura al día (150 TBW * 1000 GB/TB / (20 GB * 365 dias/año), en ese tiempo el equipo se quedará obsoleto y el coste del almacenamiento se habrá reducido significativamente.</p>
+<p>Para cuidar el SSD hay que conocer la cantidad de datos que se están escribiendo en la unidad. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> es sencillo, el siguiente comando da la cantidad de datos en megabytes leídos y escritos desde que que se ha encendido el sistema.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ awk <span class="s1">&#39;/sd|nvme/ {print $3&#34;\t&#34;($6 * 512) / (1024 * 1024)&#34;\t&#34;($10 * 512) / (1024 * 1024)}&#39;</span> /proc/diskstats&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>awk-uptime-writes.sh</span>
+    </div>
+</div>
+<p>En este caso se han escrito 326 MB en el dispositivo <em>nvme0n1p2</em> que corresponde a la partición <em>root</em> en una hora de actividad del sistema realizando tareas ofimáticas y de navegación.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/awk_hu2f9598549ed102025232bc79089abe44_40142_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos escritos al almacenamiento desde el inicio del sistema"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/awk_hu2f9598549ed102025232bc79089abe44_40142_300x200_fit_box_3.png" width="300" height="108" alt="Datos escritos al almacenamiento desde el inicio del sistema" title="Datos escritos al almacenamiento desde el inicio del sistema" class="" loading="lazy"></a></p>
+<figcaption>Datos escritos al almacenamiento desde el inicio del sistema</figcaption>
+</figure>
+</div>
+<p>También es interesante conocer los datos escritos en la unidad en total desde su instalación, en realidad lo siguiente nos dará los GiB escritos desde la creación de la partición, si se han hecho varios particionados no será el total del tiempo de vida de la unidad. Al usar LVM on LUKS el nombre que Linux le a la unidad en mi caso es <em>dm-1</em>, según la configuración del sistema otro nombre que se le asigna es <em>sda2</em>. En esta captura de 129 GB.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ awk <span class="s1">&#39;// {print $0 / (1024 * 1024)}&#39;</span> /sys/fs/ext4/dm-1/lifetime_write_kbytes&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>awk-lifetime-writes.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/awk-lifetime_hu39bef0aba530b0a41102a26d1d2db139_20509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos escritos a una partición"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/awk-lifetime_hu39bef0aba530b0a41102a26d1d2db139_20509_300x200_fit_box_3.png" width="300" height="136" alt="Datos escritos a una partición" title="Datos escritos a una partición" class="" loading="lazy"></a></p>
+<figcaption>Datos escritos a una partición</figcaption>
+</figure>
+</div>
+<p>Después de <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">comprar un Intel NUC junto con SSD</a> e instalarle <a href="https://www.archlinux.org/">Arch Linux</a> me he dado cuenta que de forma periódica, cada 5 o 10 segundos, parpadea la luz de actividad del disco duro (o simplemente almacenamiento al tener un SSD) sin hacer ninguna actividad salvo tener algunas aplicaciones abiertas. He instalado <em>iotop</em> para descubrir el origen de esta actividad y he encontrado dos. Por un lado <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a>, varios procesos de él, y otro proceso del sistema <em>jdb2-dm-1-8</em> que corresponde al <em>journaling</em> del sistema de archivos. La opción <em>-a</em> de <em>iotop</em> muestra la cantidad de E/S en la sesión por proceso y la opción <em>--only</em> solo aquellos que han realizado E/S.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ iotop -a --only&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>iotop.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/iotop_hue4687c96ed1462b9a490f6bf88d00c3d_167006_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos escritos por procesos del sistema"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/iotop_hue4687c96ed1462b9a490f6bf88d00c3d_167006_300x200_fit_box_3.png" width="300" height="198" alt="Datos escritos por procesos del sistema" title="Datos escritos por procesos del sistema" class="" loading="lazy"></a></p>
+<figcaption>Datos escritos por procesos del sistema</figcaption>
+</figure>
+</div>
+<p>Investigando sobre los motivos de escritura de Firefox he encontrado algunos artículos y tres recomendaciones a cambiar en la configuración de Firefox para optimizar su uso en unidades SSD.</p>
+<ul>
+<li><a href="https://superuser.com/questions/399473/firefox-writes-megabytes-of-data-per-minute-to-disk-why">Firefox writes megabytes of data per minute to disk, why?</a></li>
+<li><a href="https://pringao.com/optimizar-firefox-para-ssd/">Optimizar Firefox para SSD</a></li>
+</ul>
+<p>Las opciones a cambiar en la configuración son:</p>
+<ul>
+<li><em>browser.sessionstore.interval</em>: para recuperar las pestañas abiertas en caso de cierre inesperado Firefox las guarda en disco cada cierto tiempo, por defecto 15000 ms o 15 segundos que es un tiempo muy bajo y que ocasiona escrituras al disco constantemente.</li>
+<li><em>browser.cache.disk.enable</em>: para no realizar tŕafico de red en un futuro los recursos ya descargados como imágenes, archivos de estilo o <em>javascript</em> los almacena en una caché en el disco. Evita tráfico de red y mejora el rendimiento pero la caché ocupa espacio en disco y ocasiona escrituras. Cambiando el valor de esta propiedad a <em>false</em> se inhabilita la cache y las escrituras.</li>
+<li><em>browser.cache.memory.capacity</em>: para no perder la funcionalidad de la cache al menos en una sesión si se dispone de memoria RAM suficiente se puede activar una cache en memoria. Esta opción indica en KiB el espacio reservado para esa caché. Un valor de 307200 (300 * 1024) corresponde a 300 MiB de caché en memoria. Aún teniendo una cache de sesión y en memoria no he notado diferencia velocidad de carga en las páginas al navegar aún usando ADSL. Esa opción se ha de crear de tipo entero.</li>
+</ul>
+<p>Estas opciones se cambian el la sección de configuración de Firefox introduciendo <em>about:config</em> en la barra de direcciones.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-config-1_huac92489a70fe30a83fa2fed454815d3b_38903_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de Firefox optimizado para SSD"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-config-1_huac92489a70fe30a83fa2fed454815d3b_38903_300x200_fit_box_3.png" width="286" height="200" alt="Configuración de Firefox optimizado para SSD" title="Configuración de Firefox optimizado para SSD" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-config-2_hu1ede719cd1c8042fc711c3800df7e9b2_102209_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de Firefox optimizado para SSD"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-config-2_hu1ede719cd1c8042fc711c3800df7e9b2_102209_300x200_fit_box_3.png" width="286" height="200" alt="Configuración de Firefox optimizado para SSD" title="Configuración de Firefox optimizado para SSD" class="" loading="lazy"></a></p>
+<figcaption>Configuración de Firefox optimizado para SSD</figcaption>
+</figure>
+</div>
+<p>Con la configuración por defecto y cambiando estas opciones esta es la diferencia de los procesos de Firefox que causan E/S después de un tiempo de uso. Por defecto se observa que hay un proceso relacionado que debe estar relacionado con la caché a raíz de su nombre que escribe en el almacenamiento y cambiadas las opciones solo los procesos <em>mozStorage</em> escriben, estos procesos están relacionados con las <em>cookies</em> y almacenamiento local o bases de datos que los navegadores ofrecen a las páginas web pero los procesos relacionados con la caché han desaparecido. La cantidad de datos escritos con las opciones por defecto y cambiadas son significativamente menores en el mismo periodo de tiempo.</p>
+<p>Dado que la caché ocasiona escrituras en el almacenamiento el proceso de <em>journaling</em> del sistema también realiza escrituras amplificando el problema. Con Firefox optimizado para SSD el proceso <em>firefox [Cache2 I/O]</em> desaparece y al escribir la sesión no cada 15 segundos Firefox deja de escribir de forma regular. <a href="https://www.google.es/chrome/browser/desktop/">Google Chrome</a> no ofrece estas opciones de personalización.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-default_hu13ad6d682ee4ae6ce7313a7569e91b43_134475_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Entrada y salida con las opciones de Firefox por defecto"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-default_hu13ad6d682ee4ae6ce7313a7569e91b43_134475_300x200_fit_box_3.png" width="300" height="198" alt="Entrada y salida con las opciones de Firefox por defecto" title="Entrada y salida con las opciones de Firefox por defecto" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-ssd_hue958cb401399bf1e0ea7184de54b2473_92599_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Entrada y salida con opciones de Firefox optimizadas para SSD"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/firefox-ssd_hue958cb401399bf1e0ea7184de54b2473_92599_300x200_fit_box_3.png" width="300" height="198" alt="Entrada y salida con opciones de Firefox optimizadas para SSD" title="Entrada y salida con opciones de Firefox optimizadas para SSD" class="" loading="lazy"></a></p>
+<figcaption>Entrada y salida de Firefox por defecto y optimizado para SSD</figcaption>
+</figure>
+</div>
+<p>En el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a> con la aplicación <em>Monitor del sistema</em> es posible ver la cantidad de datos escritos por un proceso en total y en tiempo real.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/gnome-monitor-del-sistema_hudc54858e148c80688588348a42ecafd9_174051_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Monitor del sistema de GNOME"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/gnome-monitor-del-sistema_hudc54858e148c80688588348a42ecafd9_174051_300x200_fit_box_3.png" width="300" height="173" alt="Monitor del sistema de GNOME" title="Monitor del sistema de GNOME" class="" loading="lazy"></a></p>
+<figcaption>Monitor del sistema de GNOME</figcaption>
+</figure>
+</div>
+<p>Dado que los SSD no hacen ruido no se ha pedido la alerta sonora del «rascar» del disco cuando algún programa está escribiendo o leyendo de forma intensiva y por ello quizá no nos demos cuenta de que algún programa está teniendo un mal comportamiento y esté escribiendo muchos datos al SSD, peor aún si el sistema ni siquiera dispone de este LED de actividad.</p>
+<p>Para visualizar el uso del disco de forma constante <a href="https://extensions.gnome.org/extension/120/system-monitor/">en GNOME hay una extensión que hace de monitor del sistema</a> que agregará en la barra superior un área de estado visible en todo momento en la que se puede ver la información del estado del sistema, entre esa información se puede visualizar la cantidad de lectura y escritura que está realizando al almacenamiento.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/gnome-extension-system-monitor_hu9cf33cffc4fcae05a240cdf19afd64b7_165112_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Extensión de GNOME de monitor del sistema"><img src="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/images/gnome-extension-system-monitor_hu9cf33cffc4fcae05a240cdf19afd64b7_165112_300x200_fit_box_3.png" width="209" height="200" alt="Extensión de GNOME de monitor del sistema" title="Extensión de GNOME de monitor del sistema" class="" loading="lazy"></a></p>
+<figcaption>Extensión de GNOME de monitor del sistema</figcaption>
+</figure>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/flatpak.svg" width="326" height="125" alt="Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux" title="Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux" class="" loading="lazy">
+                <h3>Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/09/el-comando-fork-bomb-explicado/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="El comando fork bomb explicado" title="El comando fork bomb explicado" class="" loading="lazy">
+                <h3>El comando fork bomb explicado</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie" title="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie" class="" loading="lazy">
+                <h3>Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Personalizar el prompt del sistema del intérprete de comandos Bash" title="Personalizar el prompt del sistema del intérprete de comandos Bash" class="" loading="lazy">
+                <h3>Personalizar el prompt del sistema del intérprete de comandos Bash</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash" title="Prompt de la terminal personalizado en carpetas de git con el intérprete Bash" class="" loading="lazy">
+                <h3>Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-367';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2018\/12\/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

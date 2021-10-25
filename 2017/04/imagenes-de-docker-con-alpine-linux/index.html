@@ -1,0 +1,498 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En el repositorio de imágenes Docker Hub de Docker hay múltiples versiones de cada software contenirizado, alguna de las versiones están etiquetadas con la palabra alpine. Las imágenes de Docker etiquetadas con alpine hacen referencia a que usan como base la distribución Alpine Linux y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en busybox y musl-libc hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en Ubuntu o Debian, seguramente porque no contienen una buena cantidad de cosas innecesarias. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Imágenes de Docker con Alpine Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/" hreflang="es" title="Imágenes de Docker con Alpine Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/index-amp.html" hreflang="es" title="Imágenes de Docker con Alpine Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Imágenes de Docker con Alpine Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En el repositorio de imágenes Docker Hub de Docker hay múltiples versiones de cada software contenirizado, alguna de las versiones están etiquetadas con la palabra alpine. Las imágenes de Docker etiquetadas con alpine hacen referencia a que usan como base la distribución Alpine Linux y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en busybox y musl-libc hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en Ubuntu o Debian, seguramente porque no contienen una buena cantidad de cosas innecesarias. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Imágenes de Docker con Alpine Linux">
+<meta name="twitter:description" content="En el repositorio de imágenes Docker Hub de Docker hay múltiples versiones de cada software contenirizado, alguna de las versiones están etiquetadas con la palabra alpine. Las imágenes de Docker etiquetadas con alpine hacen referencia a que usan como base la distribución Alpine Linux y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en busybox y musl-libc hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en Ubuntu o Debian, seguramente porque no contienen una buena cantidad de cosas innecesarias. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/"
+    },
+    "headline": "Imágenes de Docker con Alpine Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/docker-750.png"
+        
+      },
+    "datePublished": "2017-04-28T23:00:00+02:00",
+    "dateModified": "2017-04-28T23:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "318",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En el repositorio de imágenes Docker Hub de Docker hay múltiples versiones de cada software contenirizado, alguna de las versiones están etiquetadas con la palabra alpine. Las imágenes de Docker etiquetadas con alpine hacen referencia a que usan como base la distribución Alpine Linux y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en busybox y musl-libc hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en Ubuntu o Debian, seguramente porque no contienen una buena cantidad de cosas innecesarias."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Imágenes de Docker con Alpine Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>28/04/2017</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/alpinelinux.svg" width="350" height="85" alt="Alpine Linux" title="Alpine Linux" class="" loading="false"></p>
+</div>
+<p>En el repositorio de imágenes <a href="https://registry.hub.docker.com/">Docker Hub</a> de <a href="https://www.docker.com/">Docker</a> hay múltiples versiones de cada software <em>contenirizado</em>, alguna de las versiones están etiquetadas con la palabra <em>alpine</em>. Las imágenes de Docker etiquetadas con <em>alpine</em> hacen referencia a que usan como base la distribución <a href="https://www.alpinelinux.org/">Alpine Linux</a> y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en <a href="https://www.busybox.net/">busybox</a> y <a href="https://www.musl-libc.org/">musl-libc</a> hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en <a href="https://www.ubuntu.com/">Ubuntu</a> o <a href="https://www.debian.org/">Debian</a>, seguramente porque no contienen una buena cantidad de cosas innecesarias.</p>
+<p>Por ejemplo, la <a href="https://hub.docker.com/_/openjdk/">imagen de Docker que contiene en JDK</a> de Java basada en Debian ocupa 643 MiB y la imagen de Java basada en Alpine Linux ocupa 101 MiB, una diferencia significativa de casi 500 MiB. Con la capacidad de los discos duros actuales no es tanto por lo que ocupan en disco sino por el tiempo que las imágenes tardan en descargarse desde el repositorio e iniciarse los contenedores como es el caso en un <a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">cluster de contenedores Docker</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/images/imagenes-docker_hu253efe971b278639688e2ea3de182c9f_81827_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine. Linux"><img src="/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/images/imagenes-docker_hu253efe971b278639688e2ea3de182c9f_81827_300x200_fit_box_3.png" width="300" height="165" alt="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine. Linux" title="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine. Linux" class="" loading="lazy"></a></p>
+<figcaption>Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine Linux.</figcaption>
+</figure>
+</div>
+<p>El tiempo de descarga solo se emplea la primera vez que se hace uso de una imagen pero como las imágenes se van actualizando hay que tener en cuenta que en cada nueva versión que se use hay que descargar una nueva imagen, cuanto más pequeñas sean las imágenes menos tiempo se emplea en descargarlas y más rápidamente se iniciarán los contenedores.</p>
+<p>La <a href="https://hub.docker.com/_/ubuntu/">imagen base de Ubuntu</a> con la que crear nuevas ocupa 117 MiB y la <a href="https://hub.docker.com/_/alpine/">imagen base de Alpine Linux</a> únicamente 3.98 MiB. Si creamos imágenes propias basadas en Alpine Linux deberemos saber que esta distribución usa su propio gestor de paquetes <em>apk</em> y su propio <a href="https://pkgs.alpinelinux.org/packages">repositorio de paquetes</a>. Para <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">crear una imagen de Docker</a> hay que usar los archivos <em>Dockerfile</em> que contienen las instrucciones para construir la imagen del contenedor.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>docker</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Crear y usar un repositorio en Docker Hub</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Usar docker con Docker Machine en Linux, Windows o Mac</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Cambiar la ruta raíz del entorno de Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">Introducción y ejemplo de cluster de contenedores con Docker Swarm</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/">Iniciar un stack de servicios en un cluster de Docker Swarm</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/">Escalar y actualizar un servicio de un cluster de Docker Swarm</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/">Contenedores en Docker Swarm con volúmenes de datos persistentes usando REX-Ray y VirtualBox</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/">Información sensible en los contenedores con Docker Secrets</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Imágenes de Docker con Alpine Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Contenedores en macOS con Lima y minikube</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-228';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2017\/04\/imagenes-de-docker-con-alpine-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

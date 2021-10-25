@@ -1,0 +1,611 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos grep o tail o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/" hreflang="es" title="Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/index-amp.html" hreflang="es" title="Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hudfa2de24ec1b797f1090b04e26409d5e_69213_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos grep o tail o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hudfa2de24ec1b797f1090b04e26409d5e_69213_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana">
+<meta name="twitter:description" content="Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos grep o tail o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/"
+    },
+    "headline": "Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hudfa2de24ec1b797f1090b04e26409d5e_69213_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2020-09-25T16:00:00+02:00",
+    "dateModified": "2020-09-25T16:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1353",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos grep o tail o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>25/09/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Las aplicaciones monolíticas solo generan un archivo de trazas, es fácil de monitorizar, basta con conectarse por SSH a la máquina de su entorno de ejecución y utilizar los comandos <em>grep</em> o <em>tail</em> o descargarlo para examinarlo con otra herramienta de forma local. Pero aún siendo una aplicación monolítica es raro que una organización tenga solo una aplicación sino varias diferentes y las aplicaciones complejas se dividen en varias aún siendo parte de la misma aplicación. Esto hace que haya múltiples aplicaciones en cuyo caso acceder por SSH a una máquina diferente en cada caso no es cómodo. En el caso de múltiples aplicaciones o aplicaciones basadas en microservicios se opta por centralizar las trazas provenientes de múltiples fuentes en una única herramienta, una de las herramientas es la combinación de Elasticsearch, Logstash y Kibana que forma la pila ELK.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/elastic-stack.svg" width="200" height="200" alt="Elastic Stack" title="Elastic Stack" class="" loading="false"></p>
+</div>
+<p>Las trazas de una aplicación permiten conocer en tiempo real el estado de la aplicación, las trazas contienen cualquier información que haya considerado el desarrollador de interés para la monitorización cuando el código se ejecuta, la información pueden ser los valores de ciertos datos, cualquier mensaje que indique por qué líneas de código se están ejecutando en el caso de sentencias condicionales, de bucle o que varían el flujo del programa, si es una traza de error, de información, de advertencia o su marca de tiempo.</p>
+<p>Las trazas se suelen almacenar en un registro como un archivo que además permita consultarlas en un futuro en caso necesario. A veces un problema se descubre pasadas varias horas o días, en este caso acceder al registro de trazas permite obtener información para averiguar que ha sucedido y si es el caso descubrir la causa del error en el código fuente.</p>
+<p>En una aplicación monolíticas guardar las trazas en un archivo puede ser suficiente, en las aplicaciones distribuidas y compuestas por varios microservicios cada uno emitiendo su propio registro de trazas se hace necesario recopilarlos y centralizarlos en una herramienta para su almacenamiento y consulta sencilla.</p>
+<p>La monitorización y las trazas son dos de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">necesidades de funcionalidad de las aplicaciones basadas en microservicios</a> aunque es también aplicable a las aplicaciones monolíticas. El complemento a las trazas son las <a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">métricas y monitorización con Prometheus y Grafana</a>.</p>
+<p>Para cubrir la necesidad de monitorización y trazas de las aplicaciones hay múltiples herramientas, entre las que tienen una licencia de software libre o de código abierto están la combinación de <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>, <a href="https://www.elastic.co/es/logstash">Logstash</a> y <a href="https://www.elastic.co/es/kibana">Kibana</a> también conocidas por las siglas <em>ELK</em>.</p>
+<h3 id="elasticsearch-logstash-filebeat-y-kibana">ElasticSearch, Logstash, Filebeat y Kibana</h3>
+<p>ElasticSearch proporciona la indexación y el almacenamiento, Logstash que permite la recolección, tratamiento y envío a Elasticsearch y Kibana permite su consulta y visualización con una interfaz web.</p>
+<p>Cada aplicación que emite trazas necesita tener un recolector de trazas asociado que permite enviarlas a Elasticsearch para su indexación y almacenamiento. Logstash es una herramienta pesada como para incluirla en cada máquina donde se instancian los servicios, por ello la propia empresa Elasticsearch ha desarrollado herramientas más ligeras, <a href="https://www.elastic.co/es/beats/">Beats</a>, compuestas de varias herramientas como por ejemplo para archivos de log, métricas, de red o de actividad entre algunos otros.</p>
+<p>En vez de usar Logstash se puede usar la herramienta más ligera <a href="https://www.elastic.co/es/beats/filebeat">Filebeat</a> para indexar la salida estándar de las aplicaciones directamente en Elasticsearch o para enviar a una instancia de Logstash que realice el procesado y el indexado en Elasticsearch.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hudfa2de24ec1b797f1090b04e26409d5e_69213_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arquitectura de la plataforma ELK"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/elk-beats-platform_hudfa2de24ec1b797f1090b04e26409d5e_69213_300x200_fit_box_3.png" width="300" height="183" alt="Arquitectura de la plataforma ELK" title="Arquitectura de la plataforma ELK" class="" loading="lazy"></a></p>
+<figcaption>Arquitectura de la plataforma ELK</figcaption>
+</figure>
+</div>
+<p>ELK también cubre algunas funcionalidades de monitorización y visualización de datos de métricas, que se solapa en algunos aspectos con la funcionalidad proporcionada por <a href="https://prometheus.io/">Prometheus</a> y <a href="https://grafana.com/">Grafana</a>.</p>
+<p>ELK solo son las herramientas que se encargan de almacenar y permitir el acceso a las trazas, son las aplicaciones las que se encargan de emitirlas con el formato, información y nivel de detalle que desean. En Java una de las librerías que se suele emplear de soporte para emitir trazas es <a href="https://logging.apache.org/log4j/2.x/">Log4j 2</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">La librería Log4j para emitir trazas en aplicaciones Java</a></li>
+</ul>
+<p>Por otro lado, al centralizar las trazas en una herramienta hace que todas estén mezcladas de modo que encontrar las correlacionadas que se ha emitido por una aplicación en una petición o todas las trazas que ha desencadenado en diferentes servicios es necesario utilizar identificadores globales y <a href="https://spring.io/projects/spring-cloud-sleuth">Sleuth</a>. Teniendo el identificador global único basta con hacer una búsqueda para encontrar todas las relacionadas que permiten analizar en detalle el comportamiento de la aplicación para una petición.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Identificar todas las trazas de una petición en una aplicación web Java con Log4j</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">Trazabilidad en microservicios con Spring Cloud Sleuth</a></li>
+</ul>
+<p>Otra parte importante en las trazas es no incluir u ofuscar los datos sensibles como datos personales o contraseñas.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">Ofuscar datos sensibles en las trazas con Log4j</a></li>
+</ul>
+<h3 id="ejemplo-monitorización-de-trazas-con-elk-y-docker">Ejemplo monitorización de trazas con ELK y Docker</h3>
+<p>ELK son en realidad tres herramientas individuales diferentes que en conjunto proporcionan la funcionalidad que permite monitorizar las trazas de los servicios de forma centralizada y almacenarlas para su consulta en un futuro. Pueden ser cuatro herramientas si se usa Logstash como intermediario entre Filebeat y Elasticsearch.</p>
+<p>Utilizando <a href="https://www.docker.com/">Docker</a> y <a href="https://docs.docker.com/compose/">Docker Compose</a> en un archivo se puede definir la colección de contenedores para arrancarlos como una unidad. En este caso se inicia un contenedor para Elasticsearch, para Kibana y otro para Filebeats que monitoriza el servicio de Docker con todos los contenedores que se inicien.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">elasticsearch</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">docker.elastic.co/elasticsearch/elasticsearch:7.9.1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">elasticsearch</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">node.name=elasticsearch</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">cluster.name=elasticsearch-cluster</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">discovery.seed_hosts=</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">cluster.initial_master_nodes=elasticsearch</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">bootstrap.memory_lock=true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;ES_JAVA_OPTS=-Xms2048m -Xmx2048m&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ulimits</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">memlock</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">soft</span><span class="p">:</span><span class="w"> </span>-<span class="m">1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">hard</span><span class="p">:</span><span class="w"> </span>-<span class="m">1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">/usr/share/elasticsearch/data</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="m">9200</span><span class="p">:</span><span class="m">9200</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">networks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">elk</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">kibana</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">docker.elastic.co/kibana/kibana:7.9.1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">kibana</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="m">5601</span><span class="p">:</span><span class="m">5601</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">ELASTICSEARCH_URL</span><span class="p">:</span><span class="w"> </span><span class="l">http://elasticsearch:9200</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">ELASTICSEARCH_HOSTS</span><span class="p">:</span><span class="w"> </span><span class="l">http://elasticsearch:9200</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">networks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">elk</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">filebeat</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">docker.elastic.co/beats/filebeat:7.9.1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">filebeat</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">command</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;-e&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;--strict.perms=false&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;-E&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">output.elasticsearch.hosts=[&#34;elasticsearch:9200&#34;]</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w"> &#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;./filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;/var/lib/docker/containers:/var/lib/docker/containers:ro&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;/var/run/docker.sock:/var/run/docker.sock:ro&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">elasticsearch</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">networks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">elk</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">elk</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">elk</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">bridge</span><span class="w">&#10;</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-elk.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="c1"># Para evitar este error que impide iniciar Elasticsearch  hay que cambiar esta configuración en el sistema (solo afecta a la ejecución actual, en el siguiente inicio no se conserva)</span>&#10;$ <span class="c1"># [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</span>&#10;$ sudo sysctl -w vm.max_map_count<span class="o">=</span><span class="m">262144</span>&#10;&#10;$ docker-compose -f docker-compose-elk.yml up</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-elk.sh</span>
+    </div>
+</div>
+<p>Filebeat permite indexar las trazas de un archivo de <em>log</em> que genera la aplicación o en el caso de un contenedor de Docker las que emite en la salida estándar o en la salida de error. Filebeat monitoriza los contenedores de Docker y según las etiquetas que se le asignan al contenedor personaliza la indexación de las trazas. Filebeat ofrece módulos para indexar las trazas de algunas herramientas como el servidor web Nginx o Apache, entiende su formato, procesa la traza emitida, la enriquece con sus propios datos y las envía a Elascticsearch o si fuese el caso a Logstash.</p>
+<p>Para configurar Elascticsearch y Filebeat es necesario realizar una configuración con un contenedor y comando de Filebeat que crea el índice en Elasticsearch y configura algunos paneles de visualización.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm --network elk docker.elastic.co/beats/filebeat:7.9.1 setup -E setup.kibana.host<span class="o">=</span>kibana:5601 -E output.elasticsearch.hosts<span class="o">=[</span><span class="s2">&#34;elasticsearch:9200&#34;</span><span class="o">]</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>filebeat-setup.sh</span>
+    </div>
+</div>
+<p>El siguiente comando arranca un contenedor con una instancia de <a href="https://nginx.org/">Nginx</a>. El archivo de Docker Compose para iniciar el contenedor de Nginx incluye varias etiquetas para activar la monitorización de trazas de Filebeat. Filebeat monitoriza los contenedores que se inician y las trazas que emiten los contenedores que tiene asociadas las etiquetas que activan Filebeat.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">labels</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;co.elastic.logs/enabled=true&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;co.elastic.logs/module=nginx&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;co.elastic.logs/fileset.stdout=access&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;co.elastic.logs/fileset.stderr=error&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;8080:80&#34;</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-nginx.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose -f docker-compose-nginx.yml up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-nginx.sh</span>
+    </div>
+</div>
+<p>Al acceder a alguna página del servidor web emite una traza como salida. En este caso se solicita la página por defecto y el navegador intenta encontrar el <em>favicon</em> de la web, la página se devuelve con un código de estado 200 y el <em>favicon</em> como no está configurado se devuelve un código de estado 404 de recurso no encontrado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">nginx&nbsp;&nbsp;&nbsp;&nbsp;| 172.23.0.1 - - [25/Sep/2020:15:24:32 +0000] &#34;GET / HTTP/1.1&#34; 200 612 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0&#34; &#34;-&#34;&#10;nginx&nbsp;&nbsp;&nbsp;&nbsp;| 172.23.0.1 - - [25/Sep/2020:15:24:32 +0000] &#34;GET /favicon.ico HTTP/1.1&#34; 404 153 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0&#34; &#34;-&#34;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nginx.out</span>
+    </div>
+</div>
+<p>Kibana es la herramienta como cliente web que permite consultar las trazas almacenadas en Elasticsearch, permite crear filtros para precisar las trazas a buscar y limitar las consultas a ciertos periodos de tiempo, muestra las ocurrencias encontradas y el número de ellas en un cierto periodo de tiempo. Filebeat además de las trazas que generan los contenedores indexa algunas propiedades adicionales como el nombre del contenedor, la imagen del contenedor, datos del agente que realiza la solicitud, marca de tiempo de generación junto a más datos que permite filtrar para encontrar las trazas deseadas entre todas las indexadas de todos los contenedores. También permite seleccionar las trazas en un rango de tiempo y los campos de datos a mostrar como resultado. Kibana tiene su propia sintaxis para realizar las consultas y permite guardarlas para futuros usos y compartirlas, además de poder construir avanzados paneles de información.</p>
+<p>En el ejemplo Kibana se accede a través de la dirección <em>http://localhost:5601</em> con un navegador web.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/kibana_hu8e819e8e9c342111978d45f300698371_152868_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Búsqueda en Kibana de trazas del contenedor Docker de Nginx"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/kibana_hu8e819e8e9c342111978d45f300698371_152868_300x200_fit_box_3.png" width="281" height="200" alt="Búsqueda en Kibana de trazas del contenedor Docker de Nginx" title="Búsqueda en Kibana de trazas del contenedor Docker de Nginx" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/nginx_hu6605fe9f905bc873365933b272615933_53409_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de inicio por defecto de Nginx"><img src="/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/images/nginx_hu6605fe9f905bc873365933b272615933_53409_300x200_fit_box_3.png" width="281" height="200" alt="Página de inicio por defecto de Nginx" title="Página de inicio por defecto de Nginx" class="" loading="lazy"></a></p>
+<figcaption>Búsqueda en Kibana de trazas del contenedor Docker de Nginx al solicitar la página por defecto</figcaption>
+</figure>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/ELK">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">
+                <img src="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_huc41ce270717c7d83329c22fcc858a46d_656703_875x0_resize_box_3.png" width="326" height="125" alt="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan" title="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan" class="" loading="lazy">
+                <h3>Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Renombrar campos del esquema en las consultas GraphQL" title="Renombrar campos del esquema en las consultas GraphQL" class="" loading="lazy">
+                <h3>Renombrar campos del esquema en las consultas GraphQL</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
+                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu0930190f3c65499ea0d10d00a00e2707_141470_875x0_resize_box_3.png" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
+                <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">
+                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_875x0_resize_box_3.png" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
+                <h3>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">
+                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu45616b24568f8b7d38357044c7708dca_59208_875x0_resize_box_3.png" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
+                <h3>El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Copiar datos de un tipo de objeto a otro con ModelMapper" title="Copiar datos de un tipo de objeto a otro con ModelMapper" class="" loading="lazy">
+                <h3>Copiar datos de un tipo de objeto a otro con ModelMapper</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-517';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/09\/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

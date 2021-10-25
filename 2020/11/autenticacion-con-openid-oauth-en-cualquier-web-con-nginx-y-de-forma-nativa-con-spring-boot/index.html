@@ -1,0 +1,704 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o legacy en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o single-sing-on a varias aplicaciones. El servidor web Nginx tiene proxys que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/" hreflang="es" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/index-amp.html" hreflang="es" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o legacy en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o single-sing-on a varias aplicaciones. El servidor web Nginx tiene proxys que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot">
+<meta name="twitter:description" content="La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o legacy en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o single-sing-on a varias aplicaciones. El servidor web Nginx tiene proxys que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/"
+    },
+    "headline": "Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2020-11-20T16:00:00+01:00",
+    "dateModified": "2020-11-20T16:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1829",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o legacy en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o single-sing-on a varias aplicaciones. El servidor web Nginx tiene proxys que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>20/11/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o <em>legacy</em> en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o <em>single-sing-on</em> a varias aplicaciones. El servidor web Nginx tiene <em>proxys</em> que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>La funcionalidad de autenticación y autorización es básica en la mayoría de aplicaciones web y servicios REST. La forma de implementar la autenticación y autorización es posible de varias formas. Sin embargo, con los métodos anteriores las aplicaciones gestionan sus propios usuarios y cada aplicación ha de implementar la autenticación y autorización. Otras formas comunes de autenticación son emplear <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">autenticación básica en el servidor web</a>, <a href="https://picodotdev.github.io/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/">autenticación mutua entre el servidor y el cliente</a> o con una implementación específica en la que una parte importante es <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">guardar las contraseña de forma segura con salted-password-hashing</a>.</p>
+<p>Gestionar los usuarios de en cada una aplicación se convierte en un problema cuando el número de aplicaciones y servicios son varios, ya que a lo largo del tiempo hay que dar de alta a los usuarios nuevos y de baja a los usuarios que ya no deben acceder a la aplicación por ejemplo porque ya no forman parte de una organización. Por otro, lado hay aplicaciones heredadas o <em>legacy</em> que no se pueden modificar para añadirles la autenticación que necesitan.</p>
+<p>Para administrar de forma centralizada los usuarios o credenciales de las aplicaciones y que el sistema de autenticación y autorización sea uno compartido para cualesquiera usuarios y aplicaciones una forma de implementarlo es usando un proveedor que implemente el estándar <a href="https://openid.net/connect/">OpenID Connect</a>. Para las aplicaciones heredadas la opción es añadir un <em>proxy</em> que proteja la aplicación con autenticación y en el caso de una aplicación Java con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> el proyecto de <a href="https://spring.io/projects/spring-security">Spring Security</a> permite añadir autenticación fácilmente para cualquier proveedor de OpenID.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-es-openid-connect">Qué es OpenID Connect</a></li>
+    <li><a href="#autenticación-openidoauth-con-nginx">Autenticación OpenID/OAuth con Nginx</a></li>
+    <li><a href="#autenticación-openidoauth-con-apache">Autenticación OpenID/OAuth con Apache</a></li>
+    <li><a href="#autenticación-openid-en-una-aplicación-spring-boot">Autenticación OpenID en una aplicación Spring Boot</a></li>
+    <li><a href="#configuración-de-autenticación-con-cuentas-de-google">Configuración de autenticación con cuentas de Google</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="qué-es-openid-connect">Qué es OpenID Connect</h3>
+<p>OpenID Connect es una capa de identidad que funciona sobre el <a href="https://oauth.net/">protocolo OAuth</a> 2.0. Permite a los clientes verificar la identidad del usuario basándose en la autenticación realizada por el servidor de autorización, así como obtener información básica del perfil del usuario. El protocolo funciona con principios similares a REST lo que lo hace interoperable con cualquier sistema.</p>
+<p>Son varios los proveedores que ofrecen autenticación con sus cuentas, algunos de ellos son <a href="https://www.google.es/">Google</a>, <a href="https://github.com/">GitHub</a>, <a href="https://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>, <a href="https://aws.amazon.com/es/cognito/">AWS Cognito</a> u <a href="https://www.okta.com/">Okta</a>. Para implementar el servicio de autenticación y autorización OAuth gestionando sin depender de esas otras organizaciones está <a href="https://www.keycloak.org/">Keycloak</a>.</p>
+<h3 id="autenticación-openidoauth-con-nginx">Autenticación OpenID/OAuth con Nginx</h3>
+<p>Para añadir autenticación OpenId Connect en una aplicación web se suele configurar con el servidor web actuando de <em>proxy</em> y un <em>proxy</em> de OAuth. La función del servidor web y el <em>proxy</em> es requerir que el usuario esté autenticado en el proveedor de autenticación. De este modo entre el usuario y la página web están el servidor web, el intermediario de OAuth y el proveedor de autenticación, el esquema es el siguiente.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_300x200_fit_box_3.png" width="300" height="192" alt="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" class="" loading="lazy"></a></p>
+<figcaption>Modos de funcionamiento de oauth2-proxy (con y sin Nginx)</figcaption>
+</figure>
+</div>
+<p>Con el servidor web <a href="https://nginx.org/">Nginx</a> dos intermediarios o <em>proxys</em> que proporcionan autenticación OpenID Connect son <a href="https://oauth2-proxy.github.io/oauth2-proxy/">oauth2-proxy</a> y <a href="https://github.com/vouch/vouch-proxy">vouch-proxy</a>. Tanto <a href="https://oauth2-proxy.github.io/oauth2-proxy/">oauth2-proxy</a> y <a href="https://github.com/vouch/vouch-proxy">vouch-proxy</a> son dos servicios que le indican a Nginx si el usuario está autenticado usando la directiva <em>auth_request</em> de Nginx. Estos <em>proxys</em> simplemente devuelven como respuesta un código de estado <em>202 Accepted</em> o <em>401 Unauthorized</em> para indicarle a Nginx si hay que realizar la autenticación, las otras directivas de configuración son para establecer cabeceras con las que es posible entre otras cosas indicarle a la aplicación web final cual es el usuario autenticado. En caso de que haya que autenticar al usuario el <em>proxy</em> de OAuth redirige al proveedor de autenticación.</p>
+<p>En el caso de <a href="https://oauth2-proxy.github.io/oauth2-proxy/">oauth2-proxy</a> la configuración consiste en hacer de <em>proxy</em> para la aplicación web en la ubicación <em>/</em> y requerir autenticación con el <em>endpoint</em> <em>/oauth2/</em> y <em>/oauth2/auth</em> que hace de <em>proxy</em> para oauth2-proxy. Buena parte de esa <a href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview#configuring-for-use-with-the-nginx-auth_request-directive">configuración de <em>proxy</em></a> son el tratamiento de las cabeceras con las que se obtiene el nombre de usuario autenticado y correo electrónico.</p>
+<p>Este es la configuración para Nginx.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">user</span>  <span class="s">nginx</span><span class="p">;</span>&#10;<span class="k">worker_processes</span>  <span class="mi">1</span><span class="p">;</span>&#10;&#10;<span class="k">error_log</span>  <span class="s">/var/log/nginx/error.log</span> <span class="s">warn</span><span class="p">;</span>&#10;<span class="k">pid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">/var/run/nginx.pid</span><span class="p">;</span>&#10;&#10;<span class="k">events</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">worker_connections</span>  <span class="mi">1024</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;&#10;<span class="k">http</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">resolver</span> <span class="mi">127</span><span class="s">.0.0.1</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">include</span> <span class="s">/etc/nginx/mime.types</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">default_type</span> <span class="s">application/octet-stream</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">sendfile</span> <span class="no">on</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">keepalive_timeout</span> <span class="mi">65</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">include</span> <span class="s">/etc/nginx/conf.d/*.conf</span><span class="p">;</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nginx.conf</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span> <span class="s">nginx.127.0.0.1.xip.io</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span> <span class="s">/var/www/html/</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/oauth2/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_pass</span> <span class="s">http://oauth2:4180</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">Host</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">$host</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="nv">$remote_addr</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Scheme</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">$scheme</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Auth-Request-Redirect</span> <span class="nv">$scheme://$host$request_uri</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="p">=</span> <span class="s">/oauth2/auth</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_pass</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s">http://oauth2:4180</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_pass_request_body</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="no">off</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">Content-Length</span>   <span class="s">&#34;&#34;</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">Host</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="nv">$host</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">$remote_addr</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Scheme</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="nv">$scheme</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Auth-Request-Redirect</span> <span class="nv">$scheme://$host$request_uri</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">auth_request</span> <span class="s">/oauth2/auth</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">error_page</span> <span class="mi">401</span> <span class="p">=</span> <span class="s">/oauth2/start</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">auth_request_set</span> <span class="nv">$user</span>   <span class="nv">$upstream_http_x_auth_request_user</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">auth_request_set</span> <span class="nv">$email</span>  <span class="nv">$upstream_http_x_auth_request_email</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">auth_request_set</span> <span class="nv">$token</span>  <span class="nv">$upstream_http_x_auth_request_access_token</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">auth_request_set</span> <span class="nv">$auth_cookie</span> <span class="nv">$upstream_http_set_cookie</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">auth_request_set</span> <span class="nv">$auth_cookie_name_upstream_1</span> <span class="nv">$upstream_cookie_auth_cookie_name_1</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-User</span>  <span class="nv">$user</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Email</span> <span class="nv">$email</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Access-Token</span> <span class="nv">$token</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">add_header</span> <span class="s">Set-Cookie</span> <span class="nv">$auth_cookie</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">if</span> <span class="s">(</span><span class="nv">$auth_cookie</span> <span class="p">~</span><span class="sr">*</span> <span class="s">&#34;(</span><span class="p">;</span> <span class="kn">.*)&#34;)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">set</span> <span class="nv">$auth_cookie_name_0</span> <span class="nv">$auth_cookie</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">set</span> <span class="nv">$auth_cookie_name_1</span> <span class="s">&#34;auth_cookie_name_1=</span><span class="nv">$auth_cookie_name_upstream_1$1&#34;</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">if</span> <span class="s">(</span><span class="nv">$auth_cookie_name_upstream_1</span><span class="s">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">add_header</span> <span class="s">Set-Cookie</span> <span class="nv">$auth_cookie_name_0</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">add_header</span> <span class="s">Set-Cookie</span> <span class="nv">$auth_cookie_name_1</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;<span class="p">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nginx.127.0.0.1.xip.io.conf</span>
+    </div>
+</div>
+<p>El servicio de <em>proxy</em> OAuth debe ubicarse en un subdominio de la página a autenticar ya que para esto se utilizan <em>cookies</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span> <span class="s">oauth2.nginx.127.0.0.1.xip.io</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/oauth2/callback</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_pass</span> <span class="s">http://oauth2:4180</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">Host</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">$host</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="nv">$remote_addr</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Scheme</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">$scheme</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">X-Auth-Request-Redirect</span> <span class="nv">$scheme://$host$request_uri</span><span class="p">;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">return</span> <span class="mi">302</span> <span class="s">http://nginx.127.0.0.1.xip.io</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;<span class="p">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>oauth2.nginx.127.0.0.1.xip.io.conf</span>
+    </div>
+</div>
+<p>Tanto <em>oauth2-proxy</em> como <em>vouch-proxy</em> tienen imágenes de <a href="https://www.docker.com/">Docker</a> para su fácil uso sin necesidad de instalar nada en la máquina local salvo el propio Docker (<a href="https://hub.docker.com/r/bitnami/oauth2-proxy">imagen docker oauth2-proxy</a>, <a href="https://hub.docker.com/r/voucher/vouch-proxy">imagen docker vouch-proxy</a>). Ambos <em>proxys</em> requieren cierta configuración indicada en la <a href="https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview">documentación del archivo de configuración</a>, las propiedades son desde el puerto en el que escucha el servicio del <em>proxy</em> las peticiones desde Nginx, configuración de TLS, proveedor de autenticación, dirección de redirección después de la autenticación, configuración de <em>logging</em>, por supuesto el <em>client-id</em> y el <em>client-secret</em> obtenidos del proveedor de autenticación, los correos electrónicos considerados como válidos y configuración de la <em>cookie</em> que mantiene la autenticación. También permite guardar la información de la sesión en <a href="https://redis.io/">Redis</a> en vez de en una <em>cookie</em>.</p>
+<p>La configuración del <em>oauth-proxy</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">http_address = &#34;0.0.0.0:4180&#34;&#10;&#10;redirect_url = &#34;http://oauth2.nginx.127.0.0.1.xip.io/oauth2/callback&#34;&#10;&#10;skip_provider_button = true&#10;pass_host_header = true&#10;pass_access_token = true&#10;pass_authorization_header = true&#10;&#10;upstreams = [&#34;http://nginx.127.0.0.1.xip.io&#34;]&#10;&#10;provider = &#34;google&#34;&#10;client_id = &#34;949347437228-c2rqkjknbfq10jak1ugccfffocaut7vp.apps.googleusercontent.com&#34;&#10;client_secret = &#34;AJUHi_m8bqCWI_FY9aHGLLcu&#34;&#10;&#10;authenticated_emails_file = &#34;/etc/oauth2-proxy-authenticated-emails.cfg&#34;&#10;&#10;cookie_name = &#34;_oauth2_proxy&#34;&#10;cookie_secret = &#34;83L36igQrdxAWRxfajQXnzj8WMo9jNKe&#34;&#10;cookie_samesite = &#34;lax&#34;&#10;cookie_secure = false&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>oauth2-proxy.cfg</span>
+    </div>
+</div>
+<p>Y en este caso las direcciones de correos electrónicas o usuarios permitidos en la aplicación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">pico.dev@gmail.com&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>oauth2-proxy-authenticated-emails.cfg</span>
+    </div>
+</div>
+<p>Al acceder a la página en el dominio <em>nginx.127.0.0.1.xip.io</em> se solicita el inicio de sesión o selección de cuenta.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación con cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_300x200_fit_box_3.png" width="259" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación con cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_300x200_fit_box_3.png" width="269" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google" class="" loading="lazy"></a></p>
+<figcaption>Autenticación con cuenta de Google</figcaption>
+</figure>
+</div>
+<p>Una vez autenticado el usuario se permite el acceso a la página web, en este caso la página por defecto de Nginx, también se observa la creación de la <em>cookie</em> que mantiene la sesión.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página web y cookie de sesión"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página web y cookie de sesión"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión" class="" loading="lazy"></a></p>
+<figcaption>Página web y cookie de sesión</figcaption>
+</figure>
+</div>
+<p>Al implementar el ejemplo me he encontrado con dos mensajes de error, <em>OAuth2: unable to obtain CSRF cookie</em> y <em>http: named cookie not present</em>. Para resolver el primero es necesario indicar el parámetro de configuración <em>cookie-domain</em> que en el momento de realizar el ejemplo solo me ha sido posible indicándolo a través de la línea de comandos no en el archivo de configuración y para resolver el segundo es necesario que el <em>host</em> del servicio <em>proxy</em> OAuth esté en un subdominio del dominio de la página web.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">oauth2</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">bitnami/oauth2-proxy:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;./oauth2-proxy.cfg:/etc/oauth2-proxy.cfg&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;./oauth2-proxy-authenticated-emails.cfg:/etc/oauth2-proxy-authenticated-emails.cfg&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;4180:4180&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">oauth2-proxy --config=/etc/oauth2-proxy.cfg --cookie-domain=&#34;nginx.127.0.0.1.xip.io&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;./nginx.conf:/etc/nginx/nginx.conf:ro&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;./oauth2.nginx.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/oauth2.nginx.127.0.0.1.xip.io.conf:ro&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;./nginx.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/nginx.127.0.0.1.xip.io.conf:ro&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;80:80&#34;</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose.yml</span>
+    </div>
+</div>
+<h3 id="autenticación-openidoauth-con-apache">Autenticación OpenID/OAuth con Apache</h3>
+<p>En el caso del servidor web <a href="https://httpd.apache.org/">Apache HTTPD</a> la solución que he encontrado es usar el módulo <a href="https://www.mod-auth-openidc.org/">mod_auth_openidc</a>.</p>
+<h3 id="autenticación-openid-en-una-aplicación-spring-boot">Autenticación OpenID en una aplicación Spring Boot</h3>
+<p>Las aplicaciones de Java que usan <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> a través de la dependencia de <a href="https://spring.io/projects/spring-security">Spring Security</a> que soporta OpenID Connect con el que añadir soporte a la aplicación fácilmente con un proveedor de autenticación. En este ejemplo se usa Google como proveedor de autenticación , <a href="https://www.keycloak.org/">Keycloak</a> es otro <a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">proveedor de autenticación OAuth para autenticar un servicio REST</a>.</p>
+<p>El siguiente ejemplo es un servicio de Spring Boot accedido desde el navegador, en caso de que el cliente fuese otra aplicación o servicio hay que obtener un <em>token</em> con el que poder invocar este servicio.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth-en-java/">Cliente de un servicio REST autenticado con OAuth en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a></li>
+</ul>
+<p>Primero hay que incluir en el proyecto la dependencia del cliente OAuth2.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;java&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.springoauth&#39;</span>&#10;<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;0.0.1-SNAPSHOT&#39;</span>&#10;<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="s1">&#39;11&#39;</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-dependencies:2.4.0&#34;</span><span class="o">))</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-web&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-oauth2-client&#39;</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtimeOnly</span><span class="o">(</span><span class="s1">&#39;com.fasterxml.jackson.core:jackson-databind:2.9.6&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtimeOnly</span><span class="o">(</span><span class="s1">&#39;com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.6&#39;</span><span class="o">)</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.springoauth.Main&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>Añadir la configuración en la aplicación para incluir el identificativo del cliente y el secreto del servicio de autenticación que permite validar la autenticación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">security</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">oauth2</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">client</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">registration</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">google</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">client-id</span><span class="p">:</span><span class="w"> </span><span class="m">949347437228</span>-<span class="l">c2rqkjknbfq10jak1ugccfffocaut7vp.apps.googleusercontent.com</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">client-secret</span><span class="p">:</span><span class="w"> </span><span class="l">AJUHi_m8bqCWI_FY9aHGLLcu</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application.yml</span>
+    </div>
+</div>
+<p>La información del usuario autenticado se puede obtener con la anotación <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/bind/annotation/AuthenticationPrincipal.html">@AuthenticationPrincipal</a> o mediante la clase <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/context/SecurityContextHolder.html">SecurityContextHolder</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springoauth</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.util.Collections</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.core.annotation.AuthenticationPrincipal</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.oauth2.core.oidc.user.OidcUser</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.core.Authentication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.core.context.SecurityContextHolder</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.oauth2.core.oidc.user.OidcUser</span><span class="o">;</span>&#10;&#10;<span class="nd">@RestController</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainController</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">MainController</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">hello</span><span class="o">(</span><span class="nd">@AuthenticationPrincipal</span> <span class="n">OidcUser</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello %s (%s)&#34;</span><span class="o">,</span> <span class="n">principal</span><span class="o">.</span><span class="na">getUserInfo</span><span class="o">().</span><span class="na">getGivenName</span><span class="o">(),</span> <span class="n">principal</span><span class="o">.</span><span class="na">getUserInfo</span><span class="o">().</span><span class="na">getEmail</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/principal&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">OidcUser</span> <span class="nf">getPrincipal</span><span class="o">(</span><span class="nd">@AuthenticationPrincipal</span> <span class="n">OidcUser</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">principal</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/claims&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getClaims</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Authentication</span> <span class="n">authentication</span> <span class="o">=</span> <span class="n">SecurityContextHolder</span><span class="o">.</span><span class="na">getContext</span><span class="o">().</span><span class="na">getAuthentication</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">authentication</span><span class="o">.</span><span class="na">getPrincipal</span><span class="o">()</span> <span class="k">instanceof</span> <span class="n">OidcUser</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">OidcUser</span> <span class="n">principal</span> <span class="o">=</span> <span class="o">((</span><span class="n">OidcUser</span><span class="o">)</span> <span class="n">authentication</span><span class="o">.</span><span class="na">getPrincipal</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">principal</span><span class="o">.</span><span class="na">getClaims</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">Collections</span><span class="o">.</span><span class="na">emptyMap</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>MainController.java</span>
+    </div>
+</div>
+<p>Lo último necesario es configurar qué rutas necesitan autenticación con OpenID Connect, en caso de que el usuario no esté autenticado se realiza la redirección al proveedor de autenticación. Con la configuración indicada se requiere autenticación para acceder a todas las rutas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springoauth</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.config.annotation.web.builders.HttpSecurity</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.security.oauth2.client.oidc.userinfo.OidcUserService</span><span class="o">;</span>&#10;&#10;<span class="nd">@Configuration</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OAuth2LoginSecurityConfig</span> <span class="kd">extends</span> <span class="n">WebSecurityConfigurerAdapter</span> <span class="o">{</span>&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="n">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">googleScopes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">googleScopes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;https://www.googleapis.com/auth/userinfo.email&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">googleScopes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;https://www.googleapis.com/auth/userinfo.profile&#34;</span><span class="o">);</span>&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">OidcUserService</span> <span class="n">googleUserService</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OidcUserService</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">googleUserService</span><span class="o">.</span><span class="na">setAccessibleScopes</span><span class="o">(</span><span class="n">googleScopes</span><span class="o">);</span>&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">http</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">.</span><span class="na">authorizeRequests</span><span class="o">(</span><span class="n">authorizeRequests</span> <span class="o">-&gt;</span> <span class="n">authorizeRequests</span><span class="o">.</span><span class="na">anyRequest</span><span class="o">().</span><span class="na">authenticated</span><span class="o">())</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">.</span><span class="na">oauth2Login</span><span class="o">(</span><span class="n">oauthLogin</span> <span class="o">-&gt;</span> <span class="n">oauthLogin</span><span class="o">.</span><span class="na">userInfoEndpoint</span><span class="o">().</span><span class="na">oidcUserService</span><span class="o">(</span><span class="n">googleUserService</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>OAuth2LoginSecurityConfig.java</span>
+    </div>
+</div>
+<p>Al acceder a una de las URLs del cliente se solicita la autenticación con una cuenta de Google, una vez autenticado se accede a la página que en este caso obtiene la información del usuario como el nombre y correo electrónico.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación de Spring autenticada con una cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación de Spring autenticada con una cuenta de Google" title="Aplicación de Spring autenticada con una cuenta de Google" class="" loading="lazy"></a></p>
+<figcaption>Aplicación de Spring autenticada con una cuenta de Google</figcaption>
+</figure>
+</div>
+<h3 id="configuración-de-autenticación-con-cuentas-de-google">Configuración de autenticación con cuentas de Google</h3>
+<p>En el ejemplo de este artículo muestro la autenticación con Google como proveedor de autenticación Oauth 2 pero perfectamente podría ser otro como Keycloak, en todos básicamente se trata de obtener las credenciales <em>client-id</em> y <em>client-secret</em> que permiten validar la autenticación tanto en estos casos Nginx como la aplicación de Spring Boot. Con una cuenta de Google y desde la <a href="https://console.developers.google.com/">consola para desarrolladores</a> en el apartado credenciales es posible generar las credenciales para la autenticación de usuarios en una aplicación. Estas credenciales son los mencionados <em>client-id</em> y <em>client-secret</em>.</p>
+<p>Los pasos para obtener las credenciales para una aplicación con autenticación OAuth con cuentas de Google son:</p>
+<ul>
+<li>Crear un proyecto</li>
+<li>Configurar la pantalla de consentimiento. En este paso se pide configurar la pantalla de consentimiento, la pantalla de consentimiento se muestra al usuario cuando realicen la autenticación entre la información está que aplicación solicita el consentimiento, opcionalmente es posible añadir un logotipo o enlaces de términos de uso.</li>
+<li>Crear las credenciales del cliente. Aquí se configura las URL de retorno válidas cuando el usuario se haya autenticado. Si no se ha configurado la pantalla de consentimiento se solicita como paso previo a este.</li>
+</ul>
+<p>Las credenciales tienen unos valores similares a, estas se indican tanto en la configuración de <em>oauth-proxy</em> como de la aplicación de Spring Boot:</p>
+<ul>
+<li><em>client-id</em>: <em>949347437228-m2c85v7bkmo1qb90vso702j27j4tccvr.apps.googleusercontent.com</em></li>
+<li><em>client-secret</em>: <em>szgiplYPZR-pGgHP9MiJ-6-q</em></li>
+</ul>
+<p>Al crear las credenciales para el cliente se indican las URL de retorno permitidas a las que se retorna al <em>proxy</em> o a la aplicación después del inicio de sesión.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pasos para la creación de credenciales en Google para la autenticación OAuth"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_300x200_fit_box_3.png" width="226" height="200" alt="Pasos para la creación de credenciales en Google para la autenticación OAuth" title="Pasos para la creación de credenciales en Google para la autenticación OAuth" class="" loading="lazy"></a></p>
+<figcaption>Pasos para la creación de credenciales en Google para la autenticación OAuth</figcaption>
+</figure>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/oauth2-proxy">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose up</code></p>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringOAuthClient">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.baeldung.com/spring-security-openid-connect">Spring Security and OpenID Connect</a></li>
+<li><a href="https://developers.google.com/identity/protocols/oauth2/openid-connect#appsetup">Google Setting up OAuth 2.0</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/hemeroteca-11/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
+                <h3>Hemeroteca #11</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/12/hemeroteca-10/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #10" title="Hemeroteca #10" class="" loading="lazy">
+                <h3>Hemeroteca #10</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-533';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/11\/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

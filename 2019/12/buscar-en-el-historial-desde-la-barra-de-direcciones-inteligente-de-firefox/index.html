@@ -1,0 +1,544 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los navegadores web guardan un historial de todas las páginas a las que se acceden, además de los marcadores que los usuarios creen. Este historial en Firefox se guarda en orden cronológico pudiendo consultar todas las páginas accedidas en el día actual, el de ayer y anteriores fechas. También es posible realizar búsquedas para encontrar una cierta página. En Firefox al historial se accede desde en menú con la opción Historial &gt; Mostrar todo el historial. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Buscar en el historial desde la barra de direcciones inteligente de Firefox</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/" hreflang="es" title="Buscar en el historial desde la barra de direcciones inteligente de Firefox">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/index-amp.html" hreflang="es" title="Buscar en el historial desde la barra de direcciones inteligente de Firefox">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Buscar en el historial desde la barra de direcciones inteligente de Firefox">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/images/barra-de-busqueda-firefox_huf6ad5650de6e3bff9124953c89123401_61128_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los navegadores web guardan un historial de todas las páginas a las que se acceden, además de los marcadores que los usuarios creen. Este historial en Firefox se guarda en orden cronológico pudiendo consultar todas las páginas accedidas en el día actual, el de ayer y anteriores fechas. También es posible realizar búsquedas para encontrar una cierta página. En Firefox al historial se accede desde en menú con la opción Historial &gt; Mostrar todo el historial. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/images/barra-de-busqueda-firefox_huf6ad5650de6e3bff9124953c89123401_61128_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Buscar en el historial desde la barra de direcciones inteligente de Firefox">
+<meta name="twitter:description" content="Los navegadores web guardan un historial de todas las páginas a las que se acceden, además de los marcadores que los usuarios creen. Este historial en Firefox se guarda en orden cronológico pudiendo consultar todas las páginas accedidas en el día actual, el de ayer y anteriores fechas. También es posible realizar búsquedas para encontrar una cierta página. En Firefox al historial se accede desde en menú con la opción Historial &gt; Mostrar todo el historial. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/"
+    },
+    "headline": "Buscar en el historial desde la barra de direcciones inteligente de Firefox",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/images/barra-de-busqueda-firefox_huf6ad5650de6e3bff9124953c89123401_61128_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2019-12-11T17:00:00+01:00",
+    "dateModified": "2019-12-11T17:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "242",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los navegadores web guardan un historial de todas las páginas a las que se acceden, además de los marcadores que los usuarios creen. Este historial en Firefox se guarda en orden cronológico pudiendo consultar todas las páginas accedidas en el día actual, el de ayer y anteriores fechas. También es posible realizar búsquedas para encontrar una cierta página. En Firefox al historial se accede desde en menú con la opción Historial &gt; Mostrar todo el historial."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Buscar en el historial desde la barra de direcciones inteligente de Firefox</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>11/12/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/firefox.svg" width="200" height="188" alt="Firefox" title="Firefox" class="" loading="false"></p>
+</div>
+<p>Los navegadores web guardan un historial de todas las páginas a las que se acceden, además de los marcadores que los usuarios creen. Este historial en Firefox se guarda en orden cronológico pudiendo consultar todas las páginas accedidas en el día actual, el de ayer y anteriores fechas. También es posible realizar búsquedas para encontrar una cierta página. En Firefox al historial se accede desde en menú con la opción <em>Historial &gt; Mostrar todo el historial</em>. El historial se muestra en una ventana.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/images/historial-firefox_huafb4b7f59bbf1e2f6492c5417b522249_48002_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Historial de páginas en Firefox"><img src="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/images/historial-firefox_huafb4b7f59bbf1e2f6492c5417b522249_48002_650x450_fit_box_3.png" width="650" height="346" alt="Historial de páginas en Firefox" title="Historial de páginas en Firefox" class="" loading="lazy"></a></p>
+<figcaption>Historial de páginas en Firefox</figcaption>
+</figure>
+</div>
+<p>Acceder al historial requiere abrir una ventana y luego hacer una búsqueda pero sin necesidad de abrir la ventana del historial desde la barra de direcciones inteligente también pueden hacerse búsquedas, no solo para las páginas del historial sino también entre los marcadores, pestañas abiertas, por títulos de página o por coincidencias en la dirección web. Con ciertos caracteres especiales se determina el comportamiento de la búsqueda.</p>
+<ul>
+<li><code>^</code>: para buscar coincidencias en el historial de búsqueda.</li>
+<li><code>*</code>: para buscar coincidencias en los marcadores.</li>
+<li><code>+</code>: para buscar coincidencias en las etiquetas de las páginas.</li>
+<li><code>%</code>: para buscar entre las pestañas abiertas actualmente.</li>
+<li><code>#</code>: Para buscar coincidencias en usando los títulos de página.</li>
+</ul>
+<ul>
+<li><code>$</code>: para buscar coincidencias en la dirección web.</li>
+</ul>
+<p>En esta captura de hace una búsqueda por el título de las páginas en el historial.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/images/barra-de-busqueda-firefox_huf6ad5650de6e3bff9124953c89123401_61128_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Barra de búsqueda inteligente de Firefox"><img src="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/images/barra-de-busqueda-firefox_huf6ad5650de6e3bff9124953c89123401_61128_650x450_fit_box_3.png" width="650" height="430" alt="Barra de búsqueda inteligente de Firefox" title="Barra de búsqueda inteligente de Firefox" class="" loading="lazy"></a></p>
+<figcaption>Barra de búsqueda inteligente de Firefox</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://support.mozilla.org/en-US/kb/address-bar-autocomplete-firefox?redirectlocale=en-US&amp;redirectslug=awesome-bar-search-firefox-bookmarks-history-tabs">Address bar autocomplete in Firefox - Search your bookmarks, history and tabs</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">
+                <img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-inicio_hu8b8d704537521248ed406d67202f5cb8_498606_875x0_resize_box_3.png" width="326" height="125" alt="Nube privada para documentos personales con Nextcloud y OnlyOffice" title="Nube privada para documentos personales con Nextcloud y OnlyOffice" class="" loading="lazy">
+                <h3>Nube privada para documentos personales con Nextcloud y OnlyOffice</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/">
+                <img src="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu77ea831290e4496781697c4e09451f28_32101_875x0_resize_box_3.png" width="326" height="125" alt="Guía de inicio del gestor de terminales y sesiones tmux" title="Guía de inicio del gestor de terminales y sesiones tmux" class="" loading="lazy">
+                <h3>Guía de inicio del gestor de terminales y sesiones tmux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="326" height="125" alt="Generar credenciales de conexión a base de datos bajo demanda con Vault" title="Generar credenciales de conexión a base de datos bajo demanda con Vault" class="" loading="lazy">
+                <h3>Generar credenciales de conexión a base de datos bajo demanda con Vault</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="326" height="125" alt="Administrar secretos y proteger datos sensibles con Vault" title="Administrar secretos y proteger datos sensibles con Vault" class="" loading="lazy">
+                <h3>Administrar secretos y proteger datos sensibles con Vault</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Comprobar la seguridad de un sitio web que use SSL/TLS" title="Comprobar la seguridad de un sitio web que use SSL/TLS" class="" loading="lazy">
+                <h3>Comprobar la seguridad de un sitio web que use SSL/TLS</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-448';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/12\/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

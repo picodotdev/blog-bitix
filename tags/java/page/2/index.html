@@ -1,0 +1,651 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/tags/java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/tags/java/" hreflang="es" title="java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/tags/java/index-amp.html" hreflang="es" title="java">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/tags/java/index.xml" hreflang="es" title="java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
+  <!-- Social -->
+<meta property="og:title" content="java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/tags/java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="java">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">Programas basados en consola con Java usando Lanterna</a></h1>
+        <span class="information">
+          <time>04/04/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Todavía hoy en día la terminal no ha desaparecido, y no lo hará, aún habiendo pasado ya algunas décadas de la aparición de las interfaces gráficas. Algunas ventajas de la terminal es que conociendo los comandos es más fácil realizar una tarea que con un programa basado en una ventana con botones que hay que pulsar usando el ratón, además las tareas usando comandos se pueden automatizar con scripts y combinar varios donde la entrada de uno sea la salida de otros dando lugar a funcionalidades mucho más complejas que las que realizan los comandos individualmente.
+          
+          <br>
+          <a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos</a></h1>
+        <span class="information">
+          <time>31/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/novedades-de-java-16/">Novedades de Java 16</a></h1>
+        <span class="information">
+          <time>18/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            En Java 16 los cambios en el lenguaje no son tan notables que en versiones anteriores, aún así  el calendario se sigue manteniendo y en cada versión se incluyen mejoras incrementales destacables. Se publica la versión final y lista para producción de algunas características y se añaden nuevas en forma de vista previa.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/novedades-de-java-16/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">Repositorio de artefactos privado con Nexus</a></h1>
+        <span class="information">
+          <time>12/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Los repositorios de software almacenan los artefactos, son utilizados por las herramientas de construcción que los descargan y almacenan de forma local para posteriores usos las dependencias que los proyectos declaran en el archivo de construcción. Los desarrolladores de los artefactos publican en los repositorios de software las nuevas versiones. Nexus es un repositorio de software con soporte para repositorios de software de varios tipos, Maven para Java, imágenes de Docker, paquetes npm para JavaScript además de artefactos para los lenguajes Python y Go.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/02/las-anotaciones-de-java-y-ejemplo-de-procesador-de-anotaciones-en-tiempo-de-compilacion/">Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación</a></h1>
+        <span class="information">
+          <time>19/02/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Las anotaciones añadidas en Java 5 son muy utilizadas por múltiples librerías entre ellas Hibernate, Spring o Immutables. Desde Java 6 se ofrece una API para el procesamiento de las anotaciones en tiempo de compilación que permiten generar archivos de código fuente o emitir mensajes de error. Los procesadores de anotaciones son invocados por el compilador de Java permitiendo extender su comportamiento. En el artículo se muestra una implementación para generar clases que implementan el patrón <em>Builder</em> y otro para realizar comprobaciones.
+          
+          <br>
+          <a href="/blog-bitix/2021/02/las-anotaciones-de-java-y-ejemplo-de-procesador-de-anotaciones-en-tiempo-de-compilacion/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/">En Java, ¿los argumentos se pasan por valor o por referencia?</a></h1>
+        <span class="information">
+          <time>22/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            En el lenguaje de programación Java los punteros no existen de la misma forma que en otros lenguajes como C o C++. En Java existen los punteros o referencias pero no son libres de apuntar a cualquier dirección de memoria del programa, en C y C++ lenguajes más destinados a la programación de sistemas y cercanos al lenguaje de la máquina ofrecen manipulación de punteros pudiendo obtener un puntero con la dirección de memoria de una variable.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">Para qué sirve la palabra clave final en el código fuente Java</a></h1>
+        <span class="information">
+          <time>18/12/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada final.
+La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como final, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente.
+          
+          <br>
+          <a href="/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java</a></h1>
+        <span class="information">
+          <time>12/12/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La internacionalización y localización son funcionalidades habitualmente necesarias de implementar en una aplicación. La localización ha de tener en cuenta los diferentes literales para cada idioma y no <em>hardcodearlos</em> en el código fuente de la aplicación, las diferentes formas plurales de los lenguajes, el formato de números e importes, fechas e incluso utilizar la forma correcta para ordenar cadenas alfabéticamente.
+          
+          <br>
+          <a href="/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">5 formas de implementar el patrón Singleton en Java</a></h1>
+        <span class="information">
+          <time>21/11/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            El patrón <em>Singleton</em> es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son <em>thread-safe</em> o con evaluación <em>lazy</em>.
+          
+          <br>
+          <a href="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</a></h1>
+        <span class="information">
+          <time>20/11/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o <em>legacy</em> en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o <em>single-sing-on</em> a varias aplicaciones. El servidor web Nginx tiene <em>proxys</em> que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa.
+          
+          <br>
+          <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">Crear un archivo Zip con Java, comprimir y descomprimir datos</a></h1>
+        <span class="information">
+          <time>15/11/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Desde las primeras versiones de Java en el JDK se incluyen clases en el paquete java.util.zip que heredan de las del paquete java.io del sistema de entrada y salida con las que crear archivos comprimidos en formato Zip y comprimir datos en este formato. Comprimir los archivos que permite reducir sensiblemente el tamaño de algunos tipos de archivos como los basados en texto o ciertos archivos que de por si no están comprimidos.
+          
+          <br>
+          <a href="/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">Emitir trazas de las peticiones y respuestas HTTP con clientes Java</a></h1>
+        <span class="information">
+          <time>06/11/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            En las peticiones HTTP que se hacen unos microservicios a otros o a recursos externos son varias las cosas por las que una petición HTTP es capaz de fallar. El fallo es un código de estado distinto al correcto 200, ya sea petición invalida 400, un recurso no encontrado 404, credenciales requeridas 401, credenciales inválidas 403 o un error interno de servidor 500 entre otros códigos de estado, otras posibilidades son fallos de conexión de red. Añadir trazas de las peticiones que hacen los microservicios permite obtener información con la que averiguar cual es el motivo de fallo, si además emiten las trazas con las cabeceras y parámetros en formato de la herramienta <em>curl</em> es fácil probar y reproducir el mismo error o la misma acción.
+          
+          <br>
+          <a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/">Cómo depurar una aplicación Java con un IDE</a></h1>
+        <span class="information">
+          <time>30/10/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La depuración de un programa o <em>debug</em> permite ejecutar un programa de forma interactiva, paso a paso y examinar los valores de las variables. Esto proporciona valiosa información que permite comprobar el correcto funcionamiento de un programa o descubrir la causa de un error del que las trazas no proporcionan información suficiente. Los depuradores o <em>debuggers</em> son las aplicaciones que ejecutan el programa en modo depuración, permiten establecer puntos de ruptura, continuar la ejecución paso a paso o hasta el siguiente punto de ruptura e inspeccionar los valores de las variables. Los entornos integrados de desarrollo o IDE de Java como IntelliJ IDEA y eclipse ofrecen soporte para hacer depuración.
+          
+          <br>
+          <a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/">Entorno de desarrollo Java para editar, compilar y ejecutar programas</a></h1>
+        <span class="information">
+          <time>25/10/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            El entorno de desarrollo son la colección de herramientas necesarias para editar código fuente, compilarlo y ejecutar sus programas. El primer paso para aprender a programar en Java es disponer de un entorno de desarrollo con las herramientas mínimas necesarias para practicar y aplicar los conocimientos aprendidos de un curso de formación o utilizando algún libro sobre el lenguaje Java. El entorno mínimo necesario consta del JDK que incluye el compilador Java, otras herramientas que facilitan la programación son un editor avanzado o IDE con asistencia de código y una herramienta de construcción para automatizar tareas.
+          
+          <br>
+          <a href="/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">Cómo deduplicar eventos de dominio</a></h1>
+        <span class="information">
+          <time>23/10/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Las aplicaciones distribuidas utilizan la comunicación de mensajes para notificar de la ocurrencia de ciertos eventos en el sistema que los interesados reciben. En el envío y recepción de mensajes pueden ocurrir dos situaciones que hay que manejar, una es garantizar que cada mensaje se envíe al menos una vez para lo que se emplea el patrón <em>outbox pattern</em> y la segunda es no procesar un evento recibido por duplicado para lo que se emplea deduplicación de mensajes.
+          
+          <br>
+          <a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/tags/java/page/3/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+      <a href="/blog-bitix/tags/java/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

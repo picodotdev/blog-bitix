@@ -1,0 +1,666 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="generator" content="Hugo 0.88.1" />
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Blog Bitix</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/" hreflang="es" title="Blog Bitix">
+  
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/en/" hreflang="en" title="Blog Bitix">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/index-amp.html" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Blog Bitix">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Blog Bitix">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">Implementar la paginación eficientemente en consultas SQL con seek</a></h1>
+        <span class="information">
+          <time>31/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas <em>limit</em> ni <em>offset</em> que habitualmente se utilizan sino con <em>seek</em>. Además de que <em>limit</em> y <em>offset</em> da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a></h1>
+        <span class="information">
+          <time>26/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/">Log de sentencias SQL, sentencias lentas y otra información en jOOQ</a></h1>
+        <span class="information">
+          <time>24/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Algunas de las causas del bajo rendimiento de una aplicación que utiliza una base de datos son el número de sentencias que se realizan junto con las sentencias lentas por su coste de ejecución. Cada ejecución de una sentencia significa una comunicación por la red y ejecutar muchas de ellas significa un considerable y perceptible tiempo para el usuario. Por ello es conveniente saber que sentencias se ejecutan, si hay algún problema de 1+N o sentencias innecesarias que se repiten. Un <em>log</em> de las sentencias que se ejecutan es muy útil para detectar ineficiencias en la aplicación y corregirlas.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/combinaciones-de-teclado-en-html-javascript-y-paginas-web/">Combinaciones de teclado en HTML, JavaScript y páginas web</a></h1>
+        <span class="information">
+          <time>19/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/javascript/">javascript</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            En las páginas y aplicaciones web también es posible utilizar combinaciones de teclas para proporcionar acceso rápido a funciones usadas frecuentemente. Utilizando la propiedad global <em>accesskey</em> para los campos de texto la acción es ubicar el foco en el campo y para los botones realizar la acción de clic. Los <em>listeners</em> como <em>onkeydown</em> permiten conocer que teclas modificadoras como <kbd>Ctrl</kbd>, <kbd>Shift</kbd> y <kbd>Alt</kbd> se han pulsado al mismo tiempo.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/combinaciones-de-teclado-en-html-javascript-y-paginas-web/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Lanzar excepciones checked como si fueran unchecked en Java</a></h1>
+        <span class="information">
+          <time>17/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            No es una buena práctica al igual que al no recomendado antipatrón de inicialización de variables con dobles llaves pero en el uso de streams que aceptan lambdas es un rodeo a la limitación de no poder lanzar excepciones checked por no estar definida en su API.
+En Java existen dos tipos de excepciones las checked que son de obligada captura o ser lanzadas y las unchecked que no son de obligada captura ni ser declaradas.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky</a></h1>
+        <span class="information">
+          <time>12/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/blog/">blog</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            He cambiado ligeramente el diseño del blog con la intención de mejorar la experiencia de usuario haciendo que el contenido quede centrado en la pantalla en vez de estar desplazado un poco a la izquierda por un panel lateral. Pero más espacio horizontal para el contenido podría afectar negativamente al rendimiento de los <em>banners</em> de publicidad laterales si tenía que quitarlos con lo que he tenido que buscar una solución para ambos requerimientos. También he experimentado con la disposición de la publicidad, incluido un <em>billboard</em> y publicidad lateral <em>sticky</em> para que permanezca más tiempo visible y quizá mejorar su rendimiento.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a></h1>
+        <span class="information">
+          <time>10/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            VirtualBox es una de las herramientas que permiten virtualizar un sistema operativo completo y sus aplicaciones dentro de otra máquina. Como es un sistema operativo completo requiere que el sistema que la alberga tenga RAM suficiente para sí mismo y RAM suficiente para el sistema virtualizado, se puede configurar la cantidad de RAM y almacenamiento persistente de la máquina virtual. En el proceso de virtualización se pierde algo de rendimiento por la sobrecarga que añade virtualizar un sistema operativo completo, los procesadores modernos ofrecen soporte para que el rendimiento sea lo mayor posible pero no es igual a ejecutar el sistema de forma nativa en el sistema, sobre todo en el aspecto de interfaces gráficas y aceleración 2D y 3D.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/">De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6</a></h1>
+        <span class="information">
+          <time>05/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+          
+        </span>
+        <p>
+          
+            He estado muy contento con un Samsung Galaxy S3 durante unos 3 o 4 años más al instalarle LineageOS 7.1 y en ningún momento no ha habido nada de lo que he necesitado hacer que no pudiera por no tener capacidad, aún teniendo solo 1GB de memoria. Al abrir aplicaciones o alguna opción era un poco lento pero aceptable según mi criterio. Ahora he pasado a un Samsung Galaxy S6 que hoy día es un móvil ya viejo pero para mi suficiente. En los días que llevo usándolo estoy más que satisfecho, la mejora de rendimiento es apreciable respecto al S3. Si con el S3 ya estaba contento y tenía suficiente, con el S6 creo que será otro móvil del que guardaré un grato recuerdo.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">Autenticación mediante clave pública y privada con SSH</a></h1>
+        <span class="information">
+          <time>03/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+            
+          
+        </span>
+        <p>
+          
+            Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicios Nomad</a></h1>
+        <span class="information">
+          <time>26/04/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados.
+          
+          <br>
+          <a href="/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a></h1>
+        <span class="information">
+          <time>18/04/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            Ciertos servicios requieren que al hacer un despliegue el servicio continue funcionando. Para esto no es posible parar todas las instancias de un servicio a la vez, actualizarla y volverlas a iniciar porque durante este proceso se dejaría de prestar el servicio durante un corto periodo de tiempo en el mejor de los casos. Hay que hacer el despliegue de forma progresiva en las instancias. Algunas estrategias son <em>Rolling Update</em>, <em>Blue/Green</em> y <em>Canary</em>, el orquestador de servicios Nomad soporta y realiza de forma automatizada los despliegues usando una de estas estrategias.
+          
+          <br>
+          <a href="/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a></h1>
+        <span class="information">
+          <time>14/04/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            En las aplicaciones basadas en microservicios dado el número de ellos y de instancias tienen han de gestionarse como si fuesen ganado en vez como si fuesen animales de compañía. Nomad es un orquestador de servicios que a diferencia de Docker Swarm permite gestionar servicios con otros sistemas de ejecución además de contenedores docker y a diferencia de Kubernetes es más sencillo.
+          
+          <br>
+          <a href="/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/">Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session</a></h1>
+        <span class="information">
+          <time>12/04/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+            
+              <a href="/blog-bitix/tags/spring/">spring</a>
+            
+          
+        </span>
+        <p>
+          
+            El protocolo HTTP es un protocolo sin estado que quiere decir que entre las peticiones no se comparte estado ni se recuerda ningún dato. Por otro lado las cookies es pequeño conjunto de datos que son almacenados en el cliente y son enviados en cada petición que se hace a un sitio web, cada sitio web mantiene su propia colección de cookies, dos sitios distintos no comparten sus cookies.
+          
+          <br>
+          <a href="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">Trazabilidad en microservicios con Spring Cloud Sleuth</a></h1>
+        <span class="information">
+          <time>07/04/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Los microservicios son independientes pero se llaman unos a otros, suele ser muy útil para tareas de depuración y de visibilidad de una petición disponer de la traza completa de una petición a lo largo de las llamadas entre varios microservicios. Spring Cloud Sleuth proporciona la infraestructura para que las peticiones salientes envíen un identificativo de correlación de la petición global y para las peticiones entrantes relacionarlo con la petición global.
+          
+          <br>
+          <a href="/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/04/el-concepto-de-wildcard-capture-en-java/">El concepto de wildcard capture en Java</a></h1>
+        <span class="information">
+          <time>05/04/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Con la introducción de los generics en el lenguaje Java en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos wildcard definidos con un ?. Una lista definida como List&lt;?&gt; se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como List&lt;?&gt; o List&lt;?
+          
+          <br>
+          <a href="/blog-bitix/2019/04/el-concepto-de-wildcard-capture-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/page/15/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+      <a href="/blog-bitix/page/13/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

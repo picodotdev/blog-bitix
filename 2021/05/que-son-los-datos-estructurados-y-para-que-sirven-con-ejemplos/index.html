@@ -1,0 +1,619 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con un formato enriquecido que destaca sobre el resto de resultados. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Qué son los datos estructurados y para que sirven con ejemplos</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/" hreflang="es" title="Qué son los datos estructurados y para que sirven con ejemplos">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/index-amp.html" hreflang="es" title="Qué son los datos estructurados y para que sirven con ejemplos">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Qué son los datos estructurados y para que sirven con ejemplos">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/html-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con un formato enriquecido que destaca sobre el resto de resultados. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/html-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Qué son los datos estructurados y para que sirven con ejemplos">
+<meta name="twitter:description" content="Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con un formato enriquecido que destaca sobre el resto de resultados. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/"
+    },
+    "headline": "Qué son los datos estructurados y para que sirven con ejemplos",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/html-750.png"
+        
+      },
+    "datePublished": "2021-05-02T09:00:00+02:00",
+    "dateModified": "2021-05-02T09:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1639",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con un formato enriquecido que destaca sobre el resto de resultados."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Qué son los datos estructurados y para que sirven con ejemplos</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/05/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/web/">web</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con un formato enriquecido que destaca sobre el resto de resultados.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false"></p>
+</div>
+<p>Los buscadores rastrean la web en busca de páginas que una vez indexadas les permite mostrarlas en la página de resultados las más relevantes para las palabras clave introducidas al realizar la búsqueda.</p>
+<p>Los <a href="https://developers.google.com/search/docs/advanced/sitemaps/overview?hl=es">archivos <em>sitemap.xml</em></a> permiten a los buscadores conocer todas páginas de las que se compone un sitio web. Los rastreadores los descargan cada cierto tiempo, de forma paulatina analizan los enlaces proporcionados en el <em>sitemap.xml</em> y los indexa para mostrarlos como resultados si es un contenido relevante para las búsquedas de los usuarios.</p>
+<p>Mostrar los enlaces más relevantes de una búsqueda no es una tarea sencilla, el algoritmo de indexación y del motor de búsqueda han de conocer qué es lo que trata de buscar el usuario y han de conocer cúal es el contenido de cada página. Conocer el contenido de una página no es sencillo ya que las páginas están en formato HTML que ofrece poca ayuda a los buscadores de la información que contienen.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-son-los-datos-estructurados-en-una-página-web">Qué son los datos estructurados en una página web</a></li>
+    <li><a href="#formatos-de-datos-estructurados">Formatos de datos estructurados</a>
+      <ul>
+        <li><a href="#json-ld">JSON-LD</a></li>
+        <li><a href="#microdatos">Microdatos</a></li>
+        <li><a href="#rdfa">RDFa</a></li>
+      </ul>
+    </li>
+    <li><a href="#tipos-de-datos-estructurados">Tipos de datos estructurados</a></li>
+    <li><a href="#ejemplo-de-datos-estructurados">Ejemplo de datos estructurados</a></li>
+    <li><a href="#herramienta-para-validar-los-datos-estructurados">Herramienta para validar los datos estructurados</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="qué-son-los-datos-estructurados-en-una-página-web">Qué son los datos estructurados en una página web</h3>
+<p>Los buscadores hacen el mejor esfuerzo por entender el contenido de las páginas, los datos estructurados facilitan en gran medida el análisis del contenido. Los datos estructurados son un formato estandarizado que permite proporcionar de forma más precisa cuál es el contenido e información de una página. Para los buscadores obtener la información de la página es más sencillo y preciso obtener de los datos estructurados que analizando el texto del contenido HTML sin ninguna estructura.</p>
+<p>Además, en las páginas de resultados los buscadores para las páginas que proporcionan datos estructurados son capaces de mostrar los resultados enriquecidos, por ejemplo, incluyendo una imagen, una descripción, una imagen o ciertos datos específicos del dato estructurado como ubicación o fecha.</p>
+<p>Los datos estructurados son buenos para el SEO ya que los buscadores conocen mejor el contenido de la página. Por otro lado, los resultados enriquecidos destacan más sobre los que no son consiguiendo que los usuarios hagan más <em>clics</em> en la página de resultados y atrayendo más visitantes a un sitio web.</p>
+<p>El siguiente es un ejemplo de contenido que contiene datos como un título o fecha pero que no utiliza ningún formato de datos estructurados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Apple Spring Forward Event Live Blog<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome to live coverage of the Apple Spring Forward …<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>See the new flagship Apple Retail Store in West Lake, China.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>March 9, 2015 1:17 PM<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://images.apple.com/live/2015-mar-event/images/908d2e_large_2x.jpg&#34;</span> <span class="p">/&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>iPhone is growing at nearly twice the rate of the rest of the smartphone market.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>March 9, 2015 1:13 PM<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://images.apple.com/live/2015-mar-event/images/573cb_xlarge_2x.jpg&#34;</span><span class="p">/&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Coming this April, HBO NOW will be available exclusively in the U.S. on Apple TV and the App Store.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>March 9, 2015 1:08PM<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It&#39;s $14.99 a month.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> And for a limited time, …<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>no-structured-data.html</span>
+    </div>
+</div>
+<h3 id="formatos-de-datos-estructurados">Formatos de datos estructurados</h3>
+<p>Hay varios formatos de datos estructurados, el formato recomendado por Google es utilizar JSON-LD.</p>
+<h4 id="json-ld">JSON-LD</h4>
+<p><a href="https://json-ld.org/">JSON for Linking Data</a> o JSON-LD es un formato de datos estructurados que se especifica en formato JSON y se incluye en la página normalmente en la cabecera separada del contenido, también se puede incluir en el cuero de la página. La diferencia de este formato es que el contenido no está mezclado con los datos estructurados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;application/ld+json&#34;</span><span class="p">&gt;</span>&#10;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@context&#34;</span><span class="o">:</span><span class="s2">&#34;https://schema.org&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@type&#34;</span><span class="o">:</span><span class="s2">&#34;LiveBlogPosting&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@id&#34;</span><span class="o">:</span><span class="s2">&#34;http://techcrunch.com/2015/03/08/apple-watch-event-live-blog&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;about&#34;</span><span class="o">:</span><span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span><span class="s2">&#34;Event&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;startDate&#34;</span><span class="o">:</span><span class="s2">&#34;2015-03-09T13:00:00-07:00&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span><span class="o">:</span><span class="s2">&#34;Apple Spring Forward Event&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;coverageStartTime&#34;</span><span class="o">:</span><span class="s2">&#34;2015-03-09T11:30:00-07:00&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;coverageEndTime&#34;</span><span class="o">:</span><span class="s2">&#34;2015-03-09T16:00:00-07:00&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;headline&#34;</span><span class="o">:</span><span class="s2">&#34;Apple Spring Forward Event Live Blog&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;description&#34;</span><span class="o">:</span><span class="s2">&#34;Welcome to live coverage of the Apple Spring Forward …&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;liveBlogUpdate&#34;</span><span class="o">:</span><span class="p">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@type&#34;</span><span class="o">:</span><span class="s2">&#34;BlogPosting&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;headline&#34;</span><span class="o">:</span><span class="s2">&#34;Coming this April, HBO NOW will be available exclusively in the U.S. on Apple TV and the App Store.&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;datePublished&#34;</span><span class="o">:</span><span class="s2">&#34;2015-03-09T13:08:00-07:00&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;articleBody&#34;</span><span class="o">:</span> <span class="s2">&#34;It&#39;s $14.99 a month.&lt;br&gt; And for a limited time, …&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@type&#34;</span><span class="o">:</span><span class="s2">&#34;BlogPosting&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;headline&#34;</span><span class="o">:</span><span class="s2">&#34;iPhone is growing at nearly twice the rate of the rest of the smartphone market.&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;datePublished&#34;</span><span class="o">:</span><span class="s2">&#34;2015-03-09T13:13:00-07:00&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;image&#34;</span><span class="o">:</span><span class="s2">&#34;http://images.apple.com/live/2015-mar-event/images/573cb_xlarge_2x.jpg&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@type&#34;</span><span class="o">:</span><span class="s2">&#34;BlogPosting&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;headline&#34;</span><span class="o">:</span><span class="s2">&#34;See the new flagship Apple Retail Store in West Lake, China.&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;datePublished&#34;</span><span class="o">:</span><span class="s2">&#34;2015-03-09T13:17:00-07:00&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;video&#34;</span><span class="o">:</span><span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span><span class="s2">&#34;VideoObject&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;thumbnail&#34;</span><span class="o">:</span><span class="s2">&#34;http://images.apple.com/live/2015-mar-event/images/908d2e_large_2x.jpg&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">]</span>&#10;  <span class="p">}</span>&#10;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>json-ld.html</span>
+    </div>
+</div>
+<h4 id="microdatos">Microdatos</h4>
+<p>El formato <a href="https://www.w3.org/TR/microdata/">HTML Microdata</a> define nuevos atributos HTML para embeber datos simples legibles por computadoras en documentos HTML. Es similar a RDFa pero menos expresivo, simple de aprender y procesar  pero no ofrece el mismo nivel para la internacionalización, por ello en su lugar se suele recomendar usar RDFa o JSON-LD.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">itemid</span><span class="o">=</span><span class="s">&#34;http://techcrunch.com/2015/03/08/apple-watch-event-live-blog&#34;</span> <span class="na">itemscope</span> <span class="na">itemtype</span><span class="o">=</span><span class="s">&#34;https://schema.org/LiveBlogPosting&#34;</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;about&#34;</span> <span class="na">itemscope</span> <span class="na">itemtype</span><span class="o">=</span><span class="s">&#34;https://schema.org/Event&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">span</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;startDate&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:00:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:17 PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;name&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;Apple Spring Forward Event&#34;</span> <span class="p">/&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;coverageStartTime&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T11:30:00-07:00&#34;</span> <span class="p">/&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;coverageEndTime&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T16:00:00-07:00&#34;</span> <span class="p">/&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>Apple Spring Forward Event Live Blog<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;description&#34;</span><span class="p">&gt;</span>Welcome to live coverage of the Apple Spring Forward …<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;liveBlogUpdate&#34;</span> <span class="na">itemscope</span> <span class="na">itemtype</span><span class="o">=</span><span class="s">&#34;https://schema.org/BlogPosting&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>See the new flagship Apple Retail Store in West Lake, China.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;datePublished&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:17:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:17 PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">div</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;video&#34;</span> <span class="na">itemscope</span> <span class="na">itemtype</span><span class="o">=</span><span class="s">&#34;https://schema.org/VideoObject&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;thumbnail&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://images.apple.com/live/2015-mar-event/images/908d2e_large_2x.jpg&#34;</span> <span class="p">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;liveBlogUpdate&#34;</span> <span class="na">itemscope</span> <span class="na">itemtype</span><span class="o">=</span><span class="s">&#34;https://schema.org/BlogPosting&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>iPhone is growing at nearly twice the rate of the rest of the smartphone market.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;datePublished&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:13:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:13 PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">img</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;image&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://images.apple.com/live/2015-mar-event/images/573cb_xlarge_2x.jpg&#34;</span><span class="p">/&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;liveBlogUpdate&#34;</span> <span class="na">itemscope</span> <span class="na">itemtype</span><span class="o">=</span><span class="s">&#34;https://schema.org/BlogPosting&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>Coming this April, HBO NOW will be available exclusively in the U.S. on Apple TV and the App Store.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;datePublished&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:08:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:08PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&#34;articleBody&#34;</span><span class="p">&gt;</span>It&#39;s $14.99 a month.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> And for a limited time, …<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>microdata.html</span>
+    </div>
+</div>
+<h4 id="rdfa">RDFa</h4>
+<p><a href="https://rdfa.info/">RDFa</a> es una extensión de HTML que ayuda a marcar los datos de la página, embebiendo ciertos atributos en las etiquetas HTML.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">vocab</span><span class="o">=</span><span class="s">&#34;https://schema.org/&#34;</span> <span class="na">typeof</span><span class="o">=</span><span class="s">&#34;LiveBlogPosting&#34;</span> <span class="na">resource</span><span class="o">=</span><span class="s">&#34;http://techcrunch.com/2015/03/08/apple-watch-event-live-blog&#34;</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;about&#34;</span> <span class="na">typeof</span><span class="o">=</span><span class="s">&#34;Event&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">span</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;startDate&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:00:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:17 PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;name&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;Apple Spring Forward Event&#34;</span> <span class="p">/&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;coverageStartTime&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T11:30:00-07:00&#34;</span> <span class="p">/&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;coverageEndTime&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T16:00:00-07:00&#34;</span> <span class="p">/&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>Apple Spring Forward Event Live Blog<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;description&#34;</span><span class="p">&gt;</span>Welcome to live coverage of the Apple Spring Forward …<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;liveBlogUpdate&#34;</span> <span class="na">typeof</span><span class="o">=</span><span class="s">&#34;BlogPosting&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>See the new flagship Apple Retail Store in West Lake, China.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;datePublished&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:17:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:17 PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">div</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;video&#34;</span> <span class="na">typeof</span><span class="o">=</span><span class="s">&#34;VideoObject&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;thumbnail&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://images.apple.com/live/2015-mar-event/images/908d2e_large_2x.jpg&#34;</span> <span class="p">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;liveBlogUpdate&#34;</span> <span class="na">typeof</span><span class="o">=</span><span class="s">&#34;BlogPosting&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>iPhone is growing at nearly twice the rate of the rest of the smartphone market.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;datePublished&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:13:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:13 PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">img</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;image&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://images.apple.com/live/2015-mar-event/images/573cb_xlarge_2x.jpg&#34;</span><span class="p">/&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;liveBlogUpdate&#34;</span> <span class="na">typeof</span><span class="o">=</span><span class="s">&#34;BlogPosting&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;headline&#34;</span><span class="p">&gt;</span>Coming this April, HBO NOW will be available exclusively in the U.S. on Apple TV and the App Store.<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;datePublished&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;2015-03-09T13:08:00-07:00&#34;</span><span class="p">&gt;</span>March 9, 2015 1:08PM<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span> <span class="na">property</span><span class="o">=</span><span class="s">&#34;articleBody&#34;</span><span class="p">&gt;</span>It&#39;s $14.99 a month.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> And for a limited time, …<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>rdfa.html</span>
+    </div>
+</div>
+<h3 id="tipos-de-datos-estructurados">Tipos de datos estructurados</h3>
+<p>Hay múltiples tipos de datos estructurados según el contenido de la página. Por ejemplo, si el contenido de una página trata sobre un producto un dato es la imagen del producto, su nombre y descripción, su precio o su valoración. En el caso de un evento, por ejemplo un evento deportivo o concierto, sus datos específicos son la ubicación en la que tiene lugar, su hora de comienzo y final, además de también los participantes en el evento una su descripción.</p>
+<p>Algunos datos son compartidos por múltiples tipos de datos estructurados, como un nombre o una descripción otros son específicos según el tipo de datos estructurados y contenido de la página. También algunos datos estructurados son comunes a todas las páginas como el autor del contenido o la organización que lo publica.</p>
+<p>En la página <a href="https://schema.org/">schema.org</a> está documentados los tipos de datos estructurados y que datos tiene cada uno. Algunas propiedades son obligatorias otras son opcionales.</p>
+<p>Algunos tipos de datos estructurados son:</p>
+<ul>
+<li>Trabajos creativos: libro, película, música, receta, series de televisión, &hellip;</li>
+<li>Objetos embebidos no de texto: objeto de audio, imagen, vídeo, &hellip;</li>
+<li>Evento como un espectáculo deportivo o musical.</li>
+<li>Organización, como empresas.</li>
+<li>Persona</li>
+<li>Lugares, negocios locales, restaurantes, comercios, museos, &hellip;</li>
+<li>Productos, ofertas, &hellip;</li>
+<li>Análisis de productos</li>
+<li>Acciones</li>
+</ul>
+<h3 id="ejemplo-de-datos-estructurados">Ejemplo de datos estructurados</h3>
+<p>Hay múltiples formas de incluir los datos estructurados en una página web. Una de ellas es embebiendo en el HTML los datos estructurados añadiendo ciertos atributos a etiquetas HTML.</p>
+<p>Para separar el contenido HTML de los datos estructurados se puede utilizar <em>json-ld</em>, es la forma que recomienda Google para incluir datos estructurados en una página. Los datos estructurados <em>json-ld</em> se suelen incluir en la cabecera de la página en formato JSON.</p>
+<p>El el caso de mi blog en el que publico artículos el dato estructurado adecuado para cada publicación es <a href="https://schema.org/BlogPosting">BlogPosting</a>. Este tipo de dato estructurado tiene un título del artículo, una imagen que represente el contenido del artículo, una descripción, fecha de publicación y fecha de última actualización entre otros datos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;es&#34;</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;&#10;...&#10;&#10;<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;application/ld+json&#34;</span><span class="p">&gt;</span>&#10;<span class="p">{</span>&#10;  <span class="s2">&#34;@context&#34;</span><span class="o">:</span> <span class="s2">&#34;https://schema.org&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;BlogPosting&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;mainEntityOfPage&#34;</span><span class="o">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;WebPage&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@id&#34;</span><span class="o">:</span> <span class="s2">&#34;https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-con-matomo-como-alternativa-a-google-analytics/&#34;</span>&#10;  <span class="p">},</span>&#10;  <span class="s2">&#34;headline&#34;</span><span class="o">:</span> <span class="s2">&#34;Analítica web con Matomo como alternativa a Google Analytics&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;image&#34;</span><span class="o">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;ImageObject&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;url&#34;</span><span class="o">:</span> <span class="s2">&#34;https://picodotdev.github.io/blog-bitix/assets/images/structured-data/matomo-750.png&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">},</span>&#10;  <span class="s2">&#34;datePublished&#34;</span><span class="o">:</span> <span class="s2">&#34;2021-01-15T17:00:00+01:00&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;dateModified&#34;</span><span class="o">:</span> <span class="s2">&#34;2021-01-15T17:00:00+01:00&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;inLanguage&#34;</span><span class="o">:</span> <span class="s2">&#34;es&#34;</span><span class="p">,</span>&#10;  &#10;  <span class="s2">&#34;wordCount&#34;</span><span class="o">:</span> <span class="s2">&#34;1181&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;license&#34;</span><span class="o">:</span> <span class="s2">&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;author&#34;</span><span class="o">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;Person&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span><span class="o">:</span> <span class="s2">&#34;picodotdev&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;description&#34;</span><span class="o">:</span> <span class="s2">&#34;Ingeniero de software. I ♥ Java, GNU/Linux and libre software.&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;url&#34;</span><span class="o">:</span> <span class="s2">&#34;https://twitter.com/picodotdev/&#34;</span>&#10;  <span class="p">},</span>&#10;  <span class="s2">&#34;publisher&#34;</span><span class="o">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;Organization&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span><span class="o">:</span> <span class="s2">&#34;Blog Bitix&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;logo&#34;</span><span class="o">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;ImageObject&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;url&#34;</span><span class="o">:</span> <span class="s2">&#34;https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">}</span>&#10;  <span class="p">},</span>&#10;  <span class="s2">&#34;description&#34;</span><span class="o">:</span> <span class="s2">&#34;Matomo es una alternativa a Google Analytics con funciones similares que cubren las necesidades de la mayoría de sitios web. Es software libre con algunas funciones &lt;em&gt;premium&lt;/em&gt; que requieren comprar una licencia anual de uso. Matomo se puede hospedar &lt;em&gt;on-premise&lt;/em&gt; que requiere administrar esa infraestructura o en la nube ofrecida por la propia Matomo. En el artículo muestro en un ejemplo como empezar a usar Matomo en un sitio web con Docker.&#34;</span>&#10;<span class="p">}</span>&#10;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;&#10;<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;application/ld+json&#34;</span><span class="p">&gt;</span>&#10;<span class="p">{</span>&#10;  <span class="s2">&#34;@context&#34;</span><span class="o">:</span> <span class="s2">&#34;https://schema.org&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;Organization&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;name&#34;</span><span class="o">:</span> <span class="s2">&#34;Blog Bitix&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;description&#34;</span><span class="o">:</span> <span class="s2">&#34;Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;url&#34;</span><span class="o">:</span> <span class="s2">&#34;https://picodotdev.github.io/blog-bitix/&#34;</span><span class="p">,</span>&#10;  <span class="s2">&#34;logo&#34;</span><span class="o">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;@type&#34;</span><span class="o">:</span> <span class="s2">&#34;ImageObject&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;url&#34;</span><span class="o">:</span> <span class="s2">&#34;https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png&#34;</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span>&#10;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;&#10;...&#10;&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;  ...&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>json-ld-blogbitix.html</span>
+    </div>
+</div>
+<h3 id="herramienta-para-validar-los-datos-estructurados">Herramienta para validar los datos estructurados</h3>
+<p>Una vez incluidos los datos estructurados es recomendable validarlos, esto permite conocer con exactitud qué está extrayendo un buscador. Google ofrece una <a href="https://search.google.com/structured-data/testing-tool/">herramienta de prueba de datos estructurados</a>, basta con proporcionar la URL de la página y en el resultado se muestran los distintos tipos de datos estructurados que ha extraído de la página y sus propiedades. Para uno de los artículos del <em>blog</em>, <a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-con-matomo-como-alternativa-a-google-analytics/">Analítica web con Matomo como alternativa a Google Analytics</a>, la herramienta de análisis de Google muestra como resultado tipos de datos estructurados que reconoce que están incluídos en la cabecera de la página.</p>
+<ul>
+<li><a href="https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Fpicodotdev.github.io%2Fblog-bitix%2F2021%2F01%2Fanalitica-web-con-matomo-como-alternativa-a-google-analytics%2F">Herramienta de prueba de datos estructurados de una página de Blog Bitix</a></li>
+</ul>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://developers.google.com/search/docs/guides/intro-structured-data">Cómo funcionan los datos estructurados</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">
+                <img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hub973e372c1d61b2c7366348e15d773e2_317580_875x0_resize_box_3.png" width="326" height="125" alt="Mejorar el tiempo de carga de una página web usando lazy load" title="Mejorar el tiempo de carga de una página web usando lazy load" class="" loading="lazy">
+                <h3>Mejorar el tiempo de carga de una página web usando lazy load</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/">
+                <img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Autenticación mutua de cliente y servidor con certificados" title="Autenticación mutua de cliente y servidor con certificados" class="" loading="lazy">
+                <h3>Autenticación mutua de cliente y servidor con certificados</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Certificado SSL, de empresa, «wildcard» y de validación extendida" title="Certificado SSL, de empresa, «wildcard» y de validación extendida" class="" loading="lazy">
+                <h3>Certificado SSL, de empresa, «wildcard» y de validación extendida</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">
+                <img src="/blog-bitix/assets/images/logotypes/nexus.svg" width="326" height="125" alt="Repositorio de artefactos privado con Nexus" title="Repositorio de artefactos privado con Nexus" class="" loading="lazy">
+                <h3>Repositorio de artefactos privado con Nexus</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/02/introduccion-a-ddd-y-arquitectura-hexagonal-con-un-ejemplo-de-aplicacion-en-java/">
+                <img src="/blog-bitix/2021/02/introduccion-a-ddd-y-arquitectura-hexagonal-con-un-ejemplo-de-aplicacion-en-java/images/hexagonal-architecture_hu733e6c82d28bf094e36154a2cbdeadde_95540_875x0_resize_box_3.png" width="326" height="125" alt="Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java" title="Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java" class="" loading="lazy">
+                <h3>Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/01/las-metodologias-oocss-bem-y-smacss-para-organizar-los-estilos-css/">
+                <img src="/blog-bitix/assets/images/logotypes/css.svg" width="326" height="125" alt="Las metodologías OOCSS, BEM y SMACSS para organizar los estilos CSS" title="Las metodologías OOCSS, BEM y SMACSS para organizar los estilos CSS" class="" loading="lazy">
+                <h3>Las metodologías OOCSS, BEM y SMACSS para organizar los estilos CSS</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-571';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/05\/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

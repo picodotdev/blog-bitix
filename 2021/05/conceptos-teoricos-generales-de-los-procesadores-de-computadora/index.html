@@ -1,0 +1,842 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Conceptos teóricos generales de los procesadores de computadora</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/" hreflang="es" title="Conceptos teóricos generales de los procesadores de computadora">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/index-amp.html" hreflang="es" title="Conceptos teóricos generales de los procesadores de computadora">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Conceptos teóricos generales de los procesadores de computadora">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Conceptos teóricos generales de los procesadores de computadora">
+<meta name="twitter:description" content="Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/"
+    },
+    "headline": "Conceptos teóricos generales de los procesadores de computadora",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-05-20T22:00:00+02:00",
+    "dateModified": "2021-05-20T22:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "3544",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/processors-cpugalaxy_hu22cbdd75ea7c242f6878c5d5ae1cb90e_358241_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Conceptos teóricos generales de los procesadores de computadora</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>20/05/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/hardware/">hardware</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/arm.svg" width="300" height="93" alt="ARM" title="ARM" class="" loading="false"></p>
+</div>
+<p>Los procesadores actuales tienen una capacidad de cómputo en varios órdenes de magnitud a la de tan toso unas décadas antes. Buena parte de ese rendimiento es conseguido a través de la mejora de los procesos litográficos que permiten fabricar transistores cada vez más pequeños. Con transistores más pequeños se mejoran varios aspectos vitales de los procesadores entre ellos se reduce su consumo de energía, permiten añadir más transistores en el mismo espacio físico para implementar cachés más grandes o implementar conceptos que mejoren el rendimiento y finalmente son más baratos de fabricar.</p>
+<p>Desde la aparición de los circuitos integrados que sustituyeron a las válvulas de vacío, según la <a href="https://es.wikipedia.org/wiki/Ley_de_Moore">ley de Moore</a> cada dos año en número de transistores que incluye un procesador se duplica, esta ley se ha estado cumpliendo hasta ahora y por consiguiente la potencia de los procesadores. Uno de los primeros microprocesadores de Intel como el 4004 tenía únicamente 2300 transistores a 10 micrómetros, un Intel Core o un Ryzen llegan superan los 2 mil millones de transistores a 7 nanómetros.</p>
+<p>Varios de los conceptos teóricos aplicados en los procesadores está destinado a aumentar el rendimiento en monohilo, así ha sido hasta el desarrollo de los procesadores con múltiples núcleos tanto de Intel como de AMD y también de ARM. Desde el año 2010 el aumento de rendimiento de los procesadores también se consigue mediante la inclusión de mayor número de núcleos, para tareas paralelizables. Un amyor número de núcleos consigue un aumento de rendimiento en una proporcion similar a la proporción de aumento de núcleos. Crear procesadores multinúcleo es otra forma de seguir aumentando el rendimiento de forma más sencilla que mejorando aún más el rendimiento en monohilo. Los procesadores actuales van desde los 4 núcleos hasta cantidades como 16 para ordenadores de escritorio y hasta 64 o más para computadoras destinadas a hacer funciones de servidor.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-P4004_hu1fb723fba9f61c17f3c53cbccccca215_25344_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Intel 4004"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-P4004_hu1fb723fba9f61c17f3c53cbccccca215_25344_200x150_fit_q90_box.jpg" width="200" height="133" alt="Procesador Intel 4004" title="Procesador Intel 4004" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-D8086_hu4a9b2a61e98b62517be5b67531c8a389_24893_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Intel 8086"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-D8086_hu4a9b2a61e98b62517be5b67531c8a389_24893_200x150_fit_q90_box.jpg" width="200" height="133" alt="Procesador Intel 8086" title="Procesador Intel 8086" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Pentium"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_200x150_fit_q90_box.jpg" width="147" height="150" alt="Procesador Pentium" title="Procesador Pentium" class="" loading="lazy"></a></p>
+<figcaption>Procesadores Intel 4004, 8086 y Pentium</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/amd-athlon-xp_hu42da18795932957ce0f9752e49bc4958_40154_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador AMD Athlon XP"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/amd-athlon-xp_hu42da18795932957ce0f9752e49bc4958_40154_200x150_fit_q90_box.jpg" width="150" height="150" alt="Procesador AMD Athlon XP" title="Procesador AMD Athlon XP" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/sun-ultra-sparc-II_hube962f03be0a6bacb52a23d45f2294ed_45508_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Sun UltraSparc II"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/sun-ultra-sparc-II_hube962f03be0a6bacb52a23d45f2294ed_45508_200x150_fit_q90_box.jpg" width="150" height="150" alt="Procesador Sun UltraSparc II" title="Procesador Sun UltraSparc II" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/risc-v_hub61dde6c275c794a4f05549a96497f1b_38766_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador RISC-V"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/risc-v_hub61dde6c275c794a4f05549a96497f1b_38766_200x150_fit_q90_box.jpg" width="200" height="143" alt="Procesador RISC-V" title="Procesador RISC-V" class="" loading="lazy"></a></p>
+<figcaption>Procesadores de AMD, Sun Ultra Sparc y SiFive RISC-V</figcaption>
+</figure>
+</div>
+<p>Los siguientes apartados son una explicación sencilla, básica y resumida de los conceptos que se utilizan en los procesadores de los que se puede. Esta información está ampliada en la wikipedia.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#arquitectura">Arquitectura</a>
+      <ul>
+        <li><a href="#componentes-de-un-procesador">Componentes de un procesador</a></li>
+        <li><a href="#tamaño-de-palabra">Tamaño de palabra</a></li>
+        <li><a href="#_endianness_"><em>Endianness</em></a></li>
+        <li><a href="#almacenamiento-de-computadora-numa-y-uma">Almacenamiento de computadora, NUMA y UMA</a></li>
+        <li><a href="#memoria-y-jerarquía-de-memoria">Memoria y jerarquía de memoria</a></li>
+        <li><a href="#memoria-virtual">Memoria virtual</a></li>
+        <li><a href="#microcódigo">Microcódigo</a></li>
+      </ul>
+    </li>
+    <li><a href="#arquitecturas-de-conjunto-de-instrucciones">Arquitecturas de conjunto de instrucciones</a>
+      <ul>
+        <li><a href="#conjuntos-de-instrucciones">Conjuntos de instrucciones</a></li>
+      </ul>
+    </li>
+    <li><a href="#ciclo-de-ejecución-del-procesador">Ciclo de ejecución del procesador</a>
+      <ul>
+        <li><a href="#_pipelining_-de-instrucciones"><em>Pipelining</em> de instrucciones</a></li>
+        <li><a href="#_hazards_"><em>Hazards</em></a></li>
+        <li><a href="#ejecución-fuera-de-orden">Ejecución fuera de orden</a></li>
+        <li><a href="#ejecución-especulativa">Ejecución especulativa</a></li>
+      </ul>
+    </li>
+    <li><a href="#paralelismo">Paralelismo</a>
+      <ul>
+        <li><a href="#_bit_"><em>Bit</em></a></li>
+        <li><a href="#escalar-y-superescalar">Escalar y superescalar</a></li>
+        <li><a href="#multihilo">Multihilo</a></li>
+        <li><a href="#multinúcleo">Multinúcleo</a></li>
+        <li><a href="#número-de-núcleos">Número de núcleos</a></li>
+      </ul>
+    </li>
+    <li><a href="#seguridad">Seguridad</a>
+      <ul>
+        <li><a href="#modo-protegido">Modo protegido</a></li>
+        <li><a href="#cifrado-de-memoria">Cifrado de memoria</a></li>
+      </ul>
+    </li>
+    <li><a href="#rendimiento-de-procesador">Rendimiento de procesador</a></li>
+    <li><a href="#tipos-de-procesadores">Tipos de procesadores</a></li>
+    <li><a href="#gestión-de-energía">Gestión de energía</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="arquitectura">Arquitectura</h3>
+<p>Los computadores siguen una organización definida en el <a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">modelo de von Neumann</a> en el que una computadora consta de:</p>
+<ul>
+<li>Una unidad de procesamiento que contiene lógica de aritmética y los registros del procesador.</li>
+<li>Una unidad de control que contiene un registro de instrucción y un contador de programa.</li>
+<li>Memoria que almacena los datos y las instrucciones del programa.</li>
+<li>Almacenamiento externo.</li>
+<li>Mecanismos de entrada y salida.</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/a-basic-computer.gif" data-gallery="data-gallery" title="Esquema de computadora"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/a-basic-computer.gif" width="300" height="200" alt="Esquema de computadora" title="Esquema de computadora" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/von-neumann-architecture.svg" data-gallery="data-gallery" title="Arquitectura de Von Neumann"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/von-neumann-architecture.svg" width="300" height="200" alt="Arquitectura de Von Neumann" title="Arquitectura de Von Neumann" class="" loading="lazy"></a></p>
+<figcaption>Esquema de computadora y arquitectura de Von Neumann</figcaption>
+</figure>
+</div>
+<h4 id="componentes-de-un-procesador">Componentes de un procesador</h4>
+<p>Los componentes son los siguientes:</p>
+<ul>
+<li>Caché: es una memoria pequeña comparada con la memoria principal o el almacenamiento secundario pero mucho más rápida que estas.</li>
+<li>Unidades funcionales: la unidad de lógica aritmética o ALU permite realizar operaciones del cálculo matemático y binarias, la unidad de coma flotante o FPU permite realizar operaciones en coma flotante. La unidad de predicción de de saltos permite predecir cuál será el resultado de una condición, otras unidades son la unidad de generación de direcciones o AGU, la <em>load–store unit translation lookaside buffer</em> o TLB permite traducir direcciones virtuales a direcciones físicas y es parte de la unidad de gestión de memoria o MMU. El controlador integrado de memoria o IMC gestiona las transferencias entre la memoria principal y el procesador.</li>
+<li>Registros: son unas pequeñas zonas de memoria en las que operan las instrucciones del procesador.</li>
+<li>Unidad de control: es la encargada de enviar las señales a las otras unidades del procesador.</li>
+</ul>
+<h4 id="tamaño-de-palabra">Tamaño de palabra</h4>
+<p>El tamaño de palabra es la unidad de datos nativa del procesador media en número bits. Los registros del procesador suelen tener tener el mismo tamaño de palabra que el procesador y la máxima cantidad de información que se suele poder transferir desde y a la memoria en una única operación coincide con el tamaño de palabra. Los procesadores x86-64 tiene un tamaño de palabra de 64 bits.</p>
+<h4 id="_endianness_"><em>Endianness</em></h4>
+<p>La arquitectura de un procesador define cómo se almacenan los datos en memoria, puede ser de dos formas <em>litte-endian</em> o <em>big-endian</em>. En la primera el byte de datos menos significativo se almacena en la dirección de memoria más baja, por el contrario en <em>big-endian</em> el byte más significativo se almacena en la dirección más baja.</p>
+<p>Que una arquitectura de procesador elija entre estos dos tipos de <em>endianness</em> no es significativo, simplemente se ha de mantener de forma consistente al almacenar, cargar los datos y transmitirlos a otras computadoras.</p>
+<p>En el protocolo IP se utiliza <em>big-endian</em>, por el contrario el la mayoría de procesadores de arquitectura de procesadores como x86, ARM y RISC-V utilizan <em>litte-endian</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Endianness">Endianness</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/big-endian.svg" data-gallery="data-gallery" title="Big endian"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/big-endian.svg" width="300" height="200" alt="Big endian" title="Big endian" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/little-endian.svg" data-gallery="data-gallery" title="Little endian"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/little-endian.svg" width="300" height="200" alt="Little endian" title="Little endian" class="" loading="lazy"></a></p>
+<figcaption>Big y little endian</figcaption>
+</figure>
+</div>
+<h4 id="almacenamiento-de-computadora-numa-y-uma">Almacenamiento de computadora, NUMA y UMA</h4>
+<p>El significado de las siglas de NUMA son <em>Non-uniform memory access</em> y de UMA son <em>Uniform memory access</em>, en el primer caso el tiempo de acceso  a memoria no es uniforme y depende de la ubicación del la memoria relativa al procesador, en este caso para un procesador es más rápido acceder a su memoria local que a la memoria de otro procesador.</p>
+<p>Los procesadores actuales son significativamente más rápidos que la memoria principal por ello suelen tener pequeñas cachés de memoria más rápidas, al mismo tiempo se evita que varios procesadores compitan por el acceso a la memoria principal. Este modelo NUMA mejora el rendimiento pero ocasiona el problema que cuando un procesador requiere los datos de otro ocasiona que los datos han de ser movidos con una penalización en la latencia.</p>
+<p>AMD lo implementó el almacenamiento NUMA en los procesadores Opteron con <a href="https://en.wikipedia.org/wiki/HyperTransport">HyperTransport</a> e Intel con <a href="https://en.wikipedia.org/wiki/Intel_QuickPath_Interconnect">QPI</a>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Non-uniform_memory_access">Non-uniform memory access</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Uniform_memory_access">Uniform memory access</a></li>
+</ul>
+<h4 id="memoria-y-jerarquía-de-memoria">Memoria y jerarquía de memoria</h4>
+<p>La memoria contiene los datos y las instrucciones de los programas, el procesador lee los datos de la memoria los carga en las cachés y los registros del procesador, realiza el cálculo deseado y los resultados son almacenados de nuevo en la memoria principal.</p>
+<p>Hay cuatro niveles de almacenamiento.</p>
+<ul>
+<li>Interno: formado por los registros del procesador y sus cachés internas.</li>
+<li>Memoria principal: formada por la memoria RAM volátil cuyo contenido se pierde si se apaga la computadora.</li>
+<li>Secundaria: es una memoria persistente conectada a la computadora y que conserva los datos aún después de apagar la computadora.</li>
+<li>Terciaria:  es una memoria que se puede extraer y conectar del equipo bajo demanda.</li>
+</ul>
+<p>La memoria se puede diferenciar en las siguientes propiedades:</p>
+<ul>
+<li>Volatilidad: si persiste al apagado de la computadora.</li>
+<li>Mutabilidad: si es posible cambiar su contenido.</li>
+<li>Accesibilidad: el modo de lectura permitido si es aleatorio o ha de ser secuencial.</li>
+<li>Direccionamiento.</li>
+<li>Capacidad: el tamaño de la memoria.</li>
+<li>Rendimiento: el tiempo de acceso necesario.</li>
+<li>Uso de energía.</li>
+<li>Seguridad.</li>
+<li>Vulnerabilidad y confiabilidad.</li>
+</ul>
+<p>La diferencia de velocidad de procesamiento de la CPU y la velocidad de acceso a la memoria principal y secundaria hace que para aumentar el rendimiento de la CPU sea necesario una memoria pequeña pero más rápida que la memoria principal en el procesador. En la jerarquía de memoria en el nivel superior su latencia es inferior, su velocidad de transferencia es mayor pero su tamaño es menor. Si la tasa de aciertos en la caché es alta el procesador aumenta significativamente al no ser penalizado por la latencia de acceso a la memoria principal.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Computer_data_storage">Computer data storage</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Memory_hierarchy">Memory hierarchy</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/cache-hierarchy_hu67a35246351b6441699470bb96f7cdc8_11569_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Jerarquía de caché"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/cache-hierarchy_hu67a35246351b6441699470bb96f7cdc8_11569_300x200_fit_box_3.png" width="206" height="200" alt="Jerarquía de caché" title="Jerarquía de caché" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/computer-memory-hierarchy.svg" data-gallery="data-gallery" title="Jerarquía de caché"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/computer-memory-hierarchy.svg" width="300" height="200" alt="Jerarquía de caché" title="Jerarquía de caché" class="" loading="lazy"></a></p>
+<figcaption>Jerarquía de caché</figcaption>
+</figure>
+</div>
+<h4 id="memoria-virtual">Memoria virtual</h4>
+<p>La memoria principal del sistema es limitada aun siendo de varias decenas de GB. La memoria virtual es una técnica que permite ampliar la memoria del sistema utilizando el siguiente nivel de la jerarquía de memoria , normalmente el almacenamiento persistente de mayor capacidad.</p>
+<p>El sistema operativo con ayuda de funciones de gestión de memoria implementadas en el procesador se encarga de mover fuera de la memoria principal la que no se está utilizando y de cargar en la memoria principal la que se necesite.</p>
+<h4 id="microcódigo">Microcódigo</h4>
+<p>El microcódigo es un software que traduce las instrucciones en operaciones a ejecutar en el <em>chip</em>. Esta traducción de instrucciones permite los desarrolladores de <em>chips</em> flexibilidad en la implementación. Por ejemplo, en una versión mejorada del <em>chip</em> se puede soportar el mismo conjunto de instrucciones que versiones anteriores o soportar diferentes conjuntos de instrucciones en el mismo <em>chip</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Microcode">Microcode</a></li>
+</ul>
+<h3 id="arquitecturas-de-conjunto-de-instrucciones">Arquitecturas de conjunto de instrucciones</h3>
+<p>La arquitectura del conjunto de instrucciones o ISA es el modelo abstracto de una computadora, define los tipos de datos soportados, los registros, el hardware de soporte para la memoria principal y el modelo de entrada y salida. También forma parte el conjunto de instrucciones soportadas y su codificación binaria.</p>
+<p>El conjunto de instrucciones es una de las características mas relevantes de un procesador, los programas compilados a código máquina están codificados en forma binarias según las instrucciones de una ISA.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">Instruction set architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Microarchitecture">Microarchitecture</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/mips32-addi.svg" data-gallery="data-gallery" title="Instrucción addi de un procesador MIPS"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/mips32-addi.svg" width="300" height="200" alt="Instrucción addi de un procesador MIPS" title="Instrucción addi de un procesador MIPS" class="" loading="lazy"></a></p>
+<figcaption>Instrucción addi de un procesador MIPS</figcaption>
+</figure>
+</div>
+<h4 id="conjuntos-de-instrucciones">Conjuntos de instrucciones</h4>
+<p>El conjunto de instrucciones soportados por un procesador depende de su arquitectura. La arquitectura más popular en ordenadores de escritorio es la x86, en los dispositivos móviles como teléfonos inteligentes es ARM, otras arquitecturas alternativas son RISC-V que es una arquitectura abierta sin costes de licencia, otras son MIPS, POWER y Sparc.</p>
+<p>Los lenguajes de programación de alto nivel como C traducen los programas a un binario ejecutable por la computadora, Java traduce los programas en la compilación a un <em>bytecode</em> independendiente de la arquitectura del procesador y es en tiempo de ejecución cuando se realiza la traducción del <em>bytecode</em> a las instrucciones que entiende el procesador.</p>
+<p>Dos aproximaciones al conjunto de instrucciones son CISC que proporciona un conjunto amplio de instrucciones complejas y RISC que proporciona un conjunto reducido de instrucciones más simples. El equivalente de una instrucción CISC pueden ser varias RISC. Los procesadores CISC tienen la ventaja de hacer que los programas tengan menor tamaño pero hace que los procesadores sean más complejos, por el contrario en los procesadores RISC los programas son más grandes al necesitar más instrucciones pero los procesadores son más sencillos. La diferencia entre un procesador CISC y RISC no es muy significativa con la utilización de microcódigo.</p>
+<p>Las instrucciones se agrupan en las siguientes categorías:</p>
+<ul>
+<li>Establecimiento de datos y operaciones con memoria cómo establecer un registro con un valor y mover datos de un registro a otro.</li>
+<li>Operaciones aritméticas y lógicas como sumar, restar, multiplicar o dividir entre los valores de dos registros, realizar operaciones binarias o comprar dos valores.</li>
+<li>Control de flujo como saltar a otro punto del programa, salto condicional o llamada a una función.</li>
+<li>Instrucciones de coprocesador como cargar o almacenar datos en los registros del procesador.</li>
+</ul>
+<p>Las instrucciones <em>single instruction multiple data</em> o SIMD operan múltiples datos de forma paralela con una única instrucciones, esto mejora significativamente el rendimiento respecto si hubiera que ejecutar una instrucción por cada dato. Es una forma diferente de conseguir paralelismo.</p>
+<p>En la arquitectura x86 las instrucciones MMX, SSE y AVX son variantes de instrucciones SIMD. El primer procesador con instrucciones MMX fabricado por Intel fue el Pentium MMX. El primer procesador de Intel con instrucciones SSE fue el Pentium 3 y el primero con AVX fue a partir de la familia Sandy Bridge.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer">Complex instruction set computer</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">Reduced instruction set computer</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions">Advanced Vector Extensions</a></li>
+<li><a href="https://en.wikipedia.org/wiki/X86">x86 architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/ARM_architecture">ARM architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/IBM_POWER_instruction_set_architecture">IBM POWER instruction set architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/PowerPC">PowerPC</a></li>
+<li><a href="https://en.wikipedia.org/wiki/RISC-V">RISC-V</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SPARC">SPARC</a></li>
+</ul>
+<h3 id="ciclo-de-ejecución-del-procesador">Ciclo de ejecución del procesador</h3>
+<p>La principal tarea de un procesador es ejecutar instrucciones, para ello el procesador sigue un ciclo de obtener la siguiente instrucción de la memoria principal según el contador del programa, decodificación en la que se determina que instrucción se ejecuta y ejecución en la que se utilizan los diferentes componentes del procesador como la unidad de lógica aritmética.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_cycle">Instruction cycle</a></li>
+</ul>
+<h4 id="_pipelining_-de-instrucciones"><em>Pipelining</em> de instrucciones</h4>
+<p>Los procesadores tiene varios componentes, para mantenerlos todos en funcionamiento con el objetivo de maximizar el rendimiento las instrucciones se ejecutan en varias etapas. En un momento determinado el procesador posee varias instrucciones en diferentes etapas de ejecución. Cada uno de estos pasos de ejecución es un segmento de ejecución, denominando a estos procesadores como segmentados.</p>
+<p>El primer procesador segmentado fabricado por Intel fue el Intel 386 con un <em>pipeline</em> de tres etapas.</p>
+<p>Un procesador como los Intel Pentium 4 llegaba a tener un <em>pipeline</em> de ejecución de hasta 31 etapas. El problema es que un <em>pipeline</em> tan largo no mejora el rendimiento cuando se producen saltos al ejecutar instrucciones condicionales y el predictor de bifurcaciones falla en el predicción, en un salto el <em>pipeline</em> se vacía y comienza en la primera etapa con la primera instrucción a la que se ha saltado.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_pipelining">Instruction pipelining</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/pipeline-4-stage-with-bubble.svg" data-gallery="data-gallery" title="Pipeline de 4 segmentos"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/pipeline-4-stage-with-bubble.svg" width="300" height="200" alt="Pipeline de 4 segmentos" title="Pipeline de 4 segmentos" class="" loading="lazy"></a></p>
+<figcaption>Pipeline de 4 segmentos</figcaption>
+</figure>
+</div>
+<h4 id="_hazards_"><em>Hazards</em></h4>
+<p>Hay varios peligros en la ejecución paralela que ha de tenerse en cuenta para un buen funcionamiento de los procesadores segmentados. Los riesgos son de tres tipos, de datos, estructurales y de control.</p>
+<p>En los riegos de datos una instrucción de lectura posterior a una instrucción de escritura para un dato ha de producirse después, una instrucción de lectura posterior a una de escritura para un dato ha de producirse después y dos instrucciones de escritura sobre el mismo dato ha de producirse en el mismo orden del programa.</p>
+<p>Los riesgos estructurales consisten en que dos instrucciones en el <em>pipeline</em> necesiten el mismo recurso como la ALU, en este caso las instrucciones han de esperar.</p>
+<p>Los riesgos de control consisten en que se hayan insertado en el <em>pipeline</em> instrucciones que finalmente han de descartarse por una mala predicción en un salto en el programa.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hazard_%28computer_architecture%29">Hazard (computer architecture)</a></li>
+</ul>
+<h4 id="ejecución-fuera-de-orden">Ejecución fuera de orden</h4>
+<p>La ejecución fuera de orden permite aprovechar los ciclos de CPU que de otra manera no se utilizarían. Con este paradigma, el procesador ejecuta las instrucciones según la disponibilidad de los datos de entrada y las unidades de ejecución, en vez de en el orden original del programa. Esto permite evitar tiempos inactivos esperando a que la instrucción precedente se complete en el caso de que sean independientes.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Out-of-order_execution">Out-of-order execution</a></li>
+</ul>
+<h4 id="ejecución-especulativa">Ejecución especulativa</h4>
+<p>La ejecución especulativa es otra optimización que permite aumentar el rendimiento que consiste en ejecutar instrucciones aún antes de saber si son necesarias.</p>
+<p>Los programas incluyen sentencias condicionales, en función de su evaluación el flujo del programa continúa por una rama de la condición u otra, hasta no evaluarse la condición no se sabe porque rama se continúa. La ejecución especulativa ejecuta las instrucciones de ambas ramas descartando los resultados de una cuando se conoce que rama finalmente se ha seguido.</p>
+<p>Esta técnica aumenta el rendimiento pero con la cual se han descubierto varios problemas relativos a la seguridad con su <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</a> que han afectado a los procesadores que la implementaron tanto de Intel, de AMD como de ARM.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Speculative_execution">Speculative execution</a></li>
+</ul>
+<h3 id="paralelismo">Paralelismo</h3>
+<p>Para aumentar el rendimiento los procesadores intentan ejecutar las operaciones de forma paralela.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_computing">Parallel computing</a></li>
+</ul>
+<h4 id="_bit_"><em>Bit</em></h4>
+<p>Una forma de aumentar el paralelismo es aumentar el tamaño de palabra del procesador. Un procesador con una palabra de 8 bits necesita dos ciclos para realizar la suma de dos números de 16 bits, un procesador de 16 bits solo necesita un ciclo con lo que en la práctica es duplicar el rendimiento del procesador en este tipos de operaciones.</p>
+<h4 id="escalar-y-superescalar">Escalar y superescalar</h4>
+<p>Un procesador escalar en todo momento solo ejecuta una instrucción, en cambio un procesador superescalar ejecutar múltiples instrucciones usando varias unidades de ejecución. Los procesadores superescalares tienen varias unidades de ejecución del mismo tipo, por ejemplo un procesador superescalar tiene varias unidades ALU o de FPU. El procesador trata de mantener cada una de estas diferentes unidades con instrucciones a ejecutar. Un procesador superescalar con dos ALU es capaz de realizar el doble de operaciones por ciclo de reloj y por tanto supone duplicar el rendimiento en este tipos de operaciones.</p>
+<p>El primer procesador superescalar fabricado por Intel fue el Pentium.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Scalar_processor">Scalar processor</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Superscalar_processor">Superscalar processor</a></li>
+</ul>
+<h4 id="multihilo">Multihilo</h4>
+<p>Un procesador con procesamiento multihilo o SMT trata de mejorar el rendimiento del procesador superescalar. Cada núcleo físico es visto por el sistema operativo como dos o más núcleos lógicos, cada procesador lógico tiene sus propios registros de control sin embargo las unidades de ejecución son compartidas por los hilos. Cada hilo puede ser detenido o interrumpido de forma independiente al resto de hilos.</p>
+<p>El número de hilos que permite un procesador por cada cada núcleo puede ser tan simple como dos, dependiendo de la microarquitectura del procesador pueden ser un número más grande como cuatro u ocho.</p>
+<p>El primer procesador con hyper-threading fabricado por fue el Intel Pentium 4.</p>
+<p>Los procesadores y sistemas operativos conceden a los programas un tiempo de ejecución en el procesador, transcurrido el tiempo sin interrumpidos y se continua con otro proceso, el proceso no tiene el control de cuando se interrumpe su ejecución, a este estilo de compartir el recurso del procesador se le denomina <a href="https://en.wikipedia.org/wiki/Preemption_%28computing%29">multitarea preemtiva</a>. Incluso con la velocidad de los procesadores de mononucleo en los que solo se ejecutan un solo programa la sensación es que los programas se están ejecutando de forma paralela.</p>
+<h4 id="multinúcleo">Multinúcleo</h4>
+<p>Un procesador con procesamiento paralelo o SMP incorpora varios núcleos físicos en el mismo procesador. Cada núcleo es independiente y ejecuta un proceso en cada núcleo de forma simultánea. En un procesador mononúcleo la programación simultánea era simulada mediante la apropiación preemptiva junto con la rapidez del procesador para en la ejecución de instrucciones y cambios de contexto de un procesador a otro.</p>
+<p>El primer procesador multinúcleo fabricado por Intel fue el Pentium D.</p>
+<h4 id="número-de-núcleos">Número de núcleos</h4>
+<p>Los primeros procesadores tenían un único núcleo o unidad de cómputo denominados <em>single-core</em>, posteriormente se ha implementado en un mismo procesador varios núcleos denominados <em>multi-core</em>.</p>
+<p>Los procesadores <em>multi-core</em> de escritorio consumno están diseñados para ejecutar eficientemente tanto código en serie como en paralelo poniendo gran énfasis en la ejecución de un único hilo, para ello dedican espacio en el procesador para implementar ejecución fuera de orden, pipelines profundos, son superescalares y tienen cachés grandes.</p>
+<p>Los procesadores <em>many-core</em> están especializados en ejecutar gran cantidad de operaciones en paralelo, para ello tienen una gran cantidad de núcleos de computación. Si un procesador <em>muti-core</em> tiene unos pocos núcleos al estar limitados el número de ellos por la coherencia de la caché los procesadores <em>many-core</em> se cuentan por miles. Las GPU son un ejemplo del procesador <em>many-core</em>.</p>
+<h3 id="seguridad">Seguridad</h3>
+<p>Los procesadores incluyen funcionalidades con la colaboración del sistema operativo para que la computación de los programas sea segura, con el objetivo de que un programa no se apropie de toda la capacidad de computación o que la memoria de un programa esté aislada de otros programas.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Trusted_Execution_Technology">Trusted Execution Technology</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/processor-security-rings.svg" data-gallery="data-gallery" title="Anillos de seguridad de un procesador"><img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/processor-security-rings.svg" width="300" height="200" alt="Anillos de seguridad de un procesador" title="Anillos de seguridad de un procesador" class="" loading="lazy"></a></p>
+<figcaption>Anillos de seguridad de un procesador</figcaption>
+</figure>
+</div>
+<h4 id="modo-protegido">Modo protegido</h4>
+<p>Los procesadores incluyen un modo de ejecución con privilegios especiales que son exclusiva del sistema operativo. Algunas instrucciones solo pueden ser ejecutadas en el modo protegido por seguridad.</p>
+<p>El primer procesador con un modo protegido fabricado por Intel fue el 386.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Protected_mode">Protected mode</a></li>
+</ul>
+<h4 id="cifrado-de-memoria">Cifrado de memoria</h4>
+<p>Para minimizar las consecuencias de una fallo de seguridad los procesadores más recientes destinados a la computación en la nube, donde el entorno de computación es compatido aún estando en ciertamedia aislado lógicamente, también incluyen funcionalidades para cifrar completamente la memoria de los datos y programas, de modo que aunque un programa tenga acceso a la memoria de otro la información al estar cifrada no sea legible.</p>
+<h3 id="rendimiento-de-procesador">Rendimiento de procesador</h3>
+<p>El rendimiento de un procesador se mide en instrucciones por ciclo o IPC, instrucciones por segundo o IPS, operaciones de coma flotante por segundo FLOPS, rendimiento por vatio o PPW.</p>
+<p>Una variable que impacta en el rendimiento es el número de transistores con el que está construido el procesador, a mayor número de transistores es posible incluir cachés más grandes, mayor número de núcleos y mayor número de componentes. Sin embargo, un mayor número de transistores implica una mayor cantidad de energía consumida.</p>
+<p>Los diseñadores de procesadores han de encontrar un equilibrio óptimo entre número de transistores, tamaño del <em>chip</em>, coste de fabricación, energía consumida y disipada en forma de calor y precio del procesador.</p>
+<p>Una mejora de los procesos litográficos que permiten crear transistores de menor tamaño es beneficioso para los procesadores ya que mejoran el número de transistores que se pueden incluir en el procesador en el mismo espacio, hacen los procesadores más pequeños, la energía consumida y el calor disipado es menor y el precio de fabricación del procesador se abarata.</p>
+<h3 id="tipos-de-procesadores">Tipos de procesadores</h3>
+<p>La CPU es el principal componente de una computadora que se encarga de ejecutar las instrucciones del programa, otro tipo de procesador especializado son las GPU dedicadas al procesamiento de gráficos o en tareas de inteligencia artificial. Las GPU están especializadas en ejecutar gran cantidad de operaciones de forma paralela.</p>
+<p>Un <em>system on chip</em> o SoC incluye la mayoría de componentes de un sistema es un único <em>chip</em> en vez de estar separados. Un SoC puede incluir tanto la CPU, la memoria, los puertos de entrada/salida y otros elementos como almacenamiento secundario, la GPU y otros elementos especializados en comunicaciones y procesamiento de datos. Esto les hace más baratos que un sistema en el que los componentes están formados por <em>chips</em> individuales.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Processor_%28computing%29">Processor</a></li>
+</ul>
+<h3 id="gestión-de-energía">Gestión de energía</h3>
+<p>Los procesadores para reducir su consumo de energía y el calor que dispan emplean diferetnes técnicas como variar el voltaje de funcionamiento o la frecuencia de funcionamiento.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/01/despues-de-dos-anos-de-comprar-un-intel-nuc-cambiaria-algo-en-el-futuro/">
+                <img src="/blog-bitix/assets/images/logotypes/intel.svg" width="326" height="125" alt="Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?" title="Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?" class="" loading="lazy">
+                <h3>Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/12/guia-basica-sobre-teclados-mecanicos-para-ordenador/">
+                <img src="/blog-bitix/2020/12/guia-basica-sobre-teclados-mecanicos-para-ordenador/images/ducky-one-2-tkl_hu354ab0c3d09f385c997f31ff19e237d6_461539_875x0_resize_box_3.png" width="326" height="125" alt="Guía básica sobre teclados mecánicos para ordenador" title="Guía básica sobre teclados mecánicos para ordenador" class="" loading="lazy">
+                <h3>Guía básica sobre teclados mecánicos para ordenador</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="¿Donde comprar un ordenador sin Windows o con GNU/Linux?" title="¿Donde comprar un ordenador sin Windows o con GNU/Linux?" class="" loading="lazy">
+                <h3>¿Donde comprar un ordenador sin Windows o con GNU/Linux?</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/">
+                <img src="/blog-bitix/assets/images/logotypes/samsung.svg" width="326" height="125" alt="De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6" title="De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6" class="" loading="lazy">
+                <h3>De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">
+                <img src="/blog-bitix/assets/images/logotypes/intel.svg" width="326" height="125" alt="Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)" title="Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)" class="" loading="lazy">
+                <h3>Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/">
+                <img src="/blog-bitix/assets/images/logotypes/benq.svg" width="326" height="125" alt="Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas" title="Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas" class="" loading="lazy">
+                <h3>Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-576';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/05\/conceptos-teoricos-generales-de-los-procesadores-de-computadora\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

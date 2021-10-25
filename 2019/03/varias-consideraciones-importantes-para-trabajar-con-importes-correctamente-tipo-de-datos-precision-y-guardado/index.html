@@ -1,0 +1,529 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/" hreflang="es" title="Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/index-amp.html" hreflang="es" title="Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)">
+<meta name="twitter:description" content="Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/"
+    },
+    "headline": "Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2019-03-16T11:00:00+01:00",
+    "dateModified": "2019-03-16T11:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "414",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>16/03/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Por qué guardar fechas con UTC en la base de datos</a></li>
+</ul>
+<p>Otra consideración distinta en aplicaciones que manejan importes es usar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a> en vez de los tipos de datos de coma flotante <em>float</em> o <em>double</em> ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar <em>BigDecimal</em> es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.</p>
+<p>Sin utilizar una mayor precisión de 2 decimales puede ocurrir que algunos importes tengan una diferencia de céntimos. Por ejemplo, los precios se pueden introducir o bien el precio del producto antes de aplicar el IVA, comisiones o descuentos o puede introducirse en el precio que paga el usuario después de aplicar el IVA y en ambos casos al realizar el cálculo del precio con IVA y el cálculo del precio base ha de coincidir. Por ello la recomendación es utilizar al menos un decimal más de la precisión necesaria.</p>
+<p>Otras pautas importantes son guardar los importes redondeados que el usuario ve en la factura para evitar discrepancias hacia arriba de algún céntimo en la suma de los importes y aplicar el IVA, comisión o descuento no a cada producto individual sino a la suma de los importes de todos ellos.</p>
+<p>Este artículo sobre <a href="http://albertovilches.com/como-hacer-una-aplicacion-que-soporte-precios-con-decimales-sin-errores">Cómo hacer una aplicación que soporte precios con decimales sin errores</a> están muy bien explicadas con ejemplos varios de todos estos puntos imprescindibles al manejar importes, recomendable leerlo.</p>
+<p>Pero el tipo de datos <em>BigDecimal</em> tampoco es el mas apropiado con el que trabajar si la aplicación maneja múltiples divisas, en este caso es recomendable utilizar la librería <a href="https://javamoney.github.io/">Java Money</a> que además ofrece soporte para ratios de conversión los cuales pueden obtenerse de proveedores externos que los proporcionan actualizados a lo largo del tiempo.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/">Cómo trabajar con importes, ratios y divisas en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/06/servicio-para-obtener-ratios-de-conversion-entre-divisas/">Servicio para obtener ratios de conversión entre divisas</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java</a></li>
+</ul>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Colecciones sincronizadas e inmutables en Java" title="Colecciones sincronizadas e inmutables en Java" class="" loading="lazy">
+                <h3>Colecciones sincronizadas e inmutables en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las colecciones de Java, estructuras de datos para guardar referencias a objetos" title="Las colecciones de Java, estructuras de datos para guardar referencias a objetos" class="" loading="lazy">
+                <h3>Las colecciones de Java, estructuras de datos para guardar referencias a objetos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/lookahead-y-lookbehind-en-expresiones-regulares-con-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Lookahead y lookbehind en expresiones regulares con Java" title="Lookahead y lookbehind en expresiones regulares con Java" class="" loading="lazy">
+                <h3>Lookahead y lookbehind en expresiones regulares con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las clases anidadas inner, anónimas y locales en Java" title="Las clases anidadas inner, anónimas y locales en Java" class="" loading="lazy">
+                <h3>Las clases anidadas inner, anónimas y locales en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ofuscar datos sensibles en las trazas con Log4j" title="Ofuscar datos sensibles en las trazas con Log4j" class="" loading="lazy">
+                <h3>Ofuscar datos sensibles en las trazas con Log4j</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" title="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" class="" loading="lazy">
+                <h3>Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-389';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/03\/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

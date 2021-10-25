@@ -1,0 +1,604 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Comprimir el contenido es de utilidad para aquellos usuarios a los que se les factura por los datos transmitidos o tienen límites de transferencia en sus contratos con los proveedores de banda ancha o red móvil. Modificando la configuración del servidor web que usemos haremos que nuestra página o aplicación web comprima el contenido que envía a los navegadores de los usuarios reduciendo los datos transferidos y optimizando el sitio web. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/" hreflang="es" title="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/index-amp.html" hreflang="es" title="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/nginx-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Comprimir el contenido es de utilidad para aquellos usuarios a los que se les factura por los datos transmitidos o tienen límites de transferencia en sus contratos con los proveedores de banda ancha o red móvil. Modificando la configuración del servidor web que usemos haremos que nuestra página o aplicación web comprima el contenido que envía a los navegadores de los usuarios reduciendo los datos transferidos y optimizando el sitio web. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/nginx-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD">
+<meta name="twitter:description" content="Comprimir el contenido es de utilidad para aquellos usuarios a los que se les factura por los datos transmitidos o tienen límites de transferencia en sus contratos con los proveedores de banda ancha o red móvil. Modificando la configuración del servidor web que usemos haremos que nuestra página o aplicación web comprima el contenido que envía a los navegadores de los usuarios reduciendo los datos transferidos y optimizando el sitio web. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/"
+    },
+    "headline": "Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/nginx-750.png"
+        
+      },
+    "datePublished": "2016-07-02T12:30:00+02:00",
+    "dateModified": "2016-07-02T12:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "876",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Comprimir el contenido es de utilidad para aquellos usuarios a los que se les factura por los datos transmitidos o tienen límites de transferencia en sus contratos con los proveedores de banda ancha o red móvil. Modificando la configuración del servidor web que usemos haremos que nuestra página o aplicación web comprima el contenido que envía a los navegadores de los usuarios reduciendo los datos transferidos y optimizando el sitio web."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/07/2016</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+          <a href="/blog-bitix/tags/web/">web</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Comprimir el contenido es de utilidad para aquellos usuarios a los que se les factura por los datos transmitidos o tienen límites de transferencia en sus contratos con los proveedores de banda ancha o red móvil. Modificando la configuración del servidor web que usemos haremos que nuestra página o aplicación web comprima el contenido que envía a los navegadores de los usuarios reduciendo los datos transferidos y optimizando el sitio web.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false"></p>
+</div>
+<p>Con las velocidades de transferencia que proporciona la fibra, el ADSL incluso el 4G o 3G de los móviles transmitir el contenido de una web desde el servidor al cliente ya no es el factor más determinante en el tiempo de carga de una página, lo es más la latencia de la red y el establecimiento de múltiples conexiones. Aún así hay usuarios que por una red de baja calidad o que esté saturada pueden tener tasas de transferencia bajas o puede que al usuario se le facture por la cantidad de datos que transmite. Por estos motivos aún hoy es buena idea activar en el servidor la compresión GZIP para que los datos transmitidos se compriman y reduzcan de forma significativa. La compresión GZIP es una optimización que podemos realizar para cualquier página web. Para mejorar la latencia en el establecimiento de conexiones es aconsejable <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">configurar HTTP/2 en el servidor web</a> para mejorar la velocidad de carga de la página.</p>
+<p>Dependiendo del servidor web la configuración que deberemos añadir será diferente, en este artículo mostraré la configuración a usar para dos de los servidores web más populares en internet, que son <a href="https://nginx.org/">Nginx</a> y <a href="https://httpd.apache.org/">Apache HTTPD</a>.</p>
+<h3 id="nginx">Nginx</h3>
+<p>Usando varias <a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html">directivas de Nginx para la compresión</a> la activamos, establecemos el nivel de compresión, el tamaño de los <em>buffers</em> dedicados a la compresión y finalmente los <em>mimetypes</em> de los archivos que queremos sean comprimidos antes de enviarse al cliente (el texto plano, contenido CSS, JSON, XML, RSS y JavaScript). El <em>mimetype</em> <em>text/html</em> no hace falta indicarlo porque siempre está activo y para los formatos de archivos que ya están comprimidos es innecesario como fotos o vídeos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>&#10;  <span class="kn">listen</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="mi">80</span><span class="p">;</span>&#10;  <span class="kn">server_name</span>  <span class="s">localhost</span><span class="p">;</span>&#10;&#10;  <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>&#10;  <span class="kn">gzip_disable</span> <span class="s">&#34;msie6&#34;</span><span class="p">;</span>&#10;  <span class="kn">gzip_vary</span> <span class="no">on</span><span class="p">;</span>&#10;  <span class="kn">gzip_proxied</span> <span class="s">any</span><span class="p">;</span>&#10;  <span class="kn">gzip_comp_level</span> <span class="mi">6</span><span class="p">;</span>&#10;  <span class="kn">gzip_buffers</span> <span class="mi">16</span> <span class="mi">8k</span><span class="p">;</span>&#10;  <span class="kn">gzip_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>&#10;  <span class="kn">gzip_types</span> <span class="s">text/plain</span> <span class="s">text/css</span> <span class="s">application/json</span> <span class="s">application/x-javascript</span> <span class="s">text/xml</span> <span class="s">application/xml</span> <span class="s">application/xml+rss</span> <span class="s">text/javascript</span><span class="p">;</span>&#10;&#10;  <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">index</span> <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nginx.conf</span>
+    </div>
+</div>
+<p>Para probarlo usaré un contenedor de <a href="https://www.docker.com/">Docker</a> en el que personalizaré la configuración y usaré mi propia bitácora como página web a servir. Para conocer Docker puedes consultar otra <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> dedicados a esta tecnología de contenedores. Escrito el archivo de configuración, el contenedor se inicia con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm --name nginx -p 80:80 -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/nginx.conf:/etc/nginx/conf.d/default.conf:ro -v /home/picodotdev/Software/personal/git/blog-bitix/public:/usr/share/nginx/html:ro nginx&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-nginx.sh</span>
+    </div>
+</div>
+<p>En la siguiente captura se aprecia que Nginx devuelve la cabecera de respuesta <em>Content-Encoding: gzip</em> indicando que el contenido ha sido comprimido antes de su transmisión por la red. Haciendo que Nginx haga de servidor web para mi propia bitácora se pueden apreciar la significativa diferencia en kilobytes transmitidos entre el tamaño que tienen y lo transferido para algunos recursos. Por ejemplo, el HTML de la página de inicio tiene un tamaño sin comprimir de 34,11 KB y comprimido un tamaño mucho menor 8,38 KB, una diferencia de 25,73 KB aproximadamente un ratio de compresión del 75%. Para el recurso <em>bootstrap.min.css</em> que ya está minificado eliminando caracteres innecesarios es aún más significativo de 118,43 KB a 23,36, 95,04 KB menos un 80% de reducción.</p>
+<p>Unos pocos kilobytes no son mucho para un único recurso pero si tenemos en cuenta que una página tiene varias docenas y hacemos una multiplicación por cada acceso a una página la cantidad de datos ahorrados en la transferencia es notable.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-no-gzip_hu8ae7e2af929b6fa0ee8b79777cd81846_276701_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nginx configurado sin compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-no-gzip_hu8ae7e2af929b6fa0ee8b79777cd81846_276701_300x200_fit_box_3.png" width="300" height="148" alt="Nginx configurado sin compresión GZIP" title="Nginx configurado sin compresión GZIP" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-gzip_hu6d61388e9a20bef52da27cbc4b0fc482_222425_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nginx configurado con compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/nginx-gzip_hu6d61388e9a20bef52da27cbc4b0fc482_222425_300x200_fit_box_3.png" width="300" height="148" alt="Nginx configurado con compresión GZIP" title="Nginx configurado con compresión GZIP" class="" loading="lazy"></a></p>
+<figcaption>Nginx configurado sin y con compresión GZIP</figcaption>
+</figure>
+</div>
+<h3 id="apache-httpd">Apache HTTPD</h3>
+<p>Activado el módulo para realizar la compresión al igual que el caso de Nginx podemos establecer la cantidad de memoria reservada para la compresión, el nivel de compresión y los <em>mimetypes</em> del contenido a comprimir. Con las <a href="http://httpd.apache.org/docs/current/mod/mod_deflate.html">directivas adicionales de la documentación</a> se puede personalizar aún más el proceso de compresión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-apache" data-lang="apache"><span class="nb">LoadModule</span> deflate_module modules/mod_deflate.so&#10;...&#10;<span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>&#10;   <span class="nb">ServerName</span> localhost&#10;   <span class="nb">DocumentRoot</span> <span class="sx">/usr/local/apache2/htdocs</span>&#10;&#10;   <span class="nb">SetOutputFilter</span> DEFLATE&#10;   <span class="nb">DeflateBufferSize</span> <span class="m">8096</span>&#10;   <span class="nb">DeflateCompressionLevel</span> <span class="m">6</span>&#10;   <span class="nb">AddOutputFilterByType</span> DEFLATE text/html text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript&#10;<span class="nt">&lt;/VirtualHost&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>httpd.conf</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm --name apache -p 80:80 -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro -v /home/picodotdev/Software/personal/git/blog-bitix/public:/usr/local/apache2/htdocs:ro httpd&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-httpd.sh</span>
+    </div>
+</div>
+<p>Vemos una reducción en la transferencia similar a la conseguida en Nginx. En Apache el recurso a servir ha de tener cierto tamaño siendo de unos pocos bytes opta por servirlo sin comprimir ya que considerará que no producirá un ahorro significativo.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-no-gzip_hu8937ef9644c64bbe4571ad5847c2a7f4_257645_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Apache HTTPD configurado sin compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-no-gzip_hu8937ef9644c64bbe4571ad5847c2a7f4_257645_300x200_fit_box_3.png" width="300" height="156" alt="Apache HTTPD configurado sin compresión GZIP" title="Apache HTTPD configurado sin compresión GZIP" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-gzip_huea7aac62a38b9e8894414b3f64502c54_273448_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Apache HTTPD configurado con compresión GZIP"><img src="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/images/apache-httpd-gzip_huea7aac62a38b9e8894414b3f64502c54_273448_300x200_fit_box_3.png" width="300" height="156" alt="Apache HTTPD configurado con compresión GZIP" title="Apache HTTPD configurado con compresión GZIP" class="" loading="lazy"></a></p>
+<figcaption>Apache HTTPD configurado sin y con compresión GZIP</figcaption>
+</figure>
+</div>
+<p>La compresión se hace en cada petición que se hace al servidor que con los avanzados procesadores actuales con eficientes instrucciones específicas para la tarea implementadas en el hardware salvo un tráfico muy elevado no tiene por que notarse en gran medida el procesado de cada recurso. Si el tráfico fuese elevado y la carga de compresión se notase Nginx y Apache ofrecen la posibilidad de <a href="http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html">precomprimir los recursos</a> y de forma similar <a href="http://httpd.apache.org/docs/current/mod/mod_deflate.html#precompressed">precomprimir los recursos en apache</a>.</p>
+<p>La compresión es otra de las configuraciones básicas aconsejable hacer en un servidor web junto con:</p>
+<ul>
+<li>Añadir cifrado y autenticación con TLS/SSL.</li>
+<li>Añadir el soporte para el protocolo HTTP/2 que ya incluyen los navegadores.</li>
+<li>Redirigir el tráfico del dominio raíz al subdominio www.</li>
+<li>Redirigir el tráfico de HTTP a HTTPS.</li>
+</ul>
+<p>Estas funcionalidades las puedes consultar en el resto de artículos de la <a href="https://picodotdev.github.io/blog-bitix/series/web/">serie web</a>.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebServerCompresionGzip">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./docker-nginx.sh o ./docker-httpd.sh</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html">Module ngx_http_gzip_module</a></li>
+<li><a href="http://httpd.apache.org/docs/current/mod/mod_deflate.html">Apache Module mod_deflate</a></li>
+<li><a href="http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/">How To Optimize Your Site With GZIP Compression</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" title="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" class="" loading="lazy">
+                <h3>Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">
+                <img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" class="" loading="lazy">
+                <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/07/hemeroteca-9/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #9" title="Hemeroteca #9" class="" loading="lazy">
+                <h3>Hemeroteca #9</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Ofrecer contenido personalizado al usuario basado en su ubicación" title="Ofrecer contenido personalizado al usuario basado en su ubicación" class="" loading="lazy">
+                <h3>Ofrecer contenido personalizado al usuario basado en su ubicación</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/">
+                <img src="/blog-bitix/assets/images/logotypes/microsoft.svg" width="326" height="125" alt="4 opciones ofimáticas alternativas gratuitas a Microsoft Office" title="4 opciones ofimáticas alternativas gratuitas a Microsoft Office" class="" loading="lazy">
+                <h3>4 opciones ofimáticas alternativas gratuitas a Microsoft Office</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/01/hemeroteca-8/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
+                <h3>Hemeroteca #8</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-155';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2016\/07\/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

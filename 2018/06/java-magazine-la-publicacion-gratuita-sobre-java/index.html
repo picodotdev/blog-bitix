@@ -1,0 +1,620 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La revista Java Magazine es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista @Oraclejavamag. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Java Magazine, la publicación gratuita sobre Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/" hreflang="es" title="Java Magazine, la publicación gratuita sobre Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/index-amp.html" hreflang="es" title="Java Magazine, la publicación gratuita sobre Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Java Magazine, la publicación gratuita sobre Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La revista Java Magazine es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista @Oraclejavamag. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Java Magazine, la publicación gratuita sobre Java">
+<meta name="twitter:description" content="La revista Java Magazine es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista @Oraclejavamag. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/"
+    },
+    "headline": "Java Magazine, la publicación gratuita sobre Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2018-06-15T23:00:00+02:00",
+    "dateModified": "2018-08-13T19:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "301",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La revista Java Magazine es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista @Oraclejavamag."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Java Magazine, la publicación gratuita sobre Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>15/06/2018</time>, actualizado el <time>13/08/2018</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>La revista <a href="https://blogs.oracle.com/javamagazine/">Java Magazine</a> es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista <a href="https://twitter.com/Oraclejavamag">@Oraclejavamag</a>. Su longitud ronda algo menos de 100 páginas por número.</p>
+<p>Estas son las portadas de la revista de los tres últimos años y medio, desde el 2015 hasta junio del 2018, en las que se incluye los principales temas tratados en cada revista. Durante este tiempo publicando por supuesto algún número dedicado a Java 9 y Java 10, Java EE 8, JSF, JavaMail, JAX-RS, Spring Boot, JVM, JUnit, IoT, HTTP/2, JavaFX, Gradle, Lombok, JCommander, Byte Buddy, Jsoup, WebSockets, JPA, CDI, Servlet 4.0, <em>testing</em>, microservicios y contenedores y muchos más temas.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-may-jun_hu8f6912ebe574dbcab12ab76730e4905e_414441_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2018 Mayo/Junio"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-may-jun_hu8f6912ebe574dbcab12ab76730e4905e_414441_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2018 Mayo/Junio" title="Java Magazine 2018 Mayo/Junio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-mar-apr_huea7775c4b606101197eef2987bab8a3a_334824_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2018 Marzo/Abril"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-mar-apr_huea7775c4b606101197eef2987bab8a3a_334824_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2018 Marzo/Abril" title="Java Magazine 2018 Marzo/Abril" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-jan-feb_hud4afc3cc5dd9806679f8540c787a6054_652978_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2018 Enero/Febrero"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-jan-feb_hud4afc3cc5dd9806679f8540c787a6054_652978_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2018 Enero/Febrero" title="Java Magazine 2018 Enero/Febrero" class="" loading="lazy"></a></p>
+<figcaption>Java Magazine 2018</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="http://www.javamagazine.mozaicreader.com/MayJun2018/Twitter">Mayo/Junio 2018</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/MarApr2018/Twitter">Marzo/Abril 2018</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/JanFeb2018/Twitter">Enero/Febrero 2018</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-nov-dec_hucf5b6bfaadfd0a1dc4d72c0b1f1ac0ab_247504_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2017 Noviembre/Diciembre"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-nov-dec_hucf5b6bfaadfd0a1dc4d72c0b1f1ac0ab_247504_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2017 Noviembre/Diciembre" title="Java Magazine 2017 Noviembre/Diciembre" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-sep-oct_hu0db326f4bc42dfaaacb394e7e50458e0_301685_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2017 Sepiembre/Octubre"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-sep-oct_hu0db326f4bc42dfaaacb394e7e50458e0_301685_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2017 Sepiembre/Octubre" title="Java Magazine 2017 Sepiembre/Octubre" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-jul-aug_hu6c0ecd3d396abced587402b7c9b7dce8_312313_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2017"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-jul-aug_hu6c0ecd3d396abced587402b7c9b7dce8_312313_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2017" title="Java Magazine 2017" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-may-jun_hu245c6e8eae71f27e3f185b03a98191fa_633171_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2017 Mayo/Junio"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-may-jun_hu245c6e8eae71f27e3f185b03a98191fa_633171_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2017 Mayo/Junio" title="Java Magazine 2017 Mayo/Junio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-mar-apr_huada46b8748abb1b690a94444be323d1d_385322_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2017 Marzo/Abril"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2017-mar-apr_huada46b8748abb1b690a94444be323d1d_385322_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2017 Marzo/Abril" title="Java Magazine 2017 Marzo/Abril" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-jan-feb_hud4afc3cc5dd9806679f8540c787a6054_652978_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2017 Enero/Febrero"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2018-jan-feb_hud4afc3cc5dd9806679f8540c787a6054_652978_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2017 Enero/Febrero" title="Java Magazine 2017 Enero/Febrero" class="" loading="lazy"></a></p>
+<figcaption>Java Magazine 2017</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="http://www.javamagazine.mozaicreader.com/NovDec2017/Twitter">Noviembre/Diciembre 2017</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter">Septiembre/Octubre 2017</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/JulyAug2017/Twitter">Julio/Agosto 2017</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/MayJune2017/Twitter">Mayo/Junio 2017</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/MarApr2017/Twitter">Marzo/Abril 2017</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/JanFeb2017/Twitter">Enero/Febrero 2017</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-nov-dec_hu579b3cbc8f11baebb2c9a10fec5e8c8a_549881_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2016 Noviembre/Diciembre"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-nov-dec_hu579b3cbc8f11baebb2c9a10fec5e8c8a_549881_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2016 Noviembre/Diciembre" title="Java Magazine 2016 Noviembre/Diciembre" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-sep-oct_huaad1c651f33311264cd4c06969630804_649978_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2016 Sepiembre/Octubre"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-sep-oct_huaad1c651f33311264cd4c06969630804_649978_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2016 Sepiembre/Octubre" title="Java Magazine 2016 Sepiembre/Octubre" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-jul-aug_hu5d37bf2717902766e29507c702a0b145_431302_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2016"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-jul-aug_hu5d37bf2717902766e29507c702a0b145_431302_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2016" title="Java Magazine 2016" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-may-jun_huff9ac1f55f872544cae76a11b259dbaf_362527_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2016 Mayo/Junio"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-may-jun_huff9ac1f55f872544cae76a11b259dbaf_362527_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2016 Mayo/Junio" title="Java Magazine 2016 Mayo/Junio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-mar-apr_hu3e9bf33057361cfec2690f4b591d4913_500139_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2016 Marzo/Abril"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-mar-apr_hu3e9bf33057361cfec2690f4b591d4913_500139_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2016 Marzo/Abril" title="Java Magazine 2016 Marzo/Abril" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-jan-feb_hu521fa2eb7e077ad52576f6027c997d54_352188_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2016 Enero/Febrero"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2016-jan-feb_hu521fa2eb7e077ad52576f6027c997d54_352188_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2016 Enero/Febrero" title="Java Magazine 2016 Enero/Febrero" class="" loading="lazy"></a></p>
+<figcaption>Java Magazine 2016</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="http://www.javamagazine.mozaicreader.com/NovDec2016/Twitter">Noviembre/Diciembre 2016</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/SeptOct2016/Twitter">Septiembre/Octubre 2016</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/JulyAug2016/Twitter">Julio/Agosto 2016</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/MayJune2016/Twitter">Mayo/Junio 2016</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/MarApr2016/Twitter">Marzo/Abril 2016</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/JanFeb2016/Twitter">Enero/Febrero 2016</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-nov-dec_hufa2874961a9ad45e1e9a278f902677bf_406177_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2015 Noviembre/Diciembre"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-nov-dec_hufa2874961a9ad45e1e9a278f902677bf_406177_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2015 Noviembre/Diciembre" title="Java Magazine 2015 Noviembre/Diciembre" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-sep-oct_hub68d9ff21ae4ba72db39e10c82e2e455_505013_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2015 Sepiembre/Octubre"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-sep-oct_hub68d9ff21ae4ba72db39e10c82e2e455_505013_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2015 Sepiembre/Octubre" title="Java Magazine 2015 Sepiembre/Octubre" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-jul-aug_hub1f5495c5dafc4d9f5aad33fe2eb5cac_347127_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2015"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-jul-aug_hub1f5495c5dafc4d9f5aad33fe2eb5cac_347127_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2015" title="Java Magazine 2015" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-may-jun_hub2c8708397aeda0d8f8978d82a1d1747_368967_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2015 Mayo/Junio"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-may-jun_hub2c8708397aeda0d8f8978d82a1d1747_368967_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2015 Mayo/Junio" title="Java Magazine 2015 Mayo/Junio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-mar-apr_hu3f41bf89d2c700131d7c5fe3e6c6d4a9_544697_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2015 Marzo/Abril"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-mar-apr_hu3f41bf89d2c700131d7c5fe3e6c6d4a9_544697_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2015 Marzo/Abril" title="Java Magazine 2015 Marzo/Abril" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-jan-feb_hubd4eda21c37c41ef79fa281bd155898d_516510_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Java Magazine 2015 Enero/Febrero"><img src="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/images/java-magazine-2015-jan-feb_hubd4eda21c37c41ef79fa281bd155898d_516510_200x150_fit_q90_box.jpg" width="200" height="150" alt="Java Magazine 2015 Enero/Febrero" title="Java Magazine 2015 Enero/Febrero" class="" loading="lazy"></a></p>
+<figcaption>Java Magazine 2015</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="http://www.javamagazine.mozaicreader.com/NovDec2015/Twitter">Noviembre/Diciembre 2015</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/SeptOct2015/Twitter">Septiembre/Octubre 2015</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/JulyAug2015/Twitter">Julio/Agosto 2015</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/MayJune2015/Twitter">Mayo/Junio 2015</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/MarApr2015/Twitter">Marzo/Abril 2015</a></li>
+<li><a href="http://www.javamagazine.mozaicreader.com/JanFeb2015/Twitter">Enero/Febrero 2015</a></li>
+</ul>
+<p>La mayoría de artículos que incluyen suelen ser muy interesantes y de muy buena calidad de los que casi siempre se aprende algo, algunos artículos están escritos por personas con muy altos conocimientos sobre Java, algunos han sido galardonados como <a href="https://en.wikipedia.org/wiki/Java_Champions">Java Champion</a>, y en algunos otros casos son los desarrolladores principales de algunas de la librerías más populares en el ecosistema Java.</p>
+<p>Si estás interesado en Java seguir esta revista y leer sus artículos es una buena recomendación.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" title="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" class="" loading="lazy">
+                <h3>Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" title="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" class="" loading="lazy">
+                <h3>Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" title="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" class="" loading="lazy">
+                <h3>Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Empaquetar una aplicación Java en un archivo jar ejecutable incluyendo sus dependencias" title="Empaquetar una aplicación Java en un archivo jar ejecutable incluyendo sus dependencias" class="" loading="lazy">
+                <h3>Empaquetar una aplicación Java en un archivo jar ejecutable incluyendo sus dependencias</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Recuperar datos eficientemente en GraphQL usando batching" title="Recuperar datos eficientemente en GraphQL usando batching" class="" loading="lazy">
+                <h3>Recuperar datos eficientemente en GraphQL usando batching</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/05/gestion-de-errores-con-either-o-try-en-vez-de-con-codigo-de-error-null-optional-checked-exception-o-unchecked-exception/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception" title="Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception" class="" loading="lazy">
+                <h3>Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-328';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2018\/06\/java-magazine-la-publicacion-gratuita-sobre-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

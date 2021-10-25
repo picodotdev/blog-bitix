@@ -1,0 +1,568 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En algún momento puede que necesitemos o queramos convertir archivos de audio a otro formato individualmente o de forma masiva. Por ejemplo convertir archivos de audio del formato de música más utilizado mp3 al formato libre de patentes ogg, o de mp3 a aac o desde otros formatos y a otros formatos como wav o ac3. Algunos formatos ofrecen mejor compresión y ocupan menos espacio con la misma calidad y este puede ser un motivo por que queramos hacer la conversión. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cambiar el formato de archivos de música o audio en GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/" hreflang="es" title="Cambiar el formato de archivos de música o audio en GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/index-amp.html" hreflang="es" title="Cambiar el formato de archivos de música o audio en GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cambiar el formato de archivos de música o audio en GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ffmpeg-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En algún momento puede que necesitemos o queramos convertir archivos de audio a otro formato individualmente o de forma masiva. Por ejemplo convertir archivos de audio del formato de música más utilizado mp3 al formato libre de patentes ogg, o de mp3 a aac o desde otros formatos y a otros formatos como wav o ac3. Algunos formatos ofrecen mejor compresión y ocupan menos espacio con la misma calidad y este puede ser un motivo por que queramos hacer la conversión. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ffmpeg-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cambiar el formato de archivos de música o audio en GNU/Linux">
+<meta name="twitter:description" content="En algún momento puede que necesitemos o queramos convertir archivos de audio a otro formato individualmente o de forma masiva. Por ejemplo convertir archivos de audio del formato de música más utilizado mp3 al formato libre de patentes ogg, o de mp3 a aac o desde otros formatos y a otros formatos como wav o ac3. Algunos formatos ofrecen mejor compresión y ocupan menos espacio con la misma calidad y este puede ser un motivo por que queramos hacer la conversión. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/"
+    },
+    "headline": "Cambiar el formato de archivos de música o audio en GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ffmpeg-750.png"
+        
+      },
+    "datePublished": "2016-03-26T11:00:00+01:00",
+    "dateModified": "2016-04-03T11:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "748",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En algún momento puede que necesitemos o queramos convertir archivos de audio a otro formato individualmente o de forma masiva. Por ejemplo convertir archivos de audio del formato de música más utilizado mp3 al formato libre de patentes ogg, o de mp3 a aac o desde otros formatos y a otros formatos como wav o ac3. Algunos formatos ofrecen mejor compresión y ocupan menos espacio con la misma calidad y este puede ser un motivo por que queramos hacer la conversión."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Cambiar el formato de archivos de música o audio en GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>26/03/2016</time>, actualizado el <time>03/04/2016</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>En algún momento puede que necesitemos o queramos convertir archivos de audio a otro formato individualmente o de forma masiva. Por ejemplo convertir archivos de audio del formato de música más utilizado <a href="https://es.wikipedia.org/wiki/MP3">mp3</a> al formato libre de patentes <a href="https://es.wikipedia.org/wiki/Ogg">ogg</a>, o de mp3 a <a href="https://es.wikipedia.org/wiki/Advanced_Audio_Coding">aac</a> o desde otros formatos y a otros formatos como <a href="https://es.wikipedia.org/wiki/Waveform_Audio_Format">wav</a> o <a href="https://es.wikipedia.org/wiki/Dolby_Digital_%28AC-3%29">ac3</a>. Algunos formatos ofrecen mejor compresión y ocupan menos espacio con la misma calidad y este puede ser un motivo por que queramos hacer la conversión. Aún así hay que tener en cuenta que las conversiones entre formatos con pérdida como de mp3 a ogg aún ocupando menos (o más) la calidad puede empeorar, aunque para un oído no entrenado será imperceptible, para convertir a un formato con pérdida es mejor partir de un archivo sin pérdida como wav.</p>
+<p>Si extraemos las canciones de un CD de música dependiendo del programa obtendremos los archivos en formato wav o quizá directamente en mp3, si no las queremos en mp3 para no perder calidad es mejor extraer las canciones en el formato sin pérdida wav y luego realizar la conversión al formato que queramos. En este artículo explicaré como de forma sencilla desde la línea de comandos y con <a href="https://www.ffmpeg.org/">FFmpeg</a> podemos hacer las conversiones, de forma masiva para múltiples archivos y de forma recursiva en múltiples directorios queremos cambiar el formato de una biblioteca de música entera. Hay páginas que sin necesidad de tener instalar nada en el equipo salvo un navegador ofrecen como servicio hacer las conversiones pero hay que hacerlo para cada archivo de forma individual y es más lento por tener que realizar la transmisión a través de internet de algunos pocos megas.</p>
+<p>La herramienta FFmpeg nos permite hacer las conversiones, por ejemplo para convertir de wav a mp3, de wav a ogg o de mp3 a ogg  ejecutaríamos los siguientes comandos. El último de ellos permite cambiar el <em>bitrate</em> para que ocupen menos, se pierde algo de calidad pero hay que tener buen oído para apreciar significativamente la diferencia entre 320k y 128k, entre estas dos calidades la reducción de tamaño llega a la mitad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i entrada.wav -codec:a libmp3lame salida.mp3&#10;$ ffmpeg -i entrada.wav -codec:a libvorbis salida.ogg&#10;$ ffmpeg -i entrada.mp3 -codec:a libvorbis salida.ogg&#10;$ ffmpeg -i entrada.mp3 -codec:a libmp3lame -b:a 128k salida.mp3</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>convert.sh</span>
+    </div>
+</div>
+<p>Con la opción <em>-i</em> indicamos el archivo a convertir, con la opción <em>-acodec</em> indicamos el códec a usar para la conversión, en este caso <em>libmp3lame</em> para mp3, <em>libvorbis</em> para ogg y el último parámetro para indicar el archivo de salida. Para convertir a otros formatos los códecs que debemos usar son:</p>
+<ul>
+<li>mp3: libmp3lame</li>
+<li>ogg: libvorbis</li>
+<li>acc: libfaac</li>
+<li>ac3: ac3</li>
+</ul>
+<p>Para hacer la conversión no de un archivo individual sino de forma masiva o múltiple que en los casos anteriores usamos:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="k">for</span> f in *.wav<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -codec:a libmp3lame <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.wav</span><span class="si">}</span><span class="s2">.mp3&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;$ <span class="k">for</span> f in *.wav<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -codec:a libvorbis <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.wav</span><span class="si">}</span><span class="s2">.ogg&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;$ <span class="k">for</span> f in *.mp3<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -codec:a libvorbis <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.mp3</span><span class="si">}</span><span class="s2">.ogg&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>masive-convert.sh</span>
+    </div>
+</div>
+<p>Para hacer un conversión masiva, recursiva y en múltiples directorios usamos:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ find ./ -name <span class="s2">&#34;*.wav&#34;</span> -exec ffmpeg -i <span class="o">{}</span> -codec:a libmp3lame <span class="s2">&#34;{}.mp3&#34;</span> <span class="se">\;</span> -exec rename .wav.mp3 .mp3 <span class="s2">&#34;{}.mp3&#34;</span> <span class="se">\;</span>&#10;$ find ./ -name <span class="s2">&#34;*.wav&#34;</span> -exec ffmpeg -i <span class="o">{}</span> -codec:a libvorbis <span class="s2">&#34;{}.ogg&#34;</span> <span class="se">\;</span> -exec rename .wav.ogg .ogg <span class="s2">&#34;{}.ogg&#34;</span> <span class="se">\;</span>&#10;$ find ./ -name <span class="s2">&#34;*.mp3&#34;</span> -exec ffmpeg -i <span class="o">{}</span> -codec:a libvorbis <span class="s2">&#34;{}.ogg&#34;</span> <span class="se">\;</span> -exec rename .mp3.ogg .ogg <span class="s2">&#34;{}.ogg&#34;</span> <span class="se">\;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>recursive-convert.sh</span>
+    </div>
+</div>
+<p>En la <a href="https://trac.ffmpeg.org/wiki">documentación de FFmpeg</a> podemos encontrar más parámetros al hacer las conversiones como modificar la calidad, la tasa de bits y por tanto el tamaño del archivo o extraer ciertas partes de un audio o canción. FFmpeg no sirve solo para archivos de sonido o música también sirve para <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">realizar conversiones entre formatos de archivos de vídeo</a> o para extraer el audio de un vídeo pero eso quizá sea contenido para otro artículo.</p>
+<p>Si preferimos realizar la conversión mediante una interfaz gráfica podemos usar VLC que también nos servirá para hacer la conversión tanto en Windows como en Mac OS además de GNU/Linux. Primeramente en el menu <em>Archivo</em> <em>&gt;</em> <em>Convertir</em> añadimos el archivo a convertir a la lista y pulsamos botón <em>Convertir</em>. En el siguiente diálogo seleccionaremos el perfil de salida, en este caso <em>Audio - Vorbis (OGG)</em> y el nombre del archivo de salida, editando el perfil tendremos opción de modificar la tasa de bits del audio, además de la resolución y la posibilidad de aplicar algunos filtros como el normalizador de volumen.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-input_hu2250867cf2480bad20c4da05f9001581_36638_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Conversión audio de MP3 a OGG"><img src="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-input_hu2250867cf2480bad20c4da05f9001581_36638_300x200_fit_box_3.png" width="251" height="200" alt="Conversión audio de MP3 a OGG" title="Conversión audio de MP3 a OGG" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-codec_hu3f1e2cae022b4f12ceb36cb75f1788d7_39144_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Selección de códec"><img src="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-codec_hu3f1e2cae022b4f12ceb36cb75f1788d7_39144_300x200_fit_box_3.png" width="230" height="200" alt="Selección de códec" title="Selección de códec" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-output_hu5148d4e433fe257a28d089c1c58d5350_36618_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Salida de conversión"><img src="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-output_hu5148d4e433fe257a28d089c1c58d5350_36618_300x200_fit_box_3.png" width="216" height="200" alt="Salida de conversión" title="Salida de conversión" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://trac.ffmpeg.org/wiki">Documentación de FFmpeg</a></li>
+<li><a href="http://linuxconfig.org/ffmpeg-audio-format-conversions">FFmpeg audio format conversions</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux" title="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux" class="" loading="lazy">
+                <h3>Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" title="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" class="" loading="lazy">
+                <h3>Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar archivos con EncFS en GNU/Linux" title="Cifrar archivos con EncFS en GNU/Linux" class="" loading="lazy">
+                <h3>Cifrar archivos con EncFS en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" title="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" class="" loading="lazy">
+                <h3>Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/01/hemeroteca-8/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
+                <h3>Hemeroteca #8</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/06/hemeroteca-7/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #7" title="Hemeroteca #7" class="" loading="lazy">
+                <h3>Hemeroteca #7</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-134';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2016\/03\/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

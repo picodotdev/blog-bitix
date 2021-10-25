@@ -1,0 +1,653 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Integración de servicios y sistemas con Apache Camel</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/" hreflang="es" title="Integración de servicios y sistemas con Apache Camel">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/index-amp.html" hreflang="es" title="Integración de servicios y sistemas con Apache Camel">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Integración de servicios y sistemas con Apache Camel">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-camel-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-camel-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Integración de servicios y sistemas con Apache Camel">
+<meta name="twitter:description" content="Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/"
+    },
+    "headline": "Integración de servicios y sistemas con Apache Camel",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apache-camel-750.png"
+        
+      },
+    "datePublished": "2021-08-05T19:00:00+02:00",
+    "dateModified": "2021-08-05T19:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1726",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Integración de servicios y sistemas con Apache Camel</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>05/08/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Apache Camel es una librería específica para realizar tareas de integración que ya proporciona e implementa múltiples protocolos de comunicación, formatos de datos, componentes y patrones de integración. Ya tiene implementada toda esta funcionalidad que no hay que implementar en el caso de una aplicación con código propio. Al ser una librería es posible integrarlo en cualquier tipo de aplicación, en el artículo se muestra cómo utilizarlo en una aplicación de Spring Boot en un ejemplo.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/apache-camel.svg" width="200" height="200" alt="Apache Camel" title="Apache Camel" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Las empresas y organizaciones con cierta cantidad de años de vida con mucha probabilidad tiene una gran cantidad de servicios y sistemas con diferentes tecnologías, protocolos de comunicación y formatos de datos. Algunos de esos servicios y sistemas también tendrán varios años de vida, de entre ellos habrá alguno que ya puede ser considerado como obsoleto por la tecnología que utiliza, que ya no recibe soporte de nuevas características y solo es modificado en caso tareas de mantenimiento o en caso de un problema grave de seguridad. Estos servicios heredados aún con su antigüedad siguen siendo importantes por el servicio que prestan.</p>
+<p>Sustituir esos servicios o sistemas heredados por otros nuevos a veces no es lo más adecuado ya que intervienen otros factores como el coste de tiempo requerido para desarrollar los nuevos sistemas que reemplacen a los antiguos, el coste económico, la disponibilidad de trabajadores que lo hagan y también por fiabilidad, cambiar un sistema con sus defectos y limitaciones pero que funciona por uno nuevo que no estará exento de sus propios problemas y defectos es un riesgo para el servicio prestado.</p>
+<p>En vez de sustituir servicios y sistemas por unos nuevos una opción que se suele utilizar es proporcionar una integración. <a href="https://camel.apache.org/">Apache Camel</a> es una herramienta específica para realizar tareas de integración, que también se puede utilizar aún cuando no sea para un servicio o sistema heredado.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-librería-apache-camel">La librería Apache Camel</a>
+      <ul>
+        <li><a href="#conceptos-de-apache-camel">Conceptos de Apache Camel</a></li>
+        <li><a href="#patrones-de-integración">Patrones de integración</a></li>
+      </ul>
+    </li>
+    <li><a href="#ejemplo-básico-con-apache-camel">Ejemplo básico con Apache Camel</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="la-librería-apache-camel">La librería Apache Camel</h3>
+<p>Apache Camel es una librería ligera destinada a realizar tareas de integración entre servicios y sistemas. La de utilizar esta librería sobre realizar una integración con código propio específico para cada integración es que Apache Camel ya proporciona una buena cantidad de funcionalidades sin necesidad de tener que implementarlas.</p>
+<p>A diferencia de las herramientas <em>Enterprise Service Bus</em> o ESB que también sin utilizadas para realizar tareas de integración entre sistemas heterogéneos y que suelen ser herramientas grandes y pesadas, Apache Camel es simplemente una librería muy ligera que es posible utilizarla embebida dentro de otras aplicaciones, por ejemplo dentro de una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>.</p>
+<p>Apache Camel soporta multitud de protocolos de comunicación como HTTP, FTP o JMS, formatos de datos como JSON, XML o CSV e  integración con servicios como AWS, <a href="https://www.consul.io/">Consul</a> o Twitter entre muchos otros. También ya tiene implementados multitud de patrones de integración como <em>choice</em>, <em>filter</em>, <em>muticast</em>, <em>circuit breaker</em> o <em>bulkhead</em>. Otra de sus funcionalidades es que soporta realizar pruebas unitarias.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1617292931&amp;linkId=cb1717df1c060bb1b5abc52dbef1eca4" title="Amazon" class="lozad"></iframe>
+</div>
+<h4 id="conceptos-de-apache-camel">Conceptos de Apache Camel</h4>
+<p>Apache Camel utiliza varios conceptos. La integración o funcionalidades desarrolladas se modelan como un flujo, ruta o <em>route</em> que comienza a partir de un origen o <em>consumer</em> y se envía a un destino o <em>producer</em>. En este flujo se tratan mensajes o <em>Exchange</em> que contiene además de los datos del mensaje o <em>payload</em> metadatos como cabeceras asociadas. En los diferentes pasos del flujo el <em>Exchange</em> puede sufrir transformaciones con los procesadores o <em>processor</em> y en el que se aplican los diferentes patrones de integración o <em>integration patterns</em>.</p>
+<p>Una parte importante de Apache Camel que lo hacen fácil de utilizar son los <em>endpoints</em> que son URLs compuestas de un esquema, contexto y opciones. Un ejemplo de endpoint es el siguiente del <a href="https://camel.apache.org/components/latest/rabbitmq-component.html">componente RabbitMQ</a> <em>rabbitmq:exchange</em>  para tomar como fuente o destino colas de mensajes o del <a href="https://camel.apache.org/components/latest/file-component.html">componente File</a> <em>file:misc/</em> para el sistema de archivos.</p>
+<p>Los flujos se modelan con un lenguaje de dominio específico o DSL ya sea definiéndolo con código Java o en un archivo con formato XML. Al utilizar código Java se gana el soporte del entorno integrado de desarrollo, asistencia de código y detección de errores de compilación.</p>
+<p>Al igual que en una aplicación de Spring existe el <em>ApplicationContext</em>, Apache Camel posee un contexto a modo de registro con todos los objetos de la instancia de Camel.</p>
+<p>La colección de componentes de Apache Camel es muy numerosa.</p>
+<ul>
+<li><a href="https://camel.apache.org/components/latest/index.html">Componentes de Apache Camel</a></li>
+<li><a href="https://camel.apache.org/components/latest/others/index.html">Otros componentes de Apache Camel</a></li>
+<li><a href="https://camel.apache.org/components/latest/languages/index.html">Lenguajes de expresiones de Apache Camel</a></li>
+</ul>
+<p>Los formatos de datos que soporta también son muy numerosos.</p>
+<ul>
+<li><a href="https://camel.apache.org/components/latest/dataformats/index.html">Formatos de datos soportados por Apache Camel</a></li>
+</ul>
+<p>También soporta los patrones de integración identificados en el libro <a href="https://amzn.to/2WQDe4G" rel="sponsored">Enterprise Integration Patterns</a> que ya han demostrado su utilidad para solventar y simplificar los problemas a los que están dirigidos.</p>
+<ul>
+<li><a href="https://camel.apache.org/components/latest/eips/enterprise-integration-patterns.html">Patrones de integración de Apache Camel</a></li>
+</ul>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=0321127420&amp;linkId=69d583b77830660c9d50944e53b68bba" title="Amazon" class="lozad"></iframe>
+</div>
+<h4 id="patrones-de-integración">Patrones de integración</h4>
+<p>Algunos de los patrones básicos que soporta Apache Camel son <em>choice</em> para elegir rutas alternativas a las que dirigir los mensajes, <em>filter</em> para descartar los mensajes que no cumplan alguna condición, <em>multicast</em> para enviar un mensaje a varios destinos, <em>recipient list</em> para enviar a varios destinos de forma dinámica o <em>wire tap</em> para inspeccionar los mensajes sin alterar su flujo normal. Esos son solo unos pocos patrones de integración soportados.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/cbr_hude13fffaa071662f46f08204add6171c_157267_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrón content based router"><img src="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/cbr_hude13fffaa071662f46f08204add6171c_157267_300x200_fit_box_3.png" width="300" height="170" alt="Patrón content based router" title="Patrón content based router" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/filter_huec8a80dae92d65565612a9861fe50161_94532_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="patrón filter"><img src="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/filter_huec8a80dae92d65565612a9861fe50161_94532_300x200_fit_box_3.png" width="300" height="75" alt="patrón filter" title="patrón filter" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/multicast_hu64a2479ccdd2c53f49dc9cc7948c65f9_84152_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrón multicast"><img src="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/multicast_hu64a2479ccdd2c53f49dc9cc7948c65f9_84152_300x200_fit_box_3.png" width="300" height="123" alt="Patrón multicast" title="Patrón multicast" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/recipient-list_hu8698312e922ca0ff2bb69b3cf9350d61_118429_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrón recipient list"><img src="/blog-bitix/2021/08/integracion-de-servicios-y-sistemas-con-apache-camel/images/recipient-list_hu8698312e922ca0ff2bb69b3cf9350d61_118429_300x200_fit_box_3.png" width="300" height="160" alt="Patrón recipient list" title="Patrón recipient list" class="" loading="lazy"></a></p>
+<figcaption>Diferentes patrones de integración</figcaption>
+</figure>
+</div>
+<h3 id="ejemplo-básico-con-apache-camel">Ejemplo básico con Apache Camel</h3>
+<p>Apache Camel al ser una librería es muy fácil de integrarlo en cualquier tipo de aplicación, en este ejemplo se utiliza Spring Boot. El ejemplo consiste en dos rutas, una que simplemente muestra en la salida los mensajes que se envía, la otra ruta lee los archivos CSV de un directorio que contienen listas de productos en diferentes columnas, filtra los productos que no tienen un importe superior a una cantidad, los transforma y les añade el IVA y finalmente los muestra en la salida, cada vez que en el directorio se añade un CSV se procesa.</p>
+<p>Esta es la definición de varias rutas con su DSL en código Java que se definen en las clases que implementan la interfaz <em>RouteBuilder</em>, utilizando Spring definiéndose como un componente son añadidos de forma automática al contexto de Apache Camel. En la ruta <em>HelloWorldRoute</em> simplemente tomo como fuente lo que llega al <em>endpoint</em> de nombre <em>direct:helloworld</em> y lo dirige a la salida del sistema con <em>stream:out</em> sin ningún procesamiento adicional entre el origen y el destino.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.holamundoapachecamel</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.builder.RouteBuilder</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorldRoute</span> <span class="kd">extends</span> <span class="n">RouteBuilder</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">from</span><span class="o">(</span><span class="s">&#34;direct:helloworld&#34;</span><span class="o">).</span><span class="na">routeId</span><span class="o">(</span><span class="s">&#34;helloworld&#34;</span><span class="o">).</span><span class="na">to</span><span class="o">(</span><span class="s">&#34;stream:out&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>HelloWorldRoute.java</span>
+    </div>
+</div>
+<p>Al inicio del programa se envía al consumidor de la ruta <em>helloworld</em> diez <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/UUID.html">UUID</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.holamundoapachecamel</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.util.UUID</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.stream.IntStream</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.ProducerTemplate</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.ApplicationArguments</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.ApplicationRunner</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">ApplicationRunner</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">ProducerTemplate</span> <span class="n">producerTemplate</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">ApplicationArguments</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">10</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">producerTemplate</span><span class="o">.</span><span class="na">sendBody</span><span class="o">(</span><span class="s">&#34;direct:helloworld&#34;</span><span class="o">,</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<p>La siguiente ruta es algo más compleja y muestra varias de las capacidades de Apache Camel. Monitoriza un directorio con un archivo en formato CSV, cuando este se crea o está presente al iniciar la aplicación la ruta lo toma como fuente de datos e inicia su procesamiento en el flujo.</p>
+<p>Primeramente se procesan los datos transformándolos en objetos Java de tipo <em>Book</em> que son simplemente objetos POJO con una propiedad por cada columna del CSV. Al procesar los datos se obtiene una lista de objetos de tipo Book, con la operación <em>split</em>, la lista de divide en objetos individuales en el flujo.</p>
+<p>Posteriormente, se aplica una condición sobre los objetos, según si el objeto cumple la condición o no se envían a un destino u otro. Según el destino al que están dirigidos se establece un con una cabecera que se transmiten como metadato al mismo tiempo que los datos.</p>
+<p>Finalmente, los mensajes llegan al destino <em>direct:books-stream-out</em>, se aplica un filtro sobre la cabecera anterior, si la cumple se aplica un procesamiento al mensaje para aplicar el IVA sobre el precio del libro y una transformación que cambia el tipo del mensaje de <em>Book</em> a una cadena <em>String</em>, para terminar la cadena se envía a <em>stream:out</em> para imprimirlo en la salida de la aplicación.</p>
+<p>Una vez procesado el CSV con éxito Apache Camel lo mueve a una carpeta oculta <em>.camel</em>, si el mismo archivo es vuelto a copiar en la capeta se procesa de nuevo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.holamundoapachecamel</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.math.BigDecimal</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.Exchange</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.Processor</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.builder.PredicateBuilder</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.builder.RouteBuilder</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.model.dataformat.BindyType</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BooksRoute</span> <span class="kd">extends</span> <span class="n">RouteBuilder</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">from</span><span class="o">(</span><span class="s">&#34;file:misc/&#34;</span><span class="o">).</span><span class="na">routeId</span><span class="o">(</span><span class="s">&#34;books-file&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">unmarshal</span><span class="o">().</span><span class="na">bindy</span><span class="o">(</span><span class="n">BindyType</span><span class="o">.</span><span class="na">Csv</span><span class="o">,</span> <span class="n">Book</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="n">body</span><span class="o">())</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">choice</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">when</span><span class="o">(</span><span class="n">simple</span><span class="o">(</span><span class="s">&#34;${body.price} &lt; 30&#34;</span><span class="o">)).</span><span class="na">to</span><span class="o">(</span><span class="s">&#34;direct:books-cheap&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">otherwise</span><span class="o">().</span><span class="na">to</span><span class="o">(</span><span class="s">&#34;direct:books-expensive&#34;</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">from</span><span class="o">(</span><span class="s">&#34;direct:books-cheap&#34;</span><span class="o">).</span><span class="na">routeId</span><span class="o">(</span><span class="s">&#34;books-cheap&#34;</span><span class="o">).</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="n">constant</span><span class="o">(</span><span class="s">&#34;cheap&#34;</span><span class="o">)).</span><span class="na">to</span><span class="o">(</span><span class="s">&#34;direct:books-stream-out&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">from</span><span class="o">(</span><span class="s">&#34;direct:books-expensive&#34;</span><span class="o">).</span><span class="na">routeId</span><span class="o">(</span><span class="s">&#34;books-expensive&#34;</span><span class="o">).</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="n">constant</span><span class="o">(</span><span class="s">&#34;expensive&#34;</span><span class="o">)).</span><span class="na">to</span><span class="o">(</span><span class="s">&#34;direct:books-stream-out&#34;</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">from</span><span class="o">(</span><span class="s">&#34;direct:books-stream-out&#34;</span><span class="o">).</span><span class="na">routeId</span><span class="o">(</span><span class="s">&#34;books-stream-out&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">header</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="s">&#34;cheap&#34;</span><span class="o">))</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="k">new</span> <span class="n">VatProcessor</span><span class="o">())</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">transform</span><span class="o">(</span><span class="n">simple</span><span class="o">(</span><span class="s">&#34;${body.title} at only ${body.price} €&#34;</span><span class="o">))</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">&#34;stream:out&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">class</span> <span class="nc">VatProcessor</span> <span class="kd">implements</span> <span class="n">Processor</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span><span class="o">(</span><span class="n">Exchange</span> <span class="n">exchange</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Book</span> <span class="n">book</span> <span class="o">=</span> <span class="o">(</span><span class="n">Book</span><span class="o">)</span> <span class="n">exchange</span><span class="o">.</span><span class="na">getMessage</span><span class="o">().</span><span class="na">getBody</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BigDecimal</span> <span class="n">priceWithVat</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="na">getPrice</span><span class="o">().</span><span class="na">multiply</span><span class="o">(</span><span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="s">&#34;1.04&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">book</span><span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="n">priceWithVat</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>BooksRoute.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.holamundoapachecamel</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.math.BigDecimal</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.dataformat.bindy.annotation.CsvRecord</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.apache.camel.dataformat.bindy.annotation.DataField</span><span class="o">;</span>&#10;&#10;<span class="nd">@CsvRecord</span><span class="o">(</span><span class="n">separator</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="o">,</span> <span class="n">crlf</span> <span class="o">=</span> <span class="s">&#34;UNIX&#34;</span><span class="o">)</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@DataField</span><span class="o">(</span><span class="n">pos</span> <span class="o">=</span> <span class="n">1</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@DataField</span><span class="o">(</span><span class="n">pos</span> <span class="o">=</span> <span class="n">2</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">url</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@DataField</span><span class="o">(</span><span class="n">pos</span> <span class="o">=</span> <span class="n">3</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">BigDecimal</span> <span class="n">price</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">title</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getUrl</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">url</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUrl</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">BigDecimal</span> <span class="nf">getPrice</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">price</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPrice</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">price</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Book.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">The DevOps Handbook,https://www.amazon.es/DevOPS-Handbook-World-Class-Reliability-Organizations/dp/1942788002/,23&#10;The Phoenix Project,https://www.amazon.es/Phoenix-Project-Devops-Helping-Business/dp/1942788290/,25&#10;The Unicorn Project,https://www.amazon.es/Unicorn-Project-Developers-Disruption-Thriving/dp/1942788762/,24&#10;Site Reliability Engineering,https://www.amazon.es/Site-Reliability-Engineering-Betsy-Beyer/dp/149192912X/,43</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>books.csv</span>
+    </div>
+</div>
+<p>Esta es la salida del programa.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">  .   ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__ _ _&#10; /\\ / ___&#39;_ __ _ _(_)_ __  __ _ \ \ \ \&#10;( ( )\___ | &#39;_ | &#39;_| | &#39;_ \/ _` | \ \ \ \&#10; \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;  &#39;  |____| .__|_| |_|_| |_\__, | / / / /&#10; =========|_|==============|___/=/_/_/_/&#10; :: Spring Boot ::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v2.5.3)&#10;&#10;2021-08-05 20:38:55.887  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.holamundoapachecamel.Main&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Starting Main using Java 11.0.10 on archlinux with PID 13543 (/home/picodotdev/Documentos/Software/personal/blog-ejemplos/HolaMundoApacheCamel/app/build/classes/java/main started by picodotdev in /home/picodotdev/Documentos/Software/personal/blog-ejemplos/HolaMundoApacheCamel/app)&#10;2021-08-05 20:38:55.889  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.holamundoapachecamel.Main&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: No active profile set, falling back to default profiles: default&#10;2021-08-05 20:38:57.146  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running&#10;2021-08-05 20:38:57.155  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup summary (total:5 started:5)&#10;2021-08-05 20:38:57.156  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] o.a.c.impl.engine.AbstractCamelContext   :&nbsp;&nbsp;&nbsp;&nbsp; Started books-file (file://misc/)&#10;2021-08-05 20:38:57.156  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] o.a.c.impl.engine.AbstractCamelContext   :&nbsp;&nbsp;&nbsp;&nbsp; Started books-cheap (direct://books-cheap)&#10;2021-08-05 20:38:57.156  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] o.a.c.impl.engine.AbstractCamelContext   :&nbsp;&nbsp;&nbsp;&nbsp; Started books-expensive (direct://books-expensive)&#10;2021-08-05 20:38:57.156  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] o.a.c.impl.engine.AbstractCamelContext   :&nbsp;&nbsp;&nbsp;&nbsp; Started books-stream-out (direct://books-stream-out)&#10;2021-08-05 20:38:57.156  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] o.a.c.impl.engine.AbstractCamelContext   :&nbsp;&nbsp;&nbsp;&nbsp; Started helloworld (direct://helloworld)&#10;2021-08-05 20:38:57.156  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.11.0 (camel-1) started in 234ms (build:31ms init:190ms start:13ms)&#10;2021-08-05 20:38:57.161  INFO 13543 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.holamundoapachecamel.Main&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Started Main in 1.629 seconds (JVM running for 1.958)&#10;26723c08-c1dc-4459-9afa-4a746cad97c8&#10;31e93fa7-9df8-45fa-9852-36deb677b505&#10;f629d26d-396a-4db9-a88e-6f072cde7abe&#10;1c2593e8-09e3-4dcd-becb-9fd6053f5bde&#10;79087761-6d61-4dfa-8a9b-acd6ad83389f&#10;a77b1048-3ea1-46cb-b427-1d5b92d556f6&#10;7e45f1e9-5725-4514-b3cf-cfbf3a406c9a&#10;17e0999a-4d0f-4724-ab14-dd655b7bb991&#10;e999a300-d1c2-4911-8d8f-1f0ad575e4e6&#10;f5b3fb7c-1e22-405b-991b-978bd2e8134f&#10;The DevOps Handbook at only 23.92 €&#10;The Phoenix Project at only 26.00 €&#10;The Unicorn Project at only 24.96 €</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<p>Para su ejecución se utiliza la herramienta de construcción <a href="https://gradle.org/">Gradle</a> con el siguiente archivo donde se definen las dependencias del proyecto. La librería de Apache Camel para Spring Boot proporciona la funcionalidad de la que la aplicación se mantenga en funcionamiento tal como ocurre cuando se utiliza la dependencia de Spring para desarrollar aplicaciones web.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-dependencies:2.5.3&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s1">&#39;org.apache.camel.springboot:camel-spring-boot-bom:3.11.0&#39;</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.springframework.boot:spring-boot-starter&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.apache.camel.springboot:camel-spring-boot-starter&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.apache.camel:camel-stream:3.11.0&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.apache.camel:camel-bindy:3.11.0&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.apache.camel:camel-csv:3.11.0&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.holamundoapachecamel.Main&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoApacheCamel">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock" title="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock" class="" loading="lazy">
+                <h3>Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Formas de generar un número aleatorio en un rango con Java" title="Formas de generar un número aleatorio en un rango con Java" class="" loading="lazy">
+                <h3>Formas de generar un número aleatorio en un rango con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" title="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" class="" loading="lazy">
+                <h3>Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/07/como-documentar-una-api-rest-con-swagger-implementada-con-spring-boot/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo documentar una API REST con Swagger implementada con Spring Boot" title="Cómo documentar una API REST con Swagger implementada con Spring Boot" class="" loading="lazy">
+                <h3>Cómo documentar una API REST con Swagger implementada con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_875x0_resize_box_3.png" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java" title="Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java" class="" loading="lazy">
+                <h3>Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-590';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/08\/integracion-de-servicios-y-sistemas-con-apache-camel\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

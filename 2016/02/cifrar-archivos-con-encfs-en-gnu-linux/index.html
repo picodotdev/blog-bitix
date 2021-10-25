@@ -1,0 +1,591 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Hacer copias de seguridad es una buena práctica para evitar perder información en caso de que por ejemplo un disco duro se nos estropee. Cifrar la información o al menos parte de ella como las contraseñas (si las guardamos en un archivo de texto) también es una buena práctica por si perdemos una memoria USB, nos roban en un lugar público o en nuestro domicilio un disco duro o un portátil o los extraviamos en algún viaje. Una forma sencilla para proteger su contenido cifrando múltiples archivos es EncFS. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cifrar archivos con EncFS en GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/" hreflang="es" title="Cifrar archivos con EncFS en GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/index-amp.html" hreflang="es" title="Cifrar archivos con EncFS en GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cifrar archivos con EncFS en GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Hacer copias de seguridad es una buena práctica para evitar perder información en caso de que por ejemplo un disco duro se nos estropee. Cifrar la información o al menos parte de ella como las contraseñas (si las guardamos en un archivo de texto) también es una buena práctica por si perdemos una memoria USB, nos roban en un lugar público o en nuestro domicilio un disco duro o un portátil o los extraviamos en algún viaje. Una forma sencilla para proteger su contenido cifrando múltiples archivos es EncFS. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cifrar archivos con EncFS en GNU/Linux">
+<meta name="twitter:description" content="Hacer copias de seguridad es una buena práctica para evitar perder información en caso de que por ejemplo un disco duro se nos estropee. Cifrar la información o al menos parte de ella como las contraseñas (si las guardamos en un archivo de texto) también es una buena práctica por si perdemos una memoria USB, nos roban en un lugar público o en nuestro domicilio un disco duro o un portátil o los extraviamos en algún viaje. Una forma sencilla para proteger su contenido cifrando múltiples archivos es EncFS. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/"
+    },
+    "headline": "Cifrar archivos con EncFS en GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png"
+        
+      },
+    "datePublished": "2016-02-19T20:00:00+01:00",
+    "dateModified": "2016-02-22T21:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "647",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Hacer copias de seguridad es una buena práctica para evitar perder información en caso de que por ejemplo un disco duro se nos estropee. Cifrar la información o al menos parte de ella como las contraseñas (si las guardamos en un archivo de texto) también es una buena práctica por si perdemos una memoria USB, nos roban en un lugar público o en nuestro domicilio un disco duro o un portátil o los extraviamos en algún viaje. Una forma sencilla para proteger su contenido cifrando múltiples archivos es EncFS."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Cifrar archivos con EncFS en GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>19/02/2016</time>, actualizado el <time>22/02/2016</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Hacer copias de seguridad es una buena práctica para evitar perder información en caso de que por ejemplo un disco duro se nos estropee. Cifrar la información o al menos parte de ella como las contraseñas (si las guardamos en un archivo de texto) también es una buena práctica por si perdemos una memoria USB, nos roban en un lugar público o en nuestro domicilio un disco duro o un portátil o los extraviamos en algún viaje. Una forma sencilla para proteger su contenido cifrando múltiples archivos es EncFS.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>Nuestros datos es una de las cosas más importantes que podemos perder o nos pueden robar, más que el dispositivo que los contiene ya que este es fácilmente reemplazable no así los datos. La pérdida de datos puede ser porque se nos ha estropeado el disco duro y ha quedado completamente inaccesible, para evitar la pérdida de datos conviene <a href="https://elblogdepicodev.blogspot.com.es/2013/05/copia-de-seguridad-con-rsync.html">realizar copias de seguridad</a> regularmente de las que recuperar los datos perdidos en caso de necesidad. También nos puede ocurrir que perdamos una memoria USB o peor aún nos roben en nuestro propio domicilio y nos extraigan entre otras cosas el portátil o un disco duro. Los productos de electrónica son objetivos apreciados por los ladrones por su valor, por su demanda que los hacen fácilmente colocables en el mercado y por su poco volumen.</p>
+<p>En GNU/Linux podemos proteger nuestros datos de múltiples formas de una memoria USB, de un portátil o disco duro externo. Una de ellas es <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">cifrando completamente el sistema de archivos</a> con lo que todos los datos que contuviese estarán protegidos. Otra forma es <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">cifrar ciertos archivos con información sensible con GPG</a> como contraseñas, una solución menos invasiva y más compatible con otros sistemas que cifrar completamente el sistema de archivos, no muy complicada pero en la que debemos cifrar cada archivo individualmente. Para evitar cifrar/descifrar cada archivo individualmente y manualmente con GPG podemos usar <a href="https://wiki.archlinux.org/index.php/EncFS">EncFS</a>. EncFS es un sistema de archivos que podemos montar y cifrará el contenido de todos los archivos que incluyamos en él.</p>
+<p>Con EncFS el contenido de los archivos y sus nombres serán cifrados aunque su tamaño, fechas de modificación y estructura de carpetas seguirá siendo visible. Aunque sin sus nombres originales el tamaño, fechas y estructura de carpetas ya es algo indicativo y por tanto para algunas necesidades no es suficiente la seguridad que proporciona.</p>
+<p>Para usar EncFS debemos instalar su paquete, en <a href="https://www.archlinux.org/">Arch Linux</a> con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S encfs&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman.sh</span>
+    </div>
+</div>
+<p>Instalado el paquete y con el comando <code>encfs</code> indicamos el directorio donde se almacenará el sistema de archivos cifrado y el directorio donde EncFS montará el sistema de archivos sin cifrar, la primera vez que lo usemos nos pedirá la contraseña con la que el sistema de archivos se cifrará que deberemos recordar ya que nos la pedirá cada vez que montemos el sistema de archivos cifrado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ encfs -f <span class="o">[</span>directorio cifrado<span class="o">]</span> <span class="o">[</span>directorio montaje <span class="o">(</span>sin cifrar<span class="o">)]</span>&#10;$ encfs -f cifrado/ descifrado/&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>encfs.sh</span>
+    </div>
+</div>
+<div class="media">
+<script type="text/javascript" src="https://asciinema.org/a/36852.js" id="asciicast-36852" async></script>
+<noscript><a href="https://asciinema.org/a/36852" target="_blank"><img src="https://asciinema.org/a/36852.png" width="650" height="450"></a></noscript>
+</div>
+<p>Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-descifrados_huee92fa96ad94c91ffbc0e14d64d1dc98_27549_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sistema de archivos montado y descifrado"><img src="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-descifrados_huee92fa96ad94c91ffbc0e14d64d1dc98_27549_300x200_fit_box_3.png" width="300" height="183" alt="Sistema de archivos montado y descifrado" title="Sistema de archivos montado y descifrado" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<p>La opción <em>-f</em> sirve para usar EncFS en primer plano, si lo usamos de esta forma se quedará esperando hasta que lo finalicemos con <em>Ctrl-C</em> momento en el que desmontará automáticamente la unidad. Cuando queramos desmontar el sistema de archivos otra opción es el siguiente comando:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ fusermount -u <span class="o">[</span>directorio sin cifrar<span class="o">]</span>&#10;$ fusermount -u descifrado/&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>fusermount.sh</span>
+    </div>
+</div>
+<p>Montado el sistema de archivos en primer o segundo plano podremos trabajar con los archivos normalmente y EncFS irá cifrando su contenido y nombres de archivos de forma transparente en el directorio de archivos cifrados. Añadiendo algún archivo este podría ser el contenido del directorio de archivos cifrados.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-cifrados_hu939c6f6be665dd7f1e1b685686a6e1d9_39233_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sistema de archivos cifrado"><img src="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/sistema-archivos-cifrados_hu939c6f6be665dd7f1e1b685686a6e1d9_39233_300x200_fit_box_3.png" width="300" height="183" alt="Sistema de archivos cifrado" title="Sistema de archivos cifrado" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<p>Por supuesto, el contenido de un archivo cifrado será completamente ininteligible consiguiendo nuestro objetivo de que nuestros datos estén a salvo y protegidos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-descifrado_hucd51b3d9b2fe9c447c54add6d3810a5f_16415_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Contenido de un archivo de texto"><img src="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-descifrado_hucd51b3d9b2fe9c447c54add6d3810a5f_16415_300x200_fit_box_3.png" width="300" height="127" alt="Contenido de un archivo de texto" title="Contenido de un archivo de texto" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-cifrado_huf84c944abe6cc268efe4e0c6b6d2ca4e_23212_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Contenido del archivo de texto cifrado"><img src="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/images/contenido-archivo-cifrado_huf84c944abe6cc268efe4e0c6b6d2ca4e_23212_300x200_fit_box_3.png" width="300" height="127" alt="Contenido del archivo de texto cifrado" title="Contenido del archivo de texto cifrado" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<p>En el <a href="https://wiki.archlinux.org/index.php/EncFS">artículo de EncFS de la wiki de Arch Linux</a> está muy bien explicado con alguna información más sobre esta forma de proteger la preciada información personal que poseemos en diversas formas de documentos, imágenes, fotos, vídeos, música y otros formatos.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">Cómo eliminar de forma segura archivos con wipe en GNU/Linux</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/EncFS">Artículo de EncFS de la wiki de Arch Linux</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" title="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" class="" loading="lazy">
+                <h3>Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/01/hemeroteca-8/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
+                <h3>Hemeroteca #8</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/06/hemeroteca-7/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #7" title="Hemeroteca #7" class="" loading="lazy">
+                <h3>Hemeroteca #7</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">
+                <img src="/blog-bitix/assets/images/logotypes/drupal.svg" width="326" height="125" alt="Introducción e inicio a Drupal" title="Introducción e inicio a Drupal" class="" loading="lazy">
+                <h3>Introducción e inicio a Drupal</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">
+                <img src="/blog-bitix/assets/images/logotypes/redmine.png" width="326" height="125" alt="Instalar y usar un plugin ágil en Redmine" title="Instalar y usar un plugin ágil en Redmine" class="" loading="lazy">
+                <h3>Instalar y usar un plugin ágil en Redmine</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/12/hemeroteca-6/">
+                <img src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Hemeroteca #6" title="Hemeroteca #6" class="" loading="lazy">
+                <h3>Hemeroteca #6</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-126';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2016\/02\/cifrar-archivos-con-encfs-en-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

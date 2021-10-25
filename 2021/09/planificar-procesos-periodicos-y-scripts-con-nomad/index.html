@@ -1,0 +1,562 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los pequeños scripts aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos scripts el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del cluster ya sea como procesos del sistema o dentro de contenedores. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Planificar procesos periódicos y scripts con Nomad</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/" hreflang="es" title="Planificar procesos periódicos y scripts con Nomad">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/index-amp.html" hreflang="es" title="Planificar procesos periódicos y scripts con Nomad">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Planificar procesos periódicos y scripts con Nomad">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los pequeños scripts aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos scripts el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del cluster ya sea como procesos del sistema o dentro de contenedores. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Planificar procesos periódicos y scripts con Nomad">
+<meta name="twitter:description" content="Los pequeños scripts aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos scripts el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del cluster ya sea como procesos del sistema o dentro de contenedores. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/"
+    },
+    "headline": "Planificar procesos periódicos y scripts con Nomad",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-nomad-750.png"
+        
+      },
+    "datePublished": "2021-09-23T19:00:00+02:00",
+    "dateModified": "2021-09-23T19:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1174",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los pequeños scripts aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos scripts el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del cluster ya sea como procesos del sistema o dentro de contenedores."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Planificar procesos periódicos y scripts con Nomad</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>23/09/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los pequeños <em>scripts</em> aún con su pequeña función específica, sus pocas líneas de código y breves instantes de ejecución limitados a segundos, minutos u pocas horas al día o a la semana realizan tareas importantes dentro de todas las tares de las que se compone un sistema computacional completo. Al igual que cualquier otro proceso requieren de un entorno de ejecución pero dada su naturaleza breve hace que dedicar una máquina reservada que estará infrautilizada en exclusiva para ellos sea ineficiente además de un coste en la infraestructura. En vez de dedicar una máquina en exclusiva para uno o unos pocos <em>scripts</em> el orquestador de procesos Nomad permite planificarlos en alguna de las instancias de computación existentes del <em>cluster</em> ya sea como procesos del sistema o dentro de contenedores.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false"></p>
+</div>
+<p>Con mucha seguridad surge la necesidad de ejecutar de forma periódica un pequeño proceso o <em>script</em> completamente autónomo con el que no interacciona ningún usuario o administrador pero realiza una función esencial para el funcionamiento de una aplicación u organización. Las funciones o tareas de los <em>scripts</em> son muy diversas desde <a href="https://picodotdev.github.io/blog-bitix/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/">generar informes en formato CSV</a> o <a href="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/">generador documentos PDF</a> a enviar correos electrónicos, para ello quizá se conecten a bases de datos relacionales o NoSQL o <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">realizar llamadas usando REST a APIs de aplicaciones</a> propias o de otras organizaciones, incluso un <em>script</em> con la complejidad suficiente varias cosas de todo esto.</p>
+<p>Los lenguajes habitualmente usados para realizar tareas de <em>scripting</em> son dinámicos e interpretados por no requerir ser compilados y ejecutables desde el código fuente. En la plataforma Java una opción como lenguaje de <em>scripting</em> es <a href="https://www.groovy-lang.org/">Groovy</a> y en otros lenguajes son propio intérprete de comandos  <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> o <a href="https://www.python.org/">Python</a>, aunque <a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/">el lenguaje Java con JBang o Gradle es una opción para realizar tareas de <em>scripting</em></a> con las ventajas de ser un lenguaje compilado con la asistencia de código de los entornos integrados de desarrollo o IDE.</p>
+<p>Una vez creado un <em>script</em> este ha de ser ejecutado en un sistema, dependiendo de las dependencias como fuentes de datos que tenga el <em>script</em> la ejecución se puede realizar de forma manual en la propia computadora de un usuario o desarrollador. Por el contrario, como cualquier otra aplicación requiere su propio entorno de ejecución en producción, la forma más simple con una expresión <em>cron</em> como un proceso del sistema habiendo aprovisionado previamente el entorno y las dependencias necesarias del mismo. Otra propiedad de muchos <em>scripts</em> es que su tiempo de ejecución no es continuo durando unos pocos minutos u alguna hora realizan su atarea y terminan hasta la siguiente ejecución, al contrario que las aplicaciones con funciones de servidor que están continuamente funcionado por si algún cliente se conecta. En función de las necesidades del <em>script</em> su ejecución se planifica con <a href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">una expresión cron cada minuto, hora, día o una vez a la semana</a>.</p>
+<h3 id="ejemplo-de-planificar-procesos-o-_scripts_-de-forma-periódica-con-nomad">Ejemplo de planificar procesos o <em>scripts</em> de forma periódica con Nomad</h3>
+<p>Una de las ventajas de la computación en la nube es poder crear máquinas virtuales cuando se necesitan y destruirlas cuando ya no son necesarias, de forma rápida y bajo demanda. Los contenedores permiten ejecutar procesos en cualquier máquina que soporte para la ejecución de contenedores, esto permite que un proceso no dependa de una máquina física o virtual en concreto.</p>
+<p><a href="https://www.nomadproject.io/">Nomad</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> es un orquestador de procesos y contenedores, en lo relativo al tema de este artículo permite planificar no solo tareas para mantenerse en ejecución de forma constante e indefinida sino también <a href="https://www.nomadproject.io/docs/job-specification/periodic">planificar una tarea de forma periódica y temporal</a>. Una ventaja de Nomad sobre una opción alternativa como <a href="https://kubernetes.io/">Kuberntes</a> es que permite planificar no solo <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">contenedores de Docker</a> sino también contenedores <a href="https://podman.io/">Podman</a> o procesos del sistema a partir de comandos existentes en el mismo. Otra ventaja de Nomad es que es simplemente un orquestador de procesos de fácil instalación y uso al constar de únicamente un binario, se integra con otras herramientas como <a href="https://www.consul.io/">Consul</a> para el registro y descubrimiento y conectividad y <a href="https://www.vaultproject.io/">Vault</a> para seguridad.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a></li>
+</ul>
+<p>Desde luego crear una infraestructura basada en un <em>cluster</em> de servidores Nomad para planificar un <em>script</em> es un esfuerzo innecesario teniendo en cuenta que la opción de una máquina con un <em>cron</em> es más sencillo. Sin embargo, a poco complejo que sea un entorno para prestar un servicio que conste de más de una decena de instancias computacionales, la opción del <em>cluster</em> de Nomad permite utilizar la misma infraestructura para cualquier tipo de carga de trabajo, además siendo una infraestructura con la opción de proporcionar autoservicio permite conseguir algunos de los ideales propuestos de la cultura <em>DevOps</em> y detallados en <a href="https://picodotdev.github.io/blog-bitix/2021/08/the-three-ways-y-the-five-ideals-de-los-libros-the-devops-handbook-the-phoenix-project-y-the-unicorn-project/">The three ways y The five ideals de los libros The DevOps Handbook, The Phoenix Project y The Unicorn Project</a>.</p>
+<p>En este ejemplo se muestran la definición de dos tareas o <em>jobs</em> para Nomad, una como definida como un proceso del sistema a partir de los comandos disponibles en la máquina en la que se ejecuta y otra tarea como un contenedor de Docker. Ambas tareas son lo más simple posible emitiendo únicamente en la salida estándar un mensaje, en el caso del proceso del sistema con el comando <em>echo</em> y en el caso del contenedor con el mismo comando de una imagen de contenedor con <a href="https://www.busybox.net/">BusyBox</a>. En la definición de las tareas de Nomad se planifica su ejecución con una expresión <em>cron</em> cada un minuto.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="k">job</span> <span class="s2">&#34;echo-busybox&#34;</span> {&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;datacenters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;dc1&#34;</span><span class="p">]</span>&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;type</span> <span class="o">=</span> <span class="s2">&#34;batch&#34;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">periodic</span> {&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cron</span> <span class="o">=</span> <span class="s2">&#34;*/1 * * * * *&#34;</span>&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prohibit_overlap</span> <span class="o">=</span> <span class="kt">false</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">group</span> <span class="s2">&#34;echo&#34;</span> {&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;echo&#34;</span> {&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">config</span> {&#10;<span class="n">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image</span> <span class="o">=</span> <span class="s2">&#34;busybox:latest&#34;</span>&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command</span> <span class="o">=</span> <span class="s2">&#34;/bin/echo&#34;</span>&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Hello Word! (busybox)&#34;</span><span class="p">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;}&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>echo-busybox.nomad</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="k">job</span> <span class="s2">&#34;echo-bash&#34;</span> {&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;datacenters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;dc1&#34;</span><span class="p">]</span>&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;type</span> <span class="o">=</span> <span class="s2">&#34;batch&#34;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">periodic</span> {&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cron</span> <span class="o">=</span> <span class="s2">&#34;*/1 * * * * *&#34;</span>&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prohibit_overlap</span> <span class="o">=</span> <span class="kt">false</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">group</span> <span class="s2">&#34;echo&#34;</span> {&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;echo&#34;</span> {&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver</span> <span class="o">=</span> <span class="s2">&#34;raw_exec&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">config</span> {&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command</span> <span class="o">=</span> <span class="s2">&#34;/bin/echo&#34;</span>&#10;<span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Hello Word! (bash)&#34;</span><span class="p">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;}&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>echo-bash.nomad</span>
+    </div>
+</div>
+<p>Nomad y Docker se inician con los siguientes comandos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad agent -dev&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo systemctl start docker.service&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker.sh</span>
+    </div>
+</div>
+<p>Antes de enviar a Nomad las tareas el panel de administración integrado o <em>dashboard</em> permite ver el estado, está disponible en la dirección <em>http://127.0.0.1:4646/ui/</em>, inicialmente sin ninguna tarea planificada, una vez se envían las tareas aparecen en el panel.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hue2652f930d7fc8b9a9c137481a009998_53682_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hue2652f930d7fc8b9a9c137481a009998_53682_650x450_fit_box_3.png" width="600" height="450" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
+<figcaption>Dashboard de Nomad</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_huead3b9d22d7085bb39a7ec8b9e546085_134380_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_huead3b9d22d7085bb39a7ec8b9e546085_134380_300x250_fit_box_3.png" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu1e5faf36df214e07015eacddab62315c_111663_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu1e5faf36df214e07015eacddab62315c_111663_300x250_fit_box_3.png" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
+<figcaption>Dashboard de Nomad</figcaption>
+</figure>
+</div>
+<p>Las tareas se envían a Nomad para su planificación con el siguiente comando, otros comandos permiten ver el estado de las tareas y las trazas que ha generado. Nomad planifica una ejecución de cada tarea según la expresión <em>cron</em> indicada en la definición de los <em>jobs</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad job run echo-busybox.nomad&#10;Job registration successful&#10;Approximate next launch time: 2021-09-23T17:38:00Z <span class="o">(</span>37s from now<span class="o">)</span>&#10;&#10;$ nomad job status echo-busybox&#10;<span class="nv">ID</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">=</span> echo-busybox&#10;<span class="nv">Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> echo-busybox&#10;Submit <span class="nv">Date</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> 2021-09-23T19:37:23+02:00&#10;<span class="nv">Type</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> batch&#10;<span class="nv">Priority</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="m">50</span>&#10;<span class="nv">Datacenters</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> dc1&#10;<span class="nv">Namespace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> default&#10;<span class="nv">Status</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">=</span> running&#10;<span class="nv">Periodic</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="nb">true</span>&#10;<span class="nv">Parameterized</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> <span class="nb">false</span>&#10;Next Periodic <span class="nv">Launch</span> <span class="o">=</span> 2021-09-23T17:39:00Z <span class="o">(</span>1s from now<span class="o">)</span>&#10;&#10;Children Job Summary&#10;Pending  Running  Dead&#10;<span class="m">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">1</span>&#10;&#10;Previously Launched Jobs&#10;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status&#10;echo-busybox/periodic-1632418680  dead&#10;&#10;$ nomad job status echo-busybox/periodic-1632418680&#10;<span class="nv">ID</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> echo-busybox/periodic-1632418680&#10;<span class="nv">Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> echo-busybox/periodic-1632418680&#10;Submit <span class="nv">Date</span>   <span class="o">=</span> 2021-09-23T19:38:00+02:00&#10;<span class="nv">Type</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> batch&#10;<span class="nv">Priority</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> <span class="m">50</span>&#10;<span class="nv">Datacenters</span>   <span class="o">=</span> dc1&#10;<span class="nv">Namespace</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> default&#10;<span class="nv">Status</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> dead&#10;<span class="nv">Periodic</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> <span class="nb">false</span>&#10;<span class="nv">Parameterized</span> <span class="o">=</span> <span class="nb">false</span>&#10;&#10;Summary&#10;Task Group  Queued  Starting  Running  Failed  Complete  Lost&#10;<span class="nb">echo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">0</span>&#10;&#10;Allocations&#10;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node ID   Task Group  Version  Desired  Status&nbsp;&nbsp;&nbsp;&nbsp;Created&nbsp;&nbsp;&nbsp;&nbsp;Modified&#10;be8e648a  26b275d9  <span class="nb">echo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nb">complete</span>  1m20s ago  1m16s ago&#10;&#10;$ nomad alloc logs be8e648a&#10;Hello Word! <span class="o">(</span>busybox<span class="o">)</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad-job-run-echo-busybox.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad job run echo-bash.nomad&#10;Job registration successful&#10;Approximate next launch time: 2021-09-23T17:44:00Z <span class="o">(</span>4s from now<span class="o">)</span>&#10;&#10;$ nomad job status echo-bash&#10;<span class="nv">ID</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">=</span> echo-bash&#10;<span class="nv">Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> echo-bash&#10;Submit <span class="nv">Date</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> 2021-09-23T19:43:56+02:00&#10;<span class="nv">Type</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> batch&#10;<span class="nv">Priority</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="m">50</span>&#10;<span class="nv">Datacenters</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> dc1&#10;<span class="nv">Namespace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> default&#10;<span class="nv">Status</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">=</span> running&#10;<span class="nv">Periodic</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="nb">true</span>&#10;<span class="nv">Parameterized</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> <span class="nb">false</span>&#10;Next Periodic <span class="nv">Launch</span> <span class="o">=</span> 2021-09-23T17:45:00Z <span class="o">(</span>31s from now<span class="o">)</span>&#10;&#10;Children Job Summary&#10;Pending  Running  Dead&#10;<span class="m">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">1</span>&#10;&#10;Previously Launched Jobs&#10;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status&#10;echo-bash/periodic-1632419040  dead&#10;&#10;$ nomad job status echo-bash/periodic-1632419040&#10;<span class="nv">ID</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> echo-bash/periodic-1632419040&#10;<span class="nv">Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> echo-bash/periodic-1632419040&#10;Submit <span class="nv">Date</span>   <span class="o">=</span> 2021-09-23T19:44:00+02:00&#10;<span class="nv">Type</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> batch&#10;<span class="nv">Priority</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> <span class="m">50</span>&#10;<span class="nv">Datacenters</span>   <span class="o">=</span> dc1&#10;<span class="nv">Namespace</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> default&#10;<span class="nv">Status</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">=</span> dead&#10;<span class="nv">Periodic</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">=</span> <span class="nb">false</span>&#10;<span class="nv">Parameterized</span> <span class="o">=</span> <span class="nb">false</span>&#10;&#10;Summary&#10;Task Group  Queued  Starting  Running  Failed  Complete  Lost&#10;<span class="nb">echo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">0</span>&#10;&#10;Allocations&#10;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node ID   Task Group  Version  Desired  Status&nbsp;&nbsp;&nbsp;&nbsp;Created  Modified&#10;db6b9f1e  26b275d9  <span class="nb">echo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nb">complete</span>  55s ago  55s ago&#10;&#10;$ nomad alloc logs db6b9f1e&#10;Hello Word! <span class="o">(</span>bash<span class="o">)</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad-job-run-echo-bash.sh</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/NomadCron">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>hashicorp</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicios Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-599';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/09\/planificar-procesos-periodicos-y-scripts-con-nomad\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

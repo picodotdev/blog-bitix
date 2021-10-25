@@ -1,0 +1,544 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de Subtle Patterns. Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la licencia Creative Commons - Reconocimiento - Compartir igual. Podemos encontrar texturas en las siguientes categorías y motivos:
+ Light Dark Paper Stripes Wall Fabric Noise Diamond Grid Carbon  En el momento de escribir este artículo hay 400&#43; texturas con diferentes patrones para temas claros, oscuros, &hellip; Como tenemos muchas podemos usar varias y hacer que se cargue una diferente de forma aleatoria cada vez que se visualiza una página variando un poco el estilo de la página cada vez que se carga. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Usar una imagen de fondo aleatoria al cargar una página web</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/" hreflang="es" title="Usar una imagen de fondo aleatoria al cargar una página web">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/index-amp.html" hreflang="es" title="Usar una imagen de fondo aleatoria al cargar una página web">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Usar una imagen de fondo aleatoria al cargar una página web">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/javascript-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de Subtle Patterns. Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la licencia Creative Commons - Reconocimiento - Compartir igual. Podemos encontrar texturas en las siguientes categorías y motivos:
+ Light Dark Paper Stripes Wall Fabric Noise Diamond Grid Carbon  En el momento de escribir este artículo hay 400&#43; texturas con diferentes patrones para temas claros, oscuros, &hellip; Como tenemos muchas podemos usar varias y hacer que se cargue una diferente de forma aleatoria cada vez que se visualiza una página variando un poco el estilo de la página cada vez que se carga. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/javascript-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Usar una imagen de fondo aleatoria al cargar una página web">
+<meta name="twitter:description" content="Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de Subtle Patterns. Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la licencia Creative Commons - Reconocimiento - Compartir igual. Podemos encontrar texturas en las siguientes categorías y motivos:
+ Light Dark Paper Stripes Wall Fabric Noise Diamond Grid Carbon  En el momento de escribir este artículo hay 400&#43; texturas con diferentes patrones para temas claros, oscuros, &hellip; Como tenemos muchas podemos usar varias y hacer que se cargue una diferente de forma aleatoria cada vez que se visualiza una página variando un poco el estilo de la página cada vez que se carga. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/"
+    },
+    "headline": "Usar una imagen de fondo aleatoria al cargar una página web",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/javascript-750.png"
+        
+      },
+    "datePublished": "2016-11-13T12:00:00+01:00",
+    "dateModified": "2017-03-20T21:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "370",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de Subtle Patterns. Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la licencia Creative Commons - Reconocimiento - Compartir igual. Podemos encontrar texturas en las siguientes categorías y motivos:
+ Light Dark Paper Stripes Wall Fabric Noise Diamond Grid Carbon  En el momento de escribir este artículo hay 400+ texturas con diferentes patrones para temas claros, oscuros, &hellip; Como tenemos muchas podemos usar varias y hacer que se cargue una diferente de forma aleatoria cada vez que se visualiza una página variando un poco el estilo de la página cada vez que se carga."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Usar una imagen de fondo aleatoria al cargar una página web</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>13/11/2016</time>, actualizado el <time>20/03/2017</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/javascript/">javascript</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <p>Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>. Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la <a href="https://creativecommons.org/licenses/by-sa/3.0/">licencia Creative Commons - Reconocimiento - Compartir igual</a>. Podemos encontrar texturas en las siguientes categorías y motivos:</p>
+<ul>
+<li><a href="http://subtlepatterns.com/tag/light/">Light</a></li>
+<li><a href="http://subtlepatterns.com/tag/dark/">Dark</a></li>
+<li><a href="http://subtlepatterns.com/tag/paper/">Paper</a></li>
+<li><a href="http://subtlepatterns.com/tag/stripes/">Stripes</a></li>
+<li><a href="http://subtlepatterns.com/tag/wall/">Wall</a></li>
+<li><a href="http://subtlepatterns.com/tag/fabric/">Fabric</a></li>
+<li><a href="http://subtlepatterns.com/tag/noise/">Noise</a></li>
+<li><a href="http://subtlepatterns.com/tag/diamond/">Diamond</a></li>
+<li><a href="http://subtlepatterns.com/tag/grid/">Grid</a></li>
+<li><a href="http://subtlepatterns.com/tag/carbon/">Carbon</a></li>
+</ul>
+<p>En el momento de escribir este artículo hay 400+ texturas con diferentes patrones para temas claros, oscuros, &hellip; Como tenemos muchas podemos usar varias y hacer que se cargue una diferente de forma aleatoria cada vez que se visualiza una página variando un poco el estilo de la página cada vez que se carga. En el momento de escribir este artículo es lo que hago en Blog Bitix con el siguiente código JavaScript, puedes probar a recargar la página y verás que se carga otra textura de fondo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// ...&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">function</span> <span class="nx">random</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">spec</span> <span class="o">=</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">backgrounds</span><span class="o">:</span> <span class="p">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;confectionary.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;dimension.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;skulls.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;tree_bark.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;contemporary_china_2.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;eight_horns.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;swirl_pattern.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;upfeathers.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;contemporary_china.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;paisley.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;symphony.png&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">};</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">backgrounds</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">backgrounds</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-image&#39;</span><span class="p">,</span> <span class="s1">&#39;url(&#34;assets/images/backgrounds/&#39;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s1">&#39;&#34;)&#39;</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// ...&#10;</span><span class="c1"></span><span class="p">});</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>app-theme.js</span>
+    </div>
+</div>
+<p>Otra página que podemos para obtener una textura en este caso con ruido es <a href="http://www.noisetexturegenerator.com/">Noise Texture Generator</a>. Indicamos unos cuantos parámetros y podemos obtener la textura generada.</p>
+<p>Si lo que queremos son fotos de buena calidad en la página en <a href="https://unsplash.com/">Unsplash</a> se publican 10 fotos cada 10 días que también podemos usar libremente, deberemos tener en cuenta que como son fotos de alta calidad y en formato jpg ocupan bastante más y si las usamos en una web deberemos reducir su tamaño para que la carga de la página no se ralentice demasiado en conexiones lentas o consuma demasiados datos, también podemos usarlas como fondo de pantalla de nuestro escritorio.</p>
+<p>Una buena textura o imagen pueden darle a una página un aspecto mucho más atractivo y si además hacemos que se use una diferente cada cierto tiempo o de forma aleatoria hacemos que la página sea algo diferente cada vez que se visualiza.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://subtlepatterns.com/">Subtle Patterns</a></li>
+<li><a href="http://www.noisetexturegenerator.com/">Noise Texture Generator</a></li>
+<li><a href="https://unsplash.com/">Unsplash</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Añadir botones selectores de opciones a select múltiple de bootstrap-select" title="Añadir botones selectores de opciones a select múltiple de bootstrap-select" class="" loading="lazy">
+                <h3>Añadir botones selectores de opciones a select múltiple de bootstrap-select</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select múltiple en Apache Tapestry" title="Componente select múltiple en Apache Tapestry" class="" loading="lazy">
+                <h3>Componente select múltiple en Apache Tapestry</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" title="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" class="" loading="lazy">
+                <h3>Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/moment-js-libreria-javascript-para-fechas/">
+                <img src="/blog-bitix/assets/images/logotypes/javascript.svg" width="326" height="125" alt="Moment.js, librería JavaScript para fechas" title="Moment.js, librería JavaScript para fechas" class="" loading="lazy">
+                <h3>Moment.js, librería JavaScript para fechas</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">
+                <img src="/blog-bitix/assets/images/logotypes/javascript.svg" width="326" height="125" alt="Internacionalización (i18n) en JavaScript" title="Internacionalización (i18n) en JavaScript" class="" loading="lazy">
+                <h3>Internacionalización (i18n) en JavaScript</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">
+                <img src="/blog-bitix/assets/images/logotypes/backbone.svg" width="326" height="125" alt="Ejemplo lista de tareas con Backbone y React" title="Ejemplo lista de tareas con Backbone y React" class="" loading="lazy">
+                <h3>Ejemplo lista de tareas con Backbone y React</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-194';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2016\/11\/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

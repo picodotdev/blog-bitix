@@ -1,0 +1,722 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/" hreflang="es" title="Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/index-amp.html" hreflang="es" title="Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/polimorfism_huf8144c4d5308bdedb3ed4c308b6c87a2_38530_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/polimorfism_huf8144c4d5308bdedb3ed4c308b6c87a2_38530_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos">
+<meta name="twitter:description" content="La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/"
+    },
+    "headline": "Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/polimorfism_huf8144c4d5308bdedb3ed4c308b6c87a2_38530_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2021-03-31T19:00:00+02:00",
+    "dateModified": "2021-03-31T19:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2674",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>31/03/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Para el desarrollo de software a lo largo del tiempo se han definido varios paradigmas de programación implementados en los lenguajes de programación.</p>
+<p>Los primeros lenguajes de programación utilizaban un paradigma imperativo con un conjunto de instrucciones ejecutadas de forma secuencial y organizado en funciones que manipulan datos. Posteriormente, surge el paradigma de programación orientado a objetos en el que el código se organiza en objetos que encapsulan los datos y las funciones que los manipulan. Otro paradigma es la programación funcional donde el código se organiza en funciones puras que dados unos datos de entrada genera un resultado y en vez de cambiar de estado a los datos existentes genera nuevos datos haciendo a los datos inmutables.</p>
+<p>Muchos de los lenguajes de programación hacen uso u ofrecen formas de aplicar al mismo tiempo varios de estos paradigmas de programación. Por ejemplo, el lenguaje de programación C aún siendo un lenguaje de programación que hace uso del paradigma imperativo también es posible utilizar conceptos de la programación orientada a objetos o funcionales, aunque el lenguaje en sí no ofrezca abstracciones propias de orientación a objetos o funcionales. El lenguaje de programación Java es orientado a objetos aunque también en el código de los métodos utiliza programación imperativa y con las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades incluidas en Java 8</a> con las <em>lambdas</em>, <em>streams</em>, o <a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/">los records en Java 16</a> y el soporte en las estructuras de datos de las colecciones permite utilizar conceptos de la programación funcional.</p>
+<p>En la programación orientada a objetos hay varios conceptos que definen este paradigma de programación, la encapsulación de datos, abstracciones de los modelos en los programas, los objetos, clases e instancias, herencia, polimorfismo y composición.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#conceptos-de-la-programación-orientada-a-objetos">Conceptos de la programación orientada a objetos</a>
+      <ul>
+        <li><a href="#encapsulación">Encapsulación</a></li>
+        <li><a href="#abstracción">Abstracción</a></li>
+        <li><a href="#objeto-clase-e-instancia">Objeto, clase e instancia</a></li>
+        <li><a href="#herencia-e-interfaces">Herencia e interfaces</a></li>
+      </ul>
+    </li>
+    <li><a href="#ejemplos-de-clases-herencia-e-interfaces">Ejemplos de clases, herencia e interfaces</a>
+      <ul>
+        <li><a href="#polimorfismo">Polimorfismo</a></li>
+      </ul>
+    </li>
+    <li><a href="#los-problemas-de-la-herencia">Los problemas de la herencia</a></li>
+    <li><a href="#composición">Composición</a>
+      <ul>
+        <li><a href="#beneficios-de-la-composición">Beneficios de la composición</a></li>
+      </ul>
+    </li>
+    <li><a href="#inyección-de-dependencias">Inyección de dependencias</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="conceptos-de-la-programación-orientada-a-objetos">Conceptos de la programación orientada a objetos</h3>
+<p>Los lenguajes de programación orientados a objetos se diferencian de los imperativos en que el propio lenguaje incluye abstracciones y sintaxis específica para el soporte de la programación orientada a objetos.</p>
+<p>El lenguaje de programación Java considerado como un lenguaje de programación a objetos incluye palabras reservadas para la definición de clases e interfaces e implementa los conceptos de herencia y polimorfismo.</p>
+<h4 id="encapsulación">Encapsulación</h4>
+<p>La encapsulación no es un concepto propio de la programación orientada a objetos pero es fundamental, los objetos son la abstracción que proporciona la encapsulación.</p>
+<p>La encapsulación consiste en hacer que los datos sean modificados únicamente por las funciones destinadas a tal efecto. La encapsulación permite que los datos conserven un estado válido y consistente, trata de evitar que cualquier código pueda modificar una estructura de datos con el consiguiente problema de generación de inconsistencias.</p>
+<p>Se denomina encapsulación porque los datos y sus estructuras de datos no están accesibles de forma directa, sino que para acceder a los datos o manipularlos se ha de realizar a través de las funciones asociadas, los datos están encapsulados.</p>
+<h4 id="abstracción">Abstracción</h4>
+<p>La abstracción es el concepto por el que un modelo es creado con las propiedades relevantes a observar. Un programa trata únicamente con las propiedades de un objeto que al programa le interesa. Las clases son la abstracción de los conceptos que maneja la aplicación, pueden ser conceptos que existan en el mundo real pero simplificados al tener únicamente las propiedades relevantes para la aplicación. Las clases también pueden ser conceptos que no tengan una existencia física en el mundo real como una lista de elementos, una dirección IP o un archivo de ordenador.</p>
+<p>Un avión es un objeto físico del mundo real con multitud de propiedades, desde su fabricante y modelo, color, tamaño, numero de asientos, ubicación, capacidad de carga, peso, año de diseño y fabricación, materiales de fabricación, altitud, posición GPS, dirección, velocidad y distancia máxima y muchas otras. De todas estas propiedades en una aplicación de gestión de embarque le interesará únicamente las propiedades de los asientos, quizá en otra aplicación para la programación de vuelo le interesa otras propiedades como altitud, posición GPS, dirección, velocidad aeropuerto origen y destino o distancia.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/abstraction_huebdf403939c773e5e8bc4d4de88eb70c_66734_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Abstracción en dos modelos diferentes de un objeto"><img src="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/abstraction_huebdf403939c773e5e8bc4d4de88eb70c_66734_650x450_fit_box_3.png" width="455" height="414" alt="Abstracción en dos modelos diferentes de un objeto" title="Abstracción en dos modelos diferentes de un objeto" class="" loading="lazy"></a></p>
+<figcaption>Abstracción en dos modelos diferentes de un objeto <br>Fuente: matiasbeltramone.github.io</figcaption>
+</figure>
+</div>
+<h4 id="objeto-clase-e-instancia">Objeto, clase e instancia</h4>
+<p>Los objetos, clases e instancias son conceptos característicos de la programación a objetos. Son la denominación que le dan los lenguajes de programación orientada a objetos para la encapsulación y las abstracciones.</p>
+<p>Los objetos y clases encapsulan los datos y definen la colección de funciones que los manipulan. Las clases son la definición de los objetos en tiempo de compilación y las instancias son la creación en tiempo de ejecución de una clase, en tiempo de ejecución un programa puede crear tantas instancias de una clase como desee, al crear la instancia se reserva la memoria para el conjunto de datos de la clase.</p>
+<p>A las funciones de las clases en el lenguaje de dominio de la orientación a objetos se les denomina métodos y a los datos propiedades. Esta es la definición de una clase en Java con varias propiedades y varios métodos que manipulan esas propiedades, si otra clase quiere manipular los datos lo ha de hacer a través de los métodos de la clase tal como permitan <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">los modificadores de acceso de los miembros de la clase</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">Color</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BLACK</span><span class="o">,</span> <span class="n">WHITE</span><span class="o">,</span> <span class="n">LIGHT_GREY</span><span class="o">,</span> <span class="n">RED</span><span class="o">,</span> <span class="n">BLUE</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Brand</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">RENAULT</span><span class="o">,</span> <span class="n">PEUGEOT</span><span class="o">,</span> <span class="n">FORD</span><span class="o">,</span> <span class="n">TOYOTA</span><span class="o">,</span> <span class="n">MERCEDES</span><span class="o">,</span> <span class="n">TESLA</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Status</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">STOPED</span><span class="o">,</span> <span class="n">ON</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Gasoline</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">OCTANE_95</span><span class="o">,</span> <span class="n">OCTANE_98</span><span class="o">,</span> <span class="n">GASOLEO_A</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Brand</span> <span class="n">brand</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Color</span> <span class="n">color</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Status</span> <span class="n">status</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="n">Brand</span> <span class="n">brand</span><span class="o">,</span> <span class="n">Color</span> <span class="n">color</span><span class="o">,</span> <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">brand</span> <span class="o">=</span> <span class="n">brand</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">color</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">speed</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">STOPED</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">on</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">ON</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">speed</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">STOPED</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSpeed</span><span class="o">(</span><span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">speed</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fillCombustible</span><span class="o">(</span><span class="n">Gasoline</span> <span class="n">gasoline</span><span class="o">,</span> <span class="kt">int</span> <span class="n">liters</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car-class.java</span>
+    </div>
+</div>
+<p>En Java la creación de una instancia de una clase se realiza con la palabra reservada <em>new</em> y utilizando un método especializado únicamente en construir instancias de la clase, un método constructor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Car</span> <span class="n">car</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">Branc</span><span class="o">.</span><span class="na">RENAULT</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">LIGHT_GREY</span><span class="o">,</span> <span class="n">160</span><span class="o">);</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car-new.java</span>
+    </div>
+</div>
+<p>La invocación de <em>new</em> y un constructor devuelve una referencia a la instancia del objeto a través de la cual se realizan la invocación de sus métodos o también denominado el paso de mensajes.</p>
+<p>El formato de la invocación de un método en una instancia de un objeto es el siguiente. La referencia del objeto se separa con un punto del método a invocar, entre los paréntesis se proporciona una lista de argumentos separados por comas. Los argumentos pueden ser referencias a otras instancias de objetos o en Java datos primitivos numéricos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">objeto</span><span class="o">.</span><span class="na">metodo</span><span class="o">(</span><span class="n">argumentos</span><span class="o">);</span>&#10;&#10;<span class="n">car</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;<span class="n">car</span><span class="o">.</span><span class="na">setSpeed</span><span class="o">(</span><span class="n">50</span><span class="o">);</span>&#10;<span class="n">car</span><span class="o">.</span><span class="na">fillCombustible</span><span class="o">(</span><span class="n">Gasoline</span><span class="o">.</span><span class="na">GASOLEO_A</span><span class="o">,</span> <span class="n">50</span><span class="o">);</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car-method.java</span>
+    </div>
+</div>
+<h4 id="herencia-e-interfaces">Herencia e interfaces</h4>
+<p>Otro de los conceptos propios de la programación orientada a objetos es la herencia. Al implementar una clase y para reutilizar el código una clase puede extender de otra, heredando el comportamiento de la clase extendida. La relación de herencia entre las clases es una relación de «es-un».</p>
+<p>En Java la herencia se realiza con la palabra reservada <em>extends</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicle</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">BigDecimal</span> <span class="n">price</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Vehicle</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">price</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="kd">extends</span> <span class="n">Vehicle</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Truck</span> <span class="kd">extends</span> <span class="n">Vehicle</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bicycle</span> <span class="kd">extends</span> <span class="n">Vehicle</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car-inheritance.java</span>
+    </div>
+</div>
+<p>Como un coche es un vehículo la referencia de coche se puede asignar a la referencia de vehículo, por el contrario no todos los vehículos son coches y por tanto una referencia de vehículo no se puede asignar directamente a una referencia de coche.</p>
+<p>Si se está seguro de que una referencia de vehículo es una referencia de coche es posible hacer la asignación haciendo un <em>cast</em> de la referencia de forma explícita para que el compilador no genere un error de compilación. Para comprobar si una referencia es de una determinada clase se utiliza el operador <em>instanceof</em>. Si se realiza un <em>cast</em> y en tiempo de ejecución no se puede realizar porque la referencia no sea asignable a la clase que se hace <em>cast</em> se produce una excepción del tipo <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassCastException.html">ClassCastException</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Car</span> <span class="n">car</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">Branc</span><span class="o">.</span><span class="na">RENAULT</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">LIGHT_GREY</span><span class="o">,</span> <span class="n">160</span><span class="o">);</span>&#10;<span class="n">Vehicle</span> <span class="n">vehicle</span> <span class="o">=</span> <span class="n">car</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="k">if</span> <span class="o">(</span><span class="n">vehicle</span> <span class="k">instanceof</span> <span class="n">Car</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Car</span> <span class="n">car</span> <span class="o">=</span> <span class="o">(</span><span class="n">Car</span><span class="o">)</span> <span class="n">vehicle</span><span class="o">;</span>  &#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car-cast.java</span>
+    </div>
+</div>
+<p>En Java solo se permite heredar de una única clase, no hay herencia múltiple. Sin embargo, si se permite implementar múltiples interfaces. En Java una interfaz es una colección de métodos que una clase que la implementa debe proporciona una implementación de los métodos de la interfaz.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Cleanable</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">void</span> <span class="nf">clean</span><span class="o">();</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="kd">extends</span> <span class="n">Vehicle</span> <span class="kd">implements</span> <span class="n">Cleanable</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">clean</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car-interface.java</span>
+    </div>
+</div>
+<p>En Java las clases abstractas no pueden instanciarse pero si ser extendidas por otras clases que no sean abstractas. Una clase al implementar una interfaz ha de proporcionar una implementación para todos los métodos de la interfaz, en caso de no implementar algún método la clase ha de declararse como abstracta con la palabra reservado <em>abstract</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/classes-interfaces_huc7e2fd60af9d72d59939ae7806945df0_29751_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Clases, herencia e interfaces"><img src="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/classes-interfaces_huc7e2fd60af9d72d59939ae7806945df0_29751_650x450_fit_box_3.png" width="496" height="311" alt="Clases, herencia e interfaces" title="Clases, herencia e interfaces" class="" loading="lazy"></a></p>
+<figcaption>Clases, herencia e interfaces <br>Fuente: matiasbeltramone.github.io</figcaption>
+</figure>
+</div>
+<p>Desde la versión de Java 8 las interfaces con los métodos <em>default</em> pueden proporcionar implementaciones para métodos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Math</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BigDecimal</span> <span class="nf">mutiply</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">a</span><span class="o">,</span> <span class="n">BigDecimal</span> <span class="n">b</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="n">BigDecimal</span> <span class="nf">square</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">mutiply</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="n">BigDecimal</span> <span class="nf">cube</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">mutiply</span><span class="o">(</span><span class="n">square</span><span class="o">(</span><span class="n">a</span><span class="o">),</span> <span class="n">a</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Math-interface-default-method.java</span>
+    </div>
+</div>
+<h3 id="ejemplos-de-clases-herencia-e-interfaces">Ejemplos de clases, herencia e interfaces</h3>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Speak</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">void</span> <span class="nf">speak</span><span class="o">();</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="kd">implements</span> <span class="n">Speak</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Guau!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Miau!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Human</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Animal-classes.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Shapes-classes.java</span>
+    </div>
+</div>
+<h4 id="polimorfismo">Polimorfismo</h4>
+<p>El polimorfismo es una propiedad por la cual el método invocado varía en función de la clase de la instancia de un objeto. El polimorfismo es una característica única en la programación orientada a objetos, mientras que la encapsulación y herencia es posible conseguirla en lenguajes no orientados a objetos de una manera razonablemente segura el polimorfismo al usar punteros a funciones es propensa a errores. Los los lenguajes orientados lo que proporcionan es un uso sencillo y seguro del polimorfismo ocultando los detalles internos de su implementación de sus punteros a funciones.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/polimorfism_huf8144c4d5308bdedb3ed4c308b6c87a2_38530_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Polimorfismo"><img src="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/images/polimorfism_huf8144c4d5308bdedb3ed4c308b6c87a2_38530_650x450_fit_box_3.png" width="404" height="369" alt="Polimorfismo" title="Polimorfismo" class="" loading="lazy"></a></p>
+<figcaption>Polimorfismo <br>Fuente: matiasbeltramone.github.io</figcaption>
+</figure>
+</div>
+<p>En una jerarquía de clases que representen diferentes figuras geométricas dos operaciones son el cálculo del área y de la longitud del perímetro. La fórmula matemática depende de la clase de figura. En el caso de un cuadrado y de un círculo las fórmulas para el cálculo del área y perímetro son distintas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">calculatePerimeter</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">calculateArea</span><span class="o">();</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">double</span> <span class="n">radious</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculatePerimeter</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">2</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radious</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateArea</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radious</span> <span class="o">*</span> <span class="n">radious</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">double</span> <span class="n">tall</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">double</span> <span class="n">with</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculatePerimeter</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">2</span> <span class="o">*</span> <span class="o">(</span><span class="n">tall</span> <span class="o">+</span> <span class="n">with</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateArea</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">tall</span> <span class="o">*</span> <span class="n">with</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Shape-polymorfism-classes.java</span>
+    </div>
+</div>
+<p>La potencia del polimorfismo es que teniendo una referencia de <em>Shape</em> al invocar al método de la operación el método que se ejecuta es el propio de la clase de la instancia en tiempo de ejecución, si <em>shape</em> es un <em>square</em> se llama al método <em>calculatePerimeter</em> o <em>calculateArea</em> de <em>square</em> y si <em>shape</em> es un <em>circle</em> a sus respectivos métodos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Shape</span> <span class="n">shape</span> <span class="o">=</span> <span class="o">...;</span>&#10;&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape perimter %s%n&#34;</span><span class="o">,</span> <span class="n">shape</span><span class="o">.</span><span class="na">calculatePerimeter</span><span class="o">());</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape area %s%n&#34;</span><span class="o">,</span> <span class="n">shape</span><span class="o">.</span><span class="na">calculatearea</span><span class="o">());</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Shape-polymorfism-example.java</span>
+    </div>
+</div>
+<h3 id="los-problemas-de-la-herencia">Los problemas de la herencia</h3>
+<p>El principal problema de la herencia es que en ocasiones no es el mecanismo adecuado para reutilizar el comportamiento, ocasionado que al intentar usar herencia provoque un problema exponencial del número de clases posibles.</p>
+<p>En un ejemplo de pizzas que tienen ingredientes una posible jerarquía de clases es la siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">base</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ingredients</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Pizza</span><span class="o">(</span><span class="n">String</span> <span class="n">base</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ingredients</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CarbonaraPizza</span> <span class="kd">extends</span> <span class="n">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">CarbonaraPizza</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese&#34;</span><span class="o">,</span> <span class="s">&#34;Bacon&#34;</span><span class="o">,</span> <span class="s">&#34;Mushroom&#34;</span><span class="o">,</span> <span class="s">&#34;Onion&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BarbecuePizza</span> <span class="kd">extends</span> <span class="n">Pizza</span>  <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">BarbecuePizza</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese&#34;</span><span class="o">,</span> <span class="s">&#34;Beef&#34;</span><span class="o">,</span> <span class="s">&#34;Onion&#34;</span><span class="o">,</span> <span class="s">&#34;Bacon&#34;</span><span class="o">,</span> <span class="s">&#34;Corn&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HawaianPizza</span> <span class="kd">extends</span> <span class="n">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">HawaianPizza</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese Extra&#34;</span><span class="o">,</span> <span class="s">&#34;York Double&#34;</span><span class="o">,</span> <span class="s">&#34;Pineapple&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Pizza-classes-1.java</span>
+    </div>
+</div>
+<p>El problema surge cuando a las pizzas se les añade otro vector adicional de diseño, además de los ingredientes. Si a las pizzas se les añade el tipo de cocina y una clase concreta con las diferentes combinaciones el número de clases crece de forma exponencial con el nuevo vector de diseño, se produce una proliferación de clases que se convierte en un problema de mantenimiento.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">base</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ingredients</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Pizza</span><span class="o">(</span><span class="n">String</span> <span class="n">base</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ingredients</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CarbonaraPizza</span> <span class="kd">extends</span> <span class="n">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">CarbonaraPizza</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese&#34;</span><span class="o">,</span> <span class="s">&#34;Bacon&#34;</span><span class="o">,</span> <span class="s">&#34;Mushroom&#34;</span><span class="o">,</span> <span class="s">&#34;Onion&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BarbecuePizza</span> <span class="kd">extends</span> <span class="n">Pizza</span>  <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">BarbecuePizza</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese&#34;</span><span class="o">,</span> <span class="s">&#34;Beef&#34;</span><span class="o">,</span> <span class="s">&#34;Onion&#34;</span><span class="o">,</span> <span class="s">&#34;Bacon&#34;</span><span class="o">,</span> <span class="s">&#34;Corn&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HawaianPizza</span> <span class="kd">extends</span> <span class="n">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">HawaianPizza</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese Extra&#34;</span><span class="o">,</span> <span class="s">&#34;York Double&#34;</span><span class="o">,</span> <span class="s">&#34;Pineapple&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NewYorkStyleCarbonaraPizza</span> <span class="kd">extends</span> <span class="n">HawaianPizza</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChicagoStyleCarbonaraPizza</span> <span class="kd">extends</span> <span class="n">HawaianPizza</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NewYorkStyleBarbecuePizza</span> <span class="kd">extends</span> <span class="n">HawaianPizza</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChicagoStyleBarbecuePizza</span> <span class="kd">extends</span> <span class="n">HawaianPizza</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NewYorkStyleHawawianPizza</span> <span class="kd">extends</span> <span class="n">HawaianPizza</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChicagoStyleHawawianPizza</span> <span class="kd">extends</span> <span class="n">HawaianPizza</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Pizza-classes-2.java</span>
+    </div>
+</div>
+<p>Con el tipo de masa podría haber sido otro vector de diseño pero en este caso se ha implementado con una relación «tiene-un» en vez de «es-un», la solución para el tipo de cocina es aplicar una relación «tiene-un», esto es, en vez de usar herencia la solución es usar composición.</p>
+<h3 id="composición">Composición</h3>
+<p>Si la herencia es una relación «es-un» entre dos clases, la composición es una relación «tiene-un» entre dos clases. La composición se produce cuando una clase contiene referencias a instancias de otras clases en sus propiedades. La clase coche contiene una marca, modelo, motor, ruedas, aceite, color, velocidad y velocidad máxima.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Car</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Brand</span> <span class="n">brand</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Model</span> <span class="n">model</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Engine</span> <span class="n">engine</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Oil</span> <span class="n">oil</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Color</span> <span class="n">color</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tire</span> <span class="n">tireFrontLeft</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tire</span> <span class="n">tireFrontRight</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tire</span> <span class="n">tireBackLeft</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tire</span> <span class="n">tireBackRight</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Status</span> <span class="n">status</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Car-composition.java</span>
+    </div>
+</div>
+<p>En el problema de las pizzas utilizando herencia la solución es usar composición para la forma de cocinar de las pizzas en vez de herencia.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">base</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ingredients</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">BakeStyle</span> <span class="n">bakeStyle</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Pizza</span><span class="o">(</span><span class="n">String</span> <span class="n">base</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ingredients</span><span class="o">,</span> <span class="n">BakeStyle</span> <span class="n">bakeStyle</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">bake</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">bakeStyle</span><span class="o">.</span><span class="na">bake</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CarbonaraPizza</span> <span class="kd">extends</span> <span class="n">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">CarbonaraPizza</span><span class="o">(</span><span class="n">BakeStyle</span> <span class="n">bakeStyle</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese&#34;</span><span class="o">,</span> <span class="s">&#34;Bacon&#34;</span><span class="o">,</span> <span class="s">&#34;Mushroom&#34;</span><span class="o">,</span> <span class="s">&#34;Onion&#34;</span><span class="o">),</span> <span class="n">bakeStyle</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BarbecuePizza</span> <span class="kd">extends</span> <span class="n">Pizza</span>  <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">BarbecuePizza</span><span class="o">(</span><span class="n">BakeStyle</span> <span class="n">bakeStyle</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese&#34;</span><span class="o">,</span> <span class="s">&#34;Beef&#34;</span><span class="o">,</span> <span class="s">&#34;Onion&#34;</span><span class="o">,</span> <span class="s">&#34;Bacon&#34;</span><span class="o">,</span> <span class="s">&#34;Corn&#34;</span><span class="o">),</span> <span class="n">bakeStyle</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HawaianPizza</span> <span class="kd">extends</span> <span class="n">Pizza</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">HawaianPizza</span><span class="o">(</span><span class="n">BakeStyle</span> <span class="n">bakeStyle</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">super</span><span class="o">(</span><span class="s">&#34;Normal&#34;</span><span class="o">,</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Mozzarella Cheese Extra&#34;</span><span class="o">,</span> <span class="s">&#34;York Double&#34;</span><span class="o">,</span> <span class="s">&#34;Pineapple&#34;</span><span class="o">),</span> <span class="n">bakeStyle</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">abstract</span> <span class="n">BakeStyle</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">bake</span><span class="o">(</span><span class="n">Pizza</span> <span class="n">pizza</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="n">NewYorkBakeStyle</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">bake</span><span class="o">(</span><span class="n">Pizza</span> <span class="n">pizza</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="n">ChicagoNewYorkBakeStyle</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">bake</span><span class="o">(</span><span class="n">Pizza</span> <span class="n">pizza</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Pizza-composition.java</span>
+    </div>
+</div>
+<h4 id="beneficios-de-la-composición">Beneficios de la composición</h4>
+<p>Aunque la herencia es útil y adecuado en algunos casos por regla general se recomienda usar composición sobre herencia por los siguientes beneficios:</p>
+<ul>
+<li>Flexibilidad: con la herencia la reutilización de código está fijado por la herencia. Es posible la circunstancia en que la clase hija solo necesite una parte de los métodos de la clase padre pero con el mecanismo de la herencia la clase hija los hereda todos o que solo una parte de las clases hijas necesitan los métodos adicionales. La herencia es habitualmente no suficientemente flexible.</li>
+<li>Herencia múltiple: la herencia en Java solo permite extender de una única clase padre. Las interfaces y los métodos por defecto suplen en cierta medida la herencia múltiple pero también tienen limitaciones como no poder tener propiedades.</li>
+<li>Evitar duplicidad: aún usando interfaces si no es a través de los métodos por defecto obliga a duplicar código en diferentes clases. La duplicidad de código por norma general es algo a evitar.</li>
+</ul>
+<h3 id="inyección-de-dependencias">Inyección de dependencias</h3>
+<p>Los lenguajes de programación ofrecen un mecanismo para construir instancias, en Java es a través de la palabra reservada <em>new</em> y los constructores, las relaciones con otras instancias se establecen pasando sus referencias como argumentos del constructor o con los métodos de la instancia.</p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">El recolector de basura de Java</a> es el mecanismo de la máquina virtual de Java de liberar la memoria de las instancias cuando ya no hay más referencias accesibles por otras instancias, la recolección de basura se realiza de forma automática liberando al programador de hacer esta tarea de forma explícita lo que hace los programas más sencillos, con menos errores y ofreciendo un rendimiento similar y suficiente para la mayoría de los programas.</p>
+<p>Una herramienta muy utilizada son los contenedores, uno de ellos en Java conocidos <a href="https://spring.io/">Spring</a>, estos permiten delegar en ellos la construcción de las instancias junto con las relaciones con otras instancias a través de la inyección de dependencias.</p>
+<p>El contenedor de objetos para la creación de las instancias y el recolector de basura para la liberación de la memoria permiten liberar al programador de realizar estas tareas de forma explícita.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://medium.com/@stoltmanjan/clean-architecture-oop-4c122e6a91e7">Clean Architecture — OOP</a></li>
+<li><a href="http://marcotroisi.com/composition-over-inheritance/">Composition over Inheritance (what it is, why use it)</a></li>
+<li><a href="https://matiasbeltramone.github.io/oop-lesson-1/">POO Lección 1: ¿Qué rayos es un paradigma orientado a objetos?</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">
+                <img src="/blog-bitix/assets/images/logotypes/nexus.svg" width="326" height="125" alt="Repositorio de artefactos privado con Nexus" title="Repositorio de artefactos privado con Nexus" class="" loading="lazy">
+                <h3>Repositorio de artefactos privado con Nexus</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_875x0_resize_box_3.png" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear un archivo Zip con Java, comprimir y descomprimir datos" title="Crear un archivo Zip con Java, comprimir y descomprimir datos" class="" loading="lazy">
+                <h3>Crear un archivo Zip con Java, comprimir y descomprimir datos</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" title="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" class="" loading="lazy">
+                <h3>Emitir trazas de las peticiones y respuestas HTTP con clientes Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo deduplicar eventos de dominio" title="Cómo deduplicar eventos de dominio" class="" loading="lazy">
+                <h3>Cómo deduplicar eventos de dominio</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementar un bus de comandos y consultas en Java" title="Implementar un bus de comandos y consultas en Java" class="" loading="lazy">
+                <h3>Implementar un bus de comandos y consultas en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-564';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/03\/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

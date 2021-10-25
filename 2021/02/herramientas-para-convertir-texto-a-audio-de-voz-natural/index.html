@@ -1,0 +1,649 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Herramientas para convertir texto a audio de voz natural</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/" hreflang="es" title="Herramientas para convertir texto a audio de voz natural">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/index-amp.html" hreflang="es" title="Herramientas para convertir texto a audio de voz natural">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Herramientas para convertir texto a audio de voz natural">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Herramientas para convertir texto a audio de voz natural">
+<meta name="twitter:description" content="Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/"
+    },
+    "headline": "Herramientas para convertir texto a audio de voz natural",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2021-02-14T00:30:00+01:00",
+    "dateModified": "2021-02-14T00:30:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1145",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Herramientas para convertir texto a audio de voz natural</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>14/02/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Al grabar un audio de voz se crea un archivo binario con la grabación en formato <em>wav</em> o comprimido con <em>mp3</em>. Estos formatos de audio son archivos poco editables, no se puede sustituir una palabra, frase o realizar una corrección. La única edición que permite un audio de voz es cortar un trozo o añadir un trozo de audio nuevo. Sin embargo, la edición no es perfecta y el tono de la voz de la parte editada puede variar con la parte anterior y posterior. Además, grabar un audio de voz requiere el tiempo para realizar la grabación.</p>
+<p>Hay herramientas que usando un sintetizador de voz permiten transformar un texto en un audio, dando solución a dos de los problemas de la grabación de voz a partir de texto. Al convertir un texto a voz es más fácil la edición ya que basta simplemente cambiar el texto y generar de nuevo el audio y es más rápido ya que la generación del audio es más rápido que grabarlo en tiempo real. Algunos sintetizadores y herramientas además permiten seleccionar el idioma de la voz o ser una voz masculina o femenina.</p>
+<p>Una de estas herramientas es <a href="https://github.com/mozilla/TTS">TTS: Text-to-Speech</a>, un proyecto de <a href="https://www.mozilla.org/">Mozilla</a> y las ofrecidas por Amazon, Google y Microsoft. Esta y otras herramientas alternativas de conversión de texto a voz producen audios de voz bastante fieles a la voz humana natural. Para ayudar en la interpretación del texto se enriquece con un lenguaje de marcado que indica a la computadora como entonar e interpretar el texto.</p>
+<p>En la actualidad hay herramientas de conversión de texto a voz natural que producen resultados difícilmente indisinguibles de si la voz ha sido producida por un humano por una computadora. Otra tarea para la que hay herramientas que producen buenos resultados es <a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">reconocimiento de texto en imágenes con OCR</a>. Estas son tareas aparentemente simples pero significativamente complejas para una computadora que a pesar de su rapidez y capacidad enorme de cálculo no posee la inteligencia humana.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#convertir-texto-a-voz-natural">Convertir texto a voz natural</a>
+      <ul>
+        <li><a href="#herramientas-web">Herramientas web</a></li>
+        <li><a href="#servicios-de-conversión">Servicios de conversión</a></li>
+        <li><a href="#mozilla-tts">Mozilla TTS</a></li>
+        <li><a href="#espeak">espeak</a></li>
+      </ul>
+    </li>
+    <li><a href="#lenguaje-de-marcado-de-síntesis-de-voz-ssml">Lenguaje de marcado de síntesis de voz (SSML)</a></li>
+    <li><a href="#resultado-y-ejemplo-de-conversión-de-texto-a-voz">Resultado y ejemplo de conversión de texto a voz</a></li>
+    <li><a href="#convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="convertir-texto-a-voz-natural">Convertir texto a voz natural</h3>
+<h4 id="herramientas-web">Herramientas web</h4>
+<p>Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio sin necesidad de software adicional a un navegador web. Algunas con limitaciones de número de caracteres pero suficiente para un uso básico. También algunas permiten descargar el archivo de audio, en caso de que no ofrezcan la descargar se puede reproducir y capturar con el <a href="https://www.videolan.org/vlc/">reproductor multimedia VLC</a> en la opción <em>Captura de audio &gt; Monitor de audio interno (HDMI) &gt; Guardar</em>.</p>
+<ul>
+<li><a href="https://www.texttospeechfree.com/">TextToSpeechFree</a></li>
+<li><a href="https://freetts.com/">Free TTS</a></li>
+<li><a href="http://fromtexttospeech.com/">Free online Text To Speech</a></li>
+</ul>
+<h4 id="servicios-de-conversión">Servicios de conversión</h4>
+<p>Para un uso más profesional y avanzado hay algunas aplicaciones para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y entre los muchos servicios que ofrecen <a href="https://aws.amazon.com/es/ec2/">Amazon AWS</a>, <a href="https://www.google.es/">Google</a> y <a href="https://www.microsoft.com/">Microsoft</a> para hacer la operación de convertir audio a texto que realmente producen unos resultados muy buenos con una voz natural difícil de distinguir de una real.</p>
+<p>Aplicaciones.</p>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/p/any-text-to-voice-convert-text-to-speech-text-to-audio-mp3-for-free/9n92n3shd1mv?activetab=pivot:overviewtab#">Any Text to Voice</a></li>
+<li><a href="https://www.microsoft.com/en-us/p/convert-text-to-speech/9wzdncrddlsc?activetab=pivot:overviewtab#">Convert Text to Speech</a></li>
+</ul>
+<p>Servicios.</p>
+<ul>
+<li><a href="https://aws.amazon.com/es/polly/">Amazon Polly</a></li>
+<li><a href="https://aws.amazon.com/es/transcribe/">Amazon Transcribe</a></li>
+<li><a href="https://cloud.google.com/text-to-speech/">Google Text‑to‑Speech</a></li>
+<li><a href="https://azure.microsoft.com/es-es/services/cognitive-services/text-to-speech/">Microsoft Text to Speech</a></li>
+</ul>
+<h4 id="mozilla-tts">Mozilla TTS</h4>
+<p>La herramienta TTS es capaz de generar un audio de voz sintética a partir de un texto de bastante buena calidad. El audio de voz sintética no es perfecta ni tiene todos los matices en tono, velocidad de habla, contiene algunos defectos y otros matices de las voces humanas pero es aceptablemente bueno.</p>
+<p>TTS se ofrece como una imagen de <a href="https://www.docker.com/">Docker</a> que permite una instalación y uso sencillo de la herramienta. Previamente hay que <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">instalar Docker</a>, una vez instalado descargar la <a href="https://github.com/synesthesiam/docker-mozillatts">imagen del contenedor TTS</a> e iniciar un contenedor de la herramienta TTS.</p>
+<p>Hay varias voces disponibles específicas para cada idioma, la del español se indica con <em>es</em>, la de inglés con <em>en</em></p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm -it -p 5002:5002 synesthesiam/mozillatts:es&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker.sh</span>
+    </div>
+</div>
+<p>Iniciado el servidor de TTS este ofrece dos interfaces una interfaz web en la dirección <em>http://localhost:5002/</em> y una interfaz de linea de comandos con una API REST. Tanto en la interfaz web como en la interfaz de linea de comandos se ha de indicar el texto que convertir a audio. Esto genera como resultado un archivo de audio en formato <em>wav</em>. Para que ocupe menos es posible convertirlo a <em>mp3</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -o voice.wav -X POST -H <span class="s1">&#39;Content-Type: text/plain&#39;</span> --data <span class="s1">&#39;@text.txt&#39;</span> http://localhost:5002/api/tts&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Mozilla TTS"><img src="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_300x200_fit_box_3.png" width="250" height="200" alt="Interfaz web de Mozilla TTS" title="Interfaz web de Mozilla TTS" class="" loading="lazy"></a></p>
+<figcaption>Interfaz web de Mozilla TTS</figcaption>
+</figure>
+</div>
+<h4 id="espeak">espeak</h4>
+<p><em>espeak</em> y <em>espeak-ng</em> son dos herramientas de linea de comandos que aunque producen una voz sintetizada con un tono fácilmente reconocible como generado por computadora, robótico y metálico, son otras opciones conocidas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ espeak -f text.txt -v europe/es -w voice.wav&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>espeak.sh</span>
+    </div>
+</div>
+<h3 id="lenguaje-de-marcado-de-síntesis-de-voz-ssml">Lenguaje de marcado de síntesis de voz (SSML)</h3>
+<p>Dependiendo de la herramienta de conversión de texto a voz la calidad de las voces de resultado son más fieles a la voz humana o son fácilmente reconocibles como haber sido generadas por una computadora. Algunas de estas herramientas ya producen conversiones de texto a voz que imitan con fidelidad las voces humanas haciendo uso de redes neuronales entrenadas. Un aspecto por el que son todavía fácilmente identificables es por la entonación y personalidad que los humanos imprimimos en el habla, sin ayuda las conversiones sintéticas de texto a voz son monótonas.</p>
+<p>El <a href="https://cloud.google.com/text-to-speech/docs/ssml">lenguaje de marcado de síntesis de voz</a> o SSML es un lenguaje que sirve de ayuda a la computadora para interpretar y dar entonación al texto a convertir a voz. Es un lenguaje similar al HTML, con etiquetas atributos y valores, utilizado en las páginas web pero con el propósito de la conversión a voz.</p>
+<p>Hay aplicaciones que permite la edición del texto para añadirle el lenguaje de marcado SSML.</p>
+<ul>
+<li><a href="https://www.getwoord.com/ssml-editor">getwoord ssml-editor</a></li>
+<li><a href="https://www.ssml-editor.com/">SSML Editor</a></li>
+<li><a href="https://www.amazon.com/-/es/dp/B07L64KVNR">SSML Editor</a> para Alexa, <a href="https://topvoiceapps.com/ssml">SSML WYSIWYG editor y probador</a></li>
+</ul>
+<h3 id="resultado-y-ejemplo-de-conversión-de-texto-a-voz">Resultado y ejemplo de conversión de texto a voz</h3>
+<p>El texto que he utilizado para hacer pruebas ha sido el de la descripción de mi blog. Con los siguientes resultados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux,&#10;lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática.&#10;El contenido puede contener trazas de asuntos fuera de tema.&#10;&#10;Publicando de uno a tres artículos únicos a la semana desde el año 2010.</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>text.txt</span>
+    </div>
+</div>
+<p>Utilizando el servicio Microsoft Text to Speech.</p>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/microsoft-alvaro.mp3" type="audio/mpeg">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/microsoft-elvira.mp3" type="audio/mpeg">
+</audio>
+<p>Utilizando el servicio Free TTS.</p>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/freetts-enrique.mp3" type="audio/mpeg">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/freetts-lucia.mp3" type="audio/mpeg">
+</audio>
+<p>Utilizando Mozilla TTS.</p>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/mozilla-tts.mp3" type="audio/mpeg">
+</audio>
+<p>Utilizando espeak.</p>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/espeak.mp3" type="audio/mpeg">
+</audio>
+<h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
+<p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
+<p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i voice.wav -codec:a libmp3lame voice.mp3&#10;$ ffmpeg -i voice.wav -codec:a libvorbis voice.ogg&#10;$ ffmpeg -i voice.mp3 -codec:a libvorbis voice.ogg&#10;$ ffmpeg -i voice.mp3 -codec:a libmp3lame -b:a 128k voice.mp3</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>convert.sh</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://alternativeto.net/software/from-text-to-speech/">From Text to Speech Alternatives</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_speech_synthesizers">Comparison of speech synthesizers</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/">
+                <img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="326" height="125" alt="Guía de instalación de GNU/Linux para la Raspberry Pi" title="Guía de instalación de GNU/Linux para la Raspberry Pi" class="" loading="lazy">
+                <h3>Guía de instalación de GNU/Linux para la Raspberry Pi</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Qué es la variable PATH del sistema y cómo cambiarla en GNU/Linux" title="Qué es la variable PATH del sistema y cómo cambiarla en GNU/Linux" class="" loading="lazy">
+                <h3>Qué es la variable PATH del sistema y cómo cambiarla en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">
+                <img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu44169003e1adff259ec31b6c8aa75355_115945_875x0_resize_box_3.png" width="326" height="125" alt="Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos" title="Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos" class="" loading="lazy">
+                <h3>Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/">
+                <img src="/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_875x0_resize_box_3.png" width="326" height="125" alt="Comandos para crear una autoridad de certificación (CA) con OpenSSL" title="Comandos para crear una autoridad de certificación (CA) con OpenSSL" class="" loading="lazy">
+                <h3>Comandos para crear una autoridad de certificación (CA) con OpenSSL</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">
+                <img src="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/images/dig_hu3a19147225d8f34127d275e0d47847be_56993_875x0_resize_box_3.png" width="326" height="125" alt="Obtener un nombre de dominio para una dirección IP privada" title="Obtener un nombre de dominio para una dirección IP privada" class="" loading="lazy">
+                <h3>Obtener un nombre de dominio para una dirección IP privada</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">
+                <img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_875x0_resize_box_3.png" width="326" height="125" alt="Revertir un servicio a una versión anterior con Nomad" title="Revertir un servicio a una versión anterior con Nomad" class="" loading="lazy">
+                <h3>Revertir un servicio a una versión anterior con Nomad</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-555';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/02\/herramientas-para-convertir-texto-a-audio-de-voz-natural\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,691 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de John Horton Conway publicado en 1970 y la hormiga de Langton de Chris Langton publicado en 1986. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/" hreflang="es" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/index-amp.html" hreflang="es" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de John Horton Conway publicado en 1970 y la hormiga de Langton de Chris Langton publicado en 1986. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java">
+<meta name="twitter:description" content="Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de John Horton Conway publicado en 1970 y la hormiga de Langton de Chris Langton publicado en 1986. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/"
+    },
+    "headline": "Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2021-06-18T23:00:00+02:00",
+    "dateModified": "2021-06-18T23:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1796",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de John Horton Conway publicado en 1970 y la hormiga de Langton de Chris Langton publicado en 1986."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_1040x0_resize_box_3.png" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>18/06/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de <a href="https://es.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a> publicado en 1970 y la hormiga de Langton de <a href="https://es.wikipedia.org/wiki/Christopher_Langton">Chris Langton</a> publicado en 1986.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-juego-de-la-vida-de-conway">El juego de la vida de Conway</a>
+      <ul>
+        <li><a href="#reglas">Reglas</a></li>
+        <li><a href="#variaciones-con-otras-reglas">Variaciones, con otras reglas</a></li>
+        <li><a href="#patrones">Patrones</a></li>
+        <li><a href="#cómo-probar-el-juego-de-la-vida">Cómo probar el juego de la vida</a></li>
+      </ul>
+    </li>
+    <li><a href="#la-hormiga-de-langton">La hormiga de Langton</a>
+      <ul>
+        <li><a href="#reglas-1">Reglas</a></li>
+        <li><a href="#variaciones-con-otras-reglas-1">Variaciones, con otras reglas</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementación-del-juego-de-la-vida-en-java">Implementación del juego de la vida en Java</a></li>
+    <li><a href="#implementación-de-la-hormiga-de-hormiga-de-langton-en-java">Implementación de la hormiga de Hormiga de Langton en Java</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="el-juego-de-la-vida-de-conway">El juego de la vida de Conway</h3>
+<p>El juego de la vida de Conway es un autómata con unas reglas muy simples que da lugar a múltiples y variados comportamientos. Es un autómata de cero jugadores que se desarrolla por sí mismo en base al estado inicial y las reglas del juego.</p>
+<p>El juego es un tablero bidimensional formado por cuadrados o células que poseen dos estados, células muertas o encendidas o células vivas o apagadas. Cada célula está rodeada por 8 células vecinas. El estado de las células evoluciona a lo largo de unidades de tiempo discretas, el estado de todas las células se tiene en cuenta para calcular el estado en el turno siguiente aplicando las reglas del juego. Todas las células se actualizan simultáneamente en cada turno.</p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Juego_de_la_vida">Juego de la vida</a></li>
+</ul>
+<h4 id="reglas">Reglas</h4>
+<p>Las reglas del juego de la vida definido por Conway son las siguientes:</p>
+<ul>
+<li>Una célula muerta con exactamente 3 células vecinas vivas nace, en el siguiente turno estará viva o encendida.</li>
+<li>Una célula viva con 2 o 3 células vecinas vivas sigue viva.</li>
+<li>En cualquier otro caso la célula muere o se apaga, por tener menos o más células adyacentes vivas de las reglas anteriores. Una célula viva muere por soledad o por superpoblación.</li>
+</ul>
+<h4 id="variaciones-con-otras-reglas">Variaciones, con otras reglas</h4>
+<p>El juego de la vida definido por Conway se representa con la siguiente nomenclatura 23/3, los primeros dos números indican las células necesarias para que una célula siga viva y el tercer número indica las células adyacentes necesarias para que una célula nazca.</p>
+<p>Con otro número de células requeridas es posible crear variaciones del juego de la vida. Por ejemplo, 16/6 en el que una célula nace si tiene 6 vivas adyacentes y sigue viva si tiene un número igual a 1 o 6. Otra variación es 23/36 en el que una célula nace si el número de adyacentes vivas es 3 o 6 y sigue viva si el número de células vivas es 2 o 3, este caso es similar al juego de la vida de Conway variando que una célula nace si tiene 6 adyacentes vivas.</p>
+<h4 id="patrones">Patrones</h4>
+<p>Dado el estado inicial y las reglas de juego de la vida se observan varios patrones de comportamiento.</p>
+<ul>
+<li>Osciladores: estos patrones siguen una serie de pasos hasta que un número determinado llega al estado inicial, el patrón se repite de forma cíclica.</li>
+<li>Vidas estáticas: estas no cambian de estado con el paso del tiempo se mantienen en el mismo estado con el paso del tiempo.</li>
+<li>Naves espaciales: estos patrones evolucionan dando la sensación de que se trasladan por el tablero de juego de la vida.</li>
+<li>Matusalenes: son patrones que evolucionan o desaparecen después de un gran número grande de turnos.</li>
+<li>Cañones: son patrones que generan planeadores o naves espaciales.</li>
+<li>Locomotoras: son patrones que se desplazan por el tablero dejando un rastro de basura de osciladores, vidas estáticas, planeadores o naves espaciales.</li>
+<li>Sintetizadores: son patrones que dispuestos de elementos más básicos como <em>gliders</em> producen otro tipos de patrones.</li>
+</ul>
+<p>Uno de los patrones destacados del juego de la vida es una nave espacial conocido como <em>glider</em>, este es un patrón importante ya que son fáciles de producir que se pueden hacer colisionar con otros objetos de este modo ser usados para transmitir información. Ocho <em>gliders</em> pueden ser posicionados para que colisionen formando un cañón <em>gosper glider</em>. Otros patrones como bloques, <em>beehives</em>, <em>blinkers</em>, <em>traffic lights</em> son sintetizables con únicamente dos <em>gliders</em>.</p>
+<p>Los <em>gliders</em> también son capaces de colisionar para producir otros comportamientos, si dos <em>gliders</em> son lanzados contra un bloque de la forma adecuada el bloque se mueve hacia a la fuente de los <em>gliders</em>. Si tres <em>glider</em> son disparados en la forma correcta el bloque se mueve más aún. Esta memoria de desplazamiento puede ser usada para simular un contador modificable lanzándole <em>gliders</em>. También es posible construir puertas lógicas como <em>AND</em>, <em>OR</em> o <em>NOT</em> usando <em>gliders</em>. Esto es la misma capacidad de computación que una máquina universal de Turing, de modo que usando <em>gliders</em> el juego de la vida es de forma teórica tan capaz como cualquier computadora con memoria ilimitada y sin restricciones de tiempo. Por estas propiedades del <em>glider</em> se ha adoptado como un icono de la cultura <em>hacker</em>.</p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Juego_de_la_vida">Juego de la vida</a></li>
+</ul>
+<p>En esta <a href="https://conwaylife.appspot.com/library">librería de patrones del juego de la vida de Conway</a> hay una colección de patrones en la que además es posible visualizar su comportamiento.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Glider"><img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_200x150_fit_box_3.png" width="200" height="67" alt="Glider" title="Glider" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider-gun_hu61cee5f6a4594884cd7c14dd9ee82e0d_259_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Glider gun"><img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider-gun_hu61cee5f6a4594884cd7c14dd9ee82e0d_259_200x150_fit_box_3.png" width="200" height="51" alt="Glider gun" title="Glider gun" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-diehard_hucf2b8312ed83bb0f015da5eb6f5b7861_255_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diehard"><img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-diehard_hucf2b8312ed83bb0f015da5eb6f5b7861_255_200x150_fit_box_3.png" width="114" height="44" alt="Diehard" title="Diehard" class="" loading="lazy"></a></p>
+<figcaption>Patrones glider, glider gun y diehard</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="https://conwaylife.appspot.com/pattern/glider">Glider</a> (nave espacial)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/gosperglidergun">Gosper Glider Gun</a> (cañón)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/diehard">Diehard</a> (matusalén)</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-1_hu325dfbe80cf41e23c2d13cf0c844f26b_409_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrones que crecen indefinidamente"><img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-1_hu325dfbe80cf41e23c2d13cf0c844f26b_409_200x150_fit_box_3.png" width="114" height="86" alt="Patrones que crecen indefinidamente" title="Patrones que crecen indefinidamente" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-2_hu80245b2aa19c6c4d4f081165f0678d32_255_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrones que crecen indefinidamente"><img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-2_hu80245b2aa19c6c4d4f081165f0678d32_255_200x150_fit_box_3.png" width="72" height="72" alt="Patrones que crecen indefinidamente" title="Patrones que crecen indefinidamente" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-3_hu34a2d0042cf5878ea1f789026833d5c0_378_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrones que crecen indefinidamente"><img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-3_hu34a2d0042cf5878ea1f789026833d5c0_378_200x150_fit_box_3.png" width="200" height="6" alt="Patrones que crecen indefinidamente" title="Patrones que crecen indefinidamente" class="" loading="lazy"></a></p>
+<figcaption>Patrones que crecen indefinidamente</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="https://conwaylife.appspot.com/pattern/10cellinfinitegrowth">10 cell infinite growth</a></li>
+<li><a href="https://conwaylife.appspot.com/pattern/5x5infinitegrowth">5x5 infinite growth</a></li>
+<li><a href="https://conwaylife.appspot.com/pattern/unidimensionalinfinitegrowth">Unidimensional infinite growth</a></li>
+</ul>
+<p>Otros patrones:</p>
+<ul>
+<li><a href="https://conwaylife.appspot.com/pattern/acorn">Acorn</a> (matusalén)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/beehive">Beehive</a> (vida estática)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/beehive_synth">Beehive Synth</a> (sintetizador)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/gosperglidergun_synth">Gosper Glider Gun Synth</a> (sintetizador)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/blinker_synth">Blinker Synth</a> (sintetizador)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/trafficlight">Traffic Light</a> (oscilador)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/trafficlight_synth">Traffic Light Synth</a> (sintetizador)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/prepulsarshuttle26">Prepulsarshuttle26</a> (oscilador)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/88p28">88p28</a> (oscilador)</li>
+<li><a href="https://conwaylife.appspot.com/pattern/linepuffer">Line puffer</a> (locomotora)</li>
+</ul>
+<h4 id="cómo-probar-el-juego-de-la-vida">Cómo probar el juego de la vida</h4>
+<p>En algunas páginas es posible probar el juego de la vida para experimentar con su comportamiento.</p>
+<ul>
+<li><a href="https://conwaylife.appspot.com/new">Visualizador del juego de la vida I</a></li>
+<li><a href="https://playgameoflife.com/">Visualizador del juego de la vida II</a></li>
+</ul>
+<h3 id="la-hormiga-de-langton">La hormiga de Langton</h3>
+<p>La hormiga de Langton es otro tipo de autómata con unas reglas muy simples pero que da lugar a un comportamiento complejo. Al igual que el juego de la vida de Conway se desarrolla en un tablero de dos dimensiones en el que cada celda del tablero está encendida o apagada.</p>
+<p>En está página de la wikipedia se puede probar la hormiga de Langton.</p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Hormiga_de_Langton">Hormiga de Langton</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/hormiga-de-langton_hu112cb1854a982cba51e2ae1421ef42fb_22639_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Hormiga de Langton"><img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/hormiga-de-langton_hu112cb1854a982cba51e2ae1421ef42fb_22639_300x200_fit_box_3.png" width="267" height="200" alt="Hormiga de Langton" title="Hormiga de Langton" class="" loading="lazy"></a></p>
+<figcaption>Patrón generado por la hormiga de Langton después de 10K pasos</figcaption>
+</figure>
+</div>
+<h4 id="reglas-1">Reglas</h4>
+<p>La hormiga de Langton se basa en las siguientes reglas:</p>
+<ul>
+<li>Si está sobre un cuadrado encendido, cambia el color del cuadrado, gira noventa grados a la izquierda y avanza un cuadrado.</li>
+<li>Si está sobre un cuadrado apagado, cambia el color del cuadrado, gira noventa grados a la derecha y avanza un cuadrado.</li>
+</ul>
+<p>En el caso de la hormiga de Langton al cabo de unos 10000 turnos crea un patrón que sigue de forma indefinida.</p>
+<h4 id="variaciones-con-otras-reglas-1">Variaciones, con otras reglas</h4>
+<p>A la hormiga de Langton también es posible aplicarle otra reglas, por ejemplo añadiendo más estados a las celdas con colores o incluyendo varias hormigas en el tablero.</p>
+<h3 id="implementación-del-juego-de-la-vida-en-java">Implementación del juego de la vida en Java</h3>
+<p>Esta es la implementación en código con lenguaje Java del juego de la vida de Conway y sus reglas. Estas son las clases principales que implementan el juego, la clase <em>Cell</em> representa una célula con su estado y la clase <em>Board</em> en el método <em>step</em> produce el siguiente estado con las reglas del juego implementadas en los métodos <em>survives</em>, <em>borns</em> y <em>countAliveNeighbours</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaconwaylangton.conway</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cell</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Status</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ALIVE</span><span class="o">,</span> <span class="n">DEAD</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Status</span> <span class="n">status</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Cell</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">(</span><span class="n">Status</span><span class="o">.</span><span class="na">DEAD</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Cell</span><span class="o">(</span><span class="n">Status</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">(</span><span class="n">status</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Cell</span><span class="o">(</span><span class="n">Status</span> <span class="n">status</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAlive</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">status</span> <span class="o">==</span> <span class="n">Status</span><span class="o">.</span><span class="na">ALIVE</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAlive</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="na">ALIVE</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isDead</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">status</span> <span class="o">==</span> <span class="n">Status</span><span class="o">.</span><span class="na">DEAD</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDead</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="na">DEAD</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">age</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">tick</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">age</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Status</span> <span class="nf">getStatus</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">status</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setStatus</span><span class="o">(</span><span class="n">Status</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">!=</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">age</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>conway/Cell.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">  1&#10;</span><span class="lnt">  2&#10;</span><span class="lnt">  3&#10;</span><span class="lnt">  4&#10;</span><span class="lnt">  5&#10;</span><span class="lnt">  6&#10;</span><span class="lnt">  7&#10;</span><span class="lnt">  8&#10;</span><span class="lnt">  9&#10;</span><span class="lnt"> 10&#10;</span><span class="lnt"> 11&#10;</span><span class="lnt"> 12&#10;</span><span class="lnt"> 13&#10;</span><span class="lnt"> 14&#10;</span><span class="lnt"> 15&#10;</span><span class="lnt"> 16&#10;</span><span class="lnt"> 17&#10;</span><span class="lnt"> 18&#10;</span><span class="lnt"> 19&#10;</span><span class="lnt"> 20&#10;</span><span class="lnt"> 21&#10;</span><span class="lnt"> 22&#10;</span><span class="lnt"> 23&#10;</span><span class="lnt"> 24&#10;</span><span class="lnt"> 25&#10;</span><span class="lnt"> 26&#10;</span><span class="lnt"> 27&#10;</span><span class="lnt"> 28&#10;</span><span class="lnt"> 29&#10;</span><span class="lnt"> 30&#10;</span><span class="lnt"> 31&#10;</span><span class="lnt"> 32&#10;</span><span class="lnt"> 33&#10;</span><span class="lnt"> 34&#10;</span><span class="lnt"> 35&#10;</span><span class="lnt"> 36&#10;</span><span class="lnt"> 37&#10;</span><span class="lnt"> 38&#10;</span><span class="lnt"> 39&#10;</span><span class="lnt"> 40&#10;</span><span class="lnt"> 41&#10;</span><span class="lnt"> 42&#10;</span><span class="lnt"> 43&#10;</span><span class="lnt"> 44&#10;</span><span class="lnt"> 45&#10;</span><span class="lnt"> 46&#10;</span><span class="lnt"> 47&#10;</span><span class="lnt"> 48&#10;</span><span class="lnt"> 49&#10;</span><span class="lnt"> 50&#10;</span><span class="lnt"> 51&#10;</span><span class="lnt"> 52&#10;</span><span class="lnt"> 53&#10;</span><span class="lnt"> 54&#10;</span><span class="lnt"> 55&#10;</span><span class="lnt"> 56&#10;</span><span class="lnt"> 57&#10;</span><span class="lnt"> 58&#10;</span><span class="lnt"> 59&#10;</span><span class="lnt"> 60&#10;</span><span class="lnt"> 61&#10;</span><span class="lnt"> 62&#10;</span><span class="lnt"> 63&#10;</span><span class="lnt"> 64&#10;</span><span class="lnt"> 65&#10;</span><span class="lnt"> 66&#10;</span><span class="lnt"> 67&#10;</span><span class="lnt"> 68&#10;</span><span class="lnt"> 69&#10;</span><span class="lnt"> 70&#10;</span><span class="lnt"> 71&#10;</span><span class="lnt"> 72&#10;</span><span class="lnt"> 73&#10;</span><span class="lnt"> 74&#10;</span><span class="lnt"> 75&#10;</span><span class="lnt"> 76&#10;</span><span class="lnt"> 77&#10;</span><span class="lnt"> 78&#10;</span><span class="lnt"> 79&#10;</span><span class="lnt"> 80&#10;</span><span class="lnt"> 81&#10;</span><span class="lnt"> 82&#10;</span><span class="lnt"> 83&#10;</span><span class="lnt"> 84&#10;</span><span class="lnt"> 85&#10;</span><span class="lnt"> 86&#10;</span><span class="lnt"> 87&#10;</span><span class="lnt"> 88&#10;</span><span class="lnt"> 89&#10;</span><span class="lnt"> 90&#10;</span><span class="lnt"> 91&#10;</span><span class="lnt"> 92&#10;</span><span class="lnt"> 93&#10;</span><span class="lnt"> 94&#10;</span><span class="lnt"> 95&#10;</span><span class="lnt"> 96&#10;</span><span class="lnt"> 97&#10;</span><span class="lnt"> 98&#10;</span><span class="lnt"> 99&#10;</span><span class="lnt">100&#10;</span><span class="lnt">101&#10;</span><span class="lnt">102&#10;</span><span class="lnt">103&#10;</span><span class="lnt">104&#10;</span><span class="lnt">105&#10;</span><span class="lnt">106&#10;</span><span class="lnt">107&#10;</span><span class="lnt">108&#10;</span><span class="lnt">109&#10;</span><span class="lnt">110&#10;</span><span class="lnt">111&#10;</span><span class="lnt">112&#10;</span><span class="lnt">113&#10;</span><span class="lnt">114&#10;</span><span class="lnt">115&#10;</span><span class="lnt">116&#10;</span><span class="lnt">117&#10;</span><span class="lnt">118&#10;</span><span class="lnt">119&#10;</span><span class="lnt">120&#10;</span><span class="lnt">121&#10;</span><span class="lnt">122&#10;</span><span class="lnt">123&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaconwaylangton.conway</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Board</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">aliveRules</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">bornRules</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Cell</span><span class="o">[][]</span> <span class="n">cells</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Board</span><span class="o">(</span><span class="n">String</span> <span class="n">initial</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">(</span><span class="n">initial</span><span class="o">,</span> <span class="n">160</span><span class="o">,</span> <span class="n">80</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Board</span><span class="o">(</span><span class="n">String</span> <span class="n">initial</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">initCells</span><span class="o">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">loadCells</span><span class="o">(</span><span class="n">initial</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Cell</span> <span class="nf">getCell</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">getHeight</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">getWidth</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">cells</span><span class="o">[</span><span class="n">y</span><span class="o">][</span><span class="n">x</span><span class="o">];</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getWidth</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">cells</span><span class="o">[</span><span class="n">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHeight</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">cells</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPopulation</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">population</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">getHeight</span><span class="o">();</span> <span class="o">++</span><span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">getWidth</span><span class="o">();</span> <span class="o">++</span><span class="n">x</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">getCell</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">).</span><span class="na">isAlive</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">population</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">population</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">step</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cell</span><span class="o">[][]</span> <span class="n">cells</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cell</span><span class="o">[</span><span class="n">getHeight</span><span class="o">()][</span><span class="n">getWidth</span><span class="o">()];</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">getHeight</span><span class="o">();</span> <span class="o">++</span><span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">getWidth</span><span class="o">();</span> <span class="o">++</span><span class="n">x</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cell</span> <span class="n">oldCell</span> <span class="o">=</span> <span class="n">getCell</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cell</span> <span class="n">newCell</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cell</span><span class="o">(</span><span class="n">oldCell</span><span class="o">.</span><span class="na">getStatus</span><span class="o">(),</span> <span class="n">oldCell</span><span class="o">.</span><span class="na">getAge</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">cells</span><span class="o">[</span><span class="n">y</span><span class="o">][</span><span class="n">x</span><span class="o">]</span> <span class="o">=</span> <span class="n">newCell</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">aliveNeighbours</span> <span class="o">=</span> <span class="n">countAliveNeighbours</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cell</span><span class="o">.</span><span class="na">Status</span> <span class="n">status</span> <span class="o">=</span> <span class="o">(</span><span class="n">survives</span><span class="o">(</span><span class="n">oldCell</span><span class="o">,</span> <span class="n">aliveNeighbours</span><span class="o">)</span> <span class="o">||</span> <span class="n">borns</span><span class="o">(</span><span class="n">oldCell</span><span class="o">,</span> <span class="n">aliveNeighbours</span><span class="o">))</span> <span class="o">?</span> <span class="n">Cell</span><span class="o">.</span><span class="na">Status</span><span class="o">.</span><span class="na">ALIVE</span> <span class="o">:</span> <span class="n">Cell</span><span class="o">.</span><span class="na">Status</span><span class="o">.</span><span class="na">DEAD</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">newCell</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="n">status</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">cells</span> <span class="o">=</span> <span class="n">cells</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">survives</span><span class="o">(</span><span class="n">Cell</span> <span class="n">cell</span><span class="o">,</span> <span class="kt">int</span> <span class="n">aliveNeighbours</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">cell</span><span class="o">.</span><span class="na">isAlive</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">aliveRules</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">aliveNeighbours</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">borns</span><span class="o">(</span><span class="n">Cell</span> <span class="n">cell</span><span class="o">,</span> <span class="kt">int</span> <span class="n">aliveNeighbours</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">cell</span><span class="o">.</span><span class="na">isDead</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">bornRules</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">aliveNeighbours</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="nf">countAliveNeighbours</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">getNeighbours</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">).</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">Cell</span><span class="o">::</span><span class="n">isAlive</span><span class="o">).</span><span class="na">count</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">Cell</span><span class="o">&gt;</span> <span class="nf">getNeighbours</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Collection</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="n">positions</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="o">+</span> <span class="n">2</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">2</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">continue</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">getWidth</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">getHeight</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">continue</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">positions</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Position</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">positions</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">p</span> <span class="o">-&gt;</span> <span class="n">getCell</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">getX</span><span class="o">(),</span> <span class="n">p</span><span class="o">.</span><span class="na">getY</span><span class="o">())).</span><span class="na">filter</span><span class="o">(</span><span class="n">Objects</span><span class="o">::</span><span class="n">nonNull</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">void</span> <span class="nf">initCells</span><span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">cells</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cell</span><span class="o">[</span><span class="n">height</span><span class="o">][</span><span class="n">width</span><span class="o">];</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="o">;</span> <span class="o">++</span><span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="o">;</span> <span class="o">++</span><span class="n">x</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">cells</span><span class="o">[</span><span class="n">y</span><span class="o">][</span><span class="n">x</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cell</span><span class="o">(</span><span class="n">Cell</span><span class="o">.</span><span class="na">Status</span><span class="o">.</span><span class="na">DEAD</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">void</span> <span class="nf">loadCells</span><span class="o">(</span><span class="n">String</span> <span class="n">initial</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">initial</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;\\n&#34;</span><span class="o">)).</span><span class="na">max</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">())).</span><span class="na">orElseGet</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="s">&#34;&#34;</span><span class="o">).</span><span class="na">length</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">initial</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;\\n&#34;</span><span class="o">).</span><span class="na">length</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">(</span><span class="n">getWidth</span><span class="o">()</span> <span class="o">/</span> <span class="n">2</span><span class="o">)</span> <span class="o">-</span> <span class="o">(</span><span class="n">width</span> <span class="o">/</span> <span class="n">2</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="o">(</span><span class="n">getHeight</span><span class="o">()</span> <span class="o">/</span> <span class="n">2</span><span class="o">)</span> <span class="o">-</span> <span class="o">(</span><span class="n">height</span> <span class="o">/</span> <span class="n">2</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">initial</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Character</span> <span class="n">c</span> <span class="o">=</span> <span class="n">initial</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">a</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">b</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">!=</span> <span class="sc">&#39; &#39;</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cell</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">getCell</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">b</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">cell</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="n">Cell</span><span class="o">.</span><span class="na">Status</span><span class="o">.</span><span class="na">ALIVE</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">a</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">a</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>conway/Board.java</span>
+    </div>
+</div>
+<h3 id="implementación-de-la-hormiga-de-hormiga-de-langton-en-java">Implementación de la hormiga de Hormiga de Langton en Java</h3>
+<p>Esta es la implementación en lenguaje Java de la hormiga de Langton y las reglas propias del juego. La clase <em>Turmite</em> representa la hormiga, el método <em>step</em> aplica la lógica del autómata de la hormiga en función del estádo de la celda en la que está. Los metodos <em>turnLeft</em>, <em>turnRight</em> y <em>forward</em> cambian el estado de la hormiga haciéndola cambiar de dirección y avanzando a otra celda.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">  1&#10;</span><span class="lnt">  2&#10;</span><span class="lnt">  3&#10;</span><span class="lnt">  4&#10;</span><span class="lnt">  5&#10;</span><span class="lnt">  6&#10;</span><span class="lnt">  7&#10;</span><span class="lnt">  8&#10;</span><span class="lnt">  9&#10;</span><span class="lnt"> 10&#10;</span><span class="lnt"> 11&#10;</span><span class="lnt"> 12&#10;</span><span class="lnt"> 13&#10;</span><span class="lnt"> 14&#10;</span><span class="lnt"> 15&#10;</span><span class="lnt"> 16&#10;</span><span class="lnt"> 17&#10;</span><span class="lnt"> 18&#10;</span><span class="lnt"> 19&#10;</span><span class="lnt"> 20&#10;</span><span class="lnt"> 21&#10;</span><span class="lnt"> 22&#10;</span><span class="lnt"> 23&#10;</span><span class="lnt"> 24&#10;</span><span class="lnt"> 25&#10;</span><span class="lnt"> 26&#10;</span><span class="lnt"> 27&#10;</span><span class="lnt"> 28&#10;</span><span class="lnt"> 29&#10;</span><span class="lnt"> 30&#10;</span><span class="lnt"> 31&#10;</span><span class="lnt"> 32&#10;</span><span class="lnt"> 33&#10;</span><span class="lnt"> 34&#10;</span><span class="lnt"> 35&#10;</span><span class="lnt"> 36&#10;</span><span class="lnt"> 37&#10;</span><span class="lnt"> 38&#10;</span><span class="lnt"> 39&#10;</span><span class="lnt"> 40&#10;</span><span class="lnt"> 41&#10;</span><span class="lnt"> 42&#10;</span><span class="lnt"> 43&#10;</span><span class="lnt"> 44&#10;</span><span class="lnt"> 45&#10;</span><span class="lnt"> 46&#10;</span><span class="lnt"> 47&#10;</span><span class="lnt"> 48&#10;</span><span class="lnt"> 49&#10;</span><span class="lnt"> 50&#10;</span><span class="lnt"> 51&#10;</span><span class="lnt"> 52&#10;</span><span class="lnt"> 53&#10;</span><span class="lnt"> 54&#10;</span><span class="lnt"> 55&#10;</span><span class="lnt"> 56&#10;</span><span class="lnt"> 57&#10;</span><span class="lnt"> 58&#10;</span><span class="lnt"> 59&#10;</span><span class="lnt"> 60&#10;</span><span class="lnt"> 61&#10;</span><span class="lnt"> 62&#10;</span><span class="lnt"> 63&#10;</span><span class="lnt"> 64&#10;</span><span class="lnt"> 65&#10;</span><span class="lnt"> 66&#10;</span><span class="lnt"> 67&#10;</span><span class="lnt"> 68&#10;</span><span class="lnt"> 69&#10;</span><span class="lnt"> 70&#10;</span><span class="lnt"> 71&#10;</span><span class="lnt"> 72&#10;</span><span class="lnt"> 73&#10;</span><span class="lnt"> 74&#10;</span><span class="lnt"> 75&#10;</span><span class="lnt"> 76&#10;</span><span class="lnt"> 77&#10;</span><span class="lnt"> 78&#10;</span><span class="lnt"> 79&#10;</span><span class="lnt"> 80&#10;</span><span class="lnt"> 81&#10;</span><span class="lnt"> 82&#10;</span><span class="lnt"> 83&#10;</span><span class="lnt"> 84&#10;</span><span class="lnt"> 85&#10;</span><span class="lnt"> 86&#10;</span><span class="lnt"> 87&#10;</span><span class="lnt"> 88&#10;</span><span class="lnt"> 89&#10;</span><span class="lnt"> 90&#10;</span><span class="lnt"> 91&#10;</span><span class="lnt"> 92&#10;</span><span class="lnt"> 93&#10;</span><span class="lnt"> 94&#10;</span><span class="lnt"> 95&#10;</span><span class="lnt"> 96&#10;</span><span class="lnt"> 97&#10;</span><span class="lnt"> 98&#10;</span><span class="lnt"> 99&#10;</span><span class="lnt">100&#10;</span><span class="lnt">101&#10;</span><span class="lnt">102&#10;</span><span class="lnt">103&#10;</span><span class="lnt">104&#10;</span><span class="lnt">105&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaconwaylangton.langton</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Turmite</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Direction</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">UP</span><span class="o">,</span> <span class="n">DOWN</span><span class="o">,</span> <span class="n">LEFT</span><span class="o">,</span> <span class="n">RIGHT</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Direction</span> <span class="n">direction</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Turmite</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">(</span><span class="n">80</span><span class="o">,</span> <span class="n">24</span><span class="o">,</span> <span class="n">Direction</span><span class="o">.</span><span class="na">UP</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Turmite</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="n">Direction</span> <span class="n">direction</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">direction</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getX</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">x</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getY</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">y</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Position</span> <span class="nf">getPosition</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">new</span> <span class="n">Position</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAt</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">==</span> <span class="n">y</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">step</span><span class="o">(</span><span class="n">Board</span> <span class="n">board</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Cell</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="na">getCell</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">cell</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">cell</span><span class="o">.</span><span class="na">isOn</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">cell</span><span class="o">.</span><span class="na">setOff</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">turnLeft</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">forward</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">cell</span><span class="o">.</span><span class="na">isOff</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">cell</span><span class="o">.</span><span class="na">setOn</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">turnRight</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">forward</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">forward</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">switch</span> <span class="o">(</span><span class="n">direction</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">UP</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">-=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">DOWN</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">LEFT</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">-=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">RIGHT</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">turnLeft</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">switch</span> <span class="o">(</span><span class="n">direction</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">UP</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">LEFT</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">DOWN</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">RIGHT</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">LEFT</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">DOWN</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">RIGHT</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">UP</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">turnRight</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">switch</span> <span class="o">(</span><span class="n">direction</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">UP</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">RIGHT</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">DOWN</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">LEFT</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">LEFT</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">UP</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">RIGHT</span><span class="o">:</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direction</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="na">DOWN</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">break</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>langton/Turmite.java</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaConwayLangton">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.it.uc3m.es/jvillena/irc/practicas/09-10/04mem.pdf">El juego de la vida por Manuel R. D.</a></li>
+<li><a href="https://www.adictosaltrabajo.com/2020/04/30/el-juego-de-la-vida-de-conway/">El Juego de la Vida de Conway</a></li>
+<li><a href="https://www.xataka.com/historia-tecnologica/mitico-juego-vida-matematico-john-conway-sigue-siendo-uno-problemas-clasicos-programacion-50-anos-despues">El mítico juego de la vida del matemático John Conway sigue siendo uno de los problemas clásicos de programación 50 años después</a></li>
+<li><a href="http://www.bitstorm.org/gameoflife/code/">Implementación en Java del juego de la vida</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" title="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" class="" loading="lazy">
+                <h3>El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">
+                <img src="/blog-bitix/assets/images/logotypes/nexus.svg" width="326" height="125" alt="Repositorio de artefactos privado con Nexus" title="Repositorio de artefactos privado con Nexus" class="" loading="lazy">
+                <h3>Repositorio de artefactos privado con Nexus</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_875x0_resize_box_3.png" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear un archivo Zip con Java, comprimir y descomprimir datos" title="Crear un archivo Zip con Java, comprimir y descomprimir datos" class="" loading="lazy">
+                <h3>Crear un archivo Zip con Java, comprimir y descomprimir datos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" title="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" class="" loading="lazy">
+                <h3>Emitir trazas de las peticiones y respuestas HTTP con clientes Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo deduplicar eventos de dominio" title="Cómo deduplicar eventos de dominio" class="" loading="lazy">
+                <h3>Cómo deduplicar eventos de dominio</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-582';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/06\/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,564 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Las páginas web están formadas por varios elementos separados, por un lado está el código HTML que forma el contenido de la página con las referencias a elementos externos que use como hojas de estilo CSS, imágenes o archivos JavaScript. Las imágenes son recursos gráficos soportando todos los navegadores los formatos png, jpg para fotos e imágenes vectoriales como svg. Los archivos JavaScript permite incorporar a la página código ejecutable con el propósito de añadir ciertos comportamientos mediante programación. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Qué hace y ventajas de un preprocesador de estilos CSS</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/" hreflang="es" title="Qué hace y ventajas de un preprocesador de estilos CSS">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/index-amp.html" hreflang="es" title="Qué hace y ventajas de un preprocesador de estilos CSS">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Qué hace y ventajas de un preprocesador de estilos CSS">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/css-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Las páginas web están formadas por varios elementos separados, por un lado está el código HTML que forma el contenido de la página con las referencias a elementos externos que use como hojas de estilo CSS, imágenes o archivos JavaScript. Las imágenes son recursos gráficos soportando todos los navegadores los formatos png, jpg para fotos e imágenes vectoriales como svg. Los archivos JavaScript permite incorporar a la página código ejecutable con el propósito de añadir ciertos comportamientos mediante programación. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/css-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Qué hace y ventajas de un preprocesador de estilos CSS">
+<meta name="twitter:description" content="Las páginas web están formadas por varios elementos separados, por un lado está el código HTML que forma el contenido de la página con las referencias a elementos externos que use como hojas de estilo CSS, imágenes o archivos JavaScript. Las imágenes son recursos gráficos soportando todos los navegadores los formatos png, jpg para fotos e imágenes vectoriales como svg. Los archivos JavaScript permite incorporar a la página código ejecutable con el propósito de añadir ciertos comportamientos mediante programación. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/"
+    },
+    "headline": "Qué hace y ventajas de un preprocesador de estilos CSS",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/css-750.png"
+        
+      },
+    "datePublished": "2020-08-21T15:00:00+02:00",
+    "dateModified": "2020-08-21T15:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1143",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Las páginas web están formadas por varios elementos separados, por un lado está el código HTML que forma el contenido de la página con las referencias a elementos externos que use como hojas de estilo CSS, imágenes o archivos JavaScript. Las imágenes son recursos gráficos soportando todos los navegadores los formatos png, jpg para fotos e imágenes vectoriales como svg. Los archivos JavaScript permite incorporar a la página código ejecutable con el propósito de añadir ciertos comportamientos mediante programación."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Qué hace y ventajas de un preprocesador de estilos CSS</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>21/08/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/web/">web</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/css.svg" width="200" height="209" alt="CSS" title="CSS" class="" loading="false"></p>
+</div>
+<p>Las páginas web están formadas por varios elementos separados, por un lado está el código HTML que forma el contenido de la página con las referencias a elementos externos que use como hojas de estilo CSS, imágenes o archivos JavaScript. Las imágenes son recursos gráficos soportando todos los navegadores los formatos <em>png</em>, <em>jpg</em> para fotos e imágenes vectoriales como <em>svg</em>. Los archivos JavaScript permite incorporar a la página código ejecutable con el propósito de añadir ciertos comportamientos mediante programación. Finalmente, están las hojas de estilo CSS que proporcionan los estilos y cambian el aspecto visual y maquetación de los elementos, el contenido HTML puede ser el mismo pero con una hoja de estilos diferente la visualización muy diferente.</p>
+<p>Las hojas de estilos cambian propiedades de visualización de diferentes elementos como tipo de letra, tamaño de texto, formato, color, alineación, bordes, etc&hellip; La etiqueta <em>h1</em> representa el título principal de la página, con el siguiente código se establecen varias propiedades a cada una de las etiquetas.</p>
+<p>Siendo las páginas web cada vez más complejas, en gran medida las hojas de estilo también se convierten en más complejas con la aparición de los dispositivos móviles un poco más dado que hay que adaptar la página al tamaño de cada uno de los dispositivos. Por esto se suelen usar <em>toolkits</em> o librerías como <a href="https://getbootstrap.com/">Bootstrap</a> con unos estilos elegantes listos para usar sin tener que crearlos desde cero en cada proyecto,  proporciona diferentes componentes como <em>layouts</em>, botones, formularios, modales, <em>popovers</em>, barras de progreso, desplegables y algunos más. Sin embargo, aún con Bootstrap suelen ser necesarios escribir algunos estilos adicionales propios de la página.</p>
+<h3 id="el-preprocesador-de-estilos-css">El preprocesador de estilos CSS</h3>
+<p>Para facilitar la escritura de hojas de estilos complejas con menor código y más legibles han aparecido preprocesadores de hojas de estilos o <em>css preprocessors</em> con funcionalidades adicionales y una nueva forma de escribir hojas de estilo menos tediosa que el CSS.</p>
+<p>Un preprocesador de CSS es un programa que lee un archivo de código fuente en el formato pseudo-código CSS que espera el preprocesador y genera un archivo hoja de estilos en formato CSS que los navegadores entienden, es un compilador que transforma el lenguaje de un archivo a otro en este caso de un código que suele ser similar a CSS a CSS estándar. Uno de los preprocesadores más populares por su simplicidad pero con muchas funciones útiles es <a href="https://lesscss.org/">less</a>, otro es <a href="https://sass-lang.com/">Sass</a>.</p>
+<p>Las ventajas de un preprocesador CSS es que se pueden usar variables que pueden ser utilizadas por ejemplo para aplicar el mismo color a varios elementos sin tener que repetir el color RGB en cada uno de los elementos lo que facilita el mantenimiento de las hojas de estilo. Anidar estilos relativos a un elemento y selectores, realizar operaciones, utilizar funciones, <em>namespaces</em> para agrupar contextos de estilos y <em>mixins</em> para estilos aplicables a varios elementos algunas cosas más pero estas ya mejoran y simplifican significativamente el trabajo con hojas de estilo.</p>
+<p>Los preprocesadores CSS facilitan la escritura y mantenimiento de las hojas de estilos con funcionalidades que CSS no tiene pero esto no hace del CSS resultante generado mejor que si estuviese escrito directamente sin utilizar un preprocesador, por ejemplo no conviene crear muchos niveles de anidación ya que el CSS generado será más grande y más costoso de aplicar al navegador. Para desarrollar estilos aplicables a elementos HTML que sean reutilizables y más fácilmente mantenibles hay que emplear alguna de las metodologías más aceptadas que proponen buenas prácticas para la escritura de CSS, algunas de estas metodologías son OOCSS, BEM y SMACSS.</p>
+<p>Este es un ejemplo de código fuente en formato del preprocesador Less que muestra varias de las funcionalidades que aporta sobre CSS estándar.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">// Variables&#10;@width: 10px;&#10;@height: @width + 10px;&#10;&#10;#header {&#10;  width: @width;&#10;  height: @height;&#10;}&#10;&#10;// Mixins&#10;.bordered {&#10;&nbsp;&nbsp;&nbsp;&nbsp;border-top: dotted 1px black;&#10;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: solid 2px black;&#10;}&#10;&#10;#menu a {&#10;&nbsp;&nbsp;&nbsp;&nbsp;color: #111;&#10;&nbsp;&nbsp;&nbsp;&nbsp;.bordered();&#10;}&#10;  &#10;.post a {&#10;&nbsp;&nbsp;&nbsp;&nbsp;color: red;&#10;&nbsp;&nbsp;&nbsp;&nbsp;.bordered();&#10;}&#10;&#10;// Nesting&#10;#header {&#10;&nbsp;&nbsp;&nbsp;&nbsp;color: black;&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;.navigation {&#10;&nbsp;&nbsp;&nbsp;&nbsp;  font-size: 12px;&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;.logo {&#10;&nbsp;&nbsp;&nbsp;&nbsp;  width: 300px;&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;}&#10;&#10;// Operations&#10;@conversion-1: 5cm + 10mm; // result is 6cm&#10;@conversion-2: 2 - 3cm - 5mm; // result is -1.5cm&#10;&#10;@base: 5%;&#10;@filler: @base * 2; // result is 10%&#10;@other: @base + @filler; // result is 15%&#10;&#10;// Functions&#10;@base: #f04615;&#10;@width: 0.5;&#10;&#10;.class {&#10;  width: percentage(@width); // returns `50%`&#10;  color: saturate(@base, 5%);&#10;  background-color: spin(lighten(@base, 25%), 8);&#10;}&#10;&#10;// Importing&#10;@import &#34;library.less&#34;;&#10;@import &#34;typo.css&#34;;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>example.less</span>
+    </div>
+</div>
+<h3 id="cómo-transformar-el-pseudo-codigo-css-a-css-con-un-preprocesador">Cómo transformar el pseudo-codigo CSS a CSS con un preprocesador</h3>
+<p>El archivo CSS en formato <em>less</em> hay que compilarlo para producir el archivo CSS que los navegadores entienden. La herramienta para compilar el archivo de estilos en formato <em>less</em> es <em>lessc</em>. Se puede usar directamente en un <em>script</em> Bash o con una herramienta de construcción como <a href="https://www.npmjs.com/">npm</a> o a través de <a href="https://webpack.js.org/">webpack</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ npm install --save-dev less&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>npm-install.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;blog-bitix&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;1.0.0&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;devDependencies&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="err">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nt">&#34;less&#34;</span><span class="p">:</span> <span class="s2">&#34;^3.12.2&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="err">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nt">&#34;less-main&#34;</span><span class="p">:</span> <span class="s2">&#34;lessc themes/bitix/static/assets/css/main.less themes/bitix/static/assets/css/main.css&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="err">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nt">&#34;npm&#34;</span><span class="p">:</span> <span class="s2">&#34;^6.14.7&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nt">&#34;npm-check-updates&#34;</span><span class="p">:</span> <span class="s2">&#34;^7.0.2&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;  <span class="p">}</span>&#10;  </code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>package.json</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span><span class="nb">set</span> -e&#10;&#10;npm run less-main</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>npm-less-main.sh</span>
+    </div>
+</div>
+<p>La hoja de estilos en formato <em>less</em> que genera el código CSS anterior el siguiente. Se observa que los estilos aplicables a _la etiqueta <em>article</em> quedan agrupados en el contexto de <em>article</em> de modo que son fácilmente identificables todos los estilos de cada etiqueta, además algunos colores utilizan variables cuyos valores no hace falta repetir en cada uso junto con el uso de funciones como <em>lighten</em> y <em>darken</em> para generar variaciones del color base indicado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span><span class="lnt">66&#10;</span><span class="lnt">67&#10;</span><span class="lnt">68&#10;</span><span class="lnt">69&#10;</span><span class="lnt">70&#10;</span><span class="lnt">71&#10;</span><span class="lnt">72&#10;</span><span class="lnt">73&#10;</span><span class="lnt">74&#10;</span><span class="lnt">75&#10;</span><span class="lnt">76&#10;</span><span class="lnt">77&#10;</span><span class="lnt">78&#10;</span><span class="lnt">79&#10;</span><span class="lnt">80&#10;</span><span class="lnt">81&#10;</span><span class="lnt">82&#10;</span><span class="lnt">83&#10;</span><span class="lnt">84&#10;</span><span class="lnt">85&#10;</span><span class="lnt">86&#10;</span><span class="lnt">87&#10;</span><span class="lnt">88&#10;</span><span class="lnt">89&#10;</span><span class="lnt">90&#10;</span><span class="lnt">91&#10;</span><span class="lnt">92&#10;</span><span class="lnt">93&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">@background: white;&#10;@background-page: #F8F8F8;&#10;@color: #222;&#10;@link: rgb(86, 157, 47);&#10;@border: @background-page;&#10;&#10;html {&#10;  font-size: 16px;&#10;}&#10;&#10;body {&#10;  color: @color;&#10;  font-family: &#39;PT Serif&#39;, &#39;Times New Roman&#39;, Times, serif;&#10;  font-size: 1.2em;&#10;  font-weight: 400;&#10;  margin-bottom: 50px;&#10;  background-color: @background-page;&#10;  background-image: url(&#39;/blog-bitix/assets/images/backgrounds/grey.png&#39;);&#10;}&#10;&#10;...&#10;&#10;h1, h2, h3, h4, h5, h6 {&#10;  margin-top: 20px;&#10;  margin-bottom: 10px;&#10;  font-weight: 700;&#10;  clear: both;&#10;}&#10;&#10;...&#10;&#10;article {&#10;  h1 {&#10;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 2.6em;&#10;  }&#10;&#10;  @media (max-width: 576px) {&#10;&nbsp;&nbsp;&nbsp;&nbsp;h1 {&#10;&nbsp;&nbsp;&nbsp;&nbsp;  font-size: 1.8em;&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;  }&#10;&#10;  p.information, span.information {&#10;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9em;&#10;  }&#10;&#10;  p.summary {&#10;&nbsp;&nbsp;&nbsp;&nbsp;font-weight: 700;&#10;  }&#10;&#10;  ul.columns {&#10;&nbsp;&nbsp;&nbsp;&nbsp;columns: 4 12em;&#10;&nbsp;&nbsp;&nbsp;&nbsp;column-gap: 1em;&#10;  }&#10;&#10;  table {&#10;&nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 20px;&#10;  }&#10;&#10;  blockquote {&#10;&nbsp;&nbsp;&nbsp;&nbsp;padding: 0 1em;&#10;&nbsp;&nbsp;&nbsp;&nbsp;color: #6a737d;&#10;&nbsp;&nbsp;&nbsp;&nbsp;border-left: 0.25em solid #dfe2e5;&#10;  }&#10;&#10;  div.logotypes {&#10;&nbsp;&nbsp;&nbsp;&nbsp;margin-left: 1.5em;&#10;&nbsp;&nbsp;&nbsp;&nbsp;text-align: right;&#10;&nbsp;&nbsp;&nbsp;&nbsp;float: right;&#10;&nbsp;&nbsp;&nbsp;&nbsp;clear: right;&#10;&nbsp;&nbsp;&nbsp;&nbsp;max-width: 400px;&#10;&nbsp;&nbsp;&nbsp;&nbsp;min-width: 150px;&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;@media (max-width: 576px) {&#10;&nbsp;&nbsp;&nbsp;&nbsp;  width: 125px;&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;img, amp-img {&#10;&nbsp;&nbsp;&nbsp;&nbsp;  background-color: white;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  border: 0.5em solid @background;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  border-radius: 0.3em;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);&#10;&nbsp;&nbsp;&nbsp;&nbsp;  box-sizing: border-box;&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  @media (max-width: 576px) {&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 125px;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;  }&#10;&#10;  ...&#10;}&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>main.less</span>
+    </div>
+</div>
+<p>Y su resultado en formato CSS.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span><span class="lnt">66&#10;</span><span class="lnt">67&#10;</span><span class="lnt">68&#10;</span><span class="lnt">69&#10;</span><span class="lnt">70&#10;</span><span class="lnt">71&#10;</span><span class="lnt">72&#10;</span><span class="lnt">73&#10;</span><span class="lnt">74&#10;</span><span class="lnt">75&#10;</span><span class="lnt">76&#10;</span><span class="lnt">77&#10;</span><span class="lnt">78&#10;</span><span class="lnt">79&#10;</span><span class="lnt">80&#10;</span><span class="lnt">81&#10;</span><span class="lnt">82&#10;</span><span class="lnt">83&#10;</span><span class="lnt">84&#10;</span><span class="lnt">85&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="nt">html</span> <span class="p">{</span>&#10;  <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="nt">body</span> <span class="p">{</span>&#10;  <span class="k">color</span><span class="p">:</span> <span class="mh">#222</span><span class="p">;</span>&#10;  <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;PT Serif&#39;</span><span class="p">,</span> <span class="s1">&#39;Times New Roman&#39;</span><span class="p">,</span> <span class="n">Times</span><span class="p">,</span> <span class="kc">serif</span><span class="p">;</span>&#10;  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.2</span><span class="kt">em</span><span class="p">;</span>&#10;  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">400</span><span class="p">;</span>&#10;  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>&#10;  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#F8F8F8</span><span class="p">;</span>&#10;  <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s1">&#39;/blog-bitix/assets/images/backgrounds/grey.png&#39;</span><span class="p">);</span>&#10;<span class="p">}</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nt">h1</span><span class="o">,</span>&#10;<span class="nt">h2</span><span class="o">,</span>&#10;<span class="nt">h3</span><span class="o">,</span>&#10;<span class="nt">h4</span><span class="o">,</span>&#10;<span class="nt">h5</span><span class="o">,</span>&#10;<span class="nt">h6</span> <span class="p">{</span>&#10;  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>&#10;  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>&#10;  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">700</span><span class="p">;</span>&#10;  <span class="k">clear</span><span class="p">:</span> <span class="kc">both</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nt">article</span> <span class="nt">h1</span> <span class="p">{</span>&#10;  <span class="k">font-size</span><span class="p">:</span> <span class="mf">2.6</span><span class="kt">em</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">576px</span><span class="o">)</span> <span class="p">{</span>&#10;  <span class="nt">article</span> <span class="nt">h1</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">font-size</span><span class="p">:</span> <span class="mf">1.8</span><span class="kt">em</span><span class="p">;</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span>&#10;<span class="nt">article</span> <span class="nt">p</span><span class="p">.</span><span class="nc">information</span><span class="o">,</span>&#10;<span class="nt">article</span> <span class="nt">span</span><span class="p">.</span><span class="nc">information</span> <span class="p">{</span>&#10;  <span class="k">font-size</span><span class="p">:</span> <span class="mf">0.9</span><span class="kt">em</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="nt">article</span> <span class="nt">p</span><span class="p">.</span><span class="nc">summary</span> <span class="p">{</span>&#10;  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">700</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="nt">article</span> <span class="nt">ul</span><span class="p">.</span><span class="nc">columns</span> <span class="p">{</span>&#10;  <span class="k">columns</span><span class="p">:</span> <span class="mi">4</span> <span class="mi">12</span><span class="kt">em</span><span class="p">;</span>&#10;  <span class="k">column-gap</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="nt">article</span> <span class="nt">table</span> <span class="p">{</span>&#10;  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="nt">article</span> <span class="nt">blockquote</span> <span class="p">{</span>&#10;  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>&#10;  <span class="k">color</span><span class="p">:</span> <span class="mh">#6a737d</span><span class="p">;</span>&#10;  <span class="k">border-left</span><span class="p">:</span> <span class="mf">0.25</span><span class="kt">em</span> <span class="kc">solid</span> <span class="mh">#dfe2e5</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="nt">article</span> <span class="nt">div</span><span class="p">.</span><span class="nc">logotypes</span> <span class="p">{</span>&#10;  <span class="k">margin-left</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span>&#10;  <span class="k">text-align</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>&#10;  <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>&#10;  <span class="k">clear</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>&#10;  <span class="k">max-width</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>&#10;  <span class="k">min-width</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">576px</span><span class="o">)</span> <span class="p">{</span>&#10;  <span class="nt">article</span> <span class="nt">div</span><span class="p">.</span><span class="nc">logotypes</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">width</span><span class="p">:</span> <span class="mi">125</span><span class="kt">px</span><span class="p">;</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span>&#10;<span class="nt">article</span> <span class="nt">div</span><span class="p">.</span><span class="nc">logotypes</span> <span class="nt">img</span><span class="o">,</span>&#10;<span class="nt">article</span> <span class="nt">div</span><span class="p">.</span><span class="nc">logotypes</span> <span class="nt">amp-img</span> <span class="p">{</span>&#10;  <span class="k">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>&#10;  <span class="k">border</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">em</span> <span class="kc">solid</span> <span class="kc">white</span><span class="p">;</span>&#10;  <span class="k">border-radius</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">em</span><span class="p">;</span>&#10;  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">);</span>&#10;  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;<span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">576px</span><span class="o">)</span> <span class="p">{</span>&#10;  <span class="nt">article</span> <span class="nt">div</span><span class="p">.</span><span class="nc">logotypes</span> <span class="nt">img</span><span class="o">,</span>&#10;  <span class="nt">article</span> <span class="nt">div</span><span class="p">.</span><span class="nc">logotypes</span> <span class="nt">amp-img</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">width</span><span class="p">:</span> <span class="mi">125</span><span class="kt">px</span><span class="p">;</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span>&#10;&#10;<span class="o">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>main.css</span>
+    </div>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">
+                <img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_875x0_resize_box_3.png" width="326" height="125" alt="Configurar un servidor web virtual en Nginx y Apache" title="Configurar un servidor web virtual en Nginx y Apache" class="" loading="lazy">
+                <h3>Configurar un servidor web virtual en Nginx y Apache</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">
+                <img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_875x0_resize_box_3.png" width="326" height="125" alt="Configurar autenticación básica en los servidores web Nginx y Apache" title="Configurar autenticación básica en los servidores web Nginx y Apache" class="" loading="lazy">
+                <h3>Configurar autenticación básica en los servidores web Nginx y Apache</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" title="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" class="" loading="lazy">
+                <h3>El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/">
+                <img src="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/images/css-animations-transformations_hu3448c95c1e89a037628691b9ee56ae5d_454367_875x0_resize_box_3.png" width="326" height="125" alt="Animaciones y transformaciones 2D y 3D con CSS" title="Animaciones y transformaciones 2D y 3D con CSS" class="" loading="lazy">
+                <h3>Animaciones y transformaciones 2D y 3D con CSS</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/">
+                <img src="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/images/hello-world-page_hu1ad16cbf06b99a95d71184aff0c8acbd_15397_875x0_resize_box_3.png" width="326" height="125" alt="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" title="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" class="" loading="lazy">
+                <h3>Usar un paquete npm con Webpack creado con Storybook, React y TypeScript</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/">
+                <img src="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/images/storybook-helloworld_hub7bcf5008d7c8d3c96ea32d079f41ce8_51971_875x0_resize_box_3.png" width="326" height="125" alt="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" title="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" class="" loading="lazy">
+                <h3>Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-509';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/08\/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

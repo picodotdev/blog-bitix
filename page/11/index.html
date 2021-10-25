@@ -1,0 +1,661 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="generator" content="Hugo 0.88.1" />
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Blog Bitix</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/" hreflang="es" title="Blog Bitix">
+  
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/en/" hreflang="en" title="Blog Bitix">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/index-amp.html" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Blog Bitix">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Blog Bitix">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/">Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox</a></h1>
+        <span class="information">
+          <time>10/01/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            El navegador web Firefox tiene una opción con la que poder tomar una captura de pantalla de una página web desde la línea de comandos, que es útil como parte de un proceso automatizado. Firefox también permite tomar capturas de pantalla de una página web desde su interfaz gráfica o desde la consola web.
+          
+          <br>
+          <a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">Mejorar el tiempo de carga de una página web usando lazy load</a></h1>
+        <span class="information">
+          <time>04/01/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+          
+        </span>
+        <p>
+          
+            Las páginas grandes y con muchos recursos como imágenes e <em>iframes</em> implementar la carga vaga o <em>lazy load</em> obtienen un gran beneficio, necesitando realizar menos peticiones en la carga inicial, con menos tamaño y cargándose en menos tiempo. Los navegadores han añadido soporte para desde JavaScript proporciona este soporte.
+          
+          <br>
+          <a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/12/hemeroteca-16/">Hemeroteca #16</a></h1>
+        <span class="information">
+          <time>27/12/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/blog/">blog</a>
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Se acaba otro año y en este caso además la década, en el siguiente 2020 harán 10 años ya desde que empecé a escribir artículos técnicos principalmente sobre GNU/Linux y Java, algunos artículos de opinión y desempaquetados los productos que compro relacionados con la tecnología. Una década escribiendo uno o dos artículos semanales, no es fácil aguantar durante todo este tiempo y conservar la motivación y tener el tiempo que requieren cada uno de los artículos.
+          
+          <br>
+          <a href="/blog-bitix/2019/12/hemeroteca-16/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/12/articulo-7-de-yo-apoyo-al-software-libre/">Artículo #7 de Yo apoyo al software libre</a></h1>
+        <span class="information">
+          <time>22/12/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Continuando con la serie de artículos comentando las donaciones que voy realizando a los proyectos de software libre en este caso comentaré otro programa que uso habitualmente. En este caso de trata del programa el gestor gestor de libros electrónicos y conversor entre diferentes formatos de libro electrónicos Calibre que que quizá no tiene la interfaz de usuario más atractiva pero es muy útil, funciona realmente bien y permite tener organizada la biblioteca digital.
+          
+          <br>
+          <a href="/blog-bitix/2019/12/articulo-7-de-yo-apoyo-al-software-libre/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/12/sobre-los-planes-de-pensiones-analizando-sus-ventajas-fiscales-y-rentabilidad/">Sobre los planes de pensiones, analizando sus ventajas fiscales y rentabilidad</a></h1>
+        <span class="information">
+          <time>15/12/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/fuera-de-tema/">fuera-de-tema</a>
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+          
+        </span>
+        <p>
+          
+            En los últimos años un producto financiero que se ha puesto de moda son los denominados planes de pensiones. Dada la nula o escasa rentabilidad de productos más tradicionales como los depósitos a plazo, la incertidumbre de cómo se van a financiar las pensiones en unas décadas con la baja tasa de natalidad o dependiendo de los que gobiernen los futuros pensionistas de la seguridad social pierdan poder adquisitivo, los planes de pensiones puede parecer un producto más atractivo por las ventajas fiscales que poseen ¿realmente son interesantes?.
+          
+          <br>
+          <a href="/blog-bitix/2019/12/sobre-los-planes-de-pensiones-analizando-sus-ventajas-fiscales-y-rentabilidad/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/">Generar documentos, informes y facturas en formato PDF con JasperReports y Java</a></h1>
+        <span class="information">
+          <time>13/12/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Para generar documentos PDF sencillos en Java está la librería PDFBox que mediante código permite insertar la información y los elementos del documento. Con PDFBox el documento es generado completamente mediante código, para separar el estilo del documento y la información que contiene y para documentos más complejos está JasperReports que mediante una plantilla hace que si cambia el estilo del documento el código no requiera cambios.
+          
+          <br>
+          <a href="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/">Buscar en el historial desde la barra de direcciones inteligente de Firefox</a></h1>
+        <span class="information">
+          <time>11/12/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            Los navegadores web guardan un historial de todas las páginas a las que se acceden, además de los marcadores que los usuarios creen. Este historial en Firefox se guarda en orden cronológico pudiendo consultar todas las páginas accedidas en el día actual, el de ayer y anteriores fechas. También es posible realizar búsquedas para encontrar una cierta página. En Firefox al historial se accede desde en menú con la opción Historial &gt; Mostrar todo el historial.
+          
+          <br>
+          <a href="/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/12/comando-para-convertir-imagenes-jpeg-y-png-a-webp/">Comando para convertir imágenes JPEG y PNG a WebP</a></h1>
+        <span class="information">
+          <time>08/12/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Las velocidades de conexión actuales de 100 Mbps y de 600 Mbps en los hogares permiten no darle tanta importancia al tamaño de una imagen y aunque los dispositivos móviles también tienen unas velocidades de conexión rápidas reducir el tamaño de las imágenes puede significar que una página web cargue algo más rápido. El ahorro está en un 30% y 60% lo que en colecciones grandes de imágenes el ahorro es considerable. WebP proporciona un ahorro de tamaño en las imágenes con una calidad similar que <em>jpg</em> y <em>png</em>.
+          
+          <br>
+          <a href="/blog-bitix/2019/12/comando-para-convertir-imagenes-jpeg-y-png-a-webp/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">Nube privada para documentos personales con Nextcloud y OnlyOffice</a></h1>
+        <span class="information">
+          <time>05/12/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Empresas como Google ofrecen servicios gratuitos que los usuarios pueden utilizar, algunos de ellos a cambio de entregrarles documentos con información personal con la consiguiente potencial pérdida de privacidad. Algunos de estos servicios son sustituibles con alternativas como Nextcloud y OnlyOffice que permiten a sus usuarios ser dueños de su información ya sea utilizando una Raspberry Pi como servidor que debe ser administrada o incluso en la nube con servicios como DigitalOcean o AWS.
+          
+          <br>
+          <a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">Implementar un segundo factor de autenticación en una aplicación web Java con Spring</a></h1>
+        <span class="information">
+          <time>29/11/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+            
+              <a href="/blog-bitix/tags/spring/">spring</a>
+            
+          
+        </span>
+        <p>
+          
+            El segundo factor de autenticación es una medida adicional en la autenticación que proporciona una notable mayor seguridad que utilizar solo un usuario y contraseña. Utilizando Spring y la aplicación para <em>smatphone</em> Google Authenticator se puede implementar en una aplicación Java el segundo factor de autenticación o 2FA con códigos temporales o TOTP.
+          
+          <br>
+          <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/11/extraer-informacion-del-navegador-del-usuario-en-el-servidor-de-una-aplicacion-web-java/">Extraer información del navegador del usuario en el servidor de una aplicación web Java</a></h1>
+        <span class="information">
+          <time>24/11/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            En una aplicación web dependiendo de las características del cliente si es de escritorio, móvil u otro dispositivo y tamaño, lenguaje o dependiendo de la ubicación mediante su dirección IP puede servirse diferente contenido adaptado a las propiedades del cliente.
+La comprobación desde el navegador se realiza con JavaScript, con la propiedad window.navigator.userAgent se obtienen propiedades básicas del agente del usuario como navegador, versión y plataforma. Con la librería JavaScript Modernizr se obtiene las características que soporta el navegador.
+          
+          <br>
+          <a href="/blog-bitix/2019/11/extraer-informacion-del-navegador-del-usuario-en-el-servidor-de-una-aplicacion-web-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/">Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre</a></h1>
+        <span class="information">
+          <time>22/11/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            Dado que los libros electrónicos ocupan muy poco se puede llegar a tener una biblioteca grande de libros que necesitan de una herramienta para ser catalogados y para realizar conversión entre formatos si es necesario para uno de entre los que soporte el dispositivo de libros electrónicos. Calibre es una aplicación que ofrece estas dos principales funciones.
+          
+          <br>
+          <a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/">Rotar los archivos de trazas con log4j por fecha o tamaño</a></h1>
+        <span class="information">
+          <time>15/11/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La librería log4j 2 es configurable para que si se guardan las trazas en un archivo estos se roten en una fecha indicada en una expresión <em>cron</em>, cuando lleguen a un cierto tamaño o cuando se inicie la aplicación. El rotado además de para archivar las trazas de la aplicación y clasificarlas por fecha sirve para evitar que lleguen a consumir todo el espacio de almacenamiento disponible.
+          
+          <br>
+          <a href="/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java</a></h1>
+        <span class="information">
+          <time>08/11/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            JMX es una forma sencilla e integrada en la plataforma Java de monitorizar e instrumentalizar ciertas operaciones de funcionamiento interno de la aplicación que no tenga que ver con el ámbito de negocio que resuelve sino en el aspecto técnico. Unos casos de uso son activar una característica de la aplicación mientras la aplicación está funcionando o limpiar una cache de modo que los datos que almacena se actualicen de nuevo de la fuente origen en tiempo real y sin necesidad de reniciarla, cualquier otro realizable con código Java es posible.
+          
+          <br>
+          <a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/">Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux</a></h1>
+        <span class="information">
+          <time>03/11/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Los directorios de Descargas, Documentos, Música, Imágenes, Vídeos, Escritorio, Plantillas y Público «bien conocidos» por defecto se encuentran en el directorio de inicio o home del usuario, en mi caso sería /home/picodotdev/ o abreviadamente ~/.
+Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta Documentos, Música e Imágenes se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa.
+          
+          <br>
+          <a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/page/12/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+      <a href="/blog-bitix/page/10/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

@@ -1,0 +1,661 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Análisis de la serie de juegos de plataformas Trine</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/" hreflang="es" title="Análisis de la serie de juegos de plataformas Trine">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/index-amp.html" hreflang="es" title="Análisis de la serie de juegos de plataformas Trine">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis de la serie de juegos de plataformas Trine">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Análisis de la serie de juegos de plataformas Trine">
+<meta name="twitter:description" content="La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/"
+    },
+    "headline": "Análisis de la serie de juegos de plataformas Trine",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-03-20T09:00:00+01:00",
+    "dateModified": "2021-03-20T09:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1470",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Análisis de la serie de juegos de plataformas Trine</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>20/03/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p><a href="https://www.igdb.com/games/trine-enchanted-edition">Trine: Enchanted Edition</a> es un juego de plataformas desarrollado por <a href="https://www.igdb.com/companies/frozenbyte">Frozenbyte</a> en el año 2009 y remasterizado en el 2014, con posterioridad se ha publicado varios más que continúan la historia del primero, <a href="https://www.igdb.com/games/trine-2-complete-story">Trine 2: Complete Story</a> (2013), <a href="https://www.igdb.com/games/trine-3-the-artifacts-of-power">Trine 3: The Artifacts of Power</a> (2015) y <a href="https://www.igdb.com/games/trine-4-the-nightmare-prince">Trine 4: The Nightmare Prince</a> (2019). Estos juegos están disponibles tanto para consola como para PC.</p>
+<p>Cada juego de la colección de Trine tiene algunas pequeñas diferencias aún siendo los conceptos básicos del original los mismos en todos, el más diferente es Trine 3 que adopta un modo de juego más en tres dimensiones y con más libertad de movimientos. Son juegos principalmente de plataformas, de aventuras, resolver puzles y con un pequeño componente de rol de elegir habilidades en cada personaje u objetos. Los juegos de Trine destacan por su apartado gráfico y banda sonora que incluso el primero de la colección tiene un nivel de detalles gráficos notable.</p>
+<p>Debido a que son juegos ya con varios años en las diferentes tiendas digitales en cada plataforma se encuentra a un precio de unos pocos euros, los tres primeros se distribuyen como una colección siendo aún así bastante baratos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2_hu2f2e17f458d52571f8d5b574dfdfaa13_571898_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2_hu2f2e17f458d52571f8d5b574dfdfaa13_571898_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3_hu4113b09df7e4619cc99e1ff8fc5d6623_560681_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3_hu4113b09df7e4619cc99e1ff8fc5d6623_560681_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-1_hu8d0406f1e740d02695f22b3c8d8e2c20_401147_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-1_hu8d0406f1e740d02695f22b3c8d8e2c20_401147_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-1_hu99ec00029889e899a61de3665e0b168d_406219_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-1_hu99ec00029889e899a61de3665e0b168d_406219_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-1_hua27ce57a929f6e6111133d895073116e_363685_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-1_hua27ce57a929f6e6111133d895073116e_363685_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-2_hu8561abf5595b4d1b5050d8d7f7882465_365124_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-2_hu8561abf5595b4d1b5050d8d7f7882465_365124_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-2_hud64e39fcf7d195da183126495a09aae5_407183_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-2_hud64e39fcf7d195da183126495a09aae5_407183_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-2_hu6c38cc5cdaa7b2cf51e6de0523c51df3_404072_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-2_hu6c38cc5cdaa7b2cf51e6de0523c51df3_404072_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú" class="" loading="lazy"></a></p>
+<figcaption>Pantalla inicial y menú</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning">
+    <h2>Anticipación del juego</h2>
+    <p>Este artículo contiene información de estrategias para completar más fácilmente el juego, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
+    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-juego">El juego</a>
+      <ul>
+        <li><a href="#diferencias-entre-los-juegos-de-la-serie-trine">Diferencias entre los juegos de la serie Trine</a></li>
+      </ul>
+    </li>
+    <li><a href="#objetivos-del-juego">Objetivos del juego</a></li>
+    <li><a href="#arte-gráfico-y-banda-sonora">Arte gráfico y banda sonora</a></li>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#banda-sonora-original">Banda sonora original</a></li>
+    <li><a href="#ubicación-de-los-orbes-de-experiencia-y-cofres">Ubicación de los orbes de experiencia y cofres</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="el-juego">El juego</h3>
+<p>Los juegos en toda la saga narran la historia de tres personajes Pontius un caballero, Amadeus un mago y Zoya una ladrona. Al inicio de cada nivel hay una narración que sirve como hilo conductor del juego e incluso dentro de los niveles los personajes conversan haciendo algún comentario con un toque de humor, los juegos Trine poseen un buen doblaje al español.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-inicio_hu2bed8fdef08d0da75f51f28eac97ebd7_321521_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio de nivel en Trine 1"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-inicio_hu2bed8fdef08d0da75f51f28eac97ebd7_321521_300x200_fit_q90_box.jpg" width="300" height="169" alt="Inicio de nivel en Trine 1" title="Inicio de nivel en Trine 1" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-inicio_hu453e694bda57e695b9189f89984604ad_365732_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio de nivel en Trine 2"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-inicio_hu453e694bda57e695b9189f89984604ad_365732_300x200_fit_q90_box.jpg" width="300" height="169" alt="Inicio de nivel en Trine 2" title="Inicio de nivel en Trine 2" class="" loading="lazy"></a></p>
+<figcaption>Inicios de nivel en Trine 1 y 2</figcaption>
+</figure>
+</div>
+<p>El juego consiste en llegar al final de cada uno de los niveles, recoger los orbes de experiencia y abrir los cofres del tesoro. La dificultad radica en que algunos orbes y cofres están un poco escondidos con lo que es necesario fijarse bien en cada sección del nivel para descubrirlos, también en que algunas secciones requieren de la combinación de los personajes y emplear sus habilidades para continuar a la siguiente sección.</p>
+<p>Recoger los orbes de experiencia otorgan puntos de habilidad para emplearlos en ganar habilidades en los personajes. En cada uno de los juegos las habilidades varían, por ejemplo, en Trine los personajes tienen tres habilidades cada uno con varios niveles y un inventario de objetos. En Trine 2 los personajes no tienen inventario y las habilidades están organizadas en un árbol.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-1_hu9967e592d26640171b30b7eab7be922c_529361_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidades de personajes en Trine 1"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-1_hu9967e592d26640171b30b7eab7be922c_529361_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades de personajes en Trine 1" title="Habilidades de personajes en Trine 1" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-2_hu93cb1593a4ffa15a257f671e8c364da0_521159_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidades de personajes en Trine 1"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-2_hu93cb1593a4ffa15a257f671e8c364da0_521159_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades de personajes en Trine 1" title="Habilidades de personajes en Trine 1" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-habilidades_hube89d6eaa5d0b9562be16714758a3fd5_520599_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidades de personajes en Trine 2"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-habilidades_hube89d6eaa5d0b9562be16714758a3fd5_520599_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades de personajes en Trine 2" title="Habilidades de personajes en Trine 2" class="" loading="lazy"></a></p>
+<figcaption>Habilidades de personajes en Trine 1 y 2</figcaption>
+</figure>
+</div>
+<p>En algunos niveles se encuentran varios enemigos, en Trine son esqueletos y en Trine 2 son duendes. En algunos niveles hay jefes enemigos que para eliminarlos hay que emplear una táctica según su comportamiento, variedad de ataques o descubrir sus puntos vulnerables para hacerles daño.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-jefe_hucc8b07dbfb738154250d5d04b7fa9979_373008_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Jefe enemigo de Trine 1"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-jefe_hucc8b07dbfb738154250d5d04b7fa9979_373008_300x200_fit_q90_box.jpg" width="300" height="169" alt="Jefe enemigo de Trine 1" title="Jefe enemigo de Trine 1" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-jefe_huc27cd954fb8e13cdc5f4ce8e61e91a91_429949_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Jefe enemigo de Trine 2"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-jefe_huc27cd954fb8e13cdc5f4ce8e61e91a91_429949_300x200_fit_q90_box.jpg" width="300" height="169" alt="Jefe enemigo de Trine 2" title="Jefe enemigo de Trine 2" class="" loading="lazy"></a></p>
+<figcaption>Jefes enemigos de Trine 1 y 2</figcaption>
+</figure>
+</div>
+<p>Posee varios niveles de dificultad que hacen que los enemigos tengan más vida, los personajes reciban más daño al sufrir heridas o al llegar a ciertos puntos de control los personajes no se curen completamente y sus resurrecciones estén limitadas. En caso de que los tres personajes mueran se ha de reiniciar el nivel desde el principio en el modo <em>hardcore</em>, si un personaje muere al llegar a ciertos puntos de control los personajes muertos reviven y se puede continuar. Aunque los personajes puedan resucitar obliga a llegar hasta el siguiente punto de control sin los personajes restantes lo que dificulta continuar avanzando al no poder emplear las habilidades de los personajes muertos.</p>
+<p>El juego soporta un modo cooperativo entre varios jugadores que pueden jugar simultáneamente en la misma partida con varios mandos. Se hace uso de físicas para interactuar con los objetos objetos, utiliza la tecnología <a href="https://en.wikipedia.org/wiki/PhysX">Nvidia PhysX</a> que da más realismo en el comportamiento físico de los objetos. Los tiempos de carga son más bajos que en otros juegos debido a que el juego no requiere grandes recursos.</p>
+<h4 id="diferencias-entre-los-juegos-de-la-serie-trine">Diferencias entre los juegos de la serie Trine</h4>
+<p>Los juegos de Trine en realidad no son juegos completamente distintos sino que más bien cada uno de ellos es una nueva colección de niveles con algunos aspectos cambiados de los personajes.</p>
+<p>Mientras que en Trine 1 y Trine 2 el aspecto del juegos es más bien en dos dimensiones o 2D o 2.5D en Trine 3 es el primer juego de la serie con una jugabilidad en 3D. Trine 4 recupera el estilo de juego de los dos primeros 2D.</p>
+<p>En Trine hay 16 niveles con unos 25 orbes de experiencia por nivel, en Trine 2 hay 20 niveles y un número mayor de orbes de experiencia que puede llegar a los 75. En Trine hay una barra de magia que desaparece en Trine 2.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-niveles_hu284e793ec5903ac14b67ab9c8e249ba3_348670_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Niveles de Trine 1"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-niveles_hu284e793ec5903ac14b67ab9c8e249ba3_348670_200x150_fit_q90_box.jpg" width="200" height="113" alt="Niveles de Trine 1" title="Niveles de Trine 1" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-niveles_hufb27b8b0ee7bdab8a34bfe351516a96d_339103_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Niveles de Trine 2"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-niveles_hufb27b8b0ee7bdab8a34bfe351516a96d_339103_200x150_fit_q90_box.jpg" width="200" height="113" alt="Niveles de Trine 2" title="Niveles de Trine 2" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-niveles_huec13dbfef08d38904729406c615b888e_375759_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Niveles de Trine 3"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-niveles_huec13dbfef08d38904729406c615b888e_375759_200x150_fit_q90_box.jpg" width="200" height="113" alt="Niveles de Trine 3" title="Niveles de Trine 3" class="" loading="lazy"></a></p>
+<figcaption>Niveles de Trine 1, 2 y 3</figcaption>
+</figure>
+</div>
+<h3 id="objetivos-del-juego">Objetivos del juego</h3>
+<p>El juego básicamente es un juego de plataformas en el que en alguno puntos hay que resolver sencillos puzles con las habilidades combinadas de los personajes. Si la solución para resolver un puzle es demasiado complicada es que esa forma de resolverlo no es la que pensaron los desarrolladores, dados los diferentes personajes y sus habilidades hay múltiples formas válidas de resolver cada puzle. Otro objetivo del juego es recoger todos los orbes de experiencia y encontrar los cofres de tesoro, algunos están un poco escondidos con lo que es necesario fijarse bien en cada una de las secciones de los niveles, después de los primeros niveles se va conociendo que sitios son susceptibles de tener alguna zona oculta a explorar.</p>
+<p>El juego posee varios niveles de dificultad y un modo <em>hardcore</em>, para conseguir todos los objetivos del juego hay que completar cada nivel en el mayor nivel de dificultad y en el modo <em>hardcore</em>.</p>
+<h3 id="arte-gráfico-y-banda-sonora">Arte gráfico y banda sonora</h3>
+<p>Los juegos de Trine destacan por su nivel artístico lleno de detalles, colores vivos, brumas y efectos de luz que los hacen interesantes para disfrutar de su aspecto gráfico. El hecho de que para encontrar los orbes y tesoros haya que fijarse en cada una de las secciones refuerzan el disfrutar del aspecto artístico y ser consciente del mismo.</p>
+<p>Incluso el primer Trine tiene unos detalles gráficos muy notables, mejorados en Trine 2 y que en la versión de Trine 4 alcanzan su mayor esplendor. Además del aspecto gráfico el juego se complementa con una banda sonora destacable y variada, combinado con su jugabilidad hacen del juego una muy buena experiencia.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-1_hu8533d67bad540a4b7709182caceae666_382006_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 1"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-1_hu8533d67bad540a4b7709182caceae666_382006_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 1" title="Arte gráfico de Trine 1" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-2_hu660e8ac5b6d17d2d6fd6bc39ec97045d_345834_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 1"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-2_hu660e8ac5b6d17d2d6fd6bc39ec97045d_345834_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 1" title="Arte gráfico de Trine 1" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-1_hu9bbc5d815aa1a06b06877b2b96b605bc_450623_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 2"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-1_hu9bbc5d815aa1a06b06877b2b96b605bc_450623_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 2" title="Arte gráfico de Trine 2" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-2_huf6840cc35f06cf729430e7765e471ae8_420149_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 2"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-2_huf6840cc35f06cf729430e7765e471ae8_420149_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 2" title="Arte gráfico de Trine 2" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-arte-grafico-1_hu5cd54655ebb6f4890c4ee32751df0e5a_91732_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 3"><img src="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-arte-grafico-1_hu5cd54655ebb6f4890c4ee32751df0e5a_91732_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 3" title="Arte gráfico de Trine 3" class="" loading="lazy"></a></p>
+<figcaption>Arte gráfico de Trine 1, 2 y 3</figcaption>
+</figure>
+</div>
+<p>A lo largo de las diferentes versiones y con el paso de los años el arte gráfico ha mejorado en algunos aspectos pero incluso en la versión de <em>Trine 1: Enchanted Edition</em> el aspecto gráfico en la <a href="https://www.playstation.com/es-es/ps4/">PlayStation 4</a> es admirable.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/mMXGE9bgfpg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="historia">Historia</h3>
+<p>El juego se desarrolla con una pequeña historia lineal como hilo conductor al inicio de cada nivel que dan sentida a las aventuras de los personajes y niveles. No es una historia muy elaborada ni diferentes lineas argumentales pero completa con su papel en el juego con suficiencia. En estos vídeos están los inicios de las historias.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/ax3xJ961Ll8" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/DF4GvTz-mlM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/H1mUQehIXcY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/2ukNLC2DPBI" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="banda-sonora-original">Banda sonora original</h3>
+<p>La banda sonora enriquece el juego estando a la altura del arte gráfico, completa el juego en el aspecto del audio.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/RkyhqPjVE0w" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/8fkSw8Auv3I" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/L5MUYw5G99g" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/kfo1G8EjqB8" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="ubicación-de-los-orbes-de-experiencia-y-cofres">Ubicación de los orbes de experiencia y cofres</h3>
+<p>Algunos de los orbes de experiencia y los cofres del tesoro están escondidos, con la experiencia de juego uno se fija donde pueden estar y encontrarlos requiere explorar de forma completa los rincones escondidos de cada sección. Aún así quizá alguno se resista el encontrarlo, algunos niveles son un poco largos con lo que intentar encontrarlos requiere tiempo y aún así cuesta recogerlos todos, en caso de querer obtenerlos todos en YouTube hay vídeos donde se muestra la ubicación de cada uno de ellos.</p>
+<p>En los siguientes enlaces se pueden ver todos los orbes, objetos coleccionables y cofres en los diferentes niveles.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=EoyWNs8CNi8&amp;list=PLZo48CcL6RpS5JrGhzLzuIQMctrRUgtdY&amp;index=16">Localización de los objetos en Trine 1</a></li>
+<li><a href="https://www.youtube.com/watch?v=7gQQwqPVpLo&amp;list=PL37676FCB9427A9BB">Localización de los objetos en Trine 2</a></li>
+<li><a href="https://www.youtube.com/watch?v=txPiKO7XFxE&amp;list=PLRdic7wFhHbX6nt2X-VIAAF43Fr_zuC5w">Localización de los objetos en Trine 3</a></li>
+<li><a href="https://www.youtube.com/watch?v=3-HBLUKONqg&amp;list=PLRYiNkjGrK9PdE3R0Te7p-GcHKCa-h4vd">Localización de los objetos en Trine 4</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/EoyWNs8CNi8" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/7gQQwqPVpLo" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/txPiKO7XFxE" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/3-HBLUKONqg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>analisis-juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-561';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/03\/analisis-de-la-serie-de-juegos-de-plataformas-trine\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

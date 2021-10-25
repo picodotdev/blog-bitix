@@ -1,0 +1,605 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Todo el conocimiento está en el código fuente pero este no tiene una forma de fácil y rápida comprensión a alto nivel, para comprender un sistema es necesario una forma de documentación que muestre los detalles importantes de los que se compone el sistema. El lenguaje unificado de desarrollo o UML permite describir un sistema utilizando diferentes diagramas específicos para mostrar diferentes aspectos del sistema. Gaphor es una aplicación de software libre disponible para diferentes sistemas operativos que permite crear y exportar a imágenes los diferentes diagramas. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Los diagramas UML para documentar y una aplicación para crearlos</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/" hreflang="es" title="Los diagramas UML para documentar y una aplicación para crearlos">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/index-amp.html" hreflang="es" title="Los diagramas UML para documentar y una aplicación para crearlos">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Los diagramas UML para documentar y una aplicación para crearlos">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gaphor-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Todo el conocimiento está en el código fuente pero este no tiene una forma de fácil y rápida comprensión a alto nivel, para comprender un sistema es necesario una forma de documentación que muestre los detalles importantes de los que se compone el sistema. El lenguaje unificado de desarrollo o UML permite describir un sistema utilizando diferentes diagramas específicos para mostrar diferentes aspectos del sistema. Gaphor es una aplicación de software libre disponible para diferentes sistemas operativos que permite crear y exportar a imágenes los diferentes diagramas. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gaphor-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Los diagramas UML para documentar y una aplicación para crearlos">
+<meta name="twitter:description" content="Todo el conocimiento está en el código fuente pero este no tiene una forma de fácil y rápida comprensión a alto nivel, para comprender un sistema es necesario una forma de documentación que muestre los detalles importantes de los que se compone el sistema. El lenguaje unificado de desarrollo o UML permite describir un sistema utilizando diferentes diagramas específicos para mostrar diferentes aspectos del sistema. Gaphor es una aplicación de software libre disponible para diferentes sistemas operativos que permite crear y exportar a imágenes los diferentes diagramas. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/"
+    },
+    "headline": "Los diagramas UML para documentar y una aplicación para crearlos",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gaphor-750.png"
+        
+      },
+    "datePublished": "2021-09-02T20:00:00+02:00",
+    "dateModified": "2021-09-02T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1081",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Todo el conocimiento está en el código fuente pero este no tiene una forma de fácil y rápida comprensión a alto nivel, para comprender un sistema es necesario una forma de documentación que muestre los detalles importantes de los que se compone el sistema. El lenguaje unificado de desarrollo o UML permite describir un sistema utilizando diferentes diagramas específicos para mostrar diferentes aspectos del sistema. Gaphor es una aplicación de software libre disponible para diferentes sistemas operativos que permite crear y exportar a imágenes los diferentes diagramas."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Los diagramas UML para documentar y una aplicación para crearlos</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/09/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Todo el conocimiento está en el código fuente pero este no tiene una forma de fácil y rápida comprensión a alto nivel, para comprender un sistema es necesario una forma de documentación que muestre los detalles importantes de los que se compone el sistema. El lenguaje unificado de desarrollo o UML permite describir un sistema utilizando diferentes diagramas específicos para mostrar diferentes aspectos del sistema. Gaphor es una aplicación de software libre disponible para diferentes sistemas operativos que permite crear y exportar a imágenes los diferentes diagramas.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gaphor.svg" width="200" height="200" alt="Gaphor" title="Gaphor" class="" loading="false"></p>
+</div>
+<p>El trabajo de desarrollo de software en mayor media es un trabajo colaborativo entre un grupo de personas, por ello la comunicación y transmisión de información es fundamental. Por otro lado, los sistemas informáticos de cierto tamaño son complejos de los cuales ninguna persona tiene el conocimiento completo y detallado de todas las partes que lo forman. Esto hace que la documentación y la transferencia de conocimiento sea importante en un grado similar al desarrollo de nuevas funcionalidades.</p>
+<p>El problema de la documentación es que se quede obsoleta ni refleje el estado actual del sistema por los continuos cambios realizados en el código, para evitarlo la documentación ha de ser a alto nivel que describan los conceptos fundamentales del sistema que no serán propensos a cambiar. Otra forma de evitar esta obsolescencia en algunos casos es generar la documentación a partir de la información embebida en el código fuente como <a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">la documentación Javadoc de las clases y API de Java</a> o <a href="https://picodotdev.github.io/blog-bitix/2021/07/como-documentar-una-api-rest-con-swagger-implementada-con-spring-boot/">la documentación de una API REST con Swagger</a>. Sin embargo, no toda la documentación que aporta valor es posible generarla de forma automatizada.</p>
+<p>El código fuente de una aplicación contiene el conocimiento más detallado y fiel de una aplicación , sin embargo, tratar de comprender un sistema complejo compuesto por unas cuantas decenas de miles de líneas de código aún usando un lenguaje de alto nivel ya sea Java , Python o C# es una tarea complicada o al menos que requiere mucho tiempo de investigación y esfuerzo de comprensión. Una breve descripción en prosa y un esquema del sistema permite obtener la misma información que analizando el código de forma mucho más rápida.</p>
+<p>Si en una organización cuando una persona la abandona deja un vacío importante de conocimiento en las reglas de negocio implementadas o en la incorporación de una nueva persona a un equipo toma demasiado tiempo y dedicación adquirir el mismo conocimiento que el resto de miembros del equipo un problema de la organización quizá sea la falta de documentación. Con el paso del tiempo a medida que una aplicación es más compleja y dado que las personas en una organización se van con el conocimiento que posean y otras vienen pero necesitan adquirir conocimiento, la documentación es una forma de transferencia de conocimiento que está disponible de forma permanente y en forma de autoservicio.</p>
+<p>Una buena documentación ha de se concisa y transmitir su información de forma rápida, una forma es utilizar diagramas que esquematizan el sujeto que se trata de describir complementados descripciones en texto. El lenguaje unificado de modelado o UML describe una notación estándar para los diagramas y varios tipos de diagramas.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-lenguaje-unificado-de-modelado-o-uml">El lenguaje unificado de modelado o UML</a></li>
+    <li><a href="#aplicación-para-crear-diagramas-de-uml">Aplicación para crear diagramas de UML</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="el-lenguaje-unificado-de-modelado-o-uml">El lenguaje unificado de modelado o UML</h3>
+<p><a href="https://es.wikipedia.org/wiki/Lenguaje_unificado_de_modelado">El lenguaje unificado de desarrollo</a> o UML estandariza las convenciones y elementos utilizados en los diagramas además de identificar y describir varios tipos de diagramas para describir un sistema desde varios puntos de vista. Cada uno de estos diagramas describen un sistema a alto nivel de forma esquematizada los conceptos fundamentales.</p>
+<p>Los diagramas UML son de dos tipos estructurales que describen la parte estática del sistema y de comportamiento que describen la parte dinámica.</p>
+<p>Diagramas UML estructurales:</p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_clases">Diagrama de clases</a>: en un lenguaje de programación orientado a objetos muestra las clases e interfaces por las que está compuesto el sistema y sus relaciones de herencia, composición e implementación con diferentes tipos de flechas. También muestra los atributos y métodos que poseen las clases.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_paquetes">Diagrama de paquetes</a>: los paquetes son agrupaciones lógicas de varias clases, en este diagrama se muestran los paquetes fundamentales asi como su relación y dependencia con otros.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_objetos">Diagrama de objetos</a>: utilizan la misma notación que los diagramas de clases, se diferencian de los diagramas de clases en que muestran las instancias en un momento determinado del sistema.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_componentes">Diagrama de componentes</a>: muestran los componentes fundamentales en los que se divide un sistema complejo y sus relaciones.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_estructura_compuesta">Diagrama de estructura compuesta</a>: muestra la estructura interna de una clase.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_despliegue">Diagrama de despliegue</a>: muestra en que elementos de computación se despliega el software asi como sus relaciones. Son especialmente útiles en los sistemas distribuidos o basados en microservicios.</li>
+</ul>
+<p>Diagramas UML de comportamiento:</p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_flujo">Diagrama de flujo</a> o actividad: muestra la secuencia de acciones y decisiones implementadas en un algoritmo o proceso.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_secuencia">Diagrama de secuencia</a>: muestran las interacciones de los objetos entre si y el orden en el que se producen esas interacciones. El orden de las acciones se muestran de forma vertical y las interacciones como flechas.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_casos_de_uso">Diagrama de caso de uso</a>: proporciona una visión general de los actores involucrados en un sistema, las diferentes funciones que usa esos actores y cómo interactúan estas diferentes funciones. Proporciona un descripción global del sistema inicial.</li>
+<li>Diagrama de estado: algunos objetos o el sistema se comportan de forma diferente en función del estado, estos diagramas muestran los diferentes estados de los que se compone y cual es su comportamiento en función del estado y condiciones.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_comunicaci%C3%B3n">Diagrama de comunicación</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_global_de_interacciones">Diagrama de interacción</a>: muestra un proceso al igual que un diagrama de actividad pero empleando una colección de diagramas de secuencia con su misma notación.</li>
+<li><a href="https://es.wikipedia.org/wiki/Diagrama_de_tiempos">Diagrama de tiempos</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-diagrams.svg" data-gallery="data-gallery" title="Esquema de diagramas UML"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-diagrams.svg" width="650" height="450" alt="Esquema de diagramas UML" title="Esquema de diagramas UML" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-sequence-diagram.svg" data-gallery="data-gallery" title="Diagramas UML"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-sequence-diagram.svg" width="300" height="250" alt="Diagramas UML" title="Diagramas UML" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-activity-diagram.svg" data-gallery="data-gallery" title="Diagramas UML"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-activity-diagram.svg" width="300" height="250" alt="Diagramas UML" title="Diagramas UML" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-use-case-diagram.svg" data-gallery="data-gallery" title="Diagramas UML"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-use-case-diagram.svg" width="200" height="150" alt="Diagramas UML" title="Diagramas UML" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-class-diagram.svg" data-gallery="data-gallery" title="Diagramas UML"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-class-diagram.svg" width="200" height="150" alt="Diagramas UML" title="Diagramas UML" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-components-diagram_hu05de9b6e8664b2cd5ad22858fe2d2771_25693_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagramas UML"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/uml-components-diagram_hu05de9b6e8664b2cd5ad22858fe2d2771_25693_200x150_fit_box_3.png" width="200" height="134" alt="Diagramas UML" title="Diagramas UML" class="" loading="lazy"></a></p>
+<figcaption>Esquema y ejemplos de diagramas UML</figcaption>
+</figure>
+</div>
+<h3 id="aplicación-para-crear-diagramas-de-uml">Aplicación para crear diagramas de UML</h3>
+<p>Para crear los diagramas de UML es necesario utilizar una aplicación, una orientada y especifica para crear diagramas UML es <a href="https://gaphor.org/">Gaphor</a>. Está disponible a través de <a href="https://flathub.org/apps/details/org.gaphor.Gaphor">aplicación Flatpak</a> como <a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">forma de empaquetar una aplicación para cualquier distribución GNU/Linux</a>, para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y <a href="https://www.apple.com/macos/">macOS</a> además de ser una aplicación de software libre. Gaphor es una aplicación sencilla con un aspecto cuidado que forma parte del <a href="https://apps.gnome.org/es/">círculo de aplicaciones de GNOME</a> y sigue la guía de estilos para las aplicaciones de este escritorio.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor_hud62cbdecb255b8a2c9c1baf867fa06c9_101875_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor_hud62cbdecb255b8a2c9c1baf867fa06c9_101875_650x450_fit_box_3.png" width="648" height="450" class="" loading="lazy"></a></p>
+<figcaption>Aplicación Gaphor para crear diagramas UML</figcaption>
+</figure>
+</div>
+<p>En el panel izquierdo se encuentran los elementos gráficos con los que crear los diferentes diagramas. Los elementos gráficos están categorizados para crear diagramas de clases, paquetes y componentes, también para diagramas de actividad, secuencia, estado y casos de uso, los otros diagramas se pueden crear con los elementos disponibles.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor-use-case-diagram_huc172453d1be757fbb9bedeb5a1766da9_144012_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear diagramas UML con Gaphor"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor-use-case-diagram_huc172453d1be757fbb9bedeb5a1766da9_144012_300x200_fit_box_3.png" width="287" height="200" alt="Crear diagramas UML con Gaphor" title="Crear diagramas UML con Gaphor" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor-class-diagram_hu1f549975f2e991c56cd0f08319adb36c_121622_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear diagramas UML con Gaphor"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor-class-diagram_hu1f549975f2e991c56cd0f08319adb36c_121622_300x200_fit_box_3.png" width="287" height="200" alt="Crear diagramas UML con Gaphor" title="Crear diagramas UML con Gaphor" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor-sequence-diagram_hua4964415d416ef25abd0c8bdf478abe2_124577_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear diagramas UML con Gaphor"><img src="/blog-bitix/2021/09/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos/images/gaphor-sequence-diagram_hua4964415d416ef25abd0c8bdf478abe2_124577_300x200_fit_box_3.png" width="287" height="200" alt="Crear diagramas UML con Gaphor" title="Crear diagramas UML con Gaphor" class="" loading="lazy"></a></p>
+<figcaption>Crear diagramas UML con Gaphor</figcaption>
+</figure>
+</div>
+<p>Gaphor permite guardar en un mismo archivo múltiples diagramas que describan los diferentes aspectos del sistema asi como exportar los diagramas a diferentes formatos de archivo como PDF y forma to de imagen como PNG y SVG. Otras de sus funciones son poder personalizar los estilos de los elementos con reglas de CSS. Finalmente, UML es simplemente una de los estándares para crear diagramas, Gaphor soporta otro tipos de estándares como el modelo C4, RAAML y SysML.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/08/the-three-ways-y-the-five-ideals-de-los-libros-the-devops-handbook-the-phoenix-project-y-the-unicorn-project/">
+                <img src="/blog-bitix/2021/08/the-three-ways-y-the-five-ideals-de-los-libros-the-devops-handbook-the-phoenix-project-y-the-unicorn-project/images/the-devops-handbook_hu9c0293191275ec580fde96aa10860175_1803345_875x0_resize_q90_box.jpg" width="326" height="125" alt="The three ways y The five ideals de los libros The DevOps Handbook, The Phoenix Project y The Unicorn Project" title="The three ways y The five ideals de los libros The DevOps Handbook, The Phoenix Project y The Unicorn Project" class="" loading="lazy">
+                <h3>The three ways y The five ideals de los libros The DevOps Handbook, The Phoenix Project y The Unicorn Project</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/">
+                <img src="/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/images/the-strangler-pattern-1_hua30b7d595d77d2879eb3fa1cff7439a7_38105_875x0_resize_box_3.png" width="326" height="125" alt="El patrón de estrangulación para reemplazar aplicaciones heredadas" title="El patrón de estrangulación para reemplazar aplicaciones heredadas" class="" loading="lazy">
+                <h3>El patrón de estrangulación para reemplazar aplicaciones heredadas</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_875x0_resize_box_3.png" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" title="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" class="" loading="lazy">
+                <h3>El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Qué son los datos estructurados y para que sirven con ejemplos" title="Qué son los datos estructurados y para que sirven con ejemplos" class="" loading="lazy">
+                <h3>Qué son los datos estructurados y para que sirven con ejemplos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">
+                <img src="/blog-bitix/assets/images/logotypes/nexus.svg" width="326" height="125" alt="Repositorio de artefactos privado con Nexus" title="Repositorio de artefactos privado con Nexus" class="" loading="lazy">
+                <h3>Repositorio de artefactos privado con Nexus</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-594';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/09\/los-diagramas-uml-para-documentar-y-una-aplicacion-para-crearlos\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

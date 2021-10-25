@@ -1,0 +1,701 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad  por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del framework de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Novedades y nuevas características de Java 17</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/" hreflang="es" title="Novedades y nuevas características de Java 17">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/index-amp.html" hreflang="es" title="Novedades y nuevas características de Java 17">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Novedades y nuevas características de Java 17">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu6704f33d6db27da37ff27235d9124aac_215527_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad  por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del framework de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu6704f33d6db27da37ff27235d9124aac_215527_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Novedades y nuevas características de Java 17">
+<meta name="twitter:description" content="La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad  por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del framework de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/"
+    },
+    "headline": "Novedades y nuevas características de Java 17",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu6704f33d6db27da37ff27235d9124aac_215527_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-09-16T20:00:00+02:00",
+    "dateModified": "2021-09-16T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2743",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del framework de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/images/java-17_hu6704f33d6db27da37ff27235d9124aac_215527_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Novedades y nuevas características de Java 17</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>16/09/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La versión Java 17 sucede a Java 11 como versión LTS, por ello es una versión más importante que las no LTS anteriores. Incorpora todas las mejoras incluidas en todas las no LTS previas más otras adicionales dede Java 16 publicada seis meses antes. Como versión LTS ofrece un soporte de correcciones de errores, fallos y alertas de seguridad  por un periodo de cinco años hasta septiembre de 2026 más un periodo adicional de tres años hasta 2029. La versión 6 del <em>framework</em> de Spring y Spring Boot 3 se tendrán como requisito mínimo Java 17 y Jakarta 9.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>El ciclo de publicación de una nueva versión de Java cada seis meses está siendo un éxito en la evolución del lenguaje, algunas características no tienen un gran impacto en la plataforma o el lenguaje pero otras sí suponen un gran mejora como las  lambdas de Java 8, los módulos de Java 9, inferencia de tipos de Java 10, Java 11 como primera versión LTS con soporte a largo plazo, expresiones <em>switch</em> de Java 12 en vista previa, bloques de texto de Java 13 en vista previa, excepciones <em>NullPointerException</em> más útiles y <em>Records</em> de Java 14, <em>Sealed Classes</em>  de Java 15 y encapsulación más fuerte de clases internas del JDK en Java 16 por mencionar simplemente una característica destacada de cada una de ellas.</p>
+<p>Java 17 al ser una versión LTS es más importante que las versiones no LTS anteriores. Las versiones LTS son más atractivas para ciertas organizaciones por sus periodos de soporte extendidos.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#nuevas-características">Nuevas características</a>
+      <ul>
+        <li><a href="#restaurar-la-semántica-estricta-de-coma-flotante">Restaurar la semántica estricta de coma flotante</a></li>
+        <li><a href="#generadores-de-números-pseudo-aleatorios-mejorado">Generadores de números pseudo-aleatorios mejorado</a></li>
+        <li><a href="#nuevo-_pipeline_-de-_renderizado_-para-macos">Nuevo <em>pipeline</em> de <em>renderizado</em> para macOS</a></li>
+        <li><a href="#portado-a-macosaarch64">Portado a macOS/AArch64</a></li>
+        <li><a href="#marcado-como-obsoleto-para-eliminación-la-applet-api">Marcado como obsoleto para eliminación la Applet API</a></li>
+        <li><a href="#encapsulación-fuerte-de-las-clases-internas-del-jdk">Encapsulación fuerte de las clases internas del JDK</a></li>
+        <li><a href="#eliminación-de-rmi-activation">Eliminación de RMI Activation</a></li>
+        <li><a href="#clases-_sealed_">Clases <em>sealed</em></a></li>
+        <li><a href="#eliminar-el-compilador-experimental-aot-y-jit">Eliminar el compilador experimental AOT y JIT</a></li>
+        <li><a href="#marcado-como-obsoleto-para-eliminación-el-_security-manager_">Marcado como obsoleto para eliminación el <em>Security Manager</em></a></li>
+        <li><a href="#filtros-de-deserialización-específicos-para-cada-contexto">Filtros de deserialización específicos para cada contexto</a></li>
+      </ul>
+    </li>
+    <li><a href="#nuevas-características-en-vista-previa">Nuevas características en vista previa</a>
+      <ul>
+        <li><a href="#_pattern-matching_-para-los-_switch_"><em>Pattern Matching</em> para los <em>switch</em></a></li>
+        <li><a href="#_foreign-function_--_memory_-api"><em>Foreign Function</em> &amp; <em>Memory</em> API</a></li>
+        <li><a href="#vector-api">Vector API</a></li>
+        <li><a href="#adelante-más-rápido">Adelante más rápido</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>Java 17 sucede a como versión LTS en septiembre de 2021 a Java 11 que fué publicada hace tres años en septiembre de 2018. Java 17 según la <a href="https://www.oracle.com/java/technologies/java-se-support-roadmap.html">hoja de ruta de Java</a> tiene un soporte de cinco años hasta septiembre de 2026 y tres años más hasta septiembre de 2029 en el periodo de soporte extendido para los clientes que paguen ese soporte.</p>
+<p>Este calendario de soporte claro y simple permite planificar la estrategia de actualización de forma anticipada de las aplicaciones que usen versiones que han dejado de estar soportadas. Las actualizaciones incluyen correcciones de errores, fallos y alertas de seguridad, actualizaciones legales, regulación y de impuestos asi como certificación con otros productos. El software empresarial por ciclo de vida prefiere usar versiones LTS por su soporte extendido, con la publicación de Java 17 está es la versión recomendada.</p>
+<p>En el caso de pasar de la versión 11, anterior LTS, o previas, la versión 17 incluye las numerosas novedades de las versiones no LTS y previa LTS a esta, de la 12 a la 16.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/17/">Características de Java 17</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/17-all-relnotes.html">Notas de publicación de Java 17</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/">Documentación Javadoc de Java 17</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/java-jdk-17-generally-available">JavaMagazine: Java 17 is here: 14 JEPs with exciting new language and JVM features</a></li>
+</ul>
+<p><a href="https://spring.io/">Spring</a> ha anunciado que la versión 6 de este <em>framework</em> junto a <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> 3 ampliamente usados se basarán en Java 17 y <a href="https://jakarta.ee/">Jakarta EE</a> 9. Estas versiones serán la base mínima requerida de la siguiente generación de aplicaciones Java.</p>
+<p>Spring 6 y Spring Boot 3 se publicará a finales del 2022 cuando Java 17 incluso ya tenga un par de versiones sucesoras. Los entornos integrados de desarrollo como <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> han sido actualizados para proporcionar soporte desde el primer momento a las nuevas características de Java 17.</p>
+<ul>
+<li><a href="https://blog.jetbrains.com/idea/2021/09/java-17-and-intellij-idea/">Java 17 and IntelliJ IDEA</a></li>
+<li><a href="https://spring.io/blog/2021/09/02/a-java-17-and-jakarta-ee-9-baseline-for-spring-framework-6">A Java 17 and Jakarta EE 9 baseline for Spring Framework 6</a></li>
+</ul>
+<p>Las mejoras incluidas en esta versión son:</p>
+<ul>
+<li>306: <a href="https://openjdk.java.net/jeps/306">Restore Always-Strict Floating-Point Semantics</a></li>
+<li>356: <a href="https://openjdk.java.net/jeps/356">Enhanced Pseudo-Random Number Generators</a></li>
+<li>382: <a href="https://openjdk.java.net/jeps/382">New macOS Rendering Pipeline</a></li>
+<li>391: <a href="https://openjdk.java.net/jeps/391">macOS/AArch64 Port</a></li>
+<li>398: <a href="https://openjdk.java.net/jeps/398">Deprecate the Applet API for Removal</a></li>
+<li>403: <a href="https://openjdk.java.net/jeps/403">Strongly Encapsulate JDK Internals</a></li>
+<li>406: <a href="https://openjdk.java.net/jeps/406">Pattern Matching for switch (Preview)</a></li>
+<li>407: <a href="https://openjdk.java.net/jeps/407">Remove RMI Activation</a></li>
+<li>409: <a href="https://openjdk.java.net/jeps/409">Sealed Classes</a></li>
+<li>410: <a href="https://openjdk.java.net/jeps/410">Remove the Experimental AOT and JIT Compiler</a></li>
+<li>411: <a href="https://openjdk.java.net/jeps/411">Deprecate the Security Manager for Removal</a></li>
+<li>412: <a href="https://openjdk.java.net/jeps/412">Foreign Function &amp; Memory API (Incubator)</a></li>
+<li>414: <a href="https://openjdk.java.net/jeps/414">Vector API (Second Incubator)</a></li>
+<li>415: <a href="https://openjdk.java.net/jeps/415">Context-Specific Deserialization Filters</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/BW35_IGDseI" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="restaurar-la-semántica-estricta-de-coma-flotante">Restaurar la semántica estricta de coma flotante</h4>
+<p>El <a href="https://es.wikipedia.org/wiki/IEEE_754">estándar IEEE 754</a> especifica cómo realizar operaciones de coma flotante y cómo almacenar valores de coma flotante en varios formatos incluyendo en precisión simple (en 32 bits usado en el <em>float</em> de Java) y precisión doble (en 64 bits usado en el <em>double</em> de Java).</p>
+<p>Algunos dispositivos hardware como CPU proporcionan precisiones extendidas con mayor precisión o mayor rango del exponente. En esas arquitecturas con precisiones extendidas puede ser más eficiente usarlas para los resultados intermedios evitando operaciones de redondeo o desbordamientos que de otra manera ocurrirían. Esto hace las operaciones más eficientes pero puede ocasionar resultados diferentes en esas arquitecturas. La precisión extendida en las máquinas x86 con la arquitectura x87 por sus peculiaridades era necesaria ser usada para evitar penalizaciones de rendimiento.</p>
+<p>Antes de las versiones a la JVM 1.2 los cálculos de coma flotante requerían ser estrictas empleando la misma precisión tal como define el estándar IEEE 754 para todos los cálculos intermedios. La semántica estricta de coma flotante era costosa en el hardware x87 por ello en la versión de la JVM 1.2 se cambió la semántica estricta por defecto por una semántica con precisión extendida produciendo resultados posiblemente más precisos pero a riesgo de resultados menos repetibles entre diferentes arquitecturas.</p>
+<p>Dado que los cálculos de coma flotante mediante x87 ya no son necesarios ni tienen penalización de rendimiento en los procesadores x86 que soportan el conjunto de instrucciones SSE2 introducidas en el Pentium 4 y están al mismo tiempo presentes en los procesadores de AMD y sucesores de Intel, Java 17 de nuevo hace que todas operaciones de coma flotante sean estrictas recuperando de forma efectiva el comportamiento de las versiones anteriores a la JVM 1.2.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Strictfp">Strictfp</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Formato_en_coma_flotante_de_simple_precisi%C3%B3n">Formato en coma flotante de simple precisión</a></li>
+<li><a href="https://en.wikipedia.org/wiki/X87">x87</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SSE2">SSE2</a></li>
+<li><a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a></li>
+</ul>
+<h4 id="generadores-de-números-pseudo-aleatorios-mejorado">Generadores de números pseudo-aleatorios mejorado</h4>
+<p>En la API de Java hay varias clases que permiten la obtención de números pseudo-aleatorios, estas clases contienen diferentes métodos con código repetido en varias de las implementaciones.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">Formas de generar un número aleatorio en un rango con Java</a></li>
+</ul>
+<p>Se proporciona una nueva interfaz <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/random/RandomGenerator.html">RandomGenerator</a> que proporciona una API uniforme para los generadores de números aleatorios existentes. <em>RandomGenerator</em> proporciona métodos para <em>ints</em>, <em>longs</em>, y <em>doubles</em> con sus variaciones de parámetros. También se proporciona la factoría <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/random/RandomGeneratorFactory.html">RandomGeneratorFactory</a> para localizar y construir instancias que implementan la interfaz <em>RandomGenerator</em> usando <a href="https://picodotdev.github.io/blog-bitix/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/">la API de ServiceLoader.Provider</a> para registrar las implementaciones.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.random.RandomGeneratorFactory</span><span class="o">;</span>&#10;&#10;<span class="n">RandomGeneratorFactory</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Random&#34;</span><span class="o">).</span><span class="na">create</span><span class="o">().</span><span class="na">nextInt</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">11</span><span class="o">);</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>RandomGeneratorFactory.java</span>
+    </div>
+</div>
+<h4 id="nuevo-_pipeline_-de-_renderizado_-para-macos">Nuevo <em>pipeline</em> de <em>renderizado</em> para macOS</h4>
+<p>Se implementa un <em>pipeline</em> de renderizado interno de Java 2D para macOS usando <a href="https://developer.apple.com/metal/">Apple Metal</a> como alternativa al <em>pipeline</em> existente que usa el obsoleto Apple OpenGL API estando preparado para cuando <a href="https://www.apple.com/">Apple</a> lo elimine.</p>
+<p>Las funcionalidades proporcionadas en el <em>pipeline</em> usando Apple Metal API son equivalentes a las existentes en OpenGL con un rendimiento tan bueno o mejor. Ambos <em>pipelines</em> coexistirán hasta que el <em>pipeline</em> OpenGL se considere obsoleto.</p>
+<h4 id="portado-a-macosaarch64">Portado a macOS/AArch64</h4>
+<p>En Java 16 se implementó el portado a AArch64 para <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, ahora se hace lo equivalente para <a href="https://www.apple.com/macos/">macOS</a>. Dado que ARM es una plataforma que será más común con el tiempo junto con el anuncio de Apple de su plan a largo plazo de transición de la arquitectura x64 a AArch64 se espera una demanda amplia para el portado de macOS/AArch64 del JDK.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Mac_transition_to_Apple_Silicon">Mac transition to Apple silicon</a></li>
+</ul>
+<h4 id="marcado-como-obsoleto-para-eliminación-la-applet-api">Marcado como obsoleto para eliminación la Applet API</h4>
+<p>Se marca como obsoleta para eliminación la de los Applet. A día de hoy es irrelevante dado que todos los vendedores de navegadores web han eliminado el soporte para los complementos de Java o han anunciado planes para hacerlo.</p>
+<p>Anteriormente en Java 9 con la Applet API fué marcada como deprecada aunque no para eliminación.</p>
+<p>La alternativa similar a los Applets es utilizar <em>Java Web Start</em>, que permitía descargar y lanzar aplicaciones Java como aplicaciones de escritorio sin utilizar el navegador como entorno de ejecución. En Java 9 <em>Java Web Start</em> fué marcado como obsoleto y en Java 11 el su soporte fué eliminado. La alternativa equivalente a los Applets y <em>Java Web Start</em> es <a href="https://openwebstart.com/">OpenWebStart</a>.</p>
+<h4 id="encapsulación-fuerte-de-las-clases-internas-del-jdk">Encapsulación fuerte de las clases internas del JDK</h4>
+<p>Se encapsula de forma fuerte impidiendo su uso de todos los elementos internos del JDK de los paquetes <em>java.*</em>, <em>sun.*</em>, <em>com.sun.*</em>, <em>jdk.*</em> y <em>org.*</em> , exceptuando <a href="https://openjdk.java.net/jeps/260#Description">ciertas APIs críticas</a> como <em>sun.misc.Unsafe</em>. En el JDK 16 se cambió el comportamiento por defecto de permitido a fuerte aún siguiendo siendo posible utilizar la opción para relajar la encapsulación. Ya no será posible relajar la encapsulación de los elementos internos mediante la opción de línea de comandos <em>&ndash;illegal-access=permit</em> como era posible en el JDK 9 hasta el JDK 16.</p>
+<p>La encapsulación fuerte permite mejorar la seguridad y el mantenimiento del JDK que era uno de los objetivos primarios del proyecto Jigsaw con la incorporación de los módulos. Se aconseja a los desarrolladores migrar del uso de elementos internos  a APIs estándar de modo que tanto los desarrolladores de librerías como sus usuarios puedan actualizar sin complicaciones a futuras versiones de Java.</p>
+<h4 id="eliminación-de-rmi-activation">Eliminación de RMI Activation</h4>
+<p>Se elimina el mecanismo de activación de RMI mientras se conserva el resto de RMI. El mecanismo de llamada a procedimiento remoto RMI de Java es una tecnología obsoleta prefiriéndose REST para la integración de sistemas distribuidos, RMI también ha sido superado y mejorado por <a href="https://es.wikipedia.org/wiki/Remote_Procedure_Call">gRPC</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Ejemplo de API REST en Java con JAX-RS y Spring Boot</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Introducción a gRPC y ejemplo con Java</a></li>
+</ul>
+<h4 id="clases-_sealed_">Clases <em>sealed</em></h4>
+<p>Las clases <em>sealed</em> fueron propuestas en Java 15 en modo vista previa, en Java 16 fueron propuestas de nuevo con algunos cambios. Las clases <em>sealed</em> son incorporadas de forma final sin cambios respecto a Java 16. Las clases <em>sealed</em> permite limitar que que clases tienen permitido heredar de una clase definida como <em>sealed</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="n">sealed</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="n">permits</span> <span class="n">Circle</span><span class="o">,</span> <span class="n">Rectangle</span><span class="o">,</span> <span class="n">Square</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sealed-classes.java</span>
+    </div>
+</div>
+<h4 id="eliminar-el-compilador-experimental-aot-y-jit">Eliminar el compilador experimental AOT y JIT</h4>
+<p>Se elimina el soporte experimental de compilación <em>ahead-of-time</em> o <em>AOT</em> y el compilador <em>just-in-time</em> o JIT implementados en Java. Este compilador ha sido usado poco desde su introducción suponiendo un esfuerzo de mantenimiento significativo. Se mantiene la interfaz experimental de compilador JVM basado en Java o JVMCI para que los desarrolladores continúen construyendo externamente versiones del compilador para la compilación JIT.</p>
+<p>La herramienta <em>jaotc</em> fue incorporada en el JDK 9 de forma experimental, usa el compilador Graal que está escrito a su vez en Java. El compilador Graal fue incorporado como compilador JIT experimental en el JDK 10. Los desarrolladores que deseen usar el compilador Graal para realizar compilación AOT o JIT pueden usar <a href="https://www.graalvm.org/">GraalVM</a>.</p>
+<h4 id="marcado-como-obsoleto-para-eliminación-el-_security-manager_">Marcado como obsoleto para eliminación el <em>Security Manager</em></h4>
+<p>El <em>Security Manager</em> está presente desde la versión de Java 1.0. No ha sido la forma de añadir seguridad en el código Java en el lado cliente  desde hace muchos años y ha sido raramente usado para añadir seguridad en el código de lado del servidor. Se marca como obsoleto el <em>Security Manager</em> en consonancia con la Applet API heredada.</p>
+<p>El control de acceso se basa en el principio de menor privilegio que era viable en la reducida librería de clases de Java 1.0 pero con el rápido crecimiento de los paquetes <em>java.*</em> y <em>javax.*</em> ha originado docenas de permisos y cientos de comprobaciones de permisos en todo el JDK. Esto supone un área grande a mantener seguro.</p>
+<p>Ahora se considera que la seguridad es mejor implementarla proporcionando integridad a bajo nivel en la plataforma Java, por ejemplo fortaleciendo los límites de los módulos para prevenir acceso a detalles del JDK, y aislando el entorno de ejecución de Java completo de recursos sensibles mediante mecanismos ajenos al proceso o <em>out-of-process</em> como los contenedores y virtualización.</p>
+<p>Se marca como obsoleto el <em>Security Manager</em> y eliminan algunas de sus capacidades a lo largo de varias versiones y simultáneamente se crean APIs alternativas para ciertas tareas como bloquear la llamada a <em>System::exit</em> u otros casos de uso considerados suficientemente importantes para tener reemplazos.</p>
+<p>En la JEP 411 hay una descripción detallada de las motivaciones de esta eliminación además de su poco uso se proporciona varias deficiencias como un modelo de permisos frágil, un modelo de programación complicado que desincentiva su uso y bajo rendimiento. Tampoco es eficaz para evitar la mayoría de <a href="https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html">problemas de seguridad más importantes identificados en 2020</a>.</p>
+<h4 id="filtros-de-deserialización-específicos-para-cada-contexto">Filtros de deserialización específicos para cada contexto</h4>
+<p>Esto permite a las aplicaciones configurar un filtro de deserialización específico según el contexto y seleccionado dinámicamente mediante una factoría de filtros de la JVM para cada operación de deserialización.</p>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<p>Además de las características anteriores se incorporan otras en modo experimental que también se pueden usar pero que podrían cambiar en el futuro.</p>
+<h4 id="_pattern-matching_-para-los-_switch_"><em>Pattern Matching</em> para los <em>switch</em></h4>
+<p>Se mejoran las sentencias y expresiones <em>switch</em> de dos formas:</p>
+<ul>
+<li>Se extienden las etiquetas <em>case</em> para incluir patrones adicionalmente a constantes.</li>
+<li>Se añaden dos nuevos tipos de patrones: patrones de protección o <em>guarded patterns</em> y patrones con paréntesis o <em>parenthesized patterns</em>.</li>
+</ul>
+<p>Este es un ejemplo de sentencia <em>if-else</em> de varios niveles con expresiones booleanas usando el operador <em>instanceof</em>, gracias a que el operador <em>instanceof</em> soporta <em>pattern matching</em> se evita los <em>cast</em> de <em>Object</em> al tipo del <em>instanceof</em>, sin embargo, el código de la sentencia <em>if-else</em> sigue siendo de difícil lectura.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">123L</span><span class="o">;</span>&#10;<span class="n">String</span> <span class="n">formatted</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>&#10;<span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Integer</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">formatted</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;int %d&#34;</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Long</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">formatted</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;long %d&#34;</span><span class="o">,</span> <span class="n">l</span><span class="o">);</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Double</span> <span class="n">d</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">formatted</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;double %f&#34;</span><span class="o">,</span> <span class="n">d</span><span class="o">);</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">formatted</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;String %s&#34;</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">formatted</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>switch-pattern-matching-1.java</span>
+    </div>
+</div>
+<p>Este es un ejemplo de expresión <em>switch</em> que usa <em>pattern matching</em> para las etiquetas <em>case</em> que sustituye una expresión <em>if-else</em> anterior.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">123L</span><span class="o">;</span>&#10;<span class="n">String</span> <span class="n">formatted</span> <span class="o">=</span> <span class="k">switch</span> <span class="o">(</span><span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">Integer</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;int %d&#34;</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">Long</span> <span class="n">l</span> <span class="o">-&gt;</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;long %d&#34;</span><span class="o">,</span> <span class="n">l</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">Double</span> <span class="n">d</span> <span class="o">-&gt;</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;double %f&#34;</span><span class="o">,</span> <span class="n">d</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;String %s&#34;</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="o">-&gt;</span> <span class="n">o</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>&#10;<span class="o">};</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>switch-pattern-matching-2.java</span>
+    </div>
+</div>
+<p>La etiqueta <em>case</em> también soporta la comprobación del valor <em>null</em> que ha de ser especificado explícitamente, para mantener la compatibilidad hacia atrás el <em>default</em> <em>case</em> no cumple con el valor <em>null</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">switch</span> <span class="o">(</span><span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="kc">null</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;null!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;String&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Something else&#34;</span><span class="o">);</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>switch-pattern-matching-3.java</span>
+    </div>
+</div>
+<p>En el primer caso de esta expresión <em>switch</em> se hace uso de una patrón de protección y de un patrón con paréntesis.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">switch</span> <span class="o">(</span><span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="n">String</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>switch-pattern-matching-4.java</span>
+    </div>
+</div>
+<p>Un patrón de protección tiene la forma <em>p &amp;&amp; (e)</em> donde <em>p</em> es un patrón y <em>e</em> es una expresión booleana, este patrón incluye la unión de todas las variables definidas en el patrón <em>p</em> y la expresión <em>e</em>. Una valor cumple con un patrón de protección si primero cumple el patrón <em>p</em> y segundo la expresión <em>e</em> se evalúa como verdadero, si el valor no cumple <em>p</em> no se evalúa la expresión <em>e</em>.</p>
+<p>Una patrón con paréntesis tiene la forma <em>(p)</em>, donde <em>p</em> es un patrón. Una patrón con paréntesis introduce las variables de patrón  que son introducidas por el subatrón <em>p</em>. Un valor cumple el patrón parametrizado <em>(p)</em> su cumple el patrón <em>p</em>.</p>
+<h4 id="_foreign-function_--_memory_-api"><em>Foreign Function</em> &amp; <em>Memory</em> API</h4>
+<p>La <em>Foreign Function &amp; Memory API</em> o FFM API permite que los programas Java puedan interoperar con código y datos fuera del entorno de ejecución de Java, invocar eficientemente funciones externas (fuera de la JVM) y acceder de forma segura memoria externa (no gestionada por la JVM).</p>
+<p>La FFM API permite a los programa Java llamar a librerías nativas y procesar datos nativos sin la fragilidad y peligro de JNI. Esta es una revisión introducida inicialmente en Java 14 y revisada en Java 15 y 16.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/">Ejemplo de JNI, usar código en C desde Java</a></li>
+</ul>
+<p>La API en el módulo <a href="https://docs.oracle.com/en/java/javase/17/docs/api/jdk.incubator.foreign/module-summary.html">jdk.incubator.foreign</a> define varias clases e interfaces para que el código cliente en librerías puedan:</p>
+<ul>
+<li>Solicitar memoria externa.</li>
+<li>Manipular y acceder a estructuras de memoria externas.</li>
+<li>Gestionar el ciclo de vida de los recursos externos.</li>
+<li>Invocar funciones externas.</li>
+</ul>
+<h4 id="vector-api">Vector API</h4>
+<p>Se añade la Vector API para expresar computaciones vectoriales que son compiladas en tiempo de ejecución en las instrucciones vectoriales de las arquitecturas de CPU soportadas, esto permite conseguir un rendimiento superior al equivalente con las computaciones escalares.</p>
+<p>La Vector API fue integrada en Java 16 en forma de incubación, en esta nueva revisión se incorporan mejoras en respuesta a los comentarios así como a mejoras de rendimiento y otras mejoras significativas en la implementación.</p>
+<h4 id="adelante-más-rápido">Adelante más rápido</h4>
+<p>Como última nota se está proponiendo lanzar una versión LTS cada dos años en vez de cada tres lo que permitirá a aquellos usuarios que prefieren el soporte extendido tener disponible una versión LTS cada menos tiempo proporcionando más oportunidades de actualización. Por otro lado, hace más atractivas las versiones no-LTS pudiendo los desarrolladores comenzar con una versión no LTS sabiendo que en dos años habrá una versión LTS que poder utilizar en producción.</p>
+<ul>
+<li><a href="https://mreinhold.org/blog/forward-even-faster">Moving Java Forward Even Faster</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/Twwpk6vub1M" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/KVXbWCwOLg4" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://blog.arkey.fr/2021/09/04/a-practical-look-at-jep-412-in-jdk17-with-libsodium/">A practical look at JEP-412 in JDK17 with libsodium</a></li>
+<li><a href="https://www.oracle.com/support/lifetime-support/">Expect lifetime support</a></li>
+<li><a href="https://www.oracle.com/support/lifetime-support/resources.html">Oracle Lifetime Support Policies Resources</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>java-platform</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">Introducción y nuevas características de Java EE 7</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/">Aplicación de ejemplo usando varias especificaciones de Java EE 7</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">Novedades y nuevas características de Java 9, los módulos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">Novedades de Java 9, más allá de la modularidad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/03/novedades-de-java-10/">Novedades de Java 10</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/">Novedades y nuevas características de Java 11</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/11/novedades-de-java-ee-8/">Novedades de Java EE 8</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/">Novedades de Java 12</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/">Novedades de Java 13</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/novedades-de-java-14/">Novedades de Java 14</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/">Novedades de Java 15</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/">Novedades de Java 16</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/">Novedades y nuevas características de Java 17</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-597';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/09\/novedades-y-nuevas-caracteristicas-de-java-17\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

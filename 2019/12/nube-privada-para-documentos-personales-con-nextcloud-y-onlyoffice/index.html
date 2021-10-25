@@ -1,0 +1,615 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Empresas como Google ofrecen servicios gratuitos que los usuarios pueden utilizar, algunos de ellos a cambio de entregrarles documentos con información personal con la consiguiente potencial pérdida de privacidad. Algunos de estos servicios son sustituibles con alternativas como Nextcloud y OnlyOffice que permiten a sus usuarios ser dueños de su información ya sea utilizando una Raspberry Pi como servidor que debe ser administrada o incluso en la nube con servicios como DigitalOcean o AWS. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Nube privada para documentos personales con Nextcloud y OnlyOffice</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/" hreflang="es" title="Nube privada para documentos personales con Nextcloud y OnlyOffice">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/index-amp.html" hreflang="es" title="Nube privada para documentos personales con Nextcloud y OnlyOffice">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Nube privada para documentos personales con Nextcloud y OnlyOffice">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-inicio_hu8b8d704537521248ed406d67202f5cb8_498606_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Empresas como Google ofrecen servicios gratuitos que los usuarios pueden utilizar, algunos de ellos a cambio de entregrarles documentos con información personal con la consiguiente potencial pérdida de privacidad. Algunos de estos servicios son sustituibles con alternativas como Nextcloud y OnlyOffice que permiten a sus usuarios ser dueños de su información ya sea utilizando una Raspberry Pi como servidor que debe ser administrada o incluso en la nube con servicios como DigitalOcean o AWS. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-inicio_hu8b8d704537521248ed406d67202f5cb8_498606_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Nube privada para documentos personales con Nextcloud y OnlyOffice">
+<meta name="twitter:description" content="Empresas como Google ofrecen servicios gratuitos que los usuarios pueden utilizar, algunos de ellos a cambio de entregrarles documentos con información personal con la consiguiente potencial pérdida de privacidad. Algunos de estos servicios son sustituibles con alternativas como Nextcloud y OnlyOffice que permiten a sus usuarios ser dueños de su información ya sea utilizando una Raspberry Pi como servidor que debe ser administrada o incluso en la nube con servicios como DigitalOcean o AWS. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/"
+    },
+    "headline": "Nube privada para documentos personales con Nextcloud y OnlyOffice",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-inicio_hu8b8d704537521248ed406d67202f5cb8_498606_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2019-12-05T12:00:00+01:00",
+    "dateModified": "2019-12-05T12:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "754",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Empresas como Google ofrecen servicios gratuitos que los usuarios pueden utilizar, algunos de ellos a cambio de entregrarles documentos con información personal con la consiguiente potencial pérdida de privacidad. Algunos de estos servicios son sustituibles con alternativas como Nextcloud y OnlyOffice que permiten a sus usuarios ser dueños de su información ya sea utilizando una Raspberry Pi como servidor que debe ser administrada o incluso en la nube con servicios como DigitalOcean o AWS."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Nube privada para documentos personales con Nextcloud y OnlyOffice</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>05/12/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Empresas como Google ofrecen servicios gratuitos que los usuarios pueden utilizar, algunos de ellos a cambio de entregrarles documentos con información personal con la consiguiente potencial pérdida de privacidad. Algunos de estos servicios son sustituibles con alternativas como Nextcloud y OnlyOffice que permiten a sus usuarios ser dueños de su información ya sea utilizando una Raspberry Pi como servidor que debe ser administrada o incluso en la nube con servicios como DigitalOcean o AWS.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/nextcloud.svg" width="200" height="141" alt="Nextcloud" title="Nextcloud" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/onlyoffice.svg" width="200" height="186" alt="OnlyOffice" title="OnlyOffice" class="" loading="false"></p>
+</div>
+<p>Una cuenta de Google da acceso a múltiples servicios gratuitos, útiles y con un servicio más que correcto. Algunas de estos servicios está el de correo electrónico de <a href="https://www.google.com/intl/es/gmail/about/">GMail</a>, la sincronización y unidad de documentos de <a href="https://www.google.es/drive/apps.html">Google Drive</a>, calendario para apuntar citas y recordatorios con <a href="https://www.google.com/calendar/about/">Google Calendar</a>, el acceso a la <em>suite</em> ofimática colaborativa <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a> o fotos con <a href="https://www.google.com/photos/about/">Google Photos</a>. Estos son los servicios que uso de Google por su comodidad.</p>
+<p>Los servicios en la nube permiten guardar los documentos e información fuera del dispositivo donde se usen, esto permite tener sincronizados y compartir todos los documentos entre varios dispositivos como el ordenador personal en casa, tener disponibles los documentos en el ordenador del trabajo y en un dispositivo móvil como un <em>smartphone</em> en cualquier lugar. El problema de los servicios en la nube es que no somos realmente propietarios de nuestra información y documentos, son entregados a esos servicios como los de Google, esto genera una pérdida de privacidad sin ser conscientes de los usos que le pueda dar Google. Para proteger nuestra privacidad hay alternativas para disponer de nuestra propia nube que proporcione la mayoría de estos servicios.</p>
+<p><a href="https://nextcloud.com/">Nextcloud</a> es un software que permite alojar en nuestro propio servidor nuestros documentos sustituyendo a varios de los servicios de Google. Nextcloud permite almacenar archivos y documentos ofimáticos, fotos, música, calendarios, un visor de PDF, editor de <em>markdown</em>, gestor de tareas o nuestros contactos. Permite complementos con los que añadir las funcionalidad que necesitemos como un reproductor de música o un paquete ofimático con <a href="https://www.onlyoffice.com/es/">OnlyOffice</a> que sustituya a Google Docs.</p>
+<p>Una <a href="https://www.raspberrypi.org/">Raspberry Pi 4</a> o una de sus <a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/">7 computadoras alternativas</a> similares es una buena opción como servidor por su pequeño tamaño, bajo consumo, totalmente silencioso con un recomendable disipador pasivo y suficiente para ejecutar con normalidad Nextcloud con los 4 GiB de memoria del modelo con más capacidad. Hay <a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/">otras placas similares</a> o incluso se puede utilizar un <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC</a> que permiten más cantidad de memoria y sus procesadores son más capaces. Para una nube privada una Raspberry Pi es interesante por su pequeño tamaño y bajo consumo eléctrico dado que su funcionamiento sería constante.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07TC2BK1X&amp;linkId=6e87726b77e92056e7ac168add1bc747" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07XNVPK8X&amp;linkId=bef0fad42b2cc046799c66f7fa220c0f" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B073JWXGNT&amp;linkId=d64d66fda7d25defd2018c4119aa7e46" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B014I8U33I&amp;linkId=df5c52be4ca21b9991d26145edb0b642" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07VMXHJ4Q&amp;linkId=39ee0802cdc202ce8259d463b59224ed" title="Amazon" class="lozad"></iframe>
+</div>
+<p>Usando <a href="https://www.docker.com/">Docker</a> y el <a href="https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud">repositorio de GitHub</a> es sencillo iniciar el servidor de Nextcloud realizando los siguientes pasos.</p>
+<ul>
+<li>Instalar Docker.</li>
+<li>Descargar o clonar el repositorio de GitHub.</li>
+<li>Iniciar con Docker Compose los contenedores de Nextcloud y OnlyOffice.</li>
+<li>Acceder <em>http://localhost</em> y realizar la configuración inicial, introducir el usuario y contraseña de administrador.</li>
+<li>Ejecutar <em>bash set_configuration.sh</em>.</li>
+<li>Añadir el complemento de OnlyOffice.</li>
+<li>Acceder a <em>http://localhost</em>.</li>
+</ul>
+<p>Este archivo de Docker Compose incluye Nextcloud con OnlyOffice sin usar una base de datos externa.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">app-server</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nextcloud:fpm</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">stdin_open</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">tty</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">expose</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;80&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;9000&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">app_data:/var/www/html</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">onlyoffice-document-server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">onlyoffice-document-server</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">onlyoffice/documentserver:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">stdin_open</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">tty</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">expose</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;80&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;443&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">document_data:/var/www/onlyoffice/Data</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">document_log:/var/log/onlyoffice</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-server</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">stdin_open</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">tty</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="m">80</span><span class="p">:</span><span class="m">80</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="m">443</span><span class="p">:</span><span class="m">443</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">./nginx.conf:/etc/nginx/nginx.conf</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">app_data:/var/www/html</span><span class="w">&#10;</span><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">document_data</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">document_log</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">app_data</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">mysql_data</span><span class="p">:</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-up.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-configuracion_hu7348f075c395873d91de02a5fb57b540_592428_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de Nextcloud"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-configuracion_hu7348f075c395873d91de02a5fb57b540_592428_300x200_fit_box_3.png" width="300" height="198" alt="Configuración de Nextcloud" title="Configuración de Nextcloud" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-inicio_hu8b8d704537521248ed406d67202f5cb8_498606_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de Nextcluod"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-inicio_hu8b8d704537521248ed406d67202f5cb8_498606_300x200_fit_box_3.png" width="300" height="198" alt="Inicio de Nextcluod" title="Inicio de Nextcluod" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-archivos_hu0e5f45861c65c3026f8a6d9908487425_77402_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos en Nextcloud"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-archivos_hu0e5f45861c65c3026f8a6d9908487425_77402_300x200_fit_box_3.png" width="300" height="198" alt="Archivos en Nextcloud" title="Archivos en Nextcloud" class="" loading="lazy"></a></p>
+<figcaption>Configuración y archivos en Nextcloud</figcaption>
+</figure>
+</div>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/">OnlyOffice es un paquete ofimático alternativa a Microsoft Office</a> que ofrece un editor de documentos de texto, una hoja de cálculo y una aplicación para realizar presentaciones integrables en Nextcloud. Son aplicaciones con menos opciones que las ofrecidas por Microsoft Office pero suficientes para un uso sencillo, también dispone de una versión como aplicaciones de escritorio.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-onlyoffice-documento_hu75d514e1af687067042b36db0d8cca97_82529_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documento con OnlyOffice"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-onlyoffice-documento_hu75d514e1af687067042b36db0d8cca97_82529_300x200_fit_box_3.png" width="300" height="198" alt="Documento con OnlyOffice" title="Documento con OnlyOffice" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-onlyoffice-hoja-de-calculo_hu1e880885d1b87bcaeedc67cdcf30656f_90253_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Hola de cálculo con OnlyOffice"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-onlyoffice-hoja-de-calculo_hu1e880885d1b87bcaeedc67cdcf30656f_90253_300x200_fit_box_3.png" width="300" height="198" alt="Hola de cálculo con OnlyOffice" title="Hola de cálculo con OnlyOffice" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-onlyoffice-presentacion_huf80b231b0357f81b45055c61fc87e78a_89511_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Presentación con OnlyOffice"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-onlyoffice-presentacion_huf80b231b0357f81b45055c61fc87e78a_89511_300x200_fit_box_3.png" width="300" height="198" alt="Presentación con OnlyOffice" title="Presentación con OnlyOffice" class="" loading="lazy"></a></p>
+<figcaption>Ofimática con OnlyOffice y Nextcloud alternativa a Google Docs</figcaption>
+</figure>
+</div>
+<p>Otras utilidades es un reproductor de música, calendario o galería de fotos, hay un complemento para añadir estas funcionalidades.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-visor-pdf_hu9c375447dbaadb6118d44af382ae6dc2_244274_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Visor de documento PDF"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-visor-pdf_hu9c375447dbaadb6118d44af382ae6dc2_244274_300x200_fit_box_3.png" width="300" height="198" alt="Visor de documento PDF" title="Visor de documento PDF" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-calendario_hua3364b511a687c3dd051fba1e58308cd_55308_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Calendario"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-calendario_hua3364b511a687c3dd051fba1e58308cd_55308_300x200_fit_box_3.png" width="300" height="198" alt="Calendario" title="Calendario" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-visor-fotos_hu8fa48cc6dd28b15761dd535ce8c3e54c_529797_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Visor de fotos"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-visor-fotos_hu8fa48cc6dd28b15761dd535ce8c3e54c_529797_300x200_fit_box_3.png" width="300" height="198" alt="Visor de fotos" title="Visor de fotos" class="" loading="lazy"></a></p>
+<figcaption>Aplicaciones y complementos</figcaption>
+</figure>
+</div>
+<p>Con <a href="https://en.wikipedia.org/wiki/WebDAV">WebDAV</a> los documentos son accesibles como si fuese una unidad local proporcionando la misma funcionalidad de Google Drive. En GNOME con el explorador de archivos Nautilus es posible conectarse a dispositivo WebDAV, en el caso de Nextcloud la dirección es <em>dav://localhost/remote.php/dav/files/admin</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-webdav_hu654eea6c2f2a8913b74ce780deb20881_51637_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos en el explorador de archivos Nautilus con WebDAV"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-webdav_hu654eea6c2f2a8913b74ce780deb20881_51637_300x200_fit_box_3.png" width="289" height="200" alt="Archivos en el explorador de archivos Nautilus con WebDAV" title="Archivos en el explorador de archivos Nautilus con WebDAV" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-administracion_hub414e9a557d957a8ac86576d54dc2a39_111099_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Opciones de administración"><img src="/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/images/nextcloud-administracion_hub414e9a557d957a8ac86576d54dc2a39_111099_300x200_fit_box_3.png" width="251" height="200" alt="Opciones de administración" title="Opciones de administración" class="" loading="lazy"></a></p>
+<figcaption>Archivos en el explorador de archivos Nautilus con WebDAV y opciones de administración</figcaption>
+</figure>
+</div>
+<p>Con las <a href="https://nextcloud.com/install/#">aplicaciones para <em>smatphone</em></a> los documentos quedan accesibles en cualquier lugar teniendo un dispositivo móvil, <em>smartphone</em> o tableta. Tener una nube propia que esté accesible en internet hace necesario tener un dominio propio, añadir seguridad para lo que es necesario configurar Nextcloud de modo que utilice el protocolo seguro que cifre las comunicaciones con TLS, esto requiere obtener <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">un certificado autofirmado</a> al menos o mejor obteniéndolo de <a href="https://letsencrypt.org/">Let’s Encrypt</a>, que proporciona certificados de forma automatizada y gratuita. Otra medida para aumentar la seguridad es utilizar un segundo factor de autenticación o <em>2FA</em>.</p>
+<p>Hay <a href="https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/with-nginx-proxy/postgres/fpm/docker-compose.yml">ejemplo de archivo de Docker Compose para tener Nextcloud con un certificado</a> creado y renovado de forma automática con Let&rsquo;s Encrypt a través del contenedor <a href="https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion">jrcs/letsencrypt-nginx-proxy-companion</a> y configurando las variables de entorno <em>LETSENCRYPT_HOST</em>, <em>LETSENCRYPT_EMAIL</em> con el dominio propio para Nextcloud y un correo electrónico.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Serie de artículos sobre Docker</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/flatpak.svg" width="326" height="125" alt="Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux" title="Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux" class="" loading="lazy">
+                <h3>Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/">
+                <img src="/blog-bitix/assets/images/logotypes/gitlab.svg" width="326" height="125" alt="Gestión de peticiones, wiki y pages con GitLab" title="Gestión de peticiones, wiki y pages con GitLab" class="" loading="lazy">
+                <h3>Gestión de peticiones, wiki y pages con GitLab</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/">
+                <img src="/blog-bitix/assets/images/logotypes/gitlab.svg" width="326" height="125" alt="Integración y entrega continua con GitLab sobre Docker" title="Integración y entrega continua con GitLab sobre Docker" class="" loading="lazy">
+                <h3>Integración y entrega continua con GitLab sobre Docker</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-446';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/12\/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

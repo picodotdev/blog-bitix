@@ -1,0 +1,6 @@
+...
+System.out.println("# Dates");
+System.out.println("Date (iso): " + DateTimeFormatter.ISO_ZONED_DATE_TIME.format(ZonedDateTime.now()));
+System.out.println("Date (en): " + DateTimeFormatter.ofPattern("EEEE d, LLLL YYYY", enLocale).format(ZonedDateTime.now()));
+System.out.println("Date (es): " + DateTimeFormatter.ofPattern("EEEE d, LLLL YYYY", esLocale).format(ZonedDateTime.now()));
+...

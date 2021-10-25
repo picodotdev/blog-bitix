@@ -1,0 +1,739 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El juego World of Warships es un juego de estrategia en el que la habilidad en el manejo del mando o disparo no es tan importante para ser un jugador que tenga un nivel por encima de la media. Otra parte importante de este juego es el juego en equipo en la que cada miembro según clase de barco y características ha de desempeñar su papel para que el equipo consiga la victoria. Conocer la misión de cada barco, las características de barco propio y del contrario junto con otras nociones básicas como que objetivos enemigos son los prioritarios, dónde posicionarse y que errores comunes no cometer también contribuyen a ser un mejor jugador. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Estrategia de batalla básica en el juego World of Warships Legends</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/" hreflang="es" title="Estrategia de batalla básica en el juego World of Warships Legends">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/index-amp.html" hreflang="es" title="Estrategia de batalla básica en el juego World of Warships Legends">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Estrategia de batalla básica en el juego World of Warships Legends">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/world-of-warships-legends_hue2ce1f9ecda6ef6a317aaa659b2fac21_452925_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El juego World of Warships es un juego de estrategia en el que la habilidad en el manejo del mando o disparo no es tan importante para ser un jugador que tenga un nivel por encima de la media. Otra parte importante de este juego es el juego en equipo en la que cada miembro según clase de barco y características ha de desempeñar su papel para que el equipo consiga la victoria. Conocer la misión de cada barco, las características de barco propio y del contrario junto con otras nociones básicas como que objetivos enemigos son los prioritarios, dónde posicionarse y que errores comunes no cometer también contribuyen a ser un mejor jugador. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/world-of-warships-legends_hue2ce1f9ecda6ef6a317aaa659b2fac21_452925_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Estrategia de batalla básica en el juego World of Warships Legends">
+<meta name="twitter:description" content="El juego World of Warships es un juego de estrategia en el que la habilidad en el manejo del mando o disparo no es tan importante para ser un jugador que tenga un nivel por encima de la media. Otra parte importante de este juego es el juego en equipo en la que cada miembro según clase de barco y características ha de desempeñar su papel para que el equipo consiga la victoria. Conocer la misión de cada barco, las características de barco propio y del contrario junto con otras nociones básicas como que objetivos enemigos son los prioritarios, dónde posicionarse y que errores comunes no cometer también contribuyen a ser un mejor jugador. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/"
+    },
+    "headline": "Estrategia de batalla básica en el juego World of Warships Legends",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/world-of-warships-legends_hue2ce1f9ecda6ef6a317aaa659b2fac21_452925_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-01-10T09:00:00+01:00",
+    "dateModified": "2021-01-10T09:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "5467",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El juego World of Warships es un juego de estrategia en el que la habilidad en el manejo del mando o disparo no es tan importante para ser un jugador que tenga un nivel por encima de la media. Otra parte importante de este juego es el juego en equipo en la que cada miembro según clase de barco y características ha de desempeñar su papel para que el equipo consiga la victoria. Conocer la misión de cada barco, las características de barco propio y del contrario junto con otras nociones básicas como que objetivos enemigos son los prioritarios, dónde posicionarse y que errores comunes no cometer también contribuyen a ser un mejor jugador."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/world-of-warships-legends_hue2ce1f9ecda6ef6a317aaa659b2fac21_452925_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Estrategia de batalla básica en el juego World of Warships Legends</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>10/01/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El juego World of Warships es un juego de estrategia en el que la habilidad en el manejo del mando o disparo no es tan importante para ser un jugador que tenga un nivel por encima de la media. Otra parte importante de este juego es el juego en equipo en la que cada miembro según clase de barco y características ha de desempeñar su papel para que el equipo consiga la victoria. Conocer la misión de cada barco, las características de barco propio y del contrario junto con otras nociones básicas como que objetivos enemigos son los prioritarios, dónde posicionarse y que errores comunes no cometer también contribuyen a ser un mejor jugador.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Los juegos competitivos individuales o en equipo con y contra otros jugadores a través de internet son una modalidad de juegos diferentes a los más tradicionales individuales contra la inteligencia artificial de los enemigos controlados por la computadora. A día de hoy la inteligencia artificial implementada en los enemigos está a mucha distancia de la inteligencia de un ser humano, la forma de hacer más difícil a un enemigo controlado por la computadora es dándole más puntos de vida, más velocidad o mayor habilidad en el disparo pero estos siempre siguen la misma estrategia de combate, en cuento a aprendizaje un ser humano aprende rápidamente sus comportamientos y mecánicas que en buena parte dejan de ser un reto.</p>
+<p>Un atractivo de los juegos donde los enemigos están controlados por otras personas es precisamente que la inteligencia de los enemigos en general es mayor que la que un desarrollador es capaz de implementar. Esto hace de los juegos un reto mayor y más divertidos.</p>
+<p>Dado que los juegos competitivos donde los enemigos son otras personas requieren de personas hace que muchos de estos juegos sean gratuitos de jugar o <em>free-to-play</em> para que haya un importante número de jugadores que generen la posibilidad de crear batallas. Al mismo tiempo dado que el juego marca unos objetivos pero el reto está en batir al rival se requiere que cada jugador cumpla el papel designado para él en el juego para que suponga un reto para todos y el juego cumpla su propósito de ser divertido.</p>
+<p>Algunos juegos competitivos son completamente individualistas, otros se juegan en equipo. En estos segundos es crucial el juego en equipo y cumplir con el papel asignado, de no hacerlo genera frustración en el resto de compañeros que se están esforzando para ganar la batalla. Los juegos suelen emparejar a jugadores del mismo nivel para que el reto sea lo más parecido para todos. Puede ocurrir que a veces simplemente cometemos un error o el enemigo tiene algo de suerte y la batalla resulta en una derrota, en estos casos no hay nada que reprochar, sin embargo, en ocasiones algunos jugadores parece que van a hacer misiones individuales en vez jugar en equipo para ganar la batalla o no hacen su cometido según papel, en estos casos genera frustración en el resto de jugadores del equipo que se están esforzando por ganar la batalla.</p>
+<p>Por ello es fundamental tener unas nociones básicas sobre estrategia según el juego que se juega, algunas reglas de estrategia se aprenden jugando, otras es de mucha ayuda leer alguna guía o seguir algún canal de jugadores muy experimentados que comparten sus conocimientos y lecciones aprendidas para el resto de jugadores.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/world-of-warships-legends_hue2ce1f9ecda6ef6a317aaa659b2fac21_452925_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen inicial del juego World of Warships en PlayStation 4"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/world-of-warships-legends_hue2ce1f9ecda6ef6a317aaa659b2fac21_452925_650x450_fit_q90_box.jpg" width="650" height="366" alt="Imagen inicial del juego World of Warships en PlayStation 4" title="Imagen inicial del juego World of Warships en PlayStation 4" class="" loading="lazy"></a></p>
+<figcaption>Imagen inicial del juego World of Warships en PlayStation 4</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#estrategia-básica">Estrategia básica</a></li>
+    <li><a href="#objetivos-según-tipo-de-navío">Objetivos según tipo de navío</a>
+      <ul>
+        <li><a href="#objetivos-de-los-destructores">Objetivos de los destructores</a></li>
+        <li><a href="#objetivos-de-los-cruceros">Objetivos de los cruceros</a></li>
+        <li><a href="#objetivos-de-los-acorazados">Objetivos de los acorazados</a></li>
+      </ul>
+    </li>
+    <li><a href="#otras-nociones-comunes-básicas-de-estrategia">Otras nociones comunes básicas de estrategia</a>
+      <ul>
+        <li><a href="#defensa-contra-torpedos">Defensa contra torpedos</a></li>
+        <li><a href="#selección-de-objetivos">Selección de objetivos</a></li>
+        <li><a href="#posicionamiento-y-fuego-cruzado">Posicionamiento y fuego cruzado</a></li>
+        <li><a href="#errores-comunes">Errores comunes</a></li>
+        <li><a href="#supervivencia">Supervivencia</a></li>
+        <li><a href="#características-del-rival">Características del rival</a></li>
+        <li><a href="#barcos-de-las-diferentes-naciones">Barcos de las diferentes naciones</a></li>
+        <li><a href="#mejores-barcos-según-arena">Mejores barcos según arena</a></li>
+      </ul>
+    </li>
+    <li><a href="#uso-de-recursos">Uso de recursos</a></li>
+    <li><a href="#canales-de-youtube-sobre-el-juego">Canales de YouTube sobre el juego</a></li>
+    <li><a href="#toxicidad">Toxicidad</a></li>
+    <li><a href="#diferencias-con-la-versión-de-pc">Diferencias con la versión de PC</a>
+      <ul>
+        <li><a href="#portaaviones">Portaaviones</a></li>
+        <li><a href="#submarinos">Submarinos</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="estrategia-básica">Estrategia básica</h3>
+<p>En el juego hay una estrategia básica independiente del tipo de barco con el que se juegue. Como juego en equipo la primera regla es jugar en equipo, actuar en formaciones, cubrir y dar soporte a los aliados, no exponerse individualmente o asumir riesgos innecesarios, conocer la situación de la batalla de los enemigos y aliados, designar un objetivo preferente y disparar al mismo enemigo que los compañeros. Esto en conjunto aumenta las posibilidades de victoria en la batalla.</p>
+<p>Muchos juegos para coordinarse entre miembros del mismo equipo ofrecen un sistema de comunicación que es de gran ayuda utilizar. En el caso de World of Warships están las opciones de solicitar la captura de la base, notificar de un objetivo estratégico preferentes al que disparar, retroceder, solicitar soporte o he sido detectado lo que puede alertar de la presencia de un destructor cerca.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/comunicaciones-1_hue574b595db7a73d38f4f94ba518374e3_301163_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Mensajes de comunicaciones"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/comunicaciones-1_hue574b595db7a73d38f4f94ba518374e3_301163_300x200_fit_q90_box.jpg" width="300" height="169" alt="Mensajes de comunicaciones" title="Mensajes de comunicaciones" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/comunicaciones-2_hud031a866ffe2054388f8d9c74a6ad117_278987_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Mensajes de comunicaciones"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/comunicaciones-2_hud031a866ffe2054388f8d9c74a6ad117_278987_300x200_fit_q90_box.jpg" width="300" height="169" alt="Mensajes de comunicaciones" title="Mensajes de comunicaciones" class="" loading="lazy"></a></p>
+<figcaption>Mensajes de comunicaciones</figcaption>
+</figure>
+</div>
+<p>Según la batalla el juego tiene diferentes objetivos, dominación o capturar la base enemiga. Normalmente las batallas se ganan por eliminar a todos los jugadores del equipo rival pero esto es propiciado en parte por obligar al equipo rival a exponerse. En el caso de dominación en el que otro forma habitual de victoria es a los puntos, si el equipo rival o nuestro equipo no reacciona en no mucho tiempo a las capturas del otro equipo al final se pierde a los puntos, en el caso de dominación quizá se gane por eliminación de todos los rivales pero la situación que en algunos casos ha provocado esto es por obligación a exponerse.</p>
+<p>En el caso de captura de la base enemiga, su captura significa la victoria. Por lo que igualmente iniciar la captura de la base enemiga obliga a reaccionar el equipo contrario que puede ocasionar hacerle exponerse, dividir las fuerzas que otorga superioridad al equipo contrario al tener que retroceder para impedir la captura.</p>
+<h3 id="objetivos-según-tipo-de-navío">Objetivos según tipo de navío</h3>
+<h4 id="objetivos-de-los-destructores">Objetivos de los destructores</h4>
+<p>La principal característica de los destructores es su bajo radio de distancia en la que son detectados, esto les dota de un buen nivel de ocultamiento. Por el contrario son el tipo de barco que menos puntos de vida tiene con lo que han de tratar de no ser detectados. Es la unidad más importante en el juego y determinante para el éxito de una batalla.</p>
+<p>Por su buen nivel de ocultamiento sus objetivos principales son capturar bases, detectar o pintar a barcos enemigos que permite al resto del equipo conocer la posición de los enemigos sin estar los compañeros detectados y detectar y contrarrestar a los destructores enemigos. Aunque los destructores al estar dotados de torpedos con un buen alcance es el archienemigo de los acorazados, el objetivo de los destructores de atacar a acorazados no es su objetivo prioritario ya que realmente los acorazados son la unidad menos importante del juego, son más importantes los objetivos anteriores mencionados.</p>
+<p>Los torpedos son más fáciles de utilizar contra los acorazados pero tienen otras utilidades tácticas, otros usos que se les puede dar a los torpedos es para cubrir zona con ellos que impida al equipo enemigo acercarse a riesgo de sufrir un impacto, a veces no es mala idea lanzarlos en su dirección conociendo que hay enemigos cerca aún sin saber su posición exacta. Aunque los cruceros y otros destructores son suficientemente ágiles para esquivar torpedos de destructores y están dorados de sonar para detectarlos a mayor distancia arriesgarse a sufrir un pacto de torpedo supone el hundimiento del barco o quedarse con tan pocos puntos de vida que en una salva enemiga suponga el hundimiento.</p>
+<p>Hay algunos destructores con algo mejor que la media o el mejor nivel de ocultamiento. Algunos son más torpederos, con más lanzaderas, menor tiempo de recarga y hacen más daño por impacto de torpedo. Otros destructores son más cañoneros que igual no tienen tantos torpedos pero sus cañones tienen un tiempo de recarga más bajo o hacen más daño. Según la orientación del destructor dentro de los objetivos generales de todos los destructores serán algo más efectivos si se aprovechan sus virtudes en la que más destacan. Si el destructor es más cañonero que el rival su estrategia será algo más encontrar a los destructores rivales y hundirlos, si tiene más ocultación capturar bases y sin son más torpederos utilizarlos para cubrir zonas o atacar a acorazados desprevenidos o aislados.</p>
+<p>Aunque los destructores tienen el mejor nivel de ocultamiento que los hace difíciles de detectar, dada la importancia de estos a nivel estratégico suelen ser el objetivo preferente de todo barco que lo tiene a tiro. La forma que tienen los destructores de protegerse al ser detectados es utilizando el humo para ocultarse, despintarse y buscar una nueva posición en la que combatir de nuevo sin estar detectado.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/humo-destructor_hucda2a29e0524523f1e1b07eca4e99cc6_309753_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Humo de destructor y de algunos cruceros"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/humo-destructor_hucda2a29e0524523f1e1b07eca4e99cc6_309753_300x200_fit_q90_box.jpg" width="300" height="169" alt="Humo de destructor y de algunos cruceros" title="Humo de destructor y de algunos cruceros" class="" loading="lazy"></a></p>
+<figcaption>Humo de destructor y algunos cruceros</figcaption>
+</figure>
+</div>
+<h4 id="objetivos-de-los-cruceros">Objetivos de los cruceros</h4>
+<p>Los cruceros son la unidad media del juego. Son ágiles, veloces, un tiempo de recarga de los cañones bajo comparado con los acorazados, unos cañones relativamente potentes e incluso similares a los de algunos acorazados. Son una unidad polivalente aunque frágil expuesta a un acorazado.</p>
+<p>Sus funciones principales es la de dar apoyo a los destructores aliados, perseguir o localizar destructores enemigos sin apoyo, en algunas ocasiones realizar capturas de bases, intentar permanecer el mayor tiempo con vida o buscar coberturas detrás de islas desde la que disparar estando oculto sin ningún riesgo.</p>
+<p>Los cruceros tienen como punto débil las ciudadelas que al exponerse de forma completamente lateral se arriesgan de ser hundidos de una salva o quedar con muy pocos puntos de vida por ellos han de buscar cobertura o permanecer alejados de ellos. Los cruceros tienen un radio de detección relativamente alto suelen ser una de las unidades detectadas primero en las partidas que se suelen adelantar antes en el inicio del juego por ser más rápidos que los acorazados.</p>
+<p>Dada la polivalencia de los cruceros algunos están más orientados a atacar destructores u otros cruceros, a disparar munición HE que cause incendios en los acorazados, algunos tiene cañones comparables a algunos acorazados con los que son muy efectivos contra otros cruceros e incluso acorazados, por su tiempo de recarga más bajo que los acorazados pero algunos con calibre similar a estos también son una unidad peligrosa para otros cruceros.</p>
+<p>Después de los destructores los cruceros son el siguiente objetivo prioritario en el juego y en cuanto son detectados una vez los cañones de los acorazados giran para apuntarles reciben las salvas, más si tienen el lateral expuesto. Tienen pocos puntos de vida comparado con el daño que hacen los acorazados cuando impactan en la ciudadela de modo que han de intentar recibir poco daño o no ser el objetivo primario. Algunos capitanes tiene una habilidad que permite saber cuantos enemigos los tienen seleccionado como objetivo, esto permite intentar hacer maniobras evasivas o disparar con tranquilidad sabiendo que no se es el objetivo primario para ningún enemigo.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/habilidad-ingenio-1_hubfd6e580bd06b220677c328940624345_305305_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidad ingenio útil en cruceros"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/habilidad-ingenio-1_hubfd6e580bd06b220677c328940624345_305305_300x200_fit_q90_box.jpg" width="300" height="169" alt="Habilidad ingenio útil en cruceros" title="Habilidad ingenio útil en cruceros" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/habilidad-ingenio-2_hud84d34f65c0cd399c8b2c17776ea3f46_280968_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidad ingenio útil en cruceros"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/habilidad-ingenio-2_hud84d34f65c0cd399c8b2c17776ea3f46_280968_300x200_fit_q90_box.jpg" width="300" height="169" alt="Habilidad ingenio útil en cruceros" title="Habilidad ingenio útil en cruceros" class="" loading="lazy"></a></p>
+<figcaption>Habilidad ingenio útil en cruceros</figcaption>
+</figure>
+</div>
+<h4 id="objetivos-de-los-acorazados">Objetivos de los acorazados</h4>
+<p>Los acorazados son la unidad pesada del juego, con más puntos de vida, con los cañones de mayor calibre y de largo alcance. Por el contrario son menos ágiles y tienen una velocidad máxima menor que los hacen más vulnerables a los torpedos.</p>
+<p>Al contrario que los destructores o en ocasiones los cruceros su objetivo principal no es realizar capturas de bases enemigas. Sin embargo, sirven para impedir la de los enemigos aún estando en la zona de captura si estos están detectados y en el radio de alcance al causar el reinicio de la captura si el barco que está capturando recibe un impacto. Impiden el libre movimiento de los cruceros y con su largo radio de acción un control táctico del mapa sin necesidad de estar desplazándose continuamente a máxima velocidad. Se basan más en tener una buena posición en el mapa que en el movimiento.</p>
+<p>Por lo general son efectivos contra los cruceros por sus ciudadelas vulnerables, otros acorazados también son objetivos si están expuestos de forma completamente lateral que también se arriesgan a sufrir impactos en la ciudadela. Generalmente, en los acorazados se utiliza siempre munición AP incluso contra los destructores en los que los impactos serán sobre penetraciones pero seguirán causando un daño significativo comparado con los puntos de vida de los destructores.</p>
+<p>Junto con exponerse de forma completamente lateral a otros acorazados, los incendios de algunos cruceros que están especializados en provocar son un riesgo. Un incendio no es peligroso estando con prácticamente la totalidad de los puntos de vida e incluso dos durante un poco de tiempo ya que tiene la habilidad de reparación que les permite recuperar gran parte de los puntos de vida perdidos por incendio. Una amenaza más grave es una inundación causada por el impacto de un torpedo, una inundación al igual que los incendios causan la pérdida constante de puntos de vida pero en algo mayor número por segundo y durante algo más de tiempo, por ello una inundación obliga casi siempre a utilizar un consumible de reparación, si el consumible de reparación no está disponible por haber sido utilizado con anterioridad y está en periodo de recarga la pérdida de puntos de la inundación al cabo de unas cuanta decenas de segundos puede causar el hundimiento del acorazado.</p>
+<h3 id="otras-nociones-comunes-básicas-de-estrategia">Otras nociones comunes básicas de estrategia</h3>
+<h4 id="defensa-contra-torpedos">Defensa contra torpedos</h4>
+<p>Los acorazados en solitario son un objetivo sencillo para el destructor, un acorazado no tiene forma de detectar un destructor si el capitán del destructor no quiere. Son lentos y poco maniobrables que los hace más vulnerables a los torpedos.</p>
+<p>Hay algunas formas de defenderse de los destructores y de los torpedos. Una es protegerse detrás de islas que impida que los torpedos tengan una línea de impacto. En mar abierto es poner rumbo en dirección contraria a la posición estimada del destructor enemigo de modo que los torpedos no lleguen a alcanzar al acorazado entre lo que que el acorazado se desplaza y antes de que el torpedo llegue a su alcance máximo. En caso de necesidad de tener que dirigirse por obligación a un punto determinado en dirección o en el radio de acción del destructor como una zona de captura hay que emplear tácticas de evasión maniobrando cada 30 o 40 segundos dependiendo del tiempo de recarga de torpedos del destructor enemigo, cambiando el rumbo y velocidad para que el indicador de previsión de impacto que tienen los destructores al lanzar los torpedos no sea preciso. Finalmente, otra táctica para protegerse de los torpedos es no exponer el lateral completo del acorazado poniendo la proa o la popa en dirección a los torpedos de esta forma el número de impactos en vez de ser dos o más habitualmente será uno.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/indicador-torpedos-1_hu085a7fdcb8334bace78fbbcc453ea02b_357102_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Indicador de impacto de torpedos"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/indicador-torpedos-1_hu085a7fdcb8334bace78fbbcc453ea02b_357102_200x150_fit_q90_box.jpg" width="200" height="113" alt="Indicador de impacto de torpedos" title="Indicador de impacto de torpedos" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/indicador-torpedos-2_huee45bde7e0ef62252e1c12bbb4946110_403026_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Indicador de impacto de torpedos"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/indicador-torpedos-2_huee45bde7e0ef62252e1c12bbb4946110_403026_200x150_fit_q90_box.jpg" width="200" height="113" alt="Indicador de impacto de torpedos" title="Indicador de impacto de torpedos" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/indicador-torpedos-3_hu0d85e1c9609a74fda8ac3dc1891eddb1_296899_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Indicador de impacto de torpedos"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/indicador-torpedos-3_hu0d85e1c9609a74fda8ac3dc1891eddb1_296899_200x150_fit_q90_box.jpg" width="200" height="113" alt="Indicador de impacto de torpedos" title="Indicador de impacto de torpedos" class="" loading="lazy"></a></p>
+<figcaption>Indicador de impacto de torpedos</figcaption>
+</figure>
+</div>
+<p>Otra forma de defensa contra los torpedos es conociendo cuando el destructor los está lanzando. Los torpedos se lanzan por los laterales de modo que si un destructor gira para ponerse de forma lateral puede ser indicativo de que los está lanzando o si está girando para alejarse de que ya los ha lanzado y ahora intenta ocultarse. Al mismo tiempo lanzar los torpedos en los destructores requiere cambiar entre los cañones y la lanzadera de torpedos de modo que si un destructor está disparando con los cañones y deja de disparar con cadencia de recargar es indicativo de que el enemigo ha lanzado o está lanzando los torpedos.</p>
+<p>Tener el conocimiento de cuando un destructor es probable que haya lanzado torpedos permite maniobrar cambiando de dirección o velocidad para cambiar la ubicación prevista de impacto que ha tenido el destructor, la maniobra permite esquivarlos. Si un destructor al que se dispara no dispara es que está tramando algo malo, que es que está lanzando torpedos, el momento para conocer que los ha lanzado es cuando empieza a girar momento en el que hay que cambiar de rumbo y cambiar de velocidad.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/QFqRwedbsPY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="selección-de-objetivos">Selección de objetivos</h4>
+<p>Una parte importante en la táctica es la selección de objetivos. Por norma general, los objetivos por orden de prioridad son los destructores, luego los cruceros con radar por su peligro para los destructores aliados que los permite detectar por un periodo breve de tiempo pero aún estando a largas distancias, luego los cruceros y finalmente el tipo de barco menos importante son los acorazados aún siendo estos los que más puntos de vida tienen y  aún siendo estos los que tienen los cañones de mayor calibre. Los otros tipos de barcos son más importantes tácticamente y más fáciles de eliminar por tener menor número de puntos y blindaje que los acorazados.</p>
+<p>Después de seguir estas prioridades el siguiente punto en la selección de objetivos es coordinarse con los aliados para disparar todos a mismo barco para eliminarlo los más rápido posible, esto quita cañones al enemigo y tener mayor número de barcos que el enemigo otorga ventaja en el potencial daño causado por minuto lo que ayuda a aumentar aún más la ventaja. De este modo es recomendable utilizar las comunicaciones para señalar el objetivo prioritario al resto de aliados.</p>
+<p>Las excepciones a la regla general de selección de objetivos son las oportunidades puntuales, como un crucero o acorazado expuesto de forma completamente lateral que permite tener grandes posibilidades de hacer impactos en las ciudadelas. O enemigos que están a muy pocos puntos de vida que al rematarlos los elimine del juego, menos cañones enemigos, el fuego aliado se puede concentrar más en disparar al resto, tomar mejores posiciones y un barco enemigo menos es eliminar su radio de pintado de barcos aliados.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/seleccion-objetivo_hu0b94de9ecc7407b1388e8fbbfec6f61c_393005_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Selección de objetivo"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/seleccion-objetivo_hu0b94de9ecc7407b1388e8fbbfec6f61c_393005_300x200_fit_q90_box.jpg" width="300" height="169" alt="Selección de objetivo" title="Selección de objetivo" class="" loading="lazy"></a></p>
+<figcaption>Selección de objetivo</figcaption>
+</figure>
+</div>
+<h4 id="posicionamiento-y-fuego-cruzado">Posicionamiento y fuego cruzado</h4>
+<p>Los destructores y cruceros tienen buena movilidad por el mapa, durante los 15 minutos de la partida tiene tiempo de cambiar de posición varias veces. Los acorazados por el contrario no tienen tanta movilidad y se basan más en tomar una posición inicial en la que tener un buen ángulo de disparo según las islas del mapa para buscar coberturas, los puntos calientes como las zonas de captura donde normalmente se dirigen los barcos y la experiencia de partidas anteriores sabiendo que posiciones son las utilizadas por los enemigos.</p>
+<p>Al usar un acorazado e incluso los cruceros no hace falta estar navegando a máxima velocidad en todo momento, solo al principio para tomar una posición. Los acorazados se basan más en tomar una buena posición, moverse para angularse bien a los enemigos y estar cubierto con las islas de proyectiles y torpedos. Si ya no hay ningún enemigo a distancia de disparo entonces sí, han de moverse para buscar una nueva posición.</p>
+<p>En el posicionamiento hay que coordinarse en cierta medida con los aliados, principalmente no estar todos apelotonados en un único cuadrante lo que facilita la selección de objetivos y posicionamiento al enemigo. En ocasiones conviene tener cierta separación con los aliados para tratar de encontrar situaciones de fuego cruzado, aquellas en las que el enemigo recibe salvas desde puntos diferentes lo que les obliga a tener expuesto a unos u otros el lateral del barco o les requiere emplear tiempo en el giro de torretas para apuntar a unos u a otros.</p>
+<p>El juego en las batallas normales suele desplegar a los aliados y a los enemigos tanto en el modo dominación como en captura la base en tres bandos. El bando del medio suele dividirse o desplazarse hacia uno de los lados, ya que dirigirse al centro del mapa es precisamente quedar bajo una posición de fuego cruzado. El objetivo según el sitio en que se aparezca es ganar ese lado al bando contrario que en el modo dominación suele ser capturar la base de ese lado.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ganar-lado-1_hu338c92ee435e812867f197f8ed6fa6b0_435803_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Ganar el lado de la batalla según despliegue"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ganar-lado-1_hu338c92ee435e812867f197f8ed6fa6b0_435803_300x200_fit_q90_box.jpg" width="300" height="169" alt="Ganar el lado de la batalla según despliegue" title="Ganar el lado de la batalla según despliegue" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ganar-lado-2_hue6bcd30a13383128ac6416c00343cf14_441554_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Ganar el lado de la batalla según despliegue"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ganar-lado-2_hue6bcd30a13383128ac6416c00343cf14_441554_300x200_fit_q90_box.jpg" width="300" height="169" alt="Ganar el lado de la batalla según despliegue" title="Ganar el lado de la batalla según despliegue" class="" loading="lazy"></a></p>
+<figcaption>Ganar el lado de la batalla según despliegue</figcaption>
+</figure>
+</div>
+<h4 id="errores-comunes">Errores comunes</h4>
+<p>Hay varios errores comunes que no pocos jugadores suelen cometer y que hay que conocerlos para no cometerlos uno mismo. Cometer estos errores significa en ocasiones la diferencia entre la victoria o la derrota, y ver que un jugador los está cometiendo no sienta bien a uno mismo y supongo al resto de compañeros del equipo, más en las batallas clasificatorias o <em>ranked</em>. En arenas bajas quizá está justificado ya que algunos serán jugadores inexpertos que aún no conocen todas las estrategias básicas, no está justificado en una arena alta del juego en la que ya hay que haber jugado bastante para llegar a ella.</p>
+<p>Un error básico es iniciar una batalla y luego no jugar o tardar mucho en empezar a moverse. En WoW Legends las batallas son de 9 jugadores por equipo, con un jugador menos se nota la diferencia, más si el jugador ausente es un destructor y es el único destructor aliado. El juego no lo penaliza y las batallas requieren un tiempo de preparación pero para la buena salud del juego es conveniente entrar en una batalla solo cuando se esté preparado.</p>
+<p>Por repetirlo este es un juego de equipo, un jugador por muy bueno que sea en ningún caso puede enfrentarse solo a varios rivales. Entrar en combate contra varios rivales sin apoyo o en inferioridad, en una situación de inferioridad lo habitual es perder el enfrentamiento.</p>
+<p>Pensar que cualquier destructor, crucero o acorazado se enfrenta en igualdad de condiciones a cualquier otro destructor, crucero o acorazado. Cada barco tiene sus propias características en múltiples variables como calibre y tiempos de recarga de cañones, puntos de vida, blindaje, torpedos, distancia de combate óptima u ocultamiento por mencionar nas pocas. Un destructor cañonero es capaz de destruir a un destructor torpedero en un enfrentamiento directo, con lo que la estrategia del destructor torpedero es evitar los enfrentamientos directos sin apoyo. La misma situación ocurre en los cruceros y acorazados.</p>
+<p>En los destructores un error muy habitual es ver uno que se pasa toda la partida intentando torpedear un acorazado en vez de realizar los objetivos más importantes del juego para los destructores, capturar bases, detectar y destruir otros destructores. Quizá ese destructor tenga una la batalla un rendimiento demás de 100K de daño causado y sin embargo resultar que la batalla se pierde. Una acorazado consciente de que un destructor le está intentando torpedear también tiene estrategias para defenderse. El daño de los destructores una vez cumplidos sus objetivos de capturar bases y la batalla balanceada a favor empiezan a hacer daño hacia la mitad y final de la partida.</p>
+<p>Los acorazados son lentos y tienen un tiempo de recarga de sus baterías principales de casi medio minuto. Aún así intentar cargar con un destructor o un crucero a un acorazado para intentar torpedarle es un error que en la mayoría de ocasiones se tiene las de perder en el enfrentamiento. Los acorazados tienen buen armamento secundario y una salva de un acorazado a una distancia corta para la mayoría de los destructores es la destrucción aún con la vida completa, los cruceros son también fáciles para la mayoría de acorazados.</p>
+<p>En el fragor de los combates a veces uno pierde la noción de que está pasando en el resto del mapa, se tiene visión de túnel. Salvo en los enfrentamiento directos la mayor parte del juego es estar observando el minimapa, las posiciones de los enemigos o sus últimas posiciones conocidas y la situación de los aliados. Cada cierto tiempo aprovechando entre recarga y recarga conviene observar el minimapa para conocer la situación táctica de la batalla. Ayuda a saber si está en ventaja, se puede cargar, si se está en desventaja y conviene retroceder, mantener la posición o moverse para ayudar en otra parte del mapa.</p>
+<h4 id="supervivencia">Supervivencia</h4>
+<p>La supervivencia en una partida de los destructores y cruceros es fundamental para acabar las partidas en las posiciones altas de la tabla y para ayudar a los acorazados como apoyo dándoles visión. Los destructores aúnque tiene un buen ocultamiento una vez descubiertos son el objetivo prioritario para defenderse la forma que tiene de defenderse es salir del rango de visión, protegerse detrás de una isla si le da tiempo o más habitualmente utilizar una pantalla de humo para despintarse y reiniciar el enfrentamiento sin estar avistado.</p>
+<p>La estrategia de los cruceros para sobrevivir las partidas o durante más tiempo es no exponerse a los acorazados detrás de una isla y con la habilidad ingenio que indica cuantos enemigos nos tienen como objetivo realizar maniobras de evasión. El mayor peligro de los cruceros son los acorazados y su punto débil las ciudadelas si exponen el lateral completo. Un crucero para enfrentarse a un acorazado la estrategia que ha de utilizar es ponerse en dirección de fuga, entre los límites de alcance de disparo y visibilidad sin disparar. En un enfrentamiento a un acorazado cambiar de rumbo y velocidad en sus momentos de disparo da una oportunidad de sobrevivir o hacer más daño al acorazado que el acorazado a él.</p>
+<p>Los acorazados han de ser conscientes de la ubicación de los destructores para no ser sorprendido para una salva de torpedos que le resulte imposible de esquivar y volver a puerto. En caso de enfrentarse a un destructor utilizar las tácticas para defenderse de los torpedos.</p>
+<h4 id="características-del-rival">Características del rival</h4>
+<p>Los mejores jugadores, con mayor conocimiento y mayor experiencia además de las reglas básicas tácticas teóricas anteriores, además tienen en cuenta que barco tienen y los aliados, por que barcos está formado en equipo rival o contra qué barco se están enfrentando en un combate uno a uno.</p>
+<p>Saber si un acorazado tiene unos cañones de un calibre suficiente como para hacerle <em>overmatch</em>, hacer daño ignorando las reglas de rebotes según el ángulo de impacto, si el destructor enemigo es más cañonero o torpedero que el propio para conocer quien tiene la ventaja a cañones en un combate directo, saber si un crucero tiene radar o está equipado con torpedos que los hacer peligros a cortas distancias son factores a conocer que ayudan a la supervivencia.</p>
+<p>También, conocer la distribución de los puntos de blindaje y posición de las ciudadelas, o saber si el barco está especializado en causar incendios con facilidad, también denominados como <em>HE spammers</em>, a barcos vulnerables a ellos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/blindaje_hu54e393d1e9781dff4bd022d049b6e190_533186_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Blindaje de un acorazado"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/blindaje_hu54e393d1e9781dff4bd022d049b6e190_533186_300x250_fit_q90_box.jpg" width="300" height="169" alt="Blindaje de un acorazado" title="Blindaje de un acorazado" class="" loading="lazy"></a></p>
+<figcaption>Blindaje de un acorazado</figcaption>
+</figure>
+</div>
+<h4 id="barcos-de-las-diferentes-naciones">Barcos de las diferentes naciones</h4>
+<p>Los niveles de las arenas de los barcos con los que se juega normalmente son los de la 5, 6 y 7. Son los de la 5 son los más rentables en cuanto a recompensa de moneda para comprar más barcos y los de la 7 son los de la arena más alta.</p>
+<p>Obtener los barcos requiere avanzar en las ramas de investigación e ir adquiriendo los barcos poco a poco. Suele ser más recomendable desarrollar varias naciones al mismo tiempo que desarrollar una única nación exclusivamente hasta el nivel superior. Desarrollar varias naciones al mismo tiempo permite conocer sus virtudes y defectos para enfrentarse a ellos en un combate directo o cuando están en el equipo rival.</p>
+<p>Algunas naciones tienen ciertas características comunes a su rama de barcos:</p>
+<ul>
+<li>Alemana: son barcos polivalentes, sus destructores son un intermedio entre cañoneros y torpederos, los cruceros tiene poco blindaje pero tiene torpedos y un sonar con un alcance superior a la media. Los acorazados no tienen los cañones de mayor calibre ni el mayor blindaje pero tienen muchos puntos de vida y destacan por sus armas secundarias lo que los hace más efectivos cortas distancias, están más destinados contra cruceros que contra acorazados.</li>
+<li>Americana: los destructores americanos son más cañoneros que torpederos, los cruceros no tiene torpedos pero tiene una parábola que les permite disparar a barcos aún estando detrás de islas. Los acorazados tienen un buen blindaje y cañones de buen calibre efectivos contra cruceros y acorazados.</li>
+<li>Japonesa: los destructores tiene dos ramas una más torpederos y otra más cañoneros, sus torpedos destacan por hacer mayor número puntos de daño, más lanzaderas, menor tiempo de recarga de torpedos y tener mejor ocultamiento que otras naciones. En sus acorazados destaca el Yamato que tiene los cañones de mayor calibre del juego capaz de hacer <em>overmatch</em>  y ciudadelas a otros acorazados aún no teniendo el lateral expuesto.</li>
+<li>Británica: los destructores británicos son más cañoneros siendo capaces de disparar los torpedos en salvas o de uno en uno en vez de solo en salvas como otros destructores. Sus cruceros solo tienen munición AP pero aún así es efectiva contra los destructores. Sus acorazados son lentos y poco maniobrables, su munición HE tiene una probabilidad muy alta de causar incendios e incluso de hacer ciudadelas, son capaces de hundir destructores de una sola salva a distancias cortas y una alta capacidad de reparación del daño causado por los incendios.</li>
+</ul>
+<h4 id="mejores-barcos-según-arena">Mejores barcos según arena</h4>
+<p>Algunos barcos tienen diferencias en sus estadísticas que combinado con las habilidades de los capitanes, habilidades seleccionadas e inspiraciones hace que dada barco sea más efectivo jugado de cierta forma. En términos absolutos no hay un barco mejor que otro ya que también depende de la situación de combate. sin embargo, algunos barcos destacan un poco más que los demás según su arena. Estos son una selección de barcos considerados que en una clasificación estarían en las primeras posiciones.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/992PhVPnXAI" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/_dXHQGTuxoA" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/T0XtUNHTQWQ" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="uso-de-recursos">Uso de recursos</h3>
+<p>Al final de cada batalla, con las misiones semanales o de varias semanas se obtienen diversos recursos con los que comprar nuevos barcos y subir el nivel de los capitanes. Los recursos más valiosos por ser más difíciles de conseguir o requieren más tiempo para conseguirlos son las insignias y las recomendaciones.</p>
+<p>Los capitanes permiten subir de nivel con experiencia de capitán, órdenes de promoción, en los niveles superiores se requieren insignias y en nivel legendario requieren recomendaciones. Al decidir en qué capitán gastar esos valiosos recursos es recomendable no hacerlo hasta conocer cuales tiene las mejores habilidades e inspiraciones para otros capitanes. Algunos capitanes son comúnmente utilizados como inspiración en muchos otros capitanes, los más utilizados son los que tendrá mayor preferencia para gastar los recursos. Por ejemplo, el ocultamiento para reducir el radio de visibilidad es una habilidad muy útil para los destructores por lo que el capitán alemán Erich Bay es un buen capitán a utilizar como inspiración en otros capitanes de cualesquiera otras naciones. Otros capitanes también tienen habilidades base útiles para los cruceros y acorazados con lo que también son comunes utilizarlos como inspiración en muchos otros capitanes.</p>
+<p>Subir un capitan al nivel 7 no cuestan muchas órdenes de promoción y permite al capitán adquirir la primera inspiración, la segunda inspiración se permite en el nivel 11 de capitán sin tampoco costar muchas órdenes de promoción, subir un capitán a partir hasta el nivel 12 cuesta una cantidad significativa de órdenes de promoción, del nivel 14 hasta el 16 cuestan insignias que son mucho más difíciles de conseguir. Otra forma de mejorar los capitanes es el nivel legendario con recomendaciones personales que también son muy difíciles de conseguir.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/capitan-destructor_hudf8cb8f9c05de40257523e643d1add96_279099_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Capitán destructor"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/capitan-destructor_hudf8cb8f9c05de40257523e643d1add96_279099_200x150_fit_q90_box.jpg" width="200" height="113" alt="Capitán destructor" title="Capitán destructor" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/capitan-crucero_hud3f20947d5d81fd41a008f0357533cd0_315453_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Capitán crucero"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/capitan-crucero_hud3f20947d5d81fd41a008f0357533cd0_315453_200x150_fit_q90_box.jpg" width="200" height="113" alt="Capitán crucero" title="Capitán crucero" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/capitan-acorazado_hu6017124e20adda972819450c7f6b5ec8_304912_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Capitán acorazado"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/capitan-acorazado_hu6017124e20adda972819450c7f6b5ec8_304912_200x150_fit_q90_box.jpg" width="200" height="113" alt="Capitán acorazado" title="Capitán acorazado" class="" loading="lazy"></a></p>
+<figcaption>Capitanes adecuados para cada tipo de barco según su habilidad base</figcaption>
+</figure>
+</div>
+<h3 id="canales-de-youtube-sobre-el-juego">Canales de YouTube sobre el juego</h3>
+<p>Algunos de estos canales son del juego en PC pero dado que en gran parte las mecánicas son las mismas se aplican las mismas reglas de estrategia. Algunos <em>youtubers</em> comparten vídeos de las partidas que juegan a las que les añaden comentarios con lecciones sobre estrategia, toma de decisiones y errores cometidos.</p>
+<ul>
+<li><a href="https://www.youtube.com/user/worldofwarshipsCOM/videos">Canal oficial de World of Warships</a>. Son las <a href="https://www.youtube.com/watch?v=xaZeeKB4RAs&amp;list=PLfYIjPpQ2erHkCjSdnydRvIivjPw-c82q">guías oficiales del juego básicas</a> y de <a href="https://www.youtube.com/watch?v=OgRUSmzcw2s&amp;list=PLVmXzlhZvJVSo3LA0O0ccjHRxxv-Qzchb">como funciona</a>.</li>
+<li><a href="https://www.youtube.com/user/Daibakufu/videos">Canal de CUBTC</a>, un jugador experimentado con consejos muy útiles sobre el juego de PC pero que en gran media son aplicables a WoW Legends. Además en español.</li>
+<li><a href="https://www.youtube.com/c/Daibakufu/videos">Canal de Sergui Ahumada</a>, otro canal sobre el juego en español con consejos muy útiles sobre estrategia y revisiones de barcos.</li>
+<li><a href="https://www.youtube.com/channel/UC_U5rsqGwuwPOqev6FMclDQ">Canal del Tbull</a>, un jugador también experimentado con algunas <a href="https://www.youtube.com/watch?v=3Mo_dLIpUU8">guías específicas de WoW Legends</a> y consejos sobre estrategia de batalla según su experiencia de mucho valor. El canal es en inglés.</li>
+<li><a href="https://www.youtube.com/c/Xarkun/videos">Canal de Xarkun</a>, otro jugador que ofrece consejos y revisiones de partidas comentando estrategias de batalla al mismo tiempo que análisis de barcos. El canal es específico de WoW Legends de habla inglesa.</li>
+</ul>
+<h3 id="toxicidad">Toxicidad</h3>
+<p>En la versión de consola dado la limitada forma de comunicación la toxicidad no es elevada, salvo por el <em>chat</em> de voz que algún iluminado que no tiene nada mejor que hacer que culpar con tono de enfadado y reproche a otro de la derrota o de que ha resultado hundido por no darle ayuda, en la versión para PC además dado que tiene un <em>chat</em> de texto puede darse en alguna ocasión alguna situación desagradable. Siguiendo estas reglas tácticas de juego que hacen del juego lo entretenido que es, y coordinandose con el resto de aliados no debería ser uno el que reciba estos mensajes tóxicos.</p>
+<p>Es un juego competitivo, hay jugadores muy buenos, quizá con mayores niveles de comandantes o que tienen mejores elecciones de comandantes, aunque es complicado no hay que frustrarse, analizar si en la partida hemos cometido un error e intentar mejorar para las siguientes. Incluso los mejores jugadores y <em>youtubers</em> pierden y su ratio de victorias aunque quizá algo superior a la media también sufren derrotas habitualmente, ya que por muy bueno que sea uno como este juego es un juego de equipo si el equipo no sigue las reglas tácticas básicas es muy difícil que individualmente uno consiga la victoria. Y supongo que en los emparejamientos el juego implementa algún algoritmo para balancear las partidas.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ratio-victorias-1_hu853ffb2504f2f453af2976195847b4b0_231840_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Proporción de victorias"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ratio-victorias-1_hu853ffb2504f2f453af2976195847b4b0_231840_300x200_fit_q90_box.jpg" width="300" height="169" alt="Proporción de victorias" title="Proporción de victorias" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ratio-victorias-2_hub5133c026acb884c659c3c18b9704e7c_237942_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Proporción de victorias"><img src="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/images/ratio-victorias-2_hub5133c026acb884c659c3c18b9704e7c_237942_300x200_fit_q90_box.jpg" width="300" height="169" alt="Proporción de victorias" title="Proporción de victorias" class="" loading="lazy"></a></p>
+<figcaption>Proporción de victorias</figcaption>
+</figure>
+</div>
+<h3 id="diferencias-con-la-versión-de-pc">Diferencias con la versión de PC</h3>
+<h4 id="portaaviones">Portaaviones</h4>
+<p>Los portaaviones existen ya en la versión para PC y está previsto que se añadan al juego para consola lo que cambiará la estrategia en el juego significativamente. Los aviones de los portaaviones hacen que los destructores sean más fácilmente detectables y los barcos hayan de maniobrar más para evitar los ataques de los aviones bombarderos o torpederos.</p>
+<h4 id="submarinos">Submarinos</h4>
+<p>Otra pieza de las batallas navales son los submarinos. En la versión de PC se están probando y buscando formas de añadirlos de modo que no desequilibran el juego y sean divertidos de jugarlos. Este nuevo tipo de barcos es otra forma distinta de juego que también cambia las estrategias básicas.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/pnmXf-GOw8o" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/1__yzi6NM1w" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://wowslegends.com/blogs/">Blog World of Warships Legends</a></li>
+<li><a href="https://discord.gg/wowslegends">Discord World of Warships Legends</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/">Jugar al ajedrez en GNU/Linux con GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22&#43; buenos juegos en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/que-es-mejor-para-jugar-y-10-variables-para-elegir-entre-pc-o-consola/">Qué es mejor para jugar y 10&#43; variables para elegir entre PC o consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-545';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/01\/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

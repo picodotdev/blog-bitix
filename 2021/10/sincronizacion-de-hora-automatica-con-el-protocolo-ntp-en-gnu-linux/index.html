@@ -1,0 +1,591 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Muchos dispositivos electrónicos entre ellos las computadoras tienen un reloj interno que continúa funcionando aún estando apagados y desconectados de la red electrica gracias a una batería en forma de pila de botón. La fecha y la hora permiten conocer cuando se modifica un documento pero también otros procesos más importantes que también dependen del tiempo como el segundo factor de autenticación y los códigos temporales basados en el tiempo. Los relojes internos usados en las computadoras son bastante imprecisos y se adelantan o retrasan con respecto a la hora oficial, algunos dispositivos electrónicos ni siquiera tienen el hardware de un reloj interno. El protocolo Network Time Protocol o NTP permite a las computadoras obtener la hora de un servidor que ofrezca este servicio de forma regular para evitar diferencias significativas, algunos de estos servidores están respaldados por una organización gubernamental que ofrecen la medida del tiempo oficial de un país y que poseen relojes atómicos mucho más precisos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Sincronización de hora automática con el protocolo NTP en GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/" hreflang="es" title="Sincronización de hora automática con el protocolo NTP en GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/index-amp.html" hreflang="es" title="Sincronización de hora automática con el protocolo NTP en GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Sincronización de hora automática con el protocolo NTP en GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Muchos dispositivos electrónicos entre ellos las computadoras tienen un reloj interno que continúa funcionando aún estando apagados y desconectados de la red electrica gracias a una batería en forma de pila de botón. La fecha y la hora permiten conocer cuando se modifica un documento pero también otros procesos más importantes que también dependen del tiempo como el segundo factor de autenticación y los códigos temporales basados en el tiempo. Los relojes internos usados en las computadoras son bastante imprecisos y se adelantan o retrasan con respecto a la hora oficial, algunos dispositivos electrónicos ni siquiera tienen el hardware de un reloj interno. El protocolo Network Time Protocol o NTP permite a las computadoras obtener la hora de un servidor que ofrezca este servicio de forma regular para evitar diferencias significativas, algunos de estos servidores están respaldados por una organización gubernamental que ofrecen la medida del tiempo oficial de un país y que poseen relojes atómicos mucho más precisos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Sincronización de hora automática con el protocolo NTP en GNU/Linux">
+<meta name="twitter:description" content="Muchos dispositivos electrónicos entre ellos las computadoras tienen un reloj interno que continúa funcionando aún estando apagados y desconectados de la red electrica gracias a una batería en forma de pila de botón. La fecha y la hora permiten conocer cuando se modifica un documento pero también otros procesos más importantes que también dependen del tiempo como el segundo factor de autenticación y los códigos temporales basados en el tiempo. Los relojes internos usados en las computadoras son bastante imprecisos y se adelantan o retrasan con respecto a la hora oficial, algunos dispositivos electrónicos ni siquiera tienen el hardware de un reloj interno. El protocolo Network Time Protocol o NTP permite a las computadoras obtener la hora de un servidor que ofrezca este servicio de forma regular para evitar diferencias significativas, algunos de estos servidores están respaldados por una organización gubernamental que ofrecen la medida del tiempo oficial de un país y que poseen relojes atómicos mucho más precisos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/"
+    },
+    "headline": "Sincronización de hora automática con el protocolo NTP en GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/linux-750.png"
+        
+      },
+    "datePublished": "2021-10-07T20:00:00+02:00",
+    "dateModified": "2021-10-07T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1228",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Muchos dispositivos electrónicos entre ellos las computadoras tienen un reloj interno que continúa funcionando aún estando apagados y desconectados de la red electrica gracias a una batería en forma de pila de botón. La fecha y la hora permiten conocer cuando se modifica un documento pero también otros procesos más importantes que también dependen del tiempo como el segundo factor de autenticación y los códigos temporales basados en el tiempo. Los relojes internos usados en las computadoras son bastante imprecisos y se adelantan o retrasan con respecto a la hora oficial, algunos dispositivos electrónicos ni siquiera tienen el hardware de un reloj interno. El protocolo Network Time Protocol o NTP permite a las computadoras obtener la hora de un servidor que ofrezca este servicio de forma regular para evitar diferencias significativas, algunos de estos servidores están respaldados por una organización gubernamental que ofrecen la medida del tiempo oficial de un país y que poseen relojes atómicos mucho más precisos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Sincronización de hora automática con el protocolo NTP en GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>07/10/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Muchos dispositivos electrónicos entre ellos las computadoras tienen un reloj interno que continúa funcionando aún estando apagados y desconectados de la red electrica gracias a una batería en forma de pila de botón. La fecha y la hora permiten conocer cuando se modifica un documento pero también otros procesos más importantes que también dependen del tiempo como el segundo factor de autenticación y los códigos temporales basados en el tiempo. Los relojes internos usados en las computadoras son bastante imprecisos y se adelantan o retrasan con respecto a la hora oficial, algunos dispositivos electrónicos ni siquiera tienen el hardware de un reloj interno. El protocolo <em>Network Time Protocol</em> o NTP permite a las computadoras obtener la hora de un servidor que ofrezca este servicio de forma regular para evitar diferencias significativas, algunos de estos servidores están respaldados por una organización gubernamental que ofrecen la medida del tiempo oficial de un país y que poseen relojes atómicos mucho más precisos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>Conocer la hora y fecha actual es importante también en las computadoras y programas para algo tan simple como conocer cuál fue la fecha de creación o modificación de un archivo o algo más importante como conocer la fecha de una compra o transacción bancaria. Las computadoras son capaces de mantener la hora y fecha gracias a una pequeña batería como fuente de energía como una pila de  botón habitualmente una CR2032 y un reloj que sigue funcionando cuando la computadora está apagada y desconectada de toda fuente de energía. La pila de botón es suficiente para mantener el reloj interno de la computadora y otros dispositivos electrónicos funcionando durante más de 10 años.</p>
+<p>Otra funcionalidad importante que depende del tiempo es el segundo factor de autenticación o <em>2FA</em>. Para mayor seguridad es muy recomendable <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">configurar el segundo factor de autenticación en los principales servicios</a> como correo electrónico junto a otros servicios que tratan con información personal o datos bancarios. El segundo factor de autenticación o TOTP es un código adicional a la contraseña a introducir al autenticarse en un servicio. El TOTP normalmente está formado por unos seis dígitos que solo es válido durante un pequeño espacio de tiempo de unos 30 segundos, pasado este tiempo deja de ser válido y otro código pasa a ser válido. En caso de que el dispositivo que genera el código no posea el tiempo actual genera códigos inválidos.</p>
+<p>Sin embargo, algunos dispositivos como la <a href="https://www.raspberrypi.org/">Raspberry Pi</a> no posee un reloj interno con lo que no son capaces de mantener la hora cuando están apagados. Por otro lado, los relojes de las computadoras no son totalmente precisos y durante periodos de tiempo prolongados cada uno mide el paso del tiempo de forma diferente, el tiempo proporcionado por cada uno varía en unos pocos milisegundos o segundos. Estas variaciones de tiempo aunque pequeñas son suficientes para no ser válidas en ciertos propósitos que necesitan marcas de tiempo totalmente precisas. Enviar un correo electrónico de respuesta con una fecha anterior al original es una paradoja temporal, posiblemente inocua en correo electrónico pero un problema en una transacción financiera. Los relojes más precisos son los atómicos que tardan en desfasarse un segundo al cabo de 52 millones de años. El motivo por el que se utilizan relojes de cuarzo en los ordenadores en vez de atómicos más precisos es que los primeros son más baratos, más pequeños y con menor consumo, los relojes de cuarzo ofrecen una precisión suficiente durante más o menos un pequeño periodo de tiempo.</p>
+<p>Los dispositivos que no tienen un reloj interno mantiene la hora actual utilizando el protocolo <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol">Network Time Protocol</a> o NTP, los dispositivos que tiene reloj interno pero se quieren mantener mayor precisión pueden utilizar este protocolo para mantener yna medida del tiempo más precisa. Hay servidores que ofrecen la hora a través del protocolo NTP tomando como fuente el tiempo proporcionado por un organismo gubernamental siendo la autoridad encargada de proporcionar esta medida considerada la oficial. En España es el <a href="https://armada.defensa.gob.es">Real Instituto y Observatorio de la Armada</a> ubicado en Cádiz el que mantiene la hora oficial, este organismo posee un reloj atómico y ofrece el servicio de NTP, en su página web en la <a href="https://armada.defensa.gob.es/ArmadaPortal/page/Portal/ArmadaEspannola/cienciaobservatorio/prefLang-es/06Hora--00Hora">Sección de Hora</a> proporciona más detalles.</p>
+<p>Hace unos días intenté entrar en mi cuenta de PayPal en la que tengo configurada el segundo factor de autenticación, resulta que mi ordenador que no lo tenía configurado con NTP tenía una diferencia de tiempo de dos minutos con la real. Esta diferencia de tiempo era suficiente para que el código no fuera válido utilizando <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">el cliente KeePassXC para guardar las contraseñas</a> y que también utilizo para generar los códigos TOTP del segundo factor de autenticación. El resultado fué que la cuenta de PayPal se me bloqueó de forma temporal como medida de seguridad para evitar ataques de fuerza bruta después de varios intentos.</p>
+<p>No tenía activado el servicio NTP proporcionado por el gestor de servicios <em>systemd</em>, lo activé de forma fácil en el panel de configuración de <a href="https://www.gnome.org/">GNOME</a>.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sincronización-de-hora-en-gnome">Sincronización de hora en GNOME</a></li>
+    <li><a href="#sincronización-de-hora-desde-línea-de-comandos">Sincronización de hora desde línea de comandos</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="sincronización-de-hora-en-gnome">Sincronización de hora en GNOME</h3>
+<p>Para activar el servicio NTP en GNOME basta con acceder al panel de configuración en la sección de <em>Fecha y hora</em> y activar la opción <em>Fecha y hora</em> automáticas. Esta opción hace lo mismo que desde la línea de comandos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/images/gnome-fecha-hora_hub19a9f71586a70f9e62306c94c585c29_61460_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de fecha y hora en GNOME"><img src="/blog-bitix/2021/10/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux/images/gnome-fecha-hora_hub19a9f71586a70f9e62306c94c585c29_61460_300x250_fit_box_3.png" width="300" height="211" alt="Configuración de fecha y hora en GNOME" title="Configuración de fecha y hora en GNOME" class="" loading="lazy"></a></p>
+<figcaption>Configuración de fecha y hora en GNOME</figcaption>
+</figure>
+</div>
+<h3 id="sincronización-de-hora-desde-línea-de-comandos">Sincronización de hora desde línea de comandos</h3>
+<p>El gestor de servicios <em>systemd</em> proporciona un servicio para mantener sincronizada la fecha y hora con el protocolo NTP. Los siguientes comandos permiten conocer el estado del servicio y la información de la fecha y hora del sistema.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ systemctl status systemd-timesyncd.service&#10;$ systemctl status systemd-timesyncd.service&#10;● systemd-timesyncd.service - Network Time Synchronization&#10;&nbsp;&nbsp;&nbsp;&nbsp; Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/systemd-timesyncd.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; Active: active <span class="o">(</span>running<span class="o">)</span> since Thu 2021-10-07 19:09:48 CEST<span class="p">;</span> 51min ago&#10;&nbsp;&nbsp;&nbsp;&nbsp;   Docs: man:systemd-timesyncd.service<span class="o">(</span>8<span class="o">)</span>&#10;   Main PID: <span class="m">355</span> <span class="o">(</span>systemd-timesyn<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; Status: <span class="s2">&#34;Initial synchronization to time server 193.182.111.142:123 (2.arch.pool.ntp.org).&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  Tasks: <span class="m">2</span> <span class="o">(</span>limit: 38345<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; Memory: 2.1M&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPU: 65ms&#10;&nbsp;&nbsp;&nbsp;&nbsp; CGroup: /system.slice/systemd-timesyncd.service&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └─355 /usr/lib/systemd/systemd-timesyncd&#10;&#10;oct <span class="m">07</span> 19:09:48 archlinux systemd<span class="o">[</span>1<span class="o">]</span>: Starting Network Time Synchronization...&#10;oct <span class="m">07</span> 19:09:48 archlinux systemd<span class="o">[</span>1<span class="o">]</span>: Started Network Time Synchronization.&#10;oct <span class="m">07</span> 19:10:18 archlinux systemd-timesyncd<span class="o">[</span>355<span class="o">]</span>: Initial synchronization to <span class="nb">time</span> server 193.182.111.142:123 <span class="o">(</span>2.arch.pool.ntp.org<span class="o">)</span>.</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>systemctl-timesyncd-status.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ timedatectl&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Local time: jue 2021-10-07 20:01:59 CEST&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Universal time: jue 2021-10-07 18:01:59 UTC&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RTC time: jue 2021-10-07 18:01:59&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time zone: Europe/Madrid <span class="o">(</span>CEST, +0200<span class="o">)</span>&#10;System clock synchronized: yes&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  NTP service: active&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  RTC in <span class="nb">local</span> TZ: no</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>timedatectl.sh</span>
+    </div>
+</div>
+<p>El siguiente comando ofrece información más detallada, incluye el servidor NTP utilizado y el intervalo de tiempo entre sincronizaciones.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ timedatectl timesync-status&#10;&nbsp;&nbsp;&nbsp;&nbsp;   Server: 193.182.111.142 <span class="o">(</span>2.arch.pool.ntp.org<span class="o">)</span>&#10;Poll interval: 34min 8s <span class="o">(</span>min: 32s<span class="p">;</span> max 34min 8s<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leap: normal&#10;&nbsp;&nbsp;&nbsp;&nbsp;  Version: <span class="m">4</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  Stratum: <span class="m">2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Reference: C0248F96&#10;&nbsp;&nbsp;&nbsp;&nbsp;Precision: 1us <span class="o">(</span>-20<span class="o">)</span>&#10;Root distance: 39.024ms <span class="o">(</span>max: 5s<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   Offset: -1.968ms&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay: 76.516ms&#10;&nbsp;&nbsp;&nbsp;&nbsp;   Jitter: 10.264ms&#10; Packet count: <span class="m">7</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Frequency: +23,154ppm</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>timesyncd-timesync-status.sh</span>
+    </div>
+</div>
+<p>Habilitar el servicio indica que el servicio se inicie como parte del inicio del sistema, si el servicio está parado se puede iniciar de forma explícita.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ systemctl <span class="nb">enable</span> systemd-timesyncd.service&#10;$ systemctl start systemd-timesyncd.service&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>systemctl-timesyncd.sh</span>
+    </div>
+</div>
+<p>El servidor NTP utilizado para realizar la sincronización de la fecha y la hora usa la configuración personalizada del archivo <em>/etc/systemd/timesyncd.conf</em> en el que se incluye el dominio del servicio. Sin haber realizado cambios en el archivo todos los valores de está configuración están comentados. Los valores por defecto de esta configuración se definen en tiempo de compilación, en el caso de los paquetes de <a href="https://www.archlinux.org/">Arch Linux</a> en el <a href="https://github.com/archlinux/svntogit-packages/blob/master/systemd/trunk/PKGBUILD">archivo PKGBUILD de systemd</a>.</p>
+<p>En este archivo se pone el servidor NTP deseado si es otro distinto del por defecto como el proporcionado por el Real Instituto y Observatorio de la Armada, <em>hora.roa.es</em> y <em>minuto.roa.es</em>, u otro de los proporcionados por la organización de voluntarios <a href="https://www.ntppool.org/es/">NTP Pool Project</a> que utilizan muchas distribuciones incluida Arch Linux y dispositivos en internet como <em>routers</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">#  This file is part of systemd.&#10;#&#10;#  systemd is free software; you can redistribute it and/or modify it under the&#10;#  terms of the GNU Lesser General Public License as published by the Free&#10;#  Software Foundation; either version 2.1 of the License, or (at your option)&#10;#  any later version.&#10;#&#10;# Entries in this file show the compile time defaults. Local configuration&#10;# should be created by either modifying this file, or by creating &#34;drop-ins&#34; in&#10;# the timesyncd.conf.d/ subdirectory. The latter is generally recommended.&#10;# Defaults can be restored by simply deleting this file and all drop-ins.&#10;#&#10;# See timesyncd.conf(5) for details.&#10;&#10;[Time]&#10;#NTP=&#10;#FallbackNTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org&#10;#RootDistanceMaxSec=5&#10;#PollIntervalMinSec=32&#10;#PollIntervalMaxSec=2048</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>timesyncd.conf</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://feeding.cloud.geek.nz/posts/time-synchronization-with-ntp-and-systemd/">Time Synchronization with NTP and systemd</a></li>
+<li><a href="https://www.elmundo.es/ciencia/2015/06/30/559189c622601d6b4e8b4594.html">El hombre que ajusta la hora en España</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Reloj_at%C3%B3mico">Reloj atómico</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Real-time_clock">Real-time clock</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">
+                <img src="/blog-bitix/assets/images/logotypes/containerd.svg" width="326" height="125" alt="Contenedores en macOS con Lima y minikube" title="Contenedores en macOS con Lima y minikube" class="" loading="lazy">
+                <h3>Contenedores en macOS con Lima y minikube</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="326" height="125" alt="Planificar procesos periódicos y scripts con Nomad" title="Planificar procesos periódicos y scripts con Nomad" class="" loading="lazy">
+                <h3>Planificar procesos periódicos y scripts con Nomad</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/">
+                <img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_875x0_resize_box_3.png" width="326" height="125" alt="El proxy inverso Traefik, características y funcionalidades que ofrece" title="El proxy inverso Traefik, características y funcionalidades que ofrece" class="" loading="lazy">
+                <h3>El proxy inverso Traefik, características y funcionalidades que ofrece</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">
+                <img src="/blog-bitix/assets/images/logotypes/gnome.svg" width="326" height="125" alt="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" title="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" class="" loading="lazy">
+                <h3>Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/">
+                <img src="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6e011cae91d9fec5bc7576cde312e803_167910_875x0_resize_box_3.png" width="326" height="125" alt="Cómo crear y poner subtítulos a un vídeo" title="Cómo crear y poner subtítulos a un vídeo" class="" loading="lazy">
+                <h3>Cómo crear y poner subtítulos a un vídeo</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/">
+                <img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_875x0_resize_box_3.png" width="326" height="125" alt="Herramientas de línea de comandos para monitorizar GNU/Linux" title="Herramientas de línea de comandos para monitorizar GNU/Linux" class="" loading="lazy">
+                <h3>Herramientas de línea de comandos para monitorizar GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-602';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/10\/sincronizacion-de-hora-automatica-con-el-protocolo-ntp-en-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

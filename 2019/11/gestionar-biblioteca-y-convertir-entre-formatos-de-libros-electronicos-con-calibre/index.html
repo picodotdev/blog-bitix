@@ -1,0 +1,568 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Dado que los libros electrónicos ocupan muy poco se puede llegar a tener una biblioteca grande de libros que necesitan de una herramienta para ser catalogados y para realizar conversión entre formatos si es necesario para uno de entre los que soporte el dispositivo de libros electrónicos. Calibre es una aplicación que ofrece estas dos principales funciones. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/" hreflang="es" title="Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/index-amp.html" hreflang="es" title="Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre_hu46ff9abe2a9e46774fd89681d1ab6ae2_1940986_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Dado que los libros electrónicos ocupan muy poco se puede llegar a tener una biblioteca grande de libros que necesitan de una herramienta para ser catalogados y para realizar conversión entre formatos si es necesario para uno de entre los que soporte el dispositivo de libros electrónicos. Calibre es una aplicación que ofrece estas dos principales funciones. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre_hu46ff9abe2a9e46774fd89681d1ab6ae2_1940986_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre">
+<meta name="twitter:description" content="Dado que los libros electrónicos ocupan muy poco se puede llegar a tener una biblioteca grande de libros que necesitan de una herramienta para ser catalogados y para realizar conversión entre formatos si es necesario para uno de entre los que soporte el dispositivo de libros electrónicos. Calibre es una aplicación que ofrece estas dos principales funciones. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/"
+    },
+    "headline": "Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre_hu46ff9abe2a9e46774fd89681d1ab6ae2_1940986_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2019-11-22T16:00:00+01:00",
+    "dateModified": "2019-11-22T16:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "478",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Dado que los libros electrónicos ocupan muy poco se puede llegar a tener una biblioteca grande de libros que necesitan de una herramienta para ser catalogados y para realizar conversión entre formatos si es necesario para uno de entre los que soporte el dispositivo de libros electrónicos. Calibre es una aplicación que ofrece estas dos principales funciones."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>22/11/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Dado que los libros electrónicos ocupan muy poco se puede llegar a tener una biblioteca grande de libros que necesitan de una herramienta para ser catalogados y para realizar conversión entre formatos si es necesario para uno de entre los que soporte el dispositivo de libros electrónicos. Calibre es una aplicación que ofrece estas dos principales funciones.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/calibre.png" width="200" height="80" alt="Calibre" title="Calibre" class="" loading="false"></p>
+</div>
+<p>Hace ya unos años que tengo un lector de libros electrónicos y estoy muy contento con él, el popular <a href="https://amzn.to/3Dd5Q8p" rel="sponsored">Amazon Kindle</a> aún echando de menos la luz integrada y el modelo <em>paperwhite</em> que tiene la pantalla más blanca de los modelos más recientes que el mío. Una de las ventajas de los libros electrónicos es que una vez leídos no ocupan espacio físico con lo que no hay que tener varias baldas de libros ocupando espacio, al ser electrónicos no son más que un archivo de ordenador que ocupan muy poco no llegando muchos de ellos al megabyte de espacio. Teniendo una gran cantidad de libros según se obtienen o se empiezan a leer un libro se puede añadir a la biblioteca para tenerlo catalogado. Para gestionar la biblioteca de libros una de las mejores opciones sino la mejor es <a href="https://calibre-ebook.com/">Calibre</a> no solo por su completa funcionalidad sino porque es software libre.</p>
+<p>Calibre permite organizar los libros por autor y muestra las portadas de los mismos, además permite convertir entre formatos de libros electrónicos. Dos de los formatos mayormente soportados por los lectores de libros electrónicos son el <em>EPUB</em> y <em>MOBI</em>. Los Amazon Kindle soportan <em>MOBI</em>, <em>AZW</em>, <em>AZW3</em> y muchas de otras marcas soportan <em>EPUB</em>, dependiendo del dispositivo en que vayan a ser leídos los libros y el formato en el que se tenga el libro puede ser necesaria una conversión.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre_hu46ff9abe2a9e46774fd89681d1ab6ae2_1940986_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Biblioteca y conversor de libros electrónicos Calibre"><img src="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre_hu46ff9abe2a9e46774fd89681d1ab6ae2_1940986_300x200_fit_box_3.png" width="292" height="200" alt="Biblioteca y conversor de libros electrónicos Calibre" title="Biblioteca y conversor de libros electrónicos Calibre" class="" loading="lazy"></a></p>
+<figcaption>Biblioteca y conversor de libros electrónicos Calibre</figcaption>
+</figure>
+</div>
+<p>La conversión entre formatos no tarda muchos y en ningún momento me he encontrado que el resultado sea malo si el original está correctamente formateado. Como los libros electrónicos son archivos pequeños la conversión se realiza en unos pocos decenas de segundos. Además, Calibre permite realizar la conversión de forma masiva sobre varios libros guardando los libros en diferentes formatos en la biblioteca.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-convertir_hub994f0718b34dec5877192624f544a1e_826817_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Convertir un libro electrónico a otro formato con Calibre"><img src="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-convertir_hub994f0718b34dec5877192624f544a1e_826817_300x200_fit_box_3.png" width="213" height="200" alt="Convertir un libro electrónico a otro formato con Calibre" title="Convertir un libro electrónico a otro formato con Calibre" class="" loading="lazy"></a></p>
+<figcaption>Convertir un libro electrónico a otro formato</figcaption>
+</figure>
+</div>
+<p>La biblioteca se guarda en el sistema de archivos del ordenador en una estructura de directorios organizados por autor, títulos del libro y en los formatos en los que se haya realizado la conversión.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-biblioteca-autores_huc9ea6d610438a4f3fb3049ad0dc871db_88941_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Organización por autores de los archivos en la biblioteca"><img src="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-biblioteca-autores_huc9ea6d610438a4f3fb3049ad0dc871db_88941_300x200_fit_box_3.png" width="300" height="160" alt="Organización por autores de los archivos en la biblioteca" title="Organización por autores de los archivos en la biblioteca" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-biblioteca-libros_huc259eb10d2e5d664a2f4e8df954d51f5_62215_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Organización por autor de los archivos en la biblioteca"><img src="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-biblioteca-libros_huc259eb10d2e5d664a2f4e8df954d51f5_62215_300x200_fit_box_3.png" width="300" height="160" alt="Organización por autor de los archivos en la biblioteca" title="Organización por autor de los archivos en la biblioteca" class="" loading="lazy"></a></p>
+<figcaption>Organización de los archivos en la biblioteca</figcaption>
+</figure>
+</div>
+<p>Quizá algunos de los libros no tenga los metadatos correctos como el título, nombre del autor o el número del libro si forma parte de una serie de libros relacionados, mediante otro diálogo se puede editar y catalogar correctamente el libro.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-metadatos_hud488a9e5a6701fe8f1402d14b2a219a4_748874_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Convertir un libro electrónico a otro formato con Calibre"><img src="/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/images/calibre-metadatos_hud488a9e5a6701fe8f1402d14b2a219a4_748874_300x200_fit_box_3.png" width="300" height="191" alt="Convertir un libro electrónico a otro formato con Calibre" title="Convertir un libro electrónico a otro formato con Calibre" class="" loading="lazy"></a></p>
+<figcaption>Metadatos de un libro electrónico</figcaption>
+</figure>
+</div>
+<p>Calibre tiene más funciones pero la catalogar los libros en una biblioteca digital y la realizar la conversión entre formatos para diferentes dispositivos son las dos principales. Está <a href="https://calibre-ebook.com/download">disponible para los principales sistemas operativos</a> como <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en forma de paquete proporcionado por la distribución o como <a href="https://flathub.org/apps/details/com.calibre_ebook.calibre">aplicación Flatpak universal para cualquier distribución</a>, <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y <a href="https://www.apple.com/macos/">macOS</a>. Puedes conocer la <a href="https://calibre-ebook.com/about#history">historia de Calibre</a> y cmo surgió como una necesidad de su autor.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/">
+                <img src="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu77ea831290e4496781697c4e09451f28_32101_875x0_resize_box_3.png" width="326" height="125" alt="Guía de inicio del gestor de terminales y sesiones tmux" title="Guía de inicio del gestor de terminales y sesiones tmux" class="" loading="lazy">
+                <h3>Guía de inicio del gestor de terminales y sesiones tmux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">
+                <img src="/blog-bitix/assets/images/logotypes/wine.svg" width="326" height="125" alt="Cómo usar Wine para jugar en GNU/Linux a juegos de Windows" title="Cómo usar Wine para jugar en GNU/Linux a juegos de Windows" class="" loading="lazy">
+                <h3>Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/flatpak.svg" width="326" height="125" alt="Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux" title="Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux" class="" loading="lazy">
+                <h3>Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-443';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/11\/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

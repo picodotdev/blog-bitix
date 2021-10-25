@@ -1,0 +1,627 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor mock que imite las respuestas para las peticiones que se necesite de uno o varios servicios. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/" hreflang="es" title="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/index-amp.html" hreflang="es" title="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor mock que imite las respuestas para las peticiones que se necesite de uno o varios servicios. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock">
+<meta name="twitter:description" content="Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor mock que imite las respuestas para las peticiones que se necesite de uno o varios servicios. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/"
+    },
+    "headline": "Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2021-07-30T12:00:00+02:00",
+    "dateModified": "2021-07-30T12:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1880",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor mock que imite las respuestas para las peticiones que se necesite de uno o varios servicios."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>30/07/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los microservicios aportan varias ventajas pero también algunos inconvenientes que si no son manejados generan sus propios problemas. Una dificultad de los servicios por las dependencias entre ellos es poder desarrollarlos y probarlos en local, algunos microservicios son complejos con dependencia sobre bases de datos, sistemas de envío de mensajes u otros servicios. Si un microservicio necesita iniciar en local o en entorno todas sus dependencias el desarrollo se vuelve complejo y lento. Para facilitar el desarrollo una opción es utilizar un servidor <em>mock</em> que imite las respuestas para las peticiones que se necesite de uno o varios servicios.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Una aplicación diseñada como una colección de microservicios se compone de múltiples de ellos, unos microservicios son consumidos por otros y a su vez un microservicio consume otros uno o varios.</p>
+<p>Algunas aplicaciones son diseñadas para ofrecer su funcionalidad a través de un API desde el primer momento por su independencia de los clientes que hagan uso de ella. Tener un API permite dar soporte a los múltiples clientes ya sean directamente desde el navegador web, una aplicación nativa de un dispositivo como un teléfono inteligente o incluso para ofrecer a tercera partes de modo que realicen integraciones y automatizaciones según sus necesidades.</p>
+<p>Las ventajas de los microservicios son varios como los anteriores junto a algunos otros adicionales, sin embargo, añaden otros problemas, principalmente el mayor número de elementos que los hacen más complejos comparado con una aplicación monolítica.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-servidor-_mock_">El servidor <em>mock</em></a></li>
+    <li><a href="#opciones-de-servidores-_mock_">Opciones de servidores <em>mock</em></a></li>
+    <li><a href="#características-de-wiremock">Características de WireMock</a></li>
+    <li><a href="#ejemplo-de-prueba-de-wiremock">Ejemplo de prueba de WireMock</a>
+      <ul>
+        <li><a href="#como-aplicación-independiente">Como aplicación independiente</a></li>
+        <li><a href="#embebido-en-una-aplicación-para-hacer-pruebas-unitarias">Embebido en una aplicación para hacer pruebas unitarias</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="el-servidor-_mock_">El servidor <em>mock</em></h3>
+<p>Muchas aplicaciones se basan en <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">microservicios REST haciendo uso del protocolo HTTP y JSON</a> como formato de datos. Un servidor <em>mock</em> es simplemente un servidor web que en caso de los microservicios es utilizado para programar las respuestas para las peticiones que se le hagan según el <em>endpoint</em> invocado, variables en el <em>path</em>, parámetros o cabeceras. Las respuestas programadas incluyen el código de estado, cabeceras devueltas y datos del cuerpo.</p>
+<p>Un servidor de imitación o <em>mock</em> facilita el desarrollo de los microservicios de forma independiente y las pruebas. El servidor <em>mock</em> elimina la dependencia de un servicio real junto con todo el entorno de ejecución que necesite que en el caso de algunos llega a ser notablemente complejo si incluye base de datos, sistemas de mensajería u otros servicios. El servicio es sustituido por una imitación que devuelve las respuestas programadas para cada una de las peticiones.</p>
+<p>Otro caso de uso de un servidor <em>mock</em> es permitir realizar pruebas de código o convertir pruebas de integración en unitarias. Otro uso de un servidor <em>mock</em> es que permite centrarse en el desarrollo de un servicio sin necesidad de usar servicios reales incluso antes de que estos estén implementados si su interfaz está definida.</p>
+<p>Uno de los potenciales riesgos de utilizar un servidor <em>mock</em> es que este no se ajuste a la realidad del servicio real cuando este contenga cambios incompatibles. Un servidor <em>mock</em> permite simular las respuestas de un servicio HTTP lo que facilita las pruebas unitarias de la parte cliente, sin embargo, esto no asegura que el servidor al realizar en las pruebas de integración o en producción cumpla con el contrato que el cliente espera de su API. Para asegurar que el servidor soporta las peticiones esperadas por la parte cliente y devuelve los datos esperados otra forma de pruebas son las <a href="https://picodotdev.github.io/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/">pruebas de contrato o <em>contract testing</em> con Pact</a>, una herramienta de pruebas de contrato que soporta el lenguaje Java entre otros.</p>
+<h3 id="opciones-de-servidores-_mock_">Opciones de servidores <em>mock</em></h3>
+<p>Como cualquier otro tipo de herramienta hay múltiples opciones entre las que elegir. La principal característica de todo servidor <em>mock</em> es permitir programar las respuestas según las peticiones, sus diferencias está en el lenguaje de programación en el que están implementadas y su entorno de ejecución necesario así como su tipo de licencia. Algunas ofrecen programar las respuestas a través de una API del lenguaje de programación para el que están destinadas.</p>
+<p>Hay muchas opciones de servidor <em>mock</em> algunas conocidas son <a href="https://www.mock-server.com/">MockServer</a>, <a href="http://wiremock.org/">WireMock</a>, <a href="https://github.com/outofcoffee/imposter">Imposter</a> o <a href="https://stoplight.io/open-source/prism/">Prism</a>. Varias implementadas con JavaScript, otras en Java y algunas incluso se ofrecen en forma de software como servicio para delegar el mantenimiento de la herramienta en una tercera parte.</p>
+<h3 id="características-de-wiremock">Características de WireMock</h3>
+<p>WireMock es una opción bastante conocida de servidor para hacer <em>mocking</em>. Ofrece bastante flexibilidad en la forma de aprovisionar las respuestas programadas ya sea a través de un archivo de configuración, peticiones REST una vez iniciado el servidor <em>mock</em> o de forma programática mediante una API de Java. También es bastante flexible en su forma de ejecución pudiendo ser como una aplicación Java independiente, de forma embebida como parte de una aplicación Java como sería el caso de querer utilizarlo para realizar pruebas unitarias o como un contenedor de <a href="https://www.docker.com/">Docker</a>.</p>
+<p>Ofrece una potente definición de correspondencia entre las peticiones realizadas a través de las URLs, métodos, cabeceras, <em>cookies</em> con diferentes estrategias, también ofrece soporte para generar respuestas en formato JSON o XML pudiendo utilizar plantillas para crear respuestas dinámicas según la petición de entrada.  Otras características que ofrece es soporte para HTTPS, hacer de intermediario o <em>proxy</em> entre la aplicación y el servicio real para peticiones que no están programadas, permitir grabar las respuestas obtenidas por la funcionalidad de <em>proxy</em>, simular errores como tiempos de respuesta elevados y crear flujos de peticiones con escenarios que dependen de estado e interacciones previas.</p>
+<p>Es simple de iniciar y configurar, tiene una documentación suficiente para aprender sus conceptos básicos, configuración junto la <a href="http://wiremock.org/docs/api/">documentación completa de la API REST</a> y empezar a usarlo en poco tiempo, está implementado en Java que lo hace adecuado si es el entorno de ejecución utilizado para los microservicios.</p>
+<h3 id="ejemplo-de-prueba-de-wiremock">Ejemplo de prueba de WireMock</h3>
+<p>De forma oficial el proyecto ofrece un archivo <em>jar</em> ejecutable que inicia el servidor web de WireMock de forma independiente, una vez iniciado expone una API REST a través de la cual es posible aprovisionar las respuestas, el aprovisionamiento y configuración también es posible realizarlo mediante parámetros de inicio. A partir de este archivo <em>jar</em> ejecutable es posible <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">crear una imagen de Docker</a> con el servicio para ejecutarlo en forma de contenedor o <a href="https://picodotdev.github.io/blog-bitix/2020/06/pruebas-de-integracion-con-testcontainers-ejemplo-de-jpa-con-la-base-de-datos-postgresql/">en pruebas unitarias o de integración con Testcontainers</a>, alguna persona ya ha creado una <a href="https://github.com/rodolpheche/wiremock-docker">imagen de Docker de WireMock</a>.</p>
+<h4 id="como-aplicación-independiente">Como aplicación independiente</h4>
+<p>Este es el comando de inicio de WireMock como aplicación independiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ java -jar wiremock-jre8-standalone-2.29.1.jar &#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>wiremock.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">SLF4J: Failed to load class &#34;org.slf4j.impl.StaticLoggerBinder&#34;.&#10;SLF4J: Defaulting to no-operation (NOP) logger implementation&#10;SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.&#10; /$$&nbsp;&nbsp;&nbsp;&nbsp;  /$$ /$$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /$$&nbsp;&nbsp;&nbsp;&nbsp;  /$$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /$$&nbsp;&nbsp;&nbsp;&nbsp;  &#10;| $$  /$ | $$|__/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $$$&nbsp;&nbsp;&nbsp;&nbsp;/$$$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $$&nbsp;&nbsp;&nbsp;&nbsp;  &#10;| $$ /$$$| $$ /$$  /$$$$$$   /$$$$$$ | $$$$  /$$$$  /$$$$$$   /$$$$$$$| $$   /$$&#10;| $$/$$ $$ $$| $$ /$$__  $$ /$$__  $$| $$ $$/$$ $$ /$$__  $$ /$$_____/| $$  /$$/&#10;| $$$$_  $$$$| $$| $$  \__/| $$$$$$$$| $$  $$$| $$| $$  \ $$| $$&nbsp;&nbsp;&nbsp;&nbsp;  | $$$$$$/ &#10;| $$$/ \  $$$| $$| $$&nbsp;&nbsp;&nbsp;&nbsp;  | $$_____/| $$\  $ | $$| $$  | $$| $$&nbsp;&nbsp;&nbsp;&nbsp;  | $$_  $$ &#10;| $$/   \  $$| $$| $$&nbsp;&nbsp;&nbsp;&nbsp;  |  $$$$$$$| $$ \/  | $$|  $$$$$$/|  $$$$$$$| $$ \  $$&#10;|__/&nbsp;&nbsp;&nbsp;&nbsp; \__/|__/|__/&nbsp;&nbsp;&nbsp;&nbsp;   \_______/|__/&nbsp;&nbsp;&nbsp;&nbsp; |__/ \______/  \_______/|__/  \__/&#10;&#10;port:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8080&#10;enable-browser-proxying:&nbsp;&nbsp;&nbsp;&nbsp;  false&#10;disable-banner:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   false&#10;no-request-journal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   false&#10;verbose:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  false</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>wiremock.out</span>
+    </div>
+</div>
+<p>Por defecto el servidor <em>mock</em> se inicia en el puerto 8080. Con las siguientes peticiones REST es posible aprovisionar manualmente las respuestas, estas peticiones utilizan la API REST de WireMock. También es posible realizar el aprovisionamiento con archivos de configuración creando una carpeta en el directorio de trabajo de nombre <em>mappings</em> creando archivos con extensión <em>json</em> con el contenido del JSON de cada uno de los <em>mappings</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -v -X POST http://localhost:8080/__admin/mappings/import --data <span class="s1">&#39;{&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&#34;mappings&#34;: [{&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;request&#34;: {&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;method&#34;: &#34;GET&#34;,&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;url&#34;: &#34;/message/1&#34;&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;response&#34;: {&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;status&#34;: 200,&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;jsonBody&#34;: {&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;id&#34;: 1,&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;text&#34;: &#34;Hello World!&#34;&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;}]&#10;</span><span class="s1">}&#39;</span>&#10;&#10;$ curl -v -X POST http://localhost:8080/__admin/mappings/import --data <span class="s1">&#39;{&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&#34;mappings&#34;: [{&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;request&#34;: {&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;method&#34;: &#34;POST&#34;,&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;url&#34;: &#34;/message&#34;,&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;bodyPatterns&#34; : [{&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;equalToJson&#34; : {&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;id&#34;: 1,&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;text&#34;: &#34;Hello World!&#34;&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;response&#34;: {&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;status&#34;: 200&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span><span class="s1">&nbsp;&nbsp;&nbsp;&nbsp;}]&#10;</span><span class="s1">}&#39;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-wiremock-provision.sh</span>
+    </div>
+</div>
+<p>Una vez aprovisionado el servidor <em>mock</em> con las respuestas deseadas al realizar peticiones al servidor de WireMock si estás coinciden se devuelven las respuestas, la respuestas incluye el código de estado, las cabeceras y los datos de respuesta tal como fueron aprovisionados. En este caso las peticiones se hacen con el comando <em>curl</em> que simulan las peticiones de una aplicación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -v http://localhost:8080/message/1&#10;*   Trying 127.0.0.1:8080...&#10;* Connected to localhost <span class="o">(</span>127.0.0.1<span class="o">)</span> port <span class="m">8080</span> <span class="o">(</span><span class="c1">#0)</span>&#10;&gt; GET /message/1 HTTP/1.1&#10;&gt; Host: localhost:8080&#10;&gt; User-Agent: curl/7.78.0&#10;&gt; Accept: */*&#10;&gt; &#10;* Mark bundle as not supporting multiuse&#10;&lt; HTTP/1.1 <span class="m">200</span> OK&#10;&lt; Matched-Stub-Id: 9acc8318-dff3-4d18-9522-56861eff0ca3&#10;&lt; Vary: Accept-Encoding, User-Agent&#10;&lt; Transfer-Encoding: chunked&#10;&lt; &#10;* Connection <span class="c1">#0 to host localhost left intact</span>&#10;<span class="o">{</span><span class="s2">&#34;id&#34;</span>:1,<span class="s2">&#34;text&#34;</span>:<span class="s2">&#34;Hello World!&#34;</span><span class="o">}</span>&#10;&#10;$ curl -v -X POST http://localhost:8080/message --data <span class="s1">&#39;{&#34;id&#34;:1,&#34;text&#34;:&#34;Hello World!&#34;}&#39;</span>&#10;Note: Unnecessary use of -X or --request, POST is already inferred.&#10;*   Trying 127.0.0.1:8080...&#10;* Connected to localhost <span class="o">(</span>127.0.0.1<span class="o">)</span> port <span class="m">8080</span> <span class="o">(</span><span class="c1">#0)</span>&#10;&gt; POST /message HTTP/1.1&#10;&gt; Host: localhost:8080&#10;&gt; User-Agent: curl/7.78.0&#10;&gt; Accept: */*&#10;&gt; Content-Length: <span class="m">30</span>&#10;&gt; Content-Type: application/x-www-form-urlencoded&#10;&gt; &#10;* Mark bundle as not supporting multiuse&#10;&lt; HTTP/1.1 <span class="m">200</span> OK&#10;&lt; Matched-Stub-Id: 7ef3a405-4435-417d-8579-57497d149f29&#10;&lt; Vary: Accept-Encoding, User-Agent&#10;&lt; Transfer-Encoding: chunked&#10;&lt; &#10;* Connection <span class="c1">#0 to host localhost left intact</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-wiremock-request.sh</span>
+    </div>
+</div>
+<p>En caso de que la petición no coincida con una aprovisionada se devuelve en error 404.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -v -H <span class="s2">&#34;Accept: application/json&#34;</span> http://localhost:8080/message/2&#10;*   Trying 127.0.0.1:8080...&#10;* Connected to localhost <span class="o">(</span>127.0.0.1<span class="o">)</span> port <span class="m">8080</span> <span class="o">(</span><span class="c1">#0)</span>&#10;&gt; GET /message/2 HTTP/1.1&#10;&gt; Host: localhost:8080&#10;&gt; User-Agent: curl/7.78.0&#10;&gt; Accept: */*&#10;&gt; &#10;* Mark bundle as not supporting multiuse&#10;&lt; HTTP/1.1 <span class="m">404</span> Not Found&#10;&lt; Content-Type: text/plain&#10;&lt; Transfer-Encoding: chunked&#10;&lt; &#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Request was not <span class="nv">matched</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">=======================</span>&#10;&#10;-----------------------------------------------------------------------------------------------------------------------&#10;<span class="p">|</span> Closest stub&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="p">|</span> Request&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">|</span>&#10;-----------------------------------------------------------------------------------------------------------------------&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="p">|</span>&#10;GET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">|</span> GET&#10;/message/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="p">|</span> /message/2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">&lt;&lt;&lt;</span>&lt;&lt; URL does not match&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="p">|</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="p">|</span>&#10;-----------------------------------------------------------------------------------------------------------------------&#10;* Connection <span class="c1">#0 to host localhost left intact</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-wiremock-nomatch.sh</span>
+    </div>
+</div>
+<p>Modificando la aplicación para que las peticiones las haga al servidor de WireMock la aplicación es posible desarrollarla o probarla sin necesidad del servicio real y sus dependencias.</p>
+<h4 id="embebido-en-una-aplicación-para-hacer-pruebas-unitarias">Embebido en una aplicación para hacer pruebas unitarias</h4>
+<p>En el caso de utilizar WireMock para realizar pruebas unitarias el servidor de WireMock ha de iniciarse y aprovisionarse en el contexto de las pruebas, en este caso para las <a href="https://picodotdev.github.io/blog-bitix/2019/06/teses-unitarios-parametrizados-con-junit/">pruebas unitarias con teses de Junit5</a>.</p>
+<p>En este ejemplo se crea <a href="https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">una interfaz de un cliente de una API REST con Retrofit</a>, a partir de esta interfaz Retrofit permite crear una instancia de un objeto que a través de sus métodos y parámetros permite hacer llamadas al servicio REST mediante código Java eliminando los detalles de que en realidad hace una petición HTTP.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picotodev.blogbitix.javawiremock</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Service</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GET</span><span class="o">(</span><span class="s">&#34;/message/{id}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Call</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">message</span><span class="o">(</span><span class="nd">@Path</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">)</span> <span class="n">Long</span> <span class="n">id</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Service.java</span>
+    </div>
+</div>
+<p>La aplicación en su código crea una instancia del cliente del servicio REST e invoca sus métodos de llamada, dado que el cliente realiza operaciones de red al ejecutarlo al hacer la prueba unitaria si el servicio no está iniciado la comunicación fallará produciendo errores.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picotodev.blogbitix.javawiremock</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Service</span> <span class="n">service</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Main</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">service</span> <span class="o">=</span> <span class="n">buildService</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getMessage</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">service</span><span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">execute</span><span class="o">().</span><span class="na">body</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Service</span> <span class="nf">buildService</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">build</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Retrofit</span> <span class="n">retrofit</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Retrofit</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">client</span><span class="o">(</span><span class="n">client</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">addConverterFactory</span><span class="o">(</span><span class="n">ScalarsConverterFactory</span><span class="o">.</span><span class="na">create</span><span class="o">())</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">baseUrl</span><span class="o">(</span><span class="s">&#34;http://localhost:8080/&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">retrofit</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">Service</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<p>Es en este punto donde entra WireMock que permite simular ese servicio, en este ejemplo de prueba unitaria se inicia el servidor de WireMock, se aprovisiona con la petición esperada y respuesta desea a devolver. Se ejercita el código que se desea probar en este caso el método <em>getMessage</em> de la clase <em>Main</em> que en su implementación hace uso del cliente del servicio REST con Retrofit y que en la prueba invocará al servidor de WireMock. Finalmente, se comprueba que la respuesta del clase <em>Main</em> coincida con la esperada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picotodev.blogbitix.javawiremock</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainTest</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="n">WireMockServer</span> <span class="n">wireMockServer</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@BeforeAll</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">static</span> <span class="kt">void</span> <span class="nf">beforeAll</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">wireMockServer</span> <span class="o">=</span> <span class="n">buildWireMockServer</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@AfterAll</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">static</span> <span class="kt">void</span> <span class="nf">afterAll</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">wireMockServer</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Test</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// given&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">stubFor</span><span class="o">(</span><span class="n">get</span><span class="o">(</span><span class="n">urlEqualTo</span><span class="o">(</span><span class="s">&#34;/message/1&#34;</span><span class="o">))</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">willReturn</span><span class="o">(</span><span class="n">aResponse</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">withHeader</span><span class="o">(</span><span class="s">&#34;Content-Type&#34;</span><span class="o">,</span> <span class="s">&#34;appication/json&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">withBody</span><span class="o">(</span><span class="s">&#34;{\&#34;id\&#34;: 1, \&#34;text\&#34;: \&#34;Hello World!\&#34;}&#34;</span><span class="o">)));</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// when&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Main</span><span class="o">().</span><span class="na">getMessage</span><span class="o">(</span><span class="n">1L</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// then&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">assertEquals</span><span class="o">(</span><span class="s">&#34;{\&#34;id\&#34;: 1, \&#34;text\&#34;: \&#34;Hello World!\&#34;}&#34;</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="n">WireMockServer</span> <span class="nf">buildWireMockServer</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">WireMockServer</span> <span class="n">wireMockServer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WireMockServer</span><span class="o">(</span><span class="n">WireMockConfiguration</span><span class="o">.</span><span class="na">options</span><span class="o">().</span><span class="na">port</span><span class="o">(</span><span class="n">8080</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">wireMockServer</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">wireMockServer</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>MainTest.java</span>
+    </div>
+</div>
+<p>Este el archivo de <a href="https://gradle.org/">Gradle</a> con las dependencias.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.squareup.retrofit2:retrofit:2.9.0&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.squareup.retrofit2:converter-scalars:2.9.0&#39;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testImplementation</span> <span class="s1">&#39;org.junit.jupiter:junit-jupiter:5.7.1&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testImplementation</span> <span class="s1">&#39;com.github.tomakehurst:wiremock-jre8:2.29.1&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picotodev.blogbitix.javawiremock.Main&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">tasks</span><span class="o">.</span><span class="na">named</span><span class="o">(</span><span class="s1">&#39;test&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">useJUnitPlatform</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>En este caso WireMock se ha usado de forma directa, en el caso de utilizar <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> uno de los proyectos de <a href="https://cloud.spring.io/spring-cloud-contract/reference/html/project-features.html#features-wiremock">Spring proporciona librerías para facilitar y hacer compatible el uso de WireMock con JUnit y Spring</a>.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaWireMock">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew test</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/07/formas-de-generar-un-numero-aleatorio-en-un-rango-con-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Formas de generar un número aleatorio en un rango con Java" title="Formas de generar un número aleatorio en un rango con Java" class="" loading="lazy">
+                <h3>Formas de generar un número aleatorio en un rango con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/07/los-niveles-de-madurez-rest-ejemplo-con-hateoas-y-documentacion-con-swagger-de-un-servicio-con-spring-boot/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" title="Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot" class="" loading="lazy">
+                <h3>Los niveles de madurez REST, ejemplo con HATEOAS y documentación con Swagger de un servicio con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/07/como-documentar-una-api-rest-con-swagger-implementada-con-spring-boot/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo documentar una API REST con Swagger implementada con Spring Boot" title="Cómo documentar una API REST con Swagger implementada con Spring Boot" class="" loading="lazy">
+                <h3>Cómo documentar una API REST con Swagger implementada con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">
+                <img src="/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/images/game-of-life-glider_hu2efc0f38dfbbf639e271a8370cf93e6f_6602_875x0_resize_box_3.png" width="326" height="125" alt="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" title="Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java" class="" loading="lazy">
+                <h3>Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java" title="Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java" class="" loading="lazy">
+                <h3>Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo ordenar arrays y colecciones de objetos en Java" title="Cómo ordenar arrays y colecciones de objetos en Java" class="" loading="lazy">
+                <h3>Cómo ordenar arrays y colecciones de objetos en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-589';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/07\/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

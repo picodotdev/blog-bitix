@@ -1,0 +1,537 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Otro par de sensores que incluye el kit de introducción a la electrónica para la Raspberry Pi son un sensor de golpes o tilt y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un pin GPIO como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/" hreflang="es" title="Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/index-amp.html" hreflang="es" title="Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/raspberrypi-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Otro par de sensores que incluye el kit de introducción a la electrónica para la Raspberry Pi son un sensor de golpes o tilt y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un pin GPIO como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/raspberrypi-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java">
+<meta name="twitter:description" content="Otro par de sensores que incluye el kit de introducción a la electrónica para la Raspberry Pi son un sensor de golpes o tilt y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un pin GPIO como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/"
+    },
+    "headline": "Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/raspberrypi-750.png"
+        
+      },
+    "datePublished": "2017-04-13T11:00:00+02:00",
+    "dateModified": "2017-04-13T11:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "615",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Otro par de sensores que incluye el kit de introducción a la electrónica para la Raspberry Pi son un sensor de golpes o tilt y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un pin GPIO como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>13/04/2017</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Otro par de sensores que incluye el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de introducción a la electrónica para la Raspberry Pi</a> son un sensor de golpes o <em>tilt</em> y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un <em>pin</em> <abbr title="General Purpose Input Output">GPIO</abbr> como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal. Como el mercurio a temperatura ambiente su estado es líquido puede moverse y como es un metal puede conducir la electricidad cuando está en una determinada posición entre dos filamentos.</p>
+<p>El sensor de golpes necesita de tres cables uno para la corriente de 3.3V, otro para tierra y finalmente otro que se conecta como entrada a un <em>pin</em> GPIO. Usando varios cables hembra-hembra y macho-macho hacemos las conexiones entre el sensor y la placa de pruebas sin soldadura o <em>breadboard</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-1_hu72fde87c50037226c7e027f53998df11_148115_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Sensor de golpes y detector de movimiento"><img src="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-1_hu72fde87c50037226c7e027f53998df11_148115_300x200_fit_q90_box.jpg" width="300" height="121" alt="Sensor de golpes y detector de movimiento" title="Sensor de golpes y detector de movimiento" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-2_hub246cb2a41f0864b5a6f7e27b3a753b8_190121_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Sensor de golpes y detector de movimiento"><img src="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-2_hub246cb2a41f0864b5a6f7e27b3a753b8_190121_300x200_fit_q90_box.jpg" width="300" height="124" alt="Sensor de golpes y detector de movimiento" title="Sensor de golpes y detector de movimiento" class="" loading="lazy"></a></p>
+<figcaption>Sensor de golpes y detector de movimiento</figcaption>
+</figure>
+</div>
+<p>Usando la librería <a href="http://rtd.diozero.com/en/latest/">diozero</a> para controlar los <em>pines</em> GPIO desde un programa implementado con Java detectamos si el sensor está activo o no según la posición de la bolita de mercurio. El ejemplo consiste en <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">encender un diodo LED</a> que ya mostré en un artículo anterior de esta <a href="https://picodotdev.github.io/blog-bitix/series/electronica/">serie sobre electrónica</a> cuando el sensor <em>tilt</em> esté activo. Usaré el <em>pin</em> 18 para el diodo LED y el <em>pin</em> 21 para el sensor según la nomenclatura de Broadcom. Los <em>pines</em> serían el 12 según la nomenclatura del <em>header</em> y 1 según la nomenclatura de wiringPi para el diodo LED y 13 y 2 para el sensor <em>tilt</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-tilt_huc426378df3450d2db6296dceb7253079_298261_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado sensor de golpes"><img src="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-tilt_huc426378df3450d2db6296dceb7253079_298261_300x200_fit_q90_box.jpg" width="300" height="198" alt="Cableado sensor de golpes" title="Cableado sensor de golpes" class="" loading="lazy"></a></p>
+<figcaption>Cableado sensor de golpes</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.diozero.api.*</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tilt</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">18</span><span class="o">);</span> <span class="n">DigitalInputDevice</span> <span class="n">tilt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DigitalInputDevice</span><span class="o">(</span><span class="n">21</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tilt</span><span class="o">.</span><span class="na">whenActivated</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tilt</span><span class="o">.</span><span class="na">whenDeactivated</span><span class="o">(()</span> <span class="o">-&gt;</span>  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">30000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Tilt.java</span>
+    </div>
+</div>
+<p>En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor de movimiento se mueve la bolita de mercurio y el diodo LED de ejemplo se enciende y apaga.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/7Rkou-pJWFY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>El detector de movimiento en teoría es similar en funcionamiento al <em>tilt</em> y la librería diozero proporciona la clase <a href="http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/MotionSensor.html">MotionSensor</a> para hacer más sencillo su uso. Digo en teoría porque no he conseguido hacerlo funcionar y he revisado varias veces las conexiones mostradas en otros ejemplos incluido el <a href="http://osoyoo.com/2016/07/14/motionsensor-pi/">ejemplo de osoyoo</a>, no se si es porque me falta algo más que debo tener en cuenta y que no conozco o el sensor no funciona viniéndome estropeado. Cuando el sensor detecta movimiento cambia el voltaje de su <em>pin</em> GPIO de datos. Los otros dos <em>pines</em> que utiliza son uno para el voltaje de 5V y el de tierra.</p>
+<p>El programa Java para el sensor de movimiento es similar al sensor <em>tilt</em> e igualmente encendería o apagaría un diodo LED cuando detecta movimiento.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-motion_hu919daab0ca3f88d0ef311958bdf8b23b_230707_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado sensor de movimiento"><img src="/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-motion_hu919daab0ca3f88d0ef311958bdf8b23b_230707_300x200_fit_q90_box.jpg" width="300" height="157" alt="Cableado sensor de movimiento" title="Cableado sensor de movimiento" class="" loading="lazy"></a></p>
+<figcaption>Cableado sensor de movimiento</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.diozero.sandpit.MotionSensor</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Motion</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">18</span><span class="o">);</span> <span class="n">MotionSensor</span> <span class="n">motion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MotionSensor</span><span class="o">(</span><span class="n">21</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">motion</span><span class="o">.</span><span class="na">whenActivated</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">motion</span><span class="o">.</span><span class="na">whenDeactivated</span><span class="o">(()</span> <span class="o">-&gt;</span>  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">30000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Motion.java</span>
+    </div>
+</div>
+<p>Ambos ejemplos pueden usarse con los siguientes comandos cambiando la dirección IP de la Raspberry Pi y el directorio de la misma a donde se suben los ejemplos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew upload&#10;$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; sudo java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.Tilt&#39;</span>&#10;$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; sudo java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.Motion&#39;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>execute.sh</span>
+    </div>
+</div>
+<p>El siguiente artículo de la sería será sobre cómo usar un <em>servo motor</em> que es diferente de un motor que gira constantemente.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://pimylifeup.com/raspberry-pi-motion-sensor/">Raspberry Pi Motion Sensor using a PIR Sensor</a></li>
+<li><a href="http://www.meccanismocomplesso.org/en/pir-motion-detector/">PIR motion detector – a sensor for Arduino and Raspberry Pi (1st part)</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>electronica</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">Desempaquetado del kit de iniciación a la electrónica para la Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/">Ejemplo Hello World con Java en la Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">Ejemplo encender y apagar diodo LED con la Raspberry Pi en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/">Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/">Ejemplo de JNI, usar código en C desde Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/">Obtener la temperatura y humedad con el sensor DHT11, la Raspberry Pi, C y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/">Cómo usar un diodo LED, un pulsador y un zumbador con la Raspberry Pi y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/">Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/">Controlar un servomotor con la Raspberry Pi y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/">Luces navideñas con la Raspberry Pi y Java</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-224';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2017\/04\/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

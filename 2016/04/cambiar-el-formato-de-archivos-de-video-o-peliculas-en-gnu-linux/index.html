@@ -1,0 +1,666 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.
+Para hacer la conversión usaba la herramienta FFmpeg, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cambiar el formato de archivos de vídeo o películas en GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/" hreflang="es" title="Cambiar el formato de archivos de vídeo o películas en GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/index-amp.html" hreflang="es" title="Cambiar el formato de archivos de vídeo o películas en GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cambiar el formato de archivos de vídeo o películas en GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ffmpeg-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.
+Para hacer la conversión usaba la herramienta FFmpeg, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ffmpeg-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cambiar el formato de archivos de vídeo o películas en GNU/Linux">
+<meta name="twitter:description" content="En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.
+Para hacer la conversión usaba la herramienta FFmpeg, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/"
+    },
+    "headline": "Cambiar el formato de archivos de vídeo o películas en GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ffmpeg-750.png"
+        
+      },
+    "datePublished": "2016-04-03T12:00:00+02:00",
+    "dateModified": "2021-03-21T00:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1804",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En el artículo anterior comentaba como cambiar el formato de archivos de música o audio, por ejemplo de wav a mp3, de wav a ogg o de mp3 a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.
+Para hacer la conversión usaba la herramienta FFmpeg, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Cambiar el formato de archivos de vídeo o películas en GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>03/04/2016</time>, actualizado el <time>21/03/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>En el artículo anterior comentaba <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">como cambiar el formato de archivos de música o audio</a>, por ejemplo de <em>wav</em> a <em>mp3</em>, de <em>wav</em> a <em>ogg</em> o de <em>mp3</em> a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.</p>
+<p>Para hacer la conversión usaba la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. Las conversiones de los archivos de música nos puede interesar para reducir su tamaño, un <em>mp3</em> ocupa mucho menos que un wav y un archivo <em>ogg</em> es un formato libre de patentes no así el formato <em>mp3</em>. En el caso de los vídeos también nos puede interesar hacer una conversión, reducir su tamaño, extraer solo el audio, extraer solo el vídeo u obtener un trozo del vídeo entre varias cosas más que podemos realizar con FFmpeg.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#formatos-de-archivos-de-vídeo-contenedor-y-codificador-de-vídeo-y-audio">Formatos de archivos de vídeo, contenedor y codificador de vídeo y audio</a></li>
+    <li><a href="#obtener-codecs-soportados-por-ffmpeg">Obtener codecs soportados por FFmpeg</a></li>
+    <li><a href="#obtener-información-de-un-archivo-de-vídeo">Obtener información de un archivo de vídeo</a></li>
+    <li><a href="#operaciones-comunes-con-archivos-de-vídeo">Operaciones comunes con archivos de vídeo</a>
+      <ul>
+        <li><a href="#convertir-un-archivo-de-vídeo-entre-formatos">Convertir un archivo de vídeo entre formatos</a></li>
+        <li><a href="#cambiar-la-resolución-del-vídeo">Cambiar la resolución del vídeo</a></li>
+        <li><a href="#extraer-el-audio-de-un-vídeo">Extraer el audio de un vídeo</a></li>
+        <li><a href="#extraer-una-imagen-de-un-vídeo">Extraer una imagen de un vídeo</a></li>
+      </ul>
+    </li>
+    <li><a href="#realizar-conversiones-de-forma-masiva">Realizar conversiones de forma masiva</a></li>
+    <li><a href="#herramientas-gráficas-para-convertir-formatos-y-editar-vídeos">Herramientas gráficas para convertir formatos y editar vídeos</a>
+      <ul>
+        <li><a href="#herramientas-para-archivos-multimedia">Herramientas para archivos multimedia</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="formatos-de-archivos-de-vídeo-contenedor-y-codificador-de-vídeo-y-audio">Formatos de archivos de vídeo, contenedor y codificador de vídeo y audio</h3>
+<p>Formatos de vídeo hay bastantes, en el futuro surgirán más y por tanto los reproductores no son capaces de manejar correctamente todos o solo los más comunes, si el reproductor es algo antiguo seguramente los nuevos formatos no sea capaz de reproducirlos, el reproductor puede ser un aparato específico o una Smart TV que pasado un tiempo quedan en parte obsoletos si no pueden actualizarse para soportar nuevos y mejores formatos de vídeo o audio. Por otro lado la calidad de los vídeos varía según el tamaño pudiendo ser menor de lo considerado como alta definición, HD (720 líneas), Full HD (1080 líneas) o 4K (2160 líneas). Según sea la resolución de la televisión o pantalla donde vayamos a visualizar el vídeo no se va a ver mejor aunque el vídeo tenga más resolución que la pantalla por lo que cambiar la resolución del vídeo si es mayor que la resolución de la pantalla haremos que el vídeo ocupe mucho menos sin perder apenas o ninguna calidad de forma perceptible.</p>
+<p>Para entender los formatos de archivos de vídeo hay que distinguir tres conceptos que explican bastante bien en una <a href="https://wiki.archlinux.org/index.php/video_encoding">página de la wiki de Arch Linux relativa a la codificación de vídeo</a>: el contenedor, el codificador de vídeo y el codificador de audio. El contenedor determina la estructura en la que son almacenados los bits en el archivo de vídeo, mantiene la sincronicación entre el vídeo y el audio o permite que haya múltiples pistas de vídeo, audio en diferentes idiomas, subtítulos o un menú similar a los presentes en los DVD de los reproductores de salón. El codificador de vídeo aplica su algoritmo de compresión reduciendo considerablemente el tamaño de cada fotograma y el codificador de audio igualmente aplica un algoritmo de compresión que también reduce considerablemente el tamaño del audio. Las dimensiones del vídeo en ancho y alto en pixeles y la tasa de bits por segundo tanto del audio y vídeo determinan la calidad del vídeo, a más resolución y tasa de bits el vídeo tendrá más calidad y se verá mejor siempre que la pantalla donde se visualice lo permita, pero a mayor calidad mayor tamaño del archivo de vídeo.</p>
+<p>Contenedores de vídeo son MKV (Matroska), AVI, MP4, WebM, WMV, o FLV siendo MKV, MP4 y AVI los más comunes en el momento de escribir este artículo.</p>
+<p>Algunos de los codificadores (<em>encoders</em>) y decodificadores (<em>decoders</em>) más comunes son:</p>
+<ul>
+<li>Codecs de vídeo: h264, mpeg4, libxvid, vp8, vp9, &hellip;</li>
+<li>Codecs de audio: mp3, ac3, libvorbis, &hellip;</li>
+</ul>
+<h3 id="obtener-codecs-soportados-por-ffmpeg">Obtener codecs soportados por FFmpeg</h3>
+<p>Si antes de reproducirlos en el reproductor multimedia o Smart TV pruebas en vídeo convertido con el <a href="https://www.videolan.org/vlc/">reproductor multimedia VLC</a> has de tener en cuenta que VLC es capaz de reproducir casi todo lo que se le eche, por tanto que funcione con VLC no quiere decir que vaya a funcionar con el reproductor que usemos.</p>
+<p>Con el siguiente comando obtenemos la lista de codificadores y decodificadores que es capaz de utilizar FFmpeg:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -encoders&#10;$ ffmpeg -decoders&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-codecs.sh</span>
+    </div>
+</div>
+<h3 id="obtener-información-de-un-archivo-de-vídeo">Obtener información de un archivo de vídeo</h3>
+<p>Si no se indica la tasa de bits como indican en la <a href="https://ffmpeg.org/ffmpeg.html">documentación de FFmpeg</a> el codificador seleccionará por defecto una tasa de bits muy baja resultando en una calidad muy pobre por lo que deberemos indicar una similar a la original. Para ver ver la calidad de un vídeo y del audio usamos el parámetro <em>-i</em>:</p>
+<p>Por otro lado, los vídeos pueden tener múltiples pistas de audio y subtítulos en varios idiomas, para reducir el tamaño del archivo podemos eliminar las pistas de los idiomas que no queramos. Por ejemplo, el siguiente vídeo contiene tres pistas de subtítulos en los idiomas español, inglés y francés y cuatro pistas de audio en japonés, español, francés y español latinoamericano, el siguiente comando nos da información de las pistas o <em>streams</em> en la parte final.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i video.mkv&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-info.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-i_hu7b8b23c8d84aa1a322539edb336af6cc_122367_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Información de un vídeo"><img src="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-i_hu7b8b23c8d84aa1a322539edb336af6cc_122367_650x450_fit_box_3.png" width="433" height="450" alt="Información de un vídeo" title="Información de un vídeo" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<h3 id="operaciones-comunes-con-archivos-de-vídeo">Operaciones comunes con archivos de vídeo</h3>
+<h4 id="convertir-un-archivo-de-vídeo-entre-formatos">Convertir un archivo de vídeo entre formatos</h4>
+<p>Partiendo de un vídeo en un contenedor MKV, vídeo codificado con H.264 y audio codificado con <em>mp3</em> estos son los comandos que me han servidor para recodificarlo y reproducirlo correctamente en un reproductor multimedia <a href="https://www.google.es/search?q=omega&#43;ScreenPlay&#43;TV&#43;Link&amp;ie=utf-8&amp;oe=utf-8&amp;gws_rd=cr&amp;ei=_Q4BV7WXBcnXU9nQtcgI">iomega ScreenPlay TV Link</a> que tendrá ya más de 7 años. De MKV/H.264/MP3 a MPG/MPEG2/MP3, a MPG/MPEG1/MP3, a MP4/H.264/AC3 y en el caso de DivX AVI/XViD/MP el vídeo se reproducía con unos molestos frecuentes pequeños parones en la imagen.</p>
+<p>Con el parámetro <em>-c:v</em> indicamos el codificador de vídeo, con <em>-c:a</em> el codificador de audio y con la extensión del archivo de salida el contenedor, los tres parámetros forman el formato del archivo de vídeo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i input.mkv -c:v mpeg2video -c:a libmp3lame -b:v 3500K -b:a 192K output.mpg&#10;$ ffmpeg -i input.mkv -c:v mpeg1video -c:a libmp3lame -b:v 3500K -b:a 192K output.mpg&#10;$ ffmpeg -i input.mkv -c:v mpeg4 -c:a libmp3lame -b:v 3500k -b:a 192k output.avi&#10;$ ffmpeg -i input.mkv -c:v libx264 -c:a ac3 -b:v 3500k -b:a 192k output.mp4&#10;$ ffmpeg -i input.mkv -f avi -tag:v DIVX -c:v libxvid -b:v 1800k -c:a libmp3lame -b:a 192k -vf <span class="nv">scale</span><span class="o">=</span>720x406,setdar<span class="o">=</span>16:9 output.avi&#10;$ ffmpeg -i input.mkv -c:v libvpx -c:a libvorbis -b:v 3500K -b:a 192K output.webm&#10;$ <span class="c1"># Cambiar únicamente de contenedor</span>&#10;$ ffmpeg -i input.mkv -c:v copy -c:a copy -b:v 3500K -b:a 192K output.mpg</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-convert.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-output_hu676e47dd52b03f3b74a3c3eaa8ba485d_78532_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Salida conversión de MKV a MPG"><img src="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-output_hu676e47dd52b03f3b74a3c3eaa8ba485d_78532_650x450_fit_box_3.png" width="650" height="448" alt="Salida conversión de MKV a MPG" title="Salida conversión de MKV a MPG" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<h4 id="cambiar-la-resolución-del-vídeo">Cambiar la resolución del vídeo</h4>
+<p>Con la información de la calidad el vídeo y audio original lo indicamos en la conversión con los parámetros <em>-b:v</em> y <em>-b:a</em> para el vídeo y audio de los como se ha usado en los ejemplos anteriores. Si queremos cambiar la resolución del vídeo lo indicamos con el parámetro <em>-vf</em>, reduciremos también la tasa de bits dedicados si el tamaño del vídeo de salida es menor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i input.mkv -c:v mpeg2video -c:a libmp3lame -b:v 2500K -b:a 192K -vf <span class="nv">scale</span><span class="o">=</span>720x406,setdar<span class="o">=</span>16:9 output.mpg&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-scale.sh</span>
+    </div>
+</div>
+<h4 id="extraer-el-audio-de-un-vídeo">Extraer el audio de un vídeo</h4>
+<p>Con FFmpeg también nos es posible extraer el audio de un vídeo a un archivo de sonido <em>mp3</em> o <em>ogg</em> o quitar el audio del vídeo, para ello con el parámetro <em>-vn</em> omitiremos el vídeo y con <em>-an</em> omitiremos el audio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i input.mkv -vn -acodec libmp3lame -b:a 128K output.mp3&#10;$ ffmpeg -i input.mkv -vn -acodec libvorbis -b:a 128K output.ogg&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-extract.sh</span>
+    </div>
+</div>
+<p>Para hacer la eliminación de las pistas usamos el siguiente comando donde los parámetros <em>-map</em> son las pistas o <em>streams</em> que queremos copiar y conservar del original en el nuevo archivo, en este caso solo la pista del vídeo y la pista de audio en español. Dependiendo del número de pistas para otros idiomas que tenga el archivo y de la duración del vídeo el ahorro de espacio que conseguiremos será más o menos notable. Haciendo un cálculo suponiendo algunas cifras habituales un audio a 320kb/s para una película de 120 minutos el audio ocupa alrededor de 281 MiB que ya es una cifra notable ((320 kilobits/segundo / 8 bits/byte) * 60 segundos/minuto * 120 minutos / 1024 kilobytes/megabyte = 281,25 megabytes) y a lo que hay que multiplicar cada pista de audio que eliminemos del original.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i video.mkv -map 0:0 -map 0:2 -acodec copy -vcodec copy newvideo.mkv&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-map.sh</span>
+    </div>
+</div>
+<p>Si no tenemos instalado un reproductor de vídeo con el comando <code>ffplay</code> podemos reproducirlo, quizá en algún caso nos sirva aunque esté destinado principalmente para pruebas ya que no ofrece controles para pausar o detener la reproducción.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffplay -i video.mkv&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffplay.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffplay_huc5e0cb8f6eb3562a0248d441fc36fb28_77311_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="FFplay"><img src="/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffplay_huc5e0cb8f6eb3562a0248d441fc36fb28_77311_300x250_fit_q90_box.jpg" width="300" height="242" alt="FFplay" title="FFplay" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<h4 id="extraer-una-imagen-de-un-vídeo">Extraer una imagen de un vídeo</h4>
+<p>Otra operación es extraer una imagen o fotograma de un archivo de vídeo indicando el tiempo específico del vídeo de la que se quiere la imagen. El parámetro <em>-ss</em> indica el tiempo específico en segundos desde el inicio del fotograma y el parámetro <em>-frames:v</em> indica que solo se desea un fotograma, el parámetro <em>-i</em> especifica el vídeo de entrada y <em>image.jpg</em> es el archivo de salida con el formato de imagen según la extensión indicada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -ss <span class="m">15</span> -i video.mp4 -qscale:v <span class="m">4</span> -frames:v <span class="m">1</span> image.jpg&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-image.sh</span>
+    </div>
+</div>
+<p>Esta operación de obtener un fotograma de una película o vídeo se puede combinar con <a href="https://picodotdev.github.io/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/">la herramienta j2pa para convertir una imagen a arte de caracteres ASCII</a>.</p>
+<h3 id="realizar-conversiones-de-forma-masiva">Realizar conversiones de forma masiva</h3>
+<p>Al igual que comentaba en el artículo de convertir archivos de audio todas estas operaciones son realizables de forma masiva en un directorio o recursiva en múltiples directorios con los siguientes comandos.</p>
+<p>Otras opciones útiles disponibles en los comandos de FFmpeg son:</p>
+<ul>
+<li><em>-t</em>: para limitar la operación hasta el tiempo en segundos indicado.</li>
+<li><em>-ss</em>: para empezar desde desde un punto posterior relativo al inicio.</li>
+<li><em>-sseof</em>: como <em>-ss</em> pero desde el final.</li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="c1"># conversión masiva</span>&#10;$ <span class="k">for</span> f in *.mkv<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -c:v mpeg2video -c:a libmp3lame -b:v 2500K -b:a 192K -vf <span class="nv">scale</span><span class="o">=</span>720x406,setdar<span class="o">=</span>16:9 <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.mkv</span><span class="si">}</span><span class="s2">.mpg&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;&#10;$ <span class="c1"># conversión masiva y recursiva en árbol de carpetas</span>&#10;$ find ./ -name <span class="s2">&#34;*.mkv&#34;</span> -exec ffmpeg -i <span class="o">{}</span> -c:v mpeg2video -c:a libmp3lame -b:v 2500K -b:a 192K -vf <span class="nv">scale</span><span class="o">=</span>720x406,setdar<span class="o">=</span>16:9 <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.mkv</span><span class="si">}</span><span class="s2">.mpg&#34;</span><span class="p">;</span> -exec rename .mkv.mpg .mpg <span class="s2">&#34;{}.mpg&#34;</span> <span class="se">\;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ffmpeg-masive.sh</span>
+    </div>
+</div>
+<h3 id="herramientas-gráficas-para-convertir-formatos-y-editar-vídeos">Herramientas gráficas para convertir formatos y editar vídeos</h3>
+<p>Si preferimos realizar la conversión mediante una interfaz gráfica podemos se pueden utilizar varias herramientas, una de ellas es <a href="https://handbrake.es/">HandBrake</a> específica para realizar conversiones con multitud de opciones con la que es posible hacer las mismas operaciones que con FFmpeg e incluye preconfiguraciones para producir resultados compatibles y eficientes para dispositivos y páginas como YouTube o compartirlos en redes sociales. Tiene la opción de realizar encolar tareas de conversión a aplicar a varios archivos.</p>
+<p>Otra herramienta de conversión pero también de edición son <a href="http://www.pitivi.org/">Pitivi</a> o <a href="https://www.openshot.org/">OpenShot</a>, como herramientas de edición permiten crear vídeos con fragmentos de varios vídeos, cambiar o añadir el audio, definir la resolución y formato de salida.</p>
+<h4 id="herramientas-para-archivos-multimedia">Herramientas para archivos multimedia</h4>
+<p>Hay muchas otras operaciones y herramientas para archivos multimedia de vídeo o audio en formato de línea de comandos o con interfaz gráfica. En esta página <a href="https://wiki.archlinux.org/index.php/List_of_applications/Multimedia">lista de aplicaciones multimedia</a> de la <a href="https://wiki.archlinux.org/">wiki de Arch Linux</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://trac.ffmpeg.org/wiki">Documentación de FFmpeg</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/video_encoding">Video Encoding</a></li>
+<li><a href="http://www.sample-videos.com/">Vídeos de ejemplo</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="326" height="125" alt="Cambiar el formato de archivos de música o audio en GNU/Linux" title="Cambiar el formato de archivos de música o audio en GNU/Linux" class="" loading="lazy">
+                <h3>Cambiar el formato de archivos de música o audio en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux" title="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux" class="" loading="lazy">
+                <h3>Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" title="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" class="" loading="lazy">
+                <h3>Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar archivos con EncFS en GNU/Linux" title="Cifrar archivos con EncFS en GNU/Linux" class="" loading="lazy">
+                <h3>Cifrar archivos con EncFS en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" title="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" class="" loading="lazy">
+                <h3>Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/01/hemeroteca-8/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #8" title="Hemeroteca #8" class="" loading="lazy">
+                <h3>Hemeroteca #8</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-135';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2016\/04\/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,15 @@
+http:
+  routers:
+    ...
+    nginx:
+      rule: "Host(`nginx.127.0.0.1.sslip.io`)"
+      middlewares:
+        - nginx-ratelimit
+      service: "nginx"
+    ...
+  middlewares:
+    nginx-ratelimit:
+      rateLimit:
+        average: 1
+  services:
+    ...

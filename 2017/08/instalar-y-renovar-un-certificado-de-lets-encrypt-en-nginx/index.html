@@ -1,0 +1,599 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Let&rsquo;s Encrypt es una entidad que emite certificados TLS/SSL que son reconocidos como de confianza por los navegadores web. Usando esta entidad de certificación es posible obtener y renovar un certificado TLS/SSL de forma automatizada, rápida y sin coste alguno. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/" hreflang="es" title="Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/index-amp.html" hreflang="es" title="Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/lets-encrypt-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Let&rsquo;s Encrypt es una entidad que emite certificados TLS/SSL que son reconocidos como de confianza por los navegadores web. Usando esta entidad de certificación es posible obtener y renovar un certificado TLS/SSL de forma automatizada, rápida y sin coste alguno. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/lets-encrypt-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx">
+<meta name="twitter:description" content="Let&rsquo;s Encrypt es una entidad que emite certificados TLS/SSL que son reconocidos como de confianza por los navegadores web. Usando esta entidad de certificación es posible obtener y renovar un certificado TLS/SSL de forma automatizada, rápida y sin coste alguno. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/"
+    },
+    "headline": "Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/lets-encrypt-750.png"
+        
+      },
+    "datePublished": "2017-08-12T11:00:00+02:00",
+    "dateModified": "2017-08-18T17:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "832",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Let&amp;rsquo;s Encrypt es una entidad que emite certificados TLS/SSL que son reconocidos como de confianza por los navegadores web. Usando esta entidad de certificación es posible obtener y renovar un certificado TLS/SSL de forma automatizada, rápida y sin coste alguno."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>12/08/2017</time>, actualizado el <time>18/08/2017</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+          <a href="/blog-bitix/tags/web/">web</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Let&rsquo;s Encrypt es una entidad que emite certificados TLS/SSL que son reconocidos como de confianza por los navegadores web. Usando esta entidad de certificación es posible obtener y renovar un certificado TLS/SSL de forma automatizada, rápida y sin coste alguno.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/lets-encrypt.svg" width="350" height="83" alt="Let&amp;#39;s Encrypt" title="Let&amp;#39;s Encrypt" class="" loading="false"></p>
+</div>
+<p><a href="https://www.google.es/">Google</a> ha anunciado que su buscador va a considerar el uso del protocolo seguro HTTPS como un criterio de <abbr title="Search Engine Optimization">SEO</abbr> y posicionamiento en la lista de resultados, posicionando mejor aquellas páginas web que usen el protocolo seguro. Además, el navegador <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> va a advertir al usuario para algunas páginas que usen solo HTTP que esas páginas son inseguras. Por estos motivos y para mayor seguridad y privacidad del usuario es conveniente usar el protocolo seguro HTTPS.</p>
+<p>El mayor inconveniente de usar el protocolo seguro HTTPS es que es necesario un certificado firmado por una autoridad de confianza instalada en el navegador del usuario. Hasta ahora había que comprar el certificado que puede llegar a tener un coste de más de 100 €, instalarlo en el servidor y renovarlo antes de su fecha de expiración. Tareas quizá manuales por tanto tediosas y propensas a que surjan errores o se nos olvide hacer la renovación del certificado sobre todo si son múltiples los certificados a gestionar.</p>
+<p>Para mejorar la seguridad en la web y facilitar la administración de certificados hace un tiempo se creó una entidad <a href="https://letsencrypt.org/">Let’s Encrypt</a> asociado a la <a href="https://www.linuxfoundation.org/">Linux Foundation</a> con la que es posible automatizar la obtención y renovación de un certificado TLS/SSL firmado por una autoridad de confianza para los navegadores. Además Let&rsquo;s Encrypt permite obtener un certificado sin ningún coste, de forma gratuita.</p>
+<p>Los pasos para usar en un servidor web un certificado de Let&rsquo;s Encrypt son los siguientes. Primero hay que instalar el <a href="https://www.archlinux.org/packages/community/any/certbot/">paquete certbot</a> según la distribución de GNU/Linux, en <a href="https://www.archlinux.org/">Arch Linux</a>:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -S certbot</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman.sh</span>
+    </div>
+</div>
+<p>En el proceso de obtención del certificado demostraremos que somos los propietarios del sitio web a certificar. Usando <a href="https://nginx.org/">nginx</a> como servidor web, iniciado y el dominio a certificar con la opción <em>-d</em> se usa el siguiente comando:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># certbot certonly --webroot -w /usr/share/nginx/html -d smaug.l5.ca</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>certbot.sh</span>
+    </div>
+</div>
+<p>El certificado obtenido tiene una fecha de expiración de únicamente tres meses periodo antes del cual hay que renovarlo. Para hacer la renovación hay que usar el comando:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># certbot renew</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>certbot-renew.sh</span>
+    </div>
+</div>
+<p>La renovación del certificado se realiza cuando queda poco tiempo para que expire, unos 30 días, el siguiente comando permite comprobar antes si la configuración es correcta para realizar la renovación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># certbot renew --dry-run</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>certbot-renew-dry-run.sh</span>
+    </div>
+</div>
+<p>La clave privada y certificado que Let&rsquo;s Encrypt genera una vez el dominio se ha validado se ubican en el directorio <em>/etc/letsencrypt/live/</em> con una carpeta por cada dominio. También se puede ver desde la linea de comandos los certificados existentes y sus fechas de expiración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ls /etc/letsencrypt/live/smaug.l5.ca</span>&#10;cert.pem  chain.pem  fullchain.pem  privkey.pem&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>key-cert.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo certbot certificates&#10;<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> raspberrypi: &#10;Saving debug log to /var/log/letsencrypt/letsencrypt.log&#10;&#10;-------------------------------------------------------------------------------&#10;Found the following certs:&#10;  Certificate Name: smaug.l5.ca&#10;&nbsp;&nbsp;&nbsp;&nbsp;Domains: smaug.l5.ca&#10;&nbsp;&nbsp;&nbsp;&nbsp;Expiry Date: 2017-10-21 09:18:00+00:00 <span class="o">(</span>VALID: <span class="m">70</span> days<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Certificate Path: /etc/letsencrypt/live/smaug.l5.ca/fullchain.pem&#10;&nbsp;&nbsp;&nbsp;&nbsp;Private Key Path: /etc/letsencrypt/live/smaug.l5.ca/privkey.pem&#10;-------------------------------------------------------------------------------</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>certbot-certificates.sh</span>
+    </div>
+</div>
+<p>Dado el relativo poco tiempo de validez de los certificados es recomendable automatizar la renovación empleando una <a href="https://es.wikipedia.org/wiki/Cron_%28Unix%29">expresión cron</a>. La utilidad <em>certbot</em> solo hace la renovación del certificado cuando queda menos de un més para su expiración aunque se programe su ejecución en este caso cada 6 horas y en un minuto aleatorio que Let&rsquo;s Encrypt recomienda para que todos los usuarios no programen sus renovaciones al mismo tiempo:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo su&#10;<span class="c1"># crontab -e</span>&#10;<span class="m">0</span> */6 * * * sleep <span class="si">${</span><span class="nv">RANDOM</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>m <span class="p">;</span> certbot renew --quiet --renew-hook <span class="s2">&#34;systemctl restart nginx.service&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>cron.sh</span>
+    </div>
+</div>
+<p>Una vez que se ha renovado el certificado hay que reiniciar el servidor web para que lo utilice y para ello está el parámetro <em>--renew-hook</em> que ejecuta un comando cuando se produce una renovación. En el ejemplo anterior está el comando para reiniciar el servicio de nginx con el sistema gestión de procesos de <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>.</p>
+<p>Let&rsquo;s Encrypt con <em>certbot</em> comprueba si somos el propietario de un sitio web instalando en el servidor web un archivo que posteriormente antes de generar el certificado lo valida. Este archivo para nginx se ubica en el directorio <em>/usr/share/nginx/html/.well-known/acme-challenge/</em> y ha de estar accesible desde internet con el protocolo HTTP en la dirección <em>/.well-known/acme-challenge/</em> del servidor web.</p>
+<p>La siguiente configuración del servidor web nginx redirige todo el tráfico usando el protocolo HTTPS excepto el contenido del directorio <em>/.well-known/acme-challenge/</em> que queda accesible por HTTP.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">worker_processes</span>  <span class="mi">1</span><span class="p">;</span>&#10;&#10;<span class="k">events</span> <span class="p">{</span>&#10;  <span class="kn">worker_connections</span> <span class="mi">64</span><span class="p">;</span>&#10;<span class="p">}</span>&#10;&#10;<span class="k">http</span> <span class="p">{</span>&#10;  <span class="kn">include</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s">mime.types</span><span class="p">;</span>&#10;  <span class="kn">default_type</span>  <span class="s">application/octet-stream</span><span class="p">;</span>&#10;&#10;  <span class="kn">sendfile</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="no">on</span><span class="p">;</span>&#10;  <span class="c1">#tcp_nopush&nbsp;&nbsp;&nbsp;&nbsp; on;&#10;</span><span class="c1"></span>&#10;  <span class="kn">keepalive_timeout</span>  <span class="mi">65</span><span class="p">;</span>&#10;&#10;  <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>&#10;  <span class="kn">gzip_disable</span> <span class="s">&#34;msie6&#34;</span><span class="p">;</span>&#10;  <span class="kn">gzip_vary</span> <span class="no">on</span><span class="p">;</span>&#10;  <span class="kn">gzip_proxied</span> <span class="s">any</span><span class="p">;</span>&#10;  <span class="kn">gzip_comp_level</span> <span class="mi">6</span><span class="p">;</span>&#10;  <span class="kn">gzip_buffers</span> <span class="mi">16</span> <span class="mi">8k</span><span class="p">;</span>&#10;  <span class="kn">gzip_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>&#10;  <span class="kn">gzip_types</span> <span class="s">text/plain</span> <span class="s">text/css</span> <span class="s">application/json</span> <span class="s">application/x-javascript</span> <span class="s">text/xml</span> <span class="s">application/xml</span> <span class="s">application/xml+rss</span> <span class="s">text/javascript</span><span class="p">;</span>&#10;&#10;  <span class="kn">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="mi">80</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span>  <span class="s">localhost</span> <span class="s">smaug.l5.ca</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/.well-known/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">allow</span> <span class="s">all</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">alias</span> <span class="s">/usr/share/nginx/html/.well-known/</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;  <span class="p">}</span>&#10;&#10;  <span class="kn">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="mi">443</span> <span class="s">ssl</span> <span class="s">http2</span> <span class="s">default_server</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span>  <span class="s">localhost</span> <span class="s">smaug.l5.ca</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_certificate</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">/etc/letsencrypt/live/smaug.l5.ca/cert.pem</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_certificate_key</span>  <span class="s">/etc/letsencrypt/live/smaug.l5.ca/privkey.pem</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_protocols</span> <span class="s">TLSv1.1</span> <span class="s">TLSv1.2</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_ciphers</span>   <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_session_cache</span>   <span class="s">shared:SSL:1m</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">ssl_session_timeout</span> <span class="mi">3m</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nginx.conf</span>
+    </div>
+</div>
+<p>Y este es el resultado al acceder con el navegador al sitio web que tengo instalado en una <a href="https://www.raspberrypi.org/">Raspberry Pi</a> accesible desde internet con un dominio de <a href="https://freedns.afraid.org/">FreeDNS</a>:</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/images/smaug-1_hu12a4623b7f6c5a899b17fffa3e5f273d_39940_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sitio web con certificado de Let&amp;#39;s Encrypt"><img src="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/images/smaug-1_hu12a4623b7f6c5a899b17fffa3e5f273d_39940_300x200_fit_box_3.png" width="285" height="200" alt="Sitio web con certificado de Let&amp;#39;s Encrypt" title="Sitio web con certificado de Let&amp;#39;s Encrypt" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/images/smaug-2_hu4cb5bdb44c9d0e30ac5cc5600a4ff243_32417_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sitio web con certificado de Let&amp;#39;s Encrypt"><img src="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/images/smaug-2_hu4cb5bdb44c9d0e30ac5cc5600a4ff243_32417_300x200_fit_box_3.png" width="300" height="198" alt="Sitio web con certificado de Let&amp;#39;s Encrypt" title="Sitio web con certificado de Let&amp;#39;s Encrypt" class="" loading="lazy"></a></p>
+<figcaption>Sitio web con certificado de Let&#39;s Encrypt</figcaption>
+</figure>
+</div>
+<p>En la documentación del proyecto de Let&rsquo;s Encrypt hay explicaciones más detalladas sobre <a href="https://letsencrypt.org/how-it-works/">como funciona</a>, <a href="https://letsencrypt.org/docs/rate-limits/">límites de uso</a>, <a href="https://certbot.eff.org/docs/using.html">como usarlo</a> y <a href="https://certbot.eff.org/">varias guías según el servidor web y distribución GNU/Linux</a>.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" title="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" class="" loading="lazy">
+                <h3>Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">
+                <img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" class="" loading="lazy">
+                <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/08/como-y-por-que-redirigir-trafico-web-del-dominio-raiz-al-subdominio-www/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Cómo y por que redirigir tráfico web del dominio raíz al subdominio www (o viceversa)" title="Cómo y por que redirigir tráfico web del dominio raíz al subdominio www (o viceversa)" class="" loading="lazy">
+                <h3>Cómo y por que redirigir tráfico web del dominio raíz al subdominio www (o viceversa)</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Configurar Nginx para cachear respuestas del servidor de aplicaciones" title="Configurar Nginx para cachear respuestas del servidor de aplicaciones" class="" loading="lazy">
+                <h3>Configurar Nginx para cachear respuestas del servidor de aplicaciones</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Las cabeceras de cache del protocolo HTTP" title="Las cabeceras de cache del protocolo HTTP" class="" loading="lazy">
+                <h3>Las cabeceras de cache del protocolo HTTP</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java" title="Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java" class="" loading="lazy">
+                <h3>Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-252';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2017\/08\/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

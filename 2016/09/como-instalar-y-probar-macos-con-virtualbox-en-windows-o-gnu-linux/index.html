@@ -1,0 +1,730 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="¿Quieres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un hackintosh mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/" hreflang="es" title="Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/index-amp.html" hreflang="es" title="Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apple-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="¿Quieres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un hackintosh mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apple-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux">
+<meta name="twitter:description" content="¿Quieres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un hackintosh mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/"
+    },
+    "headline": "Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/apple-750.png"
+        
+      },
+    "datePublished": "2016-09-25T11:00:00+02:00",
+    "dateModified": "2020-07-04T23:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1438",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "¿Quieres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un hackintosh mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/macos-catalina-wallpaper_hu22518225c9157da636e91226f3978c72_1528968_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>25/09/2016</time>, actualizado el <time>04/07/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/apple/">apple</a>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">¿Quieres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un <em>hackintosh</em> mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/apple.svg" width="200" height="200" alt="Apple" title="Apple" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/macos.svg" width="300" height="70" alt="macOS" title="macOS" class="" loading="false"></p>
+</div>
+<p>Estaría leyendo alguna noticia, ahora no me acuerdo que me despertaría la curiosidad pero me pregunté si es posible usar de forma virtualizada <a href="https://www.apple.com/macos/">macOS</a> con <a href="https://www.virtualbox.org/">VirtualBox</a> tanto en <a href="https://www.microsoft.com/es-es/windows/">Windows</a> como en <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. Usar lo que se conoce como <em>hackintosh</em>, esto es <em>hackear</em> el sistema operativo Macinstosh que solo está soportado y destinado funcionar en los equipos de <a href="https://www.apple.com/">Apple</a> para que se ejecute en cualquier un dispositivo no soportado. En la página web <a href="https://hackintosh.com/">hackintosh</a> hay información diversa sobre el tema como instrucciones, vídeos, comunidades, &hellip; Es política de Apple que su sistema operativo solo pueda ser ejecutado en sus equipos que los vende de forma conjunta a un notable precio. No se si alguien usa macOS en un sistema no Mac con garantías de que en alguna actualización el sistema deje de funcionar teniendo en cuenta la política de Apple para con sus productos.</p>
+<p>Ya sea por curiosidad o por probar antes de hacer una compra se puede tener interés en cómo probar el sistema operativo macOS para saber si nos convence y nos gusta, sin embargo como macOS solo está soportado en sistemas Apple es difícil probarlo sin haber comprado antes un equipo. VirtualBox es un software de virtualización que permite ejecutar un sistema operativo dentro de otro con el que es posible ejecutar macOS en un sistema que tenga instalado Windows o GNU/Linux o probar GNU/Linux en un sistema Windows o macOS.</p>
+<p>Si te gusta y convence macOS estos son varios de los equipos Apple en formato de escritorio y portátil.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0863RCN53&amp;linkId=985c015a07f1aeb92b4938f07efc4092" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0863G2M7F&amp;linkId=0aa1dc43af09cde9683bf55251528765" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B081G4SK26&amp;linkId=ccab7216adb50858f5eb5d55e30ad85b" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B071K2RVHF&amp;linkId=7b5fd1a6f05821d2bcb5232d01704063" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07922WLRF&amp;linkId=e3a47715b60f846d9d1fd81a4fcb82ae" title="Amazon" class="lozad"></iframe>
+</div>
+<p>En esta guía muestro como instalar y probar macOS 10.15 Catalina con VirtualBox, los pasos on similares para las versiones 10.14 Mojave y 10.13 High Sierra.</p>
+<h3 id="requerimientos-mínimos">Requerimientos mínimos</h3>
+<p>Los requerimientos mínimos de macOS en la versión Catalina son los siguientes:</p>
+<ul>
+<li>4 GiB de memoria RAM</li>
+<li>12.5GB de espacio de almacenamiento</li>
+<li>MacBook (principios de 2015 o más nuevo)</li>
+<li>MacBook Air (mediados de 2012 o más nuevo)</li>
+<li>MacBook Pro (mediados de 2012 o más nuevo)</li>
+<li>Mac mini (final de 2012 o más nuevo)</li>
+<li>iMac (final de 2012 o más nuevo)</li>
+<li>iMac Pro (2017)</li>
+<li>Mac Pro (final de 2013 o más nuevo)</li>
+</ul>
+<p>Algunas características requieren una conexión a internet estable con una velocidad de descarga mínima de 5 Mbps para una buena experiencia de usuario. Para comprobar tu conexión haz una prueba de velocidad y estabilidad en <a href="https://www.speedcheck.org/es">www.speedcheck.org</a>.</p>
+<p>Dado que al virtualizar se están ejecutando dos sistemas operativos a la vez los requerimientos de la computadora anfitrión donde se ejecutan ambos son más elevados en cuando a memoria y almacenamiento siendo recomendable tener al menos 8 GiB de memoria, asignando 4 GiB a la máquina virtual y 25 GiB de almacenamiento. Para probar macOS Catalina en VirtualBox es necesario asignar a la máquina virtual 8 GiB de modo que es necesario tener en el sistema al menos 16 GiB.</p>
+<h3 id="descargar-la-imagen-de-macos-para-virtualbox">Descargar la imagen de macOS para Virtualbox</h3>
+<p>Los pasos para instalar macOS en una máquina virtual con VirtualBox requieren descargar un archivo <em>torrent</em> con la imagen del disco duro de macOS y una vez creada la máquina virtual en VirtualBox ejecutar unos comandos para cambiar algunos parámetros del sistema de arranque EFI. Hay que descomprimir la imagen del disco duro para obtener el archivo de extensión <em>vmdk</em> y proceder a crear la máquina virtual. Hay que elegir crear una máquina virtual de tipo macOS, cambiando algunas opciones, asignando unos 2 o 3 GiB de memoria, seleccionar el disco duro con la imagen <em>vmdk</em> descomprimida y cambiar la memoria asignada a la pantalla.</p>
+<p>De macOS hay múltiples versiones que con el tiempo Apple ha publicado incorporando mejoras en el sistema operativo. Entre ellas:</p>
+<ul>
+<li>10.15, Catalina publicada en octubre de 2019</li>
+<li>10.14, Mojave con la ultima versión menor de actualización publicada en mayo de 2019</li>
+<li>10.13, High Sierra con la ultima versión menor de actualización publicada en septiembre de 2017</li>
+</ul>
+<p>Los archivos <em>torrent</em> permiten descargar las imágenes de instalación de macOS que ocupan entre 5 y 10 GiB mediante compartición de archivos entre usuarios <em>torrent</em> con programas como <a href="https://transmissionbt.com/">Transmission</a> o <a href="https://www.utorrent.com/intl/es/">uTorrent</a>. Dependiendo de la velocidad de conexión a internet la descarga tarda más o menos.</p>
+<ul>
+<li><a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/resources/macOS-10.15-Catalina.torrent" title="">Archivo de descarga macOS-10.15-Catalina</a></li>
+<li><a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/resources/macOS-10.14-Mojave.torrent" title="">Archivo de descarga macOS-10.14-Mojave</a></li>
+<li><a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/resources/macOS-10.13-High-Sierra.torrent" title="">Archivo de descarga macOS-10.13-High-Sierra</a></li>
+</ul>
+<p>Una vez descargados los archivos hay que descomprimirlos, <strong>si al descomprimir el archivo <em>rar</em> se solicita la contraseña es <code>Geekrar.com</code></strong>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/descargar-macos-virtualbox_hueaac611ca421d82b07680bfb37a0037c_55704_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Descarga de macOS mediante torrent"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/descargar-macos-virtualbox_hueaac611ca421d82b07680bfb37a0037c_55704_300x200_fit_box_3.png" width="275" height="200" alt="Descarga de macOS mediante torrent" title="Descarga de macOS mediante torrent" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/archivo-imagen-macos-catalina-vmdk_hu47bbabd48b51b19759e7515173c1be26_35337_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivo VMDK de instalación de macOS para Virtualbox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/archivo-imagen-macos-catalina-vmdk_hu47bbabd48b51b19759e7515173c1be26_35337_300x200_fit_box_3.png" width="300" height="181" alt="Archivo VMDK de instalación de macOS para Virtualbox" title="Archivo VMDK de instalación de macOS para Virtualbox" class="" loading="lazy"></a></p>
+<figcaption>Descarga de macOS mediante torrent y archivo VMDK para VirtualBox</figcaption>
+</figure>
+</div>
+<h3 id="crear-la-máquina-virtual-en-virtualbox">Crear la máquina virtual en VirtualBox</h3>
+<p>VirtualBox es un software de virtualización gratuito disponible para varios sistemas operativos entre ellos Windows, GNU/Linux y macOS. De modo que probar macOS se puede hacer en cualquiera de estas plataformas. Instalado Virtuabox hay que crear una nueva máquina virtual asignar los parámetros de memoria RAM, almacenamiento de disco, memoria de vídeo y seleccionar usar un disco duro virtual existente que será el archivo <em>vmdk</em> descomprimido descargado mediante <em>torrent</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-1_huc83a2a28917b0def8dc9c5c67f258043_95864_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de la máquina virtual macOS con VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-1_huc83a2a28917b0def8dc9c5c67f258043_95864_200x150_fit_box_3.png" width="200" height="132" alt="Configuración de la máquina virtual macOS con VirtualBox" title="Configuración de la máquina virtual macOS con VirtualBox" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-2_hu6059666d121d92cfaa0ea04d6ba69118_81917_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de la máquina virtual macOS con VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-2_hu6059666d121d92cfaa0ea04d6ba69118_81917_200x150_fit_box_3.png" width="200" height="140" alt="Configuración de la máquina virtual macOS con VirtualBox" title="Configuración de la máquina virtual macOS con VirtualBox" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-3_hucae84facd5ff0b1ea672fe558291eae1_67484_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de la máquina virtual macOS con VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-3_hucae84facd5ff0b1ea672fe558291eae1_67484_200x150_fit_box_3.png" width="200" height="140" alt="Configuración de la máquina virtual macOS con VirtualBox" title="Configuración de la máquina virtual macOS con VirtualBox" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-4_huf679cf2ec231d34ba50b1f9c997dbece_159712_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de la máquina virtual macOS con VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-4_huf679cf2ec231d34ba50b1f9c997dbece_159712_200x150_fit_box_3.png" width="200" height="130" alt="Configuración de la máquina virtual macOS con VirtualBox" title="Configuración de la máquina virtual macOS con VirtualBox" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-5_hu8972b1962423777b41a7da2a62b6e35a_163413_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de la máquina virtual macOS con VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-5_hu8972b1962423777b41a7da2a62b6e35a_163413_200x150_fit_box_3.png" width="200" height="131" alt="Configuración de la máquina virtual macOS con VirtualBox" title="Configuración de la máquina virtual macOS con VirtualBox" class="" loading="lazy"></a></p>
+<figcaption>Configuración de la máquina virtual macOS con VirtualBox</figcaption>
+</figure>
+</div>
+<p>Una vez creada la máquina virtual antes de iniciarla si se usa Windows hay que ejecutar los siguientes comandos en modo administrador, sustituyendo <em>macOS 10.15 Catalina</em> por el nombre que le hayamos dado a la máquina virtual al crearla.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Batchfile" data-lang="Batchfile"><span class="k">cd</span> <span class="s2">&#34;C:\Program Files\Oracle\VirtualBox\&#34;</span>&#10;VBoxManage.exe modifyvm <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff&#10;VBoxManage.exe setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&#34;</span> <span class="s2">&#34;iMac11,3&#34;</span>&#10;VBoxManage.exe setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&#34;</span> <span class="s2">&#34;1.0&#34;</span>&#10;VBoxManage.exe setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&#34;</span> <span class="s2">&#34;Mac-F2238BAE&#34;</span>&#10;VBoxManage.exe setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/smc/0/Config/DeviceKey&#34;</span> <span class="s2">&#34;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&#34;</span>&#10;VBoxManage.exe setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&#34;</span> 1</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>windows.cmd</span>
+    </div>
+</div>
+<p>En el caso de Linux el archivo de comandos es similar aunque no es necesario ejecutar los comandos con permiso de administrador. Igualmente hay que sustituir <em>macOS 10.15 Catalina</em> por el nombre que le hayamos dado a la máquina virtual al crearla.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">VBoxManage modifyvm <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> --cpuidset <span class="m">00000001</span> 000106e5 <span class="m">00100800</span> 0098e3fd bfebfbff&#10;VBoxManage setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&#34;</span> <span class="s2">&#34;iMac11,3&#34;</span>&#10;VBoxManage setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&#34;</span> <span class="s2">&#34;1.0&#34;</span>&#10;VBoxManage setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&#34;</span> <span class="s2">&#34;Mac-F2238BAE&#34;</span>&#10;VBoxManage setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/smc/0/Config/DeviceKey&#34;</span> <span class="s2">&#34;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&#34;</span>&#10;VBoxManage setextradata <span class="s2">&#34;macOS 10.15 Catalina&#34;</span> <span class="s2">&#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&#34;</span> <span class="m">1</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>linux.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-6_hu30e628a7949a85666ec3d1366ec191c0_70083_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de la máquina virtual macOS con VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/configuracion-maquina-virtual-macos-6_hu30e628a7949a85666ec3d1366ec191c0_70083_300x200_fit_box_3.png" width="300" height="132" alt="Configuración de la máquina virtual macOS con VirtualBox" title="Configuración de la máquina virtual macOS con VirtualBox" class="" loading="lazy"></a></p>
+<figcaption>Comandos de configuración de la máquina virtual macOS con VirtualBox</figcaption>
+</figure>
+</div>
+<p>Hecho estos dos pasos podemos proceder a iniciar la máquina virtual.</p>
+<h3 id="instalar-macos-en-una-máquina-virtual">Instalar macOS en una máquina virtual</h3>
+<p>Al iniciar la ejecución de la máquina virtual de macOS en los primeros segundos empiezan a salir unos cuantos mensajes en modo texto hasta que se inicia el sistema gráfico con un proceso que inicia la instalación que tarda varios minutos pudiendo llegar a más de la media hora.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/inicio-instalacion-macos-1_hued2cd836c4b83aa25372de02c2dd74d8_71986_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de la instalación de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/inicio-instalacion-macos-1_hued2cd836c4b83aa25372de02c2dd74d8_71986_300x200_fit_box_3.png" width="240" height="200" alt="Inicio de la instalación de macOS Catalina" title="Inicio de la instalación de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/inicio-instalacion-macos-2_huc20ae19b41286941b6f5e3b03a64ce3c_29290_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de la instalación de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/inicio-instalacion-macos-2_huc20ae19b41286941b6f5e3b03a64ce3c_29290_300x200_fit_box_3.png" width="240" height="200" alt="Inicio de la instalación de macOS Catalina" title="Inicio de la instalación de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/inicio-instalacion-macos-3_hua2c37d01d257c788a428751c828c6fbc_269665_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de la instalación de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/inicio-instalacion-macos-3_hua2c37d01d257c788a428751c828c6fbc_269665_300x200_fit_box_3.png" width="240" height="200" alt="Inicio de la instalación de macOS Catalina" title="Inicio de la instalación de macOS Catalina" class="" loading="lazy"></a></p>
+<figcaption>Inicio de la instalación de macOS Catalina</figcaption>
+</figure>
+</div>
+<p>Después de completar la instalación inicial, un reinicio y otros minutos de espera se inicia el asistente de instalación y configuración inicial que consta de varios pasos con una pantalla de bienvenida seguido de otras para introducir algunos datos como el idioma, la disposición del teclado, opciones de localización, privacidad, &hellip; en los que básicamente es dar varias veces al botón siguiente.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-1_hu1037fe66ee3aa005a944de78d3560de8_258284_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-1_hu1037fe66ee3aa005a944de78d3560de8_258284_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-2_hub79f015ad38f92a1c54c2804336d7d3b_225533_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-2_hub79f015ad38f92a1c54c2804336d7d3b_225533_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-3_hu7ed440e47c2e0cb66aab25183dc24121_205663_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-3_hu7ed440e47c2e0cb66aab25183dc24121_205663_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-4_hu1bf3ef37d094636e8f57c4bae685c092_224232_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-4_hu1bf3ef37d094636e8f57c4bae685c092_224232_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-5_hu9105b4fcc39c8a4326f3a97552ac1427_233258_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-5_hu9105b4fcc39c8a4326f3a97552ac1427_233258_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-6_hu9dc6f5ff68e34b4e8e75b5e10675a1ab_230762_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-6_hu9dc6f5ff68e34b4e8e75b5e10675a1ab_230762_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-7_hub6e81922a58dd54e1d807c97c74f22f7_244140_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-7_hub6e81922a58dd54e1d807c97c74f22f7_244140_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-8_huc13f6a10b4ebc5e5ea2d8297e2b7a209_277186_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-8_huc13f6a10b4ebc5e5ea2d8297e2b7a209_277186_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-9_hue274f505edab535f277742a822fc90cf_217909_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-9_hue274f505edab535f277742a822fc90cf_217909_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-10_hu2c1176acdefe14c14ab5209276ee4f3a_221823_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-10_hu2c1176acdefe14c14ab5209276ee4f3a_221823_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-11_hu84a227982677ddf82abfb5372b9ef4c9_211745_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-11_hu84a227982677ddf82abfb5372b9ef4c9_211745_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-12_hu05c5982c7716bf137f4bda70a06ebede_243790_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-12_hu05c5982c7716bf137f4bda70a06ebede_243790_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-13_hu705117ded9443ce449a30b779e76b09c_345696_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-13_hu705117ded9443ce449a30b779e76b09c_345696_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-14_hua6a9ef3deb7822717614cffde58e67ee_341874_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-14_hua6a9ef3deb7822717614cffde58e67ee_341874_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-15_hu6ff7f73cec46084504e279c52026dcc1_353275_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-15_hu6ff7f73cec46084504e279c52026dcc1_353275_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-16_hu52626fcb23528949cc9a738213ac374d_280286_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-16_hu52626fcb23528949cc9a738213ac374d_280286_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-17_hua0611c3d4f79a96b3bfbeb76c4a120fc_193996_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente de instalación y configuración inicial de macOS Catalina"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/asistente-de-instalacion-y-configuracion-inicial-17_hua0611c3d4f79a96b3bfbeb76c4a120fc_193996_200x150_fit_box_3.png" width="180" height="150" alt="Asistente de instalación y configuración inicial de macOS Catalina" title="Asistente de instalación y configuración inicial de macOS Catalina" class="" loading="lazy"></a></p>
+<figcaption>Asistente de instalación y configuración inicial de macOS Catalina</figcaption>
+</figure>
+</div>
+<h3 id="primer-inicio-de-sesión-con-macos">Primer inicio de sesión con macOS</h3>
+<p>Completados los pasos del asistente se entra en el escritorio con el fondo de pantalla característico según la versión de macOS y algunas de las aplicaciones incorporadas en el propio sistema por defecto en la barra de tareas inferior.</p>
+<p>También se puede probar a <a href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/">instalar otros programas con Homebrew</a>, para instalar programas de la <a href="https://www.apple.com/es/ios/app-store/">Apple Store</a> es necesario tener una cuenta.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-1_hu4c360b647f3c6757fb631d8ef1479561_1185611_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Primer inicio de macOS Catalina en VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-1_hu4c360b647f3c6757fb631d8ef1479561_1185611_200x150_fit_box_3.png" width="180" height="150" alt="Primer inicio de macOS Catalina en VirtualBox" title="Primer inicio de macOS Catalina en VirtualBox" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-2_hubd0bbfbb8235d2f0ed3f188111f1e7bd_894758_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Primer inicio de macOS Catalina en VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-2_hubd0bbfbb8235d2f0ed3f188111f1e7bd_894758_200x150_fit_box_3.png" width="180" height="150" alt="Primer inicio de macOS Catalina en VirtualBox" title="Primer inicio de macOS Catalina en VirtualBox" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-3_hu05245d39d88aecb6999de2b61001464b_699651_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Primer inicio de macOS Catalina en VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-3_hu05245d39d88aecb6999de2b61001464b_699651_200x150_fit_box_3.png" width="180" height="150" alt="Primer inicio de macOS Catalina en VirtualBox" title="Primer inicio de macOS Catalina en VirtualBox" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-4_hu7bfaeaf233495c6f7083c08ea074ce90_464959_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Primer inicio de macOS Catalina en VirtualBox"><img src="/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/images/primer-inicio-macos-4_hu7bfaeaf233495c6f7083c08ea074ce90_464959_300x150_fit_box_3.png" width="180" height="150" alt="Primer inicio de macOS Catalina en VirtualBox" title="Primer inicio de macOS Catalina en VirtualBox" class="" loading="lazy"></a></p>
+<figcaption>Primer inicio de macOS Catalina en VirtualBox</figcaption>
+</figure>
+</div>
+<h3 id="conclusión">Conclusión</h3>
+<p>Como partidario del software libre y la privacidad además de <a href="https://picodotdev.github.io/blog-bitix/2016/08/sobre-los-infimos-impuestos-que-paga-apple/">los ínfimos impuestos que paga Apple</a> usando reprobable ingeniería fiscal y su software privativo no recomiendo usar un Mac pero si alguien quiere probar este sistema operativo antes de decidirse a hacer una compra usarlo de forma virtualizado es una buena ayuda para tomar una decisión y ver si nos gusta su sistema operativo aparte del propio equipo junto con su precio que podemos ver en las tiendas. Si no nos convence ni su software ni su abultado precio podemos optar por un portátil de <a href="https://slimbook.es/">Slimbook</a> mucho más económico y con características notables con los que no tendremos que pagar tampoco <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">el impuesto Windows</a> ya que podemos elegir entre varias la distribución GNU/Linux preinstalada que deseamos.</p>
+<p>Hay que tener en cuenta que al probar macOS con VirtualBox el rendimiento de la máquina virtual no será exactamente el mismo que en un equipo real por la sobrecarga impuesta por la virtualización. La experiencia de usuario puede cambiar significativamente junto con el hecho de que los portátiles Mac tiene una pantalla bastante mejor y con más resolución que la mayoría de portátiles diseñados para Windows o GNU/Linux y un SSD de gran rendimiento además de la falta de su <em>touchpad</em>, todo esto puede marcar diferencias en la experiencia de uso global.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.geekrar.com/install-macos-catalina-on-virtualbox-on-windows-pc/">Install macOS Catalina on VirtualBox on Windows PC</a></li>
+<li><a href="http://www.wikigain.com/install-macos-sierra-10-12-virtualbox/">How to Install macOS Sierra 10.12 on VirtualBox?</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/la-siguiente-disrupcion-tecnologica-la-convergencia/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="La siguiente disrupción tecnológica, la convergencia" title="La siguiente disrupción tecnológica, la convergencia" class="" loading="lazy">
+                <h3>La siguiente disrupción tecnológica, la convergencia</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/08/sobre-los-infimos-impuestos-que-paga-apple/">
+                <img src="/blog-bitix/assets/images/logotypes/apple.svg" width="326" height="125" alt="Sobre los ínfimos impuestos que paga Apple" title="Sobre los ínfimos impuestos que paga Apple" class="" loading="lazy">
+                <h3>Sobre los ínfimos impuestos que paga Apple</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Guía básica del intérprete de comandos Bash" title="Guía básica del intérprete de comandos Bash" class="" loading="lazy">
+                <h3>Guía básica del intérprete de comandos Bash</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/07/hemeroteca-9/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #9" title="Hemeroteca #9" class="" loading="lazy">
+                <h3>Hemeroteca #9</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/combinacion-de-teclas-para-copiar-y-pegar-en-la-terminal/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Combinación de teclas para copiar y pegar en la terminal" title="Combinación de teclas para copiar y pegar en la terminal" class="" loading="lazy">
+                <h3>Combinación de teclas para copiar y pegar en la terminal</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/atajos-de-teclado-basicos-de-la-terminal-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Atajos de teclado básicos de la terminal en GNU/Linux" title="Atajos de teclado básicos de la terminal en GNU/Linux" class="" loading="lazy">
+                <h3>Atajos de teclado básicos de la terminal en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-181';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2016\/09\/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

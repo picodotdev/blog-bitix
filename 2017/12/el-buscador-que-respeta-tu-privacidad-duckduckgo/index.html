@@ -1,0 +1,577 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En la WWW o simplemente en la web hay una cantidad ingente de información y conocimiento distribuido entre los millones de computadoras interconectados por internet. La creación de la WWW por Tim_Berners-Lee en 1989, hace no tanto, y su crecimiento exponencial desde entonces ha hecho que se haya convertido en uno de los recipientes de conocimiento más importantes de la humanidad. La información o conocimiento está ahí, la dificultad radica en que buscar y como encontrarla. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>El buscador que respeta tu privacidad, DuckDuckGo</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/" hreflang="es" title="El buscador que respeta tu privacidad, DuckDuckGo">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/index-amp.html" hreflang="es" title="El buscador que respeta tu privacidad, DuckDuckGo">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="El buscador que respeta tu privacidad, DuckDuckGo">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/duckduckgo-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En la WWW o simplemente en la web hay una cantidad ingente de información y conocimiento distribuido entre los millones de computadoras interconectados por internet. La creación de la WWW por Tim_Berners-Lee en 1989, hace no tanto, y su crecimiento exponencial desde entonces ha hecho que se haya convertido en uno de los recipientes de conocimiento más importantes de la humanidad. La información o conocimiento está ahí, la dificultad radica en que buscar y como encontrarla. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/duckduckgo-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="El buscador que respeta tu privacidad, DuckDuckGo">
+<meta name="twitter:description" content="En la WWW o simplemente en la web hay una cantidad ingente de información y conocimiento distribuido entre los millones de computadoras interconectados por internet. La creación de la WWW por Tim_Berners-Lee en 1989, hace no tanto, y su crecimiento exponencial desde entonces ha hecho que se haya convertido en uno de los recipientes de conocimiento más importantes de la humanidad. La información o conocimiento está ahí, la dificultad radica en que buscar y como encontrarla. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/"
+    },
+    "headline": "El buscador que respeta tu privacidad, DuckDuckGo",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/duckduckgo-750.png"
+        
+      },
+    "datePublished": "2017-12-06T12:30:00+01:00",
+    "dateModified": "2017-12-07T12:30:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "675",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En la WWW o simplemente en la web hay una cantidad ingente de información y conocimiento distribuido entre los millones de computadoras interconectados por internet. La creación de la WWW por Tim_Berners-Lee en 1989, hace no tanto, y su crecimiento exponencial desde entonces ha hecho que se haya convertido en uno de los recipientes de conocimiento más importantes de la humanidad. La información o conocimiento está ahí, la dificultad radica en que buscar y como encontrarla."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>El buscador que respeta tu privacidad, DuckDuckGo</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>06/12/2017</time>, actualizado el <time>07/12/2017</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/duckduckgo.svg" width="200" height="199" alt="DuckDuckGo" title="DuckDuckGo" class="" loading="false"></p>
+</div>
+<p>En la <abbr title="World Wide Web">WWW</abbr> o simplemente en la web hay una cantidad ingente de información y conocimiento distribuido entre los millones de computadoras interconectados por internet. La creación de la WWW por <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim_Berners-Lee</a> en 1989, hace no tanto, y su crecimiento exponencial desde entonces ha hecho que se haya convertido en uno de los recipientes de conocimiento más importantes de la humanidad. La información o conocimiento está ahí, la dificultad radica en que buscar y como encontrarla. Para atender a la necesidad de encontrar la información se han creado los buscadores, a día de hoy el más popular es <a href="https://www.google.es/">Google</a> pero hay otros como <a href="https://www.bing.com/">Bing</a>, <a href="https://www.yahoo.com/">Yahoo</a> o con cierta popularidad en algunas regiones como <a href="https://www.yandex.ru/">Yandex</a> en Rusia o <a href="https://www.baidu.com/">Baidu</a> en China.</p>
+<p>Uno de los buscadores que está ganando popularidad es <a href="https://duckduckgo.com/">DuckDuckGo</a> ya que al contrario que otros <a href="https://duckduckgo.com/privacy">respeta la privacidad</a> de los usuarios no rastreando al usuario, no compartiendo las búsquedas realizadas o el historial de búsquedas y no guardando información personal. Pero también porque tiene algunas características únicas como los <a href="https://duckduckgo.com/bang">bang!</a> además de ofrecer una lista de resultados apropiada y relevante a lo que el usuario está buscando. También en cierta medida se puede <a href="https://duckduckgo.com/settings">personalizar el buscador</a> cambiando la apariencia, algunas opciones de privacidad y opciones generales en los resultados de búsqueda. En la siguiente página pueden <a href="https://tosdr.org/">comparar los términos de servicio de los principales proveedores de internet</a> de forma simple y resumida, entre ellos los <a href="https://tosdr.org/#google">términos de servicio de Google</a> y los <a href="https://tosdr.org/#duckduckgo">términos de servicio de DuckDuckGo</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo_hub9b4239670ec28b239d169b3284c6a30_26709_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="DuckDuckGo"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo_hub9b4239670ec28b239d169b3284c6a30_26709_300x200_fit_box_3.png" width="300" height="170" alt="DuckDuckGo" title="DuckDuckGo" class="" loading="lazy"></a></p>
+<figcaption>DuckDuckGo</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-1_hu3cf5af135da4ed59f113fef2c29bb2e2_57515_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="No guardamos tu información personal"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-1_hu3cf5af135da4ed59f113fef2c29bb2e2_57515_300x200_fit_box_3.png" width="300" height="170" alt="No guardamos tu información personal" title="No guardamos tu información personal" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-2_hu7f1d210cb79e9c6e4344516dfa70c62e_56148_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nosotros no te perseguimos con anuncios"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-2_hu7f1d210cb79e9c6e4344516dfa70c62e_56148_300x200_fit_box_3.png" width="300" height="170" alt="Nosotros no te perseguimos con anuncios" title="Nosotros no te perseguimos con anuncios" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-3_hu36809bd8c5b39a451bf6ca3e47a700d6_47197_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="No rastreamos tu información"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-3_hu36809bd8c5b39a451bf6ca3e47a700d6_47197_300x200_fit_box_3.png" width="300" height="170" alt="No rastreamos tu información" title="No rastreamos tu información" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-4_hu07bb08a296d45bcf025a23d3e39723ba_39006_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Cámbiate a DuckDuckGo"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/duckduckgo-4_hu07bb08a296d45bcf025a23d3e39723ba_39006_300x200_fit_box_3.png" width="300" height="170" alt="Cámbiate a DuckDuckGo" title="Cámbiate a DuckDuckGo" class="" loading="lazy"></a></p>
+<figcaption>Privacidad de DuckDuckGo</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/resultados_hub1dec5ad4be8c53fba32145906c7d7ae_79727_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultados"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/resultados_hub1dec5ad4be8c53fba32145906c7d7ae_79727_300x200_fit_box_3.png" width="249" height="200" alt="Resultados" title="Resultados" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/resultados-imagenes_hu48ac9871f0c513031a11726836826706_806971_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultados de imágenes"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/resultados-imagenes_hu48ac9871f0c513031a11726836826706_806971_300x200_fit_box_3.png" width="249" height="200" alt="Resultados de imágenes" title="Resultados de imágenes" class="" loading="lazy"></a></p>
+<figcaption>Resultados de DuckDuckGo</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-general_hu14f0a121b73053172797688c979e9e3a_138931_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Opciones general"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-general_hu14f0a121b73053172797688c979e9e3a_138931_300x200_fit_box_3.png" width="96" height="200" alt="Opciones general" title="Opciones general" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-diseno_hu40c0334144b59f99598c2196b833f052_137221_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Opciones diseño"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-diseno_hu40c0334144b59f99598c2196b833f052_137221_300x200_fit_box_3.png" width="249" height="200" alt="Opciones diseño" title="Opciones diseño" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-apariencia_hu3c8a5c385daf5755473dc44ef7a28b1d_139231_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Opciones apariencia"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-apariencia_hu3c8a5c385daf5755473dc44ef7a28b1d_139231_300x200_fit_box_3.png" width="91" height="200" alt="Opciones apariencia" title="Opciones apariencia" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-privacidad_hu32acf0ec29e64ef4a69e3359d6194f76_62712_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Opciones privacidad"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/opciones-privacidad_hu32acf0ec29e64ef4a69e3359d6194f76_62712_300x200_fit_box_3.png" width="249" height="200" alt="Opciones privacidad" title="Opciones privacidad" class="" loading="lazy"></a></p>
+<figcaption>Opciones de DuckDuckGo</figcaption>
+</figure>
+</div>
+<p>DuckDuckGo es una empresa con ánimo de lucro pero lo hace respetando la privacidad de sus usuarios. Usa varias formas para ganar dinero, una de ellas es mediante enlaces de afiliación de páginas como <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> o <a href="https://www.ebay.es/">eBay</a> con los que si el hace una compra DuckDuckGo obtiene una pequeña comisión, también mostrando en la página de resultados algunos enlaces de publicidad relevantes según la búsqueda realizada.</p>
+<p>Los <em>bang!</em> permiten hacer búsquedas en otros sitios directamente desde DuckDuckGo, es muy útil ya que la lista de resultados la proporciona el sitio asociado al <em>bang</em> evitando tener que hacer clic en una página de resultados del buscador para ir al sitio como ocurren en el buscador de Google si queremos buscar un vídeo en <a href="https://www.youtube.com/">YouTube</a>. La sintaxis para hacer una búsqueda de un vídeo en YouTube es <em>!yt gnu linux</em>. <em>!yt</em> sería el <em>bang</em> denominándose así por la exclamación al inicio (o final) de la palabra asociada al sitio al que se redirigirá la búsqueda. DuckDuckGo tiene unos cuantos miles de <a href="https://duckduckgo.com/bang"><em>bangs</em> registrados</a> en varias categorías entre los que está incluidos los más populares. <em>!g</em> es para el buscador de Google que se puede utilizar en caso de que los resultados de DuckDuckGo no nos gusten. Otros son !twitch, !tpb (the pirate bay), !ames (amazon), !so (stackoverflow), !ebay, &hellip;</p>
+<p>Para hacer búsquedas efectivas y encontrar la información que se desea es muy útil conocer la <a href="https://duck.co/help/results/syntax">sintaxis del buscador DuckDuckGo</a>. Por ejemplo, se puede utilizar una \ al inicio para ir directamente al primer resultado sin pasar por la página de resultados. Utilizar los <em>bang!</em>. Utilizar expresiones <em>and</em> y <em>or</em>. Encontrar páginas que no tienen un determinado término precediéndolo con un <em>-</em>. Buscar en un determinado sitio con <em>site:picodotdev.github.io</em>, en una determinada región con <em>region:</em> o <em>r:</em>. O hacer búsquedas en el título de la página con <em>intitle:</em> o de forma abreviada <em>t:</em> o por tipo de archivo con <em>filetype:</em> o <em>f:</em> como podría ser <em>pdf</em>, <em>txt</em>, <em>doc</em>, <em>docx</em>, <em>xls</em>, <em>xlsx</em>, <em>ppt</em>, <em>pptx</em> o <em>torrent</em> o en el cuerpo de la página con <em>inbody:</em> o <em>b:</em>.</p>
+<p>Firefox tiene la opción de convertir DuckDuckGo en el buscador predeterminado en el apartado de <em>Preferencias</em> y sección <em>Buscar</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/firefox-duckduckgo_hudcc2c21306183f366a6f97533981d1ea_65357_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Preferencias de buscadores en Firefox"><img src="/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/images/firefox-duckduckgo_hudcc2c21306183f366a6f97533981d1ea_65357_300x200_fit_box_3.png" width="238" height="200" alt="Preferencias de buscadores en Firefox" title="Preferencias de buscadores en Firefox" class="" loading="lazy"></a></p>
+<figcaption>Preferencias de buscadores en Firefox</figcaption>
+</figure>
+</div>
+<p>También se pueden hacer búsquedas de imágenes, vídeos o noticias. Los resultados que ofrece DuckDuckGo son bastante buenos, sino mejores que los de Google, y en los casos que no acierte se puede buscar con <em>!g</em> en Google. Desde hace mucho tiempo DuckDuckGo es el único buscador que uso, #ComeToTheDuckSide.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/definir-nuevos-tipos-de-datos-escalares-en-graphql/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Definir nuevos tipos de datos escalares en GraphQL" title="Definir nuevos tipos de datos escalares en GraphQL" class="" loading="lazy">
+                <h3>Definir nuevos tipos de datos escalares en GraphQL</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/11/paginacion-usando-cursores-en-graphql-y-java/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Paginación usando cursores en GraphQL y Java" title="Paginación usando cursores en GraphQL y Java" class="" loading="lazy">
+                <h3>Paginación usando cursores en GraphQL y Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Consultas con parámetros para filtrar datos en GraphQL" title="Consultas con parámetros para filtrar datos en GraphQL" class="" loading="lazy">
+                <h3>Consultas con parámetros para filtrar datos en GraphQL</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Usar un resolver para recuperar propiedades en GraphQL" title="Usar un resolver para recuperar propiedades en GraphQL" class="" loading="lazy">
+                <h3>Usar un resolver para recuperar propiedades en GraphQL</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Devolver mensajes de error descriptivos en GraphQL" title="Devolver mensajes de error descriptivos en GraphQL" class="" loading="lazy">
+                <h3>Devolver mensajes de error descriptivos en GraphQL</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La forma correcta de ordenar alfabéticamente cadenas en Java" title="La forma correcta de ordenar alfabéticamente cadenas en Java" class="" loading="lazy">
+                <h3>La forma correcta de ordenar alfabéticamente cadenas en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-286';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2017\/12\/el-buscador-que-respeta-tu-privacidad-duckduckgo\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

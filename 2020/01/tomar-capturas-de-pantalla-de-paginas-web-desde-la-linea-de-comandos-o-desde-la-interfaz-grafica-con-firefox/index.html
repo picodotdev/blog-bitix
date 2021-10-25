@@ -1,0 +1,616 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El navegador web Firefox tiene una opción con la que poder tomar una captura de pantalla de una página web desde la línea de comandos, que es útil como parte de un proceso automatizado. Firefox también permite tomar capturas de pantalla de una página web desde su interfaz gráfica o desde la consola web. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/" hreflang="es" title="Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/index-amp.html" hreflang="es" title="Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/duckduckgo_hu34683831885d8be1d35773589bdb7690_439624_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El navegador web Firefox tiene una opción con la que poder tomar una captura de pantalla de una página web desde la línea de comandos, que es útil como parte de un proceso automatizado. Firefox también permite tomar capturas de pantalla de una página web desde su interfaz gráfica o desde la consola web. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/duckduckgo_hu34683831885d8be1d35773589bdb7690_439624_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox">
+<meta name="twitter:description" content="El navegador web Firefox tiene una opción con la que poder tomar una captura de pantalla de una página web desde la línea de comandos, que es útil como parte de un proceso automatizado. Firefox también permite tomar capturas de pantalla de una página web desde su interfaz gráfica o desde la consola web. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/"
+    },
+    "headline": "Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/duckduckgo_hu34683831885d8be1d35773589bdb7690_439624_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2020-01-10T17:00:00+01:00",
+    "dateModified": "2020-01-11T20:30:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "845",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El navegador web Firefox tiene una opción con la que poder tomar una captura de pantalla de una página web desde la línea de comandos, que es útil como parte de un proceso automatizado. Firefox también permite tomar capturas de pantalla de una página web desde su interfaz gráfica o desde la consola web."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Tomar capturas de pantalla de páginas web desde la línea de comandos o desde la interfaz gráfica con Firefox</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>10/01/2020</time>, actualizado el <time>11/01/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El navegador web Firefox tiene una opción con la que poder tomar una captura de pantalla de una página web desde la línea de comandos, que es útil como parte de un proceso automatizado. Firefox también permite tomar capturas de pantalla de una página web desde su interfaz gráfica o desde la consola web.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/firefox.svg" width="200" height="188" alt="Firefox" title="Firefox" class="" loading="false"></p>
+</div>
+<p>Como norma general las pruebas de una aplicación deben estar automatizadas con una herramienta de <em>testing</em>. <a href="https://picodotdev.github.io/blog-bitix/2019/06/teses-unitarios-parametrizados-con-junit/">Para el código Java una herramienta de pruebas es JUnit</a> y <a href="https://picodotdev.github.io/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/">para una aplicación web es Geb</a>. Sin embargo, algunas pruebas que no son de funcionalidad de la aplicación sino en una aplicación web por ejemplo de estilos y de visualización en la pantalla, que la página se muestre correctamente. Para estos casos no queda más que revisar, visualizar y comprobar la corrección visual de la misma, una posibilidad es entrar en la página manualmente mediante su dirección y realizar la comprobación.</p>
+<p>Sin embargo, las acciones manuales hay que evitarlas en la medida de lo posible y que sean las menos posibles realizando su automatización ya que consumen mucho tiempo dedicable a tareas de valor. En este caso realizando la automatización se evita abrir el navegador, introducir la URL de la página o navegar hasta ella por cada URL a probar.</p>
+<p>Aunque la revisión visual no esté automatizada y dependa de intervención humana al menos evitando las acciones manuales de introducir la URL o navegar hasta ella supone un ahorro de tiempo importante. La correcta visualización de una página puede consistir en revisar una captura de pantalla de la página y la automatización consiste en obtener esa captura de pantalla.</p>
+<p>Esta automatización es interesante también ya que guardando los archivos de captura permiten tener un registro del estado de la visualización de una página a lo largo del tiempo y ver los cambios que se han ido realizando.</p>
+<h3 id="captura-de-pantalla-desde-la-linea-de-comandos-con-firefox">Captura de pantalla desde la linea de comandos con Firefox</h3>
+<p>Para obtener la captura de pantalla el navegador <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> permite desde la línea de comandos cargar una página a partir de su URL y obtener su captura de pantalla guardándola en un archivo <em>jpg</em> o <em>png</em>. Las capturas de pantalla también se pueden tomar en un servidor <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> sin interfaz gráfica con un comando habiendo instalado Firefox previamente para este propósito.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ firefox -P headless -headless --screenshot duckduckgo.png https://duckduckgo.com/&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>firefox-screenshot.sh</span>
+    </div>
+</div>
+<p>El parámetro <em>-P</em> indica el perfil a usar y hay que crear uno para tomar capturas de pantalla al mismo tiempo que está abierto el perfil personal en una ventana gráfica del navegador. Hay varias formas de crear un nuevo perfil en Firefox. Desde la página de configuración <em>about:profiles</em>, con el gestor de perfiles o desde la línea de comandos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/firefox-about-profiles_hufa9635f8e1b0346f619225c53c18abe8_103349_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Perfiles de usuario en Firefox"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/firefox-about-profiles_hufa9635f8e1b0346f619225c53c18abe8_103349_300x200_fit_box_3.png" width="244" height="200" alt="Perfiles de usuario en Firefox" title="Perfiles de usuario en Firefox" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/firefox-gestor-perfiles_hu8ba69a7fa6fe46c9363aa0e5801916cc_33219_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Gestor de perfiles de Firefox"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/firefox-gestor-perfiles_hu8ba69a7fa6fe46c9363aa0e5801916cc_33219_300x200_fit_box_3.png" width="222" height="200" alt="Gestor de perfiles de Firefox" title="Gestor de perfiles de Firefox" class="" loading="lazy"></a></p>
+<figcaption>Perfiles de usuario y gestor de perfiles de Firefox</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ firefox -p&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>firefox-gestor-perfiles.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ firefox -CreateProfile headless&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>firefox-createprofile.sh</span>
+    </div>
+</div>
+<p>Si hay necesidad de tomar varias capturas de pantalla de diferentes URLs de la aplicación o diferentes páginas web, con un script del intérprete de comandos <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> y dada una lista de URLs una por línea en un archivo se realiza el bucle. El parámetro <em>screenshot</em> contiene el nombre de la imagen en el que guardar la captura y a continuación la URL de la que tomar la captura, el parámetro <em>--window-size</em> especifica el ancho del navegador al tomar la captura, cambiar el ancho permite observar como se visualiza la página en diferentes resoluciones de ancho (1366, 1600, 1920, 2560, &hellip;).</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">google,https://www.google.es&#10;duckduckgo,https://duckduckgo.com&#10;ubuntu,https://www.ubuntu.com&#10;redhat,https://www.redhat.com&#10;archlinux,https://www.archlinux.org</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>links.txt</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>cat links.txt <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -r LINE&#10;<span class="k">do</span>&#10;  <span class="nv">NAME</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$LINE</span> <span class="p">|</span> cut -d <span class="se">\,</span> -f 1<span class="sb">`</span>&#10;  <span class="nv">URL</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$LINE</span> <span class="p">|</span> cut -d <span class="se">\,</span> -f 2<span class="sb">`</span>&#10;  firefox -P headless -headless --screenshot <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2">.png&#34;</span> <span class="nv">$URL</span> --window-size<span class="o">=</span><span class="m">1920</span>&#10;<span class="k">done</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>firefox-screenshot-links.sh</span>
+    </div>
+</div>
+<p>El resultado son las siguientes capturas de pantalla.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/google_hu45b934e7544d9d05a8deffa10a627cd7_50467_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Google"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/google_hu45b934e7544d9d05a8deffa10a627cd7_50467_300x200_fit_box_3.png" width="300" height="120" alt="Google" title="Google" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/duckduckgo_hu34683831885d8be1d35773589bdb7690_439624_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="DuckDuckGo"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/duckduckgo_hu34683831885d8be1d35773589bdb7690_439624_300x200_fit_box_3.png" width="100" height="200" alt="DuckDuckGo" title="DuckDuckGo" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/ubuntu_hu770ccb2a2fa4fc0af06b278df92dc312_431155_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ubuntu"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/ubuntu_hu770ccb2a2fa4fc0af06b278df92dc312_431155_300x200_fit_box_3.png" width="84" height="200" alt="Ubuntu" title="Ubuntu" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/redhat_hu7d9600702af10b4b100108c913311141_1482120_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="RedHat"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/redhat_hu7d9600702af10b4b100108c913311141_1482120_300x200_fit_box_3.png" width="96" height="200" alt="RedHat" title="RedHat" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/archlinux_hu763c3287d0d16291e76f19c3febbdd9c_479946_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arch Linux"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/archlinux_hu763c3287d0d16291e76f19c3febbdd9c_479946_300x200_fit_box_3.png" width="228" height="200" alt="Arch Linux" title="Arch Linux" class="" loading="lazy"></a></p>
+<figcaption>Capturas de pantalla realizadas con Firefox en modo headless</figcaption>
+</figure>
+</div>
+<p>Con un gran número de páginas validar visualmente cada una de las páginas mediante una imagen aun con la automatización de tomar la captura consume una buena cantidad de tiempo, para reducir el número de capturas a validar el archivo puede limitarse a unas representativas de la aplicación o unas aleatorias de todo el conjunto, con los comandos <em>sort -R</em> y <em>head -3</em> se toman las 3 primeras líneas aleatorias del archivo, el comando <em>sort</em> las ordena de forma aleatoria y el comando <em>head</em> toma el número de líneas indicado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>cat links.txt <span class="p">|</span> sort -R <span class="p">|</span> head -3 <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -r LINE&#10;<span class="k">do</span>&#10;  <span class="nv">NAME</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$LINE</span> <span class="p">|</span> cut -d <span class="se">\,</span> -f 1<span class="sb">`</span>&#10;  <span class="nv">URL</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$LINE</span> <span class="p">|</span> cut -d <span class="se">\,</span> -f 2<span class="sb">`</span>&#10;  firefox -P headless -headless --screenshot <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2">.png&#34;</span> <span class="nv">$URL</span> --window-size<span class="o">=</span><span class="m">1920</span>&#10;<span class="k">done</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>firefox-screenshot-links-random-firts.sh</span>
+    </div>
+</div>
+<h3 id="captura-de-pantalla-desde-firefox">Captura de pantalla desde Firefox</h3>
+<p>Firefox también permite tomar capturas de pantalla desde la interfaz gráfica, con el botón derecho y la opción del menú emergente <em>Hacer una captura de pantalla</em> de la pantalla completa o de la parte visible en ese momento o también desde el <em>Inspector</em> que se muestra con el botón derecho y la opción <em>Inspeccionar elemento</em> y habilitando la opción <em>Hacer una captura de pantalla de la página completa</em> y si se desea <em>Captura de pantalla al portapapeles</em> con las opciones de los ajustes.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/firefox-ajustes-inspector_hu8525e663c6d118f26df03b7c175e7e2e_175521_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ajustes para mostrar botón de captura en las herramientas del inspector"><img src="/blog-bitix/2020/01/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox/images/firefox-ajustes-inspector_hu8525e663c6d118f26df03b7c175e7e2e_175521_300x200_fit_box_3.png" width="269" height="200" alt="Ajustes para mostrar botón de captura en las herramientas del inspector" title="Ajustes para mostrar botón de captura en las herramientas del inspector" class="" loading="lazy"></a></p>
+<figcaption>Ajustes para mostrar botón de captura en las herramientas del inspector</figcaption>
+</figure>
+</div>
+<p>La consola web de Firefox también permite tomar capturas de pantalla escribiendo el comando <em>:screenshot</em>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Headless_mode#Taking_screenshots">Firefox Headless mode Taking screenshots</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Taking_screenshots">Firefox Taking screenshots</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Taking_screenshots#Taking_screenshots_with_the_web_console">Firefox Taking screenshots with the web console</a></li>
+<li><a href="https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles?redirectlocale=en-US&amp;redirectslug=profile-manager-create-and-remove-firefox-profiles">Profile Manager - Create, remove, or switch Firefox profiles</a></li>
+<li><a href="https://stackoverflow.com/questions/15396190/read-file-line-by-line-and-perform-action-for-each-in-bash">Read file line by line and perform action for each in bash</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">
+                <img src="/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/images/metricas-pagespeed-playstation-despues_hub973e372c1d61b2c7366348e15d773e2_317580_875x0_resize_box_3.png" width="326" height="125" alt="Mejorar el tiempo de carga de una página web usando lazy load" title="Mejorar el tiempo de carga de una página web usando lazy load" class="" loading="lazy">
+                <h3>Mejorar el tiempo de carga de una página web usando lazy load</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_3.png" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/11/extraer-informacion-del-navegador-del-usuario-en-el-servidor-de-una-aplicacion-web-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Extraer información del navegador del usuario en el servidor de una aplicación web Java" title="Extraer información del navegador del usuario en el servidor de una aplicación web Java" class="" loading="lazy">
+                <h3>Extraer información del navegador del usuario en el servidor de una aplicación web Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">
+                <img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hua2f7781bc9fbb44232be61e6d3ca5723_57481_875x0_resize_box_3.png" width="326" height="125" alt="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" title="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" class="" loading="lazy">
+                <h3>Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java" title="Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java" class="" loading="lazy">
+                <h3>Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/ventajas-de-usar-un-tipo-especifico-para-los-identificadores-de-las-entidades-en-vez-de-un-tipo-basico/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico" title="Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico" class="" loading="lazy">
+                <h3>Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-454';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/01\/tomar-capturas-de-pantalla-de-paginas-web-desde-la-linea-de-comandos-o-desde-la-interfaz-grafica-con-firefox\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

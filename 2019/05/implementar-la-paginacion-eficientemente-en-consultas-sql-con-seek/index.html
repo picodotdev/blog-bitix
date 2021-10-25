@@ -1,0 +1,496 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas limit ni offset que habitualmente se utilizan sino con seek. Además de que limit y offset da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Implementar la paginación eficientemente en consultas SQL con seek</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/" hreflang="es" title="Implementar la paginación eficientemente en consultas SQL con seek">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/index-amp.html" hreflang="es" title="Implementar la paginación eficientemente en consultas SQL con seek">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Implementar la paginación eficientemente en consultas SQL con seek">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas limit ni offset que habitualmente se utilizan sino con seek. Además de que limit y offset da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Implementar la paginación eficientemente en consultas SQL con seek">
+<meta name="twitter:description" content="Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas limit ni offset que habitualmente se utilizan sino con seek. Además de que limit y offset da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/"
+    },
+    "headline": "Implementar la paginación eficientemente en consultas SQL con seek",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png"
+        
+      },
+    "datePublished": "2019-05-31T18:00:00+02:00",
+    "dateModified": "2019-05-31T18:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "576",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas limit ni offset que habitualmente se utilizan sino con seek. Además de que limit y offset da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Implementar la paginación eficientemente en consultas SQL con seek</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>31/05/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas <em>limit</em> ni <em>offset</em> que habitualmente se utilizan sino con <em>seek</em>. Además de que <em>limit</em> y <em>offset</em> da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>La paginación habitualmente se implementa con las palabras reservadas <em>limit</em> y <em>offset</em> del lenguaje SQL pero esto es ineficiente ya que para llegar los resultados de las últimas páginas la base de datos ha de recuperar antes todos los resultados anteriores. Cuando hay varios cientos de miles o millones de filas en una tabla esto es ineficiente y hace que las consultas sean lentas y añadan una importante carga al servidor de base de datos que al final afecta al rendimiento de la aplicación o su capacidad para atender a gran número de peticiones.</p>
+<p>Además del rendimiento, otro problema de la paginación con <em>limit</em> y <em>offset</em> es que si se insertan filas en una página anterior mientras se están recorriendo los resultados, uno o varios resultados al avanzar por las páginas en la típica tabla de resultados en una aplicación web podría aparecer dos veces, en un proceso automatizado sería aún peor ya que un resultado podría procesarse dos veces.</p>
+<p>La paginación con <em>limit</em> y <em>offset</em> permite ir a una página directamente en una búsqueda pero en los casos que hay miles de resultados realmente a un usuario no le interesa ir a una determinada página cuando hay cientos de páginas, en un proceso automatizado ir a una página en concreto tampoco suele ser un requerimiento.</p>
+<p><a href="https://www.jooq.org/">jOOQ</a> con la cláusula <a href="https://www.jooq.org/javadoc/latest/org/jooq/SelectSeekStep1.html">seek</a> permite hacer la paginación eficiente de una forma cómoda. La técnica se basa en ordenar los resultados por unas determinadas columnas y filtrar por condición <em>where</em> sobre las mismas columnas los resultados anteriores, los valores por los que se filtra en la condición son los obtenidos de la última página.</p>
+<p>Haciendo <em>seek</em> la paginación es más eficiente ya que la base de datos no necesita recuperar los datos de las páginas anteriores ya que los descarta utilizando la cláusula <em>where</em> que al final es en lo que se traduce la clausula <em>seek</em>. Y se elimina el problema de que se inserten datos en páginas anteriores y alguno se pudiese aparecer dos veces en los resultados ya que manteniendo la ordenación de la consulta si se insertan filas en páginas anteriores no afectarán a las páginas siguientes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.jooq.DSLContext</span><span class="o">;</span>&#10;<span class="o">...</span>&#10;<span class="kd">private</span> <span class="n">DSLContext</span> <span class="n">context</span><span class="o">;</span>&#10;<span class="o">...</span>&#10;<span class="n">context</span><span class="o">.</span><span class="na">selectFrom</span><span class="o">(</span><span class="n">Tables</span><span class="o">.</span><span class="na">PRODUCTO</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">orderBy</span><span class="o">(</span><span class="n">PRODUCTO</span><span class="o">.</span><span class="na">CANTIDAD</span><span class="o">,</span> <span class="n">PRODUCTO</span><span class="o">.</span><span class="na">ID</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">seek</span><span class="o">(</span><span class="n">3l</span><span class="o">,</span> <span class="n">2l</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">fetchInto</span><span class="o">(</span><span class="n">Producto</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Seek.java</span>
+    </div>
+</div>
+<p>La SQL generada por jOOQ es la siguiente donde la clausula <em>seek</em> se añade como una condición en la cláusula <em>where</em>. El campo de la clausula <em>seek</em> coincide con el campo del criterio de ordenación, el operador mayor que en la condición coincide también con el orden ascendente del <em>order by</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Sql" data-lang="Sql"><span class="w">   </span><span class="k">select</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;ID&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;NOMBRE&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;DESCRIPCION&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;CANTIDAD&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;FECHA&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="k">from</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;CANTIDAD&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;ID&#34;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">cast</span><span class="p">(</span><span class="o">?</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">bigint</span><span class="p">),</span><span class="w"> </span><span class="k">cast</span><span class="p">(</span><span class="o">?</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">bigint</span><span class="p">))</span><span class="w">&#10;</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;CANTIDAD&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;PRODUCTO&#34;</span><span class="p">.</span><span class="s2">&#34;ID&#34;</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="o">?</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Seek.sql</span>
+    </div>
+</div>
+<p>Para que el <em>seek</em> sea correcto los valores de las filas para los campos que forman parte del <em>seek</em> han de ser únicos por eso entre los campos de los ejemplos se incluye el identificativo de la fila, que siempre se incluye como último campo si hubiese más criterios de ordenación y valores para el <em>seek</em>.</p>
+<p>Si además se tiene un índice para los campos que forman parte del <em>seek</em> el rendimiento será muy alto y la diferencia entre la primera y la última página mínimo, además se puede considerar independiente del número de filas de la tabla. Son varias las ventajas perdiendo solo la capacidad de navegar a cierta página pero en la mayoría de los casos esto es asumible.</p>
+<p>En los siguientes interesantes artículos se comenta detalladamente como implementar la paginación eficientemente y se dan más detalles.</p>
+<ul>
+<li><a href="https://wiki.postgresql.org/images/3/35/Pagination_Done_the_PostgreSQL_Way.pdf">Pagination Done the PostgreSQL Way</a></li>
+<li><a href="https://blog.jooq.org/2016/08/10/why-most-programmers-get-pagination-wrong/">Why Most Programmers Get Pagination Wrong</a></li>
+<li><a href="https://dba.stackexchange.com/questions/73175/pagination-with-postgresql-9-3-counting-number-of-pages">Pagination with PostgreSQL 9.3: counting number of pages</a></li>
+</ul>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>jooq</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">Alternativa a Hibernate u ORM y ejemplo de jOOQ</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/">Múltiples esquemas o bases de datos con jOOQ y Spring en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/11/obtener-datos-de-multiples-tablas-con-jooq/">Obtener datos de múltiples tablas con jOOQ</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/11/validar-objetos-con-spring-validation-ejemplo-registros-de-jooq/">Validar objetos con Spring Validation, ejemplo registros de jOOQ</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/">Log de sentencias SQL, sentencias lentas y otra información en jOOQ</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">Implementar la paginación eficientemente en consultas SQL con seek</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-409';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/05\/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

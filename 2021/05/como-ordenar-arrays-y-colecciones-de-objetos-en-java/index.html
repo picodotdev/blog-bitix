@@ -1,0 +1,635 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cómo ordenar arrays y colecciones de objetos en Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/" hreflang="es" title="Cómo ordenar arrays y colecciones de objetos en Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/index-amp.html" hreflang="es" title="Cómo ordenar arrays y colecciones de objetos en Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cómo ordenar arrays y colecciones de objetos en Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cómo ordenar arrays y colecciones de objetos en Java">
+<meta name="twitter:description" content="Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/"
+    },
+    "headline": "Cómo ordenar arrays y colecciones de objetos en Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2021-05-27T20:00:00+02:00",
+    "dateModified": "2021-05-27T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1093",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Cómo ordenar arrays y colecciones de objetos en Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>27/05/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Al implementar un algoritmo es común querer iterar los elementos de una colección en un orden según un criterio, por ejemplo, si se trata de números de menor a mayor, si se trata de fechas de menor a mayor y si se trata de personas por orden alfabético del nombre, de menor a mayor edad o de menor a mayor antigüedad en la empresa, también es posible la necesidad de iterar en orden inverso. El JDK de Java proporciona interfaces para implementar la ordenación de objetos y que ya implementan algunos de los algoritmos de ordenación conocidos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Entre las clases proporcionadas en el JDK de Java se proporciona un amplio <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">conjunto de clases dedicadas a colecciones</a> que son el fundamento de muchos algoritmos de programación y programas. Las clases de colecciones sirven para almacenar referencias a objetos, algunas colecciones no tiene un orden definido como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a> y otras definen un orden en la iteración de la colección como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a> pero no un orden entre los elementos, otras colecciones como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html">TreeSet</a> y <a href="java.base/java/util/TreeMap.html">TreeMap</a> guardan los elementos ordenados según un criterio manteniéndose ordenada incluyendo al realizar inserciones y eliminaciones de elementos.</p>
+<p>Hay varios <a href="https://es.wikipedia.org/wiki/Algoritmo_de_ordenamiento">algoritmos de ordenación</a> conocidos como la <a href="https://picodotdev.github.io/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/">ordenación por burbuja o <em>bubble sort</em>, por inserción, <em>merge sort</em> o <em>quicksort</em></a> cada uno con diferentes propiedades de complejidad o consumo de memoria. Normalmente no es necesario implementar estos algoritmos, sino que ya están implementados en las bibliotecas y en el caso de Java en las clases del JDK.</p>
+<p>El usar colecciones ordenadas por un orden es una funcionalidad común al implementar programas lo único que es necesario es utilizar la colección adecuada y únicamente crear una clase que implemente la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a> que determina el orden entre dos elementos, aplicando la comparación a los elementos de la colección con el algoritmo de ordenación ser ordena la colección.</p>
+<div class="media">
+<figure>
+<p>
+<img src="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/images/bubble-sort.gif" width="300" height="200" alt="Algoritmo de ordenación bubble-sort" title="Algoritmo de ordenación bubble-sort" class="" loading="lazy">
+
+<img src="/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/images/merge-sort.gif" width="300" height="200" alt="Algoritmo de ordenación merge-sort" title="Algoritmo de ordenación merge-sort" class="" loading="lazy"></p>
+<figcaption>Algoritmo de ordenación bubble-sort y merge-sort</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-interfaz-_comparator_">La interfaz <em>Comparator</em></a></li>
+    <li><a href="#la-interfaz-_comparable_">La interfaz <em>Comparable</em></a></li>
+    <li><a href="#cómo-ordenar-los-elementos-un-_array_">Cómo ordenar los elementos un <em>array</em></a></li>
+    <li><a href="#cómo-ordenar-los-elementos-de-una-colección">Cómo ordenar los elementos de una colección</a></li>
+    <li><a href="#invertir-el-orden">Invertir el orden</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="la-interfaz-_comparator_">La interfaz <em>Comparator</em></h3>
+<p>La interfaz <em>Comprator</em> es una interfaz funcional, por tener un único método a implementar, que recibe dos argumentos y devuelve un entero. Los argumentos son los dos objetos a comparar y el resultado indica cual es el orden de los elementos entre sí.</p>
+<p>Si el resultado es un <em>-1</em> se indica que el argumento <em>a</em> tiene un orden menor que <em>b</em>, si devuelve un <em>0</em> el orden de los elementos es el mismo y si devuelve un <em>1</em> el argumento <em>a</em> tiene
+un orden superior a <em>b</em>.</p>
+<p>Estas son implementaciones de <em>Comparator</em> utilizando referencias de métodos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">ageComparator</span> <span class="o">=</span> <span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">Person</span><span class="o">::</span><span class="n">getAge</span><span class="o">);</span>&#10;<span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">hireComparator</span> <span class="o">=</span> <span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">Person</span><span class="o">::</span><span class="n">getHired</span><span class="o">);</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Comparators.java</span>
+    </div>
+</div>
+<p>Para ordenar cadenas alfabéticamente también es necesario crear un comparador, sin embargo, la ordenación de cadenas alfabéticamente no es tan simple como utilizar el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#compareTo%28java.lang.String%29">comprateTo</a> de la clase <a href="java.base/java/lang/String.html">String</a>. Para <a href="https://picodotdev.github.io/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">ordenar cadenas alfabéticamente en Java</a> hay de tener en cuenta letras con tildes, mayúsculas y minúsculas que varían según el idioma de las palabras, el método comprteTo que podría usarse para crear un <em>Comprator</em> no es válido y puede producir resultados inesperados ya que el <em>String.compareTo</em> ordena según el código de los caracteres sin tener en cuenta tildes ni mayúsculas ni minúsculas.</p>
+<p>Esta es la implementación de un <em>Comparator</em> que ordena cadenas en orden ascendente de forma alfabética utilizando la clase <a href="#ZgotmplZ">Collator</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">NameComparator</span> <span class="kd">implements</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Collator</span> <span class="n">collator</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">NameComparator</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">collator</span> <span class="o">=</span> <span class="n">Collator</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Locale</span><span class="o">(</span><span class="s">&#34;es&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">collator</span><span class="o">.</span><span class="na">setStrength</span><span class="o">(</span><span class="n">Collator</span><span class="o">.</span><span class="na">TERTIARY</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Person</span> <span class="n">o1</span><span class="o">,</span> <span class="n">Person</span> <span class="n">o2</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">collator</span><span class="o">.</span><span class="na">compare</span><span class="o">(</span><span class="n">o1</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">o2</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>NameComparator.java</span>
+    </div>
+</div>
+<p>Con la clase <em>Comparator</em> es posible ordenar cualquier clase, en este ejemplo de clase <em>Person</em> se ordenan los objetos según su edad, fecha de contratación y nombre. Como en este caso es posible tener varias implementaciones de <em>Comprator</em> para una misma clase para ordenar los objetos por diferentes criterios.</p>
+<h3 id="la-interfaz-_comparable_">La interfaz <em>Comparable</em></h3>
+<p>Otra interfaz relacionada con la ordenación es la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html">Comparable</a>, es una interfaz que pueden implementar los objetos, la ordenación que se establece en la ordenación se le denomina el orden natural.</p>
+<p>A diferencia de la clase <em>Comparator</em> de la que es posible crear varias implementaciones, las clases sólo pueden implementar una vez la interfaz <em>Comparable</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">LocalDate</span> <span class="n">hired</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">,</span> <span class="n">LocalDate</span> <span class="n">hired</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">hired</span> <span class="o">=</span> <span class="n">hired</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Person</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">age</span> <span class="o">&lt;</span> <span class="n">o</span><span class="o">.</span><span class="na">getAge</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="n">o</span><span class="o">.</span><span class="na">getAge</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">1</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">0</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> &#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Person-comparable.java</span>
+    </div>
+</div>
+<h3 id="cómo-ordenar-los-elementos-un-_array_">Cómo ordenar los elementos un <em>array</em></h3>
+<p>La clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html">Arrays</a> contiene varios métodos de utilidad entre ellos varios dedicados a la ordenación de los elementos de un <em>array</em> tanto para elementos primitivos como para objetos. Hay métodos que utilizan el la ordenación natural de la interfaz <em>Comparable</em> y hay métodos en los que es posible indicar la clase <em>Comparator</em> con el orden deseado entre los elementos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javasort</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">64</span><span class="o">,</span> <span class="n">47</span><span class="o">,</span> <span class="n">33</span><span class="o">,</span> <span class="n">82</span><span class="o">,</span> <span class="n">91</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">45</span> <span class="o">};</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">array</span><span class="o">).</span><span class="na">boxed</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&#34;Juan&#34;</span><span class="o">,</span> <span class="n">56</span><span class="o">,</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">1982</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">26</span><span class="o">)),</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&#34;María&#34;</span><span class="o">,</span> <span class="n">24</span><span class="o">,</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2018</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">7</span><span class="o">)),</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&#34;Marisa&#34;</span><span class="o">,</span> <span class="n">63</span><span class="o">,</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2021</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">17</span><span class="o">)),</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&#34;Antonio&#34;</span><span class="o">,</span> <span class="n">41</span><span class="o">,</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2020</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">2</span><span class="o">))</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">nameComparator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NameComparator</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">ageComparator</span> <span class="o">=</span> <span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">Person</span><span class="o">::</span><span class="n">getAge</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">hireComparator</span> <span class="o">=</span> <span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">Person</span><span class="o">::</span><span class="n">getHired</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Array (sorted)&#34;</span><span class="o">);</span>&#10;<span class="kt">int</span><span class="o">[]</span> <span class="n">arraySorted</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>&#10;<span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">arraySorted</span><span class="o">);</span>&#10;<span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arraySorted</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Array-sort.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Array</span> <span class="o">(</span><span class="n">unsorted</span><span class="o">)</span>&#10;<span class="n">64</span>&#10;<span class="n">47</span>&#10;<span class="n">33</span>&#10;<span class="n">82</span>&#10;<span class="n">91</span>&#10;<span class="n">1</span>&#10;<span class="n">45</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="n">Array</span> <span class="o">(</span><span class="n">sorted</span><span class="o">)</span>&#10;<span class="n">1</span>&#10;<span class="n">33</span>&#10;<span class="n">45</span>&#10;<span class="n">47</span>&#10;<span class="n">64</span>&#10;<span class="n">82</span>&#10;<span class="n">91</span>&#10;&#10;<span class="o">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-array</span>
+    </div>
+</div>
+<h3 id="cómo-ordenar-los-elementos-de-una-colección">Cómo ordenar los elementos de una colección</h3>
+<p>Las clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">Collections</a> es el equivalente de la clase <em>Arrays</em> para las colecciones, también tiene métodos de utilidad en este caso para las colecciones. Tiene un método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#sort%28java.util.List%29">sort</a> para ordenar los elementos de una lista según el orden natural y para ordenar los elementos de la lista según el criterio de un <em>Comparator</em>.</p>
+<p>A tener en cuenta que tanto los métodos <em>sort</em> de <em>Arrays</em> como de <em>Collections</em> no devuelven una nueva instancia de <em>array</em> o colección ordenada sino que modifican la instancia de <em>array</em> o colección que se proporciona para ordenar.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;List (sorted)&#34;</span><span class="o">);</span>&#10;<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">listSorted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">list</span><span class="o">);</span>&#10;<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">listSorted</span><span class="o">);</span>&#10;<span class="n">listSorted</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>List-sort.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Persons (sorted, natural)&#34;</span><span class="o">);</span>&#10;<span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">personsSortedNatural</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">persons</span><span class="o">);</span>&#10;<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personsSortedNatural</span><span class="o">);</span>&#10;<span class="n">personsSortedNatural</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>&#10;&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Persons (sorted, name)&#34;</span><span class="o">);</span>&#10;<span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">personsSortedName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">persons</span><span class="o">);</span>&#10;<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personsSortedName</span><span class="o">,</span> <span class="n">nameComparator</span><span class="o">);</span>&#10;<span class="n">personsSortedName</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>&#10;&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Persons (sorted, age)&#34;</span><span class="o">);</span>&#10;<span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">personsSortedAge</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">persons</span><span class="o">);</span>&#10;<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personsSortedAge</span><span class="o">,</span> <span class="n">ageComparator</span><span class="o">);</span>&#10;<span class="n">personsSortedAge</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>&#10;&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Persons (sorted, hired)&#34;</span><span class="o">);</span>&#10;<span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">personsSortedHired</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">persons</span><span class="o">);</span>&#10;<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personsSortedHired</span><span class="o">,</span> <span class="n">hireComparator</span><span class="o">);</span>&#10;<span class="n">personsSortedHired</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Person-sort.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span> <span class="o">(</span><span class="n">unsorted</span><span class="o">)</span>&#10;<span class="n">64</span>&#10;<span class="n">47</span>&#10;<span class="n">33</span>&#10;<span class="n">82</span>&#10;<span class="n">91</span>&#10;<span class="n">1</span>&#10;<span class="n">45</span>&#10;&#10;<span class="nf">Persons</span> <span class="o">(</span><span class="n">unsorted</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Juan</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">56</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">1982</span><span class="o">-</span><span class="n">03</span><span class="o">-</span><span class="n">26</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">María</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">24</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2018</span><span class="o">-</span><span class="n">08</span><span class="o">-</span><span class="n">07</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Marisa</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">63</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2021</span><span class="o">-</span><span class="n">04</span><span class="o">-</span><span class="n">17</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Antonio</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">41</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2020</span><span class="o">-</span><span class="n">05</span><span class="o">-</span><span class="n">02</span><span class="o">)</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="n">List</span> <span class="o">(</span><span class="n">sorted</span><span class="o">)</span>&#10;<span class="n">1</span>&#10;<span class="n">33</span>&#10;<span class="n">45</span>&#10;<span class="n">47</span>&#10;<span class="n">64</span>&#10;<span class="n">82</span>&#10;<span class="n">91</span>&#10;&#10;<span class="nf">Persons</span> <span class="o">(</span><span class="n">sorted</span><span class="o">,</span> <span class="n">natural</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">María</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">24</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2018</span><span class="o">-</span><span class="n">08</span><span class="o">-</span><span class="n">07</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Antonio</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">41</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2020</span><span class="o">-</span><span class="n">05</span><span class="o">-</span><span class="n">02</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Juan</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">56</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">1982</span><span class="o">-</span><span class="n">03</span><span class="o">-</span><span class="n">26</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Marisa</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">63</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2021</span><span class="o">-</span><span class="n">04</span><span class="o">-</span><span class="n">17</span><span class="o">)</span>&#10;&#10;<span class="n">Persons</span> <span class="o">(</span><span class="n">sorted</span><span class="o">,</span> <span class="n">name</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Antonio</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">41</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2020</span><span class="o">-</span><span class="n">05</span><span class="o">-</span><span class="n">02</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Juan</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">56</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">1982</span><span class="o">-</span><span class="n">03</span><span class="o">-</span><span class="n">26</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">María</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">24</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2018</span><span class="o">-</span><span class="n">08</span><span class="o">-</span><span class="n">07</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Marisa</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">63</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2021</span><span class="o">-</span><span class="n">04</span><span class="o">-</span><span class="n">17</span><span class="o">)</span>&#10;&#10;<span class="n">Persons</span> <span class="o">(</span><span class="n">sorted</span><span class="o">,</span> <span class="n">age</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">María</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">24</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2018</span><span class="o">-</span><span class="n">08</span><span class="o">-</span><span class="n">07</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Antonio</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">41</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2020</span><span class="o">-</span><span class="n">05</span><span class="o">-</span><span class="n">02</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Juan</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">56</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">1982</span><span class="o">-</span><span class="n">03</span><span class="o">-</span><span class="n">26</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Marisa</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">63</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2021</span><span class="o">-</span><span class="n">04</span><span class="o">-</span><span class="n">17</span><span class="o">)</span>&#10;&#10;<span class="n">Persons</span> <span class="o">(</span><span class="n">sorted</span><span class="o">,</span> <span class="n">hired</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Juan</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">56</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">1982</span><span class="o">-</span><span class="n">03</span><span class="o">-</span><span class="n">26</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">María</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">24</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2018</span><span class="o">-</span><span class="n">08</span><span class="o">-</span><span class="n">07</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Antonio</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">41</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2020</span><span class="o">-</span><span class="n">05</span><span class="o">-</span><span class="n">02</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Marisa</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">63</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2021</span><span class="o">-</span><span class="n">04</span><span class="o">-</span><span class="n">17</span><span class="o">)</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-collection</span>
+    </div>
+</div>
+<h3 id="invertir-el-orden">Invertir el orden</h3>
+<p>La interfaz <em>Comprable</em> establece un orden ya sea ascendente o descendente según el criterio que implementa, si en un caso se desea el orden inverso del comprador la propia interfaz <em>Comparator</em> permite obtener un <em>Comparator</em> con el orden inverso al de la instancia. También es posible obtener un comprador que ordene las referencias nulas al principio si es que hay alguna en la colección.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Array (sorted descending)&#34;</span><span class="o">);</span>&#10;<span class="n">Integer</span><span class="o">[]</span> <span class="n">arraySorted</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">array</span><span class="o">).</span><span class="na">boxed</span><span class="o">().</span><span class="na">toArray</span><span class="o">(</span><span class="n">Integer</span><span class="o">[]::</span><span class="k">new</span><span class="o">);</span>&#10;<span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">arraySorted</span><span class="o">,</span> <span class="n">Collections</span><span class="o">.</span><span class="na">reverseOrder</span><span class="o">());</span>&#10;<span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arraySorted</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>&#10;&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;List (sorted descending)&#34;</span><span class="o">);</span>&#10;<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">listSortedNatural</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">list</span><span class="o">);</span>&#10;<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">listSortedNatural</span><span class="o">,</span> <span class="n">Comparator</span><span class="o">.&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="n">naturalOrder</span><span class="o">().</span><span class="na">reversed</span><span class="o">());</span>&#10;<span class="n">listSortedNatural</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>&#10;&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Persons (sorted descending, age)&#34;</span><span class="o">);</span>&#10;<span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">personsSortedAge</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">persons</span><span class="o">);</span>&#10;<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personsSortedAge</span><span class="o">,</span> <span class="n">ageComparator</span><span class="o">.</span><span class="na">reversed</span><span class="o">());</span>&#10;<span class="n">personsSortedAge</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">));</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Sort-reverse.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Array</span> <span class="o">(</span><span class="n">sorted</span> <span class="n">descending</span><span class="o">)</span>&#10;<span class="n">91</span>&#10;<span class="n">82</span>&#10;<span class="n">64</span>&#10;<span class="n">47</span>&#10;<span class="n">45</span>&#10;<span class="n">33</span>&#10;<span class="n">1</span>&#10;&#10;<span class="nf">List</span> <span class="o">(</span><span class="n">sorted</span> <span class="n">descending</span><span class="o">)</span>&#10;<span class="n">91</span>&#10;<span class="n">82</span>&#10;<span class="n">64</span>&#10;<span class="n">47</span>&#10;<span class="n">45</span>&#10;<span class="n">33</span>&#10;<span class="n">1</span>&#10;&#10;<span class="nf">Persons</span> <span class="o">(</span><span class="n">sorted</span> <span class="n">descending</span><span class="o">,</span> <span class="n">age</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Marisa</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">63</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2021</span><span class="o">-</span><span class="n">04</span><span class="o">-</span><span class="n">17</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Juan</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">56</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">1982</span><span class="o">-</span><span class="n">03</span><span class="o">-</span><span class="n">26</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">Antonio</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">41</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2020</span><span class="o">-</span><span class="n">05</span><span class="o">-</span><span class="n">02</span><span class="o">)</span>&#10;<span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="n">María</span><span class="o">,</span> <span class="n">age</span><span class="o">=</span><span class="n">24</span><span class="o">,</span> <span class="n">hired</span><span class="o">=</span><span class="n">2018</span><span class="o">-</span><span class="n">08</span><span class="o">-</span><span class="n">07</span><span class="o">)</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-reverse</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaSort">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" title="El patrón de diseño Factory, ventajas sobre new y diferencias con Builder" class="" loading="lazy">
+                <h3>El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit" title="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit" class="" loading="lazy">
+                <h3>Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">
+                <img src="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_875x0_resize_q90_box.jpg" width="326" height="125" alt="Herramientas de reconocimiento de texto en imágenes con OCR" title="Herramientas de reconocimiento de texto en imágenes con OCR" class="" loading="lazy">
+                <h3>Herramientas de reconocimiento de texto en imágenes con OCR</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/las-clases-y-librerias-basicas-de-java-para-bases-de-datos-relacionales/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las clases y librerías básicas de Java para bases de datos relacionales" title="Las clases y librerías básicas de Java para bases de datos relacionales" class="" loading="lazy">
+                <h3>Las clases y librerías básicas de Java para bases de datos relacionales</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">
+                <img src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu24edf9756fc7ba259961f103685e76b6_38126_875x0_resize_box_3.png" width="326" height="125" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="" loading="lazy">
+                <h3>Programas basados en consola con Java usando Lanterna</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/novedades-de-java-16/">
+                <img src="/blog-bitix/2021/03/novedades-de-java-16/images/java-16_hued80e256cc9250e83d3c3f558925622f_679086_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 16" title="Novedades de Java 16" class="" loading="lazy">
+                <h3>Novedades de Java 16</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-577';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/05\/como-ordenar-arrays-y-colecciones-de-objetos-en-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

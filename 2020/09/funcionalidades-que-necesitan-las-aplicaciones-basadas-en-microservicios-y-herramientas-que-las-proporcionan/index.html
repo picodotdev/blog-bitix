@@ -1,0 +1,636 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/" hreflang="es" title="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/index-amp.html" hreflang="es" title="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_huc41ce270717c7d83329c22fcc858a46d_656703_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_huc41ce270717c7d83329c22fcc858a46d_656703_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan">
+<meta name="twitter:description" content="Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/"
+    },
+    "headline": "Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_huc41ce270717c7d83329c22fcc858a46d_656703_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2020-09-20T10:30:00+02:00",
+    "dateModified": "2020-09-20T10:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2279",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>20/09/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los microservicios aún algunas ventajas necesitan una infraestructura mucho más compleja y necesitan de varias funcionalidades que en una aplicación monolítica no son necesarias. Para desarrollar y mantener con éxito una aplicación nativa para la nube basada en microservicios hay varias herramientas individuales específicas que resuelven cada una un problema específico de los microservicios. En este artículo se identifica cuales son las áreas funcionales que necesitan los microservicios, algunas herramientas hay para cada una de esas herramientas y algunos criterios para elegir una u otra herramienta.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>En el caso de una aplicación compleja y grande llegará un punto en el que una aplicación monolítica presenta problemas como tamaño de la aplicación, un error afecta a toda la aplicación, es más difícil de escalar las partes que lo requieran o dificulta el trabajar a un número grande de desarrolladores sobre el mismo código. Ante estos problemas una posibilidad es dividir la aplicación monolítica en múltiples microservicios independientes y distribuidos, cada microservicio proporciona una funcionalidad y entre todos colaborar para proporcionar la funcionalidad completa. Los microservicios resuelven algunos problemas de las aplicaciones monolíticas pero presentan otros problemas.</p>
+<p>Para cada una de las áreas funcionales que necesitan los microservicios hay múltiples herramientas que ayudan a resolver cada área funcional. Por ejemplo, en una aplicación basada en microservicios donde hay múltiples aplicaciones en varias instancias que varían en número y se comunica una parte importante para que los microservicios no sean un problema es la monitorización para permitir conocer el estado del sistema que permita identificar que está fallando rápidamente o incluso detectarlo antes de que ocurra. En una aplicación monolítica no son tan necesarias algunas de estas funcionalidades pero otras son igualmente necesarias o deseables como una base de datos, integración continua, entorno de ejecución también con contenedores, automatización y configuración, claves y secretos o monitorización, trazas y trazabilidad.</p>
+<p>Las aplicaciones nativas para la nube necesitan varias herramientas, en la página <a href="https://landscape.cncf.io/">CNCF Cloud Native Interactive Landscape</a> se agrupan las herramientas disponibles por categoría. Para cada categoría hay más de diez herramientas disponibles entre las que elegir para cubrir la necesidad. La colección de herramientas además de estar categorizadas por funcionalidad es posible filtrar aquellas que tienen una licencia de software libre o código abierto.</p>
+<p>Para tomar una decisión al elegir una herramienta u otra hay varios criterios:</p>
+<ul>
+<li>Documentación: una buena documentación permite aprender a como utilizarla y sacarle el máximo provecho directamente desde la fuente original.</li>
+<li>Popularidad, madurez, comunidad: utilizar una herramienta popular permite que si hay algún problema posiblemente ya le haya ocurrido a otra persona antes de modo que es muy posible encontrar una respuesta rápidamente y correcta. Una herramienta madura tendrá mejor documentación y es más fácil encontrar más información de ella.</li>
+<li>Herramienta específica o generalista: dado que las necesidades de los microservicios son varias es necesario utilizar múltiples herramientas para resolver esa necesidad. Cada una de estas herramientas añade un poco más de complejidad a la infraestructura que hay que mantener para que los microservicios funcionen o para poder entregar funcionalidad desde el entorno de desarrollo al entorno de producción. Algunas herramientas realizan varias funcionalidades, si una única herramienta es adecuada para varias necesidades permite reducir la complejidad de la infraestructura que si fuesen varias. Las herramientas específicas proporcionan funcionalidades más avanzadas pero las generalistas aún quizá no teniendo esas funciones avanzadas las que tienen son suficientes.</li>
+<li>Dependencias o posibilidad de cambiar: cada herramienta que se utiliza añade una dependencia al sistema, es algo a tener en cuenta ya que para alguna de entre todas las que se elijan será sustituida en el futuro por una nueva alternativa mejor. Tener la posibilidad de cambiar a una herramienta en el futuro es algo deseable sin que suponga un gran impacto en el sistema.</li>
+<li>Licencia y coste: las herramientas tienen un coste, los productos con licencia de software libre o código abierto no incurren en costes pero tienen un coste de mantenimiento tanto económico como en tiempo que ha de hacer uno mismo, por el contrario los servicios gestionados basados en la nube no tienen coste de infraestructura ni de mantenimiento del que se encarga el propio servicio pero tienen un coste mensual.</li>
+</ul>
+<p>En el caso de optar por administrar y mantener uno mismo el servicio otro punto importante a considerar son las actualizaciones a nuevas versiones. Conviene considerar cual es el procedimiento para actualizar a una nueva versión y tener un plan para realizarlas de forma periódica, no solo para tener acceso a las nuevas características que ofrezcan sino también para evitar quedar expuesto a un problema de seguridad de una versión antigua y ya no mantenida.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_huc41ce270717c7d83329c22fcc858a46d_656703_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Colección de herramientas nativas para la nube"><img src="/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/images/cncf-landscape_huc41ce270717c7d83329c22fcc858a46d_656703_650x450_fit_box_3.png" width="650" height="263" alt="Colección de herramientas nativas para la nube" title="Colección de herramientas nativas para la nube" class="" loading="lazy"></a></p>
+<figcaption>Colección de herramientas nativas para la nube</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#base-de-datos">Base de datos</a></li>
+    <li><a href="#mensajería">Mensajería</a></li>
+    <li><a href="#construcción-de-imágenes">Construcción de imágenes</a></li>
+    <li><a href="#integración-continua-y-despliegue-continuo">Integración continua y despliegue continuo</a></li>
+    <li><a href="#planificación-y-orquestación">Planificación y orquestación</a></li>
+    <li><a href="#descubrimiento-de-servicios-y-conexión">Descubrimiento de servicios y conexión</a></li>
+    <li><a href="#llamada-a-procedimientos-remotos-y-api">Llamada a procedimientos remotos y API</a></li>
+    <li><a href="#_proxy_-de-servicios"><em>Proxy</em> de servicios</a></li>
+    <li><a href="#automatización-y-configuración">Automatización y configuración</a></li>
+    <li><a href="#registro-de-contenedores-y-artefactos">Registro de contenedores y artefactos</a></li>
+    <li><a href="#autenticación-claves-y-secretos">Autenticación, claves y secretos</a></li>
+    <li><a href="#monitorización-trazas-y-trazabilidad">Monitorización, trazas y trazabilidad</a></li>
+    <li><a href="#repositorio-de-artefactos">Repositorio de artefactos</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="base-de-datos">Base de datos</h3>
+<p>Los datos son una de las partes más importantes para el correcto funcionamiento de un negocio. Una parte importante de las aplicaciones consiste tanto en persistir datos como recuperarlos cuando se necesitan. Una de las ventajas de los microservicios es que cada uno de ellos puede utilizar el tipo de base de datos que más adecuado considere para almacenar los datos. Puede ser una base de datos relacional como <a href="https://www.postgresql.org/">PostgreSQL</a>, clave-valor como <a href="https://redis.io/">Redis</a>, de documentos con <a href="https://www.mongodb.com/">MongoDB</a> o incluso una combinación de varios.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/introduccion-a-la-base-de-datos-relacional-postgresql/">Introducción a la base de datos relacional PostgreSQL</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/">Introducción a la base de datos NoSQL MongoDB</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/06/introduccion-a-la-base-de-datos-nosql-redis/">Introducción a la base de datos NoSQL Redis</a></li>
+</ul>
+<h3 id="mensajería">Mensajería</h3>
+<p>Una forma de comunicar los microservicios sin crear acoplamiento entre los servicios o de forma asíncrona es utilizar una comunicación basada en mensajes. Un sistema de mensajería es <a href="https://www.rabbitmq.com/">RabbitMQ</a>, otra popular es <a href="https://kafka.apache.org/">Kafka</a> con algunas diferencias.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/">Ejemplo de RabbitMQ con Java para enviar y recibir mensajes</a></li>
+</ul>
+<h3 id="construcción-de-imágenes">Construcción de imágenes</h3>
+<p>La forma nativa de ejecutar las aplicaciones basadas en microservicios es utilizando contenedores. Los contenedores son una forma de independizarse de las dependencias de ejecución que necesita cada microservicio ya sea por el lenguaje de programación que utilizan o librerías que necesitan, los contenedores permite ejecutarlos y tratarlos de la misma forma. <a href="https://www.docker.com/">Docker</a> permite ejecutar aplicaciones en contenedores así como construir imágenes de contenedores, <a href="https://www.packer.io/">Packer</a> es otra herramienta que permite construir diferentes artefactos ya sea para una máquina virtual <a href="https://www.virtualbox.org/">VirtualBox</a> o la computación en la nube de <a href="https://aws.amazon.com/es/">Amazon Web Services</a>, <a href="https://cloud.google.com/">Google Cloud Computing</a> o <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></li>
+</ul>
+<h3 id="integración-continua-y-despliegue-continuo">Integración continua y despliegue continuo</h3>
+<p>Desarrollando pruebas automatizadas al mismo tiempo que desarrollar la funcionalidad de una aplicación permite conocer que el software desarrollado con los casos creados funciona como se espera. Más tarde al introducir más cambios permiten conocer si un cambio afecta de forma inesperada a alguna funcionalidad cubierta por las pruebas automatizadas. Utilizando integración continua las pruebas automatizadas proporcionan el estado por cada cambio realizado en el repositorio de código fuente. Automatizar el despliegue de los cambios es la entrega continua y permite reducir el tiempo entre que una funcionalidad se ha terminado de desarrollar y el tiempo en que está disponible en el entorno de producción. <a href="https://about.gitlab.com/">Gitlab</a> es una herramienta que cubre varias necesidades, entre ellas la de repositorio de código fuente con <a href="https://git-scm.com/">Git</a> y también las funcionalidades de integración y entrega continua. <a href="https://jenkins.io/">Jenkins</a> es una herramienta más específica y cubre las funcionalidades de integración y entrega continua.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/">GitLab, la completa herramienta integrada para desarrollo de software</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/">Integración y entrega continua con GitLab sobre Docker</a></li>
+</ul>
+<h3 id="planificación-y-orquestación">Planificación y orquestación</h3>
+<p>Con un número importante de microservicios, incluso múltiples instancias de cada uno de ellos que varían en número a lo largo del tiempo para soportar tolerancia a fallos y alta disponibilidad se hace imprescindible tratar a las instancias como ganado y una herramienta que se encargue de su administración, tanto para planificar en que nodos se crean las instancias según sus restricciones como de aumentar o reducir su número, realizar despliegues utilizando estrategias <em>blue/green</em> o <em>canary</em> y revertir a versiones anteriores. <a href="https://kubernetes.io/">Kubernetes</a> es una popular específica para contenedores Docker, <a href="https://www.nomadproject.io/">Nomad</a> es una herramienta más sencilla e independiente pero integrable con otras herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a> que en conjunto proporcionan similares funcionalidades que Kubernetes.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a></li>
+</ul>
+<h3 id="descubrimiento-de-servicios-y-conexión">Descubrimiento de servicios y conexión</h3>
+<p>Si los microservicios son numerosos, se crean múltiples instancias de cada uno de ellos y son efímeros pudiendo desaparecer es necesario un servicio que guarde un registro de cual es su ubicación que permita conocer al resto de servicios donde se encuentran para comunicarse con ellos. <a href="https://www.consul.io/">Consul</a> es un servicio que proporciona la funcionalidad de de registro y descubrimiento además de otras funcionalidades como conectividad segura entre microservicios basado en intenciones en vez de direcciones IP, puertos y reglas de <em>firewall</em>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a></li>
+</ul>
+<h3 id="llamada-a-procedimientos-remotos-y-api">Llamada a procedimientos remotos y API</h3>
+<p>Unos microservicios tienen como dependencia y ofrecen su funcionalidad a otros a través de una interfaz de programación o API. La interfaz puede ser REST, <a href="https://graphql.org/">GraphQL</a> o si es un servicio interno con llamada a procedimiento remoto con <a href="https://grpc.io/">gRPC</a>. La comunicación entre servicios mediante API y mensajes no es incompatible, es más, es común que un microservicio utilice ambas formas para comunicarse o otros microservicios.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Introducción a gRPC y ejemplo con Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Ejemplo de API REST en Java con JAX-RS y Spring Boot</a></li>
+</ul>
+<h3 id="_proxy_-de-servicios"><em>Proxy</em> de servicios</h3>
+<p>Un <em>proxy</em> permite hacer de intermediario entre el origen servicio origen y el servicio destino para ofrecer una visión más sencilla de los microservicios al consumidor o hacer algunas operaciones en las comunicaciones. <a href="https://traefik.io/">Traefik</a> es una <em>proxy</em> adaptado a los microservicios, es integrable con Consul y con Docker.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></li>
+</ul>
+<h3 id="automatización-y-configuración">Automatización y configuración</h3>
+<p>Para hacer manejable la infraestructura y configuración de la misma es necesario automatizarla tratando a la infraestructura como código. Esto permite evitar cambios manuales, mantener un registro de los cambios y replicar la misma infraestructura rápidamente en caso de ser necesario. La infraestructura puede ser mutable o inmutable, tener una infraestructura inmutable es más deseable ya que en todo momento se tiene conocimiento del estado de la infraestructura evitando cambios temporales aplicados que no estén bajo control e impidan replicar la infraestructura. <a href="https://www.ansible.com/">Ansible</a> permite automatizar ciertas tareas para una infraestructura mutable en algunos casos es herramienta conveniente, <a href="https://www.terraform.io/">Terraform</a> es una herramienta declarativa con la que se especifica la infraestructura deseada y aplica los cambios necesarios para tenerla, sigue la filosofía inmutable con la que si una instancia de una máquina cambia en vez de cambiar la instancia crea una nueva y elimina la antigua.</p>
+<h3 id="registro-de-contenedores-y-artefactos">Registro de contenedores y artefactos</h3>
+<p>A partir del código fuente se construyen los artefactos que posteriormente se incluyen en contenedores que son desplegados. Un repositorio de artefactos permite almacenar los binarios y paquetes de cada versión a partir del código fuente, esto permite volver a una versión anterior y guardar un historial de los mismos para el futuro. <a href="https://docs.docker.com/registry/">Docker Registry</a> es un registro para imágenes Docker, <a href="https://jfrog.com/artifactory/">Artifactory</a> o <a href="https://www.sonatype.com/nexus/repository-oss">Nexus</a> son registros más generalistas que permite guardar artefactos de JavaScript, Python o Java entre otros, <a href="https://archiva.apache.org/">Archiva</a> es específico de artefactos para Java.</p>
+<h3 id="autenticación-claves-y-secretos">Autenticación, claves y secretos</h3>
+<p>Para autenticar y autorizar las llamadas a los servicios a través de de la API que ofrecen se suele utilizar <a href="https://oauth.net/">OAuth</a>, como proveedor de autenticación OAuth una opción es <a href="https://www.keycloak.org/">Keycloak</a>.</p>
+<p>Por otro lado, cierta información que tratan las aplicaciones es de carácter sensible e importante para la seguridad, estas son las claves y contraseñas que permiten conectarse a las bases de datos o autenticarse en otros microservicios, datos personales o bancarios. <a href="https://www.vaultproject.io/">Vault</a> permite generar credenciales bajo demanda con un tiempo de expiración pequeño y se ofrece como un servicio centralizado para cifrar y descifrar datos, esto aumenta la seguridad, reduce las posibilidades de ataque y en caso de éxito mitiga la información comprometida si la más sensible está cifrada.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></li>
+</ul>
+<h3 id="monitorización-trazas-y-trazabilidad">Monitorización, trazas y trazabilidad</h3>
+<p>Un sistema complejo como son los microservicios es indispensable que esté monitorizado para dar visibilidad a su estado y observar su funcionamiento en tiempo real. Las métricas son obtener las trazas que emiten cada uno de los microservicios, monitorizar los tiempos de respuesta de cada microservicio, consumo de memoria, CPU o almacenamiento.</p>
+<p><a href="https://prometheus.io/">Prometheus</a> permite recoger las métricas de funcionamiento de cada uno de los microservicios y almacenar los datos. <a href="https://grafana.com/">Grafana</a> permite acceder a los datos recogidos por Prometheus y crear diferentes tipos de gráficas que permitan visualizar gran cantidad de información con una fácil compresión.</p>
+<p><a href="https://www.fluentd.org/">Fluentd</a> y <a href="https://www.elastic.co/es/logstash">Logstash</a> permiten recopilar los registro de trazas que emiten las aplicaciones y enviarlos a un consumidor para que sean agregados e indexados en <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>, <a href="https://www.elastic.co/es/kibana">Kibana</a> es una servicio que permite buscar y obtener los mensajes de trazas deseados.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</a></li>
+</ul>
+<p>Una solicitud genera varias llamadas entre servicios en cadena, para tener una visión global de cada petición y cuales son las llamadas que ha desencadenado entre los diferentes servicios que se usan como dependencias están <a href="https://spring.io/projects/spring-cloud-sleuth">Sleuth</a> y <a href="https://zipkin.io/">Zipkin</a>. Un identificador único global permite obtener toda la cadena de llamadas realizada con los tiempos empleados en cada microservicio para atender la petición lo que permite identificar problemas de rendimiento.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">Trazabilidad en servicios distribuidos con Sleuth y Zipkin</a></li>
+</ul>
+<h3 id="repositorio-de-artefactos">Repositorio de artefactos</h3>
+<p>Los repositorio sde artefactos permiten compartir artefactos generados en la compilación de los proyectos. Los artefactos en Java son librerías que otros proyectos utilizan como dependencias, en Docker son las imágenes que utilizan los contenedores generados con un archivo Dockerfile en Java Script paquetes npm y otros lenguajes como Python, Go o C# los suyos. <a href="https://www.sonatype.com/nexus/repository-oss">Nexus</a> permite crear un repositorio de artefactos privado.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">Repositorio de artefactos privado con Nexus</a></li>
+</ul>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">
+                <img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="326" height="125" alt="Renombrar campos del esquema en las consultas GraphQL" title="Renombrar campos del esquema en las consultas GraphQL" class="" loading="lazy">
+                <h3>Renombrar campos del esquema en las consultas GraphQL</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
+                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu0930190f3c65499ea0d10d00a00e2707_141470_875x0_resize_box_3.png" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
+                <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">
+                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_875x0_resize_box_3.png" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
+                <h3>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">
+                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu45616b24568f8b7d38357044c7708dca_59208_875x0_resize_box_3.png" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
+                <h3>El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Copiar datos de un tipo de objeto a otro con ModelMapper" title="Copiar datos de un tipo de objeto a otro con ModelMapper" class="" loading="lazy">
+                <h3>Copiar datos de un tipo de objeto a otro con ModelMapper</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/">
+                <img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_875x0_resize_box_3.png" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="" loading="lazy">
+                <h3>El patrón Open Session in View, qué es, ventajas, problemas y alternativas</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-516';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/09\/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

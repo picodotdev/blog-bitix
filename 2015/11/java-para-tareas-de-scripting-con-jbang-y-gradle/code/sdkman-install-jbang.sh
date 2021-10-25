@@ -1,0 +1,1 @@
+$ sdk install jbang 0.78.0

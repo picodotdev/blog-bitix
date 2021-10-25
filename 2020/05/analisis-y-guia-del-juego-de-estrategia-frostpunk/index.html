@@ -1,0 +1,738 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Análisis y guía del juego de estrategia Frostpunk</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/" hreflang="es" title="Análisis y guía del juego de estrategia Frostpunk">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/index-amp.html" hreflang="es" title="Análisis y guía del juego de estrategia Frostpunk">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis y guía del juego de estrategia Frostpunk">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/Frostpunk_hu989a3475c8ce18ca3b235d7f82841a38_566303_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/Frostpunk_hu989a3475c8ce18ca3b235d7f82841a38_566303_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Análisis y guía del juego de estrategia Frostpunk">
+<meta name="twitter:description" content="Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/"
+    },
+    "headline": "Análisis y guía del juego de estrategia Frostpunk",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/Frostpunk_hu989a3475c8ce18ca3b235d7f82841a38_566303_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2020-05-10T10:00:00+02:00",
+    "dateModified": "2020-05-10T10:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2043",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/Frostpunk_hu989a3475c8ce18ca3b235d7f82841a38_566303_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Análisis y guía del juego de estrategia Frostpunk</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>10/05/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/">juegos</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Los juegos de estrategia no suelen abundar mucho en las consolas, el uso del mando no es lo ideal para este tipo de juegos al igual que ocurre en otros que son mejores con teclado y ratón. Pero hay algunos buenos juegos de estrategia, uno de ellos es <a href="https://www.igdb.com/games/frostpunk">Frostpunk</a> de <a href="https://www.igdb.com/companies/11-bit-studios">11 Bit Studios</a>.</p>
+<p>La historia de Frostpunk es diferente a lo habitual, está basado en el acontecimiento de un cataclismo apocalíptico en una época alternativa pasada que ha hecho que las temperaturas hayan descendido significativamente hasta llegar al punto de congelación para el desarrollo de la vida tal y como la ha conocido la humanidad hasta ese momento. La humanidad se ha reducido a un grupo de humanos que ha de sobrevivir construyendo una nueva colonia alrededor de un generador alimentado con carbón que proporciona el calor para no perecer congelados. Se trata de un juego de construcción de ciudades, gestión de recursos y supervivencia con un árbol de investigaciones tecnológicas y leyes que proporcionan mejoras.</p>
+<p>No es un juego complicado pero requiere plantear bien las prioridades y construcciones para conseguir llegar al final dado que como en este tipo de juegos los recursos son limitados o de lo contrario los colonos se rebelarán finalizando la partida con la expulsión del jefe de la colonia al que representamos en el juego.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/Frostpunk_hu989a3475c8ce18ca3b235d7f82841a38_566303_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/Frostpunk_hu989a3475c8ce18ca3b235d7f82841a38_566303_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial" title="Pantalla inicial" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-intro_huc23c8c27441bf92f1b40a6353a675eb6_275408_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-intro_huc23c8c27441bf92f1b40a6353a675eb6_275408_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial" title="Pantalla inicial" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-menu_hu4f41ef62db040772db5c7fc26f01a9b7_236205_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Menú"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-menu_hu4f41ef62db040772db5c7fc26f01a9b7_236205_200x150_fit_q90_box.jpg" width="200" height="113" alt="Menú" title="Menú" class="" loading="lazy"></a></p>
+<figcaption>Pantalla inicial y menú</figcaption>
+</figure>
+</div>
+<p>Frostpunk es un juego corto sabiendo cual es la estrategia para sobrevivir. En mi caso me ha gustado mucho y me he divertido bastante con él tomando las decisiones que finalmente me han permitido superar con éxito el juego. Una vez acabada el modo historia inicial se habilitan otros modos de juego que permiten rejugarlo durante más tiempo. Más recientemente también se ha publicado una expansión del juego <a href="https://www.frostpunkgame.com/">Frostpunk The last Autumn</a> ambientada en un punto anterior en la línea temporal de Frostpunk que permite conocer más detalles de esta historia.</p>
+<p>Ha sido lanzado para PC y consolas, yo lo he jugado en la PlayStation 4. Los textos están en español pero los diálogos están en inglés. Es un juego del 2019 en consolas con lo que hasta pasado un tiempo no tendrá una oferta importante y de forma habitual, en uno de estos momentos se puede comprar por unos 20 € en la <a href="https://www.playstation.com/es-es/buy/playstation-store/">PlayStation Store</a> o físico en <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a></li>
+</ul>
+<div class="alert alert-warning">
+    <h2>Anticipación del juego</h2>
+    <p>Este artículo contiene información de estrategias para completar más fácilmente el juego, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
+    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#estrategia-inicial">Estrategia inicial</a></li>
+    <li><a href="#estrategia-juego-medio">Estrategia juego medio</a></li>
+    <li><a href="#estrategia-juego-final">Estrategia juego final</a></li>
+    <li><a href="#nuevos-modos-de-juego">Nuevos modos de juego</a></li>
+    <li><a href="#frostpunk-wiki">Frostpunk Wiki</a></li>
+    <li><a href="#banda-sonora-original">Banda sonora original</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="estrategia-inicial">Estrategia inicial</h3>
+<p>Frostpunk es un juego de gestión de recursos en el que hay que ser previsor a las necesidades futuras para no malgastar tiempo esperando a tener los recursos necesarios. Hay que construir edificios por adelantado antes de que sean imprescindibles o acumular recursos para acometer la siguiente investigación en cuanto se pueda. De forma regular es aconsejable realizar guardados para poder volver a un punto anterior para poder reconducir la partida tomando otras decisiones.</p>
+<p>Los primeros momentos son los más difíciles ya que los recursos son escasos tanto en materias primas como trabajadores e ingenieros. El primer objetivo es usar los trabajadores e ingenieros para conseguir los mínimos recursos que permitan construir los primeros edificios. Los recursos son carbón para alimentar el generador, madera y acero para las construcciones. Por otro, conseguir comida con puestos de cazadores.</p>
+<ul>
+<li><a href="https://frostpunk.fandom.com/wiki/Tutorial">Tutorial</a></li>
+</ul>
+<p>También hay que proporcionar una casa y atención médica a todos los colonos, de lo contrario aumentará el descontento y la esperanza. Por lo que hay que construir casas para todos los ciudadanos, uno o dos puestos médicos y un comedor. La forma de construir las casas es aconsejable construirlas agrupadas en un mismo sector del núcleo y dejando algunos huecos ya que avanzando el juego algunos edificios afectan a los habitantes cercanos de esas construcciones. Algunos edificios no es necesario que estén cerca del generador como los depósitos pero las cas de los colonos si, el espacio alrededor del generador es limitado por lo que hay que aprovecharlo para los edificios que sean necesario que tengan calor.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-1_hudeff90919c381f1ad0d2670020b63fb3_134664_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-1_hudeff90919c381f1ad0d2670020b63fb3_134664_200x150_fit_q90_box.jpg" width="200" height="113" alt="Inicio" title="Inicio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-2_hu801d4263bda60e0e02d2f00650f7a19e_185565_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-2_hu801d4263bda60e0e02d2f00650f7a19e_185565_200x150_fit_q90_box.jpg" width="200" height="113" alt="Inicio" title="Inicio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-3_hua4e7fb9115bb4c7e5abc325d8fa25b8f_197396_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-3_hua4e7fb9115bb4c7e5abc325d8fa25b8f_197396_200x150_fit_q90_box.jpg" width="200" height="113" alt="Inicio" title="Inicio" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-4_hu49758d208f47a83f9a1672defeba21be_209231_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-4_hu49758d208f47a83f9a1672defeba21be_209231_200x150_fit_q90_box.jpg" width="200" height="113" alt="Inicio" title="Inicio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-5_hufd4c93260cf2681c92a72df327d52ff3_381485_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-5_hufd4c93260cf2681c92a72df327d52ff3_381485_200x150_fit_q90_box.jpg" width="200" height="113" alt="Inicio" title="Inicio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-6_hu4d3ced80063b49ba2c9d6e0e82459b78_181986_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-6_hu4d3ced80063b49ba2c9d6e0e82459b78_181986_200x150_fit_q90_box.jpg" width="200" height="113" alt="Inicio" title="Inicio" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-7_huc8353fd93a34b09e26c061050dc62d34_302324_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-inicio-7_huc8353fd93a34b09e26c061050dc62d34_302324_200x150_fit_q90_box.jpg" width="200" height="113" alt="Inicio" title="Inicio" class="" loading="lazy"></a></p>
+<figcaption>Inicio</figcaption>
+</figure>
+</div>
+<p>En el transcurso del juego los colonos realizarán algunas peticiones en las que podremos optar por varias respuestas, hacerles caso o ignorarlos. Dependiendo de la decisión habrá que construir algún edificio y dependiendo del cumplimiento de la promesa aumentará el descontento o bajará la esperanza. Aunque la decisión sea difícil no siempre hay que hacer atender a sus peticiones ya que los recursos son escasos.</p>
+<p>La firma de leyes permite establecer políticas que proporcionan algunas ventajas como poder usar niños en algunas tareas. Son un árbol de desarrollo. Algunas son establecer turnos de trabajo nocturnos, proporcionar sopa en vez de raciones completas, construir un nevero para los colonos que perezcan o mejorar las atenciones médicas. Cada vez que se firma una ley hay que esperar un tiempo hasta poder firmar la siguiente, es aconsejable que cada vez que se pueda inmediatamente firmar la siguiente que proporcione la mayor ventaja que se considere sin embargo hay que tener en cuenta que algunas requieren construir algún edificio en un determinado tiempo, un día o dos, de modo que hay que tener preparados los recursos necesarios para poder construir esos edificios.</p>
+<p>El otro árbol de desarrollo son las investigaciones proporcionadas por los talleres. Estos proporciona mejoras tecnológicas de caza, de poder construir nuevos edificios, avances para hacer más eficientes a los trabajadores, minas, construir autómatas o mejorar el generador. Inicialmente las más interesantes serán las dedicadas conseguir recursos. Los avances tecnológicos se dividen en niveles, no hace falta desarrollar todos los de un nivel siguiente pero cada nivel ha de ser investigado para tener acceso él.</p>
+<p>En la fase inicial también será necesario construir un puesto de investigación para explorar los alrededores que proporcionarán detalles de la historia, conseguir recursos y nuevos colonos. Hay diferentes construcciones entre las que están las dedicadas a la gente como casas y que mejoran la esperanza, salud como puestos médicos y hospitales, los dedicados a recursos como comida y materias primas como carbón, madera y acero, finalmente los dedicados a tecnología como los talleres, factoría y calefactores.</p>
+<h3 id="estrategia-juego-medio">Estrategia juego medio</h3>
+<p>Una vez asegurada la obtención de recursos imprescindibles en la fase de juego medio los objetivos son mantener el descontento en niveles bajos y la esperanza en niveles altos de lo contrario será la causa de finalización del juego.</p>
+<p>En esta fase los exploradores encontrarán nuevos colonos y proporcionará más trabajadores así como depósitos externos que proporcionan materias, una de ellas será la de los núcleos de vapor que permite construir autómatas en la factoría que los usan como recurso. Los autómatas permiten no tener que usar trabajadores o ingenieros en los edificios además de que son capaces de trabajar todo el día en vez de solo las horas de trabajo como los colonos y no les afectan las bajas temperaturas de las tormentas.</p>
+<p>Dependiendo de las necesidades hay otros recursos que se consiguen con depósitos externos carbón, madera o acero hay que elegir uno de ellos ya que solo es posible construir dos depósitos externos y los núcleos de vapor solo es posible conseguirlos con uno de ellos y los autómatas son interesantes para emplearlos en las minas y edificios para conseguir recursos. Las exploraciones permite obtener más colonos pero hay que ser previsor y construir por adelantado las casas que sean necesarias para albergarlos o tener siempre algunas casas sobrantes más de las necesarias.</p>
+<p>Algunos edificios que permiten tener controlado los niveles de descontento bajos y la esperanza alta son las zonas de peleas, las iglesias, la taberna y el importante templo con los custodios de la fe en la rama de propósito. Se tiene acceso a estos edificios promulgando sus respectivas leyes. En el árbol de leyes en un determinado momento se ha de optar por el árbol de la fe y esperanza o del orden que da acceso a un nuevo árbol de leyes.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-1_hu13c013c9157e99432f0c74988e9c5b62_317245_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-1_hu13c013c9157e99432f0c74988e9c5b62_317245_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-2_hu37068a187ec0a4e97159140e69052ac1_355444_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-2_hu37068a187ec0a4e97159140e69052ac1_355444_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-3_hucbb7b583d933181efa0946610cff1c42_287601_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-3_hucbb7b583d933181efa0946610cff1c42_287601_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-4_hu503fa562284aae9d792325c826838196_360295_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-4_hu503fa562284aae9d792325c826838196_360295_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-5_hu66e60263e2f079b8bd5b55d8d9e2c8c1_336339_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-5_hu66e60263e2f079b8bd5b55d8d9e2c8c1_336339_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-6_huba75052dcf712cb9e76fc0323866eba3_344160_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-6_huba75052dcf712cb9e76fc0323866eba3_344160_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-7_hu8a6cd2c2a1ecf380498813fc749c8425_336752_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-7_hu8a6cd2c2a1ecf380498813fc749c8425_336752_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-8_hu2bca18dd54be684785c4ffd560c3b27c_347665_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-8_hu2bca18dd54be684785c4ffd560c3b27c_347665_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-9_hude2e9fb6f121a046fcd3b3dc6e76d867_303158_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-9_hude2e9fb6f121a046fcd3b3dc6e76d867_303158_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-10_hu7f61d7a07318112582dffa1158714429_336811_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-10_hu7f61d7a07318112582dffa1158714429_336811_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-11_hu15e98e402976f6cc055b3430e2a527b5_300672_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-11_hu15e98e402976f6cc055b3430e2a527b5_300672_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-12_hu7deb38ffd8cd4f09003a17b400b2ca20_329229_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de tecnologías"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-tecnologias-12_hu7deb38ffd8cd4f09003a17b400b2ca20_329229_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de tecnologías" title="Árbol de tecnologías" class="" loading="lazy"></a></p>
+<figcaption>Árbol de tecnologías</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-leyes-1_hu64cc2eabc82524f6ba6ca172e7a54392_240981_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de leyes"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-leyes-1_hu64cc2eabc82524f6ba6ca172e7a54392_240981_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de leyes" title="Árbol de leyes" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-leyes-2_hu8a98f20784b52937bcc687a2cad6ed31_252945_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de leyes"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-leyes-2_hu8a98f20784b52937bcc687a2cad6ed31_252945_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de leyes" title="Árbol de leyes" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-leyes-3_hu0135da2a22c8796151f00ad565823446_217115_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Árbol de leyes"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-arbol-leyes-3_hu0135da2a22c8796151f00ad565823446_217115_200x150_fit_q90_box.jpg" width="200" height="113" alt="Árbol de leyes" title="Árbol de leyes" class="" loading="lazy"></a></p>
+<figcaption>Árbol de leyes</figcaption>
+</figure>
+</div>
+<p>En esa fase el objetivo es acumular recursos sobre todo carbón y comida para hacer frente a la tormenta del final. Será necesario construir depósitos grandes para tener capacidad para acumularlos. También es aconsejable los cuatro talleres que se pueden construir para realizar las investigaciones más rápido, y estar continuamente tiendo alguna investigación en marcha incluso teniendo que realizar turnos nocturnos. El uso de estos turnos nocturnos aumentarán el descontento que se mantendrá controlador con las iglesias, tabernas y templo.</p>
+<p>La comida se consigue de dos formas con los cazadores o con los invernaderos. En mi opinión es mejor construir puestos de cazadores ya que estos permiten conseguir niveles de comida parecidos que los invernaderos pero no requieren emplear núcleos de vapor para construir los edificios que están mejor empleados para construir autómatas. Será necesario construir unos 5 o 6 puestos de cazadores.</p>
+<p>Las minas de carbón, de acero y perforadoras permiten acceder a recursos en cantidades que podrían considerarse ilimitados de modo que es necesario construir estos edificios y sus respectivos avances con mayor eficiencia y poner en ellos autómatas también investigando sus mejoras para hacerlos más eficientes. Se pueden construir hasta tres minas de carbón, dos perforadoras para conseguir madera y dos minas de acero con lo que son necesarios unos siete autómatas. Alguno más si se quieren para algún puesto médico pero no son imprescindibles para estas tareas.</p>
+<p>También será necesario realizar alguna investigación para las mejoras del generador y calderas de vapor para que afecte a áreas más alejadas de núcleo, con más eficiencia para soportar alguna tormenta que baja las temperaturas de modo que las casas soporten el frío. Hay que investigar las mejoras que den acceso a poder construir barracones y casas con mejores aislamientos y modernizar progresivamente los hogares a casas y las minas a minas avanzadas.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-decisiones-1_hu1b4e4eac37e4ef8b34ab52c36dfee71f_427219_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Algunas decisiones difíciles"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-decisiones-1_hu1b4e4eac37e4ef8b34ab52c36dfee71f_427219_300x250_fit_q90_box.jpg" width="300" height="169" alt="Algunas decisiones difíciles" title="Algunas decisiones difíciles" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-decisiones-2_hue38b7380749e44c096b4af70fa3f2701_412482_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Algunas decisiones difíciles"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-decisiones-2_hue38b7380749e44c096b4af70fa3f2701_412482_300x250_fit_q90_box.jpg" width="300" height="169" alt="Algunas decisiones difíciles" title="Algunas decisiones difíciles" class="" loading="lazy"></a></p>
+<figcaption>Algunas decisiones difíciles</figcaption>
+</figure>
+</div>
+<h3 id="estrategia-juego-final">Estrategia juego final</h3>
+<p>El juego final consiste en una tormenta que dura una semana y en la que hay que disponer del suficiente carbón y comida acumulada en los depósitos grandes. Ya que en la tormenta final los puestos de cazadores no pueden salir a obtener comida y en los peores momentos de la tormenta los trabajadores dejarán sus puestos de trabajo. Tener autómatas permite seguir pudiendo conseguir carbón.</p>
+<p>Dado que el generador a máximo rendimiento consume carbón es necesario tener carbón acumulado. Con los recursos acumulados es sencillo soportar la tormenta final. En los peores momentos de la misma será necesario activar la opción de sobrerendimiento del generador cuando se observe que las casas tienen el icono de congelación, hay que vigilar la presión del generador para que no llegue al máximo o de lo contrario explotará siendo esta otra forma de fracaso en el juego.</p>
+<p>Durante las exploraciones habrá que tomar la decisión de dejar abandonados a algunos colonos en vez de acogerlos en la colonia dado que no hay casas, comida o recursos para todos los colonos, un objetivo del juego puede ser intentar salvar a los máximos colonos que se pueda.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-end_huedef7c278b65a9d246ecf054c7423ca4_66329_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Supervivencia"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-end_huedef7c278b65a9d246ecf054c7423ca4_66329_300x250_fit_q90_box.jpg" width="300" height="169" alt="Supervivencia" title="Supervivencia" class="" loading="lazy"></a></p>
+<figcaption>Supervivencia</figcaption>
+</figure>
+</div>
+<h3 id="nuevos-modos-de-juego">Nuevos modos de juego</h3>
+<p>Al finalizar el modo historia se habilitan otros modos de juego y escenarios con otras formas de supervivencia que le dan al juego mas rejugabilidad.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-escenarios_hu05927b4cd0df335ded6bf30fa445ac74_233580_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Escenarios"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-escenarios_hu05927b4cd0df335ded6bf30fa445ac74_233580_200x150_fit_q90_box.jpg" width="200" height="113" alt="Escenarios" title="Escenarios" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-nuevo-hogar_hu15644256dabca885442bf37f7b7da062_381836_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Escenario Nuevo hogar, historia principal"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-nuevo-hogar_hu15644256dabca885442bf37f7b7da062_381836_200x150_fit_q90_box.jpg" width="200" height="113" alt="Escenario Nuevo hogar, historia principal" title="Escenario Nuevo hogar, historia principal" class="" loading="lazy"></a></p>
+<figcaption>Escenarios</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-las-arcas_hue56a0973c544e934930fde609b95cec0_371929_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Escenario Las arcas"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-las-arcas_hue56a0973c544e934930fde609b95cec0_371929_200x150_fit_q90_box.jpg" width="200" height="113" alt="Escenario Las arcas" title="Escenario Las arcas" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-refugiados_hu96d8990277a5762d38ac26753260e506_378016_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Escenario Refugiados"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-refugiados_hu96d8990277a5762d38ac26753260e506_378016_200x150_fit_q90_box.jpg" width="200" height="113" alt="Escenario Refugiados" title="Escenario Refugiados" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-la-caida-de-invernia_hu5897b6755ccf64d125f0c6ec14d5b03e_381709_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Escenario La caída de invernia"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-ecenario-la-caida-de-invernia_hu5897b6755ccf64d125f0c6ec14d5b03e_381709_200x150_fit_q90_box.jpg" width="200" height="113" alt="Escenario La caída de invernia" title="Escenario La caída de invernia" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-modo-infinito_hu1edf7d22ce4da4d95c4c225050580e76_233688_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Modo infinito"><img src="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/images/frostpunk-modo-infinito_hu1edf7d22ce4da4d95c4c225050580e76_233688_200x150_fit_q90_box.jpg" width="200" height="113" alt="Modo infinito" title="Modo infinito" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<h3 id="frostpunk-wiki">Frostpunk Wiki</h3>
+<p>En la <a href="https://frostpunk.fandom.com/wiki/Frostpunk_Wiki">Wiki de Frostpunk de Fandom</a> están recogidos con detalle de los construcciones, recursos, tecnologías, leyes y escenarios. Esta información resulta muy útil para elegir la que consideremos la mejor estrategia o revisar si la que utilizamos no es del todo efectiva.</p>
+<ul>
+<li><a href="https://frostpunk.fandom.com/wiki/Exploration">Exploración</a></li>
+<li><a href="https://frostpunk.fandom.com/wiki/Scenarios">Escenarios</a></li>
+<li><a href="https://frostpunk.fandom.com/wiki/Buildings">Construcciones</a></li>
+<li><a href="https://frostpunk.fandom.com/wiki/Technology_Tree">Árbol de tecnologías</a></li>
+<li><a href="https://frostpunk.fandom.com/wiki/Book_of_Laws">Libro de leyes</a></li>
+<li><a href="https://frostpunk.fandom.com/wiki/Resources">Recursos</a></li>
+<li><a href="https://frostpunk.fandom.com/wiki/Citizens">Ciudadanos</a></li>
+<li><a href="https://frostpunk.fandom.com/wiki/Cities">Ciudades</a></li>
+</ul>
+<h3 id="banda-sonora-original">Banda sonora original</h3>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/uLF6VFME2jc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.gamespot.com/reviews/frostpunk-review-damned-if-you-do-damned-if-you-do/1900-6416899/">Frostpunk Review: Damned If You Do, Damned If You Don’t</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>analisis-juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          
+        </ol>
+      <h3>Este artículo forma parte de la serie <strong>juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/">Jugar al ajedrez en GNU/Linux con GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22&#43; buenos juegos en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/que-es-mejor-para-jugar-y-10-variables-para-elegir-entre-pc-o-consola/">Qué es mejor para jugar y 10&#43; variables para elegir entre PC o consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-482';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/05\/analisis-y-guia-del-juego-de-estrategia-frostpunk\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

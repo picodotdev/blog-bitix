@@ -1,0 +1,851 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Herramientas de línea de comandos para monitorizar GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/" hreflang="es" title="Herramientas de línea de comandos para monitorizar GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/index-amp.html" hreflang="es" title="Herramientas de línea de comandos para monitorizar GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Herramientas de línea de comandos para monitorizar GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Herramientas de línea de comandos para monitorizar GNU/Linux">
+<meta name="twitter:description" content="A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/"
+    },
+    "headline": "Herramientas de línea de comandos para monitorizar GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2021-05-29T18:00:00+02:00",
+    "dateModified": "2021-05-29T18:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1331",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_1040x0_resize_box_3.png" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Herramientas de línea de comandos para monitorizar GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>29/05/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>En GNU/Linux hay una colección de herramientas de línea de comandos para obtener información y monitorizar el estado del sistema. Estas herramientas permiten dar respuesta a las preguntas ¿qué porcentaje del procesador están usando los procesos?, ¿cuánta memoria están usando los procesos y cuanta queda libre?, ¿cual es el espacio de almacenamiento usado y cuanto espacio de almacenamiento queda libre?, ¿cual es la tasa de transferencia para el disco y red? o ¿que temperatura tiene el procesador?.</p>
+<p>Otra información que es posible conocer es cuanta memoria tiene el sistema, cuánto almacenamiento tiene el sistema en total, cual es el modelo de procesador, cuál es el modelo de tarjeta gráfica o cual es el entorno de escritorio.</p>
+<p>Las siguientes herramientas permiten monitorizar en tiempo real el estado del sistema y obtener información del mismo, tanto para los procesos, almacenamiento y red.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#monitorizar-procesos-del-sistema">Monitorizar procesos del sistema</a>
+      <ul>
+        <li><a href="#top">top</a></li>
+        <li><a href="#htop">htop</a></li>
+        <li><a href="#ps">ps</a></li>
+        <li><a href="#bpytop">bpytop</a></li>
+        <li><a href="#free">free</a></li>
+      </ul>
+    </li>
+    <li><a href="#monitorizar-almacenamiento">Monitorizar almacenamiento</a>
+      <ul>
+        <li><a href="#df">df</a></li>
+        <li><a href="#iotop">iotop</a></li>
+        <li><a href="#lsof">lsof</a></li>
+      </ul>
+    </li>
+    <li><a href="#monitorizar-red">Monitorizar red</a>
+      <ul>
+        <li><a href="#netstat">netstat</a></li>
+        <li><a href="#tcpdump">tcpdump</a></li>
+      </ul>
+    </li>
+    <li><a href="#otras-herramientas-de-monitorización">Otras herramientas de monitorización</a>
+      <ul>
+        <li><a href="#uptime">uptime</a></li>
+        <li><a href="#iostat">iostat</a></li>
+        <li><a href="#sensors">sensors</a></li>
+        <li><a href="#watch">watch</a></li>
+        <li><a href="#neofetch">neofetch</a></li>
+        <li><a href="#hwinfo">hwinfo</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="monitorizar-procesos-del-sistema">Monitorizar procesos del sistema</h3>
+<p>Estas herramientas permiten monitorizar los procesos del sistema, principalmente en consumo de procesador y memoria.</p>
+<h4 id="top">top</h4>
+<p>Esta herramienta permite monitorizar los procesos del sistema en tiempo real, ver cuánto porcentaje de procesador se está usando, cuanta memoria se está usando y qué procesos lo están haciendo además de conocer qué cantidad de memoria total tiene el sistema.</p>
+<p>Es una herramienta que está entre la colección de herramientas instaladas por defecto en la mayoría de sistema GNU/Linux.</p>
+<p>Com la tecla <em>h</em> se accede al panel de configuración en el que es posible personalizar los colores, ver las teclas de acceso para mostrar información y otras opciones de configuración que se mantienen entre diferentes ejecuciones del programa.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ top -u picodotdev&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>top.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top_hue9710ca91e02327bf802c761716f5ec1_203517_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando top"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top_hue9710ca91e02327bf802c761716f5ec1_203517_300x200_fit_box_3.png" width="269" height="200" alt="Comando top" title="Comando top" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-help_hu9e677f7fe4b799df0f9dbfe2409f0978_97340_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando top"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-help_hu9e677f7fe4b799df0f9dbfe2409f0978_97340_300x200_fit_box_3.png" width="269" height="200" alt="Comando top" title="Comando top" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-colors_hu7e3765eea234a2e285c86c2974ebf809_82511_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando top"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-colors_hu7e3765eea234a2e285c86c2974ebf809_82511_300x200_fit_box_3.png" width="269" height="200" alt="Comando top" title="Comando top" class="" loading="lazy"></a></p>
+<figcaption>Comando top</figcaption>
+</figure>
+</div>
+<h4 id="htop">htop</h4>
+<p><em>htop</em> es una herramienta con el mismo propósito que <em>top</em> pero un poco más avanzada mostrando algo más de información, permite ver los procesos del sistema, consumo de procesador y memoria que están usando. Permite ver el uso del procesador por núcleo de CPU.</p>
+<p>Al igual que <em>top</em> permite ordenar la lista de procesos por uso de procesador, uso de memoria, o tipos de CPU consumidos en orden descendente o en orden ascendente. Ofrece integración con el comando <em>lsof</em>.</p>
+<p>Con la tecla <em>F1</em> es posible ver las opciones de configuración de la utilidad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S htop&#10;$ htop&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>htop.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop_hu793f246a7cc441c11462ba65d90c374b_287755_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando htop"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop_hu793f246a7cc441c11462ba65d90c374b_287755_300x200_fit_box_3.png" width="269" height="200" alt="Comando htop" title="Comando htop" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop-help_hu2e8e77427d12dc26d3cad60c03088e8f_103873_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando htop"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop-help_hu2e8e77427d12dc26d3cad60c03088e8f_103873_300x200_fit_box_3.png" width="269" height="200" alt="Comando htop" title="Comando htop" class="" loading="lazy"></a></p>
+<figcaption>Comando htop</figcaption>
+</figure>
+</div>
+<h4 id="ps">ps</h4>
+<p>El comando <em>ps</em> permite obtener información del estado de los procesos del sistema en el instante que se ejecuta. Posee varias opciones para filtrar los procesos que devuelve y su información de estado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ps&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ps.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/ps_hucb0d0e84f3fb2311cc2a3691f621d8fc_26125_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando ps"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/ps_hucb0d0e84f3fb2311cc2a3691f621d8fc_26125_300x200_fit_box_3.png" width="285" height="200" alt="Comando ps" title="Comando ps" class="" loading="lazy"></a></p>
+<figcaption>Comando ps</figcaption>
+</figure>
+</div>
+<h4 id="bpytop">bpytop</h4>
+<p><a href="https://github.com/aristocratos/bpytop">bpytop</a> es una herramienta similar a <em>top</em> y <em>htop</em> que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.</p>
+<p>Con la tecla <em>M</em> se accede al menu del programa donde configurar los diferentes paneles de información que muestra el programa. Además de ofrecer información de varios aspectos esenciales del sistema otra de sus grandes ventajas es que las teclas de acceso rápido para cambiar las opciones están visibles  en la interfaz general con lo que no hace falta recordar las teclas para cada opción.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S bpytop&#10;$ bpytop&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>bpytop.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando bpytop"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_300x200_fit_box_3.png" width="269" height="200" alt="Comando bpytop" title="Comando bpytop" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-menu_hu87ad5c810f6a2930b5dd304634c8161a_183372_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando bpytop"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-menu_hu87ad5c810f6a2930b5dd304634c8161a_183372_300x200_fit_box_3.png" width="269" height="200" alt="Comando bpytop" title="Comando bpytop" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-options_hucc3b41bff75409a527d27c2d065b2ce5_204109_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando bpytop"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-options_hucc3b41bff75409a527d27c2d065b2ce5_204109_300x200_fit_box_3.png" width="272" height="200" alt="Comando bpytop" title="Comando bpytop" class="" loading="lazy"></a></p>
+<figcaption>Comando bpytop</figcaption>
+</figure>
+</div>
+<h4 id="free">free</h4>
+<p>El comando <em>free</em> permite ver la memoria física del sistema y la cantidad de memoria virtual o <em>swap</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ free -h&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>free.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/free_hu69d495e9683a97090df82479adb3a74a_26564_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando free"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/free_hu69d495e9683a97090df82479adb3a74a_26564_300x200_fit_box_3.png" width="289" height="200" alt="Comando free" title="Comando free" class="" loading="lazy"></a></p>
+<figcaption>Comando free</figcaption>
+</figure>
+</div>
+<h3 id="monitorizar-almacenamiento">Monitorizar almacenamiento</h3>
+<p>Las siguientes herramientas permiten monitorizar el almacenamiento del sistema. Permiten ver cuál es la capacidad de todas las unidades conectadas, cuanto espacio de almacenamiento queda libre en cada una de ellas y cual es la tasa de transferencia de almacenamiento que está utilizando el sistema tanto en lectura como en escritura.</p>
+<h4 id="df">df</h4>
+<p>El comando <em>df</em> permite ver información del almacenamiento de las unidades conectadas al sistema en el momento de ejecutar el comando. Permite ver en cada una de ellas su capacidad total y espacio libre restante que le queda, dispositivo hardware, sus particiones y puntos de montaje. Con la opción <em>-h</em> muestra los datos en unidades más comprensibles como KiB, MiB y GiB en vez de en <em>bytes</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ df -h&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>df.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/df_huc614b3df353af1d27dc35fdf84eb2cf0_50416_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando df"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/df_huc614b3df353af1d27dc35fdf84eb2cf0_50416_300x200_fit_box_3.png" width="285" height="200" alt="Comando df" title="Comando df" class="" loading="lazy"></a></p>
+<figcaption>Comando df</figcaption>
+</figure>
+</div>
+<h4 id="iotop">iotop</h4>
+<p>El comando <em>iotop</em> permite ver en tiempo real la tasa de transferencia de lectura y escritura que están empleando los procesos del sistema. Se puede ordenar los procesos por cantidad de lectura o cantidad de escritura.</p>
+<p>Esta herramienta requiere permisos de superusuario en su ejecución.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/">Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux</a></li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S iotop&#10;$ sudo iotop&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>iotop.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iotop_hu449a229f1934b609cf8a4e762e7a7eb2_165483_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando iotop"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iotop_hu449a229f1934b609cf8a4e762e7a7eb2_165483_300x200_fit_box_3.png" width="269" height="200" alt="Comando iotop" title="Comando iotop" class="" loading="lazy"></a></p>
+<figcaption>Comando iotop</figcaption>
+</figure>
+</div>
+<h4 id="lsof">lsof</h4>
+<p>El comando <em>lsof</em> permite conocer cuales son los archivos abiertos por los procesos del sistema en el momento de ejecutar el comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S lsof&#10;$ lsof&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lsof.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/lsof_hufaf7eda6f24e0239145d3d27b9cc6674_138392_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando lsof"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/lsof_hufaf7eda6f24e0239145d3d27b9cc6674_138392_300x200_fit_box_3.png" width="273" height="200" alt="Comando lsof" title="Comando lsof" class="" loading="lazy"></a></p>
+<figcaption>Comando lsof</figcaption>
+</figure>
+</div>
+<h3 id="monitorizar-red">Monitorizar red</h3>
+<p>Las siguientes herramientas permite monitorizar la entrada y salida del trafico red.</p>
+<h4 id="netstat">netstat</h4>
+<p>El comando <em>netstat</em> permite ver cuales son las conexiones de red establecidas por los procesos del sistema y su estado. Con la opción <em>-c</em> monitoriza el tráfico de red en tiempo real o de forma continua.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S netstat-nat&#10;$ netstat-nat&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>netstat.sh</span>
+    </div>
+</div>
+<h4 id="tcpdump">tcpdump</h4>
+<p>El comando <em>tcpdump</em> permite capturar el tráfico de red de una interfaz de red, para un puerto de red o para un nombre de <em>host</em> como origen o destino específico. Con la opción <em>-c</em> se limita la captura a un número de paquetes determinado. También es posible guardar la captura a un archivo para analizarlo una vez terminada la captura con la opción <em>-w</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S tcpdump&#10;$ sudo tcpdump -i any -c5 -nn port <span class="m">80</span>&#10;$ sudo tcpdump -i any -c5 -nn src 192.168.1.6&#10;$ sudo tcpdump -i any -c5 -nn dst 192.168.1.6&#10;&#10;$ sudo tcpdump -i any -c10 -nn -w webserver.pcap port <span class="m">80</span>&#10;$ tcpdump -nn -r webserver.pcap</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>tcpdump.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/tcpdump_hu02e1adf060aca51fc885c3d4a643ccac_142205_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando tcpdump"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/tcpdump_hu02e1adf060aca51fc885c3d4a643ccac_142205_300x200_fit_box_3.png" width="272" height="200" alt="Comando tcpdump" title="Comando tcpdump" class="" loading="lazy"></a></p>
+<figcaption>Comando tcpdump</figcaption>
+</figure>
+</div>
+<h3 id="otras-herramientas-de-monitorización">Otras herramientas de monitorización</h3>
+<h4 id="uptime">uptime</h4>
+<p>El comando <em>uptime</em> permite ver cuánto tiempo lleva en funcionamiento el sistema desde su último apagado o reinicio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ uptime&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>uptime.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/uptime_hu099b590243c3f4c8b8a672c8f820ab27_24564_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando uptime"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/uptime_hu099b590243c3f4c8b8a672c8f820ab27_24564_300x200_fit_box_3.png" width="285" height="200" alt="Comando uptime" title="Comando uptime" class="" loading="lazy"></a></p>
+<figcaption>Comando uptime</figcaption>
+</figure>
+</div>
+<h4 id="iostat">iostat</h4>
+<p>El comando <em>iostat</em> muestra información de entrada y salida del sistema agrupando la información por dispositivo de almacenamiento. A diferencia de <em>iotop</em> no muestra cual es el proceso que está realizando la operación de entrada y salida.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S sysstat&#10;$ iostat&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>iostat.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iostat_huade58eb63f8a7287837ebc089793c7bf_41728_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando iostat"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iostat_huade58eb63f8a7287837ebc089793c7bf_41728_300x200_fit_box_3.png" width="300" height="175" alt="Comando iostat" title="Comando iostat" class="" loading="lazy"></a></p>
+<figcaption>Comando iostat</figcaption>
+</figure>
+</div>
+<h4 id="sensors">sensors</h4>
+<p>El comando <em>sensors</em> permite obtener información de la temperatura que incorporan varios de los componente de las computadoras. Este comando muestra la temperatura del procesador para cada uno de sus núcleos, también del dispositivo de almacenamiento NVMe.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sensors&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sensors.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/sensors_hu6a59db204b0f87373c0d1a91561ebfc0_79657_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando sensors"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/sensors_hu6a59db204b0f87373c0d1a91561ebfc0_79657_300x200_fit_box_3.png" width="227" height="200" alt="Comando sensors" title="Comando sensors" class="" loading="lazy"></a></p>
+<figcaption>Comando sensors</figcaption>
+</figure>
+</div>
+<h4 id="watch">watch</h4>
+<p>El comando <em>sensors</em> no muestra la temperatura en tiempo real, únicamente en el momento de su ejecución. El comando <em>watch</em> permite ejecutar un comando según el intervalo de tiempo deseado, utilizado con el comando <em>sensors</em> permite dotarle a este de monitorización casi en tiempo real configurando el intervalo de ejecución cada un segundo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ watch -n <span class="m">1</span> sensors&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>watch.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/watch_hu81be446d9980787a8e00ba05c2693d45_78049_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando watch"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/watch_hu81be446d9980787a8e00ba05c2693d45_78049_300x200_fit_box_3.png" width="227" height="200" alt="Comando watch" title="Comando watch" class="" loading="lazy"></a></p>
+<figcaption>Comando watch</figcaption>
+</figure>
+</div>
+<h4 id="neofetch">neofetch</h4>
+<p>El comando <em>neofetch</em> muestra la información básica del sistema en el que se ejecuta. Aunque la información no es muy detallada contiene la descripción del los componentes de hardware y software principales del sistema como procesador, memoria, tarjeta gráfica, <em>kernel</em>, distribución de GNU/Linux, entorno de escritorio, número de paquetes instalados y algunas informaciones adicionales menos relevantes.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/">Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux</a></li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S neofetch&#10;$ neofetch&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>neofetch.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/neofetch_hu24d53025913e97820fb59ebb162457a0_77205_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando neofetch"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/neofetch_hu24d53025913e97820fb59ebb162457a0_77205_300x200_fit_box_3.png" width="275" height="200" alt="Comando neofetch" title="Comando neofetch" class="" loading="lazy"></a></p>
+<figcaption>Comando neofetch</figcaption>
+</figure>
+</div>
+<h4 id="hwinfo">hwinfo</h4>
+<p>Aunque el comando <em>hwinfo</em> no es un comando de monitorización permite conocer diversa y detallada información del hardware del sistema. La información incluye datos sobre el modelo de procesador, modelo de placa base, unidad de almacenamiento y tarjeta gráfica. Esta información es útil en caso de necesitar algún paquete ya que algunos son específicos según el hardware del sistema por ejemplo los controladores de la tarjeta gráfica.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S hwinfo&#10;$ hwinfo --cpu&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>hwinfo.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo_hu19e68f27b9be385c86cd8cdf8f2c247a_152125_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando hwinfo"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo_hu19e68f27b9be385c86cd8cdf8f2c247a_152125_300x200_fit_box_3.png" width="272" height="200" alt="Comando hwinfo" title="Comando hwinfo" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo-help_hu4ca6279f055077ddb40bb7c33b70404b_132013_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando hwinfo"><img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo-help_hu4ca6279f055077ddb40bb7c33b70404b_132013_300x200_fit_box_3.png" width="272" height="200" alt="Comando hwinfo" title="Comando hwinfo" class="" loading="lazy"></a></p>
+<figcaption>Comando hwinfo</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.terminalbytes.com/common-linux-commands-system-monitoring/">6 Common Linux Commands for System Monitoring</a></li>
+<li><a href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">20 Command Line Tools to Monitor Linux Performance</a></li>
+<li><a href="https://opensource.com/article/18/10/introduction-tcpdump">An introduction to using tcpdump at the Linux command line</a></li>
+<li><a href="https://www.techrepublic.com/article/how-to-use-the-linux-iostat-command-to-check-on-your-storage-subsystem/">How to use the Linux iostat command to check on your storage subsystem</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">
+                <img src="/blog-bitix/assets/images/logotypes/freebsd.svg" width="326" height="125" alt="Guía de instalación y uso básico de FreeBSD" title="Guía de instalación y uso básico de FreeBSD" class="" loading="lazy">
+                <h3>Guía de instalación y uso básico de FreeBSD</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">
+                <img src="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_875x0_resize_q90_box.jpg" width="326" height="125" alt="Herramientas de reconocimiento de texto en imágenes con OCR" title="Herramientas de reconocimiento de texto en imágenes con OCR" class="" loading="lazy">
+                <h3>Herramientas de reconocimiento de texto en imágenes con OCR</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Convertir texto o imagen a arte de caracteres ASCII" title="Convertir texto o imagen a arte de caracteres ASCII" class="" loading="lazy">
+                <h3>Convertir texto o imagen a arte de caracteres ASCII</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-boundary.svg" width="326" height="125" alt="Acceso simple y seguro a sistemas remotos con Boundary" title="Acceso simple y seguro a sistemas remotos con Boundary" class="" loading="lazy">
+                <h3>Acceso simple y seguro a sistemas remotos con Boundary</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="326" height="125" alt="Cifrado y descifrado como servicio con Vault" title="Cifrado y descifrado como servicio con Vault" class="" loading="lazy">
+                <h3>Cifrado y descifrado como servicio con Vault</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">
+                <img src="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_875x0_resize_box_3.png" width="326" height="125" alt="Herramientas para convertir texto a audio de voz natural" title="Herramientas para convertir texto a audio de voz natural" class="" loading="lazy">
+                <h3>Herramientas para convertir texto a audio de voz natural</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-578';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/05\/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

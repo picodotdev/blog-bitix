@@ -1,0 +1,607 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Trazabilidad en servicios distribuidos con Sleuth y Zipkin</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/" hreflang="es" title="Trazabilidad en servicios distribuidos con Sleuth y Zipkin">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/index-amp.html" hreflang="es" title="Trazabilidad en servicios distribuidos con Sleuth y Zipkin">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Trazabilidad en servicios distribuidos con Sleuth y Zipkin">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/zipkin-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/zipkin-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Trazabilidad en servicios distribuidos con Sleuth y Zipkin">
+<meta name="twitter:description" content="En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/"
+    },
+    "headline": "Trazabilidad en servicios distribuidos con Sleuth y Zipkin",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/zipkin-750.png"
+        
+      },
+    "datePublished": "2020-10-02T17:30:00+02:00",
+    "dateModified": "2020-10-02T17:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1463",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Trazabilidad en servicios distribuidos con Sleuth y Zipkin</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/10/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/zipkin.svg" width="200" height="211" alt="Zipkin" title="Zipkin" class="" loading="false"></p>
+</div>
+<p>El un sistema basado en microservicios unos servicios depende de otros y se comunican haciendo llamadas entre ellos. Las llamadas entre los servicios son un punto de fallo y problemas que conviene monitorizar para que el conjunto de la aplicación funcione correctamente. Con un número importante de servicios la monitorización y la trazabilidad es una de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">funcionalidades de las aplicaciones basadas en microservicios</a>, muchas de estas funcionalidades son proporcionadas de forma específica por una herramienta.</p>
+<p>En el caso de <a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">trazabilidad en microservicios con Sleuth</a> proporciona un identificador global que permite correlacionar todas las trazas desencadenadas por una petición en los diferentes servicios, con el identificador global de una traza se puede obtener el resto de trazas del mismo servicio. Con el identificador global es posible acceder al registro de trazas y obtener todas las correlacionadas con el identificador global como sería el caso de <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">guardar las trazas en Elasticsearch, Logstash y Kibana</a>. Pero las trazas emitidas por los microservicios no ofrecen métricas de cuánto tiempo ha tardado cada uno de los microservicios en su ejecución en devolver la respuesta y sin nada adicional no permite correlacionar las trazas de un servicio con las trazas del servicio llamado.</p>
+<p>Otro aspecto de las llamadas entre los microservicios es medir los tiempos de respuesta y latencia entre los servicios, si un servicio tiene un bajo rendimiento y tarda en responder es posible que produzca errores en los servicios que lo usan, provocando otros errores en el sistema. Para que el mal funcionamiento de un servicio provoque errores en otros los servicios han de estar preparados y admitir <a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">tolerancia a fallos con la librería Resilience4j</a>. <a href="https://micrometer.io/">Micrometer</a>, <a href="https://prometheus.io/">Prometheus</a> y <a href="https://grafana.com/">Grafana</a> son la forma de <a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">obtener métricas y monitorizar una aplicación Java con Spring Boot</a> que incluye los tiempos de respuesta de los microservicios.</p>
+<p><a href="https://zipkin.io/">Zipkin</a> es una herramienta que recolecta las transacciones creadas por Sleuth en la ejecución de los microservicios e información de los tiempos de respuesta de las invocaciones que han intervenido en una transación. Ofrece las dos funcionalidades la recolección de datos y la obtención de los mismos. Tanto la recolección como el almacenamiento ofrecen diferentes herramientas para implementarlo, la recolección puede ser mediante peticiones HTTP, <a href="https://www.rabbitmq.com/">RabbitMQ</a> o <a href="https://kafka.apache.org/">Kafka</a> y el almacenamiento en memoria, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://cassandra.apache.org/">Cassandra</a> o <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>.</p>
+<p>En el ejemplo hay un microservicio que hace de servidor y otro de cliente que se comunican mediante peticiones HTTP con REST. Tanto el microservicio cliente como el microservicio servidor usan <a href="https://spring.io/projects/spring-cloud-sleuth">Sleuth</a> que genera identificativos globales que permiten correlacionar todas las peticiones entre los diferentes servicios.</p>
+<p>Sleuth proporcionar trazabilidad con identificativos globales que podrían ser recuperados a través del sistema de <em>logging</em> centralizado como Elasticsearch, <a href="https://www.elastic.co/es/logstash">Logstash</a> y <a href="https://www.elastic.co/es/kibana">Kibana</a>. Usando una librería de <em>logging</em> como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> se puede <a href="https://picodotdev.github.io/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">configurar Log4j para que emita en las trazas los identificadores globales</a>.</p>
+<h3 id="ejemplo-de-microservicio-con-spring-boot-sleuth-y-zipkin">Ejemplo de microservicio con Spring Boot, Sleuth y Zipkin</h3>
+<p>En el ejemplo de trazabilidad de microservicios con Sleuth consistía en un servicio implementado con Spring Boot, también tiene un cliente que realiza de forma periódica peticiones al servicio. Ambos tienen Sleuth integrado y en las trazas de la consola en ambos aparece el identificador global <em>traceId</em> de la traza. En este ejemplo se configura Sleuth para que envíe a Zipkin las transacciones de estos dos pequeños microservicios.</p>
+<p>Para que Sleuth envíe al servidor las métricas de las llamadas entre los microservicios basta con añadir al proyecto del cliente y microservicio la dependencia <em>spring-cloud-starter-zipkin</em> y configurar el medio de transporte que se utiliza para enviar las métricas al servidor, en este caso mediante peticiones HTTP y la dirección de Zipkin. Esto se configura con las propiedades de Spring Boot <em>spring.zipkin.enabled</em>, <em>spring.zipkin.baseUrl</em> y <em>spring.zipkin.sender.type</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="o">...</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-starter-zipkin&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">...</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">client</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">zipkin</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">baseUrl</span><span class="p">:</span><span class="w"> </span><span class="l">http://zipkin:9411/</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">sender</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nn">...</span><span class="w">&#10;</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>client.yml</span>
+    </div>
+</div>
+<p>Los siguientes comandos inician el registro y descubrimiento de servicios, el orquestador de contenedores, el servidor de configuración, el servicio, un <em>proxy</em> del servicio que balancea la carga si hubiera diferentes instancias del servicio y admite tolerancia a fallos si alguna de las instancias falla y finalmente el cliente del servicio. En el ejemplo se utiliza <a href="https://www.nomadproject.io/">Nomad</a> y <a href="https://www.docker.com/">Docker</a> junto a <a href="https://www.consul.io/">Consul</a> y <a href="https://traefik.io/">Traefik</a>. El ejemplo requiere iniciar Consul y Nomad y tener instalado, configurado y en ejecución Docker.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Guía sobre Docker</a></li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>docker network create --subnet 172.30.0.0/16 nomad&#10;&#10;consul agent -dev -ui -client<span class="o">=</span>0.0.0.0&#10;nomad agent -dev -config<span class="o">=</span>nomad/nomad.conf&#10;<span class="c1"># http://127.0.0.1:8500</span>&#10;<span class="c1"># http://127.0.0.1:4646</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-1.sh</span>
+    </div>
+</div>
+<p>Nomad se encarga de orquestar los contenedores de Docker para crear las instancias de los microservicios. Las definiciones de los microservicios se envian a Nomad para que inicie las instancias.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>docker network create --subnet 172.30.0.0/16 nomad&#10;&#10;./gradlew assemble&#10;&#10;nomad job run nomad/traefik.nomad&#10;nomad job run nomad/zipkin.nomad&#10;<span class="c1"># http://127.0.0.1:8092</span>&#10;<span class="c1"># http://127.0.0.1:9411</span>&#10;&#10;nomad job run nomad/configserver.nomad&#10;nomad job run nomad/service.nomad&#10;nomad job run nomad/client.nomad</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-2.sh</span>
+    </div>
+</div>
+<p>Sleuth exporta los datos de las transacciones a Zipkin donde se observa los tiempos de respuesta de los microservicios para una petición determinada dado su identificador global. Pero también permite observar que microservicios han sido llamados lo que ayuda a conocer cual ha sido el comportamiento del sistema, dependiendo de la lógica de negocio que implementen no tienen por que ser siempre los mismos.</p>
+<p>Zipkin ofrece una aplicación web con la que consultar las llamadas desencadenadas por una petición y los tiempos de respuesta de los servicios involucrados, la aplicación web está en la dirección <em>http://localhost:9411/zipkin/</em> o a través de Traefik con <em>http://localhost:8093/zipkin/</em>. Utilizando uno de los identificadores globales de petición e introduciéndolo en el cuadro de búsqueda de Zipkin se observan los tiempos de respuesta de cada uno de los servicios.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">...&#10;Client Span (traceId: 4605e7da594f8a1c, spanId: 4605e7da594f8a1c)&#10;Service response: Hello world (url: http://172.30.0.3/, remoteAddress_172.30.0.3, localAddress: 172.30.0.7, traceId: 4605e7da594f8a1c, spanId: 8b42ba6118ff60e9, key: value)&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>client.out</span>
+    </div>
+</div>
+<p>Tanto el microservicio cliente como el microservicio servidor tienen Sleuth integrado y envían de forma asíncrona cuando terminan las peticiones HTTP la información de trazabilidad a Zipkin. Con el <em>traceId</em> de una transacción se observa en Zipkin la cadena de llamadas entre los microservicios y sus tiempos de respuesta. En el ejemplo solo hay dos pero podrían en un caso real quizá sean tres, cuatro o más ya sea porque cada servicio utiliza otro o porque un mismo servicio utiliza varios, ver esta información de forma gráfica es mucho más fácil de analizar que solo con las trazas correlacionadas en ELK.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Nomad"><img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Nomad" title="Interfaz web de Nomad" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Zipkin"><img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Zipkin" title="Interfaz web de Zipkin" class="" loading="lazy"></a></p>
+<figcaption>Interfaz web de Nomad y Zipkin</figcaption>
+</figure>
+</div>
+<p>Este es el código del cliente que hace la petición al servidor y el código del servidor. Spring ya proporciona integración con Sleuth en sus utilidades como <em>RestTemplate</em>. Si se utiliza el cliente HTTP de Java añadido junto con otras <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/">novedades de Java 11</a> hay que añadir el soporte para que en la petición se añadan las cabeceras cuando se haga la petición. La forma que tiene Sleuth de compartir los identificativos de las transacciones entre el cliente y el servidor es a través de las cabeceras en las peticiones HTTP.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloud.client</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="nd">@EnableDiscoveryClient</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;	<span class="nd">@Autowired</span>&#10;	<span class="kd">private</span> <span class="n">DefaultConfiguration</span> <span class="n">configuration</span><span class="o">;</span>&#10;&#10;	<span class="nd">@Autowired</span>&#10;	<span class="kd">private</span> <span class="n">ProxyService</span> <span class="n">proxyService</span><span class="o">;</span>&#10;&#10;	<span class="nd">@Bean</span>&#10;	<span class="kd">public</span> <span class="n">RestTemplate</span> <span class="nf">restTemplate</span><span class="o">(</span><span class="n">RestTemplateBuilder</span> <span class="n">builder</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Valor de propiedad de configuración (%s): %s%n&#34;</span><span class="o">,</span> <span class="s">&#34;config.key&#34;</span><span class="o">,</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>&#10;		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Valor de propiedad de configuración (%s): %s%n&#34;</span><span class="o">,</span> <span class="s">&#34;config.password&#34;</span><span class="o">,</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getPassword</span><span class="o">());</span>&#10;&#10;		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">20000</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;			<span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">get</span><span class="o">();</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Service response: %s%n&#34;</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>&#10;			<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>&#10;		<span class="o">}</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="n">String</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>&#10;		<span class="k">return</span> <span class="n">proxyService</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">SpringApplication</span> <span class="n">application</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SpringApplication</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;		<span class="n">application</span><span class="o">.</span><span class="na">setApplicationContextClass</span><span class="o">(</span><span class="n">AnnotationConfigApplicationContext</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;	<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span><span class="lnt">66&#10;</span><span class="lnt">67&#10;</span><span class="lnt">68&#10;</span><span class="lnt">69&#10;</span><span class="lnt">70&#10;</span><span class="lnt">71&#10;</span><span class="lnt">72&#10;</span><span class="lnt">73&#10;</span><span class="lnt">74&#10;</span><span class="lnt">75&#10;</span><span class="lnt">76&#10;</span><span class="lnt">77&#10;</span><span class="lnt">78&#10;</span><span class="lnt">79&#10;</span><span class="lnt">80&#10;</span><span class="lnt">81&#10;</span><span class="lnt">82&#10;</span><span class="lnt">83&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloud.client</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProxyService</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracing</span> <span class="n">tracing</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracer</span> <span class="n">tracer</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">RestTemplate</span> <span class="n">restTemplate</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">HttpClient</span> <span class="n">client</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">ProxyService</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">client</span> <span class="o">=</span> <span class="n">HttpClient</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">version</span><span class="o">(</span><span class="n">HttpClient</span><span class="o">.</span><span class="na">Version</span><span class="o">.</span><span class="na">HTTP_2</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ServiceInstance</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">loadBalancer</span><span class="o">.</span><span class="na">choose</span><span class="o">(</span><span class="s">&#34;traefik&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">URI</span> <span class="n">uri</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="na">getUri</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">resource</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%s%s&#34;</span><span class="o">,</span> <span class="n">uri</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="o">,</span> <span class="s">&#34;traefik&#34;</span><span class="o">),</span> <span class="s">&#34;/service&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">final</span> <span class="n">URI</span> <span class="n">resourceUri</span> <span class="o">=</span> <span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">resource</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Supplier</span><span class="o">&lt;</span><span class="n">CompletableFuture</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">get</span> <span class="o">=</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">CompletableFuture</span><span class="o">.</span><span class="na">supplyAsync</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Span</span> <span class="n">span</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">newTrace</span><span class="o">().</span><span class="na">kind</span><span class="o">(</span><span class="n">Span</span><span class="o">.</span><span class="na">Kind</span><span class="o">.</span><span class="na">CLIENT</span><span class="o">).</span><span class="na">name</span><span class="o">(</span><span class="s">&#34;CLIENT&#34;</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Client Span (traceId: %s, spanId: %s)%n&#34;</span><span class="o">,</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">traceIdString</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">spanIdString</span><span class="o">());</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">getRequest</span><span class="o">(</span><span class="n">client</span><span class="o">,</span> <span class="n">span</span><span class="o">,</span> <span class="n">resourceUri</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//String result = getRequest(restTemplate, span, resouceUri);&#10;</span><span class="c1"></span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">span</span><span class="o">.</span><span class="na">finish</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">result</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">};</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">Try</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">getCircuitBreaker</span><span class="o">::</span><span class="n">call</span><span class="o">).</span><span class="na">recover</span><span class="o">((</span><span class="n">throwable</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">getFallback</span><span class="o">()).</span><span class="na">get</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="nf">getFallback</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="s">&#34;Fallback&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="nf">getRequest</span><span class="o">(</span><span class="n">HttpClient</span> <span class="n">client</span><span class="o">,</span> <span class="n">Span</span> <span class="n">span</span><span class="o">,</span> <span class="n">URI</span> <span class="n">resourceUri</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HttpRequest</span><span class="o">.</span><span class="na">Builder</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HttpRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">(</span><span class="n">resourceUri</span><span class="o">).</span><span class="na">GET</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Span</span> <span class="n">serviceSpan</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">newChild</span><span class="o">(</span><span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">());</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">Tracer</span><span class="o">.</span><span class="na">SpanInScope</span> <span class="n">ws</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">withSpanInScope</span><span class="o">(</span><span class="n">serviceSpan</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">TraceContext</span><span class="o">.</span><span class="na">Injector</span><span class="o">&lt;</span><span class="n">HttpRequest</span><span class="o">.</span><span class="na">Builder</span><span class="o">&gt;</span> <span class="n">injector</span> <span class="o">=</span> <span class="n">tracing</span><span class="o">.</span><span class="na">propagation</span><span class="o">().</span><span class="na">injector</span><span class="o">((</span><span class="n">HttpRequest</span><span class="o">.</span><span class="na">Builder</span> <span class="n">carrier</span><span class="o">,</span> <span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">carrier</span><span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">injector</span><span class="o">.</span><span class="na">inject</span><span class="o">(</span><span class="n">tracer</span><span class="o">.</span><span class="na">currentSpan</span><span class="o">().</span><span class="na">context</span><span class="o">(),</span> <span class="n">request</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">build</span><span class="o">(),</span> <span class="n">HttpResponse</span><span class="o">.</span><span class="na">BodyHandlers</span><span class="o">.</span><span class="na">ofString</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="na">body</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">getFallback</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">serviceSpan</span><span class="o">.</span><span class="na">finish</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="nf">getRequest</span><span class="o">(</span><span class="n">RestTemplate</span> <span class="n">restTemplate</span><span class="o">,</span> <span class="n">Span</span> <span class="n">span</span><span class="o">,</span> <span class="n">URI</span> <span class="n">resourceUri</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">Tracer</span><span class="o">.</span><span class="na">SpanInScope</span> <span class="n">ws</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">withSpanInScope</span><span class="o">(</span><span class="n">span</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="n">resourceUri</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RestClientException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">getFallback</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ProxyService.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloud.service</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@RestController</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefaultController</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">DefaultConfiguration</span> <span class="n">configuration</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracing</span> <span class="n">tracing</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracer</span> <span class="n">tracer</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Random</span> <span class="n">random</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Counter</span> <span class="n">counter</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">home</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Span</span> <span class="n">span</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">currentSpan</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Service Span (traceId: %s, spanId: %s)%n&#34;</span><span class="o">,</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">traceIdString</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">spanIdString</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">counter</span><span class="o">.</span><span class="na">increment</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Timeout simulation&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//Thread.sleep(random.nextInt(4000));&#10;</span><span class="c1"></span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello world (url: %s, remoteAddress_%s, localAddress: %s, traceId: %s, spanId: %s, key: %s)&#34;</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestURL</span><span class="o">(),</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">request</span><span class="o">.</span><span class="na">getRemoteAddr</span><span class="o">(),</span> <span class="n">request</span><span class="o">.</span><span class="na">getLocalAddr</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">traceIdString</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">spanIdString</span><span class="o">(),</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultController.java</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloudConsulNomadTraefik">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./run.sh</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.paradigmadigital.com/dev/trazabilidad-distribuida-spring-cloud-sleuth-zipkin/">Trazabilidad Distribuida con Spring Cloud: Sleuth y Zipkin</a></li>
+<li><a href="https://github.com/openzipkin/zipkin-dependencies">Zipkin Dependencies</a></li>
+<li><a href="https://github.com/openzipkin?utf8=%E2%9C%93&amp;q=example">Zipkin Examples</a></li>
+<li><a href="https://docs.spring.io/spring-cloud-sleuth/docs/2.2.5.RELEASE/reference/html/appendix.html">Sleuth Common application properties</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>spring-cloud</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">Datos de sesión externalizados con Spring Session</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/">Configuración de una aplicación en diferentes entornos con Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">Información y métricas de la aplicación con Spring Boot Actuator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/aplicaciones-basadas-en-microservicios/">Aplicaciones basadas en microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/">Registro y descubrimiento de servicios con Spring Cloud Netflix</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/servicio-de-configuracion-para-microservicios-con-spring-cloud-config/">Servicio de configuración para microservicios con Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/recargar-sin-reiniciar-la-configuracion-de-una-aplicacion-spring-boot-con-spring-cloud-config/">Recargar sin reiniciar la configuración de una aplicación Spring Boot con Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/almacenar-cifrados-los-valores-de-configuracion-sensibles-en-spring-cloud-config/">Almacenar cifrados los valores de configuración sensibles en Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/">Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/10/balanceo-de-carga-y-resilencia-en-un-microservicio-con-spring-cloud-netflix-y-ribbon/">Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/10/proxy-para-microservicios-con-spring-cloud-netflix-y-zuul/">Proxy para microservicios con Spring Cloud Netflix y Zuul</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">Trazabilidad en microservicios con Spring Cloud Sleuth</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">Implementar tolerancia a fallos con Resilience4j</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/">Iniciar una aplicación de Spring Boot en un puerto aleatorio</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">Trazabilidad en servicios distribuidos con Sleuth y Zipkin</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-518';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/10\/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

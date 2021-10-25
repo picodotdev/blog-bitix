@@ -1,0 +1,627 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="No siempre las aplicaciones proporcionan los datos que se necesitan. A veces para obtener cierta información de forma puntual o para corregir un dato que no se puede hacer desde la aplicación es necesario lanzar una consulta SQL a la base de datos relacional. Esto no es lo ideal, simplemente en ocasiones es lo más simple y rápido. Por otro lado, para tareas de análisis algunos usuarios necesitan una forma de tener acceso a los datos y obtener gráficas para analizarlos. En el artículo comento varias herramientas para tener acceso a las diferentes bases de datos ya sean de producción o del entorno de QA. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Herramienta para ejecutar consultas SQL en la base de datos de producción</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/" hreflang="es" title="Herramienta para ejecutar consultas SQL en la base de datos de producción">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/index-amp.html" hreflang="es" title="Herramienta para ejecutar consultas SQL en la base de datos de producción">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Herramienta para ejecutar consultas SQL en la base de datos de producción">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad_hu97a7f11ed2c90582f47b208688f34114_58441_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="No siempre las aplicaciones proporcionan los datos que se necesitan. A veces para obtener cierta información de forma puntual o para corregir un dato que no se puede hacer desde la aplicación es necesario lanzar una consulta SQL a la base de datos relacional. Esto no es lo ideal, simplemente en ocasiones es lo más simple y rápido. Por otro lado, para tareas de análisis algunos usuarios necesitan una forma de tener acceso a los datos y obtener gráficas para analizarlos. En el artículo comento varias herramientas para tener acceso a las diferentes bases de datos ya sean de producción o del entorno de QA. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad_hu97a7f11ed2c90582f47b208688f34114_58441_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Herramienta para ejecutar consultas SQL en la base de datos de producción">
+<meta name="twitter:description" content="No siempre las aplicaciones proporcionan los datos que se necesitan. A veces para obtener cierta información de forma puntual o para corregir un dato que no se puede hacer desde la aplicación es necesario lanzar una consulta SQL a la base de datos relacional. Esto no es lo ideal, simplemente en ocasiones es lo más simple y rápido. Por otro lado, para tareas de análisis algunos usuarios necesitan una forma de tener acceso a los datos y obtener gráficas para analizarlos. En el artículo comento varias herramientas para tener acceso a las diferentes bases de datos ya sean de producción o del entorno de QA. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/"
+    },
+    "headline": "Herramienta para ejecutar consultas SQL en la base de datos de producción",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad_hu97a7f11ed2c90582f47b208688f34114_58441_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2020-11-13T17:00:00+01:00",
+    "dateModified": "2020-11-13T17:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1193",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "No siempre las aplicaciones proporcionan los datos que se necesitan. A veces para obtener cierta información de forma puntual o para corregir un dato que no se puede hacer desde la aplicación es necesario lanzar una consulta SQL a la base de datos relacional. Esto no es lo ideal, simplemente en ocasiones es lo más simple y rápido. Por otro lado, para tareas de análisis algunos usuarios necesitan una forma de tener acceso a los datos y obtener gráficas para analizarlos. En el artículo comento varias herramientas para tener acceso a las diferentes bases de datos ya sean de producción o del entorno de QA."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Herramienta para ejecutar consultas SQL en la base de datos de producción</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>13/11/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">No siempre las aplicaciones proporcionan los datos que se necesitan. A veces para obtener cierta información de forma puntual o para corregir un dato que no se puede hacer desde la aplicación es necesario lanzar una consulta SQL a la base de datos relacional. Esto no es lo ideal, simplemente en ocasiones es lo más simple y rápido. Por otro lado, para tareas de análisis algunos usuarios necesitan una forma de tener acceso a los datos y obtener gráficas para analizarlos. En el artículo comento varias herramientas para tener acceso a las diferentes bases de datos ya sean de producción o del entorno de QA.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Sí, es cierto, lanzar consultas SQL directamente en la base de datos de producción o una réplica no es lo ideal ni debería ser habitual, sin embargo, a veces tener acceso a los datos de la base de datos de producción es la forma más rápida y sencilla de obtener información para resolver un <em>bug</em> del que ni siquiera un <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">sistema centralizado de almacenamiento de trazas como ELK</a> proporciona información relevante o simplemente porque alguien del departamento financiero, <em>marketing</em> u otro departamento solicita una información que necesita.</p>
+<p>En ambos casos del <em>bug</em> o de alguien que necesita información en ocasiones tienen la mala costumbre de necesitar ser atendidos con rapidez. Si para obtener la información se necesita un proceso que involucra a varias personas, cada una con sus propias tareas y prioridades, el proceso es lento y el demandante de esa información acabará poco contento quejándose del departamento de IT. El proceso también será lento si es complicado o sólo determinadas personas tienen los permisos necesarios pare realizarlo o con riesgos si las herramientas que se usan otorgan gran poder pero requieren gran responsabilidad.</p>
+<p>Proporcionando una herramienta a modo de sírvete tú mismo uno se sorprende de las consultas que alguien del departamento financiero o de <em>marketing</em> son capaces de hacer ellos mismos para obtener la información que necesitan si tienen el interés de aprender algo de SQL. Lo cual es beneficioso en varios sentidos, ellos son más autónomos en su trabajo y las personas de IT no se ven interrumpidas para atender este tipo de tareas, sólo cuando la consulta tiene cierta dificultad.</p>
+<p>Si además como en los microservicios hay múltiples bases de datos para varios de ellos tener acceso a todas las bases de datos es más complicado de gestionar. Por otro lado, al decir la base de datos de producción también es válido para tener acceso a las bases de datos del entorno de QA.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#herramienta-para-obtener-y-modificar-datos-de-una-base-de-datos-relacional">Herramienta para obtener y modificar datos de una base de datos relacional</a></li>
+    <li><a href="#herramientas-para-visualizar-datos">Herramientas para visualizar datos</a></li>
+    <li><a href="#cómo-proteger-los-datos">Cómo proteger los datos</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="herramienta-para-obtener-y-modificar-datos-de-una-base-de-datos-relacional">Herramienta para obtener y modificar datos de una base de datos relacional</h3>
+<p><a href="https://sqlpad.github.io/sqlpad/#/">SQLPad</a> es una pequeña herramienta que actúa como cliente de una base de datos relacional con la que es posible lanzar consultas SQL mediante una interfaz web. Esta herramienta hace muy sencillo el acceso a la base de datos de producción, entorno de QA o a una de sus réplicas, dado que utiliza una interfaz web no es necesario instalar ni configurar ninguna herramienta adicional, solo requiere un navegador web que todo ordenador ya posee.</p>
+<p>Simplemente es necesario seleccionar la base de datos de la que se quieren los datos y ejecutar la consulta SQL deseada para obtener los datos como resultado. Permite explorar los esquemas de la base de datos, las tablas, los campos y cuales son sus tipos.</p>
+<p>SQLPad tiene una licencia de software libre y soporta las bases de datos relacionales más populares como <a href="https://www.postgresql.org/">Postgres</a>, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2016">SQL Server</a>, <a href="https://cassandra.apache.org/">Cassandra</a>, <a href="https://cloud.google.com/bigquery?hl=es">Google BigQuery</a>, <a href="https://sqlite.org/index.html">SQLite</a> entre otras.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad_hu97a7f11ed2c90582f47b208688f34114_58441_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="SQLPad"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad_hu97a7f11ed2c90582f47b208688f34114_58441_600x450_fit_box_3.png" width="600" height="394" alt="SQLPad" title="SQLPad" class="" loading="lazy"></a></p>
+<figcaption>SQLPad</figcaption>
+</figure>
+</div>
+<p>Otra funcionalidad habitual es poder exportar los datos en formato CSV o xlsx para procesarlos con algún comando o programa en el equipo en local o simplemente para hacer algún tipo de tratamiento con el programa ofimático de hoja de cálculo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">id,name&#10;1,one&#10;2,two&#10;3,two</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>data.csv</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/onlyoffice-csv_hu0ea464c954966fed594c697d9be1f4d0_84490_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="OnlyOffice CSV"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/onlyoffice-csv_hu0ea464c954966fed594c697d9be1f4d0_84490_300x200_fit_box_3.png" width="300" height="198" alt="OnlyOffice CSV" title="OnlyOffice CSV" class="" loading="lazy"></a></p>
+<figcaption>OnlyOffice CSV</figcaption>
+</figure>
+</div>
+<p>Aunque SQLPad no ofrece la potencia de otras herramientas específicas para la tarea permite visualizar los datos de forma básica en gráficas. Por ejemplo obtener un gráfico de barras de una agrupación de datos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-up.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad-visualization-1_hueda0501677491bc4a7dcac9eabb4d984_60220_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="SQLPad Visualization"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad-visualization-1_hueda0501677491bc4a7dcac9eabb4d984_60220_300x200_fit_box_3.png" width="300" height="197" alt="SQLPad Visualization" title="SQLPad Visualization" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad-visualization-2_huf46c4bd1c1dfb97aa2ce75da9c65cf0f_63989_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="SQLPad Visualization"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad-visualization-2_huf46c4bd1c1dfb97aa2ce75da9c65cf0f_63989_300x200_fit_box_3.png" width="300" height="197" alt="SQLPad Visualization" title="SQLPad Visualization" class="" loading="lazy"></a></p>
+<figcaption>SQLPad Visualization</figcaption>
+</figure>
+</div>
+<p>Permite además guardar las consultas que sirve para compartir entre diferentes miembros de un equipo aquellas que son habituales o proporcionarles a personas que no saben SQL la consulta que deben ejecutar para obtener los datos que necesitan de forma periódica.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad-queries_hu4f02ec9ba288033677b0a85ecae94038_90487_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consultas compartidas en SQLPad"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/sqlpad-queries_hu4f02ec9ba288033677b0a85ecae94038_90487_300x200_fit_box_3.png" width="300" height="197" alt="Consultas compartidas en SQLPad" title="Consultas compartidas en SQLPad" class="" loading="lazy"></a></p>
+<figcaption>Consultas compartidas en SQLPad</figcaption>
+</figure>
+</div>
+<p>Una herramienta que proporciona acceso a los datos de producción requiere autenticación y permisos para otorgar únicamente el acceso a las bases de datos o conceder acceso de solo lectura a los datos. Los usuarios con el rol de administrador puede crear conexiones a bases de datos, crear usuarios y definir qué conexiones pueden utilizar cada usuario con una fecha de expiración para cada usuario. Para crear una conexión de solo lectura hay que crear un usuario en la base de datos que únicamente tenga permisos de solo lectura, posteriormente en SQLPad para definir una conexión de solo lectura se usa este usuario. Del mismo modo con los permisos del usuario de conexión de la base de datos es posible limitar las tablas a las que se tienen acceso u otros permisos que permita la base de datos.</p>
+<p>SQLPad ofrece un contenedor de <a href="https://www.docker.com/">Docker</a> y un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> con el que iniciar la herramienta. El siguiente archivo de Docker Compose define un contenedor con una base de datos PostgreSQL a la que se conecta e inicializa el contenedor de SQLPad. Los archivos del <a href="https://github.com/sqlpad/sqlpad/tree/master/docker-examples/postgres-docker-compose">código fuente completo del ejemplo</a> incluye algunos adicionales, SQLPad se accede con la siguiente URL <em>http://localhost:3000/</em> que solicita una credenciales <em>admin@sqlpad.com/admin</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">version: <span class="s1">&#39;3&#39;</span>&#10;services:&#10;  postgres:&#10;&nbsp;&nbsp;&nbsp;&nbsp;image: postgres&#10;&nbsp;&nbsp;&nbsp;&nbsp;restart: always&#10;&nbsp;&nbsp;&nbsp;&nbsp;environment:&#10;&nbsp;&nbsp;&nbsp;&nbsp;  POSTGRES_USER: sqlpad&#10;&nbsp;&nbsp;&nbsp;&nbsp;  POSTGRES_PASSWORD: sqlpad&#10;&nbsp;&nbsp;&nbsp;&nbsp;volumes:&#10;&nbsp;&nbsp;&nbsp;&nbsp;  - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d&#10;&#10;  sqlpad:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1"># To use Dockerfile at root of this project, use build instead of image</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1"># build: ../../</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;image: sqlpad/sqlpad:5&#10;&nbsp;&nbsp;&nbsp;&nbsp;hostname: <span class="s1">&#39;sqlpad&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;ports:&#10;&nbsp;&nbsp;&nbsp;&nbsp;  - <span class="s1">&#39;3000:3000&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;environment:&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_ADMIN: <span class="s1">&#39;admin@sqlpad.com&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_ADMIN_PASSWORD: <span class="s1">&#39;admin&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_APP_LOG_LEVEL: debug&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_WEB_LOG_LEVEL: warn&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_SEED_DATA_PATH: /etc/sqlpad/seed-data&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__name: Postgres demo&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__driver: postgres&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__host: postgres&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__database: sqlpad&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__username: sqlpad&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__password: sqlpad&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__multiStatementTransactionEnabled: <span class="s1">&#39;true&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  SQLPAD_CONNECTIONS__pgdemo__idleTimeoutSeconds: <span class="m">86400</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;volumes:&#10;&nbsp;&nbsp;&nbsp;&nbsp;  - ./seed-data:/etc/sqlpad/seed-data</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-up.sh</span>
+    </div>
+</div>
+<h3 id="herramientas-para-visualizar-datos">Herramientas para visualizar datos</h3>
+<p>Obtener los datos y descargarlos en formato csv o xlsx permite extraer información, para comprender mejor un gran volumen de datos se utilizan diferentes tipos de gráficas.</p>
+<p>SQLPad tiene una funcionalidad básica para representar los datos en formato gráfico pero no es una herramienta especializada en esta tarea.</p>
+<p><a href="https://redash.io/">Redash</a>, <a href="https://www.metabase.com/">Metabase</a>, <a href="https://superset.apache.org/">Apache Superset</a> son herramientas dedicadas a construir gráficas a partir de datos de la categoría inteligencia empresarial o <em>business intelligence</em>. Permiten crear paneles de control con la información que se desee y ver la evolución y tendencia de los datos. Esta información sirve como apoyo para tomar decisiones basadas en los datos.</p>
+<p>Algunas herramientas tienen un coste si se usan con el <em>hosting</em> que ofrecen pero son gratuitas si se hospeda en infraestructura propia.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/redash_hu01869cc69a673aead30b8aaa954d25ca_341822_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Redash"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/redash_hu01869cc69a673aead30b8aaa954d25ca_341822_300x200_fit_box_3.png" width="300" height="168" alt="Redash" title="Redash" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/metabase_hu22c33d06d1ca35f9435157f1c61e7978_209958_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Metabase"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/metabase_hu22c33d06d1ca35f9435157f1c61e7978_209958_300x200_fit_box_3.png" width="283" height="200" alt="Metabase" title="Metabase" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/apache-superset_hu0d04afa480c49f2c2972ab098ef6a45d_641441_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Apache Superset"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/apache-superset_hu0d04afa480c49f2c2972ab098ef6a45d_641441_300x200_fit_box_3.png" width="300" height="191" alt="Apache Superset" title="Apache Superset" class="" loading="lazy"></a></p>
+<figcaption>Redash, Metabase y Apache Superset</figcaption>
+</figure>
+</div>
+<h3 id="cómo-proteger-los-datos">Cómo proteger los datos</h3>
+<p>Además de limitar a que bases de datos tiene permisos de acceso cada usuario algunos datos almacenados son sensibles, por motivos de seguridad si se tratan de contraseñas si no se utiliza <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">una forma correcta de guardar contraseñas con <em>salted-password-hashing</em> en la base de datos</a>, datos personales protegidos por leyes que de no custodiar correctamente los datos en caso de filtración suponen sanciones como importantes multas económicas o datos de tarjetas de crédito, códigos de seguridad, fechas de expiración o cuentas bancarias.</p>
+<p>Una forma de proteger los datos aún teniendo acceso a ellos es cifrarlos es utilizando <a href="https://www.vaultproject.io/">Vault</a> con su funcionalidad de <a href="https://www.hashicorp.com/products/vault/data-protection">protección de datos</a>. Vault permite actuar como servicio para cifrar los datos a guardar en la base de datos y descifrar los datos al recuperarlos de modo que aún teniendo acceso a la base de datos no supone ningún problema de seguridad. Aún así siempre es recomendable otorgar a los usuarios los permisos mínimos que necesiten o limitar únicamente a ciertos usuarios los permisos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/vault-encryption_huc8635f77b91cd57bca3ed518ea10e8ba_60540_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Vault Encryption"><img src="/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/images/vault-encryption_huc8635f77b91cd57bca3ed518ea10e8ba_60540_300x200_fit_box_3.png" width="300" height="112" alt="Vault Encryption" title="Vault Encryption" class="" loading="lazy"></a></p>
+<figcaption>Vault Encryption</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Artículos de la serie Docker</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/hemeroteca-11/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
+                <h3>Hemeroteca #11</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/12/hemeroteca-10/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #10" title="Hemeroteca #10" class="" loading="lazy">
+                <h3>Hemeroteca #10</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-531';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/11\/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

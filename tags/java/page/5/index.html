@@ -1,0 +1,675 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/tags/java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/tags/java/" hreflang="es" title="java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/tags/java/index-amp.html" hreflang="es" title="java">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/tags/java/index.xml" hreflang="es" title="java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
+  <!-- Social -->
+<meta property="og:title" content="java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/tags/java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="java">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/">Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java</a></h1>
+        <span class="information">
+          <time>25/10/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            En el caso extremo una cobertura de código del cien por cien pero que no tenga ningún <em>assert</em> pasa los teses pero que en realidad no comprueba nada así que por si sola no es garantía de tener teses efectivos. <em>Mutation testing</em> da una medida adicional a la cobertura de los teses más completa y efectiva que simplemente la cobertura de código ejecutado por los teses unitarios.
+          
+          <br>
+          <a href="/blog-bitix/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/10/ventajas-de-usar-un-tipo-especifico-para-los-identificadores-de-las-entidades-en-vez-de-un-tipo-basico/">Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico</a></h1>
+        <span class="information">
+          <time>18/10/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Al persistir una entidad de dominio en la base de datos su identificador se guarda como un tipo de datos soportado por la base de datos. Si es una base de datos relacional habitualmente es el equivalente a un bigint o en una base de datos de documentos quizá un UUID. En las entidades de dominio el tipo de datos usado para el identificador es el equivalente de la base de datos en el lenguaje de programación.
+          
+          <br>
+          <a href="/blog-bitix/2019/10/ventajas-de-usar-un-tipo-especifico-para-los-identificadores-de-las-entidades-en-vez-de-un-tipo-basico/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></h1>
+        <span class="information">
+          <time>12/10/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Sin entrar a si los microservicios son adecuados o no son adecuados en una aplicación, está claro que si se utilizan estos tienen varias necesidades. Un servicio de registro y descubrimiento, configuración centralizada, tolerancia a fallos, <em>gateway/load balancer/reverse proxy</em>, trazabilidad y métricas, autenticación, orquestación, &hellip; Los microservicios quizá no sean un gran monolito, quizá mas pequeños y con funcinalidad más acotada, pero el hecho de que se comuniquen a través de un medio más complejo y menos fiable como la red en vez de una llamada a un método y sean más numerosos hacen que la complejidad sea incluso mayor. Este artículo propone un ejemplo con Spring Cloud para los servicios, Consul para el registro y descubrimiento, Nomad para la orquestación y Traefik como <em>gateway</em>.
+          
+          <br>
+          <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/09/novedades-de-java-13/">Novedades de Java 13</a></h1>
+        <span class="information">
+          <time>27/09/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Continuando las mejoras incrementales cada seis meses el 17 de septiembre se publico Java 13. Java 13 incorpora algunas nuevas características interesantes que mejoran un facilitan la lectura del código, entre las más destacadas están los bloques de texto y las expresiones switch mejoradas.
+Contenido del artículo   Introducción Casi coincidiendo con la publicación de Java 13 se publicado Jakarta EE 8 que únicamente tiene como novedad que su propiedad ha pasado a estar baja la fundación Eclipse, es totalmente compatible con Java EE 8 y sus últimas mejoras, las novedades vendrán en versiones posteriores de Jakarta EE en las que se dará importancia a la tendencia de las aplicaciones para su funcionamiento en entornos orientados a la nube.
+          
+          <br>
+          <a href="/blog-bitix/2019/09/novedades-de-java-13/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/">Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java</a></h1>
+        <span class="information">
+          <time>20/09/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/javascript/">javascript</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Algunas aplicaciones permiten escribir contenido para posteriormente mostrarse en una página web. Permitir introducir directamente en texto en formato HTML es peligroso ya que puede causar problemas si no es correcto y ha de validarse para no permitir introducir archivos CSS, archivos JavaScript u otras etiquetas que supongan un problema de seguridad o desmaqueten la página web. Una alternativa es utilizar como entrada texto en formato markdown y posteriormente transformarlo a contenido en formato HTML.
+          
+          <br>
+          <a href="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/">Ejemplo sencillo de como crear un documento PDF con Java y PDFBox</a></h1>
+        <span class="information">
+          <time>30/08/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Leer un CSV, escribir un CSV, archivos excel, generar gráficas para visualizar datos junto con generar documentos PDF son tareas comunes de las aplicaciones como forma de exportar los datos de la base de datos de una aplicación. Generar un archivo PDF con PDFBox requiere unas pocas lineas de código para documentos con cierta complejidad quizá sea más adecuado usar la librería JasperReports.
+          
+          <br>
+          <a href="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></h1>
+        <span class="information">
+          <time>23/08/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Spring Cloud Vault facilita la integración con Vault, una de sus usos es utilizarlo para obtener unas credenciales de conexión a la base de datos generadas bajo demanda y con un tiempo de vida limitado en vez de embeberlas en la configuración de la aplicación y con u tiempo de vida indefinido.
+          
+          <br>
+          <a href="/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/">Iniciar una aplicación de Spring Boot en un puerto aleatorio</a></h1>
+        <span class="information">
+          <time>09/08/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            En una arquitectura basada en microservicios es normal iniciar varias instancias de un mismo servicio, si están en la misma máquina ha de asignarse a cada instancia un puerto diferente. Asignar los puertos manualmente no es recomendable cuando se quieren varias instancias, Spring Boot ofrece la funcionalidad de iniciar la aplicación en un puerto aleatorio.
+          
+          <br>
+          <a href="/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">Implementar tolerancia a fallos con Resilience4j</a></h1>
+        <span class="information">
+          <time>02/08/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Hystrix ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es Resilience4j. Resilience4j proporciona las características similares con algunas ventajas adicionales.
+Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son:
+          
+          <br>
+          <a href="/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/07/publicacion-y-suscripcion-de-eventos-con-guava-eventbus-en-una-aplicacion-java/">Publicación y suscripción de eventos con Guava EventBus en una aplicación Java</a></h1>
+        <span class="information">
+          <time>19/07/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Guava EventBus es una solución simple para la publicación y suscripción de eventos en una misma aplicación y como tal no posee muchas de las capacidades que si tiene JMS o RabbitMQ, sin embargo, en algunos casos puede ser muy útil, una solución sencilla y sin requerimientos adicionales de infraestructura.
+          
+          <br>
+          <a href="/blog-bitix/2019/07/publicacion-y-suscripcion-de-eventos-con-guava-eventbus-en-una-aplicacion-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Recuperar datos eficientemente en GraphQL usando batching con data loaders</a></h1>
+        <span class="information">
+          <time>12/07/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Al diferencia de una API REST donde cada recurso posee un <em>endpoint</em> propio en GraphQL los recursos están relacionados y forman un grafo. Por otro lado las propiedades devueltas en una consulta de GraphQL son las que se indiquen en la consulta en vez de prefijadas como en una API REST. Hay que tener en cuenta que GraphQL para recuperar las propiedades de las entidades usa un <em>resolver</em> y las recupera una a una, si se devuelve una lista de elementos y de cada uno de esos elementos otra propiedad para la que hay que generar una consulta adicional a la base de datos el rendimiento no será bueno. Los <em>data loaders</em> permiten recuperar las propiedades relacionadas de una colección de entidades eficientemente evitando el problema 1+N.
+          
+          <br>
+          <a href="/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/">Los tipos de módulos de JPMS añadidos a partir de Java 9</a></h1>
+        <span class="information">
+          <time>07/07/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Los módulos de Java dotan a la plataforma de nuevas características. Para garantiza la compatibilidad con las librerías existentes y permitir una transición progresiva de una versión sin módulos a una con módulos la plataforma de módulos de Java define varios tipos de módulos.
+          
+          <br>
+          <a href="/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/06/hemeroteca-15/">Hemeroteca #15</a></h1>
+        <span class="information">
+          <time>30/06/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/blog/">blog</a>
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Estos seis primeros meses del 2019 han transcurrido como todos los años anteriores, sigo manteniendo la constancia de publicar dos artículos nuevos y únicos, algunas semanas sólo uno las menos tres.
+En cuanto al blog durante este tiempo le he hecho un cambio de diseño para que el contenido quede centrado en la pantalla y tenga más espacio horizontal lo que creo hace más agradable la lectura del texto y los extractos de código se ven mejor con menos necesidad de hacer desplazamiento horizontal.
+          
+          <br>
+          <a href="/blog-bitix/2019/06/hemeroteca-15/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/06/metadatos-e-introspeccion-en-graphql/">Metadatos e introspección en GraphQL</a></h1>
+        <span class="information">
+          <time>16/06/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Una API REST no ofrece introspección y por tanto hay que recurrir a un sistema de documentación que puede estar desactualizado y hay que mantener para conocer como usar la API y cuales son sus tipos y parámetros. Por el contrario GraphQL incorpora un sistema de introspección que permite conocer sus tipos y campos, a través del editor GraphiQL o si fuese necesario de forma automatizada con código.
+          
+          <br>
+          <a href="/blog-bitix/2019/06/metadatos-e-introspeccion-en-graphql/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/06/teses-unitarios-parametrizados-con-junit/">Teses unitarios parametrizados con JUnit</a></h1>
+        <span class="information">
+          <time>07/06/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Hay múltiples lenguajes y librerías donde cada una publica nuevas versiones. Una vez elegida una esa decisión no tiene que ser para siempre si las circunstancias de un proyecto cambian o una nueva versión incorpora las funcionalidades por las que se eligió otra. Si se reconsideran de nuevo el conjunto de todos los parámetros la decisión puede ser distinta. Esto me ha ocurrido al evaluar de nuevo JUnit comparándolo con Spock, teniendo en cuenta que en JUnit 5 han incorporado los teses parametrizados y el lenguaje que utiliza cada una de ellas.
+          
+          <br>
+          <a href="/blog-bitix/2019/06/teses-unitarios-parametrizados-con-junit/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/tags/java/page/6/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+      <a href="/blog-bitix/tags/java/page/4/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

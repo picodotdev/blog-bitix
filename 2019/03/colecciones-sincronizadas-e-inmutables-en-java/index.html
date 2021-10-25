@@ -1,0 +1,518 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Colecciones sincronizadas e inmutables en Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/" hreflang="es" title="Colecciones sincronizadas e inmutables en Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/index-amp.html" hreflang="es" title="Colecciones sincronizadas e inmutables en Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Colecciones sincronizadas e inmutables en Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Colecciones sincronizadas e inmutables en Java">
+<meta name="twitter:description" content="En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/"
+    },
+    "headline": "Colecciones sincronizadas e inmutables en Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2019-03-01T16:30:00+01:00",
+    "dateModified": "2019-03-01T16:30:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "461",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En la API de Java hay un conjunto amplio de estructuras de datos de diferentes tipos para guardar información de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la API de colecciones. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios threads hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Colecciones sincronizadas e inmutables en Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>01/03/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
+<p>La interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> es implementada por varias interfaces y clases <em>ArrayList</em>, <em>HashSet</em>, <em>List</em>, <em>Queue</em>, <em>Set</em>, <em>SortedSet</em>, <em>Stack</em>, <em>TreeSet</em> y algunas otras, por otro lado está la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a> para estructuras clave-valor. Las colecciones que mantienen un orden en sus elementos heredan de la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a> que posee métodos con operaciones basadas en un índice como obtener, insertar o eliminar un elemento en una determinada posición. Los <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a> no permiten elementos que sean iguales según determine el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals%28java.lang.Object%29">equals</a> del objeto y los presentes en la colección. Los <em>Map</em> asocian una clave a cada objeto que se utiliza para realizar operaciones en la colección.</p>
+<p>Muchos de los métodos de las colecciones funcionan en términos de los métodos <em>equals</em> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode%28%29">hashCode</a> de modo que si en una determinada clase se sobrescriben se ha de hacer implementando el contrato de estos métodos correctamente de otra manera una aplicación puede presentar errores de difícil depuración.</p>
+<p>La clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">Collections</a> contiene numerosos métodos estáticos entre ellos para hacer una colección que no lo sea en inmutable o sincronizada. Con los métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedCollection%28java.util.Collection%29">synchronizedCollection</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedList%28java.util.List%29">synchronizedList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedMap%28java.util.Map%29">synchronizedMap</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedSet%28java.util.Set%29">synchronizedSet</a> para hacerlas sincronizadas y los métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableCollection%28java.util.Collection%29">unmodifiableCollection</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableList%28java.util.List%29">unmodifiableList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableMap%28java.util.Map%29">unmodifiableMap</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableSet%28java.util.Set%29">unmodifiableSet</a>. Estos métodos estáticos de la clase <em>Collections</em> reciben como parámetro una colección no sincronizada o inmutable y devuelven una colección sincronizada o inmutable.</p>
+<p>Las colecciones específicas para la concurrencia son más eficientes que convertir una colección no sincronizada en sincronizada con los métodos de <em>Collections</em>. Las colecciones que se convierten en sincronizadas tienen una contención en toda la colección cuando no es necesario para las operaciones de lectura. Si las operaciones de lectura son mayoría las colecciones específicas para la concurrencia son más eficientes, no tienen tanta contención, por ejemplo, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html">ConcurrentHashMap</a> divide el mapa en varios segmentos y solo bloquea los segmentos relevantes lo que permite a múltiples <em>threads</em> acceder a otros segmentos del mismo mapa sin contención. <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CopyOnWriteArrayList.html">CopyOnWriteArrayList</a> permite varios lectores sin necesidad de sincronización y cuando ocurre una escritura copia el <em>ArrayList</em> a uno nuevo.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las colecciones de Java, estructuras de datos para guardar referencias a objetos" title="Las colecciones de Java, estructuras de datos para guardar referencias a objetos" class="" loading="lazy">
+                <h3>Las colecciones de Java, estructuras de datos para guardar referencias a objetos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/lookahead-y-lookbehind-en-expresiones-regulares-con-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Lookahead y lookbehind en expresiones regulares con Java" title="Lookahead y lookbehind en expresiones regulares con Java" class="" loading="lazy">
+                <h3>Lookahead y lookbehind en expresiones regulares con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las clases anidadas inner, anónimas y locales en Java" title="Las clases anidadas inner, anónimas y locales en Java" class="" loading="lazy">
+                <h3>Las clases anidadas inner, anónimas y locales en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ofuscar datos sensibles en las trazas con Log4j" title="Ofuscar datos sensibles en las trazas con Log4j" class="" loading="lazy">
+                <h3>Ofuscar datos sensibles en las trazas con Log4j</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" title="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" class="" loading="lazy">
+                <h3>Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java" title="Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java" class="" loading="lazy">
+                <h3>Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-387';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/03\/colecciones-sincronizadas-e-inmutables-en-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

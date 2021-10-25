@@ -1,0 +1,519 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En la introducción de Docker y inicio básico de docker explicaba como usar Docker y en la introducción a Ansible explicaba las características de Ansible y como usarlo. Podemos usar Docker y Ansible de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son docker y docker_image. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Integración entre Ansible y Docker</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/" hreflang="es" title="Integración entre Ansible y Docker">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/index-amp.html" hreflang="es" title="Integración entre Ansible y Docker">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Integración entre Ansible y Docker">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ansible-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En la introducción de Docker y inicio básico de docker explicaba como usar Docker y en la introducción a Ansible explicaba las características de Ansible y como usarlo. Podemos usar Docker y Ansible de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son docker y docker_image. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ansible-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Integración entre Ansible y Docker">
+<meta name="twitter:description" content="En la introducción de Docker y inicio básico de docker explicaba como usar Docker y en la introducción a Ansible explicaba las características de Ansible y como usarlo. Podemos usar Docker y Ansible de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son docker y docker_image. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/"
+    },
+    "headline": "Integración entre Ansible y Docker",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/ansible-750.png"
+        
+      },
+    "datePublished": "2014-11-22T10:28:52+01:00",
+    "dateModified": "2014-12-29T19:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "465",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En la introducción de Docker y inicio básico de docker explicaba como usar Docker y en la introducción a Ansible explicaba las características de Ansible y como usarlo. Podemos usar Docker y Ansible de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son docker y docker_image."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Integración entre Ansible y Docker</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>22/11/2014</time>, actualizado el <time>29/12/2014</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
+</div>
+<p>En la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción de Docker</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">inicio básico de docker</a> explicaba como usar Docker y en la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">introducción a Ansible</a> explicaba las características de Ansible y como usarlo. Podemos usar <a href="https://www.docker.com/">Docker</a> y <a href="https://www.ansible.com/">Ansible</a> de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son <a href="http://docs.ansible.com/docker_module.html">docker</a> y <a href="http://docs.ansible.com/docker_image_module.html">docker_image</a>.</p>
+<p>Usando tareas de ansible podemos automatizar el arranque del servicio de docker, la construcción de las imágenes con los Dokerfile y el inicio o parada de los contenedores de docker. En el ejemplo se construye una imagen base en la que se basarán el resto de imágenes, se crea una imagen con mysql, otra de redis y finalmente la imagen apps donde se ejecutarán las aplicaciones que usarán los servicios de mysql y redis.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">&#10;</span><span class="w"></span>- <span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">devbox</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start docker service</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">name=docker state=started</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">sudo</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">   &#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">build docker images</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">docker_image</span><span class="p">:</span><span class="w"> </span><span class="l">name=&#34;{{ item.name }}&#34; tag=&#34;{{ item.tag }}&#34; state=&#34;present&#34; path={{ item.path }}</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">with_items</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;picodotdev/base&#34;</span><span class="nt">, tag</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;1.0&#34;</span><span class="nt">, path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;../docker/base&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;picodotdev/mysql&#34;</span><span class="nt">, tag</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;1.0&#34;</span><span class="nt">, path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;../docker/mysql&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;picodotdev/redis&#34;</span><span class="nt">, tag</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;1.0&#34;</span><span class="nt">, path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;../docker/redis&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;picodotdev/apps&#34;</span><span class="nt">, tag</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;1.0&#34;</span><span class="nt">, path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;../docker/apps&#34;</span><span class="w"> </span>}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install.yml</span>
+    </div>
+</div>
+<p>Una vez que disponemos de las imágenes de docker podemos arrancar contenedores con ellas automatizándolo con ansible. En este caso se inicia el servicio de docker, se inicializan los contenedores con los volúmenes donde se guardan los datos de forma persistente de mysql y redis, se inician los contenedores de mysql y redis usando los volúmenes anteriores y finalmente el contenedor de las aplicaciones. Al final, se muestra cierta información de las imágenes como sus direcciones IP.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">devbox</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start docker service</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">name=docker state=started</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">sudo</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start mysql data docker container</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="l">image=busybox:latest name=picodotdev-mysql-data state=present volumes=&#34;/var/lib/mysql&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l">mysql_data_container</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start redis data docker container</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="l">image=busybox:latest name=picodotdev-redis-data state=present volumes=&#34;/var/lib/redis&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l">redis_data_container</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start mysql docker container</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="l">image=picodotdev/mysql:1.0 name=picodotdev-mysql state=running volumes_from=picodotdev-mysql-data hostname=mysql ports=3306:3306 command=/sbin/my_init</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l">mysql_container</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start redis docker container</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="l">image=picodotdev/redis:1.0 name=picodotdev-redis state=running volumes_from=picodotdev-redis-data volumes=&#34;{{ keys_path }}:/mnt/keys&#34; hostname=redis ports=6379:6379 command=/sbin/my_init</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l">redis_container</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start apps docker container</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="l">image=picodotdev/apps:1.0 name=picodotdev-apps state=running volumes=&#34;{{ projects_path }}:/mnt/projects,{{ grails_path }}:/root/.grails,{{ gradle_path }}:/root/.gradle,{{ keys_path }}:/mnt/keys&#34; hostname=apps ports=8080:8080,8443:8443 links=picodotdev-mysql:mysql,picodotdev-redis:redis command=/sbin/my_init</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l">apps_container</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">update hosts with containers ip address</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="l">dest=/etc/hosts regexp=&#34;^(\d+\.\d+\.\d+\.\d+)(\s+{{ item.host }})$&#34; replace=&#34;{{ item.ip }}\2&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">sudo</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">with_items</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;mysql&#34;</span><span class="nt">, ip</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ mysql_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;NetworkSettings&#39;][&#39;IPAddress&#39;] }}&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;redis&#34;</span><span class="nt">, ip</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ redis_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;NetworkSettings&#39;][&#39;IPAddress&#39;] }}&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;apps&#34;</span><span class="nt">, ip</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ apps_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;NetworkSettings&#39;][&#39;IPAddress&#39;] }}&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">display containers info</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">debug</span><span class="p">:</span><span class="w"> </span><span class="l">msg=&#34;info&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">with_items</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ mysql_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;Name&#39;] }}&#34;</span><span class="nt">, ip</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ mysql_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;NetworkSettings&#39;][&#39;IPAddress&#39;] }}&#34;</span><span class="nt">, id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ mysql_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;Id&#39;] }}&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ redis_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;Name&#39;] }}&#34;</span><span class="nt">, ip</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ redis_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;NetworkSettings&#39;][&#39;IPAddress&#39;] }}&#34;</span><span class="nt">, id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ redis_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;Id&#39;] }}&#34;</span><span class="w"> </span>}<span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- {<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ apps_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;Name&#39;] }}&#34;</span><span class="nt">, ip</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ apps_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;NetworkSettings&#39;][&#39;IPAddress&#39;] }}&#34;</span><span class="nt">, id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ apps_container[&#39;ansible_facts&#39;][&#39;docker_containers&#39;][0][&#39;Id&#39;] }}&#34;</span><span class="w"> </span>}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>start.yml</span>
+    </div>
+</div>
+<p>Ansible <a href="http://docs.ansible.com/list_of_all_modules.html">dispone muchos módulos</a> que nos permiten automatizar las tareas:</p>
+<ul>
+<li><a href="http://docs.ansible.com/list_of_cloud_modules.html">Módulos para manejo de entornos cloud</a> (<a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a>, <a href="https://www.digitalocean.com/">Digital Ocean</a>, <a href="https://www.openstack.org/">OpenStack</a>, <a href="https://www.rackspace.com/es">Rackspace</a>)</li>
+<li><a href="http://docs.ansible.com/list_of_commands_modules.html">Módulos para ejecutar comandos</a></li>
+<li><a href="http://docs.ansible.com/list_of_database_modules.html">Módulos para administración de bases de datos</a></li>
+<li><a href="http://docs.ansible.com/modules_by_category.html">Módulos para manejo de archivos</a></li>
+<li><a href="http://docs.ansible.com/list_of_packaging_modules.html">Módulos para manejo de paquetes</a></li>
+<li><a href="http://docs.ansible.com/list_of_source_control_modules.html">Módulos para manejo de sistemas de control de versiones</a></li>
+<li>Y algunos más</li>
+</ul>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>docker</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Crear y usar un repositorio en Docker Hub</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Usar docker con Docker Machine en Linux, Windows o Mac</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Cambiar la ruta raíz del entorno de Docker</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">Introducción y ejemplo de cluster de contenedores con Docker Swarm</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/">Iniciar un stack de servicios en un cluster de Docker Swarm</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/">Escalar y actualizar un servicio de un cluster de Docker Swarm</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/">Contenedores en Docker Swarm con volúmenes de datos persistentes usando REX-Ray y VirtualBox</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/">Información sensible en los contenedores con Docker Secrets</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Imágenes de Docker con Alpine Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Contenedores en macOS con Lima y minikube</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-53';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2014\/11\/integracion-entre-ansible-y-docker\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

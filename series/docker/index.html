@@ -1,0 +1,640 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>docker</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/series/docker/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/series/docker/" hreflang="es" title="docker">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/series/docker/index-amp.html" hreflang="es" title="docker">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/series/docker/index.xml" hreflang="es" title="docker">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
+  <!-- Social -->
+<meta property="og:title" content="docker">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/series/docker/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="docker">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Contenedores en macOS con Lima y minikube</a></h1>
+        <span class="information">
+          <time>25/09/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/apple/">apple</a>
+            
+          
+        </span>
+        <p>
+          
+            Para ejecutar contenedores en macOS hay dos opciones entre las posibles, una usar minikube que aunque su objetivo es ejecutar un <em>cluster</em> de Kubernetes permite usarlo para ejecutar contenedores de Docker directamente, la segunda opción es lime que es una opción similar que usa containerd en vez de Docker. La empresa encargada del desarrollo de Docker ha anunciado que el producto Docker Desktop pasa a requerir una licencia de pago para organizaciones empresariales grandes. Docker Desktop es usado tanto en Windows como en macOS para ejecutar contenedores de Docker con la opción también de ejecutar un <em>cluster</em> de Kubernetes, minikube y lima para macOS son una alternativa a Docker Desktop.
+          
+          <br>
+          <a href="/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a></h1>
+        <span class="information">
+          <time>26/05/2019</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+          
+        </span>
+        <p>
+          
+            En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.
+          
+          <br>
+          <a href="/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Imágenes de Docker con Alpine Linux</a></h1>
+        <span class="information">
+          <time>28/04/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            En el repositorio de imágenes Docker Hub de Docker hay múltiples versiones de cada software contenirizado, alguna de las versiones están etiquetadas con la palabra alpine. Las imágenes de Docker etiquetadas con alpine hacen referencia a que usan como base la distribución Alpine Linux y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en busybox y musl-libc hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en Ubuntu o Debian, seguramente porque no contienen una buena cantidad de cosas innecesarias.
+          
+          <br>
+          <a href="/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/">Información sensible en los contenedores con Docker Secrets</a></h1>
+        <span class="information">
+          <time>22/04/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Parte de la información que usan los contenedores de Docker se debe proteger de accesos no deseados. Anteriormente en algunos casos se usaban variables de entorno para lanzar los contenedores lo que no es seguro si se listan los procesos del sistema con sus parámetros, incluir archivos en las imágenes de los contenedores tampoco es recomendable. Docker Secrets permite proporcionar y mantener segura la información sensible que usen los contenedores.
+          
+          <br>
+          <a href="/blog-bitix/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/">Contenedores en Docker Swarm con volúmenes de datos persistentes usando REX-Ray y VirtualBox</a></h1>
+        <span class="information">
+          <time>16/04/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Salvo que un servicio sea sin estado o <em>stateless</em> los contenedores de Docker necesitan persistir datos y que estos sobrevivan a su terminación, como es el caso de un contenedor de una base de datos. Además en un <em>cluster</em> de nodos Docker hay que tener en cuenta que los datos deben estar accesibles para todos los nodos ya que un contenedor que usase los datos podría ser lanzado en cualquiera de ellos. REX-Ray es un sistema de almacenamiento en red que cubre estas necesidades, es simple de instalar, configurar y de iniciar. En el artículo muestro un ejemplo usando REX-Ray junto con Docker Swarm y VirtualBox.
+          
+          <br>
+          <a href="/blog-bitix/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/">Escalar y actualizar un servicio de un cluster de Docker Swarm</a></h1>
+        <span class="information">
+          <time>09/04/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Ya tenemos un <em>cluster</em> formado por varios nodos con algún servicio ejecutándose en el <em>cluster</em> de Docker Swarm. Si surge la necesidad los servicios del <em>cluster</em> se pueden escalar cambiando el número de instancias de contenedores que forma el servicio para atender las necesidades computacionales o para ofrecer el servicio a más usuarios. Por otro lado, pasado un tiempo muy posiblemente se publicará una nueva imagen de los contenedores, el servicio se puede actualizar para que los contenedores utilicen esa nueva imagen.
+          
+          <br>
+          <a href="/blog-bitix/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/">Iniciar un stack de servicios en un cluster de Docker Swarm</a></h1>
+        <span class="information">
+          <time>02/04/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Los <em>stacks</em> en Docker Swarm son definiciones en un archivo de texto en formato YAML de múltiples servicios además de volúmenes, redes de software y secretos. Esta definición de un <em>stack</em> ejecutado en un <em>cluster</em> de nodos Docker Swarm permite iniciar múltiples contenedores además de los otros elementos que necesiten para su funcionamiento. Los <em>stacks</em> son el equivalente para Docker Swarm de los archivos multicontenedor de Docker Compose, y el formato de ambos muy similar.
+          
+          <br>
+          <a href="/blog-bitix/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">Introducción y ejemplo de cluster de contenedores con Docker Swarm</a></h1>
+        <span class="information">
+          <time>19/03/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Las funcionalidades de Docker Swarm están incorporadas en Docker para gestionar <em>clusters</em> de nodos con contenedores de los servicios que deseemos. En artículo comentaré algunas de las propiedades de <em>networkning</em> distribuido incorporado en Docker, como crear un <em>cluster</em> de nodos Docker usando VirtualBox con máquinas virtuales para simular múltiples máquinas junto con como lanzar un servicio en el <em>cluster</em> que en este caso consistirá en un servidor web nginx.
+          
+          <br>
+          <a href="/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Cambiar la ruta raíz del entorno de Docker</a></h1>
+        <span class="information">
+          <time>24/07/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB.
+          
+          <br>
+          <a href="/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Usar docker con Docker Machine en Linux, Windows o Mac</a></h1>
+        <span class="information">
+          <time>18/07/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Aunque no usemos Linux podemos hacer uso de docker a través de una máquina virtual de VirtualBox y con Docker Machine. Docker Machine permite crear un sistema con la misión de albergar contenedores de docker, puede ser en VirtualBox pero también en Amazon EC2 o Digital Ocean además de otras muchas opciones.
+          
+          <br>
+          <a href="/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Crear y usar un repositorio en Docker Hub</a></h1>
+        <span class="information">
+          <time>10/07/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            ¿Por qué se habla tanto de Docker y despierta tanto interés si la tecnología ya existía desde hace tiempo tanto en otros sistemas operativos como en Linux? Uno de los éxitos que ha contribuido a ellos es Docker Hub, un repositorio de imágenes en el que cualquiera puede contribuir con las suyas. Esto hace que pueda encontrarse cualquier herramienta de las populares y empezar a usarlas en muy pocos minutos.
+          
+          <br>
+          <a href="/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a></h1>
+        <span class="information">
+          <time>03/07/2015</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Continuando la serie de artículos sobre Docker, otra de las herramientas disponibles en el ecosistema y que nos facilitará enormemente el administrar aplicaciones compuestas por varios contenedores relacionados entre sí es Docker Compose. Definiendo en un archivo los contenedores que forman parte de una aplicación podemos iniciarlos, pararlos, eliminarlos o ver su estado como si de una unidad se tratara.
+          
+          <br>
+          <a href="/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></h1>
+        <span class="information">
+          <time>22/11/2014</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            En la introducción de Docker y inicio básico de docker explicaba como usar Docker y en la introducción a Ansible explicaba las características de Ansible y como usarlo. Podemos usar Docker y Ansible de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son docker y docker_image.
+          
+          <br>
+          <a href="/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></h1>
+        <span class="information">
+          <time>07/11/2014</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas herramientas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile.
+          
+          <br>
+          <a href="/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></h1>
+        <span class="information">
+          <time>01/11/2014</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La tecnología de contenedores nos ofrece múltiples ventajas para nuestras aplicaciones. Docker es una de las más nombradas y que está creciendo muy rápidamente. Es muy sencillo empezarla a usar como mostraré en unos pocos comandos a continuación.
+          
+          <br>
+          <a href="/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/series/docker/page/2/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

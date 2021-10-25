@@ -1,0 +1,582 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada final.
+La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como final, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Para qué sirve la palabra clave final en el código fuente Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/" hreflang="es" title="Para qué sirve la palabra clave final en el código fuente Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/index-amp.html" hreflang="es" title="Para qué sirve la palabra clave final en el código fuente Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Para qué sirve la palabra clave final en el código fuente Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada final.
+La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como final, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Para qué sirve la palabra clave final en el código fuente Java">
+<meta name="twitter:description" content="Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada final.
+La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como final, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/"
+    },
+    "headline": "Para qué sirve la palabra clave final en el código fuente Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2020-12-18T18:00:00+01:00",
+    "dateModified": "2020-12-18T18:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "869",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada final.
+La palabra final tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como final, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Para qué sirve la palabra clave final en el código fuente Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>18/12/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada <em>final</em>.</p>
+<p>La palabra <em>final</em> tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como <em>final</em>, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente.</p>
+<h3 id="qué-hace-la-palabra-clave-_final_">¿Qué hace la palabra clave <em>final</em>?</h3>
+<p>La palabra clave reservada <em>final</em> hace que el compilador genere un error de compilación cuando a una variable <em>final</em> se le intenta asignar un nuevo valor. El error de compilación quizá en algún caso evita un <em>bug</em> ya que no debería haber intención de asignar un nuevo valor a una variable <em>final</em>.</p>
+<p>La palabra clave reservada <em>final</em> se usa en diferentes contextos:</p>
+<ul>
+<li>En la declaración de variables: permite declarar constantes, no se puede asignar un nuevo valor a la variable una vez inicializada.</li>
+<li>En la declaración de un método: en este contexto una clase que herede un método <em>final</em> no puede redefinirlo en la clase hija, no se puede hacer un <em>override</em>.</li>
+<li>En la declaración de una clase: impide extender de la clase.</li>
+</ul>
+<p>Las tres formas de inicializar una variable declarada como <em>final</em> son:</p>
+<ul>
+<li>En su declaración.</li>
+<li>En el constructor.</li>
+<li>En el contexto estático si la variable es estática.</li>
+</ul>
+<p>Los constructores no pueden declararse como <em>final</em> ya que no se heredan.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bike</span> <span class="o">{</span>&#10;&#10;   <span class="kd">protected</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAX_SPEED</span> <span class="o">=</span> <span class="n">50</span><span class="o">;</span>&#10;&#10;   <span class="kd">protected</span> <span class="kt">int</span> <span class="n">speed</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSpeed</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">speed</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;running&#34;</span><span class="o">);</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span> </code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Bike.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Honda</span> <span class="kd">extends</span> <span class="n">Bike</span> <span class="o">{</span>&#10; &#10;  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">Honda</span> <span class="n">honda</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Honda</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">honda</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Honda.java</span>
+    </div>
+</div>
+<h3 id="debería-añadirse-la-palabra-clave-_final_-a-cada-uno-de-los-argumentos-de-un-método-y-variables-locales">¿Debería añadirse la palabra clave <em>final</em> a cada uno de los argumentos de un método y variables locales?</h3>
+<p>En teoría, sí. En la práctica, no. Sólo es útil en métodos cuyo código es largo y complicado, y en ese caso el método debería simplificarse, o cuando el argumento tiene la posibilidad de confundirse con una variable local o miembro de la clase con la posibilidad de reasignación.</p>
+<p>Aunque un argumento de un método se declare como <em>final</em> e impide asignarle un valor no se impide modificar su estado si esa variable es una referencia a un objeto como es modificar los elementos de una colección. Para evitar modificaciones en colecciones hay que hacerlas inmutables.</p>
+<p>La palabra <em>final</em> en un argumento sirve para capturar un error en el que el nombre de la variable del argumento se llama igual que una propiedad de la clase en un constructor o un <em>setter</em>, pero usarlo de forma indiscriminada para todos los argumentos puede hacer el código aún más verboso sin proporcionar nada significativo, en los constructores y métodos <em>setter</em>  puede ser útil como en el siguiente caso pero en el resto de métodos no es significativamente útil con el coste de legibilidad del código que genera.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bike</span> <span class="o">{</span> &#10;&#10;   <span class="o">...</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSpeed</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span> <span class="c1">// Compiler error: Cannot assign a value to final variable &#39;speed&#39;&#10;</span><span class="c1"></span>   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMaxSpeed</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MAX_SPEED</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span> <span class="c1">// Compiler error: Cannot assign a value to final variable &#39;MAX_SPEED&#39;&#10;</span><span class="c1"></span>   <span class="o">}</span>&#10;&#10;   <span class="o">...</span>&#10;<span class="o">}</span> </code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Bike-setter.java</span>
+    </div>
+</div>
+<p>Aunque una variable no se indique como <em>final</em> Java la considera efectivamente como <em>final</em> si se dan las siguientes circunstancias en el caso de que tenga inicializador:</p>
+<ul>
+<li>No está declarada como <em>final</em>.</li>
+<li>No aparece en la parte izquierda de una expresión de asignación (la asignación en la declaración no se considera una expresión de asignación).</li>
+<li>No aparece nunca como un operando de un operador <em>pre</em> o <em>post</em> incremento o decremento.</li>
+</ul>
+<p>Una variable que no tenga inicializador se considera efectivamente como <em>final</em> si:</p>
+<ul>
+<li>No está declarada como <em>final</em>.</li>
+<li>Cuando aparece como una expresión de asignación, está sin asignar.</li>
+<li>No aparece nunca como un operando de un operador <em>pre</em> o <em>post</em> incremento o decremento.</li>
+</ul>
+<p>Si una variable es efectivamente <em>final</em> añadir el modificador <em>final</em> no genera ningún error en tiempo de compilación. Una variable o parámetro que es declarado como <em>final</em> en un programa válido se convierte en efectivamente <em>final</em> si se elimina el modificador <em>final</em>.</p>
+<p>También suele comentarse que una variable <em>final</em> ofrece mejor rendimiento, la diferencia de rendimiento no es significativa y si el rendimiento del programa depende de optimizarlo con palabras clave <em>final</em> seguramente haya muchas otras cosas a mejorar primero que el uso de palabras reservadas <em>final</em>. Otra justificación para el uso indiscriminado de la palabra <em>final</em> es en programas concurrentes con varios hilos con la intención de que los hilos no vean objetos parcialmente construidos, casos avanzados en los que quizá las primitivas de sincronización sea más adecuado.</p>
+<ul>
+<li><a href="https://www.baeldung.com/java-final-performance">The Java final Keyword – Impact on Performance</a></li>
+</ul>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.javatpoint.com/final-keyword">Final Keyword In Java</a></li>
+<li><a href="https://www.geeksforgeeks.org/final-keyword-java/">final keyword in java</a></li>
+<li><a href="https://stackoverflow.com/questions/4279420/does-use-of-final-keyword-in-java-improve-the-performance">Does use of final keyword in Java improve the performance?</a></li>
+<li><a href="https://softwareengineering.stackexchange.com/questions/98691/excessive-use-final-keyword-in-java">Excessive use “final” keyword in Java</a></li>
+<li><a href="https://dzone.com/articles/final-keyword-and-jvm-memory-impact">Final Keyword and JVM Memory Impact</a></li>
+<li><a href="https://www.javamex.com/tutorials/synchronization_final.shtml">Thread-safety with the Java final keyword</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java" title="Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java" class="" loading="lazy">
+                <h3>Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="5 formas de implementar el patrón Singleton en Java" title="5 formas de implementar el patrón Singleton en Java" class="" loading="lazy">
+                <h3>5 formas de implementar el patrón Singleton en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_875x0_resize_box_3.png" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear un archivo Zip con Java, comprimir y descomprimir datos" title="Crear un archivo Zip con Java, comprimir y descomprimir datos" class="" loading="lazy">
+                <h3>Crear un archivo Zip con Java, comprimir y descomprimir datos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" title="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" class="" loading="lazy">
+                <h3>Emitir trazas de las peticiones y respuestas HTTP con clientes Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/">
+                <img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_875x0_resize_box_3.png" width="326" height="125" alt="Cómo depurar una aplicación Java con un IDE" title="Cómo depurar una aplicación Java con un IDE" class="" loading="lazy">
+                <h3>Cómo depurar una aplicación Java con un IDE</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-540';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/12\/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

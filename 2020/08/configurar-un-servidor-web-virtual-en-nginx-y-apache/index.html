@@ -1,0 +1,594 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Configurar un servidor web virtual en Nginx y Apache</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/" hreflang="es" title="Configurar un servidor web virtual en Nginx y Apache">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/index-amp.html" hreflang="es" title="Configurar un servidor web virtual en Nginx y Apache">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Configurar un servidor web virtual en Nginx y Apache">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Configurar un servidor web virtual en Nginx y Apache">
+<meta name="twitter:description" content="La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/"
+    },
+    "headline": "Configurar un servidor web virtual en Nginx y Apache",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2020-08-09T14:00:00+02:00",
+    "dateModified": "2020-08-09T14:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "730",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de proxy entre en navegador y la aplicación de backend que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación backend usando el protocolo HTTP, añadir autenticación básica a ciertas rutas o utilizar el protocolo HTTP/2."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Configurar un servidor web virtual en Nginx y Apache</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/08/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/web/">web</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD" class="" loading="false"></p>
+</div>
+<p>La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/"><em>proxy</em> entre en navegador y la aplicación de <em>backend</em></a> que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación <em>backend</em> usando el protocolo HTTP, <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">añadir autenticación básica a ciertas rutas</a> o utilizar <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">el protocolo HTTP/2</a>.</p>
+<p>Los servidores web no requieren una capacidad de cómputo elevada, para aprovechar al máximo la capacidad e una máquina y para no requerir un servidor web por cada sitio web se utilizan los servidores web virtuales. Un servidor web virtual es un servidor web que sirve el contenido de un sitio web normalmente asociado a un nombre de dominio aunque también es posible estar asociado a una dirección IP. Por ejemplo, empleando servidores web virtuales la misma instancia de servidor web puede servir el contenido de varios sitios web diferentes como <em>site1.127.0.0.1.xip.io</em>, <em>site2.127.0.0.1.xip.io</em> y  <em>site3.127.0.0.1.xip.io</em>. El servidor web obtiene el nombre del dominio por el que es accedido y determina el servidor web al que redirigir la solicitud.</p>
+<p>En cada servidor web virtual se puede configurar HTTPS y HTTP/2 para lo que es necesario generar un certificado autofirmado con el nombre del dominio.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">Generar y convertir claves y certificados con OpenSSL</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty</a></li>
+</ul>
+<p>En el ejemplo se usa un contenedor de <a href="https://www.docker.com/">Docker</a> de modo que para probar los ejemplos no sea necesario instalar Nginx ni Apache.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
+</ul>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configurar-un-servidor-web-virtual-en-nginx">Configurar un servidor web virtual en Nginx</a></li>
+    <li><a href="#configurar-un-servidor-web-virtual-en-apache-httpd">Configurar un servidor web virtual en Apache HTTPD</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="configurar-un-servidor-web-virtual-en-nginx">Configurar un servidor web virtual en Nginx</h3>
+<p>En el servidor web <a href="https://nginx.org/">Nginx</a> añadir un servidor web virtual consiste en añadir la configuración del sitio web en el directorio <em>/etc/nginx/conf.d</em>. La directiva relevante es <em>server_name</em> que asocia el servidor web virtual con el nombre del dominio. En base al nombre del dominio por el que se accede al servidor web se utiliza su configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span> <span class="s">www.127.0.0.1.xip.io</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;<span class="p">}</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nginx-www.127.0.0.1.xip.io.conf</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>docker run --rm -p 80:80 <span class="se">\&#10;</span><span class="se"></span>  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/nginx-www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro <span class="se">\&#10;</span><span class="se"></span>  nginx:latest&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-nginx.sh</span>
+    </div>
+</div>
+<p>En el ejemplo se accede al sitio web por su nombre de dominio <em>www.127.0.0.1.xip.io</em>, usando <a href="https://picodotdev.github.io/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">el servidor de nombres xip.io</a> que permite asociar un nombre de dominio a una dirección IP privada en este caso la dirección <em>127.0.0.1</em> que identifica a la propia máquina anfitrión.</p>
+<p>Algunas distribuciones permiten añadir la configuración de los sitios web en los directorios <em>/etc/nginx/sites-available</em>, <em>/etc/nginx/sites-enabled</em>, <em>/etc/apache2/sites-available</em>, <em>/etc/apache2/sites-enabled</em> en el caso de las imágenes de Docker tanto para Nginx como para Apache estos directorios no están configurados por defecto.</p>
+<p>En el ejemplo se usa la misma raíz de documentos que el sitio web para <em>localhost</em>, si se añaden archivos de contenido en una raíz de documentos propia para el servidor web virtual el contenido devuelto cambia o si cambia la raíz de documentos al directorio <em>/usr/share/nginx</em> que Nginx no tiene permitido el acceso se observa que cuando se accede al servidor por el nombre del dominio <em>localhost</em> se muestra la página de inicio y cuando se accede por el nombre del dominio <em>www.127.0.0.1.xip.io</em> se devuelve un error <em>HTTP 403 Forbidden</em> por falta de permisos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servidor web virtual en Nginx"><img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_300x200_fit_box_3.png" width="300" height="196" alt="Servidor web virtual en Nginx" title="Servidor web virtual en Nginx" class="" loading="lazy"></a></p>
+<figcaption>Servidor web virtual en Nginx</figcaption>
+</figure>
+</div>
+<h3 id="configurar-un-servidor-web-virtual-en-apache-httpd">Configurar un servidor web virtual en Apache HTTPD</h3>
+<p>En el servidor web <a href="https://httpd.apache.org/">Apache HTTPD</a> un servidor web virtual se configura con sus propias directivas que igualmente indican el nombre del dominio asociado al servidor web y la ruta raíz de los recursos estáticos. Dependiendo del nombre del dominio por el que se accede al servidor web, se utiliza su configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">&lt;VirtualHost *:80&gt;&#10;&nbsp;&nbsp;&nbsp;&nbsp;ServerName wwww.127.0.0.1.xip.io&#10;&nbsp;&nbsp;&nbsp;&nbsp;DocumentRoot &#34;/usr/local/apache2/htdocs&#34;&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Directory /usr/local/apache2/htdocs&gt;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Options -Indexes +FollowSymLinks&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowOverride All&#10;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Directory&gt;&#10;&lt;/VirtualHost&gt;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>httpd-vhosts.conf</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>docker run --rm -p 80:80 <span class="se">\&#10;</span><span class="se"></span>  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro <span class="se">\&#10;</span><span class="se"></span>  -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf:ro <span class="se">\&#10;</span><span class="se"></span>  httpd:alpine&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-apache.sh</span>
+    </div>
+</div>
+<p>Usando Apache también se accede al sitio web por su nombre de dominio <em>www.127.0.0.1.xip.io</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servidor web virtual en Apache"><img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_300x200_fit_box_3.png" width="300" height="196" alt="Servidor web virtual en Apache" title="Servidor web virtual en Apache" class="" loading="lazy"></a></p>
+<figcaption>Servidor web virtual en Apache</figcaption>
+</figure>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/WebVirtualServer">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./docker-nginx.sh, ./docker-apache.sh</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://linuxhint.com/install_apache_server_setup_virtual_hosts_ubuntu/">How to Install Apache Server and Set Up Virtual Hosts on Ubuntu 20.04</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">
+                <img src="/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_875x0_resize_box_3.png" width="326" height="125" alt="Configurar autenticación básica en los servidores web Nginx y Apache" title="Configurar autenticación básica en los servidores web Nginx y Apache" class="" loading="lazy">
+                <h3>Configurar autenticación básica en los servidores web Nginx y Apache</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" title="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" class="" loading="lazy">
+                <h3>El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/">
+                <img src="/blog-bitix/2020/04/animaciones-y-transformaciones-2d-y-3d-con-css/images/css-animations-transformations_hu3448c95c1e89a037628691b9ee56ae5d_454367_875x0_resize_box_3.png" width="326" height="125" alt="Animaciones y transformaciones 2D y 3D con CSS" title="Animaciones y transformaciones 2D y 3D con CSS" class="" loading="lazy">
+                <h3>Animaciones y transformaciones 2D y 3D con CSS</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/">
+                <img src="/blog-bitix/2020/03/usar-un-paquete-npm-con-webpack-creado-con-storybook-react-y-typescript/images/hello-world-page_hu1ad16cbf06b99a95d71184aff0c8acbd_15397_875x0_resize_box_3.png" width="326" height="125" alt="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" title="Usar un paquete npm con Webpack creado con Storybook, React y TypeScript" class="" loading="lazy">
+                <h3>Usar un paquete npm con Webpack creado con Storybook, React y TypeScript</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/">
+                <img src="/blog-bitix/2020/03/desarrollar-componentes-react-con-typescript-y-sistemas-de-diseno-con-storybook/images/storybook-helloworld_hub7bcf5008d7c8d3c96ea32d079f41ce8_51971_875x0_resize_box_3.png" width="326" height="125" alt="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" title="Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook" class="" loading="lazy">
+                <h3>Desarrollar componentes React con TypeScript y sistemas de diseño con Storybook</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/02/como-migrar-el-contenido-de-un-sitio-web-html-a-formato-markdown/">
+                <img src="/blog-bitix/assets/images/logotypes/markdown.svg" width="326" height="125" alt="Cómo migrar el contenido de un sitio web HTML a formato Markdown" title="Cómo migrar el contenido de un sitio web HTML a formato Markdown" class="" loading="lazy">
+                <h3>Cómo migrar el contenido de un sitio web HTML a formato Markdown</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-507';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/08\/configurar-un-servidor-web-virtual-en-nginx-y-apache\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

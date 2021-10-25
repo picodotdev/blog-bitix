@@ -1,0 +1,647 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>2021s</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/" hreflang="es" title="2021s">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/index-amp.html" hreflang="es" title="2021s">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/2021/index.xml" hreflang="es" title="2021s">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
+  <!-- Social -->
+<meta property="og:title" content="2021s">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="2021s">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/05/los-mejores-juegos-gratuitos-o-free-to-play-de-pc-consolas-y-movil/">Los mejores juegos gratuitos o free to play de PC, consolas y móvil</a></h1>
+        <span class="information">
+          <time>16/05/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Para jugar no hace falta comprar los juegos en el mismo momento en que los juegos se publican, en poco tiempo bajan de precio de forma significativa. Pero incluso hay muchos juegos de muy buena calidad que son completamente gratuitos, los hay para todas las plataformas ya sean PC, consolas e incluso teléfonos móviles. Hay juegos gratuitos de varios géneros ya sea de disparos, estrategia o rol, algunos tienen mecánicas de juegos de varios de estos géneros.
+          
+          <br>
+          <a href="/blog-bitix/2021/05/los-mejores-juegos-gratuitos-o-free-to-play-de-pc-consolas-y-movil/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</a></h1>
+        <span class="information">
+          <time>14/05/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            El patrón de diseño <em>Factory</em> es uno de los patrones dedicados a la creación de instancias. El patrón <em>Factory</em> proporciona varias ventajas sobre la palabra reservada <em>new</em> que proporcionan los lenguajes de programación orientada a objetos para la creación de instancias. Es muy utilizado en muchas librerías, en ocasiones también es necesario implementar una clase que implemente este patrón por lo que es muy útil conocer y usar este patrón en las ocasiones que sea adecuado.
+          
+          <br>
+          <a href="/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/05/herramientas-para-mejorar-una-pagina-web-en-seo-conformidad-estandares-y-rendimiento/">Herramientas para mejorar una página web en SEO, conformidad estándares y rendimiento</a></h1>
+        <span class="information">
+          <time>09/05/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+          
+        </span>
+        <p>
+          
+            Hay múltiples herramientas que permiten evaluar y mejorar un sitio web en la conformidad de estándares web, rendimiento y SEO. Con los resultados de estas herramientas se han de realizar correcciones en el sitio web para mejorar las páginas del sitio web. La conformidad a estándares web, rendimiento, SEO y enlaces rotos son criterios por los que los buscadores clasifican las páginas en las páginas de resultados. Con un mejor posicionamiento es posible mejorar el número de visitas que los buscadores atraen al sitio web y realizando cambios mejorar la experiencia de usuario.
+          
+          <br>
+          <a href="/blog-bitix/2021/05/herramientas-para-mejorar-una-pagina-web-en-seo-conformidad-estandares-y-rendimiento/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/05/la-tinta-electronica-y-los-mejores-lectores-de-libros-electronicos/">La tinta electrónica y los mejores lectores de libros electrónicos</a></h1>
+        <span class="information">
+          <time>06/05/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+          
+        </span>
+        <p>
+          
+            Un lector de libros electrónico ofrece mayor comodidad frente a los libros en formato físico, en cuanto a peso y volumen de libros ni los libros ocupan espacio una vez leídos. Son ligeros, de tamaño reducido, ofrecen una lectura bajo el sol equivalente al formato impreso y añaden algunas funciones adicionales como luz integrada y un diccionario de palabras. Tienen un precio asequible y muchos libros electrónicos un precio inferior a la versión en formato físico en papel.
+          
+          <br>
+          <a href="/blog-bitix/2021/05/la-tinta-electronica-y-los-mejores-lectores-de-libros-electronicos/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/">Qué son los datos estructurados y para que sirven con ejemplos</a></h1>
+        <span class="information">
+          <time>02/05/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con un formato enriquecido que destaca sobre el resto de resultados.
+          
+          <br>
+          <a href="/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">Guía de instalación y uso básico de FreeBSD</a></h1>
+        <span class="information">
+          <time>30/04/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos.
+          
+          <br>
+          <a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</a></h1>
+        <span class="information">
+          <time>23/04/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La implementación de un servicio REST o HTTP es solo una parte, el otro lado es crear un cliente de ese u otro servicio que permita invocarlo, proporcionar parámetros y obtener las respuestas. Con la librería Retrofit implementar un cliente de un servicio en Java es una tarea bastante sencilla sencilla que utiliza una simple interfaz a la que se le añaden varias anotaciones que le indican a Retrofit cómo construir una implementación a partir de la interfaz. El código que hace uso de la clase que implementa la interfaz del servicio con Retrofit no es diferente de usar una clase que implementa una interfaz.
+          
+          <br>
+          <a href="/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/04/historias-de-un-streamer-un-nuevo-reto/">Historias de un streamer, «Un nuevo reto»</a></h1>
+        <span class="information">
+          <time>20/04/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+              <a href="/blog-bitix/tags/patrocinado/">patrocinado</a>
+            
+          
+        </span>
+        <p>
+          
+            Alex enciende la Xbox y conecta el disco duro externo más vendido del momento, que ha comprado en una tienda online con dos terabytes metidos en una caja verde con la que liberará espacio de la consola.
+Con la capturadora que compró y el micrófono tiene todo preparado y hoy es un día importante, se enfrenta a los mejores del instituto. Los cascos bien ajustados y listo, se deja caer en la parte más alta de la isla.
+          
+          <br>
+          <a href="/blog-bitix/2021/04/historias-de-un-streamer-un-nuevo-reto/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">Herramientas de reconocimiento de texto en imágenes con OCR</a></h1>
+        <span class="information">
+          <time>16/04/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Un programa de reconocimiento de caracteres o OCR permite obtener el texto de una imagen o fotografía tomada con la cámara de un teléfono inteligente, captura de pantalla, <em>scanner</em> u otro medio. Al programa OCR se le proporciona la imagen y este genera como resultado el texto reconocido, si la imagen es de buena calidad el reconocimiento de caracteres es bastante preciso. Hay programas OCR de línea de comandos, con interfaz gráfica, en línea sin necesidad de instalar software y también es posible realizar OCR desde en un programa con un lenguaje de programación como Java.
+          
+          <br>
+          <a href="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/04/las-clases-y-librerias-basicas-de-java-para-bases-de-datos-relacionales/">Las clases y librerías básicas de Java para bases de datos relacionales</a></h1>
+        <span class="information">
+          <time>09/04/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Las aplicaciones suelen delegar el guardado del estado y de los datos que tratan en sistemas especializados en almacenar datos. Las bases de datos relacionales son sistemas que han probado su eficacia y utilizad durante las últimas décadas de la computación. Aún con la aparición de múltiples bases de datos NoSQL alternativas las bases de datos relacionales se seguirán utilizando o incluso combinando diferentes tipos de bases de datos en un mismo sistema. Java proporciona desde sus primeras versiones el paquete <em>java.sql</em> con varias clases para el acceso a bases de datos relacionales, aunque el acceso a las bases de datos relacionales se suele utilizar a través de librerías es útil conocer estas clases de Java que constituyen los conceptos fundamentales de acceso a base de datos y que las librerías internamente son las que usan.
+          
+          <br>
+          <a href="/blog-bitix/2021/04/las-clases-y-librerias-basicas-de-java-para-bases-de-datos-relacionales/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">Programas basados en consola con Java usando Lanterna</a></h1>
+        <span class="information">
+          <time>04/04/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Todavía hoy en día la terminal no ha desaparecido, y no lo hará, aún habiendo pasado ya algunas décadas de la aparición de las interfaces gráficas. Algunas ventajas de la terminal es que conociendo los comandos es más fácil realizar una tarea que con un programa basado en una ventana con botones que hay que pulsar usando el ratón, además las tareas usando comandos se pueden automatizar con scripts y combinar varios donde la entrada de uno sea la salida de otros dando lugar a funcionalidades mucho más complejas que las que realizan los comandos individualmente.
+          
+          <br>
+          <a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos</a></h1>
+        <span class="information">
+          <time>31/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            La programación orientada a objetos es un paradigma adoptado por todos lenguajes modernos y publicados en las últimas décadas. La programación orientada a objetos proporciona una sintaxis en el lenguaje para definir abstracciones que hacen sencillo utilizar conceptos cuya implementación es compleja. La encapsulación, la abstracción, la herencia, el polimorfismo, la composición y la inyección de dependencias son conceptos fundamentales a conocer en la programación orientada a objetos.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/">Convertir texto o imagen a arte de caracteres ASCII</a></h1>
+        <span class="information">
+          <time>27/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            El arte ASCII es utilizar caracteres para obtener una composición que simula una imagen o dibujo. Es posible convertir texto a arte de caracteres ASCII o una imagen en formato <em>svg</em>, <em>jpeg</em> o <em>png</em> a texto. En GNU/Linux hay herramientas de línea de comandos que permiten crear arte ASCII tanto para texto como para imágenes. En internet también hay disponibles páginas que ofrecen el servicio de generar arte ASCII sin necesidad de instalar ningún software en la propia computadora.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/">Autenticación con segundo factor de autenticación en SSH</a></h1>
+        <span class="information">
+          <time>26/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            El servicio SSH permite el acceso a equipos remotos a un usuario desde cualquier ubicación en la que se encuentre el usuario siempre que tenga conectividad desde el punto de acceso a internet y el equipo remoto. La autenticación se realiza mediante un usuario y contraseña o mediante clave privada y pública, adicionalmente SSH también se puede configurar para requerir un segundo factor de autenticación o 2FA que consituye una segunda clave.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a></h1>
+        <span class="information">
+          <time>20/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/2021/page/4/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+      <a href="/blog-bitix/2021/page/2/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

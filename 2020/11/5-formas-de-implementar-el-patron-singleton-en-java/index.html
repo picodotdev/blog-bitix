@@ -1,0 +1,560 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El patrón Singleton es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son thread-safe o con evaluación lazy. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>5 formas de implementar el patrón Singleton en Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/" hreflang="es" title="5 formas de implementar el patrón Singleton en Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/index-amp.html" hreflang="es" title="5 formas de implementar el patrón Singleton en Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="5 formas de implementar el patrón Singleton en Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El patrón Singleton es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son thread-safe o con evaluación lazy. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="5 formas de implementar el patrón Singleton en Java">
+<meta name="twitter:description" content="El patrón Singleton es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son thread-safe o con evaluación lazy. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/"
+    },
+    "headline": "5 formas de implementar el patrón Singleton en Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2020-11-21T23:00:00+01:00",
+    "dateModified": "2020-11-21T23:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1112",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El patrón Singleton es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son thread-safe o con evaluación lazy."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>5 formas de implementar el patrón Singleton en Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>21/11/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El patrón <em>Singleton</em> es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son <em>thread-safe</em> o con evaluación <em>lazy</em>.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Los lenguajes orientados a objetos modelan los programas utilizando clases, estas clases contienen tanto los datos como las operaciones que tratan esos datos que solo pueden ser modificados a través de esas operaciones. Este principio de encapsulación tiene como beneficio garantizar que los datos no sean modificados por cualquier otro código distinto a las operaciones y que los datos no queden en un estado inconsistente.</p>
+<p>En un lenguaje orientado a objetos de cada clase se crean tantas instancias u objetos como se necesiten en el programa. En algunos casos de una clase en concreto sólo se desea que haya una única instancia, normalmente hacer que de una clase en concreto haya una única instancia se implementa con el patrón <em>Singleton</em>.</p>
+<p>En Java hay varias formas de implementar el patrón <em>Singleton</em>, aunque todas son posibles cada una tiene diferentes propiedades, algunas tiene más beneficios sin las debilidades de otras. En este artículo incluyo 5 formas de cómo implementar el patrón <em>Singleton</em> con un ejemplo de código de cada una de ellas e indico cuales de ellas son las mejores opciones de entre estas.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-es-el-patrón-singleton">Qué es el patrón Singleton</a></li>
+    <li><a href="#formas-de-implementar-el-patrón-singleton-en-java">Formas de implementar el patrón Singleton en Java</a>
+      <ul>
+        <li><a href="#forma-tradicional">Forma tradicional</a></li>
+        <li><a href="#método-sincronizado">Método sincronizado</a></li>
+        <li><a href="#variable-estática-final">Variable estática final</a></li>
+        <li><a href="#clase-_inner_">Clase <em>inner</em></a></li>
+        <li><a href="#clases-_enum_">Clases <em>enum</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="qué-es-el-patrón-singleton">Qué es el patrón Singleton</h3>
+<p>El <a href="https://en.wikipedia.org/wiki/Singleton_pattern">patrón Singleton</a> es un patrón de diseño que restringe a una única instancia de objeto el número instancias de una clase que se pueden crear durante la ejecución del programa. Es útil en ciertas clases donde su única instancia es compartida en todo el código como si de una variable global se tratase. Si el método que permite obtener la referencia a la instancia es un método estático la instancia es como si fuese una variable global dado que es posible acceder a ella desde cualquier parte del programa siempre que lo permitan <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">los modificadores de acceso</a>.</p>
+<p>Los casos de uso de las clases <em>singleton</em> son mantener un estado compartido, permitir inicialización bajo demanda o <em>lazy</em>, también es usado en otros patrones como el patrón <em>abstract factory</em>, <em>factory method</em>, <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">el patrón <em>builder</em></a> o <em>facade</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama de clases del patrón de diseño Singleton"><img src="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_650x450_fit_box_3.png" width="650" height="390" alt="Diagrama de clases del patrón de diseño Singleton" title="Diagrama de clases del patrón de diseño Singleton" class="" loading="lazy"></a></p>
+<figcaption>Diagrama de clases del patrón de diseño Singleton</figcaption>
+</figure>
+</div>
+<h3 id="formas-de-implementar-el-patrón-singleton-en-java">Formas de implementar el patrón Singleton en Java</h3>
+<p>En Java hay varias formas de implementar el patrón <em>Singleton</em> en una clase, el objetivo y resultado es el mismo pero la implementación hace que tengan algunas diferencias como que no sea <em>thread-safe</em>, no sea <em>lazy</em>, otras implementaciones igualmente sencillas son <em>thread-safe</em> y <em>lazy</em> al mismo tiempo.</p>
+<p>Esta son las implementaciones más comunes, dependiendo de las necesidades de la aplicación todas son válidas simplemente la implementación con la clase <em>inner</em> y <em>enum</em> son las que proporcionan <em>thread-safe</em> y evaluación <em>lazy</em> que algunas de las otras no tienen.</p>
+<h4 id="forma-tradicional">Forma tradicional</h4>
+<p>La forma tradicional de implementar el patrón <em>Singleton</em> es utilizando una variable estática privada para guardar la referencia de la única instancia, hacer el constructor privado de modo que el resto de clases no tengan la posibilidad de crear más instancias y un método que crea la instancia si no ha sido creada con anterioridad con una sentencia condicional y devuelve la referencia si ya existe la instancia.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Singleton-1.java</span>
+    </div>
+</div>
+<p>Esta implementación es muy utilizada, aunque es <em>lazy</em> ya que la instancia no se crea hasta que se realiza la primera solicitud su inconveniente es que no es <em>thread-safe</em> si varios hilos intentan obtener una instancia cuando aún no hay ninguna creada.</p>
+<h4 id="método-sincronizado">Método sincronizado</h4>
+<p>Para implementar el patrón <em>Singleton</em> con la propiedad de que sea <em>thread-safe</em> en el caso anterior la forma más sencilla es hacer el método <em>synchronized</em> de modo que Java garantiza que si varios hilos intentan obtener la referencia de la instancia cuando aún no está creada sólo uno de ellos la cree.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Singleton-2.java</span>
+    </div>
+</div>
+<p>El inconveniente de esta implementación con <em>synchronized</em> hace que el método para obtener la instancia sea más lento debido a la propia sincronización y a la contención que se produce si hay múltiples hilos en ejecución que hacen uso del método, si el rendimiento es una consideración importante hay otras formas de implementar el patrón <em>Singleton</em> no mucho más difíciles que tienen mejor rendimiento.</p>
+<h4 id="variable-estática-final">Variable estática final</h4>
+<p>La siguiente forma de implementar el patrón <em>Singleton</em> es crear la instancia en la inicialización de la clase ya sea como una asignación en la variable o con el constructor estático.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Singleton-3a.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>&#10;&#10;   <span class="kd">static</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Singleton-3b.java</span>
+    </div>
+</div>
+<p>Esta implementación no requiere utilizar una sentencia condicional <em>if</em> para comprobar si la instancia ya ha sido creada y es <em>thread-safe</em>, sin embargo, no es <em>lazy</em> ya que la instancia se crea cuando se inicializa la clase antes de que se haga el primer uso.</p>
+<h4 id="clase-_inner_">Clase <em>inner</em></h4>
+<p>Esta implementación es <em>thread-safe</em> y tiene evaluación <em>lazy</em> que algunas de las anteriores no tienen. Lo que hace es utilizar una clase anidada o <em>inner</em> para mantener la referencia a la instancia de la clase que la contiene.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SingletonHolder</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">SingletonHolder</span><span class="o">.</span><span class="na">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Singleton-4.java</span>
+    </div>
+</div>
+<p>Este caso tampoco hace uso de la sentencia condicional <em>if</em> y el propio lenguaje Java por la inicialización de las clases y propiedades <em>static</em> garantiza que es <em>thread-safe</em>.</p>
+<h4 id="clases-_enum_">Clases <em>enum</em></h4>
+<p>Las clases <em>enum</em> son por definición clases cuyos enumerados son <em>singleton</em> y <em>thread-safe</em>. La particularidad de los <em>enum</em> es que no se pueden crear nuevas instancias adicionales a las que se definan en el código en tiempo de compilación, el número de instancias es constante, por lo demás los <em>enum</em> al igual que las clases pueden implementar interfaces, declarar métodos y constructores de uso en el propio <em>enum</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Singleton</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">INSTANCE</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Singleton-5.java</span>
+    </div>
+</div>
+<h3 id="conclusión">Conclusión</h3>
+<p>Si el Singleton debe extender una clase la mejor opción de crearlo es con la clase <em>inner</em>, la implementación con una clase <em>enum</em> también es válida. Estas son las dos implementaciones aconsejadas para implementar el patrón <em>Singleton</em>. La forma tradicional sigue siendo muy utilizada con números ejemplos de código en artículos y es posible utilizarla, sin embargo, dadas sus desventajas es preferible utilizar alguna de las dos aconsejadas que son igual de sencillas de implementar.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://www.learn4master.com/algorithms/java-singleton-pattern">Five ways to implement Singleton pattern in Java</a></li>
+<li><a href="https://dzone.com/articles/java-singletons-using-enum">Java Singletons Using Enum</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>java-patron-diseno</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/01/ejemplo-del-patron-de-diseno-no-operation/">Ejemplo del patrón de diseño No Operation</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/">El patrón de diseño Observer y una forma de implementarlo en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/">Ejemplo de máquina de estados con Spring Statemachine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">5 formas de implementar el patrón Singleton en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-534';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/11\/5-formas-de-implementar-el-patron-singleton-en-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

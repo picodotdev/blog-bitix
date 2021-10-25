@@ -1,0 +1,567 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Revertir un servicio a una versión anterior con Nomad</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/" hreflang="es" title="Revertir un servicio a una versión anterior con Nomad">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/index-amp.html" hreflang="es" title="Revertir un servicio a una versión anterior con Nomad">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Revertir un servicio a una versión anterior con Nomad">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Revertir un servicio a una versión anterior con Nomad">
+<meta name="twitter:description" content="Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/"
+    },
+    "headline": "Revertir un servicio a una versión anterior con Nomad",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2020-07-26T09:00:00+02:00",
+    "dateModified": "2020-07-26T09:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1155",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Revertir un servicio a una versión anterior con Nomad</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>26/07/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp" class="" loading="false"></p>
+</div>
+<p>En el desarrollo de una aplicación se dedica un considerable esfuerzo a tener la mayor seguridad que los cambios no introducen errores, se realizan numerosas pruebas unitarias, pruebas de integración, si es una aplicación web pruebas funcionales simulando la interacción de un usuario. Todas estas pruebas se ejecutan además del equipo de cada desarrollador en un entorno de integración continua o CI en cada <em>commit</em> al repositorio de control de versiones del código fuente, el equipo de desarrollo recibe una notificación con inmediatez en caso de fallar alguna prueba. Aún se hacen mas pruebas algunas manuales en un entorno de <em>staging</em> que tiene una configuración similar al de producción. Finalmente, se despliega la versión validada en producción todavía haciendo más comprobaciones con estrategias de despliegue <em>blue/green</em> y <em>canary</em>, si no se ha descubierto ningún error se promociona la versión en todas las instancias.</p>
+<p>Y aún con todo estos procesos de pruebas en ocasiones se descubren errores en producción. Si la causa del error se descubre rápido y es fácil de solucionar se opta por corregirlo, crear una nueva versión y desplegarla. Si el error es leve y no afecta a una funcionalidad importante se puede esperar a la siguiente versión para corregirlo. Pero algunos errores impactan en una funcionalidad vital para el negocio, tanto que obligan al equipo a dejar las tareas planificadas que están haciendo aún siendo también importantes para descubrir la causa del error y corregirlo, a veces la causa y la corrección se realiza rápido. En otras ocasiones la causa es difícil de determinar o la corrección es compleja, en estas ocasiones la opción adecuada es volver a la versión anterior buena conocida haciendo un <em>revert</em> o <em>rollback</em>. Se pierden las otras nuevas funcionalidades incorporadas en la misma versión pero se evita hacer cambios que introducen deuda técnica por la presión de dar solución rápido al error y se evita al equipo trabajar en un desagradable bajo presión.</p>
+<p>En la operación de sistemas lo ideal es que todas las tareas estén automatizadas para evitar errores al realizar operaciones manuales y para evitar complejos procesos que impidan a cualquier miembro de equipo realizar la tarea por falta de conocimiento, complejidad o requerir formación. Dos de estas tareas a automatizar son el despliegue de una aplicación con una nueva versión y también el revertir a una versión anterior en caso de detectar que la nueva versión tiene algún tipo de error.</p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Nomad es un orquestador de servicios</a> que en gran medida automatiza el despliegue de de las aplicaciones, su actualización a nuevas versiones y revertir a versiones anteriores.</p>
+<p>Se inicia con el siguiente comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad agent -dev&#10;<span class="o">==</span>&gt; No configuration files <span class="nv">loaded</span>&#10;<span class="o">==</span>&gt; Starting Nomad agent...&#10;<span class="o">==</span>&gt; Nomad agent configuration:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;   Advertise Addrs: HTTP: 127.0.0.1:4646<span class="p">;</span> RPC: 127.0.0.1:4647<span class="p">;</span> Serf: 127.0.0.1:4648&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bind Addrs: HTTP: 127.0.0.1:4646<span class="p">;</span> RPC: 127.0.0.1:4647<span class="p">;</span> Serf: 127.0.0.1:4648&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Client: <span class="nb">true</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log Level: DEBUG&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Region: global <span class="o">(</span>DC: dc1<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server: <span class="nb">true</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Version: 0.12.0&#10;&#10;<span class="o">==</span>&gt; Nomad agent started! Log data will stream in below:&#10;&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad-start.sh</span>
+    </div>
+</div>
+<p>Para ejecutar un servicio basta con enviar su definición en su archivo de configuración con un comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad run service-1.nomad&#10;<span class="o">==</span>&gt; Monitoring evaluation <span class="s2">&#34;56421393&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Evaluation triggered by job <span class="s2">&#34;service&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Allocation <span class="s2">&#34;b51101cc&#34;</span> created: node <span class="s2">&#34;5721462c&#34;</span>, group <span class="s2">&#34;service&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Evaluation within deployment: <span class="s2">&#34;33154ac5&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Evaluation status changed: <span class="s2">&#34;pending&#34;</span> -&gt; <span class="s2">&#34;complete&#34;</span>&#10;<span class="o">==</span>&gt; Evaluation <span class="s2">&#34;56421393&#34;</span> finished with status <span class="s2">&#34;complete&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad-run-1.sh</span>
+    </div>
+</div>
+<p>La definición del servicio en <a href="https://www.nomadproject.io/">Nomad</a> incluye la versión del artecfacto a desplegar. En este caso el servicio es simplemente un comando que emite una traza en la consola, a efectos didácticos no es relevante ya que sería lo mismo si fuera el comando de inicio de la aplicación Java que incluya la versión del <em>jar</em> o si el contenedor Docker estuviese versionado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">job <span class="s2">&#34;service&#34;</span> <span class="o">{</span>&#10;  <span class="nv">datacenters</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&#34;dc1&#34;</span><span class="o">]</span>&#10;&#10;  group <span class="s2">&#34;service&#34;</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;task <span class="s2">&#34;service&#34;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nv">driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  config <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">image</span> <span class="o">=</span> <span class="s2">&#34;busybox:latest&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">command</span> <span class="o">=</span> <span class="s2">&#34;ash&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">args</span> <span class="o">=</span> <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;-c&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;while true; do echo \&#34;Version 1\&#34;; sleep 1; done&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>service-1.nomad</span>
+    </div>
+</div>
+<p>El servicio emite en la salida el mensaje.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad job status service&#10;...&#10;Allocations&#10;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node ID   Task Group  Version  Desired  Status&nbsp;&nbsp;&nbsp;&nbsp;Created&nbsp;&nbsp;&nbsp;&nbsp; Modified&#10;b51101cc  5721462c  service&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop&nbsp;&nbsp;&nbsp;&nbsp; running   40m6s ago   38m31s ago&#10;$ nomad alloc logs b51101cc&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>service-1-logs.sh</span>
+    </div>
+</div>
+<p>Al hacer cambios en el código de un servicio con nuevas características, correcciones de errores o mejoras de las funcionalidades existentes hay que generar una nueva versión del artefacto a desplegar, en el caso de una aplicación Java con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> puede ser un nuevo archivo <em>jar</em> con un nuevo nombre que incluye su versión, el artefacto de despligue es un contenedor Docker este también estará versionado. En la definición del servicio para Nomad hay que actualizar la referencia del artefacto a la nueva versión. El comando para realizar el despliegue es el mismo, basta con enviar la nueva definición del servicio a Nomad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">job <span class="s2">&#34;service&#34;</span> <span class="o">{</span>&#10;  <span class="nv">datacenters</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&#34;dc1&#34;</span><span class="o">]</span>&#10;&#10;  group <span class="s2">&#34;service&#34;</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;task <span class="s2">&#34;service&#34;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nv">driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  config <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">image</span> <span class="o">=</span> <span class="s2">&#34;busybox:latest&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">command</span> <span class="o">=</span> <span class="s2">&#34;ash&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nv">args</span> <span class="o">=</span> <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;-c&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;while true; do echo \&#34;Version 2 (error)\&#34;; sleep 1; done&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>service-2.nomad</span>
+    </div>
+</div>
+<p>Como una nueva versión implica cambios en el código o la configuración del servicio es posible introducir nuevos errores que aún con todos los procesos de pruebas en diferentes entornos comentados sean descubiertos solo en el entorno de producción como es el típico <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a> o en este caso un mensaje de traza erróneo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad job status service&#10;...&#10;Allocations&#10;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node ID   Task Group  Version  Desired  Status&nbsp;&nbsp;&nbsp;&nbsp;Created&nbsp;&nbsp;&nbsp;&nbsp; Modified&#10;f7bd853e  5721462c  service&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop&nbsp;&nbsp;&nbsp;&nbsp; running   38m33s ago  34m57s ago&#10;b51101cc  5721462c  service&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop&nbsp;&nbsp;&nbsp;&nbsp; <span class="nb">complete</span>  40m6s ago   38m31s ago&#10;$ nomad alloc logs f7bd853e&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;Version <span class="m">2</span> <span class="o">(</span>error<span class="o">)</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>service-2-logs.sh</span>
+    </div>
+</div>
+<p>Para la tarea de volver a una versión anterior el proceso con Nomad es igualmente sencillo, Nomad recuerda las definiciones anteriores enviadas con lo que solo se necesita utilizar <a href="https://www.nomadproject.io/docs/commands/job/revert.html">el comando para restaurar la definición del servicio</a>. Con los artefactos de despliegue versionados ya sea con contenedores Docker o con versiones en archivos <em>jar</em> las definiciones de los servicios contienen la referencia de los artefactos que utilizan.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad job revert service <span class="nv">0</span>&#10;<span class="o">==</span>&gt; Monitoring evaluation <span class="s2">&#34;493bcc52&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Evaluation triggered by job <span class="s2">&#34;service&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Evaluation within deployment: <span class="s2">&#34;e13303e3&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Allocation <span class="s2">&#34;fc4fd574&#34;</span> created: node <span class="s2">&#34;5721462c&#34;</span>, group <span class="s2">&#34;service&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Evaluation status changed: <span class="s2">&#34;pending&#34;</span> -&gt; <span class="s2">&#34;complete&#34;</span>&#10;<span class="o">==</span>&gt; Evaluation <span class="s2">&#34;493bcc52&#34;</span> finished with status <span class="s2">&#34;complete&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad-revert.sh</span>
+    </div>
+</div>
+<p>El volver a la versión anterior puede hacerse desde la consola gráfica de administración de Nomad o desde la interfaz de línea de comandos introduciendo la definición anterior del servicio. Nomad se encarga de actualizar a la versión anterior de todas las instancias de forma progresiva utilizando <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">estrategias de despliegue <em>blue/green</em> y <em>canary</em> con Nomad</a> que haya del servicio de forma automatizada y el servicio vuelve a la normalidad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ nomad job status service&#10;...&#10;Allocations&#10;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node ID   Task Group  Version  Desired  Status&nbsp;&nbsp;&nbsp;&nbsp;Created&nbsp;&nbsp;&nbsp;&nbsp; Modified&#10;fc4fd574  5721462c  service&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run&nbsp;&nbsp;&nbsp;&nbsp;  running   34m58s ago  34m43s ago&#10;f7bd853e  5721462c  service&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop&nbsp;&nbsp;&nbsp;&nbsp; <span class="nb">complete</span>  38m33s ago  34m57s ago&#10;b51101cc  5721462c  service&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop&nbsp;&nbsp;&nbsp;&nbsp; <span class="nb">complete</span>  40m6s ago   38m31s ago&#10;$ nomad alloc logs fc4fd574&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;Version <span class="m">1</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>service-3-logs.sh</span>
+    </div>
+</div>
+<p>Desde la consola web de administración también se ven las definiciones de los jobs y sus versiones con sus diferencias.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-1_hu46d56fa32dedc34aa925f05a6e74ed43_123650_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Versión 1 del servicio"><img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-1_hu46d56fa32dedc34aa925f05a6e74ed43_123650_200x150_fit_box_3.png" width="155" height="150" alt="Versión 1 del servicio" title="Versión 1 del servicio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-2_hua65f376519e85a3e38c7d189b5a61580_132252_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Versión 2 del servicio"><img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-2_hua65f376519e85a3e38c7d189b5a61580_132252_200x150_fit_box_3.png" width="148" height="150" alt="Versión 2 del servicio" title="Versión 2 del servicio" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Versiones del servicio"><img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_200x150_fit_box_3.png" width="200" height="150" alt="Versiones del servicio" title="Versiones del servicio" class="" loading="lazy"></a></p>
+<figcaption>Versiones del servicio</figcaption>
+</figure>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>hashicorp</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicios Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">Planificar procesos periódicos y scripts con Nomad</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-503';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/07\/revertir-un-servicio-a-una-version-anterior-con-nomad\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

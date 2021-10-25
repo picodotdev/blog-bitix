@@ -1,0 +1,51 @@
+{
+    "consumer": {
+      "name": "serviceConsumer"
+    },
+    "interactions": [
+      {
+        "description": "get message with a name with en-GB locale interaction",
+        "request": {
+          "headers": {
+            "Accept-Language": "en-GB"
+          },
+          "matchingRules": {
+            "query": {
+              "random": {
+                "combine": "AND",
+                "matchers": [
+                  {
+                    "match": "regex",
+                    "regex": ".*"
+                  }
+                ]
+              }
+            }
+          },
+          "method": "GET",
+          "path": "/message/Java",
+          "query": {
+            "random": [
+              "16fc8a5f-b9ab-4b26-8049-81a4e7901820"
+            ]
+          }
+        },
+        "response": {
+          "body": "Hello Java!",
+          "status": 200
+        }
+      },
+      ...
+    ],
+    "metadata": {
+      "pact-jvm": {
+        "version": "4.2.9"
+      },
+      "pactSpecification": {
+        "version": "3.0.0"
+      }
+    },
+    "provider": {
+      "name": "serviceProvider"
+    }
+  }

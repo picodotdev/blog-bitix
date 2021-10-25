@@ -1,0 +1,721 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Un proxy inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el proxy inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un proxy inverso diseñado para los entornos cloud dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>El proxy inverso Traefik, características y funcionalidades que ofrece</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/" hreflang="es" title="El proxy inverso Traefik, características y funcionalidades que ofrece">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/index-amp.html" hreflang="es" title="El proxy inverso Traefik, características y funcionalidades que ofrece">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="El proxy inverso Traefik, características y funcionalidades que ofrece">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Un proxy inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el proxy inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un proxy inverso diseñado para los entornos cloud dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="El proxy inverso Traefik, características y funcionalidades que ofrece">
+<meta name="twitter:description" content="Un proxy inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el proxy inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un proxy inverso diseñado para los entornos cloud dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/"
+    },
+    "headline": "El proxy inverso Traefik, características y funcionalidades que ofrece",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2021-09-19T13:00:00+02:00",
+    "dateModified": "2021-09-19T13:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1948",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Un proxy inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el proxy inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un proxy inverso diseñado para los entornos cloud dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_1040x0_resize_box_3.png" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>El proxy inverso Traefik, características y funcionalidades que ofrece</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>19/09/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Un <em>proxy</em> inverso oculta la complejidad de los servicios para los que hace de intermediario. Al situarse como intermediario el <em>proxy</em> inverso es capaz de proporcionar funcionalidades adicionales como balanceo de carga, limitar el número de peticiones por unidad de tiempo, duplicar peticiones o realizar la autenticación entre otras funciones. Traefik es un <em>proxy</em> inverso diseñado para los entornos <em>cloud</em> dinámicos soportando autoconfigurarción a partir de varios proveedores de registro y descubrimiento de servicios como Consul o Docker, también se integra con herramientas para la observabilidad como Prometheus para métricas y Zipkin y Elastic para trazabilidad y registro de trazas.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/traefik.svg" width="200" height="200" alt="Traefik" title="Traefik" class="" loading="false"></p>
+</div>
+<p>La tendencia de desarrollo es utilizar microservicios, contenedores y computación en la nube. Una característica de este tipo de aplicaciones es que se componen de múltiples elementos muy dinámicos que se crean, eliminan o cambia el número de instancias. La configuración de las herramientas nativas para la nube ha de ser dinámica en vez de estática.</p>
+<p>Una herramienta específica para hacer de <em>proxy</em> inverso adaptada a la nube es Traefik.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</a></li>
+    <li><a href="#casos-de-uso-y-características">Casos de uso y características</a></li>
+    <li><a href="#conceptos">Conceptos</a></li>
+    <li><a href="#ejemplos-de-funcionalidades">Ejemplos de funcionalidades</a>
+      <ul>
+        <li><a href="#balanceador-de-carga">Balanceador de carga</a></li>
+        <li><a href="#balanceador-de-carga-con-peso">Balanceador de carga con peso</a></li>
+        <li><a href="#limitar-número-de-peticiones">Limitar número de peticiones</a></li>
+        <li><a href="#duplicar-peticiones-o-_mirroring_">Duplicar peticiones o <em>mirroring</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#otras-funcionalidades">Otras funcionalidades</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</h3>
+<p><a href="https://traefik.io/">Traefik</a> es un <em>proxy</em> inverso y balanceador de carga adaptado a la computación en la nube mediante microservicios. Traefik se integra con los principales componentes de infraestructura configurándose a sí mismo automáticamente y de forma dinámica. Traefik es simple de operar pero capaz de manejar sistemas complejos y grandes en entornos diversos y diferentes capas de la pila de red como HTTP, TCP o UDP. Proporciona funcionalidades de intermediario que aumenta sus capacidades para realizar balanceo de carga o servir como <em>gateway</em> API.</p>
+<p>Como <em>proxy</em> inverso intercepta las peticiones entrantes y las redirige a los servicios adecuados. A diferencia de <em>proxys</em> inversos configurados de forma estática, Traefik usa descubrimiento de servicios para configurarse a sí mismo según los servicios en ejecución. Puede hacer de <em>proxy</em> en diferentes capas de la pila de red proporcionando funcionalidades como balanceo de carga, limitación de peticiones, <em>circuit breaker</em>, duplicación o <em>mirroring</em>, autenticación y más. También soporta terminación de SSL y puede usar un proveedor ACME como <a href="https://letsencrypt.org/">Let’s Encrypt</a> para la generación automática de certificados.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik_hu52bdaf14e3ca5d749a9a980e7772743f_134637_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="El proxy inverso Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik_hu52bdaf14e3ca5d749a9a980e7772743f_134637_300x250_fit_box_3.png" width="300" height="207" alt="El proxy inverso Traefik" title="El proxy inverso Traefik" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arquitectura del proxy inverso Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-architecture_hu78821b724a6b0de08cbf0fd88a055a4a_463097_300x250_fit_box_3.png" width="300" height="157" alt="Arquitectura del proxy inverso Traefik" title="Arquitectura del proxy inverso Traefik" class="" loading="lazy"></a></p>
+<figcaption>El proxy inverso Traefik y arquitectura</figcaption>
+</figure>
+</div>
+<p>El ecosistema de Traefik permite integrarse con otras herramientas destacadas soportando de forma nativa observabilidad con trazabilidad distribuida y con varios proveedores de métricas.</p>
+<ul>
+<li>Proveedores y orquestadores: <a href="https://www.consul.io/">Consul</a>, <a href="https://www.docker.com/">Docker</a>, <a href="https://etcd.io/">etcd</a>, <a href="https://kubernetes.io/">Kubernetes</a>, <a href="https://mesosphere.github.io/marathon/">Marathon</a>, <a href="https://rancher.com/">Rancher</a>, <a href="https://redis.io/">Redis</a>.</li>
+<li>Trazabilidad: <a href="https://www.jaegertracing.io/">Jaeger</a>, <a href="https://opentracing.io/">Open Tracing</a>, <a href="https://zipkin.io/">Zipkin</a>, <a href="https://www.instana.com/">Instana</a>.</li>
+<li>Métricas: <a href="https://www.datadoghq.com/">Datadog</a>, <a href="https://prometheus.io/">Prometheus</a>, <a href="https://www.influxdata.com/">InfluxData</a>.</li>
+</ul>
+<p>Traefik posee dos versiones una <em>open source</em> gratuita con varias de las funcionalidades básicas, para los casos de uso empresariales proporciona funcionalidades adicionales como autenticación <a href="https://oauth.net/">OAuth2</a> o integración con <a href="https://www.vaultproject.io/">Vault</a>, en la <a href="https://traefik.io/pricing/">tabla que compara ambas versiones</a> se especifica cuales están incluídas en cada una.</p>
+<p>Al iniciar Traefik se integra un panel de información o <em>dashboard</em> en el que observar las rutas, servicios y <em>middelwares</em> configurados, dado el entorno dinámico de la computación en la nube y microservicios permite ver el estado del sistema.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard_hu557144e3be3d8b91d5ed54b4f2efc316_171229_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard_hu557144e3be3d8b91d5ed54b4f2efc316_171229_650x450_fit_box_3.png" width="399" height="450" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-routes_hudc0662f52b9484d95f431403f6ab49b7_138952_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-routes_hudc0662f52b9484d95f431403f6ab49b7_138952_200x150_fit_box_3.png" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-services_hu018b4cef96a6e408c63c37d5f4dd4ef7_110414_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-services_hu018b4cef96a6e408c63c37d5f4dd4ef7_110414_200x150_fit_box_3.png" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-middlewares_hu930a17723a7d2160346da69b7ee91b31_85998_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="El panel de información o dashboard integrado de Traefik"><img src="/blog-bitix/2021/09/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece/images/traefik-dashboard-middlewares_hu930a17723a7d2160346da69b7ee91b31_85998_200x150_fit_box_3.png" width="133" height="150" alt="El panel de información o dashboard integrado de Traefik" title="El panel de información o dashboard integrado de Traefik" class="" loading="lazy"></a></p>
+<figcaption>El panel de información o dashboard integrado de Traefik</figcaption>
+</figure>
+</div>
+<h3 id="casos-de-uso-y-características">Casos de uso y características</h3>
+<p>Los principales casos de uso deTraefik son:</p>
+<ul>
+<li>Balanceador de carga: permite distribuir la carga de peticiones con un enrutamiento flexible en la capa 4 (TCP y UDP) y 7 (HTTP, aplicación) junto con un conjunto amplio de <em>midleware</em> que permite escalado dinámico, despliegues <em>blue-green</em> y <em>canary</em> sin caídas, duplicación de peticiones y más.</li>
+<li>API <em>gateway</em>: usar Traefik como <em>proxy</em> inverso delante de los servicios permite delegar a Traefik aspectos funcionales transversales incluyendo autenticación, limitación de peticiones y terminación de SSL. Estas capacidades son expandibles mediante complementos o <em>plugins</em>.</li>
+<li><em>Kubernetes Ingress</em>: Traefik se puede usar como controlador <em>Kubernetes Ingress</em> para añadir la flexibilidad y facilidad de uso a los despliegues de Kubernetes asi como al resto de su infraestructura de red.</li>
+<li>Gestión de certificados: Traefik soporta de forma nativa gestión de certificados de proveedores ACME como Let’s Encrypt así como certificados actualizables de forma dinámica definidos por el usuario.</li>
+</ul>
+<p>Sus características son:</p>
+<ul>
+<li><a href="https://docs.traefik.io/routing/overview/">Enrutado y balanceo de carga</a>: capa de enrutado flexible en la capa 4 y 7, soporta los protocolos HTTP, HTTP/2, TCP, UDP, Websockets, gRPC, despliegues <em>blue-green</em> y <em>canary</em>, fijación de sesión o <em>session stickness</em> y comprobaciones de salud.</li>
+<li><a href="https://docs.traefik.io/https/overview/">Seguridad</a>: automatización de HTTP, soporte para Let’s Encrypt, certificados personalizados y autenticación.</li>
+<li><a href="https://docs.traefik.io/providers/overview/">Configuración dinámica</a>: a través de descubrimiento de servicios (Kubernetes, Docker Swarm, Red Hat OpenShift, Rancher, Amazon ECS, <em>key-value stores</em>) y funcionales de intermediario o <em>middelware</em> (<em>circuit breakers</em>, reintentos, <em>buffering</em>, <em>compresión de la respuesta</em>, cabeceras o limitación de peticiones).</li>
+<li><a href="https://docs.traefik.io/observability/metrics/overview/">Observabilidad</a>: posee un panel informativo de forma nativa, trazabilidad distribuida (Jaeger, Open Tracing, Zipkin) y métricas en tiempo real (Datadog, Grafana, InfluxDB, Prometheus, StatsD).</li>
+</ul>
+<p>Estas <a href="https://traefik.io/blog/using-private-plugins-in-traefik-proxy-2-5/">funcionalidades son extensibles mediante <em>plugins</em></a>.</p>
+<h3 id="conceptos">Conceptos</h3>
+<p>Como <em>proxy</em> inverso la funcionalidad de Traefik es redirigir las peticiones entrantes a los servicios de <em>backend</em> para los que hace de <em>proxy</em>. Traefik emplea los siguientes conceptos fundamentales para su configuración:</p>
+<ul>
+<li><a href="https://doc.traefik.io/traefik/providers/overview/">Proveedores</a>: permiten descubrir los servicios disponibles proporcionando su ubicación y salud y al mismo tiempo realizar la configuración de Traefik de forma dinámica.</li>
+<li><a href="https://doc.traefik.io/traefik/routing/entrypoints/"><em>Entrypoints</em></a>: son los puertos por los que entra el tráfico de red  y el protocolo usado HTTP, TCP o UDP.</li>
+<li><a href="https://doc.traefik.io/traefik/routing/routers/">Enrutadores</a>: analizan las peticiones entrantes en base a unas reglas que utilizan el nombre de dominio, ruta o cabecera, definen que las funcionalidades de <em>middelware</em> que se aplican y a que servicios se redirigen.</li>
+<li><a href="https://doc.traefik.io/traefik/routing/services/">Servicios</a>: son los destinos de las peticiones entrantes pudiendo aplicar funcionalidad de balanceo de carga entre las diferentes instancias de los servicios de <em>backend</em> para los que se hace de <em>proxy</em>.</li>
+<li><a href="https://doc.traefik.io/traefik/middlewares/overview/"><em>Middlewares</em></a>: pueden actualizar la petición como añadir cabeceras HTTP, actualizar la ruta o realizar acciones de intermediario como autenticación o limitación de peticiones.</li>
+</ul>
+<h3 id="ejemplos-de-funcionalidades">Ejemplos de funcionalidades</h3>
+<p>En este ejemplo se utiliza Traefik como <em>proxy</em> inverso para dos instancias de servidor web <a href="https://nginx.org/">Nginx</a>. La configuración de los <em>entry points</em> de Traefik es estática que en el ejemplo se define un un archivo de configuración estático.</p>
+<p>La configuración de los enrutadores, servicios y <em>middlewares</em> es dinámica pudiendo actualizarse sin necesidad de reiniciar Traefik. La configuración dinámica la obtiene de los proveedores como Consul o Docker donde los servicios al iniciarse incluyen metainformación que Traefik obtiene se autoconfigura como se muestra en el artículo <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>. En el caso de este ejemplo por sencillez la configuración dinámica se proporciona a Traefik en un archivo de texto, aún siendo manual escribir esta configuración Traefik la puede recargar y aplicar sin necesidad de reiniciar el servidor.</p>
+<p>La configuración de Traefik del ejemplo se divide en tres secciones que son: enrutadores, <em>middlewares</em> y servicios. En la configuración se definen varios enrutadores que aplican reglas en función del <em>host</em> de la petición, los enrutadores definen que <em>middlewares</em> se aplican y a que servicios se redirigen las peticiones coincidentes.</p>
+<p>Esta es la configuración estática de Traefik.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">providers</span><span class="p">:</span><span class="w">&#10;</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">watch</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/traefik/traefik-dynamic.yml</span><span class="w">&#10;</span><span class="w"></span><span class="nt">api</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">insecure</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">dashboard</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>traefik.yml</span>
+    </div>
+</div>
+<p>El archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> que inicia Traefik y los servidores de Nginx de <em>backend</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.7&#39;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">traefik</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">traefik:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;8090:80&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;8080:8080&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">./:/etc/traefik/</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">nginx-1</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">./nginx-1:/usr/share/nginx/html:ro</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;8081:80&#34;</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">nginx-2</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">./nginx-2:/usr/share/nginx/html:ro</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;8082:80&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose.yml</span>
+    </div>
+</div>
+<p>Y los archivos HTML de los servidores web.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to nginx (nginx-1)!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;icon&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;data:,&#34;</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>&#10;<span class="nt">html</span> <span class="p">{</span> <span class="n">color-scheme</span><span class="p">:</span> <span class="n">light</span> <span class="n">dark</span><span class="p">;</span> <span class="p">}</span>&#10;<span class="nt">body</span> <span class="p">{</span> <span class="k">width</span><span class="p">:</span> <span class="mi">35</span><span class="kt">em</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>&#10;<span class="k">font-family</span><span class="p">:</span> <span class="n">Tahoma</span><span class="p">,</span> <span class="n">Verdana</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> <span class="p">}</span>&#10;<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to nginx! (nginx-1)<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>If you see this page, the nginx web server is successfully installed and&#10;working. Further configuration is required.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>For online documentation and support please refer &gt; to&#10;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://nginx.org/&#34;</span><span class="p">&gt;</span>nginx.org<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>&#10;Commercial support is available at&#10;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://nginx.com/&#34;</span><span class="p">&gt;</span>nginx.com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Thank you for&gt;  using nginx.<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>index-1.html</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to nginx (nginx-2)!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;icon&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;data:,&#34;</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>&#10;<span class="nt">html</span> <span class="p">{</span> <span class="n">color-scheme</span><span class="p">:</span> <span class="n">light</span> <span class="n">dark</span><span class="p">;</span> <span class="p">}</span>&#10;<span class="nt">body</span> <span class="p">{</span> <span class="k">width</span><span class="p">:</span> <span class="mi">35</span><span class="kt">em</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>&#10;<span class="k">font-family</span><span class="p">:</span> <span class="n">Tahoma</span><span class="p">,</span> <span class="n">Verdana</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span> <span class="p">}</span>&#10;<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to nginx! (nginx-2)<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>If you see this page, the nginx web server is successfully installed and&#10;working. Further configuration is required.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>For online documentation and support please refer &gt; to&#10;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://nginx.org/&#34;</span><span class="p">&gt;</span>nginx.org<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>&#10;Commercial support is available at&#10;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://nginx.com/&#34;</span><span class="p">&gt;</span>nginx.com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;&#10;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Thank you for&gt;  using nginx.<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>index-2.html</span>
+    </div>
+</div>
+<h4 id="balanceador-de-carga">Balanceador de carga</h4>
+<p>Un balanceador de carga permite distribuir la carga entre las diferentes instancias del servicio de <em>backend</em>. Por defecto, se aplican una estrategia <em>round-robin</em> para distribuir la carga de forma equitativa entre las diferentes instancias.</p>
+<p>Con esta configuración al realizar peticiones se distribuyen entre la instancia <em>nginx-1</em> y <em>nginx-2</em> de forma alternativa. La primera petición a la instancia <em>nginx-1</em>, la segunda a la instancia <em>nginx-2</em> y la tercera de nuevo a la instancia <em>nginx-1</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">http</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">routers</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Host(`nginx.127.0.0.1.sslip.io`)&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">middlewares</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">nginx-ratelimit</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;nginx&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">middlewares</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">loadBalancer</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">servers</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">http://nginx-1:80/</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">http://nginx-2:80/</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">passHostHeader</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>traefik-dynamic-load-balancer.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl http://nginx.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-1<span class="o">)</span>!&lt;/title&gt;&#10;...&#10;$ curl http://nginx.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-2<span class="o">)</span>!&lt;/title&gt;&#10;...&#10;$ curl http://nginx.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-1<span class="o">)</span>!&lt;/title&gt;&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-load-balancer.sh</span>
+    </div>
+</div>
+<h4 id="balanceador-de-carga-con-peso">Balanceador de carga con peso</h4>
+<p>A veces interesa no distribuir la carga de forma uniforme entre las diferentes instancias de los servicios de <em>backend</em>, sino realizar un balanceo de carga con peso.</p>
+<p>En este caso el balanceo de carga se configura para que la instancia de <em>nginx-1</em> tenga un peso de 3 y la instancia de <em>nginx-2</em> tenga un peso de 1, según estos pesos la instancia <em>nginx-1</em> de cada 4 peticiones recibe 3 mientras que la instancia <em>nginx-2</em> de cada 4 peticiones recibe 1.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">http</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">routers</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx-weighted</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Host(`nginx-weighted.127.0.0.1.sslip.io`)&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">middlewares</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">nginx-ratelimit</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;nginx-weighted&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">middlewares</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx-weighted</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">weighted</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-2</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>traefik-dynamic-load-balancer-weighted.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl http://nginx-weighted.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-1<span class="o">)</span>!&lt;/title&gt;&#10;...&#10;$ curl http://nginx-weighted.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-1<span class="o">)</span>!&lt;/title&gt;&#10;...&#10;$ curl http://nginx-weighted.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-1<span class="o">)</span>!&lt;/title&gt;&#10;...&#10;$ curl http://nginx-weighted.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-2<span class="o">)</span>!&lt;/title&gt;&#10;...&#10;$ curl http://nginx-weighted.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-1<span class="o">)</span>!&lt;/title&gt;&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-load-balancer-weighted.sh</span>
+    </div>
+</div>
+<h4 id="limitar-número-de-peticiones">Limitar número de peticiones</h4>
+<p>Para evitar que un servicio reciba más peticiones de las que es capaz de procesar según su nivel de servicio, con el objetivo de evitar que se sature y falle o  evitar denegación de servicio por una carga excesiva es posible establecer un límite en el número de peticiones que se envían a los servicios de <em>backend</em>. El límite se puede establecer de forma global para todas las peticiones o agruparse según la dirección IP origen o el valor de una cabecera.</p>
+<p>En esta configuración se establece que el servicio de <em>backend</em> no reciba más de una petición por segundo, en caso de que se realicen más peticiones por unidad de tiempo que este límite Traefik devuelve un error <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">429 Too Many Requests</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">http</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">routers</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Host(`nginx.127.0.0.1.sslip.io`)&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">middlewares</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">nginx-ratelimit</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;nginx&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">middlewares</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx-ratelimit</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">rateLimit</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>traefik-dynamic-rate-limit.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -v http://nginx.127.0.0.1.sslip.io:8080/&#10;*   Trying 127.0.0.1:8090...&#10;* Connected to nginx.127.0.0.1.sslip.io <span class="o">(</span>127.0.0.1<span class="o">)</span> port <span class="m">8090</span> <span class="o">(</span><span class="c1">#0)</span>&#10;&gt; GET / HTTP/1.1&#10;&gt; Host: nginx.127.0.0.1.sslip.io:8090&#10;&gt; User-Agent: curl/7.78.0&#10;&gt; Accept: */*&#10;&gt; &#10;* Mark bundle as not supporting multiuse&#10;&lt; HTTP/1.1 <span class="m">429</span> Too Many Requests&#10;&lt; Retry-After: <span class="m">1</span>&#10;&lt; X-Retry-In: 565.087221ms&#10;&lt; Date: Sun, <span class="m">19</span> Sep <span class="m">2021</span> 12:32:41 GMT&#10;&lt; Content-Length: <span class="m">17</span>&#10;&lt; Content-Type: text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8&#10;&lt; &#10;* Connection <span class="c1">#0 to host nginx.127.0.0.1.sslip.io left intact</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-rate-limit.sh</span>
+    </div>
+</div>
+<h4 id="duplicar-peticiones-o-_mirroring_">Duplicar peticiones o <em>mirroring</em></h4>
+<p>Este <em>middleware</em> permite duplicar la petición que se envía a un servicio a otros servicios descartando el resultado devuelto por esos otros servicios.</p>
+<p>Esto puede ser útil en el caso de aplicar el patrón de estrangulación ya que permite probar las peticiones sin riesgos. El servicio heredado continúa recibiendo y procesando las peticiones a la vez que el nuevo servicio recibe las mismas peticiones, una vez que el nuevo servicio se comporta de la forma esperada las peticiones del servicio heredado se redirigen al nuevo servicio completando la estrangulación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">http</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">routers</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx-mirroring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Host(`nginx-mirroring.127.0.0.1.sslip.io`)&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">service</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">nginx-mirroring</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">middlewares</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">...</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">nginx-mirroring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">mirroring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-1</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">mirrors</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-2</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">percent</span><span class="p">:</span><span class="w"> </span><span class="m">50</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>traefik-dynamic-mirroring.yml</span>
+    </div>
+</div>
+<p>Al hacer la petición el resultado que se devuelve es el <em>nginx-1</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl http://nginx-mirroring.127.0.0.1.sslip.io:8080/&#10;&lt;!DOCTYPE html&gt;&#10;...&#10;&lt;title&gt;Welcome to nginx <span class="o">(</span>nginx-1<span class="o">)</span>!&lt;/title&gt;&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-mirroring.sh</span>
+    </div>
+</div>
+<p>Traefik al mismo tiempo que realiza la petición a <em>nginx-1</em> se realiza a <em>nginx-2</em> como se observa en las trazas de los servidores Nginx.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">nginx-1_1  | 172.20.0.2 - - [19/Sep/2021:12:34:39 +0000] &#34;GET / HTTP/1.1&#34; 200 136 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0&#34; &#34;172.20.0.1&#34;&#10;nginx-2_1  | 172.20.0.2 - - [19/Sep/2021:12:34:39 +0000] &#34;GET / HTTP/1.1&#34; 200 136 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0&#34; &#34;172.20.0.1&#34;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-mirroring-nginx.out</span>
+    </div>
+</div>
+<h3 id="otras-funcionalidades">Otras funcionalidades</h3>
+<p>Hay otros <em>middlewares</em> que se pueden aplicar como el de <em>retry</em> para reintentar las peticiones en caso de fallo, aplicar el patrón <em>circuit breaker</em> para aplicar resiliencia evitando enviar peticiones a un servicio que está fallando, autenticación, reescribir el <em>path</em> de las peticiones o quitar un prefijo del <em>path</em> y añadir o eliminar cabeceras.</p>
+<p>Al aplicar <a href="https://picodotdev.github.io/blog-bitix/2021/08/el-patron-de-estrangulacion-para-reemplazar-aplicaciones-heredadas/">el patrón de estrangulación para reemplazar aplicaciones heredadas</a> la solución es añadir un intermediario como Traefik que permita redirigir las peticiones a la aplicación heredada o a su reemplazo cuando esté esté implementado. Este intermediario permite ir reemplazando de forma incremental la aplicación heredada.</p>
+<p>Traefik también permite delegar la autenticación en <a href="https://www.keycloak.org/">Keycloak</a> u otros servicios con los <em>middlewares</em> <a href="https://doc.traefik.io/traefik/middlewares/forwardauth/">Forward Auth</a>, <a href="https://doc.traefik.io/traefik/middlewares/digestauth/">Digest Auth</a> y <a href="https://doc.traefik.io/traefik/middlewares/basicauth/">Basic Auth</a>.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Traefik">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose up</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">
+                <img src="/blog-bitix/assets/images/logotypes/gnome.svg" width="326" height="125" alt="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" title="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME" class="" loading="lazy">
+                <h3>Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/">
+                <img src="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6e011cae91d9fec5bc7576cde312e803_167910_875x0_resize_box_3.png" width="326" height="125" alt="Cómo crear y poner subtítulos a un vídeo" title="Cómo crear y poner subtítulos a un vídeo" class="" loading="lazy">
+                <h3>Cómo crear y poner subtítulos a un vídeo</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">
+                <img src="/blog-bitix/assets/images/logotypes/freebsd.svg" width="326" height="125" alt="Guía de instalación y uso básico de FreeBSD" title="Guía de instalación y uso básico de FreeBSD" class="" loading="lazy">
+                <h3>Guía de instalación y uso básico de FreeBSD</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Convertir texto o imagen a arte de caracteres ASCII" title="Convertir texto o imagen a arte de caracteres ASCII" class="" loading="lazy">
+                <h3>Convertir texto o imagen a arte de caracteres ASCII</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/">
+                <img src="/blog-bitix/assets/images/logotypes/beastie.png" width="326" height="125" alt="Las diferencias entre GNU/Linux, BSD y sus distribuciones" title="Las diferencias entre GNU/Linux, BSD y sus distribuciones" class="" loading="lazy">
+                <h3>Las diferencias entre GNU/Linux, BSD y sus distribuciones</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" title="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" class="" loading="lazy">
+                <h3>Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-598';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/09\/el-proxy-inverso-traefik-caracteristicas-y-funcionalidades-que-ofrece\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,595 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Autenticación mediante clave pública y privada con SSH</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/" hreflang="es" title="Autenticación mediante clave pública y privada con SSH">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/index-amp.html" hreflang="es" title="Autenticación mediante clave pública y privada con SSH">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Autenticación mediante clave pública y privada con SSH">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Autenticación mediante clave pública y privada con SSH">
+<meta name="twitter:description" content="Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/"
+    },
+    "headline": "Autenticación mediante clave pública y privada con SSH",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png"
+        
+      },
+    "datePublished": "2019-05-03T20:00:00+02:00",
+    "dateModified": "2019-05-03T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "735",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Autenticación mediante clave pública y privada con SSH</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>03/05/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma.</p>
+<p>Para generar contraseñas fuertes se puede usar <a href="https://strongpasswordgenerator.com/">Strong Password Generator</a> y para almacenarlas <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">el programa KeePassXC</a>.</p>
+<p>Con <a href="https://www.openssh.com/">OpenSSH</a> también se puede iniciar sesión de línea de comandos en otro sistema proporcionando un usuario y una contraseña que se solicitará. O mejor aún con una clave pública y privada sin necesidad de introducir una contraseña.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh ubuntu@192.168.33.10&#10;Welcome to Ubuntu 18.04.2 LTS <span class="o">(</span>GNU/Linux 4.15.0-48-generic x86_64<span class="o">)</span>&#10;&#10; * Documentation:  https://help.ubuntu.com&#10; * Management:&nbsp;&nbsp;&nbsp;&nbsp; https://landscape.canonical.com&#10; * Support:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ubuntu.com/advantage&#10;&#10;  System information as of Fri May  <span class="m">3</span> 18:04:48 UTC <span class="m">2019</span>&#10;&#10;  System load:  0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Processes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">102</span>&#10;  Usage of /:   10.0% of 9.63GB   Users logged in:&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">1</span>&#10;  Memory usage: 6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP address <span class="k">for</span> enp0s3: 10.0.2.15&#10;  Swap usage:   0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP address <span class="k">for</span> enp0s8: 192.168.33.10&#10;&#10;&#10;<span class="m">0</span> packages can be updated.&#10;<span class="m">0</span> updates are security updates.&#10;&#10;&#10;Last login: Fri May  <span class="m">3</span> 18:04:00 <span class="m">2019</span> from 192.168.33.1&#10;To run a <span class="nb">command</span> as administrator <span class="o">(</span>user <span class="s2">&#34;root&#34;</span><span class="o">)</span>, use <span class="s2">&#34;sudo &lt;command&gt;&#34;</span>.&#10;See <span class="s2">&#34;man sudo_root&#34;</span> <span class="k">for</span> details.&#10;&#10;ubuntu@ubuntu-bionic:~$&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<img src="/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/images/openssh_hua00e364d197fb1857da25b410a64f760_83550_2560x1440_fit_box_3.png" width="578" height="191" alt="OpenSSH" title="OpenSSH" class="" loading="lazy"></p>
+</figure>
+</div>
+<p>Usar SSH es más seguro y más cómodo que usar contraseñas para realizar la autenticación, es más seguro ya que una clave pública y privada son más largas y es más cómodo ya que no se solicita contraseña constantemente que de otra manera al cabo de un tiempo se convierte en un paso tedioso y molesto. Lo primero que hay que hacer es <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar una clave SSH pública y privada</a> propia. Una clave de 2048 bits ya se considera segura pero como cuesta lo mismo generar una de más bits se puede generar una de 8192 bits para más seguridad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl genrsa -out ubuntu <span class="m">8192</span>&#10;$ ssh-keygen -y -f ubuntu &gt; ubuntu.pub&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-keygen.sh</span>
+    </div>
+</div>
+<p>En el servidor SSH se deben modificar algunas propiedades de configuración del archivo de configuración <em>/etc/ssh/sshd_config</em> para permitir la autenticación con usuario y contraseña para poder copiar la clave pública y una vez copiada la clave para mayor seguridad no permitir la autenticación mediante usuario y contraseña.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">PasswordAuthentication yes&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sshd_config</span>
+    </div>
+</div>
+<p>Una vez generado el par de claves hay que copiar la clave pública al servidor donde se desee iniciar sesión. Manualmente concatenando la clave pública al archivo <em>.ssh/authorized_keys</em> del directorio <em>home</em> del usuario con el que se quiere iniciar sesión o también se puede copiar la clave pública usando el comando <em>ssh-copy-id</em>. Para revocar el acceso mediante esa clave basta con eliminar su linea del archivo de claves autorizadas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh-copy-id -i ~/.ssh/ubuntu ubuntu@192.168.33.10&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-copy-id.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo passwd ubuntu&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>passwd.sh</span>
+    </div>
+</div>
+<p>Si se poseen varios pares de claves públicas y privadas se puede especificar que clave privada usar para cada máquina a la que se desee conectar en el archivo <em>~/.ssh/config</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Host</span> <span class="n">192</span><span class="o">.</span><span class="na">168</span><span class="o">.</span><span class="na">33</span><span class="o">.</span><span class="na">10</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HostName</span> <span class="n">192</span><span class="o">.</span><span class="na">168</span><span class="o">.</span><span class="na">33</span><span class="o">.</span><span class="na">10</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">User</span> <span class="n">ubuntu</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">IdentityFile</span> <span class="o">~/.</span><span class="na">ssh</span><span class="o">/</span><span class="n">ubuntu</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-config</span>
+    </div>
+</div>
+<p>La clave privada debe tener permisos restringidos sino se muestra una advertencia e impide el inicio de sesión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">$</span> <span class="n">chmod</span> <span class="n">600</span> <span class="n">ubuntu</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chmod.sh</span>
+    </div>
+</div>
+<p>Para probar la autenticación con SSH se puede utilizar una máquina virtual de <a href="https://www.virtualbox.org/">VirtualBox</a> creada con <a href="https://www.vagrantup.com/">Vagrant</a>. En el caso de utilizar el usuario <em>ubuntu</em> hay que asignarle una clave con el comando <em>passwd</em> para ejecutar comando <em>ssh-copy-id</em> ya que se solicita su contraseña en este paso, una vez realizado se puede desactivar la autenticación mediante usuario y contraseña cambiando el valor de la configuración <em>PasswordAuthentication</em> a <em>no</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># -*- mode: ruby -*-&#10;# vi: set ft=ruby :&#10;&#10;Vagrant.configure(&#34;2&#34;) do |config|&#10;  config.vm.box = &#34;ubuntu/bionic64&#34;&#10;&#10;  config.vm.provider :virtualbox do |vb|&#10;&nbsp;&nbsp;&nbsp;&nbsp;vb.name = &#34;Ubuntu 18.04 (Vagrant)&#34;&#10;  end&#10;&#10;  config.vm.network &#34;private_network&#34;, ip: &#34;192.168.33.10&#34;&#10;&#10;  config.vm.provider &#34;virtualbox&#34; do |vb|&#10;&nbsp;&nbsp;&nbsp;&nbsp;vb.memory = &#34;2048&#34;&#10;  end&#10;end</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Vagrantfile</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vagrant up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vagrant.sh</span>
+    </div>
+</div>
+<p>Para mayor seguridad en caso de que la clave publica y privada sean comprometidas es posible <a href="https://picodotdev.github.io/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/">configurar un segundo factor de autenticación con SSH</a> que adicionalmente a la clave privada pide un <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">segundo factor de autenticación generado con la aplicación Google Authenticator o con KeePassXC</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://askubuntu.com/questions/30788/does-ssh-key-need-to-be-named-id-rsa#30792">Does ssh key need to be named id_rsa?</a></li>
+<li><a href="http://stackoverflow.com/questions/3466626/add-private-key-permanently-with-ssh-add-on-ubuntu">How to permanently add a private key with ssh-add on Ubuntu?</a></li>
+<li><a href="http://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke">How do I remove the passphrase for the SSH key without having to create a new key?</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux" title="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux" class="" loading="lazy">
+                <h3>Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" title="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" class="" loading="lazy">
+                <h3>Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar archivos con EncFS en GNU/Linux" title="Cifrar archivos con EncFS en GNU/Linux" class="" loading="lazy">
+                <h3>Cifrar archivos con EncFS en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" title="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" class="" loading="lazy">
+                <h3>Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/">
+                <img src="/blog-bitix/assets/images/logotypes/tomcat.svg" width="326" height="125" alt="Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session" title="Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session" class="" loading="lazy">
+                <h3>Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras" title="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras" class="" loading="lazy">
+                <h3>Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-401';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/05\/autenticacion-mediante-clave-publica-y-privada-con-ssh\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

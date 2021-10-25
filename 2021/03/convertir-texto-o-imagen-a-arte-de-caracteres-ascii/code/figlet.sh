@@ -1,0 +1,6 @@
+$ figlet -w 240 "Blog Bitix"
+$ figlet -f ~/Descargas/alphabet.flf -w 240 "Blog Bitix"
+$ figlet -f ~/Descargas/3-d.flf -w 240 "Blog Bitix"
+$ figlet -f ~/Descargas/lean.flf -w 240 "Blog Bitix"
+$ figlet -f ~/Descargas/slant.flf -w 240 "Blog Bitix"
+$ figlet -f ~/Descargas/univers.flf -w 240 "Blog Bitix"

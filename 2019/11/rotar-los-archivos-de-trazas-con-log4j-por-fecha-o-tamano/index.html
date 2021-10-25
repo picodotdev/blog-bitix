@@ -1,0 +1,534 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La librería log4j 2 es configurable para que si se guardan las trazas en un archivo estos se roten en una fecha indicada en una expresión cron, cuando lleguen a un cierto tamaño o cuando se inicie la aplicación. El rotado además de para archivar las trazas de la aplicación y clasificarlas por fecha sirve para evitar que lleguen a consumir todo el espacio de almacenamiento disponible. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Rotar los archivos de trazas con log4j por fecha o tamaño</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/" hreflang="es" title="Rotar los archivos de trazas con log4j por fecha o tamaño">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/index-amp.html" hreflang="es" title="Rotar los archivos de trazas con log4j por fecha o tamaño">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Rotar los archivos de trazas con log4j por fecha o tamaño">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La librería log4j 2 es configurable para que si se guardan las trazas en un archivo estos se roten en una fecha indicada en una expresión cron, cuando lleguen a un cierto tamaño o cuando se inicie la aplicación. El rotado además de para archivar las trazas de la aplicación y clasificarlas por fecha sirve para evitar que lleguen a consumir todo el espacio de almacenamiento disponible. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Rotar los archivos de trazas con log4j por fecha o tamaño">
+<meta name="twitter:description" content="La librería log4j 2 es configurable para que si se guardan las trazas en un archivo estos se roten en una fecha indicada en una expresión cron, cuando lleguen a un cierto tamaño o cuando se inicie la aplicación. El rotado además de para archivar las trazas de la aplicación y clasificarlas por fecha sirve para evitar que lleguen a consumir todo el espacio de almacenamiento disponible. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/"
+    },
+    "headline": "Rotar los archivos de trazas con log4j por fecha o tamaño",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2019-11-15T17:00:00+01:00",
+    "dateModified": "2019-11-15T17:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "627",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La librería log4j 2 es configurable para que si se guardan las trazas en un archivo estos se roten en una fecha indicada en una expresión cron, cuando lleguen a un cierto tamaño o cuando se inicie la aplicación. El rotado además de para archivar las trazas de la aplicación y clasificarlas por fecha sirve para evitar que lleguen a consumir todo el espacio de almacenamiento disponible."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Rotar los archivos de trazas con log4j por fecha o tamaño</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>15/11/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La librería log4j 2 es configurable para que si se guardan las trazas en un archivo estos se roten en una fecha indicada en una expresión <em>cron</em>, cuando lleguen a un cierto tamaño o cuando se inicie la aplicación. El rotado además de para archivar las trazas de la aplicación y clasificarlas por fecha sirve para evitar que lleguen a consumir todo el espacio de almacenamiento disponible.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Una tendencia en el uso de aplicaciones basadas en contenedores o microservicios es que estos sus mensajes de trazas o <em>logs</em> los emitan a la salida estándar del proceso, esto tiene la ventaja de que la aplicación no ha de conocer ni impone ninguna limitación si posteriormente se utiliza alguna herramienta para agregar esos <em>logs</em>. Una combinación es utilizar ELK (<a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a> para indexar el texto, <a href="https://www.elastic.co/es/logstash">Logstash</a> para guardar los <em>logs</em>, <a href="https://www.elastic.co/es/kibana">Kibana</a> como interfaz de consulta) pero en un futuro podría cambiarse por otra y la aplicación que emita sus <em>logs</em> en la salida estándar no requeriría ninguna modificación.</p>
+<p>Otra posibilidad adicional o como sustituta es guardar los <em>log</em> en un archivo en el sistema de archivos. Sin embargo, hay que estimar la cantidad de información que puede llegar emitir la aplicación para aprovisionar en la máquina espacio suficiente para darles cabida. Para limitar el espacio que pueden llegar a ocupar los <em>logs</em> se pueden rotar los archivos cuando lleguen a cierto tamaño o por fecha. De no imponer un cierto límite a los archivos de <em>log</em> estos pueden llegar a consumir todo el espacio de almacenamiento disponible y ocasionar una caída del servicio de la aplicación.</p>
+<p>En la librería <a href="https://logging.apache.org/log4j/2.x/">log4j</a> para realizar <em>logging</em> en Java la política y estrategia de rotación se define con el <a href="https://logging.apache.org/log4j/2.x/manual/appenders.html#RollingFileAppender"><em>Appender</em> de tipo <em>RollingFileAppender</em></a>. Las políticas de rotado definen cuando se realiza el rotado, por fecha, por tamaño o al inicio de la aplicación. La estrategia define cómo se realiza el rotado y que nombre se le da a los archivos rotados, cuantos rotados de archivos se conservan y si los archivos rotados se archivan comprimidos.</p>
+<p>En la configuración de <em>RollingFileAppender</em> los parámetros de configuración <em>fileName</em> y <em>filePattern</em> indican en que archivo se generan los <em>logs</em> y que nombre se les da a los archivos rotados y si se comprimen. La política <em>CronTriggeringPolicy</em> permite definir con una expresión <em>cron</em> en que momento y fecha periódica se realiza el rotado, la política <em>SizeBasedTriggeringPolicy</em> rota los archivos cuando lleguen a cierto tamaño especificado por parámetro de configuración en KB, MB o GB. Con la estrategia <em>DefaultRolloverStrategy</em> por defecto se configura cuantos archivos de <em>log</em> se quieren conservar como máximo, una vez llegado al límite el más antiguo se elimina limitando de esta forma el espacio ocupado por los <em>logs</em> de la aplicación.</p>
+<p>En el siguiente ejemplo se muestra el archivo de configuración de log4j que emite las trazas a la consola y a un archivo en los que cada día o cuando lleguen a 500 MB son rotados. Al especificar en el parámetro <em>filePattern</em> la extensión <em>gz</em> los archivos rotados se comprimen para que ocupen menos espacio. Como se define en <em>DefaultRolloverStrategy</em> se conservan como máximo 10 archivos rotados, por tanto ocupando un máximo de 5 GiB.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">configuration</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">warn</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">appenders</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">console</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">STDOUT</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">patternLayout</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">Pattern</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;%d{DEFAULT} %X{uuid} %-5level %60.60logger %msg%n&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">rollingFile</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">RollingFile</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">fileName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;logs/app.log&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">filePattern</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">patternLayout</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;%d{DEFAULT} %X{uuid} %-5level %60.60logger %msg%n&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">policies</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">cronTriggeringPolicy</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">schedule</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 0 * * * ?&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">sizeBasedTriggeringPolicy</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;500 MB&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">defaultRollOverStrategy</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;10&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">loggers</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">root</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l">info</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">appenderRef</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">STDOUT</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">appenderRef</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">RollingFile</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>log4j2.yaml</span>
+    </div>
+</div>
+<p>Rotar los <em>logs</em> es una buena idea ya que en algunas aplicaciones Java si la aplicación por alguna circunstancia emite a los archivos de <em>log</em> un <em>stacktrace</em> de forma continuada generando una considerable cantidad de información en poco tiempo, si se guarda en el almacenamiento acaba por consumir todo el espacio disponible por muy previsor que se haya sido al aprovisionar el tamaño del espacio de almacenamiento, la aplicación terminará por dejar de prestar su servicio y alguien un sábado a las 3:00 de la noche es posible que deba levantarse de la cama porque ha llegado alguna alerta de monitorización si se es afortunado de disponer de uno para reaccionar cuanto antes y antes de que la aplicación deje de funcionar o peor recibe una llamada de teléfono cuando la aplicación ya se ha dejado de funcionar.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">
+                <img src="/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/images/jconsole_hua2f7781bc9fbb44232be61e6d3ca5723_57481_875x0_resize_box_3.png" width="326" height="125" alt="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" title="Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java" class="" loading="lazy">
+                <h3>Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java" title="Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java" class="" loading="lazy">
+                <h3>Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/ventajas-de-usar-un-tipo-especifico-para-los-identificadores-de-las-entidades-en-vez-de-un-tipo-basico/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico" title="Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico" class="" loading="lazy">
+                <h3>Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
+                <img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="" loading="lazy">
+                <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/09/novedades-de-java-13/">
+                <img src="/blog-bitix/2019/09/novedades-de-java-13/images/java-13_huc59bffa1369ee6368f3a390d9438a9a4_1165508_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 13" title="Novedades de Java 13" class="" loading="lazy">
+                <h3>Novedades de Java 13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/">
+                <img src="/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu8590a6b882a54d9f2c5070316e74f92a_151427_875x0_resize_box_3.png" width="326" height="125" alt="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" title="Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java" class="" loading="lazy">
+                <h3>Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-442';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/11\/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,570 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Algunos archivos de texto tienen un tamaño de cientos de megas, a veces incluso sin ningún salto de línea. Visualizar el contenido de estos archivos en una aplicación con interfaz gráfica no suele ser posible porque la aplicación se queda bloqueada al intentar cargar tan enormes archivos. Incluso tampoco puede ser posible con un editor mucho más ligero como vim. Hacer un cat del archivo tampoco es útil. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/" hreflang="es" title="Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/index-amp.html" hreflang="es" title="Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Algunos archivos de texto tienen un tamaño de cientos de megas, a veces incluso sin ningún salto de línea. Visualizar el contenido de estos archivos en una aplicación con interfaz gráfica no suele ser posible porque la aplicación se queda bloqueada al intentar cargar tan enormes archivos. Incluso tampoco puede ser posible con un editor mucho más ligero como vim. Hacer un cat del archivo tampoco es útil. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep">
+<meta name="twitter:description" content="Algunos archivos de texto tienen un tamaño de cientos de megas, a veces incluso sin ningún salto de línea. Visualizar el contenido de estos archivos en una aplicación con interfaz gráfica no suele ser posible porque la aplicación se queda bloqueada al intentar cargar tan enormes archivos. Incluso tampoco puede ser posible con un editor mucho más ligero como vim. Hacer un cat del archivo tampoco es útil. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/"
+    },
+    "headline": "Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnu-750.png"
+        
+      },
+    "datePublished": "2019-07-25T20:00:00+02:00",
+    "dateModified": "2019-07-25T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1115",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Algunos archivos de texto tienen un tamaño de cientos de megas, a veces incluso sin ningún salto de línea. Visualizar el contenido de estos archivos en una aplicación con interfaz gráfica no suele ser posible porque la aplicación se queda bloqueada al intentar cargar tan enormes archivos. Incluso tampoco puede ser posible con un editor mucho más ligero como vim. Hacer un cat del archivo tampoco es útil."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>25/07/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>Algunos archivos de texto tienen un tamaño de cientos de megas, a veces incluso sin ningún salto de línea. Visualizar el contenido de estos archivos en una aplicación con interfaz gráfica no suele ser posible porque la aplicación se queda bloqueada al intentar cargar tan enormes archivos. Incluso tampoco puede ser posible con un editor mucho más ligero como <a href="https://www.vim.org/">vim</a>. Hacer un <em>cat</em> del archivo tampoco es útil.</p>
+<p>Sin embargo, sigue siendo necesario ver parte del contenido de estos archivos de texto grande para validar que el contenido de los mismos es el correcto. La opción que se puede utilizar es ver los primeros o últimos caracteres o lineas con los comandos <em>head</em> o <em>tail</em> usándolos de la siguiente forma.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="c1"># Primeros o últimos 100 caracteres de un archivo</span>&#10;$ head -c <span class="m">100</span> archivo.txt&#10;Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar et praesent, egestas fermentum mauri&#10;&#10;$ tail -c <span class="m">100</span> archivo.txt&#10;ultricies, a dictumst velit dapibus leo pellentesque dictum dui ligula aliquam eu dignissim rhoncus.</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>head-tail-characters.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="c1"># Primeras o últimas 2 lineas de un archivo</span>&#10;$ head -n <span class="m">2</span> archivo.txt&#10;Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar et praesent, egestas fermentum mauris phasellus non nec rutrum nibh accumsan, placerat natoque interdum dui duis viverra molestie id parturient. Imperdiet commodo viverra arcu ridiculus blandit interdum litora bibendum felis ac purus, eu facilisi habitasse ultrices nisl magnis lobortis phasellus turpis velit vestibulum faucibus, auctor sagittis consequat quis cubilia inceptos donec enim gravida mus. Lacinia felis cras leo porta imperdiet tellus ridiculus convallis praesent ante, dapibus laoreet nibh dictumst penatibus a euismod nisi nulla, luctus lacus porttitor neque magnis sed molestie curae quisque. Hac volutpat curabitur laoreet ultrices est nibh parturient quam libero, faucibus ac metus gravida quis venenatis aliquam placerat cubilia, vel ligula litora dapibus dignissim auctor rhoncus at.&#10;&#10;$ tail -n <span class="m">2</span> archivo.txt&#10;&#10;Bibendum hendrerit sociosqu id libero neque, ad mollis donec consequat sagittis, tempus litora morbi nisi. Augue gravida aliquet rhoncus porta odio dui auctor velit erat lectus magna phasellus fringilla, quam praesent class cursus blandit nulla curabitur nostra feugiat consequat egestas cubilia, tortor magnis senectus volutpat ad urna semper himenaeos nascetur luctus posuere interdum. Nam quisque aliquet convallis taciti maecenas euismod vulputate mauris commodo et eleifend vel duis ultricies, a dictumst velit dapibus leo pellentesque dictum dui ligula aliquam eu dignissim rhoncus.</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>head-tail-lines.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar et praesent, egestas fermentum mauris phasellus non nec rutrum nibh accumsan, placerat natoque interdum dui duis viverra molestie id parturient. Imperdiet commodo viverra arcu ridiculus blandit interdum litora bibendum felis ac purus, eu facilisi habitasse ultrices nisl magnis lobortis phasellus turpis velit vestibulum faucibus, auctor sagittis consequat quis cubilia inceptos donec enim gravida mus. Lacinia felis cras leo porta imperdiet tellus ridiculus convallis praesent ante, dapibus laoreet nibh dictumst penatibus a euismod nisi nulla, luctus lacus porttitor neque magnis sed molestie curae quisque. Hac volutpat curabitur laoreet ultrices est nibh parturient quam libero, faucibus ac metus gravida quis venenatis aliquam placerat cubilia, vel ligula litora dapibus dignissim auctor rhoncus at.&#10;&#10;Proin sapien viverra nisl posuere dapibus commodo senectus aptent dui nam est tempor primis, dignissim vehicula pharetra et augue hendrerit tincidunt metus mauris curae mus eu. Quam habitasse natoque gravida cras class porttitor fringilla facilisi, phasellus mauris hendrerit et montes enim libero, suspendisse id fermentum lacus molestie purus blandit. Vivamus interdum nisi eleifend suscipit vulputate faucibus suspendisse felis curae, sodales pharetra cubilia vehicula proin velit turpis sapien ad, cursus molestie erat aliquam ridiculus rhoncus duis eu.&#10;&#10;Mollis venenatis felis suscipit mauris fusce at massa sociosqu conubia, hac sociis aptent ut netus vestibulum nostra sed dictumst, nec non eget magna vulputate cum pellentesque arcu. Congue pharetra luctus justo curabitur turpis mi semper nibh laoreet fames, vehicula quam maecenas dui magna scelerisque dictum diam tortor, sociis massa facilisi cum viverra duis erat urna fusce. Urna interdum nisl class fames quam cum suscipit ultrices hendrerit ullamcorper, sagittis nullam aliquam porta tellus aptent fringilla iaculis vitae, vivamus vestibulum conubia elementum semper id himenaeos nunc convallis.&#10;&#10;Bibendum hendrerit sociosqu id libero neque, ad mollis donec consequat sagittis, tempus litora morbi nisi. Augue gravida aliquet rhoncus porta odio dui auctor velit erat lectus magna phasellus fringilla, quam praesent class cursus blandit nulla curabitur nostra feugiat consequat egestas cubilia, tortor magnis senectus volutpat ad urna semper himenaeos nascetur luctus posuere interdum. Nam quisque aliquet convallis taciti maecenas euismod vulputate mauris commodo et eleifend vel duis ultricies, a dictumst velit dapibus leo pellentesque dictum dui ligula aliquam eu dignissim rhoncus.</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>archivo.txt</span>
+    </div>
+</div>
+<p>Como programador no es raro trabajar con archivos de más de 100 MiB en los que el texto no contiene saltos de línea y el contenido es una sola línea como es el caso de un archivo en formato XML utilizado para intercambiar información entre dos aplicaciones. Estos archivos por su tamaño y sin saltos de línea se les atragantan a los editores de texto gráficos como <a href="https://code.visualstudio.com/">Visual Studio Code</a> e incluso a la opción más ligera basada en texto como <em>vim</em>.</p>
+<p>En ete caso también es necesaria una forma de comprobar el contenido del archivo o contar el número de ocurrencias de un determinado patrón. La herramienta de línea de comandos <em>grep</em> es una gran ayuda en estos dos casos. Suponiendo un archivo XML que contiene elementos con un <em>tag</em> de precio se desea comprobar que estos elementos tienen un valor válido. Utilizando <em>grep</em> y una expresión regular se obtienen las etiquetas <em>price</em>, una en cada línea. El parámetro <em>-E</em> indica que se utilizan una expresión regular y el parámetro <em>-o</em> indica que cada coincidencia se emita en una línea nueva.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grep -E -o <span class="s2">&#34;&lt;price&gt;[^&lt;]*&lt;/price&gt;&#34;</span> archivo.xml&#10;&lt;price&gt;1.0&lt;/price&gt;&#10;&lt;price&gt;2.0&lt;/price&gt;&#10;&lt;price&gt;3.0&lt;/price&gt;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>grep-1.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>&#10;<span class="nt">&lt;products&gt;&lt;product&gt;&lt;name&gt;</span>A<span class="nt">&lt;/name&gt;&lt;price&gt;</span>1.0<span class="nt">&lt;/price&gt;&lt;/product&gt;&lt;product&gt;&lt;name&gt;</span>B<span class="nt">&lt;/name&gt;&lt;price&gt;</span>2.0<span class="nt">&lt;/price&gt;&lt;/product&gt;&lt;product&gt;&lt;name&gt;</span>C<span class="nt">&lt;/name&gt;&lt;price&gt;</span>3.0<span class="nt">&lt;/price&gt;&lt;/product&gt;&lt;/products&gt;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>archivo.xml</span>
+    </div>
+</div>
+<p>En caso de no ser un archivo estructurado como XML o querer obtener los 15 caracteres anteriores o posteriores de una coincidencia se utiliza un comando <em>grep</em> similar cambiando la expresión regular.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grep -E -o <span class="s2">&#34;.{0,15}price.{0,15}&#34;</span> archivo.xml&#10;&lt;name&gt;A&lt;/name&gt;&lt;price&gt;1.0&lt;/price&gt;&lt;/p&#10;&lt;name&gt;B&lt;/name&gt;&lt;price&gt;2.0&lt;/price&gt;&lt;/p&#10;&lt;name&gt;C&lt;/name&gt;&lt;price&gt;3.0&lt;/price&gt;&lt;/p</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>grep-2.sh</span>
+    </div>
+</div>
+<p>Para contar el número de coincidencias en el archivo se puede combinar el comando <em>grep</em> utilizando la opción <em>-o</em> para que emita cada coincidencia en cada línea y el comando <em>wc</em> con la opción <em>-l</em> para que cuente el número de líneas de entrada. Utilizando una tubería entre ambos comandos es posible contar el número de coincidencias en un archivo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ grep -E -o <span class="s2">&#34;&lt;product&gt;&#34;</span> archivo.xml <span class="p">|</span> wc -l&#10;<span class="m">3</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>grep-3.sh</span>
+    </div>
+</div>
+<p>En este caso el XML es muy pequeño y un editor de texto es capaz de abrirlo perfectamente pero un archivo de texto a partir unas cuantas decenas de MiB se le atraganta a los editores incluso a los basados en texto y en el caso querer hacer comprobaciones una buena alternativa o la única es recurrir a los comandos <em>head</em>, <em>tail</em>, <em>grep</em> y <em>wc</em>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://stackoverflow.com/questions/8101701/grep-characters-before-and-after-match">Grep characters before and after match?</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/06/hemeroteca-15/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #15" title="Hemeroteca #15" class="" loading="lazy">
+                <h3>Hemeroteca #15</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux" title="Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux" class="" loading="lazy">
+                <h3>Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Autenticación mediante clave pública y privada con SSH" title="Autenticación mediante clave pública y privada con SSH" class="" loading="lazy">
+                <h3>Autenticación mediante clave pública y privada con SSH</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/permitir-o-denegar-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux" title="Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux" class="" loading="lazy">
+                <h3>Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux" title="Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux" class="" loading="lazy">
+                <h3>Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-423';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/07\/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,452 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>analisis-juegos</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/series/analisis-juegos/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/series/analisis-juegos/" hreflang="es" title="analisis-juegos">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/series/analisis-juegos/index-amp.html" hreflang="es" title="analisis-juegos">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/series/analisis-juegos/index.xml" hreflang="es" title="analisis-juegos">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
+  <!-- Social -->
+<meta property="og:title" content="analisis-juegos">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/series/analisis-juegos/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="analisis-juegos">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Análisis del maravilloso juego horrible The Last of Us</a></h1>
+        <span class="information">
+          <time>16/10/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Algunos juegos están enfocados a la parte de habilidad y acción con la única intención de proporcionar diversion. Otros independiente de la calidad gráfica que es muy notable en la actualidad pueden ser vistos como una forma de obra de arte al mismo nivel que una novela, una película, una canción o música, un cómic, un cuadro u otras formas de arte. Los juegos tienen varios de estas formas de arte como una historia, imágenes, secuencias cinemáticas o una banda sonora que en conjunto forman la obra. El juego The Last of Us sin lugar a dudas entra perfectamente en la categoría de obra de arte siendo uno de los mejores juegos no solo de la generación para la PS3 y PS4. Un juego con una maravillosa historia al mismo tiempo que horrible.
+          
+          <br>
+          <a href="/blog-bitix/2021/10/analisis-del-maravilloso-juego-horrible-the-last-of-us/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Análisis, guía y consejos del juego roguelike Darkest Dungeon</a></h1>
+        <span class="information">
+          <time>03/07/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Si hay un juego en el que no hay una decisión perfecta o en el que hay que hacer sacrificios ese es Darkest Dungeon. Seguir avanzando en una mazmorra supone un riesgo, tocar un objeto sin la provisión adecuada puede tener efectos muy negativos, a veces para completar una misión hay que sacrificar un héroe, equiparse con un abalorio aparte de los efectos positivos la mayoría tiene efectos negativos. Darkest Dungeon es un juego difícil en el que en gran medida para completarlo hace falta conocerlo muy bien, sin una guía y consejos es muy difícil llegar al su final o requeriría mucho tiempo para aprender todos sus trucos, con algunos de ellos el éxito no está asegurado pero hay mayor probabilidad de conseguirlo. Está guía es introductoria no es exhaustiva para completarla incluye varios enlaces con mucha información para profundizar más.
+          
+          <br>
+          <a href="/blog-bitix/2021/07/analisis-guia-y-consejos-del-juego-roguelike-darkest-dungeon/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a></h1>
+        <span class="information">
+          <time>20/03/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos.
+          
+          <br>
+          <a href="/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a></h1>
+        <span class="information">
+          <time>02/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a></h1>
+        <span class="information">
+          <time>12/10/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Horizon Zero Dawn un juego de mundo abierto cuenta una historia de acción ambientada en un mundo donde existen unas máquinas metálicas con rasgos de animales, pero un mundo habitado por tribus con una tecnología de arcos y fechas que siguen una religión de la diosa Madre y que repudian y temen el mundo de los antiguos. Aloy quiere conocer porque es una paria en la tribu y en su búsqueda de respuestas a sus preguntas descubre muchas otras cosas del mundo en el que vive.
+          
+          <br>
+          <a href="/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Análisis y guía del juego de estrategia Frostpunk</a></h1>
+        <span class="information">
+          <time>10/05/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo.
+          
+          <br>
+          <a href="/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Introducción al juego de batallas navales World of Warships Legends para consola</a></h1>
+        <span class="information">
+          <time>05/04/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            World of Warships es un juego de competición entre jugadores ambientado en batallas navales. Tienen un componente de rol a poder elegir barcos cada uno con diferentes estadísticas, capitanes e inspiraciones o módulos pero en lo que creo que destaca sobre otros juegos por internet con otros jugadores es que este tienen un alto componente de estrategia y de juego en equipo que es decisivo para conseguir la victoria, no dependiendo tanto de la habilidad con el apuntado o habilidad en el manejo del mando aunque también es importante lo es en menor medida. Es gratuito y está disponible para PlayStation 4 y Xbox, su versión para PC es un poco distinta estando disponible a través Steam.
+          
+          <br>
+          <a href="/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">El juego XCOM 2 y guía de estrategia</a></h1>
+        <span class="information">
+          <time>01/02/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            XCOM 2 es un juego de estrategia, con combates de acción por turnos, una parte de rol al permitir personalizar los soldados y elegir sus nuevas habilidades al subir de rango, también para las armas, y otra parte de gestión de los limitados recursos ambientado en una lucha contra una invasión alienígena a la tierra. Sin una guía el juego el nivel difícil del juego se convierte en tormento siendo muy difícil de terminar con éxito.
+          
+          <br>
+          <a href="/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

@@ -1,0 +1,506 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Las APIs devuelven información habitualmente en formato JSON si es reciente y si la API es algo más antigua quizá en XML. En cualquiera de los formatos la información está estructurada en propiedades con un nombre del campo y su valor. El nombre del campo es el que le asignó el diseñador de la API en el momento de crearla. En el momento de consumir la API quizá por adaptarla a su uso, para añadirle más semántica al caso de uso específico o por mayor claridad interese cambiar el nombre de los campos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Renombrar campos del esquema en las consultas GraphQL</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/" hreflang="es" title="Renombrar campos del esquema en las consultas GraphQL">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/index-amp.html" hreflang="es" title="Renombrar campos del esquema en las consultas GraphQL">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Renombrar campos del esquema en las consultas GraphQL">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Las APIs devuelven información habitualmente en formato JSON si es reciente y si la API es algo más antigua quizá en XML. En cualquiera de los formatos la información está estructurada en propiedades con un nombre del campo y su valor. El nombre del campo es el que le asignó el diseñador de la API en el momento de crearla. En el momento de consumir la API quizá por adaptarla a su uso, para añadirle más semántica al caso de uso específico o por mayor claridad interese cambiar el nombre de los campos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Renombrar campos del esquema en las consultas GraphQL">
+<meta name="twitter:description" content="Las APIs devuelven información habitualmente en formato JSON si es reciente y si la API es algo más antigua quizá en XML. En cualquiera de los formatos la información está estructurada en propiedades con un nombre del campo y su valor. El nombre del campo es el que le asignó el diseñador de la API en el momento de crearla. En el momento de consumir la API quizá por adaptarla a su uso, para añadirle más semántica al caso de uso específico o por mayor claridad interese cambiar el nombre de los campos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/"
+    },
+    "headline": "Renombrar campos del esquema en las consultas GraphQL",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png"
+        
+      },
+    "datePublished": "2020-08-23T11:00:00+02:00",
+    "dateModified": "2020-08-23T11:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "543",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Las APIs devuelven información habitualmente en formato JSON si es reciente y si la API es algo más antigua quizá en XML. En cualquiera de los formatos la información está estructurada en propiedades con un nombre del campo y su valor. El nombre del campo es el que le asignó el diseñador de la API en el momento de crearla. En el momento de consumir la API quizá por adaptarla a su uso, para añadirle más semántica al caso de uso específico o por mayor claridad interese cambiar el nombre de los campos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Renombrar campos del esquema en las consultas GraphQL</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>23/08/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+</div>
+<p>Las APIs devuelven información habitualmente en formato JSON si es reciente y si la API es algo más antigua quizá en XML. En cualquiera de los formatos la información está estructurada en propiedades con un nombre del campo y su valor. El nombre del campo es el que le asignó el diseñador de la API en el momento de crearla. En el momento de consumir la API quizá por adaptarla a su uso, para añadirle más semántica al caso de uso específico o por mayor claridad interese cambiar el nombre de los campos.</p>
+<p>En una API que está siendo usada cambiar el nombre a un campo devuelto o recibido implica cambios incompatibles con versiones anteriores y hace que los consumidores de la API deban modificarse para tener en cuenta el nuevo nombre del campo. En una API REST un cambio de nombre a un campo implica modificar las clases DTO o el código para tener en cuenta el nuevo nombre de campo en la respuesta o en la petición.</p>
+<p><a href="https://graphql.org/">GraphQL</a> ofrece soporte para crear sinónimos o <em>aliases</em> de los nombres de los campos, es decir, usar un nombre aunque en la API el nombre del campo sea distinto. Esta funcionalidad de alias hacen que un campo con un nuevo nombre solo implique cambiar únicamente las consultas sin que el resto del código requiera cambios, esto es mucho más simple, rápido y seguro que en REST. Los alias también pueden aplicarse al nombre de la consulta.</p>
+<p>La siguiente API de GraphQL define la siguiente entidad <em>Book</em> que posee los campos <em>id</em>, <em>title</em>, <em>author</em> e <em>isbn</em>. En este caso hay varias versiones del mismo campo ISBN obtenido de diferentes formas, de forma individual en cada entidad de <em>Book</em> con <em>isbn</em> y de forma <em>batched</em> más eficientemente con <em>batchedIsbn</em> y de forma <em>batched</em> con un <em>DataLoader</em> con <em>dataLoaderIsbn</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphqls" data-lang="graphqls"><span class="kd">type</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="p">:</span><span class="w"> </span><span class="nc">Long</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">author</span><span class="p">:</span><span class="w"> </span><span class="nc">Author</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">isbn</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="p">:</span><span class="w"> </span><span class="nc">LocalDate</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">comments</span><span class="p">(</span><span class="py">after</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="p">,</span><span class="w"> </span><span class="py">limit</span><span class="p">:</span><span class="w"> </span><span class="nc">Long</span><span class="p">):</span><span class="w"> </span><span class="nc">CommentsConnection</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">batchedIsbn</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">batchedComments</span><span class="p">(</span><span class="py">after</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="p">,</span><span class="w"> </span><span class="py">limit</span><span class="p">:</span><span class="w"> </span><span class="nc">Long</span><span class="p">):</span><span class="w"> </span><span class="nc">CommentsConnection</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">dataLoaderIsbn</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="w">&#10;</span><span class="w"></span><span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>library.graphqls</span>
+    </div>
+</div>
+<p>Esta es una consulta con el campo <em>dataLoaderIsbn</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -s -XPOST -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;query&#34;: &#34;query Books{books{title date dataLoaderIsbn}}&#34;}&#39;</span> http://localhost:8080/graphql&#10;<span class="o">{</span>&#10;  <span class="s2">&#34;data&#34;</span>: <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;books&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Ojo en el cielo&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1957-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;dataLoaderIsbn&#34;</span>: <span class="s2">&#34;87c1342a-f46e-41ad-ad9a-dda88bb9d0dc&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Muerte de la luz&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1977-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;dataLoaderIsbn&#34;</span>: <span class="s2">&#34;0e10de64-4b6e-403a-9cf0-082907525c7a&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;El nombre de la rosa&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1980-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;dataLoaderIsbn&#34;</span>: <span class="s2">&#34;ea04f2a6-3f1d-4e1a-a2ee-cd370cd2a222&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Los tejedores de cabellos&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1995-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;dataLoaderIsbn&#34;</span>: <span class="s2">&#34;c7a83503-fcbd-477e-862b-ab72575f72a7&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Ready Player One&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;2011-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;dataLoaderIsbn&#34;</span>: <span class="s2">&#34;0fee8cbb-8c0f-4fef-b89d-e6ac236fc31c&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-1.sh</span>
+    </div>
+</div>
+<p>Con la siguiente consulta el campo <em>dataLoaderIsbn</em> es renombrado a <em>isbn</em> entre los datos de la respuesta. Para realizar los renombrados hay que seguir el formato <em>alias:name</em> como nombre de campo en la consulta. Con esta funcionalidad variando la consulta se puede pedir cualquiera de los campos <em>isbn</em> sin tener que modificar el código que procesa el JSON de respuesta. Si cambia un nombre de campo en la API hay que modificar las consultas pero no el código que procesa las respuestas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -s -XPOST -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;query&#34;: &#34;query Books{books{title date isbn:dataLoaderIsbn}}&#34;}&#39;</span> http://localhost:8080/graphql&#10;<span class="o">{</span>&#10;  <span class="s2">&#34;data&#34;</span>: <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;books&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Ojo en el cielo&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1957-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;isbn&#34;</span>: <span class="s2">&#34;87c1342a-f46e-41ad-ad9a-dda88bb9d0dc&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Muerte de la luz&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1977-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;isbn&#34;</span>: <span class="s2">&#34;0e10de64-4b6e-403a-9cf0-082907525c7a&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;El nombre de la rosa&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1980-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;isbn&#34;</span>: <span class="s2">&#34;ea04f2a6-3f1d-4e1a-a2ee-cd370cd2a222&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Los tejedores de cabellos&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;1995-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;isbn&#34;</span>: <span class="s2">&#34;c7a83503-fcbd-477e-862b-ab72575f72a7&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;title&#34;</span>: <span class="s2">&#34;Ready Player One&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;date&#34;</span>: <span class="s2">&#34;2011-01-01&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;isbn&#34;</span>: <span class="s2">&#34;0fee8cbb-8c0f-4fef-b89d-e6ac236fc31c&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-2.sh</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GraphQL">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>graphql</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/">Devolver mensajes de error descriptivos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/">Usar un resolver para recuperar propiedades en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/">Consultas con parámetros para filtrar datos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/paginacion-usando-cursores-en-graphql-y-java/">Paginación usando cursores en GraphQL y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/12/definir-nuevos-tipos-de-datos-escalares-en-graphql/">Definir nuevos tipos de datos escalares en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">El editor, explorador e IDE GraphiQL para una API con GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/">Usando directivas en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/los-fragmentos-en-graphql/">Los fragmentos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/06/metadatos-e-introspeccion-en-graphql/">Metadatos e introspección en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Recuperar datos eficientemente en GraphQL usando batching con data loaders</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">Renombrar campos del esquema en las consultas GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/">Añadir descripciones y documentar los campos de GraphQL</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-510';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/08\/renombrar-campos-del-esquema-en-las-consultas-graphql\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

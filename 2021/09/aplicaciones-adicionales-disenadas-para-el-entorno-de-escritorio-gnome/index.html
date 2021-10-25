@@ -1,0 +1,661 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/" hreflang="es" title="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/index-amp.html" hreflang="es" title="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnome-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnome-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME">
+<meta name="twitter:description" content="Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/"
+    },
+    "headline": "Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gnome-750.png"
+        
+      },
+    "datePublished": "2021-09-09T10:00:00+02:00",
+    "dateModified": "2021-09-09T10:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1151",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-apps_hu8622eda66bcc642a832d30189af998a0_61075_1040x0_resize_box_3.png" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/09/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME" class="" loading="false"></p>
+</div>
+<p>Distribuciones de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hay muchas que se diferencian principalmente en si están patrocinadas por una empresa como <a href="https://fedoraproject.org/">Fedora</a> con <a href="https://www.redhat.com/es">Red Hat</a>, <a href="https://www.ubuntu.com/">Ubuntu</a> con <a href="https://www.canonical.com/">Canonical</a> o si están desarrolladas por una comunidad de usuarios como <a href="https://www.debian.org/">Debian</a> o <a href="https://www.archlinux.org/">Arch Linux</a>, su modelo de publicación de versiones puede seguir un calendario como Ubuntu o estar en continua actualización como Arch Linux, otras diferencias son su popularidad medido por el número de usuarios que la utilizan o el entorno de escritorio o gestor de arranque instalado por defecto.</p>
+<p>Sin embargo, en el uso habitual de cualquier distribución GNU/Linux las diferencias no son tantas, al final una distribución de GNU/Linux es simplemente una recopilación de programas y librerías de software libre. Los programas en cada una de las distribuciones son exactamente los mismos tanto de línea de comandos con los programas de GNU, el entorno de escritorio con sus aplicaciones integradas o las aplicaciones de terceros preinstaladas. Cada distribución suele tener su propia aplicación gestor de paquetes para instalar y desinstalar programas junto a sus dependencias de sus repositorios oficiales pero en esencia tanto el gestor de paquetes de Debian como de Arch Linux realizan la misma función incluso las distribuciones derivadas utilizan el mismo programa gestor de paquetes.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">Elegir una distribución GNU/Linux según el usuario, uso o equipo</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</a></li>
+</ul>
+<p>En realidad la distribución GNU/Linux que se utilice no es lo más relevante, lo importante son las aplicaciones usadas para realizan las tareas. Aplicaciones hay muchas con diferentes propósitos que se pueden clasificar en las siguientes categorías:</p>
+<ul>
+<li>Ofimática, documentos y escritorio (editor de documentos ofimáticos, editor de textos avanzado, libros electrónicos y cómics, capturador de pantalla, copias de seguridad).</li>
+<li>Internet y comunicaciones (navegador, correo electrónico, lector de <em>feeds</em>, descargar archivos torrent y descargas directas, mensajería instantánea, videoconferencia, nube privada).</li>
+<li>Fotos y gráficos (retoque fotográfico).</li>
+<li>Multimedia, vídeo y audio (reproductor de vídeo, audio, películas y música, editor de vídeo, conversor de vídeo y audio).</li>
+<li>Juegos.</li>
+<li>Programación y desarrollo (compiladores, entorno integrado de desarrollo, bases de datos y software de servidor, virtualización).</li>
+<li>Seguridad y privacidad.</li>
+</ul>
+<p>En estos artículos he escrito sobre las aplicaciones más conocidas para cada una de las categorías anteriores:</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">Listado de programas esenciales según categoría para GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a></li>
+</ul>
+<p>Estas son las aplicaciones de línea de comandos de GNU/Linux de los cuales son instalados en la mayoría de distribuciones como parte del sistema base.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/">50+ comandos básicos y útiles de GNU/Linux</a></li>
+</ul>
+<p>El propio entorno de escritorio que proporciona la interfaz gráfica también incluye una serie de aplicaciones esenciales básicas que hacen el sistema gráfico usable e incluso sin necesitar aplicaciones de terceros adicionales para los mismos propósitos, sólo son necesarias aplicaciones adicionales de terceros en el caso de requerir funcionalidades más avanzadas o necesidades no cubiertas.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones integradas del entorno de escritorio GNOME</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a></li>
+</ul>
+<h3 id="aplicaciones-adicionales-del-círculo-de-gnome">Aplicaciones adicionales del círculo de GNOME</h3>
+<p>Las aplicaciones del entorno de escritorio de GNOME son aplicaciones sencillas que cubren las necesidades más básicas, para propósitos adicionales específicos es necesario instalar aplicaciones desarrolladas por terceros fuera del entorno de escritorio.</p>
+<p>El problema de las aplicaciones de terceros, si es que es un problema, es que no tienen por qué seguir las directrices de diseño de la interfaz del usuario de ningún entorno de escritorio. Esta libertad que tienen las aplicaciones de terceros hacen que las aplicaciones no estén integradas con el escritorio al emplear un diseño totalmente diferente. La <a href="https://developer.gnome.org/hig/">guía de estilos de las aplicaciones de GNOME</a> contiene recomendaciones y normas que las aplicaciones deben seguir para este entorno de escritorio, estas guías permiten uniformidad en las aplicaciones y contienen una colección de buenas prácticas en el diseño de aplicaciones para hacerlas más fáciles de usar e intuitivas para los usuarios.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps_hu1683b4da75bb9e26bb019b3e1888454f_38942_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps_hu1683b4da75bb9e26bb019b3e1888454f_38942_200x150_fit_box_3.png" width="200" height="94" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-1_hu5c7763e69b5be9f8bd2551eb66548670_115844_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-1_hu5c7763e69b5be9f8bd2551eb66548670_115844_200x150_fit_box_3.png" width="200" height="135" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-2_hu136419279a0220907ff14d49514df53b_101448_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-2_hu136419279a0220907ff14d49514df53b_101448_200x150_fit_box_3.png" width="200" height="128" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-3_hube020cac5d1a9a47e43675e30651c98b_78237_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-3_hube020cac5d1a9a47e43675e30651c98b_78237_200x150_fit_box_3.png" width="200" height="124" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a></p>
+<figcaption>Aplicaciones del círculo de GNOME</figcaption>
+</figure>
+</div>
+<p>Algunas aplicaciones aunque desarrolladas por terceros siguen las guías de estilos de diseño de interfaces del escritorio de GNOME dando la sensación que están perfectamente integradas con el entorno de escritorio. Muchas son aplicaciones distribuidas como paquetes en formato <a href="https://flatpak.org/">Flatpak</a> que las hace fácil de instalar en cualquier distribución GNU/Linux sin depender de los paquetes oficiales de la distribución.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
+</ul>
+<p>Las siguientes son aplicaciones sencillas desarrolladas por terceros que siguen las guías de estilos de diseño de interfaces del escritorio de GNOME y que están recomendadas por GNOME, cada una cubre una necesidad específica que si es necesaria permite hacerlo mediante una aplicación con interfaz gráfica en vez de tener que recurrir a otras aplicaciones o la línea de comandos, en conjunto cubren funcionalidades muy diversas, desde un editor de texto en formato <em>markdown</em> hasta un lector de la <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada">Wikipedia</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/apostrophe_hu931cdc620fc536505f4c480e04e54302_62011_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/apostrophe_hu931cdc620fc536505f4c480e04e54302_62011_200x150_fit_box_3.png" width="200" height="114" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/curtail_hu71a8a8a15ed836006fa810077f114a35_15383_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/curtail_hu71a8a8a15ed836006fa810077f114a35_15383_200x150_fit_box_3.png" width="200" height="112" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/kooha_hue3c62376f9c3058778bcd54e7d7d42c9_40101_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/kooha_hue3c62376f9c3058778bcd54e7d7d42c9_40101_200x150_fit_box_3.png" width="137" height="150" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/pika-backup_hubc373628fa4019a85dbd1f1cffea859b_40756_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/pika-backup_hubc373628fa4019a85dbd1f1cffea859b_40756_200x150_fit_box_3.png" width="200" height="127" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/shortwave_hu17cb48c50653d99ce7cfb0307bd56f9c_217396_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/shortwave_hu17cb48c50653d99ce7cfb0307bd56f9c_217396_200x150_fit_box_3.png" width="200" height="138" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME" class="" loading="lazy"></a></p>
+<figcaption>Algunas aplicaciones del círculo de GNOME</figcaption>
+</figure>
+</div>
+<p>En la descripción de cada aplicación y en su página del repositorio en <a href="https://flathub.org/">Flathub</a> están los detalles para instalar la aplicación con Flatpak. Se puede instalar con la aplicación software de GNOME o desde la línea de comandos. Una vez instalada la aplicación Flatpak la mantiene actualizada automáticamente en cada nueva publicación de versión.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-software_hu9b5d59de78941f67d61ed8984e13ac6f_81835_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación gestión de software de GNOME"><img src="/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-software_hu9b5d59de78941f67d61ed8984e13ac6f_81835_650x450_fit_box_3.png" width="637" height="450" alt="Aplicación gestión de software de GNOME" title="Aplicación gestión de software de GNOME" class="" loading="lazy"></a></p>
+<figcaption>Aplicación para instalar y desinstalar software de GNOME</figcaption>
+</figure>
+</div>
+<p>Comandos para instalar y ejecutar la aplicación con Flatpak, el identificativo de cada aplicación se muestra en la <a href="https://flathub.org/apps/details/org.gnome.gitlab.somas.Apostrophe">página de descripción de Apostrophe en Flathub</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ flatpak install flathub org.gnome.gitlab.somas.Apostrophe&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>flatpak-install.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ flatpak run org.gnome.gitlab.somas.Apostrophe&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>flatpak-run.sh</span>
+    </div>
+</div>
+<ul>
+<li><strong>Apostrophe</strong>: Un editor Markdown elegante y libre de distracciones</li>
+<li><strong>Authenticador</strong>: Generar códigos de autenticación de doble factor</li>
+<li><strong>Blanket</strong>: Escuche diferentes sonidos</li>
+<li><strong>Copia de respaldo Pika</strong>: Respaldos sencillos basados en borg</li>
+<li><strong>Copias de seguridad Déjà Dup</strong>: Mantenga sus documentos importantes a salvo de cualquier peligro</li>
+<li><strong>Cozy</strong>: Un moderno reproductor de audiolibros</li>
+<li><strong>Curtail</strong>: Comprima sus imágenes</li>
+<li><strong>Decodificador</strong>: Escanear y generar códigos QR</li>
+<li><strong>Depósito seguro de contraseñas</strong>: Gestionar sus contraseñas</li>
+<li><strong>Descargador de tipografías</strong>: Instalar tipografías de fuentes en línea</li>
+<li><strong>Dialect</strong>: Traduce entre idiomas</li>
+<li><strong>Dibujo</strong>: Una aplicación de dibujo para el escritorio GNOME</li>
+<li><strong>Fragmentos</strong>: Un cliente de BitTorrent</li>
+<li><strong>Gaphor</strong>: Herramienta de modelado UML y SysML</li>
+<li><strong>Hashbrown</strong>: Comrprueba las huellas digitales de sus archivos</li>
+<li><strong>Health</strong>: Una aplicación para la monitorización de la salud para el escritorio GNOME</li>
+<li><strong>Identity</strong>: Comparar imágenes y vídeos</li>
+<li><strong>Khronos</strong>: Medir el tiempo de cada tarea de una forma simple sin obstrucciones</li>
+<li><strong>Kooha</strong>: Graba tu pantalla elegantemente</li>
+<li><strong>Limpiador de metadatos</strong>: Ver y limpiar los metadatos en los archivos</li>
+<li><strong>Mercados</strong>: Un rastreador de acciones, divisas y criptodivisas</li>
+<li><strong>NewsFlash</strong>: Siga sus blogs y sitios de noticias favoritos.</li>
+<li><strong>Ofuscador</strong>: Censor de información privada</li>
+<li><strong>Plots</strong>: Dibujado de gráficas simple</li>
+<li><strong>Podcasts</strong>: Aplicación de <em>podcast</em> para GNOME</li>
+<li><strong>Recortador de vídeo</strong>: Recortar vídeos rápidamente</li>
+<li><strong>Shortwave</strong>: Escuchar la radio por internet</li>
+<li><strong>Solanum</strong>: Equilibrio entre tiempo de trabajo y de descanso</li>
+<li><strong>Tangram</strong>: Ejecutar aplicaciones web en su escritorio</li>
+<li><strong>Tootle</strong>: Cliente rápido para Mastodon</li>
+<li><strong>Webfont Kit Generator</strong>: Cree fácilmente los <em>kits</em> <em>@font*face</em></li>
+<li><strong>Wike</strong>: Lector de Wikipedia</li>
+</ul>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/">
+                <img src="/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6e011cae91d9fec5bc7576cde312e803_167910_875x0_resize_box_3.png" width="326" height="125" alt="Cómo crear y poner subtítulos a un vídeo" title="Cómo crear y poner subtítulos a un vídeo" class="" loading="lazy">
+                <h3>Cómo crear y poner subtítulos a un vídeo</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">
+                <img src="/blog-bitix/assets/images/logotypes/freebsd.svg" width="326" height="125" alt="Guía de instalación y uso básico de FreeBSD" title="Guía de instalación y uso básico de FreeBSD" class="" loading="lazy">
+                <h3>Guía de instalación y uso básico de FreeBSD</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Convertir texto o imagen a arte de caracteres ASCII" title="Convertir texto o imagen a arte de caracteres ASCII" class="" loading="lazy">
+                <h3>Convertir texto o imagen a arte de caracteres ASCII</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/">
+                <img src="/blog-bitix/assets/images/logotypes/beastie.png" width="326" height="125" alt="Las diferencias entre GNU/Linux, BSD y sus distribuciones" title="Las diferencias entre GNU/Linux, BSD y sus distribuciones" class="" loading="lazy">
+                <h3>Las diferencias entre GNU/Linux, BSD y sus distribuciones</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" title="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" class="" loading="lazy">
+                <h3>Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">
+                <img src="/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/images/onlyoffice-documentos_hu1ebe2640438e7df051bb0bb0b3997d62_53212_875x0_resize_box_3.png" width="326" height="125" alt="Listado de programas esenciales según categoría para GNU/Linux" title="Listado de programas esenciales según categoría para GNU/Linux" class="" loading="lazy">
+                <h3>Listado de programas esenciales según categoría para GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-595';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/09\/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

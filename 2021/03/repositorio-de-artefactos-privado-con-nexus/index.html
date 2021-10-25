@@ -1,0 +1,708 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los repositorios de software almacenan los artefactos, son utilizados por las herramientas de construcción que los descargan y almacenan de forma local para posteriores usos las dependencias que los proyectos declaran en el archivo de construcción. Los desarrolladores de los artefactos publican en los repositorios de software las nuevas versiones. Nexus es un repositorio de software con soporte para repositorios de software de varios tipos, Maven para Java, imágenes de Docker, paquetes npm para JavaScript además de artefactos para los lenguajes Python y Go. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Repositorio de artefactos privado con Nexus</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/" hreflang="es" title="Repositorio de artefactos privado con Nexus">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/index-amp.html" hreflang="es" title="Repositorio de artefactos privado con Nexus">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Repositorio de artefactos privado con Nexus">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/nexus-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los repositorios de software almacenan los artefactos, son utilizados por las herramientas de construcción que los descargan y almacenan de forma local para posteriores usos las dependencias que los proyectos declaran en el archivo de construcción. Los desarrolladores de los artefactos publican en los repositorios de software las nuevas versiones. Nexus es un repositorio de software con soporte para repositorios de software de varios tipos, Maven para Java, imágenes de Docker, paquetes npm para JavaScript además de artefactos para los lenguajes Python y Go. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/nexus-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Repositorio de artefactos privado con Nexus">
+<meta name="twitter:description" content="Los repositorios de software almacenan los artefactos, son utilizados por las herramientas de construcción que los descargan y almacenan de forma local para posteriores usos las dependencias que los proyectos declaran en el archivo de construcción. Los desarrolladores de los artefactos publican en los repositorios de software las nuevas versiones. Nexus es un repositorio de software con soporte para repositorios de software de varios tipos, Maven para Java, imágenes de Docker, paquetes npm para JavaScript además de artefactos para los lenguajes Python y Go. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/"
+    },
+    "headline": "Repositorio de artefactos privado con Nexus",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/nexus-750.png"
+        
+      },
+    "datePublished": "2021-03-12T18:00:00+01:00",
+    "dateModified": "2021-03-12T18:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1115",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los repositorios de software almacenan los artefactos, son utilizados por las herramientas de construcción que los descargan y almacenan de forma local para posteriores usos las dependencias que los proyectos declaran en el archivo de construcción. Los desarrolladores de los artefactos publican en los repositorios de software las nuevas versiones. Nexus es un repositorio de software con soporte para repositorios de software de varios tipos, Maven para Java, imágenes de Docker, paquetes npm para JavaScript además de artefactos para los lenguajes Python y Go."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Repositorio de artefactos privado con Nexus</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>12/03/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los repositorios de software almacenan los artefactos, son utilizados por las herramientas de construcción que los descargan y almacenan de forma local para posteriores usos las dependencias que los proyectos declaran en el archivo de construcción. Los desarrolladores de los artefactos publican en los repositorios de software las nuevas versiones. Nexus es un repositorio de software con soporte para repositorios de software de varios tipos, Maven para Java, imágenes de Docker, paquetes npm para JavaScript además de artefactos para los lenguajes Python y Go.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/nexus.svg" width="200" height="227" alt="Sonatype Nexus" title="Sonatype Nexus" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker" class="" loading="false"></p>
+</div>
+<p>Los proyectos de software son complejos, las librerías permiten crear módulos de las aplicaciones y reutilizar código ya implementado sin tener que implementar la misma funcionalidad en cada proyecto. Todos los lenguajes de una forma u otra permiten reutilizar librerías. En Java las librerías son archivos <em>jar</em>, en Docker imágenes de contenedores y en JavaScript paquetes <em>npm</em>.</p>
+<p>Para reutilizar las librerías los proyectos declaran las librerías de las que dependen, la herramienta de construcción se encargan de descargarlas y almacenarlas en un repositorio local para evitar una nueva descargacon su transferencia de red en usos posteriores. En Java las herramientas de construcción <a href="https://gradle.org/">Gradle</a> y <a href="https://maven.apache.org/">Maven</a> automatizan la descarga y enlazado de las dependencias declaradas con el código del proyecto. Para JavaScript una herramienta de dependencias es <a href="https://www.npmjs.com/">npm</a>.</p>
+<p>Las librerías requieren de la funcionalidad de un repositorio de librerías o artefactos que permite descargarlas cuando un proyecto las declare como dependencias. En Java el repositorio más popular es <a href="https://search.maven.org/">Maven Central</a>, las imágenes para iniciar un contenedor de Docker también tienen su propio repositorio de imágenes de Docker con <a href="https://registry.hub.docker.com/">Docker Hub</a> o el repositorio de librerías JavaScript que utiliza  npm.</p>
+<p>Los repositorios anteriores son públicos donde los desarrolladores suben sus artefactos cada vez que publican una nueva versión de sus librerías o <em>frameworks</em>. Una organización en sus proyectos utiliza numerosas dependencias de los repositorios oficiales de cada lenguaje o herramienta pero también con seguridad desarrollará sus propias librerías que necesita compartir en diferentes proyectos de forma interna sin compartirlos en los repositorios públicos.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#repositorio-de-artefactos-con-nexus">Repositorio de artefactos con Nexus</a></li>
+    <li><a href="#ejemplo-de-repositorio-con-nexus">Ejemplo de repositorio con Nexus</a>
+      <ul>
+        <li><a href="#publicar-un-artefacto-a-un-repositorio-maven-local">Publicar un artefacto a un repositorio Maven local</a></li>
+        <li><a href="#publicar-un-artefacto-a-un-repositorio-maven-en-nexus-con-gradle">Publicar un artefacto a un repositorio Maven en Nexus con Gradle</a></li>
+        <li><a href="#publicar-una-imagen-docker-a-un-repositorio-repositorio-en-nexus">Publicar una imagen Docker a un repositorio repositorio en Nexus</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="repositorio-de-artefactos-con-nexus">Repositorio de artefactos con Nexus</h3>
+<p><a href="https://www.sonatype.com/nexus/repository-oss">Nexus</a> es un software que ofrece la funcionalidad de repositorio de artefactos. Permite a una organización compartir de forma privada los artefactos entre los diferentes proyectos. Soporta diferentes tipos de repositorios según el tipo de artefactos, librerías <em>jar</em> para Java, paquetes npm para JavaScript, imágenes de contenedores para Docker, paquetes de <a href="https://www.python.org/">Python</a> y <a href="https://golang.org/">Go</a>.</p>
+<p>Nexus OSS es la versión de código abierto que permite su uso sin coste, la versión <a href="https://www.sonatype.com/nexus/repository-pro">Nexus Pro</a> tiene características empresariales como autenticación SSO.</p>
+<ul>
+<li><a href="https://www.sonatype.com/nexus/repository-oss-vs-pro-features">Comparación de caracterśiticas entre Nexus Repository OSS y Pro</a></li>
+</ul>
+<p><a href="https://github.com/features/packages">Github Packages</a> permite hacer las funcionalidades de repositorio de artefactos pero no soporta todos los tipos de artefactos de todos los lenguajes. <a href="https://cloud.google.com/artifact-registry/">Google Artifact Registry</a> también ofrece un servicio para almacenar los artefactos resultado de compilación, <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> con <a href="https://aws.amazon.com/es/codeartifact/">AWS CodeArtifact</a> también tiene su servicio administrado de artefactos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus_hu569344ef3b9d3bc3d0c279ec1f5120cc_72589_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus_hu569344ef3b9d3bc3d0c279ec1f5120cc_72589_650x450_fit_q90_box.jpg" width="650" height="329" alt="Nexus" title="Nexus" class="" loading="lazy"></a></p>
+<figcaption>Arquitectura de un repositorio de artefactos con Nexus</figcaption>
+</figure>
+</div>
+<h3 id="ejemplo-de-repositorio-con-nexus">Ejemplo de repositorio con Nexus</h3>
+<p>Nexus ofrece una imagen de Docker que permite iniciar el servidor de Nexus de forma fácil como un contenedor. El siguiente <em>script</em> lo inicia en el puerto 8081 y en el puerto adicional 8082 para el repositorio de Docker.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run -it --rm -p 8081:8081 -p 8082:8082 --name nexus sonatype/nexus3&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-run.sh</span>
+    </div>
+</div>
+<p>El usuario administrador es <em>admin</em> y la contraseña aleatoria generada al inicio del contenedor se almacena en el archivo <em>/nexus-data/admin.password</em> del sistema de archivos del contenedor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker ps&#10;CONTAINER ID   IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMMAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  CREATED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  PORTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  NAMES&#10;6b7d7495ad0c   sonatype/nexus3   <span class="s2">&#34;sh -c </span><span class="si">${</span><span class="nv">SONATYPE_DI</span><span class="p">…</span><span class="si">}</span><span class="s2">&#34;</span>   <span class="m">50</span> seconds ago   Up <span class="m">49</span> seconds   0.0.0.0:8081-8082-&gt;8081-8082/tcp   nexus&#10;$ docker <span class="nb">exec</span> -it 6b7d7495ad0c bash&#10;<span class="c1"># cat /nexus-data/admin.password</span>&#10;41693644-b54a-4aef-9cf0-cb151e9ef440</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-exec.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-1_huc7edf825174dcec70e5916a8a54c0462_228021_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-1_huc7edf825174dcec70e5916a8a54c0462_228021_300x250_fit_box_3.png" width="300" height="220" alt="Nexus" title="Nexus" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-2_hu95533abba5813823a079eb0bef34dbea_126802_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-2_hu95533abba5813823a079eb0bef34dbea_126802_300x250_fit_box_3.png" width="300" height="221" alt="Nexus" title="Nexus" class="" loading="lazy"></a></p>
+<figcaption>Nexus</figcaption>
+</figure>
+</div>
+<h4 id="publicar-un-artefacto-a-un-repositorio-maven-local">Publicar un artefacto a un repositorio Maven local</h4>
+<p>Usando Gradle o Maven las dependencias de un proyecto se cachean en un directorio local del directorio de inicio del usuario, <em>~/.gradle</em> o <em>~/.m2</em>. Al desarrollar es posible publicar una versión de una librería en estos repositorios de caché. Para publicar un artefacto en un repositorio de Maven con Gradle se utiliza el <em>plugin</em> <a href="https://docs.gradle.org/current/userguide/publishing_maven.html">Maven Publish</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew publishToMavenLocal&#10;$ ./gradlew publishLibraryPublicationToMavenLocal&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-publishToMavenLocal.sh</span>
+    </div>
+</div>
+<h4 id="publicar-un-artefacto-a-un-repositorio-maven-en-nexus-con-gradle">Publicar un artefacto a un repositorio Maven en Nexus con Gradle</h4>
+<p>Gradle ofrece el <em>plugin</em> <em>Maven Publish</em> para publicar artefactos en repositorios de Maven. Hay que configurar y definir los artefactos y los repositorios en los que se puede publicar. El <em>plugin</em> añade varias tareas de Gradle con las que elegir de forma específica que artefacto publicar, en que repositorio, el grupo del artefacto, su nombre y versión.</p>
+<p>Este es un archivo de construcción de Gradle con un repositorio Maven de Nexus en el que publicar los artefactos de la librería.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;java-library&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;maven-publish&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">maven</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">url</span> <span class="s2">&#34;http://localhost:8081/repository/maven-releases/&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">tasks</span><span class="o">.</span><span class="na">named</span><span class="o">(</span><span class="s1">&#39;test&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">useJUnitPlatform</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">publishing</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">publications</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">library</span><span class="o">(</span><span class="n">MavenPublication</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">groupId</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">artifactId</span> <span class="o">=</span> <span class="s1">&#39;java-library&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">from</span> <span class="n">components</span><span class="o">.</span><span class="na">java</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">maven</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;nexus&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">allowInsecureProtocol</span> <span class="o">=</span> <span class="kc">true</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">url</span> <span class="s2">&#34;http://localhost:8081/repository/maven-releases/&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">credentials</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">username</span> <span class="s1">&#39;admin&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">password</span> <span class="s1">&#39;admin&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build-library.gradle</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">$</span> <span class="o">./</span><span class="n">gradlew</span> <span class="n">publishLibraryPublicationToNexusRepository</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-publishToNexusRepository.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-maven_hue5e65df069eb6a6c39948e78d6e6afb4_207191_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Librería de Java publicada en repositorio Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-maven_hue5e65df069eb6a6c39948e78d6e6afb4_207191_300x250_fit_box_3.png" width="300" height="221" alt="Librería de Java publicada en repositorio Nexus" title="Librería de Java publicada en repositorio Nexus" class="" loading="lazy"></a></p>
+<figcaption>Librería de Java publicada en repositorio Nexus</figcaption>
+</figure>
+</div>
+<p>Una vez publicado el artefacto otro proyecto puede declararlo como una dependencia en la sección <em>dependencies</em> y añadir el repositorio de Maven donde buscar dependencias en la sección <em>repositories</em>. Al ejecutar el programa Gradle descarga la dependencia y la añade al proyecto como cualquier dependencia del repositorio de <em>mavenCentral</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">maven</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">allowInsecureProtocol</span> <span class="o">=</span> <span class="kc">true</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">url</span> <span class="s2">&#34;http://localhost:8081/repository/maven-releases/&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;io.github.picodotdev:java-library:1.0&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.nexus.Main&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">tasks</span><span class="o">.</span><span class="na">named</span><span class="o">(</span><span class="s1">&#39;test&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">useJUnitPlatform</span><span class="o">()</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build-application.gradle</span>
+    </div>
+</div>
+<p>El programa trata las clases de la librería del repositorio de Nexus como cualquier otra clase de una librería de Maven Central.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.nexus.library</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Library</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">someLibraryMethod</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Library.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.nexus.application</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.nexus.library.Library</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getGreeting</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="s">&#34;Hello World!&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Main: &#34;</span> <span class="o">+</span> <span class="k">new</span> <span class="n">Main</span><span class="o">().</span><span class="na">getGreeting</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Library: &#34;</span> <span class="o">+</span> <span class="k">new</span> <span class="n">Library</span><span class="o">().</span><span class="na">someLibraryMethod</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Main: Hello World!&#10;Library: true&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<h4 id="publicar-una-imagen-docker-a-un-repositorio-repositorio-en-nexus">Publicar una imagen Docker a un repositorio repositorio en Nexus</h4>
+<p>Para usar el repositorio de imágenes de Docker en Nexus es necesario crear un repositorio y configurar Nexus para que se ubique en un puerto diferente del del puerto estándar. En este caso el contenedor de Docker de Nexus además del puerto 8081 se inicia en el puerto 8082.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-repository-1_hu657d2e832a4c53f89ae0a12b91c0a55b_113775_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Repositorios de Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-repository-1_hu657d2e832a4c53f89ae0a12b91c0a55b_113775_200x150_fit_box_3.png" width="200" height="148" alt="Repositorios de Nexus" title="Repositorios de Nexus" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-repository-2_hu8fce64f8a363011a1409c34c1f35f68c_165640_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Repositorios de Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-repository-2_hu8fce64f8a363011a1409c34c1f35f68c_165640_200x150_fit_box_3.png" width="200" height="148" alt="Repositorios de Nexus" title="Repositorios de Nexus" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-repository-3_hu1b8b3d384a6ce39656185efac36bc458_191429_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Repositorios de Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-repository-3_hu1b8b3d384a6ce39656185efac36bc458_191429_200x150_fit_box_3.png" width="200" height="148" alt="Repositorios de Nexus" title="Repositorios de Nexus" class="" loading="lazy"></a></p>
+<figcaption>Repositorios de Nexus</figcaption>
+</figure>
+</div>
+<p>Para subir una imagen de un contenedor al repositorio hay que crear su <em>tag</em> y realizar la subida de la imagen. <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Crear una imagen de Docker con un Dockerfile</a> genera una imagen de un contenedor en el repositorio local, una vez se ha generado se le añade la etiqueta y se sube al repositorio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker images&#10;REPOSITORY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAG&nbsp;&nbsp;&nbsp;&nbsp;   IMAGE ID&nbsp;&nbsp;&nbsp;&nbsp;   CREATED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIZE&#10;busybox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   latest&nbsp;&nbsp;&nbsp;&nbsp;a9d583973f65   <span class="m">2</span> days ago&nbsp;&nbsp;&nbsp;&nbsp; 1.23MB&#10;sonatype/nexus3   latest&nbsp;&nbsp;&nbsp;&nbsp;f07af611e0df   <span class="m">8</span> days ago&nbsp;&nbsp;&nbsp;&nbsp; 662MB&#10;$ docker tag a9d583973f65 localhost:8082/repository/docker/busybox:latest&#10;$ docker images&#10;REPOSITORY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TAG&nbsp;&nbsp;&nbsp;&nbsp;   IMAGE ID&nbsp;&nbsp;&nbsp;&nbsp;   CREATED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIZE&#10;busybox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;latest&nbsp;&nbsp;&nbsp;&nbsp;a9d583973f65   <span class="m">2</span> days ago&nbsp;&nbsp;&nbsp;&nbsp; 1.23MB&#10;localhost:8082/repository/docker/busybox   latest&nbsp;&nbsp;&nbsp;&nbsp;a9d583973f65   <span class="m">2</span> days ago&nbsp;&nbsp;&nbsp;&nbsp; 1.23MB&#10;sonatype/nexus3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;latest&nbsp;&nbsp;&nbsp;&nbsp;f07af611e0df   <span class="m">8</span> days ago&nbsp;&nbsp;&nbsp;&nbsp; 662MB&#10;$ docker login localhost:8082&#10;Username: admin&#10;Password:&#10;Login Succeeded&#10;$ docker push localhost:8082/repository/docker/busybox:latest&#10;The push refers to repository <span class="o">[</span>localhost:8082/repository/docker/busybox<span class="o">]</span>&#10;2983725f2649: Pushed &#10;latest: digest: sha256:410a07f17151ffffb513f942a01748dfdb921de915ea6427d61d60b0357c1dcd size: <span class="m">527</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-push.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-docker_hu243d7fe2cb9df4b89918e164bf9a2faf_108779_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imagen de Docker publicada en repositorio Nexus"><img src="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/images/nexus-docker_hu243d7fe2cb9df4b89918e164bf9a2faf_108779_300x250_fit_box_3.png" width="300" height="221" alt="Imagen de Docker publicada en repositorio Nexus" title="Imagen de Docker publicada en repositorio Nexus" class="" loading="lazy"></a></p>
+<figcaption>Imagen de Docker publicada en repositorio Nexus</figcaption>
+</figure>
+</div>
+<p>Una vez la imagen del contenedor se ha subido se puede utilizar especificando la URL del repositorio de imágenes. Para comprobar que la imagen se descarga del repositorio de Nexus primero se elimina de la caché local.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker rmi localhost:8082/repository/docker/busybox:latest&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-rmi.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker pull localhost:8082/repository/docker/busybox:latest&#10;$ docker run -it --rm localhost:8082/repository/docker/busybox:latest&#10;/ <span class="c1"># date</span>&#10;Fri Mar <span class="m">12</span> 19:12:56 UTC <span class="m">2021</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-pull.sh</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Nexus">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://help.sonatype.com/repomanager3/formats/docker-registry/docker-authentication">Docker Authentication</a></li>
+<li><a href="https://help.sonatype.com/repomanager3/formats/docker-registry/pushing-images">Pushing Images</a></li>
+<li><a href="https://docs.github.com/en/packages/guides">GitHub Packages</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
+                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_875x0_resize_box_3.png" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
+                <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear un archivo Zip con Java, comprimir y descomprimir datos" title="Crear un archivo Zip con Java, comprimir y descomprimir datos" class="" loading="lazy">
+                <h3>Crear un archivo Zip con Java, comprimir y descomprimir datos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" title="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" class="" loading="lazy">
+                <h3>Emitir trazas de las peticiones y respuestas HTTP con clientes Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo deduplicar eventos de dominio" title="Cómo deduplicar eventos de dominio" class="" loading="lazy">
+                <h3>Cómo deduplicar eventos de dominio</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementar un bus de comandos y consultas en Java" title="Implementar un bus de comandos y consultas en Java" class="" loading="lazy">
+                <h3>Implementar un bus de comandos y consultas en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">
+                <img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_875x0_resize_box_3.png" width="326" height="125" alt="Implementar un bus de eventos de dominio en Java" title="Implementar un bus de eventos de dominio en Java" class="" loading="lazy">
+                <h3>Implementar un bus de eventos de dominio en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-559';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/03\/repositorio-de-artefactos-privado-con-nexus\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

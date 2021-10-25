@@ -1,0 +1,580 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los directorios de Descargas, Documentos, Música, Imágenes, Vídeos, Escritorio, Plantillas y Público «bien conocidos» por defecto se encuentran en el directorio de inicio o home del usuario, en mi caso sería /home/picodotdev/ o abreviadamente ~/.
+Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta Documentos, Música e Imágenes se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/" hreflang="es" title="Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/index-amp.html" hreflang="es" title="Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los directorios de Descargas, Documentos, Música, Imágenes, Vídeos, Escritorio, Plantillas y Público «bien conocidos» por defecto se encuentran en el directorio de inicio o home del usuario, en mi caso sería /home/picodotdev/ o abreviadamente ~/.
+Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta Documentos, Música e Imágenes se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux">
+<meta name="twitter:description" content="Los directorios de Descargas, Documentos, Música, Imágenes, Vídeos, Escritorio, Plantillas y Público «bien conocidos» por defecto se encuentran en el directorio de inicio o home del usuario, en mi caso sería /home/picodotdev/ o abreviadamente ~/.
+Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta Documentos, Música e Imágenes se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/"
+    },
+    "headline": "Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2019-11-03T13:00:00+01:00",
+    "dateModified": "2019-11-04T19:30:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "741",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los directorios de Descargas, Documentos, Música, Imágenes, Vídeos, Escritorio, Plantillas y Público «bien conocidos» por defecto se encuentran en el directorio de inicio o home del usuario, en mi caso sería /home/picodotdev/ o abreviadamente ~/.
+Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta Documentos, Música e Imágenes se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>03/11/2019</time>, actualizado el <time>04/11/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>Los directorios de <em>Descargas</em>, <em>Documentos</em>, <em>Música</em>, <em>Imágenes</em>, <em>Vídeos</em>, <em>Escritorio</em>, <em>Plantillas</em> y <em>Público</em> «bien conocidos» por defecto se encuentran en el directorio de inicio o <em>home</em> del usuario, en mi caso sería <em>/home/picodotdev/</em> o abreviadamente <em>~/</em>.</p>
+<p>Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta <em>Documentos</em>, <em>Música</em> e <em>Imágenes</em> se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa.</p>
+<p>Los discos duros SSD se han abaratado muchísimo en los últimos años pero aún no han alcanzado a los discos duros mecánicos en el precio de € por GB. Un <a href="https://amzn.to/2NEWsly" rel="sponsored">disco duro mecánico de 4 TB</a> tiene un precio bastante asequible. A lo largo del tiempo he ido reaprovechando los discos duros de portátiles para los que compré una caja USB para utilizarlos como discos duros externos USB y ahora tengo varios, uno de 500 GB, otro de 320 GB, y dos de 120 GB.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0713WPGLL&amp;linkId=e4fd44ae2ee8a6632bf514c94a9bcce2" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07H1231S8&amp;linkId=51f9f449af48eb3c5f98ae05eb93cbc7" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07FD6D4HJ&amp;linkId=7e74aadff0dd2b77d5f5d8ee66108f4d" title="Amazon" class="lozad"></iframe>
+</div>
+<p>Cuando compré el <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC</a> compré la versión <em>slim</em> sin bahía para disco SATA 2.5&quot; y solo le puse un SSD de 500 GB con conexión M.2. Tenía intención de comprar una <a href="https://amzn.to/2NE97Fg" rel="sponsored">tarjeta SDXC</a> o una <a href="https://amzn.to/2NE97Fg" rel="sponsored">memoria USB</a> pequeña para tenerla siempre conectada al ordenador y como una forma de ampliar la capacidad de almacenamiento. Sin embargo, ni la tarjeta microSD ni la memoria USB es barata comparada con el precio de un SSD SATA. Al final he optado por utilizar uno de esos discos duros externos que tengo para el mismo propósito. Lo que necesitaba era cambiar la ubicación de esos directorios por defecto para que en vez de estar en la carpeta de inicio de mi usuario y en el SSD estuviesen en el disco duro externo USB.</p>
+<p>La ubicación de los directorios de usuario se puede cambiar modificando las rutas en el archivo de configuración <em>~/.config/user-dirs.dirs</em>. En este caso poniendo la ubicación del punto de montaje del disco duro externo USB.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># This file is written by xdg-user-dirs-update&#10;# If you want to change or add directories, just edit the line you&#39;re&#10;# interested in. All local changes will be retained on the next run.&#10;# Format is XDG_xxx_DIR=&#34;$HOME/yyy&#34;, where yyy is a shell-escaped&#10;# homedir-relative path, or XDG_xxx_DIR=&#34;/yyy&#34;, where /yyy is an&#10;# absolute path. No other format is supported.&#10;# &#10;XDG_DESKTOP_DIR=&#34;/run/media/picodotdev/bmovenegro/Escritorio/&#34;&#10;XDG_DOWNLOAD_DIR=&#34;/run/media/picodotdev/bmovenegro/Descargas/&#34;&#10;XDG_TEMPLATES_DIR=&#34;/run/media/picodotdev/bmovenegro/Plantillas/&#34;&#10;XDG_PUBLICSHARE_DIR=&#34;/run/media/picodotdev/bmovenegro/Público/&#34;&#10;XDG_DOCUMENTS_DIR=&#34;$HOME/Documentos&#34;&#10;XDG_MUSIC_DIR=&#34;/run/media/picodotdev/bmovenegro/Música/&#34;&#10;XDG_PICTURES_DIR=&#34;/run/media/picodotdev/bmovenegro/Imágenes/&#34;&#10;XDG_VIDEOS_DIR=&#34;/run/media/picodotdev/bmovenegro/Vídeos/&#34;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>user-dirs.dirs</span>
+    </div>
+</div>
+<p>Cambiar los valores de los directorios de usuario a otro directorio requiere que esos directorios estén disponibles a iniciar sesión de usuario en el entorno de escritorio. Para que el disco duro externo USB se monte al iniciar el sistema he definido un servicio de tipo <em>mount</em> para <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> en la ubicación <em>/etc/systemd/system/run-media-picodotdev-bmovenegro.mount</em> con el siguiente contenido. El disco duro se monta en el directorio <em>/run/media/bmovenegro/</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">[Unit]&#10;Description=Disk bmovenegro mount&#10;&#10;[Mount]&#10;What=/dev/disk/by-uuid/f0fe2765-00aa-4c2a-adef-83a3264b8f4f&#10;Where=/run/media/picodotdev/bmovenegro/&#10;Type=ext4&#10;Options=defaults&#10;&#10;[Install]&#10;WantedBy=multi-user.target</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-media-picodotdev-bmovenegro.mount</span>
+    </div>
+</div>
+<p>El identificador UUID de un dispositivo se obtiene con el comando <em>lsblk</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">$ lsblk -o +uuid,name&#10;NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   UUID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   NAME&#10;sda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 disk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  sda&#10;└─sda1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  8:1&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 part  /run/media/picodotdev/bmovenegro f0fe2765-00aa-4c2a-adef-83a3264b8f4f   sda1&#10;nvme0n1&nbsp;&nbsp;&nbsp;&nbsp;   259:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 disk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  nvme0n1&#10;├─nvme0n1p1   259:1&nbsp;&nbsp;&nbsp;&nbsp;0   511M  0 part  /boot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7869-6341&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  nvme0n1p1&#10;└─nvme0n1p2   259:2&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 part&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   3067348f-58f4-48fd-be4b-7cb3aae80dd1   nvme0n1p2&#10;  └─lvm&nbsp;&nbsp;&nbsp;&nbsp;   254:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 crypt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  c0fVvN-1QTv-HccD-tyEt-cl49-GM7M-xDNGJQ lvm&#10;&nbsp;&nbsp;&nbsp;&nbsp;└─vg-root 254:1&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 lvm   /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4b561dc9-bbd6-4433-bc53-c879bde68042   vg-root</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lsblk.sh</span>
+    </div>
+</div>
+<p>Con esta configuración para el explorador de archivos en este caso Nautilus de <a href="https://www.gnome.org/">GNOME</a> la ubicación de estos archivos de usuario es transparente, los directorios aparecen en el panel lateral. Aunque en el directorio <em>home</em> siguen existiendo las carpetas originales de los directorios de usuario realmente cuando se hace clic en el panel lateral del directorio <em>Documentos</em> se muestra el contenido <em>/run/media/bmovenegro/Documentos</em> y no de <em>~/Documentos</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en el directorio home"><img src="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_300x200_fit_box_3.png" width="300" height="161" alt="Directorios de usuario en el directorio home" title="Directorios de usuario en el directorio home" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-user-dirs_hu2434c9f8192fcf97ba39eedbddb085c5_40855_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en disco USB externo"><img src="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-user-dirs_hu2434c9f8192fcf97ba39eedbddb085c5_40855_300x200_fit_box_3.png" width="300" height="161" alt="Directorios de usuario en disco USB externo" title="Directorios de usuario en disco USB externo" class="" loading="lazy"></a></p>
+<figcaption>Directorios de usuario en el directorio home y en disco USB externo</figcaption>
+</figure>
+</div>
+<p>En el caso de GNU/Linux los directorios de usuario además están localizados de forma automática, esto es al listar los directorios los nombres están en el idioma del usuario de forma consistente, al contrario de como ocurre en otros sistemas operativos que sus nombres se mantienen en inglés aún en su explorador de archivos aparecer en el idioma del usuario creando una inconsistencia entre los nombres que se listan desde la terminal y los que aparecen en su explorador de archivos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/terminal-user-dirs_hu41e0484bcf94be2a2cd5f9b857ee6811_18873_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en el directorio home"><img src="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/terminal-user-dirs_hu41e0484bcf94be2a2cd5f9b857ee6811_18873_300x200_fit_box_3.png" width="272" height="200" alt="Directorios de usuario en el directorio home" title="Directorios de usuario en el directorio home" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-terminal-user-dirs_hu6ad41259ed9f626bde19d488d145fea7_25770_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en disco USB externo"><img src="/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-terminal-user-dirs_hu6ad41259ed9f626bde19d488d145fea7_25770_300x200_fit_box_3.png" width="272" height="200" alt="Directorios de usuario en disco USB externo" title="Directorios de usuario en disco USB externo" class="" loading="lazy"></a></p>
+<figcaption>Directorios de usuario en el directorio home y en disco USB externo</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/XDG_user_directories">XDG user directories</a></li>
+<li><a href="https://sites.google.com/site/installationubuntu/tweaking-ubuntu/change-the-location-of-subfolders-in-your-home-partition">Change the location of subfolders in your Home partition</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/">
+                <img src="/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/images/neofetch-1_hufc0eb32c5c911b9872950627e8a1a7b7_57869_875x0_resize_box_3.png" width="326" height="125" alt="Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux" title="Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux" class="" loading="lazy">
+                <h3>Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/">
+                <img src="/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/images/tmux_hu77ea831290e4496781697c4e09451f28_32101_875x0_resize_box_3.png" width="326" height="125" alt="Guía de inicio del gestor de terminales y sesiones tmux" title="Guía de inicio del gestor de terminales y sesiones tmux" class="" loading="lazy">
+                <h3>Guía de inicio del gestor de terminales y sesiones tmux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">
+                <img src="/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_875x0_resize_box_3.png" width="326" height="125" alt="La aplicación cliente de Steam en GNU/Linux" title="La aplicación cliente de Steam en GNU/Linux" class="" loading="lazy">
+                <h3>La aplicación cliente de Steam en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep" title="Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep" class="" loading="lazy">
+                <h3>Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/06/hemeroteca-15/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #15" title="Hemeroteca #15" class="" loading="lazy">
+                <h3>Hemeroteca #15</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux" title="Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux" class="" loading="lazy">
+                <h3>Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-440';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2019\/11\/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

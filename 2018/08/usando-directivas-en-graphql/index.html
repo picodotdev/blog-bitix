@@ -1,0 +1,578 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En GraphQL construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.
+Por ejemplo, si de un libro solo se requieren las propiedades el id, title y date de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
+&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;queryBooks{&#10;books{&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10;}&#10;}&#10;&#10; query-1.graphql   Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Usando directivas en GraphQL</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/" hreflang="es" title="Usando directivas en GraphQL">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/index-amp.html" hreflang="es" title="Usando directivas en GraphQL">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Usando directivas en GraphQL">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En GraphQL construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.
+Por ejemplo, si de un libro solo se requieren las propiedades el id, title y date de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
+&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;queryBooks{&#10;books{&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10;}&#10;}&#10;&#10; query-1.graphql   Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Usando directivas en GraphQL">
+<meta name="twitter:description" content="En GraphQL construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.
+Por ejemplo, si de un libro solo se requieren las propiedades el id, title y date de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
+&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;queryBooks{&#10;books{&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10;}&#10;}&#10;&#10; query-1.graphql   Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/"
+    },
+    "headline": "Usando directivas en GraphQL",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/graphql-750.png"
+        
+      },
+    "datePublished": "2018-08-24T08:00:00+02:00",
+    "dateModified": "2019-06-15T01:35:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "459",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "En GraphQL construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.
+Por ejemplo, si de un libro solo se requieren las propiedades el id, title y date de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
+&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;queryBooks{&#10;books{&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10;}&#10;}&#10;&#10; query-1.graphql   Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Usando directivas en GraphQL</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>24/08/2018</time>, actualizado el <time>15/06/2019</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/08/usando-directivas-en-graphql/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/08/usando-directivas-en-graphql/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL" class="" loading="false"></p>
+</div>
+<p>En <a href="https://graphql.org/">GraphQL</a> construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.</p>
+<p>Por ejemplo, si de un libro solo se requieren las propiedades el <em>id</em>, <em>title</em> y <em>date</em> de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="kd">query</span><span class="w"> </span><span class="nc">Books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">  </span><span class="py">books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="w">&#10;</span><span class="w">  </span><span class="p">}</span><span class="w">&#10;</span><span class="w"></span><span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>query-1.graphql</span>
+    </div>
+</div>
+<p>Si se desea recuperar solo el <em>id</em> y <em>title</em> sin el <em>date</em> la consulta debe ser diferente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="kd">query</span><span class="w"> </span><span class="nc">Books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">  </span><span class="py">books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="w">&#10;</span><span class="w">  </span><span class="p">}</span><span class="w">&#10;</span><span class="w"></span><span class="p">}</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>query-2.graphql</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphqls" data-lang="graphqls"><span class="kd">...</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="kd">type</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="p">:</span><span class="w"> </span><span class="nc">Long</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">author</span><span class="p">:</span><span class="w"> </span><span class="nc">Author</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">isbn</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="p">:</span><span class="w"> </span><span class="nc">LocalDate</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">...</span><span class="w">&#10;</span><span class="w"></span><span class="p">}</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="kd">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>library.graphqls</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-1_hue18fc5c5e3783ff5b0aa3911439cb95e_76217_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consulta id, title y date"><img src="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-1_hue18fc5c5e3783ff5b0aa3911439cb95e_76217_300x200_fit_box_3.png" width="279" height="200" alt="Consulta id, title y date" title="Consulta id, title y date" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-2_hua7433c7be30e5acefd59b59781df8fa7_64539_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consulta id y title"><img src="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-2_hua7433c7be30e5acefd59b59781df8fa7_64539_300x200_fit_box_3.png" width="279" height="200" alt="Consulta id y title" title="Consulta id y title" class="" loading="lazy"></a></p>
+<figcaption>Consultas diferentes que devuelven diferentes datos</figcaption>
+</figure>
+</div>
+<p>Esto obliga en principio a tener dos consultas diferentes según los datos recuperar. En principio, ya que las <a href="https://graphql.org/learn/queries/#directives">directivas <em>skip</em> e <em>include</em></a> definidas en la especificación de GraphQL permiten tener la misma consulta y parametrizar si un determinado dato ha de incluirse o no en el resultado.</p>
+<p>Las directivas se definen en el lenguaje de consulta de GraphQL con el caracter <em>@</em> y pueden recibir parámetros. La directiva <em>skip</em> permite omitir un dato según el valor de un booleano, si es <em>true</em> se omite y si es <em>false</em> se incluye, el comportamiento de <em>include</em> es el mismo pero con el valor contrario del booleano, si es <em>true</em> se incluye y si es <em>false</em> se omite.</p>
+<p>Esta sería la consulta parametrizada para obtener los datos de los libros omitiendo o incluyendo su fecha en función de una variable utilizando la directiva <em>include</em>. Cuando el valor de la variable es <em>true</em> se incluye el dato fecha, cuando el valor de la variable es <em>false</em> no se incluye.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="kd">query</span><span class="w"> </span><span class="nc">Books</span><span class="p">(</span><span class="nv">$include</span><span class="p">:</span><span class="w"> </span><span class="nc">Boolean</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">  </span><span class="py">books</span><span class="w"> </span><span class="p">{</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">id</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">title</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="py">date</span><span class="w"> </span><span class="nd">@include</span><span class="p">(</span><span class="py">if</span><span class="p">:</span><span class="w"> </span><span class="nv">$include</span><span class="p">)</span><span class="w">&#10;</span><span class="w">  </span><span class="p">}</span><span class="w">&#10;</span><span class="w"></span><span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>query-3.graphql</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="p">{</span><span class="w">&#10;</span><span class="w"> </span><span class="s">&#34;include&#34;</span><span class="p">:</span><span class="w"> </span><span class="nc">true</span><span class="w">&#10;</span><span class="w"></span><span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>variables-1.graphql</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-graphql" data-lang="graphql"><span class="p">{</span><span class="w">&#10;</span><span class="w"> </span><span class="s">&#34;include&#34;</span><span class="p">:</span><span class="w"> </span><span class="nc">false</span><span class="w">&#10;</span><span class="w"></span><span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>variables-2.graphql</span>
+    </div>
+</div>
+<p>Utilizando <a href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">el editor GraphiQL</a> para construir y ejecutar consultas de una API de GraphQL se obtienen los resultados.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-3_huc0754d3d0c577a4a7edb35a8176e9a56_84698_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consulta con directiva include"><img src="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-3_huc0754d3d0c577a4a7edb35a8176e9a56_84698_300x200_fit_box_3.png" width="279" height="200" alt="Consulta con directiva include" title="Consulta con directiva include" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-4_huc5299cd7495168e21ba044db3ab1a90e_74305_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consulta con directiva include"><img src="/blog-bitix/2018/08/usando-directivas-en-graphql/images/image-4_huc5299cd7495168e21ba044db3ab1a90e_74305_300x200_fit_box_3.png" width="279" height="200" alt="Consulta con directiva include" title="Consulta con directiva include" class="" loading="lazy"></a></p>
+<figcaption>Misma consulta con directiva include que devuelve diferentes datos</figcaption>
+</figure>
+</div>
+<p>Con un comando <em>curl</em> se realizan las mismas consultas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -XPOST -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;query&#34;: &#34;query Books($include: Boolean!) { books { id title date @include(if: $include) }}&#34;, &#34;variables&#34;: { &#34;include&#34;: true }}&#39;</span> http://localhost:8080/graphql&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-1.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>&#10;  <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;books&#34;</span><span class="p">:</span> <span class="p">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;7&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Ojo en el cielo&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;1957-01-01&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;8&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Muerte de la luz&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;1977-01-01&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;9&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;El nombre de la rosa&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;1980-01-01&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;10&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Los tejedores de cabellos&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;1995-01-01&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;11&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Ready Player One&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;2011-01-01&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">]</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>data-1.json</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -XPOST -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;query&#34;: &#34;query Books($include: Boolean!) { books { id title date @include(if: $include) }}&#34;, &#34;variables&#34;: { &#34;include&#34;: false }}&#39;</span> http://localhost:8080/graphql&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-2.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>&#10;  <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;books&#34;</span><span class="p">:</span> <span class="p">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;7&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Ojo en el cielo&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;8&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Muerte de la luz&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;9&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;El nombre de la rosa&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;10&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Los tejedores de cabellos&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;11&#34;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Ready Player One&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">]</span>&#10;  <span class="p">}</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>data-2.json</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GraphQL">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>graphql</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/">Devolver mensajes de error descriptivos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/">Usar un resolver para recuperar propiedades en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/">Consultas con parámetros para filtrar datos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/11/paginacion-usando-cursores-en-graphql-y-java/">Paginación usando cursores en GraphQL y Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/12/definir-nuevos-tipos-de-datos-escalares-en-graphql/">Definir nuevos tipos de datos escalares en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">El editor, explorador e IDE GraphiQL para una API con GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/usando-directivas-en-graphql/">Usando directivas en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/los-fragmentos-en-graphql/">Los fragmentos en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/06/metadatos-e-introspeccion-en-graphql/">Metadatos e introspección en GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Recuperar datos eficientemente en GraphQL usando batching con data loaders</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">Renombrar campos del esquema en las consultas GraphQL</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/">Añadir descripciones y documentar los campos de GraphQL</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-341';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2018\/08\/usando-directivas-en-graphql\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,565 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Introducción a Bitnami</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/" hreflang="es" title="Introducción a Bitnami">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/index-amp.html" hreflang="es" title="Introducción a Bitnami">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Introducción a Bitnami">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/bitnami-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/bitnami-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Introducción a Bitnami">
+<meta name="twitter:description" content="Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/"
+    },
+    "headline": "Introducción a Bitnami",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/bitnami-750.png"
+        
+      },
+    "datePublished": "2014-11-29T10:45:45+01:00",
+    "dateModified": "2017-05-28T01:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "886",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Introducción a Bitnami</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>29/11/2014</time>, actualizado el <time>28/05/2017</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/hardware/">hardware</a>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2014/11/introduccion-a-bitnami/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2014/11/introduccion-a-bitnami/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes"> 
+<p>
+<img src="/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami" class="" loading="false"></p>
+</div>
+<p>Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados.</p>
+<p><a href="https://bitnami.com/">Bitnami</a> es una amplia colección de servicios populares que permite instalarlos y disponer de ellos rápidamente completamente configurados sin necesidad de dedicar tiempo a conocer como instalarlos, además, si empleamos virtualización con <a href="https://www.virtualbox.org/">VirtualBox</a> se consigue que el equipo quede completamente limpio una vez que el servicio sea desinstalado bastando únicamente eliminar la máquina virtual. Esta colección de servicios se pueden instalar en el propio equipo, en una máquina virtual con VirtualBox, <a href="https://www.vmware.com/">VMware</a>, <a href="https://www.linux-kvm.org/page/Main_Page">KVM</a> o en la nube por ejemplo de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> o <a href="https://cloud.google.com/">Google Cloud</a> y próximamente usando <a href="https://www.docker.com/">Docker</a>.</p>
+<p>¿Alguna vez has querido probar <a href="https://wordpress.org/">Wordpress</a>, <a href="https://www.redmine.org/">Redmine</a>, <a href="https://www.drupal.org/">Drupal</a>, <a href="https://www.mediawiki.org/">MediaWiki</a>, <a href="https://www.phpbb.com/">phpBB</a>, <a href="https://www.liferay.com/">Liferay</a>, <a href="https://jenkins.io/">Jenkins</a>, <a href="https://plone.org/">Plone</a>, <a href="https://www.alfresco.com/">Alfresco</a>, &hellip;? Estos son solo unos pocos ejemplos de <a href="https://bitnami.com/stacks">todos los servicios que nos ofrece Bitnami</a> listos para que empecemos a usarlos en unos pocos minutos, hay muchos otros disponibles y en un futuro se agregarán más según las peticiones que realicen los usuarios de Bitnami. Algunas aplicaciones están compuestas de una pila completa de servicios como por ejemplo LAMP (Linux, Apache, MySQL, PHP) o LAPP (Linux, Apache, PostgreSQL, PHP) que incluyen una lista completa de dependencias que necesitan como FastCGI, OpenSSL, phpMyAdmin, ModSecurity, SQLite, Varnish, ImageMagick, xDebug, Xcache, OpenLDAP, ModSecurity, Memcache, OAuth, PEAR, PECL, APC, GD o cURL. Adicionalmente podemos usar una única pila como LAMP para instalar varios <a href="https://bitnami.com/stack/lamp/modules">módulos</a> en vez de instalar cada aplicación individualmente (Drupal, MediaWiki, &hellip;) de forma que todas las aplicación compartan la infraestructura de la misma pila.</p>
+<p>En un futuro parece que Bitnami ofrecerá soporte para <a href="https://www.docker.com/">Docker</a> haciendo que no necesitemos ni siquiera un entorno de virtualización, ahorrando espacio en disco y ofreciendo el máximo rendimiento que ofrezca la máquina sin ningún tipo de penalización que impone virtualizar.</p>
+<h3 id="cómo-empezar-a-usar-bitnami">¿Cómo empezar a usar Bitnami?</h3>
+<p>A continuación explicaré la opción de usar Bitnami con VirtualBox, para el ejemplo usaré la aplicación de <a href="https://about.gitlab.com/">GitLab</a>. En la <a href="https://docs.bitnami.com/virtual-machine/">guía de inicio rápido de Bitnami</a> están explicadas otras opciones y preguntas frecuentes, en este caso nos interesa la <a href="https://docs.bitnami.com/virtual-machine/get-started-virtualbox/">sección para VirtualBox</a>.</p>
+<p>Teniendo instalado previamente VirtualBox, primeramente necesitaremos descargar la imagen del disco que contiene la <a href="https://bitnami.com/stack/gitlab">aplicación de Bitnami para GitLab</a>. Accedida a la sección <a href="https://bitnami.com/stack/gitlab/virtual-machine"><em>Local Install</em></a> pulsamos el botón <em>Download</em> según la versión del sistema operativo que prefiramos, en este caso usaré la basada en <a href="https://www.debian.org/">Debian</a>. A continuación hay que crear una máquina virtual en VirtualBox mediante la opción <em>Importar servicio virtualizado&hellip;</em> del menú <em>Archivo</em> donde hay que seleccionar el archivo de extensión <em>ova</em> y cambiaremos la memoria asignada a la máquina virtual al menos 2048 MiB.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Importación de servicio virtualizado en VirtualBox"><img src="/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_300x200_fit_box_3.png" width="300" height="198" alt="Importación de servicio virtualizado en VirtualBox" title="Importación de servicio virtualizado en VirtualBox" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquina virtual de GitLab"><img src="/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_300x200_fit_box_3.png" width="296" height="200" alt="Máquina virtual de GitLab" title="Máquina virtual de GitLab" class="" loading="lazy"></a></p>
+<figcaption>Importación de servicio virtualizado de Bitnami en VirtualBox</figcaption>
+</figure>
+</div>
+<p>Una vez importado el servicio y creada la máquina virtual la tratamos como cualquier otra máquina virtual para iniciarla la máquina virtual está lista para ser iniciada. Una vez iniciada completamente en la terminal se solicita un inicio de sesión con el usuario y contraseña que da acceso a una terminal para realizar tareas administrativas, en la misma página de inicio de sesión se indica el usuario y contraseña a usar y se indica la dirección IP (en el caso de las capturas mostradas es la <em>192.168.1.3</em>) que es necesario usar para acceder al servicio con el navegador. En el primer inicio de sesión se solicita cambiar la contraseña.</p>
+<p>Accediendo con el navegador a la dirección <em>https://192.168.1.3</em> se accede a la aplicación de GitLab que pide un usuario y contraseña para iniciar sesión, el usuario y contraseña están indicados en la página de descarga de la imagen del servicio.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de sesión de GitLab"><img src="/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_300x200_fit_box_3.png" width="284" height="200" alt="Inicio de sesión de GitLab" title="Inicio de sesión de GitLab" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="GitLab"><img src="/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_300x200_fit_box_3.png" width="266" height="200" alt="GitLab" title="GitLab" class="" loading="lazy"></a></p>
+<figcaption>Servicio de GitLab</figcaption>
+</figure>
+</div>
+<p>En definitiva, Bitnami es de utilidad si se necesita usar cualquiera de los servicios que ofrece tanto para probarlos con una máquina virtual o para instalarlos en la nube de Amazon EC2, Azure o en Google Cloud. La nube evita adquirir hardware y posibilita escalarlo según las necesidades siempre estando dispuestos a pagar su coste, en algunos casos un mini PC como los <a href="https://amzn.to/2rauzYV" rel="sponsored">Brix</a>, <a href="https://amzn.to/2s8GYtI" rel="sponsored">NUC</a> o <a href="https://amzn.to/2r07KGS" rel="sponsored">Cubi</a> que soportan cantidades de memoria de 16 GiB y algunos 32 GiB son mas que suficientes para una infraestructura interna de una empresa pequeña que incluya control de versiones, gestor de peticiones, integración continua, base de datos, servidor de aplicaciones, &hellip; estos ordenadores pequeños en tamaño pero con una capacidad de proceso y memoria nada despreciable son una opción a considerar para algunas tareas y pueden actuar perfectamente como servidores en los que alojar algunos servicios para consumo interno.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://bitnami.com">Bitnami</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bitnami">Wikipedia Bitnami</a></li>
+<li><a href="http://www.jsitech.com/generales/bitnami-una-tienda-de-aplicaciones-para-servidores/">Bitnami, Una tienda de Aplicaciones para Servidores</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción a Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Guía de inicio básico de Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">Introducción al gestor de proyectos y tareas Redmine</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar plugin ágil en Redmine</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/06/hemeroteca-5/">
+                <img src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Hemeroteca #5" title="Hemeroteca #5" class="" loading="lazy">
+                <h3>Hemeroteca #5</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/05/presentacion-blog-stack/">
+                <img src="/blog-bitix/assets/images/logotypes/blogstack.png" width="326" height="125" alt="Presentación de Blog Stack" title="Presentación de Blog Stack" class="" loading="lazy">
+                <h3>Presentación de Blog Stack</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Anexo a la guía de instalación y del principiante de Arch Linux" title="Anexo a la guía de instalación y del principiante de Arch Linux" class="" loading="lazy">
+                <h3>Anexo a la guía de instalación y del principiante de Arch Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">
+                <img src="/blog-bitix/assets/images/logotypes/dnie.jpg" width="326" height="125" alt="Firmar digitalmente documentos con el DNIe y Sinadura" title="Firmar digitalmente documentos con el DNIe y Sinadura" class="" loading="lazy">
+                <h3>Firmar digitalmente documentos con el DNIe y Sinadura</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Enviar correos electrónicos firmados con el DNIe y Evolution" title="Enviar correos electrónicos firmados con el DNIe y Evolution" class="" loading="lazy">
+                <h3>Enviar correos electrónicos firmados con el DNIe y Evolution</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Usar el DNI electrónico con Firefox en Linux" title="Usar el DNI electrónico con Firefox en Linux" class="" loading="lazy">
+                <h3>Usar el DNI electrónico con Firefox en Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-54';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2014\/11\/introduccion-a-bitnami\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

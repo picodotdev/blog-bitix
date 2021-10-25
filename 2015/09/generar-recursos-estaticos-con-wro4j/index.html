@@ -1,0 +1,543 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Con nuevas tecnologías como less, Sass o CoffeeScript el desarrollo y mantenimiento de una página web medianamente compleja mejora notablemente. Con la librería wro4j en una aplicación Java podemos procesar este tipo de recursos y convertirlos a los equivalentes que saben interpretar los navegadores de forma nativa CSS y JavaScript además de optimizar su tamaño u ofuscarlos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Generar recursos estáticos con wro4j</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/" hreflang="es" title="Generar recursos estáticos con wro4j">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/index-amp.html" hreflang="es" title="Generar recursos estáticos con wro4j">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Generar recursos estáticos con wro4j">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Con nuevas tecnologías como less, Sass o CoffeeScript el desarrollo y mantenimiento de una página web medianamente compleja mejora notablemente. Con la librería wro4j en una aplicación Java podemos procesar este tipo de recursos y convertirlos a los equivalentes que saben interpretar los navegadores de forma nativa CSS y JavaScript además de optimizar su tamaño u ofuscarlos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Generar recursos estáticos con wro4j">
+<meta name="twitter:description" content="Con nuevas tecnologías como less, Sass o CoffeeScript el desarrollo y mantenimiento de una página web medianamente compleja mejora notablemente. Con la librería wro4j en una aplicación Java podemos procesar este tipo de recursos y convertirlos a los equivalentes que saben interpretar los navegadores de forma nativa CSS y JavaScript además de optimizar su tamaño u ofuscarlos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/"
+    },
+    "headline": "Generar recursos estáticos con wro4j",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2015-09-25T17:00:00+02:00",
+    "dateModified": "2015-09-25T17:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "445",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Con nuevas tecnologías como less, Sass o CoffeeScript el desarrollo y mantenimiento de una página web medianamente compleja mejora notablemente. Con la librería wro4j en una aplicación Java podemos procesar este tipo de recursos y convertirlos a los equivalentes que saben interpretar los navegadores de forma nativa CSS y JavaScript además de optimizar su tamaño u ofuscarlos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Generar recursos estáticos con wro4j</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>25/09/2015</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Con nuevas tecnologías como less, Sass o CoffeeScript el desarrollo y mantenimiento de una página web medianamente compleja mejora notablemente. Con la librería wro4j en una aplicación Java podemos procesar este tipo de recursos y convertirlos a los equivalentes que saben interpretar los navegadores de forma nativa CSS y JavaScript además de optimizar su tamaño u ofuscarlos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes"> 
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>El desarrollo y las tecnologías de las páginas web sigue evolucionando, HTML 5, JavaScript, CSS 3, <a href="https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable">diseño adaptable</a> (<em>responsive</em>), &hellip; Y también surgen nuevas herramientas que hacen el desarrollo más simple o hace que las aplicaciones sean más eficientes. Algunas de estas nuevas tecnologías son <a href="https://lesscss.org/">less</a> o <a href="https://sass-lang.com/">Sass</a> que permiten producir hojas de estilo CSS utilizando una mejor notación, si la hoja de estilos es grande usar una tecnología como esta puede reducir considerablemente su tamaño, hacerla más legible y de más fácil mantenimiento, <a href="https://coffeescript.org/">CoffeeScript</a> también puede hacer más simple el desarrollo de la parte cliente de una aplicación, proporciona una sintaxis más clara (para algunos) que la ofrecida por el propio lenguaje JavaScript, que compilados generan su equivalente en JavaScript.</p>
+<p>También hay herramientas para optimizar los recursos eliminando los espacios innecesarios reduciendo su tamaño, la reducción conseguida variará en función del tamaño del archivo. En los archivos JavaScript la reducción puede ser mayor ya que aparte de eliminar los espacios en blanco se pueden renombrar los nombres de las variables, funciones y argumentos por otros más cortos consiguiendo una mayor reducción de tamaño. Esta minificación puede servirnos para ofuscar el código si queremos dificultar su lectura para las personas.</p>
+<p>En Java disponemos de la librería <a href="https://github.com/wro4j/wro4j/">wro4j</a> (<em>Web Resource Optimizer for Java</em>) para hacer este procesado de conversión y optimización desde nuestra aplicación. Puede interesarnos si el <em>framework</em> web no ofrece esta funcionalidad o en una aplicación <em>standalone</em> como ha sido el caso de <a href="https://twitter.com/blogstackinfo">Blog Stack</a> donde la he usado para en vez de usar CSS directamente usar un archivo less y luego transformarlo a CSS. Su uso no es complicado y puede mejorar nuestra aplicación o el desarrollo de la misma notablemente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">//&#10;</span><span class="c1"></span><span class="n">Resource</span> <span class="n">resource</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="s">&#34;script.coffee&#34;</span><span class="o">,</span> <span class="n">ResourceType</span><span class="o">.</span><span class="na">JS</span><span class="o">);</span>&#10;<span class="n">Reader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;path/to/script.coffee&#34;</span><span class="o">);</span>&#10;<span class="n">Writer</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;path/to/script.js&#34;</span><span class="o">);</span>&#10;&#10;<span class="c1">// Transforming a CoffeeScript file into a JavaScript file&#10;</span><span class="c1"></span><span class="k">new</span> <span class="n">CoffeeScriptProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">reader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span>&#10;&#10;<span class="c1">// Using UglifyJs&#10;</span><span class="c1"></span><span class="k">new</span> <span class="n">UglifyJsProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">reader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span>&#10;&#10;<span class="c1">//&#10;</span><span class="c1"></span><span class="n">Resource</span> <span class="n">resource</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="s">&#34;style.css&#34;</span><span class="o">,</span> <span class="n">ResourceType</span><span class="o">.</span><span class="na">CSS</span><span class="o">);</span>&#10;<span class="n">Reader</span> <span class="n">lessReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;path/to/style.less&#34;</span><span class="o">);</span>&#10;<span class="n">Reader</span> <span class="n">sassReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;path/to/style.sass&#34;</span><span class="o">);</span>&#10;<span class="n">Writer</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;path/to/style.css&#34;</span><span class="o">);</span>&#10;&#10;<span class="c1">// Using Less&#10;</span><span class="c1"></span><span class="k">new</span> <span class="n">LessCssProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">lessReader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span>&#10;&#10;<span class="c1">// Using Sass&#10;</span><span class="c1"></span><span class="k">new</span> <span class="n">SassCssProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">sassReader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Wro4j.java</span>
+    </div>
+</div>
+<p>Aparte de los procesadores de este ejemplo wro4j tiene <a href="https://code.google.com/p/wro4j/wiki/AvailableProcessors">disponibles muchos otros</a>. Este procesado es algo costoso en cuanto a tiempo pero el archivo producido podemos cachearlo al inicio de la aplicación o después de compilarlo.</p>
+<p>Si queremos usarlo en una aplicación web Java y el <em>framework</em> que usemos no lo usa internamente o no proporciona algo parecido podemos <a href="http://wro4j.github.io/wro4j/">seguir 3 para emplear wro4j</a>, añadir un filtro, una configuración en XML y una etiqueta <em>link</em> y otra <em>script</em> para incluirlos en las páginas, por supuesto habrá que añadir la dependencia de la librería con <a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">la herramienta de construcción automatizada Gradle</a> u otra.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://github.com/wro4j/wro4j/">wro4j</a></li>
+<li><a href="https://lesscss.org/">less</a></li>
+<li><a href="https://sass-lang.com/">sass</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo de multiproyecto con Gradle" title="Ejemplo de multiproyecto con Gradle" class="" loading="lazy">
+                <h3>Ejemplo de multiproyecto con Gradle</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/09/ejemplo-practico-de-serviceloader-con-serviceprovider-de-java-money/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money" title="Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money" class="" loading="lazy">
+                <h3>Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Aplicación Java extensible con la clase ServiceLoader" title="Aplicación Java extensible con la clase ServiceLoader" class="" loading="lazy">
+                <h3>Aplicación Java extensible con la clase ServiceLoader</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementación de máquina de estados finita (FSM) con Java 8" title="Implementación de máquina de estados finita (FSM) con Java 8" class="" loading="lazy">
+                <h3>Implementación de máquina de estados finita (FSM) con Java 8</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo trabajar con importes, ratios y divisas en Java" title="Cómo trabajar con importes, ratios y divisas en Java" class="" loading="lazy">
+                <h3>Cómo trabajar con importes, ratios y divisas en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/06/hemeroteca-7/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #7" title="Hemeroteca #7" class="" loading="lazy">
+                <h3>Hemeroteca #7</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-98';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2015\/09\/generar-recursos-estaticos-con-wro4j\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

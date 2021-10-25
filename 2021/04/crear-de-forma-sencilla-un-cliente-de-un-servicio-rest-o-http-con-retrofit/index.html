@@ -1,0 +1,608 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="La implementación de un servicio REST o HTTP es solo una parte, el otro lado es crear un cliente de ese u otro servicio que permita invocarlo, proporcionar parámetros y obtener las respuestas. Con la librería Retrofit implementar un cliente de un servicio en Java es una tarea bastante sencilla sencilla que utiliza una simple interfaz a la que se le añaden varias anotaciones que le indican a Retrofit cómo construir una implementación a partir de la interfaz. El código que hace uso de la clase que implementa la interfaz del servicio con Retrofit no es diferente de usar una clase que implementa una interfaz. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/" hreflang="es" title="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/index-amp.html" hreflang="es" title="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="La implementación de un servicio REST o HTTP es solo una parte, el otro lado es crear un cliente de ese u otro servicio que permita invocarlo, proporcionar parámetros y obtener las respuestas. Con la librería Retrofit implementar un cliente de un servicio en Java es una tarea bastante sencilla sencilla que utiliza una simple interfaz a la que se le añaden varias anotaciones que le indican a Retrofit cómo construir una implementación a partir de la interfaz. El código que hace uso de la clase que implementa la interfaz del servicio con Retrofit no es diferente de usar una clase que implementa una interfaz. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit">
+<meta name="twitter:description" content="La implementación de un servicio REST o HTTP es solo una parte, el otro lado es crear un cliente de ese u otro servicio que permita invocarlo, proporcionar parámetros y obtener las respuestas. Con la librería Retrofit implementar un cliente de un servicio en Java es una tarea bastante sencilla sencilla que utiliza una simple interfaz a la que se le añaden varias anotaciones que le indican a Retrofit cómo construir una implementación a partir de la interfaz. El código que hace uso de la clase que implementa la interfaz del servicio con Retrofit no es diferente de usar una clase que implementa una interfaz. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/"
+    },
+    "headline": "Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2021-04-23T21:30:00+02:00",
+    "dateModified": "2021-04-23T21:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1239",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "La implementación de un servicio REST o HTTP es solo una parte, el otro lado es crear un cliente de ese u otro servicio que permita invocarlo, proporcionar parámetros y obtener las respuestas. Con la librería Retrofit implementar un cliente de un servicio en Java es una tarea bastante sencilla sencilla que utiliza una simple interfaz a la que se le añaden varias anotaciones que le indican a Retrofit cómo construir una implementación a partir de la interfaz. El código que hace uso de la clase que implementa la interfaz del servicio con Retrofit no es diferente de usar una clase que implementa una interfaz."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>23/04/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">La implementación de un servicio REST o HTTP es solo una parte, el otro lado es crear un cliente de ese u otro servicio que permita invocarlo, proporcionar parámetros y obtener las respuestas. Con la librería Retrofit implementar un cliente de un servicio en Java es una tarea bastante sencilla sencilla que utiliza una simple interfaz a la que se le añaden varias anotaciones que le indican a Retrofit cómo construir una implementación a partir de la interfaz. El código que hace uso de la clase que implementa la interfaz del servicio con Retrofit no es diferente de usar una clase que implementa una interfaz.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>En el lenguaje de programación Java hay varias librerías que permiten hacer peticiones a un servicio que utilice el protocolo HTTP. Varias de las librerías más conocidas son <a href="https://square.github.io/okhttp/">OkHttp</a>, <a href="https://hc.apache.org/">Apache HttpComponents</a> e incluso <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/">en el JDK en la versión 11 se ha incorporado un cliente HTTP que soporta HTTP/2</a>.</p>
+<p>Estas librerías cumplen su función y ofrecen total flexibilidad en su uso, sin embargo, requieren hacer las peticiones HTTP de forma explícita lo que supone un código repetitivo y tedioso incluyendo hacer las <a href="https://picodotdev.github.io/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">conversiones de objetos a JSON y de JSON a objetos Java</a> en las peticiones y respuestas.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-librería-retrofit-para-crear-un-cliente-de-un-servicio-rest-o-http">La librería Retrofit para crear un cliente de un servicio REST o HTTP</a>
+      <ul>
+        <li><a href="#anotaciones-de-retrofit">Anotaciones de Retrofit</a></li>
+        <li><a href="#aplicar-funcionalidades-transversales-con-interceptores">Aplicar funcionalidades transversales con interceptores</a></li>
+      </ul>
+    </li>
+    <li><a href="#servicio-de-ejemplo-con-retrofit">Servicio de ejemplo con Retrofit</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="la-librería-retrofit-para-crear-un-cliente-de-un-servicio-rest-o-http">La librería Retrofit para crear un cliente de un servicio REST o HTTP</h3>
+<p><a href="https://square.github.io/retrofit/">Retrofit</a> es una librería que simplifica en gran medida el construir clientes HTTP de una API REST o realizar un cliente de un servicio REST. Con Retrofit basta con crear una interfaz Java que represente el servicio y decorarla con las anotaciones que proporciona Retrofit. También es posible utilizar Retrofit para <a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">servicios implementados con GraphQL</a> que aunque no están basados en REST si utilizan el protocolo HTTP.</p>
+<p>Retrofit utiliza como librería para realizar las peticiones OkHttp y es compatible con varias librerías para realizar las conversiones de datos de JSON a objetos y de objetos a JSON, entre ellas <a href="https://github.com/FasterXML/jackson">Jackson</a>, <a href="https://github.com/google/gson">Gson</a> y JSON-B. También soporta realizar las peticiones de forma síncrona o asíncrona.</p>
+<p>Esta es una interfaz de Java que representa un sencillo servicio REST de una petición <em>GET</em>. Las anotaciones instruyen a Retrofit como a partir de esta interfaz crear el cliente del servicio REST, al proporcionar esta interfaz Retrofit devuelve una instancia de la interfaz que al invocar a los métodos internamente realiza las peticiones HTTP.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaretrofit</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">retrofit2.Call</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">retrofit2.http.GET</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">retrofit2.http.Header</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">retrofit2.http.Path</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">retrofit2.http.Query</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Service</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GET</span><span class="o">(</span><span class="s">&#34;/message/{name}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Call</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">message</span><span class="o">(</span><span class="nd">@Header</span><span class="o">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">acceptLanguage</span><span class="o">,</span> <span class="nd">@Path</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="nd">@Query</span><span class="o">(</span><span class="s">&#34;random&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">random</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Service.java</span>
+    </div>
+</div>
+<p>Al proporcionar a Retrofit la interfaz este crea una instancia que implementa la interfaz pero que internamente implementa el cliente HTTP del servicio. Aparte de la interfaz para obtener la instancia del servicio se ha de proporcionar la URL base donde se ubica el servicio asi como otros objetos relacionados como interceptores.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">MeterRegistry</span> <span class="n">registry</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Service</span> <span class="nf">buildService</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OkHttpClient</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">addNetworkInterceptor</span><span class="o">(</span><span class="n">buildLoggingInterceptor</span><span class="o">())</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">eventListener</span><span class="o">(</span><span class="n">OkHttpMetricsEventListener</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="n">registry</span><span class="o">,</span> <span class="s">&#34;okhttp.requests&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">())</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">build</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Retrofit</span> <span class="n">retrofit</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Retrofit</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">client</span><span class="o">(</span><span class="n">client</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">addConverterFactory</span><span class="o">(</span><span class="n">ScalarsConverterFactory</span><span class="o">.</span><span class="na">create</span><span class="o">())</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">baseUrl</span><span class="o">(</span><span class="s">&#34;http://localhost:8080/&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">retrofit</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">Service</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-buildService.java</span>
+    </div>
+</div>
+<h4 id="anotaciones-de-retrofit">Anotaciones de Retrofit</h4>
+<p>Las anotaciones de Retrofit en la interfaz de Java describen el servicio como variables en el <em>path</em> de la URL, parámetros, para realizar conversiones a JSON o el método HTTP a invocar o cabeceras HTTP.</p>
+<ul>
+<li><em>HTTP</em>, <em>GET</em>, <em>POST</em>, <em>PUT</em>, <em>PATCH</em>, <em>DELETE</em>, <em>OPTIONS</em> y <em>HEAD</em>: estas anotaciones indican el método HTTP que se realiza.</li>
+<li><em>Path</em>, <em>Query</em>: la anotación <em>Path</em> sustituye una variable en el <em>path</em> de la URL por el valor del argumento anotado. La anotación <em>Query</em> añade un argumento en la <em>query</em> de la URL.</li>
+<li><em>Headers</em>, <em>Header</em>: la anotación <em>Headers</em> permite especificar una colección de cabeceras HTTP a incluir en la petición. La anotación <em>Header</em> añade una cabecera a partir del valor de un argumento en la firma del método.</li>
+<li><em>Body</em>: la anotación <em>Body</em> transforma el argumento como los datos a incluir como JSON en cuerpo de la petición utilizando la librería que implementa la conversión de objetos a JSON.</li>
+</ul>
+<h4 id="aplicar-funcionalidades-transversales-con-interceptores">Aplicar funcionalidades transversales con interceptores</h4>
+<p>Algunas funcionalidades comunes al crear un cliente de un servicio REST son obtener trazas de las peticiones que se están realizando, realizar autenticación, generar métricas o <a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">trazabilidad con Sleuth</a>. Estas son funcionalidades transversales a todos los métodos de la interfaz del servicio REST que se implementan usando interceptores.</p>
+<p>Un interceptor es una clase que implementa una interfaz de la librería OkHttp que es invocada al realizarse una petición HTTP. OkHttp soporta métricas añadiendo un <em>EventListener</em> al construir la instancia del cliente de OkHttp.</p>
+<p>OkHttp proporciona una implementación de interceptor que emite trazas cuando se realiza una petición útil para observar en el <em>log</em> qué peticiones se están realizando y que códigos de estado se están devolviendo. Esta es una implementación propia de un interceptor para emitir las trazas que se realizan con el cliente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Interceptor</span> <span class="nf">buildLoggingInterceptor</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">chain</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Request</span> <span class="n">request</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="na">request</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">long</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Sending request %s on %s%n%s&#34;</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">url</span><span class="o">(),</span> <span class="n">chain</span><span class="o">.</span><span class="na">connection</span><span class="o">(),</span> <span class="n">request</span><span class="o">.</span><span class="na">headers</span><span class="o">()));</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="na">proceed</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">long</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Received response for %s in %.1fms%n%s&#34;</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">request</span><span class="o">().</span><span class="na">url</span><span class="o">(),</span> <span class="o">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="o">)</span> <span class="o">/</span> <span class="n">1e6d</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">headers</span><span class="o">()));</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">response</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">};</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-interceptor.java</span>
+    </div>
+</div>
+<h3 id="servicio-de-ejemplo-con-retrofit">Servicio de ejemplo con Retrofit</h3>
+<p>Un controlador como el siguiente de un servicio REST definido con <a href="https://projects.spring.io/spring-framework/">Spring Framework</a> sencillo que únicamente devuelve un mensaje en función de los parámetros recibidos a través de una en la petición, una variable en el <em>path</em> de la petición y un parámetro en la <em>query</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaretrofit</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@RestController</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestService</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">MESSAGES</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">static</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MESSAGES</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MESSAGES</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;es-ES;default&#34;</span><span class="o">,</span> <span class="s">&#34;¡Hola mundo!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MESSAGES</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;es-ES;hello&#34;</span><span class="o">,</span> <span class="s">&#34;¡Hola %s!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MESSAGES</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;en-GB;default&#34;</span><span class="o">,</span> <span class="s">&#34;Hello World!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MESSAGES</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;en-GB;hello&#34;</span><span class="o">,</span> <span class="s">&#34;Hello %s&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GetMapping</span><span class="o">(</span><span class="n">path</span> <span class="o">=</span> <span class="o">{</span> <span class="s">&#34;/message/&#34;</span><span class="o">,</span> <span class="s">&#34;/message/{name}&#34;</span> <span class="o">})</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">message</span><span class="o">(</span><span class="nd">@RequestHeader</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;Accept-Language&#34;</span><span class="o">,</span> <span class="n">defaultValue</span> <span class="o">=</span> <span class="s">&#34;en-GB&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">locale</span><span class="o">,</span> <span class="nd">@PathVariable</span><span class="o">(</span><span class="n">required</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="nd">@RequestParam</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;random&#34;</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span> <span class="n">String</span> <span class="n">random</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Random: %s%n&#34;</span><span class="o">,</span> <span class="n">random</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">name</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">name</span><span class="o">.</span><span class="na">isBlank</span><span class="o">())</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%s;default&#34;</span><span class="o">,</span> <span class="n">locale</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">message</span> <span class="o">=</span> <span class="n">MESSAGES</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">MESSAGES</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;en-GB;default&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%s;hello&#34;</span><span class="o">,</span> <span class="n">locale</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">MESSAGES</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">MESSAGES</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;en-GB;default&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">message</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>RestService.java</span>
+    </div>
+</div>
+<p>El cliente del servicio construido por Retrofit se realiza a partir de la definición de la interfaz, el cliente es un objeto que implementa esa interfaz y en código Java no de su uso es simplemente invocar sus métodos y proporcionar los parámetros. La implementación del cliente contiene el código necesario para transformar las invocaciones de los métodos de la interfaz en peticiones al servicio REST.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaretrofit</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Service</span> <span class="n">service</span> <span class="o">=</span> <span class="n">buildService</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="s">&#34;es-ES&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">()).</span><span class="na">execute</span><span class="o">().</span><span class="na">body</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="s">&#34;es-ES&#34;</span><span class="o">,</span> <span class="s">&#34;Java&#34;</span><span class="o">,</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">()).</span><span class="na">execute</span><span class="o">().</span><span class="na">body</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">r3</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="s">&#34;en-GB&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">()).</span><span class="na">execute</span><span class="o">().</span><span class="na">body</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">r4</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="s">&#34;en-GB&#34;</span><span class="o">,</span> <span class="s">&#34;Java&#34;</span><span class="o">,</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">()).</span><span class="na">execute</span><span class="o">().</span><span class="na">body</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Result: %s%n&#34;</span><span class="o">,</span> <span class="n">r1</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Result: %s%n&#34;</span><span class="o">,</span> <span class="n">r2</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Result: %s%n&#34;</span><span class="o">,</span> <span class="n">r3</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Result: %s%n&#34;</span><span class="o">,</span> <span class="n">r4</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<p>Esta es la salida del programa en la consola donde se ven las trazas del interceptor de OkHttp con los datos de la petición y las respuesta del servicio junto con el mensaje de respuesta del servicio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Sending request http://localhost:8080/message/?random=520983c7-79d9-4956-aceb-b0dad5c8902c on Connection{localhost:8080, proxy=DIRECT hostAddress=localhost/127.0.0.1:8080 cipherSuite=none protocol=http/1.1}&#10;Accept-Language: es-ES&#10;Host: localhost:8080&#10;Connection: Keep-Alive&#10;Accept-Encoding: gzip&#10;User-Agent: okhttp/3.14.9&#10;&#10;Random: 520983c7-79d9-4956-aceb-b0dad5c8902c&#10;Received response for http://localhost:8080/message/?random=520983c7-79d9-4956-aceb-b0dad5c8902c in 94,6ms&#10;Content-Type: text/plain;charset=UTF-8&#10;Content-Length: 13&#10;Date: Fri, 23 Apr 2021 17:46:41 GMT&#10;Keep-Alive: timeout=60&#10;Connection: keep-alive&#10;&#10;Sending request http://localhost:8080/message/Java?random=d4cca45d-4a45-40ca-9872-fc2c344f1572 on Connection{localhost:8080, proxy=DIRECT hostAddress=localhost/127.0.0.1:8080 cipherSuite=none protocol=http/1.1}&#10;Accept-Language: es-ES&#10;Host: localhost:8080&#10;Connection: Keep-Alive&#10;Accept-Encoding: gzip&#10;User-Agent: okhttp/3.14.9&#10;&#10;Random: d4cca45d-4a45-40ca-9872-fc2c344f1572&#10;Received response for http://localhost:8080/message/Java?random=d4cca45d-4a45-40ca-9872-fc2c344f1572 in 3,7ms&#10;Content-Type: text/plain;charset=UTF-8&#10;Content-Length: 12&#10;Date: Fri, 23 Apr 2021 17:46:41 GMT&#10;Keep-Alive: timeout=60&#10;Connection: keep-alive&#10;&#10;Sending request http://localhost:8080/message/?random=e802c2e7-9f5c-4908-8fe6-22b3c8069192 on Connection{localhost:8080, proxy=DIRECT hostAddress=localhost/127.0.0.1:8080 cipherSuite=none protocol=http/1.1}&#10;Accept-Language: en-GB&#10;Host: localhost:8080&#10;Connection: Keep-Alive&#10;Accept-Encoding: gzip&#10;User-Agent: okhttp/3.14.9&#10;&#10;Random: e802c2e7-9f5c-4908-8fe6-22b3c8069192&#10;Received response for http://localhost:8080/message/?random=e802c2e7-9f5c-4908-8fe6-22b3c8069192 in 2,2ms&#10;Content-Type: text/plain;charset=UTF-8&#10;Content-Length: 12&#10;Date: Fri, 23 Apr 2021 17:46:41 GMT&#10;Keep-Alive: timeout=60&#10;Connection: keep-alive&#10;&#10;Sending request http://localhost:8080/message/Java?random=16fc8a5f-b9ab-4b26-8049-81a4e7901820 on Connection{localhost:8080, proxy=DIRECT hostAddress=localhost/127.0.0.1:8080 cipherSuite=none protocol=http/1.1}&#10;Accept-Language: en-GB&#10;Host: localhost:8080&#10;Connection: Keep-Alive&#10;Accept-Encoding: gzip&#10;User-Agent: okhttp/3.14.9&#10;&#10;Random: 16fc8a5f-b9ab-4b26-8049-81a4e7901820&#10;Received response for http://localhost:8080/message/Java?random=16fc8a5f-b9ab-4b26-8049-81a4e7901820 in 2,7ms&#10;Content-Type: text/plain;charset=UTF-8&#10;Content-Length: 10&#10;Date: Fri, 23 Apr 2021 17:46:41 GMT&#10;Keep-Alive: timeout=60&#10;Connection: keep-alive&#10;&#10;Result: ¡Hola mundo!&#10;Result: ¡Hola Java!&#10;Result: Hello World!&#10;Result: Hello Java!</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<p>En el archivo de construcción hay que incluir la dependencia de Retrofit.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-dependencies:2.4.5&#39;</span><span class="o">))</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.springframework.boot:spring-boot&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.springframework.boot:spring-boot-starter-web&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.springframework.boot:spring-boot-starter-actuator&#39;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.squareup.retrofit2:retrofit:2.9.0&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.squareup.retrofit2:converter-scalars:2.9.0&#39;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;io.micrometer:micrometer-core:1.6.6&#39;</span>&#10;<span class="o">}</span>&#10;&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.javaretrofit.Main&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>El código que utiliza el cliente realiza peticiones HTTP de modo que al hacer pruebas unitarias es necesario utilizar un <a href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">servidor <em>mock</em> para devolver las respuestas simuladas del servicio real a las peticiones HTTP</a> sin necesidad de que este esté disponible, esto elimina dependencias del entorno de pruebas haciéndolo más sencillo, también el servidor <em>mock</em> permite el desarrollo sin necesidad del servicio real.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRetrofit">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">
+                <img src="/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_875x0_resize_q90_box.jpg" width="326" height="125" alt="Herramientas de reconocimiento de texto en imágenes con OCR" title="Herramientas de reconocimiento de texto en imágenes con OCR" class="" loading="lazy">
+                <h3>Herramientas de reconocimiento de texto en imágenes con OCR</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/las-clases-y-librerias-basicas-de-java-para-bases-de-datos-relacionales/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las clases y librerías básicas de Java para bases de datos relacionales" title="Las clases y librerías básicas de Java para bases de datos relacionales" class="" loading="lazy">
+                <h3>Las clases y librerías básicas de Java para bases de datos relacionales</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">
+                <img src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu24edf9756fc7ba259961f103685e76b6_38126_875x0_resize_box_3.png" width="326" height="125" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="" loading="lazy">
+                <h3>Programas basados en consola con Java usando Lanterna</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/novedades-de-java-16/">
+                <img src="/blog-bitix/2021/03/novedades-de-java-16/images/java-16_hued80e256cc9250e83d3c3f558925622f_679086_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 16" title="Novedades de Java 16" class="" loading="lazy">
+                <h3>Novedades de Java 16</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">
+                <img src="/blog-bitix/assets/images/logotypes/nexus.svg" width="326" height="125" alt="Repositorio de artefactos privado con Nexus" title="Repositorio de artefactos privado con Nexus" class="" loading="lazy">
+                <h3>Repositorio de artefactos privado con Nexus</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/02/las-anotaciones-de-java-y-ejemplo-de-procesador-de-anotaciones-en-tiempo-de-compilacion/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación" title="Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación" class="" loading="lazy">
+                <h3>Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-569';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/04\/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

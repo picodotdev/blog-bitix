@@ -1,0 +1,3 @@
+$ ./gradlew run
+...
+Hola mundo!

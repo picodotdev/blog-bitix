@@ -1,0 +1,592 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Con este artículo continúo haciendo de vez en cuando una pequeña donación a algunos programas que utilizo habitualmente y proyectos que me parecen importántes e útiles con la intención de apoyar su desarrollo aunque sean cantidades pequeñas. Este es ya el octavo artículo de donación que escribo y poco a poco las cantidades que he donado ya empiezan a ser respetables. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Artículo #8 de Yo apoyo al software libre</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/" hreflang="es" title="Artículo #8 de Yo apoyo al software libre">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/index-amp.html" hreflang="es" title="Artículo #8 de Yo apoyo al software libre">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Artículo #8 de Yo apoyo al software libre">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Con este artículo continúo haciendo de vez en cuando una pequeña donación a algunos programas que utilizo habitualmente y proyectos que me parecen importántes e útiles con la intención de apoyar su desarrollo aunque sean cantidades pequeñas. Este es ya el octavo artículo de donación que escribo y poco a poco las cantidades que he donado ya empiezan a ser respetables. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Artículo #8 de Yo apoyo al software libre">
+<meta name="twitter:description" content="Con este artículo continúo haciendo de vez en cuando una pequeña donación a algunos programas que utilizo habitualmente y proyectos que me parecen importántes e útiles con la intención de apoyar su desarrollo aunque sean cantidades pequeñas. Este es ya el octavo artículo de donación que escribo y poco a poco las cantidades que he donado ya empiezan a ser respetables. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/"
+    },
+    "headline": "Artículo #8 de Yo apoyo al software libre",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        
+      },
+    "datePublished": "2020-12-24T09:00:00+01:00",
+    "dateModified": "2020-12-24T09:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "851",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Con este artículo continúo haciendo de vez en cuando una pequeña donación a algunos programas que utilizo habitualmente y proyectos que me parecen importántes e útiles con la intención de apoyar su desarrollo aunque sean cantidades pequeñas. Este es ya el octavo artículo de donación que escribo y poco a poco las cantidades que he donado ya empiezan a ser respetables."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Artículo #8 de Yo apoyo al software libre</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>24/12/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Con este artículo continúo haciendo de vez en cuando una pequeña donación a algunos programas que utilizo habitualmente y proyectos que me parecen importántes e útiles con la intención de apoyar su desarrollo aunque sean cantidades pequeñas. Este es ya el octavo artículo de donación que escribo y poco a poco las cantidades que he donado ya empiezan a ser respetables.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Los ingresos que me genera el blog por la publicidad de <a href="https://www.google.com/adsense/">AdSense</a> y enlaces de afiliado de <a href="https://amzn.to/2flFhHA" rel="sponsored">Amazon</a> me permiten dedicar una pequeña parte de los mismos a estas donaciones. Mi blog hasta el momento no tiene ningún gasto ni por hospedaje ya que uso <a href="https://pages.github.com/">GitHub Pages</a> ni siquiera por tener un dominio propio ya que hasta el momento tampoco tengo. Si necesitase, una parte de los ingresos de publicidad serían para el <em>hosting</em> a unos 5 €/mes mínimo más el coste anual de unos 10 €/año del dominio.</p>
+<p>Aunque este año 2020 no ha sido normal y lo he notado significativamente en los ingresos de AdSense respecto a los años anteriores son suficientes para contribuir aunque sea un poco con estas donaciones.</p>
+<h3 id="phoronix">Phoronix</h3>
+<p><a href="https://www.phoronix.com/">Phoronix</a> es un sitio web dedicado a noticias relacionadas con el software y hardware libre o de código abierto. Un medio que da noticias sobre los progresos desde en el <em>kernel</em> de Linux, avances en los controladores gráficos pero también de las distribuciones BSD y otra multitud de programas junto con detallados análisis de rendimiento.</p>
+<p>Es uno de los medios que utilizan como fuente otros medios como varios de habla hispana. En Phoronix están suscritos a las lista de distribución y blogs de desarrolladores de muchos de los proyectos de software libre. Por ello suelen ser los primeros en dar la noticia de la que otros medios se hacen eco. Phoronix no es un medio como otros que tiene una decena de editores par publicar noticias sino que a tiempo completo está compuesto de una o dos personas, por la cantidad de noticias que publican y calidad de las mismas el trabajo de información que hacen es notable.</p>
+<p>Un sitio web recomendable al que suscribirse para estar informado sobre los avances en el mundo del software libre. Aunque no es un programa sigo este medio desde hace tiempo ya que la cantidad de noticias y calidad de las mismas es muy alto, es merecedor también de gratificar su dedicación, constancia y esfuerzo por difundir el software libre.</p>
+<div class="media">
+<figure>
+<p>
+<img src="/blog-bitix/assets/images/logotypes/phoronix.png" width="300" height="200" alt="Phoronix" title="Phoronix" class="" loading="lazy"></p>
+</figure>
+</div>
+<h3 id="mozilla-firefox">Mozilla, Firefox</h3>
+<p>En esta ocasión repito en la donación de hace unos años a la fundación <a href="https://www.mozilla.org/">Mozilla</a> que desarrolla el navegador web <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a>. Es mi navegador web preferido y que sigo usando para uso personal. Un navegador que le da importancia a la privacidad y seguridad para que sitios web malintencionados no puedan rastrear, recolectar ni abusar de los datos de los usuarios sin su consentimiento o desconocimiento al navegar por internet.</p>
+<p>Es la alternativa más usada al navegador <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> y <a href="https://www.chromium.org/Home">Chromium</a> desarrollado por <a href="https://www.google.es/">Google</a> con sus intereses comerciales al que se ha unido <a href="https://www.microsoft.com/">Microsoft</a> con su nuevo navegador <a href="https://www.microsoft.com/es-es/windows/microsoft-edge/">Edge</a> utilizando el mismo <a href="https://webkit.org/">WebKit</a> que utiliza Chrome desde que abandonó su propio motor de navegador web.</p>
+<div class="media">
+<figure>
+<p>
+<img src="/blog-bitix/assets/images/logotypes/mozilla.svg" width="300" height="200" alt="Mozilla" title="Mozilla" class="" loading="lazy"></p>
+</figure>
+</div>
+<h3 id="gnupg">GnuPG</h3>
+<p><a href="https://www.gnupg.org/index.html">GnuPG</a> permite mantener comunicaciones seguras y proteger la privacidad de los usuarios, no solo permite cifrar y descifrar correos electrónicos sino también cualquier otro archivo. El correo electrónico <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> de <a href="https://www.google.es/">Google</a> lee y analiza el contenido de los correos electrónicos que reciben y envían sus usuarios e incluye algunos enlaces de publicidad. Algunas alternativas a Gmail centradas en la seguridad y privacidad son <a href="https://protonmail.com/es/">ProtonMail</a> y <a href="https://tutanota.com/es/">Tutanota</a>, por otro lado el cliente de correo electrónico <a href="https://www.thunderbird.net/es-ES/">Thunderbird</a> ha añadido soporte para OpenPGP sin necesidad de complementos adicionales, se puede usar como alternativa a la interfaz web de Gmail que no incluye esta funcionalidad.</p>
+<p>Hace tiempo que no hago uso habitual de GnuPG, pero es uno de esos proyectos que me parecen importantes, y quizá uno de esos proyectos en los que algunas organizaciones con un volumen de facturación grande basan su negocio cuando el proyecto es mantenido por un pequeño número de personas que lo hacen de forma casi voluntaria sin mucha financiación por parte de esas empresas, esto mismo seguro que ocurre con otros muchos proyectos de software libre o código abierto.</p>
+<div class="media">
+<figure>
+<p>
+<img src="/blog-bitix/assets/images/logotypes/gnupg.svg" width="300" height="200" alt="GnuPG" title="GnuPG" class="" loading="lazy"></p>
+</figure>
+</div>
+<h3 id="comprobantes-de-las-donaciones">Comprobantes de las donaciones</h3>
+<p>Me gusta pensar que realmente los que hacen posible estas donaciones aun con su desconocimiento son las personas que acceden a este blog en busca de los artículos que escribo, los que lo siguen de forma habitual y la mayoría que llegan de rebote a través del buscador de Google. No acepto <a href="https://picodotdev.github.io/blog-bitix/pages/donate/">donaciones</a>, al menos no de forma directa pero si ofrezco como alternativa que cuando alguien haga <a href="https://amzn.to/2flFhHA" rel="sponsored">una compra en Amazon</a> utilice uno de los enlaces de afiliado de este blog, el precio es el mismo al hacer la compra pero yo recibo una pequeña comisión que cada cierto tiempo además de AdSense me permite hacer estas donaciones a proyectos
+como estos además ser una forma de motivarme para continuar escribiendo en el blog.</p>
+<p><a href="https://www.gnu.org/">Yo apoyo al software libre</a></p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/images/donacion-phoronix_hu679c1e1c7eabf08bb3f30dc16c668eba_114842_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación Phoronix"><img src="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/images/donacion-phoronix_hu679c1e1c7eabf08bb3f30dc16c668eba_114842_650x450_fit_box_3.png" width="267" height="450" alt="Donación Phoronix" title="Donación Phoronix" class="" loading="lazy"></a></p>
+<figcaption>Donación Phoronix</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/images/donacion-mozilla_hu4c2ad4e8a671dacfd138653b272eb864_141454_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación Firefox"><img src="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/images/donacion-mozilla_hu4c2ad4e8a671dacfd138653b272eb864_141454_650x450_fit_box_3.png" width="257" height="450" alt="Donación Firefox" title="Donación Firefox" class="" loading="lazy"></a></p>
+<figcaption>Donación Mozilla</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/images/donacion-gnupg_hufd37e3a5f075c79c74f511f77c7e51d6_146087_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación Firefox"><img src="/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/images/donacion-gnupg_hufd37e3a5f075c79c74f511f77c7e51d6_146087_650x450_fit_box_3.png" width="252" height="450" alt="Donación Firefox" title="Donación Firefox" class="" loading="lazy"></a></p>
+<figcaption>Donación GnuPG</figcaption>
+</figure>
+</div>
+<table class="table">
+    <thead>
+        <tr class="thead-dark">
+            <th colspan="4">Donaciones que he realizado hasta la última fecha</th>
+        </tr>
+        <tr class="thead-light">
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Proyecto</th>
+            <th>Donación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2015/12</td>
+            <td>Free Software Foundation Europe (FSFE)</td>
+            <td>40€</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2016/09</td>
+            <td>Wikipedia, Mozilla/Firefox</td>
+            <td>10€, 10€</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2017/01</td>
+            <td>elementaryOS, Libre Office, Arch Linux ARM</td>
+            <td>10€, 10€, 10€</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>2017/05</td>
+            <td>GNOME, VideoLAN (VLC), Arch Linux</td>
+            <td>15,31€, 10€, 0,31€</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>2018/01</td>
+            <td>LineageOS, Replicant</td>
+            <td>15€, 15€</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>2018/12</td>
+            <td>Wine</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2019/12</td>
+            <td>Calibre</td>
+            <td>$10</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>2020/12</td>
+            <td>Phoronix, Mozilla/Firefox, GnuPG</td>
+            <td>$12, 10€, 10€</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>165€, $42</td>
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>donacion</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">Yo apoyo al software libre, tú también</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/09/articulo-2-de-yo-apoyo-al-software-libre/">Artículo #2 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/01/articulo-3-de-yo-apoyo-al-software-libre/">Artículo #3 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/05/articulo-4-de-yo-apoyo-al-software-libre/">Artículo #4 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/">Artículo #5 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/articulo-6-de-yo-apoyo-al-software-libre/">Artículo #6 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/12/articulo-7-de-yo-apoyo-al-software-libre/">Artículo #7 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/">Artículo #8 de Yo apoyo al software libre</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-541';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/12\/articulo-8-de-yo-apoyo-al-software-libre\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

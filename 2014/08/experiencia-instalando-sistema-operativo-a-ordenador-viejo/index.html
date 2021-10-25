@@ -1,0 +1,542 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:
+ CPU: Intel Pentium M (i686) Memoria: 1 GiB Pantalla: 15.4&quot;, 1280 x 800 Tarjeta gráfica: ATI Radeon 9200 (64 MiB) WiFi: 802. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Experiencia instalando sistema operativo a ordenador viejo</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/" hreflang="es" title="Experiencia instalando sistema operativo a ordenador viejo">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/index-amp.html" hreflang="es" title="Experiencia instalando sistema operativo a ordenador viejo">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Experiencia instalando sistema operativo a ordenador viejo">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:
+ CPU: Intel Pentium M (i686) Memoria: 1 GiB Pantalla: 15.4&quot;, 1280 x 800 Tarjeta gráfica: ATI Radeon 9200 (64 MiB) WiFi: 802. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Experiencia instalando sistema operativo a ordenador viejo">
+<meta name="twitter:description" content="Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:
+ CPU: Intel Pentium M (i686) Memoria: 1 GiB Pantalla: 15.4&quot;, 1280 x 800 Tarjeta gráfica: ATI Radeon 9200 (64 MiB) WiFi: 802. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/"
+    },
+    "headline": "Experiencia instalando sistema operativo a ordenador viejo",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png"
+        
+      },
+    "datePublished": "2014-08-15T09:18:07+02:00",
+    "dateModified": "2015-04-10T20:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "800",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:
+ CPU: Intel Pentium M (i686) Memoria: 1 GiB Pantalla: 15.4&quot;, 1280 x 800 Tarjeta gráfica: ATI Radeon 9200 (64 MiB) WiFi: 802."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Experiencia instalando sistema operativo a ordenador viejo</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>15/08/2014</time>, actualizado el <time>10/04/2015</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/opinion/">opinion</a>
+        
+          <a href="/blog-bitix/tags/software/">software</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false"></p>
+</div>
+<p>Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:</p>
+<ul>
+<li>CPU: Intel Pentium M (i686)</li>
+<li>Memoria: 1 GiB</li>
+<li>Pantalla: 15.4&quot;, 1280 x 800</li>
+<li>Tarjeta gráfica: ATI Radeon 9200 (64 MiB)</li>
+<li>WiFi: 802.11b</li>
+<li><a href="http://www.miniputer.com/Acer/Aspire_2000.html">Características Acer Aspire 2000 completas</a></li>
+</ul>
+<p>Como puede verse por las características no es un ordenador muy potente para los días de hoy pero que puede ser suficiente para navegar por internet, ver vídeos, escuchar música y realizar tareas ofimáticas.</p>
+<p>Teniendo claro las características del ordenador y el uso que se le iba a dar me tocaba decidir que sistema operativo le iba a instalar. La primera opción que consideré por ser la opción que usaba el portátil de fábrica fue instalarle Windows XP (por supuesto usando una copia sin la correspondiente licencia) pero una vez instalado comenzaron los problemas para que todo funcionase correctamente, la gráfica no era detectada y la pantalla se mostraba en una resolución menor que la que ofrecía la pantalla, la conexión WiFi no funcionaba por no tener los controladores necesarios y tampoco el sonido por el mismo motivo. A pesar de haber buscado no conseguí encontrar los controladores adecuados tanto para la tarjeta gráfica como para la WiFi con lo que el sistema resultante iba a quedar menos aprovechado de lo que pudiera.</p>
+<p>Viendo que el resultado con Windows no era nada satisfactorio y que estoy convencido del uso del software libre empecé a buscar alguna distribución ligera que pudiese usar. Algunas de las que probé fueron <a href="https://www.gnewsense.org/">gNewSense</a>, luego <a href="https://trisquel.info/es">trisquel</a>, también <a href="https://www.linuxmint.com/">Mint</a> pero gNewSense usaba versiones de software algo antiguas y trisquel y Mint Xfce requería del procesador que tuviese PAE (o no lo detectaba). Al final pensé algo que antes de hacerlo me pareció descabellado, instalar <a href="https://www.archlinux.org/">Arch Linux</a>. Al ser Arch Linux una distribución rolling release y con el software siempre actualizado a las últimas versiones no sabía si iba a funcionar correctamente en un equipo antiguo. Pero sorprendentemente el CD de instalación de Arch no se me quejó por el PAE y aunque la instalación me fue lenta al tener que descargar los paquetes de internet y se descargaban a baja velocidad por algún motivo finalmente completé la instalación sin ningún problema. Después de la instalación base le instalé <a href="https://xfce.org/">Xfce</a> y como gestor de entorno de escritorio e inicio de sesión le puse <a href="https://en.wikipedia.org/wiki/SLiM">SLiM</a>. Una vez con el entorno de escritorio Xfce le instalé los programas: el navegador firefox, geary como gestor de correo, VLC para reproducir vídeos y música. Todo sin ningún problema incluso la WiFi B funcionaba, me bastó seguir lo <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration#Intel">indicado en la wiki</a> para el caso de una WiFi intel.</p>
+<p>El equipo es viejo pero con Arch Linux tiene las versiones de los últimos programas en el momento que se los instalé, al contrario de windows no tuve que buscar los controladores y no malgasté tiempo en ello aparte de no usar un copia de windows sin licencia. El equipo era para un usuario con pocos conocimientos de informática que por supuesto no ha visto ni usado linux en ningún momento, hasta el momento no he recibido ninguna queja en cuanto al uso o que le haya dado problemas. Asi que al contrario de lo que pensé al principio Arch Linux fue una distribución adecuada para lo que quería, era lo que más conocía y más documentación tenía como en el caso de instalar la WiFi. Instalar la WiFI quizá en <a href="https://www.debian.org/">Debian</a> u otra distribución también lo hubiese conseguido pero la información para estas distribuciones probablemente la hubiese obtenido en un foro y no de una forma más oficial como la wiki de Arch Linux. Más que el rolling release lo que más me gusta de Arch es su <a href="https://wiki.archlinux.org/">wiki</a> por estas cosas con las que uno puede obtener información un poco más oficial y con un poco más de seguridad de que va a funcionar que en la respuesta de un foro que además cuesta tiempo encontrarla.</p>
+<p>También puedes leer los pasos que he seguido <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">desde Windows a Arch Linux</a> con algunos motivos y características de Arch explicados más detalladamente y <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a> donde comento ya con más conocimiento porque después de 4 años sigo usando Arch Linux y no he cambiado de distribución GNU/Linux. En el siguiente <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">anexo a la guía de instalación</a> puedes encontrar los pasos que sigo para instalar Arch Linux.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">Anexo a la guía de instalación de Arch Linux</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="De Arch Linux a Arch Linux" title="De Arch Linux a Arch Linux" class="" loading="lazy">
+                <h3>De Arch Linux a Arch Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/06/hemeroteca-5/">
+                <img src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Hemeroteca #5" title="Hemeroteca #5" class="" loading="lazy">
+                <h3>Hemeroteca #5</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/05/presentacion-blog-stack/">
+                <img src="/blog-bitix/assets/images/logotypes/blogstack.png" width="326" height="125" alt="Presentación de Blog Stack" title="Presentación de Blog Stack" class="" loading="lazy">
+                <h3>Presentación de Blog Stack</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">
+                <img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Anexo a la guía de instalación y del principiante de Arch Linux" title="Anexo a la guía de instalación y del principiante de Arch Linux" class="" loading="lazy">
+                <h3>Anexo a la guía de instalación y del principiante de Arch Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">
+                <img src="/blog-bitix/assets/images/logotypes/blogstack.png" width="326" height="125" alt="Arquitectura y hospedaje de Blog Stack" title="Arquitectura y hospedaje de Blog Stack" class="" loading="lazy">
+                <h3>Arquitectura y hospedaje de Blog Stack</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/">
+                <img src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Guía para la creación de un blog con Octopress" title="Guía para la creación de un blog con Octopress" class="" loading="lazy">
+                <h3>Guía para la creación de un blog con Octopress</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-37';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2014\/08\/experiencia-instalando-sistema-operativo-a-ordenador-viejo\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

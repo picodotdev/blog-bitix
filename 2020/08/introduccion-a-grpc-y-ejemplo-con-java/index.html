@@ -1,0 +1,651 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Introducción a gRPC y ejemplo con Java</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/" hreflang="es" title="Introducción a gRPC y ejemplo con Java">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/index-amp.html" hreflang="es" title="Introducción a gRPC y ejemplo con Java">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Introducción a gRPC y ejemplo con Java">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grpc.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grpc.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Introducción a gRPC y ejemplo con Java">
+<meta name="twitter:description" content="Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/"
+    },
+    "headline": "Introducción a gRPC y ejemplo con Java",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grpc.png"
+        
+      },
+    "datePublished": "2020-08-30T11:30:00+02:00",
+    "dateModified": "2020-08-30T11:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2065",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Introducción a gRPC y ejemplo con Java</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>30/08/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/grpc.png" width="300" height="128" alt="gRPC" title="gRPC" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Desarrollar una API con interfaz REST o <a href="https://graphql.org/">GraphQL</a> es la opción empleada mayoritariamente en los casos que hay que proporcionar datos y acceso a operaciones de forma programática a otra aplicación. Las API REST se basan en los elementos sobre los cuales está construida la web como el protocolo HTTP y su semántica junto con las operaciones de creación, modificación, lectura y eliminación organizando las operaciones alrededor de los recursos que se exponen mediante URLs utilizando JSON como formato de intercambio de datos basado en texto. GraphQL tiene importantes diferencias con REST al utilizar un esquema para definir el formato de los datos y la posibilidad de realizar varias consultas en la misma petición pero igualmente se basa en el protocolo HTTP y JSON.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Ejemplo de API REST en Java con JAX-RS y Spring Boot</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a></li>
+</ul>
+<p>Hace un tiempo ya comentaba una opción alternativa a las API REST y son las API RPC usando llamadas a métodos remotos. Las API REST son una buena opción aunque en casos que se necesite alto rendimiento imponen cierta sobrecarga en la comunicación al tener que hacer múltiples peticiones para obtener todos los datos necesarios de los diferentes <em>endpoints</em> y por utilizar el formato de intercambio de datos JSON que impone cierto procesamiento tanto para procesarlo como para generarlo.</p>
+<p>Uno de los problemas que presentaban las llamadas a métodos remotos es que solían estar encadenados a un lenguaje de programación en concreto como RMI con Java, pero hay algunas opciones de RPC más modernas que eliminan esta restricción y ofrecen mayor rendimiento y tipado seguro. Hace un tiempo ya comentaba sobre <a href="https://thrift.apache.org/">Apache Thrift</a> otra de ellas similar es gRPC auspiciada originalmente por Google.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/">Introducción y ejemplo de API RPC con Apache Thrift</a></li>
+</ul>
+<h3 id="qué-es-grpc">Qué es gRPC</h3>
+<p><a href="https://grpc.io/">gRPC</a> es una implementación de llamada a procedimiento remoto o <em>Remote Procedure Call</em> (RPC) de alto rendimiento. Las invocaciones RPC permiten hacer llamadas a funciones remotas como si se tratase de llamadas a funciones locales ocultando en gran parte la dificultad en la comunicación por la red subyacente. Los servicios remotos se define en archivos descriptores o <em>Interface Description Language</em> (IDL) en los que se incluyen las operaciones que ofrece el servicio así como las propiedades de los argumentos que recibe y devuelve como respuesta esta descripción basándose en <a href="https://developers.google.com/protocol-buffers">Protocol Buffers</a>. Los <a href="https://developers.google.com/protocol-buffers/docs/proto3#scalar">tipos soportados</a> para las propiedades incluyen varios numéricos, de coma flotante, boleano, <em>string</em> y byte.</p>
+<p>gRPC al contrario que RMI que era específico de Java es agnóstico del lenguaje de programación en el que se implemente el servicio, a partir del archivo descriptor del servicio se genera unos archivos que sirven como base tanto para realizar la implementación en el lenguaje para la parte servidor como de la parte cliente del servicio pudiendo el servidor y cliente estar implementado en diferentes lenguajes. Los lenguajes soportados por gRPC están los más populares como Java, C#, C++, Dart, Go, Kotlin, Node/JavaScript, PHP, Python o Ruby.</p>
+<h4 id="características-de-grpc">Características de gRPC</h4>
+<ul>
+<li>Alto rendimiento con seguridad: gRPC tiene alto rendimiento al usar <em>protobuf</em> y HTTP/2 que son multiplexados, requieren una única conexión TCP, utilizan un formato de datos binario y posibilitan la comunicación bidireccional. Los mensajes al tener un esquema son más seguros de procesar.</li>
+<li>Comunicación bidireccional: esto permite a la parte cliente y servidor enviar datos simultáneamente en ambas direcciones.</li>
+<li>Balanceo de carga: incorpora balanceo de carga para seleccionar la instancia del servicio servidor a la que enviar el tráfico.</li>
+<li>Compresión selectiva: si se envían datos en formato texto e imagen se puede deshabilitar la compresión para las imágenes.</li>
+<li>Generación de código servidor y cliente: a partir del esquema se generan artefactos en cualquiera de los lenguajes soportado con los cuales crear la implementación del servidor y cliente rápidamente.</li>
+</ul>
+<h4 id="las-diferencias-entre-grpc-y-rest">Las diferencias entre gRPC y REST</h4>
+<ul>
+<li>Formato de intercambio de dato (Protobuf contra JSON): esa es una de las diferencias principales entre REST y gRPC, los mensajes REST contiene datos en formato JSON habitualmente mientras gRPC hace uso de Protobuf. Protobuf es una mejor forma de codificar datos estructurados, tiene mejor compresión y es más eficiente que JSON.</li>
+<li>Tipado fuerte contra serialización: en REST que normalmente se usa JSON no hay ningún mecanismo pra coordinar el formato de los datos intercambiados en las peticiones y respuestas que hay que tener en cuenta especialmente cuando se hacen cambios en la API para mantener la compatibilidad con los clientes o requiere actualizar los clientes de forma coordinada a la nueva versión lo que suele ser muy difícil. Por otro lado el formato JSON ha de ser convertir tanto en el servidor como en el cliente a estructuras de datos del lenguaje en el que estén implementados, la serialización es otro paso que añade la posibilidad de errores así como sobrecarga en el rendimiento.</li>
+<li>Mensajes contra recursos y verbos: REST está estrechamente basado en la semántica del protocolo HTTP, en lógica de negocio compleja es difícil trasladar la lógica de negocio y sus operaciones a los recursos y verbos que emplea REST. El modelo de gRPC traslada directamente los conceptos a los lenguajes de programación como interfaces, métodos y estructuras de datos.</li>
+<li><em>Streaming</em> contra Petición-Respuesta: REST solo soporta el único modelo petición-respuesta disponible en HTTP/1. gRPC hace uso de las capacidades de HTTP/2 y permite enviar y recibir información de forma constante tanto en el servidor como en el cliente.</li>
+<li>gRPC se basa en HTTP/2: HTTP/2 es un protocolo binario más eficiente y seguro de procesar, REST puede usarse con HTTP/1 pero si se usa junto a HTTP/2 obtiene algunos de sus beneficios.</li>
+</ul>
+<h4 id="desventajas-de-grpc">Desventajas de gRPC</h4>
+<ul>
+<li>No hay soporte para los navegadores web de modo que no puede ser usado en ellos como servicios expuestos al exterior. Para no imponer su uso su aplicación son para servicios que sean consumidos de forma interna y ofrecer una API basada en REST o GraphQL de forma externa.</li>
+<li>No hay <em>endpoints</em> basados en URLs de modo que las peticiones y respuestas no pueden ser probadas con las herramientas <a href="https://www.postman.com/">Postman</a> o el comando <em>curl</em>.</li>
+<li>No hay códigos de estados predefinidos, cada situación de error es específica de cada método ofrecido por el servicio.</li>
+</ul>
+<p>GraphQL tiene algunas similitudes con gRPC, igual que él utiliza un esquema para definir la interfaz del servicio y define las estructuras de datos que utilizan el cliente y el servidor ni emplea recursos ni verbos del protocolo HTTP. Pero al igual que REST utiliza JSON como formato para intercambiar los datos.</p>
+<p>Estas <a href="https://www.grpc.io/docs/talks/">presentaciones en formato vídeo sobre gRPC</a> contienen una introducción y explican algunos detalles con más profundidad.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/OZ_Qmklc4zE" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/S7WIYLcPS1Y" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="ejemplo-de-servicio-grpc-con-java">Ejemplo de servicio gRPC con Java</h3>
+<p>La construcción de un servicio o API basada en gRPC comienza con la definición del servicio en un archivo descriptor que incluye tanto las operaciones disponibles así como las estructuras de datos que incluye los nombres de los campos y tipos que reciben y devuelven como respuestas las llamadas a funciones remotas. El archivo descriptor del servicio sigue el <a href="https://developers.google.com/protocol-buffers/docs/proto3">formato de Protocol Buffers</a>.</p>
+<p>En este ejemplo el servicio <em>HelloWorld</em> tiene dos operaciones <em>HelloMessage</em> y <em>HelloStream</em> que reciben y devuelven dos estructuras de datos <em>HelloRequest</em> y <em>HelloResponse</em>. La operación <em>HelloStream</em> muestra como enviar el cliente un número indeterminado de mensajes al cliente que los va procesando según los envía el servidor. El esquema también contiene algunas opciones utilizadas por gRPC para personalizar la generación de las clases que sirven como base para realizar la implementación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-proto" data-lang="proto"><span class="n">syntax</span> <span class="o">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span><span class="err">&#10;</span><span class="err">&#10;</span><span class="err"></span><span class="k">option</span> <span class="n">java_outer_classname</span> <span class="o">=</span> <span class="s">&#34;HelloWorldClass&#34;</span><span class="p">;</span><span class="err">&#10;</span><span class="err"></span><span class="k">option</span> <span class="n">java_package</span> <span class="o">=</span> <span class="s">&#34;io.github.picodotdev.blogbitix.grpc.service&#34;</span><span class="p">;</span><span class="err">&#10;</span><span class="err">&#10;</span><span class="err"></span><span class="kd">message</span> <span class="nc">HelloRequest</span> <span class="p">{</span><span class="err">&#10;</span><span class="err"></span>  <span class="kt">string</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">&#10;</span><span class="err"></span><span class="p">}</span><span class="err">&#10;</span><span class="err">&#10;</span><span class="err"></span><span class="kd">message</span> <span class="nc">HelloResponse</span> <span class="p">{</span><span class="err">&#10;</span><span class="err"></span>  <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">&#10;</span><span class="err"></span><span class="p">}</span><span class="err">&#10;</span><span class="err">&#10;</span><span class="err"></span><span class="kd">service</span> <span class="n">HelloWorld</span> <span class="p">{</span><span class="err">&#10;</span><span class="err"></span>   <span class="k">rpc</span> <span class="n">HelloMessage</span><span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloResponse</span><span class="p">)</span> <span class="p">{}</span><span class="err">&#10;</span><span class="err"></span>   <span class="k">rpc</span> <span class="n">HelloStream</span><span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloResponse</span><span class="p">);</span><span class="err">&#10;</span><span class="err"></span><span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>HelloWorld.proto</span>
+    </div>
+</div>
+<p>Una vez escrita la definición del servicio hay que generar las clases que sirven como base para realizar la implementación, <a href="https://github.com/google/protobuf-gradle-plugin">gRPC ofrece un <em>plugin</em></a> para <a href="https://gradle.org/">Gradle</a> sin necesidad de instalar ninguna herramienta adicional en el sistema. En el archivo de construcción además de las dependencias se indican algunas <a href="https://github.com/google/protobuf-gradle-plugin">propiedades para personalizar la compilación del archivo <em>proto</em></a> como el directorio en el que ubicar los archivos de código fuente generados y algunas opciones para que el IDE de <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> reconozca ese directorio como ubicación de código fuente. En la documentación de Protocol Buffers hay una <a href="https://developers.google.com/protocol-buffers/docs/overview">guía del lenguaje</a> y un <a href="https://developers.google.com/protocol-buffers/docs/javatutorial">tutorial para Java</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;java&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;idea&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;com.google.protobuf&#39;</span> <span class="n">version</span> <span class="s1">&#39;0.8.8&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">jcenter</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;io.grpc:grpc-protobuf:1.31.1&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;io.grpc:grpc-stub:1.31.1&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;io.grpc:grpc-netty-shaded:1.31.1&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compileOnly</span> <span class="s1">&#39;org.apache.tomcat:annotations-api:6.0.53&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.grpc.Main&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">idea</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">module</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">sourceDirs</span> <span class="o">+=</span> <span class="n">file</span><span class="o">(</span><span class="s2">&#34;src/generated&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">protobuf</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">generatedFilesBaseDir</span> <span class="o">=</span> <span class="s2">&#34;$projectDir/src/generated&#34;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">protoc</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">artifact</span> <span class="o">=</span> <span class="s2">&#34;com.google.protobuf:protoc:3.13.0&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">grpc</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">artifact</span> <span class="o">=</span> <span class="s1">&#39;io.grpc:protoc-gen-grpc-java:1.31.1&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">generateProtoTasks</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">all</span><span class="o">()*.</span><span class="na">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">grpc</span> <span class="o">{}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">clean</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">delete</span> <span class="n">protobuf</span><span class="o">.</span><span class="na">generatedFilesBaseDir</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>El siguiente paso es generar los artefactos para Java con la siguiente tarea, los artefactos se ubican en el directorio <em>src/generated</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew build&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-build.sh</span>
+    </div>
+</div>
+<p>Una vez generador los artefactos hay que realizar su implementación. En esta caso son muy sencillos, en casos más complejos seguramente se utilicen junto a <a href="https://spring.io/">Spring</a> para inyectarles dependencias que necesiten como otros servicios de la capa de aplicación que le permita obtener o persistir datos en la base de datos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.grpc</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.grpc.service.HelloWorldClass</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.grpc.service.HelloWorldGrpc</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.grpc.stub.StreamObserver</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.text.MessageFormat</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.stream.IntStream</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorldService</span> <span class="kd">extends</span> <span class="n">HelloWorldGrpc</span><span class="o">.</span><span class="na">HelloWorldImplBase</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">helloMessage</span><span class="o">(</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="n">MessageFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello {0}!&#34;</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getName</span><span class="o">())).</span><span class="na">build</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">helloStream</span><span class="o">(</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">6</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="n">MessageFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello {0} {1}!&#34;</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">i</span><span class="o">)).</span><span class="na">build</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">sleep</span><span class="o">(</span><span class="n">3000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">millis</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>HelloWorldService.java</span>
+    </div>
+</div>
+<p>gRPC necesita de una parte que actúa como servidor y otra parte que actúa como cliente, el servidor se inicia en un puerto para la comunicación por red y el cliente se conecta al puerto y dirección IP donde se inicia una de las instancias del servidor. Estas clases para el servidor y cliente son clases Java normales que hace un uso de algunas de las clases de gRPC.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.grpc</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">io.grpc.Server</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.grpc.ServerBuilder</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorldServer</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">int</span> <span class="n">port</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Server</span> <span class="n">server</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">HelloWorldServer</span><span class="o">(</span><span class="kt">int</span> <span class="n">port</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">port</span> <span class="o">=</span> <span class="n">port</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">server</span> <span class="o">=</span> <span class="n">ServerBuilder</span><span class="o">.</span><span class="na">forPort</span><span class="o">(</span><span class="n">port</span><span class="o">).</span><span class="na">addService</span><span class="o">(</span><span class="k">new</span> <span class="n">HelloWorldService</span><span class="o">()).</span><span class="na">build</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">server</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">addShutdownHook</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Server started, listening on %d%n&#34;</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">server</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">server</span><span class="o">.</span><span class="na">shutdown</span><span class="o">().</span><span class="na">awaitTermination</span><span class="o">(</span><span class="n">30</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">blockUntilShutdown</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">server</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">server</span><span class="o">.</span><span class="na">awaitTermination</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">void</span> <span class="nf">addShutdownHook</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Runtime</span><span class="o">.</span><span class="na">getRuntime</span><span class="o">().</span><span class="na">addShutdownHook</span><span class="o">(</span><span class="k">new</span> <span class="n">Thread</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HelloWorldServer</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>HelloWorldServer.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.grpc</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.grpc.service.HelloWorldClass</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.grpc.service.HelloWorldGrpc</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.grpc.Channel</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.grpc.ManagedChannelBuilder</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.Spliterator</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.Spliterators</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.stream.Stream</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.stream.StreamSupport</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorldClient</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">final</span> <span class="n">HelloWorldGrpc</span><span class="o">.</span><span class="na">HelloWorldBlockingStub</span> <span class="n">blockingStub</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">HelloWorldClient</span><span class="o">(</span><span class="n">String</span> <span class="n">host</span><span class="o">,</span> <span class="kt">int</span> <span class="n">port</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">(</span><span class="n">ManagedChannelBuilder</span><span class="o">.</span><span class="na">forAddress</span><span class="o">(</span><span class="n">host</span><span class="o">,</span> <span class="n">port</span><span class="o">).</span><span class="na">usePlaintext</span><span class="o">().</span><span class="na">build</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">HelloWorldClient</span><span class="o">(</span><span class="n">Channel</span> <span class="n">channel</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">blockingStub</span> <span class="o">=</span> <span class="n">HelloWorldGrpc</span><span class="o">.</span><span class="na">newBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getHelloMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">blockingStub</span><span class="o">.</span><span class="na">helloMessage</span><span class="o">(</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="n">name</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getHelloStream</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">blockingStub</span><span class="o">.</span><span class="na">helloStream</span><span class="o">(</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="n">name</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Spliterator</span><span class="o">&lt;</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span><span class="o">&gt;</span> <span class="n">splitIterator</span> <span class="o">=</span> <span class="n">Spliterators</span><span class="o">.</span><span class="na">spliteratorUnknownSize</span><span class="o">(</span><span class="n">response</span><span class="o">,</span> <span class="n">Spliterator</span><span class="o">.</span><span class="na">ORDERED</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">StreamSupport</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">splitIterator</span><span class="o">,</span> <span class="kc">false</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">HelloWorldClass</span><span class="o">.</span><span class="na">HelloResponse</span><span class="o">::</span><span class="n">getMessage</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">stream</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>HelloWorldClient.java</span>
+    </div>
+</div>
+<p>Con Gradle se inicia programa que inicia servidor en la máquina local y el cliente que realiza varias peticiones e imprime en la salida sus respuestas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.grpc</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">startServer</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">startClient</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">startServer</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HelloWorldServer</span> <span class="n">server</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HelloWorldServer</span><span class="o">(</span><span class="n">8980</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">server</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">startClient</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HelloWorldClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HelloWorldClient</span><span class="o">(</span><span class="s">&#34;localhost&#34;</span><span class="o">,</span> <span class="n">8980</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">client</span><span class="o">.</span><span class="na">getHelloMessage</span><span class="o">(</span><span class="s">&#34;gRPC&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">client</span><span class="o">.</span><span class="na">getHelloStream</span><span class="o">(</span><span class="s">&#34;gRPC&#34;</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">message</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run&#10;&#10;&gt; Task :run&#10;Server started, listening on <span class="m">8980</span>&#10;Hello gRPC!&#10;Hello gRPC 1!&#10;Hello gRPC 2!&#10;Hello gRPC 3!&#10;Hello gRPC 4!&#10;Hello gRPC 5!</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-run.sh</span>
+    </div>
+</div>
+<p>Este es un ejemplo muy básico y no incluye varias necesidades habituales que se necesitan para implementar servicios y una API con grado de producción como balanceo de carga con múltiples instancias del servicio, tolerancia a fallos en caso de que una instancia deje de funcionar, descubrimiento y registro de servicios para que los clientes conozcan las ubicaciones de las instancias de los servidores, métricas, autenticación o como <a href="https://docs.microsoft.com/en-us/aspnet/core/grpc/versioning?view=aspnetcore-3.1">evolucionar los servicios cuando estos requieran cambios</a>. Para implementar en un servicio gRPC varias de estas funcionalidades hay que usar herramientas de las que he escrito y mostrado en otros artículos de forma específica como <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, <a href="https://www.consul.io/">Consul</a>, <a href="https://traefik.io/">Traefik</a>, <a href="https://github.com/resilience4j/resilience4j">Resilience4j</a>, <a href="https://www.nomadproject.io/">Nomad</a> que no tienen nada de diferentes al aplicarlas por el hecho de que el servicio esté basado en gRPC.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">Información y métricas de la aplicación con Spring Boot Actuator</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">Implementar tolerancia a fallos con Resilience4j</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a></li>
+</ul>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoGRPC">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://medium.com/@omoletoye/grpc-the-state-of-winning-api-for-microservices-18d9b6bd8196">gRPC: The state of winning API for Microservices</a></li>
+<li><a href="https://www.vineethweb.com/post/grpc/">Understanding gRPC</a></li>
+<li><a href="https://cloud.google.com/blog/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them">API design: Understanding gRPC, OpenAPI and REST and when to use them</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/grpc">Cloud-native communication patterns, gRPC</a></li>
+<li><a href="https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da">Evaluating Performance of REST vs. gRPC</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/">
+                <img src="/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-documentation_hu3c11d1febb905ce4b3f1a5687473832a_146324_875x0_resize_box_3.png" width="326" height="125" alt="Añadir descripciones y documentar los campos de GraphQL" title="Añadir descripciones y documentar los campos de GraphQL" class="" loading="lazy">
+                <h3>Añadir descripciones y documentar los campos de GraphQL</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
+                <img src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu0930190f3c65499ea0d10d00a00e2707_141470_875x0_resize_box_3.png" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="" loading="lazy">
+                <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/">
+                <img src="/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/images/jobs_hucd18c307cc0705574ee465edc6573dea_180715_875x0_resize_box_3.png" width="326" height="125" alt="Tareas programadas de forma periódica con Quartz y Spring en Java" title="Tareas programadas de forma periódica con Quartz y Spring en Java" class="" loading="lazy">
+                <h3>Tareas programadas de forma periódica con Quartz y Spring en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">
+                <img src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_875x0_resize_box_3.png" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="" loading="lazy">
+                <h3>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/">
+                <img src="/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/images/entities-id_hu114300abf2292e7288699ebad8ad1975_98747_875x0_resize_box_3.png" width="326" height="125" alt="Generar en el dominio los identificativos de las entidades aplicando DDD antes de persistirlas en la base de datos" title="Generar en el dominio los identificativos de las entidades aplicando DDD antes de persistirlas en la base de datos" class="" loading="lazy">
+                <h3>Generar en el dominio los identificativos de las entidades aplicando DDD antes de persistirlas en la base de datos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">
+                <img src="/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/images/specification_hu45616b24568f8b7d38357044c7708dca_59208_875x0_resize_box_3.png" width="326" height="125" alt="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" title="El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data" class="" loading="lazy">
+                <h3>El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-512';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2020\/08\/introduccion-a-grpc-y-ejemplo-con-java\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,682 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C&#43;&#43;. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Programación de juegos y 3D en Java con jMonkeyEngine</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/" hreflang="es" title="Programación de juegos y 3D en Java con jMonkeyEngine">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/index-amp.html" hreflang="es" title="Programación de juegos y 3D en Java con jMonkeyEngine">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Programación de juegos y 3D en Java con jMonkeyEngine">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jmonkeyengine.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C&#43;&#43;. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jmonkeyengine.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Programación de juegos y 3D en Java con jMonkeyEngine">
+<meta name="twitter:description" content="Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C&#43;&#43;. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/"
+    },
+    "headline": "Programación de juegos y 3D en Java con jMonkeyEngine",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jmonkeyengine.png"
+        
+      },
+    "datePublished": "2015-05-09T10:18:40+02:00",
+    "dateModified": "2015-11-10T19:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1342",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C++. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Programación de juegos y 3D en Java con jMonkeyEngine</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>09/05/2015</time>, actualizado el <time>10/11/2015</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/#comments">Comentarios</a>
+      
+    </p>
+
+    
+    
+
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/jmonkeyengine.png" width="200" height="160" alt="jMonkeyEngine" title="jMonkeyEngine" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C++. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos.</p>
+<p>Java no suele ser considerado como opción para programar videojuegos triple A pero ahí está <a href="https://minecraft.net/">Minecraft</a> uno de los juegos más populares y un ejemplo de que un juego de buena calidad y rendimiento también se puede hacer en Java. Hay algunos otros ejemplos notables como de variados estilos <em>RPG</em>, <em>Puzzle</em>, <em>MOBA</em>, <em>Rogue</em>, <em>RTS</em>, <em>Card MMOG</em>, <em>FPS</em>, <em>Arcade</em>, <em>Platform</em> ,&hellip;:</p>
+<ul>
+<li><a href="http://store.steampowered.com/app/329770/">4089: Ghost Within</a></li>
+<li><a href="https://www.rising-world.net/">Rising World</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.rampage.seizon">Seizon</a></li>
+<li><a href="http://herebeben.com/copod">Copod</a></li>
+<li><a href="http://drohtin.org/">Drohtin – Tales of an Old Kingdom</a></li>
+<li><a href="http://4realms.net/News/">CHAOS: In the Darkness</a></li>
+<li><a href="https://www.indiedb.com/games/just-tactics/">Just Tactics</a></li>
+<li><a href="https://gentrieve.wordpress.com/">Gentrieve 2</a></li>
+<li><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=354610327">Spermination</a></li>
+<li><a href="http://www.indiedb.com/games/herodex">Herodex</a></li>
+<li><a href="https://gentrieve.wordpress.com/">Gentrieve 2</a></li>
+<li><a href="https://www.indiedb.com/games/makers-tale/videos">Maker’s Tale</a></li>
+<li><a href="http://store.steampowered.com/app/263360/">3089</a></li>
+<li><a href="http://boardtastic.com/">Boardtastic</a></li>
+<li><a href="http://store.steampowered.com/app/321080">PirateHell</a></li>
+<li><a href="http://mythruna.com/">Mythruna</a></li>
+<li><a href="http://mindemia.com/hostilesector/">Hostile Sector</a></li>
+<li><a href="http://store.steampowered.com/app/259620/">3079</a></li>
+<li><a href="https://www.tygron.com/">TYGRON</a></li>
+<li><a href="https://sourceforge.net/projects/fleshsnatcher/">Fleshsnatcher</a></li>
+<li><a href="http://nordgame.com/">Nord</a></li>
+<li><a href="https://www.urbangalaxyonline.com/">Urban Galaxy</a></li>
+<li><a href="https://ghook.speedrungames.com/">Grappling Hook</a></li>
+<li><a href="http://www.madskillsmx.com/">Mad Skills Motocross</a></li>
+<li><a href="http://betaville.net/">Betaville</a></li>
+<li><a href="http://scriptblocks.com/">Script Blocks</a></li>
+<li><a href="http://jmonkeyengine.org/project/windup-baseball/">Windup Baseball</a></li>
+<li><a href="https://www.petsvsmonsters.com/">Pets vs Monsters</a></li>
+<li><a href="http://www.banghowdy.com/">Bang! Howdy</a></li>
+<li><a href="http://jmonkeyengine.org/project/imperii/">Imperii</a></li>
+</ul>
+<p>Este es un vídeo del juego PirateHell que tiene una pinta muy buena:</p>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/ODjq7IUkwUg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/4089_huc314e1f58c93e5ca7f2e870bef5fe70b_75512_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="4089: Ghost Within"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/4089_huc314e1f58c93e5ca7f2e870bef5fe70b_75512_300x200_fit_q90_box.jpg" width="300" height="169" alt="4089: Ghost Within" title="4089: Ghost Within" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/rising-world_hub9d3aa3e89ed7d0c2edfeff327a754e9_87286_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Rising World"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/rising-world_hub9d3aa3e89ed7d0c2edfeff327a754e9_87286_300x200_fit_q90_box.jpg" width="300" height="169" alt="Rising World" title="Rising World" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/seizon_hudc5d5745d9a6a341f377d3be39a5c377_85750_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Seizon"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/seizon_hudc5d5745d9a6a341f377d3be39a5c377_85750_300x200_fit_q90_box.jpg" width="125" height="200" alt="Seizon" title="Seizon" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/copod_huf817f10b5ae3f0c10bd52df2de50fab6_170304_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Copod"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/copod_huf817f10b5ae3f0c10bd52df2de50fab6_170304_300x200_fit_box_3.png" width="300" height="169" alt="Copod" title="Copod" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/drohtin-tales-of-old-kingdom_hu4f0f0f6ba4980a57d3095e3f564a62d7_3943057_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Drohtin – Tales of an Old Kingdom"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/drohtin-tales-of-old-kingdom_hu4f0f0f6ba4980a57d3095e3f564a62d7_3943057_300x200_fit_box_3.png" width="300" height="169" alt="Drohtin – Tales of an Old Kingdom" title="Drohtin – Tales of an Old Kingdom" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/chaos_in-the-darkness_hu2cc3ed8b5763862138707bf0539aaa28_890128_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="CHAOS: In the Darkness"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/chaos_in-the-darkness_hu2cc3ed8b5763862138707bf0539aaa28_890128_300x200_fit_q90_box.jpg" width="300" height="169" alt="CHAOS: In the Darkness" title="CHAOS: In the Darkness" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/just-tactics_hu06e177b9c2399a4d4ecaffd141b20130_193990_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Just Tactics"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/just-tactics_hu06e177b9c2399a4d4ecaffd141b20130_193990_300x200_fit_q90_box.jpg" width="300" height="169" alt="Just Tactics" title="Just Tactics" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/spermination_hu4c8ee83fbd3d68d92ba53c77f18ca64e_428046_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Spermination"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/spermination_hu4c8ee83fbd3d68d92ba53c77f18ca64e_428046_300x200_fit_box_3.png" width="300" height="169" alt="Spermination" title="Spermination" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/makers-tale_hud0ce71c661977a4c732e851d636885db_178699_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Maker’s Tale"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/makers-tale_hud0ce71c661977a4c732e851d636885db_178699_300x200_fit_q90_box.jpg" width="300" height="169" alt="Maker’s Tale" title="Maker’s Tale" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/piratehell_huba629ae6e63484f80b8d079715ae0aca_481858_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="PirateHell"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/piratehell_huba629ae6e63484f80b8d079715ae0aca_481858_300x200_fit_q90_box.jpg" width="300" height="183" alt="PirateHell" title="PirateHell" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/hostile-sector_hu8f55c794346a3bd1d55d2359b00f859b_78093_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Hostile Sector"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/hostile-sector_hu8f55c794346a3bd1d55d2359b00f859b_78093_300x200_fit_q90_box.jpg" width="267" height="200" alt="Hostile Sector" title="Hostile Sector" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/3079_hu3ec15271a03555294e666b6c6d872c16_768582_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="3079"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/3079_hu3ec15271a03555294e666b6c6d872c16_768582_300x200_fit_box_3.png" width="267" height="200" alt="3079" title="3079" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/urban-galaxy_hufca53ee84e4a62a25cc1605741e9d95f_255385_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Urban Galaxy"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/urban-galaxy_hufca53ee84e4a62a25cc1605741e9d95f_255385_300x200_fit_q90_box.jpg" width="291" height="200" alt="Urban Galaxy" title="Urban Galaxy" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/grapplinghook_hu460719c85460277e42053f4bf2bd7480_139409_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Grappling Hook"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/grapplinghook_hu460719c85460277e42053f4bf2bd7480_139409_300x200_fit_q90_box.jpg" width="267" height="200" alt="Grappling Hook" title="Grappling Hook" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/mad-skills-motocross_huacfde71bb93c1f1c718bd76696813d3c_98314_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Mad Skills Motocross"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/mad-skills-motocross_huacfde71bb93c1f1c718bd76696813d3c_98314_300x200_fit_q90_box.jpg" width="267" height="200" alt="Mad Skills Motocross" title="Mad Skills Motocross" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/pets-vs-monsters_hucd3eafebcfc1d641661a57a0bbed24d4_167912_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pets vs Monsters"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/pets-vs-monsters_hucd3eafebcfc1d641661a57a0bbed24d4_167912_300x200_fit_q90_box.jpg" width="267" height="200" alt="Pets vs Monsters" title="Pets vs Monsters" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/bang-howdy_hu28e2506b2fc5745b07d0f14b5b032521_201468_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Bang! Howdy"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/bang-howdy_hu28e2506b2fc5745b07d0f14b5b032521_201468_300x200_fit_q90_box.jpg" width="250" height="200" alt="Bang! Howdy" title="Bang! Howdy" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/imperii_hueb887ddf8ba63d0473841d1ac55291ca_104530_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imperii"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/imperii_hueb887ddf8ba63d0473841d1ac55291ca_104530_300x200_fit_q90_box.jpg" width="267" height="200" alt="Imperii" title="Imperii" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<p>Todos estos juegos están programados utilizando el lenguaje de programación Java y la librería <a href="https://jmonkeyengine.org/">jMonkeyEngine</a> que facilita las tareas de programación de videojuegos proporcionando programación gráfica en 3D usando <a href="https://www.khronos.org/opengl/">OpenGL</a>, manejo de eventos de entrada como teclado o ratón, manejo de sonido, pantallas de menús o red. Usando jMonkeyEngine se pueden hacer cosas muy interesantes como se ve en los ejemplos. En el siguiente enlace se pueden encontrar el <a href="https://github.com/jMonkeyEngine/BookSamples/tree/master/src">código fuente de varios ejemplos</a> que podemos probar.</p>
+<p>A continuación mostraré el código y unas capturas de pantalla de algunas las posibilidades de jMonkeyEngine. Primeramente veamos como crear un ejemplo básico con un cubo aplicándole una textura con el que veremos como crear una escena. El segundo ejemplo aplica texturas de diferentes formas que varían la visualización de un elemento geométrico.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.jmonkeyengine</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">com.jme3.app.SimpleApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.material.Material</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.math.ColorRGBA</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.renderer.RenderManager</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.scene.Geometry</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.scene.shape.Box</span><span class="o">;</span>&#10;&#10;<span class="cm">/**&#10;</span><span class="cm"> * &lt;h3&gt;Ejemplo 1: Hola mundo&lt;/h3&gt;&#10;</span><span class="cm"> * &#10;</span><span class="cm"> * &lt;p&gt;Este ejemplo muestra el mínimo necesario para empezar con una aplicación&#10;</span><span class="cm"> * que use jMonkeyEngine. Sirve cmo punto de partida para comprobar que  &#10;</span><span class="cm"> * disponemos del entorno instalado correctamente que principalmente en extender&#10;</span><span class="cm"> * de la clase SimpleApplication y disponer de las librerías jar de jMonkeyEngine&#10;</span><span class="cm"> * en el classpath.&lt;/p&gt;&#10;</span><span class="cm"> * &#10;</span><span class="cm"> * &lt;p&gt;También muestra lo mínimo necesario para añadir elementos geométricos y que se&#10;</span><span class="cm"> * visualicen en la escena 3D.&lt;/&gt;&#10;</span><span class="cm"> */</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaMundoJMonkeyEngine</span> <span class="kd">extends</span> <span class="n">SimpleApplication</span> <span class="o">{</span>&#10;&#10;	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">HolaMundoJMonkey</span> <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HolaMundoJMonkey</span><span class="o">();</span>&#10;		<span class="n">app</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleInitApp</span><span class="o">()</span> <span class="o">{</span>&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="n">buildBox</span><span class="o">();</span>&#10;&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry</span><span class="o">);</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleUpdate</span><span class="o">(</span><span class="kt">float</span> <span class="n">tpf</span><span class="o">)</span> <span class="o">{</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleRender</span><span class="o">(</span><span class="n">RenderManager</span> <span class="n">rm</span><span class="o">)</span> <span class="o">{</span>&#10;	<span class="o">}</span>&#10;	&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildBox</span><span class="o">()</span> <span class="o">{</span>&#10;		<span class="n">Box</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>&#10;		&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Misc/Unshaded.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Color&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">Blue</span><span class="o">);</span>&#10;&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="s">&#34;Box&#34;</span><span class="o">,</span> <span class="n">box</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;		&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>HolaMundoJMonkeyEngine.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">  1&#10;</span><span class="lnt">  2&#10;</span><span class="lnt">  3&#10;</span><span class="lnt">  4&#10;</span><span class="lnt">  5&#10;</span><span class="lnt">  6&#10;</span><span class="lnt">  7&#10;</span><span class="lnt">  8&#10;</span><span class="lnt">  9&#10;</span><span class="lnt"> 10&#10;</span><span class="lnt"> 11&#10;</span><span class="lnt"> 12&#10;</span><span class="lnt"> 13&#10;</span><span class="lnt"> 14&#10;</span><span class="lnt"> 15&#10;</span><span class="lnt"> 16&#10;</span><span class="lnt"> 17&#10;</span><span class="lnt"> 18&#10;</span><span class="lnt"> 19&#10;</span><span class="lnt"> 20&#10;</span><span class="lnt"> 21&#10;</span><span class="lnt"> 22&#10;</span><span class="lnt"> 23&#10;</span><span class="lnt"> 24&#10;</span><span class="lnt"> 25&#10;</span><span class="lnt"> 26&#10;</span><span class="lnt"> 27&#10;</span><span class="lnt"> 28&#10;</span><span class="lnt"> 29&#10;</span><span class="lnt"> 30&#10;</span><span class="lnt"> 31&#10;</span><span class="lnt"> 32&#10;</span><span class="lnt"> 33&#10;</span><span class="lnt"> 34&#10;</span><span class="lnt"> 35&#10;</span><span class="lnt"> 36&#10;</span><span class="lnt"> 37&#10;</span><span class="lnt"> 38&#10;</span><span class="lnt"> 39&#10;</span><span class="lnt"> 40&#10;</span><span class="lnt"> 41&#10;</span><span class="lnt"> 42&#10;</span><span class="lnt"> 43&#10;</span><span class="lnt"> 44&#10;</span><span class="lnt"> 45&#10;</span><span class="lnt"> 46&#10;</span><span class="lnt"> 47&#10;</span><span class="lnt"> 48&#10;</span><span class="lnt"> 49&#10;</span><span class="lnt"> 50&#10;</span><span class="lnt"> 51&#10;</span><span class="lnt"> 52&#10;</span><span class="lnt"> 53&#10;</span><span class="lnt"> 54&#10;</span><span class="lnt"> 55&#10;</span><span class="lnt"> 56&#10;</span><span class="lnt"> 57&#10;</span><span class="lnt"> 58&#10;</span><span class="lnt"> 59&#10;</span><span class="lnt"> 60&#10;</span><span class="lnt"> 61&#10;</span><span class="lnt"> 62&#10;</span><span class="lnt"> 63&#10;</span><span class="lnt"> 64&#10;</span><span class="lnt"> 65&#10;</span><span class="lnt"> 66&#10;</span><span class="lnt"> 67&#10;</span><span class="lnt"> 68&#10;</span><span class="lnt"> 69&#10;</span><span class="lnt"> 70&#10;</span><span class="lnt"> 71&#10;</span><span class="lnt"> 72&#10;</span><span class="lnt"> 73&#10;</span><span class="lnt"> 74&#10;</span><span class="lnt"> 75&#10;</span><span class="lnt"> 76&#10;</span><span class="lnt"> 77&#10;</span><span class="lnt"> 78&#10;</span><span class="lnt"> 79&#10;</span><span class="lnt"> 80&#10;</span><span class="lnt"> 81&#10;</span><span class="lnt"> 82&#10;</span><span class="lnt"> 83&#10;</span><span class="lnt"> 84&#10;</span><span class="lnt"> 85&#10;</span><span class="lnt"> 86&#10;</span><span class="lnt"> 87&#10;</span><span class="lnt"> 88&#10;</span><span class="lnt"> 89&#10;</span><span class="lnt"> 90&#10;</span><span class="lnt"> 91&#10;</span><span class="lnt"> 92&#10;</span><span class="lnt"> 93&#10;</span><span class="lnt"> 94&#10;</span><span class="lnt"> 95&#10;</span><span class="lnt"> 96&#10;</span><span class="lnt"> 97&#10;</span><span class="lnt"> 98&#10;</span><span class="lnt"> 99&#10;</span><span class="lnt">100&#10;</span><span class="lnt">101&#10;</span><span class="lnt">102&#10;</span><span class="lnt">103&#10;</span><span class="lnt">104&#10;</span><span class="lnt">105&#10;</span><span class="lnt">106&#10;</span><span class="lnt">107&#10;</span><span class="lnt">108&#10;</span><span class="lnt">109&#10;</span><span class="lnt">110&#10;</span><span class="lnt">111&#10;</span><span class="lnt">112&#10;</span><span class="lnt">113&#10;</span><span class="lnt">114&#10;</span><span class="lnt">115&#10;</span><span class="lnt">116&#10;</span><span class="lnt">117&#10;</span><span class="lnt">118&#10;</span><span class="lnt">119&#10;</span><span class="lnt">120&#10;</span><span class="lnt">121&#10;</span><span class="lnt">122&#10;</span><span class="lnt">123&#10;</span><span class="lnt">124&#10;</span><span class="lnt">125&#10;</span><span class="lnt">126&#10;</span><span class="lnt">127&#10;</span><span class="lnt">128&#10;</span><span class="lnt">129&#10;</span><span class="lnt">130&#10;</span><span class="lnt">131&#10;</span><span class="lnt">132&#10;</span><span class="lnt">133&#10;</span><span class="lnt">134&#10;</span><span class="lnt">135&#10;</span><span class="lnt">136&#10;</span><span class="lnt">137&#10;</span><span class="lnt">138&#10;</span><span class="lnt">139&#10;</span><span class="lnt">140&#10;</span><span class="lnt">141&#10;</span><span class="lnt">142&#10;</span><span class="lnt">143&#10;</span><span class="lnt">144&#10;</span><span class="lnt">145&#10;</span><span class="lnt">146&#10;</span><span class="lnt">147&#10;</span><span class="lnt">148&#10;</span><span class="lnt">149&#10;</span><span class="lnt">150&#10;</span><span class="lnt">151&#10;</span><span class="lnt">152&#10;</span><span class="lnt">153&#10;</span><span class="lnt">154&#10;</span><span class="lnt">155&#10;</span><span class="lnt">156&#10;</span><span class="lnt">157&#10;</span><span class="lnt">158&#10;</span><span class="lnt">159&#10;</span><span class="lnt">160&#10;</span><span class="lnt">161&#10;</span><span class="lnt">162&#10;</span><span class="lnt">163&#10;</span><span class="lnt">164&#10;</span><span class="lnt">165&#10;</span><span class="lnt">166&#10;</span><span class="lnt">167&#10;</span><span class="lnt">168&#10;</span><span class="lnt">169&#10;</span><span class="lnt">170&#10;</span><span class="lnt">171&#10;</span><span class="lnt">172&#10;</span><span class="lnt">173&#10;</span><span class="lnt">174&#10;</span><span class="lnt">175&#10;</span><span class="lnt">176&#10;</span><span class="lnt">177&#10;</span><span class="lnt">178&#10;</span><span class="lnt">179&#10;</span><span class="lnt">180&#10;</span><span class="lnt">181&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.jmonkeyengine</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">com.jme3.app.SimpleApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.light.AmbientLight</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.light.DirectionalLight</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.material.Material</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.material.RenderState.BlendMode</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.math.ColorRGBA</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.math.Vector3f</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.renderer.RenderManager</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.renderer.queue.RenderQueue.Bucket</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.scene.Geometry</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.scene.shape.Box</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.jme3.scene.shape.Sphere</span><span class="o">;</span>&#10;&#10;<span class="cm">/**&#10;</span><span class="cm"> * Aplicando texturas y materiales a geometrías.&#10;</span><span class="cm"> */</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Materiales</span> <span class="kd">extends</span> <span class="n">SimpleApplication</span> <span class="o">{</span>&#10;&#10;	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Materials</span> <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Materials</span><span class="o">();</span>&#10;		<span class="n">app</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleInitApp</span><span class="o">()</span> <span class="o">{</span>&#10;		<span class="n">flyCam</span><span class="o">.</span><span class="na">setMoveSpeed</span><span class="o">(</span><span class="n">15</span><span class="o">);</span>&#10;		<span class="n">initializeLight</span><span class="o">();</span>&#10;&#10;		<span class="n">Geometry</span> <span class="n">geometry1</span> <span class="o">=</span> <span class="n">buildBoxUnshaded</span><span class="o">(</span><span class="s">&#34;Box&#34;</span><span class="o">);</span>&#10;		<span class="n">Geometry</span> <span class="n">geometry2</span> <span class="o">=</span> <span class="n">buildBoxShaded</span><span class="o">(</span><span class="s">&#34;Box Shaded&#34;</span><span class="o">);</span>&#10;		<span class="n">Geometry</span> <span class="n">geometry3</span> <span class="o">=</span> <span class="n">buildBoxTransparent</span><span class="o">(</span><span class="s">&#34;Box Transparent&#34;</span><span class="o">);</span>&#10;		<span class="n">Geometry</span> <span class="n">geometry4</span> <span class="o">=</span> <span class="n">buildBoxWireframe</span><span class="o">(</span><span class="s">&#34;Box Wireframe&#34;</span><span class="o">);</span>&#10;		<span class="n">Geometry</span> <span class="n">geometry5</span> <span class="o">=</span> <span class="n">buildSphereLighting</span><span class="o">(</span><span class="s">&#34;Sphere Lighting&#34;</span><span class="o">);</span>&#10;		<span class="n">Geometry</span> <span class="n">geometry6</span> <span class="o">=</span> <span class="n">buildSphereShiny</span><span class="o">(</span><span class="s">&#34;Sphere Shiny&#34;</span><span class="o">);</span>&#10;		<span class="n">Geometry</span> <span class="n">geometry7</span> <span class="o">=</span> <span class="n">buildWindow</span><span class="o">(</span><span class="s">&#34;window&#34;</span><span class="o">);</span>&#10;&#10;		<span class="n">geometry1</span><span class="o">.</span><span class="na">setLocalTranslation</span><span class="o">(-</span><span class="n">5</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;		<span class="n">geometry2</span><span class="o">.</span><span class="na">setLocalTranslation</span><span class="o">(-</span><span class="n">2</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;		<span class="n">geometry3</span><span class="o">.</span><span class="na">setLocalTranslation</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;		<span class="n">geometry4</span><span class="o">.</span><span class="na">setLocalTranslation</span><span class="o">(</span><span class="n">4</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;		<span class="n">geometry5</span><span class="o">.</span><span class="na">setLocalTranslation</span><span class="o">(</span><span class="n">7</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;		<span class="n">geometry6</span><span class="o">.</span><span class="na">setLocalTranslation</span><span class="o">(</span><span class="n">10</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;		<span class="n">geometry7</span><span class="o">.</span><span class="na">setLocalTranslation</span><span class="o">(</span><span class="n">13</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry1</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry2</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry3</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry4</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry5</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry6</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">attachChild</span><span class="o">(</span><span class="n">geometry7</span><span class="o">);</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleUpdate</span><span class="o">(</span><span class="kt">float</span> <span class="n">tpf</span><span class="o">)</span> <span class="o">{</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleRender</span><span class="o">(</span><span class="n">RenderManager</span> <span class="n">rm</span><span class="o">)</span> <span class="o">{</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildBoxUnshaded</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Box</span> <span class="n">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>&#10;&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Misc/Unshaded.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Color&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="s">&#34;ColorMap&#34;</span><span class="o">,</span> <span class="n">assetManager</span><span class="o">.</span><span class="na">loadTexture</span><span class="o">(</span><span class="s">&#34;assets/interface/Monkey.png&#34;</span><span class="o">));</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="s">&#34;LightMap&#34;</span><span class="o">,</span> <span class="n">assetManager</span><span class="o">.</span><span class="na">loadTexture</span><span class="o">(</span><span class="s">&#34;assets/interface/Monkey_light.png&#34;</span><span class="o">));</span>&#10;&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">sphere</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildBoxShaded</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Box</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>&#10;&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Light/Lighting.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setBoolean</span><span class="o">(</span><span class="s">&#34;UseMaterialColors&#34;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Diffuse&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Ambient&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">Gray</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="s">&#34;DiffuseMap&#34;</span><span class="o">,</span> <span class="n">assetManager</span><span class="o">.</span><span class="na">loadTexture</span><span class="o">(</span><span class="s">&#34;assets/interface/Monkey.png&#34;</span><span class="o">));</span>&#10;&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">box</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;		&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;	&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildBoxTransparent</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Box</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>&#10;&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Light/Lighting.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setBoolean</span><span class="o">(</span><span class="s">&#34;UseMaterialColors&#34;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Diffuse&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Ambient&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">Gray</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="s">&#34;DiffuseMap&#34;</span><span class="o">,</span> <span class="n">assetManager</span><span class="o">.</span><span class="na">loadTexture</span><span class="o">(</span><span class="s">&#34;assets/interface/Monkey.png&#34;</span><span class="o">));</span>&#10;&#10;		<span class="n">material</span><span class="o">.</span><span class="na">getAdditionalRenderState</span><span class="o">().</span><span class="na">setAlphaTest</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">getAdditionalRenderState</span><span class="o">().</span><span class="na">setAlphaFallOff</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">5f</span><span class="o">);</span>&#10;		&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">box</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;		&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setQueueBucket</span><span class="o">(</span><span class="n">Bucket</span><span class="o">.</span><span class="na">Transparent</span><span class="o">);</span>&#10;&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;	&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildBoxWireframe</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Box</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>&#10;&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Misc/Unshaded.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">getAdditionalRenderState</span><span class="o">().</span><span class="na">setWireframe</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>&#10;&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">box</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;		&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setQueueBucket</span><span class="o">(</span><span class="n">Bucket</span><span class="o">.</span><span class="na">Transparent</span><span class="o">);</span>&#10;&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildSphereLighting</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Sphere</span> <span class="n">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sphere</span><span class="o">(</span><span class="n">32</span><span class="o">,</span> <span class="n">32</span><span class="o">,</span> <span class="n">1f</span><span class="o">);</span>&#10;&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Light/Lighting.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setBoolean</span><span class="o">(</span><span class="s">&#34;UseMaterialColors&#34;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Diffuse&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">Blue</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Ambient&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">Gray</span><span class="o">);</span>&#10;&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">sphere</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildSphereShiny</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Sphere</span> <span class="n">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sphere</span><span class="o">(</span><span class="n">32</span><span class="o">,</span> <span class="n">32</span><span class="o">,</span> <span class="n">1f</span><span class="o">);</span>&#10;&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Light/Lighting.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setBoolean</span><span class="o">(</span><span class="s">&#34;UseMaterialColors&#34;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Diffuse&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">Blue</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Ambient&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">Gray</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="s">&#34;Specular&#34;</span><span class="o">,</span> <span class="n">ColorRGBA</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setFloat</span><span class="o">(</span><span class="s">&#34;Shininess&#34;</span><span class="o">,</span> <span class="n">64f</span><span class="o">);</span>&#10;		&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">sphere</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;		&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="n">Geometry</span> <span class="nf">buildWindow</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">Box</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>&#10;				&#10;		<span class="n">Material</span> <span class="n">material</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Material</span><span class="o">(</span><span class="n">assetManager</span><span class="o">,</span> <span class="s">&#34;Common/MatDefs/Light/Lighting.j3md&#34;</span><span class="o">);</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="s">&#34;DiffuseMap&#34;</span><span class="o">,</span> <span class="n">assetManager</span><span class="o">.</span><span class="na">loadTexture</span><span class="o">(</span><span class="s">&#34;assets/interface/mucha-window.png&#34;</span><span class="o">));</span>&#10;		<span class="n">material</span><span class="o">.</span><span class="na">getAdditionalRenderState</span><span class="o">().</span><span class="na">setBlendMode</span><span class="o">(</span><span class="n">BlendMode</span><span class="o">.</span><span class="na">Alpha</span><span class="o">);</span>&#10;		&#10;		<span class="n">Geometry</span> <span class="n">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Geometry</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">box</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setMaterial</span><span class="o">(</span><span class="n">material</span><span class="o">);</span>&#10;		<span class="n">geometry</span><span class="o">.</span><span class="na">setQueueBucket</span><span class="o">(</span><span class="n">Bucket</span><span class="o">.</span><span class="na">Transparent</span><span class="o">);</span>&#10;		&#10;		<span class="k">return</span> <span class="n">geometry</span><span class="o">;</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">initializeLight</span><span class="o">()</span> <span class="o">{</span>&#10;		<span class="n">DirectionalLight</span> <span class="n">sun</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectionalLight</span><span class="o">();</span>&#10;		<span class="n">sun</span><span class="o">.</span><span class="na">setDirection</span><span class="o">(</span><span class="k">new</span> <span class="n">Vector3f</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="o">-</span><span class="n">2</span><span class="o">));</span>&#10;		<span class="n">sun</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">ColorRGBA</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">addLight</span><span class="o">(</span><span class="n">sun</span><span class="o">);</span>&#10;&#10;		<span class="n">AmbientLight</span> <span class="n">ambient</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AmbientLight</span><span class="o">();</span>&#10;		<span class="n">ambient</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">ColorRGBA</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>&#10;		<span class="n">rootNode</span><span class="o">.</span><span class="na">addLight</span><span class="o">(</span><span class="n">ambient</span><span class="o">);</span>&#10;	<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Materiales.java</span>
+    </div>
+</div>
+<p>Se pueden crear objetos con texturas transparentes, efectos de luz, <em>ray casting</em>, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de <em>fps</em> normal es de 60, al tomar las capturas baja).</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/cubo_hu40168a156f4b585e07dc1f1ccb224b45_10822_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="¡Hola mundo!"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/cubo_hu40168a156f4b585e07dc1f1ccb224b45_10822_300x200_fit_box_3.png" width="248" height="200" alt="¡Hola mundo!" title="¡Hola mundo!" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/cubos_hu88f586269f44544d23921fc8f9205b31_41570_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Texturas y materiales"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/cubos_hu88f586269f44544d23921fc8f9205b31_41570_300x200_fit_box_3.png" width="248" height="200" alt="Texturas y materiales" title="Texturas y materiales" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/particulas-fuego_hu2621290be09c287ae7b2b1b9aad5c13a_54988_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sistemas de partículas, fuego"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/particulas-fuego_hu2621290be09c287ae7b2b1b9aad5c13a_54988_300x200_fit_box_3.png" width="248" height="200" alt="Sistemas de partículas, fuego" title="Sistemas de partículas, fuego" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/agua_hu35c342832163dc11f5dfea575b2d79cf_293219_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Agua"><img src="/blog-bitix/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/images/agua_hu35c342832163dc11f5dfea575b2d79cf_293219_300x200_fit_box_3.png" width="248" height="200" alt="Agua" title="Agua" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<p>Un videojuego se compone de múltiples recursos como imágenes, modelos 3D, música, <em>sprites</em>, texturas, fuentes de texto, sonidos, iconos&hellip; en la página <a href="http://opengameart.org">Open Game Art</a> podemos encontrar todo este tipo de material sin necesidad de tener que crearlo desde la nada.</p>
+<p>jMonkeyEngine ofrece un entorno de desarrollo (IDE) basado <a href="https://netbeans.apache.org/">NetBeans</a>. Descargando el paquete de jMonkeyEngine y copiando las librerías .jar los programas se puede ejecutar perfectamente independientemente del IDE y desarrollar con <a href="https://eclipse.org">eclipse</a> y usar la <a href="https://gradle.org/">herramienta de construcción gradle</a>.</p>
+<p>Para instalar jMonkeyEngine debemos <a href="http://jmonkeyengine.org/downloads/">descargar el SDK</a> adecuado para la plataforma que usemos ya sea Windows, Linux o Macintosh. En el caso de Linux es un archivo .sh que deberemos ejecutar (dando permisos de ejecución si es necesario), seguimos las instrucciones y seleccionamos el directorio de instalación del SDK. En <em>jmonkeyplatform/libs</em> de la carpeta de instalación encontramos los archivos .jar que deberemos usar en el IDE o en los programas de los ejemplos.</p>
+<p>El <a href="https://amzn.to/2ZRNc38" rel="sponsored">libro jMonkeyEngine 3.0 Beginners Guide</a> me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el <a href="http://www.cedv.es/">Curso de Experto en Desarrollo de Videojuegos</a>, un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la <a href="http://wiki.jmonkeyengine.org/doku.php"><em>wiki</em> de jMonkeyEngine</a> se pueden encontrar <a href="http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners">numerosos tutoriales para principiantes</a>, también numerosos artículos de nivel más avanzado y el <a href="https://javadoc.jmonkeyengine.org/">javadoc de la API</a>.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1849516464&amp;linkId=56dfb3e4672ccdf48e706b39693b3b55" title="Amazon" class="lozad"></iframe>
+</div>
+<p>Otras librerías como <a href="http://slick.ninjacave.com/">Slick2D</a> permiten hacer videojuegos en 2D como serían los juegos de plataformas, más o menos lo que permite jMonkeyEngine en el 3D aplicado a 2D también usando como lenguaje Java. Sin duda los videojuegos han sido el motivo en parte de que muchos hoy seamos programadores e informáticos aunque en nuestro trabajo nos dediquemos a otro tipo de aplicaciones y entornos.</p>
+<p>Que, ¿aún crees que en Java no se pueden hacer juegos que no tienen que envidiar a muchos otros?</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://jmonkeyengine.org/">jMonkeyEngine</a></li>
+<li><a href="http://www.cedv.es./">Curso Experto Desarrollo Videojuegos</a></li>
+<li><a href="https://amzn.to/2QsiP0q" rel="sponsored">Libro jMonkeyEngine 3.0 Beginners Guide</a></li>
+<li><a href="http://slick.ninjacave.com/">Slick2D</a></li>
+<li><a href="https://libgdx.badlogicgames.com/">libGDX</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/04/escribir-en-varios-writer-a-la-vez/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Escribir en varios «Writer» a la vez" title="Escribir en varios «Writer» a la vez" class="" loading="lazy">
+                <h3>Escribir en varios «Writer» a la vez</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-shiro.png" width="326" height="125" alt="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" title="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" class="" loading="lazy">
+                <h3>Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/04/evitar-iniciar-varias-veces-la-maquina-virtual-java-para-procesos-cortos/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Evitar iniciar varias veces la máquina virtual Java para procesos cortos" title="Evitar iniciar varias veces la máquina virtual Java para procesos cortos" class="" loading="lazy">
+                <h3>Evitar iniciar varias veces la máquina virtual Java para procesos cortos</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Productividad y errores de compilación con Apache Tapestry" title="Productividad y errores de compilación con Apache Tapestry" class="" loading="lazy">
+                <h3>Productividad y errores de compilación con Apache Tapestry</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Introducción y ejemplo de API RPC con Apache Thrift" title="Introducción y ejemplo de API RPC con Apache Thrift" class="" loading="lazy">
+                <h3>Introducción y ejemplo de API RPC con Apache Thrift</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2015/03/aplicacion-web-java-autocontenida-con-tomcat-embedded/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Aplicación web Java autocontenida con Tomcat Embedded" title="Aplicación web Java autocontenida con Tomcat Embedded" class="" loading="lazy">
+                <h3>Aplicación web Java autocontenida con Tomcat Embedded</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-79';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2015\/05\/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
