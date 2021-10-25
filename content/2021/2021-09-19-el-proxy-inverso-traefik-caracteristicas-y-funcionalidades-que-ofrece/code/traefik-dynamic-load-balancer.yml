@@ -1,0 +1,20 @@
+http:
+  routers:
+    ...
+    nginx:
+      rule: "Host(`nginx.127.0.0.1.sslip.io`)"
+      middlewares:
+        - nginx-ratelimit
+      service: "nginx"
+    ...
+  middlewares:
+    ...
+  services:
+    ...
+    nginx:
+      loadBalancer:
+        servers:
+          - url: http://nginx-1:80/
+          - url: http://nginx-2:80/
+        passHostHeader: true
+    ...

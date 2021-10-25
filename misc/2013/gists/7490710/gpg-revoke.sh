@@ -1,0 +1,1 @@
+$ gpg --output "[email].revoke" --gen-revoke "[email]"

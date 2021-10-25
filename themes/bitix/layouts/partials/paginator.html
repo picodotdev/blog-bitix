@@ -1,0 +1,21 @@
+{{ $paginator := $.Paginator }}
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    {{ if $paginator.HasNext }}
+      <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true">&laquo;</span> {{ i18n "older" }}</a>
+    {{ end }}
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="{{ ref . "archive" }}">{{ i18n "archive" }}</a>
+    </div>
+    <div class="col-md-4 text-right">
+    {{ if $paginator.HasPrev }}
+      <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous">{{ i18n "newer" }} <span aria-hidden="true">&raquo;</span></a>
+    {{ end }}
+    </div>
+  </div>
+</nav>
+{{ end }}

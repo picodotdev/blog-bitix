@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="picodotdev (generated)" id="1368200697562-1">
+        <createTable tableName="DEPT">
+            <column autoIncrement="true" name="DEPTNO" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="DNAME" type="VARCHAR(14)"/>
+            <column name="LOC" type="VARCHAR(13)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="picodotdev (generated)" id="1368200697562-2">
+        <createTable tableName="EMP">
+            <column autoIncrement="true" name="EMPNO" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="ENAME" type="VARCHAR(10)"/>
+            <column name="JOB" type="VARCHAR(9)"/>
+            <column name="MGR" type="DECIMAL(4,0)"/>
+            <column name="HIREDATE" type="DATE"/>
+            <column name="SAL" type="DECIMAL(7,2)"/>
+            <column name="COMM" type="DECIMAL(7,2)"/>
+            <column name="DEPTNO" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="picodotdev (generated)" id="1368200697562-3">
+        <addForeignKeyConstraint baseColumnNames="DEPTNO" baseTableName="EMP" baseTableSchemaName="liquibase" constraintName="FK_DEPTNO" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="DEPTNO" referencedTableName="DEPT" referencedTableSchemaName="liquibase" referencesUniqueColumn="false"/>
+    </changeSet>
+</databaseChangeLog>

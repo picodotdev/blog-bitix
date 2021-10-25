@@ -1,0 +1,1 @@
+# vim /etc/modules-load.d/snd-bcm2835.conf

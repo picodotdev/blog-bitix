@@ -1,0 +1,23 @@
+...
+
+plugins {
+    ...
+    id 'pmd'
+    ...
+}
+
+application {
+    description = 'PlugInTapestry application'
+    group = 'io.github.picodotdev.plugintapestry'
+    version = '1.8'
+    mainClass = 'io.github.picodotdev.plugintapestry.Main'
+}
+
+...
+
+pmd {
+  ruleSets = ["bestpractices"]
+  ruleSetFiles = files("misc/ruleset.xml")
+}
+
+...

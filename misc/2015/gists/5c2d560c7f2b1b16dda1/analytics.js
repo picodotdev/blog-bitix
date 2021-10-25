@@ -1,0 +1,1 @@
+ga('send', 'event', 'error', '404', JSON.stringify({ location: window.location.pathname, referrer: document.referrer }));

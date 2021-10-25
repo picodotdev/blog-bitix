@@ -1,0 +1,68 @@
+{{ .Scratch.Set "outputFormat" "AMP" }}
+{{ partial "globals.html" . }}
+<!DOCTYPE html>
+<html amp lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="{{ "" | relURL }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="{{ .Site.Author.name }}">
+  <meta name="keywords" content="{{ .Site.Params.keywords }}">
+  <meta name="description" content="{{ if .IsPage }}{{ .Summary }} &hellip;{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="theme-color" content="#FFFFFF"/>
+  {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
+
+  <title>{{ .Title }}</title>
+
+  <link rel="shortcut icon" href="{{ "assets/favicon.ico" | relURL }}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "assets/apple-touch-icon-144-precomposed.png" | relURL }}">
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" title="{{ .Title }}">
+  {{ range .Translations }}
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Title }}">
+  {{ end }}
+  {{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" hreflang="{{ $.Language.Lang }}">
+  {{ end }}
+  <link rel="humans" type="text/plain" href="{{ "humans.txt" | relURL }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  {{ partial "html-head-social.html" . }}
+
+  {{ if .IsPage }}
+  <script type="application/ld+json">
+  {{ partial "html-head-post-structured-data.html" . | safeJS }}
+  </script>
+  {{ end }}
+
+  <script type="application/ld+json">
+  {{ partial "html-head-organization-structured-data.html" . | safeJS }}
+  </script>
+
+  {{ "<!-- boilerplate -->" | safeHTML }}
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  {{ "<!-- css -->" | safeHTML }}
+  {{ "<!-- theme -->" | safeHTML }}
+  <style amp-custom> 
+  {{ partial "style-bootstrap.amp.min.css" . | safeCSS }}
+  {{ partial "style-syntax.amp.min.css" . | safeCSS }}
+  {{ partial "style-main.amp.min.css" . | safeCSS }}
+  </style>
+
+  {{ "<!-- scripts -->" | safeHTML }}
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+  
+  {{ partial "html-head-adsense.amp.html" . }}
+
+  {{ partial "html-head-custom-css.amp.html" . }}
+  {{ partial "html-head-custom-js.amp.html" . }}
+</head>

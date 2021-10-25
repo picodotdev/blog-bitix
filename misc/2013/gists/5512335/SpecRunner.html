@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    require(['jasmine-html', 'specs/main-specs'], function(jasmine, specs) {
+        var env = jasmine.getEnv();
+    
+        var reporter = new jasmine.HtmlReporter();
+        env.specFilter = function(spec) {
+            return reporter.specFilter(spec);
+        };
+        env.updateInterval = 1000;
+        env.addReporter(reporter);
+        env.execute();
+    });
+</script>

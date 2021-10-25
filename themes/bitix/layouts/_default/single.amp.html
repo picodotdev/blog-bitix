@@ -1,0 +1,48 @@
+{{ partial "html-head.amp.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{ partial "head.amp.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        {{ partial "adsense/billboard.amp.html" . }}
+      </div>
+    </div>
+    {{ if .Params.imageHead }}
+    <div class="row page-header">
+      <div class="col-12">
+        {{ print "![" (i18n "article_image") "](url=" .Params.imageHead ",size=1040x300,command=Resize,options=1040x,commandthumb=Resize,optionsthumb=1040x,gallery=false,layout=,lazy=false" " \"" (i18n "header_image") "\"" ")" | $.Page.RenderString (dict "display" "inline" "markup" "markdown") }}
+      </div>
+    </div>
+    {{ end }}
+    <div class="row">
+      <div class="col-12">
+        {{ partial "article-single.amp.html" . }}
+        <div>
+          <hr>
+        </div>
+        {{ partial "series.html" . }}
+        {{ partial "share-this.amp.html" . }}
+        {{ partial "related.html" . }}
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            {{ partial "adsense/billboard.amp.html" . }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    {{ partial "footer.amp.html" . }}
+  </div>
+  {{ partial "html-footer.amp.html" . }}
+  {{ partial "html-footer-custom.amp.html" . }}
+</body>
+</html>

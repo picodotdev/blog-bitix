@@ -1,0 +1,53 @@
+{{ $tags := $.Site.Data.theme.conf.tags.html }}
+{{ $imgtagopen := $tags.imgtagopen }}
+{{ $imgtagclose := $tags.imgtagclose }}
+{{ $imgtagsrc := $tags.imgtagsrc }}
+{{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>{{ .Site.Title }}</strong></p>
+      <p>{{ .Site.Params.description }}</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        {{ range .Site.Menus.footer -}}
+          <li><a href="{{ print .URL $urlsuffix }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      {{ if .Site.Params.links.feed }}
+        <a href="{{ .Site.Params.links.feed.url | absURL }}" title="{{ .Site.Params.links.feed.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/rss.svg" | relURL }}" width="50" height="50" class="icon" alt="rss">{{ $imgtagclose | safeHTML }}</a>
+      {{ end }}
+      {{ if .Site.Params.links.twitter }}
+        <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/twitter.svg" | relURL }}" width="50" height="50" class="icon" alt="twitter">{{ $imgtagclose | safeHTML }}</a>
+      {{ end }}
+      {{ if .Site.Params.links.googleplus }}
+        <a href="{{ .Site.Params.links.googleplus.url }}" title="{{ .Site.Params.links.googleplus.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/google-plus.svg" | relURL }}" width="50" height="50" class="icon" alt="google-plus">{{ $imgtagclose | safeHTML }}</a>
+      {{ end }}
+      {{ if .Site.Params.links.github }}
+        <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/github.svg" | relURL }}" width="50" height="50" class="icon" alt="github">{{ $imgtagclose | safeHTML }}</a>
+      {{ end }}
+      {{ if .Site.Params.links.facebook }}
+        <a href="{{ .Site.Params.links.facebook.url }}" title="{{ .Site.Params.links.facebook.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/facebook.svg" | relURL }}" width="50" height="50" class="icon" alt="facebook">{{ $imgtagclose | safeHTML }}</a>
+      {{ end }}
+      {{ if .Site.Params.links.linkedin }}
+        <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/linkedin.svg" | relURL }}" width="50" height="50" class="icon" alt="linkedin">{{ $imgtagclose | safeHTML }}</a>
+      {{ end }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> {{ now.Format "2006" }} - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">{{ $imgtagopen | safeHTML }} src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License">{{ $imgtagclose | safeHTML }}</a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/planeta-codigo.png" | relURL }}" width="80" height="15" alt="Planeta código" title="Planeta código">{{ $imgtagclose | safeHTML }}</a>
+      <br/>
+      <a href="{{ .Site.BaseURL }}" rel="nofollow">Blog Bitix</a> by <a href="{{ .Site.BaseURL }}">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>

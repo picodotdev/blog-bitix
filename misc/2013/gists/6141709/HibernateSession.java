@@ -1,0 +1,1 @@
+Session session = (Session)entityManager.getDelegate();

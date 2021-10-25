@@ -1,0 +1,15 @@
+{
+ book: __type(name: "Magazine") {
+   name
+   
+   fields(includeDeprecated: true) {
+     name
+     description
+     isDeprecated
+     type {
+       name
+       kind
+     }
+   }
+ }
+}

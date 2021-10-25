@@ -1,0 +1,33 @@
+{{ $tags := $.Site.Data.theme.conf.tags.amp }}
+{{ $iframetagopen := $tags.iframetagopen }}
+{{ $iframetagclose := $tags.iframetagclose }}
+{{ $iframetagsrc := $tags.iframetagsrc }}
+
+{{ $linkids := split .Params.linkids "," }}
+{{ $asins := split .Params.asins "," }}
+
+{{ if or (gt (len $linkids) 0) (gt (len $asins) 0) }}
+{{ if ne (len $linkids) (len $asins) }}
+  {{ errorf "Invalid number linkids and asins: %s" .Position }}
+{{ end }}
+<div class="media media-amazon">
+  {{- range $index, $linkid  := $linkids -}}
+  {{- $asin := index $asins $index }}
+  <amp-ad
+    width="120"
+    height="240"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="{{ $.Site.Params.amazon.trackingId }}"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="ES"
+    data-amzn_assoc_title="{{ i18n "suggested_products" }}"
+    data-amzn_assoc_linkid="{{ $linkid }}"
+    data-amzn_assoc_asins="{{ $asin }}">
+  </amp-ad>
+  {{- end }}
+</div>
+{{ end }}

@@ -1,0 +1,15 @@
+{{ if .Params.comments }}
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = '{{ .Site.Params.disqus.shortname }}';
+    var disqus_identifier = '{{ .Site.Params.disqus.shortname }}-{{ .Params.pid }}';
+    var disqus_url = '{{ .Site.Params.baseurl }}{{ .Params.url }}';
+    var disqus_script = 'embed.js';
+  </script>
+{{ end }}

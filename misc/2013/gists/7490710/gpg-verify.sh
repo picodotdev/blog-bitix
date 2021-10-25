@@ -1,0 +1,1 @@
+$ gpg --verify secret.zip.asc

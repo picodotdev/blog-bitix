@@ -1,0 +1,37 @@
+{{ $expression := split .Params.imagePost ":" }}
+{{ $binding := default "logotype" (index $expression 0) }}
+{{ $value := default "blogbitix.svg" (index $expression 1) }}
+{{- $nil := default nil nil -}}
+
+{{ if (eq $binding "image") }}
+    {{ $resource := .Page.Resources.GetMatch (print "images/" $value) }}
+
+    {{ if eq $resource nil }}
+        {{ errorf "Missing image post: %s" $value }}
+    {{ end }}
+
+    {{ $resource1x1 := $resource.Fit "750x750" }}
+    {{ .Scratch.Set "image1x1" $resource1x1.Permalink }}
+{{ end }}
+{{ if (eq $binding "logotype") }}
+    {{ $value1x1 := $value }}
+    {{ $image1x1 := $nil }}
+    {{ if eq (strings.HasSuffix $value1x1 ".svg") true }}
+        {{ $value1x1 = replaceRE "\\.(svg)$" "-750.png" $value1x1 }}
+        {{ $image1x1 = print "assets/images/structured-data/" $value1x1 }}
+    {{ else }}
+        {{ $image1x1 = print "assets/images/logotypes/" $value1x1 }}
+    {{ end }}
+    
+    {{ if ne (fileExists (print "static/" $image1x1)) true }}
+        {{ errorf "Missing image post logotype: %s" $image1x1 }}
+    {{ end }}
+
+    {{ .Scratch.Set "image1x1" $image1x1 }}
+{{ end }}
+
+{{ $image1x1 := default .Site.Params.publisher.logotype (.Scratch.Get "image1x1") }}
+{{ $image1x1 := $image1x1 | absURL }}
+{{ $images := slice $image1x1 }}
+
+{{ return $images }}

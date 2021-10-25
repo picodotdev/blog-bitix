@@ -1,0 +1,1 @@
+select * from articles where to_tsvector(title, body) @@ to_tsquery('PostgreSQL');

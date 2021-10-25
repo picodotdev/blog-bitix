@@ -1,0 +1,21 @@
+http:
+  routers:
+    ...
+    nginx-weighted:
+      rule: "Host(`nginx-weighted.127.0.0.1.sslip.io`)"
+      middlewares:
+        - nginx-ratelimit
+      service: "nginx-weighted"
+    ...
+  middlewares:
+    ...
+  services:
+    ...
+    nginx-weighted:
+      weighted:
+        services:
+          - name: nginx-1
+            weight: 3
+          - name: nginx-2
+            weight: 1
+    ...

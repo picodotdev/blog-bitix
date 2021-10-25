@@ -1,0 +1,136 @@
+# Creación blog
+
+Fecha: 2010
+
+### Contexto
+
+Quiero un blog personal para escribir artículos técnicos relacionados con Java, de software libre y GNU/Linux y otros
+artículos relacionados con la programación.
+El mantenimiento no ha de ser complicado y el coste bajo o ninguno.
+
+### Decisión
+
+Uso Blogger como plataforma para tener un blog. Es rápido de tener, sencillo de usar y no
+requiere conocimientos.
+
+### Alternativa a Blogger
+
+Fecha: 2013-12
+
+### Contexto
+
+Editar y publicar artículos con Blogger requiere un esfuerzo significativo. Personalizar la plantilla de Blogger no es
+sencillo y propenso a errores.
+Es difícil gestionar recursos de los artículos como imágenes y gestionar los enlaces entre los artículos.
+
+Candidatos: Pelican, Octopress.
+
+### Decisión
+
+Cambio al generador estático Octopress y muevo el blog a GitHub Pages. Selecciono Octopress por tener documentación
+específica para GitHub Pages.
+No migro los artículos de Blogger a Octopress ya que requiere mucho esfuerzo.
+
+---
+
+# Alternativa a Octopress
+
+Fecha: 2015-05
+
+### Contexto
+
+La instalación de la herramienta Octopress no es sencilla y es propensa a errores en local en las actualizaciones.
+Octopress usa Ruby que no dominio de modo que los errores no se cual es el problema para solucionarlo rápidamente,
+al mismo tiempo son poco descriptivos.
+
+Candidatos: Hugo
+
+### Argumentos
+
+Hugo es un único binario fácil de instalar, es un generador estático de sitios web equivalente a Octopress pero mucho
+más rápido en la generación del sitio, tiene numerosas opciones de personalización y buena documentación.
+
+### Decisión
+
+Empiezo a usar Hugo
+
+### Riesgos
+
+He de migrar el contenido de los artículos de Octopress a Hugo. El número de artículos a migrar es manejable y al estar
+ambos en formato _markdown_ no se requieres grandes cambios.
+
+---
+
+# Alternativa a Gists
+
+Fecha: 201?
+
+### Contexto
+
+Los trozos de código fuente que incluyo en los artículos los llevo almacenando como Gist de GitHub. Esto es parte del
+contenido del artículo que está externalizado fuera.
+
+### Acciones
+
+Extraer el contenido de los Gist con un _script_ y ubicarlos como contenido de los artículos según la estructura de
+directorios requerida por Hugo. Usar el editor para buscar y reemplazar en el contenido de los artículos de Gist al
+contenido local.
+
+### Decisión
+
+Sustituir Gist por contenido local en el blog usando las facilidades de Hugo, _shortcodes_.
+
+---
+
+# Diseño adaptable
+
+Fecha: 2019-05
+
+### Contexto
+
+El blog no es adaptable a diferentes tipos de pantalla, los bloques de publicidad solo se muestran
+en la parte superior del artículo.
+
+### Decisión
+
+Hacer que el contenido del artículo tenga más anchura, sea adaptable y que un bloque de publicidad siga al contenido
+al hacer _scroll_.
+
+---
+
+# Hospedaje en la nube y dominio propio
+
+Fecha: 2021?
+Estado: Proposición
+
+### Contexto
+
+Con el objetivo de aprender sobre computación en la nube, evaluar si migrar el blog a una nube. Y comprar un
+dominio propio para independizarlo de la plataforma de hospedaje.
+
+Candidatos: AWS, Linode o Digital Ocean.
+
+### Argumentos
+
+AWS tiene unos costes más variables que Linode o Digital Ocean pero algo más barato con un plan
+de varios años, AWS es una opción más útil en ofertas de trabajo.
+
+### Riesgos
+
+El coste del blog con GitHub Pages es cero, el blog genera ingresos suficientes para cubrir los costes
+de su hospedaje en la nube y el coste de un dominio propio. Con GitHub Pages no se requiere administrar
+ni mantener infraestructura propia. Una nube requiere infraestructura propia y mantenerla.
+
+Minimizar el impacto en el SEO, redirigiendo el tŕafico actual al nuevo dominio y haciendo que los buscadores
+consideren el nuevo dominio como el canónico.
+
+### Mitigaciones
+
+En caso de que administrar infraestructura propia requiera tiempo o sea poco fiable una opción
+es usar CloudFront + S3 en vez de CloudFront + EC2. El coste de S3 será algo más barato que usar EC2.
+Durante el primer año la capa gratuita de AWS cubre la mayor parte de los costes. Con un dominio propio
+en caso necesario quizá pudiese volver a GitHub Pages.
+
+### Decisión
+
+Migrar el contenido a una nube y adquirir un dominio propio.

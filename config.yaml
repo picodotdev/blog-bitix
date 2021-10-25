@@ -1,0 +1,194 @@
+title: "Blog Bitix"
+baseURL: "https://picodotdev.github.io/blog-bitix/"
+paginate: 15
+metadataformat: "yaml"
+timeout: 60000
+
+languageCode: "es"
+defaultContentLanguage: "es"
+languages:
+  es:
+    weight: 1
+  en:
+    weight: 1
+    taxonomies:
+      disableKinds:
+      - home
+      - page
+      - section
+      - taxonomy
+      - term
+
+theme: "bitix"
+
+mediaTypes:
+  text/html:
+    suffixes:
+    - enr
+  text/html:
+    suffixes:
+    - asp
+
+outputs:
+  home:
+  - HTML
+  - AMP
+  - RSS
+  page:
+  - HTML
+  - AMP
+  section:
+  - HTML
+  - AMP
+  - RSS
+  taxonomy:
+  - HTML
+  - AMP
+  - RSS
+  taxonomyTerm:
+  - HTML
+  - AMP
+  - RSS
+
+outputFormats:
+  AMP:
+    path: ""
+    baseName: "index-amp"
+
+markup:
+  defaultMarkdownHandler: goldmark
+  blackFriday:
+  goldmark:
+    extensions:
+      linkify: false
+    renderer:
+      unsafe: true
+      xHTML: true
+  tableOfContents:
+    startLevel: 3
+    endLevel: 4
+    ordered: false
+
+pygmentsUseClasses: true
+pygmentsOptions: linenos=table,linenostart=1
+pygmentsStyle: github
+
+author:
+  name: "picodotdev"
+  description: "Ingeniero de software. I ♥ Java, GNU/Linux and libre software."
+copyright: https://creativecommons.org/licenses/by-sa/4.0/
+
+permalinks:
+  post: "/:year/:month/:title/"
+
+taxonomies:
+  tag: "tags"
+  series: "series"
+
+imaging:
+  resampleFilter: "box"
+  quality: 90
+
+menu:
+  header:
+    - Name: "Java"
+      URL: "/tags/java/"
+      Weight: 1
+    - Name: "GNU/Linux"
+      URL: "/tags/gnu-linux/"
+      Weight: 2
+    - Name: "JavaScript"
+      URL: "/tags/javascript/"
+      Weight: 3
+    - Name: "Tapestry"
+      URL: "/tags/tapestry/"
+      Weight: 4
+    - Name: "Archivo y hemeroteca"
+      URL: "/archive/"
+      Weight: 5
+    - Name: "Enlaces"
+      URL: "/pages/links/"
+      Weight: 6
+    - Name: "Acerca de..."
+      URL: "/pages/about/"
+      Weight: 7
+  footer:
+    - Name: "Java"
+      URL: "/tags/java/"
+      Weight: 1
+    - Name: "GNU/Linux"
+      URL: "/tags/gnu-linux/"
+      Weight: 2
+    - Name: "JavaScript"
+      URL: "/tags/javascript/"
+      Weight: 3
+    - Name: "Tapestry"
+      URL: "/tags/tapestry/"
+      Weight: 4
+    - Name: "Archivo y hemeroteca"
+      URL: "/archive/"
+      Weight: 5
+    - Name: "Enlaces"
+      URL: "/pages/links/"
+      Weight: 6
+    - Name: "Publicidad"
+      URL: "/pages/advertising/"
+      Weight: 7
+    - Name: "Donaciones"
+      URL: "/pages/donate/"
+      Weight: 8
+    - Name: "Acerca de..."
+      URL: "/pages/about/"
+      Weight: 9
+
+params:
+  baseurl: "https://picodotdev.github.io/blog-bitix"
+  context: "/blog-bitix"
+  description: "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema."
+  keywords: "java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos"
+  publisher:
+    name: "Blog Bitix"
+    logotype: "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+  links:
+    feed:
+      url: "index.xml"
+      title: "¡Suscríbete a Blog Bitix!"
+    github:
+      user: "picodotdev"
+      url: "https://github.com/picodotdev/blog-ejemplos/"
+      title: "¡Obtén el código fuente de los ejemplos!"
+    twitter:
+      user: "@picodotdev"
+      url: "https://twitter.com/picodotdev/"
+      title: "¡Sígueme en twitter!"
+#    facebook:
+#      url: ""
+#      title: ""
+#    linkedin:
+#      url: ""
+#      title: ""
+  github:
+    user: "picodotdev"
+  analytics:
+    trackingid: "UA-12874075-4"
+    domain: "picodotdev.github.io"
+  adsense:
+    adclient: "ca-pub-3533636310991304"
+    adslot:
+      autobillboard: "4052324337"
+      autoleaderboard: "8238629013"
+      autovertical: "7450235768"
+  amazon:
+    trackingId: "blobit-21"
+  sharethis:
+    publisher: "ur-a2d4b156-3d22-5ffc-2477-6c0f8a809173"
+    twitteruser: "picodotdev"
+  disqus:
+    shortname: "blog-bitix"
+  outputformats:
+    html:
+      urlsuffix: ""
+    amp:
+      urlsuffix: "index-amp.html"
+  misc:
+    sponsoredlink: "https://amzn.to/"

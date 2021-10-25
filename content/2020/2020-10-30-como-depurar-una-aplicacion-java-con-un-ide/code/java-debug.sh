@@ -1,0 +1,1 @@
+ $ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -classpath "target/classes:libraries/*" io.github.picodotdev.blogbitix.java8.helloworld.Main 

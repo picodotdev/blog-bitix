@@ -1,0 +1,72 @@
+{{ .Scratch.Set "outputFormat" "HTML" }}
+{{ partial "globals.html" . }}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta name="base" href="{{ "" | relURL }}">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="{{ .Site.Author.name }}">
+  <meta name="keywords" content="{{ .Site.Params.keywords }}">
+  <meta name="description" content="{{ if .IsPage }}{{ .Summary }} &hellip;{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>{{ .Title }}</title>
+
+  <link rel="shortcut icon" href="{{ "assets/favicon.ico" | relURL }}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "assets/apple-touch-icon-144-precomposed.png" | relURL }}">
+  <link rel="canonical" type="text/html" href="{{ with .OutputFormats.Get "HTML" }}{{ .Permalink }}{{ end }}" hreflang="{{ .Language.Lang }}">
+  <link rel="alternate" type="application/rss&#43;xml" href="{{ .Site.Params.links.feed.url | absURL }}" hreflang="{{ .Language.Lang }}" title="{{ .Site.Title }}">
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" title="{{ .Title }}">
+  {{ range .Translations }}
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Title }}">
+  {{ end }}
+  {{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" hreflang="{{ $.Language.Lang }}" title="{{ $.Page.Title }}">
+  {{ end }}
+  <link rel="humans" type="text/plain" href="{{ "humans.txt" | relURL }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
+
+  {{ partial "html-head-social.html" . }}
+
+  {{ if .IsPage }}
+  <script type="application/ld+json">
+  {{ partial "html-head-post-structured-data.html" . | safeJS }}
+  </script>
+  {{ end }}
+  <script type="application/ld+json">
+  {{ partial "html-head-organization-structured-data.html" . | safeJS }}
+  </script>
+
+  {{ "<!-- css -->" | safeHTML }}
+  <link rel="preload" href="{{ "assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" | relURL }}" as="style">
+  <link rel="preload" href="{{ "assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" | relURL }}" as="style">
+  <link rel="preload" href="{{ "assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" | relURL }}" as="style">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" | relURL }}" media="all">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" | relURL }}" media="all">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" | relURL }}" media="all">
+  {{ "<!-- theme -->" | safeHTML }}
+  <link rel="preload" href="{{ "assets/css/syntax.css" | relURL }}" as="style">
+  <link rel="preload" href="{{ "assets/css/main.css" | relURL }}" as="style">
+  <link rel="preload" href="{{ "assets/css/cookieconsent.min.css" | relURL }}" as="style">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/syntax.css" | relURL }}" media="all">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/main.css" | relURL }}" media="all">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/cookieconsent.min.css" | relURL }}" media="all">
+
+  {{ "<!-- javascript -->" | safeHTML }}
+  <link rel="preload" href="{{ "assets/js/require-config.js" | relURL }}" as="script">
+  <link rel="preload" href="{{ "assets/libs/require.js" | relURL }}" as="script">
+  <link rel="preload" href="{{ "assets/js/main.js" | relURL }}" as="script">
+  <script type="text/javascript" src="{{ "assets/js/require-config.js" | relURL }}" defer></script>
+  <script type="text/javascript" src="{{ "assets/libs/require.js" | relURL }}" data-main="{{ "assets/js/main" | relURL }}" defer></script>
+
+  {{ partial "analytics.html" . }}
+  {{ partial "html-head-adsense.html" . }}
+
+  {{ partial "html-head-custom-css.html" . }}
+  {{ partial "html-head-custom-js.html" . }}
+</head>

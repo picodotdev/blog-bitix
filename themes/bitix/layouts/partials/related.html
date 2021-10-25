@@ -1,0 +1,18 @@
+{{ if not .Params.series }}
+    {{ $related := .Site.RegularPages.Related . | first 6 }}
+    {{ range $index, $page := $related }}
+    {{ if eq $index 0 }}<div class="row related"><div class="col-12"><p>{{ i18n "related_articles" }}:</p></div></div>{{ end }}
+    {{ if eq (mod $index 3) 0 }}<div class="row related">{{ end }}
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                {{ with $page }}
+                <a href="{{ .RelPermalink }}">
+                {{ print "![" (i18n "article_image") "](page=" .File.Path ",url=" (default "logotype:hugo.svg" .Params.imagePost) ",size=326x125,command=Resize,options=875x,commandthumb=Resize,optionsthumb=875x,gallery=false" " \"" (.Title | plainify) "\"" ")" | $.Page.RenderString (dict "display" "inline" "markup" "markdown") }}
+                <h3>{{ .Title }}</h3>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    {{ if eq (mod $index 3) 2 }}</div>{{ end }}
+    {{ end }}
+{{ end }}

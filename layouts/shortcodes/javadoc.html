@@ -1,0 +1,17 @@
+{{ $version := string (default 11 .Params.version) }}
+{{ $javadocs := "https://docs.oracle.com/en/java/javase/11/docs/api/" }}
+{{ if eq $version "7" }}
+    {{ $javadocs := "https://docs.oracle.com/javase/7/docs/api/" }}
+{{ else if eq $version "8" }}
+    {{ $javadocs := "https://docs.oracle.com/javase/8/docs/api/" }}
+{{ else if eq $version "9" }}
+    {{ $javadocs := "https://docs.oracle.com/javase/9/docs/api/" }}
+{{ else if eq $version "10" }}
+    {{ $javadocs := "https://docs.oracle.com/javase/10/docs/api/" }}
+{{ else if eq $version "11" }}
+    {{ $javadocs := "https://docs.oracle.com/en/java/javase/11/docs/api/" }}
+{{ else }}
+    {{ $javadocs := print "https://docs.oracle.com/en/java/javase/" $version "/docs/api/" }}
+{{ end }}
+{{ $url := print $javadocs .Params.url }}
+<a href="{{ $url }}">{{ .Params.text }}</a>

@@ -1,0 +1,27 @@
+<script id="tareas-template" type="text/template">
+    	<![CDATA[
+    	    	<input type="text" name="nuevaTarea" value="" placeholder="Introduce una nueva tarea"/>
+    	    	<ul id="lista-tareas" class="unstyled"></ul>
+    	    	<div id="estado"></div>
+    	    	<input type="button" name="limpiar" value="Limpiar" class="btn"/>
+    	]]>
+</script>
+
+<script id="tarea-template" type="text/template">
+    	<![CDATA[
+    	    	<label class="checkbox">
+    	    	    	<input id="{{id}}" type="checkbox" name="completada" {{attrs.checked}}/> <span class="{{attrs.completada}}">{{descripcion}}</span>
+    	    	</label>
+    	]]>
+</script>
+
+<script id="estado-template" type="text/template">
+    	<![CDATA[
+    	    	{{#total}}
+    	    	    	{{completadas}} tareas de {{total}} completadas
+    	    	{{/total}}
+    	    	{{^total}}
+    	    	    	¡Muy bien! has completado todas las tareas
+    	    	{{/total}}
+    	]]>
+</script>

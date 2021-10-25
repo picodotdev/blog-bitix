@@ -1,0 +1,6 @@
+<div class="media">
+<figure>
+{{ .Inner }}
+</figure>
+{{- with .Params.caption }}<figcaption>{{ . }} {{ i18n "source" }}: {{ .Params.source }}</figcaption>{{ end -}}
+</div>

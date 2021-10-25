@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-md-4">
+		<h5><b>Con</b> mixin en <br/> form (ajax)</h5>
+		<form t:id="submitOneForm2" t:type="form" t:zone="submitOneZone" t:mixins="submitOne">
+			<input t:type="submit" value="Sumar 1"/>
+		</form>
+	</div>
+        <div class="col-md-4">
+		<h5><b>Con</b> mixin en <br/> botón (ajax)</h5>
+        	<form t:id="submitOneForm3" t:type="form" t:zone="submitOneZone">
+			<input t:type="submit" value="Sumar 1" t:mixins="submitOne"/>
+		</form>
+        </div>
+        <div class="col-md-4">
+		<h5><b>Con</b> mixin en <br/> enlace (ajax)</h5>
+		<a t:type="eventlink" t:event="sumar1CuentaAjaxSubmitOne" t:zone="submitOneZone" t:mixins="submitOne">Sumar 1</a>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+{{ partial "html-head.html" . }}
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{ partial "head.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        {{ partial "adsense/billboard.html" . }}
+      </div>
+    </div>
+    {{ if .Params.imageHead }}
+    <div class="row page-header">
+      <div class="col-12">
+        {{ print "![" (i18n "article_image") "](url=" .Params.imageHead ",size=1040x300,command=Resize,options=1040x,commandthumb=Resize,optionsthumb=1040x,gallery=false,layout=,lazy=false" " \"" (i18n "header_image") "\"" ")" | $.Page.RenderString (dict "display" "inline" "markup" "markdown") }}
+      </div>
+    </div>
+    {{ end }}
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            {{ partial "adsense/auto-vertical.html" . }}
+          </div>
+        </div>
+        {{ partial "article-single.html" . }}
+        <div>
+          <hr>
+        </div>
+        {{ partial "series.html" . }}
+        {{ partial "share-this.html" . }}
+        {{ partial "related.html" . }}
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            {{ partial "adsense/billboard.html" . }}
+          </div>
+        </div>
+        {{ partial "disqus.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partial "image-gallery.html" . }}
+  {{ partial "html-footer.html" . }}
+  {{ partial "html-footer-custom.html" . }}
+</body>
+</html>

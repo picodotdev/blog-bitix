@@ -1,0 +1,2 @@
+$ limactl stop
+$ limactl delete

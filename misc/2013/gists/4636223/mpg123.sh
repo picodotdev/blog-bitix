@@ -1,0 +1,1 @@
+$ mpg123 -@ http://radio1.rtve.stream.flumotion.com/rtve/radio1.mp3.m3u

@@ -1,0 +1,1 @@
+$ espeak -f text.txt -v europe/es -w voice.wav

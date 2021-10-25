@@ -1,0 +1,53 @@
+{{ partial "html-head.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{ partial "head.html" . }}
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            {{ partial "adsense/billboard.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                {{ partial "adsense/auto-vertical.html" . }}
+              </div>
+              <div class="adblock-sidebar-container-right">
+                {{ partial "adsense/auto-vertical.html" . }}
+              </div>
+            </div>
+            {{ partial "article-list.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            {{ partial "paginator.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            {{ partial "adsense/billboard.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </div>
+  {{ partial "html-footer.html" . }}
+  {{ partial "html-footer-custom.html" . }}
+</body>
+</html>

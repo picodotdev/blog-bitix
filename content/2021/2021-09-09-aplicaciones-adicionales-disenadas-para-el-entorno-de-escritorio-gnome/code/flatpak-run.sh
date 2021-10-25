@@ -1,0 +1,1 @@
+$ flatpak run org.gnome.gitlab.somas.Apostrophe

@@ -1,0 +1,1 @@
+# pacman -S vim transmission-cli vsftpd lighttpd dnsutils ufw ntfs-3g ntfsprogs dosfstools udev-automount php php-cgi cmus pulseaudio libmad libvorbis alsa-firmware alsa-lib alsa-plugins alsa-utils screen

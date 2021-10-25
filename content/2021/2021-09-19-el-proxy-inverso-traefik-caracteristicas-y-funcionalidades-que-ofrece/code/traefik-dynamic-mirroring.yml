@@ -1,0 +1,17 @@
+http:
+  routers:
+    ...
+    nginx-mirroring:
+      rule: "Host(`nginx-mirroring.127.0.0.1.sslip.io`)"
+      service:
+        - nginx-mirroring
+  middlewares:
+    ...
+  services:
+    ...
+    nginx-mirroring:
+      mirroring:
+        service: nginx-1
+        mirrors:
+          - name: nginx-2
+            percent: 50

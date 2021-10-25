@@ -1,0 +1,36 @@
+{{ $tags := $.Site.Data.theme.conf.tags.amp }}
+{{ $imgtagopen := $tags.imgtagopen }}
+{{ $imgtagclose := $tags.imgtagclose }}
+{{ $imgtagsrc := $tags.imgtagsrc }}
+{{ $urlsuffix := .Site.Params.outputformats.amp.urlsuffix }}
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="{{ print .Site.BaseURL $urlsuffix }}">{{ .Site.Title }}</a></span>
+      <div class="links">
+        {{ if .Site.Params.links.feed }}
+          <a href="{{ .Site.Params.links.feed.url | absURL }}" title="{{ .Site.Params.links.feed.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/rss.svg" | relURL }}" width="50" height="50" class="icon" alt="rss">{{ $imgtagclose | safeHTML }}</a>
+        {{ end }}
+        {{ if .Site.Params.links.twitter }}
+          <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/twitter.svg" | relURL }}" width="50" height="50" class="icon" alt="twitter">{{ $imgtagclose | safeHTML }}</a>
+        {{ end }}
+        {{ if .Site.Params.links.github }}
+          <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/github.svg" | relURL }}" width="50" height="50" class="icon" alt="github">{{ $imgtagclose | safeHTML }}</a>
+        {{ end }}
+        {{ if .Site.Params.links.facebook }}
+          <a href="{{ .Site.Params.links.facebook.url }}" title="{{ .Site.Params.links.facebook.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/facebook.svg" | relURL }}" width="50" height="50" class="icon" alt="facebook">{{ $imgtagclose | safeHTML }}</a>
+        {{ end }}
+        {{ if .Site.Params.links.linkedin }}
+          <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/linkedin.svg" | relURL }}" width="50" height="50" class="icon" alt="linkedin">{{ $imgtagclose | safeHTML }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      {{ partial "menu.amp.html" . }}
+    </div>
+  </div>
+</header>

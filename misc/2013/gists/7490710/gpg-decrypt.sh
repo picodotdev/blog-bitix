@@ -1,0 +1,1 @@
+$ gpg --output unsecret.zip -d secret.zip.asc

@@ -1,0 +1,17 @@
+{{ $tags := $.Site.Data.theme.conf.tags.html }}
+{{ $imgtagopen := $tags.imgtagopen }}
+{{ $imgtagclose := $tags.imgtagclose }}
+{{ $imgtagsrc := $tags.imgtagsrc }}
+
+<div class="alert alert-secondary sourcecode">
+    {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ "assets/images/icons/terminal.svg" | relURL }}" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">{{ $imgtagclose | safeHTML }}
+    <p>
+        {{- if .Params.git }}
+            You can download the <a href="https://github.com/picodotdev/{{ .Params.git }}">example complete source code</a> from the Blog Bitix examples repository hosted on GitHub
+            {{- if .Params.command }} and test it on your computer by executing the following command:<br><code>{{ .Params.command }}</code>{{ else }}.{{end -}}
+        {{- else -}}
+            {{- if .Params.command }} You can test the example on your computer by executing the following command:<br><code>{{ .Params.command }}</code>{{ else }}.{{end -}}
+        {{- end -}}
+        {{- if .Params.note }}<br><small>Note: {{ .Params.note }}</small>{{end -}}
+    </p>
+</div>

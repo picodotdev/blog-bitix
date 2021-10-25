@@ -1,0 +1,14 @@
+scalar Long
+scalar LocalDate
+
+type Book {
+    id: Long
+    title: String
+    author: Author
+    isbn: String
+    date: LocalDate
+    comments(after: String, limit: Long): CommentsConnection
+    batchedComments(after: String, limit: Long): CommentsConnection
+}
+
+...

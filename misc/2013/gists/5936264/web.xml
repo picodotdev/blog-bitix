@@ -1,0 +1,15 @@
+<filter-mapping>
+	<filter-name>app</filter-name>
+	<url-pattern>/*</url-pattern>
+	<dispatcher>REQUEST</dispatcher>
+	<dispatcher>ERROR</dispatcher>
+</filter-mapping>
+...
+<error-page>
+	<error-code>404</error-code>
+	<location>/error404</location>
+</error-page>
+<error-page>
+	<error-code>500</error-code>
+	<location>/error500</location>
+</error-page>

@@ -1,0 +1,1 @@
+ResourceBundle bundle = ResourceBundle.getBundle("utf8-2", new EncodingControl("UTF-8"));
