@@ -3,7 +3,7 @@ set -e
 
 rm -rf .git
 
-git init
+git init -b main
 git add .
 git commit -m "Initial commit"
 

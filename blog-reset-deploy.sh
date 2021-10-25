@@ -5,7 +5,7 @@ set -e
 mkdir deploy/
 
 cd deploy/
-git init
+git init -b gh-pages
 git remote add origin git@github.com:picodotdev/blog-bitix.git
 git config --local user.email "pico.dev@gmail.com"
 git config --local user.name "pico.dev"
