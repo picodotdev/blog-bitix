@@ -1,0 +1,633 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del dlincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el phishing que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar salted pasword hashing. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/" hreflang="es" title="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/index-amp.html" hreflang="es" title="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del dlincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el phishing que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar salted pasword hashing. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos">
+<meta name="twitter:description" content="Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del dlincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el phishing que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar salted pasword hashing. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/"
+    },
+    "headline": "Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-10-28T19:00:00+02:00",
+    "dateModified": "2021-10-28T19:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2084",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del dlincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el phishing que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar salted pasword hashing. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>28/10/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del dlincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el <em>phishing</em> que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar <em>salted pasword hashing</em>. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Algunos ataques informáticos están dirigidos a las empresas y sus sistemas de computación explotando alguna vulnerabilidad de seguridad. Tener un fallo de seguridad ya de por sí es un grave problema para la imagen de la empresa también con consecuencias económicas de pérdida de clientes o valor en la bolsa sino también legales con posibles cuantiosas multas , además de otras consecuencias intangibles como la reputación entre sus clientes y usuarios.</p>
+<p>Otros ataques están dirigidos hacia los usuarios como el robo de datos personales, bancarios o credenciales con técnicas de suplantación de identidad o <em>phishing</em>. Aún hoy en día muchas personas apenas tienen unos conocimientos básicos de tecnología y la mayoría desconoce las medidas básicas de seguridad. Estas personas aún con una alfabetización digital muy básica están rodeadas de tecnología y realizan importantes tareas como compras y transacciones bancarias. Muchas personas son víctimas de fraudes y estafas por internet, a veces por su desconocimiento pero también a veces porque las empresas no implementan medidas de seguridad suficientes para que sus servicios sean más difícil de ser explotados.</p>
+<p>Los informáticos tenemos una gran responsabilidad para diseñar sistemas seguros aplicando las mejores prácticas de seguridad no solo como algo adicional a la finalización de una funcionalidad, sino involucrando al rol de <em>security operations</em>  o <em>SecOps</em> desde el inicio, al igual que no se deben dejar las pruebas de aseguramiento de calidad para el final la seguridad tampoco debería.
+Los bancos utilizan medidas adicionales para realizar operaciones pero algunas medidas de seguridad dejan que desear en varios aspectos como requerir para todas las cuentas bancarias  iniciar sesión en la banca <em>online</em> con el número del DNI y un código de seis dígitos, no implementar medidas de notificación de pagos, transferencias o falta un registro de actividad completo en la cuenta digital.</p>
+<p>Sin embargo, me da miedo que un banco que debería ser un referente en medidas de seguridad incluyan en la página donde los usuarios introducen sus credenciales para el acceso a la banca online recursos JavaScript de <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> y de dominios ajenos al banco que no controlan para hacer analítica web de seguimiento de usuarios.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#inyección-de-sql-xss-_tabnabbing_-y-otros-errores-owasp">Inyección de SQL, XSS, <em>tabnabbing</em> y otros errores OWASP</a></li>
+    <li><a href="#_salted-password-hashing_"><em>Salted Password Hashing</em></a></li>
+    <li><a href="#implementación-de-segundo-factor-de-autenticación">Implementación de segundo factor de autenticación</a></li>
+    <li><a href="#notificación-de-acciones-relevantes">Notificación de acciones relevantes</a></li>
+    <li><a href="#registro-de-actividad">Registro de actividad</a></li>
+    <li><a href="#establecer-límites-de-uso">Establecer límites de uso</a></li>
+    <li><a href="#cifrar-información-personal">Cifrar información personal</a></li>
+    <li><a href="#informar-a-los-usuarios">Informar a los usuarios</a></li>
+    <li><a href="#comunicaciones-entre-servicios">Comunicaciones entre servicios</a></li>
+    <li><a href="#contraseñas-en-repositorios-de-código-fuente-y-artefactos-compilados">Contraseñas en repositorios de código fuente y artefactos compilados</a></li>
+    <li><a href="#otras">Otras</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="inyección-de-sql-xss-_tabnabbing_-y-otros-errores-owasp">Inyección de SQL, XSS, <em>tabnabbing</em> y otros errores OWASP</h3>
+<p>Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.</p>
+<p>La fundación OWASP mantiene un registro detallado de los diferentes tipos de seguridad, explicando el problema de seguridad y cómo evitarlos. También publicar cada ciertos años una lista de los 10 errores más comunes durante ese año.</p>
+<ul>
+<li><a href="https://owasp.org/www-community/attacks/">List of Attacks</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">SQL Injection Prevention Cheat Sheet</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html">XSS Filter Evasion Cheat Sheet</a></li>
+<li><a href="https://owasp.org/www-community/attacks/Reverse_Tabnabbing">Reverse Tabnabbing</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</a></li>
+</ul>
+<h3 id="_salted-password-hashing_"><em>Salted Password Hashing</em></h3>
+<p>Una aplicación que guarda credenciales para autenticar a los usuarios habitualmente solicita dos datos, un identificador del usuario o de la cuenta y una contraseña que como solo conoce el legítimo usuario permite identificarle en el sistema al iniciar sesión. Los identificadores de los usuarios y las contraseñas la aplicación necesita guardarlas en una base de datos para que la aplicación las compare con las que proporciona un usuario al iniciar sesión.</p>
+<p>Guardar la contraseña en la base de datos el valor original que el usuario ha proporcionado es un peligro ya que cualquier persona con acceso a la base de datos es capaz de conocer el valor de la contraseña. Para no guardar el valor original es posible utilizar una función de <em>hash</em> de un solo sentido que permite transformar el valor original en otro derivador a partir del cual no es posible conocer el valor original pero permite conocer si es válido aplicando la función al dato proporcionado y comparándolo con el guardado en la base de datos. Sin embargo, usar una función <em>hash</em> no es suficiente ya que utilizando un ataque de diccionario con valores precalculados de <em>hashes</em> de  valores comunes de contraseñas permite identificar cuentas con contraseñas débiles.</p>
+<p>La forma correcta de guardar contraseñas es utilizando cifrado o sin cifrado utilizando una versión modificada de <em>hash</em> denominada <em>salted password hashing</em> que evita ataques de diccionario.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</a></li>
+</ul>
+<h3 id="implementación-de-segundo-factor-de-autenticación">Implementación de segundo factor de autenticación</h3>
+<p>Muchos usuarios no tienen conocimientos de informática, ni una alfabetización digital avanzada. Estos usuarios con unos conocimientos mínimos utilizan la tecnología por ser necesaria ya para muchas tareas o permitir realizarlas de forma más rápida y sencilla. Pero incluso usuarios con muchos conocimientos avanzados de tecnología también son vulnerables a ciertos tipos de ataques como los de <em>phishing</em> sin las precauciones adecuadas. Los ataques de suplantación de identidad o <em>phishing</em> son empleados por los delincuentes para robar información personal, credenciales de acceso a cualquier tipo de servicio y datos bancarios como tarjetas de crédito.</p>
+<p>Las aplicaciones que ofrecen el segundo factor de autenticación y los usuarios que lo emplean mantienen su cuenta a salvo incluso si son víctimas de un ataque de <em>phishing</em>. Con el segundo factor de autenticación además de la contraseña que es el algo que solo el usuario sabe se requiere algo que se tiene que sería un generador de códigos temporales. En un ataque de <em>phishing</em> los delincuentes se hacen con lo que se sabe, si esto es lo único que permite el acceso a una cuenta es suficiente para que los delincuentes accedan a ella. Con el segundo factor de autenticación la contraseña no es suficiente se requiere un código adicional, en caso de que un ataque de <em>phishing</em> robase el código temporal sólo permitiría iniciar sesión en la cuenta durante un breve periodo de tiempo habitualmente de 30 segundos.</p>
+<p>Los servicios más conocidos implementan el segundo factor de autenticación que los usuarios deben activar, no es difícil de implementar en Java.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">Implementar un segundo factor de autenticación en una aplicación web Java con Spring</a></li>
+</ul>
+<h3 id="notificación-de-acciones-relevantes">Notificación de acciones relevantes</h3>
+<p>Algunas operaciones son relevantes desde el punto de vista de seguridad, como el inicio de sesión, un intento fallido de inicio de sesión, cambio de contraseña o realización de algunas operaciones en el ámbito de la aplicación. Para mejorar la seguridad conviene enviar en este tipo de acciones una notificación al usuario que permita advertir ante acciones que se puedan realizar sin su conocimiento. Las notificaciones permiten al usuario tomar medidas en caso de que detecte acciones fraudulentas. Las notificaciones pueden ser a través de un correo electrónico, mensaje SMS o a través de mensajería instantánea.</p>
+<p>Estos son dos ejemplos de correos electrónicos que envía <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> y <a href="https://es.wallapop.com/">Wallapop</a> para notificar al usuario de un nuevo inicio de sesión en su cuenta.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_huee3b0496a171157529c82e29f9f8cebc_80671_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Notificación de Gmail de inicio de sesión"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_huee3b0496a171157529c82e29f9f8cebc_80671_300x200_fit_box_3.png" width="161" height="200" alt="Notificación de Gmail de inicio de sesión" title="Notificación de Gmail de inicio de sesión" class="" loading="lazy"></a>
+
+<a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu62f37908c47c484e5c6522c4c79fd755_123506_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Notificación de Wallapop de inicio de sesión"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu62f37908c47c484e5c6522c4c79fd755_123506_300x200_fit_box_3.png" width="103" height="200" alt="Notificación de Wallapop de inicio de sesión" title="Notificación de Wallapop de inicio de sesión" class="" loading="lazy"></a></p>
+<figcaption>Correos electrónicos de notificación de inicio de sesión</figcaption>
+</figure>
+</div>
+<h3 id="registro-de-actividad">Registro de actividad</h3>
+<p>Mantener un registro de la actividad es otra variante para dar visibilidad y permitirle al usuario identificar actividad fraudulenta en su cuenta en caso de que haya sido víctima de un ataque o sus credenciales hayan sido robadas. Algunos servicios mantienen un registro con las fechas de los últimos inicios de sesión, la dirección IP de la computadora junto con su geolocalización que permite conocer su ubicación aproximada, el navegador usado, sistema operativo o fecha de últimos cambios de contraseña.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu684b93583f6beeef0a82426816b767c2_138167_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Registro de actividad en una cuenta de Gmail"><img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu684b93583f6beeef0a82426816b767c2_138167_300x200_fit_box_3.png" width="178" height="200" alt="Registro de actividad en una cuenta de Gmail" title="Registro de actividad en una cuenta de Gmail" class="" loading="lazy"></a></p>
+<figcaption>Registro de actividad en una cuenta de Gmail</figcaption>
+</figure>
+</div>
+<h3 id="establecer-límites-de-uso">Establecer límites de uso</h3>
+<p>Ya sea por una fallo de seguridad en un servicio vulnerable que ha sufrido un ataque o por un ataque dirigido al usuario por ejemplo con un ataque de <em>phishing</em> es posible implementar medidas no dirigidas a evitar los ataques sino a mitigar o reducir los posibles daños de un posible ataque.</p>
+<p>Para mitigar los posibles daños un servicio puede implementar medidas para limitar los datos como establecer un límite de intentos fallidos de inicio de sesión antes de bloquear la cuenta de forma temporal. Los bancos por ejemplo permiten activar o desactivar las tarjetas de crédito a petición del cliente que impidan la autorización de operaciones, con esta medida aunque un usuario haya sido atacado y un delincuente haya robado los datos de su tarjeta de crédito este puede desactivarla para evitar operaciones fraudulentas con ella unido a la notificación de acciones relevante un usuario puede actuar para evitar más daños. Otras medidas que utilizan los bancos son establecer límites de disposición de efectivo diario, importe máximo de transferencias, importe máximo en comercios físicos y electrónicos y de compras por internet.</p>
+<h3 id="cifrar-información-personal">Cifrar información personal</h3>
+<p>Los datos personales están protegidos por leyes, un fallo de seguridad con el resultado de robo de datos personales también tiene consecuencias legales para la empresa con importantes multas y económicas por pérdida de clientes y mala imagen.</p>
+<p>Los datos a proteger de los usuario son aquellos que permita identificarlos como nombre y apellidos, DNI, dirección de correo electrónico, dirección del domicilio, número de teléfono y por supuesto datos bancarios como número de cuenta y tarjetas de crédito.</p>
+<p>Para evitar el riesgo de un ataque dirigido al servicio que ocasione una fuga de datos es conveniente cifrarlos. Incluso para que los empleados que trabajan en la empresa no conozcan a quién corresponden esos datos.</p>
+<p>Cifrados los datos aun teniendo acceso a ellos la información está protegida ya que es necesario descifrarlos para obtener el valor original.</p>
+<p>Vault es una aplicación que ofrece el cifrado como servicio entre otras funcionalidades de seguridad.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a></li>
+</ul>
+<h3 id="informar-a-los-usuarios">Informar a los usuarios</h3>
+<p>Para prevenir fraudes otras medidas sencillas son informar a los usuarios de unas medidas básicas de prevención de fraude y explicar cómo son los procedimientos de comunicación.</p>
+<p>Algunos son desconfiar de mensajes inesperados, no acceder a enlaces de mensajes SMS, de mensajería instantánea y leer con atención la dirección en el navegador de los enlaces a los que se acceder.</p>
+<p>Nunca facilitar datos personales, credenciales de acceso a una cuenta no datos de tarjetas bancarias. Tampoco descargar ni instalar aplicaciones si no provienen de las tiendas oficiales del dispositivo. Y activar las notificaciones para conocer la actividad en la cuenta del servicio.</p>
+<h3 id="comunicaciones-entre-servicios">Comunicaciones entre servicios</h3>
+<p>La arquitectura de las aplicaciones tienden a diseñarse de forma que ofrezcan un medio de invocar sus funcionalidades mediante llamadas de red ya sea con el protocolo HTTP mediante REST, GraphQL o gRPC.</p>
+<p>Para autorizar las llamadas a los servicios estos han de implementar alguna forma de autenticación y autorización por ejemplo con OAuth y JWT.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a></li>
+</ul>
+<p>Otra forma de proteger los servicios más sencilla sin que cada uno de ellos tenga que implementar las funcionalidades de autenticación y autorización es utilizar un <em>service mesh</em>. <a href="https://www.consul.io/">Consul</a> además de ser un servicio que ofrece registro y descubrimiento ofrece la funcionalidad de conexión entre servicios con cifrado, autenticación mutua y autorización especificando qué servicio está autorizado a comunicarse con cual.</p>
+<p>Con las funcionalidades de conexión de Consul los servicios no es necesario que implementen el cifrado, autenticación y autorización. Los servicios tienen menos responsabilidades, son más sencillos y la autorización de la comunicación es gestionada desde Consul.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a></li>
+</ul>
+<h3 id="contraseñas-en-repositorios-de-código-fuente-y-artefactos-compilados">Contraseñas en repositorios de código fuente y artefactos compilados</h3>
+<p>La seguridad de las aplicaciones se basa en contraseñas, claves privadas y certificados que únicamente las aplicaciones y los administradores de los servicios deben tener acceso.</p>
+<p>Las credenciales deben ser guardadas aparte del código fuente de la aplicación, fuera de la herramienta de control de versiones. Incluso las credenciales en una clase Java compila a <em>bytecode</em> es posible acceder a ellas.</p>
+<p>Estos secretos deben proporcionarse a las aplicaciones en tiempo de ejecución por el orquestador de procesos, el entorno de ejecución en la nube o de un servicio específico de seguridad del que obtenerlo. Para mayor seguridad las propiedades con secretos de los archivos de configuración en el sistema de archivos deben evitarse.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/">Las contraseñas e información sensible en el código fuente o <em>bytecode</em> de Java no son seguras</a></li>
+</ul>
+<h3 id="otras">Otras</h3>
+<p>Otra medida de seguridad es ofrecer la posibilidad de eliminar una cuenta o desactivarla tras un periodo de inactividad prolongado.</p>
+<ul>
+<li><a href="https://www.whitesourcesoftware.com/resources/blog/application-security-best-practices/">Application Security Best Practices</a></li>
+<li><a href="https://techbeacon.com/security/7-must-dos-delivering-app-focused-security">7 must-dos for delivering app-focused security</a></li>
+</ul>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Application_security">Application security</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">
+                <img src="/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_875x0_resize_q90_box.jpg" width="326" height="125" alt="Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención" title="Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención" class="" loading="lazy">
+                <h3>Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">
+                <img src="/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/images/paypal-2fa-2_hu649eb672996bd37528e41668ac07392c_66523_875x0_resize_box_3.png" width="326" height="125" alt="Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios" title="Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios" class="" loading="lazy">
+                <h3>Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" title="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" class="" loading="lazy">
+                <h3>El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_3.png" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Comprobar la seguridad de un sitio web que use SSL/TLS" title="Comprobar la seguridad de un sitio web que use SSL/TLS" class="" loading="lazy">
+                <h3>Comprobar la seguridad de un sitio web que use SSL/TLS</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">
+                <img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Autenticación mediante clave pública y privada con SSH" title="Autenticación mediante clave pública y privada con SSH" class="" loading="lazy">
+                <h3>Autenticación mediante clave pública y privada con SSH</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-606';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/10\/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
