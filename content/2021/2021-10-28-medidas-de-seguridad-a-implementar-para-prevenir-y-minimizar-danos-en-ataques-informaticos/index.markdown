@@ -28,7 +28,7 @@ Sin embargo, me da miedo que un banco que debería ser un referente en medidas d
 
 {{< tableofcontents >}}
 
-### Inyección de SQL, XSS, _tabnabbing_ y otros errores OWASP
+### Inyección de SQL, XSS, _tabnabbing_ y otras vulnerabilidades básicas
 
 Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.
 
