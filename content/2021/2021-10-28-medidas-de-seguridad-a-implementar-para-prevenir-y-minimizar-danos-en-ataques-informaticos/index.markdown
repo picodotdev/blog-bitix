@@ -38,7 +38,7 @@ La fundación OWASP mantiene un registro detallado de los diferentes tipos de se
 * [SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 * [XSS Filter Evasion Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
 * [Reverse Tabnabbing](https://owasp.org/www-community/attacks/Reverse_Tabnabbing)
-* [El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo][blogbitix-486]
+* [El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo][blogbitix-486]
 
 ### _Salted Password Hashing_
 

@@ -74,7 +74,7 @@ Artículos sobre desarrollo web.
 * [Usar un paquete npm con Webpack creado con Storybook, React y TypeScript][blogbitix-472]
 * [Animaciones y transformaciones 2D y 3D con CSS][blogbitix-475]
 * [Copia de seguridad, restauración y carga de datos en PostgreSQL y MySQL][blogbitix-481]
-* [El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo][blogbitix-486]
+* [El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo][blogbitix-486]
 
 Artículos sobre juegos con la PlayStation.
 

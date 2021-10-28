@@ -1,8 +1,9 @@
 ---
 pid: 486
 type: "post"
-title: "El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo"
-url: "/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/"
+title: "El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo"
+url: "/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/"
+aliases: ["/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/"]
 date: 2020-05-24T10:00:00+02:00
 language: "es"
 index: true
@@ -12,7 +13,7 @@ comments: true
 promoted: false
 imagePost: "logotype:html.svg"
 tags: ["planeta-codigo", "seguridad", "web"]
-summary: "A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de _tabnabbing_ y _phising_."
+summary: "A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de _tabnabbing_ y _phishing_."
 ---
 
 {{% post %}}
@@ -21,7 +22,7 @@ summary: "A medida que las personas dependen en mayor medida para operar en inte
 
 Es bueno conocer los problemas de seguridad más comunes en las aplicaciones web. Aún siendo la lista de [los 10 problemas de seguridad más importantes](https://owasp.org/www-project-top-ten/) muy conocidos aún siguen siendo de los más importantes por seguir habiendo aplicaciones vulnerables a ellos y por su gravedad para la seguridad de los datos así como para explotar una aplicación.
 
-Aún así no son los únicos importantes, algunos ni siquiera requieren complejas técnicas para explotarlos. Uno de ellos son los enlaces externos que se abren en páginas en blanco. El problema de seguridad reside en que el modo de funcionamiento por defecto de estos enlaces se permite el acceso a la ventana origen desde la página abierta. Esto hace que la página abierta potencialmente sea capaz de tomar el control de la ventana origen y modificar su contenido, por ejemplo cargando una página maliciosa para hacer un peligroso ataque de suplantación de identidad o _phising_ que simule una página legítima con la intención de robar las contraseñas de algún servicio importante de un usuario.
+Aún así no son los únicos importantes, algunos ni siquiera requieren complejas técnicas para explotarlos. Uno de ellos son los enlaces externos que se abren en páginas en blanco. El problema de seguridad reside en que el modo de funcionamiento por defecto de estos enlaces se permite el acceso a la ventana origen desde la página abierta. Esto hace que la página abierta potencialmente sea capaz de tomar el control de la ventana origen y modificar su contenido, por ejemplo cargando una página maliciosa para hacer un peligroso ataque de suplantación de identidad o _phishing_ que simule una página legítima con la intención de robar las contraseñas de algún servicio importante de un usuario.
 
 {{< code file="page.xhtml" language="html" options="hl_lines=8-9" >}}
 
@@ -34,7 +35,7 @@ El problema es que los navegadores cuando se abre un enlace en una página en bl
 
 {{< code file="external.xhtml" language="html" options="hl_lines=7" >}}
 
-Es un problema peligroso porque se aprovecha de los navegadores basados en pestañas, en este caso en una página fuera de la atención del usuario se carga un contenido nuevo, el usuario inadvertido al volver a esa pestaña puede pensar que el contenido cambiado de esa pestaña es legítimo sin ser consciente de que no lo es, sin embargo, ser víctima de este peligro de seguridad conocido como [tabnabbing](https://en.wikipedia.org/wiki/Tabnabbing) combinado con [phising](https://es.wikipedia.org/wiki/Phishing). Por ello se recomienda y es importante comprobar que el dominio de la página mostrado por el navegador en la barra de direcciones se corresponda con el contenido, que la página utilice un protocolo seguro no es suficiente si el ataque es de _phising_.
+Es un problema peligroso porque se aprovecha de los navegadores basados en pestañas, en este caso en una página fuera de la atención del usuario se carga un contenido nuevo, el usuario inadvertido al volver a esa pestaña puede pensar que el contenido cambiado de esa pestaña es legítimo sin ser consciente de que no lo es, sin embargo, ser víctima de este peligro de seguridad conocido como [tabnabbing](https://en.wikipedia.org/wiki/Tabnabbing) combinado con [phishing](https://es.wikipedia.org/wiki/Phishing). Por ello se recomienda y es importante comprobar que el dominio de la página mostrado por el navegador en la barra de direcciones se corresponda con el contenido, que la página utilice un protocolo seguro no es suficiente si el ataque es de _phishing_.
 
 Este ataque es realmente sencillo pero ha de complementarse con una forma de ataque [XSS](https://es.wikipedia.org/wiki/Cross-site_scripting) no tanto por permitir insertar código JavaScript pero si por permitir insertar contenido inseguro sin control de forma que otros usuarios tangan posibilidad de abrirlos y ser potenciales victimas en este caso enlaces que abran una página maliciosa.
 

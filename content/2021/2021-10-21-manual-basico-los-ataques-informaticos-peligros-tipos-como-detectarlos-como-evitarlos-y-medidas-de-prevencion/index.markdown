@@ -83,7 +83,7 @@ En los ataques informáticos que consisten en el secuestro de datos los delincue
 
 Otros ataques informáticos están dirigidos a robar las credenciales o los datos de su tarjeta de crédito de una cuenta importante del usuario. El robo de las credenciales de una cuenta o datos de la tarjeta de crédito ocurre sin ni siquiera ser la víctima consciente del robo. El delincuente hace llegar a la víctima a través de cualquier medio y dispositivo un enlace que lleva a una página aparentemente igual que la legítima pero que en realidad es una página maliciosa que simula ser una legítima, en algún punto a la víctima se le presenta el formulario que solicita las credenciales de la cuenta o los datos de la tarjeta bancaria. La víctima los introduce y la página controlada por el delincuente ahora en posesión de los datos puede ir a la página legítima y realizar las mismas acciones que pudiera hacer el usuario.
 
-Este tipo de ataques de suplantación de identidad son denominados de _phising_. Son muy peligrosos por dos motivos, porque son muy simples de realidad y porque se pueden hacer de forma masiva a muchos usuarios. Seguramente muchos usuarios potenciales víctimas no caigan en la trampa pero por probabilidad y estadística con que unos pocos se conviertan en víctimas compensa a los delincuentes.
+Este tipo de ataques de suplantación de identidad son denominados de _phishing_. Son muy peligrosos por dos motivos, porque son muy simples de realidad y porque se pueden hacer de forma masiva a muchos usuarios. Seguramente muchos usuarios potenciales víctimas no caigan en la trampa pero por probabilidad y estadística con que unos pocos se conviertan en víctimas compensa a los delincuentes.
 
 Si son los datos de la tarjeta de crédito es posible realizar compras y pagos en cualquier página que la acepte hasta el límite que permita. Si se trata de las credenciales de una cuenta bancaria y el banco no tiene medidas adicionales de seguridad es posible realizar transferencias bancarias.
 
@@ -155,7 +155,7 @@ En caso de un ataque informático según su gravedad algunas de las acciones a r
 
 ### Conclusión, tómatelo muy en serio
 
-Mantened los dispositivos y programas actualizados y seguros instalados únicamente de fuentes fiables. Conoced las mínimas nociones de los ataques de robo de credenciales y _phising_ y estar alerta ante mensajes no esperados por cualquier medio, asi como conocer los tipos de ataques habituales e ser capaz de identificarlos.
+Mantened los dispositivos y programas actualizados y seguros instalados únicamente de fuentes fiables. Conoced las mínimas nociones de los ataques de robo de credenciales y _phishing_ y estar alerta ante mensajes no esperados por cualquier medio, asi como conocer los tipos de ataques habituales e ser capaz de identificarlos.
 
 Internet permite estar conectados con muchas personas que están lejos o no veis en persona a las que queréis, pero también permite a cualquier persona del mundo contactarnos directamente. En las redes sociales se comparte mucha información personal demasiado alegremente (fotos propias, de hijos menores de edad, de otras personas sin su consentimiento, trabajo, ...) y en este mundo hay personas que cometen delitos  muy graves intencionadamente y conscientemente (robo, extorsión, ...). La información pública y las redes sociales son un filón para ellos para realizar ataques informáticos.
 
