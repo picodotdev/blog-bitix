@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-#mv deploy/ deploy-backup/
+mv deploy/ deploy-backup/
 mkdir deploy/
 
 cd deploy/
