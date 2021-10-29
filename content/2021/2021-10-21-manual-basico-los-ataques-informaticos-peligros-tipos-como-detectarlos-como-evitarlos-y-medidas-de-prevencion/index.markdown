@@ -37,7 +37,7 @@ Por un momento imagina que te roban las credenciales que dan acceso a un servici
 
 Este es un mensaje de audio de lo que parece una comercial o trabajadora en una sucursal de una entidad bancaria ante un número de ataques masivo no solo en la suya que muestra el grado de alarma y caos que es capaz de generar un ataque masivo con la capacidad de ser a nivel nacional.
 
-{{< video video="audio-ataque-masivo-banco.mp4" poster="poster.jpg" caption="Mensaje de advertencia después de un ataque informático" >}}
+{{< video video="audio-ataque-masivo-banco.mp4" poster="poster.jpg" caption="Audio con un mensaje de advertencia después de un ataque informático" >}}
 
 En el caso de sufrir un ataque informático los grupos dedicados a delitos informáticos de los diferentes cuerpos de policía harán todo lo posible para evitar más daños, reparar el causado que quizá no sea mucho y poner a disposición de la justicia a los delincuentes si pueden dependiendo del país el país en el que está el delincuente pero tampoco son todo poderosos y sus recursos materiales y de personal son limitados. La policía no da a basto con el número de casos que ya se dan, y los ataques parece que solo van a ir a mayor en número y gravedad. La policía únicamente se centrará en los más graves o en aquellos que se produzcan por bandas organizadas, por reiteración o por la posibilidad de acabar con ataques futuros. El mejor consejo que te va a dar la policía seguramente es la prevención, que evites ser víctima de un ataque informático. Con unas pautas sencillas la mayoría de ataques son detectables y evitables.
 
@@ -60,6 +60,24 @@ Las acciones de un virus informático son diversas como secuestrar los documento
 Los dispositivos móviles ya sean teléfonos móviles inteligentes o tabletas con conexión a internet mediante WIFI son dispositivos también vulnerables y medios que utiliza el usuario a través de los que realizar ataques. Además del correo electrónico los dispositivos móviles añaden otros vectores de ataque como las aplicaciones de mensajería instantánea como [WhatsApp][whatsapp], [Telegram][telegram] o simplemente mensajes SMS. Lo único que se necesita para hacer llegar de forma directa un ataque a un usuario de forma muy precisa es su número de teléfono, un dato que no es especialmente difícil de conseguir. En los dispositivos móviles, además, detectar algunos ataques es un poco más complicado por la forma de interactuar.
 
 * [El último timo que azota a España mezcla a Correos y un móvil por 1,5€](https://www.adslzone.net/noticias/seguridad/correos-phishing-correo-chatbot-octubre-2021/)
+
+#### Ejemplo de ataque mediante suplantación de identidad o _phishing_
+
+Este es un ejemplo de mensaje SMS con una alarmante supuesta desactivación de la cuenta que solicita una verificación por motivos de seguridad. En realidad el enlace lleva a una página de _phishing_ que trata de suplantar la identidad de la página de inicio de sesión de la banca _online_ del banco [Santander](https://www.bancosantander.es) que en caso de que el usuario introduzca los datos de inicio de sesión será una víctima si este banco no implementa medidas adicionales de seguridad.
+ 
+El enlace del mensaje SMS usa un acortador de direcciones para ocultar la dirección destino a la que se dirige. Este tipo de ataques son más difíciles de detectar en los móviles por no poder examinar el destino del enlace y por la limitación de las pantallas que son más pequeñas y no permiten ver la dirección completa una vez cargadas en el navegador. Este tipo de ataques también son posibles en ordenadores con enlaces que llegan a través de correo electrónico.
+ 
+En este ejemplo la página que suplanta la identidad de la banca online del banco tiene un aspecto que perfectamente podría considerarse válido si no se compara con la página real. Utiliza los colores corporativos del banco, el logotipo oficial y un aspecto bastante similar al real. La diferencia para darse cuenta de ser una página de suplantación de identidad está en la dirección de la página que muestra el navegador en la barra de direcciones con un dominio que no se corresponde con el oficial del banco y por el detalle del marcador en la parte inferior del _Powered by_.
+
+{{< image
+    gallery="true"
+    image1="image:phishing-sms.png" optionsthumb1="300x250" title1="Mensaje SMS de alarma y urgencia con un enlace a una página de phishing"
+    image2="image:phishing-web.jpg" optionsthumb2="300x250" title2="Página web de phishing que suplanta la identidad del inicio de sesión en la banca online"
+    caption="Ejemplo de los pasos en un ataque de phishing a través de un mensaje SMS" >}}
+{{< image
+    gallery="true"
+    image1="image:santander-banca-online.jpg" optionsthumb1="300x250" title1="Página real de inicio de sesión de la banca online"
+    caption="Página real de inicio de sesión de la banca online" >}}
 
 #### Ataques personalizados
 
