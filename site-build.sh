@@ -5,7 +5,7 @@ set -e
 
 #https://github.com/gohugoio/hugo/issues/6699
 #hugo --minify
-hugo --destination="deploy"
+hugo --destination="deploy" --gc --cleanDestinationDir
 
 # Soporte para compatibilidad de feeds antiguos
 cp deploy/index.xml deploy/atom.xml

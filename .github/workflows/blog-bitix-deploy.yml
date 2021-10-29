@@ -47,9 +47,9 @@ jobs:
           npm install
       - name: Echo content
         run: |
-          echo "Echo content"
           ls
-          echo "Echo content (deploy)"
+      - name: Echo content (deploy)
+        run: |
           ls deploy/
       - name: Generate styles
         run: |
@@ -60,15 +60,14 @@ jobs:
           npm run minify-amp
       - name: Generate content
         run: |
-          hugo --destination="deploy/"
+          hugo --destination="deploy/" --gc --cleanDestinationDir
       - name: Generate content (fixes)
         run: |
           cp deploy/index.xml deploy/atom.xml
           mkdir -p deploy/categories/planeta-codigo/
           cp deploy/tags/planeta-codigo/index.xml deploy/categories/planeta-codigo/atom.xml
-      - name: Echo content
+      - name: Echo content (deploy)
         run: |
-          echo "Echo content (deploy)"
           ls deploy/
       - name: Deploy
         run: |
