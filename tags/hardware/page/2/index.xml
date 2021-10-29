@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">Blog Bitix</title>
+    <subtitle type="text">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</subtitle>
+    <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
+    <link href="https://picodotdev.github.io/blog-bitix/" />
+    <id>https://picodotdev.github.io/blog-bitix/tags/hardware/</id>
+    <updated>2021-05-20T22:00:00+02:00</updated>
+    <author><name>picodotdev</name></author>
+    <generator>Hugo</generator>
+    <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
+    <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
+    <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/</id>
+        <title>7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM</title>
+        <updated>2019-07-12T12:30:00+02:00</updated>
+        <published>2018-03-10T10:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<p>Una de las tendencias de la tecnología desde sus inicios es que en todo momento está en constante evolución y mejora. Cada vez es más potente, más pequeña y más barata. Hay multitud de ejemplos en cualquier dispositivo electrónico que se use para ver su evolución desde <a href="https://en.wikipedia.org/wiki/History_of_IBM_magnetic_disk_drives#IBM%27s_first_HDD_versus_its_last_HDDs">discos duros de 5 megas que ocupaban un armario y pesaban varias decenas de kilos</a> a ahora las tarjetas microSD del tamaño de una uña con una capacidad de 256 GiB, de procesadores que en los años 70 funcionaban a una frecuencia de unos pocos megahercios a ahora varios gigahercios, de memorias RAM de unos pocos kilobytes a ahora varios gigabytes, de <em>chips</em> con <a href="https://en.wikipedia.org/wiki/Transistor_count">unos miles de transistores</a>, ya no digamos válvulas de vacío, a varios miles de millones de transistores que emplean ahora las GPU de las tarjetas gráficas.</p>
+<p>En poco más de dos décadas ha habido un salto de entre dos y tres órdenes de magnitud. Mi primer ordenador en 1996 fué un Intel Pentium a 120 Mhz con 8 MiB de memoria RAM que luego amplié a 32 MiB y un disco duro de 1 GiB que utilicé en mis años de universidad. En el 2002 cambié a un AMD 1800+ con 512 MiB, 60 GiB de disco duro y una gráfica Nvidia GeForce 2 MX creo que con 32 MiB de memoria gráfica con un monitor de 17&quot; de tubo que pesaba más de 10 kilos seguro. En el 2008 dejé el ordenador de escritorio y pase a un portátil Dell, del que no me quiero acordar mucho por lo malo que resultó, con un Intel Core 2 Duo 8100 fabricado un una litografía de 45 nanómetros, 4 GiB de RAM, un disco duro de 320 GiB y una gráfica Nvidia 8600 con 256 MiB de memoria gráfica. Finalmente ya casi en el 2013 a mi siguiente equipo como portátil con un Intel i3-3210 de 2 núcleos y 4 hilos fabricado a 22 nanómetros, 8 GiB de memoria e inicialmente un disco duro de 500 GiB que posteriormente cambié por un SSD de 250 GiB. Y actualmente si cambiase de equipo optaría seguramente por un AMD basado en la arquitectura Zen que han aumentado de forma significativa los núcleos e hilos de los procesadores, iría a por 32 GiB para virtualizar a gusto o 64 GiB si fuese posible y la memoria DDR4 estuviese a precios más asequibles, un monitor 2K o 4K y un disco SSD basado en NVMe que aumenta más la tasa de transferencia incluso sobre la interfaz SATA. Eso en los computadores tradicionales pero ya algunos modelos de móviles de gama alta poseen más memoria que varios portátiles de la gama básica y en el tamaño de 5 pulgadas.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</a>, finalmente adquirí un Intel NUC</li>
+</ul>
+<p>En otro artículo algo comentaba <a href="https://picodotdev.github.io/blog-bitix/2016/10/sobre-el-rapido-avance-de-la-tecnologia/">Sobre el rápido avance de la tecnología</a> y básicamente sacaba dos conclusiones. Una no merece comprar tecnología hasta que realmente es necesario pero tampoco esperar indefinidamente a lo siguiente mejor y como segunda conclusión que no hace falta tener lo último para hacer lo mismo que ya es posible con lo anterior.</p>
+<p>Una de las últimas adquisiciones que hice fué en 2012, uno de los primeros modelos de la popular computadora del tamaño de una tarjeta de crédito Raspberry Pi con un procesador ARM con el juego de instrucciones <em>armv6h</em> y 256 MiB que he utilizado mayoritariamente para realizar descargas y compartir archivos <em>torrent</em> o algunas pruebas de <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">utilización de sensores y dispositivos de entrada y salida con Java</a> o para <a href="https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/">usar un certificador de Let’s Encrypt en un servidor Nginx</a>. El siguiente uso que le daré es como <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">consola de juegos retro</a>, otro uso es utilizarla como <a href="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">nube privada de documentos personales con Nextcloud y OnlyOffice</a>.</p>
+<p>Ya había placas de tamaño reducido con un computador completo similares a la Raspberry Pi pero la Raspberry Pi ha sido la placa con más éxito y que sigue teniendo uno de los mejores soportes y comunidad. Su propósito original es el aprendizaje a nivel educativo sin embargo su precio reducido de unos 36 € por los que se puede <a href="http://amzn.to/2EP9mHX">comprar ahora en Amazon</a> ha sido gran parte de su éxito junto con una labor de promoción muy bien realizada en internet que contribuyó a crear gran expectación superando con creces la demanda esperada por los propios creadores en los meses iniciales. Han sido elaborados nuevos modelos más capaces con 4 núcleos a más velocidad y basados en un procesador de arquitectura ARM Cortex-A53 de 64 bits, con WiFi y Bluetooth, pero con solo 1 GiB de memoria y ciertas limitaciones en el ancho de banda de red.</p>
+<p>La Raspberry Pi es la más popular y con mejor soporte pero no es la mini placa más capaz ni incluso la más barata, debido a su éxito han surgido numerosas placas similares. La totalidad de estas placas usan alguna distribución de GNU/Linux y procesadores ARM ya sea <a href="https://www.debian.org/">Debian</a>, <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://www.android.com/">Android</a>, <a href="https://archlinuxarm.org/">Arch Linux ARM</a>, <a href="https://www.armbian.com/">Armbian</a> o algunas distribuciones especializadas como <a href="https://www.lakka.tv/">Lakka</a> para consola de juegos retro y <a href="https://libreelec.tv/">LibreELEC</a> o <a href="https://kodi.tv/">Kodi</a> para centro multimedia de salón.</p>
+<p>El uso que se les puede dar a estas computadores es muy diverso quizá no como para sustituir a un ordenador de escritorio o portátil basado en procesadores <a href="https://www.intel.es">Intel</a> o <a href="https://www.amd.com/es">AMD</a> pero si para otros propósitos como servidor de descargas, centro multimedia, servidor web, cluster de servidores con <a href="https://www.docker.com/">Docker</a>, servicio en la nube propio con <a href="https://owncloud.org/">OwnCloud</a>, servidor de código fuente con <a href="https://about.gitlab.com/">GitLab</a>, servidor de integración continua con <a href="https://jenkins.io/">Jenkins</a>, base de datos <a href="https://www.postgresql.org/">PostgreSQL</a> o los mencionados consola de juegos retro y centro multimedia entre cualesquiera otros usos que queramos mientras el software necesario esté disponible y la cantidad memoria de la computadora sea suficiente.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/arm-powered_hu4e4b4e6e72c77b245b83add14f218f6b_23049_2560x1440_fit_box_3.png" width="277" height="250" alt="ARM Powered" title="ARM Powered"  class="lozad "></p>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="raspberry-pi">Raspberry Pi</h3>
+<p>Cuando apareció en el 2012 ya había placas similares pero su bajo precio y <em>marketing</em> ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo <a href="https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/">Raspberry Pi 3</a> puede quedarse escaso. Su <em>SoC</em> BCM2837 de Broadcom no es el más capaz tanto en CPU (<em>quad-core</em> ARM Cortex-A53 a 1.4 GHz) como en GPU (VideoCore IV) y con su gigabit ethernet compartida con los puertos USB y limitada lo que es un inconveniente importante en las transferencias de datos.</p>
+<ul>
+<li>SoC: CPU Broadcom BCM2837B0, 4 x Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li>
+<li>GPU VideoCore IV</li>
+<li>Memoria 1GB LPDDR2 SDRAM</li>
+<li>WiFi 2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE</li>
+<li>Red Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps)</li>
+<li>Extended 40-pin GPIO header</li>
+<li>Full-size HDMI</li>
+<li>4 USB 2.0 ports</li>
+<li>CSI camera port for connecting a Raspberry Pi camera</li>
+<li>DSI display port for connecting a Raspberry Pi touchscreen display</li>
+<li>4-pole stereo output and composite video port</li>
+<li>Micro SD port for loading your operating system and storing data</li>
+<li>5V/2.5A DC power input</li>
+<li>Power-over-Ethernet (PoE) support (requires separate PoE HAT)</li>
+</ul>
+<p>La <a href="https://www.raspberrypi.org/magpi/raspberry-pi-4-specs-benchmarks/">Raspberry Pi 4</a> ha sido anunciada y comercializada por sorpresa el 2019 cuando pocos se esperaban este nuevo modelo. Mejora sensiblemente varios aspectos y limitaciones de las versiones anteriores y sigue manteniendo un precio reducido. La CPU pasa a estar formada por 4 núcleos ARM Cotex-A72 a 1.5 GHz lo que es alrededor de 3 veces más potente que la CPU de la Raspberry Pi 3. La memoria pasa a tener varias configuraciones de 1, 2, 4 y 8 GiB además de ser más veloz al ser LPDDR4. Se ha eliminado la limitación del puerto Gigabit ethernet y dos puertos USB pasan a ser USB 3.0 con notables aumentos de capacidad de transferencia. La salida de vídeo ahora está compuesta por dos mini HDMI para soportar configuraciones multimonitor en resolución 4K. La GPU es una Video Core VI con soporte de OpenGL ES 3.0.</p>
+<ul>
+<li>SoC: CPU Broadcom BCM2711B0 quad-core A72 (ARMv8-A) 64-bit @ 1.5GHz</li>
+<li>GPU: Broadcom VideoCore VI</li>
+<li>RAM: 1GB, 2GB, 4GB, 8GB LPDDR4 SDRAM</li>
+<li>Red: 2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN</li>
+<li>Bluetooth: Bluetooth 5.0, Bluetooth Low Energy (BLE)</li>
+<li>GPIO: 40-pin GPIO header, populated</li>
+<li>Almacenamiento: microSD</li>
+<li>Puertos: 2 × micro-HDMI 2.0, 3.5 mm analogue audio-video jack, 2 × USB 2.0, 2 × USB 3.0, Gigabit Ethernet, Camera Serial Interface (CSI), Display Serial Interface (DSI)</li>
+</ul>
+<p>El precio del modelo de 1 GiB de memoria se mantiene en $35 y el de 4 GiB llega a $55. Con este nuevo modelo la Raspberry Pi vuelve a posicionarse a la altura de sus equivalentes que con el paso del tiempo habían superado a los modelos anteriores de RPi.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi3b_huf7bddd99ea74c1ddc0c5b8580dd4a8c5_327265_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Raspberry Pi 3"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi3b_huf7bddd99ea74c1ddc0c5b8580dd4a8c5_327265_300x200_fit_q90_box.jpg" width="287" height="200" alt="Raspberry Pi 3" title="Raspberry Pi 3"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi4b_hud8137f3457ffc935be8b5b47cc7bb3ae_296533_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Raspberry Pi 4"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi4b_hud8137f3457ffc935be8b5b47cc7bb3ae_296533_300x200_fit_q90_box.jpg" width="300" height="200" alt="Raspberry Pi 4" title="Raspberry Pi 4"  class="lozad "></a></p>
+<figcaption>Raspberry Pi 3 y 4</figcaption>
+</figure>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07TC2BK1X&amp;linkId=6e87726b77e92056e7ac168add1bc747" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07XNVPK8X&amp;linkId=bef0fad42b2cc046799c66f7fa220c0f" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B073JYC4XM&amp;linkId=fc47107b5f2e02c96571abfa0506c1c7" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B014I8U33I&amp;linkId=df5c52be4ca21b9991d26145edb0b642" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07VMXHJ4Q&amp;linkId=39ee0802cdc202ce8259d463b59224ed" title="Amazon" class="lozad"></iframe>
+</div>
+<h3 id="rock64">Rock64</h3>
+<p>El segundo modelo que destacaré es este de <a href="https://www.pine64.org/">PINE64</a> porque posee versiones de 1, 2 y 4 GiB de memoria, gigabit ethernet y 1 puerto USB 3.0 a un precio similar al de una Raspberry Pi, lo único que le falta es WiFi para superar en todo a la RPi. También posee un módulo eMMC más rápido que las tarjetas microSD, SPI de 128 MiB para prescincir de tarjeta microSD en el arranque, salida de audio, otros 2 puertos USB 2.0, salida HDMI con soporte para 4K@60fps HDR10, botones dedicados de encendido y reinicio y los 40 <em>pines</em> para usar sensores. El <em>SoC</em> es un <a href="http://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html">Rockchip RK3328</a> <em>quad-core</em> ARM Cortex-A53 y la GPU <a href="https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-450-gpu">ARM Mali-450MP2</a> con capacidad para OpenGL ES 1.1 / 2.0.</p>
+<ul>
+<li>CPU Rockchip RK3328, 4 x Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li>
+<li>GPU ARM Mali-450MP2</li>
+<li>Memoria 1 / 2 / 4 GiB 1600 MHz LPDDR3 SDRAM</li>
+<li>128 Mb SPI Flash</li>
+<li>eMMC Module Socket, eMMC Jumper</li>
+<li>MicroSD Card Slot (Bottom)</li>
+<li>3.5mm Barrel Power Jack (5V3A)</li>
+<li>4K60P HDR Digital Output</li>
+<li>A/V Jack</li>
+<li>Red Gigabit Ethernet</li>
+<li>2 x USB 2.0 Dedicated Host, 1 x USB 3.0 Dedicated Host</li>
+<li>Pi-P5+ Bus</li>
+<li>Pi-2 Bus</li>
+<li>Power, Reset and Recovery Buttons</li>
+<li>IR Receiver Port</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64_hudfc13bdf91379a00065bee84942df0d9_616068_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Rock64"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64_hudfc13bdf91379a00065bee84942df0d9_616068_300x200_fit_q90_box.jpg" width="300" height="196" alt="Rock64" title="Rock64"  class="lozad "></a></p>
+<figcaption>Rock64</figcaption>
+</figure>
+</div>
+<p>Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conectable a un puerto USB, también tienen la posibilidad de comprar el alimentador de corriente, mando a distancia, caja acrílica y un <em>splitter</em> con <em>Power Over Ethernet</em> o <em>PoE</em> que hace innecesario el alimentador de corriente si poseemos o adquirimos un <em>switch</em> con esa función, tarjetas eMMC de 16, 32 y 64 GiB. Su precio de unos $45 para el modelo de 4 GiB.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/ZejkWra-Mfc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor <em>SoC</em> <a href="http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html">Rockchip RK3399</a> <em>hexa-core</em> con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una <a href="https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus">ARM Mali-T860MP4</a> <em>quad-core</em> con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64pro_huac7173302891f5df6b9d7f25e4921bbd_841529_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Rock64Pro"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64pro_huac7173302891f5df6b9d7f25e4921bbd_841529_300x200_fit_q90_box.jpg" width="267" height="200" alt="Rock64Pro" title="Rock64Pro"  class="lozad "></a></p>
+<figcaption>Rock64Pro</figcaption>
+</figure>
+</div>
+<p>Estas placas de PINE64 son de lo mejor en la relación características hardware y precio, donde adolecen es en el software y es que aún con un tiempo relativamente corto de un año de vida es en el software donde pueden presentar algún problema. Conforme pase el tiempo mejorarán pero quizá no sea el modelo más adecuado para aquellos usuarios que no deseen encontrase problemas en su uso y no estén dispuestos buscar información o a resolver los que se presenten.</p>
+<p>Aunque no es como los modelos anteriores de placas base este es destacable por ser un portátil basado en un procesador ARM RK3399 a un precio de $200. Pantalla de 14&quot; con una resolución de 1920x1080, 4 GiB de memoria, WiFi, microSD, mini HDMI, 64GB eMMC, dos puertos USB uno 3.0 y otro 2.0, salida de audio, cámara web y batería de 10000mAH, teclado y <em>touchpad</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/pinebook-pro_hu3f8af8bce03adffdd63b304c9c9fc947_188030_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="PineBook Pro"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/pinebook-pro_hu3f8af8bce03adffdd63b304c9c9fc947_188030_300x200_fit_q90_box.jpg" width="233" height="200" alt="PineBook Pro" title="PineBook Pro"  class="lozad "></a></p>
+<figcaption>PineBook Pro <br>Fuente: arstechnica.com</figcaption>
+</figure>
+</div>
+<h3 id="rock-pi-4b">Rock Pi 4B</h3>
+<p>Un modelo de placa mas reciente también basada en el mismo <em>SoC</em> de la Rock64Pro el Rockchip RK3399 con algunas características muy completas. Esta <a href="http://rockpi.org/">Rock Pi</a> no tiene uno de los defectos de la Rock64 y es que tiene WiFi AC y Bluetooth 5.0, su memoria también es de hasta 4 GiB pero LPDDR4, puerto Gigabit Ethernet, tiene dos puertos USB 2.0 y otros dos 3.0, GPIO de 40 <em>pines</em> compatible con la Raspberry Pi, además de conector de 3.5mm para el audio y salida HDMI de hasta 4K, se alimenta mediante conector USB Type-C, tarjeta microSD, tiene <em>socket</em> eMMC pero es que además tiene un conector M.2 lo que le permite tener SSD con esta interfaz y un gran ancho de banda para el almacenamiento.</p>
+<ul>
+<li>CPU Rockchip RK3399, 2 x Cortex-A72, 4 x Cortex-A53</li>
+<li>GPU Mali T860MP4 (OpenGL ES 1.1 /2.0 /3.0 /3.1 /3.2, Vulkan 1.0, Open CL 1.1 1.2, DX11)</li>
+<li>Memory LPDDR4 1GB/2GB/4GB</li>
+<li>Storage eMMC, microSD, M.2 SSD</li>
+<li>Display HDMI 2.0 4K@60, Audio 3.5mm jack</li>
+<li>WiFI 802.11 ac, Bluetooth 5.0, Gigabit Ethernet with PoE</li>
+<li>2 x USB 3.0, 2 x USB 2.0</li>
+<li>IO 40-pin GPIO header</li>
+<li>Power USB Type C, RTC battery connector</li>
+</ul>
+<p>Por si fuera poco tiene un precio razonable y similar al resto de placas que está entre los 70 € y los 107 € según configuración de memoria y accesorios incluidos, además es ofrecido por varias tiendas alemanas. Aunque no tiene el soporte de la Raspberry Pi en cuanto a características técnicas es posiblemente el mejor modelo de los comentados en este artículo.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/C4p9EpjA0ZM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="asus-tinker-board">ASUS Tinker Board</h3>
+<p>La <a href="https://www.asus.com/uk/Single-Board-Computer/Tinker-Board/overview/">ASUS Tinker Board</a> también está basada en un <em>SoC</em> de Rockchip pero en este caso el modelo <a href="http://www.rock-chips.com/a/en/products/RK32_Series/2014/0504/484.html">RK3288</a> que como CPU tiene el modelo más potente de 32 bits con una ARM Cortex-A17 <em>quad-core</em> e incorporando una GPU Mali-T764 mejor que la Mali de la Rock64. Tiene 2 GiB de memoria e incorpora de serie WiFi N y Bluetooth 4.0.</p>
+<p>Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que la Raspberry Pi, aún así incorpora de serie WiFi y Bluetooth por lo que no sería necesario comprar elementos adicionales.</p>
+<ul>
+<li>CPU Rockchip Quad-Core RK3288 processor</li>
+<li>Memoria 2GB Dual Channel DDR3</li>
+<li>GPU ARM Mali-T764</li>
+<li>Micro SD(TF) card slot</li>
+<li>Red Gigabit Ethernet</li>
+<li>WiFi 802.11 b/g/n, Bluetooth V4.0 + EDR</li>
+<li>Audio RTL ALC4040 CODEC</li>
+<li>4 x USB 2.0</li>
+<li>GPIO 40-pin header, up to 28 x GPIO pins, up to 2 x SPI bus, up to 2 x I2C bus, up to 4 x UART, up to 2 x PWM, up to 1 x PCM/I2S, 2 x 5V power pins, 2 x 3.3V power pins, 8 x ground pins, 1 x PWM, 1 x S/PDIF, 1 x 15-pin MIPI DSI, 1 x 15-pin MIPI CSI</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/asus-tinker-board_hu26cefdac17f008c08b5b052328b833f9_77329_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="ASUS Tinker Board"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/asus-tinker-board_hu26cefdac17f008c08b5b052328b833f9_77329_300x200_fit_q90_box.jpg" width="290" height="200" alt="ASUS Tinker Board" title="ASUS Tinker Board"  class="lozad "></a></p>
+<figcaption>ASUS Tinker Board</figcaption>
+</figure>
+</div>
+<h3 id="cubox">Cubox</h3>
+<p>Aunque los modelos de <a href="https://www.solid-run.com/">SolidRun</a> son significativamente más caros poseen buenas especificaciones como el modelo <a href="https://www.solid-run.com/product/cubox-i4x4/">CuBox i4x4</a> con un procesador <em>quad core</em> aunque en si versión ARMv7 de 32 bits pero con 4 GiB de memoria, gigabit ethernet, WiFi y bluetooth incluido en un formato de cubo de 2 pulgadas. Como decía a un precio mas elevado, $170.</p>
+<p>El modelo mas reciente <a href="https://www.solid-run.com/nxp-family/cubox-pulse/">Cubox Pulse</a> incorpora un procesador <a href="https://www.nxp.com/products/processors-and-microcontrollers/applications-processors/i.mx-applications-processors/i.mx-8-processors:IMX8-SERIES">NXP i.MX8M</a> ya a 64 bits pero con el precio igualmente abultado respecto a otras opciones de 170 €.</p>
+<ul>
+<li>CPU i.MX8M Dual/Quad core ARM Cortex A53 up to 1.5Ghz (with ARM M4 GPP)</li>
+<li>Memoria up to 4GB LPDDR4</li>
+<li>MicroSD</li>
+<li>eMMC</li>
+<li>2 x USB 3.0, 1 x HDMI 2.0, 1 x RJ45</li>
+<li>Power on button</li>
+<li>Indication LEDs</li>
+<li>RTC</li>
+<li>IR receiver</li>
+<li>PoE sink support</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox_hu2c855b5894605dc99ee7a60598c9e367_87196_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cubox"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox_hu2c855b5894605dc99ee7a60598c9e367_87196_300x200_fit_q90_box.jpg" width="260" height="200" alt="Cubox" title="Cubox"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox-pulse_hu2f7dfc62d4499ad78ab3f1361dd53ac8_41698_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cubox Pulse"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox-pulse_hu2f7dfc62d4499ad78ab3f1361dd53ac8_41698_300x200_fit_q90_box.jpg" width="189" height="200" alt="Cubox Pulse" title="Cubox Pulse"  class="lozad "></a></p>
+<figcaption>Cubox y Cubox Pulse</figcaption>
+</figure>
+</div>
+<h3 id="odroid">ODROID</h3>
+<p>Otro distribuidor importante es <a href="https://www.hardkernel.com">Hardkernel</a> con sus modelos ODROID de pequeñas computadoras basadas en ARM con varios modelos entre ellos el <a href="http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145457216438">ODROID C2</a> que posee un procesador ARM Cortex-A53 <em>quad-core</em>, 2 GiB de memoria, gigabit ethernet, soporta HDMI 2.0 4K@60fps, eMMC, 4 puertos USB 2.0 pero sin WiFi ni bluetooth. A un precio de $46.</p>
+<p>Están preparando el modelo <a href="https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/">ODROID N1</a> también basada en el <em>SoC</em> Rockchip RK3399.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/odroid-c2_hu3d03a01dcc18bc5be0e67db3d8d209a6_214044_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="ODROID C2"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/odroid-c2_hu3d03a01dcc18bc5be0e67db3d8d209a6_214044_300x200_fit_q90_box.jpg" width="282" height="200" alt="ODROID C2" title="ODROID C2"  class="lozad "></a></p>
+<figcaption>ODROID C2</figcaption>
+</figure>
+</div>
+<h3 id="nanopi-orangepi-y-bananapi">NanoPi, OrangePi y BananaPi</h3>
+<p>De <a href="http://nanopi.org/">NanoPi</a> voy a destacar el modelo <a href="http://nanopi.org/NanoPi-K2_Feature.html">NanoPi K2</a> con 2 GiB de memoria, procesador quad core, con WiFi y bluetooth y gigabit ethernet y soporte de 4K@60fps y H.265 10bit, H.264 a un precio de $50.</p>
+<p>Parece que con la costumbre de denominar a estas placas bases el nombre de frutos están <a href="http://www.orangepi.org/orangepiplus2/">OrangePi Plus 2</a> y <a href="http://www.banana-pi.org/m3.html">BananaPi M3</a>, el primero a un precio de 45 € con 2 GiB de memoria y soporte para HDMI 4K además de incluir gigabit ethernet y WiFi. El modelo de Banana Pi se diferencia en tener un procesador <em>octa-core</em>, un puerto SATA y un precio superior de 85 €.</p>
+<h3 id="conclusión">Conclusión</h3>
+<p>Estos no son los únicos modelos que existen pero son algunos de los más destacables. La Raspberry Pi 4 destaca por tener un modelo con 8 GiB de memoria y conectividad con WiFi sin necesidad de adaptadores. A pesar de que las alternativas de placas bases sean tan capaces como la Raspberry Pi esta les gana en mejor soporte del software como distribuciones GNU/Linux y programas como Kodi que también es algo a tener muy en cuenta y este posiblemente es el motivo de que aún siendo menos capaz tiene más éxito e igualmente una muy buena opción. Quizá con algunas de estas placas alternativas hay que leer la documentación que tengan, algún foro y probar más cosas de las que requeriría una Raspberry Pi.</p>
+<p>Estas placas son un logro del avance de la tecnología pero ciertamente no hay ningún modelo que soporte la memoria que un Intel NUC, todas estas placas no incluyen más de 8 GiB de memoria ni es ampliable, los NUC pueden llegar hasta los 32 GiB siendo más capaces. En cuanto al precio quizá los NUC son algo más caros pero la plataforma x86 tiene un gran soporte de software y no está tan fragmentado como la plataforma ARM, por otro lado al precio de las placas hay que añadirles los accesorios como la fuente de alimentación, caja, disipador, microSD o eMMC. A los NUC lo que les falta es el puerto GPIO para <a href="https://picodotdev.github.io/blog-bitix/series/electronica/">trastear con la electrónica como LEDs, <em>displays</em> y otros actuadores</a>. Si el propósito es de software preferiría un NUC, si el propósito es la electrónica o un precio muy ajustado una de estas placas.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.arm.com/products/processors/cortex-a">Procesadores ARM Cortex-A</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Arquitectura_ARM">Arquitectura ARM</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi</a></li>
+<li><a href="https://www.arm.com/products/graphics-and-multimedia/mali-gpu">GPUs ARM Mali</a></li>
+<li><a href="https://www.arm.com/products/graphics-and-multimedia/mali-gpu">GPUs ARM Mali (wkipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/VideoCore">VideoCore</a></li>
+<li><a href="https://www.khronos.org/opengles/">OpenGL ES</a></li>
+<li><a href="https://www.khronos.org/opencl/">OpenCL</a></li>
+<li><a href="https://www.khronos.org/openvg/">OpenVG</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="hardware"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/</id>
+        <title>Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</title>
+        <updated>2018-01-07T01:30:00+01:00</updated>
+        <published>2018-01-06T10:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los procesadores Intel se han visto afectados por un grave error de seguridad debido a que fueron diseñados con ejecución especulativa sin tener algunas consideraciones de seguridad, técnica empleada para aumentar el rendimiento pero que tiene efectos colaterales en la cache que pueden se aprovechados para realizar ataques <em>side-channel</em> con los que leer el contenido de la memoria del <em>kernel</em>, independientemente del sistema operativo utilizado.</strong></p>]]>
+        <![CDATA[<p>El año 2018 ha empezando haciéndose público uno de los peores <em>bugs</em> de seguridad que afecta a absolutamente todos los procesadores <a href="https://www.intel.es">Intel</a> que esta compañía ha fabricado en la última década, denominado <a href="https://meltdownattack.com/"><em>Meltdown</em> y su variante <em>Spectre</em></a>, el error tiene su propio nombre, logotipo y página web. Un error de diseño en los procesadores que solo se puede corregir reemplazando el microprocesador o modificando los sistemas operativos aunque se especula con una pérdida de rendimiento en ciertas cargas de trabajo, entre un 5% y un 30%. El error es tan grave que permite leer a un programa la memoria del núcleo del sistema operativo que debería estar protegida. En la memoria del <em>kernel</em> residen las claves de acceso a sistemas o datos sensibles que obtenidos y utilizados pueden ocasionar graves problemas de seguridad con consecuencias económicas o de acceso no autorizado a información. Este error es tan grave que deja al viejo conocido <a href="https://en.wikipedia.org/wiki/Pentium_FDIV_bug">fallo de la división de los Pentium</a> a la altura de chiste. Hace unos meses por si fuera poco se conocía otro error de seguridad en el <a href="https://en.wikipedia.org/wiki/Intel_Management_Engine">Management Engine (ME)</a> de Intel.</p>
+<ul>
+<li><a href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00088&amp;languageid=en-fr">Listado de procesadores Intel afectados por Meltdown y Spectre</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/meltdown.svg" width="200" height="200" alt="Meltdown" title="Meltdown"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spectre.svg" width="200" height="200" alt="Spectre" title="Spectre"  class="lozad "></p>
+<figcaption>Logotipos de Meltdown y Spectre</figcaption>
+</figure>
+</div>
+<p>Reemplazar todos los microprocesadores es tremendamente caro además de que primero hay que diseñar y fabricar unos que estén exentos del <em>bug</em> que lleva tiempo, meses o años hasta que estén preparados, por lo que la solución hasta el momento pasa por hacer modificaciones en el software y en los sistemas operativos, compiladores y programas para resolver o mitigar el problema. En el sistema operativo la solución consiste en separar el espacio de direcciones del <em>kernel</em> de la de los programas, sin embargo, cada vez que el microprocesador cambia entre un espacio de direcciones a otro hay una penalización en tiempo por lo que en ciertas cargas de trabajo muy intensivas en las que se cambia frecuentemente de contextos como operaciones de red, de almacenamiento rápido o E/S el rendimiento se ve afectado. Para un usuario doméstico, ofimático o juegos la perdida de rendimiento será insignificante y no será apreciable ya que en estos casos el microprocesador no trabaja a la máxima carga o no está cambiando frecuentemente del espacio de direcciones del <em>kernel</em> al de usuario. En grandes centros de datos como la computación en la nube de <a href="https://aws.amazon.com/es/">Amazon Web Services</a>, <a href="https://cloud.google.com/">Google Cloud Platform</a> o <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a> el rendimiento será más apreciable.</p>
+<p>Como usuarios domésticos para estar protegidos conviene descargar únicamente software de fuentes confiables pero para los usuarios empresariales con sus servicios en la nube en donde los sistemas están aislados pero usando infraestructura compartida y con el descubrimiento de este <em>bug</em> es más grave si no se parchea, los proveedores de infraestructura en la nube ya han planificando tareas de mantenimiento y reinicios obligatorios.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/intel.svg" width="200" height="200" alt="Intel" title="Intel"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amd.svg" width="200" height="200" alt="AMD" title="AMD"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/arm.svg" width="200" height="200" alt="ARM" title="ARM"  class="lozad "></p>
+</figure>
+</div>
+<h3 id="técnicas-para-aumentar-el-rendimiento">Técnicas para aumentar el rendimiento</h3>
+<p>Los microprocesadores modernos implementan varias técnicas para aumentar el rendimiento. Una de las mas simples es aumentar la frecuencia de trabajo del microprocesador, uno de los primeros Pentium trabajaba únicamente a 100 Mhz y los actuales llegan hasta los 3 Ghz, casi 30 veces más. Pero aumentar la frecuencia solo es posible hasta cierto límite a partir del cual el microprocesador se calienta mucho y consume mucha energía. Por lo que hay que emplear otras técnicas al mismo tiempo.</p>
+<p>Otra de las mas simples es reducir el tamaño de los transistores, unos transistores más pequeños hace que sea posible incluir más transistores en el mismo espacio físico para incluir caches de mayor tamaño o nuevas funcionalidades, con más velocidad y con menor consumo de energía. El tamaño de los transistores de los Pentium originales era de 800 nanómetros e incluía 3.1 millones, los Intel Core de octava generación se fabrican a 14 nanómetros incluyendo unos 5000 millones, unas 60 veces más pequeños. Aún así cada vez es más difícil cumplir con la <a href="https://es.wikipedia.org/wiki/Ley_de_Moore">ley de Moore</a> ya que se está llegando a límite físico de los átomos de los materiales, consistía en que cada dos años se duplica el número de transistores de un microprocesador.</p>
+<p>Con la ayuda de unos transistores más pequeños y más espacio se aprovecha para aumentar el rendimiento incluyendo más núcleos de cómputo. Pero para aumentar el rendimiento de un núcleo de cómputo individual o el <abbr title="Instructions Per Cicle">IPC</abbr> se emplean otras técnicas como utilizar múltiples <em>pipelines</em> para ejecutar varias instrucciones simultáneamente, ejecución fuera de orden para reorganizar las instrucciones y la ejecución especulativa para mantener llenos esos <em>pipelines</em>.</p>
+<h3 id="escalar">Escalar</h3>
+<p>En un microprocesador escalar se ejecuta una instrucción por ciclo, por ejemplo, en esta secuencia de instrucciones que realizan unas sumas se tardarían 6 ciclos de reloj. A estos microprocesadores que ejecutan una instrucción por ciclo de reloj se les denomina escalares, siendo ejemplos el Intel 486 y el ARM1176 usado en la Raspberry Pi 1.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">n</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span>&#10;<span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span>&#10;<span class="n">y</span> <span class="o">=</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span>&#10;<span class="n">z</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>escalar.py</span>
+    </div>
+</div>
+<h3 id="superescalar">Superescalar</h3>
+<p>En un microprocesador con dos <em>pipelines</em> o <a href="https://en.wikipedia.org/wiki/Superscalar_processor">superescalar</a> se pueden realizar varias operaciones simultáneamente, es decir, mientras se realiza la primera operación en la variable <em>m</em> se realiza al mismo tiempo la segunda operación de <em>n</em>, con lo que estas operaciones podrían completarse en únicamente tres ciclos de reloj con la siguiente equivalencia de programa. Ejemplos de microprocesadores superescalares son el Intel Pentium y los <a href="https://www.arm.com/">ARM</a> Cortex-A7 y Cortex-A53 estos últimos usados en la Raspberry Pi 2 y 3 respectivamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span>&#10;<span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>superescalar-1.py</span>
+    </div>
+</div>
+<p>Sin embargo, hacer la suma de <em>o</em> y <em>x</em> al mismo tiempo no es posible ya que antes de calcular <em>x</em> hay que calcular <em>o</em> debido a que uno de los operandos en la suma de <em>x</em> es <em>o</em>, es decir, hay una dependencia en estas instrucciones y se han de ejecutar una después de otra. Con lo que en vez de tres ciclos habría que conformase en ejecutar estas instrucciones en cuatro ciclos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span> &#10;<span class="n">o</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c1"># el segundo pipeline está ocioso</span>&#10;<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span><span class="p">,</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span> &#10;<span class="n">z</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c1"># el segundo pipeline está ocioso</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>suprescalar-2.py</span>
+    </div>
+</div>
+<h3 id="fuera-de-orden">Fuera de orden</h3>
+<p>Los microprocesadores <a href="https://en.wikipedia.org/wiki/Out-of-order_execution">fuera de orden</a> reordenan las instrucciones de la forma adecuada para que el programa sea equivalente pero manteniendo los <em>pipelines</em> llenos. Cambiando el orden entre las instrucciones <em>x</em> e <em>y</em> se consigue ejecutar las instrucciones en tres ciclos de reloj. Ejemplos de microprocesadores fuera de orden son el Pentium 2 y siguientes microprocesadores Intel y <a href="https://www.amd.com/es">AMD</a> incluyendo varios ARM Cortex-A9, A15, A17 y A57.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">,</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span>&#10;<span class="n">x</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>fuera-de-orden.py</span>
+    </div>
+</div>
+<h3 id="predicción-de-salto-y-ejecución-especulativa">Predicción de salto y ejecución especulativa</h3>
+<p>Los programas incluyen saltos con sentencias condicionales <em>if</em> o de bucle. Los microprocesadores tratan de adivinar si una sentencia de salto se producirá o no (con heurísticas y son bastante buenos acertando) para recuperar y tener preparadas las siguientes instrucciones. Mantener los <em>pipelines</em> llenos es difícil al aumentar su número a tres o cuatro. Para tratar de mantenerlos llenos los microprocesadores usan la predicción de salto y van ejecutando las instrucciones desechando las operaciones si finalmente no se acierta en el salto pero habiendo aumentado el rendimiento si se ha acertado, realizan <a href="https://en.wikipedia.org/wiki/Speculative_execution">ejecución especulativa</a> de las instrucciones.</p>
+<p>En este otro caso, <em>v</em> depende de <em>u</em> y <em>u</em> depende de <em>t</em> de modo que un microprocesador superescalar sin ejecución especulativa tardará tres ciclos computando <em>t</em>, <em>u</em> y <em>v</em> para determinar el valor de <em>v</em> en la sentencia condicional <em>if</em> (en otro ciclo) momento en que pasa otros tres ciclos calculando <em>w</em>, <em>x</em> e <em>y</em>, en total 4 o 7 ciclos dependiendo de si hay salto en la sentencia condicional.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;   <span class="n">x</span> <span class="o">=</span> <span class="n">w</span><span class="o">+</span><span class="n">g</span>&#10;   <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-1.py</span>
+    </div>
+</div>
+<p>Si el predictor de salto determina que es probable que la condición sea cierta la ejecución especulativa reordena el programa de la siguiente manera:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">w_</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;<span class="n">x_</span> <span class="o">=</span> <span class="n">w_</span><span class="o">+</span><span class="n">g</span>&#10;<span class="n">y_</span> <span class="o">=</span> <span class="n">x_</span><span class="o">+</span><span class="n">h</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-2.py</span>
+    </div>
+</div>
+<p>Y con la ejecución superescalar se mantiene los <em>pipelines</em> ocupados de modo que el ejemplo tiene la siguiente equivalencia y tardando aproximadamente 3 ciclos cuando antes se necesitaban 7.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;<span class="n">u</span><span class="p">,</span> <span class="n">x_</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">w_</span><span class="o">+</span><span class="n">g</span>&#10;<span class="n">v</span><span class="p">,</span> <span class="n">y_</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">x_</span><span class="o">+</span><span class="n">h</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-3.py</span>
+    </div>
+</div>
+<h3 id="cache">Cache</h3>
+<p>Los microprocesadores son muy rápidos comparados con la memoria o el acceso al almacenamiento secundario. Un Cortex-A53 de una Raspberry Pi puede ejecutar una instrucción en 0.5 nanosegundos pero el acceso a memoria costar 100 nanosegundos. Esto no es bueno pero por fortuna los accesos a memoria siguen patrones, accediendo repetidamente a variables recientemente accedidas y accediendo a variables en posiciones cercanas, de forma que colocando estas variables en una cache más rápida y cercana al procesador que la memoria principal se mitiga en gran medida el problema.</p>
+<h3 id="relación-entre-ejecución-especulativa-cache-y-_meltdown_-y-_spectre_">Relación entre ejecución especulativa, cache y <em>Meltdown</em> y <em>Spectre</em></h3>
+<p>La ejecución especulativa tiene el efecto colateral de colocar datos en la memoria cache del microprocesador y esto es utilizado para realizar una forma de <a href="https://en.wikipedia.org/wiki/Side-channel_attack">ataque side-channel</a>. Desde el punto de vista de <em>Meltdown</em> y <em>Spectre</em> y la ejecución especulativa lo importante es que midiendo el tiempo que tarda el acceso a memoria se puede conocer si el dato está en la cache (tarda poco) o no (tarda mucho).</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span> <span class="o">=</span> <span class="n">kern_mem</span><span class="p">[</span><span class="n">address</span><span class="p">]</span>   <span class="c1"># si se llega aquí se produce un fallo</span>&#10;   <span class="n">x</span> <span class="o">=</span> <span class="n">w</span> <span class="o">&amp;</span> <span class="mh">0x100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="c1"># operación de bit and</span>&#10;   <span class="n">y</span> <span class="o">=</span> <span class="n">user_mem</span><span class="p">[</span><span class="n">x</span><span class="p">]</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>meltdown-1.py</span>
+    </div>
+</div>
+<p><em>u</em> tiene una dependencia sobre <em>t</em> y <em>v</em> sobre <em>u</em> con lo que el microprocesador usando la superescalabilidad, la ejecución fuera de orden y ejecución especulativa acabaría transformando el programa en la siguiente secuencia de operaciones:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">kern_mem</span><span class="p">[</span><span class="n">address</span><span class="p">]</span>&#10;<span class="n">u</span><span class="p">,</span> <span class="n">x_</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">w_</span> <span class="o">&amp;</span> <span class="mh">0x100</span>&#10;<span class="n">v</span><span class="p">,</span> <span class="n">y_</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">user_mem</span><span class="p">[</span><span class="n">x_</span><span class="p">]</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="c1"># nunca se llega aquí, si no fallo</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>meltdown-2.py</span>
+    </div>
+</div>
+<p>El microprocesador lee de el valor de una dirección del <em>kernel</em> de forma especulativa pero el fallo en la operación de acceso no se produce hasta se conoce el valor de <em>v</em> utilizando en la sentencia condicional no es cero. Limpiando la cache previamente y haciendo que <em>v</em> de cero para que no se produzca la excepción con los valores adecuados de las variables (<em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>) la ejecución especulativa de <code>v, y_ = u+d, user_mem[x_]</code> producirá un acceso a la dirección de memoria <em>0x000</em> o <em>0x100</em> dependiendo del valor del octavo bit recuperado en el acceso ilegal a la dirección de memoria <code>kern_mem[address]</code>. El ataque <em>side-channel</em> se produce midiendo el tiempo que tarda una instrucción posterior que utilice estas direcciones, si está o no está en la cache (por el tiempo que tarda) determina a que dirección de memoria se ha accedido y cual es el valor del octavo bit de una dirección del <em>kernel</em>. ¡Felicidades has leído un bit de la memoria del kernel!. Bit a bit y con tiempo se puede leer todo el contenido de la memoria del <em>kernel</em> aplicando esta operación millones de veces.</p>
+<h3 id="notas-finales">Notas finales</h3>
+<p>Los microprocesadores ARM1176, Cortex-A7, and Cortex-A53 usados en la Raspberry Pi no se ven afectados por el <em>Meltdown</em> ya que no poseen ejecución especulativa, los AMD Ryzen tampoco se ven afectados por el <em>Meltdown</em> ya que aunque si soportan ejecución especulativa al contrario de Intel la ejecución especulativa no se permite entre diferentes anillos de seguridad, el <em>kernel</em> se ejecuta en el anillo 0 y las aplicaciones en el anillo 3. Sin embargo, una variante de <em>Meltdown</em> es <em>Spectre</em> que es el mismo caso pero en vez de con la memoria del <em>kernel</em> con la memoria de otra aplicación. Como las aplicaciones se ejecutan en el mismo anillo en este caso los AMD Ryzen y algunos modelos de ARM si se ven afectados por <em>Spectre</em> al igual que también los Intel.</p>
+<p>La ejecución especulativa hace más rápidos los microprocesadores pero habiéndose descubierto este fallo muy inseguros en el caso de los Intel ya que se ve afectados por <em>Meltdown</em> y <em>Spectre</em> a menos que se implementen parches por software ya que por microcódigo no es posible darle solución. <em>Meltdown</em> es más grave pero se puede corregir modificando el <em>kernel</em> aún con una pérdida de rendimiento, <em>Spectre</em> es más difícil de explotar pero más difícil de corregir y lo que se hará en este último caso es mitigar el problema modificando el sistema operativo, compilador y aplicaciones.</p>
+<p>Intel tiene un problema importante, con AMD y sus Ryzen a buen precio, con buen rendimiento y&hellip; sin el problema del <em>Meltdown</em>. Para corregir el fallo en el diseño de la arquitectura del hardware Intel va a tener que rediseñar en parte su arquitectura y esto le va a llevar meses hasta tener preparados nuevos modelos de microprocesadores sin el error.</p>
+<p>En el <em>kernel</em> de Linux 4.14.11 ya se han aplicado varios parches al igual que posteriormente se implementarán en Windows y macOS. Yo como usuario de Linux con un Intel Core i5-3210M que posee la característica <em>pcid</em> y esa versión del <em>kernel</em> no he notado ninguna perdida de rendimiento apreciable.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.raspberrypi.org/blog/why-raspberry-pi-isnt-vulnerable-to-spectre-or-meltdown/">Why Raspberry Pi isn’t vulnerable to Spectre or Meltdown</a></li>
+<li><a href="https://pdfs.semanticscholar.org/2209/42809262c17b6631c0f6536c91aaf7756857.pdf">The Intel 80x86 Processor Architecture: Pitfalls for Secure Systems</a></li>
+<li><a href="https://www.amd.com/en/corporate/speculative-execution">An Update on AMD Processor Security</a></li>
+<li><a href="https://lkml.org/lkml/2017/12/27/2">x86/cpu, x86/pti: Do not enable PTI on AMD processors</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures">List of ARM microarchitectures</a></li>
+<li><a href="https://geeks.ms/etomas/2018/01/05/meltdown-y-spectre-algunos-comentarios/">Meltdown y Spectre algunos comentarios</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="hardware"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="seguridad"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/</id>
+        <title>Introducción a Bitnami</title>
+        <updated>2017-05-28T01:00:00+02:00</updated>
+        <published>2014-11-29T10:45:45+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes"> 
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
+</div>
+<p>Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados.</p>
+<p><a href="https://bitnami.com/">Bitnami</a> es una amplia colección de servicios populares que permite instalarlos y disponer de ellos rápidamente completamente configurados sin necesidad de dedicar tiempo a conocer como instalarlos, además, si empleamos virtualización con <a href="https://www.virtualbox.org/">VirtualBox</a> se consigue que el equipo quede completamente limpio una vez que el servicio sea desinstalado bastando únicamente eliminar la máquina virtual. Esta colección de servicios se pueden instalar en el propio equipo, en una máquina virtual con VirtualBox, <a href="https://www.vmware.com/">VMware</a>, <a href="https://www.linux-kvm.org/page/Main_Page">KVM</a> o en la nube por ejemplo de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> o <a href="https://cloud.google.com/">Google Cloud</a> y próximamente usando <a href="https://www.docker.com/">Docker</a>.</p>
+<p>¿Alguna vez has querido probar <a href="https://wordpress.org/">Wordpress</a>, <a href="https://www.redmine.org/">Redmine</a>, <a href="https://www.drupal.org/">Drupal</a>, <a href="https://www.mediawiki.org/">MediaWiki</a>, <a href="https://www.phpbb.com/">phpBB</a>, <a href="https://www.liferay.com/">Liferay</a>, <a href="https://jenkins.io/">Jenkins</a>, <a href="https://plone.org/">Plone</a>, <a href="https://www.alfresco.com/">Alfresco</a>, &hellip;? Estos son solo unos pocos ejemplos de <a href="https://bitnami.com/stacks">todos los servicios que nos ofrece Bitnami</a> listos para que empecemos a usarlos en unos pocos minutos, hay muchos otros disponibles y en un futuro se agregarán más según las peticiones que realicen los usuarios de Bitnami. Algunas aplicaciones están compuestas de una pila completa de servicios como por ejemplo LAMP (Linux, Apache, MySQL, PHP) o LAPP (Linux, Apache, PostgreSQL, PHP) que incluyen una lista completa de dependencias que necesitan como FastCGI, OpenSSL, phpMyAdmin, ModSecurity, SQLite, Varnish, ImageMagick, xDebug, Xcache, OpenLDAP, ModSecurity, Memcache, OAuth, PEAR, PECL, APC, GD o cURL. Adicionalmente podemos usar una única pila como LAMP para instalar varios <a href="https://bitnami.com/stack/lamp/modules">módulos</a> en vez de instalar cada aplicación individualmente (Drupal, MediaWiki, &hellip;) de forma que todas las aplicación compartan la infraestructura de la misma pila.</p>
+<p>En un futuro parece que Bitnami ofrecerá soporte para <a href="https://www.docker.com/">Docker</a> haciendo que no necesitemos ni siquiera un entorno de virtualización, ahorrando espacio en disco y ofreciendo el máximo rendimiento que ofrezca la máquina sin ningún tipo de penalización que impone virtualizar.</p>
+<h3 id="cómo-empezar-a-usar-bitnami">¿Cómo empezar a usar Bitnami?</h3>
+<p>A continuación explicaré la opción de usar Bitnami con VirtualBox, para el ejemplo usaré la aplicación de <a href="https://about.gitlab.com/">GitLab</a>. En la <a href="https://docs.bitnami.com/virtual-machine/">guía de inicio rápido de Bitnami</a> están explicadas otras opciones y preguntas frecuentes, en este caso nos interesa la <a href="https://docs.bitnami.com/virtual-machine/get-started-virtualbox/">sección para VirtualBox</a>.</p>
+<p>Teniendo instalado previamente VirtualBox, primeramente necesitaremos descargar la imagen del disco que contiene la <a href="https://bitnami.com/stack/gitlab">aplicación de Bitnami para GitLab</a>. Accedida a la sección <a href="https://bitnami.com/stack/gitlab/virtual-machine"><em>Local Install</em></a> pulsamos el botón <em>Download</em> según la versión del sistema operativo que prefiramos, en este caso usaré la basada en <a href="https://www.debian.org/">Debian</a>. A continuación hay que crear una máquina virtual en VirtualBox mediante la opción <em>Importar servicio virtualizado&hellip;</em> del menú <em>Archivo</em> donde hay que seleccionar el archivo de extensión <em>ova</em> y cambiaremos la memoria asignada a la máquina virtual al menos 2048 MiB.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Importación de servicio virtualizado en VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_300x200_fit_box_3.png" width="300" height="198" alt="Importación de servicio virtualizado en VirtualBox" title="Importación de servicio virtualizado en VirtualBox"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquina virtual de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_300x200_fit_box_3.png" width="296" height="200" alt="Máquina virtual de GitLab" title="Máquina virtual de GitLab"  class="lozad "></a></p>
+<figcaption>Importación de servicio virtualizado de Bitnami en VirtualBox</figcaption>
+</figure>
+</div>
+<p>Una vez importado el servicio y creada la máquina virtual la tratamos como cualquier otra máquina virtual para iniciarla la máquina virtual está lista para ser iniciada. Una vez iniciada completamente en la terminal se solicita un inicio de sesión con el usuario y contraseña que da acceso a una terminal para realizar tareas administrativas, en la misma página de inicio de sesión se indica el usuario y contraseña a usar y se indica la dirección IP (en el caso de las capturas mostradas es la <em>192.168.1.3</em>) que es necesario usar para acceder al servicio con el navegador. En el primer inicio de sesión se solicita cambiar la contraseña.</p>
+<p>Accediendo con el navegador a la dirección <em>https://192.168.1.3</em> se accede a la aplicación de GitLab que pide un usuario y contraseña para iniciar sesión, el usuario y contraseña están indicados en la página de descarga de la imagen del servicio.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de sesión de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_300x200_fit_box_3.png" width="284" height="200" alt="Inicio de sesión de GitLab" title="Inicio de sesión de GitLab"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_300x200_fit_box_3.png" width="266" height="200" alt="GitLab" title="GitLab"  class="lozad "></a></p>
+<figcaption>Servicio de GitLab</figcaption>
+</figure>
+</div>
+<p>En definitiva, Bitnami es de utilidad si se necesita usar cualquiera de los servicios que ofrece tanto para probarlos con una máquina virtual o para instalarlos en la nube de Amazon EC2, Azure o en Google Cloud. La nube evita adquirir hardware y posibilita escalarlo según las necesidades siempre estando dispuestos a pagar su coste, en algunos casos un mini PC como los <a href="https://amzn.to/2rauzYV">Brix</a>, <a href="https://amzn.to/2s8GYtI">NUC</a> o <a href="https://amzn.to/2r07KGS">Cubi</a> que soportan cantidades de memoria de 16 GiB y algunos 32 GiB son mas que suficientes para una infraestructura interna de una empresa pequeña que incluya control de versiones, gestor de peticiones, integración continua, base de datos, servidor de aplicaciones, &hellip; estos ordenadores pequeños en tamaño pero con una capacidad de proceso y memoria nada despreciable son una opción a considerar para algunas tareas y pueden actuar perfectamente como servidores en los que alojar algunos servicios para consumo interno.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://bitnami.com">Bitnami</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bitnami">Wikipedia Bitnami</a></li>
+<li><a href="http://www.jsitech.com/generales/bitnami-una-tienda-de-aplicaciones-para-servidores/">Bitnami, Una tienda de Aplicaciones para Servidores</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción a Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Guía de inicio básico de Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">Introducción al gestor de proyectos y tareas Redmine</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar plugin ágil en Redmine</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="hardware"/>
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/</id>
+        <title>Desempaquetado y análisis Samsung SSD 840 EVO 250 GB</title>
+        <updated>2017-01-31T22:00:00+01:00</updated>
+        <published>2014-03-28T18:22:41+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<p>En estos momentos sin lugar a dudas la actualización más provechosa para mejorar el rendimiento de un equipo es una unidad de estado sólido o <a href="https://es.wikipedia.org/wiki/Unidad_de_estado_s%C3%B3lido"><abbr title="Solid State Drive">SSD</abbr></a> una vez tengamos memoria RAM suficiente, unos 2 GiB suelen ser suficientes para tareas ofimáticas y acceder a internet y los equipos que se están vendiendo ahora ya suelen venir con 4 GiB e incluso 8 GiB. El tiempo de acceso a un disco duro mecánico es grande y la velocidad de transferencia es pequeña, en los momentos que se require un uso intensivo del disco se nota que son el cuello de botella del sistema. A veces una mejora en el software puede producir una notable aumento de rendimiento con el mismo hardware pero cuando ya no hay margen de mejora en el software con una mejora en el hardware podemos conseguir el aumento de rendimiento buscado, este es el caso de los SSD.</p>
+<p>Así que después de estar leyendo prácticamente en todas las opiniones de los usuarios que han adquirido un SSD la apreciable mejora conseguida finalmente decidí comprar uno. El modelo que he elegido ha sido un Samsung 840 EVO SSD de 250 GB, que en el momento de adquirirlo es posiblemente una de las mejores opciones en cuanto calidad/precio, aunque posteriormente ha salido la evolución de este modelo el <a href="https://amzn.to/2kdQsRO">Samsung 850 EVO de 250 GB</a> con la novedad de que usa 3D NAND con la que consigue mayor densidad de almacenamiento que para los usuarios se traducirá en menor coste, otra buena opción era el Crucial MX100 256 GB o el Crucial M550 256 GB. Los SSD aún siguen siendo un producto con un precio más alto que los discos mecánicos pero desde la aparición de los primeros modelos han bajado notablemente de precio y ya se están poniendo alrededor de los 110 € para los modelos de 250 GB y en 65 € para los modelos de 120 GB, unos precios que empiezan a ser muy accesibles y posiblemente sus ventas empiecen a dispararse y a ser incluidos de serie en los equipos nuevos. Hay modelos de más capacidad, de <a href="https://amzn.to/2kdYGJK">1 TB también en la serie Samsung 850 EVO</a> y <a href="https://amzn.to/2jSgJ7j">500 GB</a> pero los precios son algo abultados y posiblemente tampoco necesitemos tanto espacio.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07MFBLN7K&amp;linkId=d8ee308b386ae8fc1ed0978391f98ade" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B077SQ8J1V&amp;linkId=048e7dde98c59aff3bdf3eda82b0057a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B078WST5RK&amp;linkId=9843c55e883197e8c5108e19cff142ae" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B077SF8KMG&amp;linkId=30e60238410c4c1f9584f13e067e8cca" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00OJ3UJ2S&amp;linkId=cfbb3e451367da0d5e878888b81e8ebc" title="Amazon" class="lozad"></iframe>
+</div>
+<p>En cualquier caso el SSD para mi tampoco ha sido una necesidad real sino más bien un capricho que me he permitido, si bien es cierto que el rendimiento del SSD hace palidecer al disco duro mecánico que tenía y los comentarios sobre los SSD están totalmente justificados también se puede vivir perfectamente con un disco duro mecánico si no nos importa esperar algo de tiempo. Con el disco duro mecánico el sistema me iniciaba en 1 minuto 30 segundos hasta llegar al inicio de sesión GDM y otros 30 segundos más hasta que el equipo me era usable en el escritorio. Con el SSD, y sin exagerar, el sistema se inicia en unos 10 segundos hasta llegar al inicio de sesión GDM y pocos segundos más hasta llegar al escritorio. En el inicio del sistema y en el arranque de alguna aplicación pesada que es donde más intensivamente se usa el disco es donde más notaremos el aumento de rendimiento, en mi caso que uso <a href="https://www.archlinux.org/">Arch Linux</a> también lo noto en las actualización del sistema cuando instala los nuevos paquetes. Mi opinión es que el SSD es posiblemente la mejor actualización para prolongar algo más la vida de un equipo si la memoria RAM no es el problema pero tampoco es imprescindible a pesar de ser cierto el gran aumento de rendimiento.</p>
+<p>El disco Samsung 840 EVO SSD de 250 GB lo compré en <a href="https://amzn.to/2kdYOJe">Amazon</a>, en algunos productos como este suelen tener los mejores precios y una abundante cantidad de modelos donde elegir. En las ocasiones que he comprado en ellos el proceso de compra y el envío ha sido perfecto, en tres días laborables tenía los productos en la dirección de entrega y en todo momento he estado informado tanto del estado del pedido como del envío del producto. Amazon es un buen modelo a seguir en cuanto a comercio electrónico. Si bien es cierto que si hubiese tenido oportunidad y los precios hubiesen sido similares o un poco superiores lo hubiese preferido comprar en un tienda local, <a href="http://www.izarmicro.net/">IzarMicro</a> me era una buena opción pero en el momento que hice el pedido el precio era algo superior.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-1_hue875e3cde77b35c74edb7fda5287dd14_41072_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Samsung SSD 840 EVO 250 GB"><img src="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-1_hue875e3cde77b35c74edb7fda5287dd14_41072_300x200_fit_q90_box.jpg" width="209" height="200" alt="Samsung SSD 840 EVO 250 GB" title="Samsung SSD 840 EVO 250 GB"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-2_hua8ac5d32dabfa939737cb1a81dce974f_52578_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Samsung SSD 840 EVO 250 GB"><img src="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-2_hua8ac5d32dabfa939737cb1a81dce974f_52578_300x200_fit_q90_box.jpg" width="214" height="200" alt="Samsung SSD 840 EVO 250 GB" title="Samsung SSD 840 EVO 250 GB"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-3_hud320d1470c31ae4ba3244cf3c280b515_46140_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Samsung SSD 840 EVO 250 GB"><img src="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-3_hud320d1470c31ae4ba3244cf3c280b515_46140_300x200_fit_q90_box.jpg" width="224" height="200" alt="Samsung SSD 840 EVO 250 GB" title="Samsung SSD 840 EVO 250 GB"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-4_hu86c6b2fdb83a5e1c7277d0569203f917_38656_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Samsung SSD 840 EVO 250 GB"><img src="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-4_hu86c6b2fdb83a5e1c7277d0569203f917_38656_300x200_fit_q90_box.jpg" width="210" height="200" alt="Samsung SSD 840 EVO 250 GB" title="Samsung SSD 840 EVO 250 GB"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Como se aprecia en las imágenes de desempaquetado el disco viene en una caja del tamaño de un CD conteniendo:</p>
+<ul>
+<li>El disco SSD</li>
+<li>Unas pegatinas</li>
+<li>Un CD con el manual y software.</li>
+<li>Unas guías de instalación</li>
+<li>La hoja de garantía</li>
+</ul>
+<p>Las especificaciones técnicas de la serie de discos SSD de Samsung 840 EVO SSD son:</p>
+<ul>
+<li>SATA 3 (6 Gbps) compatible con SATA 2 (3 Gbps)</li>
+<li>7 mm de altura en 2.5&quot;</li>
+<li>Lectura secuencial hasta 540 MB/s y 520 MB/s de escritura</li>
+</ul>
+<p>El disco es muy ligero pesando solo unos pocos gramos, tiene un tamaño de 7 milímetros de altura y la dimensiones son de 2.5 pulgadas, el tamaño más ampliamente usando en los discos para los portátiles no muy viejos. El disco se nota que en su mayor parte está vacío, he visto en <a href="http://www.xbitlabs.com/articles/storage/display/samsung-840-evo_3.html">alguna foto</a> que en realidad el disco solo ocupa una fracción del tamaño total de 2.5 pulgadas, por lo que los SSD todavía tienen margen para aumentar su capacidad, un punto donde aún les ganan los discos mecánicos. El ruido que hace es ninguno por lo que ya no oiremos &ldquo;rascar&rdquo; al disco cuando se escriba de forma intensiva en él. Aunque en la etiqueta se indica que el disco tiene una capacidad de 250 GB en realidad usables son unos 232 GiB una vez formateado.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-5_hu55e9c6599c56f8a877c891ff2c742b32_48431_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-5_hu55e9c6599c56f8a877c891ff2c742b32_48431_300x200_fit_q90_box.jpg" width="300" height="187"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-6_hufaa2f94481d86770cb24bb55a5d83e6b_76320_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/images/samsung-840-evo-ssd-6_hufaa2f94481d86770cb24bb55a5d83e6b_76320_300x200_fit_q90_box.jpg" width="300" height="195"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Los SSD aún tienen margen de mejora, seguirán bajando de precio, aumentarán de capacidad y no tardarán mucho en masificarse para dejar de ser un producto a comprar para los que buscan una mejora de rendimiento. Como muestra no hace ni una semana de que lo compre y ya ha bajado de 125 € a 120 €. Un punto donde todavía puede haber dudas es cuanto a la durabilidad, si realizamos tareas que escriban muchos datos en el disco puede que prefiramos usarlo junto con un disco mecánico. En teoría los discos TLC como el <a href="https://amzn.to/2kdQsRO">Samsung 850 EVO de 250 GB</a> tiene una esperanza de vida de 1000 escrituras por celda, a unos 10 GiB de datos escritos por día la esperanza de vida estimada es de 11.7 años para el modelo de 120 GB y 23.4 para el modelo de 250 GB. Los 10 GiB de escritura por día me parece una estimación escasa para un día de trabajo, en mi trabajo suelo estar entre 20 GiB y 40 GiB de escritura, principalmente porque uso una base de datos MySQL que por cada importación escribe al disco unos 14 GiB. También es cierto que los 1000 ciclos de escritura quizá sean algo bajos y las celdas aguanten algo más, probablemente y salvo que le demos mucho uso al disco antes de que falle cambiaremos de equipo.</p>
+<p>Si alguien está pensando en comprar un disco SSD lo primero que deberá hacer es calcular el espacio mínimo que va a necesitar para saber que modelo comprar y el uso que le va a dar, una opción de 120 GB puede que sea más que suficiente, se recomienda que el espacio ocupado no sea superior al 75% de la capacidad. Si va usarse de forma intensiva en cuanto a escrituras o se necesita mucho espacio es recomendable seguir usando un disco mecánico. También se puede optar por un SSD para el sistema y un disco duro mecánico USB externo para el almacenamiento de datos, con una caja de disco duro USB externa podemos aprovechar el disco duro mecánico que sustituimos, una opción es <a href="https://amzn.to/3hnky2h">una caja USB 3.0</a> que cumple perfectamente la misión además de tener un precio bastante asequible.</p>
+<p>En siguientes artículos comentaré como monitorizar las escrituras a disco, obtener la cantidad de datos escritos y leídos, una guía de instalación de <a href="https://www.archlinux.org/">Arch Linux</a> con notas específicas para SSD entre otras cosas y una serie de recomendaciones para proteger la esperanza de vida del SSD. En internet hay multitud de análisis sobre este SSD, dos de los que más me han gustado han sido <a href="http://www.anandtech.com/show/6459/samsung-ssd-840-testing-the-endurance-of-tlc-nand">Testing the endurance of TLC NAND</a> y otro de <a href="http://www.xbitlabs.com/articles/storage/display/samsung-840-evo.html">xbitlabs</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://www.samsung.com/global/business/semiconductor/minisite/SSD/us/html/about/SSD840EVO.html">Página de Samsung SSD 840 EVO</a></li>
+<li><a href="http://www.samsung.com/global/business/semiconductor/minisite/SSD/global/html/ssd850evo/overview.html">Página de Samsung SSD 850 EVO</a></li>
+<li><a href="http://www.anandtech.com/show/6459/samsung-ssd-840-testing-the-endurance-of-tlc-nand">Test de resistencia SSD 840 EVO</a></li>
+<li><a href="http://www.xbitlabs.com/articles/storage/display/samsung-840-evo.html">Artículo sobre Samsung 840 EVO</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="hardware"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/</id>
+        <title>Iniciar la Raspberry Pi desde un disco o memoria USB</title>
+        <updated>2016-09-23T18:30:00+01:00</updated>
+        <published>2014-01-10T12:41:33+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La Raspberry Pi utiliza para arrancar una tarjeta SD en todo caso, sin embargo, dada la lentitud de lectura y escritura de esta es recomendable instalar el sistema en una memoria USB o disco duro externo. No es muy complicado y el aumento de rendimiento es notable.</strong></p>]]>
+        <![CDATA[<div class="logotypes"> 
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+</div>
+<p>Por defecto la Raspberry Pi se instala en una tarjeta SD y se inicia desde ella, sin embargo, la tarjeta SD es muy lenta tanto en la lectura como en la escritura de datos y cuando tiene que hacerlo de forma intensiva el sistema queda sin responder y aparentemente atascado. Para aumentar muy notablemente el rendimiento de la Raspberry Pi podemos instalar la partición del sistema en una memoria USB o disco duro externo.</p>
+<p>En la guía de <a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Instalación de la Raspberry Pi</a> expliqué como instalar la distribución <a href="https://archlinuxarm.org/">Arch Linux ARM</a> en una tarjeta SD, esa guía será el punto de partida para esta entrada. La Raspberry Pi inicia el sistema desde la tarjeta SD por lo que aunque instalemos el sistema en un dispositivo USB seguiremos necesitando la tarjeta SD para que contenga al menos la partición de arranque (boot).</p>
+<p>Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando <em>lsblk</em>:</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu8c4cf5de9d804ac479808dece73576ba_51781_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu8c4cf5de9d804ac479808dece73576ba_51781_300x200_fit_box_3.png" width="300" height="167"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># dd if=/dev/mmcblk0p2 of=mmcblk0p2.img bs=4096 conv=notrunc</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>leer-particion.sh</span>
+    </div>
+</div>
+<p>El comando dd creará un archivo en nuestro ordenador con la imagen de la partición del sistema de la Raspberry Pi. A continuación deberemos escribir esa imagen de la partición en el dispositivo USB también usando el comando dd. Hay que tener en cuenta que al escribir la imagen perderemos todos los datos que tengamos en el dispositivo destino. En el ejemplo, el dispositivo <em>/dev/sdb1</em> se corresponde con la partición del dispositivo USB en el que copiaremos la partición del sistema de la Raspberry Pi.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># dd if=mmcblk0p2.img of=/dev/sdb1 bs=4096 conv=notrunc</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>escribir-particion.sh</span>
+    </div>
+</div>
+<p>Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con <a href="http://gparted.org/">GParted</a> podemos hacerlo de forma muy sencilla. Seleccionamos <em>/dev/sdb1</em>, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar&gt; Aplicar operaciones».</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu4379d86290f2ec785f27113182f1f999_34060_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Redimiensionado de patición con GParted"><img src="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu4379d86290f2ec785f27113182f1f999_34060_300x200_fit_box_3.png" width="288" height="200" alt="Redimiensionado de patición con GParted" title="Redimiensionado de patición con GParted"  class="lozad "></a></p>
+</figure>
+</div>
+<p>El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea <em>/dev/sda1</em>, con este valor modificamos el archivo <em>cmdline.txt</em> y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">smsc95xx.turbo_mode=N dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/sda1 rootfstype=ext4 elevator=noop rootwait&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>cmdline.txt</span>
+    </div>
+</div>
+<p>A partir de este punto con la tarjeta SD insertada en la Raspberry Pi y el dispositivo USB conectado a uno de los puertos se iniciará la Pi desde la partición del sistema del dispositivo USB en vez de la tarjeta SD. Enseguida se nota un aumento de rendimiento considerable en el tiempo de inicio y las perdidas de respuesta porque se está leyendo o escribiendo serán mucho menores o nulos con la mayor tasa de transferencia de los dispositivos USB.</p>
+<p>Aunque la tarjeta SD es suficiente para usarla como <a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/">Media Center en la Raspberry Pi</a> al navegar por los menús notaremos que se atasca y el tiempo de arranque es notable. Con la partición del sistema instalada en una memoria o disco duro externo siguiendo el método descrito en esta entrada notaremos un menor tiempo de arranque de <a href="http://www.geexbox.org/">GeeXboX</a> y evitaremos los atascos en los menus de <a href="http://xbmc.org/">XBMC</a>.</p>
+<p>Los elementos básicos para usar este miniordenador son la <a href="https://amzn.to/2cN0d6L">placa de la Raspberry Pi</a>, una <a href="https://amzn.to/2dfFJT7">cargador de 3A</a> junto con una <a href="https://amzn.to/2cN0SFi">tarjeta SD</a>.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01CD5VC92&amp;linkId=fecbf2f5ac6495bca6b3e686bc0fa2e0&amp;internal=1" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01566WOAG&amp;linkId=1a779c49b1d7df6206e1c1428af645e7&amp;internal=1" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00J2BU7WO&amp;linkId=f3093eebc185e207e98f6b5c53cd2c3a&amp;internal=1" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch_22.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte II, programas)</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/">Raspberry Pi como Media Center con GeeXboX</a></li>
+<li><a href="http://www.diverteka.com/?p=580">RaspBerry en USB</a></li>
+<li><a href="https://www.raspberrypi.org/phpBB3/viewtopic.php?f=29&amp;t=44177">HOWTO: Move the filesystem to a USB stick</a></li>
+<li><a href="https://www.raspberrypi.org/phpBB3/viewtopic.php?f=91&amp;t=9117">Using usb hard drive as default boot and storage?</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="hardware"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/</id>
+        <title>Raspberry Pi como Media Center con GeeXboX</title>
+        <updated>2018-02-08T16:30:00+01:00</updated>
+        <published>2014-01-03T20:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/geexbox.png" width="200" height="52" alt="GeeXboX" title="GeeXboX"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+</div>
+<p>La Raspberry Pi es un computador del tamaño de una tarjeta de crédito que se puede usar para diferentes propósitos. Hasta hace no mucho a mi me servía para descargar películas mediante torrent, sin embargo, puede usarse perfectamente para otros propósitos muy interesantes como usarla como Media Center en una televisión que no es una Smart TV o como Media Center con más opciones.</p>
+<p>Dada la popularidad que tiene la Raspberry Pi disponemos de varias distribuciones con soporte para usar la Raspberry Pi como centro multimedia de nuestro salón. Las principales son:</p>
+<ul>
+<li><a href="https://openelec.tv/">OpenELEC</a></li>
+<li><a href="https://kodi.tv/">Kodi</a></li>
+<li><a href="https://www.geexbox.org/">GeeXboX</a></li>
+<li><a href="https://osmc.tv/">OSMC</a></li>
+</ul>
+<p>Las tres opciones tienen la similitud que son muy fácilmente instalables (también para alguien sin muchos conocimientos técnicos) y que se basan en el programa <a href="https://kodi.tv/">Kodi</a> para ofrecer la funcionalidad de Media Center. La mayor diferencia entre las tres opciones están en los dispositivos soportados, Raspberry Pi al ser muy popular es soportada perfectamente en las tres opciones, RaspMBC está destinada específicamente para la Pi y GeeXboX y OpenELEC soportan algunos otros dispositivos como sistemas i386, x64_86, Cubox 1 / 2 / Pro, Utilite, Cubiboard o incluso Apple TV. Otras diferencias es que RaspBMC está basado en la distribución <a href="https://www.debian.org/">Debian</a> mientras que OpenELEC y GeeXboX no se basan en ninguna y están desarrolladas específicamente para actuar como Media Center. GeeXboX tiene algunas características adicionales como un servidor HTTP, un servidor FTP, SSH, un cliente torrent con una interfaz accesible con el navegador, compatible con NFS, Samba, UPnP y DLNA.</p>
+<p>XBMC permite reproducir música, vídeo, películas, ofrece soporte para subtítulos, series, fotos incluso ver y grabar en directo la televisión con <a href="https://www.mythtv.org/">MythTV</a> además puede ser controlado conectándonos vía HTTP o <a href="http://www.geexbox.org/geexbox-daily-usage-iphone-and-android-remote-control/">con nuestro teléfono inteligente</a> ya sea <a href="https://www.android.com/">Android</a> o iPhone aunque la Raspberry Pi al no disponer de WiFi de por sí deberemos tenerla conectada a la red de nuestra casa con un cable ethernet.</p>
+<p>En esta entrada explicaré como instalar GeeXboX en la Raspberry Pi y de esta manera dotar a nuestra televisión de características que quizá no tenga. El proceso no es nada complicado y en muy poco tiempo podremos empezar a usar la Raspberry Pi como centro multimedia si nuestra televisión dispone de una entrada para cable HDMI. El material que necesitaremos para esta guía es:</p>
+<ul>
+<li>Una Rasbpberry Pi y su adaptador de energía.</li>
+<li>Una tarjeta SD de unos 8 GiB o más.</li>
+<li>Un cable HDMI (por el se transmitirá el sonido y la imagen).</li>
+<li>Una televisión con entrada HDMI.</li>
+</ul>
+<p>Lo primero que haremos es <a href="http://www.geexbox.org/download/">descargar la última versión de GeeXboX</a> para la Raspberry Pi y el <a href="http://www.geexbox.org/geexbox-for-embedded-devices-creating-a-bootable-sd-card/">script para nuestro dispositivo</a> que hará todo el proceso de instalación, en este caso para la Pi. Antes de grabar la imagen en la tarjeta SD deberemos conocer el nombre del dispositivo de la tarjeta SD, para ello ejecutamos los comandos <em>lsblk</em> y <em>blkid</em> en modo superusuario antes y después de introducir la tarjeta SD. Anotamos el nombre y lo usamos para ejecutar el siguiente comando sustituyendo el dispositivo anotado por el de este comando si es distinto que copiará la imagen del sistema a la tarjeta SD.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo ./make-sdcard /dev/mmcblk0 geexbox-3.1.raspberrypi.tar.bz2&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>instalacion-geexbox.sh</span>
+    </div>
+</div>
+<p>Este comando tardará un poco de tiempo dada la lentitud de las tarjetas SD. Una vez termine quizá debamos expandir la partición del sistema para aprovechar todo el espacio de la tarjeta SD. Para expandir la partición del sistema podemos usar <a href="http://gparted.org/">GParted</a>. Y esto es lo mínimo imprescindible para instalar GeeXboX en una tarjeta SD para la Pi. GeeXboX tiene el siguiente aspecto.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-inicio_hu14095cfdd1099308f825400c6b863e20_41205_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-inicio_hu14095cfdd1099308f825400c6b863e20_41205_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes_hudf5748fba26e5e08f4132ecad86ae975_87113_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes_hudf5748fba26e5e08f4132ecad86ae975_87113_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes-video_hu6a81883a71640b42b0aed8e136ba7b31_54712_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes-video_hu6a81883a71640b42b0aed8e136ba7b31_54712_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-apariencia-ajustes_hu7515213a32809a4c7d6a205fdeced3b3_48935_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-apariencia-ajustes_hu7515213a32809a4c7d6a205fdeced3b3_48935_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-servicios_hu42e34e584910479e390e4c74e3dce1fc_35019_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-servicios_hu42e34e584910479e390e4c74e3dce1fc_35019_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-reproduccion_hu3e550307345196d79d008cda983a37b6_61532_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-reproduccion_hu3e550307345196d79d008cda983a37b6_61532_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Como apunte a tener en cuenta es que para reproducir películas en formato imagen de DVD (iso) <em>intuyo</em> que se necesita adquirir la licencia MPEG-2 en la <a href="http://www.raspberrypi.com/license-keys/">tienda de la propia página de Raspberry Pi</a>. Para otros formatos como DivX (avi) o Matroska (mkv) no tendremos ningún problema en reproducir las películas y van totalmente fluídas. Otras opciones son bastante más potentes pero Pi ya tiene capacidad suficiente para reproducir películas a 1080p.</p>
+<p>A pesar de lo interesante de la Raspberry Pi esta tiene algunas incomodidades. Una incomodidad es que la tarjeta SD es muy lenta comparada con un disco duro conectado por el puerto USB. La tasa de transferencia de la tarjeta SD es suficiente para reproducir películas sin ningún problema pero al navegar entre los menús de  XBMC notaremos ciertos atascos mientas se accede a la tarjeta SD. Una tarjeta SD de 32 GB tiene espacio suficiente para almacenar varias películas y los archivos de GeeXboX.</p>
+<p>Usando la <a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/">Raspberry Pi con un disco duro externo o memoria USB</a> hará que GeeXboX se inicie mucho más rápido, evitaremos los atascos en la navegación de los menús y el copiar las películas al disco USB nos llevará menos tiempo que copiarlas a la tarjeta SD. Pero tampoco es una solución exenta de sus pequeños inconvenientes ya que los puertos USB de la Raspberry Pi son incapaces de proporcionar suficiente energía a un disco duro externo de 2.5&quot; para hacerlo funcionar por lo que necesitaremos un concentrador de puertos USB alimentado, son unos cuantos cables más que necesitaremos si pretendemos tener las películas almacenadas de esta forma. Si queremos usar la Raspberry Pi usando un disco duro externo USB podemos seguir las instrucciones de otra entrada que escribiré sobre como Usar la Raspberry Pi con un disco duro externo USB.</p>
+<p>Otro inconveniente de la Raspberry Pi es que no dispone de WiFi (si la tercera versión de esta placa) y algunas funcionalidades de GeeXboX se proporcionan cuando la Pi está conectada a internet con lo que perderemos esas funcionalidades o deberemos tener la suerte de tener el router cerca para conectar el cable ethernet, también útil si pretendemos controlar XMBC con nuestro teléfono en vez de con un ratón. Aunque esas opciones proporcionadas al estar conectados a internet tampoco son indispensables.</p>
+<p>Algunos servicios y contenidos están bloqueados según la ubicación del usuario normalmente basado en la dirección IP, <a href="https://picodotdev.github.io/blog-bitix/2019/02/proyecto-de-mejora-de-smart-tv-usando-una-vpn-para-acceder-a-contenido-restringido-por-ip/">evitar bloqueo según ubicación con una VPN</a> es una forma de acceder a los contenidos o servicios bloqueados.</p>
+<p>Los elementos básicos para usar este miniordenador Pi son la <a href="https://amzn.to/2cN0d6L">placa de la Raspberry Pi</a>, una <a href="https://amzn.to/2dfFJT7">cargador de 3A</a> junto con una <a href="https://amzn.to/2cN0SFi">tarjeta SD</a>.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01CD5VC92&amp;linkId=fecbf2f5ac6495bca6b3e686bc0fa2e0&amp;internal=1" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01566WOAG&amp;linkId=1a779c49b1d7df6206e1c1428af645e7&amp;internal=1" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00J2BU7WO&amp;linkId=f3093eebc185e207e98f6b5c53cd2c3a&amp;internal=1" title="Amazon" class="lozad"></iframe>
+</div>
+<p>¡A disfrutar!</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/">Iniciar la Raspberry Pi desde un disco o memoria USB</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="hardware"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/</id>
+        <title>Firmar digitalmente documentos con el DNIe y Sinadura</title>
+        <updated>2015-05-28T20:00:00+02:00</updated>
+        <published>2013-12-21T11:34:55+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sinadura.png" width="200" height="118" alt="Sinadura" title="Sinadura"  class=""></p>
+</div>
+<p>Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">como instalar un lector de tarjetas inteligentes en linux para usar el DNI electrónico</a> y que una vez instalado podemos darle algún uso útil como por ejemplo <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">autenticarnos con en DNI</a> en las páginas que lo soporten como medio de autenticación y el navegador Firefox. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">como usar el DNI con el cliente de correo Evolution para enviar correos firmados digitalmente</a>.</p>
+<p>En esta entrada voy a comentar como firmar digitalmente documentos en cualquier formato electrónico con la aplicación de software libre <a href="http://www.sinadura.net/es/">Sinadura</a>. La firma que hagamos con el DNIe sobre estos documentos puede tener la misma validez legal que la firma manuscrita.</p>
+<p>Primeramente deberemos descargar la última versión de <a href="http://www.sinadura.net/es/">Sinadura</a> según la arquitectura de nuestro procesador, de 32 bits o de 64 bits y la plataforma linux o windows. El archivo descargado es un instalador que deberemos ejecutarlo, como es un programa Java deberemos tener instalado previamente un entorno de ejecución de Java como el <a href="http://openjdk.java.net/">OpenJDK</a>. Lo ejecutamos con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ java -jar sinaduraDesktop-3.3.3-unix64-installer.jar&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>instalar-sinadura.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Instalador Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_300x200_fit_box_3.png" width="267" height="200" alt="Instalador Sinadura" title="Instalador Sinadura"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Una vez instalado sinadura y también teniendo instalado el lector de tarjetas inteligentes para el DNI y funcionando deberemos conectarlo al ordenador e introducir el DNI. Iniciaremos sinadura con que se encuentra dentro del directorio de instalación de Sinadura:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./sinadura.sh&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>iniciar-sinadura.sh</span>
+    </div>
+</div>
+<p>Inicialmente veremos una pantalla como la siguiente con una lista de archivos vacíos y una serie de botones para realizar varias acciones.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_300x200_fit_box_3.png" width="285" height="200" alt="Sinadura" title="Sinadura"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Con Sinadura y el DNI podemos firmar digitalmente cualquier tipo de archivo pero entre los archivos de tipo pdf y el resto hay diferencias. En el caso de los pdf la firma se incrusta en el propio documento y en resto se crea un nuevo archivo con la firma y el documento original, el archivo nuevo creado tiene la extensión .sar. Para firmar un documento deberemos añadirlo a la vista con el botón «Añadir documento» y posteriormente firmarlo con el botón «Firmar». Para realizar la firma se nos pedirá que introduzcamos el PIN secreto que nos proporcionaron al emitirnos el DNI en la oficina de expedición.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_300x200_fit_box_3.png" width="300" height="124" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
+</figure>
+</div>
+<p>En el caso de los archivos pdf Sinadura por defecto incrusta además de la firma una marca de agua en la primera página aunque se pueden cambiar algunas preferencias en «Archivo&gt; Preferencias»:</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_300x200_fit_box_3.png" width="277" height="200" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Los archivos .sar creados para archivos que no son pdf tienen el siguiente contenido, además del archivo original una serie de archivos .xml que contendrán la firma (son archivos zip con extensión .sar):</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documento firmado con Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_300x200_fit_box_3.png" width="259" height="200" alt="Documento firmado con Sinadura" title="Documento firmado con Sinadura"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Una vez firmados los archivos podemos enviarlos por correo electrónico y la persona que los reciba podrá validarlos también con Sinadura. Para ello se debe añadir el archivo y pulsar el botón «Validar».</p>
+<p>Si queremos firmar muchos archivos a la vez usar la interfaz gráfica nos va a resultar lento y un trabajo repetitivo. En caso de querer hacer firmas masivas de archivos es mejor usar la linea de comandos o un proceso sh que nos haga la tarea. Sinadura también proporciona una utilidad basada en la linea de comandos que debemos usar de la siguiente forma:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./sinadura-console.sh --sign --pdf&#10;  --input /home/picodotdev/Software/personal/PlugInTapestry/PlugInTapestry.pdf&#10;  --output /home/picodotdev/Software/personal/PlugInTapestry/PlugInTapestry-signed.pdf&#10;  --preferences /home/picodotdev/.sinadura/preferences/preferences-console.properties&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sinadura-console-pdf.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./sinadura-console.sh --sign --xades&#10;  --input /home/picodotdev/Software/personal/PlugInTapestry/PlugInTapestry.pdf.zip&#10;  --output /home/picodotdev/Software/personal/PlugInTapestry/PlugInTapestry-signed.zip&#10;  --preferences /home/picodotdev/.sinadura/preferences/preferences-console.properties</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sinadura-console-xades.sh</span>
+    </div>
+</div>
+<p>Con el siguiente archivo de preferencias:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">preferencias.radioCertType.active=1&#10;hardware.dispositive=/usr/lib64/opensc-pkcs11.so&#10;&#10;pdf.stamp.enable=false&#10;pdf.stamp.height=122&#10;pdf.stamp.path=/home/picodotdev/.sinadura/preferences/sinadura150.png&#10;pdf.stamp.y=17&#10;pdf.stamp.x=17&#10;pdf.stamp.width=122&#10;pdf.visible=false&#10;pdf.location=Bilbao&#10;pdf.reason=powered by zylk.net&#10;pdf.certified=1&#10;&#10;ks.cache=/home/picodotdev/.sinadura/preferences/cache.jks&#10;ks.trusted=/home/picodotdev/.sinadura/preferences/trusted.jks&#10;ks.cache.pass=sinadura&#10;ks.trusted.pass=sinadura&#10;&#10;callback.handler=net.esle.sinadura.core.password.ConsoleCallbackHandler&#10;certificate.password= </code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>preferences-console.properties</span>
+    </div>
+</div>
+<p>La linea de comandos producirá el mismo resultado que el uso con la interfaz gráfica. Realmente los ejemplos de firma por consola no me han funcionado, en ambos casos me da una excepción NullPointerException que no es muy aclarativa de lo que está sucediendo, probablemente sea que falta algo en el archivo de preferencias.</p>
+<p>En definitiva, la firma digital de documentos es otro uso que le podemos dar al DNI electrónico y con Sinadura realizarlo es bastante sencillo.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">Crear una par de claves GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">Como firmar correos electrónicos con GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">Usar el DNI electrónico con Firefox en Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">Enviar correos electrónicos firmados con el DNIe y Evolution</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+                <category term="hardware"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/</id>
+        <title>Enviar correos electrónicos firmados con el DNIe y Evolution</title>
+        <updated>2015-05-28T20:00:00+02:00</updated>
+        <published>2013-12-13T16:39:07+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+</div>
+<p>Otra forma de la que podemos sacar partido al DNI electrónico además de para <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">identificarnos en sitios web</a> que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">como firmar correos electrónicos con GPG</a> pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">crear una par de claves GPG</a> sino que con tener el DNI e <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">instalar un lector de tarjetas inteligentes</a> será suficiente.</p>
+<p>En esta entrada explicaré como usar el DNI electrónico para firmar digitalmente correos usando el cliente de correo <a href="https://projects.gnome.org/evolution/">Evolution</a>. Primeramente necesitaremos hacer una configuración adicional a la que hemos necesitado para poder usar el lector de tarjetas inteligentes y el DNIe en Linux. Y es usar el siguiente comando tal y como está comentado en <a href="https://forja.cenatic.es/plugins/mediawiki/wiki/opendnie/index.php/Documentacion_Aplicaciones_Evolution#Configuraci.C3.B3n_del_DNIe_en_el_cliente_de_correo_Evolution">esta página</a> cambiando el directorio home del usuario por el que corresponda:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ modutil -add <span class="s2">&#34;OpenSC-OpenDNIe&#34;</span> -libfile /usr/lib/opensc-pkcs11.so -dbdir sql:/home/picodotdev/.pki/nssdb&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>comando-opensc-dnie.sh</span>
+    </div>
+</div>
+<p>A continuación, el proceso es similar a como se configura la firma con claves GPG, con el lector de tarjetas inteligentes conectado al equipo y el DNI electrónico introducido accedemos a las propiedades de la cuenta, a la sección seguridad y en el apartado MIME seguro (S/MIME) seleccionamos nuestro certificado. Si queremos que nuestros mensajes se firmen automaticamente debemos marcar la opción «Firmar siempre los mensajes salientes cuando se use esta cuenta». Habiendo ejecutado el comando <em>modutil</em> cuando pulsemos el botón seleccionar en el apartado S/MIME se nos solicitará el PIN secreto de nuestro DNIe.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_300x200_fit_box_3.png" width="300" height="105" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Selección de certificado digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_300x200_fit_box_3.png" width="300" height="132" alt="Selección de certificado digital con el DNIe" title="Selección de certificado digital con el DNIe"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_300x200_fit_box_3.png" width="247" height="200" alt="Diálogo de preferencias de seguridad de Evolution para el DNIe" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Una vez con las propiedades de la cuenta configurada para que Evolution use nuestro DNI electrónico, si no hemos marcado la opción «Firmar siempre los mensajes&hellip;» podemos realizarlo al escribir el propio correo marcando la opción «Opciones&gt; Firmar con S/MIME». Al enviar un correo electrónico firmado se añadirá automáticamente un adjunto con la firma de nombre «smime.sp7». Al contrario que GPG la firma está en un formato binario y es dificilmente legible con un lector de texto plano.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Confirmación de firma digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_300x200_fit_box_3.png" width="300" height="121" alt="Confirmación de firma digital con el DNIe" title="Confirmación de firma digital con el DNIe"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Mensaje firmado con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_300x200_fit_box_3.png" width="300" height="121" alt="Mensaje firmado con el DNIe" title="Mensaje firmado con el DNIe"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">Crear una par de claves GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">Como firmar correos electrónicos con GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">Usar el DNI electrónico con Firefox en Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">Firmar digitalmente documentos con el DNIe y Sinadura</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+                <category term="hardware"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/</id>
+        <title>Usar el DNI electrónico con Firefox en Linux</title>
+        <updated>2015-04-10T20:00:00+02:00</updated>
+        <published>2013-12-06T14:07:58+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+</div>
+<p>Una vez hemos conseguido <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">instalar el DNIe en Linux</a> correctamente podemos empezar a darle alguna utilidad más allá de cuando se nos require para acreditar nuestra identidad. Como veremos en esta entrada podemos usar el DNI electrónico para hacer varios trámites administrativos y consultas con la administración pública, empresas o entidades que en su web soporten el DNIe como medio de autenticación.</p>
+<p>En esta entrada explicaré como usar el DNIe electrónico con la combinación del navegador <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> y <a href="https://www.linux.com/">Linux</a>. Para ello primeramente debemos hacer que Firefox detecte el lector de tarjetas inteligentes, desde el menú de Firefox vamos a «Preferencias&gt; Avanzado&gt; Certificados&gt; Dispositivos de seguridad».</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administrador de dispositivos (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_300x200_fit_box_3.png" width="217" height="200" alt="Administrador de dispositivos (1)" title="Administrador de dispositivos (1)"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_300x200_fit_box_3.png" width="300" height="116"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administrador de dispositivos (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_300x200_fit_box_3.png" width="300" height="100" alt="Administrador de dispositivos (2)" title="Administrador de dispositivos (2)"  class="lozad "></a></p>
+</figure>
+</div>
+<p>En esta pantalla pulsamos el botón «Cargar» e introducimos los siguientes datos:</p>
+<ul>
+<li>Nombre del módulo: podemos poner cualquier cosa que nos sirva para identificar el lector de tarjetas inteligentes como «Smart Card», «Lector de tarjetas inteligentes» o «PKCS#11» como le he puesto y se ve en la imagen.</li>
+<li>Archivo del módulo: en el caso de Arch Linux debemos poner «/usr/lib/opensc-pkcs11.so», en otras distribuciones será algo similar si no es lo mismo.</li>
+</ul>
+<p>Pulsamos «Aceptar», salimos del diálogo «Dispositivos de seguridad» y reiniciamos Firefox. Para que Firefox reconozca el lector junto con el DNIe este debe estar introducido al iniciarlo sino no se nos aparecerá el diálogo solicitando el PIN del DNIe en el momento de la autenticación y no podremos usarlo, esto es así posiblemente por algún tipo de circunstancia que impide detectar el DNIe en el momento de introducirlo en Firefox, sabiéndolo no supone mayor problema. Por lo demás, esa es toda la configuración adicional necesaria para usar el DNIe con Firefox.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Lector de tarjetas inteligentes y DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_300x200_fit_q90_box.jpg" width="149" height="200" alt="Lector de tarjetas inteligentes y DNIe" title="Lector de tarjetas inteligentes y DNIe"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="DNI electrónico"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_300x200_fit_q90_box.jpg" width="300" height="188" alt="DNI electrónico" title="DNI electrónico"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Para probar que tenemos instalado el DNIe crrectamente y que Firefox es capaz de utilizarlo podemos usar la <a href="http://www.dnielectronico.es/como_utilizar_el_dnie/verificar.html">página preparada para probar el DNI</a>. Al final de la misma hay un enlace «Comprobación de certificados» que deberemos pulsar, se nos pedirá el PIN y si todo es correcto veremos una página con diversa información de nuestro DNI.</p>
+<p>Con el DNI electrónico preparado podemos hacer distintos tipos de trámites o consultas, por ejemplo, muchos bancos ofrecen medios para acceder de forma electrónica, online y mediante un navegador la consulta del saldo de nuestras cuentas y operaciones que se han realizado o para hacer transferencias. Alguno de los que he visto que soportan el DNIe como medio de autenticación son <a href="https://portal.bbk.es">BBK</a>, <a href="https://www.bancosantander.es">Santander</a> y el infame <a href="http://www.bankia.com/es/">Bankia</a>, seguro que hay unos cuantos más. También otro tipo de consulta que podemos hacer es consultar los puntos de carnet de conducir que poseemos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación BBK con DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_300x200_fit_box_3.png" width="163" height="200" alt="Autenticación BBK con DNIe" title="Autenticación BBK con DNIe"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Consultar puntos cárnet DGT"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_300x200_fit_q90_box.jpg" width="300" height="162" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio <em>pcscd</em>, manualmente o con el inicio del sistema (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">consultar la guía de instalación del DNIe en Linux</a>).</p>
+<p>En algún momento en el proceso de autenticación se nos pedirá el PIN secreto que posibilita usar el DNIe, apareciéndonos una ventana similar a la siguiente para introducirlo.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_300x200_fit_box_3.png" width="300" height="114" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a></p>
+</figure>
+</div>
+<p>El PIN secreto de nuestro DNI se facilita en el momento de solicitar o renovar el documento nacional de identidad, es proporcionado en un documento como el siguiente.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Documento con el PIN del DNIe (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_300x200_fit_q90_box.jpg" width="300" height="184" alt="Documento con el PIN del DNIe (1)" title="Documento con el PIN del DNIe (1)"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Documento con el PIN del DNIe (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_300x200_fit_q90_box.jpg" width="194" height="200" alt="Documento con el PIN del DNIe (2)" title="Documento con el PIN del DNIe (2)"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Al introducir el PIN hay que poner cuidado y atención, suelen ser unos cuantos números, letras y caracteres especiales que hay que teclear correctamente. Disponemos varios intentos para introducirlos correctamente, al tercero fallido el DNIe se bloqueará y tendremos que acudir a la oficina de expedición de nuestra ciudad para desbloquearlo, también podremos acudir a él para cambiar el PIN. Una vez introducido correctamente podremos continuar con nuestra consulta o trámite.</p>
+<p>En definitiva, el DNIe puede evitarnos algún viaje a alguna ventanilla y podemos hacer el trámite las 24 horas sin hacer colas.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://web.cenatic.es/dnie/index.php?option=com_content&amp;view=article&amp;id=104&amp;Itemid=139">Configuración del DNI electrónico en Mozilla / Firefox</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">Enviar correos electrónicos firmados con el DNIe y Evolution</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">Crear una par de claves GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">Como firmar correos electrónicos con GPG</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+                <category term="hardware"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
+    
+</feed>

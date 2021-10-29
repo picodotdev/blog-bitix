@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">Blog Bitix</title>
+    <subtitle type="text">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</subtitle>
+    <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
+    <link href="https://picodotdev.github.io/blog-bitix/" />
+    <id>https://picodotdev.github.io/blog-bitix/tags/web/</id>
+    <updated>2021-09-12T00:30:00+02:00</updated>
+    <author><name>picodotdev</name></author>
+    <generator>Hugo</generator>
+    <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
+    <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
+    <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/</id>
+        <title>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</title>
+        <updated>2016-03-05T12:00:00+01:00</updated>
+        <published>2014-02-28T16:58:17+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Tanto en un servidor web como de aplicaciones podemos hacer que la comunicación entre el cliente y el servidor esté cifrada usando un protocolo seguro. La configuración para usar un protocolo seguro en cada servidor es diferente pero todos se basan en lo mismo, usar un certificado y un clave. En este artículo muestro la configuración necesaria en los servidores web y de aplicaciones más populares.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
+</div>
+<p>En entradas anteriores he explicado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">en que consiste la criptografía y GPG</a> y como podemos usarlo a nivel personal para firmar y cifrar archivos y <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">firmar correos electrónicos con el cliente de correo Evolution</a>. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">cómo crear un certificado con OpenSSL y como convertirlo a diferentes formatos</a>. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificados SSL, de empresa, «wildcard» y de validación extendida</a> para proporcionar acceso cifrado al servidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores <a href="http://tomcat.apache.org/">Tomcat</a>, <a href="http://www.lighttpd.net/">Lighttpd</a>, <a href="http://jbossas.jboss.org/">JBoss</a>/<a href="http://wildfly.org/">WildFly</a>, <a href="http://nginx.org/">Nginx</a> y <a href="http://www.apache.org/">Apache</a>.</p>
+<p>Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.</p>
+<p>Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">protocolo HTTP/2</a> que es más eficiente tanto para el cliente como para el servidor y con menores latencias. <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty</a> es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones. Utilizar el protocolo seguro HTTPS es también una condición necesaria por seguridad al <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">utilizar autenticación básica</a>.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="configurar-ssltls-en-tomcat">Configurar SSL/TLS en Tomcat</h3>
+<p>Tomcat es uno de los servidores de aplicaciones más usado para desplegar aplicaciones web desarrolladas con el lenguaje Java. La forma que explicaré a continuación sobre como obtener cifrado SSL con este servidor será usando APR (<em>Apache Portable Runtime</em>). Previamente deberemos haber generado un certificado SSL con OpenSSL, una vez dispongamos del nuestro aunque sea autofirmado debemos añadir la siguiente configuración al archivo server.xml:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;Connector</span> <span class="na">port=</span><span class="s">&#34;8443&#34;</span> <span class="na">protocol=</span><span class="s">&#34;HTTP/1.1&#34;</span> <span class="na">SSLEnabled=</span><span class="s">&#34;true&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">maxThreads=</span><span class="s">&#34;150&#34;</span> <span class="na">scheme=</span><span class="s">&#34;https&#34;</span> <span class="na">secure=</span><span class="s">&#34;true&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">clientAuth=</span><span class="s">&#34;false&#34;</span> <span class="na">sslProtocol=</span><span class="s">&#34;TLS&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">SSLCertificateFile=</span><span class="s">&#34;${catalina.home}/conf/localhost.crt&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">SSLCertificateKeyFile=</span><span class="s">&#34;${catalina.home}/conf/localhost.key&#34;</span><span class="nt">/&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>server.xml</span>
+    </div>
+</div>
+<p>Hay que activar el conector SSL (el anterior xml) y disponer del certificado y su clave privada, ambos archivos se indican en los atributos SSLCertificateFile y SSLCertificateKeyFile. Si queremos usar el puerto estándar del protocolo HTTPS cambiaremos el valor del puerto de 8443 a 443 en el atributo port. La configuración es la misma tanto para Tomcat 7 como para Tomcat 8.</p>
+<h3 id="configurar-ssltls-en-jboss">Configurar SSL/TLS en JBoss</h3>
+<p>JBoss es otro de los servidores que es ampliamente usado para desplegar aplicaciones Java y que proporciona un perfil completo de las especificaciones EE al contrario que Tomcat que solo proporciona un perfil web. La configuración que hay que indicar en JBoss 7.1 es la siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">&#34;urn:jboss:domain:web:1.1&#34;</span> <span class="na">default-virtual-server=</span><span class="s">&#34;default-host&#34;</span> <span class="na">native=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;connector</span> <span class="na">name=</span><span class="s">&#34;http&#34;</span> <span class="na">protocol=</span><span class="s">&#34;HTTP/1.1&#34;</span> <span class="na">scheme=</span><span class="s">&#34;http&#34;</span> <span class="na">socket-binding=</span><span class="s">&#34;http&#34;</span> <span class="na">redirect-port=</span><span class="s">&#34;8443&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;connector</span> <span class="na">name=</span><span class="s">&#34;https&#34;</span> <span class="na">protocol=</span><span class="s">&#34;HTTP/1.1&#34;</span> <span class="na">scheme=</span><span class="s">&#34;https&#34;</span> <span class="na">socket-binding=</span><span class="s">&#34;https&#34;</span> <span class="na">secure=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;ssl</span> <span class="na">name=</span><span class="s">&#34;jboss&#34;</span> <span class="na">certificate-key-file=</span><span class="s">&#34;${jboss.server.config.dir}/localhost.key&#34;</span> <span class="na">certificate-file=</span><span class="s">&#34;${jboss.server.config.dir}/localhost.crt&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/connector&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;...&#10;<span class="nt">&lt;/subsystem&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>standalone-jboss.xml</span>
+    </div>
+</div>
+<h3 id="configurar-ssltls-en-wildfly">Configurar SSL/TLS en WildFly</h3>
+<p>JBoss cambió recientemente el nombre de la versión community de JBoss, esta ha pasado a llamarse WildFly y la comercial con soporte sigue llamándose JBoss. WildFly soporta las especificaciones de Java EE 7. En WildFly el contenedor web es <a href="http://undertow.io/">undertow</a> en vez de Tomcat y cambia la configuración de SSL. Se necesita crear un keystore JKS que contenga tanto la clave como el certificado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="nt">&lt;security-realms&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;...&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;security-realm</span> <span class="na">name=</span><span class="s">&#34;SecureRealm&#34;</span><span class="nt">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;server-identities&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;ssl&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;keystore</span> <span class="na">path=</span><span class="s">&#34;localhost.keystore&#34;</span> <span class="na">relative-to=</span><span class="s">&#34;jboss.server.config.dir&#34;</span> <span class="na">keystore-password=</span><span class="s">&#34;wildfly&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/ssl&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/server-identities&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/security-realm&gt;</span>&#10;<span class="nt">&lt;/security-realms&gt;</span>&#10;...&#10;<span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">&#34;urn:jboss:domain:undertow:1.0&#34;</span><span class="nt">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;...&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;server</span> <span class="na">name=</span><span class="s">&#34;default-server&#34;</span><span class="nt">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;http-listener</span> <span class="na">name=</span><span class="s">&#34;default&#34;</span> <span class="na">socket-binding=</span><span class="s">&#34;http&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;https-listener</span> <span class="na">name=</span><span class="s">&#34;https&#34;</span> <span class="na">socket-binding=</span><span class="s">&#34;https&#34;</span> <span class="na">security-realm=</span><span class="s">&#34;SecureRealm&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">&#34;default-host&#34;</span> <span class="na">alias=</span><span class="s">&#34;localhost&#34;</span><span class="nt">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;location</span> <span class="na">name=</span><span class="s">&#34;/&#34;</span> <span class="na">handler=</span><span class="s">&#34;welcome-content&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;filter-ref</span> <span class="na">name=</span><span class="s">&#34;server-header&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;filter-ref</span> <span class="na">name=</span><span class="s">&#34;x-powered-by-header&#34;</span><span class="nt">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/host&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/server&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;...&#10;<span class="nt">&lt;/subsystem&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>standalone-wildfly.xml</span>
+    </div>
+</div>
+<h3 id="configurar-ssltls-en-lighttpd">Configurar SSL/TLS en Lighttpd</h3>
+<p>Lighttpd es un servidor web de los denominados ligeros que aunque posiblemente no tiene toda la versatilidad de Apache ofrece un mayor rendimiento. Para activar SSL en lighttpd debemos modificar el archivo de configuración y añadir lo siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">$SERVER[&#34;socket&#34;] == &#34;:443&#34; {&#10;&nbsp;&nbsp;&nbsp;&nbsp;ssl.engine = &#34;enable&#34; &#10;&nbsp;&nbsp;&nbsp;&nbsp;ssl.pemfile = &#34;localhost.pem&#34; &#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lighttpd.conf</span>
+    </div>
+</div>
+<p>Quizá debamos cambiar el propietario y permisos con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chown root:root /etc/lighttpd/ssl/localhost.pem&#10;$ chmod <span class="m">400</span> /etc/lighttpd/ssl/localhost.pem&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-1.sh</span>
+    </div>
+</div>
+<p>El archivo localhost.pem contiene la clave y el certificado.</p>
+<h3 id="configurar-ssltls-en-nginx">Configurar SSL/TLS en Nginx</h3>
+<p>El proceso es similar para el servidor web Nginx aunque lógicamente se usan las directivas propias de configuración de Nginx.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">http</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">listen</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">server_name</span>  <span class="s">localhost</span><span class="p">;</span>&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">ssl_certificate</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">localhost.pem</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">ssl_certificate_key</span>  <span class="s">localhost.key</span><span class="p">;</span>&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">ssl_session_timeout</span>  <span class="mi">5m</span><span class="p">;</span>&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">ssl_protocols</span>  <span class="s">SSLv2</span> <span class="s">SSLv3</span> <span class="s">TLSv1</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">ssl_ciphers</span>  <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">ssl_prefer_server_ciphers</span>   <span class="no">on</span><span class="p">;</span>&#10; &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; <span class="p">}</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nginx.conf</span>
+    </div>
+</div>
+<h3 id="configurar-ssltls-en-apache">Configurar SSL/TLS en Apache</h3>
+<p>Apache es uno de los servidores web más utilizados para servir sitios web en internet. Para activar SSL en Apache debemos modificar el archivo de configuración, añadiendo la siguiente configuración que activa el soporte de SSL y especifica el archivo de clave y certificado, nada distinto de lo necesario en los servidores anteriores:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-apache" data-lang="apache"><span class="nb">LoadModule</span> ssl_module modules/mod_ssl.so&#10;&#10;<span class="nb">Listen</span> <span class="m">443</span>&#10;<span class="nt">&lt;VirtualHost</span> <span class="s">*:443</span><span class="nt">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">ServerName</span> localhost&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">SSLEngine</span> <span class="k">on</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">SSLCertificateFile</span> localhost.crt&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">SSLCertificateKeyFile</span> localhost.key&#10;<span class="nt">&lt;/VirtualHost&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>httpd.conf</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html">Tomcat</a></li>
+<li><a href="http://docs.jboss.org/jbossweb/7.0.x/ssl-howto.html">JBoss</a></li>
+<li><a href="https://community.jboss.org/message/824152#824152">WildFly (Undertow)</a></li>
+<li><a href="http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL">Lighttpd</a></li>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_ssl_module.html">Nginx</a></li>
+<li><a href="http://httpd.apache.org/docs/current/ssl/ssl_howto.html">Apache</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="seguridad"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="web"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/</id>
+        <title>Generar y convertir claves y certificados con OpenSSL</title>
+        <updated>2020-07-27T12:00:00+02:00</updated>
+        <published>2014-02-21T17:36:21+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Usando los comandos expuestos en este artículo y con OpenSSL podemos crear una clave pública y privada para usarlo con ssh o para cifrar y descifrar mensajes, un certificado autofirmado que podremos usar en un servidor de aplicaciones para usar un protocolo seguro y también convertir las claves y certificados a uno de los formatos aceptados por la aplicación que usemos.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
+</div>
+<p>Para un uso personal como enviar correos o archivos cifrados o firmados digitalmente usar <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">GnuPG</a> es una buena opción. En Internet los servidores también se aprovechan del uso de criptografía para realizar comunicaciones seguras entre el usuario y el servidor.</p>
+<p>Para hacer uso en un servidor de una comunicación https donde los datos viajan cifrados y sin que otras partes salvo el usuario y el servidor puedan acceder a los datos necesitamos un certificado digital. Un certificado es un archivo que contiene la clave pública sirviéndonos para verificar su autenticidad. Un certificado autofirmado es un certificado firmado con la misma clave privada asociada a la clave pública que contiene el certificado. Un certificado autofirmado es suficiente para un entorno de pruebas pero en un servidor para proporcionar confianza a los usuarios deberemos solicitar que una autoridad de certificados que nos firme con su clave nuestro certificado, si el usuario confía en esa autoridad de certificado puede de esta manera confiar en nuestro certificado y clave pública. Varias entidades de registro de dominios o alojamiento web ofrecen la compra de certificados SSL, en el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificado SSL, de empresa, «wildcard» y de validación extendida</a> comento con un poco más detalle los varios tipos de certificados y algunas opciones donde obtenerlos o comprarlos.</p>
+<p>Dependiendo del tipo de certificado que solicitemos y nos entregue la autoridad de certificado el usuario podrá ver que está simplemente accediendo a un servidor con conexión segura, ver los detalles de nuestro certificado y en algunos casos el usuario podrá ver en la barra de direcciones en verde el nombre de la entidad, que puede darle al usuario más confianza y ver que realmente está accediendo al servidor correcto y no a uno que esté intentando suplantar una identidad. En este último caso la barra de direcciones no tendría en verde el nombre de la entidad, esto es algo que como usuarios debemos comprobar al acceder a determinados sitios de forma segura.</p>
+<p>Con la herramienta <a href="https://www.openssl.org/">OpenSSL</a> y los siguientes comandos podemos generar claves y certificados y realizar las conversiones entre formatos que necesitemos. Una vez que disponemos de un certificado y del formato en el que necesitemos podemos hacer uso de él, por ejemplo, en un servidor de páginas web o aplicaciones para proporcionar acceso mediante el protocolo HTTPS y proporcionar seguridad SSL. En otros artículos muestro <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">cómo configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</a>, por otro lado usar HTTPS es un requisito para <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">utilizar el protocolo HTTP/2 en un servidor web</a>.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="crear-claves-y-certificados">Crear claves y certificados</h3>
+<h4 id="crear-una-clave-privada-y-pública">Crear una clave privada y pública</h4>
+<p>Para generar un par de claves RSA pública y privada que nos permitan tanto cifrar datos como realizar firmas se emplea el siguiente comando:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl genrsa -out localhost.key <span class="m">8192</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-1.sh</span>
+    </div>
+</div>
+<p>Para cifrar la clave generada con el algoritmo <em>aes256</em> y protegerla por una contraseña se puede emplear el siguiente comando, en realidad al generar la clave indicando la misma opción <em>-aes256</em> en el comando anterior la clave se generará cifrada y protegida por una contraseña. Para cambiar la contraseña es el mismo comando y el segundo comando elimina la contraseña y la descifra:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl rsa -aes256 -in localhost.key -out localhost-encrypted.key&#10;$ openssl rsa -in localhost-encrypted.key -out localhost.key&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-12.sh</span>
+    </div>
+</div>
+<p>El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspecto (los tres puntos son líneas de contenido omitidas).</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">-----BEGIN RSA PRIVATE KEY-----&#10;MIISKAIBAAKCBAEAyMuPWmmTI4IkfoqQ2TWpqo79GEasdxn9McHb4I5Vk4c3rFIR&#10;ExMozoWmCVvKD6Z9lT9aJ69jlwAR4KGownT4mXN0pRN3mSf6kZ854XssB6o63/0e&#10;/D1xTYdcrP7OKMnHyZwcVKPXEz0RhUsUqH7wzIjwsoXDBDOVFM6EJ2RGo+MuTMDX&#10;wMW3X/DvnDlaxes7ZZizrQ0F+hvopFZowZxRjj/RCJRdAbzNhVEyG+2qtaYlRIC3&#10;mq/eYCJUi+jD1jnFr2daC4zFa6Cr7bGoxrXJlNg4iS1hjciaMV13kXXW1lsWOkPd&#10;exctVEb/nuH64cozPhXJoBjR7rDvXPllnhTay3UnVqK7art1iqKZXmN7FGGM2nJv&#10;w7PIYk25T7H3ucRwfT+svUzdooGNSpojKhFoaAvG4X5Z9wZgtTa24pz/T673DH+J&#10;1Hujco+ufAwJ+ZMZDfnN2g49Y2hqrJmU177e+g6vW5xYAK8raYp6RzTYRuxKLaQg&#10;mi4ctBsycbxETZUk1kSlOB2ebM6+8lArW8VOtCQGdNvvEfydrTHK3hxrEvW8oFAb&#10;j5eU3oWzZL0wTMJ1S/Crbg2eRfCkWPvBdV3e5DUUlqMp2f5urxgOlHmkYEop8gBm&#10;...&#10;...&#10;...&#10;...&#10;...&#10;...&#10;sH+8kfyWZP4x+ivVlTrtJMRPJLKAbIJ2CEN16YQtaE9tjCWcz4JjV2b7k79UEjLg&#10;mVGXSWo8koxl8MJpSFlYJMAlhiLkoanNzW+u+LPvn2Abc6174u5QD+ihk8c=&#10;-----END RSA PRIVATE KEY-----</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>localhost.key</span>
+    </div>
+</div>
+<h4 id="exportar-la-clave-pública">Exportar la clave pública</h4>
+<p>El archivo generado al crear el par de claves contiene tanto la clave pública como la privada. La privada no se debe distribuir y se debe mantener protegida de forma que solo la conozca su propietario por ejemplo guardándola en una base de datos de KeePassXC como un archivo adjunto de <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">la aplicación KeePassXC</a>. La clave pública es la que se distribuye a otras personas o entidades. Para extraer la clave pública del archivo generado anterior por OpenSSL usamos el siguiente comando:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl rsa -in localhost.key -pubout &gt; localhost.pub&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-9.sh</span>
+    </div>
+</div>
+<p>También se puede obtener la clave pública en formato <a href="https://www.openssh.com/">OpenSSH</a> y una representación gráfica de la huella digital.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh-keygen -y -f localhost.key &gt; localhost-openssh.pub&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-10.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh-keygen -lv -f localhost-openssh.pub&#10;<span class="m">8192</span> SHA256:mxKfFP7NwwlZsvfxMqG9CQOjJssyOA/v1I67C4j8vwM no comment <span class="o">(</span>RSA<span class="o">)</span>&#10;+---<span class="o">[</span>RSA 8192<span class="o">]</span>----+&#10;<span class="p">|</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="p">|</span>&#10;<span class="p">|</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="p">|</span>&#10;<span class="p">|</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. . .&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">|</span>&#10;<span class="p">|</span>&nbsp;&nbsp;&nbsp;&nbsp;   . . <span class="o">=</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="p">|</span>&#10;<span class="p">|</span>&nbsp;&nbsp;&nbsp;&nbsp;  . S * . o  <span class="p">|</span>&#10;<span class="p">|</span>o. E . + * <span class="nv">O</span> <span class="o">=</span> + <span class="p">|</span>&#10;<span class="p">|</span>o.o.o + B . <span class="nv">X</span> <span class="o">=</span> .<span class="p">|</span>&#10;<span class="p">|</span>  +<span class="o">=</span><span class="nv">o</span><span class="o">=</span> <span class="o">=</span>&nbsp;&nbsp;&nbsp;&nbsp; + <span class="o">=</span> <span class="p">|</span>&#10;<span class="p">|</span>   <span class="o">=</span>XO*&nbsp;&nbsp;&nbsp;&nbsp;   o  <span class="p">|</span>&#10;+----<span class="o">[</span>SHA256<span class="o">]</span>-----+</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-15.sh</span>
+    </div>
+</div>
+<h4 id="obtener-la-huella-digital-de-la-clave-pública">Obtener la huella digital de la clave pública</h4>
+<p>La huella digital de una clave pública sirve para comprobar que la clave es la esperada. Son una cadena de números y letras pudiendo estar cada pareja de caracteres separados por <em>:</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl dgst -sha256 -c localhost.pub&#10;SHA256<span class="o">(</span>localhost.pub<span class="o">)=</span> a4:39:88:cf:8b:cf:3c:13:23:c1:e6:f8:10:d3:e5:a4:95:6f:30:d6:11:b1:81:4b:ce:3d:c0:e5:1c:57:ca:ff&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-11.sh</span>
+    </div>
+</div>
+<h4 id="crear-un-certificado">Crear un certificado</h4>
+<p>Un certificado permite utilizar el protocolo seguro HTTPS en un servidor web y contiene la firma de una tercera parte que valida nuestra clave pública como auténtica. Para que esa tercera parte pueda firmar nuestra clave deberemos generar una petición de firma de certificado y enviársela a la autoridad de certificado que nos lo devolverá firmado. La petición firma de certificado se crea con el siguiente comando:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl req -new -key localhost.key -out localhost.csr&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-2.sh</span>
+    </div>
+</div>
+<p>Si no queremos tratar con una autoridad de certificado, ya que cobran por la firma, podemos crear un certificado autofirmado que puede ser suficiente para un entorno de pruebas de un servidor web. El comando para generar el certificado autofirmado es, la opción <em>-subj</em> indica la información del sujeto a autenticar:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl req -new -x509 -days <span class="m">1825</span> -subj <span class="s2">&#34;/C=ES/ST=Spain/L=/O=/CN=localhost&#34;</span> -key localhost.key -out localhost.crt&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-3.sh</span>
+    </div>
+</div>
+<h3 id="convertir-un-certificado-a-otros-formatos">Convertir un certificado a otros formatos</h3>
+<p>Dependiendo de la autoridad de certificado el certificado puede estar en diferentes formatos, también dependiendo del servidor donde se quiera usar es necesario convertirlo a al formato adecuado. OpenSSL permite para hacer las conversiones entre formatos DER, PEM y PKCS#12.</p>
+<h4 id="convertir-un-certificado-en-formato-der-crt-cer-der-a-pem">Convertir un certificado en formato DER (.crt .cer .der) a PEM</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat localhost.key localhost.crt &gt; localhost.pem&#10;$ openssl x509 -in localhost.crt -out localhost.pem&#10;$ openssl x509 -inform der -in localhost.cer -out localhost.pem</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-4.sh</span>
+    </div>
+</div>
+<h4 id="convertir-un-certificado-en-formato-pem-a-der">Convertir un certificado en formato PEM a DER</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl x509 -outform der -in localhost.pem -out localhost.der&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-5.sh</span>
+    </div>
+</div>
+<h4 id="convertir-un-certificado-en-formato-pem-y-una-clave-privada-a-pkcs12-pfx-p12">Convertir un certificado en formato PEM y una clave privada a PKCS#12 (.pfx .p12)</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl pkcs12 -export -out localhost.p12 -inkey localhost.key -in localhost.crt&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-6.sh</span>
+    </div>
+</div>
+<h4 id="convertir-un-archivo-en-formato-pkcs12-pfx-p12-que-contiene-una-clave-privada-y-certificado-a-pem">Convertir un archivo en formato PKCS#12 (.pfx .p12) que contiene una clave privada y certificado a PEM</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl pkcs12 -in localhost.p12 -out localhost.pem -nodes&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-7.sh</span>
+    </div>
+</div>
+<h4 id="convertir-pkcs12-a-keystore-jks">Convertir PKCS#12 a keystore JKS</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ keytool -importkeystore -destkeystore localhost.keystore -srckeystore localhost.p12 -srcstoretype pkcs12&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-8.sh</span>
+    </div>
+</div>
+<h3 id="examinar-certificados">Examinar certificados</h3>
+<h4 id="examinar-un-certificado">Examinar un certificado</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl x509 -text -noout -in localhost.crt&#10;Certificate:&#10;&nbsp;&nbsp;&nbsp;&nbsp;Data:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version: <span class="m">3</span> <span class="o">(</span>0x2<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serial Number:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;49:e5:32:9b:7f:be:bf:a6:90:14:34:5e:24:53:e8:96:51:8d:74:d4&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature Algorithm: sha256WithRSAEncryption&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Issuer: <span class="nv">C</span> <span class="o">=</span> ES, <span class="nv">ST</span> <span class="o">=</span> Spain, <span class="nv">CN</span> <span class="o">=</span> localhost&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Validity&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not Before: Jul <span class="m">27</span> 10:40:19 <span class="m">2020</span> GMT&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not After : Jul <span class="m">26</span> 10:40:19 <span class="m">2025</span> GMT&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject: <span class="nv">C</span> <span class="o">=</span> ES, <span class="nv">ST</span> <span class="o">=</span> Spain, <span class="nv">CN</span> <span class="o">=</span> localhost&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject Public Key Info:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public Key Algorithm: rsaEncryption&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RSA Public-Key: <span class="o">(</span><span class="m">8192</span> bit<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modulus:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00:c8:cb:8f:5a:69:93:23:82:24:7e:8a:90:d9:35:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a9:aa:8e:fd:18:46:ac:77:19:fd:31:c1:db:e0:8e:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exponent: <span class="m">65537</span> <span class="o">(</span>0x10001<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X509v3 extensions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X509v3 Subject Key Identifier: &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07:A0:9B:0F:8F:22:9D:AE:CF:F7:46:11:82:B7:7A:0C:43:88:58:8D&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X509v3 Authority Key Identifier: &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyid:07:A0:9B:0F:8F:22:9D:AE:CF:F7:46:11:82:B7:7A:0C:43:88:58:8D&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X509v3 Basic Constraints: critical&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CA:TRUE&#10;&nbsp;&nbsp;&nbsp;&nbsp;Signature Algorithm: sha256WithRSAEncryption&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1b:9d:d1:a5:1a:2d:23:8c:09:8b:08:6c:fb:49:f6:88:e9:51:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 86:ce:19:53:74:ab:90:01:d9:ab:d1:9e:2b:56:ca:7c:a3:53:&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-13.sh</span>
+    </div>
+</div>
+<h4 id="examinar-el-certificado-de-un-servidor-web">Examinar el certificado de un servidor web</h4>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl s_client -showcerts -connect duckduckgo.com:443&#10;CONNECTED<span class="o">(</span>00000003<span class="o">)</span>&#10;<span class="nv">depth</span><span class="o">=</span><span class="m">2</span> <span class="nv">C</span> <span class="o">=</span> US, <span class="nv">O</span> <span class="o">=</span> DigiCert Inc, <span class="nv">OU</span> <span class="o">=</span> www.digicert.com, <span class="nv">CN</span> <span class="o">=</span> DigiCert Global Root CA&#10;verify <span class="k">return</span>:1&#10;<span class="nv">depth</span><span class="o">=</span><span class="m">1</span> <span class="nv">C</span> <span class="o">=</span> US, <span class="nv">O</span> <span class="o">=</span> DigiCert Inc, <span class="nv">CN</span> <span class="o">=</span> DigiCert SHA2 Secure Server CA&#10;verify <span class="k">return</span>:1&#10;<span class="nv">depth</span><span class="o">=</span><span class="m">0</span> <span class="nv">C</span> <span class="o">=</span> US, <span class="nv">ST</span> <span class="o">=</span> Pennsylvania, <span class="nv">L</span> <span class="o">=</span> Paoli, <span class="nv">O</span> <span class="o">=</span> <span class="s2">&#34;Duck Duck Go, Inc.&#34;</span>, <span class="nv">CN</span> <span class="o">=</span> *.duckduckgo.com&#10;verify <span class="k">return</span>:1&#10;---&#10;Certificate chain&#10; <span class="m">0</span> s:C <span class="o">=</span> US, <span class="nv">ST</span> <span class="o">=</span> Pennsylvania, <span class="nv">L</span> <span class="o">=</span> Paoli, <span class="nv">O</span> <span class="o">=</span> <span class="s2">&#34;Duck Duck Go, Inc.&#34;</span>, <span class="nv">CN</span> <span class="o">=</span> *.duckduckgo.com&#10;   i:C <span class="o">=</span> US, <span class="nv">O</span> <span class="o">=</span> DigiCert Inc, <span class="nv">CN</span> <span class="o">=</span> DigiCert SHA2 Secure Server CA&#10;-----BEGIN CERTIFICATE-----&#10;MIIGNTCCBR2gAwIBAgIQAx42ydSKbld6na9pgqdX4zANBgkqhkiG9w0BAQsFADBN&#10;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMScwJQYDVQQDEx5E&#10;...&#10;-----END CERTIFICATE-----&#10; <span class="m">1</span> s:C <span class="o">=</span> US, <span class="nv">O</span> <span class="o">=</span> DigiCert Inc, <span class="nv">CN</span> <span class="o">=</span> DigiCert SHA2 Secure Server CA&#10;   i:C <span class="o">=</span> US, <span class="nv">O</span> <span class="o">=</span> DigiCert Inc, <span class="nv">OU</span> <span class="o">=</span> www.digicert.com, <span class="nv">CN</span> <span class="o">=</span> DigiCert Global Root CA&#10;-----BEGIN CERTIFICATE-----&#10;MIIElDCCA3ygAwIBAgIQAf2j627KdciIQ4tyS8+8kTANBgkqhkiG9w0BAQsFADBh&#10;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3&#10;...&#10;-----END CERTIFICATE-----&#10;---&#10;Server certificate&#10;<span class="nv">subject</span><span class="o">=</span><span class="nv">C</span> <span class="o">=</span> US, <span class="nv">ST</span> <span class="o">=</span> Pennsylvania, <span class="nv">L</span> <span class="o">=</span> Paoli, <span class="nv">O</span> <span class="o">=</span> <span class="s2">&#34;Duck Duck Go, Inc.&#34;</span>, <span class="nv">CN</span> <span class="o">=</span> *.duckduckgo.com&#10;&#10;<span class="nv">issuer</span><span class="o">=</span><span class="nv">C</span> <span class="o">=</span> US, <span class="nv">O</span> <span class="o">=</span> DigiCert Inc, <span class="nv">CN</span> <span class="o">=</span> DigiCert SHA2 Secure Server CA&#10;&#10;---&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>script-14.sh</span>
+    </div>
+</div>
+<h3 id="autoridad-de-certificación">Autoridad de certificación</h3>
+<p>Los comandos anteriores permiten generar un certificado autofirmado válido para proporcionar una conexión cifrada entre un servidor y un cliente como es el caso de un servidor web y un navegador web. Pero los certificados autofirmados no permiten todas las validaciones de seguridad, el cliente no puede confiar en que realmente se está conectando al nombre del dominio del servidor que el certificado incluye y por ello en el cliente hay que eliminar la validación de comprobación del certificado. Para mayor seguridad y en un entorno de producción se ha de utilizar una autoridad de certificación, es posible <a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/">crear una autoridad de certificación propia con comandos de OpenSSL</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.openssl.org/">OpenSSL</a></li>
+<li><a href="http://www.sslshopper.com/article-most-common-openssl-commands.html">The Most Common OpenSSL Commands</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="programacion"/>
+            
+                <category term="seguridad"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+                <category term="web"/>
+            
+        
+    </entry>
+    
+</feed>

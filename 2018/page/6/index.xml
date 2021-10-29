@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">Blog Bitix</title>
+    <subtitle type="text">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</subtitle>
+    <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
+    <link href="https://picodotdev.github.io/blog-bitix/" />
+    <id>https://picodotdev.github.io/blog-bitix/2018/</id>
+    <updated>2018-12-30T19:00:00+01:00</updated>
+    <author><name>picodotdev</name></author>
+    <generator>Hugo</generator>
+    <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
+    <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
+    <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/</id>
+        <title>Gestión de peticiones, wiki y pages con GitLab</title>
+        <updated>2018-01-20T10:00:00+01:00</updated>
+        <published>2018-01-20T10:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
+</div>
+<p>Una de las cosas que me gustan de <a href="https://about.gitlab.com/">GitLab</a> es que se puede usar en un servidor propio, la otra cosa que me gusta es que incluye varias herramientas casi imprescindibles para cualquier proyecto como gestión de peticiones para recoger las historias, wiki como documentación e información y <em>pages</em> para generar pequeños sitios web además de los repositorios de <a href="https://git-scm.com/">Git</a> o el servidor de integración y entrega continua. Que GitLab incluya por defecto todas estas herramientas hace innecesario recurrir en la mayoría de los casos a varias herramientas especializadas que cubran estas necesidades como <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://jenkins.io/">Jenkins</a>, <a href="https://www.mediawiki.org/">MediaWiki</a> o un servidor web para los sitios web.</p>
+<p>Después de <a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/">instalar GitLab usando Docker</a> o de alguna de sus otras formas, creado un usuario no administrador y un proyecto se puede empezar a usar las herramientas de gestión de incidencias, wiki y <em>pages</em>. Estas son solo tres de sus herramientas incluidas, además incluye <a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/">integración y entrega continua</a>.</p>
+<h3 id="gestión-de-peticiones">Gestión de peticiones</h3>
+<p>La herramienta de gestión de peticiones permite crear historias que recojan las tareas a realizar, las historias pueden ser de diferente tipo como nuevas funcionalidades, mejoras técnicas o errores, es posible asignarlas a diferentes usuarios, relacionar peticiones entre si o incluir documentos adjuntos. Las historias también se pueden mostrar en un panel <a href="https://es.wikipedia.org/wiki/Kanban_%28desarrollo%29">Kanban</a> para visualizar el estado de las peticiones, las que están realizándose, las desplegadas en producción, las siguientes peticiones y donde puede haber cuellos de botella en los procesos. El flujo y el panel Kanban que siguen las peticiones desde que se crean hasta que se dan por terminadas es personalizable.</p>
+<p>Para crear una nueva petición hay que acceder en el proyecto a <em>Issues</em> y pulsar el botón <em>New Issue</em>. Rellenados los datos del formulario de creación se puede consultar desde <em>Issues &gt; List</em> para verlas en formato lista o <em>Issues &gt; Board</em> para verlas en formato panel Kanban. El panel Kanban se puede modificar y asignando etiquetas a las peticiones crear columnas adaptado al flujo de trabajo de una organización. Con <a href="https://docs.gitlab.com/ee/user/markdown.html">formato de las descripciones de las peticiones</a> permite hacer referencia a otras o incluir menciones a otros usuarios.</p>
+<ul>
+<li><a href="https://docs.gitlab.com/ee/user/project/issues/issues_functionalities.html#11-reference">Issues Functionalities</a></li>
+<li><a href="https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.html">Crosslinking Issues</a></li>
+<li><a href="https://about.gitlab.com/product/issueboard/">Issue Board</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-1_hu39cda9bb77c6776898ba6dc3bdb94e84_286600_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva petición A"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-1_hu39cda9bb77c6776898ba6dc3bdb94e84_286600_300x200_fit_box_3.png" width="300" height="163" alt="Nueva petición A" title="Nueva petición A"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-2_hu39cda9bb77c6776898ba6dc3bdb94e84_285620_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva petición B"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-2_hu39cda9bb77c6776898ba6dc3bdb94e84_285620_300x200_fit_box_3.png" width="300" height="163" alt="Nueva petición B" title="Nueva petición B"  class="lozad "></a></p>
+<figcaption>Nueva petición</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/issues_hua9fb50b63579c6550c6f5d00c5abbfce_218131_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Lista de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/issues_hua9fb50b63579c6550c6f5d00c5abbfce_218131_300x200_fit_box_3.png" width="300" height="163" alt="Lista de peticiones" title="Lista de peticiones"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/labels_hucf4845fc7964e54d76e32fedbafd0a71_293277_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Etiquetas"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/labels_hucf4845fc7964e54d76e32fedbafd0a71_293277_300x200_fit_box_3.png" width="300" height="163" alt="Etiquetas" title="Etiquetas"  class="lozad "></a></p>
+<figcaption>Lista de peticiones y etiquetas</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/board_hubcbec4cba09a225e060715df5c1b7a3b_161725_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/board_hubcbec4cba09a225e060715df5c1b7a3b_161725_300x200_fit_box_3.png" width="300" height="163" alt="Panel Kanban" title="Panel Kanban"  class="lozad "></a></p>
+<figcaption>Panel Kanban</figcaption>
+</figure>
+</div>
+<h3 id="wiki">Wiki</h3>
+<p>Una wiki ayuda a recoger información útil en el mismo proyecto pero no en el repositorio de código fuente, por ejemplo, cómo iniciar la aplicación de un proyecto a partir del repositorio de código fuente, qué dependencias tiene como el JDK o una base de datos. También puede recoger información general de lógica de negocio que no cambien tan a menudo como el código como pudiera ser un esquema de alto nivel de arquitectura o por que se han tomado algunas decisiones en la arquitectura y los requerimientos.</p>
+<p>Cuando se accede por primera vez a la wiki se crea la página de inicio que se puede editar o crear nuevas páginas. Las páginas de la wiki se escriben en formato <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a> y se guarda un historial de las ediciones que se han realizado a cada página.</p>
+<ul>
+<li><a href="https://docs.gitlab.com/ce/user/project/wiki/index.html">GitLab Wiki</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-page_hucf4845fc7964e54d76e32fedbafd0a71_224040_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva página"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-page_hucf4845fc7964e54d76e32fedbafd0a71_224040_300x200_fit_box_3.png" width="300" height="163" alt="Nueva página" title="Nueva página"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/page_hucf4845fc7964e54d76e32fedbafd0a71_160172_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/page_hucf4845fc7964e54d76e32fedbafd0a71_160172_300x200_fit_box_3.png" width="300" height="163" alt="Página" title="Página"  class="lozad "></a></p>
+<figcaption>Nueva página y página</figcaption>
+</figure>
+</div>
+<h3 id="pages">Pages</h3>
+<p>La herramienta de <em>pages</em> o páginas permite crear un pequeño sitio web. Se pueden utilizar varias de las herramientas generadoras de sitios web estáticos como <a href="https://jekyllrb.com/">Jekyll</a> o <a href="https://gohugo.io/">Hugo</a>. Para crear un sitio web hay que crear un repositorio de código fuente con un archivo <em>.gitlab-ci.yml</em> y una tarea de nombre <em>pages</em> que contiene los comandos para construir el sitio web.</p>
+<p>Es posible asignar a los sitios web de <em>pages</em> un dominio propio y añadirles seguridad con el protocolo HTTPS. En <a href="https://gitlab.com/pages">estos repositorios</a> hay ejemplos de como generar un sitio web del proyecto con varios de los más populares generadores de sitios web estáticos. Dependiendo de si el sitio web es para el proyecto o del usuario o grupo el sitio estará accesible en la dirección u otra.</p>
+<ul>
+<li><a href="https://docs.gitlab.com/ee/user/project/pages/index.html#gitlab-pages-documentation">GitLab Pages</a></li>
+</ul>
+<p>En resumen, ya con esta pequeña serie de artículos queda claro que GitLab es una herramienta muy completa y que incluye las funcionalidades de varias que son suficientes para la mayoría de los casos sin tener que recurrir a Jira, Jenkins, MediaWiki o un servidor web. Además, con la muy completa <a href="https://docs.gitlab.com/ce/api/">API de GitLab</a> es posible hacer desarrollos a medida y según las necesidades que se tengan.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GitLab">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose -f docker-compose-all.yml up</code></p>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/</id>
+        <title>Integración y entrega continua con GitLab sobre Docker</title>
+        <updated>2018-01-13T10:30:00+01:00</updated>
+        <published>2018-01-13T10:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
+</div>
+<p><a href="https://about.gitlab.com/">GitLab</a> es una herramienta muy completa, una de las necesidades de los proyectos es tener teses y que estos se ejecuten con cada <em>commit</em> para asegurar que los cambios no introducen errores en las funcionalidades cubiertas por los teses, esto es la integración continua. La entrega inmediata es una vez que los teses se han ejecutado correctamente hacer el despliegue en los servidores de forma pasa el tiempo mínimo entre que una funcionalidad está desarrollada y esta se puede utilizar.</p>
+<p>GitLab proporciona integración continua (<em>Continuos Integration</em>, CI) y entrega continua (<em>Continuos Delivery</em>, CD) sin necesidad de una herramienta externa más especializada como es <a href="https://jenkins.io/">Jenkins</a>. En el siguiente ejemplo muestro como configurar GitLab para crear uno o varios <em>runner</em> que son los que realizan las acciones de integración y entrega continua y el archivo descriptor <em>.gitlab-ci.yml</em> en formato <em>yaml</em> que define las acciones específicas del proyecto que se ejecutarán con cada <em>commit</em> en el repositorio <a href="https://git-scm.com/">Git</a>.</p>
+<p>Jenkins es una herramienta más especializada que también sirve para realizar integración y entrega continua. En la página <a href="https://about.gitlab.com/comparison/gitlab-vs-jenkins.html">GitLab vs Jenkins</a> se comparan las características de ambas herramientas, aunque en esa página de comparación GitLab está indicando que tiene algunas características más y aunque no tuviera tantas para la mayoría de los casos de uso es más que suficiente con la ventaja de no necesitar una herramienta más al estar estar ya integrado en GitLab que ofrece además del repositorio de código fuente, una wiki o un páginas para un sitio web.</p>
+<p>Para realizar integración y entrega continua hay definir las acciones, tareas y comandos de los que se componen del <em>pipeline</em> específico para el proyecto, la descripción del <em>pipeline</em> se define en un archivo <em>.gitlab-ci.yml</em> que se añade en el directorio raíz del código fuente del proyecto en su repositorio de Git. El <em>pipeline</em> según las necesidades del proyecto consta de varios pasos o <em>steps</em> que se ejecutan de forma secuencial. Si en un mismo paso hay varias acciones estas se ejecutan de forma paralela. En el ejemplo de proyecto <em>test</em> con un programa <em>Hola Mundo</em> con Java y usando la herramienta de construcción <a href="https://gradle.org/">Gradle</a> el <em>pipeline</em> consta de las acciones de compilación y de ejecución de pruebas unitarias y <a href="https://picodotdev.github.io/blog-bitix/2017/09/como-generar-la-documentacion-javadoc-con-gradle/">creación de documentación <em>javadoc</em></a>. La tarea de Gradle <em>build</em> en un proyecto Java realiza la compilación, ejecución de pruebas unitarias y genera el artefacto resultado el el directorio <em>build/distributions</em> y la librería <em>jar</em> con las clases compiladas en <em>build/libs</em>, la tarea <em>javadoc</em> genera la <a href="https://docs.oracle.com/javase/9/docs/api/overview-summary.html">documentación Javadoc</a> de las clases del proyecto.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">openjdk:8-jdk-alpine</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">stages</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span>- <span class="l">build</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">build</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">build</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">./gradlew --no-daemon build javadoc</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">paths</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">build/distributions/gradle.zip</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">build/docs/javadoc/</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gitlab-ci.yml</span>
+    </div>
+</div>
+<p>Añadido el archivo del <em>pipeline</em> al código fuente del proyecto hay que definir un <em>runner</em> que se encargará de ejecutarlo con cada <em>commit</em> que se envíe al repositorio de código fuente. Hay que registrarlo y se necesita un <em>token</em> que se puede obtener desde el área de administración en <em>Overview &gt; Runners</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/gitlab-runners_hu4e48bd46d630c15053f13e201276a889_258822_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Runners"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/gitlab-runners_hu4e48bd46d630c15053f13e201276a889_258822_300x200_fit_box_3.png" width="300" height="164" alt="Runners" title="Runners"  class="lozad "></a></p>
+<figcaption>GitLab Runners</figcaption>
+</figure>
+</div>
+<p>Al registrarlo hay que especificar el tipo de <em>runner</em>, hay varios tipos, en este caso se usa el de <em>docker</em> para ejecutar el <em>pipeline</em> dentro de un contenedor de <a href="https://www.docker.com/">Docker</a>. En en archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> es necesario que el <em>runner</em> pueda comunicarse con el servicio de Docker, para ello como punto de montaje del contenedor de <em>gitlab-runner</em> se especificar el archivo <em>docker.sock</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker <span class="nb">exec</span> -it gitlab-runner gitlab-runner register --url <span class="s2">&#34;https://gitlab&#34;</span> --registration-token <span class="s2">&#34;RhoFva9z8Ri6cuDYbXN1&#34;</span> --tag-list <span class="s2">&#34;gitlab-runner-01&#34;</span> --run-untagged <span class="s2">&#34;true&#34;</span> --locked <span class="s2">&#34;false&#34;</span> --executor <span class="s2">&#34;docker&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>add-gitlab-runner.sh</span>
+    </div>
+</div>
+<p>En este ejemplo y con este <em>pipeline</em> el artefacto distribuible de la aplicación y el Javadoc se almacena en GitLab estando accesible para su descarga desde el panel lateral una vez finalizado el <em>pipeline</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipelines_hu3f62b1b8d4d7ea188729501f507f909e_98907_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pipelines"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipelines_hu3f62b1b8d4d7ea188729501f507f909e_98907_300x200_fit_box_3.png" width="300" height="164" alt="Pipelines" title="Pipelines"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipeline_huedfef20b9fb22617dbc80afe0102ced6_359504_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pipeline"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipeline_huedfef20b9fb22617dbc80afe0102ced6_359504_300x200_fit_box_3.png" width="281" height="200" alt="Pipeline" title="Pipeline"  class="lozad "></a></p>
+<figcaption>Pipeline</figcaption>
+</figure>
+</div>
+<p>El descriptor usando <a href="https://docs.docker.com/compose/">Docker Compose</a> que define el servicio de GitLab y otro para GitLab Runner es el siguiente. El nombre de dominio que he utilizado para el servidor es <em>gitlab</em> y ha de añadirse al archivo <em>/etc/hosts</em> para que sea resuelto localmente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.4&#39;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">gitlab</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;gitlab/gitlab-ce:latest&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">gitlab</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;gitlab&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">GITLAB_OMNIBUS_CONFIG</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gitlab_rails[&#39;gitlab_shell_ssh_port&#39;] = 8022&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;external_url &#39;https://gitlab&#39;&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nginx[&#39;ssl_certificate&#39;] = &#39;/etc/gitlab/ssl/gitlab.crt&#39;&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nginx[&#39;ssl_certificate_key&#39;] = &#39;/etc/gitlab/ssl/gitlab.key&#39;&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pages_external_url &#39;https://gitlab&#39;&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pages_nginx[&#39;redirect_http_to_https&#39;] = true&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pages_nginx[&#39;ssl_certificate&#39;] = &#34;/etc/gitlab/ssl/gitlab.crt&#34;&#10;</span><span class="sd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pages_nginx[&#39;ssl_certificate_key&#39;] = &#34;/etc/gitlab/ssl/gitlab.key&#34;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">networks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">gitlab</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">aliases</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">gitlab</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;8022:22&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;8080:80&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;8443:443&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;gitlab-config-volume:/etc/gitlab&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;gitlab-log-volume:/var/log/gitlab&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;gitlab-data-volume:/var/opt/gitlab&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;./docker-volumes/gitlab/ssl:/etc/gitlab/ssl&#39;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">gitlab-runner</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;gitlab/gitlab-runner:latest&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">gitlab-runner</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;DOCKER_NETWORK_MODE=gitlab_gitlab&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">links</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">gitlab</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">networks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">gitlab</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;gitlab-runner-config-volume:/etc/gitlab&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;./docker-volumes/gitlab/ssl/gitlab.crt:/etc/gitlab-runner/certs/ca.crt&#39;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s1">&#39;/var/run/docker.sock:/var/run/docker.sock&#39;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">gitlab-config-volume</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">gitlab-log-volume</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">gitlab-data-volume</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">gitlab-runner-config-volume</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">gitlab</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">bridge</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-compose-all.yml</span>
+    </div>
+</div>
+<p>En la sección de referencia hay unos buenos enlaces de documentación de GitLab sobre la integración continua, despliegue continuo y entrega continua.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GitLab">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>docker-compose -f docker-compose-all.yml up</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.gitlab.com/ce/ci/">GitLab Continuous Integration (GitLab CI/CD)</a></li>
+<li><a href="https://docs.gitlab.com/ce/ci/quick_start/README.html">Getting started with GitLab CI/CD</a></li>
+<li><a href="https://docs.gitlab.com/ce/ci/yaml/README.html">Configuration of your jobs with .gitlab-ci.yml</a></li>
+<li><a href="https://gist.github.com/daicham/5ac8461b8b49385244aa0977638c3420">A sample of .gitlab-ci.yml for a gradle project</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/</id>
+        <title>Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</title>
+        <updated>2018-01-07T01:30:00+01:00</updated>
+        <published>2018-01-06T10:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los procesadores Intel se han visto afectados por un grave error de seguridad debido a que fueron diseñados con ejecución especulativa sin tener algunas consideraciones de seguridad, técnica empleada para aumentar el rendimiento pero que tiene efectos colaterales en la cache que pueden se aprovechados para realizar ataques <em>side-channel</em> con los que leer el contenido de la memoria del <em>kernel</em>, independientemente del sistema operativo utilizado.</strong></p>]]>
+        <![CDATA[<p>El año 2018 ha empezando haciéndose público uno de los peores <em>bugs</em> de seguridad que afecta a absolutamente todos los procesadores <a href="https://www.intel.es">Intel</a> que esta compañía ha fabricado en la última década, denominado <a href="https://meltdownattack.com/"><em>Meltdown</em> y su variante <em>Spectre</em></a>, el error tiene su propio nombre, logotipo y página web. Un error de diseño en los procesadores que solo se puede corregir reemplazando el microprocesador o modificando los sistemas operativos aunque se especula con una pérdida de rendimiento en ciertas cargas de trabajo, entre un 5% y un 30%. El error es tan grave que permite leer a un programa la memoria del núcleo del sistema operativo que debería estar protegida. En la memoria del <em>kernel</em> residen las claves de acceso a sistemas o datos sensibles que obtenidos y utilizados pueden ocasionar graves problemas de seguridad con consecuencias económicas o de acceso no autorizado a información. Este error es tan grave que deja al viejo conocido <a href="https://en.wikipedia.org/wiki/Pentium_FDIV_bug">fallo de la división de los Pentium</a> a la altura de chiste. Hace unos meses por si fuera poco se conocía otro error de seguridad en el <a href="https://en.wikipedia.org/wiki/Intel_Management_Engine">Management Engine (ME)</a> de Intel.</p>
+<ul>
+<li><a href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00088&amp;languageid=en-fr">Listado de procesadores Intel afectados por Meltdown y Spectre</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/meltdown.svg" width="200" height="200" alt="Meltdown" title="Meltdown"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spectre.svg" width="200" height="200" alt="Spectre" title="Spectre"  class="lozad "></p>
+<figcaption>Logotipos de Meltdown y Spectre</figcaption>
+</figure>
+</div>
+<p>Reemplazar todos los microprocesadores es tremendamente caro además de que primero hay que diseñar y fabricar unos que estén exentos del <em>bug</em> que lleva tiempo, meses o años hasta que estén preparados, por lo que la solución hasta el momento pasa por hacer modificaciones en el software y en los sistemas operativos, compiladores y programas para resolver o mitigar el problema. En el sistema operativo la solución consiste en separar el espacio de direcciones del <em>kernel</em> de la de los programas, sin embargo, cada vez que el microprocesador cambia entre un espacio de direcciones a otro hay una penalización en tiempo por lo que en ciertas cargas de trabajo muy intensivas en las que se cambia frecuentemente de contextos como operaciones de red, de almacenamiento rápido o E/S el rendimiento se ve afectado. Para un usuario doméstico, ofimático o juegos la perdida de rendimiento será insignificante y no será apreciable ya que en estos casos el microprocesador no trabaja a la máxima carga o no está cambiando frecuentemente del espacio de direcciones del <em>kernel</em> al de usuario. En grandes centros de datos como la computación en la nube de <a href="https://aws.amazon.com/es/">Amazon Web Services</a>, <a href="https://cloud.google.com/">Google Cloud Platform</a> o <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a> el rendimiento será más apreciable.</p>
+<p>Como usuarios domésticos para estar protegidos conviene descargar únicamente software de fuentes confiables pero para los usuarios empresariales con sus servicios en la nube en donde los sistemas están aislados pero usando infraestructura compartida y con el descubrimiento de este <em>bug</em> es más grave si no se parchea, los proveedores de infraestructura en la nube ya han planificando tareas de mantenimiento y reinicios obligatorios.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/intel.svg" width="200" height="200" alt="Intel" title="Intel"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amd.svg" width="200" height="200" alt="AMD" title="AMD"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/arm.svg" width="200" height="200" alt="ARM" title="ARM"  class="lozad "></p>
+</figure>
+</div>
+<h3 id="técnicas-para-aumentar-el-rendimiento">Técnicas para aumentar el rendimiento</h3>
+<p>Los microprocesadores modernos implementan varias técnicas para aumentar el rendimiento. Una de las mas simples es aumentar la frecuencia de trabajo del microprocesador, uno de los primeros Pentium trabajaba únicamente a 100 Mhz y los actuales llegan hasta los 3 Ghz, casi 30 veces más. Pero aumentar la frecuencia solo es posible hasta cierto límite a partir del cual el microprocesador se calienta mucho y consume mucha energía. Por lo que hay que emplear otras técnicas al mismo tiempo.</p>
+<p>Otra de las mas simples es reducir el tamaño de los transistores, unos transistores más pequeños hace que sea posible incluir más transistores en el mismo espacio físico para incluir caches de mayor tamaño o nuevas funcionalidades, con más velocidad y con menor consumo de energía. El tamaño de los transistores de los Pentium originales era de 800 nanómetros e incluía 3.1 millones, los Intel Core de octava generación se fabrican a 14 nanómetros incluyendo unos 5000 millones, unas 60 veces más pequeños. Aún así cada vez es más difícil cumplir con la <a href="https://es.wikipedia.org/wiki/Ley_de_Moore">ley de Moore</a> ya que se está llegando a límite físico de los átomos de los materiales, consistía en que cada dos años se duplica el número de transistores de un microprocesador.</p>
+<p>Con la ayuda de unos transistores más pequeños y más espacio se aprovecha para aumentar el rendimiento incluyendo más núcleos de cómputo. Pero para aumentar el rendimiento de un núcleo de cómputo individual o el <abbr title="Instructions Per Cicle">IPC</abbr> se emplean otras técnicas como utilizar múltiples <em>pipelines</em> para ejecutar varias instrucciones simultáneamente, ejecución fuera de orden para reorganizar las instrucciones y la ejecución especulativa para mantener llenos esos <em>pipelines</em>.</p>
+<h3 id="escalar">Escalar</h3>
+<p>En un microprocesador escalar se ejecuta una instrucción por ciclo, por ejemplo, en esta secuencia de instrucciones que realizan unas sumas se tardarían 6 ciclos de reloj. A estos microprocesadores que ejecutan una instrucción por ciclo de reloj se les denomina escalares, siendo ejemplos el Intel 486 y el ARM1176 usado en la Raspberry Pi 1.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">n</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span>&#10;<span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span>&#10;<span class="n">y</span> <span class="o">=</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span>&#10;<span class="n">z</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>escalar.py</span>
+    </div>
+</div>
+<h3 id="superescalar">Superescalar</h3>
+<p>En un microprocesador con dos <em>pipelines</em> o <a href="https://en.wikipedia.org/wiki/Superscalar_processor">superescalar</a> se pueden realizar varias operaciones simultáneamente, es decir, mientras se realiza la primera operación en la variable <em>m</em> se realiza al mismo tiempo la segunda operación de <em>n</em>, con lo que estas operaciones podrían completarse en únicamente tres ciclos de reloj con la siguiente equivalencia de programa. Ejemplos de microprocesadores superescalares son el Intel Pentium y los <a href="https://www.arm.com/">ARM</a> Cortex-A7 y Cortex-A53 estos últimos usados en la Raspberry Pi 2 y 3 respectivamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span>&#10;<span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>superescalar-1.py</span>
+    </div>
+</div>
+<p>Sin embargo, hacer la suma de <em>o</em> y <em>x</em> al mismo tiempo no es posible ya que antes de calcular <em>x</em> hay que calcular <em>o</em> debido a que uno de los operandos en la suma de <em>x</em> es <em>o</em>, es decir, hay una dependencia en estas instrucciones y se han de ejecutar una después de otra. Con lo que en vez de tres ciclos habría que conformase en ejecutar estas instrucciones en cuatro ciclos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span> &#10;<span class="n">o</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c1"># el segundo pipeline está ocioso</span>&#10;<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span><span class="p">,</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span> &#10;<span class="n">z</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c1"># el segundo pipeline está ocioso</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>suprescalar-2.py</span>
+    </div>
+</div>
+<h3 id="fuera-de-orden">Fuera de orden</h3>
+<p>Los microprocesadores <a href="https://en.wikipedia.org/wiki/Out-of-order_execution">fuera de orden</a> reordenan las instrucciones de la forma adecuada para que el programa sea equivalente pero manteniendo los <em>pipelines</em> llenos. Cambiando el orden entre las instrucciones <em>x</em> e <em>y</em> se consigue ejecutar las instrucciones en tres ciclos de reloj. Ejemplos de microprocesadores fuera de orden son el Pentium 2 y siguientes microprocesadores Intel y <a href="https://www.amd.com/es">AMD</a> incluyendo varios ARM Cortex-A9, A15, A17 y A57.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">,</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span>&#10;<span class="n">x</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>fuera-de-orden.py</span>
+    </div>
+</div>
+<h3 id="predicción-de-salto-y-ejecución-especulativa">Predicción de salto y ejecución especulativa</h3>
+<p>Los programas incluyen saltos con sentencias condicionales <em>if</em> o de bucle. Los microprocesadores tratan de adivinar si una sentencia de salto se producirá o no (con heurísticas y son bastante buenos acertando) para recuperar y tener preparadas las siguientes instrucciones. Mantener los <em>pipelines</em> llenos es difícil al aumentar su número a tres o cuatro. Para tratar de mantenerlos llenos los microprocesadores usan la predicción de salto y van ejecutando las instrucciones desechando las operaciones si finalmente no se acierta en el salto pero habiendo aumentado el rendimiento si se ha acertado, realizan <a href="https://en.wikipedia.org/wiki/Speculative_execution">ejecución especulativa</a> de las instrucciones.</p>
+<p>En este otro caso, <em>v</em> depende de <em>u</em> y <em>u</em> depende de <em>t</em> de modo que un microprocesador superescalar sin ejecución especulativa tardará tres ciclos computando <em>t</em>, <em>u</em> y <em>v</em> para determinar el valor de <em>v</em> en la sentencia condicional <em>if</em> (en otro ciclo) momento en que pasa otros tres ciclos calculando <em>w</em>, <em>x</em> e <em>y</em>, en total 4 o 7 ciclos dependiendo de si hay salto en la sentencia condicional.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;   <span class="n">x</span> <span class="o">=</span> <span class="n">w</span><span class="o">+</span><span class="n">g</span>&#10;   <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-1.py</span>
+    </div>
+</div>
+<p>Si el predictor de salto determina que es probable que la condición sea cierta la ejecución especulativa reordena el programa de la siguiente manera:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">w_</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;<span class="n">x_</span> <span class="o">=</span> <span class="n">w_</span><span class="o">+</span><span class="n">g</span>&#10;<span class="n">y_</span> <span class="o">=</span> <span class="n">x_</span><span class="o">+</span><span class="n">h</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-2.py</span>
+    </div>
+</div>
+<p>Y con la ejecución superescalar se mantiene los <em>pipelines</em> ocupados de modo que el ejemplo tiene la siguiente equivalencia y tardando aproximadamente 3 ciclos cuando antes se necesitaban 7.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;<span class="n">u</span><span class="p">,</span> <span class="n">x_</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">w_</span><span class="o">+</span><span class="n">g</span>&#10;<span class="n">v</span><span class="p">,</span> <span class="n">y_</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">x_</span><span class="o">+</span><span class="n">h</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-3.py</span>
+    </div>
+</div>
+<h3 id="cache">Cache</h3>
+<p>Los microprocesadores son muy rápidos comparados con la memoria o el acceso al almacenamiento secundario. Un Cortex-A53 de una Raspberry Pi puede ejecutar una instrucción en 0.5 nanosegundos pero el acceso a memoria costar 100 nanosegundos. Esto no es bueno pero por fortuna los accesos a memoria siguen patrones, accediendo repetidamente a variables recientemente accedidas y accediendo a variables en posiciones cercanas, de forma que colocando estas variables en una cache más rápida y cercana al procesador que la memoria principal se mitiga en gran medida el problema.</p>
+<h3 id="relación-entre-ejecución-especulativa-cache-y-_meltdown_-y-_spectre_">Relación entre ejecución especulativa, cache y <em>Meltdown</em> y <em>Spectre</em></h3>
+<p>La ejecución especulativa tiene el efecto colateral de colocar datos en la memoria cache del microprocesador y esto es utilizado para realizar una forma de <a href="https://en.wikipedia.org/wiki/Side-channel_attack">ataque side-channel</a>. Desde el punto de vista de <em>Meltdown</em> y <em>Spectre</em> y la ejecución especulativa lo importante es que midiendo el tiempo que tarda el acceso a memoria se puede conocer si el dato está en la cache (tarda poco) o no (tarda mucho).</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span> <span class="o">=</span> <span class="n">kern_mem</span><span class="p">[</span><span class="n">address</span><span class="p">]</span>   <span class="c1"># si se llega aquí se produce un fallo</span>&#10;   <span class="n">x</span> <span class="o">=</span> <span class="n">w</span> <span class="o">&amp;</span> <span class="mh">0x100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="c1"># operación de bit and</span>&#10;   <span class="n">y</span> <span class="o">=</span> <span class="n">user_mem</span><span class="p">[</span><span class="n">x</span><span class="p">]</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>meltdown-1.py</span>
+    </div>
+</div>
+<p><em>u</em> tiene una dependencia sobre <em>t</em> y <em>v</em> sobre <em>u</em> con lo que el microprocesador usando la superescalabilidad, la ejecución fuera de orden y ejecución especulativa acabaría transformando el programa en la siguiente secuencia de operaciones:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">kern_mem</span><span class="p">[</span><span class="n">address</span><span class="p">]</span>&#10;<span class="n">u</span><span class="p">,</span> <span class="n">x_</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">w_</span> <span class="o">&amp;</span> <span class="mh">0x100</span>&#10;<span class="n">v</span><span class="p">,</span> <span class="n">y_</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">user_mem</span><span class="p">[</span><span class="n">x_</span><span class="p">]</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="c1"># nunca se llega aquí, si no fallo</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>meltdown-2.py</span>
+    </div>
+</div>
+<p>El microprocesador lee de el valor de una dirección del <em>kernel</em> de forma especulativa pero el fallo en la operación de acceso no se produce hasta se conoce el valor de <em>v</em> utilizando en la sentencia condicional no es cero. Limpiando la cache previamente y haciendo que <em>v</em> de cero para que no se produzca la excepción con los valores adecuados de las variables (<em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>) la ejecución especulativa de <code>v, y_ = u+d, user_mem[x_]</code> producirá un acceso a la dirección de memoria <em>0x000</em> o <em>0x100</em> dependiendo del valor del octavo bit recuperado en el acceso ilegal a la dirección de memoria <code>kern_mem[address]</code>. El ataque <em>side-channel</em> se produce midiendo el tiempo que tarda una instrucción posterior que utilice estas direcciones, si está o no está en la cache (por el tiempo que tarda) determina a que dirección de memoria se ha accedido y cual es el valor del octavo bit de una dirección del <em>kernel</em>. ¡Felicidades has leído un bit de la memoria del kernel!. Bit a bit y con tiempo se puede leer todo el contenido de la memoria del <em>kernel</em> aplicando esta operación millones de veces.</p>
+<h3 id="notas-finales">Notas finales</h3>
+<p>Los microprocesadores ARM1176, Cortex-A7, and Cortex-A53 usados en la Raspberry Pi no se ven afectados por el <em>Meltdown</em> ya que no poseen ejecución especulativa, los AMD Ryzen tampoco se ven afectados por el <em>Meltdown</em> ya que aunque si soportan ejecución especulativa al contrario de Intel la ejecución especulativa no se permite entre diferentes anillos de seguridad, el <em>kernel</em> se ejecuta en el anillo 0 y las aplicaciones en el anillo 3. Sin embargo, una variante de <em>Meltdown</em> es <em>Spectre</em> que es el mismo caso pero en vez de con la memoria del <em>kernel</em> con la memoria de otra aplicación. Como las aplicaciones se ejecutan en el mismo anillo en este caso los AMD Ryzen y algunos modelos de ARM si se ven afectados por <em>Spectre</em> al igual que también los Intel.</p>
+<p>La ejecución especulativa hace más rápidos los microprocesadores pero habiéndose descubierto este fallo muy inseguros en el caso de los Intel ya que se ve afectados por <em>Meltdown</em> y <em>Spectre</em> a menos que se implementen parches por software ya que por microcódigo no es posible darle solución. <em>Meltdown</em> es más grave pero se puede corregir modificando el <em>kernel</em> aún con una pérdida de rendimiento, <em>Spectre</em> es más difícil de explotar pero más difícil de corregir y lo que se hará en este último caso es mitigar el problema modificando el sistema operativo, compilador y aplicaciones.</p>
+<p>Intel tiene un problema importante, con AMD y sus Ryzen a buen precio, con buen rendimiento y&hellip; sin el problema del <em>Meltdown</em>. Para corregir el fallo en el diseño de la arquitectura del hardware Intel va a tener que rediseñar en parte su arquitectura y esto le va a llevar meses hasta tener preparados nuevos modelos de microprocesadores sin el error.</p>
+<p>En el <em>kernel</em> de Linux 4.14.11 ya se han aplicado varios parches al igual que posteriormente se implementarán en Windows y macOS. Yo como usuario de Linux con un Intel Core i5-3210M que posee la característica <em>pcid</em> y esa versión del <em>kernel</em> no he notado ninguna perdida de rendimiento apreciable.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.raspberrypi.org/blog/why-raspberry-pi-isnt-vulnerable-to-spectre-or-meltdown/">Why Raspberry Pi isn’t vulnerable to Spectre or Meltdown</a></li>
+<li><a href="https://pdfs.semanticscholar.org/2209/42809262c17b6631c0f6536c91aaf7756857.pdf">The Intel 80x86 Processor Architecture: Pitfalls for Secure Systems</a></li>
+<li><a href="https://www.amd.com/en/corporate/speculative-execution">An Update on AMD Processor Security</a></li>
+<li><a href="https://lkml.org/lkml/2017/12/27/2">x86/cpu, x86/pti: Do not enable PTI on AMD processors</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures">List of ARM microarchitectures</a></li>
+<li><a href="https://geeks.ms/etomas/2018/01/05/meltdown-y-spectre-algunos-comentarios/">Meltdown y Spectre algunos comentarios</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="hardware"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="seguridad"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/</id>
+        <title>Artículo #5 de Yo apoyo al software libre</title>
+        <updated>2018-01-03T13:00:00+01:00</updated>
+        <published>2018-01-03T10:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<p>La última donación que hice a algún proyecto de software libre fue en mayo del 2017, desde entonces he recibido algunos ingresos por la publicidad AdSense que incluyó en el blog. Los ingresos por AdSense están empezando a ser bastantes constantes de al menos 1 € al día con lo que al mes se convierten en 30 €, un més bueno en 50 €, con lo que cada dos o tres meses recibo un ingreso.</p>
+<p>También hace unos meses escribí un artículo patrocinado con enlaces de afiliación sobre varios <a href="https://picodotdev.github.io/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/">cursos de formación de KeepCoding</a>, la mayoría de usuarios se registran en los cursos gratuitos y ya cuando había perdido las esperanzas de que alguien comprase algún curso pagando un par de usuarios se registraron usando mis códigos de afiliado.</p>
+<p>En esta ocasión los proyectos a los que he hecho una donación han sido <a href="https://lineageos.org/">LineageOS</a> y <a href="https://www.replicant.us/">Replicant</a>, dos distribuciones de <a href="https://www.android.com/">Android</a> que permiten dar una segunda o tercera vida a móviles que desde hace tiempo se han quedado sin soporte oficial del fabricante ni de Google ni parches de seguridad con lo que ello supone en estos dispositivos que se están convirtiendo en cada vez más imprescindibles. Esto genera dispositivos no actualizados, tarde o temprano potencialmente inseguros y la conocida fragmentación en la plataforma Android.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/lineageos.svg" width="200" height="200" alt="Replicant" title="Replicant"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/replicant.svg" width="200" height="200"  class="lozad "></p>
+</figure>
+</div>
+<p>Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo <em>giga</em> de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los <em>smartphones</em> usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.</p>
+<h3 id="lineageos">LineageOS</h3>
+<p>Se trata de la versión heredera de CyanogenMod, soporta una gran cantidad de terminales que con el paso del tiempo va aumentando aunque hasta el momento no he visto que se haya lanzado una versión estable de alguno de ellos, en cualquier caso en el estado actual funcionará bastante bien en cualquiera de los terminales.</p>
+<p>Finalmente, ayer precisamente me decidí a instalar LineageOS 14.1 que incorpora una de las últimas versiones de Android, 7.1, y mucho más reciente que la que tenía, no lo había hecho hasta el momento por eso de no tener una versión estable y no estaba seguro de que tal funcionaría en un móvil tan «antiguo». Después de haberlo hecho he comprobado que funciona de forma perfectamente fluida aún con la poca cantidad de RAM que tiene para los tiempos actuales en los que los móviles ya incorporan entre 2 y 4 GiB, incluso mejor ya que funciona la cámara frontal que antes con CyanogenMod no.</p>
+<ul>
+<li><a href="https://wiki.lineageos.org/devices/i9300/install">Guía de instalación LineageOS para Samsung Galaxy S3</a></li>
+<li><a href="https://www.youtube.com/watch?v=icVFJdBL60w">Vídeo de instalación LineageOS</a></li>
+<li><a href="https://download.lineageos.org/">Dispositivos soportados</a></li>
+</ul>
+<p>Se ofrece de forma gratuita pero los servidores que son necesarios para el desarrollo y el mantenimiento de los sitios web tienen unos costes, este es el detalle de los <a href="https://wiki.lineageos.org/costs/">costes de LineageOS</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="CynogenMod 10.2"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_300x200_fit_q90_box.jpg" width="113" height="200" alt="CynogenMod 10.2" title="CynogenMod 10.2"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="LineageOS 14.1"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_300x200_fit_q90_box.jpg" width="113" height="200" alt="LineageOS 14.1" title="LineageOS 14.1"  class="lozad "></a></p>
+<figcaption>CynogenMod 10.2 y LineageOS 14.1</figcaption>
+</figure>
+</div>
+<h3 id="replicant">Replicant</h3>
+<p>Es la distribución de Android recomendada por la <a href="https://www.fsf.org/">FSF</a>. Uno de sus objetivos es los teléfonos móviles respeten la privacidad de los usuarios no realizando seguimiento, posicionamiento y no compartiendo datos e incluyendo en el sistema operativo solo elementos libres. Y es que prácticamente todas las aplicaciones quieren acceder a los contactos, fotos, mensajes SMS, llamadas y otros varios permisos que las aplicaciones solicitan y hay que conceder. Esta distribución de Android es para aquellos le dan gran importancia a la seguridad, privacidad y libertad en estos dispositivos que podrían calificarse de seguimiento y vigilancia. Y por ello esta distribución es importante.</p>
+<p>Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mantienen la privacidad y proporcionándole sustitutos. No soporta tantos dispositivos como LineageOS aunque están varios que fueron y son muy populares.</p>
+<ul>
+<li><a href="https://www.replicant.us/supported-devices.php">Dispositivos soportados</a></li>
+<li><a href="https://redmine.replicant.us/projects/replicant/wiki/ReplicantStatus">Estado de soporte en los dispositivos</a></li>
+<li><a href="https://www.replicant.us/freedom-privacy-security-issues.php">Motivaciones del uso de Replicant, Freedom and privacy/security issues</a></li>
+<li><a href="https://redmine.replicant.us/projects/replicant/wiki#Replicant-installation">Guías de instalación</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Replicant 6"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_300x200_fit_box_3.png" width="120" height="200" alt="Replicant 6" title="Replicant 6"  class="lozad "></a></p>
+<figcaption>Replicant 6</figcaption>
+</figure>
+</div>
+<h3 id="comprobantes-de-las-donaciones">Comprobantes de las donaciones</h3>
+<p>En ambos casos las donaciones que he hecho han sido de 15 €.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación LineageOS"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_650x450_fit_box_3.png" width="318" height="450" alt="Donación LineageOS" title="Donación LineageOS"  class="lozad "></a></p>
+<figcaption>Donación LineageOS</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación Replicant"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_650x450_fit_box_3.png" width="291" height="450" alt="Donación Replicant" title="Donación Replicant"  class="lozad "></a></p>
+<figcaption>Donación Replicant</figcaption>
+</figure>
+</div>
+<table class="table">
+    <thead>
+        <tr class="thead-dark">
+            <th colspan="4">Donaciones que he realizado hasta la última fecha</th>
+        </tr>
+        <tr class="thead-light">
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Proyecto</th>
+            <th>Donación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2015/12</td>
+            <td>Free Software Foundation Europe (FSFE)</td>
+            <td>40€</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2016/09</td>
+            <td>Wikipedia, Mozilla/Firefox</td>
+            <td>10€, 10€</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2017/01</td>
+            <td>elementaryOS, Libre Office, Arch Linux ARM</td>
+            <td>10€, 10€, 10€</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>2017/05</td>
+            <td>GNOME, VideoLAN (VLC), Arch Linux</td>
+            <td>15,31€, 10€, 0,31€</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>2018/01</td>
+            <td>LineageOS, Replicant</td>
+            <td>15€, 15€</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>2018/12</td>
+            <td>Wine</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2019/12</td>
+            <td>Calibre</td>
+            <td>$10</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>2020/12</td>
+            <td>Phoronix, Mozilla/Firefox, GnuPG</td>
+            <td>$12, 10€, 10€</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>165€, $42</td>
+        </tr>
+    </tbody>
+</table>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
+    
+</feed>

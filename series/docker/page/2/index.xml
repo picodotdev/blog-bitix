@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">Blog Bitix</title>
+    <subtitle type="text">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</subtitle>
+    <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
+    <link href="https://picodotdev.github.io/blog-bitix/" />
+    <id>https://picodotdev.github.io/blog-bitix/series/docker/</id>
+    <updated>2021-09-25T23:00:00+02:00</updated>
+    <author><name>picodotdev</name></author>
+    <generator>Hugo</generator>
+    <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
+    <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
+    <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/</id>
+        <title>Introducción y características de Docker</title>
+        <updated>2017-05-02T23:00:00+02:00</updated>
+        <published>2014-10-25T10:52:34+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los contenedores no son una tecnología nueva pero Docker ha reunido las características necesarias para hacerla sencilla y popular en Linux. Suponen un cambio en la infraestructura de las aplicaciones con algunas ventajas sobre la virtualización y la instalación de los servicios directamente en el sistema.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p><a href="https://www.docker.com/">Docker</a> es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que <a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">cambian la forma de desarrollar aplicaciones</a>. Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.</p>
+<p>Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.</p>
+<p>La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como <a href="https://openvz.org/">OpenVZ</a> también en Linux, <a href="http://www.freebsd.org/doc/handbook/jails.html">FreeBSD Jails</a> o los <a href="https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html">contenedores de Solaris</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquinas virtuales"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_300x200_fit_box_3.png" width="300" height="114" alt="Máquinas virtuales" title="Máquinas virtuales"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Docker"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_300x200_fit_box_3.png" width="300" height="110" alt="Docker" title="Docker"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Docker tiene varias características interesantes. Es ligero ya que no hay virtualización aprovechándose mejor el hardware y únicamente necesitando el sistema de archivos mínimo para que funcionen los servicios. Los contenedores son autosuficientes (aunque pueden depender de otros contenedores, por ejemplo, un wordpress que necesita una base de datos mysql) no necesitando nada más que la imagen del contenedor para que funcionen los servicios que ofrece. Las imágenes de docker son portables entre diferentes plataformas el único requisito es que en el sistema huésped esté disponible docker. Es seguro, pudiendo hacer que los contenedores se comuniquen por un túnel solo disponible para ellos, los contenedores están aislados en el sistema mediante namespaces y control groups.</p>
+<p>Para los desarrolladores tiene las siguientes ventajas:</p>
+<ul>
+<li>Podemos disponer de un entorno de desarrollo (devbox) o servicio en varios minutos/horas en vez de algún día. Esto es así porque la configuración y los servicios necesarios están automatizados en la construcción de las imágenes de los contenedores mediante <a href="https://docs.docker.com/reference/builder/">Dockerfiles</a>.</li>
+<li>Al estar los servicios en contenedores no hace falta instalarlos en la máquina en la que son alojados, de forma que podemos disponer de los servicios y después eliminarlos de forma sencilla sin &ldquo;ensuciar&rdquo; el sistema huésped.</li>
+<li>Nos permite tener versiones más parecidas o iguales a las usadas en producción. Por ejemplo, en Arch Linux nos permite tener un mysql de la distribución <a href="https://www.ubuntu.com/">Ubuntu</a> usando la misma versión.</li>
+</ul>
+<p>El <a href="https://registry.hub.docker.com/">registro de contenedores de Docker</a> es una forma colaborativa de ofrecer imágenes. Hay disponibles multitud de contenedores con los servicios más populares: <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.postgresql.org/">PostgreSQL</a>, <a href="https://redis.io/">Redis</a>, <a href="https://nginx.org/">Nginx</a>, <a href="https://wordpress.org/">WordPress</a>, &hellip;</p>
+<p>Para los administradores de sistemas tiene las siguientes ventajas:</p>
+<ul>
+<li>Pueden proporcionar entornos similares o iguales a los entornos de pruebas, QA o producción independientemente de la distribución que se use.</li>
+<li>Es posible desplegar un contenedor en cualquier infraestructura Linux.</li>
+<li>La creación de los contenedores puede ponerse bajo un sistema de control de versiones.</li>
+</ul>
+<p>En la siguiente presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.</p>
+<div class="media">
+    <script async class="speakerdeck-embed" data-id="c02e6030ee52013165c72a37516b560d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+    <noscript>$TODO</noscript>
+</div>
+<p>Una vez conocidos los aspectos básicos y en que se diferencia docker de la virtualización así como el caso de uso de por ejemplo un devbox o disponer de entornos similares a los de producción de una aplicación, en el siguiente artículo comentaré <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">cómo instalar docker, cómo empezar a usarlo, cómo obtener imágenes de servicios y pararlos y administrarlos</a>. En la siguiente <a href="http://www.nkode.io/2014/08/24/valuable-docker-links.html">lista de enlaces sobre Docker</a> se puede encontrar mucha información reunida dispersa en la red, desde introducciones, opiniones, como usarlo, como empaquetar las aplicaciones, como monitorizar o como usarlo en microservicios.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1633430235&amp;linkId=9d344246cd59cd65a952305379c2556a" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
+<li><a href="https://docs.docker.com/articles/security/">Seguridad Docker</a></li>
+<li><a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">Four ways Docker fundamentally changes application development</a></li>
+<li><a href="https://openwebinars.net/docker-que-es-sus-principales-caracteristicas/">Docker, qué es y sus principales características</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
+    
+</feed>
