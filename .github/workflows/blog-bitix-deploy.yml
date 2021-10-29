@@ -1,0 +1,84 @@
+name: blog-bitix-deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - uses: actions/checkout@v2
+        with:
+          path: deploy/
+          ref: gh-pages
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Enviroment information
+        run: |
+          uname -a
+          lsb_release -a
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache hugo resources
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-hugo-resources
+        with:
+          path: ./resources
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
+      - name: Install packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_0.88.1_Linux-64bit.tar.gz
+          tar xzf hugo_0.88.1_Linux-64bit.tar.gz hugo
+          rm hugo_0.88.1_Linux-64bit.tar.gz
+          chmod +x ./hugo
+          sudo mv ./hugo /usr/local/bin
+          npm install
+      - name: Echo content
+        run: |
+          echo "Echo content"
+          ls
+          echo "Echo content (deploy)"
+          ls deploy/
+      - name: Generate styles
+        run: |
+          npm run less-main
+          hugo gen chromastyles --style=github > themes/bitix/static/assets/css/syntax.css
+          cp themes/bitix/static/assets/css/syntax.css themes/bitix/layouts/partials/style-syntax.amp.css
+          cp themes/bitix/static/assets/css/main.css themes/bitix/layouts/partials/style-main.amp.css
+          npm run minify-amp
+      - name: Generate content
+        run: |
+          hugo --destination="deploy/"
+      - name: Generate content (fixes)
+        run: |
+          cp deploy/index.xml deploy/atom.xml
+          mkdir -p deploy/categories/planeta-codigo/
+          cp deploy/tags/planeta-codigo/index.xml deploy/categories/planeta-codigo/atom.xml
+      - name: Echo content
+        run: |
+          echo "Echo content (deploy)"
+          ls deploy/
+      - name: Deploy
+        run: |
+          cp 404.html deploy/pages/advertiising/index.html
+          rm -f deploy/pages/advertiising/index-amp.html
+          cd deploy/
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Site update at `LC_ALL=en_US.utf8 date +%Y-%m-%dT%H:%M:%S%z`"
+          git push origin gh-pages
+          cd ..
+

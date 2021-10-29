@@ -11,7 +11,7 @@
     <icon>{{ "assets/favicon.ico" | absURL }}</icon>
     <logo>{{ .Site.Params.publisher.logotype }}</logo>
     {{ with .Site.Copyright }}<rights>{{.}}</rights>{{end}}
-    {{ range first 15 (where .Site.RegularPages ".Params.rss" true) }}
+    {{ range first 15 (where .Paginator.Pages ".Params.index" true) -}}
     <entry>
         <id>{{ .Permalink }}</id>
         <title>{{ .Title }}</title>

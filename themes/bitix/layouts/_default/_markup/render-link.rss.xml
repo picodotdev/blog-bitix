@@ -40,11 +40,11 @@
 {{- $href = print "https://docs.spring.io/spring-framework/docs/current/javadoc-api/" $href -}}
 {{- end -}}
 
-{{- if and (findRE (print "^" .Page.Site.BaseURL) $href) (strings.HasSuffix $href $noLinks.suffix) -}}
-  {{- $href = replaceRE (print $noLinks.suffix "$") $links.suffix $href -}}
-{{- end -}}
 {{- if eq $links.absolute "true" -}}
   {{- $href = absURL $href -}}
+{{- end -}}
+{{- if and (findRE (print "^" .Page.Site.BaseURL) $href) (strings.HasSuffix $href $noLinks.suffix) -}}
+  {{- $href = replaceRE (print $noLinks.suffix "$") $links.suffix $href -}}
 {{- end -}}
 {{- $rel := index $attributes "rel" -}}
 {{- $target := index $attributes "target" -}}
@@ -54,4 +54,4 @@
   {{- $rel = strings.TrimLeft " " (print (default "" $rel) " " "sponsored") -}}
 {{- end -}}
 
-<a href="{{ $href | absURL }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text | markdownify }}</a>
+<a href="{{ $href }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text | markdownify }}</a>

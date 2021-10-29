@@ -1,6 +1,6 @@
 {{ if not .Params.series }}
     {{ $related := .Site.RegularPages.Related . | first 6 }}
-    {{ range $index, $page := $related }}
+    {{ range $index, $page := $related.ByDate.Reverse }}
     {{ if eq $index 0 }}<div class="row related"><div class="col-12"><p>{{ i18n "related_articles" }}:</p></div></div>{{ end }}
     {{ if eq (mod $index 3) 0 }}<div class="row related">{{ end }}
         <div class="col-12 col-sm-4">
