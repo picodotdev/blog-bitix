@@ -5,12 +5,107 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2021-09-02T20:00:00+02:00</updated>
+    <updated>2021-10-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/</id>
+        <title>Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java</title>
+        <updated>2017-04-13T11:00:00+02:00</updated>
+        <published>2017-04-13T11:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Otro par de sensores que incluye el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de introducción a la electrónica para la Raspberry Pi</a> son un sensor de golpes o <em>tilt</em> y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un <em>pin</em> <abbr title="General Purpose Input Output">GPIO</abbr> como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal. Como el mercurio a temperatura ambiente su estado es líquido puede moverse y como es un metal puede conducir la electricidad cuando está en una determinada posición entre dos filamentos.</p>
+<p>El sensor de golpes necesita de tres cables uno para la corriente de 3.3V, otro para tierra y finalmente otro que se conecta como entrada a un <em>pin</em> GPIO. Usando varios cables hembra-hembra y macho-macho hacemos las conexiones entre el sensor y la placa de pruebas sin soldadura o <em>breadboard</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-1_hu72fde87c50037226c7e027f53998df11_148115_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Sensor de golpes y detector de movimiento"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-1_hu72fde87c50037226c7e027f53998df11_148115_300x200_fit_q90_box.jpg" width="300" height="121" alt="Sensor de golpes y detector de movimiento" title="Sensor de golpes y detector de movimiento"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-2_hub246cb2a41f0864b5a6f7e27b3a753b8_190121_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Sensor de golpes y detector de movimiento"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/sensores-2_hub246cb2a41f0864b5a6f7e27b3a753b8_190121_300x200_fit_q90_box.jpg" width="300" height="124" alt="Sensor de golpes y detector de movimiento" title="Sensor de golpes y detector de movimiento"  class="lozad "></a></p>
+<figcaption>Sensor de golpes y detector de movimiento</figcaption>
+</figure>
+</div>
+<p>Usando la librería <a href="http://rtd.diozero.com/en/latest/">diozero</a> para controlar los <em>pines</em> GPIO desde un programa implementado con Java detectamos si el sensor está activo o no según la posición de la bolita de mercurio. El ejemplo consiste en <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">encender un diodo LED</a> que ya mostré en un artículo anterior de esta <a href="https://picodotdev.github.io/blog-bitix/series/electronica/">serie sobre electrónica</a> cuando el sensor <em>tilt</em> esté activo. Usaré el <em>pin</em> 18 para el diodo LED y el <em>pin</em> 21 para el sensor según la nomenclatura de Broadcom. Los <em>pines</em> serían el 12 según la nomenclatura del <em>header</em> y 1 según la nomenclatura de wiringPi para el diodo LED y 13 y 2 para el sensor <em>tilt</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-tilt_huc426378df3450d2db6296dceb7253079_298261_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado sensor de golpes"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-tilt_huc426378df3450d2db6296dceb7253079_298261_300x200_fit_q90_box.jpg" width="300" height="198" alt="Cableado sensor de golpes" title="Cableado sensor de golpes"  class="lozad "></a></p>
+<figcaption>Cableado sensor de golpes</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.diozero.api.*</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tilt</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">18</span><span class="o">);</span> <span class="n">DigitalInputDevice</span> <span class="n">tilt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DigitalInputDevice</span><span class="o">(</span><span class="n">21</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tilt</span><span class="o">.</span><span class="na">whenActivated</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tilt</span><span class="o">.</span><span class="na">whenDeactivated</span><span class="o">(()</span> <span class="o">-&gt;</span>  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">30000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Tilt.java</span>
+    </div>
+</div>
+<p>En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor de movimiento se mueve la bolita de mercurio y el diodo LED de ejemplo se enciende y apaga.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/7Rkou-pJWFY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>El detector de movimiento en teoría es similar en funcionamiento al <em>tilt</em> y la librería diozero proporciona la clase <a href="http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/MotionSensor.html">MotionSensor</a> para hacer más sencillo su uso. Digo en teoría porque no he conseguido hacerlo funcionar y he revisado varias veces las conexiones mostradas en otros ejemplos incluido el <a href="http://osoyoo.com/2016/07/14/motionsensor-pi/">ejemplo de osoyoo</a>, no se si es porque me falta algo más que debo tener en cuenta y que no conozco o el sensor no funciona viniéndome estropeado. Cuando el sensor detecta movimiento cambia el voltaje de su <em>pin</em> GPIO de datos. Los otros dos <em>pines</em> que utiliza son uno para el voltaje de 5V y el de tierra.</p>
+<p>El programa Java para el sensor de movimiento es similar al sensor <em>tilt</em> e igualmente encendería o apagaría un diodo LED cuando detecta movimiento.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-motion_hu919daab0ca3f88d0ef311958bdf8b23b_230707_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado sensor de movimiento"><img src="https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/images/cableado-motion_hu919daab0ca3f88d0ef311958bdf8b23b_230707_300x200_fit_q90_box.jpg" width="300" height="157" alt="Cableado sensor de movimiento" title="Cableado sensor de movimiento"  class="lozad "></a></p>
+<figcaption>Cableado sensor de movimiento</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">com.diozero.sandpit.MotionSensor</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Motion</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">18</span><span class="o">);</span> <span class="n">MotionSensor</span> <span class="n">motion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MotionSensor</span><span class="o">(</span><span class="n">21</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">motion</span><span class="o">.</span><span class="na">whenActivated</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">motion</span><span class="o">.</span><span class="na">whenDeactivated</span><span class="o">(()</span> <span class="o">-&gt;</span>  <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">off</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">30000</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Motion.java</span>
+    </div>
+</div>
+<p>Ambos ejemplos pueden usarse con los siguientes comandos cambiando la dirección IP de la Raspberry Pi y el directorio de la misma a donde se suben los ejemplos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew upload&#10;$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; sudo java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.Tilt&#39;</span>&#10;$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; sudo java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.Motion&#39;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>execute.sh</span>
+    </div>
+</div>
+<p>El siguiente artículo de la sería será sobre cómo usar un <em>servo motor</em> que es diferente de un motor que gira constantemente.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://pimylifeup.com/raspberry-pi-motion-sensor/">Raspberry Pi Motion Sensor using a PIR Sensor</a></li>
+<li><a href="http://www.meccanismocomplesso.org/en/pir-motion-detector/">PIR motion detector – a sensor for Arduino and Raspberry Pi (1st part)</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/</id>
         <title>Cómo usar un diodo LED, un pulsador y un zumbador con la Raspberry Pi y Java</title>
@@ -1532,58 +1627,6 @@
 <ul>
 <li><a href="https://developer.mozilla.org/es/">Mozilla Developer Network</a></li>
 <li><a href="http://es6-features.org/">es6-features</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="javascript"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/</id>
-        <title>Usar una imagen de fondo aleatoria al cargar una página web</title>
-        <updated>2017-03-20T21:00:00+01:00</updated>
-        <published>2016-11-13T12:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<p>Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>. Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la <a href="https://creativecommons.org/licenses/by-sa/3.0/">licencia Creative Commons - Reconocimiento - Compartir igual</a>. Podemos encontrar texturas en las siguientes categorías y motivos:</p>
-<ul>
-<li><a href="http://subtlepatterns.com/tag/light/">Light</a></li>
-<li><a href="http://subtlepatterns.com/tag/dark/">Dark</a></li>
-<li><a href="http://subtlepatterns.com/tag/paper/">Paper</a></li>
-<li><a href="http://subtlepatterns.com/tag/stripes/">Stripes</a></li>
-<li><a href="http://subtlepatterns.com/tag/wall/">Wall</a></li>
-<li><a href="http://subtlepatterns.com/tag/fabric/">Fabric</a></li>
-<li><a href="http://subtlepatterns.com/tag/noise/">Noise</a></li>
-<li><a href="http://subtlepatterns.com/tag/diamond/">Diamond</a></li>
-<li><a href="http://subtlepatterns.com/tag/grid/">Grid</a></li>
-<li><a href="http://subtlepatterns.com/tag/carbon/">Carbon</a></li>
-</ul>
-<p>En el momento de escribir este artículo hay 400+ texturas con diferentes patrones para temas claros, oscuros, &hellip; Como tenemos muchas podemos usar varias y hacer que se cargue una diferente de forma aleatoria cada vez que se visualiza una página variando un poco el estilo de la página cada vez que se carga. En el momento de escribir este artículo es lo que hago en Blog Bitix con el siguiente código JavaScript, puedes probar a recargar la página y verás que se carga otra textura de fondo.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// ...&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">function</span> <span class="nx">random</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">spec</span> <span class="o">=</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">backgrounds</span><span class="o">:</span> <span class="p">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;confectionary.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;dimension.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;skulls.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;tree_bark.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;contemporary_china_2.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;eight_horns.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;swirl_pattern.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;upfeathers.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;contemporary_china.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;paisley.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;symphony.png&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">};</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">backgrounds</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">backgrounds</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-image&#39;</span><span class="p">,</span> <span class="s1">&#39;url(&#34;assets/images/backgrounds/&#39;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s1">&#39;&#34;)&#39;</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// ...&#10;</span><span class="c1"></span><span class="p">});</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>app-theme.js</span>
-    </div>
-</div>
-<p>Otra página que podemos para obtener una textura en este caso con ruido es <a href="http://www.noisetexturegenerator.com/">Noise Texture Generator</a>. Indicamos unos cuantos parámetros y podemos obtener la textura generada.</p>
-<p>Si lo que queremos son fotos de buena calidad en la página en <a href="https://unsplash.com/">Unsplash</a> se publican 10 fotos cada 10 días que también podemos usar libremente, deberemos tener en cuenta que como son fotos de alta calidad y en formato jpg ocupan bastante más y si las usamos en una web deberemos reducir su tamaño para que la carga de la página no se ralentice demasiado en conexiones lentas o consuma demasiados datos, también podemos usarlas como fondo de pantalla de nuestro escritorio.</p>
-<p>Una buena textura o imagen pueden darle a una página un aspecto mucho más atractivo y si además hacemos que se use una diferente cada cierto tiempo o de forma aleatoria hacemos que la página sea algo diferente cada vez que se visualiza.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="http://subtlepatterns.com/">Subtle Patterns</a></li>
-<li><a href="http://www.noisetexturegenerator.com/">Noise Texture Generator</a></li>
-<li><a href="https://unsplash.com/">Unsplash</a></li>
 </ul>
 </div>
 ]]>

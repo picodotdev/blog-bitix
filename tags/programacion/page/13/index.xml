@@ -5,12 +5,64 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2021-09-02T20:00:00+02:00</updated>
+    <updated>2021-10-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/</id>
+        <title>Usar una imagen de fondo aleatoria al cargar una página web</title>
+        <updated>2017-03-20T21:00:00+01:00</updated>
+        <published>2016-11-13T12:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<p>Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>. Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la <a href="https://creativecommons.org/licenses/by-sa/3.0/">licencia Creative Commons - Reconocimiento - Compartir igual</a>. Podemos encontrar texturas en las siguientes categorías y motivos:</p>
+<ul>
+<li><a href="http://subtlepatterns.com/tag/light/">Light</a></li>
+<li><a href="http://subtlepatterns.com/tag/dark/">Dark</a></li>
+<li><a href="http://subtlepatterns.com/tag/paper/">Paper</a></li>
+<li><a href="http://subtlepatterns.com/tag/stripes/">Stripes</a></li>
+<li><a href="http://subtlepatterns.com/tag/wall/">Wall</a></li>
+<li><a href="http://subtlepatterns.com/tag/fabric/">Fabric</a></li>
+<li><a href="http://subtlepatterns.com/tag/noise/">Noise</a></li>
+<li><a href="http://subtlepatterns.com/tag/diamond/">Diamond</a></li>
+<li><a href="http://subtlepatterns.com/tag/grid/">Grid</a></li>
+<li><a href="http://subtlepatterns.com/tag/carbon/">Carbon</a></li>
+</ul>
+<p>En el momento de escribir este artículo hay 400+ texturas con diferentes patrones para temas claros, oscuros, &hellip; Como tenemos muchas podemos usar varias y hacer que se cargue una diferente de forma aleatoria cada vez que se visualiza una página variando un poco el estilo de la página cada vez que se carga. En el momento de escribir este artículo es lo que hago en Blog Bitix con el siguiente código JavaScript, puedes probar a recargar la página y verás que se carga otra textura de fondo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// ...&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">function</span> <span class="nx">random</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">spec</span> <span class="o">=</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">backgrounds</span><span class="o">:</span> <span class="p">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;confectionary.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;dimension.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;skulls.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;tree_bark.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;contemporary_china_2.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;eight_horns.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;swirl_pattern.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;upfeathers.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;contemporary_china.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;paisley.png&#39;</span><span class="p">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="s1">&#39;symphony.png&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">};</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">backgrounds</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">backgrounds</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-image&#39;</span><span class="p">,</span> <span class="s1">&#39;url(&#34;assets/images/backgrounds/&#39;</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s1">&#39;&#34;)&#39;</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// ...&#10;</span><span class="c1"></span><span class="p">});</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>app-theme.js</span>
+    </div>
+</div>
+<p>Otra página que podemos para obtener una textura en este caso con ruido es <a href="http://www.noisetexturegenerator.com/">Noise Texture Generator</a>. Indicamos unos cuantos parámetros y podemos obtener la textura generada.</p>
+<p>Si lo que queremos son fotos de buena calidad en la página en <a href="https://unsplash.com/">Unsplash</a> se publican 10 fotos cada 10 días que también podemos usar libremente, deberemos tener en cuenta que como son fotos de alta calidad y en formato jpg ocupan bastante más y si las usamos en una web deberemos reducir su tamaño para que la carga de la página no se ralentice demasiado en conexiones lentas o consuma demasiados datos, también podemos usarlas como fondo de pantalla de nuestro escritorio.</p>
+<p>Una buena textura o imagen pueden darle a una página un aspecto mucho más atractivo y si además hacemos que se use una diferente cada cierto tiempo o de forma aleatoria hacemos que la página sea algo diferente cada vez que se visualiza.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://subtlepatterns.com/">Subtle Patterns</a></li>
+<li><a href="http://www.noisetexturegenerator.com/">Noise Texture Generator</a></li>
+<li><a href="https://unsplash.com/">Unsplash</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="javascript"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/11/historico-de-datos-auditoria-y-diferencias-entre-objetos-con-javers-en-java/</id>
         <title>Histórico de datos, auditoría y diferencias entre objetos con Javers en Java</title>
@@ -1413,52 +1465,6 @@
                 <category term="programacion"/>
             
                 <category term="software"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/06/moment-js-libreria-javascript-para-fechas/</id>
-        <title>Moment.js, librería JavaScript para fechas</title>
-        <updated>2016-06-05T17:00:00+02:00</updated>
-        <published>2016-06-05T13:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/06/moment-js-libreria-javascript-para-fechas/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
-</div>
-<p>Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">introducción sobre RequireJS</a> hasta un <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:</p>
-<ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.htmlf">Plantillas con Mustache</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html"><em>Logging</em> log4javascript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html">Capturar errores de JavaScript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/introduccion-y-ejemplo-de-backbonejs.html">Modelos con Backbone</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Pruebas unitarias con Jasmine y Sinon</a></li>
-<li>El mismo <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de lista de tareas con Marionette</a></li>
-<li>Una vez más el mismo <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">ejemplo de lista de tareas con Backbone y React</a> opción que me gustó más que con <a href="https://marionettejs.com/">Marionette</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">Internacionalización (i18n) en JavaScript</a></li>
-</ul>
-<p>En este artículo comentaré otra librería de JavaScript que nos será de utilidad para el trabajo con datos de tipo fecha en el navegador, la librería es <a href="https://momentjs.com/">Moment.js</a>.</p>
-<p>La librería Moment.js permite en el lado del cliente formatear fechas según un patrón, manipular fechas añadiendo o restando días, comparar fechas, hacer consultas como si es un año bisiesto o la fecha está usando una zona horaria de verano o según calendario, soporta diferentes lenguajes además de permitirnos trabajar con diferentes zonas horarias y periodos de tiempo. En la propia <a href="http://momentjs.com/">página de inicio del proyecto</a> y la <a href="http://momentjs.com/timezone/">sección de zonas horarias</a> están incluidos diferentes ejemplos de cada una de estas posibilidades. El la <a href="http://momentjs.com/docs/">documentación</a> están explicadas más detalladamente todas las opciones, como usarlo con <a href="https://requirejs.org/">Require.js</a> y el gestor de paquetes <a href="https://bower.io/">Bower</a> o con <a href="https://www.npmjs.com/">npm</a>.</p>
-<p>En este artículo no incluiré un ejemplo de código ya que en la página de inicio del proyecto está muy bien explicado, la documentación parece bastante completa.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://momentjs.com/">Moment.js</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="javascript"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

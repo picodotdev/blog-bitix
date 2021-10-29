@@ -5,12 +5,120 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2021-09-02T20:00:00+02:00</updated>
+    <updated>2021-10-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/</id>
+        <title>Copia de seguridad, restauración y carga de datos en PostgreSQL y MySQL</title>
+        <updated>2020-05-09T09:30:00+02:00</updated>
+        <published>2020-05-09T09:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Siempre es recomedable tener una copia de seguridad de algo tan importante como suelen ser los datos en una base de datos. Esa copia de seguridad sirve para en caso de desastre restaurar la mayor parte de los datos, también sirven para restaurarlos en otras máquinas diferentes a la principal. Tanto PostgreSQL como MySQL tienen comandos para hacer copias de seguridad y restaurarlas, también tiene opciones para cargar datos de forma masiva de forma rápida y más eficiente que con sentencias SQL.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/mysql.svg" width="200" height="136" alt="MySql" title="MySql"  class=""></p>
+</div>
+<p>Los datos contenidos en las bases de datos relacionales son de los más importante en una aplicación. Hacer copias de seguridad o volcados de forma regular es indispensable para poder restaurar los datos en caso de desastre en el servidor. Las bases de datos proporcionan herramientas para hacer estas copias de seguridad y restaurado tanto de los datos como del esquema de las bases de datos. Las copias de seguridad y restaurado también nos sirven para disponer en nuestro entorno de desarrollo de una base de datos con datos reales con los que probar la aplicación.</p>
+<p>En la base de datos <a href="https://www.postgresql.org/">PosgreSQL</a> disponemos de los comandos <a href="https://www.postgresql.org/docs/current/app-pgdump.html"><em>pg_dump</em></a> para hacer la copia de seguridad o extraer el esquema y los datos y el comando <a href="https://www.postgresql.org/docs/current/app-pgrestore.html"><em>pg_restore</em></a> para cargarlos en un nuevo servidor u otro esquema. En <a href="https://www.mysql.com/">MySQL</a> disponemos de los comandos <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html">mysqldump</a> y depende de como hagamos las copias de seguridad <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqlimport.html">mysqlimport</a>.</p>
+<h3 id="postgresql">PostgreSQL</h3>
+<p>Los comandos básicos para hacer la copia de seguridad y restauración en PostgreSQL de una base de datos completa son lo siguientes:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump database &gt; database.sql&#10;&#10;$ psql -d database -f database.sql</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-backup.sh</span>
+    </div>
+</div>
+<p>PosgreSQL usando un formato de copia de seguridad personalizado con la opción <em>-Fc</em> permite restaurar posteriormente partes de la base de datos, por ejemplo, una tabla o un índice en concreto.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump -Fc database &gt; db.dump&#10;&#10;$ pg_restore -d database db.dump&#10;$ pg_restore -U <span class="nv">$username</span> --dbname<span class="o">=</span><span class="nv">$dbname</span> --table<span class="o">=</span><span class="nv">$tablename</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-backup-format-custom.sh</span>
+    </div>
+</div>
+<p>También es posible separar la definición y los datos de las copias de seguridad con las opciones <em>&ndash;schema-only</em> y <em>&ndash;data-only</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump -Fc --schema-only database &gt; database-ddl.dump&#10;$ pg_dump -Fc --data-only database &gt; database-data.dump&#10;&#10;$ psql -d database -f database-ddl.sql&#10;$ psql -d database -f database-data.sql</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-schema-data.sh</span>
+    </div>
+</div>
+<p>Como las bases de datos pueden llegar a ser de varias decenas de GiB generar las copias de seguridad comprimidas que reducirán su tamaño notablemente. Los volcados con la opción <em>-Fc</em> ya está comprimidos con lo que esto solo es necesario si generamos volcados en archivos <em>.sql</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump database <span class="p">|</span> gzip &gt; database-backup.sql.gz&#10;&#10;$ gunzip &lt; database-backup.sql.gz <span class="p">|</span> psql -d database</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-compress.sh</span>
+    </div>
+</div>
+<h3 id="mysql">MySQL</h3>
+<p>En MySQL los comandos de copia de seguridad y restauración son similares.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump database &gt; database.sql&#10;$ mysql database &lt; database.sql&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-backup.sh</span>
+    </div>
+</div>
+<p>Con la opción <em>&ndash;extended-insert</em> la importación posterior del volcado será algo más rápida al incluir sentencias <em>insert</em> con múltiples datos de vez de un <em>insert</em> por cada fila.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump --extended-insert database &gt; database.sql&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-backup-extended-insert.sh</span>
+    </div>
+</div>
+<p>También es posible separar los datos de la definición del esquema con las opciones <em>&ndash;no-data</em> y <em>&ndash;no-create-info</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump --no-data database &gt; database-ddl.sql&#10;$ mysqldump --no-create-info database &gt; database-data.sql&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-schema-data.sh</span>
+    </div>
+</div>
+<p>Para generar y restaurar copias de seguridad comprimidas se debe usar el comando <em>gzip</em> y <em>gunzip</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump database <span class="p">|</span> gzip &gt; database.sql.gz&#10;$ gunzip &lt; database.sql.gz <span class="p">|</span> mysql database&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-compress.sh</span>
+    </div>
+</div>
+<h3 id="carga-masiva-de-datos">Carga masiva de datos</h3>
+<p>Si se desean cargar datos de una fuente externa de forma masiva a una base de datos PostgreSQL o MySQL en vez de generar un archivo con varios cientos de miles las sentencias <em>insert</em> es mejor generar un archivo en formato <em>csv</em> o <em>txt</em> con algunos delimitadores y usar el comando <a href="https://www.postgresql.org/docs/current/sql-copy.html"><em>COPY</em></a> en PostgreSQL o el comando <a href="https://dev.mysql.com/doc/refman/8.0/en/load-data.html"><em>LOAD DATA</em></a> en MySQL complemento de <a href="https://dev.mysql.com/doc/refman/8.0/en/select-into.html">SELECT … INTO</a>. Estos comandos están diseñados para cargar datos de forma masiva en la base de datos con lo que la importación será mucho más rápida.</p>
+<p>En ambos casos las exportaciones e importaciones soportan archivos en formato texto y csv con la posibilidad de personalizar los caracteres separadores de las columnas y las columnas en las que importar los datos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">COPY table_name <span class="o">[</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FROM <span class="o">{</span> <span class="s1">&#39;filename&#39;</span> <span class="p">|</span> PROGRAM <span class="s1">&#39;command&#39;</span> <span class="p">|</span> STDIN <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> <span class="o">[</span> WITH <span class="o">]</span> <span class="o">(</span> option <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> WHERE condition <span class="o">]</span>&#10;&#10;COPY <span class="o">{</span> table_name <span class="o">[</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span> <span class="p">|</span> <span class="o">(</span> query <span class="o">)</span> <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;TO <span class="o">{</span> <span class="s1">&#39;filename&#39;</span> <span class="p">|</span> PROGRAM <span class="s1">&#39;command&#39;</span> <span class="p">|</span> STDOUT <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> <span class="o">[</span> WITH <span class="o">]</span> <span class="o">(</span> option <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;&#10;where option can be one of:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORMAT format_name&#10;&nbsp;&nbsp;&nbsp;&nbsp;FREEZE <span class="o">[</span> boolean <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;DELIMITER <span class="s1">&#39;delimiter_character&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;NULL <span class="s1">&#39;null_string&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;HEADER <span class="o">[</span> boolean <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;QUOTE <span class="s1">&#39;quote_character&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;ESCAPE <span class="s1">&#39;escape_character&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORCE_QUOTE <span class="o">{</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="p">|</span> * <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORCE_NOT_NULL <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORCE_NULL <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;ENCODING <span class="s1">&#39;encoding_name&#39;</span>&#10;&#10;COPY table TO <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span>&#10;&#10;COPY table FROM <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgresql-copy.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">LOAD DATA&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>LOW_PRIORITY <span class="p">|</span> CONCURRENT<span class="o">]</span> <span class="o">[</span>LOCAL<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;INFILE <span class="s1">&#39;file_name&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>REPLACE <span class="p">|</span> IGNORE<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;INTO TABLE tbl_name&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>PARTITION <span class="o">(</span>partition_name <span class="o">[</span>, partition_name<span class="o">]</span> ...<span class="o">)]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>CHARACTER SET charset_name<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[{</span>FIELDS <span class="p">|</span> COLUMNS<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>TERMINATED BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[[</span>OPTIONALLY<span class="o">]</span> ENCLOSED BY <span class="s1">&#39;char&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>ESCAPED BY <span class="s1">&#39;char&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>LINES&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>STARTING BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>TERMINATED BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>IGNORE number <span class="o">{</span>LINES <span class="p">|</span> ROWS<span class="o">}]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[(</span>col_name_or_user_var&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>, col_name_or_user_var<span class="o">]</span> ...<span class="o">)]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>SET <span class="nv">col_name</span><span class="o">={</span>expr <span class="p">|</span> DEFAULT<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>, <span class="nv">col_name</span><span class="o">={</span>expr <span class="p">|</span> DEFAULT<span class="o">}]</span> ...<span class="o">]</span>&#10;&#10;SELECT * FROM table INTO <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span>&#10;&#10;LOAD DATA INFILE <span class="s1">&#39;data.txt&#39;</span> INTO TABLE database.table<span class="p">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>mysql-load.sh</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.postgresql.org/docs/current/populate.html">Populating a Database, Performance Tips</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/</id>
         <title>Los modificadores de acceso de clases, propiedades y métodos en Java</title>
@@ -1657,76 +1765,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="software"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/</id>
-        <title>Iniciar una aplicación de Spring Boot en un puerto aleatorio</title>
-        <updated>2019-08-09T18:00:00+02:00</updated>
-        <published>2019-08-09T18:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>En una arquitectura basada en microservicios es normal iniciar varias instancias de un mismo servicio, si están en la misma máquina ha de asignarse a cada instancia un puerto diferente. Asignar los puertos manualmente no es recomendable cuando se quieren varias instancias, Spring Boot ofrece la funcionalidad de iniciar la aplicación en un puerto aleatorio.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Mediante configuración se puede especificar el puerto en el que se desea iniciar una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> que ofrece un servicio de red. El puerto por convención suele ser el <em>8080</em> y la propiedad de configuración de Spring Boot para modificarlo es <em>server.port</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l">${port:8080}</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>application-1.yml</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run&#10;...&#10;2019-08-09 17:02:40,417  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port<span class="o">(</span>s<span class="o">)</span>: <span class="m">8080</span> <span class="o">(</span>http<span class="o">)</span> with context path <span class="s1">&#39;&#39;</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>run-1.sh</span>
-    </div>
-</div>
-<p>Cuando se tiene únicamente una aplicación este puerto por defecto es suficiente pero si se desean iniciar varias instancias de una aplicación o microservicio en una misma máquina es necesario asignar a cada una de ellas un puerto diferente para que no haya conflictos a usar el mismo puerto de red. Se puede hacer manualmente aunque con muchas instancias también se puede dejar a Spring Boot elegir un puerto aleatorio.</p>
-<p>Para dejar a Spring Boot elegir el puerto de forma aleatoria basta con especificar el puerto con valor <em>0</em> en la propiedad de configuración <em>server.port</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l">${port:0}</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>application-2.yml</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run --args<span class="o">=</span><span class="s2">&#34;--port=0&#34;</span>&#10;...&#10;2019-08-09 17:02:40,417  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port<span class="o">(</span>s<span class="o">)</span>: <span class="m">45871</span> <span class="o">(</span>http<span class="o">)</span> with context path <span class="s1">&#39;&#39;</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>run-2.sh</span>
-    </div>
-</div>
-<p>Usando un <a href="https://picodotdev.github.io/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/">servicio de registro y descubrimiento como Eureka</a> el servicio registra su ubicación y los servicios que quieran acceder a él obtendrán del mismo servicio de registro y descubrimiento su ubicación, de forma que para los clientes es transparente en qué puerto se inicie.</p>
-<p>Sin embargo, por algún motivo con Eureka los servicios no se registran en el puerto aleatorio en el que realmente se inician sino que se registran incorrectamente en el puerto <em>0</em>, quizá utilizando <a href="https://www.consul.io/">Consul</a> el servicio de Spring Boot si se inicie en un puerto aleatorio.</p>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run.sh</code></p>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://javadeveloperzone.com/spring-boot/spring-boot-random-server-port/">Spring Boot Random Server Port</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

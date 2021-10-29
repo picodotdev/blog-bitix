@@ -5,12 +5,98 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2021-09-02T20:00:00+02:00</updated>
+    <updated>2021-10-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/</id>
+        <title>Codificar los datos para evitar ataques XSS en una página web</title>
+        <updated>2019-03-29T09:00:00+01:00</updated>
+        <published>2019-03-29T09:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Validar los datos es importante para una aplicación pero no es suficiente para crear una aplicación, es más, para crear una aplicación segura es más importante codificar correctamente los datos emitidos por la aplicación. Los ataques XSS se producen precisamente por no codificar correctamente los datos emitidos provenientes de una fuente no confiable. Una fuente no confiable puede ser un parámetro en una aplicación web pero también puede ser cualquier otro dato que incluya una petición HTTP como una cabecera.</p>
+<p>El siguiente código de un archivo JSP que obtiene un parámetro de la petición y lo emite en la salida permite a un usuario malicioso insertar código en la página web, si el dato que se envía es el contenido de <em>xss.data</em> y las <em>cookies</em> no se crearon con las cabeceras <em>httponly</em> el usuario malicioso puede obtener acceso a la sesión del usuario en el sitio web y es un grave fallo de seguridad. En este caso solo se emplea un <em>alert</em> pero el código podría ser más elaborado y realizar una petición a una URL en la que el usuario malicioso reciba los datos de las <em>cookies</em> de sesión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Página<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Hola <span class="err">&lt;</span>%= request.getParameter(&#34;user&#34;); %&gt;!&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>RequestParameter.jsp</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Hacker &lt;script type=&#34;text/javascript&#34;&gt;alert(&#34;Hacked!&#34;); alert(document.cookie);&lt;/script&gt;&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>user-parameter-xss.data</span>
+    </div>
+</div>
+<p>El contenido HTML generado por la aplicación y enviado al navegador sería el siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Página<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Hola Hacker <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Hacked!&#34;</span><span class="p">);</span> <span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>!&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>RequestParameter.html</span>
+    </div>
+</div>
+<p>En este caso al cargar la página en el navegador se muestra un mensaje <em>alert</em> con una ventana emergente pero si el usuario malicioso enviase los datos de las <em>cookies</em> a una URL suya el usuario ni siquiera sería consciente de que le han robado la sesión. Y este fallo de seguridad se produce simplemente por cargar una página de una aplicación insegura por XSS.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS"  class="lozad "></a></p>
+<figcaption>XSS</figcaption>
+</figure>
+</div>
+<p>Pero ¿como consigue el usuario malicioso inyectar su código mediante parámetros u otros datos emitidos por la página insegura? Una opción sería enviar al usuario un enlace especialmente construido para que se aproveche del fallo de seguridad, el medio de hacerlo llegar puede ser un correo electrónico o un enlace en las redes sociales o páginas de gran tráfico como Facebook. Para que el enlace no sea tan evidente se puede utilizar un acortador de enlaces. Los comentarios son otro vector con el que el usuario malicioso puede insertar enlaces o el propio contenido si no son tratados adecuadamente donde sean mostrados como en la página web, de otros médios como correos electrónicos o una aplicación de <em>backoffice</em> de uso interno que incluso puede tener privilegios de realizar acciones especialmente sensibles.</p>
+<p>Para evitar los ataques XSS la regla básica es codificar correctamente cualquier dato que se emita como resultado. En el caso de una aplicación web codificar correctamente el dato a emitir depende del contexto donde se incluya el dato para escapar correctamente los caracteres especiales de ese contexto. Los contextos puede ser como HTML, como un atributo de una etiqueta, como contenido HTML, como un bloque de JavaScript o como una variable de JavaScript.</p>
+<p>Si el <em>framework</em> web que usamos no proporciona facilidades para evitar ataques XSS al emitir contenido en el resultado en Java se puede usar la librería <a href="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project">OWASP Java Encoder Project</a> siendo su uso el siguiente. <em>OWASP Java Encoder Project</em> es una librería que no tiene dependencias adicionales por lo que es sencillo incorporarla  en la aplicación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="err">&lt;</span>%@ page import=&#34;org.owasp.encoder.Encoder&#34; %&gt;&#10;&#10;<span class="err">&lt;</span>%-- HTML Content context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">&lt;</span>%= Encode.forHtml(text) %&gt;&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- HTML Attribute context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;address&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&lt;%= Encode.forHtmlAttribute(address) %&gt;&#34;</span> <span class="p">/&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- HTML Textarea context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;text&#34;</span><span class="p">&gt;</span><span class="err">&lt;</span>%= Encode.forHtmlContent(textAreaContent %&gt;<span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- Javascript Block context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&#34;&lt;%= Encode.forJavaScriptBlock(message) %&gt;&#34;</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>&#10;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- Javascript Variable context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&#34;alert(&#39;&lt;%= Encode.forJavaScriptAttribute(alertMsg) %&gt;&#39;);&#34;</span><span class="p">&gt;</span>Action<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Encoder.jsp</span>
+    </div>
+</div>
+<p>Para los <em>frameworks</em> web populares ya tienen en cuenta el XSS en el comportamiento por defecto al emitir datos.</p>
+<ul>
+<li><a href="https://www.dontpanicblog.co.uk/2012/03/12/xss-vulnerabilities-in-web-frameworks-2/">Preventing XSS Vulnerabilities in Web Frameworks (Struts, Tapestry)</a></li>
+<li><a href="https://stackoverflow.com/questions/15144905/how-to-protect-against-xss-attacks-in-grails-app">How to protect against XSS attacks in Grails</a></li>
+</ul>
+<p>No siempre se desea codificar un dato simple según el contexto, a veces se quiere permitir insertar código HTML. La alternativa a la codificación para estos casos es el saneado permitiendo únicamente los elementos que se consideren seguros definiendo una política, por ejemplo, permitiendo etiquetas HTML de enlaces y ciertas etiquetas como <em>em</em>, <em>ul</em>, <em>li</em>. El saneado también se puede hacer con <a href="https://jsoup.org/">jsoup</a> pero esta incluye otras funcionalidades que si no son necesarias con <a href="https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project">WASP Saniticer</a> es suficiente.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/">Cómo filtrar contenido HTML de forma segura con jsoup</a></li>
+</ul>
+<p>Un ataque de XSS también puede producirse en contenidos distintos al HTML como pueden ser documentos JSON o XML en los que también hay que escapar los datos según su contexto para evitar por ejemplo que alguien cambien la estructura del XML o JSON previsto por la aplicación. El XSS es similar al problema de inyección de SQL si al construir las sentencias se insertan en ella datos en vez de usar en el caso de Java la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html">PreparedStatement</a> con parámetros.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project">OWASP Java Encoder Project</a></li>
+<li><a href="https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project">OWASP Java HTML Sanitizer Project</a></li>
+<li><a href="https://www.owasp.org/index.php/Cross_Site_Tracing">Cross Site Tracing (XST)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie">MDN Document.cookie</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/</id>
         <title>Colecciones sincronizadas e inmutables en Java</title>
@@ -1337,80 +1423,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/</id>
-        <title>Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras</title>
-        <updated>2019-01-05T13:00:00+01:00</updated>
-        <published>2019-01-04T19:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>En Java el código fuente se compila a una representación en <em>bytecode</em> independiente de la arquitectura del procesador y sistema operativo donde posteriormente se ejecuta. Este <em>bytecode</em> es un formato binario pero que puede ser descompilado fácilmente con la herramienta <em>javap</em> incluida en el propio JDK o examinado su contenido simplemente con un editor de texto hexadecimal. Con estas herramientas es fácil ver las instrucciones del programa para la máquina virtual y los caracteres de las cadenas que fueron incluidas en el código fuente.</p>
-<p>Lógicamente, de este modo <em>hardcodear</em> una contraseña en el código fuente hace que el código fuente sea inseguro pero es que incluso distribuir el binario compilado no es seguro ya que cualquier usuario que tenga acceso al binario de la aplicación es potencialmente capaz de recuperar la contraseña, tener acceso al binario quizá no sea sencillo pero aparte de eso no hay ninguna medida de seguridad adicional que añada más dificultad. Quien dice contraseña dice igualmente una clave privada de cifrado simétrico usada para cifrar o descifrar datos o un <em>bearer token</em> de OAuth. En definitiva es un problema de seguridad.</p>
-<p>Compilado el programa y utilizando la herramienta <em>javap</em> se puede obtener el valor de la contraseña. ¿Adivinas cual es la contraseña en este archivo binario de <em>bytecode</em> examinado el contenido?</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/images/java-class-hex_hucc38684a2f2e126dcaa28adc7d18c1d8_94339_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Contenido hexadecimal de un archivo binario de bytecode Java"><img src="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/images/java-class-hex_hucc38684a2f2e126dcaa28adc7d18c1d8_94339_300x200_fit_box_3.png" width="284" height="200" alt="Contenido hexadecimal de un archivo binario de bytecode Java" title="Contenido hexadecimal de un archivo binario de bytecode Java"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/images/c-bin-hex_huba456bb72be79b51d2898e9d10ffeae8_61110_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Contenido hexadecimal de un archivo binario de C"><img src="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/images/c-bin-hex_huba456bb72be79b51d2898e9d10ffeae8_61110_300x200_fit_box_3.png" width="284" height="200" alt="Contenido hexadecimal de un archivo binario de C" title="Contenido hexadecimal de un archivo binario de C"  class="lozad "></a></p>
-<figcaption>Contenido hexadecimal de un archivo binario de bytecode Java y C</figcaption>
-</figure>
-</div>
-<p>El siguiente ejemplo sencillo de un programa Java incluye una cadena con una supuesta contraseña. Se observa que en el archivo visualizado en formato hexadecimal o descompilado los caracteres de la cadena son fácilmente reconocibles.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">&#34;Mz6K3P9rDZ7G6wH&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello World!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Main.java</span>
-    </div>
-</div>
-<p>Para compilar este pequeño programa se utiliza el comando <em>javac</em> que genera el archivo de <em>bytecode</em> <em>Main.class</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ javac Main.java&#10;$ xxd Main.class&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>javac.sh</span>
-    </div>
-</div>
-<p>Para decompilar este pequeño programa se utiliza el comando <em>javap</em>, con él se ven las instrucciones interpretadas por la máquina virtual de Java y la cadena con la contraseña.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ javap -c Main.class&#10;Compiled from <span class="s2">&#34;Main.java&#34;</span>&#10;public class Main <span class="o">{</span>&#10;  public Main<span class="o">()</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Code:&#10;&nbsp;&nbsp;&nbsp;&nbsp;   0: aload_0&#10;&nbsp;&nbsp;&nbsp;&nbsp;   1: invokespecial <span class="c1">#1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // Method java/lang/Object.&#34;&lt;init&gt;&#34;:()V</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   4: <span class="k">return</span>&#10;&#10;  public static void main<span class="o">(</span>java.lang.String<span class="o">[])</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Code:&#10;&nbsp;&nbsp;&nbsp;&nbsp;   0: ldc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="c1">#2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // String Mz6K3P9rDZ7G6wH</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   2: astore_1&#10;&nbsp;&nbsp;&nbsp;&nbsp;   3: getstatic&nbsp;&nbsp;&nbsp;&nbsp; <span class="c1">#3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // Field java/lang/System.out:Ljava/io/PrintStream;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   6: ldc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="c1">#4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // String Hello World!</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   8: invokevirtual <span class="c1">#5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // Method java/io/PrintStream.println:(Ljava/lang/String;)V</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  11: <span class="k">return</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>javap.sh</span>
-    </div>
-</div>
-<p>Que el contenido de la constante de las cadenas del programa sea incluido en el binario y examinable con un editor hexadecimal no es exclusivo de Java, en otros lenguajes de programación como C y formatos de ejecutables como ELF para Linux se da el mismo caso al examinar el binario como se observa en las imágenes anteriores. Seguramente en la mayoría de lenguajes, como C#, ocurra lo mismo.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">&#10;</span><span class="cp"></span>&#10;<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>&#10;<span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">password</span> <span class="o">=</span> <span class="s">&#34;Mz6K3P9rDZ7G6wH&#34;</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Main.c</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ gcc Main.c -o Main&#10;$ xxd Main&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>gcc.sh</span>
-    </div>
-</div>
-<p>Una solución para evitar este problema de seguridad es <a href="https://picodotdev.github.io/blog-bitix/2018/09/almacenar-cifrados-los-valores-de-configuracion-sensibles-en-spring-cloud-config/">ubicar la contraseña a un archivo de configuración incluso con los valores sensibles cifrados</a> y que sean descifrados únicamente por la aplicación en el momento de iniciarse. En el caso de ubicar este archivo de configuración en un servidor se puede proteger mediante permisos para que solo los administradores o algunos desarrolladores tenga acceso a él y no cualquier usuario que consiga acceso al sistema.</p>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="seguridad"/>
             
         
     </entry>

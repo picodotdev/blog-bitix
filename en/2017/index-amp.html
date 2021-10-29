@@ -5,24 +5,27 @@
 
 
 <!DOCTYPE html>
-<html amp lang="es">
+<html amp lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="base" content="/blog-bitix/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de tabnabbing y phising. &hellip;">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
   <meta name="theme-color" content="#FFFFFF"/>
-  
+  <meta name="robots" content="noindex">
 
-  <title>El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</title>
+  <title>2017s</title>
 
   <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
-  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/index-amp.html" hreflang="es" title="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/en/2017/index-amp.html" hreflang="en" title="2017s">
   
-  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/" hreflang="es">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2017/index-amp.html" hreflang="es" title="Artículos del año 2017">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/en/2017/" hreflang="en">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/en/2017/index.xml" hreflang="en">
   
   <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,60 +33,22 @@
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
 
   <!-- Social -->
-<meta property="og:title" content="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo">
-<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/index-amp.html">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/html-750.png">
+<meta property="og:title" content="2017s">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/en/2017/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de tabnabbing y phising. &hellip;">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/html-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
 
 <meta name="twitter:site" content="@picodotdev">
-<meta name="twitter:title" content="El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo">
-<meta name="twitter:description" content="A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de tabnabbing y phising. &hellip;">
+<meta name="twitter:title" content="2017s">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
 <meta name="twitter:creator" content="@picodotdev">
 
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/index-amp.html"
-    },
-    "headline": "El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo",
-    "image": {
-        "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/html-750.png"
-        
-      },
-    "datePublished": "2020-05-24T10:00:00+02:00",
-    "dateModified": "2020-05-24T10:00:00+02:00",
-    "inLanguage": "es",
-    
-    "wordCount": "658",
-    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "author": {
-        "@type": "Person",
-        "name": "picodotdev",
-        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
-        "url": "https://twitter.com/picodotdev/"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Blog Bitix",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
-        }
-    },
-    "description": "A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de tabnabbing y phising."
-}
-  </script>
   
 
   <script type="application/ld+json">
@@ -176,11 +141,9 @@
     </div>
   </div>
 </header>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 adblock-container-billboard">
-        <div class="adsense adsense-billboard">
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
         width="375"
@@ -230,257 +193,103 @@
         <div overflow=""></div>
     </amp-ad>
 </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-12">
-        
-<article>
-    <h1>El problema de seguridad tabnabbing y phising en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</h1>
-    <p class="information">
-      
-        Escrito por
-       
-      <span>picodotdev</span> el <time>24/05/2020</time>.
-      
-        <br>
-        
-          <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
-        
-          <a href="/blog-bitix/tags/seguridad/index-amp.html">seguridad</a>
-        
-          <a href="/blog-bitix/tags/web/index-amp.html">web</a>
-        
-      
-      <br>
-      <a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/index-amp.html">Enlace permanente</a>
-      
-        <a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/index-amp.html#comments">Comentarios</a>
-      
-    </p>
-
-    
-      <p class="summary">A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de <em>tabnabbing</em> y <em>phising</em>.</p>
-    
-    
-
-    
-      <div class="adblock-container-leaderboard">
-        <div class="adsense adsense-leaderboard">
-    <amp-ad
-        media="(max-width: 374px)"
-        width="375"
-        height="280"
-        layout="responsive"
-        type="adsense"
-        data-ad-client="ca-pub-3533636310991304"
-        data-ad-slot="8238629013"
-        data-auto-format="auto"
-        data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
-    <amp-ad
-        media="(min-width: 375px) and (max-width: 769px)"
-        width="336"
-        height="280"
-        layout="fixed"
-        type="adsense"
-        data-ad-client="ca-pub-3533636310991304"
-        data-ad-slot="8238629013"
-        data-auto-format="auto"
-        data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
-    <amp-ad
-        media="(min-width: 770px)"
-        width="728"
-        height="90"
-        layout="fixed"
-        type="adsense"
-        data-ad-client="ca-pub-3533636310991304"
-        data-ad-slot="8238629013"
-        data-auto-format="auto"
-        data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
-</div>
-      </div>
-    
-
-    <div class="content">
-      
-
-
-      <div class="logotypes" style="min-width: 200px;">
-<p><amp-img src="/blog-bitix/assets/images/logotypes/html.svg" width="1" height="1" alt="HTML" title="HTML" layout="responsive"  class=""></amp-img></p>
-</div>
-<p>Es bueno conocer los problemas de seguridad más comunes en las aplicaciones web. Aún siendo la lista de <a href="https://owasp.org/www-project-top-ten/">los 10 problemas de seguridad más importantes</a> muy conocidos aún siguen siendo de los más importantes por seguir habiendo aplicaciones vulnerables a ellos y por su gravedad para la seguridad de los datos así como para explotar una aplicación.</p>
-<p>Aún así no son los únicos importantes, algunos ni siquiera requieren complejas técnicas para explotarlos. Uno de ellos son los enlaces externos que se abren en páginas en blanco. El problema de seguridad reside en que el modo de funcionamiento por defecto de estos enlaces se permite el acceso a la ventana origen desde la página abierta. Esto hace que la página abierta potencialmente sea capaz de tomar el control de la ventana origen y modificar su contenido, por ejemplo cargando una página maliciosa para hacer un peligroso ataque de suplantación de identidad o <em>phising</em> que simule una página legítima con la intención de robar las contraseñas de algún servicio importante de un usuario.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="hl"><span class="lnt"> 8&#10;</span></span><span class="hl"><span class="lnt"> 9&#10;</span></span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span> <span class="p">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="hl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;external.html&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>Open page<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;</span><span class="hl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;external.html&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;noopener noreferrer&#34;</span><span class="p">&gt;</span>Open page (secure)<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;</span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>page.html</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-1_hue72212653050e8e7191533ee0a6df7cd_19649_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página con enlaces a otras páginas abiertas en una nueva pestaña"><amp-img src="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-1_hue72212653050e8e7191533ee0a6df7cd_19649_300x200_fit_box_3.png" width="261" height="200" alt="Página con enlaces a otras páginas abiertas en una nueva pestaña" title="Página con enlaces a otras páginas abiertas en una nueva pestaña"  class=""></amp-img></a></p>
-<figcaption>Página con enlaces a otras páginas abiertas en una nueva pestaña</figcaption>
-</figure>
-</div>
-<p>El problema es que los navegadores cuando se abre un enlace en una página en blanco o nueva, el navegador hace accesible a la ventana abierta el <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">objeto Window</a> de la página que lo abre. Y teniendo acceso al objeto <em>Window</em> una página maliciosa cargada tiene la posibilidad de cargar una nueva página en la página original o acceder a las cookies entre ellas las que permiten mantener la sesión en el servidor. Por ejemplo, con la variable <em>window.location</em> es posible cargar una página de autenticación falsa que le pida al usuario introducir sus datos y realmente realice el robo de la contraseña.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="hl"><span class="lnt"> 7&#10;</span></span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span> <span class="p">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Unknown<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>&#10;<span class="hl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">&#39;https://www.google.com&#39;</span><span class="p">;</span>&#10;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;You have heen tabnabbed!&#39;</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>external.html</span>
-    </div>
-</div>
-<p>Es un problema peligroso porque se aprovecha de los navegadores basados en pestañas, en este caso en una página fuera de la atención del usuario se carga un contenido nuevo, el usuario inadvertido al volver a esa pestaña puede pensar que el contenido cambiado de esa pestaña es legítimo sin ser consciente de que no lo es, sin embargo, ser víctima de este peligro de seguridad conocido como <a href="https://en.wikipedia.org/wiki/Tabnabbing">tabnabbing</a> combinado con <a href="https://es.wikipedia.org/wiki/Phishing">phising</a>. Por ello se recomienda y es importante comprobar que el dominio de la página mostrado por el navegador en la barra de direcciones se corresponda con el contenido, que la página utilice un protocolo seguro no es suficiente si el ataque es de <em>phising</em>.</p>
-<p>Este ataque es realmente sencillo pero ha de complementarse con una forma de ataque <a href="https://es.wikipedia.org/wiki/Cross-site_scripting">XSS</a> no tanto por permitir insertar código JavaScript pero si por permitir insertar contenido inseguro sin control de forma que otros usuarios tangan posibilidad de abrirlos y ser potenciales victimas en este caso enlaces que abran una página maliciosa.</p>
-<p>El enlace que abre una página en una nueva pestaña es vulnerable a <em>tabnabbing</em>. Al ir al enlace se abre una pestaña, el usuario pierde el foco de la página original y en ella la página abierta carga una nueva página produciéndose el <em>tabnabbing</em>.</p>
-<div class="media">
-<figure>
-<p><a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-2_hu22643fffb0ba0f7644311b38531b1ce2_19858_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"><amp-img src="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-2_hu22643fffb0ba0f7644311b38531b1ce2_19858_300x200_fit_box_3.png" width="261" height="200" alt="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"  class=""></amp-img></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-3_hu560700057f11b8d116c6384704b49653_44735_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"><amp-img src="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-3_hu560700057f11b8d116c6384704b49653_44735_300x200_fit_box_3.png" width="177" height="200" alt="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"  class=""></amp-img></a></p>
-<figcaption>Problema de tabnabbing en enlaces que abren páginas en nueva pestaña</figcaption>
-</figure>
-</div>
-<p>La solución más sencilla es añadir el atributo <em>rel=&ldquo;noopener noreferrer&rdquo;</em> a los enlaces que se abran en una nueva página, esto informa al navegador para que no proporcione a la página abierta el acceso a la variable <em>window.opener</em>, como se muestra en el segundo enlace del ejemplo de código <em>page.html</em>, si la página abierta hace uso de ella se produce un error de JavaScript.</p>
-<div class="media">
-<figure>
-<p><a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-4_hu097818c1a0d12ef276d1e1742bc40f22_34321_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="La variable window.opener es nula en el enlace seguro"><amp-img src="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phising-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-4_hu097818c1a0d12ef276d1e1742bc40f22_34321_300x200_fit_box_3.png" width="261" height="200" alt="La variable window.opener es nula en el enlace seguro" title="La variable window.opener es nula en el enlace seguro"  class=""></amp-img></a></p>
-<figcaption>La variable window.opener es nula en el enlace seguro</figcaption>
-</figure>
-</div>
-<p>Otras medidas recomendables son <a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/index-amp.html">codificar los datos para evitar ataques XSS</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/index-amp.html">filtrar el contenido enviado por los usuarios o devuelto por la página</a> sobre todo si proviene de fuentes externas a la aplicación ya sea de formularios introducidos por el usuario, parámetros, cabeceras u otras aplicaciones.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener">window.opener</a></li>
-</ul>
-</div>
-
-    </div>
-
-    <p class="information">
-      
-    </p>
-
-    
-  </article>
-        <div>
-          <hr>
+          </div>
         </div>
-        
+        <div class="row">
+          <div class="col-12">
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/07/4-ways-to-make-a-for-loop-in-java/index-amp.html">4 ways to make a for loop in Java</a></h1>
+        <span class="information">
+          <time>01/11/2020</time>
+          
+            
+              <a href="/blog-bitix/tags/java/index-amp.html">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/index-amp.html">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            The usual way in Java to do a loop is with a <em>for</em> or <em>while</em> statement but with the addition of iterators in Java 5 it is not necessary to have a variable to keep the index of the loop. Since Java 8, <em>streams</em> have been added that offer other new ways of iterating over the elements of a collection, in the latter case with techniques of functional languages.
+          
+          <br>
+          <a href="/blog-bitix/2017/07/4-ways-to-make-a-for-loop-in-java/index-amp.html">Continue reading...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/05/download-and-install-windows-10-step-by-step-from-scratch/index-amp.html">Download and install Windows 10 step by step from scratch</a></h1>
+        <span class="information">
+          <time>09/05/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/microsoft/index-amp.html">microsoft</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software/index-amp.html">software</a>
+            
+              <a href="/blog-bitix/tags/windows/index-amp.html">windows</a>
+            
+          
+        </span>
+        <p>
+          
+            A virus, <em>bloatware</em> pre-installed on many laptops, or after installing and uninstalling programs in Windows can cause the computer to slow down, display error messages, or a virus to encrypt personal files. In these cases, a simple, fast and reliable common solution to use the computer normally again is to reinstall Windows 10 from scratch. It is not complicated but for a user with little computer knowledge it is not an easy task. In this article I explain how to download and install the Windows 10 operating system step by step from scratch for free.
+          
+          <br>
+          <a href="/blog-bitix/2017/05/download-and-install-windows-10-step-by-step-from-scratch/index-amp.html">Continue reading...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2017/01/script-to-install-arch-linux-easy-fast-unattended-automated-and-customizable-way/index-amp.html">Script to install Arch Linux easy, fast, unattended, automated and customizable way</a></h1>
+        <span class="information">
+          <time>13/01/2017</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/index-amp.html">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/index-amp.html">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Arch Linux is one of the most customizable GNU/Linux distributions but whose installation requires reading a good amount of documentation, guides or manuals to know what commands to execute step by step in the <em>prompt</em> of the system in which it leaves you the installation medium. Some users choose a distribution like Antergos, KaOS or Manjaro with a graphical installer and guided simply by the fact that they do not face Arch Linux installation from the command line. Still, executing a command and waiting for it to finish before entering another is slow and requires attention.
+          
+          <br>
+          <a href="/blog-bitix/2017/01/script-to-install-arch-linux-easy-fast-unattended-automated-and-customizable-way/index-amp.html">Continue reading...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
 
-        
-<div class="row">
-  <div class="col-md-12">
-    <div class="sharethis sharethis-text">
-      Comparte el artículo:
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="sharethis sharethis-inline-share-buttons"></div>
-  </div>
-</div>
 
 
-        
-    
-    
-    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Comprobar la seguridad de un sitio web que use SSL/TLS" title="Comprobar la seguridad de un sitio web que use SSL/TLS"  class=""></amp-img>
-                <h3>Comprobar la seguridad de un sitio web que use SSL/TLS</h3>
-                </a>
-                
-            </div>
+          </div>
         </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/lets-encrypt.svg" width="326" height="125" alt="Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx" title="Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx"  class=""></amp-img>
-                <h3>Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx</h3>
-                </a>
-                
-            </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
         </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Autenticación mutua de cliente y servidor con certificados" title="Autenticación mutua de cliente y servidor con certificados"  class=""></amp-img>
-                <h3>Autenticación mutua de cliente y servidor con certificados</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" title="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly"  class=""></amp-img>
-                <h3>Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Certificado SSL, de empresa, «wildcard» y de validación extendida" title="Certificado SSL, de empresa, «wildcard» y de validación extendida"  class=""></amp-img>
-                <h3>Certificado SSL, de empresa, «wildcard» y de validación extendida</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache"  class=""></amp-img>
-                <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-
         <div class="row">
           <div class="col-12 adblock-container-billboard">
             <span id="pageBottom"></span>
@@ -536,14 +345,12 @@
 </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <hr>
-      </div>
-    </div>
-    
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
 
 
 
@@ -598,6 +405,8 @@
   </div>
 </footer>
 
+      </div>
+    </div>
   </div>
   <amp-analytics type="gtag" data-credentials="include">
 <script type="application/json">

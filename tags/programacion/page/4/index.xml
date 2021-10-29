@@ -5,12 +5,82 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2021-09-02T20:00:00+02:00</updated>
+    <updated>2021-10-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/</id>
+        <title>Iniciar una aplicación de Spring Boot en un puerto aleatorio</title>
+        <updated>2019-08-09T18:00:00+02:00</updated>
+        <published>2019-08-09T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>En una arquitectura basada en microservicios es normal iniciar varias instancias de un mismo servicio, si están en la misma máquina ha de asignarse a cada instancia un puerto diferente. Asignar los puertos manualmente no es recomendable cuando se quieren varias instancias, Spring Boot ofrece la funcionalidad de iniciar la aplicación en un puerto aleatorio.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Mediante configuración se puede especificar el puerto en el que se desea iniciar una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> que ofrece un servicio de red. El puerto por convención suele ser el <em>8080</em> y la propiedad de configuración de Spring Boot para modificarlo es <em>server.port</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l">${port:8080}</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-1.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run&#10;...&#10;2019-08-09 17:02:40,417  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port<span class="o">(</span>s<span class="o">)</span>: <span class="m">8080</span> <span class="o">(</span>http<span class="o">)</span> with context path <span class="s1">&#39;&#39;</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-1.sh</span>
+    </div>
+</div>
+<p>Cuando se tiene únicamente una aplicación este puerto por defecto es suficiente pero si se desean iniciar varias instancias de una aplicación o microservicio en una misma máquina es necesario asignar a cada una de ellas un puerto diferente para que no haya conflictos a usar el mismo puerto de red. Se puede hacer manualmente aunque con muchas instancias también se puede dejar a Spring Boot elegir un puerto aleatorio.</p>
+<p>Para dejar a Spring Boot elegir el puerto de forma aleatoria basta con especificar el puerto con valor <em>0</em> en la propiedad de configuración <em>server.port</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l">${port:0}</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-2.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run --args<span class="o">=</span><span class="s2">&#34;--port=0&#34;</span>&#10;...&#10;2019-08-09 17:02:40,417  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port<span class="o">(</span>s<span class="o">)</span>: <span class="m">45871</span> <span class="o">(</span>http<span class="o">)</span> with context path <span class="s1">&#39;&#39;</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-2.sh</span>
+    </div>
+</div>
+<p>Usando un <a href="https://picodotdev.github.io/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/">servicio de registro y descubrimiento como Eureka</a> el servicio registra su ubicación y los servicios que quieran acceder a él obtendrán del mismo servicio de registro y descubrimiento su ubicación, de forma que para los clientes es transparente en qué puerto se inicie.</p>
+<p>Sin embargo, por algún motivo con Eureka los servicios no se registran en el puerto aleatorio en el que realmente se inician sino que se registran incorrectamente en el puerto <em>0</em>, quizá utilizando <a href="https://www.consul.io/">Consul</a> el servicio de Spring Boot si se inicie en un puerto aleatorio.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run.sh</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://javadeveloperzone.com/spring-boot/spring-boot-random-server-port/">Spring Boot Random Server Port</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/</id>
         <title>Administrar secretos y proteger datos sensibles con Vault</title>
@@ -1127,92 +1197,6 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
                 <category term="programacion"/>
             
                 <category term="software"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/</id>
-        <title>Codificar los datos para evitar ataques XSS en una página web</title>
-        <updated>2019-03-29T09:00:00+01:00</updated>
-        <published>2019-03-29T09:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Validar los datos es importante para una aplicación pero no es suficiente para crear una aplicación, es más, para crear una aplicación segura es más importante codificar correctamente los datos emitidos por la aplicación. Los ataques XSS se producen precisamente por no codificar correctamente los datos emitidos provenientes de una fuente no confiable. Una fuente no confiable puede ser un parámetro en una aplicación web pero también puede ser cualquier otro dato que incluya una petición HTTP como una cabecera.</p>
-<p>El siguiente código de un archivo JSP que obtiene un parámetro de la petición y lo emite en la salida permite a un usuario malicioso insertar código en la página web, si el dato que se envía es el contenido de <em>xss.data</em> y las <em>cookies</em> no se crearon con las cabeceras <em>httponly</em> el usuario malicioso puede obtener acceso a la sesión del usuario en el sitio web y es un grave fallo de seguridad. En este caso solo se emplea un <em>alert</em> pero el código podría ser más elaborado y realizar una petición a una URL en la que el usuario malicioso reciba los datos de las <em>cookies</em> de sesión.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Página<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Hola <span class="err">&lt;</span>%= request.getParameter(&#34;user&#34;); %&gt;!&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>RequestParameter.jsp</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Hacker &lt;script type=&#34;text/javascript&#34;&gt;alert(&#34;Hacked!&#34;); alert(document.cookie);&lt;/script&gt;&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>user-parameter-xss.data</span>
-    </div>
-</div>
-<p>El contenido HTML generado por la aplicación y enviado al navegador sería el siguiente:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Página<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;Hola Hacker <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Hacked!&#34;</span><span class="p">);</span> <span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>!&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>RequestParameter.html</span>
-    </div>
-</div>
-<p>En este caso al cargar la página en el navegador se muestra un mensaje <em>alert</em> con una ventana emergente pero si el usuario malicioso enviase los datos de las <em>cookies</em> a una URL suya el usuario ni siquiera sería consciente de que le han robado la sesión. Y este fallo de seguridad se produce simplemente por cargar una página de una aplicación insegura por XSS.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss_hua6bfdad53ee8266338466bfb56ab4002_13723_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="XSS"><img src="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/images/xss-user_hu94eb1866d4b75191418615173ede475a_10907_300x200_fit_box_3.png" width="300" height="186" alt="XSS" title="XSS"  class="lozad "></a></p>
-<figcaption>XSS</figcaption>
-</figure>
-</div>
-<p>Pero ¿como consigue el usuario malicioso inyectar su código mediante parámetros u otros datos emitidos por la página insegura? Una opción sería enviar al usuario un enlace especialmente construido para que se aproveche del fallo de seguridad, el medio de hacerlo llegar puede ser un correo electrónico o un enlace en las redes sociales o páginas de gran tráfico como Facebook. Para que el enlace no sea tan evidente se puede utilizar un acortador de enlaces. Los comentarios son otro vector con el que el usuario malicioso puede insertar enlaces o el propio contenido si no son tratados adecuadamente donde sean mostrados como en la página web, de otros médios como correos electrónicos o una aplicación de <em>backoffice</em> de uso interno que incluso puede tener privilegios de realizar acciones especialmente sensibles.</p>
-<p>Para evitar los ataques XSS la regla básica es codificar correctamente cualquier dato que se emita como resultado. En el caso de una aplicación web codificar correctamente el dato a emitir depende del contexto donde se incluya el dato para escapar correctamente los caracteres especiales de ese contexto. Los contextos puede ser como HTML, como un atributo de una etiqueta, como contenido HTML, como un bloque de JavaScript o como una variable de JavaScript.</p>
-<p>Si el <em>framework</em> web que usamos no proporciona facilidades para evitar ataques XSS al emitir contenido en el resultado en Java se puede usar la librería <a href="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project">OWASP Java Encoder Project</a> siendo su uso el siguiente. <em>OWASP Java Encoder Project</em> es una librería que no tiene dependencias adicionales por lo que es sencillo incorporarla  en la aplicación.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="err">&lt;</span>%@ page import=&#34;org.owasp.encoder.Encoder&#34; %&gt;&#10;&#10;<span class="err">&lt;</span>%-- HTML Content context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">&lt;</span>%= Encode.forHtml(text) %&gt;&#10;<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- HTML Attribute context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;address&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&lt;%= Encode.forHtmlAttribute(address) %&gt;&#34;</span> <span class="p">/&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- HTML Textarea context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;text&#34;</span><span class="p">&gt;</span><span class="err">&lt;</span>%= Encode.forHtmlContent(textAreaContent %&gt;<span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- Javascript Block context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&#34;&lt;%= Encode.forJavaScriptBlock(message) %&gt;&#34;</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>&#10;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;&#10;<span class="err">&lt;</span>%-- Javascript Variable context --%&gt;&#10;<span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&#34;alert(&#39;&lt;%= Encode.forJavaScriptAttribute(alertMsg) %&gt;&#39;);&#34;</span><span class="p">&gt;</span>Action<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Encoder.jsp</span>
-    </div>
-</div>
-<p>Para los <em>frameworks</em> web populares ya tienen en cuenta el XSS en el comportamiento por defecto al emitir datos.</p>
-<ul>
-<li><a href="https://www.dontpanicblog.co.uk/2012/03/12/xss-vulnerabilities-in-web-frameworks-2/">Preventing XSS Vulnerabilities in Web Frameworks (Struts, Tapestry)</a></li>
-<li><a href="https://stackoverflow.com/questions/15144905/how-to-protect-against-xss-attacks-in-grails-app">How to protect against XSS attacks in Grails</a></li>
-</ul>
-<p>No siempre se desea codificar un dato simple según el contexto, a veces se quiere permitir insertar código HTML. La alternativa a la codificación para estos casos es el saneado permitiendo únicamente los elementos que se consideren seguros definiendo una política, por ejemplo, permitiendo etiquetas HTML de enlaces y ciertas etiquetas como <em>em</em>, <em>ul</em>, <em>li</em>. El saneado también se puede hacer con <a href="https://jsoup.org/">jsoup</a> pero esta incluye otras funcionalidades que si no son necesarias con <a href="https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project">WASP Saniticer</a> es suficiente.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/">Cómo filtrar contenido HTML de forma segura con jsoup</a></li>
-</ul>
-<p>Un ataque de XSS también puede producirse en contenidos distintos al HTML como pueden ser documentos JSON o XML en los que también hay que escapar los datos según su contexto para evitar por ejemplo que alguien cambien la estructura del XML o JSON previsto por la aplicación. El XSS es similar al problema de inyección de SQL si al construir las sentencias se insertan en ella datos en vez de usar en el caso de Java la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html">PreparedStatement</a> con parámetros.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project">OWASP Java Encoder Project</a></li>
-<li><a href="https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project">OWASP Java HTML Sanitizer Project</a></li>
-<li><a href="https://www.owasp.org/index.php/Cross_Site_Tracing">Cross Site Tracing (XST)</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie">MDN Document.cookie</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>
