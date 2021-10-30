@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - name: Enviroment information
+      - name: Environment information
         run: |
           uname -a
           lsb_release -a
@@ -35,15 +35,16 @@ jobs:
         with:
           path: ./resources
           key: ${{ runner.os }}-build-${{ env.cache-name }}
-      - name: Install packages
+      - name: Install packages (hugo)
         run: |
-          sudo apt-get update
           sudo apt-get install -y wget
-          wget https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_0.88.1_Linux-64bit.tar.gz
-          tar xzf hugo_0.88.1_Linux-64bit.tar.gz hugo
-          rm hugo_0.88.1_Linux-64bit.tar.gz
+          wget https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_extended_0.88.1_Linux-64bit.tar.gz
+          tar xzf hugo_extended_0.88.1_Linux-64bit.tar.gz hugo
+          rm hugo_extended_0.88.1_Linux-64bit.tar.gz
           chmod +x ./hugo
           sudo mv ./hugo /usr/local/bin
+      - name: Install packages (npm)
+        run: |
           npm install
       - name: Echo content
         run: |
