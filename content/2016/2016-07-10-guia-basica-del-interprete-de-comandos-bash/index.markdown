@@ -130,7 +130,6 @@ Los _scripts_ de Bash suelen manejar ficheros y disponemos de una buena cantidad
 * [ -w FILE ]: verdadero si el fichero existe y se puede escribir.
 * [ -x FILE ]: verdadero si el fichero existe y se puede ejecutar.
 * [ -N FILE ]: verdadero si el fichero existe y ha sido modificado desde la última lectura.
-
 * [ FILE1 -nt FILE2 ]: verdadero si _FILE1_ ha sido modificado más recientemente que _FILE2_ o si _FILE1_ existe y _FILE2_ no.
 * [ FILE1 -ot FILE2 ]: verdadero si _FILE2_ ha sido modificado más recientemente que _FILE1_ o si _FILE2_ existe y _FILE1_ no.
 * [ FILE1 -ef FILE2 ]: verdadero si _FILE1_ y _FILE2_ se refieren al mismo dispositivo y número de inodo.

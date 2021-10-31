@@ -212,6 +212,8 @@ En la siguiente [web de teclados mecánicos](https://mechanicalkeyboard.com/) ti
 
 Tecládos mecánicos en Amazon. El teclado [DREVO Calibur V2 TE](https://amzn.to/3n7cfwP) ofrece un interedio entre TKL y SF, no posee teclas de función pero si las que se enuentran arriba de los TKL muy útiles al programar que permiten seleccionar el texto de una linea y cortar y pegar de forma alternativa a utilizar _Ctrl+X_ y _Ctrl+V_, al estar cerca de las teclas de desplazamiento evita tener que desplazar la mano para posicionar el cursor al escribir texto. El DREVO Calibur no tiene la calidad de los Ducky pero es más económico, compacto y con una disposición de teclas intermedia entre el SF y TKL sin perder ninguna de esas teclas de función de la parte superior de las flechas.
 
+* [Página del fabricante del teclado DREVO Calibur V2 TE](https://www.drevo.net/product/keyboard/calibur-v2-te)
+
 {{< amazon
     linkids="bd7e81798a9d04ab4943e6f9754d0072"
     asins="B07TLMYKWK" >}}
@@ -219,6 +221,8 @@ Tecládos mecánicos en Amazon. El teclado [DREVO Calibur V2 TE](https://amzn.to
 #### Glorious PC Gaming Race GMMK TKL
 
 Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://amzn.to/3vEzfpt), es un teclado en formato ISO con la característica destacada de ser personalizable tanto en los interruptores como en las teclas, los interruptores son intercambiables compatibles con los de la marca Cherry como Gateron y Kailh. Aparte Glorious ofrece como producto independiente los interruptores Gateron y los _keykaps_ del material ABS con la disposición de teclado española. Se vende tanto en Amazon como en [Coolmod][coolmod] y algunos elementos en PcComponentes. Soporta macros y pefiles configurados por software y personalización de varios efectos de luz.
+
+* [Página del fabricante del teclado Glorious PC Gaming Race GMMK TKL](https://www.pcgamingrace.com/products/gmmk-tkl-tenkeyless-brown-switch)
 
 {{< amazon
     linkids="efd4877783411bfb37d690da02824606,2cdc77ae7cc6c546d85c6e99ecd2bbf5,07db9d547c2d5a08fbe89d8a2c8c7ff3"
@@ -237,6 +241,7 @@ Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://am
 
 De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofrece modelos completos, TKL y compactos en diferente tamaño, número de teclas, tipos de _switches_ y retroiluminados. Su precio suele estar a partir de 100 € y se pueden encontrar en la tienda [Versus Gamers][vsgamers] y también en Coolmod con el formato ISO con la disposición en español y diferentes tipos de _switches_ _blue_, _brown_ y _red_. A diferencia del Glorious soporta macros y perfiles por hardware sin necesidad de un software que normalmente solo está disponible para Windows, este soporte por hardware para macros y perfiles permite no perder estas funcionalidades si se usa macOS o GNU/Linux.
 
+* [Página del fabricante del teclado Ducky One 2](https://www.duckychannel.com.tw/en/Ducky-One2-RGB-TKL)
 * [Ducky One 2 Cherry MX Red RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-cherry-mx-red)
 * [Ducky One 2 Cherry MX Brown TKL RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-tkl-cherry-mx-brown)
 * [Ducky One 2 Cherry MX Brown RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-cherry-mx-brown)
