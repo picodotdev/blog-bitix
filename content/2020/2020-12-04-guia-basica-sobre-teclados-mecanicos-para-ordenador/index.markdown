@@ -216,15 +216,20 @@ Tecládos mecánicos en Amazon. El teclado [DREVO Calibur V2 TE](https://amzn.to
 
 #### Glorious PC Gaming Race GMMK TKL
 
-Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://amzn.to/3vEzfpt), es un teclado en formato ISO con la característica destacada de ser personalizable tanto en los interruptores como en las teclas, los interruptores son intercambiables compatibles con los de la marca Cherry como Gateron y Kailh. Aparte Glorious ofrece como producto independiente los interruptores Gateron y los _keykaps_ del material ABS con la disposición de teclado española. Se vende tanto en Amazon como en [Coolmod][coolmod] y algunos elementos en PcComponentes. Soport macros y pefiles configurados por software y personalización de varios efectos de luz.
+Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://amzn.to/3vEzfpt), es un teclado en formato ISO con la característica destacada de ser personalizable tanto en los interruptores como en las teclas, los interruptores son intercambiables compatibles con los de la marca Cherry como Gateron y Kailh. Aparte Glorious ofrece como producto independiente los interruptores Gateron y los _keykaps_ del material ABS con la disposición de teclado española. Se vende tanto en Amazon como en [Coolmod][coolmod] y algunos elementos en PcComponentes. Soporta macros y pefiles configurados por software y personalización de varios efectos de luz.
 
 {{< amazon
     linkids="efd4877783411bfb37d690da02824606,2cdc77ae7cc6c546d85c6e99ecd2bbf5,07db9d547c2d5a08fbe89d8a2c8c7ff3"
     asins="B07L31V1K4,B0716ZNZ1P,B07L317X86" >}}
+{{< amazon
+    linkids="819c1e81da9f0cd7f92f795b41926582,09b7be21445b0ea3514d006335302f6f,04543405ab88e2ce7474674867279243,31c3dd925e5cc8a5ce452d81ab581c3a"
+    asins="B07CVQ7ZRL,B07CVT9ZH3,B07CVQ8NGR,B07CVR26ZF" >}}
 
 * [Glorious PC Gaming Race GMMK TKL ISO en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-gmmk-tkl-iso-layout-teclado/)
 * [Glorious PC Gaming Race Gateron Brown Switches en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-gateron-brown-switches-120-piezas-interruptores-teclado/)
 * [Glorious PC Gaming Race ABS Keycaps 105 ES Layout en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-abs-keycaps-105-es-layout-negro-teclas/)
+* [Keycaps PBT Double shot en AliExpress](https://es.aliexpress.com/item/32950357499.html)
+* [Keycaps ABS Double shot en AliExpress enviado desde España con layout Español en color negro y banco](https://es.aliexpress.com/item/4000395759765.html?spm=a2g0o.cart.0.0.21e03c00RXFxEr&mp=1)
 
 #### Ducky One 2
 
@@ -236,7 +241,6 @@ De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofr
 * [Ducky One 2 Cherry MX Blue TKL RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-tkl-cherry-mx-blue)
 * [Ducky One 2 Cherry MX Blue RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-cherry-mx-blue)
 * [Ducky One 2 TKL RGB MX Brown ABS (ES) en Versus Gamers](https://www.coolmod.com/ducky-one-2-tkl-rgb-mx-brown-abs-es-teclado/)
-* [Keycaps PBT Doubleshot en AliExpress](https://es.aliexpress.com/item/32950357499.html)
 
 #### Otros
 
