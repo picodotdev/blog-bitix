@@ -426,7 +426,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/102785" target="_blank"><amp-img src="https://asciinema.org/a/102785.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/102785.js" id="asciicast-102785" async></script>
+<noscript><a href="https://asciinema.org/a/102785" target="_blank"><img src="https://asciinema.org/a/102785.png" width="650" height="450"></a></noscript>
 </div>
 <p>La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.</p>
 <p>Los archivos <em>unit</em> propios deben ser ubicados en el directorio <em>/etc/systemd/system/</em>, siendo el directorio <em>/usr/lib/systemd/system/</em> donde se ubican los instalados por los paquetes del sistema. Iniciado el servicio con el comando <code>sudo systemctl start spring-boot-jaxrs.service</code>, si queremos habilitarlo con el inicio del sistema usamos el comando <code>sudo systemctl enable spring-boot-jaxrs.service</code>. Para ver el estado del servicio usamos el comando <code>sudo systemctl status spring-boot-jaxrs.service</code>.</p>
@@ -952,7 +953,8 @@ willing to read the documentation, and solve their own problems.</p>
 <h3 id="vídeo-de-instalación-del-sistema-base-con-alis">Vídeo de instalación del sistema base con alis</h3>
 <p>El siguiente vídeo capturado con <a href="https://asciinema.org/">asciinema</a> muestra como utilizando alis se instala Arch Linux en una computadora con el proceso completo de la instalación base del sistema.</p>
 <div class="media">
-<a href="https://asciinema.org/a/418524" target="_blank"><amp-img src="https://asciinema.org/a/418524.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
+<noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
 </div>
 <h3 id="código-fuente-de-alis">Código fuente de alis</h3>
 <p>El código del instalador no es muy complicado y mucho más sencillo que otros <em>scripts</em> interactivos similares, al no mezclar los comandos de la instalación con los mensajes interactivos que hacen preguntas y esperan respuestas, además después de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario introduzca más datos de forma interactiva.</p>
