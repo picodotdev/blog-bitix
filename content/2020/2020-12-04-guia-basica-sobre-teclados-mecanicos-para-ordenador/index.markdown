@@ -49,7 +49,7 @@ En la siguiente tabla se comparan los diferentes tipos de _switches_ según la f
     gallery="true"
     image2="image:switches-cherrymx-comparation-table.png" optionsthumb2="300x200" title2="Tabla comparación switches Cherry MX"
     image3="image:switches-gateron-comparation-table.png" optionsthumb3="300x200" title3="Tabla comparación switches Gateron"
-    caption="Switches Cherry MX y tablas de comparación" >}}
+    caption="Switches Cherry MX y tablas de comparación Cherry MX y Gateron" >}}
 
 #### _Clicky_
 
