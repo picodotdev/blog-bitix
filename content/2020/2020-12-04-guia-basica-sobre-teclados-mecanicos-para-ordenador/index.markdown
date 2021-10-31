@@ -202,6 +202,14 @@ Muchos de los teclados mecánicos se ofrecen en formato ANSI y con disposición 
 
 El formato y la disposición hace que algunas teclas con caracteres propios del lenguaje español no tengan tecla específica como la _ñ_, _¿_, _¡_, _´_, _áéíóú_ o _º_. Si se opta por un teclado con disposición US para escribir estos caracteres en español es posible pero utilizando una combinación de teclas. Por ejemplo, la eñe en el teclado con disposición US internacional se escribe con la combinación de teclas _Alt Gr+n_ y las vocales con tilde _Alt Gr+a_.
 
+En caso necesario, en GNOME alternar entre las disposiciones de teclado configuradas es tán fácil como usar el menú que aparece al congurar varias distribuciones de teclado o con el atajo de teclado _Super+Barra espaciadora_.
+
+{{< image
+    gallery="true"
+    image1="image:keyboard-iso-us-alt.png" optionsthumb1="300x200" title1="Teclado ISO (en, alt)"
+    image2="image:gnome-keyboard-layout-selector.png" optionsthumb2="300x200" title2="Selector de disposición de teclado GNOME"
+    caption="Teclado ISO (en, alt) y selector de disposición de teclado GNOME" >}}
+
 ### Marcas y modelos de teclados mecánicos
 
 En la siguiente [web de teclados mecánicos](https://mechanicalkeyboard.com/) tiene filtros para encontrar modelos de teclado con las características deseadas en cuando a marca, tipos de _switches_, tipo retroiluminación, color, tamaño y tipo de conexión.
