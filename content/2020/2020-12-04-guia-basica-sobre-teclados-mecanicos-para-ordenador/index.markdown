@@ -44,10 +44,12 @@ En la siguiente tabla se comparan los diferentes tipos de _switches_ según la f
 
 {{< image
     gallery="true"
-    image1="image:switches-cherrymx.jpg" optionsthumb1="300x200" title1="Switches Cherry MX"
-    image2="image:switches-cherrymx-comparation.png" optionsthumb2="300x200" title2="Switches Cherry MX"
-    image2="image:switches-cherrymx-comparation-table.png" optionsthumb2="300x200" title2="Switches Cherry MX"
-    caption="Switches Cherry MX" >}}
+    image1="image:switches-cherrymx.jpg" optionsthumb1="300x200" title1="Switches Cherry MX" >}}
+{{< image
+    gallery="true"
+    image2="image:switches-cherrymx-comparation-table.png" optionsthumb2="300x200" title2="Tabla comparación switches Cherry MX"
+    image3="image:switches-gateron-comparation-table.png" optionsthumb3="300x200" title3="Tabla comparación switches Gateron"
+    caption="Switches Cherry MX y tablas de comparación" >}}
 
 #### _Clicky_
 
@@ -90,7 +92,7 @@ Los códigos de colores asignados para estos _switches_ con respuesta táctil so
 
 #### Marcas de _switches_
 
-La marca más conocida de _switches_  son los [Cherry MX](https://www.cherrymx.de/en) y son los que se encuentran en la mayoría de teclados mecánicos. Una alternativa a los Cherry MX e imitación de estos son los Gateron u Outemu que se encuentran en los teclados mecánicos algo más económicos.
+La marca más conocida de _switches_  son los [Cherry MX](https://www.cherrymx.de/en) y son los que se encuentran en la mayoría de teclados mecánicos. Una alternativa a los Cherry MX e imitación de estos que no peores son los [Gateron](https://www.gateron.co), Outemu, [Kaihl](https://www.kailhswitch.com) que se encuentran en los teclados mecánicos algo más económicos.
 
 #### Probador de _switches_
 
