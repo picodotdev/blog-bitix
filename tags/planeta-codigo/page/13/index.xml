@@ -5,12 +5,119 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-10-28T19:00:00+02:00</updated>
+    <updated>2021-11-04T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/</id>
+        <title>Autenticación mediante clave pública y privada con SSH</title>
+        <updated>2019-05-03T20:00:00+02:00</updated>
+        <published>2019-05-03T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma.</p>
+<p>Para generar contraseñas fuertes se puede usar <a href="https://strongpasswordgenerator.com/">Strong Password Generator</a> y para almacenarlas <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">el programa KeePassXC</a>.</p>
+<p>Con <a href="https://www.openssh.com/">OpenSSH</a> también se puede iniciar sesión de línea de comandos en otro sistema proporcionando un usuario y una contraseña que se solicitará. O mejor aún con una clave pública y privada sin necesidad de introducir una contraseña.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh ubuntu@192.168.33.10&#10;Welcome to Ubuntu 18.04.2 LTS <span class="o">(</span>GNU/Linux 4.15.0-48-generic x86_64<span class="o">)</span>&#10;&#10; * Documentation:  https://help.ubuntu.com&#10; * Management:&nbsp;&nbsp;&nbsp;&nbsp; https://landscape.canonical.com&#10; * Support:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ubuntu.com/advantage&#10;&#10;  System information as of Fri May  <span class="m">3</span> 18:04:48 UTC <span class="m">2019</span>&#10;&#10;  System load:  0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Processes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">102</span>&#10;  Usage of /:   10.0% of 9.63GB   Users logged in:&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">1</span>&#10;  Memory usage: 6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP address <span class="k">for</span> enp0s3: 10.0.2.15&#10;  Swap usage:   0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP address <span class="k">for</span> enp0s8: 192.168.33.10&#10;&#10;&#10;<span class="m">0</span> packages can be updated.&#10;<span class="m">0</span> updates are security updates.&#10;&#10;&#10;Last login: Fri May  <span class="m">3</span> 18:04:00 <span class="m">2019</span> from 192.168.33.1&#10;To run a <span class="nb">command</span> as administrator <span class="o">(</span>user <span class="s2">&#34;root&#34;</span><span class="o">)</span>, use <span class="s2">&#34;sudo &lt;command&gt;&#34;</span>.&#10;See <span class="s2">&#34;man sudo_root&#34;</span> <span class="k">for</span> details.&#10;&#10;ubuntu@ubuntu-bionic:~$&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/images/openssh_hua00e364d197fb1857da25b410a64f760_83550_2560x1440_fit_box_3.png" width="578" height="191" alt="OpenSSH" title="OpenSSH"  class="lozad "></p>
+</figure>
+</div>
+<p>Usar SSH es más seguro y más cómodo que usar contraseñas para realizar la autenticación, es más seguro ya que una clave pública y privada son más largas y es más cómodo ya que no se solicita contraseña constantemente que de otra manera al cabo de un tiempo se convierte en un paso tedioso y molesto. Lo primero que hay que hacer es <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar una clave SSH pública y privada</a> propia. Una clave de 2048 bits ya se considera segura pero como cuesta lo mismo generar una de más bits se puede generar una de 8192 bits para más seguridad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl genrsa -out ubuntu <span class="m">8192</span>&#10;$ ssh-keygen -y -f ubuntu &gt; ubuntu.pub&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-keygen.sh</span>
+    </div>
+</div>
+<p>En el servidor SSH se deben modificar algunas propiedades de configuración del archivo de configuración <em>/etc/ssh/sshd_config</em> para permitir la autenticación con usuario y contraseña para poder copiar la clave pública y una vez copiada la clave para mayor seguridad no permitir la autenticación mediante usuario y contraseña.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">PasswordAuthentication yes&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sshd_config</span>
+    </div>
+</div>
+<p>Una vez generado el par de claves hay que copiar la clave pública al servidor donde se desee iniciar sesión. Manualmente concatenando la clave pública al archivo <em>.ssh/authorized_keys</em> del directorio <em>home</em> del usuario con el que se quiere iniciar sesión o también se puede copiar la clave pública usando el comando <em>ssh-copy-id</em>. Para revocar el acceso mediante esa clave basta con eliminar su linea del archivo de claves autorizadas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh-copy-id -i ~/.ssh/ubuntu ubuntu@192.168.33.10&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-copy-id.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo passwd ubuntu&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>passwd.sh</span>
+    </div>
+</div>
+<p>Si se poseen varios pares de claves públicas y privadas se puede especificar que clave privada usar para cada máquina a la que se desee conectar en el archivo <em>~/.ssh/config</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Host</span> <span class="n">192</span><span class="o">.</span><span class="na">168</span><span class="o">.</span><span class="na">33</span><span class="o">.</span><span class="na">10</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HostName</span> <span class="n">192</span><span class="o">.</span><span class="na">168</span><span class="o">.</span><span class="na">33</span><span class="o">.</span><span class="na">10</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">User</span> <span class="n">ubuntu</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">IdentityFile</span> <span class="o">~/.</span><span class="na">ssh</span><span class="o">/</span><span class="n">ubuntu</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-config</span>
+    </div>
+</div>
+<p>La clave privada debe tener permisos restringidos sino se muestra una advertencia e impide el inicio de sesión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">$</span> <span class="n">chmod</span> <span class="n">600</span> <span class="n">ubuntu</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chmod.sh</span>
+    </div>
+</div>
+<p>Para probar la autenticación con SSH se puede utilizar una máquina virtual de <a href="https://www.virtualbox.org/">VirtualBox</a> creada con <a href="https://www.vagrantup.com/">Vagrant</a>. En el caso de utilizar el usuario <em>ubuntu</em> hay que asignarle una clave con el comando <em>passwd</em> para ejecutar comando <em>ssh-copy-id</em> ya que se solicita su contraseña en este paso, una vez realizado se puede desactivar la autenticación mediante usuario y contraseña cambiando el valor de la configuración <em>PasswordAuthentication</em> a <em>no</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># -*- mode: ruby -*-&#10;# vi: set ft=ruby :&#10;&#10;Vagrant.configure(&#34;2&#34;) do |config|&#10;  config.vm.box = &#34;ubuntu/bionic64&#34;&#10;&#10;  config.vm.provider :virtualbox do |vb|&#10;&nbsp;&nbsp;&nbsp;&nbsp;vb.name = &#34;Ubuntu 18.04 (Vagrant)&#34;&#10;  end&#10;&#10;  config.vm.network &#34;private_network&#34;, ip: &#34;192.168.33.10&#34;&#10;&#10;  config.vm.provider &#34;virtualbox&#34; do |vb|&#10;&nbsp;&nbsp;&nbsp;&nbsp;vb.memory = &#34;2048&#34;&#10;  end&#10;end</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Vagrantfile</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vagrant up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vagrant.sh</span>
+    </div>
+</div>
+<p>Para mayor seguridad en caso de que la clave publica y privada sean comprometidas es posible <a href="https://picodotdev.github.io/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/">configurar un segundo factor de autenticación con SSH</a> que adicionalmente a la clave privada pide un <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">segundo factor de autenticación generado con la aplicación Google Authenticator o con KeePassXC</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://askubuntu.com/questions/30788/does-ssh-key-need-to-be-named-id-rsa#30792">Does ssh key need to be named id_rsa?</a></li>
+<li><a href="http://stackoverflow.com/questions/3466626/add-private-key-permanently-with-ssh-add-on-ubuntu">How to permanently add a private key with ssh-add on Ubuntu?</a></li>
+<li><a href="http://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke">How do I remove the passphrase for the SSH key without having to create a new key?</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="seguridad"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/</id>
         <title>Servicios con persistencia en el orquestador de microservicios Nomad</title>
@@ -160,7 +267,8 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/241669" target="_blank"><amp-img src="https://asciinema.org/a/241669.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/241669.js" id="asciicast-241669" async></script>
+<noscript><a href="https://asciinema.org/a/241669" target="_blank"><img src="https://asciinema.org/a/241669.png" width="650" height="450"></a></noscript>
 </div>
 <p>El proceso de despliegue también se puede monitorizar desde la interfaz web que ofrece Nomad.</p>
 <div class="media">
@@ -720,7 +828,8 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/237621" target="_blank"><amp-img src="https://asciinema.org/a/237621.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/237621.js" id="asciicast-237621" async></script>
+<noscript><a href="https://asciinema.org/a/237621" target="_blank"><img src="https://asciinema.org/a/237621.png" width="650" height="450"></a></noscript>
 </div>
 <div class="alert alert-secondary sourcecode">
     <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
@@ -1116,47 +1225,6 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
 <p>Muchos de los métodos de las colecciones funcionan en términos de los métodos <em>equals</em> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode%28%29">hashCode</a> de modo que si en una determinada clase se sobrescriben se ha de hacer implementando el contrato de estos métodos correctamente de otra manera una aplicación puede presentar errores de difícil depuración.</p>
 <p>La clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">Collections</a> contiene numerosos métodos estáticos entre ellos para hacer una colección que no lo sea en inmutable o sincronizada. Con los métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedCollection%28java.util.Collection%29">synchronizedCollection</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedList%28java.util.List%29">synchronizedList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedMap%28java.util.Map%29">synchronizedMap</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedSet%28java.util.Set%29">synchronizedSet</a> para hacerlas sincronizadas y los métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableCollection%28java.util.Collection%29">unmodifiableCollection</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableList%28java.util.List%29">unmodifiableList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableMap%28java.util.Map%29">unmodifiableMap</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableSet%28java.util.Set%29">unmodifiableSet</a>. Estos métodos estáticos de la clase <em>Collections</em> reciben como parámetro una colección no sincronizada o inmutable y devuelven una colección sincronizada o inmutable.</p>
 <p>Las colecciones específicas para la concurrencia son más eficientes que convertir una colección no sincronizada en sincronizada con los métodos de <em>Collections</em>. Las colecciones que se convierten en sincronizadas tienen una contención en toda la colección cuando no es necesario para las operaciones de lectura. Si las operaciones de lectura son mayoría las colecciones específicas para la concurrencia son más eficientes, no tienen tanta contención, por ejemplo, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html">ConcurrentHashMap</a> divide el mapa en varios segmentos y solo bloquea los segmentos relevantes lo que permite a múltiples <em>threads</em> acceder a otros segmentos del mismo mapa sin contención. <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CopyOnWriteArrayList.html">CopyOnWriteArrayList</a> permite varios lectores sin necesidad de sincronización y cuando ocurre una escritura copia el <em>ArrayList</em> a uno nuevo.</p>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/</id>
-        <title>Las colecciones de Java, estructuras de datos para guardar referencias a objetos</title>
-        <updated>2021-05-27T20:00:00+02:00</updated>
-        <published>2019-02-22T18:45:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> y la otra es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a>, estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.</p>
-<p><em>Collection</em> tiene métodos para saber si un determinado elementos está en la colección con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#contains%28java.lang.Object%29">contains</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#containsAll%28java.util.Collection%29">containsAll</a> basándose en el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals%28java.lang.Object%29">equals</a>, iterar los elementos de la colección con iterator, desde Java 8 convertir la colección en un <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html">Stream</a>, añadir elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#add%28E%29">add</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#addAll%28java.util.Collection%29">addAll</a>, eliminar elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#remove%28java.lang.Object%29">remove</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#removeAll%28java.util.Collection%29">removeAll</a>, comprobar si la colección está vacía con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#isEmpty%28%29">isEmpty</a>, vaciar la colección con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#clear%28%29">clear</a>, obtener el número de elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#size%28%29">size</a> y algunos pocos métodos más.</p>
-<h3 id="mapa">Mapa</h3>
-<p>La interfaz <em>Map</em> es para estructuras de datos que asocian a cada valor una clave por la que se recuperan los elementos tiene métodos para saber si existe una clave con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#containsKey%28java.lang.Object%29">containsKey</a> o un valor con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#containsValue%28java.lang.Object%29">containsValue</a>, obtener un valor por su clave con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#get%28java.lang.Object%29">get</a>, eliminar un valor según su clave con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#remove%28java.lang.Object%29">remove</a> obtener el conjunto de clave con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#keySet%28%29">keySet</a> o los valores con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#values%28%29">values</a>, obtener el número de elementos de la colección con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#size%28%29">size</a>, comprobar si está vacía con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html#isEmpty%28%29">isEmpty</a> también entre algunos otros más. La interfaz <em>Map</em> se basa en el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode%28%29">hashCode</a>, por eso es importante <a href="https://picodotdev.github.io/blog-bitix/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/">implementar correctamente los métodos <em>equals</em> y <em>hashCode</em> correctamente</a> en los objetos, de no hacerlo al usar el framework de colecciones se producirán comportamientos no deseados.</p>
-<h3 id="_set_-y-lista"><em>Set</em> y lista</h3>
-<p>Las colecciones que implementan la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a> no mantienen un orden de iteración y no permite valores duplicados basando la igualdad según el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html#equals%28java.lang.Object%29">equals</a> de <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>.</p>
-<p>La interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a> la implementan estructuras de datos en ls que los elementos están ordenados según el orden de inserción, como están ordenados se puede acceder por ellos mediante un índice, para ello añade dos métodos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#get%28int%29">get</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html#remove%28java.lang.Object%29">remove</a> con un índice por parámetro.</p>
-<h3 id="cola-y-pila">Cola y pila</h3>
-<p><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html">Queue</a> también mantiene un orden en los elementos pero los elementos siguen la regla <abbr title="First Input First Output">FIFO</abbr> donde los elementos se añaden al final de la cola con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html#add%28E%29">add</a> y los elementos se extraen de el inicio de la cola con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html#element%28%29">element</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html#peek%28%29">peek</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html#poll%28%29">poll</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html#remove%28%29">remove</a>.</p>
-<p><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html">Stack</a> es una pila donde se sigue la regla <abbr title="Last Input First Output">LIFO</abbr>, el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html#push%28E%29">push</a> añade un elemento en la parte de arriba de la pila y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html#peek%28%29">peek</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html#pop%28%29">pop</a> obtiene el elemento son extraerlo y extraen elementos de la cima de la pila.</p>
-<h3 id="colecciones-ordenadas">Colecciones ordenadas</h3>
-<p>Las colecciones <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html">TreeSet</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeMap.html">TreeMap</a> mantienen los elementos ordenados según el orden natural definido por el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html#compareTo%28T%29">compareTo</a> de la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html">Comparable</a> guarda la información en una estructura de árbol de forma que las búsquedas son más rápidas que un una lista.</p>
-<h3 id="implementaciones-más-utilizadas">Implementaciones más utilizadas</h3>
-<p>Las implementaciones más utilizadas de estas estas interfaces son <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html">ArrayList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html">HashSet</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html">TreeSet</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayDeque.html">ArrayDeque</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html">Stack</a>.</p>
-<p>Desde que <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">en Java 8 se permiten implementaciones de métodos en las interfaces</a> se proporcionan en algunas de estas varios métodos factoría para crear fácilmente colecciones generalmente con un método de nombre <em>of</em> como en la interfaz <em>List</em>. La clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">Collections</a> tiene métodos para hacer las <a href="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">colecciones inmutables y sincronizadas</a> impidiendo que se les realicen modificaciones o sincronizadas si varios <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html">Thread</a> de forma simultánea.</p>
-<p>La <a href="https://picodotdev.github.io/blog-bitix/2017/12/introduccion-a-la-programacion-funcional-con-java-y-la-libreria-vavr/">librería Vavr</a> proporciona otra API y conjunto de colecciones sin algunos errores de diseño pero que se han de mantener por compatibilidad o con algunas funcionalidades adicionales que la API de colecciones de Java no tiene.</p>
 ]]>
         </content>
         

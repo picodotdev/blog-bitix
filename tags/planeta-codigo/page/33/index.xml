@@ -5,12 +5,65 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-10-28T19:00:00+02:00</updated>
+    <updated>2021-11-04T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/01/convertir-fechas-y-husos-horarios-en-java/</id>
+        <title>Convertir fechas y husos horarios en Java</title>
+        <updated>2015-08-11T23:00:00+01:00</updated>
+        <published>2015-01-31T11:32:35+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/01/convertir-fechas-y-husos-horarios-en-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes"> 
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicación que trabaje con diferentes países y fechas probablemente deberemos tener en cuenta múltiples <a href="https://es.wikipedia.org/wiki/Huso_horario">husos horarios</a> o zonas horarias. Según estos husos horarios, por ejemplo, en el momento que son las 12:00 en Madrid hora local no son las 12:00 en Buenos Aires, si dos ciudades emplean diferente huso horario hay que tenerlo en cuenta para obtener la hora local en cada ciudad.</p>
+<p>Hasta la versión 7 de Java el trabajo con fechas era complicado con las clases proporcionadas <a href="https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/sql/Date.html">Date</a>, una alternativa a la API de Java para el manejo de fechas hasta esta versión era emplear la librería <a href="https://www.joda.org/joda-time/">JodaTime</a>. JodaTime ofrece una API mejor y más completa para el manejo de fechas hasta la versión de Java 7. Con la <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">nueva API para fechas de Java 8</a>, <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">entre otras novedades incluídas</a>, la situación ha mejorado pero hasta que tengamos oportunidad de usar esta versión puede que pase bastante tiempo y sigamos obligados a usar JodaTime si tenemos posibilidad de usar esta librería o usar directamente la API de Java 7 si no podemos.</p>
+<p>Otro aspecto que debemos tener en cuenta en una aplicación es en que huso horario vamos a guardar las fechas en la base de datos, para simplificar lo recomendable es guardar siempre las fechas en el mismo huso horario. Podemos elegir cualquier huso horario quizá la local del lugar donde estamos o una mas genérica como UTC.</p>
+<p>Podemos convertir la fecha de un huso horario a otro ya sea usando JodaTime, Java 7 o Java 8, por ejemplo ¿si en Madrid (España) son las 12:00 que hora sería en ese momento en Buenos Aires (Argentina)? El código que podemos emplear en Java para cambiar de zona horaria y averiguarlo es el siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.timezone</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.GregorianCalendar</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.TimeZone</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.joda.time.DateTime</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.joda.time.DateTimeZone</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="c1">// JodaTime&#10;</span><span class="c1"></span>		<span class="o">{</span>&#10;			<span class="n">DateTime</span> <span class="n">fecha</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DateTime</span><span class="o">(</span><span class="n">2015</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">31</span><span class="o">,</span> <span class="n">12</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">DateTimeZone</span><span class="o">.</span><span class="na">forID</span><span class="o">(</span><span class="s">&#34;Europe/Madrid&#34;</span><span class="o">));</span>&#10;&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;JodaTime&#34;</span><span class="o">);</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Madrid:\t\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">);</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Buenos Aires:\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">.</span><span class="na">withZone</span><span class="o">(</span><span class="n">DateTimeZone</span><span class="o">.</span><span class="na">forID</span><span class="o">(</span><span class="s">&#34;America/Argentina/Buenos_Aires&#34;</span><span class="o">)));</span>&#10;		<span class="o">}</span>&#10;		&#10;		<span class="c1">// Java 8&#10;</span><span class="c1"></span>		<span class="o">{</span>&#10;			<span class="n">ZonedDateTime</span> <span class="n">fecha</span> <span class="o">=</span> <span class="n">ZonedDateTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2015</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">31</span><span class="o">,</span> <span class="n">12</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Europe/Madrid&#34;</span><span class="o">));</span>&#10;&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;\nJava 8&#34;</span><span class="o">);</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Madrid:\t\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">);</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Buenos Aires:\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">.</span><span class="na">withZoneSameInstant</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;America/Argentina/Buenos_Aires&#34;</span><span class="o">)));</span>			&#10;		<span class="o">}</span>&#10;&#10;		<span class="c1">// Java 7&#10;</span><span class="c1"></span>		<span class="o">{</span>&#10;			<span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GregorianCalendar</span><span class="o">();</span>&#10;			<span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">2015</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">31</span><span class="o">,</span> <span class="n">12</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;&#10;			<span class="n">SimpleDateFormat</span> <span class="n">sdfMadrid</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&#34;</span><span class="o">);</span>&#10;			<span class="n">sdfMadrid</span><span class="o">.</span><span class="na">setTimeZone</span><span class="o">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="na">getTimeZone</span><span class="o">(</span><span class="s">&#34;Europe/Madrid&#34;</span><span class="o">));</span>&#10;&#10;			<span class="n">SimpleDateFormat</span> <span class="n">sdfArgentina</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&#34;</span><span class="o">);</span>&#10;			<span class="n">sdfArgentina</span><span class="o">.</span><span class="na">setTimeZone</span><span class="o">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="na">getTimeZone</span><span class="o">(</span><span class="s">&#34;America/Argentina/Buenos_Aires&#34;</span><span class="o">));</span>&#10;&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;\nJava 7&#34;</span><span class="o">);</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Madrid:\t\t %s\n&#34;</span><span class="o">,</span> <span class="n">sdfMadrid</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">()));</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Buenos Aires:\t %s\n&#34;</span><span class="o">,</span> <span class="n">sdfArgentina</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">()));</span>&#10;		<span class="o">}</span>&#10;	<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">JodaTime&#10;Hora Madrid:		 2015-01-31T12:00:00.000+01:00&#10;Hora Buenos Aires:	 2015-01-31T08:00:00.000-03:00&#10;&#10;Java 8&#10;Hora Madrid:		 2015-01-31T12:00+01:00[Europe/Madrid]&#10;Hora Buenos Aires:	 2015-01-31T08:00-03:00[America/Argentina/Buenos_Aires]&#10;&#10;Java 7&#10;Hora Madrid:		 2015-01-31T12:00:00+01:00&#10;Hora Buenos Aires:	 2015-01-31T08:00:00-03:00</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>output.txt</span>
+    </div>
+</div>
+<p>Java 7 requiere unas pocas líneas de código fuente más y en este caso se hace usando un SimpleDateFormat, en el caso de JodaTime y Java 8 el código es bastante similar.</p>
+<p>El huso horario de Madrid es <em>Europe/Madrid</em> y el huso horario de Buenos Aires es <em>America/Argentina/Buenos_Aires</em> en el momento de escribir este artículo Madrid tiene un desplazamiento respecto a UTC de +01:00 y Buenos Aires de -03:00 con lo que entre estas dos ciudades hay una diferencia de cuatro horas en tiempo local. Quizá nos interese conocer el <a href="http://www.timeanddate.com/worldclock/">tiempo local actual en una ciudad</a> y con el <a href="http://www.timeanddate.com/worldclock/converter.html">conversor entre husos horarios</a> podemos comprobar que hemos programado correctamente la conversión en código.</p>
+<p>Finalmente, hay que tener en cuenta que los <a href="https://es.wikipedia.org/wiki/Horario_de_verano">horarios de verano</a> que se establecen en cada país con la intención de ajustar normalmente el horario a las horas de luz y de este modo ahorrar energía. Estos horarios de verano los establece cada país y varían más a menudo de lo que podemos creer, a veces son una cuestión política. En el JDK para actualizar estos horarios de verano debemos actualizar el JDK esperando que <a href="https://www.oracle.com/">Oracle</a> los haya actualizado debidamente o usar la herramienta <a href="https://www.oracle.com/us/technologies/java/tzupdater-readme-136440.html">Timezone Updater Tool</a>. El actualizar el JDK o usar la herramienta Timezone Updater Tool en un servidor para esto puede ser un problema o simplemente es algo que no controlamos como desarrolladores de la aplicación por no estar el servidor bajo nuestro control, esta es otra ventaja de usar JodaTime ya que esta librería como dependencia del proyecto si está bajo nuestro control y podemos ir actualizando la versión de la misma en la que los horarios de verano si están actualizados.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/util/Date.html">Java 7 Date API</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">Java 8 Time API</a></li>
+<li><a href="https://www.joda.org/joda-time/">JodaTime</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/</id>
         <title>Internacionalización (i18n) en JavaScript</title>
@@ -1256,75 +1309,6 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
 <li><a href="https://registry.hub.docker.com/">Docker Hub Registry</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/</id>
-        <title>Introducción y características de Docker</title>
-        <updated>2017-05-02T23:00:00+02:00</updated>
-        <published>2014-10-25T10:52:34+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los contenedores no son una tecnología nueva pero Docker ha reunido las características necesarias para hacerla sencilla y popular en Linux. Suponen un cambio en la infraestructura de las aplicaciones con algunas ventajas sobre la virtualización y la instalación de los servicios directamente en el sistema.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
-</div>
-<p><a href="https://www.docker.com/">Docker</a> es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que <a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">cambian la forma de desarrollar aplicaciones</a>. Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.</p>
-<p>Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.</p>
-<p>La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como <a href="https://openvz.org/">OpenVZ</a> también en Linux, <a href="http://www.freebsd.org/doc/handbook/jails.html">FreeBSD Jails</a> o los <a href="https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html">contenedores de Solaris</a>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquinas virtuales"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_300x200_fit_box_3.png" width="300" height="114" alt="Máquinas virtuales" title="Máquinas virtuales"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Docker"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_300x200_fit_box_3.png" width="300" height="110" alt="Docker" title="Docker"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Docker tiene varias características interesantes. Es ligero ya que no hay virtualización aprovechándose mejor el hardware y únicamente necesitando el sistema de archivos mínimo para que funcionen los servicios. Los contenedores son autosuficientes (aunque pueden depender de otros contenedores, por ejemplo, un wordpress que necesita una base de datos mysql) no necesitando nada más que la imagen del contenedor para que funcionen los servicios que ofrece. Las imágenes de docker son portables entre diferentes plataformas el único requisito es que en el sistema huésped esté disponible docker. Es seguro, pudiendo hacer que los contenedores se comuniquen por un túnel solo disponible para ellos, los contenedores están aislados en el sistema mediante namespaces y control groups.</p>
-<p>Para los desarrolladores tiene las siguientes ventajas:</p>
-<ul>
-<li>Podemos disponer de un entorno de desarrollo (devbox) o servicio en varios minutos/horas en vez de algún día. Esto es así porque la configuración y los servicios necesarios están automatizados en la construcción de las imágenes de los contenedores mediante <a href="https://docs.docker.com/reference/builder/">Dockerfiles</a>.</li>
-<li>Al estar los servicios en contenedores no hace falta instalarlos en la máquina en la que son alojados, de forma que podemos disponer de los servicios y después eliminarlos de forma sencilla sin &ldquo;ensuciar&rdquo; el sistema huésped.</li>
-<li>Nos permite tener versiones más parecidas o iguales a las usadas en producción. Por ejemplo, en Arch Linux nos permite tener un mysql de la distribución <a href="https://www.ubuntu.com/">Ubuntu</a> usando la misma versión.</li>
-</ul>
-<p>El <a href="https://registry.hub.docker.com/">registro de contenedores de Docker</a> es una forma colaborativa de ofrecer imágenes. Hay disponibles multitud de contenedores con los servicios más populares: <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.postgresql.org/">PostgreSQL</a>, <a href="https://redis.io/">Redis</a>, <a href="https://nginx.org/">Nginx</a>, <a href="https://wordpress.org/">WordPress</a>, &hellip;</p>
-<p>Para los administradores de sistemas tiene las siguientes ventajas:</p>
-<ul>
-<li>Pueden proporcionar entornos similares o iguales a los entornos de pruebas, QA o producción independientemente de la distribución que se use.</li>
-<li>Es posible desplegar un contenedor en cualquier infraestructura Linux.</li>
-<li>La creación de los contenedores puede ponerse bajo un sistema de control de versiones.</li>
-</ul>
-<p>En la siguiente presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.</p>
-<div class="media">
-    <script async class="speakerdeck-embed" data-id="c02e6030ee52013165c72a37516b560d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-    <noscript>$TODO</noscript>
-</div>
-<p>Una vez conocidos los aspectos básicos y en que se diferencia docker de la virtualización así como el caso de uso de por ejemplo un devbox o disponer de entornos similares a los de producción de una aplicación, en el siguiente artículo comentaré <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">cómo instalar docker, cómo empezar a usarlo, cómo obtener imágenes de servicios y pararlos y administrarlos</a>. En la siguiente <a href="http://www.nkode.io/2014/08/24/valuable-docker-links.html">lista de enlaces sobre Docker</a> se puede encontrar mucha información reunida dispersa en la red, desde introducciones, opiniones, como usarlo, como empaquetar las aplicaciones, como monitorizar o como usarlo en microservicios.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1633430235&amp;linkId=9d344246cd59cd65a952305379c2556a" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.docker.com/">Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
-<li><a href="https://docs.docker.com/articles/security/">Seguridad Docker</a></li>
-<li><a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">Four ways Docker fundamentally changes application development</a></li>
-<li><a href="https://openwebinars.net/docker-que-es-sus-principales-caracteristicas/">Docker, qué es y sus principales características</a></li>
 </ul>
 </div>
 ]]>
