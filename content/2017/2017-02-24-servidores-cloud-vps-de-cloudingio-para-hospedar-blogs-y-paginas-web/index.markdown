@@ -6,8 +6,8 @@ url: "/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-
 date: 2017-02-28T22:00:00+01:00
 updated: 2017-11-06T20:00:00+01:00
 language: "es"
-index: false
-rss: false
+index: true
+rss: true
 sharing: true
 comments: true
 promoted: true

@@ -6,7 +6,7 @@ url: "/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-dete
 aliases: ["/2021/10/manual-basico-los-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/"]
 date: 2021-10-21T20:00:00+02:00
 language: "es"
-index: false
+index: true
 rss: true
 sharing: true
 comments: true
