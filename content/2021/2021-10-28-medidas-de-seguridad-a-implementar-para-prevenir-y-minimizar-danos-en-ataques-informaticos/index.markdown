@@ -77,6 +77,8 @@ Estos son dos ejemplos de correos electrónicos que envía [Gmail][google-gmail]
 
 Mantener un registro de la actividad es otra variante para dar visibilidad y permitirle al usuario identificar actividad fraudulenta en su cuenta en caso de que haya sido víctima de un ataque o sus credenciales hayan sido robadas. Algunos servicios mantienen un registro con las fechas de los últimos inicios de sesión, la dirección IP de la computadora junto con su geolocalización que permite conocer su ubicación aproximada, el navegador usado, sistema operativo o fecha de últimos cambios de contraseña.
 
+Además de proporcionar al usuario un registro de actividad al mismo tiempo este conviene guardarlo en los registros del propio servicio en caso de necesitar investigar actividad sospechosa.
+
 {{< image
     gallery="true"
     image1="image:gmail-registro-actividad.png" optionsthumb1="300x200" title1="Registro de actividad en una cuenta de Gmail"

@@ -139,6 +139,8 @@ Especialmente hay que tener en cuenta los correos electrónicos con comunicacion
 
 Como norma básica nunca se deben enviar o proporcionar las credenciales de ningún servicio o datos de tarjeta bancaria a alguien que los solicite ni introducir en ninguna otra página. Los delincuentes se aprovechan de que por naturaleza muchas personas son muy confiadas. Ningún empleado de ningún banco va a pedir nunca las credenciales de inicio de sesión en la banca electrónica o tarjeta de crédito de un cliente ni por correo electrónico ni por teléfono. Conviene conocer estos casos que nunca se pueden dar y en caso de que una comunicación o alguien lo intente saber de forma inmediata que es un muy potencial ataque informático.
 
+Este es el manual de Google conocer que es el _phishing_ y que datos se suelen robar demás para [evitar y denunciar los correos electrónicos de _phishing_](https://support.google.com/mail/answer/8253?hl=es) con varios de los consejos comentados en este artículo y con algunos detalles más, por ejemplo, como denunciar una cuenta de Gmail que esté siendo utilizada para realizar ataques de _phishing_. La versión en inglés de la misma página es más detallada, [Avoid and report phishing emails](https://support.google.com/mail/answer/8253?hl=en).
+
 ### Medidas preventivas para evitar problemas de seguridad
 
 Aún conociendo los indicios de potenciales correos electrónicos o direcciones de páginas nadie está a salvo de los ataques por las múltiples formas en las que estos se presentan. En este artículo se comentan los más básicos y habituales pero hay algunos más elaborados en los que incluso alguien experto puede ser víctima perfectamente. Para evitar riesgos conviene tomar unas medidas de prevención básicas.
