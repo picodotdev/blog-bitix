@@ -36,8 +36,9 @@ A veces me cuesta encender la Play y ponerme a jugar pero este al igual o más q
     caption="Pantalla inicial y menú del juego The Last of Us" >}}
 {{< image
     gallery="true"
-    image1="image:the-last-of-us-remasterizado.jpg" optionsthumb1="300x200" title1="Portada"
-    image2="image:naughty-dog.jpg" optionsthumb2="300x200" title2="Portada"
+    image1="image:the-last-of-us-remasterizado.jpg" optionsthumb1="200x150" title1="Portada"
+    image2="image:left-behind.jpg" optionsthumb2="20x150" title2="Portada"
+    image3="image:naughty-dog.jpg" optionsthumb3="200x150" title3="Portada"
     caption="Portada" >}}
 
 {{< game-spoiler >}}
@@ -49,7 +50,7 @@ El juego se desarrolla en un mundo apocalíptico que muestra la historia de prin
 
 Hay una mezcla de parte jugable de exploración y acción con varias secuencias cinemáticas que guían la historia con siempre el mismo desarrollo que no depende de ninguna de las acciones del jugador. Posee varios niveles de dificultad, algunos usuarios prefieren la parte de habilidad y acción de los juegos como diversión y juegan en niveles más difíciles para que el juego sea un reto de mayor habilidad, otros usuarios la parte de los juegos que más les gusta es disfrutar de la historia y prefieren jugar en un nivel fácil o normal. También tiene un modo _plus_ que permite volver a empezar la historia sin perder las mejoras de nivel de los personajes.
 
-El juego para la PS4 es una versión _remasterizada_ del original para la PS3, consta de la historia principal y una precuela Left Behind con una duración de unas 30 horas en tiempo de juego. Es un juego de historia lineal en el que no se puede volver a atrás como ocurre en los juegos de mundo abierto, cada zona es única y nueva por la que solo se transita una sola vez. Los escenarios aunque lineales con un único destino tienen pequeñas zonas que explorar y permiten afrontar las misiones de varias alternativas en el mapa según como se quieran resolver los combates. Al avanzar siempre a nuevos escenarios motiva a explorar más concienzudamente para encontrar todos los objetos y coleccionables. Una vez completada la historia por primera vez el juego muestra el número de coleccionables y artefactos que no se han encontrado para repetir el capítulo si se desea encontrarlos todos.
+El juego para la PS4 es una versión _remasterizada_ del original para la PS3, consta de la historia principal y Left Behind con una precuela al mismo tiempo que _spin-off_ con el desarrollo de un punto de la historia principal, el juego completo tiene una duración de unas 30 horas en tiempo de juego. Es un juego de historia lineal en el que no se puede volver a atrás como ocurre en los juegos de mundo abierto, cada zona es única y nueva por la que solo se transita una sola vez. Los escenarios aunque lineales con un único destino tienen pequeñas zonas que explorar y permiten afrontar las misiones de varias alternativas en el mapa según como se quieran resolver los combates. Al avanzar siempre a nuevos escenarios motiva a explorar más concienzudamente para encontrar todos los objetos y coleccionables. Una vez completada la historia por primera vez el juego muestra el número de coleccionables y artefactos que no se han encontrado para repetir el capítulo si se desea encontrarlos todos.
 
 The Last of Us se cataloga en el género de _survival horror_ en el que los recursos son limitados que obliga a racionarlos. Los combates han de afrontarse con una mezcla de táctica, sigilo y en ocasiones con armas de fuego. No se proporciona ningún mapa pero los escenarios no son muy amplios que simplifica su exploración necesaria para ir obteniendo recursos que se van gastando del equipo y encontrar diferentes artefactos que proporcionan mejoras. Aunque no es un juego de rol tiene varios componentes del género como la fabricación de objetos a partir de recursos, varios tipos de armas y mejora de las mismas así como una pequeña serie de mejoras en la ficha del personaje que dan cierta libertad al jugador de elegir. Aparte de acción y exploración en algunos momentos hay pequeñas mecánicas de puzzle para superar obstáculos.
 
