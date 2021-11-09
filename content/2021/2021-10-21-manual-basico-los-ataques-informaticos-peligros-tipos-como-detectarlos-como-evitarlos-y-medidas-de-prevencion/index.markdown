@@ -63,7 +63,12 @@ Los dispositivos móviles ya sean teléfonos móviles inteligentes o tabletas co
 
 #### Ejemplo de ataque mediante suplantación de identidad o _phishing_
 
-Este es un ejemplo de mensaje SMS con una alarmante supuesta desactivación de la cuenta que solicita una verificación por motivos de seguridad. En realidad el enlace lleva a una página de _phishing_ que trata de suplantar la identidad de la página de inicio de sesión de la banca _online_ del banco [Santander](https://www.bancosantander.es) que en caso de que el usuario introduzca los datos de inicio de sesión será una víctima si este banco no implementa medidas adicionales de seguridad.
+Este es un ejemplo de mensaje SMS con una alarmante supuesta desactivación de la cuenta que solicita una verificación por motivos de seguridad. En realidad el enlace lleva a una página de _phishing_ que trata de suplantar la identidad de la página de inicio de sesión de la banca _online_ del banco [Santander](https://www.bancosantander.es) que en caso de que el usuario introduzca los datos de inicio de sesión será una víctima si este banco no implementa medidas adicionales de seguridad. Y aún implementando medidas adicionales que simplemente consisten en enviar un mensaje SMS al móvil asociado a la cuenta _online_, los delincuentes se las pueden saltar sin dificultad solicitando un duplicado de la SIM de la víctima y usando _SIM swapping_.
+
+Una combinación de _phishing_ para obtener las credenciales de acceso a la banca _online_, conocido el número de la víctima junto con un _SIM swapping_ y las medidas de seguridad de algunos bancos resultan insuficientes para evitar operaciones fraudulentas.
+
+* [Así se gestó un «atraco virtual» de 240.000 euros a través de Bizum](https://www.elconfidencial.com/espana/andalucia/2021-11-09/ciberdelincuencia-atraco-virtual-bizum_3319443/)
+* [Desarticulada una banda de estafa con «SIM swapping» que operaba entre A Coruña y Brasil](https://www.elconfidencial.com/espana/galicia/2021-04-21/desarticulada-una-banda-de-estafa-con-sim-swapping-que-operaba-entre-a-coruna-y-brasil_3043704/)
  
 El enlace del mensaje SMS usa un acortador de direcciones para ocultar la dirección destino a la que se dirige. Este tipo de ataques son más difíciles de detectar en los móviles por no poder examinar el destino del enlace y por la limitación de las pantallas que son más pequeñas y no permiten ver la dirección completa una vez cargadas en el navegador. Este tipo de ataques también son posibles en ordenadores con enlaces que llegan a través de correo electrónico.
  
