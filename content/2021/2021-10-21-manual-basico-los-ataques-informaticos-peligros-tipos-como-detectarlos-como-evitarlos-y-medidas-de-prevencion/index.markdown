@@ -166,7 +166,9 @@ Los servicios de grandes compañías e importantes ofrecen configurar [segundo f
 
 #### Utilizar tarjetas de crédito virtuales
 
-Seguramente todos los bancos ofrezcan la posibilidad de crear tarjetas de crédito virtuales. En vez de introducir los datos de la tarjeta física, las tarjetas virtuales permiten crear una tarjeta virtual para realizar el pago de una compra en internet. Al crear la tarjeta virtual los datos asociados a la misma son los mismos de una tarjeta física real como los 16 dígitos del número de tarjeta, fecha de caducidad y código de seguridad. Adicionalmente al crear la tarjeta virtual es posible especificar el importe máximo permitido a cargar en la tarjeta que será un poco superior al importe de la compra en la que se pretenda usar. También es posible especificar los meses deseados de su caducidad pudiendo elegir entre ser de tan solo tres meses o un año.
+Seguramente todos los bancos ofrezcan la posibilidad de crear tarjetas de crédito virtuales. En vez de introducir los datos de la tarjeta física, una tarjeta virtual es una tarjeta que actua como una tarjeta real pero que existe físicamente y se crea bajo lo demanda del usuario en unos pocos segundos, permiten realizar el pago de una compra en internet con mayor seguridad que las tarjetas físicas. Al crear la tarjeta virtual los datos asociados a la misma son los mismos de una tarjeta física real como los 16 dígitos del número de tarjeta, fecha de caducidad y código de seguridad.
+
+Adicionalmente al crear la tarjeta virtual es posible especificar el importe máximo permitido a cargar en la tarjeta que será un poco superior al importe de la compra en la que se pretenda usar. También es posible especificar los meses deseados de su caducidad pudiendo elegir entre ser de tan solo tres meses o un año.
 
 Al no usar los datos de la tarjeta real, establecer un límite máximo en el importe que se puede cargar en la tarjeta virtual y establecer una fecha de caducidad menor aumenta la seguridad en una compra por internet.
 
