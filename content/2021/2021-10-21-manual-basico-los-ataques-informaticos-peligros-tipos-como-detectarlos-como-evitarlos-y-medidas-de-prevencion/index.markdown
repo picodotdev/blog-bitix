@@ -164,6 +164,12 @@ Ya, pero si tengo que tener unas credenciales y contraseña para cada servicio..
 
 Los servicios de grandes compañías e importantes ofrecen configurar [segundo factor de autenticación como medida adicional a las credenciales][blogbitix-530] de usuario y contraseña. El segundo factor de autenticación además de la contraseña requiere un código temporal generado con un dispositivo que tiene el usuario como un _smartphone_, aunque la contraseña haya sido robada el código temporal mantiene protegida la cuenta. Conviene activar el segundo factor de autenticación en aquellos servicios importantes que lo ofrezcan como Google, Amazon y PayPal. El programa KeePassXC ofrece soporte para actuar como generador de códigos temporales del segundo factor de autenticación.
 
+#### Utilizar tarjetas de crédito virtuales
+
+Seguramente todos los bancos ofrezcan la posibilidad de crear tarjetas de crédito virtuales. En vez de introducir los datos de la tarjeta física, las tarjetas virtuales permiten crear una tarjeta virtual para realizar el pago de una compra en internet. Al crear la tarjeta virtual los datos asociados a la misma son los mismos de una tarjeta física real como los 16 dígitos del número de tarjeta, fecha de caducidad y código de seguridad. Adicionalmente al crear la tarjeta virtual es posible especificar el importe máximo permitido a cargar en la tarjeta que será un poco superior al importe de la compra en la que se pretenda usar. También es posible especificar los meses deseados de su caducidad pudiendo elegir entre ser de tan solo tres meses o un año.
+
+Al no usar los datos de la tarjeta real, establecer un límite máximo en el importe que se puede cargar en la tarjeta virtual y establecer una fecha de caducidad menor aumenta la seguridad en una compra por internet.
+
 #### Hacer copias de seguridad
 
 No solo por los ataques de seguridad sino por corrupción de datos y fallos de hardware es necesario hacer copias de seguridad de forma periódica. Los datos son más importantes que el propio hardware donde se almacena, el hardware es reemplazable en caso de fallo pero los datos no son reemplazables en caso de pérdida por cualquier motivo. El programa [FreeFileSync permite hacer copias de seguridad][blogbitix-144] de forma sencilla.
