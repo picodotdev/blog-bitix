@@ -1,8 +1,9 @@
 ---
 pid: 608
 type: "post"
-title: "Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever"
-url: "/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/"
+title: "Ejemplo de un potencial ataque informático de phishing, El caso de El Gatico Biever"
+url: "/2021/11/ejemplo-de-un-potencial-ataque-informatico-de-phishing-el-caso-de-el-gatico-biever/"
+aliases: "/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/"
 date: 2021-11-11T19:00:00+01:00
 language: "es"
 index: true

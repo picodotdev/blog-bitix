@@ -76,7 +76,7 @@ En este ejemplo la página que suplanta la identidad de la banca online del banc
 
 Este es el caso de un ejemplo potencialmente de un ataque de _phishing_ que he recibido.
 
-* [Ejemplo de un potencial ataque de _phishing_, El caso de El Gatico Biever][blogbitix-608]
+* [Ejemplo de un potencial ataque informático de _phishing_, El caso de El Gatico Biever][blogbitix-608]
 
 {{< image
     gallery="true"
