@@ -151,6 +151,8 @@ Nadie está exento de ataques, ni alguien como yo que tiene conocimientos en inf
 
 Por ello conviene tomar una serie de medidas como establecer límites transferencias y tarjeta de crédito más bajos que los que establecen por defecto los bancos que suelen ser muy generosos, activar el segundo factor de autenticación para que aunque roben las credenciales de una cuenta evitar el ataque o permitirlo únicamente durante un breve periodo de tiempo si la página de _phishing_ fuera tan avanzada como para estar preparada para obtener también el segundo factor de autenticación.
 
+En una de estas situaciones de ataque informático conviene que el atacante sepa lo menos posible de uno, por ello conviene [proteger tu privacidad y minimizar la información tuya se puede encontrar con una búsqueda en internet][blogbitix-607].
+
 No hay otra opción de que quede impune, si es un delincuente y parece serlo por los varios indicios va a continuar haciendo su actividad y algún usuario más incauto sea su víctima, está claro que si realizan esta actividad es porque obtienen algún beneficio. La conclusión en cualquier caso es, se bueno pero ten un poco de joputismo para conocer a los malos, hay una buena cantidad de joputas malos por ahí.
 
 {{% /post %}}
