@@ -74,6 +74,10 @@ El enlace del mensaje SMS usa un acortador de direcciones para ocultar la direcc
  
 En este ejemplo la página que suplanta la identidad de la banca online del banco tiene un aspecto que perfectamente podría considerarse válido si no se compara con la página real. Utiliza los colores corporativos del banco, el logotipo oficial y un aspecto bastante similar al real. La diferencia para darse cuenta de ser una página de suplantación de identidad está en la dirección de la página que muestra el navegador en la barra de direcciones con un dominio que no se corresponde con el oficial del banco y por el detalle del marcador en la parte inferior del _Powered by_.
 
+Este es el caso de un ejemplo potencialmente de un ataque de _phishing_ que he recibido.
+
+* [Ejemplo de un potencial ataque de _phishing_, El caso de El Gatico Biever][blogbitix-608]
+
 {{< image
     gallery="true"
     image1="image:phishing-sms.png" optionsthumb1="300x250" title1="Mensaje SMS de alarma y urgencia con un enlace a una página de phishing"

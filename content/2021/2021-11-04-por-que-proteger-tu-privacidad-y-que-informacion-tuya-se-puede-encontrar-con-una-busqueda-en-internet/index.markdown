@@ -3,7 +3,7 @@ pid: 607
 type: "post"
 title: "Por qué proteger tu privacidad y qué información tuya se puede encontrar con una búsqueda en internet"
 url: "/2021/11/por-que-proteger-tu-privacidad-y-que-informacion-tuya-se-puede-encontrar-con-una-busqueda-en-internet/"
-date: 2021-11-04T19:00:00+02:00
+date: 2021-11-04T19:00:00+01:00
 language: "es"
 index: true
 rss: true
@@ -28,7 +28,7 @@ Las redes sociales como [Facebook][facebook], [Instagram][instagram] o [Twitter]
 
 En los términos y condiciones que nadie lee al crear una cuenta en un servicio se detallan las autorizaciones que se otorga a la empresa por el hecho de usar su servicio, en esos términos con una jerga legal dificil de entender y larga para agotar en su lectura se incluyen apartados que suele detallar que el propietario del servicio procesa y compartirá los datos con terceras partes. A partir de compartir estos datos luego uno no sabe porque le llegan llamadas comerciales telefónicas cuando no se ha tenido relación ninguna con esa empresa de la que nos llama el comercial o mensajes SMS al teléfono móvil.
 
-Algunos ataques informáticos son realizados de forma masiva pero otros son llevados a cabo de forma individualizada más laboriosa pero menos , que alguien que está intentando perpetrar un ataque informático sepa cosas de la víctima le da mayor conocimiento para realizar un ataque de ingeniería social.
+Algunos ataques informáticos son realizados de forma masiva pero otros son llevados a cabo de forma individualizada más laboriosa pero menos, que alguien que está intentando perpetrar un ataque informático sepa cosas de la víctima le da mayor conocimiento para realizar un ataque de ingeniería social.
 
 * [Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención][blogbitix-605]
 
