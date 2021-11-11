@@ -1,0 +1,614 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="A estas alturas la mayoría de la gente seguramente ya haya recibido a través de un medio u otro algún intento de tipo de ataque informático, ya sea a través del correo electrónico, mensajes SMS con enlaces o a través de aplicaciones de mensajería instantánea. Los ataques informáticos cada vez van a ir a más y serán más peligrosos a medida que más operaciones se realicen a través de internet, surgirán medidas adicionales de seguridad para evitarlos como el segundo factor de autenticación pero también surgirán nuevas formas de ataque, donde el componente humano seguramente siga siendo la parte más débil del sistema de seguridad. Este artículo es el relato de la historia de un potencial ataque informático de phishing. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/" hreflang="es" title="Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/index-amp.html" hreflang="es" title="Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="A estas alturas la mayoría de la gente seguramente ya haya recibido a través de un medio u otro algún intento de tipo de ataque informático, ya sea a través del correo electrónico, mensajes SMS con enlaces o a través de aplicaciones de mensajería instantánea. Los ataques informáticos cada vez van a ir a más y serán más peligrosos a medida que más operaciones se realicen a través de internet, surgirán medidas adicionales de seguridad para evitarlos como el segundo factor de autenticación pero también surgirán nuevas formas de ataque, donde el componente humano seguramente siga siendo la parte más débil del sistema de seguridad. Este artículo es el relato de la historia de un potencial ataque informático de phishing. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever">
+<meta name="twitter:description" content="A estas alturas la mayoría de la gente seguramente ya haya recibido a través de un medio u otro algún intento de tipo de ataque informático, ya sea a través del correo electrónico, mensajes SMS con enlaces o a través de aplicaciones de mensajería instantánea. Los ataques informáticos cada vez van a ir a más y serán más peligrosos a medida que más operaciones se realicen a través de internet, surgirán medidas adicionales de seguridad para evitarlos como el segundo factor de autenticación pero también surgirán nuevas formas de ataque, donde el componente humano seguramente siga siendo la parte más débil del sistema de seguridad. Este artículo es el relato de la historia de un potencial ataque informático de phishing. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/"
+    },
+    "headline": "Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-11-11T19:00:00+01:00",
+    "dateModified": "2021-11-11T19:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "3783",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "A estas alturas la mayoría de la gente seguramente ya haya recibido a través de un medio u otro algún intento de tipo de ataque informático, ya sea a través del correo electrónico, mensajes SMS con enlaces o a través de aplicaciones de mensajería instantánea. Los ataques informáticos cada vez van a ir a más y serán más peligrosos a medida que más operaciones se realicen a través de internet, surgirán medidas adicionales de seguridad para evitarlos como el segundo factor de autenticación pero también surgirán nuevas formas de ataque, donde el componente humano seguramente siga siendo la parte más débil del sistema de seguridad. Este artículo es el relato de la historia de un potencial ataque informático de phishing."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_1040x0_resize_q90_box.jpg" width="1040" height="300" alt="Cabecera" title="Cabecera" class="" loading="false">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Ejemplo de un potencial ataque de phishing, El caso de El Gatico Biever</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>11/11/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/seguridad/">seguridad</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/11/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">A estas alturas la mayoría de la gente seguramente ya haya recibido a través de un medio u otro algún intento de tipo de ataque informático, ya sea a través del correo electrónico, mensajes SMS con enlaces o a través de aplicaciones de mensajería instantánea. Los ataques informáticos cada vez van a ir a más y serán más peligrosos a medida que más operaciones se realicen a través de internet, surgirán medidas adicionales de seguridad para evitarlos como el segundo factor de autenticación pero también surgirán nuevas formas de ataque, donde el componente humano seguramente siga siendo la parte más débil del sistema de seguridad. Este artículo es el relato de la historia de un potencial ataque informático de <em>phishing</em>.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Los ataques informáticos ya no se producen solo por descargar de una una fuente no confiable y ejecutar un programa en el ordenador, ni siquiera estos son los más peligrosos. Un virus informático requiere conocimientos avanzados de programación, tiempo para desarrollar un programa con la función maliciosa que no sea bloqueada por las medidas de seguridad del sistema operativo y distribuirla de alguna forma entre las potenciales víctimas para que se lo descarguen, los virus informáticos son una forma muy elaborada de realizar un ataque informático.</p>
+<p>Aparte de los virus hay otras formas de ataque informático mucho más sencillas de desarrollar y de distribuir. Una ataque de <em>phishing</em> simplemente requiere desarrollar una página en la que la víctima introduzca los datos que se deseen robar que van desde información personal hasta credenciales de inicio de sesión en la banca online, servicios como <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> o <a href="https://www.paypal.com/">PayPal</a> o los datos de la tarjeta de crédito con los que robar el límite de saldo diariamente que la tarjeta permita hasta que el usuario o el banco la bloqueen.</p>
+<p>Una vez está desarrollada la página de <em>phising</em> el siguiente paso es hacer que las víctimas accedan a ella, tan simple como enviar un enlace por algún medio como un mensaje de correo electrónico, mensaje SMS o una aplicación de mensajería instantánea a través del móvil.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-caso-de-el-gatico-biever">El caso de El Gatico Biever</a>
+      <ul>
+        <li><a href="#el-contacto">El contacto</a></li>
+        <li><a href="#la-negociación-y-la-propuesta">La negociación y la propuesta</a></li>
+        <li><a href="#las-sospechas">Las sospechas</a></li>
+        <li><a href="#la-trampa">La trampa</a></li>
+        <li><a href="#la-exploración">La exploración</a></li>
+        <li><a href="#el-final-tú-que-crees">El final, ¿tú que crees?</a></li>
+      </ul>
+    </li>
+    <li><a href="#cómo-denunciar-el-intento-o-ataque-informático">Cómo denunciar el intento o ataque informático</a></li>
+    <li><a href="#minimizar-daños-de-posibles-ataques-informáticos">Minimizar daños de posibles ataques informáticos</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="el-caso-de-el-gatico-biever">El caso de El Gatico Biever</h3>
+<p>En este artículo comento un potencial caso como ejemplo y una vez leído me puedes comentar si crees que este era un ataque informático. En el que denominaré El caso del Gatico Biever está basado en una conversación real que mantuve por correo electrónico a la que he cambiado el nombre real del contacto y comentado los hechos relevantes del contenido de los mensajes.</p>
+<p>Sin más, os dejo con la narración de El caso del Gatico Biever.</p>
+<h4 id="el-contacto">El contacto</h4>
+<p>Tengo un blog con ya casi una década de vida y más de 600 artículos publicados algunos posicionados en las primeras posiciones de las páginas de resultados por algunas combinaciones de palabras clave. El blog tiene casi 2.5K páginas vistas diariamente y unas 65K páginas mensuales.</p>
+<p>Por algún motivo que desconozco pero supongo por el buen posicionamiento de algunas páginas y la autoridad del dominio, me sorprende la buena cantidad de comerciales que me contactan solicitando publicar algún artículo a cambio de una pequeña compensación económica. Quizá no todas las semanas recibo una oferta para publicar un artículo pero si cada uno o dos meses, algunas llegan a buen fin otras simplemente se quedan en el conocimiento de las condiciones.</p>
+<p>El interés de estos comerciales al publicar el artículo es incluir algún enlace en los artículos hacia alguna página o servicio por motivos de SEO, a veces el interés es simplemente insertar un enlace en un artículo ya posicionado. Dar a conocer una página web o servicio desde cero o hacerlo crecer es difícil y requiere tiempo, para reducir este tiempo están dispuestos a pagar a sitios web existentes.</p>
+<p>Uno de estos meses recibí un correo electrónico como remitente el Gatico Biever utilizando una dirección de Gmail precisamente proponiendome una oferta de colaboración para el blog con la intención de publicar hasta seis artículos al mes durante varios meses. Una oferta extraordinaria fuera de lo normal que suele ser exclusivamente de un artículo. El correo electrónico estaba redactado en inglés pero haciendo referencia al dominio de mi blog en el asunto del mensaje y diciendo que era un lector asiduo de mi blog.</p>
+<p>El primer paso en estos contactos comerciales suele ser la negociación de las condiciones.</p>
+<h4 id="la-negociación-y-la-propuesta">La negociación y la propuesta</h4>
+<p>Una oferta de seis artículos al mes y durante varios meses parece una oferta muy atractiva. Los primeros puntos a conocer es en qué consiste el acuerdo si en la inserción de enlaces, publicar un artículo ya redactado o que escriba yo un artículo original en función de lo cual se determina el precio ya que cada una me requiere menos  o más tiempo.</p>
+<p>Una vez conocida en qué consiste la colaboración está en la aceptación de las condiciones como que la temática de los artículos esté relacionado la programación, tecnología o software libre así como vetar algunas temáticas de artículos como apuestas, juegos de azar y otras temáticas controvertidas. Otras condiciones es que en el caso de los artículos deben ser únicos para evitar penalizaciones por contenido de publicar y ser detectado como un sitio de contenido no deseado. Comprar artículos y enlaces es una actividad que en caso de que Google la detecte la penaliza ya que es una forma de alternar y algoritmo de posicionamiento de una forma no permitida por Google.</p>
+<p>Seis artículos patrocinados al mes son muchos artículos, casi más de los que escribo como contenido del blog. Para limitar el contenido patrocinado le propongo que solo acepto uno o dos artículos al mes.</p>
+<p>Otro asunto importante de la colaboración es llegar a un acuerdo en el tema económico, poner un precio por publicar el artículo. Yo suelo ser claro y aunque puedo dejar ver que oferta me hacen suelo ir directo al tema para acabar negociar este punto sin mucha demora. Casi siempre empiezo con mi propuesta de oferta económica.</p>
+<p>Hecha mi primera oferta económica al Gatito Biever este me responde con que esta le parece demasiado alta diciendo que su artículos son de calidad y la colaboración serán varios, no me indica en qué precio a él le parece bien el acuerdo económico sino que me deja en una pregunta abierta a que le haga otra oferta. Le hago una segunda oferta económica, que también rechaza y me propone su oferta económica que si fuera por un único artículo probablemente no aceptaría.</p>
+<p>Como la colaboración iba a ser de varios artículos acepto su oferta con la condición de que los dos primeros fueran a un precio intermedio entre lo que ambos proponíamos, en los siguientes artículos al precio de lo que él proponía.</p>
+<h4 id="las-sospechas">Las sospechas</h4>
+<p>Acordados los términos de la colaboración y el precio comienza la colaboración que en este caso es simplemente que el Gatico Biever me proporcione el contenido del artículo, yo lo publique lo cual no suelo tardar más de uno o dos días y procedamos al pago en los términos acordados.</p>
+<p>Pasa casi una semana sin que sepa nada del Gatico Biever con lo que me pongo en contacto con él para ver qué hay del asunto. Me responde al cabo de unos días diciendo que está trabajando en ello y me pide que elimine la página el publicidad en la que detallo que mi blog ofrece la posibilidad de este tipo de colaboraciones, en el correo me incluye la dirección de la página que quiere que elimine con el texto el de la dirección de la página pero el enlace tiene una dirección de un dominio que desconozco, le hago un <em>curl</em> a esa URL y parece simplemente una redirección a la página de mi blog pero a través de un dominio extraño.</p>
+<ul>
+<li><a href="https://www.google.es/" rel="nofollow">Google</a></li>
+<li><a href="https://duckduckgo.com/" rel="nofollow">Google</a></li>
+</ul>
+<p>El motivo para solicitar la eliminación de esta página es para evitar penalizaciones por SEO ya que este tipo de colaboraciones no es algo aceptado por Google y seguramente lo penalice en casos extremos. La página de publicidad la tengo desde hace mucho tiempo y no he notado estar penalizado por Google.</p>
+<p>Aquí es donde empiezo a sospechar ya que  en sus correos utiliza el típico lenguaje  de acción rápida como <em>hazlo lo más pronto posible</em>, <em>respondeme hoy</em> cuando él tarda en contestar varios días. Le insisto en que esa página de publicidad no es ningún problema y que me proporcione el contenido del artículo ya poniéndome un poco borde saludándose con un <em>Hola Gatico</em> y para finalizar su misma urgencia con un <em>ASAP</em>.</p>
+<p>Él tarda nuevamente en responder un par de días. Me pongo de nuevo en contacto con él siendo nuevamente borde con que su actitud no es nada profesional. Si alguien me contesta en los mismos términos en los que yo lo hago inmediatamente termino con la colaboración, pero él no, no cae en la provocación me dice que él es un experto en SEO y que eliminar esa página es un requisito indispensable para su cliente.</p>
+<p>Me doy cuenta que en realidad se poco de el Gatico Biever, me escribe en inglés y el dominio oculto del enlace de redirección parece de UK. Le pregunto que si es de UK y que tal van las cosas por UK con la situación que tienen del Brexit con un tono burlesco porque en un primer momento pienso que es alguien gastando una broma. Nuevamente si alguien se dirige a mi en los mismos términos que yo lo hago yo terminaría la colaboración. Pero él no, él responde con un «Sí, sí, lo has entendido bien» a lo de que él es de UK y que hablaremos más adelante cuando tenga un poco más de tiempo.</p>
+<p>Otro correo me responde con un «Seguro querido», un ¿querido?, me dice que nos centremos en los negocios y que su cliente «Indulgente» está esperando a que elimine la página de publicidad.</p>
+<p>Me doy cuenta de que en realidad se poco de el Gatico Biever, su «sí, sí» parece irónico y condescendiente y el «indulgente» parece muy&hellip; no se como definirlo ¿sacro? ¿de practicante, creyente, fiel religioso?, hacer colaboraciones profesionales con una cuenta que como nombre tiene Gatico Biever con una foto de catálogo que se encuentra y he encontrado fácilmente en una búsqueda por imágenes no parece profesional.</p>
+<p>Llega la trampa, mi pequeña trampa.</p>
+<h4 id="la-trampa">La trampa</h4>
+<p>No estoy dispuesto a eliminar esa página de publicidad y ya estoy sospechando de que este sea un ataque informático aunque aún no se qué forma tendrá el ataque.</p>
+<p>Me doy cuenta de que en realidad se poco del Gatico Biever, no es una cuenta profesional ni pone de que empresa de consultoría SEO pertenece, simplemente se identifica con un equipo SEO como organización en la despedida del mensaje.</p>
+<p>Preparo un enlace a una página que tiene un enlace similar a la página de publicidad pero algo modificada que si uno no se fija en detalle pasa desapercibido que las páginas son diferentes. Si la página de publicidad es <em>/publicidad</em> le preparo una página <em>/publiciidad</em> que simula un error de página no encontrada como desea el Gatico Biever que haga.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/pages/advertising/" rel="nofollow">Publicidad</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/pages/advertiising/" rel="nofollow">Publicidad</a></li>
+</ul>
+<p>Le envío en un nuevo correo electrónico el enlace de la página de publicidad trucado esperando que él haga clic en él. Esta es la misma técnica para realizar un ataque de <em>phishing</em> en vez de utilizando otro dominio añadiendo simplemente un caracter de una nueva URL parecida a la original, como el dominio y sus URLs lo controlo yo puedo hacerlo y lo hago.</p>
+<p>¿Caerá en la trampa? Necesita hacer clic en el enlace que le he enviado yo, si entra directamente a la página para comprobar si he eliminado la página de publicidad no es de mucha utilidad.</p>
+<p>Pues Gatico Biever cae en la trampa hace clic en enlace directamente desde el correo electrónico y como se que ese enlace solo lo tiene él sé que ha sido él, ahora analizo los datos que me proporciona <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a> para conocer algo más de el Gatico Biever.</p>
+<h4 id="la-exploración">La exploración</h4>
+<p>Los datos de Analytics me permiten ver unos datos básicos anónimos pero algo más de quien es el Gatico Biever como su país de origen, que navegador utiliza y que sistema operativo utiliza. Veo que su país de origen es Pakistan, su sistema operativo es Windows 10 y el navegador web que utiliza es <a href="https://www.google.es/chrome/browser/desktop/">Google Chrome</a> actualizado a la última versión.</p>
+<p>El país de origen me pone en alerta ya que es un país de oriente medio en una zona posiblemente en conflictos armados. Seguramente no tenga muchos visitantes de Pakistan asi que creo un segmento con los visitantes de este país y miro qué páginas ha visitado. No ha visitado muchas páginas pero veo que se ha parado alguna algo más de tiempo en la que hablaba de PayPal, la hemeroteca donde también hablaba de dinero y otra donde mencionaba la aplicación autenticador de Google. Otro dato que veo es que además de visitar la página preparada por mi ha visitado la página de publicidad original después de proporcionarle el enlace, asi que sé que sabe que en realidad no he eliminado la página de publicidad.</p>
+<p>El primer correo ya me debería haber hecho sospechar, por el mismo nombre del remitente, parecer una plantilla, decir que me visita regularmente alguien que habla en inglés. Ahora con estos datos tengo aún más sospechas. Aún no sé de qué forma será el ataque ni qué interés tiene esta yinkana de eliminar la página de publicidad en todo ello, igual es un filtro para discriminar a usuarios fáciles de los difíciles o de adoctrinar a la víctima para que haga lo que se le dice.</p>
+<p>El Gatico Biever ignora que en realidad no he eliminado la página de publicidad y me envía el contenido del artículo. Analizó el contenido del artículo que está en buen español, no parece un artículo que esté obteniendo de internet ni esté ya publicado en otro sitio web. Me dice que lo publique cuanto antes porque tiene varios artículos más.</p>
+<p>Le digo que mientras lo publico me conteste de qué forma me va a pagar con una pregunta abierta. Me contesta que me paga con PayPal pero no cuál será el procedimiento, así que le insisto con cual es el procedimiento que suele utilizar para hacer el pago. Me responde con un «querido» y me dice con un tono imperativo en lo que yo haré que su procedimiento es que yo le proporcione mi dirección de PayPal en la que hacerme el pago y que me envía un enlace para que compruebe que me ha hecho el pago.</p>
+<p>Vale ahora tengo claro cual es su forma de ataque si es que es un ataque, un ataque de <em>phishing</em> sobre la página de PayPal. Pobre Gatico Biever que si este es su ataque no sabe que tengo activado el segundo factor de autenticación, no es infalible pero si no lo impide al menos limita el tiempo en el que es posible el ataque, concretamente tienen unos 30 segundos en caso de que sea víctima si su ataque de <em>phishing</em> soporta el segundo factor de autenticación que no creo.</p>
+<p>Le pido más información con la excusa de que por razones legales le tengo que emitir una factura para pagar impuestos, con lo que le pido cierta información como nombre y apellidos, dirección y nombre de la compañía.</p>
+<p>Parece que se ha cansado de esta pequeña yinkana que le estoy haciendo y me propone sin yo haber publicado el artículo todavía hacerme el pago por adelantado con lo que me pide mi dirección de correo asociada a PayPal y nuevamente me repite que me proporcionará un enlace que podré usar para comprobar el pago.</p>
+<p>Aquí ya tengo la intención de dejarlo pasar, podría ir más lejos para que me envíe el enlace de la página de <em>phishing</em>, podría inventarme cualquier dirección de correo electrónico como por ejemplo <em>felipin.demaritxalar.yvorvon[at]gmail.com</em> a ver si es capaz de hacer el pago y enviarme el enlace para que lo compruebe que sospecho es de <em>phishing</em>. ¿O será ese nombre demasiado evidente que se de cuenta? Posiblemente para alguien de Pakistan no sea tan evidente. Si le doy una dirección de PayPal, supongo que me insistirá en que me ha hecho el pago y que lo compruebe.</p>
+<p>Como ve que ya no respondo me envía un nuevo correo al cabo de una semana con unos datos para atender a mi petición. Me dice que es de Reino Unido y me da como nombre real Ethan Biever. Busco por el nombre que me da y las primeras referencias son los nombres de dos personajes de un película.</p>
+<p>Llegar hasta el punto de que me de el enlace de <em>phishing</em> tampoco tiene ninguna utilidad, no soy policía, muy posiblemente ni ellos podrían hacer algo aunque fuese víctima del ataque y aunque le denuncie ante Google es seguro que será capaz de crearse una nueva dirección de correo electrónico con la que seguir haciendo ataques.</p>
+<h4 id="el-final-tú-que-crees">El final, ¿tú que crees?</h4>
+<p>Bueno, la mayoría sois lectores, otras personas equivalentes a mi serán <em>youtubers</em>, <em>podcasters</em> o <em>streamers</em> pero todavía quedamos algunos <em>bloggers</em> de la vieja escuela, en cualquier caso este es solo un ejemplo, podría llegar en realidad a cualquiera persona ni siquiera estar englobada en ningún colectivo y podría ser de otra forma con alguna excusa que un delincuente tenga su correo electrónico y una forma de contactarte por el ordenador o con teléfono inteligente.</p>
+<p>Los indicios que parecen indicar ser un ataque informático son el nombre de la cuenta, la forma de dirigirse a mí con un «querido», una oferta de colaboración muy atractiva respecto de lo que suele ser lo habitualmente, algunas respuestas que me da condescendientes, ignora mi mala educación y falta de respeto, ignora que no he hecho lo que me ha pedido de eliminar la página de publicidad, su país de origen, utilizar lenguaje imperativo, pedir inmediatez y se ofrece a hacerme el pago por adelantado sin yo haber publicado el artículo.</p>
+<p>El perfil de la persona que me hago del tipo de Gatico Biever es el siguiente. Aceptan tus insultos y faltas de respeto mientras te están esperando a que cometas un error, tus insultos los soportan hasta que cometes el error, disfrutan de tu desorientación como cuando le pregunto si es de UK y me responde con un «si, si». Es como si buscarán duelos o peleas, pero no son duelos cara a cara son duelos de engaño, en los que dan la imagen de ir todo bien, pierde es el que cae en la trampa. Se burlan a su modo, de forma velada con lo de «Indulgente», igual que yo con lo de «froilin» o su propio nombre sacado de una película.</p>
+<p>No se que criterio ha elegido para realizar un ataque, no sé si entenderá algo de español y habrá investigado algo sobre la víctima en este caso yo con lo que he publicado en en blog y mi cuenta de <a href="https://twitter.com/">Twitter</a>, posiblemente haya recopilado un conjunto de direcciones de correo electrónico públicas y enviado un mensaje a ver cuantos responden. Porque elegir como víctima de un ataque informático a un usuario que es informático y que usa GNU/Linux no parece la víctima ideal, es como intentar ir a robar la casa de un cerrajero. Qué lo puede intentar pero ambos sabemos mucho más de las técnicas que utilizan los delincuentes para cometer sus delitos y seguramente las medidas de seguridad que tenemos son mucho mejores. El cerrajero utilizando una puerta acorazada, una cerradura que evite las técnicas conocidas de apertura sin forzado, técnicas para detectar si una casa está habitada o un escudo en la cerradura que evite ciertas técnicas de forzado. Yo por mi parte como informático es posible que conozco y conozco el segundo factor de autenticación y tengo las nociones básicas de ataques informáticos.</p>
+<p>Parece un ataque de <em>phishing</em> ¿tu que crees? Porque claro no voy a seguir hasta el final para comprobarlo. Al menos le he hecho perder un poco de tiempo, he marcado sus correos como no deseados o <em>spam</em> y le he denunciado en Gmail como ataque de <em>phishing</em> que no sé si servirá de algo o será suficiente para que Google tome alguna acción.</p>
+<p>Fin.</p>
+<h3 id="cómo-denunciar-el-intento-o-ataque-informático">Cómo denunciar el intento o ataque informático</h3>
+<p>Cómo comentaba en el artículo <a href="https://picodotdev.github.io/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">nociones básicas para detectar un ataque y evitarlo</a> en caso de ser víctima de un ataque conviene denunciarlo. La unidad de delitos informáticos de los diferentes cuerpos de policía y un perito judicial informático seguro que os podría contar cientos de casos, pero seguramente el mejor consejo que den sea evitar ser víctima de un ataque informático. Ellos están para ayudar, proteger, minimizar daños, prevenir nuevos delitos, obtener pruebas y poner a disposición de la justicia a delincuentes pero muchas veces tras haber ocurrido los hechos el grave daño causado ya no es reparable. Y a veces les será muy difícil por estar los delincuentes en otros países. Muchos ataques informáticos como este ejemplo no son difíciles de detectar con las nociones básicas.</p>
+<p>En los términos y condiciones del correo electrónico de Gmail no permite utilizarlo para realizar actividades ilegales incluyendo el <em>phishing</em> y ofrecen herramientas para denunciarlo, desde el propio Gmail y desde páginas específicas. Para <a href="https://www.google.com/gmail/about/policy/">denunciar una cuenta de correo</a> que esté siendo utilizada para realizar actividades ilegales es posible tomar dos medidas, una marcar el correo como <em>spam</em> que Gmail tiene en cuenta, si son varios usuarios lo que lo hacen los correos del remitente a los usuarios les llegará a la carpeta de <em>spam</em> en vez de a la bandeja de entrada. La segunda opción es denunciar un mensaje como suplantación de identidad, aunque en realidad el Gatico Biever no me ha enviado el enlace de <em>phishing</em>.</p>
+<p>En caso de recibir el enlace es posible además <a href="https://support.google.com/a/answer/134413?hl=en">denunciar la página de <em>phishing</em></a> para que esta sea incluida en la lista negra de páginas identificadas maliciosas. Supongo una persona que trabaje para Google analizará estas peticiones y en caso de corroborarlo la página será añadida a la lista negra. Esta lista negra es utilizada por los navegadores para mostrar un mensaje de advertencia cuando un usuario intente entrar en ella, poniendo sobre aviso al usuario y aconsejando no entrar.</p>
+<h3 id="minimizar-daños-de-posibles-ataques-informáticos">Minimizar daños de posibles ataques informáticos</h3>
+<p>Nadie está exento de ataques, ni alguien como yo que tiene conocimientos en informática y conozco las nociones básicas de los ataques, que inicialmente me resultó extraño el correo pero que hasta bastante avanzada la conversación con unos cuantos correos electrónicos enviados no empecé a realmente sospechar.</p>
+<p>Por ello conviene tomar una serie de medidas como establecer límites transferencias y tarjeta de crédito más bajos que los que establecen por defecto los bancos que suelen ser muy generosos, activar el segundo factor de autenticación para que aunque roben las credenciales de una cuenta evitar el ataque o permitirlo únicamente durante un breve periodo de tiempo si la página de <em>phishing</em> fuera tan avanzada como para estar preparada para obtener también el segundo factor de autenticación.</p>
+<p>No hay otra opción de que quede impune, si es un delincuente y parece serlo por los varios indicios va a continuar haciendo su actividad y algún usuario más incauto sea su víctima, está claro que si realizan esta actividad es porque obtienen algún beneficio. La conclusión en cualquier caso es, se bueno pero ten un poco de joputismo para conocer a los malos, hay una buena cantidad de joputas malos por ahí.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/11/por-que-proteger-tu-privacidad-y-que-informacion-tuya-se-puede-encontrar-con-una-busqueda-en-internet/">
+                <img src="/blog-bitix/2021/11/por-que-proteger-tu-privacidad-y-que-informacion-tuya-se-puede-encontrar-con-una-busqueda-en-internet/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_875x0_resize_q90_box.jpg" width="326" height="125" alt="Por qué proteger tu privacidad y qué información tuya se puede encontrar con una búsqueda en internet" title="Por qué proteger tu privacidad y qué información tuya se puede encontrar con una búsqueda en internet" class="" loading="lazy">
+                <h3>Por qué proteger tu privacidad y qué información tuya se puede encontrar con una búsqueda en internet</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/">
+                <img src="/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_875x0_resize_q90_box.jpg" width="326" height="125" alt="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos" title="Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos" class="" loading="lazy">
+                <h3>Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">
+                <img src="/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/images/poster_hu5a3e592d3b9617cb81dcba98dc9a2955_140360_875x0_resize_q90_box.jpg" width="326" height="125" alt="Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención" title="Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención" class="" loading="lazy">
+                <h3>Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">
+                <img src="/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/images/paypal-2fa-2_hu649eb672996bd37528e41668ac07392c_66523_875x0_resize_box_3.png" width="326" height="125" alt="Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios" title="Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios" class="" loading="lazy">
+                <h3>Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" title="El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo" class="" loading="lazy">
+                <h3>El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
+                <img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_3.png" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="" loading="lazy">
+                <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-608';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2021\/11\/ejemplo-de-un-potencial-ataque-de-phishing-el-caso-de-el-gatico-biever\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

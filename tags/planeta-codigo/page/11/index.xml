@@ -5,12 +5,111 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-11-04T19:00:00+02:00</updated>
+    <updated>2021-11-11T19:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/</id>
+        <title>Novedades de Java 13</title>
+        <updated>2019-10-22T19:00:00+02:00</updated>
+        <published>2019-09-27T16:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Continuando las mejoras incrementales cada seis meses el 17 de septiembre se publico Java 13. Java 13 incorpora algunas nuevas características interesantes que mejoran un facilitan la lectura del código, entre las más destacadas están los bloques de texto y las expresiones <em>switch</em> mejoradas.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>Casi coincidiendo con la publicación de Java 13 se publicado <a href="https://jakarta.ee/">Jakarta EE</a> 8 que únicamente tiene como novedad que su propiedad ha pasado a estar baja la fundación Eclipse, es totalmente compatible con <a href="https://picodotdev.github.io/blog-bitix/2018/11/novedades-de-java-ee-8/">Java EE 8 y sus últimas mejoras</a>, las novedades vendrán en versiones posteriores de Jakarta EE en las que se dará importancia a la tendencia de las aplicaciones para su funcionamiento en entornos orientados a la nube. Casi al mismo tiempo se ha publicado <a href="https://openjfx.io/">JavaFX</a> 13 ya fuera del JDK en onde puede seguir su propio ciclo de publicaciones independiente del JDK.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/13/">Características de Java 13</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html">Notas de publicación de Java 13</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/13/docs/api/">Documentación Javadoc de Java 13</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/october-2019-v2">JavaMagazine: Inside Java 13</a></li>
+</ul>
+<p>Las mejoras incluídas en esta versión son:</p>
+<ul>
+<li>JEP 350: <a href="https://openjdk.java.net/jeps/350">Dynamic CDS Archives</a></li>
+<li>JEP 351: <a href="https://openjdk.java.net/jeps/351">ZGC: Uncommit Unused Memory</a></li>
+<li>JEP 353: <a href="https://openjdk.java.net/jeps/353">Reimplement the Legacy Socket API</a></li>
+<li>JEP 354: <a href="https://openjdk.java.net/jeps/354">Switch Expressions (Preview)</a></li>
+<li>JEP 355: <a href="https://openjdk.java.net/jeps/355">Text Blocks (Preview)</a></li>
+</ul>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="bloques-de-texto">Bloques de texto</h4>
+<p>Para definir una cadena de caracteres que tuviese varias lineas en Java había que emplear concatenación de cadenas, si esa cadena contiene el caracter comilla doble <em>&quot;</em> de inicio de cadena había que escaparlo, si esa cadena contenía saltos de línea había que emplear el caracter de escape de salto de línea <em>\n</em>. El resultado es una cadena con problemas de legibilidad por los caracteres de escape que incluye en el código fuente del lenguaje. Esto podría se al definir una cadena de texto que tuviese elementos HTML, JSON, sentencias SQL o expresiones regulares.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&lt;html&gt;\n&#34;</span> <span class="o">+</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;   &lt;body&gt;\n&#34;</span> <span class="o">+</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p class=\&#34;text\&#34;&gt;Hello, Escapes&lt;/p&gt;\n&#34;</span> <span class="o">+</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;   &lt;/body&gt;\n&#34;</span> <span class="o">+</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;&lt;/html&gt;\n&#34;</span><span class="o">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlock-1.java</span>
+    </div>
+</div>
+<p>Con los bloques de texto se emplean una triple comilla doble <em>&quot;</em> para la apertura y cierre de la cadena.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;&#10;</span><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&gt;&#10;</span><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;&#10;</span><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class=&#34;</span><span class="n">text</span><span class="s">&#34;&gt;Hello, Text Blocks&lt;/p&gt;&#10;</span><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;&#10;</span><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/html&gt;&#34;&#34;&#34;</span><span class="o">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlock-2.java</span>
+    </div>
+</div>
+<p>Como ayuda a las cadenas de texto en la clase <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html">String</a> se han añadido varios métodos para eliminar la indentación (<em>String::stripIndent</em>), traducir los caracteres secuencia de escape (<em>String::translateEscapes</em>) y formatear una cadena usando un método de instancia (<em>String::formatted</em>).</p>
+<ul>
+<li><a href="https://blogs.oracle.com/javamagazine/text-blocks-come-to-java">Text Blocks Come to Java</a></li>
+</ul>
+<h4 id="expresiones-_switch_-mejoradas">Expresiones <em>switch</em> mejoradas</h4>
+<p>En las <a href="https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/">novedades de Java 12</a> se añadió la posibilidad de los <em>switch</em> fueran expresiones que retornan un valor en vez de sentencias y se evita el uso de la palabra reservada <em>break</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">numericString</span> <span class="o">=</span> <span class="k">switch</span><span class="o">(</span><span class="n">integer</span><span class="o">)</span> <span class="o">{</span> &#10;   <span class="k">case</span> <span class="n">0</span> <span class="o">-&gt;</span> <span class="s">&#34;zero&#34;</span><span class="o">;</span> &#10;   <span class="k">case</span> <span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">9</span> <span class="o">-&gt;</span> <span class="s">&#34;odd&#34;</span><span class="o">;</span> &#10;   <span class="k">case</span> <span class="n">2</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">6</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">10</span> <span class="o">-&gt;</span> <span class="s">&#34;even&#34;</span><span class="o">;</span> &#10;   <span class="k">default</span> <span class="o">-&gt;</span> <span class="s">&#34;N/A&#34;</span><span class="o">;</span> &#10;<span class="o">};</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Switch-1.java</span>
+    </div>
+</div>
+<p>En Java 13 en vez únicamente el valor a retornar se permite crear bloques de sentencias para cada rama <em>case</em> y retornar el valor con la palabra reservada <em>yield</em>. En los bloques de sentencias puede haber algún cálculo más complejo que directamente retornar el valor deseado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">numericString</span> <span class="o">=</span> <span class="k">switch</span><span class="o">(</span><span class="n">integer</span><span class="o">)</span> <span class="o">{</span> &#10;   <span class="k">case</span> <span class="n">0</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateZero</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;   <span class="o">}</span> <span class="o">;</span> &#10;   <span class="k">case</span> <span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">9</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateOdd</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;   <span class="o">};</span>&#10;   <span class="k">case</span> <span class="n">2</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">6</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">10</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateEven</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;   <span class="o">};</span>&#10;   <span class="k">default</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateDefault</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;   <span class="o">};</span>&#10;<span class="o">};</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Switch-2.java</span>
+    </div>
+</div>
+<ul>
+<li><a href="https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api">Inside Java 13’s switch Expressions and Reimplemented Socket API</a></li>
+</ul>
+<h4 id="otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</h4>
+<p>Las las otras tres características destacadas <em>Dynamic CDS Archives</em>, <em>ZGC: Uncommit Unused Memory</em> para la mejora del recolector de basura y <em>Reimplement the Legacy Socket API</em> reescribiendo el código para los <em>sockets</em> en lenguaje Java son cambios internos que afectan a la plataforma Java pero no al lenguaje.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.mkyong.com/java/what-is-new-in-java-13/">What is new in Java 13</a></li>
+<li><a href="https://blog.codefx.org/java/java-13-guide/">Definitive Guide To Java 13</a></li>
+<li><a href="https://jaxenter.com/java-13-jdk-deep-dive-new-features-162272.html">Java 13 – a deep dive into the JDK’s new features</a></li>
+<li><a href="https://jaxenter.com/java-13-text-blocks-162278.html">Java 13 – why text blocks are worth the wait</a></li>
+<li><a href="https://jaxenter.com/jakarta-ee-8-future-enterprise-java-161984.html">Jakarta EE 8 is sprinting towards an exciting future for enterprise Java</a></li>
+<li><a href="https://dzone.com/articles/the-differences-between-java-ee-jakarta-ee-and-mic">The Differences Between Java EE, Jakarta EE, and MicroProfile</a></li>
+<li><a href="https://jakarta.ee/documents/insights/cloud_native_java_ebook.pdf">Cloud Native Java</a></li>
+<li><a href="https://jaxenter.com/openjfx-13-interview-dirk-lemmermann-161967.html">OpenJFX 13 – “JavaFX gets its own identity”</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/</id>
         <title>Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java</title>
@@ -166,7 +265,7 @@
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Generar documentos e informes de salida en una una tarea básica de cualquier aplicación y una forma de exportar los datos a otros formatos. Con <a href="https://poi.apache.org/">Apache POI</a> se pueden generar hojas de cálculo excel para su procesamiento con <a href="https://www.libreoffice.org/">LibreOffice</a> o <a href="https://products.office.com/es-es/">Microsoft Office Excel</a>. En ocasiones también es necesario <a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">generar gráficas para visualizar un conjunto grande de datos</a> para ser más fáciles de interpretar, descubrir tendencias, comparar, sacar conclusiones en base a las cuales tomar alguna acción. Los archivos PDF también son muy utilizados para imprimirlos en formato en papel o enviarlos adjuntos en correos electrónicos.</p>
-<p>Uno de estos casos podría ser la generación de una factura en base a una plantilla e incluir el el importe y consumo realizado por un cliente y que este pueda obtenerla en formato electrónico o le sea enviada por correo electrónico como un documento adjunto o <a href="https://elblogdepicodev.blogspot.com.es/2011/02/enviar-correos-mediante-java-mail.htmlindex-amp.html">enviar un correo electrónico</a> para indicar que tiene la factura disponible en su área de cliente lista para su descarga. Este es el caso de muchas empresas que ofrecen servicios como compañías eléctricas, de telecomunicaciones, servicios municipales de agua y basura, bancos para su justificantes y comprobantes, comercios, etc&hellip;</p>
+<p>Uno de estos casos podría ser la generación de una factura en base a una plantilla e incluir el el importe y consumo realizado por un cliente y que este pueda obtenerla en formato electrónico o le sea enviada por correo electrónico como un documento adjunto o <a href="https://elblogdepicodev.blogspot.com.es/2011/02/enviar-correos-mediante-java-mail.html">enviar un correo electrónico</a> para indicar que tiene la factura disponible en su área de cliente lista para su descarga. Este es el caso de muchas empresas que ofrecen servicios como compañías eléctricas, de telecomunicaciones, servicios municipales de agua y basura, bancos para su justificantes y comprobantes, comercios, etc&hellip;</p>
 <div class="alert alert-warning tableofcontents">
     <h2>Contenido del artículo</h2>
     <toc></toc>
@@ -1089,112 +1188,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="windows"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/06/hemeroteca-15/</id>
-        <title>Hemeroteca #15</title>
-        <updated>2019-06-30T10:30:00+02:00</updated>
-        <published>2019-06-30T10:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/06/hemeroteca-15/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
-</div>
-<p>Estos seis primeros meses del 2019 han transcurrido como todos los años anteriores, sigo manteniendo la constancia de publicar dos artículos nuevos y únicos, algunas semanas sólo uno las menos tres.</p>
-<p>En cuanto al blog durante este tiempo le he hecho un cambio de diseño para que el contenido quede centrado en la pantalla y tenga más espacio horizontal lo que creo hace más agradable la lectura del texto y los extractos de código se ven mejor con menos necesidad de hacer desplazamiento horizontal.</p>
-<p>Para que la publicidad y los ingresos de Adsense no se viesen perjudicados y para mejorarlos más aún si cabe he puesto un bloque <em>billboard</em> en la cabecera, he mantenido el <em>leaderboard</em> después del resumen del articulo en aquellos que lo tienen y la publicidad lateral he hecho que sea <em>sticky</em> de manera que permanece mas tiempo visible con la consiguiente mejora en el numero de clic.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky</a></li>
-</ul>
-<p>Sólo han pasado dos meses con el nuevo diseño pero creo que ha sido un acierto, para la lectura del usuario como para los ingresos de Adsense que apreciablemente sigue mejorado respecto al año anterior. Estos meses de verano el tráfico suele descender algo y las visitas ya no me continúan creciendo mes a mes, los mejores meses son los de octubre, noviembre y diciembre con lo que esas fechas podré comparar mejor con las del año pasado. El número de visitas se mantiene más o menos contante y no de crecimiento como semestres anteriores.</p>
-<p>En cuanto a los artículos que he escrito han sido sobre las temáticas habituales a las que dedicó este blog. Como desde hace poco estoy pudiendo usar Java 11 (¡por fin!, algo al menos) en el trabajo espero poder escribir algunos artículos con lo que considere destacable, por el momento he actualizado el ejemplo de código de la <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos de GraphQL</a> de los que tengo pendiente publicar alguno más. Los artículos de este semestre han sido los siguientes. En total 47 nuevos.</p>
-<p>En la categoría de Java.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/">Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/acceder-a-hojas-de-calculo-de-google-docs-mediante-api-desde-una-aplicacion-java/">Acceder a hojas de cálculo de Google Docs mediante API desde una aplicación Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/comandos-para-compilar-codigo-fuente-y-ejecutar-programas-java/">Compilar el código fuente y ejecutar con los comandos javac, java y jar en Java 8 o anteriores</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">Generar, procesar y modificar documentos JSON con JSON-P en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/reproducir-audio-y-musica-midi-y-sampled-wav-mp3-ogg-con-java-y-ffmpeg/">Reproducir audio y música MIDI y sampled (wav, mp3, ogg) con Java y FFmpeg</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/">Usar expresiones JSONPath para extraer datos de un JSON en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">Ofuscar datos sensibles en las trazas con Log4j</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">Las clases anidadas inner, anónimas y locales en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/lookahead-y-lookbehind-en-expresiones-regulares-con-java/">Lookahead y lookbehind en expresiones regulares con Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">Las colecciones de Java, estructuras de datos para guardar referencias a objetos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">Colecciones sincronizadas e inmutables en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-reactive-streams-en-java/">Ejemplo de Reactive Streams en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/">Novedades de Java 12</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/escribir-en-la-misma-linea-de-la-consola-y-obtener-el-ancho-y-alto-de-la-terminal-con-java/">Escribir en la misma línea de la consola y obtener el ancho y alto de la terminal con Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/">Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/">Ejemplo de máquina de estados con Spring Statemachine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/el-concepto-de-wildcard-capture-en-java/">El concepto de wildcard capture en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">Trazabilidad en microservicios con Spring Cloud Sleuth</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Lanzar excepciones checked como si fueran unchecked en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/">Log de sentencias SQL, sentencias lentas y otra información en jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/teses-unitarios-parametrizados-con-junit/">Teses unitarios parametrizados con JUnit</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/metadatos-e-introspeccion-en-graphql/">Metadatos e introspección en GraphQL</a></li>
-</ul>
-<p>En la categoría de GNU/Linux.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">Autenticación mediante clave pública y privada con SSH</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/">Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux</a></li>
-</ul>
-<p>Unos sobre algunas de las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a>, los que me gustaría seguir ampliando en el futuro.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicos Nomad</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a></li>
-</ul>
-<p>Varios sobre JavaScript y desarrollo web.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/">Componentes en el cliente con Web Components usando JavaScript, HTML y CSS</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/">Codificar los datos para evitar ataques XSS en una página web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/combinaciones-de-teclado-en-html-javascript-y-paginas-web/">Combinaciones de teclado en HTML, JavaScript y páginas web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/pruebas-de-carga-y-rendimiento-de-un-servicio-web-con-apache-bench/">Pruebas de carga y rendimiento de un servicio web con Apache Bench</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/">Comprobar la seguridad de un sitio web que use SSL/TLS</a></li>
-</ul>
-<p>Sobre SQL destacando el dedicado a como hacer paginación correctamente con <em>seek</em> en vez de como habitualmente con <em>ofsset</em>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/log-de-sqls-y-de-sqls-lentas-en-myql-y-postgresql/">Log de SQLs y de SQLs lentas en MySQL y PostgreSQL</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">Implementar la paginación eficientemente en consultas SQL con seek</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/orden-de-ejecucion-de-las-clausulas-de-las-sentencias-select-de-sql/">Orden de ejecución de las cláusulas de las sentencias SELECT de SQL</a></li>
-</ul>
-<p>Otros que no entran en las categorias anteriores y otro de opinión.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/conferencia-bilbostack-2019/">Conferencia BilboStack 2019</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/">De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/">Historial y evolución de los precios en Amazon con CamelCamelCamel</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/sobre-la-playstation-4-playstation-5-y-google-stadia/">Sobre la PlayStation 4, PlayStation 5 y Google Stadia</a></li>
-</ul>
-<p>Los dedicados al blog.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/9-aniversario-del-blog/">9º aniversario del blog</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky</a></li>
-</ul>
-<p>Y finalmente uno que estuvo patrocinado.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/proyecto-de-mejora-de-smart-tv-usando-una-vpn-para-acceder-a-contenido-restringido-por-ip/">Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP</a></li>
-</ul>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="gnu-linux"/>
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
