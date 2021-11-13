@@ -342,7 +342,7 @@
 <p>Tener en cuenta el <em>Heap Pollution</em> es importante ya que la excepción <em>ClassCastException</em> se produce más tarde y en un punto diferente de donde realmente está el error, mucho más tarde si el tipo genérico es serializado e incluso en otra <abbr title="Java Virtual Machine">JVM</abbr> diferente. Estos errores son de los peores de depurar por la poca información que proporcionan ya que la traza de la excepción solo dice quien la lanzó no donde se introdujo el fallo.</p>
 <p>La implementación de los <em>generics</em> en Java viene con la garantía conocida como <em>cast-iron</em> que consiste en que mientras el compilador no produzca una <em>unchecked warning</em> en tiempo de compilación se garantiza que en tiempo de ejecución no se producirá una <em>ClassCastException</em> por los <em>cast</em> introducidos en el proceso de <em>erasure</em>.</p>
 <p>Si nos encontramos con una de estas excepciones con los genéricos en una colección una buena alternativa es hacer uso de los métodos <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedCollection-java.util.Collection-java.lang.Class-">Collections.checkedCollection</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-">Collections.checkedSet</a>,  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-">Collections.checkedMap</a> y alguno más similar que evitará que en una colección se produzca <em>Heap Pollution</em>, la excepción <em>ClassCastException</em> se lanzará en el momento de añadir a la colección la referencia que provocaría el <em>Heap Pollution</em>.</p>
-<p>Relacionados con casos de combinar genéricos y arrays y <em>ClassCastException</em> en el libro <a href="https://amzn.to/2QsjMpw" rel="sponsored">Java Generics and Collections</a> se definen dos principios a seguir para evitar excepciones: <em>The Principle of Truth in Advertising</em> y <em>The Principle of Indecent Exposure</em>.</p>
+<p>Relacionados con casos de combinar genéricos y arrays y <em>ClassCastException</em> en el libro <a href="https://amzn.to/3D93nvU" rel="sponsored">Java Generics and Collections</a> se definen dos principios a seguir para evitar excepciones: <em>The Principle of Truth in Advertising</em> y <em>The Principle of Indecent Exposure</em>.</p>
 <div class="media media-amazon">
   <amp-ad
     width="120"
@@ -356,8 +356,8 @@
     data-amzn_assoc_marketplace="amazon"
     data-amzn_assoc_region="ES"
     data-amzn_assoc_title="Productos recomendados"
-    data-amzn_assoc_linkid="0596527756"
-    data-amzn_assoc_asins="1fecc45ce35d08547102ac4f96cc8ca8">
+    data-amzn_assoc_linkid="befd554d504892ac130d115bfc8619b5"
+    data-amzn_assoc_asins="0596527756">
   </amp-ad>
 </div>
 <p>Salvo que hagamos operaciones complicadas entre genéricos de diferentes tipos no será muy habitual que nos encontremos <em>ClassCastException</em> por <em>Heap Pollution</em>, pero es un concepto interesante conocer, en cualquier caso el compilador nos informará con los <em>unchecked warnings</em>.</p>
