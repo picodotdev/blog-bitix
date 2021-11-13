@@ -69,7 +69,7 @@ Algunos servicios y contenidos están bloqueados según la ubicación del usuari
 Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspberry Pi](https://amzn.to/3wPcyzh), una [carcasa](https://amzn.to/2YIN89T), una [cargador de 3A](https://amzn.to/2dfFJT7) junto con una [tarjeta SD](https://amzn.to/3opHZfL).
 
 {{< amazon
-    linkids="a828c25f509cfe498f3f8be91e7c9a75,f7a5d402571fb5dd48fa2311dc169469,1c7d89fa46e38c81f0e35cb1518e80ea"
+    linkids="a828c25f509cfe498f3f8be91e7c9a75,f7a5d402571fb5dd48fa2311dc169469,1c7d89fa46e38c81f0e35cb1518e80ea,aee5521403e014f5b256191d116ac4b3"
     asins="B07BFH96M3,B07VD5L1VY,B01566WOAG,B07CXXBTST" >}}
 
 ¡A disfrutar!
