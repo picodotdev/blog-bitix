@@ -51,8 +51,8 @@ Aunque la tarjeta SD es suficiente para usarla como [Media Center en la Raspberr
 Los elementos básicos para usar este miniordenador son la [placa de la Raspberry Pi](https://amzn.to/2cN0d6L), una [cargador de 3A](https://amzn.to/2dfFJT7) junto con una [tarjeta SD](https://amzn.to/2cN0SFi).
 
 {{< amazon
-    linkids="fecbf2f5ac6495bca6b3e686bc0fa2e0&internal=1,1a779c49b1d7df6206e1c1428af645e7&internal=1,f3093eebc185e207e98f6b5c53cd2c3a&internal=1"
-    asins="B01CD5VC92,B01566WOAG,B00J2BU7WO" >}}
+    linkids="a828c25f509cfe498f3f8be91e7c9a75,f7a5d402571fb5dd48fa2311dc169469,1c7d89fa46e38c81f0e35cb1518e80ea,aee5521403e014f5b256191d116ac4b3"
+    asins="B07BFH96M3,B07VD5L1VY,B01566WOAG,B07CXXBTST" >}}
 
 {{< reference >}}
 * [Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html)

@@ -186,7 +186,7 @@ Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla
 Para no incurrir en mayores gastos adicionales por tener que sustituir pilas cada cierto tiempo, sobre todo para el ratón, usaré [pilas recargables de Amazon Basics tanto AA](https://amzn.to/2QRoefk) como [AAA](https://amzn.to/2NuWAXF) y un [cargador con pantalla similar a este](https://amzn.to/2MNzLfF) que adquirí hace tiempo para cargarlas, posee un indicador de la carga de la pila a medida que se carga y soporta múltiples tipos de pilas. [Amazon Basics tiene un cargador sencillo](https://amzn.to/2NwgXna) pero aconsejo adquirir uno equivalente al que tengo yo con pantalla o mejor aún con la función de descarga de pila para prolongar más tiempo la vida útil de las pilas, no son mucho más caros que el de Amazon y la pantalla resulta muy útil. Unas pilas las usaré y tendré otras en reserva para poner de repuesto en cuanto las que estoy usando se gasten así no tendré que esperar mucho a que se carguen ya que tardan varias horas.
 
 {{< amazon
-    linkids="4b82c9473891e7e300af6af12e499a3b,7a974f6747d38d7ceae51b4c2a524820,0dc25d7884cf6c199de5621aa2a54eef"
-    asins="B00CWNMR5Y,B00CWNMW1S,B01N0VFBPI" >}}
+    linkids="4b82c9473891e7e300af6af12e499a3b,7a974f6747d38d7ceae51b4c2a524820,729262ef1a678dd96e0fc3fcfcade02f"
+    asins="B00CWNMR5Y,B00CWNMW1S,B008GZ4BII" >}}
 
 {{% /post %}}
