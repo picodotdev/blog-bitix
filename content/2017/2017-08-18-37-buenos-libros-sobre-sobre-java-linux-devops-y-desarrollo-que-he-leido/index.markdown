@@ -108,8 +108,8 @@ Hay conocimiento que es independiente del lenguaje que se utilice como tratar de
 #### Spring Boot in Action
 
 {{< amazon
-    linkids="990ac035faf92b423b7edd4e70377b89"
-    asins="1617292540" >}}
+    linkids="86ce91eca968f6de1d0a777f48ca3069,61b49fc8ef6bdf7c80975908df76d4af,e4f7f44a8b854b00a547d526b83f6469"
+    asins="1617292540,1617292540,B01N750Z7H" >}}
 
 Spring Boot permite que una aplicación sea completamente autocontenida incluyendo un servidor web como [Tomcat][tomcat] entre otros disponibles. En vez de distribuir la aplicación en formato _war_ para ser desplegada en un contenedor de _servlets_ o aplicaciones la aplicación se distribuye en formato _jar_ y se inicia como una aplicación Java tradicional. Es la aplicación la que inicia el servidor web embebido y hace que proporcione su servicio. Esta es nueva tendencia que se sigue en las aplicaciones y en las aplicaciones basadas en la nube.
 
@@ -165,12 +165,12 @@ Aún con la popularización de las bases de datos NoSQL las bases de datos relac
 #### Beginning SQL Queries y Learning PostgreSQL
 
 {{< amazon
-    linkids="6c88c8326d867c036266f6483f41477d,0b62f915f94acd860485c75946fa0392"
-    asins="1484219546,1783989181" >}}
+    linkids="6c88c8326d867c036266f6483f41477d,2f3d39f7290758074e90a66beda9e253,e91efc7d7df2c1cbbccc2793a1e9d0be,0b62f915f94acd860485c75946fa0392"
+    asins="1484219546,1934356557,1800567499,1783989181" >}}
 
 El lenguaje declarativo SQL es muy potente y yo al menos desconocía o he usado poco muchas cosas que se han añadido al lenguaje en versiones más modernas y que algunas bases de datos como [PostgreSQL][postgresql] implementan. Algunas de estas cosas son las _windows functions_, tipos definidos por el usuario, _triggers_, _common table expression_ o CTE, consultas recursivas, búsqueda de texto más avanzado y eficiente que la expresión _like_, _lateral subqueries_, ...
 
-Los libros [Beginning SQL Queries](https://amzn.to/2xbh62O) y [Learning PostgreSQL](http://amzn.to/2vaxQG8) son una buena documentación sobre el lenguaje SQL que van más allá de lo enseñado en algunos cursos académicos.
+Los libros [Beginning SQL Queries](https://amzn.to/2xbh62O), [SQL Antipatterns](https://amzn.to/3C6IXlW) y [Learning PostgreSQL](http://amzn.to/2vaxQG8) son una buena documentación sobre el lenguaje SQL que van más allá de lo enseñado en algunos cursos académicos.
 
 #### MongoDB in Action
 

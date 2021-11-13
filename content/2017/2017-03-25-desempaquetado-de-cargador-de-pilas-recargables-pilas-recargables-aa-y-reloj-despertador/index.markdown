@@ -22,7 +22,7 @@ Una de las ventajas de comprar en [Amazon][amazon-affiliate] es que casi siempre
 
 ### Cargador de pilas recargables
 
-En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo AA, que son las tradicionales, y AAA que son similares pero algo más pequeñas y con algo menos de capacidad. También quería que diese algo de información al menos para saber si estaba completamente cargada. Después de ver casi todos los modelos que hay disponibles en Amazon me decidí por el modelo [HXK-H2](https://amzn.to/2zv3ma1) para dos pilas con capacidad para cargar dos pilas simultáneamente e independientemente. Me gustó que no es muy caro uno 20 €, cumple con las necesidades básicas que tenía y además de los tipos de pilas AA y AAA Ni-MH y Ni-CD admite otros tipos de pilas como Li-ion, LiFePO. También que admite pilas de diferentes tamaños ya que el cargador se ajusta al maño de la pila. También me gusto que se puede seleccionar si se quieren cargar las pilas con 1000mA o con 500mA que hace la carga más lenta pero hace que las pilas duren más. Tiene un _display_ que muestra un indicador aproximado de la carga de la batería actual, el tipo de batería que detecta automáticamente, el voltaje de carga, el tiempo de carga y la intensidad de la carga seleccionada. La única función que no tiene es la de descargar las pilas antes de cargarlas pero para la mayoría de usuarios es más que suficiente. El material y construcción del cargador da una sensación de buena calidad.
+En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo AA, que son las tradicionales, y AAA que son similares pero algo más pequeñas y con algo menos de capacidad. También quería que diese algo de información al menos para saber si estaba completamente cargada. Después de ver casi todos los modelos que hay disponibles en Amazon me decidí por el modelo HXK-H2 para dos pilas con capacidad para cargar dos pilas simultáneamente e independientemente. Me gustó que no es muy caro uno 20 €, cumple con las necesidades básicas que tenía y además de los tipos de pilas AA y AAA Ni-MH y Ni-CD admite otros tipos de pilas como Li-ion, LiFePO. También que admite pilas de diferentes tamaños ya que el cargador se ajusta al maño de la pila. También me gusto que se puede seleccionar si se quieren cargar las pilas con 1000mA o con 500mA que hace la carga más lenta pero hace que las pilas duren más. Tiene un _display_ que muestra un indicador aproximado de la carga de la batería actual, el tipo de batería que detecta automáticamente, el voltaje de carga, el tiempo de carga y la intensidad de la carga seleccionada. La única función que no tiene es la de descargar las pilas antes de cargarlas pero para la mayoría de usuarios es más que suficiente. El material y construcción del cargador da una sensación de buena calidad.
 
 {{< image
     gallery="true"
@@ -33,13 +33,13 @@ En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo A
     image1="image:cargador-3.jpg" optionsthumb1="300x200"
     image2="image:cargador-4.jpg" optionsthumb2="300x200" >}}
 
-Otros modelos de cargador en los que me fijé son los siguientes pero el que elegí en su rango de precios considero que es de lo mejor que hay disponible:
+Otros modelos de cargador en los que me fijé son los siguientes pero el que elegí en su rango de precios considero que es de lo mejor que hay disponible.
 
 {{< amazon
-    linkids="0ffb4d325c98b4193eeee9efc053355a,f0a5a7649c2c427ca48918de8e94be1f,f7b8d434b0f52cc88ad84f89028c4764"
-    asins="B01NCP0MXC,B008GZ4BII,B07C2QTTJZ" >}}
+    linkids="f0a5a7649c2c427ca48918de8e94be1f,f7b8d434b0f52cc88ad84f89028c4764,dc98179866a708a250165039652a7c62"
+    asins="B008GZ4BII,B07C2QTTJZ,B00TS19BUW" >}}
 
-### Relog analógico
+### Reloj analógico
 
 También compré un reloj para poner en el salón y ver en todo momento la hora que es. Al igual que cargadores hay muchos modelos de relojes analógicos y digitales y de diferentes tamaños e incluso muy grandes de hasta 37 centímetros de ancho con números grandes. En principio estaba decidido por uno digital pero eran bastante más caros que los tradicionales de manecillas, además necesitan entre tres y cuatro pilas AA o AAA con lo que creo que consumirán bastante y agotarán las pilas seguramente no en un més pero probablemente no les duren más de 6 meses con lo que hay que reemplazar las pilas bastante habitualmente o como yo optar por comprar pilas recargables y un cargador.
 
@@ -54,8 +54,8 @@ Por ello, finalmente me decidí por el siguiente modelo de [reloj de manecillas 
     image1="image:reloj-3.jpg" optionsthumb1="300x200" >}}
 
 {{< amazon
-    linkids="b4520ee6411fb18af5d5eeecf755ca44"
-    asins="B01CZPVR2C" >}}
+    linkids="b4520ee6411fb18af5d5eeecf755ca44,ed6aa74ec469d9de2ae7e841c441410d,88427cb384e155bfece40c7d66133ea9"
+    asins="B01CZPVR2C,B08YCRZFZF,B09HS3Q29T" >}}
 
 Otros modelos de relojes digitales de pared y mesa que ví son los siguientes, casi todos tienen como función adicional indicar la temperatura interior y la fecha.
 

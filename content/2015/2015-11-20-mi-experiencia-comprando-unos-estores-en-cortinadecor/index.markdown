@@ -28,11 +28,8 @@ Desde hace un tiempo quería comprar unos estores tanto para la habitación como
 {{< image
     gallery="true"
     image1="image:soportes.jpg" optionsthumb1="300x200" title1="Soportes"
-    caption="Soportes" >}}
-{{< image
-    gallery="true"
-    image1="image:soportes-montados.jpg" optionsthumb1="300x200" title2="Soportes montados"
-    caption="Soportes montados" >}}
+    image2="image:soportes-montados.jpg" optionsthumb2="300x200" title2="Soportes montados"
+    caption="Soportes y soportes montados" >}}
 {{< image
     gallery="true"
     image1="image:elementos.jpg" optionsthumb1="300x200" title1="Elementos"
@@ -43,11 +40,8 @@ Tratando de buscar unos estores en más medidas y con la posibilidad de elegir l
 {{< image
     gallery="true"
     image1="image:personalizacion-1.png" optionsthumb1="650x450" title1="Opciones personalización 1-5"
-    caption="Opciones personalización 1-5" >}}
-{{< image
-    gallery="true"
-    image1="image:personalizacion-2.png" optionsthumb1="650x450" title1="Opciones personalización 6-10"
-    caption="Opciones personalización 6-10" >}}
+    image2="image:personalizacion-2.png" optionsthumb2="650x450" title2="Opciones personalización 6-10"
+    caption="Opciones personalización 1-5 y 6-10" >}}
 
 Siguiendo con la compra de los estores tenía dudas sobre como serían los tejidos y su opacidad, afortunadamente tanto _estoresbaratos.com_ y _cortinadecor.com_ ofrecían envío de muestras gratuitas de los tejidos al domicilio a través de correo postal ordinario, entre estas dos tiendas me gusto un poco más _cortinadecor.com_ por los [vídeos sobre como medir y colocar estores](https://www.youtube.com/user/cortinadecor) bastante bien realizados protagonizados por una cara conocida como [Yolanda Alzola](https://es.wikipedia.org/wiki/Yolanda_Alzola), solicite muestras en _cortinadecor.com_ de un tejido translúcido, me los enviaron en una semana, no me convencieron porque me resultaron un tejido muy simple y solicite nuevamente otras muestras de tejidos _screen_ con una apertura del 5% y otros de 1% (ambos _nano screen_). El tejido _nano screen_ del 1% me pareció casi opaco sin apenas visibilidad hacia el exterior e interior pero los tejidos del 5% si que me gustaron más. En las pequeñas muestras que envían no es fácil hacerse una idea de la opacidad del estore completo pero sirven para palpar el tejido. Una de las pegas que tiene comprar por internet es que en productos que no son estándares venda quien te los venda, como por ejemplo una PlayStation, modelo de televisión o cámara de fotos, como es el caso de los tejidos y estores que los vendedores ofrezcan la posibilidad de enviar muestras es un acierto para que al comprador tenga menos dudas y se incline a comprar. Revisa todos los tipos de tejido y pide todas las muestras que te interesen ya que las envían juntas en una sola carta.
 
@@ -69,11 +63,11 @@ Quedo contento con los estores pero hay algunas cosas mejorables. En mi caso bá
     image1="image:detelle-logotipo.jpg" optionsthumb1="650x450" title1="Detalle logotipo"
     caption="Detalle logotipo" >}}
 
-La calidad del producto, igual de importante el buen servicio de atención al cliente, las opciones de personalización y amplia gama de tejidos y colores hace que recomiende _Cortinadecor_ aún con las cosas mejorables que comentaba. He quedado satisfecho con el producto y la experiencia de compra por internet con esta tienda me ha resultado satisfactoria. También compré un vinilo adhesivo translúcido, [Película adhesiva para ventanas (67,5 x 200 cm)](https://amzn.to/36sQJHN), para los cristales inferiores del salón ya que los estores para salvar las manillas no cubrirían totalmente esos cristales. Además de dar más privacidad dejan pasar una buena cantidad de luz.
+La calidad del producto, igual de importante el buen servicio de atención al cliente, las opciones de personalización y amplia gama de tejidos y colores hace que recomiende _Cortinadecor_ aún con las cosas mejorables que comentaba. He quedado satisfecho con el producto y la experiencia de compra por internet con esta tienda me ha resultado satisfactoria. También compré un vinilo adhesivo translúcido, [Película adhesiva para ventanas (67,5 x 200 cm)](https://amzn.to/3F7l0g4), para los cristales inferiores del salón ya que los estores para salvar las manillas no cubrirían totalmente esos cristales. Además de dar más privacidad dejan pasar una buena cantidad de luz.
 
 {{< amazon
-    linkids="a19bfc2975caa7205d9c2b4f4ab1af51"
-    asins="B00CZ6VQZ0" >}}
+    linkids="9c092a38bec9dc606ec4ce209c4f6adf"
+    asins="B07L3WHXKH" >}}
 
 {{< image
     gallery="true"

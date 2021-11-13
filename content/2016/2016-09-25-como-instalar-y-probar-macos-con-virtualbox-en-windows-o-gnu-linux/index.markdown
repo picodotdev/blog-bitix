@@ -27,8 +27,8 @@ Ya sea por curiosidad o por probar antes de hacer una compra se puede tener inte
 Si te gusta y convence macOS estos son varios de los equipos Apple en formato de escritorio y portátil.
 
 {{< amazon
-    linkids="985c015a07f1aeb92b4938f07efc4092,0aa1dc43af09cde9683bf55251528765,ccab7216adb50858f5eb5d55e30ad85b,7b5fd1a6f05821d2bcb5232d01704063,e3a47715b60f846d9d1fd81a4fcb82ae"
-    asins="B0863RCN53,B0863G2M7F,B081G4SK26,B071K2RVHF,B07922WLRF" >}}
+    linkids="d1f95d35db6b8e0e11e5ba1953c3af47,914771447d7c5205a8454f8a87650415,75a974e00a03e65401da8a06c8165836,4c3a173fe7f45b2cc5648f33a881b97e,e3a47715b60f846d9d1fd81a4fcb82ae"
+    asins="B08N5RFKN5,B08N5TLVQ2,B09JQWX6PY,B08F9Y3RJ9,B07922WLRF" >}}
 
 En esta guía muestro como instalar y probar macOS 10.15 Catalina con VirtualBox, los pasos on similares para las versiones 10.14 Mojave y 10.13 High Sierra.
 

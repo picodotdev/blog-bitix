@@ -45,8 +45,8 @@ Como con todos los generadores de código es recomendable saber suficientemente 
 En el libro [Spring Boot in Action](https://amzn.to/2tvCJMs) se comenta detalladamente Spring Boot que ofrece múltiples nuevas posibilidades que hace más fácil el desarrollo de un proyecto con Spring. Por otro lado para conocer más detalladamente y ampliamente el ecosistema de Spring está el libro [Mastering Spring 5.0](https://amzn.to/2tZInqM) que también incluye secciones sobre Spring Boot.
 
 {{< amazon
-    linkids="86ce91eca968f6de1d0a777f48ca3069,e4f7f44a8b854b00a547d526b83f6469"
-    asins="1617292540,B01N750Z7H" >}}
+    linkids="86ce91eca968f6de1d0a777f48ca3069,61b49fc8ef6bdf7c80975908df76d4af,e4f7f44a8b854b00a547d526b83f6469"
+    asins="1617292540,1617292540,B01N750Z7H" >}}
 
  En definitiva el _plugin_ _init_ de Gradle y la utilidad Spring Initializr son unas buenas herramientas para empezar un proyecto Java rápidamente y en pocos minutos disponer de un proyecto básico funcional y listo para implementar la funcionalidad de la aplicación.
 

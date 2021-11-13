@@ -213,8 +213,8 @@ Los _tuppers_ de 840 ml tiene unas dimensiones de 18,5 cm de largo, 12 cm de anc
 Un complemento a una olla exprés son los robots de cocina que permiten realizar algunas recetas y elaboraciones adicionales como salsas, cremas y sofritos, la diferencia está en que suelen tener una capacidad de mayor de 5 litros y ser sensiblemente más caros al menos los modelos de gama alta. Son un complemento porque hasta donde he visto estos aparatos no hacen la función de una olla rápida, no trabajan con presión.
 
 {{< amazon
-    linkids="c3b40ef1da3c973bb5f496bad81aa984,43514935981db10e6a17aa5bf89a4db1,2a3f10222256601ee5c16268bf2475e2"
-    asins="B015993ZGW,B07YMJDMPB,B07RYKMWXD" >}}
+    linkids="c3b40ef1da3c973bb5f496bad81aa984,3a93fb30dcd5dfaba42f9a7b5dcfba74,4ae428ee41b2d2917d0213814a02f1c0,2a3f10222256601ee5c16268bf2475e2"
+    asins="B015993ZGW,B09738LQ6M,B08HM6FC2X,B07RYKMWXD" >}}
 
 Por supuesto otros elementos indispensables son las típicas sartenes de diferentes tamaños. Hace ya tiempo compre un [conjunto de sartenes de la marca BRA](https://amzn.to/37q4g3q) con las que estoy muy contento con su calidad.
 

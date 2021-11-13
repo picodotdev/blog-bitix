@@ -72,12 +72,8 @@ Un motivo importante para no comprar una consola es que hay muchos juegos como _
 
 Pero esto es la decisión de siempre adquirir lo que hay o esperar, la opción más sensata parece no esperar ya que la PS4 tiene un gran catálogo de juegos que dan para varios años de entretenimiento incluso pasado el tiempo que tarde en aparecer la PS5 _slim_.
 
-### Switcher HDMI
+### Switch HDMI
 
-En el caso de utilizar un monitor que solo disponga de una entrada HDMI tanto para el PC como para una consola se necesita un conmutador o _switch_ HDMI que permita conmutar la entrada sin tener que conectar y desconectar cables. En [Amazon][amazon-affiliate] hay muchos modelos, uno de los que más me ha gustado ha sido este [Conmutador HDMI 2.0 4K@60Hz de 5 entradas](https://amzn.to/2LsewzY) que ofrece 4K a 60 Hz con hasta cinco entradas HDMI, una salida y está alimentado por USB.
-
-{{< amazon
-    linkids="f554140ed8a800631481721106f71a23"
-    asins="B07MV8BBS2" >}}
+En el caso de utilizar un monitor que solo disponga de una entrada HDMI tanto para el PC como para una consola se necesita un conmutador o _switch_ HDMI que permita conmutar la entrada sin tener que conectar y desconectar cables. En [Amazon][amazon-affiliate] hay muchos modelos, que ofrecen 4K a 60 Hz con hasta cinco entradas HDMI, una salida y está alimentado por USB.
 
 {{% /post %}}

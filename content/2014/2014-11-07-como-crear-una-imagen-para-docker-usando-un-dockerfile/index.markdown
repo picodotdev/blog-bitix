@@ -74,11 +74,11 @@ Accediendo con el navegador al servidor nginx del contenedor se devuelve la pág
     gallery="true"
     image1="image:nginx.png" optionsthumb1="300x200" title1="Nginx" >}}
 
-Para aprender más sobre Docker es buena idea seguir un manual de referencia como el libro [Docker in Action](https://amzn.to/3pH6uEr).
+Para aprender más sobre Docker es buena idea seguir un manual de referencia como los libros [Docker: Up & Running](https://amzn.to/3DgQj7G) y [Docker in Action](https://amzn.to/3pH6uEr).
 
 {{< amazon
-    linkids="9d344246cd59cd65a952305379c2556a"
-    asins="1633430235" >}}
+    linkids="666d0aff3a2629cd87c205370bc5ae87,9d344246cd59cd65a952305379c2556a"
+    asins="1492036730,1633430235" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/DockerNginx" command="./docker-build.sh" %}}
 

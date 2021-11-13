@@ -45,29 +45,21 @@ El Viewsonic es un modelo del 2015 con dos HDMI 1.3 y DisplayPort 1.2. El BenQ P
 
 * [BenQ PD2700Q](https://amzn.to/2OFdFi9) ([página fabricante](https://www.benq.eu/es-es/monitor/designer/pd2700q.html))
 * [BenQ PD2500Q](https://amzn.to/2D0VQEf) ([página fabricante](https://www.benq.eu/es-es/monitor/designer/pd2500q.html))
-* [BenQ GW2765HT](https://amzn.to/2NXG9hR) ([página fabricante](https://www.benq.eu/es-es/monitor/home-office/gw2765ht.html))
-* [Viewsonic VG2719-2K](https://amzn.to/2OIyidi) ([página fabricante](https://www.viewsonic.com/es/products/lcd/VG2719-2K.php))
-* [V7 L27HAS2K-2E](https://amzn.to/2CZj8dx) ([página fabricante](http://www.v7world.com/es/productos/monitores/27-qhd-widescreen-led-monitor.html))
 
 {{< amazon
     linkids="37c01c8c71f103d6c7ad009afd2892a9,3f46b23e2d6b884222796306587cced8,9a692fa2ff43017270841146c742bb88,74dce1e9be6c5b55e9345a20cfcc08b3,c643b6119b0142d924df263c65a22e43"
     asins="B01K2210GS,B0737M9QP7,B00M913DVG,B0789D843P,B079P3YSTK" >}}
 
-Los otros candidatos destacables que he visto han sido alguno en formato panorámico.
+Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200 € a 700+€. Dos modelos en 4K de los anteriores son el [BenQ PD2700U](https://amzn.to/2Pik820) que es el que hubiese elegido en caso de haber optado por UHD, el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UHD no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tienen una pantalla retina. Otras opciones son optar por 32" UHD y en formato panorámico. Los otros candidatos destacables son estos alguno en formato panorámico.
 
-* [LG 29WK600-W](https://amzn.to/2CATYB5)
-* [LG 29UB67-B](https://amzn.to/2Pecupj)
-* [iiyama Prolite XUB2792QSU-B1](https://amzn.to/2OFcHlX)
-
-{{< amazon
-    linkids="508f802016832287212a9dcd4d793770,24fc95197f28f3d4d9db6514153de223,9560c7d04ae8f76ee1e3cd4a20abe387"
-    asins="B0798R91FD,B00T5P1USW,B01N2Z7OZT" >}}
-
-Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200 € a 700+€. Dos modelos en 4K de los anteriores son el [BenQ PD2700U](https://amzn.to/2Pik820) que es el que hubiese elegido en caso de haber optado por UHD, el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UHD no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tienen una pantalla retina. Otras opciones son optar por 32" UHD y en formato panorámico. 
+* [BenQ PD2700U](https://amzn.to/3Fb5gc7)
+* [BenQ PD3200U](https://amzn.to/2YLe1dq)
+* [LG 34WN750-B](https://amzn.to/3kyG4nW)
+* [Samsung LU32J592UQRXEN](https://amzn.to/3ooWHne)
 
 {{< amazon
-    linkids="c69a55a9bb5bf63725b1bdffaa567444,3160f5b6618d07e065b1f81192395611,2386c7d19354b2df0dbbe4e5cf268ab4"
-    asins="B07GLR6RQF,B0798RDRMH,B0798QLW64" >}}
+    linkids="c69a55a9bb5bf63725b1bdffaa567444,076b46557cfcc1a8a97d634ec8558adc,b3f97dfc3e625c270170a9ca9aae8eb8,85ea6c42eb833535683519da00bc0363"
+    asins="B07GLR6RQF,B01N4AIIIV,B086BHDHR5,B08SW8HC78" >}}
 
 En monitores de 27 pulgadas la recomendación en varios foros es de 2K. Menos con 1K o _full hd_ es ver píxeles como centollos, más es ver las cosas pequeñas a máxima resolución para tareas ofimáticas y es habitual tener que escalar a una resolución más baja aunque tenga mayor definición aprovechando la mayor densidad de píxeles o DPI. Estos son unos hilos en foros y dos artículos que me han parecido interesantes y que me han resuelto alguna duda o confirmado lo que ya suponía.
 
@@ -275,7 +267,6 @@ En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con res
 Es recomendable realizar una primera prueba al monitor para buscar píxeles muertos, que no se encienden, o vagos, que permanecen encendidos todo el tiempo con el color de un componente. El siguiente test se compone de varias imágenes en los colores básicos (negro, blanco, azul, rojo y verde) que visualizadas individualmente a pantalla completa muestran si algún pixel es defectuoso. Que haya un pixel defectuoso es molesto ya que basta para que haya solo uno y sepas donde está entre los casi 3 millones que tiene el monitor para que estés fijándote constantemente en él, más si se encuentra en el área central de la pantalla. También conviene informarse antes de comprar acerca de la garantía que ofrece cada fabricante respecto a los píxeles muertos, algunos toleran y no aceptan la devolución con cierto número de píxeles que permanecen encendidos, apagados o algún subpixel estropeado.
 
 * [BenQ LCD Monitor Pixel Policy](https://www.benq.com/en-us/support/downloads-faq/faq/product/application/dead-pixel-policy.html)
-
 * [Imágenes de prueba para detectar píxeles muertos o vagos](https://jasonfarrell.com/misc/deadpixeltest.php)
 
 ### Vídeos de prueba
@@ -289,8 +280,8 @@ Para probar la calidad del monitor (o televisor) en cuanto a colores o resoluci�
 Si el monitor es compartido tanto por el [ordenador como un Intel NUC][blogbitix-363] como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada y se cambia automáticamente.
 
 {{< amazon
-    linkids="3a5a1b554cb717c2763220c81be8b6fa,3954e70941543ecb9ada5c76d26024e9,f5c9c155adf728e8d3217ab7e723d14c,87c2e46fa9d13984b35d29ce7d5761ae"
-    asins="B07KSYS2L4,B00NO73MUQ,B07RY2X9LF,B01J8S6X2I" >}}
+    linkids="3a276132a39c3c3ce43f194d7e85583e,3954e70941543ecb9ada5c76d26024e9,f5c9c155adf728e8d3217ab7e723d14c,87c2e46fa9d13984b35d29ce7d5761ae"
+    asins="B09CQ4JSC5,B00NO73MUQ,B07RY2X9LF,B01J8S6X2I" >}}
 
 ### Soporte VESA
 
@@ -299,16 +290,16 @@ En todos los modelos he buscado que sea compatible con la norma VESA 100x100 por
 Algunos soportes compatibles con VESA que he mirado son los siguientes.
 
 {{< amazon
-    linkids="5fb68fe768b45db8b566a4d25ea47f9b,5ffbf7e3e57e2565ffb8cb05943edac2"
-    asins="B07DHK5DHN,B076B3Q8JR" >}}
+    linkids="de98aa0a1a642d8b7b8bd36c4ca7ca4f,d21eaafcd8bdff06c18668e60d08e71a"
+    asins="B079YQQDT2,B079YSGQKW" >}}
 
 ### _Hub_ de puertos USB
 
-Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 o 3.1, sin embargo, con otros monitores puede ser una opción como con el PD2500Q o el PD2700U. Los discos duros externos que tengo son USB 2.0 y por limitaciones del disco duro si fuesen 3.0 el rendimiento adicional no se si sería mucho mayor. Hay hubs de 4, 7 y 10 puertos pero con esta cantidad de puertos es recomendable que sea alimentado sobre todo si se conectan discos duros externos sin alimentación propia, también hay algunos con interruptor individual de encendido por puerto.
+Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 o 3.1, sin embargo, con otros monitores puede ser una opción como con el PD2500Q o el PD2700U. Los discos duros externos que tengo son USB 2.0 y por limitaciones del disco duro si fuesen 3.0 el rendimiento adicional no se si sería mucho mayor. Hay concentradores de 4, 7 y 10 puertos pero con esta cantidad de puertos es recomendable que sea alimentado sobre todo si se conectan discos duros externos sin alimentación propia, también hay algunos con interruptor individual de encendido por puerto.
 
 {{< amazon
-    linkids="c0347223e569327beb79d01b30cd549e,32d93c1c8151c7d869e32b061d0d08b4"
-    asins="B00E0NHMNQ,B00LI4O9EA" >}}
+    linkids="e509d54994bf9dc9718a7df94437ad72,e89fd5bcd771439b69b8afe03922173e,32d93c1c8151c7d869e32b061d0d08b4"
+    asins="B076YKYHCB,B076YRSWGW,B00LI4O9EA" >}}
 
 {{< reference >}}
 * [Calculadora DPI y PPI](https://www.sven.de/dpi/)

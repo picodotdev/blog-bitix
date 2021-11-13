@@ -259,8 +259,8 @@ Las _skills_ son nuevas funcionalidades, habilidades y comandos que Alexa es cap
 Además de los dispositivos inteligentes como enchufes y bombillas el Echo es capaz de controlar cualquier aparato que tenga un mando por infrarrojos o radiofrecuencia incluyendo televisores, reproductores de vídeo o aires acondicionados. Con un emisor compatible con Alexa es capaz de emitir las señal infrarrojo y radiofrecuencia que el mando del aparato electrónico original y controlarlo. Otros dispositivos controlables son enchufes para encender y apagar aparatos o bombillas regulables en color e intensidad para crear ambientes cómodas para bajar la luminosidad al ver una película.
 
 {{< amazon
-    linkids="710b081345c1115bc344bcc42ff80b1b,7a7cea572346dacf8ef2141263ab837a,be3368a7fe32cd1d3096846abb7d6ec3,93d88d8597b0da6936925ad0d6070c24,7284dbe8a31b1691523fb74bd6183c14"
-    asins="B076TGXRWS,B07ZSG9Y67,B079D689VG,B07SPYB4TQ,B07MSCBGZP" >}}
+    linkids="7a7cea572346dacf8ef2141263ab837a,93d88d8597b0da6936925ad0d6070c24,7284dbe8a31b1691523fb74bd6183c14"
+    asins="B07ZSG9Y67,B07SPYB4TQ,B07MSCBGZP" >}}
 
 ### Problemas, algunos que he resuelto y cosas que me gustaría que tuviese
 
@@ -323,8 +323,8 @@ La familia de altavoces Echo con el asistente Alexa tiene varios miembros.
 Los Echo Show incluyen una pantalla con la posibilidad de realizar videoconferencias.
 
 {{< amazon
-    linkids="eee2229f176ac67aaa8c8268fffc134a,dd1ba4441293020dfcd1c3038649cc72,64cc89bdd1ded6d385c844fc6ea7cf56"
-    asins="B07KD6624B,B07SNPKX5Y,B0793KQRJZ" >}}
+    linkids="82be0d323ecc21e171b231d2ef2fb30a,30c07c1580452fc59a07b1f7d1de33b4"
+    asins="B08KH2MTSS,B084TNNGPG" >}}
 
 Tanto Apple como Google ofrecen sus versiones de altavoces inteligentes, Apple el [HomePod](https://www.apple.com/es/homepod/) y Google los [Home](https://store.google.com/product/google_home_speaker) y [Nest Mini](https://store.google.com/product/google_nest_mini).
 

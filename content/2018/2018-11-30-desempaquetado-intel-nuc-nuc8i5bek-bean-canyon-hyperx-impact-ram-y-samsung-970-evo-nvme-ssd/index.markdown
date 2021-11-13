@@ -91,6 +91,10 @@ En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los
     linkids="f3958514001abbfacb4d2d944dbaae79,222f9d7e5b7ea470df5df9148d6ab300,4f67d035caf205cfbefa4e5afe68674a,5b22e238d8496d8d76cd9397d7f13a2d,866537dd626ab63935971b2c0b3fa830"
     asins="B07JCF1BTZ,B07JB2M5JS,B07JBM1CFH,B07JCF1LCL,B07J6T8PH6" >}}
 
+{{< amazon
+    linkids="918bcc791540cfd030f14f045520702d,c6d67a1d28c20e1cf52fd620c520724b"
+    asins="B09D7CM8L4,B08XZQKCSY" >}}
+
 Opté por el modelo NUC8i5BEK sobre el NUC8i3BEK, por sus cuatro núcleos y sobre el NUC8i7BEH porque este no ofrece un aumente de rendimiento significativo sobre el i5 acorde a la diferencia de precio. Podría haber tenido alguna duda de si optar por el modelo sin bahía de 2.5 SATA (_slim_) o el modelo con bahía (_tall_) pero con los 500GB, si necesitase más podría ponerle además una micro SDXC de 128 GB o 256 GB con las que tendré suficiente espacio, con el disco de 250 GB del portátil Sony no llegaba a los 100 GB ocupados. Y en cualquier caso en el futuro si necesito más espacio los SSD se habrán abaratado mucho o aumentado su capacidad si continúan con su bajada de precios y aumento de capacidades a cada mes que pasa como hasta ahora.
 
 El precio del NUC en el momento de salida es de unos 400 € no es muy superior respecto a los que costaría un equipo ITX teniendo en cuenta que en estos hay que comprar procesador, placa base, fuente de alimentación y caja, con la diferencia de que ocupa sensiblemente más. Un [AMD Ryzen 2400G](https://www.pccomponentes.com/amd-ryzen-r5-2400g-36ghz), [placa base MSI B450I](https://www.pccomponentes.com/msi-b450i-gaming-plus-ac), [fuente de 450W](https://www.pccomponentes.com/corsair-cx450-450w-80-plus-bronze) y caja ITX el conjunto se va a aproximadamente a los mismos 400 €, el Ryzen tiene mejor gráfica integrada que la Intel pero el conjunto ocupa sensiblemente mucho más espacio.
@@ -360,16 +364,16 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per
 Después de un tiempo y a medida que AMD lanzando modelos de procesadores con bajo consumo y el buen rendimiento basados en la arquitectura Ryzen han aparecido algunos modelos similares en formato a los Intel NUC pero basados en los procesadores de AMD. Uno de ellos es el [Minis Forum UM300](https://amzn.to/3kQkg4Z) que ya equipado con memoria y almacenamiento SSD tiene un precio muy competitivo.
 
 {{< amazon
-    linkids="fa3878e3b2d15f2dac493bba12b8aac9"
-    asins="B08FC8FL1Z" >}}
+    linkids="710109ccd69aee17e29f31f74f4912b7,c372c09d811de14ea2f946892b41ed0b,a5478d556ca3e8609e9f41ecd23d87bd"
+    asins="B094VC6C9T,B0958XZXND,B08NBK6G74" >}}
 
 ### Switch HDMI y cables, monitor con el ordenador y consola
 
-Si el monitor es compartido tanto por el ordenador como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o [_switch_ HDMI de múltiples entradas](https://amzn.to/2S7G0g5) y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
+Si el monitor es compartido tanto por el ordenador como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o [_switch_ HDMI de múltiples entradas](https://amzn.to/3kxT2Cx) y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
 
 {{< amazon
-    linkids="3a5a1b554cb717c2763220c81be8b6fa,3954e70941543ecb9ada5c76d26024e9,f5c9c155adf728e8d3217ab7e723d14c,87c2e46fa9d13984b35d29ce7d5761ae"
-    asins="B07KSYS2L4,B00NO73MUQ,B07RY2X9LF,B01J8S6X2I" >}}
+    linkids="3a276132a39c3c3ce43f194d7e85583e,3954e70941543ecb9ada5c76d26024e9,f5c9c155adf728e8d3217ab7e723d14c,87c2e46fa9d13984b35d29ce7d5761ae"
+    asins="B09CQ4JSC5,B00NO73MUQ,B07RY2X9LF,B01J8S6X2I" >}}
 
 Otro accesorio de utilidad es un [teclado pequeño con soporte dual para bluetooth y comunicación inalámbrica 2.4 Ghz](https://amzn.to/36SUMMN) que es compatible tanto con el ordenador como una _smart tv_, teléfono Android o una PlayStation 4. En mi caso un uso sería tener el teclado pequeño con soporte de ratón para ver películas desde la cama y poder controlar el PC a distancia, incluye teclas multimedia y una rueda específica para hacer desplazamiento vertical muy cómoda al visualizar páginas web, además es retroiluminado perfecto para utilizarlo a oscuras si se está viendo una película. Funciona con una batería recargable.
 

@@ -73,8 +73,8 @@ Si usamos el comando «uname -a» puede verse que aunque el contenedor usa el si
 Continuando esta serie de artículos sobre Docker explicaré como construir una imagen mediante los Dockerfiles con la que podamos usar una base de datos mysql y explicaré en más detalle como podemos conseguir la persistencia que necesitaremos para almacenar los datos de la base de datos usando otro contenedor con este propósito.
 
 {{< amazon
-    linkids="9d344246cd59cd65a952305379c2556a"
-    asins="1633430235" >}}
+    linkids="666d0aff3a2629cd87c205370bc5ae87,9d344246cd59cd65a952305379c2556a"
+    asins="1492036730,1633430235" >}}
 
 {{< reference >}}
 * [Introducción a Ansible][blogbitix-52]

@@ -143,8 +143,9 @@ Los teclados mecánicos son significativamente más caros empiezan a partir de l
 Estos son algunos modelos que tiene un buen aspecto, la dificultad es encontrar algún modelo que tenga la disposición de las teclas en la disposición de español ya que muchos de ellos tienen la disposición inglesa a las que les falta algunos caracteres que usamos como la _ñ_.
 
 {{< amazon
-    linkids="c83ac1ce0d130d286f123d8c61be16c6,d022cc6910af12be8e89cad501542d56,658ec6ee4014466a1d077b38e7aff3ad,7f3f0e73e699311aa9a9aa62e2d6a957"
-    asins="B01NAM76QW,B07Z4TCJZM,B07PJKHC5K,B07W5PD6VS" >}}
+    linkids="90c9225ac12c0f227dc1e3e0929c980a,9b730fd6fd7cd6b804c0768ff7a0e4b0,4eef50f6d2b1d0ad77d0c021945072ce,2fa6dd5d940478943c99b2cc41180bd2,90a2743711215ba483752fc15ff0a5ae"
+    asins="B07L31V1K4,B0716ZNZ1P,B07CVQ7ZRL,B09KH2NX42,B07TKM6DZ4" >}}
+
 
 #### Teclados mecánicos
 

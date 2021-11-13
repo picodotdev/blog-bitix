@@ -394,8 +394,8 @@ El mando con la funda puesta. Hay que tener algo cuidado de no estirarla demasia
     caption="Mando DualShock 4 V2 con funda" >}}
 
 {{< amazon
-    linkids="c4e617b84dbe20273c022f528f7f5451,d6e6248621355a567e929b8e711a47c9"
-    asins="B07KSYS2L4,B06XJ5ZR5P" >}}
+    linkids="3c67cbd1c37ec3b8398bba24e2d1bf24,d6e6248621355a567e929b8e711a47c9"
+    asins="B01LYWPQUN,B06XJ5ZR5P" >}}
 
 Otro accesorio de utilidad es un [teclado pequeño con soporte dual para bluetooth y comunicación inalámbrica 2.4 Ghz](https://amzn.to/36SUMMN) que es compatible tanto con el ordenador como una _smart tv_, teléfono Android o una PlayStation 4 aunque no estoy seguro de si es totalmente compatible con la PlayStation algunos usuarios comentan que si, solo he visto uno que le ha dado problemas. Usar el mando de la PlayStation para escribir testo es muy incómodo y lento, un teclado inalámbrico como este resulta mucho más simple de utilizar, además es retroiluminado para utilizarlo a oscuras sin la luz de la habitación, no va a pilas sino que funciona con una batería recargable.
 

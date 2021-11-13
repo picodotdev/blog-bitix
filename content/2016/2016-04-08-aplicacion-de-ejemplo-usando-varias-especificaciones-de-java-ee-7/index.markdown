@@ -73,9 +73,9 @@ El conjunto de especificaciones de Java EE proporciona una solución para la may
 Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, [Java EE 7 Essentials](https://amzn.to/2SW6cw2) hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es [Java EE 7 Development with WildFly](https://amzn.to/2T0MlvA) que entra más en detalle en cada una de las especificaciones. El [tutorial oficial de Java EE 7](https://docs.oracle.com/javaee/7/tutorial/) también es un buen punto de partida. <a target="_blank" href="https://amzn.to/2QLs7TX">Libros sobre Java EE 7</a> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.
 
 {{< amazon
-    linkids="8f42c49cd2ee85af9d35494fe93b878b,85fd41d16bd855bb3954171284a6b637"
-    asins="1782171983,1782171983" >}}
-
+    linkids="c616c3f3eef393473f0af785d1eb8309,3708b1d14af899f26e43d0bade797dd7"
+    asins="B00EJX7WEQ,B00RP13D9M" >}}
+  
 Con Java EE 6 y 7 ciertas partes de configuración se pueden realizar con anotaciones en vez de con XML sin embargo aún no ha desaparecido completamente aunque si reducido considerablemente.
 
 Ejecutar este ejemplo require instalar previamente el servidor de aplicaciones [WildFly][wildfly] e iniciarlo con `./standalone.sh -c standalone-full.xml`. Iniciado el servidor y desplegada la aplicación con el siguiente comando de Gradle se puede acceder a ella con el navegador en la dirección _https\://localhost:8443/war/_ teniendo el protocolo seguro configurado.

@@ -72,8 +72,8 @@ La conectividad de los Kindle se realiza mediante red WIFI o cable USB  aceptand
 Un accesorio para el lector de libros electrónicos es una [funda para los modelos Kindle](https://amzn.to/3treQ4r) que lo proteja de golpes y suciedad.
 
 {{< amazon
-    linkids="a2f704aad31e39296b42888ba0cd8876,16019091b70546a31017afb8614f01ff,3a71fdeca0d0017166eecca0617c9b98"
-    asins="B07FQ4XCR1,B07747FR44,B07L5GDTYY" >}}
+    linkids="a2f704aad31e39296b42888ba0cd8876,5e0c6c50e4ec112574ebdff20baa7ace,3a71fdeca0d0017166eecca0617c9b98"
+    asins="B07FQ4XCR1,B08N3TCP2F,B07L5GDTYY" >}}
 
 #### Kobo
 

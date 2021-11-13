@@ -88,8 +88,8 @@ Entre la cantidad de modelos y marcas que hay en tabletas y libros electrónicos
 El [Kindle Fire 8 HD](https://amzn.to/3D6Vab7) tiene un precio para las características que tiene muy ajustado y es difícil encontrar algo mejor por ese precio, pantalla de 8 pulgadas de 1280x800 de resolución con 32 GiB de almacenamiento y procesador de cuatro núcleos. El [Kindle Fire HD 10](https://amzn.to/2WzPkiT) tiene una pantalla algo más grande, de mayor resolución y algo más de almacenamiento, pantalla de 10 pulgadas FHD con 1920x1200 píxeles y entre 32 y 64 GiB.
 
 {{< amazon
-    linkids="835f0c19ee7420f8b0c06afa7896d50d,1b01ad6ddd5c5a2bd95ff3bd501c1f30,308801513ce875f833aee2aa6bd38ebb"
-    asins="B07JQRWLXM,B01AHBHPS6,B08F63PPNV" >}}
+    linkids="835f0c19ee7420f8b0c06afa7896d50d,a8fea0cdf51c688ae094944e643e91f1,308801513ce875f833aee2aa6bd38ebb"
+    asins="B07JQRWLXM,B07WGJLSS2,B08F63PPNV" >}}
 
 El [Amazon Kindle][amazon-kindle] ya es suficiente para cualquier lector con su capacidad de almacenamiento de 4 GiB (los libros más largos no ocupan ni un _mega_) y tiene pantalla táctil de 6 pulgadas, la diferencia con el [Amazon Kindle Paperwhite][amazon-kindle-paperwhite] es que este último tiene pantalla retroiluminada y algo más resolución junto con una pantalla más grande de 6.8". La diferencia de precio entre ellos no es mucha por lo que salvo que se quiera el precio más barato el Paperwhite es buena opción. El [Kindle Osais][amazon-kindle-oasis] es el modelo más caro pero ofrece una mejor, mayor tamaño pantalla de 7 pulgadas y algo más de capacidad para almacenar contenido.
 
@@ -100,8 +100,8 @@ El [Amazon Kindle][amazon-kindle] ya es suficiente para cualquier lector con su 
 Los altavoces que tenía para el ordenador desde hace más de 15 años me empezaron a fallar, la opción que he elegido para sustituirlos ha sido un [Amazon Echo][amazon-echo] del que también he escrito un artículo para el [desempaquetado del altavoz inteligente Amazon Echo][blogbitix-495]. Lo utilizo tanto como altavoz para el ordenador como dispositivo inteligente principalmente para escuchar radio y música por internet.
 
 {{< amazon
-    linkids="dfee8f752fb3ae262d93f965a17ac493,0d57b68b50c519b5199d509686057ebc"
-    asins="B084DWG2VQ,B094Z7JYMT" >}}
+    linkids="dfee8f752fb3ae262d93f965a17ac493,5a877e9655eedb0a557c0a47ad5cb983"
+    asins="B084DWG2VQ,B09G3WTR3R" >}}
 
 Aunque las televisiones ya tiene funciones de reproducir contenido por internet en caso de que pasados unos años quizá queden antiguas, los dispositivos Fire TV permiten acceder a contenido multimedia, películas y series a través de los servicios de suscripción en cualquier pantalla de televisión o monitor. También es utilizable en monitores que no tienen esa función reproducción de contenido por internet pero con este dispositivo permite añadirsela.
 

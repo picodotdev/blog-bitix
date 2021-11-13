@@ -53,11 +53,11 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
     image3="image:spring-boot-actuator-metrics.png" optionsthumb3="300x200" title3="Spring Boot Actuator endpoint Metrics"
     caption="Spring Boot Actuator endpoints health, env y metrics " >}}
 
-Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro [Spring Boot in Action](https://amzn.to/2SVtJNU) lo explica bastante bien.
+Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro [Spring Boot in Action](https://amzn.to/2SVtJNU) lo explica bastante bien, otro libro sobre Spring Boot es [Spring Boot: Up and Running](https://amzn.to/3kxG3kh).
 
 {{< amazon
-    linkids="f900d5c99d0e0007341953a3065f4631"
-    asins="1617292540" >}}
+    linkids="09aa02ea0fe2a0a34dfd52a894557d39,61b49fc8ef6bdf7c80975908df76d4af"
+    asins="1492076988,1617292540" >}}
 
 De cualquier modo conviene también tener automatizada la monitorización de las métricas. Con estos _endpoints_ y una herramienta como [Prometheus][prometheus] podemos visualizar gráficas generadas con los datos a lo largo del tiempo, con los datos visualizados de forma gráfica podremos ver rápidamente picos, cambios bruscos y tendencias en alguno de ellos o compararlos con tiempos pasados. Esta misma herramienta nos puede servir para enviar alertas y notificaciones o hacer consultas sobre los datos recolectados.
 

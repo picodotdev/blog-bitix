@@ -43,12 +43,12 @@ La implementación de los _generics_ en Java viene con la garantía conocida com
 
 Si nos encontramos con una de estas excepciones con los genéricos en una colección una buena alternativa es hacer uso de los métodos [Collections.checkedCollection](javadoc8:java/util/Collections.html#checkedCollection-java.util.Collection-java.lang.Class-), [Collections.checkedSet](javadoc8:java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-),  [Collections.checkedMap](javadoc8:java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) y alguno más similar que evitará que en una colección se produzca _Heap Pollution_, la excepción _ClassCastException_ se lanzará en el momento de añadir a la colección la referencia que provocaría el _Heap Pollution_.
 
-Relacionados con casos de combinar genéricos y arrays y _ClassCastException_ en el libro [Java Generics and Collections](https://amzn.to/2QsjMpw) se definen dos principios a seguir para evitar excepciones: _The Principle of Truth in Advertising_ y _The Principle of Indecent Exposure_.
+Relacionados con casos de combinar genéricos y arrays y _ClassCastException_ en el libro [Java Generics and Collections](https://amzn.to/3D93nvU) se definen dos principios a seguir para evitar excepciones: _The Principle of Truth in Advertising_ y _The Principle of Indecent Exposure_.
 
 {{< amazon
-    linkids="0596527756"
-    asins="1fecc45ce35d08547102ac4f96cc8ca8" >}}
-
+    linkids="befd554d504892ac130d115bfc8619b5"
+    asins="0596527756" >}}
+    
 Salvo que hagamos operaciones complicadas entre genéricos de diferentes tipos no será muy habitual que nos encontremos _ClassCastException_ por _Heap Pollution_, pero es un concepto interesante conocer, en cualquier caso el compilador nos informará con los _unchecked warnings_.
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaHeapPollution" command="./gradlew test" >}}
