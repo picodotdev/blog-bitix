@@ -3,12 +3,36 @@
 {{ $iframetagclose := $tags.iframetagclose }}
 {{ $iframetagsrc := $tags.iframetagsrc }}
 
-{{ $linkids := split .Params.linkids "," }}
-{{ $asins := split .Params.asins "," }}
+{{ $amazontags := $.Site.Data.affiliates.amazon }}
+{{ if eq $amazontags nil }}{{ errorf "Missing affiliates amazon tags info: %s" .Position }}{{ end }}
+
+{{ $ttags := split (default "" .Params.tags) "," }}
+{{ $tlinkids := slice }}
+{{ $tasins := slice }}
+
+{{ range $ttag := $ttags }}
+  {{ if and (ne $ttag nil) (ne $ttag "") }}
+    {{ $t := index $amazontags $ttag }}
+    {{ if eq $t nil }}{{ errorf "Missing affiliates amazon tag %s info" $ttag }}{{ end }}
+    {{ if or (eq (index $t "linkids") "") (eq (index $t "asins") "") }}{{ errorf "Empty amazon tag linkids or asins %s info" $ttag }}{{ end }}
+
+    {{ $tlinkids = $tlinkids | append (split (index $t "linkids") ",") }}
+    {{ $tasins = $tasins | append (split (index $t "asins") ",") }}
+  {{ end }}
+{{ end }}
+
+{{ $linkids := $tlinkids }}
+{{ $asins := $tasins }}
+{{ if isset .Params "linkids" }}
+  {{ $linkids = $linkids | append (split .Params.linkids ",") }}
+{{ end }}
+{{ if isset .Params "asins" }}
+  {{ $asins = $asins | append (split .Params.asins ",") }}
+{{ end }}
 
 {{ if or (gt (len $linkids) 0) (gt (len $asins) 0) }}
 {{ if ne (len $linkids) (len $asins) }}
-  {{ errorf "Invalid number linkids and asins: %s" .Position }}
+  {{ errorf "Invalid number linkids (%d) and asins (%d) (%s, %s): %s" (len $linkids) (len $asins) (delimit $linkids ",") (delimit $asins ",") .Position }}
 {{ end }}
 <div class="media media-amazon">
   {{- range $index, $linkid := $linkids -}}

@@ -57,28 +57,28 @@ El uso que le daré es el de programación, virtualización, contenedores [Docke
 Los Gigabyte Brix ya hay algunos modelos con los Intel i5 8250U a un precio de unos 440 €, sin embargo, no me gusta que no tienen luz indicador de actividad de SSD y creo que su BIOS/UEFI es en modo texto. La luz de actividad de SSD me parece importante para saber si en algún momento el ordenador se queda bloqueado o por algún tipo de problema lee, o peor escribe, constantemente al almacenamiento persistente cuando no debería. Los Zotac están dotados de una buena cantidad de puertos USB, incluso algunos tiene dos conexiones de red pero son algo caros y la mayoría de sus modelos están orientados a _gamers_, no son fáciles de encontrar ni siquiera en [Amazon][amazon-affiliate] ni en [PC Componentes][pccomponentes] que es donde compraré finalmente el equipo. De MSI Cubi no hay muchos modelos y aún no he visto ninguno anunciado con un Intel de 4 núcleos. Los Slimbook ONE me gustaban pero los modelos con los Intel de 4 núcleos solo tienen una ranura de memoria, se les pueden instalar 32 GiB... cuando haya módulos de memoria de 32 GiB, ahora me tendría que conformar con 16 GiB.
 
 {{< amazon
-    linkids="667a9af1171092daf632c9029b23a6cc,918bcc791540cfd030f14f045520702d,c6d67a1d28c20e1cf52fd620c520724b,710109ccd69aee17e29f31f74f4912b7,c372c09d811de14ea2f946892b41ed0b,a5478d556ca3e8609e9f41ecd23d87bd"
-    asins="B08YFFW131,B09D7CM8L4,B08XZQKCSY,B094VC6C9T,B0958XZXND,B08NBK6G74" >}}
-
+    tags="intel-nuc" >}}
 {{< amazon
-    linkids="be7b1438a935c25ce5bb7e03aab971f7,b6e01eb06b516f4a6e519d9e2666e63d"
-    asins="B07MBQPQ62,B089QXQ1TV" >}}
+    tags="minipc" >}}
+{{< amazon
+    tags="storage-nvme,storage-ssd" >}}
 
 También he seguido los NUC con un Intel Core i3 7100U sin embargo tiene solo 2 cores y 4 hilos con 3 MiB de memoria será algo mejor que el Intel i3 3210M que tenía pero no me parece una mejora significativa habiendo pasado 5 años y a pesar de que el 7100U está fabricado a 14 nanómetros y el 3210M a 22 nanómetros, los NUC con [Intel i7 8650U](https://ark.intel.com/es/products/124968/Intel-Core-i7-8650U-Processor-8M-Cache-up-to-4_20-GHz) son más caros, sobre los 580 € y teniendo en cuenta que la memoria y SSD hay que comprarlos aparte. Los NUC más económicos sobre los 175 € con [Intel Pentium J5005](https://ark.intel.com/es/products/128984/Intel-Pentium-Silver-Processor-J5005-4M-Cache-up-to-2_80-GHz) solo admiten 8 gigas como máximo y me parece que están limitados artificialmente a ese tamaño máximo de memoria. En [AliExpress][aliexpress] hay productos similares a los NUC con procesador i5 8250U pero a ver quien se la juega a importar desde China por aduanas y con la incertidumbre de lo que llega y que tal funciona, también he estado mirando placas [ARM][arm] aunque no con el objetivo que sea mi equipo principal, [7+ computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM][blogbitix-304], como la [Rock64][rock64] que tiene 4 gigas pero siguiendo su desarrollo y foros no son pocos los problemas que la gente crea en su repositorio de [Github](https://github.com/ayufan-rock64/linux-build) con lo que me da que pensar que la experiencia podría ser algo frustrante, la arquitectura x86/x64 es mucho más compatible, en ARM cada placa es un mundo aparte de que su rendimiento es mucho más limitado.
 
 Preferiría un microprocesador [AMD][amd] ya que solo están afectados por algunas variantes de _Spectre_, pero AMD no tiene tanta diversidad de productos como tiene Intel, no tienen nada parecido a los Intel NUC y en portátiles prácticamente todos los modelos equipan un Intel, quizá cambia ahora algo con los Ryzen. Por rendimiento y precio posiblemente elegiría un [AMD Ryzen 2400G](https://www.amd.com/es/products/apu/amd-ryzen-5-2400g) pero de momento las placas con el _chipset_ B450 para sacarle el máximo rendimiento aún no están disponibles, en la generación 1xxx de los Ryzen no hay modelos con gráfica integrada, tendría que ser un mini-ITX y el equipo me lo tendría que montar yo, no es difícil pero si tuviese algún imprevisto o incompatibilidad sería un problema por tener que devolver piezas y buscar otras, además no estoy seguro del ruido que haría, lo quiero muy silencioso al menos en tareas ofimáticas, navegación por internet y cosas simples, no estoy seguro de que lo sea con el ventilador de la CPU y fuente de alimentación. Ocupa más que un NUC para mi importante si en un futuro le quiero dar uso como ordenador secundario, servidor personal o quisiera traspasarlo. Pero por 400 € se tiene un ordenador muy decente en plataforma AMD Ryzen a falta de memoria y SSD.
 
 {{< amazon
-    linkids="c9f4227f57b19f7ad62f9e011b875566,299f20792e422017ab92558f2d207082,6a12cb31b0a7cd2ad746b5b7e1950e3d,b56c6d7fadb83f104fa179ed736cb431,09928718c85d77bfad2b885f90927b8f"
-    asins="B08166SLDF,B089TP3GQF,B01N27QWFA,B07NFHBD3D,B085HCKPN4" >}}
+    tags="pc-components" >}}
 
-La pantalla que estoy siguiendo es una 2K de [BenQ PD2700Q](https://amzn.to/2ltsRhf) en tamaño de 27”, 4K me parece excesiva resolución para ese tamaño de pantalla, a su máxima resolución en una 27" 4K las cosas ven muy pequeñas y tendría que escalarla a 2K, busco que sea IPS ya que los colores en este tipo de paneles se ven significativamente mejor que en un panel TN, uno al lado del otro la diferencia es clara. Apreciaré una mejora notable en la calidad de la pantalla de la que tenía en el portátil Sony. No es barata pero es algo que no necesitan renovarse tan a menudo como el ordenador seguramente pueda tener un uso durante una década si no presenta ningún problema de funcionamiento. Otros aspectos interesantes son ser regulable en altura y horizontalmente, colocable en posición vertical y puertos USB, HDMI y DisplayPort por otro lado una información en pantalla o OSD aceptable y de fácil configuración.
+La pantalla que estoy siguiendo es una 2K de [BenQ PD2700Q](https://amzn.to/2ltsRhf) en tamaño de 27", el tamaño de pantalla ideal para 4K creo que es más un monitor de 32", a su máxima resolución en una 27" 4K las cosas ven muy pequeñas y tendría que escalarla a 2K, busco que sea IPS ya que los colores en este tipo de paneles se ven significativamente mejor que en un panel TN, uno al lado del otro la diferencia es clara. Apreciaré una mejora notable en la calidad de la pantalla de la que tenía en el portátil Sony. No es barata pero es algo que no necesitan renovarse tan a menudo como el ordenador seguramente pueda tener un uso durante una década si no presenta ningún problema de funcionamiento. Otros aspectos interesantes son ser regulable en altura y horizontalmente, colocable en posición vertical y puertos USB, HDMI y DisplayPort por otro lado una información en pantalla o OSD aceptable y de fácil configuración.
 
 Entre otras cosas están el teclado y ratón que me conformo con un modelo básico y barato como el [Logitech MK120](https://amzn.to/2yCcE2T) y una alfombrilla que cubra la mesa.
 
 {{< amazon
-    linkids="1f32d07d228fd9c0eaaafcd1146b25d8,e51cd8d969848df3bb23c36529afdc8e,c97c6afa54ed38606236e18afb2f55e7"
-    asins="B01K2210GS,B00564GWEI,B072PR4FWY" >}}
+    tags="benq" >}}
+{{< amazon
+    linkids="e51cd8d969848df3bb23c36529afdc8e,c97c6afa54ed38606236e18afb2f55e7"
+    asins="B00564GWEI,B072PR4FWY" >}}
 
 Otras personas no se lo piensan tanto pero en un área del que más o menos entiendo algo me gusta saber con mucho detalle lo que estoy comprando. Una vez que uno comprende las especificaciones técnicas de los productos, que diferencias hay entre cada una de ellas, se entiende las diferencias de precios y se compra con criterio.
 

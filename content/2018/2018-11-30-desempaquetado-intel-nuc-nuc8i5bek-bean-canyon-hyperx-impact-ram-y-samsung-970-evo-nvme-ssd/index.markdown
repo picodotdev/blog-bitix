@@ -81,19 +81,8 @@ Ocupan muy poco, tiene un tamaño de 11x11x3.6cm (ancho, largo, alto en centíme
 
 En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los 300 €, el NUC8i5BEK sobre los 400 € y el NUC8i7BEK sobre los 500 €. Los Hades Canyon llegan a los 800 € y 1000 € pero con mejor gráfica y mayor número de puertos de conexión. Con la aparición de los Bean Canyon los [Baby Canyon][intel-nuc-baby-canyon] de la generación anterior se han convertido en una opción desaconsejada por la reducida diferencia de precio, el [NUC7i5BNK](https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnk.html) (i5-7260U) cuesta unos 360 € y tiene 2 núcleos menos que el NUC8i5.
 
-* [Intel NUC8i3BEK](https://amzn.to/2OYiO0d)
-* [Intel NUC8i3BEH](https://amzn.to/2RdbQq6)
-* [Intel NUC8i5BEK](https://amzn.to/2R6OB0Q)
-* [Intel NUC8i5BEH](https://amzn.to/2Ra7Arh)
-* [Intel NUC8i7BEH](https://amzn.to/2Rc0MJw)
-
 {{< amazon
-    linkids="f3958514001abbfacb4d2d944dbaae79,222f9d7e5b7ea470df5df9148d6ab300,4f67d035caf205cfbefa4e5afe68674a,5b22e238d8496d8d76cd9397d7f13a2d,866537dd626ab63935971b2c0b3fa830"
-    asins="B07JCF1BTZ,B07JB2M5JS,B07JBM1CFH,B07JCF1LCL,B07J6T8PH6" >}}
-
-{{< amazon
-    linkids="918bcc791540cfd030f14f045520702d,c6d67a1d28c20e1cf52fd620c520724b"
-    asins="B09D7CM8L4,B08XZQKCSY" >}}
+    tags="intel-nuc" >}}
 
 Opté por el modelo NUC8i5BEK sobre el NUC8i3BEK, por sus cuatro núcleos y sobre el NUC8i7BEH porque este no ofrece un aumente de rendimiento significativo sobre el i5 acorde a la diferencia de precio. Podría haber tenido alguna duda de si optar por el modelo sin bahía de 2.5 SATA (_slim_) o el modelo con bahía (_tall_) pero con los 500GB, si necesitase más podría ponerle además una micro SDXC de 128 GB o 256 GB con las que tendré suficiente espacio, con el disco de 250 GB del portátil Sony no llegaba a los 100 GB ocupados. Y en cualquier caso en el futuro si necesito más espacio los SSD se habrán abaratado mucho o aumentado su capacidad si continúan con su bajada de precios y aumento de capacidades a cada mes que pasa como hasta ahora.
 
@@ -129,11 +118,10 @@ Probablemente 16 GiB me sería suficientes pero no me importa ir a por los 32 Gi
 * [Difference between memory kits and single memory modules](http://www.tomshardware.co.uk/forum/270105-30-difference-memory-kits-single-memory-modules)
 * [HyperX Impact Memory Module Specifications](https://www.kingston.com/datasheets/HX424S14IBK2_32.pdf)
 
-Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](https://amzn.to/2K7lnfs) de Kingston y los [G.Skill Ripjaws](https://amzn.to/2PuxIjO) más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. Los 32 GiB en el momento en que los he comprado están entre 280 y 320 €, ciertamente cara. Al final opté por la memoria HyperX Impact.
+Dos modelos validados por Intel compatibles con esto NUC son HyperX Impact de Kingston y los G.Skill Ripjaws más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. En cualquier caso conviene fijarse en la compatibilidad por la fecuencia de trabajo soportada por el NUC y la memoria. Los 32 GiB en el momento en que los he comprado están entre 280 y 320 €, ciertamente cara. Al final opté por la memoria HyperX Impact.
 
 {{< amazon
-    linkids="ef22daf2b91899709c8686b7db8a49c7,06d1aea567128e234b58d2e800ef099c"
-    asins="B01BNJL8I4,B017UC3UPW" >}}
+    tags="memory-ddr4-sodim" >}}
 
 * [Memoria HyperX Impact](https://www.hyperxgaming.com/es/memory/impact-ddr4)
 
@@ -141,19 +129,17 @@ Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](htt
 
 El almacenamiento en formato SSD está bajando notablemente de precio a cada mes o par de meses que pasa. En tamaño de 250 GB ya tienen un precio muy asequible e incluso en 500 GB y 1 TB no son prohibitivos. Cambiar el disco duro por un SSD es la mejor inversión a realizar en un ordenador si la cantidad de memoria es suficiente, cualquier procesador cumple para usos ofimáticos. Se puede optar por un SSD con interfaz SATA III con una velocidad de lectura y escritura de 550 / 500 MB/s que ya es bastante rápido para muchos usuarios o en formato M.2 NVMe que ofrece sensiblemente mayores tasas de transferencia de hasta 3500 / 2500 MB/s.
 
-Por la cantidad de datos que tengo el tamaño que necesito está entre 250 y 500 considerando que una gran parte de los datos los tengo en dos discos duros USB externos por duplicado y el equipo solo contendría los más importantes. He barajado un M.2, ya que es el conector que ofrece el Intel NUC que he elegido, como el [Samsung 970 EVO](https://amzn.to/2OITkDX) y con interfaz SATA III de 500 GB con conector M.2 había barajado el [Crucial MX500](https://amzn.to/2DGhIFg). Por comparar como han evolucionado el SSD que compré en el 2014 para el Sony Vaio era un Samsung 840 EVO de 250 GB me costó 125 € y ahora un NVMe ofrece el doble de capacidad y a una velocidad sensiblemente superior y en formato SATA III doble de capacidad a un precio sensiblemente inferior.
+Por la cantidad de datos que tengo el tamaño que necesito está entre 250 y 500 considerando que una gran parte de los datos los tengo en dos discos duros USB externos por duplicado y el equipo solo contendría los más importantes. He barajado un M.2, ya que es el conector que ofrece el Intel NUC que he elegido, como el Samsung 970 EVO y con interfaz SATA III de 500 GB con conector M.2 había barajado el Crucial MX500. Por comparar como han evolucionado el SSD que compré en el 2014 para el Sony Vaio era un Samsung 840 EVO de 250 GB me costó 125 € y ahora un NVMe ofrece el doble de capacidad y a una velocidad sensiblemente superior y en formato SATA III doble de capacidad a un precio sensiblemente inferior.
 
 Al final he optado por el Samsung 970 EVO, con el Crucial con interfaz SATA III tendría creo que suficiente pero no estoy ajustando mucho el precio, al igual que en la memoria. 
 
 {{< amazon
-    linkids="d8ee308b386ae8fc1ed0978391f98ade,048e7dde98c59aff3bdf3eda82b0057a,9843c55e883197e8c5108e19cff142ae,30e60238410c4c1f9584f13e067e8cca"
-    asins="B07MFBLN7K,B077SQ8J1V,B078WST5RK,B077SF8KMG" >}}
+    tags="storage-nvme,storage-ssd" >}}
 
-Es muy posible que compre adicionalmente una [tarjeta micro SDXC de 128 GB](https://amzn.to/2BHXPeA) o [de 256 GB](https://amzn.to/2Qq04vm) como una forma de ampliar la cantidad de almacenamiento que tengo disponible y como carperta de descargas y archivos temporales. Las SDXC admiten hasta un almacenamiento de 2 TiB que en un futuro se harán más asequibles en precio.
+Es muy posible que compre adicionalmente una tarjeta micro SDXC de 128 GB o de 256 GB como una forma de ampliar la cantidad de almacenamiento que tengo disponible y como carperta de descargas y archivos temporales. Las SDXC admiten hasta un almacenamiento de 2 TiB que en un futuro se harán más asequibles en precio.
 
 {{< amazon
-    linkids="69626bf45c9c279219546f122fd33a06,186319e6ae3e35777b9412d236a46297"
-    asins="B06XFHQGB9,B06XFS5657" >}}
+    tags="storage-microsd" >}}
 
 * [Samsung 970 EVO NVMe M.2 500GB SSD](https://www.samsung.com/es/memory-storage/ssd-970-evo/MZ-V7E500BW/)
 * [Samsung EVO Plus microSD](https://www.samsung.com/es/memory-storage/evo-plus-microsd-with-adapter-mb-mc128gaeu/MB-MC128GAEU/)
@@ -364,16 +350,16 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per
 Después de un tiempo y a medida que AMD lanzando modelos de procesadores con bajo consumo y el buen rendimiento basados en la arquitectura Ryzen han aparecido algunos modelos similares en formato a los Intel NUC pero basados en los procesadores de AMD. Uno de ellos es el [Minis Forum UM300](https://amzn.to/3kQkg4Z) que ya equipado con memoria y almacenamiento SSD tiene un precio muy competitivo.
 
 {{< amazon
-    linkids="710109ccd69aee17e29f31f74f4912b7,c372c09d811de14ea2f946892b41ed0b,a5478d556ca3e8609e9f41ecd23d87bd"
-    asins="B094VC6C9T,B0958XZXND,B08NBK6G74" >}}
+    tags="minipc" >}}
 
 ### Switch HDMI y cables, monitor con el ordenador y consola
 
 Si el monitor es compartido tanto por el ordenador como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o [_switch_ HDMI de múltiples entradas](https://amzn.to/3kxT2Cx) y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
 
 {{< amazon
-    linkids="3a276132a39c3c3ce43f194d7e85583e,3954e70941543ecb9ada5c76d26024e9,f5c9c155adf728e8d3217ab7e723d14c,87c2e46fa9d13984b35d29ce7d5761ae"
-    asins="B09CQ4JSC5,B00NO73MUQ,B07RY2X9LF,B01J8S6X2I" >}}
+    tags="hdmi-switch,hdmi-cable"
+    linkids="f5c9c155adf728e8d3217ab7e723d14c,87c2e46fa9d13984b35d29ce7d5761ae"
+    asins="B07RY2X9LF,B01J8S6X2I" >}}
 
 Otro accesorio de utilidad es un [teclado pequeño con soporte dual para bluetooth y comunicación inalámbrica 2.4 Ghz](https://amzn.to/36SUMMN) que es compatible tanto con el ordenador como una _smart tv_, teléfono Android o una PlayStation 4. En mi caso un uso sería tener el teclado pequeño con soporte de ratón para ver películas desde la cama y poder controlar el PC a distancia, incluye teclas multimedia y una rueda específica para hacer desplazamiento vertical muy cómoda al visualizar páginas web, además es retroiluminado perfecto para utilizarlo a oscuras si se está viendo una película. Funciona con una batería recargable.
 
