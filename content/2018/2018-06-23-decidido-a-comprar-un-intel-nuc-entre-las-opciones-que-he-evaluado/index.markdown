@@ -68,14 +68,14 @@ También he seguido los NUC con un Intel Core i3 7100U sin embargo tiene solo 2 
 Preferiría un microprocesador [AMD][amd] ya que solo están afectados por algunas variantes de _Spectre_, pero AMD no tiene tanta diversidad de productos como tiene Intel, no tienen nada parecido a los Intel NUC y en portátiles prácticamente todos los modelos equipan un Intel, quizá cambia ahora algo con los Ryzen. Por rendimiento y precio posiblemente elegiría un [AMD Ryzen 2400G](https://www.amd.com/es/products/apu/amd-ryzen-5-2400g) pero de momento las placas con el _chipset_ B450 para sacarle el máximo rendimiento aún no están disponibles, en la generación 1xxx de los Ryzen no hay modelos con gráfica integrada, tendría que ser un mini-ITX y el equipo me lo tendría que montar yo, no es difícil pero si tuviese algún imprevisto o incompatibilidad sería un problema por tener que devolver piezas y buscar otras, además no estoy seguro del ruido que haría, lo quiero muy silencioso al menos en tareas ofimáticas, navegación por internet y cosas simples, no estoy seguro de que lo sea con el ventilador de la CPU y fuente de alimentación. Ocupa más que un NUC para mi importante si en un futuro le quiero dar uso como ordenador secundario, servidor personal o quisiera traspasarlo. Pero por 400 € se tiene un ordenador muy decente en plataforma AMD Ryzen a falta de memoria y SSD.
 
 {{< amazon
-    tags="pc-components" >}}
+    tags="hardware-pccomponents" >}}
 
 La pantalla que estoy siguiendo es una 2K de [BenQ PD2700Q][amazon-benq-pd2700q] en tamaño de 27", el tamaño de pantalla ideal para 4K creo que es más un monitor de 32", a su máxima resolución en una 27" 4K las cosas ven muy pequeñas y tendría que escalarla a 2K, busco que sea IPS ya que los colores en este tipo de paneles se ven significativamente mejor que en un panel TN, uno al lado del otro la diferencia es clara. Apreciaré una mejora notable en la calidad de la pantalla de la que tenía en el portátil Sony. No es barata pero es algo que no necesitan renovarse tan a menudo como el ordenador seguramente pueda tener un uso durante una década si no presenta ningún problema de funcionamiento. Otros aspectos interesantes son ser regulable en altura y horizontalmente, colocable en posición vertical y puertos USB, HDMI y DisplayPort por otro lado una información en pantalla o OSD aceptable y de fácil configuración.
 
 Entre otras cosas están el teclado y ratón que me conformo con un modelo básico y barato como el [Logitech MK120][amazon-logitech-mk120] y una alfombrilla que cubra la mesa.
 
 {{< amazon
-    tags="benq" >}}
+    tags="monitor-benq" >}}
 {{< amazon
     linkids="e51cd8d969848df3bb23c36529afdc8e,c97c6afa54ed38606236e18afb2f55e7"
     asins="B00564GWEI,B072PR4FWY" >}}

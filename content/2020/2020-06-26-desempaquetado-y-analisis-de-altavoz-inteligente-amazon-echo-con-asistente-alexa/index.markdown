@@ -59,8 +59,7 @@ Los similares a los que tenía.
 En el momento de buscar estas opciones y un poco lo que me ha decidido a comprarlos es que los altavoces inteligentes de Amazon estaban de oferta, entre los varios que tiene está [los altavoces inteligentes Echo con asistente Alexa](https://amzn.to/2G75Qyj), bastante pequeño y compacto, con pocos cables y con buena calidad de sonido al tener altavoz de graves, mucho mejor que la de los propios altavoces del monitor o de un portátil, al menos la suficiente para mi.
 
 {{< amazon
-    linkids="c2bd7a440ea0eb59a3484f2340171d9c,8e6dfed393a5ffcc819d9854504503f8,92cdf45c940adb1dcd628e1516b0330e"
-    asins="B085FXHR38,B07P64LFFH,B00NO73MUQ" >}}
+    tags="amazon-echo,audio-jack-cable" >}}
 
 Finalmente, me he decidido por el Amazon Echo de tercera generación, por precio está en la categoría de altavoces de gama media-alta de las que he encontrado pero para lo que lo quería y este tiene es la que elegido. Mi uso será principalmente como altavoz para el ordenador y la PlayStation, posiblemente no use muchas de sus opciones como altavoz inteligente pero otras es posible que sí como la posibilidad de escuchar música de Amazon Music o la radio sin necesidad de tener el ordenador encendido o como hilo musical al dormir. Lo que pierdo es el sonido estéreo pero recupero una buena cantidad de espacio en la mesa y quito un par de cables.
 

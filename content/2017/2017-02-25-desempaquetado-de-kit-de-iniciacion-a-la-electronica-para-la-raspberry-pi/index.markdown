@@ -41,8 +41,7 @@ Después de unos años se han lanzado versiones notablemente mejoradas, hasta la
     caption="Placas modelos Raspberry Pi 1 B y 3 B" >}}
 
 {{< amazon
-    linkids="f255c1cf8b7c2bf2208ecf942269269a,6bf3dcdc2d625453497098a500d2b8cf,51a1f2fee89ad8791b2e51bd197ea7d3,a6529005eab78be2bf5cd65027219ab0"
-    asins="B07TC2BK1X,B014I8TVLI,B07W5H9LQJ,B07FCMBLV6" >}}
+    tags="raspberrypi" >}}
 
 Hace unas semanas compré un [kit de electrónica básico para la Raspberry Pi](https://amzn.to/30Fpsle) pero que incluye una buena cantidad de sensores y elementos de electrónica y sirve para cualquier placa con _pines_ GPIO. Como el _kit_ es para la Raspberry Pi 3 y viene con un cable de extensión de 40 _pines_ (cantidad de _pines_ que tiene la Raspberry Pi 3) y yo tengo la 1 debí comprar también un [cable de extensión de 26 pines](https://amzn.to/2lSYiDF) (los que tiene la Raspberry Pi 1) para la matriz de puntos con la que hacer pruebas sin soldar los elementos. El precio del _kit_ no es muy caro, de unos 30 € y el barómetro no venía soldado con sus _pines_ por lo que si queremos usarlo deberemos hacer la soldadura primero con un [soldador de electrónica](https://amzn.to/3fk9AsE) y [estaño](https://amzn.to/30FRYmQ).
 

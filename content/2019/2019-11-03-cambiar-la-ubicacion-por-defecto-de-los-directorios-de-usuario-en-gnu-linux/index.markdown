@@ -26,10 +26,14 @@ Por preferencias o necesidad según el usuario, la ubicación de cada uno de est
 Los discos duros SSD se han abaratado muchísimo en los últimos años pero aún no han alcanzado a los discos duros mecánicos en el precio de € por GB. Un [disco duro mecánico de 4 TB](https://amzn.to/2NEWsly) tiene un precio bastante asequible. A lo largo del tiempo he ido reaprovechando los discos duros de portátiles para los que compré una caja USB para utilizarlos como discos duros externos USB y ahora tengo varios, uno de 500 GB, otro de 320 GB, y dos de 120 GB.
 
 {{< amazon
-    linkids="e4fd44ae2ee8a6632bf514c94a9bcce2,51f9f449af48eb3c5f98ae05eb93cbc7,7e74aadff0dd2b77d5f5d8ee66108f4d"
-    asins="B0713WPGLL,B07H1231S8,B07FD6D4HJ" >}}
+    tags="storage-usb-external" >}}
 
 Cuando compré el [Intel NUC][blogbitix-363] compré la versión _slim_ sin bahía para disco SATA 2.5" y solo le puse un SSD de 500 GB con conexión M.2. Tenía intención de comprar una [tarjeta SDXC](https://amzn.to/2NE97Fg) o una [memoria USB](https://amzn.to/2NE97Fg) pequeña para tenerla siempre conectada al ordenador y como una forma de ampliar la capacidad de almacenamiento. Sin embargo, ni la tarjeta microSD ni la memoria USB es barata comparada con el precio de un SSD SATA. Al final he optado por utilizar uno de esos discos duros externos que tengo para el mismo propósito. Lo que necesitaba era cambiar la ubicación de esos directorios por defecto para que en vez de estar en la carpeta de inicio de mi usuario y en el SSD estuviesen en el disco duro externo USB.
+
+{{< amazon
+    tags="storage-usb-memory" >}}
+{{< amazon
+    tags="storage-microsd" >}}
 
 La ubicación de los directorios de usuario se puede cambiar modificando las rutas en el archivo de configuración _~/.config/user-dirs.dirs_. En este caso poniendo la ubicación del punto de montaje del disco duro externo USB.
 

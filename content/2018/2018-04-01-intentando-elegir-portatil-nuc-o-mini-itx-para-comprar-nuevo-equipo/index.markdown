@@ -47,8 +47,9 @@ Es la opción que en este momento me convence más pero al igual que en los port
 Ocupan poco incluso se les puede instalar detrás del monitor, son muy silenciosos, se les puede instalar una buena cantidad de memoria y en el momento que a mi ya no me sirva es fácilmente transferible. Con un Ryzen no me lo pensaría tanto.
 
 {{< amazon
-    linkids="667a9af1171092daf632c9029b23a6cc,918bcc791540cfd030f14f045520702d,c6d67a1d28c20e1cf52fd620c520724b,710109ccd69aee17e29f31f74f4912b7,c372c09d811de14ea2f946892b41ed0b,a5478d556ca3e8609e9f41ecd23d87bd"
-    asins="B08YFFW131,B09D7CM8L4,B08XZQKCSY,B094VC6C9T,B0958XZXND,B08NBK6G74" >}}
+    tags="intel-nuc" >}}
+{{< amazon
+    tags="minipc" >}}
 
 ### Un mini ITX
 
@@ -59,8 +60,7 @@ Por otro lado por los componentes que he visto en este caso parece que los fabri
 Estos son los componentes que hasta el momento he buscado, la memoria DDR4 está especialmente cara, montar 64 GiB sería elevado incluso para mi que no tengo un límite de presupuesto superior estricto.
 
 {{< amazon
-    linkids="c9f4227f57b19f7ad62f9e011b875566,299f20792e422017ab92558f2d207082,6a12cb31b0a7cd2ad746b5b7e1950e3d,b56c6d7fadb83f104fa179ed736cb431,09928718c85d77bfad2b885f90927b8f,be7b1438a935c25ce5bb7e03aab971f7,b6e01eb06b516f4a6e519d9e2666e63d"
-    asins="B08166SLDF,B089TP3GQF,B01N27QWFA,B07NFHBD3D,B085HCKPN4,B07MBQPQ62,B089QXQ1TV" >}}
+    tags="hardware-pccomponents" >}}
 
 ### Conclusión
 

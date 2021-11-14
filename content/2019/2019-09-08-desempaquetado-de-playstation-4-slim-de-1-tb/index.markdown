@@ -66,12 +66,10 @@ Con la nueva generación de consolas ya a la venta en el mercado tanto de [Sony]
 Dado que ambas consolas ofrecen compatibilidad con los juegos de la anterior generación y los mejoran con tiempos de carga más reducidos y mejores tasas de imágenes por segundo son mejor opción que una consola de la anterior generación Xbox One o PlayStation 4 a no ser que estas se encuentren a un muy buen precio teniendo en cuenta que la Xbox Series S ya tiene un precio muy atractivo.
 
 {{< amazon
-    linkids="25e9abfe5ed88b98b9d15bd0c0c43455,617850e00511a810b16dd2342a83217c,e98b40ae43ea944046a09652d72c4d4b,f5f9e03cc0e549dba09905a2a8fc0b66,9de8d6693c56e067add3ba5c63920294"
-    asins="B08KKJ37F7,B08KJF2D25,B08KJPLGLF,B08H97WTBL,B08H99878P" >}}
+    tags="playstation-5,playstation-5-controller,playstation-5-accesories" >}}
 
 {{< amazon
-    linkids="3279bf68c4f6647fc51849ce5cc1290c,608090c668f2d3d616f26e0787fa6c0c,9af902ac772d3ea3ecf44d492b15c9d6"
-    asins="B08H93ZRLL,B087VM5XC6,B08JW624NN" >}}
+    tags="xbox-seriesx,xbox-seriesx-controller" >}}
 
 ### Lista de juegos de PlayStation
 
@@ -182,8 +180,7 @@ Las [especificaciones ténicas de la PlayStation 4 Slim](https://www.playstation
 * Salida vídeo: puerto HDMI™ (con soporte para HDR)
 
 {{< amazon
-    linkids="95a091643d28db1abfa20f5e3e12a899,f88c13419ae6b063f4ff9000db4bd837"
-    asins="B07LFY8WBX,B01LYWPQUN" >}}
+    tags="playstation-4,playstation-4-controller" >}}
 
 Estos es lo que incluye la caja del _pack_ que he comprado:
 

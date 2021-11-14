@@ -56,8 +56,7 @@ La PS5 con dos modelos en diferentes precios permite que el modelo digital salvo
 Se ha anunciado que los miembros de la suscripción Plus en el momento de lanzamiento tendrán acceso a Plus Collection formado por varios de los mejores juegos de la anterior generación, mostrando la retrocompatibilidad de la consola. También, [Sony ha confirmado que todo el catálogo de la PS4 será compatible con la PS5](https://blog.playstation.com/2020/10/09/ps4-games-on-ps5-your-top-questions-answered/) salvo unos 10 juegos entre los que no hay ninguno de los más conocidos, tanto para el formato físico de los juegos como digitales así como las partidas guardadas que se pueden trasferir a la nueva consola.
 
 {{< amazon
-    linkids="25e9abfe5ed88b98b9d15bd0c0c43455,617850e00511a810b16dd2342a83217c,e98b40ae43ea944046a09652d72c4d4b,f5f9e03cc0e549dba09905a2a8fc0b66,9de8d6693c56e067add3ba5c63920294"
-    asins="B08KKJ37F7,B08KJF2D25,B08KJPLGLF,B08H97WTBL,B08H99878P" >}}
+    tags="playstation-5,playstation-5-controller,playstation-5-accesories" >}}
 
 {{< image
     gallery="true"
@@ -211,8 +210,7 @@ La Series X ofrece más potencia gráfica, más almacenamiento, ofrece lector de
 La estrategia de Microsoft con las Series X/S con dos modelos diferentes en potencia gráfica es precio es interesante por su diferencia de precio. La Series S ofrece una consola de nueva generación a un precio sensiblemente más económico.
 
 {{< amazon
-    linkids="3279bf68c4f6647fc51849ce5cc1290c,608090c668f2d3d616f26e0787fa6c0c,9af902ac772d3ea3ecf44d492b15c9d6"
-    asins="B08H93ZRLL,B087VM5XC6,B08JW624NN" >}}
+    tags="xbox-seriesx,xbox-seriesx-controller" >}}
 
 {{< image
     gallery="true"

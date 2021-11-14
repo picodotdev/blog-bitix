@@ -233,11 +233,11 @@ Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://am
 * [Página del fabricante del teclado Glorious PC Gaming Race GMMK TKL](https://www.pcgamingrace.com/products/gmmk-tkl-tenkeyless-brown-switch)
 
 {{< amazon
-    linkids="efd4877783411bfb37d690da02824606,2cdc77ae7cc6c546d85c6e99ecd2bbf5,07db9d547c2d5a08fbe89d8a2c8c7ff3"
-    asins="B07L31V1K4,B0716ZNZ1P,B07L317X86" >}}
+    tags="keyboard-glorious" >}}
 {{< amazon
-    linkids="819c1e81da9f0cd7f92f795b41926582,09b7be21445b0ea3514d006335302f6f,04543405ab88e2ce7474674867279243,31c3dd925e5cc8a5ce452d81ab581c3a"
-    asins="B07CVQ7ZRL,B07CVT9ZH3,B07CVQ8NGR,B07CVR26ZF" >}}
+    tags="keyboard-glorious-switches" >}}
+{{< amazon
+    tags="keyboard-mechanical-keycaps" >}}
 
 * [Glorious PC Gaming Race GMMK TKL ISO en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-gmmk-tkl-iso-layout-teclado/)
 * [Glorious PC Gaming Race Gateron Brown Switches en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-gateron-brown-switches-120-piezas-interruptores-teclado/)
@@ -270,7 +270,6 @@ En [Amazon][amazon-affiliate] hay gran cantidad de modelos de membrana como el c
 Teclados de membrana con cable e inalámbrico.
 
 {{< amazon
-    linkids="92beec3c8e4c12addd6aad92e670067a,d45488e9f6f3e0fae914e06262b99644"
-    asins="B00564GWEI,B00CHHDY66" >}}
+    tags="keyboard-basic" >}}
 
 {{% /post %}}

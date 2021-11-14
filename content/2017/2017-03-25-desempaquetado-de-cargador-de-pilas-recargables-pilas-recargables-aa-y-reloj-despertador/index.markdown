@@ -36,8 +36,7 @@ En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo A
 Otros modelos de cargador en los que me fijé son los siguientes pero el que elegí en su rango de precios considero que es de lo mejor que hay disponible.
 
 {{< amazon
-    linkids="f0a5a7649c2c427ca48918de8e94be1f,f7b8d434b0f52cc88ad84f89028c4764,dc98179866a708a250165039652a7c62"
-    asins="B008GZ4BII,B07C2QTTJZ,B00TS19BUW" >}}
+    tags="battery-rechargable" >}}
 
 ### Reloj analógico
 

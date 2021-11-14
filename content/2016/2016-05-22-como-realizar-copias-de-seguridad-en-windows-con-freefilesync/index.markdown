@@ -30,8 +30,7 @@ Las copias de seguridad deben guardase en un dispositivo diferente al origen ya 
 Una opción sencilla sin más complicaciones de opciones más avanzadas es un disco duro externo USB de 2.5 pulgadas, estos discos son pequeños además de portables, en diferentes capacidades según la necesidad llegando incluso a 4 TB y a unos precios muy asequibles. Una buena opción son estos discos duros externos de 2.5" con conexión 3.0 USB en capacidades de [1 TB](https://amzn.to/31h8F7y), [2 TB](https://amzn.to/3j7ZAUY), [3 TB](https://amzn.to/346DnSW) y [4 TB](https://amzn.to/358X8Zf). Hay que tener en cuenta que la copia de seguridad requiere al menos tanto espacio como los datos originales.
 
 {{< amazon
-    linkids="b3935c0c943be983bce3ceb803928e62,6abae8dc406222e745a56e1405eb282b,54661b04f99360148ebed3b5528fa2ed,3f06bc3776d19ba91f5ab5660781d247"
-    asins="B06VVS7S94,B06W55K9N6,B06XG892ZH,B0713WPGLL" >}}
+    tags="storage-usb-external" >}}
 
 ### Utilizar el programa FreeFileSync para hace copias de seguridad
 

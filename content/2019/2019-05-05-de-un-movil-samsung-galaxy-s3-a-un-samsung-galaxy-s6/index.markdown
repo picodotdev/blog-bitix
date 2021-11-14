@@ -44,14 +44,12 @@ Pero el Galaxy S3 también ya me estaba dando algunos síntomas de agotamiento, 
 
 Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www.samsung.com/es/smartphones/galaxy-a50/SM-A505FZKSPHE/), [Samsung Galaxy A70](https://www.samsung.com/es/smartphones/galaxy-a70-a705/SM-A705FZKUPHE/), [Xiaomi Mi 9](https://www.mi.com/es/mi9/) y [Xiaomi Mi 9 SE](https://www.mi.com/es/mi-9-se/). Cualquiera de ellos unos pedazo móviles en el rango de los 300-450 € que no tienen mucho que envidiar a otros de gama alta pero que cuestan el doble o más.
 
-* [Especificaciones Samsung Galaxy A50](https://www.gsmarena.com/samsung_galaxy_a50-9554.php)
-* [Especificaciones Samsung Galaxy A70](https://www.gsmarena.com/samsung_galaxy_a70-9646.php)
-* [Especificaciones Xiaomi Mi 9](https://www.gsmarena.com/xiaomi_mi_9-9507.php)
-* [Especificaciones Xiaomi Mi 9 SE](https://www.gsmarena.com/xiaomi_mi_9_se-9583.php)
+* [Especificaciones Samsung Galaxy A52](https://www.samsung.com/es/smartphones/galaxy-a/galaxy-a52s-5g-awesome-black-128gb-sm-a528bzkdeub/)
+* [Especificaciones Samsung Galaxy A72](https://www.samsung.com/es/smartphones/galaxy-a/galaxy-a72-awesome-blue-128gb-sm-a725fzbdeub/)
+* [Especificaciones Xiaomi Mi 11](https://www.mi.com/es/mi-11/)
 
 {{< amazon
-    linkids="e6aff6e43c47d613b79a67b98759ef5a,bee64f83ca4375f0702a1162e17db294,bee64f83ca4375f0702a1162e17db294,978a77e06b7c87f3ff43d6c9b35ff059"
-    asins="B07PDZLZ9V,B07NRK942P,B07NRK942P,B07QMYX86G" >}}
+    tags="smartphone" >}}
 
 Sin embargo, en vez de comprar uno de estos anteriores nuevos como en ocasiones anteriores he tenido la posibilidad de heredar otro móvil, en este caso un [Samsung Galaxy S6](https://www.gsmarena.com/samsung_galaxy_s6-6849.php) lanzado en el 2015 que para haber pasado 4 años a día de hoy y por las especificaciones que tiene ha resistido el paso del tiempo bastante bien creo para los móviles del 2019 de gama media-baja. Y es que es un móvil de gama alta de su época al igual que lo fue el S3 en su momento. En primer contacto con él se nota una apreciable fluidez al abrir aplicaciones comparado con el Samsung Galaxy S3.
 

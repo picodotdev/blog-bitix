@@ -81,8 +81,7 @@ El precio del modelo de 1 GiB de memoria se mantiene en $35 y el de 4 GiB llega 
     caption="Raspberry Pi 3 y 4" >}}
 
 {{< amazon
-    linkids="6e87726b77e92056e7ac168add1bc747,bef0fad42b2cc046799c66f7fa220c0f,fc47107b5f2e02c96571abfa0506c1c7,df5c52be4ca21b9991d26145edb0b642,39ee0802cdc202ce8259d463b59224ed"
-    asins="B07TC2BK1X,B07XNVPK8X,B073JYC4XM,B014I8U33I,B07VMXHJ4Q" >}}
+    tags="raspberrypi" >}}
 
 ### Rock64
 

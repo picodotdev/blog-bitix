@@ -30,10 +30,6 @@ Aparte de la memoria, el SSD para el NUC y tras cosas de menor importancia que y
 
 Pasados unos meses de uso veré si ha sido buena decisión por su fiabilidad y el incordio que supone cambiar de pilas si es muy habitualmente, con las recargables no me supondrá un gasto adicional recurrente que hay que tener en cuenta en el coste del teclado y ratón, también al precio de las pilas no recargables o recargables si se le suma el del cargador aunque como uso pilas recargables para otro tipo de aparatos electrónicos (relojes, mandos a distancia, ...) este último es un gasto compartido.
 
-{{< amazon
-    linkids="22f1206a79c0eb63d39b94ca6b26ee80,32d37ac4289e4cc6001d3442d8a448e1,930604874c5c52f2c31549109cfd682b,6e19b96606f3c2b4a50d462873467b99"
-    asins="B0758DMHZG,B00564GWEI,B01K2210GS,B01N4AIIIV" >}}
-
 {{< tableofcontents >}}
 
 ### Con cable o inalámbrico
@@ -61,6 +57,11 @@ El teclado CKW200 es un teclado completo tradicional con teclado numérico y tec
 Las teclas no son en forma de isla sino que son como en la generación anterior de teclados y tienen el inconveniente de que entre los huecos de las teclas se suele acumular suciedad y polvo y no son muy fáciles de limpiar, en los teclados en formato isla se acumula menos suciedad. No posee florituras adicionales como retroiluminación para las teclas útil en condiciones de baja luz ni tampoco adornos como teclas RBG con efectos lumínicos, a un teclado con este precio no se le pueden pedir esas cosas hay que ir a teclados de mayor precio para encontrar esas funciones si se echan de menos que no son más que un añadido estético.
 
 Dado el precio de este teclado los caracteres y símbolos de las teclas está impresos con el método más barato, mediante pegatinas que con el paso del tiempo y uso puede hacer que algunas teclas pierdan su caracter, pasados dos años de uso a una tecla se le borrado parte del caracter. La pérdida del caracter en la tecla no afecta al funcionamiento pero sin pasa en varias teclas y de forma completa dificulta puede dificultar la escritura ya que no me se la posición de todos los caracteres. El teclado posee un indicador de batería entre los LED indicadores de estado, se enciende al conectar las pilas no se si indicará también el nivel bajo de las dos pilas AAA que usa. Las pilas del teclado duran muchísimo tiempo, mucho más del que pensaba, las dos pilas AAA recargables que uso le duran más de un año y medio.
+
+{{< amazon
+    tags="keyboard-basic"
+    linkids="22f1206a79c0eb63d39b94ca6b26ee80"
+    asins="B0758DMHZG" >}}
 
 ### El ratón CKW200
 
@@ -143,9 +144,7 @@ Los teclados mecánicos son significativamente más caros empiezan a partir de l
 Estos son algunos modelos que tiene un buen aspecto, la dificultad es encontrar algún modelo que tenga la disposición de las teclas en la disposición de español ya que muchos de ellos tienen la disposición inglesa a las que les falta algunos caracteres que usamos como la _ñ_.
 
 {{< amazon
-    linkids="90c9225ac12c0f227dc1e3e0929c980a,9b730fd6fd7cd6b804c0768ff7a0e4b0,4eef50f6d2b1d0ad77d0c021945072ce,2fa6dd5d940478943c99b2cc41180bd2,90a2743711215ba483752fc15ff0a5ae"
-    asins="B07L31V1K4,B0716ZNZ1P,B07CVQ7ZRL,B09KH2NX42,B07TKM6DZ4" >}}
-
+    tags="keyboard-mechanical" >}}
 
 #### Teclados mecánicos
 
@@ -186,7 +185,6 @@ Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla
 Para no incurrir en mayores gastos adicionales por tener que sustituir pilas cada cierto tiempo, sobre todo para el ratón, usaré [pilas recargables de Amazon Basics tanto AA](https://amzn.to/2QRoefk) como [AAA](https://amzn.to/2NuWAXF) y un [cargador con pantalla similar a este](https://amzn.to/2MNzLfF) que adquirí hace tiempo para cargarlas, posee un indicador de la carga de la pila a medida que se carga y soporta múltiples tipos de pilas. [Amazon Basics tiene un cargador sencillo](https://amzn.to/2NwgXna) pero aconsejo adquirir uno equivalente al que tengo yo con pantalla o mejor aún con la función de descarga de pila para prolongar más tiempo la vida útil de las pilas, no son mucho más caros que el de Amazon y la pantalla resulta muy útil. Unas pilas las usaré y tendré otras en reserva para poner de repuesto en cuanto las que estoy usando se gasten así no tendré que esperar mucho a que se carguen ya que tardan varias horas.
 
 {{< amazon
-    linkids="4b82c9473891e7e300af6af12e499a3b,7a974f6747d38d7ceae51b4c2a524820,729262ef1a678dd96e0fc3fcfcade02f"
-    asins="B00CWNMR5Y,B00CWNMW1S,B008GZ4BII" >}}
+    tags="battery-rechargable" >}}
 
 {{% /post %}}

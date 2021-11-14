@@ -43,8 +43,7 @@ Los elementos necesarios para tener tener una consola retro son los siguientes: 
 * [ROMs de juegos](https://archive.org/details/datomatic.no-intro.org)
 
 {{< amazon
-    linkids="6e87726b77e92056e7ac168add1bc747,bef0fad42b2cc046799c66f7fa220c0f,fc47107b5f2e02c96571abfa0506c1c7,df5c52be4ca21b9991d26145edb0b642,39ee0802cdc202ce8259d463b59224ed"
-    asins="B07TC2BK1X,B07XNVPK8X,B073JYC4XM,B014I8U33I,B07VMXHJ4Q" >}}
+    tags="raspberrypi" >}}
 
 {{< amazon
     linkids="0bcc896ec870ce504e2c4c0acfaa8870,2264c2741c0914e881d4e70b36b927da"

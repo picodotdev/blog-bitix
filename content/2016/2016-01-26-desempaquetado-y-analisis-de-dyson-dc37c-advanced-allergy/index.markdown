@@ -30,8 +30,7 @@ No quería que después de comprar la aspiradora tener que comprar ningún tipo 
 De los primeros aspiradores que vi interesantes uno fue el [Rowenta Compacteo Ergo 4359EA](https://amzn.to/2kdF2gT), me gustó que era pequeño, sin bolsa, barato y podría guardarlo en el mismo armario junto con la escoba. El precio era similar tanto en Amazon, Media Markt y El Corte Inglés. Pudiendo, prefiero comprar en una tienda física, el bulto iba a ser grande con lo que no quería enviármelo al trabajo y por si quería hacer alguna devolución es más fácil en una tienda física como finalmente me ocurrió, además quería ver físicamente el producto. En El Corte Inglés no tenían disponibilidad, fui a comprarlo a Media Markt por poco menos de 80 €. Amablemente un par de personas del personal de Media Markt me atendieron resolviendo varias dudas que tenía. Me llevé este modelo a casa.
 
 {{< amazon
-    linkids="3f1a337594c8d70b15a387fb1ba68323,7f37244cf46ff780830ec9efb8bc9517"
-    asins="B00TOHS3JA,B07WL235B5" >}}
+    tags="vaccum-basic" >}}
     
 Ya en casa leyendo el manual de instrucciones me percaté de que aunque muchas aspiradoras son sin bolsa y por tanto no hay que cambiarla porque no tienen en vez de eso hay que cambiar el filtro HEPA y el filtro premotor que recogen las partículas más diminutas de polvo, según el fabricante cada año. Además, como es habitual cada fabricante usa sus propios recambios incompatibles con otras marcas y como en este caso es difícil encontrarlos y si es así a un precio de entre 15 € y 30 €. Por lo que solicité hacer la devolución, dentro del plazo dispuesto a tal efecto hay que decir que la persona que me atendió Media Markt no me puso ningún tipo de objeción aún habiendo abierto el paquete que por supuesto volví a embalar como originalmente y en perfecto estado.
 
@@ -58,11 +57,9 @@ En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la 
 Este modelo de aspiradora Dyson ya está descatalogado, ahora Dyson solo fabrica aspiradoras sin cable con su ventaja de ser más fácil de usar pero también con su inconveniente de requerir cargar la batería, una buena opción si los robots aspiradores no son de nuestra preferencia que también tienen sus inconvenientes pero también algunas ventajas. Otras marcas con productos equivalentes son más baratas que Dyson.
 
 {{< amazon
-    linkids="d77ac3f764b81fd11ae627806a4d504a,fac932bfdf067ad39b644c54044436d9,990b0e523e086a4883c2b891d55fe3fd,ceb42f06e2725ff7fb612d21a9f77dc8"
-    asins="B073ZMK8DS,B0778KC18S,B07ZJ5VRZR,B07ZJ74RD6" >}}
+    tags="vaccum-dyson" >}}
 {{< amazon
-    linkids="79c54261fa6f96e680726eb093ad677a,249d856d42a42c365bc8522762e0f08e,1c361f469d9af6fc5d4cafa8811e3975"
-    asins="B0854XVNLK,B084QH68H3,B07P6GSY8L" >}}
+    tags="vaccum-robot" >}}
 
 ### Caja y desempaquetado
 
