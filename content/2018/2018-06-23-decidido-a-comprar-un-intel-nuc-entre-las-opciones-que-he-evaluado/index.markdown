@@ -70,9 +70,9 @@ Preferiría un microprocesador [AMD][amd] ya que solo están afectados por algun
 {{< amazon
     tags="pc-components" >}}
 
-La pantalla que estoy siguiendo es una 2K de [BenQ PD2700Q](https://amzn.to/2ltsRhf) en tamaño de 27", el tamaño de pantalla ideal para 4K creo que es más un monitor de 32", a su máxima resolución en una 27" 4K las cosas ven muy pequeñas y tendría que escalarla a 2K, busco que sea IPS ya que los colores en este tipo de paneles se ven significativamente mejor que en un panel TN, uno al lado del otro la diferencia es clara. Apreciaré una mejora notable en la calidad de la pantalla de la que tenía en el portátil Sony. No es barata pero es algo que no necesitan renovarse tan a menudo como el ordenador seguramente pueda tener un uso durante una década si no presenta ningún problema de funcionamiento. Otros aspectos interesantes son ser regulable en altura y horizontalmente, colocable en posición vertical y puertos USB, HDMI y DisplayPort por otro lado una información en pantalla o OSD aceptable y de fácil configuración.
+La pantalla que estoy siguiendo es una 2K de [BenQ PD2700Q][amazon-benq-pd2700q] en tamaño de 27", el tamaño de pantalla ideal para 4K creo que es más un monitor de 32", a su máxima resolución en una 27" 4K las cosas ven muy pequeñas y tendría que escalarla a 2K, busco que sea IPS ya que los colores en este tipo de paneles se ven significativamente mejor que en un panel TN, uno al lado del otro la diferencia es clara. Apreciaré una mejora notable en la calidad de la pantalla de la que tenía en el portátil Sony. No es barata pero es algo que no necesitan renovarse tan a menudo como el ordenador seguramente pueda tener un uso durante una década si no presenta ningún problema de funcionamiento. Otros aspectos interesantes son ser regulable en altura y horizontalmente, colocable en posición vertical y puertos USB, HDMI y DisplayPort por otro lado una información en pantalla o OSD aceptable y de fácil configuración.
 
-Entre otras cosas están el teclado y ratón que me conformo con un modelo básico y barato como el [Logitech MK120](https://amzn.to/2yCcE2T) y una alfombrilla que cubra la mesa.
+Entre otras cosas están el teclado y ratón que me conformo con un modelo básico y barato como el [Logitech MK120][amazon-logitech-mk120] y una alfombrilla que cubra la mesa.
 
 {{< amazon
     tags="benq" >}}
