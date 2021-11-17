@@ -40,6 +40,10 @@ En los teclados mecánicos se emplean diferentes tipos de interruptores o _switc
 
 El que _switches_ utilizar depende del usuario y sus preferencias. Algunas personas _gamers_ que utilizan teclado optan por los lineales o los que tiene una respuesta táctil, los que mayormente utilizan el teclado para escribir suelen optar por los que tiene una respuesta táctil o _clicky_ si les gusta el sonido y trabajan en un entorno aislado que no moleste a otras personas.
 
+* [_Swtiches_ Cherry MX mecánicos](https://www.cherrymx.de/en/cherry-mx/mx-original/mx-brown.html)
+* [_Switches_ Gateron mecánicos](https://www.gateron.co/products/gateron-switch-set)
+* [_Switches_ Gateron ópticos](https://www.gateron.co/products/gateron-optical-switch?variant=39534911684815)
+
 En la siguiente tabla se comparan los diferentes tipos de _switches_ según la fuerza que hay que emplear para activarlos, el recorrido hasta el punto de activación en el que se registra la pulsación de la tecla y el recorrido total.
 
 {{< image
@@ -53,7 +57,7 @@ En la siguiente tabla se comparan los diferentes tipos de _switches_ según la f
 
 #### _Clicky_
 
-Los _switches clicky_ emiten un sonido al ser pulsados además de ofrecer una respuesta táctil que mejora su precisión y saber cuando se ha pulsado la tecla por el sonido. Son un tanto ruidosos pero algunos usuarios aprecian su sonido como respuesta cuando una tecla se pulsa.
+Los _switches_ sonoros o _clicky_ emiten un sonido al ser pulsados además de ofrecer una respuesta táctil que mejora su precisión y saber cuando se ha pulsado la tecla por el sonido. Son un tanto ruidosos pero algunos usuarios aprecian su sonido como respuesta cuando una tecla se pulsa.
 
 Los códigos de colores asignados para estos _switches clicky_ son el azul o _blue_ y verde o _green_, los verde requieren algo más de fuerza para ser pulsados.
 
@@ -64,7 +68,7 @@ Los códigos de colores asignados para estos _switches clicky_ son el azul o _bl
     image3="image:switch-cherrymx-blue.gif" optionsthumb3="300x200" title3="Switch Cherry MX Clicky"
     caption="Switches Cherry MX Clicky" >}}
 
-#### Respuesta táctil
+#### Táctiles
 
 Los _switches_ con respuesta táctil ofrecen una resistencia al ser pulsados una vez superado un nivel de presión se disparan y se registra la pulsación. Son como los _switches clicky_ pero sin la respuesta sonora que los hace algo menos ruidosos.
 
@@ -79,7 +83,7 @@ Los códigos de colores asignados para estos _switches_ con respuesta táctil so
 
 #### Lineales
 
-Los _switches_ switches lineales no ofrecen respuesta táctil ni la sonora de los _clicky_, la presión que hay que ejercer para pulsar la tecla es constante durante todo su recorrido.
+Los _switches_ lineales no ofrecen respuesta táctil ni la sonora de los _clicky_, la presión que hay que ejercer para pulsar la tecla es constante durante todo su recorrido.
 
 Los códigos de colores asignados para estos _switches_ con respuesta táctil son el rojo o _red_, _silent red_, _speed silver_ y negro o _back_. El más común de los lineales son lo de color rojo, los de color negro requieren mayor presión, los _speed silver_ requieren menor recorrido de la tecla para registrar la pulsación y los _silent red_ son más silenciosos.
 
@@ -124,7 +128,7 @@ En este vídeo se muestran los diferentes tipos de _switches_ y el sonido caract
 {{< youtube
     video="DZzsR1u493M" >}}
 
-### Materiales de las teclas
+### Materiales de los _keycaps_
 
 Los materiales que se emplean para las teclas de los teclados mecánicos son de plástico ABS o PBT. Las teclas PBT tiene mayor durabilidad y se consideran de mayor calidad aunque son más comunes las ABS ya que estás son más económicas. La textura de las ABS es más suave y con el tiempo adquieren brillo por el aceite de los dedos mientras que las PBT tienen un tacto con una ligera rugosidad, un color más mate sin ser tan propensas a adquirir brillo. El sonido también cambia ligeramente, las teclas PBT al ser más gruesas tiene un sonido más grave.
 
@@ -132,6 +136,20 @@ En algunos casos para la fabricación de la teclas se utiliza un proceso de manu
 
 * [ABS vs PBT Keycaps: What’s the Difference?](https://switchandclick.com/2020/03/17/abs-vs-pbt-keycaps-whats-the-difference/)
 * [¿Cuáles son las mejores keycaps?](https://www.wikiversus.com/gaming/teclados/keycaps/)
+* [Intro to Keycaps](https://drop.com/talk/108/massdrop-101-intro-to-keycaps)
+* [Keycap Types, Keycap Sizes, Profile and other characteristics](https://rowsofkeys.com/keycap-types/)
+
+### Impresión de la leyenda en los _keycaps_
+
+Los fabricantes emplean diferentes técnicas para imprimir en el _keycap_ la leyenda del caracter o símbolo. La técnica empleada determina el coste del _keycap_ y también la durabilidad de la leyenda al desgaste.
+
+* _Pad printing_ es el método más utilizado por la simple razón de que es el más rápido y barato. Sin embargo, su durabilidad es escasa ante el uso continuado que con el paso del tiempo algunas leyendas de las teclas más utiizadas desaparece, lo que las hace poco deseables en teclados de gama alta.
+* _Laser etching_ en esta técnica un láser marca la leyenda en el _keycap_, esta técnica tambien adolece el problema del de la desaparición de la leyenda en las teclas más utilizadas con el paso del tiempo y el uso intenso..
+* _Dye sublimation_ en esta técnica la leyenda se fusiona en el _keycap_ que se convierte en parte del plástico del _keycap_. Ofrece mayor durabilidad que las dos técnicas anteriores soportando el uso intenso sin que las leyendas desaparezcan.
+* _Double-shot_ en esta técnica el proceso de fabricación se realiza en dos pasos de moldeado, un paso forma el cuero del _keycap_ y otro la leyenda del carácter. Su ventaja que es las leyendas nuca van a desparecer y son _keycaps_ más gruesas que ofrecen un sonido más robusto.
+
+{{< youtube
+    video="HqyrpQrjZ4k" >}}
 
 ### Disposición de los teclados
 
@@ -139,7 +157,7 @@ En los teclados hay dos organizaciones que definen el tamaño y posición de las
 
 La disposición de las teclas varía la ubicación de los caracteres según el alfabeto de cada lenguaje. Por ejemplo, en la disposición española hay una tecla para el caracter _ñ_ y la ubicación para otros varía como el signo de interrogación de apertura _¿_ o la tilde _´_.
 
-Los teclados más comunes son los _QUERTY_ que toman el nombre de los caracteres de las teclas de la fila superior izquierda. Hay otras disposiciones como _QUERTZ_ o _DVORAK_ utilizadas en algunos países que se ajutan mejor al alfabeto y caracteres de las palabras del lenguaje que emplean.
+Los teclados más comunes son los _QUERTY_ que toman el nombre de los caracteres de las teclas de la fila superior izquierda. Hay otras disposiciones como _QUERTZ_ o _DVORAK_ utilizadas en algunos países que se ajustan mejor al alfabeto y caracteres de las palabras del lenguaje que emplean.
 
 {{< image
     gallery="true"
@@ -147,6 +165,15 @@ Los teclados más comunes son los _QUERTY_ que toman el nombre de los caracteres
     image2="image:keyboard-ansi.png" optionsthumb2="300x200" title2="Teclado ANSI (en)"
     image3="image:keyboard-iso.png" optionsthumb3="300x200" title3="Teclado ISO (es)"
     caption="Teclados ANSI (en) e ISO (es)" >}}
+
+En función de la disposición del teclado y formato el tamaño de los _keycaps_ varia, el tamaño de los _keycaps_ y el tamaño soportado por el teclado para los _keycpas_ ha de conincidir para que encajen al colocarlas. Hay que tenerno en cuenta al comprar unos _keycaps_ si estos no están premontados por el fabricante en el teclado.
+
+Como referencia una tecla del alfabeto se considera que tiene un tamaño de 1x, el tamaño de otras teclas se especifica tomando como referencia el 1x pudiendo ser 1.25x, 1.75x, 2.25x, 6.25x para algunas teclas como la barra espaciadora y otras teclas de función.
+
+{{< image
+    gallery="true"
+    image1="image:keyboard-keycaps-size.png" optionsthumb1="300x200" title1="Tamaño keycaps en teclados ISO"
+    caption="Tamaño keycaps en teclados ISO" >}}
 
 ### Formato de los teclados
 
@@ -262,6 +289,10 @@ De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofr
 Teclados mecánicos económicos. En [PcComponentes][pccomponentes] también hay algunos modelos de teclado mecánico económicos de las marcas Newskill y Krom entre otras, otras marcas reconocidas son [Akko][akko], [Keychron][keychron] y [Royal Kludge][royal-kludge].
 
 * [Teclados mecánicos en PcComponentes](https://www.pccomponentes.com/teclado-mecanico)
+* [_Keycaps_ disposición español, ABS, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000395759765.html)
+* [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002872113471.html)
+* [_Keycaps_ disposición español, PBT, _laser etched_, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000130061265.html)
+* [_Keycaps_ disposición español, PBT, dye sub, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005003516268627.html)
 
 El precio de los teclados mecánicos son superiores a los teclados más baratos de membrana. Un teclado de membrana como el [Logitech MK120](https://amzn.to/33FoXIN) cuesta unos 20 €, los teclados mecánicos baratos a partir de 40 € y los teclados mecánicos de calidad a partir de los 100 €.
 
