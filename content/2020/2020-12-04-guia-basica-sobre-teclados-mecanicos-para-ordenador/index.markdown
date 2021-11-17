@@ -34,7 +34,7 @@ Los teclados mecánicos son sensiblemente más caros que los de membrana, aún a
 
 También hay teclados mecánicos en diferentes formatos ya sea completos con teclado numérico, sin teclado numérico y aún más compactos con algunas teclas menos.
 
-### Tipos de _switches_
+### Los _switches_
 
 En los teclados mecánicos se emplean diferentes tipos de interruptores o _switches_, los _switches_ son el mecanismo mecánico y electrónico que registra las pulsaciones de las teclas. Para diferenciar los tipos de interruptores tiene asignado un código de color, los tres grandes tipos de _switches_ son en función de la respuesta táctil que usan _clicky_, táctil o lineal, dentro de cada tipos algunos _switches_ se diferencian en la presión que hay que ejercer para presionarlos.
 
@@ -128,7 +128,11 @@ En este vídeo se muestran los diferentes tipos de _switches_ y el sonido caract
 {{< youtube
     video="DZzsR1u493M" >}}
 
-### Materiales de los _keycaps_
+### Los _keycaps_
+
+Las tapas de las teclas o _keycaps_ es la pieza de plástico que da forma a la tecla y que pulsamos para activar el interruptor, se montan encima del interruptor. La ventaja de los teclados mecánicos es que estos permiten personalizar el teclado con el diseño y disposición que quiera el usuario, incluso de cambiarlo con posterioridad en cualquier momento. Para algunos usuarios con afición los _keycaps_ no son vistas como simplemente caras piezas de plástico sino una forma de arte y expresión.
+
+#### Materiales
 
 Los materiales que se emplean para las teclas de los teclados mecánicos son de plástico ABS o PBT. Las teclas PBT tiene mayor durabilidad y se consideran de mayor calidad aunque son más comunes las ABS ya que estás son más económicas. La textura de las ABS es más suave y con el tiempo adquieren brillo por el aceite de los dedos mientras que las PBT tienen un tacto con una ligera rugosidad, un color más mate sin ser tan propensas a adquirir brillo. El sonido también cambia ligeramente, las teclas PBT al ser más gruesas tiene un sonido más grave.
 
@@ -139,7 +143,7 @@ En algunos casos para la fabricación de la teclas se utiliza un proceso de manu
 * [Intro to Keycaps](https://drop.com/talk/108/massdrop-101-intro-to-keycaps)
 * [Keycap Types, Keycap Sizes, Profile and other characteristics](https://rowsofkeys.com/keycap-types/)
 
-### Impresión de la leyenda en los _keycaps_
+#### Impresión de la leyenda
 
 Los fabricantes emplean diferentes técnicas para imprimir en el _keycap_ la leyenda del caracter o símbolo. La técnica empleada determina el coste del _keycap_ y también la durabilidad de la leyenda al desgaste.
 
@@ -250,8 +254,8 @@ Tecládos mecánicos en Amazon. El teclado [DREVO Calibur V2 TE](https://amzn.to
 * [Página del fabricante del teclado DREVO Calibur V2 TE](https://www.drevo.net/product/keyboard/calibur-v2-te)
 
 {{< amazon
-    linkids="bd7e81798a9d04ab4943e6f9754d0072"
-    asins="B07TLMYKWK" >}}
+    linkids="bd7e81798a9d04ab4943e6f9754d0072,aaa5f003821ff164674045386933a0a9"
+    asins="B07TLMYKWK,B07TKM6DZ4" >}}
 
 #### Glorious PC Gaming Race GMMK TKL
 
