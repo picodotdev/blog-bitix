@@ -37,7 +37,10 @@ Por un momento imagina que te roban las credenciales que dan acceso a un servici
 
 Este es un mensaje de audio de lo que parece una comercial o trabajadora en una sucursal de una entidad bancaria ante un número de ataques masivo no solo en la suya que muestra el grado de alarma y caos que es capaz de generar un ataque masivo con la capacidad de ser a nivel nacional.
 
-{{< video video="audio-ataque-masivo-banco.mp4" poster="poster.jpg" caption="Audio con un mensaje de advertencia después de un ataque informático" >}}
+{{< video
+    video="audio-ataque-masivo-banco.mp4"
+    poster="poster.jpg"
+    caption="Audio con un mensaje de advertencia después de un ataque informático" >}}
 
 En el caso de sufrir un ataque informático los grupos dedicados a delitos informáticos de los diferentes cuerpos de policía harán todo lo posible para evitar más daños, reparar el causado que quizá no sea mucho y poner a disposición de la justicia a los delincuentes si pueden dependiendo del país el país en el que está el delincuente pero tampoco son todo poderosos y sus recursos materiales y de personal son limitados. La policía no da a basto con el número de casos que ya se dan, y los ataques parece que solo van a ir a mayor en número y gravedad. La policía únicamente se centrará en los más graves o en aquellos que se produzcan por bandas organizadas, por reiteración o por la posibilidad de acabar con ataques futuros. El mejor consejo que te va a dar la policía seguramente es la prevención, que evites ser víctima de un ataque informático. Con unas pautas sencillas la mayoría de ataques son detectables y evitables.
 

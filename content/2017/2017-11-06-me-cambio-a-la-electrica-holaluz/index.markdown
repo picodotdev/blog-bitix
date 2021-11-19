@@ -12,7 +12,8 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "logotype:holaluz.svg"
-tags: ["desempaquetado-otros", "opinion"]
+tags: ["opinion"]
+series: ["desempaquetado-otros"]
 summary: "Como consumidor y como todo el mundo trato de elegir compañías que ofrezcan buen precio en sus servicios pero también que me traten con respeto, no me hacen falta descuentos promocionales ni regalos. Este fue el caso de elegir Pepephone como proveedor de internet y en este artículo el caso de elegir Holaluz como compañía eléctrica."
 ---
 

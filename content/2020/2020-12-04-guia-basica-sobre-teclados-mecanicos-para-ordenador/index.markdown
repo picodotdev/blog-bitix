@@ -96,7 +96,7 @@ Los códigos de colores asignados para estos _switches_ con respuesta táctil so
 
 #### Marcas de _switches_
 
-La marca más conocida de _switches_  son los [Cherry MX](https://www.cherrymx.de/en) y son los que se encuentran en la mayoría de teclados mecánicos. Una alternativa a los Cherry MX e imitación de estos que no peores son los [Gateron](https://www.gateron.co), Outemu, [Kaihl](https://www.kailhswitch.com) que se encuentran en los teclados mecánicos algo más económicos.
+La marca más conocida de _switches_  son los [Cherry MX][cherrymx] y son los que se encuentran en la mayoría de teclados mecánicos. Una alternativa a los Cherry MX e imitación de estos que no peores son los [Gateron][gateron], Outemu, [Kaihl][kaihl] que se encuentran en los teclados mecánicos algo más económicos.
 
 #### Probador de _switches_
 
@@ -166,8 +166,8 @@ Los teclados más comunes son los _QUERTY_ que toman el nombre de los caracteres
 {{< image
     gallery="true"
     image1="image:keyboard-ansi-iso.png" optionsthumb1="300x200" title1="Teclado ISO (es)"
-    image2="image:keyboard-ansi.png" optionsthumb2="300x200" title2="Teclado ANSI (en)"
-    image3="image:keyboard-iso.png" optionsthumb3="300x200" title3="Teclado ISO (es)"
+    image2="image:keyboard-ansi-en.png" optionsthumb2="300x200" title2="Teclado ANSI (en)"
+    image3="image:keyboard-iso-es.png" optionsthumb3="300x200" title3="Teclado ISO (es)"
     caption="Teclados ANSI (en) e ISO (es)" >}}
 
 En función de la disposición del teclado y formato el tamaño de los _keycaps_ varia, el tamaño de los _keycaps_ y el tamaño soportado por el teclado para los _keycpas_ ha de conincidir para que encajen al colocarlas. Hay que tenerno en cuenta al comprar unos _keycaps_ si estos no están premontados por el fabricante en el teclado.
@@ -257,11 +257,15 @@ Tecládos mecánicos en Amazon. El teclado [DREVO Calibur V2 TE](https://amzn.to
     linkids="bd7e81798a9d04ab4943e6f9754d0072,aaa5f003821ff164674045386933a0a9"
     asins="B07TLMYKWK,B07TKM6DZ4" >}}
 
-#### Glorious PC Gaming Race GMMK TKL
+#### Glorious GMMK TKL
 
 Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://amzn.to/3vEzfpt), es un teclado en formato ISO con la característica destacada de ser personalizable tanto en los interruptores como en las teclas, los interruptores son intercambiables compatibles con los de la marca Cherry como Gateron y Kailh. Aparte Glorious ofrece como producto independiente los interruptores Gateron y los _keykaps_ del material ABS con la disposición de teclado española. Se vende tanto en Amazon como en [Coolmod][coolmod] y algunos elementos en PcComponentes. Soporta macros y pefiles configurados por software y personalización de varios efectos de luz.
 
 * [Página del fabricante del teclado Glorious PC Gaming Race GMMK TKL](https://www.pcgamingrace.com/products/gmmk-tkl-tenkeyless-brown-switch)
+
+Depués de analizar las opciones esta es el teclado mecánico que he comprado.
+
+* [Desempaquetado de teclado mecánico Glorious GMMK TLK][blogbitix-609]
 
 {{< amazon
     tags="keyboard-glorious" >}}
@@ -273,14 +277,14 @@ Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://am
 * [Glorious PC Gaming Race GMMK TKL ISO en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-gmmk-tkl-iso-layout-teclado/)
 * [Glorious PC Gaming Race Gateron Brown Switches en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-gateron-brown-switches-120-piezas-interruptores-teclado/)
 * [Glorious PC Gaming Race ABS Keycaps 105 ES Layout en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-abs-keycaps-105-es-layout-negro-teclas/)
-* [Keycaps PBT Double shot en AliExpress](https://es.aliexpress.com/item/32950357499.html)
-* [Keycaps ABS Double shot en AliExpress enviado desde España con layout Español en color negro y banco](https://es.aliexpress.com/item/4000395759765.html?spm=a2g0o.cart.0.0.21e03c00RXFxEr&mp=1)
+* [_Keycaps_ disposición español, ABS, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000395759765.html)
+* [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002872113471.html)
 
 #### Ducky One 2
 
 De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofrece modelos completos, TKL y compactos en diferente tamaño, número de teclas, tipos de _switches_ y retroiluminados. Su precio suele estar a partir de 100 € y se pueden encontrar en la tienda [Versus Gamers][vsgamers] y también en Coolmod con el formato ISO con la disposición en español y diferentes tipos de _switches_ _blue_, _brown_ y _red_. A diferencia del Glorious soporta macros y perfiles por hardware sin necesidad de un software que normalmente solo está disponible para Windows, este soporte por hardware para macros y perfiles permite no perder estas funcionalidades si se usa macOS o GNU/Linux.
 
-* [Página del fabricante del teclado Ducky One 2](https://www.duckychannel.com.tw/en/Ducky-One2-RGB-TKL)
+* [Página del fabricante del teclado Ducky One 2](links)
 * [Ducky One 2 Cherry MX Red RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-cherry-mx-red)
 * [Ducky One 2 Cherry MX Brown TKL RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-tkl-cherry-mx-brown)
 * [Ducky One 2 Cherry MX Brown RGB en Versus Gamers](https://www.vsgamers.es/product/teclado-gaming-mecanico-ducky-one-2-rgb-cherry-mx-brown)
@@ -293,8 +297,6 @@ De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofr
 Teclados mecánicos económicos. En [PcComponentes][pccomponentes] también hay algunos modelos de teclado mecánico económicos de las marcas Newskill y Krom entre otras, otras marcas reconocidas son [Akko][akko], [Keychron][keychron] y [Royal Kludge][royal-kludge].
 
 * [Teclados mecánicos en PcComponentes](https://www.pccomponentes.com/teclado-mecanico)
-* [_Keycaps_ disposición español, ABS, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000395759765.html)
-* [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002872113471.html)
 * [_Keycaps_ disposición español, PBT, _laser etched_, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000130061265.html)
 * [_Keycaps_ disposición español, PBT, dye sub, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005003516268627.html)
 

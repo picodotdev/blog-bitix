@@ -124,6 +124,9 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
 
 Modelos de teclados y ratones hay muchos, hay paquetes que incluyen ambos o se venden por separado. Si no tienes las preferencias claras puedes empezar por consultar la [clasificación de los teclados y ratones según el número de ventas](https://amzn.to/2xtwXwa) que puede ser un indicador de popularidad y buena relación calidad/precio. Como decía hay con cable, inalámbricos, formato isla, gota, ergonómico, compactos, teclados completos, mecánicos, ligeros con panel táctil integrado, adaptados para Smart TV, más económicos, de precio significativo, ... aquí pongo algunos de los otros que he mirado.
 
+* [Guía básica sobre teclados mecánicos para ordenador][blogbitix-536]
+* [Desempaquetado de teclado mecánico Glorious GMMK TLK][blogbitix-609]
+
 De entre todos estos y otros de la lista de más vendidos por una cosa u otra al final elegí el Videoseven CKW200 de este artículo, ya sea por los comentarios de los clientes de Amazon o por su diseño y estética.
 
 {{< amazon

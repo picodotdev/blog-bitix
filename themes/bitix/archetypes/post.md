@@ -5,7 +5,7 @@ title: ""
 author: ""
 url: "/2021/01/xxx/"
 aliases: [""]
-date: 2021-01-01T00:00:00+02:00
+date: 2021-01-01T00:00:00+01:00
 language: "es"
 index: true
 rss: true
@@ -41,6 +41,10 @@ draft: true
 
 {{< youtube
     video="" >}}
+
+{{< video
+    video="audio-ataque-masivo-banco.mp4" poster="poster.jpg"
+    caption="Audio con un mensaje de advertencia después de un ataque informático" >}}
 
 {{% asciinema id="" caption="" %}}
 

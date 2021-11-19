@@ -45,7 +45,11 @@ Este es el contenido de un archivo de subtítulos en formato _srt_, para vídeos
 
 En este vídeo se pueden activar los subtítulos con la transcripción del audio, aunque en este caso el vídeo original ya incluye los subtítulos.
 
-{{< video video="darkest-dungeon.mp4" poster="darkest-dungeon.jpg" subtitles="videos/darkest-dungeon-intro-es.vtt" subtitlesLabel="Español" subtitlesLang="es"
+{{< video
+    video="darkest-dungeon.mp4"
+    poster="darkest-dungeon.jpg"
+    subtitles="videos/darkest-dungeon-intro-es.vtt"
+    subtitlesLabel="Español" subtitlesLang="es"
     caption="Vídeo subtitulado" >}}
 
 ### Cómo descargar pistas de subtítulos
