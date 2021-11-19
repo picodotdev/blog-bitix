@@ -1,7 +1,7 @@
 ---
 pid: 609
 type: "post"
-title: "Desempaquetado de teclado mecánico Glorious GMMK TLK"
+title: "Desempaquetado de teclado mecánico Glorious GMMK TKL"
 url: "/2021/11/desempaquetado-de-teclado-mecanico-glorious-gmmk-tkl/"
 date: 2021-11-18T18:00:00+01:00
 language: "es"
