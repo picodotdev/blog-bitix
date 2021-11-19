@@ -209,7 +209,6 @@ El contenido del teclado está compuesto por el propio teclado que viene envuelt
     gallery="true"
     image1="image:glorious-gmmk-tkl-contenido-4.jpg" optionsthumb1="200x150" title1="Contenido de la caja Glorious GMMK TKL"
     image2="image:glorious-gmmk-tkl-contenido-5.jpg" optionsthumb2="200x150" title2="Contenido de la caja Glorious GMMK TKL"
-    image3="image:glorious-gmmk-tkl-contenido-6.jpg" optionsthumb3="200x150" title3="Contenido de la caja Glorious GMMK TKL"
     caption="Contenido de la caja Glorious GMMK TKL" >}}
 
 #### El teclado
@@ -258,6 +257,7 @@ Aunque el teclado TKL en su versión ISO solo tiene 88 teclas la caja incluye 12
     gallery="true"
     image1="image:glorious-gmmk-tkl-switches-7.jpg" optionsthumb1="200x150" title1="Conjunto de switches Glorious Gateron Brown"
     image2="image:glorious-gmmk-tkl-switches-8.jpg" optionsthumb2="200x150" title2="Conjunto de switches Glorious Gateron Brown"
+    image3="image:glorious-gmmk-tkl-switches-9.jpg" optionsthumb3="200x150" title3="Conjunto de switches Glorious Gateron Brown"
     caption="Conjunto de switches Glorious Gateron Brown" >}}
 
 #### Los _keycaps_
