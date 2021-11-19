@@ -271,26 +271,25 @@ Ya sin escatimar gastos he comprado un conjunto de _keycaps_ ABS en españo en d
 {{< image
     gallery="true"
     image1="image:keycaps-abs-es-black-1.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-black-2.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
-    image3="image:keycaps-abs-es-black-3.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español"
-    caption="" >}}
+    image2="image:keycaps-abs-es-white-1.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español" >}}
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-black-4.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-black-5.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
-    image3="image:keycaps-abs-es-black-6.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español"
-    caption="" >}}
+    image1="image:keycaps-abs-es-black-2.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-black-3.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
+    image3="image:keycaps-abs-es-black-4.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español" >}}
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-white-1.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-white-2.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
-    image3="image:keycaps-abs-es-white-3.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español"
-    caption="" >}}
+    image1="image:keycaps-abs-es-white-2.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-white-3.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
+    image3="image:keycaps-abs-es-white-4.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español" >}}
 {{< image
     gallery="true"
-    image1="image:keycaps-abs-es-white-4.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
-    image2="image:keycaps-abs-es-white-5.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
-    image3="image:keycaps-abs-es-white-6.jpg" optionsthumb3="200x150" title3="Keycaps ABS double shot OEM español"
+    image1="image:keycaps-abs-es-black-5.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-black-6.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español" >}}
+{{< image
+    gallery="true"
+    image1="image:keycaps-abs-es-white-5.jpg" optionsthumb1="200x150" title1="Keycaps ABS double shot OEM español"
+    image2="image:keycaps-abs-es-white-6.jpg" optionsthumb2="200x150" title2="Keycaps ABS double shot OEM español"
     caption="Keycaps ABS double shot OEM español en color blanco y negro" >}}
 
 #### Colocación de _switches_ y _keycaps_
