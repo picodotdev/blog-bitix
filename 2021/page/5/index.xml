@@ -5,12 +5,54 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/2021/</id>
-    <updated>2021-11-11T19:00:00+01:00</updated>
+    <updated>2021-11-18T18:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/</id>
+        <title>Qué es la variable PATH del sistema y cómo cambiarla en GNU/Linux</title>
+        <updated>2021-01-24T00:30:00+01:00</updated>
+        <published>2021-01-24T00:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Al ejecutar un comando en la terminal el intérprete de comandos de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> lo busca en los directorios especificados en la variable de entorno del sistema <em>PATH</em>, esta variable de entorno contiene una lista de directorios separados por el caracter <em>:</em> en la que se busca por orden. Al instalar un paquete seguramente el programa ejecutable se instale en <em>/usr/bin</em>, directorio que por defecto está incluido en la variable <em>PATH</em>.</p>
+<p>En algún caso quizá nos interese instalar un programa ejecutable propio, un caso puede ser que la distribución usada no disponga del paquete del programa o esté en una versión antigua y se desee una más nueva. Como ejemplo usando <a href="https://www.archlinux.org/">Arch Linux</a> mi caso ha sido con las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a> como <a href="https://www.consul.io/">Consul</a>, <a href="https://www.vaultproject.io/">Vault</a> y <a href="https://www.nomadproject.io/">Nomad</a> para las que de algunas no está en los repositorios oficiales sino que está en los repositorios de los usuarios AUR.</p>
+<p>Las herramientas que está desarrolladas con el lenguaje <a href="https://golang.org/">Go</a> suelen un único binario que no tienen más dependencias. Basta con copiar ese binario al directorio <em>/usr/local/bin/</em> que está destinado a que los usuarios instalen sus propios binarios sin entrar en conflicto con los que los paquetes instalan. El directorio <em>/usr/local/bin/</em> es otro de los directorios incluídos en los directorios de búsqueda de la variable <em>PATH</em>.</p>
+<p>Otra posibilidad es modificar la variable PATH del sistema y añadir el directorio que deseemos, por ejemplo, se puede crear el directorio <em>~/Software/bin</em>. El intérprete de comandos cuando el usuario introduce un comando lo busca en orden en los directorios especificados por la variable <em>PATH</em>, ya sea un binario o un <em>script</em> ejecutable de un intérprete de comandos como <a href="https://es.wikipedia.org/wiki/Bash">Bash</a>.</p>
+<p>Este es parte del contenido de la variable <em>PATH</em> del sistema en Arch Linux (los tres puntos es contenido que he omitido). Las distribuciones GNU/Linux suelen instalar los binarios de los programa ejecutables en los directorios <em>/usr/local/sbin</em> con los binarios para el usuario <em>root</em> y <em>/usr/bin</em> es donde los paquetes ubican sus binarios y programas ejecutables. En el directorio <em>/usr/local/bin</em> el usuario puede ubicar sus propios binarios sin que entren en conflicto con los instalados por los paquetes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">echo</span> <span class="nv">$PATH</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>echo-path.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">...:/usr/local/bin:/usr/local/sbin:/usr/bin:...&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>echo-path.out</span>
+    </div>
+</div>
+<p>Dado que el programa que manualmente se ubica en el directorio para binarios de los usuarios <em>/usr/local/bin</em> o en un directorio propio no proviene de un paquete cuando se publique una nueva versión es el usuario el que ha de actualizar a la nueva versión descargando de nuevo el binario y copiarlo de nuevo al directorio.</p>
+<p>La variable <em>PATH</em> se configura en el <em>script</em> de inicialización del intérprete de comandos, el de Bash es el archivo oculto <em>.bashrc</em> ubicado en el directorio de inicio del usuario, en mi caso en <em>/home/picodotdev/.bashrc</em>. El archivo <em>.bashrc</em> sirve también para <a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a> y el caso de utilizar el sistema de control de versiones <a href="https://git-scm.com/">Git</a> para <a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">Personalizar el prompt del intérprete Bash con información de estado del repositorio git</a>.</p>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="gnu-linux"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/</id>
         <title>En Java, ¿los argumentos se pasan por valor o por referencia?</title>
