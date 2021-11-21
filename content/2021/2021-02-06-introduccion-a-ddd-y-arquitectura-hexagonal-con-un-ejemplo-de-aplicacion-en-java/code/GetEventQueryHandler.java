@@ -5,14 +5,14 @@ package io.github.picodotdev.blogbitix.dddhexagonal.catalog.application.query;
 @Component
 public class GetEventQueryHandler implements QueryHandler<Event, GetEventQuery> {
 
-    private EventRepository eventRepository;
+    private GetEventUseCase useCase;
 
-    public GetEventQueryHandler(EventRepository eventRepository) {
-        this.eventRepository = eventRepository;
+    public GetEventQueryHandler(GetEventUseCase useCase) {
+        this.useCase = useCase;
     }
 
     @Override
     public Event handle(GetEventQuery query) throws Exception {
-        return eventRepository.findById(query.getEventId());
+        return useCase.handle(query.getEventId());
     }
 }

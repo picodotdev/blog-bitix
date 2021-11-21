@@ -96,7 +96,7 @@ En la aplicación de ejemplo con [Spring Boot][spring-boot] y Java se usa como p
 
 Esta es la estructura de directorios ubicando los artefactos de REST e implementación de repositorios en el paquete de infraestructura y otras dependencias e implementaciones del _framework_ Spring. Los buses de comandos y consultas con las implementaciones de los casos de uso en el paquete de aplicación, estos llaman a los artefactos del dominio como repositorios y entidades. En infraestrucutra están los puertos y adaptadores dependientes de librerías y frameworks aislados del dominio como los elementos que componen la interfaz REST, varios elementos de Spring y las implementaciones de los repositorios que estarían acoplados a una base de datos relacional o no sql.
 
-{{< code file="tree.sh" language="bash" options="" >}}
+{{< code file="tree.sh" language="plaintext" options="" >}}
 
 #### Entidades y _value objects_
 
