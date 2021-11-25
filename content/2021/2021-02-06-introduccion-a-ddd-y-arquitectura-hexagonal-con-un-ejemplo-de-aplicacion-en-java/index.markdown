@@ -94,7 +94,7 @@ En la aplicación de ejemplo con [Spring Boot][spring-boot] y Java se usa como p
 
 #### Estructura de directorios y paquetes
 
-Esta es la estructura de directorios ubicando los artefactos de REST e implementación de repositorios en el paquete de infraestructura y otras dependencias e implementaciones del _framework_ Spring. Los buses de comandos y consultas con las implementaciones de los casos de uso en el paquete de aplicación, estos llaman a los artefactos del dominio como repositorios y entidades. En infraestrucutra están los puertos y adaptadores dependientes de librerías y frameworks aislados del dominio como los elementos que componen la interfaz REST, varios elementos de Spring y las implementaciones de los repositorios que estarían acoplados a una base de datos relacional o no sql.
+Esta es la estructura de directorios ubicando los artefactos de REST e implementación de repositorios en el paquete de infraestructura y otras dependencias e implementaciones del _framework_ Spring. Los buses de comandos y consultas con las implementaciones de los casos de uso en el paquete de aplicación, estos llaman a los artefactos del dominio como repositorios y entidades. En infraestrucutra están los puertos y adaptadores dependientes de librerías y _frameworks_ aislados del dominio como los elementos que componen la interfaz REST, varios elementos de Spring y las implementaciones de los repositorios que estarían acoplados a una base de datos relacional o no sql.
 
 {{< code file="tree.sh" language="plaintext" options="" >}}
 
@@ -102,7 +102,7 @@ Esta es la estructura de directorios ubicando los artefactos de REST e implement
 
 En el dominio de catálogo hay eventos y habría varios _value objects_ para representar ciertas propiedades del dominio.
 
-Para la persistencia se puede hacer uso de [Hibernate][hibernate], una librerías ORM para Java, como alternativa o al mismo tiempo también es posible usar [jOOQ][jooq]. Las anotaciones de Hibernate requieren añadir _imports_ que realmente son de infraestructura en las entidades de dominio, esta es una violación de la regla general de dependencias para evitarlo se puede realizar el mapeado con archivos _hbm_ en formato XML, aunque por mayor sencillez se suele implementar con anotaciones. Como en este caso la persistencia solo se hace en memoria no están incluídas las anotaciones en la entidad.
+Para la persistencia se puede hacer uso de [Hibernate][hibernate], una librerías ORM para Java, como alternativa o al mismo tiempo también es posible usar [jOOQ][jooq]. Las anotaciones de Hibernate requieren añadir _imports_ que realmente son de infraestructura en las entidades de dominio, esta es una violación de la regla general de dependencias para evitarlo se puede realizar el mapeado con archivos _hbm_ en formato XML, aunque por mayor sencillez se suele implementar con anotaciones. Como en este caso la persistencia solo se hace en memoria no están incluidas las anotaciones en la entidad.
 
 Una entidad.
 
