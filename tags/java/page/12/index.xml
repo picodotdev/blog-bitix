@@ -5,12 +5,120 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2021-09-30T23:00:00+02:00</updated>
+    <updated>2021-11-25T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/</id>
+        <title>La herramienta de documentación Javadoc de Java</title>
+        <updated>2017-09-11T13:00:00+02:00</updated>
+        <published>2017-09-11T13:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Programar y desarrollar requiere además de poseer diversos conocimientos disponer de una buena documentación de consulta y referencia. Una de las cosas buenas que me gustaron de Java cuando empecé a programar en este lenguaje, cuando aún estaba lejos de tener internet y aún me lo sigue pareciendo, fue su <a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">documentación Javadoc</a> de toda la API de clases incluidas en el JDK.</p>
+<p>La documentación Javadoc es una colección de páginas HTML de todas las clases, métodos, parámetros y retornos junto con la información y especificaciones que quiera incluir el desarrollador de la API que en el caso de las clases de JDK incluye abundantes e interesantes detalles de implementación a tener en cuenta al usar las clases. El Javadoc es también es una herramienta de línea de comandos que permite generar la colección de páginas HTML a partir del código fuente Java.</p>
+<p>Se genera a partir del propio código fuente de las clases con los comentarios incluidos que siguen cierto formato precediendo la definición de las clases y métodos. Al estar código y documentación en el propio archivo de código fuente es más fácil mantener sincronizados el código y su documentación.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-jdk_hu22225ea2ebfcb47e780555ab9a320050_134236_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documentación Javadoc del JDK"><img src="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-jdk_hu22225ea2ebfcb47e780555ab9a320050_134236_300x200_fit_box_3.png" width="300" height="137" alt="Documentación Javadoc del JDK" title="Documentación Javadoc del JDK"  class="lozad "></a></p>
+<figcaption>Documentación Javadoc del JDK</figcaption>
+</figure>
+</div>
+<p>La documentación en el código fuente se incluye en comentarios que preceden una clase o método, además, con anotaciones se pueden documentar los parámetros y el valor de retorno. Se pueden incluir etiquetas HTML junto con algunas de las anotaciones o <em>doclets</em>/<em>taglets</em>, algunas <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#javadoctags">anotaciones Javadoc incluidas en el JDK</a> son las siguientes pero también se pueden <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">desarrollar <em>doclets</em>/<em>taglets</em> propios</a> o <a href="https://picodotdev.github.io/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">personalizar los estilos de la documentación</a> para cambiar el contenido, información incluida o adaptar los estilos a unos según los colores de la organización.</p>
+<ul>
+<li><em>@author</em>: indica el autor de la clase o método.</li>
+<li><em>{@code}</em>: incluye en el comentario un trozo de código que se formatea de forma especial.</li>
+<li><em>{@docRoot}</em>: incluye una ruta relativa al directorio raíz donde se genera la documentación.</li>
+<li><em>@deprecated</em>: indica que un método ha quedado obsoleto, se desaconseja su uso y puede que en futuras versiones desaparezca.</li>
+<li><em>@exception</em>: es sinónima de throws.</li>
+<li><em>{@inheritDoc}</em>: hereda el comentario Javadoc de la clase o método superior en la jerarquía de clases.</li>
+<li><em>{@link}</em>: incluye un enlace a otra sección de la documentación, método o clase.</li>
+<li><em>{@linkplain}</em>: es idéntica a @link pero el enlace es un texto plano.</li>
+<li><em>{@literal}</em>: muestra un texto sin interpretar el texto como HTML.</li>
+<li><em>@param</em>: documenta un parámetro de un método.</li>
+<li><em>@return</em>: documenta el valor de retorno de un método.</li>
+<li><em>@see</em>: incluye un enlace con documentación adicional en la sección final de la documentación.</li>
+<li><em>@serial</em></li>
+<li><em>@serialData</em></li>
+<li><em>@serialField</em></li>
+<li><em>@since</em>: indica a partir de que versión de la API fue incluida la clase o método.</li>
+<li><em>@throws</em>: documenta una posible excepción que puede ser lanzada por el método.</li>
+<li><em>{@value}</em>: muestra el valor de un campo estático.</li>
+<li><em>@version</em>: para documentar la versión de cuando se hizo <em>checkout</em> del sistema de control de versiones.</li>
+</ul>
+<p>Un ejemplo usando estas anotaciones en una clase sería el siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javadoc</span><span class="o">;</span>&#10;&#10;<span class="cm">/**&#10;</span><span class="cm"> * Clase main de la aplicación.&#10;</span><span class="cm"> *&#10;</span><span class="cm"> * @see &lt;a href=&#34;http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javadoc.html&#34;&gt;Javadoc&lt;/a&gt;&#10;</span><span class="cm"> * @see &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/&#34;&gt;Javadoc JDK&lt;/a&gt;&#10;</span><span class="cm"> * @author picodotdev&#10;</span><span class="cm"> * @version 1.0&#10;</span><span class="cm"> */</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">/**&#10;</span><span class="cm">&nbsp;&nbsp;&nbsp;&nbsp; * Método que imprime un mensaje.&#10;</span><span class="cm">&nbsp;&nbsp;&nbsp;&nbsp; * &#10;</span><span class="cm">&nbsp;&nbsp;&nbsp;&nbsp; * @param args Argumentos del programa&#10;</span><span class="cm">&nbsp;&nbsp;&nbsp;&nbsp; */</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hola mundo&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<p>Una vez documentado el código fuente hay que usar la <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html">herramienta Javadoc</a> para generar la documentación. Mediante la herramienta de construcción <a href="https://gradle.org/">Gradle</a> se hace con la tarea <em>javadoc</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew javadoc&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;java&#39;</span>&#10;<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;application&#39;</span>&#10;&#10;<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="mf">1.8</span>&#10;<span class="n">targetCompatibility</span> <span class="o">=</span> <span class="mf">1.8</span>&#10;&#10;<span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.javadoc.Main&#39;</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;	<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">javadoc</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="o">.</span><span class="na">charSet</span> <span class="o">=</span> <span class="s1">&#39;UTF-8&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">options</span><span class="o">.</span><span class="na">encoding</span> <span class="o">=</span> <span class="s1">&#39;UTF-8&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">task</span> <span class="nf">zipJavadoc</span><span class="o">(</span><span class="nl">type:</span> <span class="n">Zip</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">dependsOn</span> <span class="n">javadoc</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">classifier</span> <span class="s1">&#39;javadoc&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">from</span> <span class="s1">&#39;build/docs/javadoc/&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">artifacts</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">archives</span> <span class="n">zipJavadoc</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>La propia documentación de las clases del JDK está generada con la herramienta Javadoc. Este es el aspecto de la documentación de este ejemplo que tiene exactamente el mismo aspecto que la del JDK.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-1_hub362be29bcaf834d0fb430d45693271c_31057_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documentación Javadoc"><img src="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-1_hub362be29bcaf834d0fb430d45693271c_31057_300x200_fit_box_3.png" width="300" height="137" alt="Documentación Javadoc" title="Documentación Javadoc"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-2_hu2ee4ff9d4a22bf8e42b6be7f69fe5e64_58801_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documentación Javadoc"><img src="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-2_hu2ee4ff9d4a22bf8e42b6be7f69fe5e64_58801_300x200_fit_box_3.png" width="300" height="137" alt="Documentación Javadoc" title="Documentación Javadoc"  class="lozad "></a></p>
+<figcaption>Documentación Javadoc del ejemplo</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-archivos_hu6d7f9d41b8db34fead8a8ca9b9ac4969_38225_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos de la documentación Javadoc"><img src="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/images/javadoc-archivos_hu6d7f9d41b8db34fead8a8ca9b9ac4969_38225_300x200_fit_box_3.png" width="300" height="141" alt="Archivos de la documentación Javadoc" title="Archivos de la documentación Javadoc"  class="lozad "></a></p>
+<figcaption>Archivos de la documentación Javadoc</figcaption>
+</figure>
+</div>
+<p>La documentación Javadoc al ser una colección de archivos HTML y demás recursos estáticos pueden copiarse a cualquier servidor web si es necesario que estén disponibles a través de internet y accesibles con cualquier navegador web.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Javadoc">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew javadoc</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html">Javadoc 8</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javadoc.html">Javadoc 7</a></li>
+<li><a href="https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">How to Write Doc Comments for the Javadoc Tool</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-en-java/</id>
         <title>Los tipos de referencias débiles soft, weak y phantom en Java</title>
@@ -308,8 +416,8 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
 </div>
 <p><a href="https://gradle.org/">Gradle</a> es una herramienta de construcción de proyectos y gestión de dependencias que adopta las mejores características de <a href="https://ant.apache.org/">Ant</a> y <a href="https://maven.apache.org/">Maven</a> con pocas o ninguna de sus deficiencias. <a href="https://amzn.to/2uY2naN">Gradle in Action</a> explica en profundidad esta herramienta de construcción para llegar a dominarla.</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/">Incluir información de la versión en el artefacto distribuible con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr</a></li>
@@ -571,7 +679,8 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/130161" target="_blank"><amp-img src="https://asciinema.org/a/130161.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/130161.js" id="asciicast-130161" async></script>
+<noscript><a href="https://asciinema.org/a/130161" target="_blank"><img src="https://asciinema.org/a/130161.png" width="650" height="450"></a></noscript>
 </div>
 <div class="alert alert-secondary sourcecode">
     <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
@@ -729,7 +838,8 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129084" target="_blank"><amp-img src="https://asciinema.org/a/129084.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129084.js" id="asciicast-129084" async></script>
+<noscript><a href="https://asciinema.org/a/129084" target="_blank"><img src="https://asciinema.org/a/129084.png" width="650" height="450"></a></noscript>
 </div>
 <p>Dos de los problemas más conocidos en la programación concurrente son el de <a href="https://es.wikipedia.org/wiki/Problema_de_la_cena_de_los_fil%C3%B3sofos">La cena de los filósofos</a> y el de <a href="https://es.wikipedia.org/wiki/Problema_del_barbero_durmiente">El barbero durmiente</a>. Usando algunas de las primitivas comentadas en este artículo este sería el código para para resolver ambos problemas en Java.</p>
 <p>En este código del problema de los filósofos la clase <em>Table</em> crea los filósofos asignándoles los <em>Fork</em> que tienen que compartir para comer después de estar un tiempo pensando. En la ejecución se observa que el primer filósofo que intenta comer puede hacerlo ya que sus tenedores adyacentes está libres pero posteriormente se observa que en algunas ocasiones algún filósofo no puede hacerlo porque sus tenedores están siendo usados por alguno de sus compañeros adyacentes.</p>
@@ -761,7 +871,8 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129083" target="_blank"><amp-img src="https://asciinema.org/a/129083.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129083.js" id="asciicast-129083" async></script>
+<noscript><a href="https://asciinema.org/a/129083" target="_blank"><img src="https://asciinema.org/a/129083.png" width="650" height="450"></a></noscript>
 </div>
 <p>En el caso de ejemplo del barbero cuando solo hay un barbero los clientes se acumulan ya que estos entran en la tienda a razón de 1 entre 1500 y 3500ms y el barbero tarda afeitar un cliente entre 2000 y 7000ms. Poniendo en la barbería dos barberos los clientes ya no se acumulan en la sala de espera.</p>
 <div class="code">
@@ -795,10 +906,12 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129098" target="_blank"><amp-img src="https://asciinema.org/a/129098.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129098.js" id="asciicast-129098" async></script>
+<noscript><a href="https://asciinema.org/a/129098" target="_blank"><img src="https://asciinema.org/a/129098.png" width="650" height="450"></a></noscript>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129099" target="_blank"><amp-img src="https://asciinema.org/a/129099.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129099.js" id="asciicast-129099" async></script>
+<noscript><a href="https://asciinema.org/a/129099" target="_blank"><img src="https://asciinema.org/a/129099.png" width="650" height="450"></a></noscript>
 </div>
 <p>Estos no son los únicos ejemplos clásicos otro es el del <a href="https://picodotdev.github.io/blog-bitix/2018/03/el-problema-de-concurrencia-del-agente-y-los-fumadores-resuelto-en-java/">agente y los fumadores</a>.</p>
 <div class="alert alert-secondary sourcecode">
@@ -1580,91 +1693,6 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
 ]]>
         </content>
         
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/</id>
-        <title>Luces navideñas con la Raspberry Pi y Java</title>
-        <updated>2017-05-14T11:00:00+02:00</updated>
-        <published>2017-05-14T11:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Con diferentes sensores y dispositivos de salida de electrónica se pueden realizar proyectos muy interesantes. En el siguiente usaré múltiples diodos LED que se encenderán y apagarán de forma aleatoria cada cierto tiempo. El resultado será muy vistoso y lo utilizaré cuando lleguen las fechas como luces navideñas.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Como muestra de lo que se puede hacer con la Raspberry Pi usando los <em>pines</em> GPIO haré un ejemplo que consistirá en múltiples diodos LED de diferentes colores enciendan y apaguen simulando una especie de luces navideñas. Como yo tengo la Raspbperry Pi 1 B con 26 <em>pines</em> de los cuales solo 17 son GPIO podré usar hasta 17 diodos LED, aunque solo usaré 15. En el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la electrónica para la Raspberry Pi</a> viene incluidos 24 diodos LED de diferentes colores 6 blancos, 6 rojos, 6 amarillos y 6 verdes, también es necesario una resistencia por cada diodo de unos 200 ohmios de los cuales en el <em>kit</em> se incluyen 20 de este valor.</p>
-<p>Aunque con muchos más LED el ejemplo no es más complicado que el ejemplo que ya mostré de <a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/">encender y apagar un diodo LED</a>. Usaré diodos de diferentes colores y dispuestos de forma aleatoria para darle un aspecto desordenado, para darle un aspecto más caótico los LEDs se encenderán y apagarán de forma aleatoria. Usaré el lenguaje de programación Java y la librería de alto nivel <a href="http://rtd.diozero.com/en/latest/">diozero</a> para controlar el encendido y apagado de los diodos.</p>
-<p>Esta es la foto del cableado usando múltiples cables macho-macho para conectar los <em>pines</em> con el polo positivo de los diodos pasando por la resistencia y también múltiples cables para conectar el polo negativo del diodo con tierra. Usando una placa <em>breadboard</em> para realizar las conexiones sin soldadura y una placa de extensión wiringPi para conectar la Raspberry Pi con la placa <em>breadboard</em> con un cable de 26 <em>pines</em> en mi caso por el modelo que tengo de RPi este es el aspecto de cableado.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-01_huee7d61ea9d7b5b07312f745caa4048cc_316166_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado de las luces LED del árbol de navidad"><img src="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-01_huee7d61ea9d7b5b07312f745caa4048cc_316166_300x200_fit_q90_box.jpg" width="300" height="145" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-02_hu705d82fe31e084ac288c097c5b9b731f_327441_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado de las luces LED del árbol de navidad"><img src="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-02_hu705d82fe31e084ac288c097c5b9b731f_327441_300x200_fit_q90_box.jpg" width="300" height="151" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-03_hufc6ac8c17ae2b9b9df089a9d8b81d72b_333502_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado de las luces LED del árbol de navidad"><img src="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-03_hufc6ac8c17ae2b9b9df089a9d8b81d72b_333502_300x200_fit_q90_box.jpg" width="300" height="148" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-04_hu0c89bbb49179fde8075fb2d123ab0310_393158_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado de las luces LED del árbol de navidad"><img src="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-04_hu0c89bbb49179fde8075fb2d123ab0310_393158_300x200_fit_q90_box.jpg" width="267" height="200" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-05_huf599c1d8e84ab19cf17eb3f19f5f5282_457543_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cableado de las luces LED del árbol de navidad"><img src="https://picodotdev.github.io/blog-bitix/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/images/arbol-navidad-05_huf599c1d8e84ab19cf17eb3f19f5f5282_457543_300x200_fit_q90_box.jpg" width="267" height="200" alt="Cableado de las luces LED del árbol de navidad" title="Cableado de las luces LED del árbol de navidad"  class="lozad "></a></p>
-<figcaption>Cableado de las luces LED del árbol de navidad</figcaption>
-</figure>
-</div>
-<p>Cada cierto tiempo los diodos cambian de estado, algunos se encenderán, otros se apagarán y otros seguirán en el estado que estaban. Para ello generaré un booleano aleatorio para cada uno de los diodos que determinará si debe estar encendido o apagado. Este es el programa Java junto con la parte relevante del archivo <a href="https://gradle.org/">Gradle</a> para compilar y construir el ejemplo y el comando que uso para ejecutarlo.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.util.stream.LongStream</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChristmasTree</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span><span class="o">[]</span> <span class="n">pins</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">17</span><span class="o">,</span> <span class="n">18</span><span class="o">,</span> <span class="n">21</span><span class="o">,</span> <span class="n">22</span><span class="o">,</span> <span class="n">23</span><span class="o">,</span> <span class="n">24</span><span class="o">,</span> <span class="n">25</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">11</span><span class="o">,</span> <span class="n">9</span><span class="o">,</span> <span class="n">10</span><span class="o">,</span> <span class="n">15</span><span class="o">,</span> <span class="n">14</span> <span class="o">};</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">List</span><span class="o">&lt;</span><span class="n">LED</span><span class="o">&gt;</span> <span class="n">leds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">pins</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">pin</span> <span class="o">:</span> <span class="n">pins</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">leds</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">pin</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">:</span> <span class="n">leds</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">setOn</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">5000</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">long</span><span class="o">[]</span> <span class="n">times</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">longs</span><span class="o">(</span><span class="n">30</span><span class="o">,</span> <span class="n">1500</span><span class="o">,</span> <span class="n">2501</span><span class="o">).</span><span class="na">toArray</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Random</span> <span class="n">status</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">long</span> <span class="n">time</span> <span class="o">:</span> <span class="n">times</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">:</span> <span class="n">leds</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">setOn</span><span class="o">(</span><span class="n">status</span><span class="o">.</span><span class="na">nextBoolean</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">time</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">};</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">:</span> <span class="n">leds</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>ChristmasTree.java</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="o">...</span>&#10;&#10;<span class="n">task</span> <span class="nf">executeChristmasTree</span><span class="o">(</span><span class="nl">type:</span> <span class="n">Exec</span><span class="o">,</span> <span class="nl">dependsOn:</span> <span class="s1">&#39;upload&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">commandLine</span> <span class="s1">&#39;ansible&#39;</span><span class="o">,</span> <span class="s1">&#39;-i&#39;</span><span class="o">,</span> <span class="s1">&#39;hosts&#39;</span><span class="o">,</span> <span class="s1">&#39;raspberrypi&#39;</span><span class="o">,</span> <span class="s1">&#39;--sudo&#39;</span><span class="o">,</span> <span class="s1">&#39;--ask-sudo-pass&#39;</span><span class="o">,</span> <span class="s1">&#39;-m&#39;</span><span class="o">,</span> <span class="s1">&#39;command&#39;</span><span class="o">,</span> <span class="s1">&#39;-a&#39;</span><span class="o">,</span> <span class="s1">&#39;chdir=/home/raspberrypi/scripts/javaraspberrypi java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.ChristmasTree&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">standardInput</span> <span class="n">System</span><span class="o">.</span><span class="na">in</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build.gradle</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.ChristmasTree&#39;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>execute.sh</span>
-    </div>
-</div>
-<p>Esta aplicación para la Raspberry Pi queda bastante vistosa y no es muy complicado de realizar a pesar del del lío de cables que resulta. Este es un vídeo de su funcionamiento.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/F2BChbcyr5g" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRasberriPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeChristmasTree</code></p>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
                 <category term="java"/>
             
