@@ -68,7 +68,7 @@
     "dateModified": "2021-11-25T20:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1175",
+    "wordCount": "1212",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -335,6 +335,13 @@
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Valid JSON errors: 0&#10;Invalid JSON errors: 3&#10;Type: required&#10;Message: $.productId: is missing but it is required&#10;Type: required&#10;Message: $.productName: is missing but it is required&#10;Type: required&#10;Message: $.price: is missing but it is required</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>System.out</span>
+    </div>
+</div>
+<p>La librería de JSON Schema Validator además de su propia dependencia requiere incluir otras en el archivo de construcción, en este caso de <a href="https://gradle.org/">Gradle</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.networknt:json-schema-validator:1.0.64&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.fasterxml.jackson.core:jackson-databind:2.13.0&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.slf4j:slf4j-api:1.7.32&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.apache.commons:commons-lang3:3.12.0&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.jsonschema.Main&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
     </div>
 </div>
 <h3 id="otras-formas-de-validación-con-bean-validation-y-spring-validation">Otras formas de validación con Bean Validation y Spring Validation</h3>
