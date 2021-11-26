@@ -61,6 +61,10 @@ Este es un ejemplo que a partir de un documento JSON se valida que cumple el esq
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
 
+La librería de JSON Schema Validator además de su propia dependencia requiere incluir otras en el archivo de construcción, en este caso de [Gradle][gradle].
+
+{{< code file="build.gradle" language="groovy" options="" >}}
+
 ### Otras formas de validación con Bean Validation y Spring Validation
 
 Otra forma de validar un JSON es cargarlo en un objeto Java y validar el objeto con [Bean Validation][beanvalidation] o [Spring Validation][spring-validation]. La diferencia en este caso respeto a JSON Schema es que Bean Validation y Spring Validation es una solución específica de Java, requiere cargar los datos en objetos y más importante no se define ningún esquema sino que el esquema está implícito en las validaciones ya se definan con anotaciones o con validadores personalizados.
