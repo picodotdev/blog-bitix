@@ -12,7 +12,7 @@ public class Query implements GraphQLQueryResolver {
 
     public List<Book> books(BookFilter filter, DataFetchingEnvironment environment) throws InterruptedException  {
         List<Book> books = libraryRepository.findBooks(filter);
-        DefaultGraphQLContext context = environment.getContext();
+        GraphQLContext context = environment.getGraphQlContext();
 
         ...
 
@@ -36,6 +36,6 @@ public class Query implements GraphQLQueryResolver {
     }
 
     private SelectedField getField(DataFetchingEnvironment environment, String name) {
-        return environment.getSelectionSet().getField(name);
+        return environment.getSelectionSet().getFields().stream().filter(it -> it.getName().equals(name)).findFirst().orElse(null);
     }
 }

@@ -18,8 +18,8 @@ public class BookResolver implements GraphQLResolver<Book> {
     }
 
     public String getBatchedIsbn(Book book, DataFetchingEnvironment environment) throws InterruptedException {
-        DefaultGraphQLContext context = environment.getContext();
-        Map<Long, String> isbns = (Map<Long, String>) context.getData().get("batchedIsbn");
+        GraphQLContext context = environment.getGraphQlContext();
+        Map<Long, String> isbns = (Map<Long, String>) context.get("batchedIsbn");
         return isbns.get(book.getId());
     }
 
@@ -28,8 +28,8 @@ public class BookResolver implements GraphQLResolver<Book> {
     }
 
     public CommentsConnection getBatchedComments(Book book, String after, Long limit, DataFetchingEnvironment environment) {
-        DefaultGraphQLContext context = environment.getContext();
-        Map<Long, CommentsConnection> batchedComments = (Map<Long, CommentsConnection>) context.getData().get("batchedComments");
+        GraphQLContext context = environment.getGraphQlContext();
+        Map<Long, CommentsConnection> batchedComments = (Map<Long, CommentsConnection>) context.get("batchedComments");
         return batchedComments.get(book.getId());
     }
 }

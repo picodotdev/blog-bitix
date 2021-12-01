@@ -12,7 +12,7 @@ public class Query implements GraphQLQueryResolver {
 
     public List<Book> books(BookFilter filter, DataFetchingEnvironment environment) throws InterruptedException  {
         List<Book> books = libraryRepository.findBooks(filter);
-        DefaultGraphQLContext context = environment.getContext();
+        GraphQLContext context = environment.getGraphQlContext();
 
         ...
 
