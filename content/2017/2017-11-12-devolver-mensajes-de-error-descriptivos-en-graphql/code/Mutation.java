@@ -9,7 +9,7 @@ public class Mutation implements GraphQLMutationResolver {
     ...
 
     public Book addBook(String title, Long author, DataFetchingEnvironment env) throws Exception {
-        DefaultGraphqlContext context = (DefaultGraphqlContext) env.getContext();
+        GraphQLServletContext context = (GraphQLServletContext) env.getGraphQlContext();
         return libraryRepository.addBook(title, author, context.getHttpServletRequest().getHeader("User"));
     }
 }

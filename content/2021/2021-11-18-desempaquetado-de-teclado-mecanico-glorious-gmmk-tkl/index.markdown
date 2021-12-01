@@ -395,7 +395,7 @@ El siguiente nivel de adicción a los teclados mecánicos es [lubricar los _swit
 
 Estos son algunos vídeos de análisis de los teclados que he evaluado, en [YouTube][youtube] hay canales dedicados en exclusiva a los teclados mecánicos en los que informarse muy bien después de ver varios de sus vídeos. Recomiendo el [canal de YouTube Switch and Click](https://www.youtube.com/c/SwitchandClickOfficial) y también el [blog de Switch and Click](https://switchandclick.com/). En cualquier caso en YouTube hay multitud de otros vídeos con análisis sobre diferentes teclados mecánicos y comparaciones entre ellos.
 
-Si se prefiere el contenido en formato texto en vez de vídeo también hay paǵinas que han redactado su análisis de diferentes teclados incluido el Glorious GMMK.
+Si se prefiere el contenido en formato texto en vez de vídeo también hay páginas que han redactado su análisis de diferentes teclados incluido el Glorious GMMK.
 
 * [Review of The GMMK TKL](https://keyboardwhiz.com/review-of-the-gmmk-tkl/)
 * [Glorious Modular Mechanical Keyboard Review](https://www.techpowerup.com/review/glorious-pc-gaming-race-gmmk/)
