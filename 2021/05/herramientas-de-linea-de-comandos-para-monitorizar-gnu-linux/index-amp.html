@@ -32,14 +32,14 @@
   <!-- Social -->
 <meta property="og:title" content="Herramientas de línea de comandos para monitorizar GNU/Linux">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/index-amp.html">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_750x750_fit_box_3.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_750x750_fit_box_3.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_750x750_fit_box_3.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_750x750_fit_box_3.png">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Herramientas de línea de comandos para monitorizar GNU/Linux">
@@ -58,14 +58,14 @@
     "headline": "Herramientas de línea de comandos para monitorizar GNU/Linux",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_750x750_fit_box_3.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_750x750_fit_box_3.png"
         
       },
     "datePublished": "2021-05-29T18:00:00+02:00",
     "dateModified": "2021-05-29T18:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1331",
+    "wordCount": "1335",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -235,7 +235,7 @@
     
     <div class="row page-header">
       <div class="col-12">
-        <amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_1040x0_resize_box_3.png" width="1040" height="300" alt="Cabecera" title="Cabecera"  class=""></amp-img>
+        <amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_1040x0_resize_box_3.png" width="1040" height="300" alt="Cabecera" title="Cabecera"  class=""></amp-img>
       </div>
     </div>
     
@@ -331,7 +331,7 @@
         <li><a href="#top">top</a></li>
         <li><a href="#htop">htop</a></li>
         <li><a href="#ps">ps</a></li>
-        <li><a href="#bpytop">bpytop</a></li>
+        <li><a href="#btop">btop</a></li>
         <li><a href="#free">free</a></li>
       </ul>
     </li>
@@ -416,25 +416,25 @@
 <figcaption>Comando ps</figcaption>
 </figure>
 </div>
-<h4 id="bpytop">bpytop</h4>
-<p><a href="https://github.com/aristocratos/bpytop">bpytop</a> es una herramienta similar a <em>top</em> y <em>htop</em> que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.</p>
+<h4 id="btop">btop</h4>
+<p><a href="https://github.com/aristocratos/btop">btop</a>, antiguamente <a href="https://github.com/aristocratos/bpytop">bpytop</a> y <a href="https://github.com/aristocratos/bashtop">bashtop</a>, es una herramienta similar a <em>top</em> y <em>htop</em> que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.</p>
 <p>Con la tecla <em>M</em> se accede al menu del programa donde configurar los diferentes paneles de información que muestra el programa. Además de ofrecer información de varios aspectos esenciales del sistema otra de sus grandes ventajas es que las teclas de acceso rápido para cambiar las opciones están visibles  en la interfaz general con lo que no hace falta recordar las teclas para cada opción.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S bpytop&#10;$ bpytop&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S btop&#10;$ btop&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
-        <span>bpytop.sh</span>
+        <span>btop.sh</span>
     </div>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando bpytop"><amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop_hud9f70ad371f0479369aa2bf255542e5b_262971_300x200_fit_box_3.png" width="269" height="200" alt="Comando bpytop" title="Comando bpytop"  class=""></amp-img></a></p>
+<p><a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando btop"><amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_300x200_fit_box_3.png" width="265" height="200" alt="Comando btop" title="Comando btop"  class=""></amp-img></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-menu_hu87ad5c810f6a2930b5dd304634c8161a_183372_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando bpytop"><amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-menu_hu87ad5c810f6a2930b5dd304634c8161a_183372_300x200_fit_box_3.png" width="269" height="200" alt="Comando bpytop" title="Comando bpytop"  class=""></amp-img></a>
-<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-options_hucc3b41bff75409a527d27c2d065b2ce5_204109_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando bpytop"><amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/bpytop-options_hucc3b41bff75409a527d27c2d065b2ce5_204109_300x200_fit_box_3.png" width="272" height="200" alt="Comando bpytop" title="Comando bpytop"  class=""></amp-img></a></p>
-<figcaption>Comando bpytop</figcaption>
+<p><a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-menu_hudc7caefd03026ee3bf07ce1263b12fc4_164081_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando btop"><amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-menu_hudc7caefd03026ee3bf07ce1263b12fc4_164081_300x200_fit_box_3.png" width="265" height="200" alt="Comando btop" title="Comando btop"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-options_hu7c13b2a09508227b314b7b0a27ab0584_172463_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comando btop"><amp-img src="/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-options_hu7c13b2a09508227b314b7b0a27ab0584_172463_300x200_fit_box_3.png" width="265" height="200" alt="Comando btop" title="Comando btop"  class=""></amp-img></a></p>
+<figcaption>Comando btop</figcaption>
 </figure>
 </div>
 <h4 id="free">free</h4>
