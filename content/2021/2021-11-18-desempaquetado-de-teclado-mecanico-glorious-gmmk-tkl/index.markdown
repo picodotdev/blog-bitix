@@ -181,7 +181,7 @@ El conjunto completo de productos que he comprado ha sido el siguiente, tanto en
 * [_Switches_ Glorious Gateron Brown](https://www.coolmod.com/glorious-pc-gaming-race-gateron-brown-switches-120-piezas-interruptores-teclado/) en CoolMod
 * [_Keycaps_ Glorious disposición español, ABS](https://www.coolmod.com/glorious-pc-gaming-race-abs-keycaps-105-es-layout-negro-teclas/) en CoolMod
 * [_Keycaps_ disposición español, ABS, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000395759765.html)
-* [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002872113471.html)
+* [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002662013875.html)
 * [_Keycaps_ disposición español, PBT, _laser etched_, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000130061265.html)
 * [_Keycaps_ disposición español, PBT, dye sub, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005003516268627.html)
 
@@ -421,6 +421,7 @@ Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [
 * [Royal Kludge 71](https://rkgamingstore.com/products/rk71-black-brown-switch), está [disponible en Amazon](https://amzn.to/3ntk4Nd)
 * [DURGOD Taurus](https://www.durgod.com/page9?product_id=47&_l=en), está [disponible en Amazon](https://amzn.to/3FsJGzT)
 * [Drop ENTR](https://drop.com/buy/drop-entr-mechanical-keyboard/details)
+* [Buying keyboards and keyboard components from EU](https://gist.github.com/henfiber/a17c7b2a7053473fe37b1a6f80e58efd)
 
 {{< youtube
     video="bOUrAbF59-8" >}}

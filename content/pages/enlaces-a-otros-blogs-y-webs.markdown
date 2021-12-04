@@ -4,7 +4,7 @@ title: "Enlaces a otros blogs y webs"
 url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
-updated: 2021-04-20T18:00:00+01:00
+updated: 2021-12-04T13:00:00+01:00
 index: true
 rss: true
 sharing: true
@@ -43,12 +43,13 @@ Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer s
 * [Xataka](https://www.xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
 * [Linwind](https://www.dacostabalboa.com/es/): página también con noticias de sistemas operativos, software y hardware.
 * [ADSLZone](https://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
-* [D'Oh](http://diegocg.blogspot.com.es/): un blog personal en el que suele publicar artículos de opinión y avances que se producen alrededor del software libre. Otro de los mejores blogs que tengo en mi lector de _feeds_, cada artículo suele ser una perla.
+* [D'Oh](https://diegocg.blogspot.com/): un blog personal en el que suele publicar artículos de opinión y avances que se producen alrededor del software libre. Otro de los mejores blogs que tengo en mi lector de _feeds_, cada artículo suele ser una perla.
 * [Foro Noticias 3D](https://foro.noticias3d.com/): el foro de la página anterior donde podrás preguntar a usuarios con muchos conocimientos sobre cualquier problema en tu ordenador o consejos para
 uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Incognitosis](https://javipas.com/): el blog personal de un editor de Xataka con artículos de opinión sobre tecnología.
 * [Hardware 360º](https://www.youtube.com/channel/UC40Ztmc_11leuUR-tHh_irQ/videos): canal de YouTube especializado en hardware de consumo como procesadores y tarjetas gráficas pero también consolas. Son exhaustivos y de fácil comprensión con los que informarse en profundidad del hardware de las computadoras.
 * [Coreteks](https://www.youtube.com/channel/UCX_t3BvnQtS5IHzto_y7tbw/videos): canal de YouTube en inglés con información avanzada y profunda sobre tecnología hardware de procesadores, gráficos y computación, también incluye información de actualidad.
+* [Hardware Unboxed](https://www.youtube.com/c/Hardwareunboxednow): canal de YouTube en inglés independiente con información orientada al consumidor sobre tecnología hardware de procesadores, gráficos y componentes de computadoras de consumo. Incluye análisis de productos, comparaciones, análisis de rendimiento, recomendaciones de compra.
 * Barrapunto (actualmente discontinuada): era la web al estilo de [slashdot](https://slashdot.org/) en español donde tan importante como la noticia eran los comentarios de sus usuarios.
 
 ### Software libre y GNU/Linux
@@ -70,8 +71,8 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Victorhck in the free world](https://victorhckinthefreeworld.com/): blog personal que promociona y defiende el software libre y los derechos de los usuarios en la tecnología.
 * [Karla's Project](https://www.youtube.com/channel/UCgHXvTpaNOBCIDqCNhOxPkg): una canal de una YouTuber sobre GNU/Linux, como un blog pero en vídeo. Detrás de sus numerosas cuñas de humor que hacen los vídeos amenos y divertidos explica de forma didáctica y sencilla muchos aspectos relacionados con del sistema operativo del pingüino y el software libre.
 * [La sombra del helicóptero](https://lasombradelhelicoptero.wordpress.com/): blog personal que ya no ofrece nuevo contenido ya que su autor dejó de publicar en él pero en el que encontrar todavía artículos interesantes.
-* [Administración de sistemas - systemadmin.es](http://systemadmin.es/)
 * [LiGNUx](https://lignux.com/)
+* [Listado de excelentes webs en español sobre software libre, código abierto y GNU/Linux](https://proyectotictac.com/blogs-linux/): un listado muy amplio de blogs, _podcasts_, canales de YouTube y otros formatos para compartir contenido centrados en la temática de software libre, código abierto y GNU/Linux.
 
 ### Desarrollo y programación
 
@@ -87,13 +88,19 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 * [JavaHispano](http://www.javahispano.org): la página de la comunidad java hispana, noticias, novedades e información.
 * [Planeta Código](https://www.planetacodigo.com/): un agregador de bitácoras personales relacionadas con la programación.
 * [OpenLibra](https://openlibra.com/es/collection): su biblioteca contiene cantidad de libros que pueden descargarse totalmente gratis sobre muchos temas relacionados con la tecnología entre otros como la programación y las metodologías ágiles. Una invaluable recopilación de documentación.    
-* [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
+* [Android Studio FAQs](https://androidstudiofaqs.com/)
+
+En español también hay algunos blogs personales con artículos desde la programación hasta los aspectos de organización y gestión.
+
 * [Arquitectura Java](https://www.arquitecturajava.com/): artículos sobre el lenguaje java principalmente y de un nivel no muy avanzado, aún así merece agregarlo al lector de _feeds_.
 * [Adictos al trabajo](https://www.adictosaltrabajo.com/): la bitácora de la gente que trabaja en [Autentia](https://www.autentia.com/) con artículos y tutoriales muy interesantes, muchos sobre Java y bastante elaborados.
 * [Apuntes de Java](https://www.apuntesdejava.com/): como su nombre indica una bitácora con artículos sobre Java que ya tiene una larga trayectoria iniciada el año 2006.
-* [Diario de Programación](http://blog.chuidiang.com): no publica todas las semanas pero los artículos que contiene son muy interesantes y tienen una buena calidad. En este blog prima la calidad sobre la cantidad.
-* [El baúl del programador](https://elbauldelprogramador.com/)
-* [Android Studio FAQs](https://androidstudiofaqs.com/)
+* [Diario de Programación](http://http://blog.chuidiang.org/): no publica todas las semanas pero los artículos que contiene son muy interesantes y tienen una buena calidad. En este blog prima la calidad sobre la cantidad.
+* [Bonilista](https://bonillaware.us2.list-manage.com/subscribe?u=374c664073e1a1fa3deca53b4&id=e67967d43f): la lista de distribución de [David Bonilla](https://twitter.com/david_bonilla) en la que cada semana escribe un artículo de opinión casi siempre relacionado de alguna forma con el mundo de la tecnología, informática o la empresa. Aunque es para suscriptores puedes [consultar sus últimos artículos](http://us2.campaign-archive2.com/home/?u=374c664073e1a1fa3deca53b4&id=e67967d43f).
+* [Spartan blog](https://www.jerolba.com/): blog personal con artículos específicos y avanzados habitualmente relacionados con Java.
+* [Danilat](https://danilat.com/weblog/): otro blog personal con artículos desde programación a mejorar los procesos de desarrollo en una organización.
+* [Félix López](https://flopezluis.medium.com/) en Medium y [en Substack](https://flopezluis.substack.com/): más centrado en los aspectos de _manager_ los artículos los artículos están más centrados en los aspectos organizativos, desde aspectos de modelos y cultura de organización, gestión de personas hasta reclutamiento todos esos aspectos no relacionados directamente con la programación pero también importantes para una empresa tecnológica.
+* [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
 
 ### Juegos
 
@@ -139,7 +146,6 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Marketing de Guerrilla en la Web 2.0](https://www.marketingguerrilla.es/): si tienes un blog y quieres sacarle el máximo partido esta web te interesa, tiene un montón de consejos útiles para tu blog.
 * [Laboro](https://laboro-spain.blogspot.com/): este es posiblemente el menos relacionado sobre todos los anteriores pero si trabajas en España es muy útil para conocer algunos de tus derechos laborales.
 * [Blog Talento IT](http://blog.talentoit.org/): un blog desde el punto de vista del _recruiter_, con información relacionada con la retención de talento y consejos para los profesionales de la tecnología.
-* [Bonilista](https://bonillaware.us2.list-manage.com/subscribe?u=374c664073e1a1fa3deca53b4&id=e67967d43f): la lista de distribución de [David Bonilla](https://twitter.com/david_bonilla) en la que cada semana escribe un artículo de opinión casi siempre relacionado de alguna forma con el mundo de la tecnología, informática o la empresa. Aunque es para suscriptores puedes [consultar sus últimos artículos](http://us2.campaign-archive2.com/home/?u=374c664073e1a1fa3deca53b4&id=e67967d43f).
 * [Justifica tu respuesta](https://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
 * [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.
 * [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.

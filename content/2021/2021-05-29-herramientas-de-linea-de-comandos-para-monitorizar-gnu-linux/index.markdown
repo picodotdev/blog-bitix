@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:bpytop.png"
-imagePost: "image:bpytop.png"
+imageHead: "image:btop.png"
+imagePost: "image:btop.png"
 tags: ["gnu-linux", "planeta-codigo"]
 summary: "A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora."
 ---
@@ -78,22 +78,22 @@ El comando _ps_ permite obtener información del estado de los procesos del sist
     image1="image:ps.png" optionsthumb1="300x200" title1="Comando ps"
     caption="Comando ps" >}}
 
-#### bpytop
+#### btop
 
-[bpytop][bpytop] es una herramienta similar a _top_ y _htop_ que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.
+[btop][btop], antiguamente [bpytop][bpytop] y [bashtop][bashtop], es una herramienta similar a _top_ y _htop_ que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.
 
 Con la tecla _M_ se accede al menu del programa donde configurar los diferentes paneles de información que muestra el programa. Además de ofrecer información de varios aspectos esenciales del sistema otra de sus grandes ventajas es que las teclas de acceso rápido para cambiar las opciones están visibles  en la interfaz general con lo que no hace falta recordar las teclas para cada opción.
 
-{{< code file="bpytop.sh" language="bash" options="" >}}
+{{< code file="btop.sh" language="bash" options="" >}}
 
 {{< image
     gallery="true"
-    image1="image:bpytop.png" optionsthumb1="300x200" title1="Comando bpytop" >}}
+    image1="image:btop.png" optionsthumb1="300x200" title1="Comando btop" >}}
 {{< image
     gallery="true"
-    image1="image:bpytop-menu.png" optionsthumb1="300x200" title1="Comando bpytop"
-    image2="image:bpytop-options.png" optionsthumb2="300x200" title2="Comando bpytop"
-    caption="Comando bpytop" >}}
+    image1="image:btop-menu.png" optionsthumb1="300x200" title1="Comando btop"
+    image2="image:btop-options.png" optionsthumb2="300x200" title2="Comando btop"
+    caption="Comando btop" >}}
 
 #### free
 

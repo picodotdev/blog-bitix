@@ -1,8 +1,9 @@
 ---
 pid: 611
 type: "post"
-title: "Cómo hacer una limpieza a fondo a un teclado de ordenador"
-url: "/2021/12/como-hacer-una-limpieza-a-fondo-a-un-teclado-de-ordenador/"
+title: "Cómo limpiar a fondo un teclado de ordenador"
+url: "/2021/12/como-limpiar-a-fondo-un-teclado-de-ordenador/"
+aliases: ["/2021/12/como-hacer-una-limpieza-a-fondo-a-un-teclado-de-ordenador/"]
 date: 2021-12-02T19:00:00+01:00
 language: "es"
 index: true

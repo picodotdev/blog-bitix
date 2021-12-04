@@ -278,7 +278,7 @@ Depués de analizar las opciones esta es el teclado mecánico que he comprado.
 * [Glorious PC Gaming Race Gateron Brown Switches en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-gateron-brown-switches-120-piezas-interruptores-teclado/)
 * [Glorious PC Gaming Race ABS Keycaps 105 ES Layout en Coolmod](https://www.coolmod.com/glorious-pc-gaming-race-abs-keycaps-105-es-layout-negro-teclas/)
 * [_Keycaps_ disposición español, ABS, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000395759765.html)
-* [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002872113471.html)
+* [_Keycaps_ disposición inglés, PBT, doble disparo, RGB, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005002662013875.html)
 
 #### Ducky One 2
 
@@ -299,6 +299,7 @@ Teclados mecánicos económicos. En [PcComponentes][pccomponentes] también hay 
 * [Teclados mecánicos en PcComponentes](https://www.pccomponentes.com/teclado-mecanico)
 * [_Keycaps_ disposición español, PBT, _laser etched_, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/4000130061265.html)
 * [_Keycaps_ disposición español, PBT, dye sub, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005003516268627.html)
+* [Buying keyboards and keyboard components from EU](https://gist.github.com/henfiber/a17c7b2a7053473fe37b1a6f80e58efd)
 
 El precio de los teclados mecánicos son superiores a los teclados más baratos de membrana. Un teclado de membrana como el [Logitech MK120](https://amzn.to/33FoXIN) cuesta unos 20 €, los teclados mecánicos baratos a partir de 40 € y los teclados mecánicos de calidad a partir de los 100 €.
 
