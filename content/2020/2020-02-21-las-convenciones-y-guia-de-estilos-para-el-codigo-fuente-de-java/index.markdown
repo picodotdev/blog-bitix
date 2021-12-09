@@ -41,12 +41,12 @@ Algunas recomendaciones en Java son:
 * Usar un espacio entre una palabra clave (_if_, _for_, _while_, ...) y el paréntesis a continuación. Todos los operadores excepto el punto _._, los de incremento _++_ y decremento _\-\-_ deben separarse de sus operandos con un espacio.
 * Reglas de nomenclatura: los nombres de las clases debería ser nombres con la primera letra de cada palabra que lo compone en mayúscula, las interfaces siguen las mismas reglas de capitalización. Los métodos debería ser verbos con la primera letra en minúscula y las primeras letras de cada palabra en mayúscula. Las variables tiene la capitalización de la primera letra en minúscula y las primeras letras de cada palabra en mayúscula con nombre cortos pero significativos. Las variables de una sola letra deben ser evitadas salvo los casos comúnmente reconocidos como iteradores (_i_, _j_, _k_). Las constantes deben estar con todas las letras en mayúscula con las palabras separadas con una barra baja _\__.
 
-Aparte de las convenciones del propio lenguaje Java otras organizaciones como [Google][google] y [Spring][spring] definen sus propias convenciones cambiando ligeramente las de Java por las preferencias de sus usuarios. Cualquier otra empresa según las preferencias acordadas por sus desarrolladores también puede definir sus variaciones a las convenciones generales de Java, salvo cambiar drásticamente las convenciones generales no hay ningún inconveniente en incorporar pequeñas variaciones lo importante es que todos los desarrolladores sigan las mismas convenciones en todo el código fuente.
+Aparte de las convenciones del propio lenguaje Java otras organizaciones como [Google][google] y [Spring][spring] definen sus propias convenciones cambiando ligeramente las de Java por las preferencias de sus desarrolladores. Cualquier otra empresa según las preferencias acordadas por sus desarrolladores también puede definir sus variaciones a las convenciones generales de Java, salvo cambiar drásticamente las convenciones generales no hay ningún inconveniente en incorporar pequeñas variaciones lo importante es que todos los desarrolladores sigan las mismas convenciones en todo el código fuente.
 
 * [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
 * [Spring Framework Code Style](https://github.com/spring-projects/spring-framework/wiki/Code-Style)
 
-Como ejemplo de pequeñas variaciones prefiero declarar las variables en el momento del primer uso en el que se le puede asignar un valor en vez del inicio del bloque de código o con las pantallas de gran resolución en mi opinión el límite de línea máximo puede ser más amplio que 70 caracteres.
+Como ejemplo de pequeñas variaciones prefiero declarar las variables en el momento del primer uso en el que se le puede asignar un valor en vez del inicio del bloque de código o con las pantallas de gran resolución en mi opinión el límite de línea máximo es más amplio que 70 caracteres.
 
 ### Ejemplos de código con convenciones de Java
 
@@ -89,6 +89,12 @@ Los entornos integrados de desarrollo ofrecen la funcionalidad de formatear el c
 Existen herramientas que automatizan la comprobación de las normas elegidas en un proyecto en el código desde la línea de comandos con la herramienta de construcción como [Gradle][gradle] y aplicable también al código subido al repositorio de control de versiones con la herramienta de integración continua ya sea [Jenkins][jenkins], [GitLab][gitlab] u otra. Una de ellas es [PMD][pmd], otra [Checkstyle][checkstyle], ambas generan un informe con los errores de convenciones con el que es muy fácil realizar los cambios para corregirlos.
 
 * [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
+
+### Otras recomendaciones
+
+Aparte de las convenciones es recomendable seguir unas pautas sencillas como guía al escribir código para entre otras coas que su legibilidad sea más sencilla.
+
+* [Buenas prácticas de programación sencillas en el código fuente][blogbitix-612]
 
 {{< reference >}}
 * [Coding conventions](https://en.wikipedia.org/wiki/Coding_conventions)
