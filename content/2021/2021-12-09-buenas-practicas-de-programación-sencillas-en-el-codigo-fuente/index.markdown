@@ -13,7 +13,6 @@ promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "Al escribir código uno de las principales objetivos además de que funcione es tan importante que sea código legible ya que la mayor parte del tiempo en la programación generalmente no se emplea a escribir código nuevo sino a mantener código existente. Las prácticas de este artículo para escribir código más legible son sencillas de comprender y de aplicar en cualquier lenguaje de programación."
-draft: true
 ---
 
 {{% post %}}
