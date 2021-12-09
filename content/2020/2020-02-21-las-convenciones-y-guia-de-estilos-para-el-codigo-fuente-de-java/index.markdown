@@ -92,7 +92,7 @@ Existen herramientas que automatizan la comprobación de las normas elegidas en 
 
 ### Otras recomendaciones
 
-Aparte de las convenciones es recomendable seguir unas pautas sencillas como guía al escribir código para entre otras coas que su legibilidad sea más sencilla.
+Aparte de las convenciones es recomendable seguir unas pautas sencillas como guía al escribir código para entre otras cosas que su legibilidad sea más sencilla.
 
 * [Buenas prácticas de programación sencillas en el código fuente][blogbitix-612]
 
