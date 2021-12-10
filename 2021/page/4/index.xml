@@ -5,12 +5,149 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/2021/</id>
-    <updated>2021-12-02T19:00:00+01:00</updated>
+    <updated>2021-12-09T23:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/</id>
+        <title>Herramientas de reconocimiento de texto en imágenes con OCR</title>
+        <updated>2021-04-16T16:30:00+02:00</updated>
+        <published>2021-04-16T16:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Un programa de reconocimiento de caracteres o OCR permite obtener el texto de una imagen o fotografía tomada con la cámara de un teléfono inteligente, captura de pantalla, <em>scanner</em> u otro medio. Al programa OCR se le proporciona la imagen y este genera como resultado el texto reconocido, si la imagen es de buena calidad el reconocimiento de caracteres es bastante preciso. Hay programas OCR de línea de comandos, con interfaz gráfica, en línea sin necesidad de instalar software y también es posible realizar OCR desde en un programa con un lenguaje de programación como Java.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>El problema de reconocimiento de caracteres es una tarea simple para un humano pero no es una tarea sencilla para una computadora que no posee la inteligencia y experiencia de un humano sino simplemente la que los programadores le han dotado dentro de sus posibilidades. La ventaja de usar una computadora, al igual que en muchas otras tareas posibles con una computadora, es que con el software adecuado es capaz de hacer el reconocimiento de caracteres de manera mucho más rápida y bastante efectiva aunque requiera cierto trabajo de revisión y edición posterior del texto obtenido. La <a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">conversión de texto a voz natural</a> es otra tarea simple para un humano pero difícil para una computadora si el resultado deseado ha de ser natural o difícilmente indistinguible de la entonación de un humana.</p>
+<p>El texto de una imagen no es extraíble de forma directa ya que por el formato de las imágenes el texto es visiblemente únicamente por la disposición de los pixeles. Para extraer el texto es necesario aplicar un algoritmo que utilizando varias heurísticas es capaz de reconocer el texto de la imagen, el software de reconocimiento de caracteres se le denomina <em>Optical Character Recognition</em> o OCR.</p>
+<p>El reconocimiento de caracteres en una imagen es útil y necesario cuando el texto está insertado en una imagen o fotografía, por ejemplo cuando se toma una fotografía de un coche con su número de matrícula o cuando se toma una fotografía de una página de un libro y se quiere extraer el texto de la imagen, los teléfonos inteligentes con cámara son capaces de sustituir para usos básicos a dispositivos hardware como escáneres ópticos.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="programas-de-reconocimiento-de-caracteres-con-ocr">Programas de reconocimiento de caracteres con OCR</h3>
+<p>Para extraer el texto de una imagen es necesario un programa OCR, un programa OCR es un software especializado en reconocer patrones de caracteres en una imagen aún cuando los caracteres y texto de la imagen tiene cierta distorsión, baja calidad o defectos. Por supuesto, a mejor calidad de la imagen origen el programa OCR es capaz de ser más preciso en el reconocimiento del texto. Aunque los programas OCR no son siempre perfectos son bastante fiables con una imagen de buena calidad y son capaces de extraer el texto con un éxito cercano al cien por cien.</p>
+<p>Los usos de OCR son múltiples, como digitalización de libros, páginas de un libro, periódico, documento, reconocimiento de matrículas de vehículos o direcciones postales entre otros muchos usos.</p>
+<p>Hay programas OCR que se invocan desde la línea de comandos, programas con interfaz gráfica y herramientas en línea sin necesidad de programas adicionales.</p>
+<h4 id="reconocimiento-de-caracteres-desde-línea-de-comandos">Reconocimiento de caracteres desde línea de comandos</h4>
+<p>La ventaja de una herramienta de línea de comandos es que permite automatizar la tarea de extracción de texto de un conjunto de imágenes, o también permite hacer la tarea más rápido sin necesidad de usar de forma interactiva con una aplicación de interfaz gráfica.</p>
+<p>En el sistema operativo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> una herramienta de OCR es <a href="https://github.com/tesseract-ocr/tesseract">tesseract</a>. Basta con instalar el paquete de distribución para usarlo, en este caso también es posible instalar un diccionario con las palabras del idioma para un mejor reconocimiento del texto.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S tesseract tesseract-data-eng tesseract-data-spa&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman-install.sh</span>
+    </div>
+</div>
+<p>Su uso desde la línea de comandos es el siguiente, se ha de proporcionar la imagen origen y el identificador del idioma en su código de tres letras. El comando no perite especificar un rectángulo de la imagen donde se desea reconocer el texto con lo que es necesario recorgar la imagen al área deseada con una herramienta de manipulación de imágenes como <a href="https://www.gimp.org/">GIMP</a>. El resultado se genera en un archivo de nombre <em>output.txt</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ tesseract image.jpg output -l spa&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>tesseract.sh</span>
+    </div>
+</div>
+<p>Para el ejemplo he usado la siguiente imagen tomada con la cámara de fotos del móvil a partir de una página de un libro electrónico. El mismo caso es posible aplicarlo a la fotografía tomada de un periódico o de un documento puesto en una pared, lo importante es que que la imagen tenga la mejor calidad posible en cuanto a definición de caracteres, si es una fotografía que esté bien enfocada y sin brillos para que todo el texto sea reconocible. El reconocimiento del texto se realiza con efectividad mientras los caracteres tengan el formato tipográfico impreso en vez de escritura realizada a mano. Aún teniendo la imagen una leve rotación el texto se sigue reconociendo.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-1_huf50b1b388f7ef31aacae5ba86c026a4e_1190912_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen original con texto"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-1_huf50b1b388f7ef31aacae5ba86c026a4e_1190912_300x250_fit_q90_box.jpg" width="179" height="250" alt="Imagen original con texto" title="Imagen original con texto"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen rotada con texto horizontal"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_300x250_fit_q90_box.jpg" width="181" height="250" alt="Imagen rotada con texto horizontal" title="Imagen rotada con texto horizontal"  class="lozad "></a></p>
+<figcaption>Imagen original y rotada con texto horizontal</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-3_hu57982401b3b19b54a02579dc8d1c81d4_549098_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen recortada al área deseada"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-3_hu57982401b3b19b54a02579dc8d1c81d4_549098_650x450_fit_q90_box.jpg" width="325" height="450" alt="Imagen recortada al área deseada" title="Imagen recortada al área deseada"  class="lozad "></a></p>
+<figcaption>Imagen recortada al área deseada</figcaption>
+</figure>
+</div>
+<p>El texto es reconocido con bastante efectividad, el formato no es completamente fiel al original y algunos signos de puntuación pequeños no son reconocidos, sin embargo si la tarea es extrael el texto de un soporte la herramienta es bastante efectiva aunque requiera un revisión y edición posterior.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Pasaron por debajo de un arco e Igor se puso a abrir una&#10;puerta que tenía muchas más tachuelas de lo que era respetable.&#10;Así llegaron a un pasillo.&#10;&#10;—¿Estás segura de que quieres venir? —le preguntó Vimes a&#10;Jovial—. Es una vampira.&#10;&#10;—Los vampiros no me preocupan, señor.&#10;&#10;—Qué suerte tienes. —Vimes miró a Pelele, que estaba en&#10;silencio. El hombre parecía agobiado—. Dile a nuestro amigo&#10;aquí presente que no lo necesitamos y que puede esperarnos en&#10;el carruaje, el cabrón con suerte —dijo—. Pero no traduzcas eso&#10;último.&#10;&#10;Igor abrió una puerta interior mientras Pelele se alejaba casi&#10;corriendo por el pasillo.&#10;&#10;—Zu eccelentízima eccelencia...&#10;&#10;—Ah, sir Samuel —dijo lady Margolotta—. Entre, por favor.&#10;Sé que no le gusta ser una excelencia. Esto se le hace muy&#10;pesado, ¿verdad? Pero se tiene que hacer, ¿no?&#10;&#10;Aquello no era lo que él había esperado. En teoría los&#10;vampiros no llevaban perlas, ni jerséis de color rosa. Y en el&#10;mundo de Vimes tampoco llevaban zapatos cómodos y sin tacón.&#10;Ni tenían una sala de estar en la que hasta el último mueble&#10;estaba tapizado con tela de chintz.&#10;&#10;Lady Margolotta parecía la típica madre, aunque tal vez la&#10;típica madre de alguien que hubiera tenido una educación cara y&#10;un poni llamado Saltitos. Se movía como alguien muy&#10;acostumbrado a su propio cuerpo, y en general tenía un aspecto&#10;que Vimes había oído describir como de «mujer de cierta edad».&#10;Nunca había estado muy seguro de qué edad era aquella.&#10;&#10;Pero... había ciertos detalles raros. Lady Margolotta llevaba&#10;murciélagos bordados en el jersey de color rosa, y el dibujo del&#10;chintz de los muebles se parecía un poco a... murciélagos. El&#10;perrito con un lazo alrededor del cuello que había tumbado y&#10;encogido sobre un cojín tenía más aspecto de rata que de perro.&#10;Vimes no estaba seguro de que esto último fuera raro, sin&#10;embbrgo ya que los perros de aquella naturaleza siempre solían&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>output.txt</span>
+    </div>
+</div>
+<h4 id="reconocimiento-de-texto-con-un-programa-con-interfaz-gráfica">Reconocimiento de texto con un programa con interfaz gráfica</h4>
+<p>Para usos esporádicos, realizar de forma más intuitiva o con alguna funcionalidad adicional también hay disponibles programas con interfaz gráfica.</p>
+<p>Una herramienta con interfaz gráfica en GNU/Linux es <a href="https://github.com/manisandro/gImageReader">gImageReader</a>. Es un programa que utiliza el reconocimiento de caracteres de <em>tesseract</em> que como funcionalidad adicional permite seleccionar el área o áreas de la imagen de las que se desea reconocer el texto.</p>
+<p>El reconocimiento de texto se realiza de forma rápida y se proporciona en forma de texto que se puede copiar y pegar en otro programa o documento. Es posible seleccionar las diferentes áreas de la imagen en las que realizar el reconocimiento de texto. También es posible realizar cierta edición en la imagen para rotarla y que las líneas de texto estén lo más horizontales posible, también es posible instalar un diccionario del idioma del texto para en las palabras en las que haya errores de reconocimiento utilizando un diccionario sean corregidos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-1_hu3bcdbab8fb805b488c42952b17312ea1_1168581_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Programa con interfaz gráfica para OCR en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-1_hu3bcdbab8fb805b488c42952b17312ea1_1168581_650x450_fit_box_3.png" width="561" height="450" alt="Programa con interfaz gráfica para OCR en GNU/Linux" title="Programa con interfaz gráfica para OCR en GNU/Linux"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-2_hu9a1a7e9b8625fc708b4bf329fd7084fa_1289849_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Programa con interfaz gráfica para OCR en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-2_hu9a1a7e9b8625fc708b4bf329fd7084fa_1289849_650x450_fit_box_3.png" width="561" height="450" alt="Programa con interfaz gráfica para OCR en GNU/Linux" title="Programa con interfaz gráfica para OCR en GNU/Linux"  class="lozad "></a></p>
+<figcaption>Programa con interfaz gráfica para OCR en GNU/Linux</figcaption>
+</figure>
+</div>
+<h4 id="herramientas-en-línea-de-reconocimiento-de-texto-sin-instalar-software">Herramientas en línea de reconocimiento de texto sin instalar software</h4>
+<p>También hay disponibles herramientas en internet que proporcionan la funcionalidad de reconocimiento de texto proporcionando la imagen de la que se quiere reconocer el texto. Por privacidad y seguridad, la imagen proporcionada a estas herramientas en línea no ha de contener información personal o con información privada importante es más conveniente instalar la herramienta de línea de comandos o con interfaz gráfica anteriores.</p>
+<p>Dos herramientas en línea de OCR que aceptan diferentes formatos de imagen son:</p>
+<ul>
+<li><a href="https://www.newocr.com/">Free Online OCR</a></li>
+<li><a href="https://onlineocr.org/">Online OCR</a>.</li>
+</ul>
+<h3 id="ocr-con-java">OCR con Java</h3>
+<p>Para automatizar el reconocimiento de caracteres en un programa propio hay una librería que permite invocar la funcionalidad de <em>tesseract</em> desde un programa implementado con el lenguaje de programación Java.</p>
+<p>La librería requiere instalar el paquete de <em>tesseract</em> en el sistema o en <a href="https://www.microsoft.com/es-es/windows/">Windows</a> extraer y cargar su librería <em>dll</em> incluída en el propio archivo <em>jar</em> de la librería. También para mayor efectividad requiere descargar los <a href="https://github.com/tesseract-ocr/tessdata_best">modelos entrenados para mayor efectividad</a> o los <a href="https://github.com/tesseract-ocr/tessdata_fast">modelos para mayor rapided</a> según el idioma para los caracteres del texto.</p>
+<p>Por defecto, la librería procesa la imagen entera, sin embargo al igual que en la aplicación con interfaz gráfica es posible aplicar el reconocimiento de texto a un área especifica de la imagen usando un objeto <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Rectangle.html">java.awt.Rectangle</a> al invocar el método sobrecargado <em>doOCR</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javatesseract</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.awt.*</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">net.sourceforge.tess4j.Tesseract</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Tesseract</span> <span class="n">tesseract</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Tesseract</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tesseract</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">&#34;spa&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tesseract</span><span class="o">.</span><span class="na">setDatapath</span><span class="o">(</span><span class="s">&#34;src/main/resources/tesseract&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tesseract</span><span class="o">.</span><span class="na">setOcrEngineMode</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getResourceAsStream</span><span class="o">(</span><span class="s">&#34;/image.jpg&#34;</span><span class="o">));</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">tesseract</span><span class="o">.</span><span class="na">doOCR</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="o">(</span><span class="n">275</span><span class="o">,</span> <span class="n">375</span><span class="o">,</span> <span class="n">1287</span> <span class="o">-</span> <span class="n">275</span><span class="o">,</span> <span class="n">1796</span> <span class="o">-</span> <span class="n">375</span><span class="o">));</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<p>En el archivo de construcción del programa se ha de añadir la dependencia sobre la librería Java.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;net.sourceforge.tess4j:tess4j:4.5.4&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.javatesseract.Main&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaTesseract">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.howtogeek.com/682389/how-to-do-ocr-from-the-linux-command-line-using-tesseract/">How to Do OCR from the Linux Command Line Using Tesseract</a></li>
+<li><a href="https://wiki.gnome.org/action/show/Apps/OCRFeeder?action=show&amp;redirect=OCRFeeder">OCRFeeder</a></li>
+<li><a href="https://www.gnu.org/software/ocrad/">Ocrad - The GNU OCR</a></li>
+<li><a href="https://www.archlinux.org/packages/community/x86_64/gocr/">GOCR: open-source character recognition</a></li>
+<li><a href="https://www.javacodegeeks.com/2020/08/ocr-in-java-with-tess4j.html">OCR in Java with Tess4J</a></li>
+<li><a href="https://www.baeldung.com/java-ocr-tesseract">Optical Character Recognition with Tesseract</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/04/las-clases-y-librerias-basicas-de-java-para-bases-de-datos-relacionales/</id>
         <title>Las clases y librerías básicas de Java para bases de datos relacionales</title>
@@ -1950,27 +2087,27 @@
     </div>
 </div>
 <p>Utilizando el servicio Microsoft Text to Speech.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-alvaro.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-elvira.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando el servicio Free TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-enrique.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-lucia.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando Mozilla TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/mozilla-tts.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando espeak.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/espeak.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
 <p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
 <p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
@@ -2390,160 +2527,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/</id>
-        <title>Licencias de software libre y diferencias con software privativo y de código abierto</title>
-        <updated>2021-02-05T16:00:00+01:00</updated>
-        <published>2021-02-05T16:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Hay varias categorías de licencias de software que los desarrolladores como autores del software le asignan al software que crean o en el caso de empresas le asignan para proteger su propiedad intelectual. En la década de los años 80 Richard Stallman lanzo el movimiento de software libre creando software equivalente al de UNIX utilizando una licencia de software libre con unos principios éticos. Otras categorías de licencias son las privativas y las de código abierto.</strong></p>]]>
-        <![CDATA[<p>Todo software tiene una licencia. Una <a href="https://es.wikipedia.org/wiki/Licencia_de_software">licencia de software</a> es el contrato formal entre el desarrollador del software, los intermediarios y el usuario del mismo, este contrato especifica los derechos que pertenecen al desarrollador y los derechos que otorga al usuario del software. La licencia de software es un documento con jerga legal que especifica los derechos y obligaciones de cada una de las partes.</p>
-<p>Es el desarrollador o desarrolladores como autores de la obra intelectual de creación del software el que determina que licencia aplican a su obra. Incluso tienen la capacidad de en versiones posteriores del software cambiar la licencia en función de sus intereses.</p>
-<p>Hay múltiples licencias de software que se catalogan principalmente en tres grupos: licencias de software privativo, licencias de software libre y licencias de código abierto.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="software-privativo">Software privativo</h3>
-<p>Para entender las licencias de software libre o código abierto se puede empezar por entender que son las licencias de software privativo. Las licencias de software privativo se denominan así porque privan al usuario de ciertos derechos en el uso o propósito de uso, acceso al código fuente, modificación, distribución o distribución de modificaciones.</p>
-<p>Este suele ser el tipo de licencias que emplean muchas empresas en su software comercial del cual obtienen sus ingresos a través de la venta de licencias de uso. Las limitaciones del software privativo permite a las empresas proteger sus programas de la competencia y les otorga exclusividad en la venta u oferta de servicios.</p>
-<p>Normalmente estas licencias requieren el pago para el uso del software y realmente no se está comprando un producto sino simplemente se está adquiriendo una licencia de uso por un tiempo indefinido o limitado.</p>
-<p>Dado que no se posee el código fuente, no se puede estudiar su funcionamiento. Muchos de los software privativos incluyen funciones malévolas que van contra los intereses de los usuarios, enviando datos acerca del uso del ordenador, la posibilidad de una puerta trasera que realice acciones  como desinstalar programas sin el permiso del usuario o enviar la ubicación del usuario.</p>
-<p>No todos los programas de software privativo contienen funciones malévolas pero como el código es secreto no se puede saber qué programas las contienen. Al mismo tiempo los programadores cometen errores en el código pero como no se tiene el código fuente no es posible corregirlos.</p>
-<p>Los software más populares con una licencia privativa son el sistema operativo <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a>, su paquete ofimático <a href="https://products.office.com/es-es/">Office</a> y el sistema operativo <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a>.</p>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft.svg" width="200" height="150" alt="Microsoft" title="Microsoft"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apple.svg" width="200" height="150" alt="Apple" title="Apple"  class="lozad "></p>
-<figcaption>Microsoft y Apple</figcaption>
-</figure>
-</div>
-<h3 id="licencias-de-software-libre">Licencias de software libre</h3>
-<p>Las licencias de software libre se caracterizan por otorgar ciertos derechos a los usuarios. Algunos de estos son el acceso al código fuente, no imponer restricciones en el uso o propósito del código fuente, permitir realizar modificaciones a los programas y distribuir esas modificaciones.</p>
-<p>Los programas de software libre también pueden requerir un pago a su distribuidor por su servicio. Pero dado que cualquier usuario al recibir el software recibe los derechos de acceso a código fuente, modificación y distribución esto permite distribuir el software de forma gratuita, por eso mucho del software libre es gratuito. Aunque el software libre normalmente es gratuito, el software libre no es sinónimo de gratuito y se permite el uso comercial.</p>
-<ul>
-<li><a href="https://www.gnu.org/philosophy/free-sw.es.html">¿Qué es el software libre?</a></li>
-<li><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.es.html">Por qué el «código abierto» pierde de vista lo esencial del software libre</a></li>
-</ul>
-<p>Nunca esta demás de ver al menos una vez en la vida o cada ciertos años una conferencia de <a href="https://es.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a> hablando de la filosofía del software libre y leer el documento <a href="https://www.gnu.org/philosophy/fsfs/free_software.es.pdf">Software libre para una sociedad libre</a>.</p>
-<p>Las siguientes no son los únicos tipos de licencias de software libre pero sí son las mas representativas y más utilizadas.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/VFpIhA5Oufg" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/5t_EcPTEzh4" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="gpl-lgpl-y-agpl">GPL, LGPL y AGPL</h4>
-<p>Las licencias de software libre de la fundación de software libre o FSF son las licencias más utilizadas para programas de software libre. La FSF considera que el software libre ha de otorgar las siguientes cuatro libertades al usuario para considerarse un software como software libre. Estas libertades tratan de garantizar los derechos del usuario y que el software conserve su condición de software libre.</p>
-<ul>
-<li>La libertad de ejecutar el programa como se desee, con cualquier propósito (libertad 0).</li>
-<li>La libertad de estudiar cómo funciona el programa, y cambiarlo para que haga lo que usted quiera (libertad 1). El acceso al código fuente es una condición necesaria para ello.</li>
-<li>La libertad de redistribuir copias para ayudar a otros (libertad 2).</li>
-<li>La libertad de distribuir copias de sus versiones modificadas a terceros (libertad 3). Esto le permite ofrecer a toda la comunidad la oportunidad de beneficiarse de las modificaciones. El acceso al código fuente es una condición necesaria para ello.</li>
-</ul>
-<p>Las licencias GPL es una de las licencias más representativas de software libre. La licencia GPL en una licencia <em>copyleft</em> que indica que si se incluye código bajo esta licencia en un programa más grande, el programa más grande también debe estar bajo esta misma licencia. La licencia LGPL es una variante de la GPL que elimina la restricción de que un software combinado con un software GPL haya de tener licencia GPL, esto es, permite combinar un software GPL con software no GPL en el caso de usar un software como una librería. La tercera licencia de la FSF es la AGPL para que el software usado en lado de servidor sea accesible considerando el uso en el lado del servidor como una forma de distribución del software. Requieren que al distribuir software modificado incluya una lista de cambios realizados.</p>
-<p>Un peligro importante que la versión 3 de la GPL impide es la <em>tivoización</em>. La <em>tivoización</em> significa que ciertos aparatos que contienen software cubierto por la GPL que en la práctica no se puede cambiar, porque el aparato se apaga si detecta software modificado. Los fabricantes de estos ordenadores sacan partido de la libertad que proporciona el software libre pero no permiten que el usuario haga lo mismo.</p>
-<ul>
-<li><a href="https://choosealicense.com/licenses/gpl-3.0/">Licencia GPL</a></li>
-<li><a href="https://choosealicense.com/licenses/lgpl-3.0/">Licencia LGPG</a></li>
-<li><a href="https://choosealicense.com/licenses/agpl-3.0/">Liciencia AGPL</a></li>
-<li><a href="https://www.gnu.org/licenses/rms-why-gplv3.es.html">¿Por qué actualizar a la versión 3 de la GPL?</a></li>
-<li><a href="https://www.gnu.org/licenses/why-not-lgpl.es.html">Por qué en su próxima biblioteca no debería utilizar la Licencia Pública General Reducida de LGPL</a></li>
-</ul>
-<p>El software más representativo con licencia de software libre es el núcleo Linux y muchos de los programas GNU de la fundación FSF que junto con Linux forman el sistema operativo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>.</p>
-<p>Hay muchas <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">distribuciones GNU/Linux entre las que elegir</a> según las preferencias o necesidades de cada usuario. <a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Ubuntu es fácil de instalar</a> en sencillos pasos y poco tiempo.</p>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="150" alt="GNU" title="GNU"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fsf.svg" width="200" height="150" alt="FSF" title="FSF"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="150" alt="Linux" title="Linux"  class="lozad "></p>
-<figcaption>GNU, FSF y Linux</figcaption>
-</figure>
-</div>
-<h4 id="bsd">BSD</h4>
-<p>Las licencias de BSD consideran que las 4 libertades de las licencias de software libre del proyecto GNU en realidad limitan las libertades del usuario, ya que la licencia GPL obliga a distribuir todo el código usado aunque otro tenga otra licencia de software libre con una licencia GPL de software libre.</p>
-<p>El software de las licencias de BSD es interesante para algunas empresas ya que pueden utilizar el software y hacer modificaciones sin estar obligados a publicar su software con la misma licencia. Pueden utilizar código con licencia BSD, hacer modificaciones pero al distribuirlo no están obligados a publicar el código fuente.</p>
-<p>Según las cláusulas que incluye la licencia las licencias BSD se clasifican en 4, 3 o 2 cláusulas.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/BSD_licenses">Licencias BSD</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/">Las diferencias entre GNU/Linux, BSD y sus distribuciones</a></li>
-</ul>
-<h4 id="mit">MIT</h4>
-<p>Las licencias MIT son de las más permisivas, casi se consideran software de dominio público. Lo único que requieren es incluir la licencia MIT para indicar que el software incluye código con licencia MIT.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/MIT_License">Licencia MIT</a></li>
-</ul>
-<h4 id="apache-license-20">Apache License 2.0</h4>
-<p>La licencia Apache trata de preservar los derechos de autor, incluir la licencia en el software distribuido y una lista de los cambios realizados. En modificaciones extensivas del software original permite licenciar el software bajo otra licencia sin incluir el código fuente esas modificaciones.</p>
-<ul>
-<li><a href="https://www.apache.org/licenses/LICENSE-2.0">Licencia Apache</a></li>
-</ul>
-<h4 id="mozilla-public-license">Mozilla Public License</h4>
-<p>Esta licencia requiere que los archivos al ser distribuido conserven la misma licencia original pero puede ser usado junto con archivos con otra licencia al contrario que la licencia GPL que requiere que todo el código usado junto con código GPL sea licenciado como código GPL. También en caso de hacer modificaciones extensivas permite distribuirlas bajo diferentes términos y sin incluir el código fuente esas modificaciones</p>
-<ul>
-<li><a href="https://www.mozilla.org/en-US/MPL/">Licencia MPL</a></li>
-</ul>
-<h4 id="código-de-dominio-público">Código de dominio público</h4>
-<p>Es un código que no está sujeto a derechos de autor que puede utilizarse sin restricciones.</p>
-<h4 id="creative-commons">Creative Commons</h4>
-<p>Las licencias de Creative Commons más que para el software se utilizan para cualquier creación artística digital, desde fotos, artículos en blogs, música, vídeos, &hellip;</p>
-<p>Hay varios tipos de licencias de <em>Creative Commons</em> diferenciando entre permitir modificaciones a la obra original o permitiendo un uso comercial de la obra.</p>
-<ul>
-<li><a href="https://creativecommons.org/">Licencia Creative Commons</a></li>
-</ul>
-<h3 id="licencias-de-código-abierto">Licencias de código abierto</h3>
-<p>Por normal general, el término código abierto y de software libre se utiliza indistintamente para denominar la misma categoría de software. Según <a href="https://opensource.org/osd">la definición de código abierto</a> (o la <a href="https://en.wikipedia.org/wiki/The_Open_Source_Definition">definición de código abierto en la wikipedia</a>) se otorgan los mismos derechos derechos de acceso al código fuente, modificación y distribución que el software libre.</p>
-<p>Las licencias de código abierto permiten el acceso al código fuente pero no todas se consideran licencias de software libre al no otorgar otros derechos que se requieren para considerar un software como software libre como el derecho a la uso o con cualquier propósito, modificación y distribución.</p>
-<p>Dado el éxito del software libre como modelo de desarrollo de software algunas empresas cuyo software era privativo pueden decidir hacerlo de código abierto con la intención de suplir algunas carencias de software privativo pero sin perder ciertos derechos que son la fuente de sus ingresos como la venta de licencias. En este caso algunas de las licencias de código abierto son un intermedio entre las licencias privativas y las licencias de software libre.</p>
-<blockquote>
-<p>Las expresiones «software libre» y «código abierto» se refieren casi al mismo conjunto de programas. No obstante, dicen cosas muy diferentes acerca de dichos programas, basándose en valores diferentes. El movimiento del software libre defiende la libertad de los usuarios de ordenadores, en un movimiento en pro de la libertad y la justicia. Por contra, la idea del código abierto valora principalmente las ventajas prácticas y no defiende principios. Esta es la razón por la que estamos en desacuerdo con el movimiento del código abierto y no empleamos esa expresión.</p>
-<p>-  Richard Stallman</p>
-</blockquote>
-<blockquote>
-<p>El término «software de código abierto» es utilizado por alguna gente para indicar más o menos la misma categoría que software libre. No es exactamente el mismo tipo de software: ellos aceptan algunas licencias que nosotros consideramos demasiado restrictivas, y hay licencias de software libre que ellos no aceptan. Sin embargo, las diferencias en la extensión de la categoría son pequeñas: casi todo el software libre es de código abierto, y casi todo el código abierto es libre.</p>
-<p>-  Free Software Foundation</p>
-</blockquote>
-<h4 id="microsoft-public-license">Microsoft Public License</h4>
-<p>La Microsoft Public License es una licencia de código abierto que permite la distribución del software bajo la misma licencia y la modificación para un uso un uso privado. Tiene restricciones en cuanto a las marcas registradas.</p>
-<p>En caso de distribuir el software de forma compiladas o en forma de objeto binario no se exige proporcionar los derechos de acceso al código fuente del software compilado o en forma de objeto binario. En este caso esta licencia no otorga más derechos de los que se reciben pero si permite otorgar menos derechos al distribuir el software en el caso de distribuir software compilado o en forma de objeto binario.</p>
-<ul>
-<li><a href="https://opensource.org/licenses/MS-PL">Licencia pública de Microsoft</a></li>
-</ul>
-<h3 id="modelo-de-desarrollo-de-software-bazar-y-catedral">Modelo de desarrollo de software bazar y catedral</h3>
-<p>El tipo de licencia no determina qué software es mejor o peor, si el privativo o de software libre, la diferencia entre las licencias está en sus características éticas y legales. Aunque el modelo de desarrollo con una licencia de código abierto a la larga suele tener un mejor desarrollo y éxito que el software privativo, más aún con un medio como internet que permite colaborar a cualesquiera personas en el mundo independiente donde estén ubicadas en el mundo.</p>
-<ul>
-<li><a href="https://es.wikipedia.org/wiki/La_catedral_y_el_bazar">La catedral y el bazar</a></li>
-<li><a href="https://openlibra.com/es/book/download/la-catedral-y-el-bazar-version-espanola">La catedral y el bazar. Modelos de desarrollo de softare</a></li>
-<li><a href="https://web.archive.org/web/20130122100227/http://gnuwin.epfl.ch/articles/es/magiccauldron/es-magic-cauldron/node1.html">El caldero mágico</a></li>
-<li><a href="https://biblioweb.sindominio.net/telematica/noosfera.html">Colonizando la noosfera</a></li>
-</ul>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://choosealicense.com/">Choose an open source license</a></li>
-<li><a href="https://choosealicense.com/licenses/">Choose an open source license (licencias)</a></li>
-<li><a href="https://choosealicense.com/appendix/">Choose an open source license (apéndice)</a></li>
-<li><a href="https://www.kiuwan.com/blog/comparison-popular-open-source-licenses/">Open Source Licenses: A Comparison Of The Most Popular Types</a></li>
-<li><a href="https://infogalactic.com/info/Comparison_of_free_and_open-source_software_licenses">Comparison of free and open-source software licenses</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>
