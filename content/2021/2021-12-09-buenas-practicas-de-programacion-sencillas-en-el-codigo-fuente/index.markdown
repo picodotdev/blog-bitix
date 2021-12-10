@@ -2,7 +2,7 @@
 pid: 612
 type: "post"
 title: "Buenas prácticas de programación sencillas en el código fuente"
-url: "/2021/12/buenas-practicas-de-programación-sencillas-en-el-codigo-fuente/"
+url: "/2021/12/buenas-practicas-de-programacion-sencillas-en-el-codigo-fuente/"
 date: 2021-12-09T23:00:00+01:00
 language: "es"
 index: true
