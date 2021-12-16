@@ -59,7 +59,7 @@ Estas clases de dominio proporcionan dos ventajas, una que es el lugar en el que
 
 {{< code file="EncapsulatedPrimitives.java" language="java" options="" >}}
 
-### Colecciones de primera clase
+### Encapsular las colecciones
 
 En el mismo sentido que encapsular datos primitivos en clases que representan conceptos del lenguaje de dominio, es añadir las colecciones en una clase sin ningún otro dato de instancia para insertar los métodos que manipulan la colección.
 

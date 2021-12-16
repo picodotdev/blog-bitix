@@ -32,7 +32,7 @@ public class Arguments {
 
     public boolean isOptional() {
         return optional;
-      
+    }
 
     public List<String> getValues() {
         return values;
