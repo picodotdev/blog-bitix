@@ -130,7 +130,7 @@ Las operaciones de estos comandos para crear los recursos están disponibles tam
 
 Una de las funcionalidades que proporciona Boundary es trazabilidad en el _log_ se muestran los inicio de las conexiones y su finalización, permite ver las conexiones abiertas y forzar el cierre de una conexión.
 
-{{< code file="boundary.log" language="plaintext" options="" >}}
+{{< code file="boundary.log" language="plain" options="" >}}
 
 {{< image
     gallery="true"
@@ -150,9 +150,9 @@ Vault permite generar contraseñas de un solo uso y configurando SSH validar los
 
 {{< code file="install-ssh-helper.sh" language="bash" options="" >}}
 {{< code file="sshd.sh" language="bash" options="" >}}
-{{< code file="sshd" language="plaintext" options="" >}}
+{{< code file="sshd" language="plain" options="" >}}
 {{< code file="sshd_config.sh" language="bash" options="" >}}
-{{< code file="sshd_config" language="plaintext" options="" >}}
+{{< code file="sshd_config" language="plain" options="" >}}
 
 Para validar el OTP el servidor SSH a través del módulo de autenticación PAM le pide a Vault que lo valide, para ello necesita conectividad de red, si es necesario activando la regla del _firewall_ para permitir el tráfico de red para el puerto _8200_ que utiliza Vault.
 

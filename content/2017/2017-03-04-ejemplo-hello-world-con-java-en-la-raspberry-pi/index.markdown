@@ -25,7 +25,7 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
 En la Raspberry Pi deberemos instalar por supuesto [Java][java] (es posible usar Java 8) junto con SSH y rsync, configurar el servidor SSH en la RPi modificando el archivo _/etc/ssh/sshd\_config_, habilitar el servidor SSH, copiar nuestra [clave pública ssh generada previamente][blogbitix-13] al archivo _~/.ssh/authorized\_keys_ del usuario e instalar [Python][python] como requerimiento de Ansible. Los programas Java los escribiremos en un equipo más potente que la Raspberry Pi ya sea un portátil o un equipo de sobremesa con un IDE ya sea [IntelliJ][intellij], [eclipse][eclipse] u otro, también deberemos instalar Gradle, Ansible y rsync. En Arch Linux con los siguientes comandos del gestor de paquetes:
 
 {{< code file="pacman-raspberrypi.sh" language="bash" options="" >}}
-{{< code file="authorized_keys" language="plaintext" options="" >}}
+{{< code file="authorized_keys" language="plain" options="" >}}
 {{< code file="pacman.sh" language="bash" options="" >}}
 
 Con la ayuda de unas tareas para la herramienta de construcción Gradle haremos el despliegue y la ejecución de la librería _jar_ del proyecto de los ejemplos y de las dependencias que necesiten. El archivo de construcción de Gradle sería el siguiente en el que la tarea _copyDependencies_ copia las dependencias al directorio _build/libs_. La tarea _upload_ ejecutan el comando `rsync` para subir el archivo _jar_ y las dependencias del proyecto a la Raspberry Pi. Finalmente, una tarea como _executeHelloWorld_ ejecutará el comando en la Raspberry Pi para lanzar el programa Java. Con SSH también se puede lanzar el comando de forma remota cambiando la dirección IP de la Raspberry Pi por la que tenga asignada.

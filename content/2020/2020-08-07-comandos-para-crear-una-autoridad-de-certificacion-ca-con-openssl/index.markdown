@@ -130,7 +130,7 @@ La CA guarda los certificados que emite, con OpenSSL en la carpeta _newcerts_ co
 Si la revocación del certificado se realiza por un problema de seguridad en el que la clave privada y pública asociada al certificado han sido comprometidas es necesario revocar el certificado comprometido, generar un nuevo par de claves para evitar suplantaciones de identidad y emitir un nuevo certificado generado a partir de las nuevas claves privada y pública.
 
 {{< code file="ca-intermediate-revoke.sh" language="bash" options="" >}}
-{{< code file="index.txt" language="plaintext" options="" >}}
+{{< code file="index.txt" language="plain" options="" >}}
 
 Al revocar un certificado la CA regenera el CRL.
 

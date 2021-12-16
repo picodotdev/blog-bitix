@@ -39,7 +39,7 @@ Antes de comentar alguna opción más que dificulte los ataques de fuerza bruta 
 
 Las contraseñas _hasheadas_ tendrán la siguiente forma, podemos guardarlas codificadas en formato hexadecimal o en formato Base64:
 
-{{< code file="hashed-password.txt" language="plaintext" options="" >}}
+{{< code file="hashed-password.txt" language="plain" options="" >}}
 
 En el ejemplo tratándose de una aplicación web usando Apache Tapestry se debe modificar la configuración para que se utilice el nuevo _Realm_ el antiguo guardaba las contraseñas en texto plano (_shiro-users.properties_).
 

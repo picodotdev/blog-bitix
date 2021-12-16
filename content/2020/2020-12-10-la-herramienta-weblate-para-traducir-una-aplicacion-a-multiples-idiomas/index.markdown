@@ -143,7 +143,7 @@ Los diferentes recursos de una aplicación se agrupan en proyectos y componentes
 
 Este es un ejemplo de archivo original _properties_ de Java con varias cadenas a traducir.
 
-{{< code file="web.properties" language="plaintext" options="" >}}
+{{< code file="web.properties" language="plain" options="" >}}
 
 El siguiente paso es definir los idiomas deseados en los que realizar la traducción del componente con el botón _Comenzar una traducción nueva_.
 
@@ -171,9 +171,9 @@ Se ofrecen también un filtro para buscar cadenas por su estado o por coincidenc
 
 Una vez las cadenas se han traducido y localizado es posible descargar los archivos de recursos localizados a importar en el código fuente de la aplicación, también es posible hacerlo de forma manual o de forma automatizada. Los archivos _properties_ siguen una convención en los nombres de archivos de recursos compuesta por el nombre del recurso, idioma, opcionalmente país y variante separados por una barra baja con el siguiente formato _resource_es_ES.properties_. La descarga manual se realiza desde _Archivos > Descargar archivos de traducción en archivador ZIP_.
 
-{{< code file="web_es.properties" language="plaintext" options="" >}}
-{{< code file="web_es-ES.properties" language="plaintext" options="" >}}
-{{< code file="web_es-MX.properties" language="plaintext" options="" >}}
+{{< code file="web_es.properties" language="plain" options="" >}}
+{{< code file="web_es-ES.properties" language="plain" options="" >}}
+{{< code file="web_es-MX.properties" language="plain" options="" >}}
 
 La operación final para completar el flujo de trabajo de traducción es actualizar las cadenas a traducir cuando por modificaciones en la aplicación haya nuevas cadenas por traducir, se hayan modificado existentes o se haya eliminado alguna. La carga del nuevo archivo fuente de traducciones se realiza desde _Archivos > Cargar traducción_ en el idioma base de la traducción, para el caso de que el archivo fuente tenga nuevas cadenas a traducir hay que seleccionar la opción _Reemplazar traducción existente_.
 

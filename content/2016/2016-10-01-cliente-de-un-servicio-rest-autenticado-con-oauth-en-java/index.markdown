@@ -31,7 +31,7 @@ Este sencillo cliente realiza varias peticiones _get_ y _post_. Una para obtener
 
 Iniciado [Keycloak][keycloak] con [Docker][docker], configurado el _realm_ y creado un cliente junto con un rol e iniciado el servicio REST podemos ejecutar el cliente que invoque al servicio. El resultado de las trazas que obtendremos en la terminal será el siguiente.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En las trazas vemos el _endpoint_ para obtener _access token_, el _access token_ obtenido, _refresh token_ y tiempos de expiración de los mismos, finalmente los datos devueltos por el servicio. Como se observa los _access token_ son una cadena opaca bastante larga de caracteres, y es que está cifrada, firmada digitalmente y contiene información como el rol y tiempos de expiración. Enviado el _access token_ al servicio REST el [adaptador de Keycloak para Spring Boot](https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/2.2/topics/oidc/java/java-adapters.html) validará la firma digital del _token_, descifrará la información, validará su tiempo de expiración y se comprobará si tiene el rol necesario para acceder al _endpoint_ del servicio REST. Notar que con la información incluida en el token y el hecho de que está firmado digitalmente no es necesario que el servicio REST se comunique con el proveedor de OAuth para hacer la validación.
 

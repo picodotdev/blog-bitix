@@ -63,7 +63,7 @@ The following program shows the four options, its output on the console would be
 
 For any of the ways of doing the _for_ loop the behavior is the same, iterate a finite number of times or over the elements of a collection. Choosing which one to use among the different types of loops depends on the case and personal preferences but also considering the readability and expressiveness of the source code.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaForeach" command="./gradlew run" >}}
 

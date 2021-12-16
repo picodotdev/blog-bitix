@@ -188,12 +188,12 @@ A partir de la consola de inicio de sesión en modo texto hay que instalar los p
 
 Para iniciar el gestor de sesión GNOME en el inicio del sistema hay que cambiar la configuración en los archivos _/etc/rc.conf_ y _~/.xinitrc_.
 
-{{< code file="rc-gnome.conf" language="plaintext" options="" >}}
-{{< code file="xinitrc.conf" language="plaintext" options="" >}}
+{{< code file="rc-gnome.conf" language="plain" options="" >}}
+{{< code file="xinitrc.conf" language="plain" options="" >}}
 
 Para establecer como idioma el español se requiere añadir la siguiente configuración en el archivo _/usr/local/etc/gdm/locale.conf_.
 
-{{< code file="locale.conf" language="plaintext" options="" >}}
+{{< code file="locale.conf" language="plain" options="" >}}
 
 {{< image
     gallery="true"

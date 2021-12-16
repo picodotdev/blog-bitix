@@ -29,7 +29,7 @@ Hay que destacar que Ansible no necesita instalar un agente (al contrario de Che
 
 Para trabajar con Ansible necesitaremos inventariar las máquinas y probablemente definir algunas variables. Podría ser de la siguiente forma en el caso de una máquina para desarrollar.
 
-{{< code file="hosts" language="plaintext" options="" >}}
+{{< code file="hosts" language="plain" options="" >}}
 
 En el inventario descrito como un archivo en formato INI se asignan los nombres del host o sus direcciones IP, también se pueden hacer agrupaciones de máquinas por ejemplo en base al rol (base de datos, servidor web, ...). Una vez que disponemos del inventario podemos empezar a usar Ansible, por ejemplo haciendo un ping a todas las máquinas o instalando un determinado paquete:
 

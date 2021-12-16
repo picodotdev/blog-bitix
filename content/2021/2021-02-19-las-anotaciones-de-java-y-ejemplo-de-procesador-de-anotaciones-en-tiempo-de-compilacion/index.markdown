@@ -70,7 +70,7 @@ El método principal a implementar es el método [process](javadoc11:java.compil
 
 Con la infraestructura de servicios de Java se define el procesador de anotaciones creando un archivo de texto en la ubicación _META-INF.services/javax.annotation.processing.Processor_. El archivo contiene una línea por cada procesador de anotaciones de la librería. Los procesadores de anotaciones también se puede especificar de forma explícita con la opción _-processor_ de _javac_.
 
-{{< code file="javax.annotation.processing.Processor" language="plaintext" options="" >}}
+{{< code file="javax.annotation.processing.Processor" language="plain" options="" >}}
 
 #### Generar código fuente
 
@@ -96,7 +96,7 @@ Este procesador de anotaciones hace uso del servicio _Messenger_ que posee méto
 
 La clase _Foo_ al estar anotada con la anotación _Foo_ pero no redefinir los métodos _equals_, _hashCode_ y _toString_ heredados de _Object_ el compilador y el procesador de la anotación genera un mensaje de advertencia en la compilación.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 ### Procesador de anotaciones en Gradle
 

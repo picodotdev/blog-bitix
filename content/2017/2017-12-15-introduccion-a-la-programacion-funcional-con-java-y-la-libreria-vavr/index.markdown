@@ -63,7 +63,7 @@ Vavr proporciona una representación bien diseñada de algunos de los tipos más
 Entre la [documentación de Varv](https://www.vavr.io/vavr-docs) hay numerosos ejemplos de código de todo lo anterior que recomiendo leer. En el siguiente ejemplo de código incluyo algunos posibles casos de uso de varias de las funcionalidades anteriores. En definitiva la librería Vavr complementa y añade a Java algunas de las características presentes en la programación funcional de otros lenguajes.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 {{< code file="build.gradle" language="groovy" options="" >}}
 
 La librería Varv es una de las que pongo como ejemplo en el artículo [La triste realidad de Java, versiones antiguas][blogbitix-266], si es útil no usarla puede hacer que programar en Java no sea todo lo placentero que podría ser. Algunas de las críticas que recibe Java no tienen validez usando las herramientas o librerías adecuadas porque en cierta medida las herramientas importan aunque por ahí circule la idea de que las herramientas no importan, para una persona de negocio quizá no sin embargo para un desarrollador sí.

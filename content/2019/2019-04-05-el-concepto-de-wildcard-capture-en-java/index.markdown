@@ -23,7 +23,7 @@ Con la [introducción de los _generics_ en el lenguaje Java][blogbitix-138] en l
 El siguiente código produce un error de compilación con el mensaje _capture of_ ya que el compilador no puede validar que el tipo que se inserta en la lista, _Object_, como primer elemento si es compatible en tiempo de ejecución con el tipo de elementos que tiene la lista:
 
 {{< code file="WildcardError.java" language="java" options="" >}}
-{{< code file="javac.out" language="plaintext" options="" >}}
+{{< code file="javac.out" language="plain" options="" >}}
 
 El método _bar()_ define como parámetro una lista _raw_ y es capaz de extraer un _Object_ ya que todo objeto hereda de él e insertar un _Object_ ya que es una lista _raw_, [el compilador realiza el _type erasure_][blogbitix-308] y la considera como _List\<Object>_ pero el compilador advierte del posible error en tiempo de ejecución con el mensaje _Note: WildcardError.java uses unchecked or unsafe operations_, en este caso la advertencia es innecesaria ya que se inserta un elemento extraído de la propia lista, se puede suprimir anotando el método con _@SuppressWarnings("unchecked")_.
 

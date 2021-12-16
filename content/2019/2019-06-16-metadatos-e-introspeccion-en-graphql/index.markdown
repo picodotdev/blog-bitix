@@ -37,7 +37,7 @@ Por ejemplo, con la siguiente consulta se puede conocer qué tipos contiene el e
 Conocer el tipo de las consultas de lectura y que consultas se pueden realizar inspeccionando el tipo _Query_.
 
 {{< code file="query-type.query" language="graphql" options="" >}}
-{{< code file="query-type-info.query" language="plaintext" options="" >}}
+{{< code file="query-type-info.query" language="plain" options="" >}}
 
 {{< code file="query-type.out" language="json" options="" >}}
 {{< code file="query-type-info.out" language="json" options="" >}}

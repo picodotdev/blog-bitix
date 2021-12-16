@@ -63,7 +63,7 @@ Este sería un ejemplo de código que hace uso de una excepción propia para det
 {{< code file="Account.java" language="java" options="" >}}
 {{< code file="InvalidAmountException.java" language="java" options="" >}}
 {{< code file="InvalidOperationException.java" language="java" options="" >}}
-{{< code file="jshell.out" language="plaintext" options="" >}}
+{{< code file="jshell.out" language="plain" options="" >}}
 
 Aunque las excepciones son un buen mecanismo para el tratamiento de errores se les critica que rompen el flujo de ejecución de un programa y tienen un coste en rendimiento, aunque esta penalización de rendimiento en la mayoría de programas es irrelevante. Algunas recomendaciones que se hace para usar de forma efectiva las excepciones son:
 

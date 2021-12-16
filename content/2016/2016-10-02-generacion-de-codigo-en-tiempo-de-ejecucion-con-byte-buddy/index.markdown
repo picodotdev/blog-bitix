@@ -63,7 +63,7 @@ Dicho esto, la generación de código en tiempo de ejecución o compilación nos
 
 Ejecutando esta pequeña aplicación obtenemos el siguiente resultado en la terminal.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En el [tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial) encontraremos más información y más detallada de las posibilidades que nos ofrece esta interesante librería en la plataforma <abbr title="Java Virtual Machine">JVM</abbr> para manipular _bytecode_ y tipos con el lenguaje Java en tiempo de ejecución.
 

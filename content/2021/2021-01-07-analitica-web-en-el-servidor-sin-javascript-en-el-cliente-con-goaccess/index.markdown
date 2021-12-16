@@ -84,7 +84,7 @@ La configuración de Nginx incluye servidores web virtuales y configuración de 
 
 En el [archivo de configuración de GoAccess](https://github.com/allinurl/goaccess/blob/master/config/goaccess.conf) o en la [configuración desde la linea de comandos](https://goaccess.io/man#configuration) se especifican varias propiedades de configuración.
 
-{{< code file="goaccess.conf" language="plaintext" options="" >}}
+{{< code file="goaccess.conf" language="plain" options="" >}}
 
 Ambos contenedores están definidos en un archivo de [Docker Compose][docker-compose].
 

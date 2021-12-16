@@ -45,7 +45,7 @@ Una forma de instalar Docker Compose es [descargar el binario](https://github.co
 Descargando el binario de Docker Compose hay que darle permisos de ejecución y si interesa colocarlo en la variable de entorno _PATH_ del sistema:
 
 {{< code file="permisos.sh" language="bash" options="" >}}
-{{< code file="bashrc" language="plaintext" options="" >}}
+{{< code file="bashrc" language="plain" options="" >}}
 
 Con el siguiente comando veremos que Docker Compose funciona correctamente y la versión del mismo.
 

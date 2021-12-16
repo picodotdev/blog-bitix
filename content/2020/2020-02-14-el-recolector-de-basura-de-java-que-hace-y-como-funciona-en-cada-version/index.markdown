@@ -27,7 +27,7 @@ Además de todas las anteriores entre las principales hay que añadir la recolec
 Esto para cada dato y en un programa grande serán muchos supone una dificultad añadida a la creación y mantenimiento. Este ejemplo en código C muestra el uso de la función _malloc_ con la que el programa solicita memoria al sistema operativo y con _free_ la libera.
 
 {{< code file="main.c" language="c" options="" >}}
-{{< code file="main.out" language="plaintext" options="" >}}
+{{< code file="main.out" language="plain" options="" >}}
 
 Como desarrollador de Java apenas hay que preocuparse de fugas de memoria ni de fallos en el programa por liberar memoria antes de que dejar de usarla. En Java la solicitud de memoria al sistema se hace de forma explícita con la palabra reservada _new_ para crear una instancia de un objeto pero no hace falta especificar el tamaño de la memoria a reservar como en C. Tampoco hace falta liberar de forma explícita el objeto cuando dejar de usarse es el propio recolector de basura el que determina si una instancia ha quedado inaccesible desde el programa según por las referencias a objetos que siguen estando en uso, libera la memoria en el proceso de recolección de basura que ejecuta la máquina virtual de forma periódica y automática sin ninguna intervención.
 
@@ -103,7 +103,7 @@ La razón es que en vez de recolectar los objetos de toda la memoria hay más pr
 
 Es el recolector de basura por defecto en Java 8 y anteriores. La opción para usar este recolector de basura es la siguiente.
 
-{{< code file="java-option-gc-parallel.txt" language="plaintext" options="" >}}
+{{< code file="java-option-gc-parallel.txt" language="plain" options="" >}}
 
 ### Recolector de basura Garbage First o G1
 
@@ -122,7 +122,7 @@ La contrapartida de especificar pausas bajas es que G1 puede no ser capaz de man
 
 G1 en general es un recolector con un buen balance entre rendimiento y restricciones de tiempo de pausa. Es el recolector de basura por defecto en Java 9.
 
-{{< code file="java-option-gc-g1.txt" language="plaintext" options="" >}}
+{{< code file="java-option-gc-g1.txt" language="plain" options="" >}}
 
 ### Recolector de basura Shenandoah
 
@@ -136,7 +136,7 @@ Si el programa Java modifica los datos de un objeto que Shenandoah está copiand
 Shenandoah elimina la necesidad de realizar pausas durante la compactación de modo que las pausas cuando se hacen son mucho menores.
 El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del OpenJDK 12 y está siendo portado al JDK 8 y 11. Se puede activar en Java 12 con la siguiente opción de la máquina virtual.
 
-{{< code file="java-option-gc-shenandoah.txt" language="plaintext" options="" >}}
+{{< code file="java-option-gc-shenandoah.txt" language="plain" options="" >}}
 
 ### Recolector de basura ZGC
 
@@ -153,6 +153,6 @@ Los recolectores de basura anteriores y hasta ahora necesitaban realizar pausas 
 
 ZGC se puede activar en Java 13 con la siguiente opción para la máquina virtual.
 
-{{< code file="java-option-gc-zgc.txt" language="plaintext" options="" >}}
+{{< code file="java-option-gc-zgc.txt" language="plain" options="" >}}
 
 {{% /post %}}

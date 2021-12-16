@@ -39,7 +39,7 @@ En este ejemplo sencillo se lanza un evento cuando se realiza una petición y co
 
 Al realizar peticiones a la aplicación el controlador emite un evento que es recibido por _listener_ al procesar el evento, en la salida de la aplicación aparecen los mensajes.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En el proyecto hay que incluir como dependencia la librería Guava en este caso usando [Gradle][gradle].
 

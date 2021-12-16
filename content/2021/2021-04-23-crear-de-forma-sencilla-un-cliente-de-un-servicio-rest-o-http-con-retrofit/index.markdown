@@ -70,7 +70,7 @@ El cliente del servicio construido por Retrofit se realiza a partir de la defini
 
 Esta es la salida del programa en la consola donde se ven las trazas del interceptor de OkHttp con los datos de la petición y las respuesta del servicio junto con el mensaje de respuesta del servicio.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En el archivo de construcción hay que incluir la dependencia de Retrofit.
 

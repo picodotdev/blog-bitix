@@ -53,11 +53,11 @@ Finalizado el asistente en la sección _Impresoras_ examinado los detalles de la
 
 Si la página de prueba no funciona en el archivo _/var/log/cups/error\_log_ encontraremos mensajes de error con pistas que nos ayudarán a saber que está fallando. Algunos de los mensajes de error que me encontré al realizar la configuración fué el siguiente.
 
-{{< code file="error_log" language="plaintext" options="" >}}
+{{< code file="error_log" language="plain" options="" >}}
 
 A raíz de este mensaje tuve que añadir en el archivo _/etc/hosts_ el _host_ _HP.local_ con la dirección IP de la impresora en red que averigüé usando la pantalla táctil que ofrece este modelo de impresora (las mayúsculas y minúsculas son importantes).
 
-{{< code file="hosts" language="plaintext" options="" >}}
+{{< code file="hosts" language="plain" options="" >}}
 
 Con todo configurado la prueba de impresión realizable tanto desde la página de administración de CUPS como de GNOME se realizó correctamente y este es el resultado. Una vez que esta prueba es satisfactoria podemos imprimir documentos desde las aplicaciones usando el diálogo de impresión donde aparecerá la impresora en red configurada. Además podremos cambiar algunas opciones como imprimir a dos caras o solo a una, imprimir en blanco y negro o a color o usar un perfil de impresión para ahorro de tinta.
 

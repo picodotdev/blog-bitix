@@ -105,11 +105,11 @@ Una vez procesado el CSV con éxito Apache Camel lo mueve a una carpeta oculta _
 
 {{< code file="BooksRoute.java" language="java" options="" >}}
 {{< code file="Book.java" language="java" options="" >}}
-{{< code file="books.csv" language="plaintext" options="" >}}
+{{< code file="books.csv" language="plain" options="" >}}
 
 Esta es la salida del programa.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Para su ejecución se utiliza la herramienta de construcción [Gradle][gradle] con el siguiente archivo donde se definen las dependencias del proyecto. La librería de Apache Camel para Spring Boot proporciona la funcionalidad de la que la aplicación se mantenga en funcionamiento tal como ocurre cuando se utiliza la dependencia de Spring para desarrollar aplicaciones web.
 

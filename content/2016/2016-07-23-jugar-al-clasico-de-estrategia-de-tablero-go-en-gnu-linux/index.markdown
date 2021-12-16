@@ -39,11 +39,11 @@ En la wikipedia está documentado de forma bastante extensa las [reglas del jueg
 
 Como una partida puede durar una buena cantidad de tiempo podemos salvar una partida a medias y cargarla de nuevo con los siguientes comandos:
 
-{{< code file="save-commands.txt" language="plaintext" options="" >}}
+{{< code file="save-commands.txt" language="plain" options="" >}}
 
 Con el comando `help` obtendremos una lista completa de los comandos a nuestra disposición como volver un movimiento hacia atrás si nos hemos equivocado al introducir el siguiente movimiento.
 
-{{< code file="help.out" language="plaintext" options="" >}}
+{{< code file="help.out" language="plain" options="" >}}
 
 En Amazon hay algunos libros como [El Go, un juego oriental milenario](https://amzn.to/2anENOU) y [GO para principiantes](https://amzn.to/29ULTWQ), en la librería libre también hay algunos como [Manual del Juego del Go](https://openlibra.com/es/book/manual-del-juego-del-go) y [GO: Utilizando las 36 estrategias chinas](https://openlibra.com/es/book/go-utilizando-las-36-estrategias-chinas).
 

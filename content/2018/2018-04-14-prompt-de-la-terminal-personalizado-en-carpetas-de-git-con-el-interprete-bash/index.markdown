@@ -38,7 +38,7 @@ El _script_ necesario para añadir el soporte a repositorios git en Bash es [git
 
 Este es el archivo _.bashrc_ completo de la distribución [Arch Linux][archlinux] con el soporte para el _script_ _git-prompt.sh_ y algunas opciones personalizadas.
 
-{{< code file="bashrc" language="plaintext" options="" >}}
+{{< code file="bashrc" language="plain" options="" >}}
 
 La documentación completa con todas las opciones de personalización están en las primeras líneas de comentario del _script_.
 

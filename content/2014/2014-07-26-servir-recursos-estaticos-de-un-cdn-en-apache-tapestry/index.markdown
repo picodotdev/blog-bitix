@@ -42,11 +42,11 @@ También deberemos añadir un poco de configuración al módulo de la aplicació
 
 Estas serían las URLs por defecto:
 
-{{< code file="urls-sin-cdn.txt" language="plaintext" options="" >}}
+{{< code file="urls-sin-cdn.txt" language="plain" options="" >}}
 
 Y estas las nuevas nuevas URL haciendo uso de la implementación del _AssetPathConverter_ que como se aprecia incorporan un dominio de Amazon y siendo uno del servicio CloudFront en caso de no tener cacheado el recurso lo pedirá a la aplicación y lo cacheará para posteriores peticiones:
 
-{{< code file="urls-con-cdn.txt" language="plaintext" options="" >}}
+{{< code file="urls-con-cdn.txt" language="plain" options="" >}}
 
 Así de simple podemos cambiar el comportamiento de Tapestry y en este caso emplear un CDN, esta implementación es sencilla y suficiente pero perfectamente podríamos implementarla con cualquier otra necesidad que tuviésemos. El cambio está localizado en una clase, son poco más que 46 líneas de código pero lo mejor es que es transparente para el código del resto de la aplicación, ¿que más se puede pedir?
 

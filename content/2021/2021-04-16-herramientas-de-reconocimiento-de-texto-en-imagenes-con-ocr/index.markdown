@@ -61,7 +61,7 @@ Para el ejemplo he usado la siguiente imagen tomada con la cámara de fotos del 
 
 El texto es reconocido con bastante efectividad, el formato no es completamente fiel al original y algunos signos de puntuación pequeños no son reconocidos, sin embargo si la tarea es extrael el texto de un soporte la herramienta es bastante efectiva aunque requiera un revisión y edición posterior.
 
-{{< code file="output.txt" language="plaintext" options="" >}}
+{{< code file="output.txt" language="plain" options="" >}}
 
 #### Reconocimiento de texto con un programa con interfaz gráfica
 

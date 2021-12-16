@@ -31,7 +31,7 @@ Por otra parte en Java los arrays en tiempo de ejecución necesitan conocer el t
 
 El compilador convierte los _varargs_ de tipos genéricos de la siguiente forma:
 
-{{< code file="Erasure-varargs.txt" language="plaintext" options="" >}}
+{{< code file="Erasure-varargs.txt" language="plain" options="" >}}
 
 En un método cuyo último argumento es un _vararg_ y de tipo genérico puede producirse _Heap Pollution_ como indica el compilador, si estamos seguros de que no se puede dar este caso en el código del método podemos eliminar la advertencia del compilador añadiendo la anotación [@SafeVarargs](javadoc8:java/lang/SafeVarargs.html) en el método. Añadir la anotación solo implica que el compilador eliminará la advertencia pero aún con ella puede seguir produciéndose la excepción _ClassCastException_ si el método no ha sido cuidadoso.
 

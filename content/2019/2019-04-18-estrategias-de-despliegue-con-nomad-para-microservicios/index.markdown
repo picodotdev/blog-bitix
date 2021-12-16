@@ -40,7 +40,7 @@ configurada. En este caso se actualiza la versión de _nginx_ de la versión _ng
 
 La estrategia de despliegue en _Nomad_ se define en la [sección de configuración _update_](https://www.nomadproject.io/docs/job-specification/update.html). El parámetro _min\_healthy\_time_ es el tiempo que se espera cuando se hace un _rolling update_ para considerar una instancia como sana y continuar la actualización con la siguiente, _max\_parallel_ indica el número de instancias que se migran al mismo tiempo. El parámetro _canary_ indica el número de instancias que se crean en las estrategias _blue/green_ y _canary_, en la primera el número de instancias coincidirá con el parámetro _canary_ que indica el número de instancias de un servicio. Nomad con los parámetros _health\_check_, _min\_healthy\_time_, _healthy\_deadline_, _progress\_deadline_, _stagger_ y _auto\_revert_ se puede poner unos límites para considerar válido un despliegue y en caso de no serlo realizar un _rollback_ de forma automática.
 
-{{< code file="nginx.nomad" language="plaintext" options="" >}}
+{{< code file="nginx.nomad" language="plain" options="" >}}
 {{< code file="nomad-job-run.sh" language="bash" options="" >}}
 
 En el caso de los despliegues _blue/green_ y _canary_ una vez comprobado que la versión de los nuevos servicios funcionan correctamente se promocionan y actualizan el resto de instancias en el caso de _canary_ o se detienen las instancias antiguas en el caso de _blue/green_.

@@ -23,7 +23,7 @@ Por ejemplo, supongamos que tenemos un código de un producto formateado de la s
 
 Los grupos de captura se especifican mediante paréntesis, «(» y «)», en la expresión regular. En el caso del código usaremos la siguiente expresión regular:
 
-{{< code file="regex.txt" language="plaintext" options="" >}}
+{{< code file="regex.txt" language="plain" options="" >}}
 
 En Java con la clase [Pattern](javadoc8:java/util/regex/Pattern.html) y [Matcher](javadoc8:java/util/regex/Matcher.html) podemos hacer las validaciones y obtener los grupos de captura de la usando el método [group](javadoc8:java/util/regex/Matcher.html#group-int-) de la clase Matcher:
 

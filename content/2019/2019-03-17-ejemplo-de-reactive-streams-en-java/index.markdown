@@ -30,7 +30,7 @@ En el ejemplo de código un productor produce y los consumidores procesan elemen
 
 {{< code file="Main.java" language="java" options="" >}}
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/ReactiveStreams" command="./gradlew run" %}}
 

@@ -27,7 +27,7 @@ El problema está en que el ORM lanza las consultas de forma automática según 
 
 Para evitar el problema N+1 hemos de recuperar todos los datos haciendo una única consulta, haciendo una join entre las tablas autor y libro. En [Hibernate](http://hibernate.org/) podemos resolverlo con una consulta HQL como la siguiente:
 
-{{< code file="hql.txt" language="plaintext" options="" >}}
+{{< code file="hql.txt" language="plain" options="" >}}
 
 O con una criteria en Grails:
 
@@ -38,7 +38,7 @@ Pero para saber en que sitios de nuestro código debemos establecer los métodos
 En Grails podemos hacer un controlador y gsp que nos muestre esa información que podrían ser de la siguiente forma:
 
 {{< code file="HibernateController.groovy" language="groovy" options="" >}}
-{{< code file="index.gsp" language="plaintext" options="" >}}
+{{< code file="index.gsp" language="plain" options="" >}}
 
 Si además queremos ver las consultas HQL de Hibernate y parámetros que se están lanzando en cada acceso a una página podemos modificar el archivo _Config.goovy_ y añadir la siguiente configuración en el apartado Log4j:
 

@@ -79,7 +79,7 @@ El siguiente comando arranca un contenedor con una instancia de [Nginx][nginx]. 
 
 Al acceder a alguna página del servidor web emite una traza como salida. En este caso se solicita la página por defecto y el navegador intenta encontrar el _favicon_ de la web, la página se devuelve con un código de estado 200 y el _favicon_ como no está configurado se devuelve un código de estado 404 de recurso no encontrado.
 
-{{< code file="nginx.out" language="plaintext" options="" >}}
+{{< code file="nginx.out" language="plain" options="" >}}
 
 Kibana es la herramienta como cliente web que permite consultar las trazas almacenadas en Elasticsearch, permite crear filtros para precisar las trazas a buscar y limitar las consultas a ciertos periodos de tiempo, muestra las ocurrencias encontradas y el número de ellas en un cierto periodo de tiempo. Filebeat además de las trazas que generan los contenedores indexa algunas propiedades adicionales como el nombre del contenedor, la imagen del contenedor, datos del agente que realiza la solicitud, marca de tiempo de generación junto a más datos que permite filtrar para encontrar las trazas deseadas entre todas las indexadas de todos los contenedores. También permite seleccionar las trazas en un rango de tiempo y los campos de datos a mostrar como resultado. Kibana tiene su propia sintaxis para realizar las consultas y permite guardarlas para futuros usos y compartirlas, además de poder construir avanzados paneles de información.
 

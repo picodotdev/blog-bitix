@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      location:
+        optional:./config
+spring:
+  config:
+    import: optional:configserver:http://localhost:8090

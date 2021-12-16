@@ -29,7 +29,7 @@ Otra posibilidad es modificar la variable PATH del sistema y añadir el director
 Este es parte del contenido de la variable _PATH_ del sistema en Arch Linux (los tres puntos es contenido que he omitido). Las distribuciones GNU/Linux suelen instalar los binarios de los programa ejecutables en los directorios _/usr/local/sbin_ con los binarios para el usuario _root_ y _/usr/bin_ es donde los paquetes ubican sus binarios y programas ejecutables. En el directorio _/usr/local/bin_ el usuario puede ubicar sus propios binarios sin que entren en conflicto con los instalados por los paquetes.
 
 {{< code file="echo-path.sh" language="bash" options="" >}}
-{{< code file="echo-path.out" language="plaintext" options="" >}}
+{{< code file="echo-path.out" language="plain" options="" >}}
 
 Dado que el programa que manualmente se ubica en el directorio para binarios de los usuarios _/usr/local/bin_ o en un directorio propio no proviene de un paquete cuando se publique una nueva versión es el usuario el que ha de actualizar a la nueva versión descargando de nuevo el binario y copiarlo de nuevo al directorio.
 

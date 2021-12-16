@@ -1,0 +1,1 @@
+$ APP_PROPERTIES_ENVIRONMENT="enviroment" ./gradlew service:run

@@ -102,8 +102,8 @@ Las llaves SSH son necesarias para conectarnos al servidor y lanzar comandos des
     gallery="true"
     image1="image:llaves-ssh.png" optionsthumb1="300x200" title1="Claves SSH"
     caption="Claves SSH" >}}
-{{< code file="config" language="plaintext" options="" >}}
-{{< code file="clouding.pem" language="plaintext" options="" >}}
+{{< code file="config" language="plain" options="" >}}
+{{< code file="clouding.pem" language="plain" options="" >}}
 
 En los ajustes veremos el saldo disponible que se irá descontando según los recursos consumidos durante el periodo de tiempo utilizados. Una cosa importante es que aunque el servidor esté apagado seguirá contabilizándose en la facturación. Podemos elegir recibir notificaciones cuando el saldo de la cuenta sea bajo para realizar una recarga.
 

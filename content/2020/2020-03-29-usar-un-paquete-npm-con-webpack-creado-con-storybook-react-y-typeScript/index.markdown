@@ -49,7 +49,7 @@ El archivo _index.html_ permite probar la página con el componente incluído.
 
 En el directorio indicado en la configuración de Webpack se generan los archivos de resultado. En el están los archivos _.map_ para depurar en javascript y los _.d.ts_ con definiciones de tipos de TypeScript para archivos JavaScript.
 
-{{< code file="tree-build.out" language="plaintext" options="" >}}
+{{< code file="tree-build.out" language="plain" options="" >}}
 
 En la página de prueba que hace uso del JavaScript producido por Webpack se carga el componente del paquete npm desarrollado en otro proyecto haciendo uso de Storybook.
 

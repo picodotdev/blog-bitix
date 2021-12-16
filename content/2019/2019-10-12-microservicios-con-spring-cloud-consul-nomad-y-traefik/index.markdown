@@ -97,7 +97,7 @@ El código del servicio, del cliente implementados con Spring y la salida del cl
 
 Como hay 2 instancias del servicio y Traefik realiza balanceo de carga utilizando el algoritmo _round robbin_ se observa en la salida con las respuestas que la dirección IP que ha atendido la petición es alternativamente una de las dos instancias del servicio.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En un momento posterior si surge la necesidad de querer desplegar una nueva versión del microservicio basta con generar de nuevo el artefacto del microservicio, cambiando la versión en el archivo _build.gradle_. El despliegue de la nueva versión se realizan mediante la estrategia _canary_, manteniendo las instancias con la versión anterior del servicio y añadiendo una nueva con la nueva versión. Si se descubre algún error en la instancia _canary_ se puede revertir el estado a la versión anterior, que consiste en detener la instancia _canary_. Una vez se comprueba que la instancia con la nueva versión funciona correctamente analizando sus trazas y métricas se envía la order a Nomad de promocionar las instancias de forma progresiva con la versión antigua a la nueva versión.
 

@@ -41,7 +41,7 @@ Algunas de las características notables de JavaFX son:
 
 A continuación mostraré los requerimientos y entorno que deberemos tener para realizar el ejemplo _Hola Mundo_ que consistirá en una aplicación con una ventana que mostrará un botón. Si usamos el JDK 8 de Oracle, JavaFX ya está incorporado y podremos usarlo sin más requerimientos además de las [otras muchas novedades incorporadas en Java 8][blogbitix-17]. En el caso de [Linux][linux] y más concretamente en [Arch Linux][archlinux], aunque será similar otros sistemas operativos, usando el paquete _openjdk_ deberemos instalar además el paquete _java-openjfx_. En Arch Linux si no tenemos instalado el paquete _java-openjfx_ obtendremos en la terminal un mensaje no muy descriptivo similar a:
 
-{{< code file="no-java-openjfx.txt" language="plaintext" options="" >}}
+{{< code file="no-java-openjfx.txt" language="plain" options="" >}}
 
 En el [repositorio de GitHub del ejemplo de JavaFX](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJavaFX) está el código fuente. Usando [Gradle][gradle] como herramienta automatizada de construcción y descargado el código podemos lanzar la aplicación de ejemplo con el comando de _run.sh_.
 
@@ -59,7 +59,7 @@ Esta es la captura de pantalla de la aplicación y el mensaje emitido en la cons
     image1="image:helloworld.png" optionsthumb1="300x200" title1="Aplicación ¡Hola Mundo!"
     caption="Aplicación ¡Hola Mundo! con JavaFX" >}}
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 ### Aplicaciones demostración de JavaFX
 

@@ -76,7 +76,7 @@ El siguiente programa muestra las cuatro opciones, su salida en la consola serí
 
 Para cualquiera de las formas de hacer el bucle _for_ el comportamiento es el mismo, iterar un número finito de veces o sobre los elementos de una colección. Elegir cual usar entre los diferentes tipos de bucles depende del caso y de las preferencias personales pero también considerando la legibilidad y expresividad del código fuente.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaForeach" command="./gradlew run" >}}
 

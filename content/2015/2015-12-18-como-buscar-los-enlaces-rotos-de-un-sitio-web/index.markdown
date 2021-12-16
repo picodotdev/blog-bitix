@@ -46,7 +46,7 @@ Las ventajas de estas herramientas web sobre las siguientes con wget y LinkCheck
 Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando `wget` para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo _wget.log_ tendremos los resultados del rastreo.
 
 {{< code file="wget.sh" language="bash" options="" >}}
-{{< code file="wget.log" language="plaintext" options="" >}}
+{{< code file="wget.log" language="plain" options="" >}}
 
 `wget` es una herramienta con múltiples usos, otro uso que tiene es la de [descargar el contenido de un sitio web completo]
 
@@ -57,7 +57,7 @@ Otra opción es [LinkChecker](https://github.com/linkchecker/linkchecker) que ad
 El siguiente comando comprueba los enlaces internos de un sitio web y los externos que contenga generando un archivo de trazas, _linkchecker.log_, con las comprobaciones de resultado correcto y erróneas. Con el registro de las erróneas es fácil corregirlas.
 
 {{< code file="linkchecker.sh" language="bash" options="" >}}
-{{< code file="linkchecker.log" language="plaintext" options="" >}}
+{{< code file="linkchecker.log" language="plain" options="" >}}
 
 ### Comprobar enlaces rotos de otros sitios web hacia el nuestro
 

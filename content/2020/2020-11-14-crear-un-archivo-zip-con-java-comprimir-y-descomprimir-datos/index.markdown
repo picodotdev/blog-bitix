@@ -39,21 +39,21 @@ El siguiente código permite comprime varios archivos en diferentes formatos en 
 Los archivos de extensión _jar_ utilizados en Java para crear librerías y _war_ para empaquetar aplicaciones web no son más que archivos Zip con estas extensiones.
 
 {{< code file="Main-compress.java" language="java" options="" >}}
-{{< code file="System.out-compress" language="plaintext" options="" >}}
+{{< code file="System.out-compress" language="plain" options="" >}}
 
 ### Cómo descomprimir un archivo Zip con Java
 
 El proceso contrario a la compresión es la descompresión, la descompresión permite recuperar los datos originales. Para esto se utiliza la clase _ZipFile_ en el caso de leer de un archivo, la clase _ZipInputStream_ también permite leer el Zip creado con _ZipOutputStream_.
 
 {{< code file="Main-decompress.java" language="java" options="" >}}
-{{< code file="System.out-decompress" language="plaintext" options="" >}}
+{{< code file="System.out-decompress" language="plain" options="" >}}
 
 ### Listar el contenido de un archivo Zip con Java
 
 En Java el contenido de un _ZipFile_ se representa con la clase _ZipEntry_, el siguiente código lista el contenido de un archivo Zip.
 
 {{< code file="Main-list.java" language="java" options="" >}}
-{{< code file="System.out-list" language="plaintext" options="" >}}
+{{< code file="System.out-list" language="plain" options="" >}}
 
 Usando la aplicación integrada en el entorno de escritorio o sistema operativo para visualizar el contenido del archivo Zip se observa que contiene comprimidos el conjunto de archivos añadidos en él.
 

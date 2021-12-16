@@ -39,7 +39,7 @@ Supongamos que tenemos una clase _Producto_ con un precio y queremos emitir un m
 {{< code file="Producto.java" language="java" options="" >}}
 {{< code file="ProductoObserver.java" language="java" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Conocer los patrones de diseño, conocer sus beneficios y desventajas y saber cuando aplicarlos probablemente nos sea de provecho en los casos reales que nos encontremos. En el libro [Head First Design Patterns](https://amzn.to/2SVhrFc) explican bastante bien este y otros patrones, este libro lo considero como lectura recomendada junto a otros [8+ libros para mejorar como programadores][blogbitix-55].
 

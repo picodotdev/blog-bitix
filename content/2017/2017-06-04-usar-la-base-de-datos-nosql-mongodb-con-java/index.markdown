@@ -37,7 +37,7 @@ La instancia del servidor de MongDB la inicio usando Docker con un archivo de [D
 
 El resultado en la terminal de ejecutar el ejemplo con el comando `gradlew run` es el siguiente donde se muestran las bases de datos, la colección _users_ creada en el ejemplo, los usuarios de la colección y una búsqueda de un usuario, el resultado de actualizar la propiedad de un documento y finalmente el número de documentos en la colección.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Spring ofrece en su API mediante el proyecto [Spring Data MongoDB](https://projects.spring.io/spring-data-mongodb/) algunas clases adicionales para facilitar el acceso y obtención de datos de MongoDB. Entre estas clases están [MongoTemplate](https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/core/MongoTemplate.html), [MongoOperations](https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/core/MongoOperations.html) y [MongoRepository](https://docs.spring.io/spring-data/data-mongo/docs/current/api/org/springframework/data/mongodb/repository/MongoRepository.html) cuyo uso puede consultarse en su [manual de referencia](https://docs.spring.io/spring-data/data-mongo/docs/current/reference/html/).
 

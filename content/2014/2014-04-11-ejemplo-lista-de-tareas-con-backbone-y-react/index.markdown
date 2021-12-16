@@ -48,7 +48,7 @@ También podríamos probarlo usando gradle con:
 
 Sin embargo, [PhantomJS](http://phantomjs.org/) que es lo que se utiliza para simular el navegador en las pruebas con jasmine y grunt, no soporta la función bind produciéndose la siguiente excepción al usarse en la librería de React.
 
-{{< code file="error-bind.txt" language="plaintext" options="" >}}
+{{< code file="error-bind.txt" language="plain" options="" >}}
 
 Para evitarlo debemos añadir un _polyfill_. Deberemos añadir los polyfills de [cujojs/poly](https://github.com/cujojs/poly), podemos hacer uso de ellos con RequireJS basta como añadirlo como dependencia:
 

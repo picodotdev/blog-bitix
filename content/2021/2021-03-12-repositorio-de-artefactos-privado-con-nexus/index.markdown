@@ -89,7 +89,7 @@ El programa trata las clases de la librería del repositorio de Nexus como cualq
 {{< code file="Library.java" language="java" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="gradlew-run.sh" language="bash" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 #### Publicar una imagen Docker a un repositorio repositorio en Nexus
 

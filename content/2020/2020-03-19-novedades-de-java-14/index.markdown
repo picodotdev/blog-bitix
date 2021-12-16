@@ -56,15 +56,15 @@ Las mejoras incluídas en esta versión son:
 
 Cuando se produce una excepción _NullPointerException_ por usar una referencia de objeto cuyo valor es _null_ Java emite una traza indicando la línea de código donde se ha producido, la clase y método donde se ha intentado referenciar pero no se ha podido.
 
-{{< code file="NullPointerException-1.out" language="plaintext" options="" >}}
+{{< code file="NullPointerException-1.out" language="plain" options="" >}}
 
 Sin embargo, hay casos en los que la trazas de NullPointerException no es lo suficientemente precisa para determinar la causa de la excepción sin usar el _debugger_. En los siguientes ejemplos con elementos encadenados no es posible determinar cuál es la variable que ha originado la excepción por tener valor nulo.
 
-{{< code file="NullPointerException-2.out" language="plaintext" options="" >}}
+{{< code file="NullPointerException-2.out" language="plain" options="" >}}
 
 A partir de Java 14 las excepciones NullPointerException son más útiles e indican de forma precisa cual es el miembro de la línea de código que ha producido la excepción.
 
-{{< code file="NullPointerException-3.out" language="plaintext" options="" >}}
+{{< code file="NullPointerException-3.out" language="plain" options="" >}}
 
 #### Expresiones _switch_
 

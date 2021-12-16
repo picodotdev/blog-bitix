@@ -31,7 +31,7 @@ Las clases principales de esta nueva API para el manejo de rutas, ficheros y ope
 Con la clase _Path_ se pueden hacer operaciones sobre rutas como obtener la ruta absoluta de un _Path_ relativo o el _Path_ relativo de una ruta absoluta, de cuanto elementos se compone la ruta, obtener el _Path_ padre o una parte de una ruta. Otros métodos interesantes son [relativize()](javadoc10:java/nio/file/Path.html#relativize(java.nio.file.Path)), [normalize()](javadoc10:java/nio/file/Path.html#normalize()), [toAbsolutePath()](javadoc10:java/nio/file/Path.html#toAbsolutePath()), [resolve()](javadoc10:java/nio/file/Path.html#resolve(java.nio.file.Path)), [startsWith()](javadoc10:java/nio/file/Path.html#startsWith(java.nio.file.Path)) y [endsWith()](javadoc10:java/nio/file/Path.html#endsWith(java.nio.file.Path)).
 
 {{< code file="Main-1.java" language="java" options="" >}}
-{{< code file="info.out" language="plaintext" options="" >}}
+{{< code file="info.out" language="plain" options="" >}}
 
 Utilizando estas clases expondré algunos ejemplos siendo el primero recorrer el listado de archivos o también se podría hacer el listado de forma recursiva de un directorio e imprimir la información de cada archivo como nombre, si es un enlace simbólico, permisos propietario, fecha de última modificación y tamaño utilizando los siguiente métodos similar a lo que hace el comando _ls_ de GNU/Linux:
 
@@ -44,7 +44,7 @@ Utilizando estas clases expondré algunos ejemplos siendo el primero recorrer el
 Al igual que es posible leer los permisos también es posible establecerlos con el método [Files.setPosixFilePermissions()](javadoc10:java/nio/file/Files.html#setPosixFilePermissions(java.nio.file.Path,java.util.Set)).
 
 {{< code file="Main-2.java" language="java" options="" >}}
-{{< code file="ls.out" language="plaintext" options="" >}}
+{{< code file="ls.out" language="plain" options="" >}}
 
 Las operaciones de crear directorios o archivos, copiar archivos, moverlos y eliminarlos son muy comunes de modo que la clase _Files_ ofrece varios métodos que con una única línea permite hacer estas operaciones de forma sencilla. El siguiente ejemplo crea un archivo, lo copia, lo mueve y finalmente lo elimina.
 

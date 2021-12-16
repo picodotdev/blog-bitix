@@ -42,7 +42,7 @@ SQLPad tiene una licencia de software libre y soporta las bases de datos relacio
 
 Otra funcionalidad habitual es poder exportar los datos en formato CSV o xlsx para procesarlos con algún comando o programa en el equipo en local o simplemente para hacer algún tipo de tratamiento con el programa ofimático de hoja de cálculo.
 
-{{< code file="data.csv" language="plaintext" options="" >}}
+{{< code file="data.csv" language="plain" options="" >}}
 
 {{< image
     gallery="true"

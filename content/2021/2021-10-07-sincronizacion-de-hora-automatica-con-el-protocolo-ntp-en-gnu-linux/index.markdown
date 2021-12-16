@@ -61,7 +61,7 @@ El servidor NTP utilizado para realizar la sincronización de la fecha y la hora
 
 En este archivo se pone el servidor NTP deseado si es otro distinto del por defecto como el proporcionado por el Real Instituto y Observatorio de la Armada, _hora.roa.es_ y _minuto.roa.es_, u otro de los proporcionados por la organización de voluntarios [NTP Pool Project][ntppool] que utilizan muchas distribuciones incluida Arch Linux y dispositivos en internet como _routers_.
 
-{{< code file="timesyncd.conf" language="plaintext" options="" >}}
+{{< code file="timesyncd.conf" language="plain" options="" >}}
 
 {{< reference >}}
 * [Time Synchronization with NTP and systemd](https://feeding.cloud.geek.nz/posts/time-synchronization-with-ntp-and-systemd/)

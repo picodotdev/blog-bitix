@@ -37,19 +37,19 @@ Esta es la configuración básica con la estrategia _round-robin_. Los servidore
 
 Para usar la estrategia _least-connected_ hay que indicar la directiva _least\_conn_ en la directiva _upstream_.
 
-{{< code file="nginx-least_conn.conf" language="plaintext" options="" >}}
+{{< code file="nginx-least_conn.conf" language="plain" options="" >}}
 
 Hay que tener en cuenta que en las estrategias _round-robin_ y _least-connected_ cada petición probablemente sea atendida por un servidor diferente de modo que si los servidores no comparten las sesiones se producirán comportamientos erráticos. Usando la estrategia _ip\_hash_ se usará la dirección IP para redirigir todas las peticiones al mismo servidor que se conoce como _sticky session_.
 
-{{< code file="nginx-ip_hash.conf" language="plaintext" options="" >}}
+{{< code file="nginx-ip_hash.conf" language="plain" options="" >}}
 
 Para que los servidores compartan la sesión y evitar usar _sticky session_ podemos [usar Redis como sistema de información para guardar las sesiones de los servidores][blogbitix-70], si un servidor de aplicaciones deja de funcionar las sesiones que mantuviese no se perderán y las peticiones podrán ser atendida por cualquier servidor. Si hay un servidor que queremos procese más peticiones porque tiene más capacidad podemos dar más peso a este. En esta configuración de cada 5 peticiones 3 serán atendidas por el servidor _app1_, 1 por el _app2_ y otra por _app3_.
 
-{{< code file="nginx-weight.conf" language="plaintext" options="" >}}
+{{< code file="nginx-weight.conf" language="plain" options="" >}}
 
 Cuando un servidor falla al servir una petición Nginx lo marca como en estado erróneo y deja de enviarle peticiones, las comprobaciones de salud se hacen de forma pasiva según el resultado de las peticiones que se envían. Con _max\_fails_ se establece el máximo número de fallos antes de considerar un servidor con estado erróneo, tiene un valor por defecto de 1. Con _fail\_timeout_ se establece el tiempo que un servidor se considera que está en estado erróneo antes de enviar una nueva petición, si enviada una nueva petición responde correctamente se vuelve a considerar en estado correcto. Con la directiva _health\_check_ se puede configurar las comprobaciones de estado que hace Nginx para determinar si el servidor de aplicaciones está funcionando correctamente.
 
-{{< code file="nginx-misc.conf" language="plaintext" options="" >}}
+{{< code file="nginx-misc.conf" language="plain" options="" >}}
 
 Si queremos que el cliente conozca que servidor atendió la petición podemos añadir la [directiva _add\_header_](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header) usando una de las [variables añadidas por el módulo  _ngx\_http\_upstream_](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#variables), nos servirá para depurar la aplicación en tiempo de desarrollo.
 

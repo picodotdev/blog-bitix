@@ -33,27 +33,27 @@ El lenguaje Java ofrece soporte para la internacionalización y localización co
 
 Los archivos de recursos de Java en formato _properties_ son archivos de texto con una cadena por línea, cada cadena está identificada con una clave. La clave de la cadena es la misma en todos los archivos localizados de la cadena, varía el literal asociado de la cadena. Es recomendable que los archivos de recursos utilicen el formato de caracteres UTF-8 par soportar los caracteres de todos los alfabetos como cirílicos, kanji y árabes.
 
-{{< code file="resource.properties" language="plaintext" options="" >}}
-{{< code file="resource_en.properties" language="plaintext" options="" >}}
-{{< code file="resource_es.properties" language="plaintext" options="" >}}
+{{< code file="resource.properties" language="plain" options="" >}}
+{{< code file="resource_en.properties" language="plain" options="" >}}
+{{< code file="resource_es.properties" language="plain" options="" >}}
 
 ### La clase Locale y Locales soportados por Java
 
 El JDK de Java proporciona soporte para múltiples _locales_ con los idiomas mayoritarios en el mundo. La lista completa de locales para los que Java incluye soporte en el JDK se obtiene con la clase _Locale_. En caso de que el _Locale_ no tenga una variable con el _locale_ estática se ofrece un constructor para indicar el código del lenguaje, el país y su variante.
 
 {{< code file="Main-locales-1.java" language="java" options="" >}}
-{{< code file="System-locales-1.out" language="plaintext" options="" >}}
+{{< code file="System-locales-1.out" language="plain" options="" >}}
 
 La clase _Locale_ está formada por el identificador de dos letras del idioma y opcionalmente adicionalmente por el identificador del país y opcionalmente adicionalmente un código de variante. Estos tres identificadores separados por un guión forman el identificador del _Locale_. En los archivos de recursos los guiones se ponen con barras bajas.
 
-{{< code file="Main-locales-2.txt" language="plaintext" options="" >}}
+{{< code file="Main-locales-2.txt" language="plain" options="" >}}
 
 ### Localización de cadenas
 
 La clase _ResourceBundle_ busca y devuelve el literal adecuando según la clave que lo identifica y el _Locale_ deseado.
 
 {{< code file="Main-literals-1.java" language="java" options="" >}}
-{{< code file="System-literals-1.out" language="plaintext" options="" >}}
+{{< code file="System-literals-1.out" language="plain" options="" >}}
 
 #### Cadenas con argumentos
 
@@ -62,14 +62,14 @@ Algunas cadenas tienen datos o _placeholders_ que son insertados en tiempo de ej
 Los argumentos o _placeholders_ están numerados entre llaves.
 
 {{< code file="Main-literals-2.java" language="java" options="" >}}
-{{< code file="System-literals-2.out" language="plaintext" options="" >}}
+{{< code file="System-literals-2.out" language="plain" options="" >}}
 
 #### Herencia de cadenas
 
 La clase _ResourceBundle_ implementa un mecanismo de herencia por el que si no existe el archivo o clave de la cadena de la clave solicitada en el archivo de recursos del _locale_ indicado se obtiene la cadena del siguiente _locale_ más general. Por ejemplo, si se desea obtener una cadena para el _Locale_ _es\_ES_ (español de España) o _es\_MX_ (español de México) para el que no existe su propio archivo de recursos o la clave de la cadena entonces se obtiene la cadena del archivo de recurso español (_es_), si incluso no existiese en el _locale_ _es_ se obtendría la cadena del recurso base _resource.properties_.
 
 {{< code file="Main-literals-3.java" language="java" options="" >}}
-{{< code file="System-literals-3.out" language="plaintext" options="" >}}
+{{< code file="System-literals-3.out" language="plain" options="" >}}
 
 #### Localización de cadenas con múltiples formas plurales
 
@@ -77,16 +77,16 @@ La localización de las cadenas también ha de tener en cuenta que los lenguajes
 
 En español dependiendo del número de elementos a los que nos referimos se utiliza el singular o el plural.
 
-{{< code file="Main-pluralforms-1.txt" language="plaintext" options="" >}}
+{{< code file="Main-pluralforms-1.txt" language="plain" options="" >}}
 
 Las aplicaciones que no soportan diferentes normas plurales en las cadenas suelen utilizar expresiones como las siguientes, la cadena es la misma tanto para el singular como para el plural.
 
-{{< code file="Main-pluralforms-2.txt" language="plaintext" options="" >}}
+{{< code file="Main-pluralforms-2.txt" language="plain" options="" >}}
 
 En Java la clase que permite utilizar diferentes formas plurales es [ChoiceFormat](javadoc11:java.base/java/text/ChoiceFormat.html). Utiliza un formato especial para que cadena elegir según la forma plural, está formada por una colección de número de forma plural y la cadena a utilizar. Para elegir la cadena adecuada según la forma plural se ha de proporcionar el número de elementos a los que se refiere la expresión, este número selecciona la cadena de la forma plural.
 
 {{< code file="Main-pluralforms-3.java" language="java" options="" >}}
-{{< code file="System-pluralforms-3.out" language="plaintext" options="" >}}
+{{< code file="System-pluralforms-3.out" language="plain" options="" >}}
 
 ### Localización de fechas
 
@@ -95,7 +95,7 @@ Las fechas también son textos que varían según el _Locale_ ya sea según el f
 Al usar fechas también suele ser necesario [convertir fechas y husos horarios][blogbitix-64] y es recomendable [guardar las fechas en formato UTC en la base de datos][blogbitix-168] porque este huso horario no varía con el horario de verano e invierno.
 
 {{< code file="Main-dates-1.java" language="java" options="" >}}
-{{< code file="System-dates-1.out" language="plaintext" options="" >}}
+{{< code file="System-dates-1.out" language="plain" options="" >}}
 
 ### Localización de números e importes
 
@@ -104,12 +104,12 @@ Al igual que con las fechas hay que tener algunas [consideraciones al trabajar c
 Los números e importes también varían en formato según el _Locale_. En los números en algunos países se utiliza el punto para separar los millares y la coma para los decimales y en otros es al revés se utiliza la coma para separar los millares y el punto para los decimales.
 
 {{< code file="Main-numbers-1.java" language="java" options="" >}}
-{{< code file="System-numbers-1.out" language="plaintext" options="" >}}
+{{< code file="System-numbers-1.out" language="plain" options="" >}}
 
 Los importes suelen incluir el símbolo de la moneda y dependiendo del _Locale_ el símbolo puede estar antes de la cifra, después de la cifra, con el código de la moneda o el símbolo de la moneda.
 
 {{< code file="Main-money-1.java" language="java" options="" >}}
-{{< code file="System-money-1.out" language="plaintext" options="" >}}
+{{< code file="System-money-1.out" language="plain" options="" >}}
 
 ### Ordenar cadenas correctamente de forma alfabética
 

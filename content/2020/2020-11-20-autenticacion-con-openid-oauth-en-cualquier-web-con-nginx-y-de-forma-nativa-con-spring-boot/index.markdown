@@ -59,11 +59,11 @@ Tanto _oauth2-proxy_ como _vouch-proxy_ tienen imágenes de [Docker][docker] par
 
 La configuración del _oauth-proxy_.
 
-{{< code file="oauth2-proxy.cfg" language="plaintext" options="" >}}
+{{< code file="oauth2-proxy.cfg" language="plain" options="" >}}
 
 Y en este caso las direcciones de correos electrónicas o usuarios permitidos en la aplicación.
 
-{{< code file="oauth2-proxy-authenticated-emails.cfg" language="plaintext" options="" >}}
+{{< code file="oauth2-proxy-authenticated-emails.cfg" language="plain" options="" >}}
 
 Al acceder a la página en el dominio _nginx.127.0.0.1.xip.io_ se solicita el inicio de sesión o selección de cuenta.
 

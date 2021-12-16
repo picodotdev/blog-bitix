@@ -24,7 +24,7 @@ Los propósitos de planificar tareas con expresiones _cron_ son ejecutar proceso
 
 El formato de las expresiones _cron_ se compone de varios campos separados por un espacios.
 
-{{< code file="formato-cron.txt" language="plaintext" options="" >}}
+{{< code file="formato-cron.txt" language="plain" options="" >}}
 
 Según el campo hay varios valores posibles. En los valores numéricos de _day-of-week_ los días empiezan por domingo, el valor 1 es domingo, el lunes es 2 y el 7 es el sábado.
 

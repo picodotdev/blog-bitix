@@ -33,7 +33,7 @@ Las relaciones jerárquicas establecen unas normas en las relaciones de los elem
 
 Esta es una estructura pequeña jerárquica de productos con dos niveles de profundidad.
 
-{{< code file="hierarchy.txt" language="plaintext" options="" >}}
+{{< code file="hierarchy.txt" language="plain" options="" >}}
 
 ### Formas de guardar relaciones jerárquicas
 
@@ -44,20 +44,20 @@ La solución de listas adyacentes o _adjacency list_ se basa en añadir un campo
 Esta solución utiliza un modelo de datos sencillo, es fácil de añadir nuevos elementos a la estructura jerárquica además de mantener la integridad referencial.
 
 {{< code file="adjacency-list-data.sql" language="sql" options="" >}}
-{{< code file="adjacency-list-data.sql" language="plaintext" options="" >}}
+{{< code file="adjacency-list-data.sql" language="plain" options="" >}}
 
 Sus desventajas son que las consultas para obtener los ascendientes o descendientes de un elemento son complicadas e ineficientes además de no soportar cualesquiera niveles de profundidad.
 
 Las consultas para obtener los ascendientes y los descendientes son las siguientes.
 
 {{< code file="adjacency-list-ancestors.sql" language="sql" options="" >}}
-{{< code file="adjacency-list-ancestors.out" language="plaintext" options="" >}}
+{{< code file="adjacency-list-ancestors.out" language="plain" options="" >}}
 {{< code file="adjacency-list-descendants.sql" language="sql" options="" >}}
-{{< code file="adjacency-list-ancestors.out" language="plaintext" options="" >}}
+{{< code file="adjacency-list-ancestors.out" language="plain" options="" >}}
 
 Para este caso y con consultas recursivas el ejemplo se puede probar con [Docker][docker] y la base de datos PostgreSQL.
 
-{{< code file="docker-run.sh" language="plaintext" options="" >}}
+{{< code file="docker-run.sh" language="plain" options="" >}}
 {{< code file="insert-data.sql" language="sql" options="" >}}
 
 #### Consultas recursivas
@@ -67,18 +67,18 @@ Las otras implementaciones están originadas a la limitación del modelo relacio
 Las consultas para obtener los ascendientes y los descendientes son las siguientes.
 
 {{< code file="recursive-queries-ancestors.sql" language="sql" options="" >}}
-{{< code file="recursive-queries-ancestors.out" language="plaintext" options="" >}}
+{{< code file="recursive-queries-ancestors.out" language="plain" options="" >}}
 {{< code file="recursive-queries-descendants.sql" language="sql" options="" >}}
-{{< code file="recursive-queries-descendants.out" language="plaintext" options="" >}}
+{{< code file="recursive-queries-descendants.out" language="plain" options="" >}}
 
 #### Closure Table
 
 Cuando la base de datos no soporta consultas recursivas una solución alternativa es la de _closure table_, esta se basa en guardar las relaciones entre los nodos en una tabla adicional, se guardan la relación de un nodo con todos sus descendientes o las de un nodo con todos sus ascendientes además de consigo mismo.
 
 {{< code file="closure-table-data-1.sql" language="sql" options="" >}}
-{{< code file="closure-table-data-1.out" language="plaintext" options="" >}}
+{{< code file="closure-table-data-1.out" language="plain" options="" >}}
 {{< code file="closure-table-data-2.sql" language="sql" options="" >}}
-{{< code file="closure-table-data-2.out" language="plaintext" options="" >}}
+{{< code file="closure-table-data-2.out" language="plain" options="" >}}
 
 {{< image
     gallery="true"
@@ -109,7 +109,7 @@ Estas otras soluciones son válidas para implementar estructuras jerárquicas en
 La solución _path enumeration_ se basa en añadir una columna que contiene en una cadena la colección de identificadores de sus ascendientes incluido el propio nodo.
 
 {{< code file="path-enumeration-data.sql" language="sql" options="" >}}
-{{< code file="path-enumeration-data.out" language="plaintext" options="" >}}
+{{< code file="path-enumeration-data.out" language="plain" options="" >}}
 
 Su desventaja es que al igual que la solución de _nested set_ no ofrece integridad referencial en los identificadores incluidos en la cadena que guarda la jerarquía. Sin embargo, las consultas para obtener los ascendientes, descendientes y realizar una inserción son sencillas.
 
@@ -125,7 +125,7 @@ La solución de _nested set_ es una solución a las limitaciones del modelo rela
 Esta solución también tiene un modelo de datos sencillo, no requiere tablas adicionales, es fácil de añadir un nuevo nodo a la jerarquía y las consultas para buscar los ascendientes y descendientes son rápidas.
 
 {{< code file="nested-set-data.sql" language="sql" options="" >}}
-{{< code file="nested-set-data.out" language="plaintext" options="" >}}
+{{< code file="nested-set-data.out" language="plain" options="" >}}
 
 Sus desventajas es que no mantiene la integridad referencial. Es más adecuada cuando la estructura de datos no cambia con frecuencia ya que las inserciones y eliminaciones requieren actualizar los valores de los rangos de gran cantidad de nodos. Si se inserta un nuevo nodo en la categoría de procesadores, por ejemplo ARM, su _left_ y _right_ serán 14 y 15 y a todos los _right_ mayor o igual que 14 hay que sumarle más 2.
 

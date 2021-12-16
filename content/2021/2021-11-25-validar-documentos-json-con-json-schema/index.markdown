@@ -59,7 +59,7 @@ Hay que tener en cuenta que varias de estas librerías están implementadas por 
 Este es un ejemplo que a partir de un documento JSON se valida que cumple el esquema contra el que se valida. En el caso de que el documento JSON no cumpla el esquema se devuelven los errores como resultado del método de validación, en el caso del ejemplo los errores son emitidos a la salida estándar donde se aprecia que en el caso de la validación del JSON inválido faltan las tres propiedades requeridas.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 La librería de JSON Schema Validator además de su propia dependencia requiere incluir otras en el archivo de construcción, en este caso de [Gradle][gradle].
 

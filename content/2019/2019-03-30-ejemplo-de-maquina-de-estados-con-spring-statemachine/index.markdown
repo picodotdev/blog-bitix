@@ -71,13 +71,13 @@ En un cambio de estado se produce la siguiente secuencia de eventos y acciones.
 * Se notifica del cambio de estado.
 * Se notifica de la finalización de la transición.
 
-{{< code file="System.out-3" language="plaintext" options="" >}}
+{{< code file="System.out-3" language="plain" options="" >}}
 
 Estas son las dependencias necesarias a añadir n la herramienta de construcción y la salida en la terminal de las trazas ejecutando la máquina de estados desde el estado inicial e inicializada desde un estado en concreto.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
-{{< code file="System.out-1" language="plaintext" options="" >}}
-{{< code file="System.out-2" language="plaintext" options="" >}}
+{{< code file="System.out-1" language="plain" options="" >}}
+{{< code file="System.out-2" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringStatemachine" command="./gradle run" %}}
 

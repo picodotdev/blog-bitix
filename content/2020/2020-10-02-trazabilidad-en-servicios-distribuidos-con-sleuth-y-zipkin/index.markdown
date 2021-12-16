@@ -57,7 +57,7 @@ Sleuth exporta los datos de las transacciones a Zipkin donde se observa los tiem
 
 Zipkin ofrece una aplicación web con la que consultar las llamadas desencadenadas por una petición y los tiempos de respuesta de los servicios involucrados, la aplicación web está en la dirección _http://localhost:9411/zipkin/_ o a través de Traefik con _http://localhost:8093/zipkin/_. Utilizando uno de los identificadores globales de petición e introduciéndolo en el cuadro de búsqueda de Zipkin se observan los tiempos de respuesta de cada uno de los servicios.
 
-{{< code file="client.out" language="plaintext" options="" >}}
+{{< code file="client.out" language="plain" options="" >}}
 
 Tanto el microservicio cliente como el microservicio servidor tienen Sleuth integrado y envían de forma asíncrona cuando terminan las peticiones HTTP la información de trazabilidad a Zipkin. Con el _traceId_ de una transacción se observa en Zipkin la cadena de llamadas entre los microservicios y sus tiempos de respuesta. En el ejemplo solo hay dos pero podrían en un caso real quizá sean tres, cuatro o más ya sea porque cada servicio utiliza otro o porque un mismo servicio utiliza varios, ver esta información de forma gráfica es mucho más fácil de analizar que solo con las trazas correlacionadas en ELK.
 

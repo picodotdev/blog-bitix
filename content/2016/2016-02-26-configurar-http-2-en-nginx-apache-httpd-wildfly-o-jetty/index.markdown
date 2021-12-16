@@ -28,7 +28,7 @@ Para usar HTTP/2 los navegadores Mozilla Firefox, Google Chrome y Microsoft Edge
 
 En Nginx es muy sencillo, deberemos modificar el archivo de configuración _default.conf_ para que quede de forma similar a la siguiente.
 
-{{< code file="default.conf" language="plaintext" options="" >}}
+{{< code file="default.conf" language="plain" options="" >}}
 
 {{< image
     gallery="true"
@@ -38,7 +38,7 @@ En Nginx es muy sencillo, deberemos modificar el archivo de configuración _defa
 
 En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.org/packages/extra/x86_64/nghttp2/) de nuestra distribución. y usar el módulo _mod\_http2.so_ junto con _mod\_ssl.so_ para el cifrado.
 
-{{< code file="httpd-default.conf" language="plaintext" options="" >}}
+{{< code file="httpd-default.conf" language="plain" options="" >}}
 
 {{< image
     gallery="true"
@@ -49,7 +49,7 @@ En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.or
 El WildFly deberemos descargar un archivo jar que ofrece el soporte para la negociación de protocolo,
 <abbr title="Application-Layer Protocol Negotiation">ALPN</abbr>, según la versión del JDK que usemos de [Maven Central](http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/). Modificamos el archivo de configuración _bin/standalone.conf_.
 
-{{< code file="standalone.conf" language="plaintext" options="" >}}
+{{< code file="standalone.conf" language="plain" options="" >}}
 
 Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listener para el subsistema de [undertow][undertow] con HTTP/2 habilitado y un Realm asociado para usar TLS/SSL.
 
@@ -63,7 +63,7 @@ Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listen
 
 Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el momento de escribir este artículo con la versión 1.8.0_74 del [OpenJDK][openjdk], _modules/alpn-impl/alpn-1.8.0\_74.mod_.
 
-{{< code file="alpn-1.8.0_74.mod" language="plaintext" options="" >}}
+{{< code file="alpn-1.8.0_74.mod" language="plain" options="" >}}
 {{< code file="jetty.sh" language="bash" options="" >}}
 
 {{< image

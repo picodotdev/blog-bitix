@@ -42,7 +42,7 @@ Una vez escrita la imagen muy probablemente deberemos redimensionar la partició
 
 El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea _/dev/sda1_, con este valor modificamos el archivo _cmdline.txt_ y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:
 
-{{< code file="cmdline.txt" language="plaintext" options="" >}}
+{{< code file="cmdline.txt" language="plain" options="" >}}
 
 A partir de este punto con la tarjeta SD insertada en la Raspberry Pi y el dispositivo USB conectado a uno de los puertos se iniciará la Pi desde la partición del sistema del dispositivo USB en vez de la tarjeta SD. Enseguida se nota un aumento de rendimiento considerable en el tiempo de inicio y las perdidas de respuesta porque se está leyendo o escribiendo serán mucho menores o nulos con la mayor tasa de transferencia de los dispositivos USB.
 

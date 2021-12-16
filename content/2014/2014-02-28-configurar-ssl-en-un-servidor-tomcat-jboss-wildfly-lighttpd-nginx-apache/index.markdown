@@ -50,7 +50,7 @@ JBoss cambió recientemente el nombre de la versión community de JBoss, esta ha
 
 Lighttpd es un servidor web de los denominados ligeros que aunque posiblemente no tiene toda la versatilidad de Apache ofrece un mayor rendimiento. Para activar SSL en lighttpd debemos modificar el archivo de configuración y añadir lo siguiente:
 
-{{< code file="lighttpd.conf" language="plaintext" options="" >}}
+{{< code file="lighttpd.conf" language="plain" options="" >}}
 
 Quizá debamos cambiar el propietario y permisos con:
 

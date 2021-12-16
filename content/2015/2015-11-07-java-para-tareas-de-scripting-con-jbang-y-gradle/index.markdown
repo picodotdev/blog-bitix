@@ -55,7 +55,7 @@ En [GNU][gnu]/[Linux][linux] los intérpretes de comandos como [Bash][bash] perm
 
 El resultado del _script_ es simplemente una cadena en la salida estándar de la terminal.
 
-{{< code file="Script1.out" language="plaintext" options="" >}}
+{{< code file="Script1.out" language="plain" options="" >}}
 
 En Java la tarea de edición de archivos de código fuente se realiza con un entorno integrado de desarrollo o IDE ya sea [IntelliJ IDEA][intellij], [eclipse][eclipse] o [NetBeans][netbeans]. Un IDE proporciona asistencia de código y muestra errores de compilación según se escribe, esto permite escribir código Java de una forma bastante rápida aún con la verbosidad de Java.
 

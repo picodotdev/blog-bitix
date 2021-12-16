@@ -35,17 +35,17 @@ Usar 2FA con SSH requiere instalar un módulo de autenticación que valide el pr
 
 En los sistemas basados en [Debian][debian] como [Ubuntu][ubuntu] hay que instalar el siguiente paquete que añade un nuevo módulo de PAM para 2FA.
 
-{{< code file="apt-install-libpam-google-authenticator.sh" language="plaintext" options="" >}}
+{{< code file="apt-install-libpam-google-authenticator.sh" language="plain" options="" >}}
 
 Posteriormente hay que configurar SSH para que haga uso del módulo PAM de Google Authenticator añadiendo la siguiente línea en el archivo _/etc/pam.d/sshd_.
 
 {{< code file="sshd.sh" language="bash" options="" >}}
-{{< code file="sshd-1" language="plaintext" options="" >}}
+{{< code file="sshd-1" language="plain" options="" >}}
 
 También hay que modificar el archivo de configuración de SSH _/etc/ssh/sshd\_config_.
 
 {{< code file="sshd_config.sh" language="bash" options="" >}}
-{{< code file="sshd_config-1" language="plaintext" options="" >}}
+{{< code file="sshd_config-1" language="plain" options="" >}}
 
 ### Configurar el módulo SSH de Google 2FA
 
@@ -59,7 +59,7 @@ El siguiente comando ejecutado con el usuario permite generar un código QR y la
 * _Increase the original generation time limit_: no
 * _Enable rate-limiting_: yes
 
-{{< code file="google-authenticator.sh" language="plaintext" options="" >}}
+{{< code file="google-authenticator.sh" language="plain" options="" >}}
 
 El resultado del comando es un código QR que se puede escanear con la aplicación de Google Authenticator para teléfono inteligente o con la clave secreta utilizar KeePassXC para generar los _tokens_.
 
@@ -72,7 +72,7 @@ El resultado del comando es un código QR que se puede escanear con la aplicaci�
 
 Una vez modificada la configuración hay que reiniciar el servicio de SSH.
 
-{{< code file="sshd-restart.sh" language="plaintext" options="" >}}
+{{< code file="sshd-restart.sh" language="plain" options="" >}}
 
 ### Usar autenticación 2FA con claves SSH
 
@@ -83,15 +83,15 @@ Para que se pida el segundo factor de autenticación aún utilizando la autentic
 
 La siguiente línea del archivo _/etc/pam.d/sshd_ ha de estar comentada de esta forma y añadir al final de archivo los métodos de autenticación.
 
-{{< code file="sshd-2" language="plaintext" options="" >}}
+{{< code file="sshd-2" language="plain" options="" >}}
 
 Nuevamente hay que modificar el archivo _/etc/ssh/sshd\_config_ y añadir esta línea al final.
 
-{{< code file="sshd_config-2" language="plaintext" options="" >}}
+{{< code file="sshd_config-2" language="plain" options="" >}}
 
 Y después reiniciar el servicio de SSH.
 
-{{< code file="sshd-restart.sh" language="plaintext" options="" >}}
+{{< code file="sshd-restart.sh" language="plain" options="" >}}
 
 ### Probar la autenticación SSH
 

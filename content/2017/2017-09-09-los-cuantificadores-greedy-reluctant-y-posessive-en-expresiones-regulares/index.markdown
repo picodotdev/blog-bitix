@@ -36,7 +36,7 @@ Aparentemente cada uno de los cuantificadores realiza lo mismo, sin embargo, hay
 * _Possessive_ o posesivo: funciona igual que _greedy_ salvo que si el emparejamiento no es válido no elimina un caracter de la cadena que se está comprobando y finaliza la comprobación.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En el primer ejemplo del cuantificador _greedy_ se usa _.*_ para encontrar cualquier cosa, cero o más veces, seguido de las letras _f_ _o_ _o_. Dado que el cuantificador de la expresión la expresión _.*_ es avaricioso primero consume toda la cadena. En este punto, no hay coincidencia dado que las tres últimas letras (_f_ _o_ _o_) han sido consumidas. De modo que se busca con una letra menos sucesivamente hasta que la la ocurrencia más a la derecha de _foo_ ha sido regurgitada, en este punto hay coincidencia y la búsqueda finaliza.
 

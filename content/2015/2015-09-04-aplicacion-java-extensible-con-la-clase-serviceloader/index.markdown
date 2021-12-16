@@ -40,11 +40,11 @@ Para obtener el mensaje de saludo en el idioma que deseemos basta con obtenerlo 
 
 La clase _ServiceLoader_ busca los servicios en los archivos _META-INF/services/[interfaz]_ que haya disponibles en cualquiera de las librerías jar incluidas en el _classpath_, en el caso de este ejemplo el archivo sería _META-INF/services/io.github.picodotdev.serviceloader.Saludador_ y este su contenido con las tres implementaciones de servicios incluidas en el ejemplo:
 
-{{< code file="io.github.picodotdev.serviceloader.Saludador" language="plaintext" options="" >}}
+{{< code file="io.github.picodotdev.serviceloader.Saludador" language="plain" options="" >}}
 
 La salida para el programa _Main1.java_ y _Main2.java_ respectivamente es:
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Esta es una forma interesante de hacer extensible o ampliable una aplicación en un futuro. Destacar que simplemente incluyendo en el _classpath_ una librería que incluya en el directorio _META-INF/services_ un archivo con el nombre de la interfaz con su nombre cualificado, _io.github.picodotdev.serviceloader.Saludador_, las nuevas implementaciones de servicios se devolverán usando el método _Service.load(Saludador.class)_ que se encargará de buscar los archivos en las librerías jar que los tengan.
 

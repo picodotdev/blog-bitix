@@ -24,7 +24,7 @@ Por suerte en GNU/Linux disponemos de cantidad de herramientas y programas que n
 
 El error en concreto al montarlo en mi sistema [Arch Linux][archlinux] era el siguiente:
 
-{{< code file="error.log" language="plaintext" options="" >}}
+{{< code file="error.log" language="plain" options="" >}}
 
 Podemos extraer una imagen de una unidad con el comando `dd`, el parámetro _if_ será la unidad de entrada y el parámetro _of_ la imagen que se creará en un archivo:
 

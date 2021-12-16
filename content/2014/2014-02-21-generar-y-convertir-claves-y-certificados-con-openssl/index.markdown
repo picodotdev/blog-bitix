@@ -42,7 +42,7 @@ Para cifrar la clave generada con el algoritmo _aes256_ y protegerla por una con
 
 El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspecto (los tres puntos son líneas de contenido omitidas).
 
-{{< code file="localhost.key" language="plaintext" options="" >}}
+{{< code file="localhost.key" language="plain" options="" >}}
 
 #### Exportar la clave pública
 

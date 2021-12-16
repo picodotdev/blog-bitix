@@ -5,6 +5,7 @@ title: "Servicio de configuración para microservicios con Spring Cloud Config"
 url: "/2018/09/servicio-de-configuracion-para-microservicios-con-spring-cloud-config/"
 date: 2018-09-15T16:00:00+02:00
 updated: 2018-09-15T19:30:00+02:00
+expiryDate: 2021-12-16T18:00:00+01:00
 language: "es"
 index: true
 rss: true

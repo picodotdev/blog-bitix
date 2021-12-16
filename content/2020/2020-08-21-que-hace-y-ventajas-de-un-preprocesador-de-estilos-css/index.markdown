@@ -36,7 +36,7 @@ Los preprocesadores CSS facilitan la escritura y mantenimiento de las hojas de e
 
 Este es un ejemplo de código fuente en formato del preprocesador Less que muestra varias de las funcionalidades que aporta sobre CSS estándar.
 
-{{< code file="example.less" language="plaintext" options="" >}}
+{{< code file="example.less" language="plain" options="" >}}
 
 ### Cómo transformar el pseudo-codigo CSS a CSS con un preprocesador
 
@@ -48,7 +48,7 @@ El archivo CSS en formato _less_ hay que compilarlo para producir el archivo CSS
 
 La hoja de estilos en formato _less_ que genera el código CSS anterior el siguiente. Se observa que los estilos aplicables a _la etiqueta _article_ quedan agrupados en el contexto de _article_ de modo que son fácilmente identificables todos los estilos de cada etiqueta, además algunos colores utilizan variables cuyos valores no hace falta repetir en cada uso junto con el uso de funciones como _lighten_ y _darken_ para generar variaciones del color base indicado.
 
-{{< code file="main.less" language="plaintext" options="" >}}
+{{< code file="main.less" language="plain" options="" >}}
 
 Y su resultado en formato CSS.
 

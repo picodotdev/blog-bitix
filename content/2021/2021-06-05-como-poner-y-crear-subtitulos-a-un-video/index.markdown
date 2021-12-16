@@ -40,8 +40,8 @@ Estos editores muestran una previsualización del vídeo, un área para introduc
 
 Este es el contenido de un archivo de subtítulos en formato _srt_, para vídeos embebidos en una página web hay que usar el formato _vtt_ que es muy similar de modo que en este caso hay que convertir el _srt_ a _vtt_ si el programa editor de subtítulos no lo permite exportar directamente. También es posible editar el archivo de texto de subtítulos y transformar un _srt_ en un _vtt_ ya que son muy similares salvo una línea de cabecera.
 
-{{< code file="darkest-dungeon-intro.srt" language="plaintext" options="" >}}
-{{< code file="darkest-dungeon-intro.vtt" language="plaintext" options="" >}}
+{{< code file="darkest-dungeon-intro.srt" language="plain" options="" >}}
+{{< code file="darkest-dungeon-intro.vtt" language="plain" options="" >}}
 
 En este vídeo se pueden activar los subtítulos con la transcripción del audio, aunque en este caso el vídeo original ya incluye los subtítulos.
 

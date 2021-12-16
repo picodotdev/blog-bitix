@@ -27,9 +27,9 @@ Inicialmente deberemos generar tres parejas de claves privadas y públicas, una 
 
 {{< code file="openssl-genrsa.sh" language="bash" options="" >}}
 
-{{< code file="ca.crt" language="plaintext" options="" >}}
-{{< code file="ca.key" language="plaintext" options="" >}}
-{{< code file="ca.pub" language="plaintext" options="" >}}
+{{< code file="ca.crt" language="plain" options="" >}}
+{{< code file="ca.key" language="plain" options="" >}}
+{{< code file="ca.pub" language="plain" options="" >}}
 
 {{< code file="openssl-genrsa-unknown.sh" language="bash" options="" >}}
 

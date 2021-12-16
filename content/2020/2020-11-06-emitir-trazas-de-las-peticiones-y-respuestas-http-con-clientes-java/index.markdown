@@ -59,14 +59,14 @@ El cliente de Java en la versión de Java 9 no incluye en su API un soporte senc
 Una posibilidad para no tener que crear una implementación propia para añadirle trazabilidad al cliente HTTP de Java es utilizar la librería [interceptable-http-client](https://github.com/raphw/interceptable-http-client) que precisamente proporciona la implementación, esta librería es del mismo autor que otras conocidas como [Byte Buddy][bytebuddy].
 
 {{< code file="Main-HttpClient.java" language="java" options="" >}}
-{{< code file="System.out-HttpClient" language="plaintext" options="" >}}
+{{< code file="System.out-HttpClient" language="plain" options="" >}}
 
 #### Trazas con Spring WebClient
 
 El cliente WebClient de Spring posee una API que permite realizar peticiones HTTP con pocas líneas de código.
 
 {{< code file="Main-WebClient.java" language="java" options="" >}}
-{{< code file="System.out-WebClient" language="plaintext" options="" >}}
+{{< code file="System.out-WebClient" language="plain" options="" >}}
 
 #### Trazas con Retrofit
 
@@ -75,14 +75,14 @@ Lo interesante del [cliente Retrofit es que convierte una interfaz REST de un se
 El _interceptor_ se añade sobre el cliente OkHttp que luego es utilizado para construir el cliente del servicio con Retrofit.
 
 {{< code file="Main-Retrofit.java" language="java" options="" >}}
-{{< code file="System.out-Retrofit" language="plaintext" options="" >}}
+{{< code file="System.out-Retrofit" language="plain" options="" >}}
 
 #### Trazas con OkHttp
 
 OkHttp es otra de las librerías para realizar peticiones HTTP populares en Java. Para añadir trazas hay que crear un interceptor y añadirlo al cliente.
 
 {{< code file="Main-OkHttp.java" language="java" options="" >}}
-{{< code file="System.out-OkHttp" language="plaintext" options="" >}}
+{{< code file="System.out-OkHttp" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/HttpClientLog" command="./gradlew run" %}}
 

@@ -41,7 +41,7 @@ Usando la clase [LogManager](https://logging.apache.org/log4j/2.x/log4j-api/apid
 Una vez se ha iniciado la aplicación Spring Boot invoca el método _run_ y se emiten las trazas propias de la aplicación después de las que también Spring Boot y otras librerías emiten., en este caso usando [texto en forma de arte ascii][elblogdepicodev-86].
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En el archivo de construcción de la aplicación usando [Gradle][gradle] hay que incluir las dependencias de las librerías.
 

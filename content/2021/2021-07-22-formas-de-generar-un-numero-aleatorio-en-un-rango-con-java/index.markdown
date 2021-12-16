@@ -37,7 +37,7 @@ Dada la especificación del método _nextInt_ si se desea un número aleatorio e
 
 {{< code file="RandomUtil-random.java" language="java" options="" >}}
 {{< code file="Main-random.java" language="java" options="" >}}
-{{< code file="RandomUtil-random.out" language="plaintext" options="" >}}
+{{< code file="RandomUtil-random.out" language="plain" options="" >}}
 
 #### Usando un _stream_
 
@@ -45,7 +45,7 @@ En el caso de desear una secuencia de números aleatorios la clase _Random_ ofre
 
 {{< code file="RandomUtil-stream.java" language="java" options="" >}}
 {{< code file="Main-stream.java" language="java" options="" >}}
-{{< code file="RandomUtil-stream.out" language="plaintext" options="" >}}
+{{< code file="RandomUtil-stream.out" language="plain" options="" >}}
 
 #### Con la clase Math
 
@@ -53,7 +53,7 @@ Es más eficiente usar la clase _Random_ pero otra forma posible de generar núm
 
 {{< code file="RandomUtil-math.java" language="java" options="" >}}
 {{< code file="Main-math.java" language="java" options="" >}}
-{{< code file="RandomUtil-math.out" language="plaintext" options="" >}}
+{{< code file="RandomUtil-math.out" language="plain" options="" >}}
 
 #### Generar un identificativo único universal
 
@@ -61,7 +61,7 @@ Si se desea generar un identificador único universal para una entidad en vez de
 
 {{< code file="RandomUtil-uuid.java" language="java" options="" >}}
 {{< code file="Main-uuid.java" language="java" options="" >}}
-{{< code file="RandomUtil-uuid.out" language="plaintext" options="" >}}
+{{< code file="RandomUtil-uuid.out" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaRandom" command="./gradlew run" %}}
 

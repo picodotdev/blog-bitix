@@ -36,7 +36,7 @@ En las siguientes trazas de ejecución de sentencias se observa una inserción d
 
 Estas sentencias se ejecutan en unos pocos milisegundos, en una aplicación con tablas de algún millón de registros, varios _joins_, condiciones _where_ complejas, ordenación y paginación las sentencias SQL pueden tardar varias segundos y decenas de segundos, conocer sus tiempos de ejecución es importante.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 {{< image
     gallery="true"
     image1="image:pagina-listado.png" optionsthumb1="650x450" title1="Listado de elementos"

@@ -31,9 +31,9 @@ Además de cómo firmar un correo electrónico el siguiente ejemplo muestra [có
 En este ejemplo solo se firma el contenido del mensaje quedando fuera de la firma el asunto, fecha, otros adjuntos y destinatarios del mensaje pero podría utilizarse lo mismo para firmar estos otros datos. Enviado el correo electrónico podemos verificar la firma con el siguiente comando de GPG.
 
 {{< code file="gpg-verify.sh" language="bash" options="" >}}
-{{< code file="email.txt" language="plaintext" options="" >}}
-{{< code file="signature.asc.txt" language="plaintext" options="" >}}
-{{< code file="email-original.txt" language="plaintext" options="" >}}
+{{< code file="email.txt" language="plain" options="" >}}
+{{< code file="signature.asc.txt" language="plain" options="" >}}
+{{< code file="email-original.txt" language="plain" options="" >}}
 
 {{< image
     gallery="true"
@@ -46,7 +46,7 @@ En el anillo de claves de GPG la clave que usemos para firmar no ha de tener _pa
 
 Las suplantaciones mediante correo electrónico son y seguirán siendo habituales si no son detectadas como _spam_. Después de escribir este artículo usar [<abbr title="DomainKeys Identified Mail">DKIM</abbr>](https://es.wikipedia.org/wiki/DomainKeys_Identified_Mail) parece ser la forma adecuada de firmar y cifrar los correos electrónicos y viendo el mensaje original de los que envían [Google][google] y [Amazon][amazon-affiliate] es lo que utilizan ellos que algo sabrán de esto. Usar DKIM en los correos electrónicos será tema para otro posible artículo, la [nube de Amazon ofrece soporte para DKIM](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html).
 
-{{< code file="email-dkim.txt" language="plaintext" options="" >}}
+{{< code file="email-dkim.txt" language="plain" options="" >}}
 
 {{< reference >}}
 * [Introducción a la criptografía e inicio con GPG ][elblogdepicodev-181]

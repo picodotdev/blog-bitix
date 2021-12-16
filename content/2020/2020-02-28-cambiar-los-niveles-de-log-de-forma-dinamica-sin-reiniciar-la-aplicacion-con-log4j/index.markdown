@@ -41,7 +41,7 @@ En este ejemplo de código se utiliza la clase _Configurator_.
 
 El nivel de trazas según se inicia la aplicación para el _logger_ es _info_ por configuración, según se ejecuta el programa se cambia el nivel de trazas a _error_ y finalmente se restablece el nivel de trazas a _info_. Se observa que cuando el nivel de las trazas está a nivel _error_ la traza de nivel _info_ no se emite, como es lo esperado. Al restablecer el nivel a _info_ se emiten ambas trazas.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Para cambiar el nivel de trazas de una aplicación de forma programática se puede [ofrecer una interfaz JMX en la aplicación][blogbitix-441] o si se trata de una aplicación web una página de configuración que ofrezca la funcionalidad.
 

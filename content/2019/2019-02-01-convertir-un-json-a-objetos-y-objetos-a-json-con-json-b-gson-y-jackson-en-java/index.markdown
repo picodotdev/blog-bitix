@@ -32,7 +32,7 @@ Se utilizan los métodos _toJson()_ tanto en JSON-B como en Gson y el método _w
 {{< code file="Main-1.java" language="java" options="" >}}
 {{< code file="Comprador.java" language="java" options="" >}}
 {{< code file="Direccion.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 El funcionamiento de las tres librerías es similar varían los nombres de los métodos que tienen sus API, se proporciona la cadena JSON y la clase de la que se crea una instancia en la que se cargan los datos. En el caso de que el JSON sea una lista o _array_ de varios elementos el tipo indicado en el que cargar los datos cambia respecto a cargar únicamente un objeto.
 

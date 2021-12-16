@@ -77,7 +77,7 @@ Por defecto después de cada sentencia Java emite un _commit_, esto no es lo des
 
 El resultado del programa en la terminal es el siguiente.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 #### Dependencia con el _driver_ de la base de datos
 

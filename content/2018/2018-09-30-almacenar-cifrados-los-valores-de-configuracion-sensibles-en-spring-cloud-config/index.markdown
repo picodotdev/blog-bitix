@@ -45,7 +45,7 @@ En este caso el servicio al iniciarse obtiene su configuración del servicio de 
 Iniciado el servicio de descubrimiento, el de configuración y un servicio que tiene un dato cifrado de configuración el valor que obtiene está ya descifrado. En este caso el servicio _client_ obtiene el valor de la propiedad _config.password_ descifrado con el valor _secret_.
 
 {{< code file="gradlew-run.sh" language="bash" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="DefaultConfiguration.java" language="java" options="" >}}

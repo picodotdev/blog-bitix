@@ -60,12 +60,12 @@ El proceso de cifrado de Vault transforma el dato original en un valor que no ti
 
 En vez de cifrado Vault también ofrece un servicio de transformación que permite obtener un dato ofuscado pero que conserva el mismo formato y longitud que el original. Que el dato tenga el formato original es importante en una base de datos relacional ya que la longitud y formato de la columna para guardarlo será el mismo que el original, en el caso de un dato cifrado el campo se ha ade adaptar al resultado cifrado lo que no es deseable.
 
-{{< code file="vault-transform.sh" language="plaintext" options="" >}}
+{{< code file="vault-transform.sh" language="plain" options="" >}}
 
 En este ejemplo se codifica y descodifica un número de tarjeta de crédito conservando el formato.
 
-{{< code file="vault-transform-encode.sh" language="plaintext" options="" >}}
-{{< code file="vault-transform-decode.sh" language="plaintext" options="" >}}
+{{< code file="vault-transform-encode.sh" language="plain" options="" >}}
+{{< code file="vault-transform-decode.sh" language="plain" options="" >}}
 
 #### Proveedor de claves
 
@@ -121,7 +121,7 @@ El cifrado y descifrado en la aplicación consiste simplemente en hacer uso de l
 
 El resultado de cifrar y descifrar el dato se muestra como salida en la consola.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En el archivo de dependencias de la aplicación se ha de incluir la que proporciona Spring para añadir el soporte a Vault.
 

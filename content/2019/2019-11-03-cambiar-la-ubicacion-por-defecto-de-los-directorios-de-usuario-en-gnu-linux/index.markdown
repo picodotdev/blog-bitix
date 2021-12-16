@@ -37,15 +37,15 @@ Cuando compré el [Intel NUC][blogbitix-363] compré la versión _slim_ sin bah�
 
 La ubicación de los directorios de usuario se puede cambiar modificando las rutas en el archivo de configuración _~/.config/user-dirs.dirs_. En este caso poniendo la ubicación del punto de montaje del disco duro externo USB.
 
-{{< code file="user-dirs.dirs" language="plaintext" options="" >}}
+{{< code file="user-dirs.dirs" language="plain" options="" >}}
 
 Cambiar los valores de los directorios de usuario a otro directorio requiere que esos directorios estén disponibles a iniciar sesión de usuario en el entorno de escritorio. Para que el disco duro externo USB se monte al iniciar el sistema he definido un servicio de tipo _mount_ para [systemd][systemd] en la ubicación _/etc/systemd/system/run-media-picodotdev-bmovenegro.mount_ con el siguiente contenido. El disco duro se monta en el directorio _/run/media/bmovenegro/_.
 
-{{< code file="run-media-picodotdev-bmovenegro.mount" language="plaintext" options="" >}}
+{{< code file="run-media-picodotdev-bmovenegro.mount" language="plain" options="" >}}
 
 El identificador UUID de un dispositivo se obtiene con el comando _lsblk_.
 
-{{< code file="lsblk.sh" language="plaintext" options="" >}}
+{{< code file="lsblk.sh" language="plain" options="" >}}
 
 Con esta configuración para el explorador de archivos en este caso Nautilus de [GNOME][gnome] la ubicación de estos archivos de usuario es transparente, los directorios aparecen en el panel lateral. Aunque en el directorio _home_ siguen existiendo las carpetas originales de los directorios de usuario realmente cuando se hace clic en el panel lateral del directorio _Documentos_ se muestra el contenido _/run/media/bmovenegro/Documentos_ y no de _~/Documentos_.
 

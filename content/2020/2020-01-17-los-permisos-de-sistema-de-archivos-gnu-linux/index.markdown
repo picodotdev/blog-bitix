@@ -28,7 +28,7 @@ Con el comando para listar el contenido de un directorio _ls -lha_ se muestra el
 
 En los listados del comando _ls_ el primer caracter indica si el archivo es un archivo regular o un directorio que se identifican por la letra _d_ como el directorio _Descargas_, si fuese una _l_ indicaría que es un enlace como el enlace _.steampath_. El propietario de los archivos es mi usuario _picodotdev_, salvo en el caso del directorio superior referenciado con _.._ que es el superusuario _root_.
 
-{{< code file="ls.sh" language="plaintext" options="" >}}
+{{< code file="ls.sh" language="plain" options="" >}}
 
 Para cambiar los permisos de un archivo se utiliza el comando _chmod_ pudiendo utilizarse de varias formas. El primer caso establece todos los bits dando permisos de lectura, escritura y ejecución al usuario propietario de archivo, y de lectura para los usuarios del grupo y para el resto de usuarios. El segundo caso da permisos de lectura al usuario en el archivo indicado. El tercer caso quita los permisos de escritura al resto de usuarios. El cuarto caso da permisos de ejecución a todos, al propietario del archivo, a los usuarios de su grupo y al resto de usuarios.
 
@@ -60,25 +60,25 @@ Estos son algunos ejemplos de permisos en directorios.
 
 El usuario _archie_ tiene acceso al directorio _Documents_. Puede listar, crear archivos, renombrar y eliminar cualquier archivo en _Documents_ independientemente de los permisos de esos archivos. Su posibilidad de acceder al contenido de los archivos dependen de los permisos del archivo.
 
-{{< code file="permissions-1.sh" language="plaintext" options="" >}}
+{{< code file="permissions-1.sh" language="plain" options="" >}}
 
 En este caso sin el permiso de lectura en el directorio _archie_ tiene acceso completo pero no puede crear, renombrar ni eliminar archivos. Puede listar los archivos y acceder al contenido de los archivos si los permisos de ese archivo lo permiten.
 
-{{< code file="permissions-2.sh" language="plaintext" options="" >}}
+{{< code file="permissions-2.sh" language="plain" options="" >}}
 
 _archie_ no puede listar los archivos del directorio pero si conocer el nombre de un archivo existente puede listarlo, renombrarlo, eliminarlo y acceder a su contenido (si los permisos del archivo lo permiten). También puede creer nuevos archivos.
 
-{{< code file="permissions-3.sh" language="plaintext" options="" >}}
+{{< code file="permissions-3.sh" language="plain" options="" >}}
 
 _archie_ solo es capaz de acceder a los archivos que conoce (si los permisos de ese archivo lo permiten). No puede listar archivos existentes ni crear, renombrar o eliminar ninguno de ellos.
 
-{{< code file="permissions-4.sh" language="plaintext" options="" >}}
+{{< code file="permissions-4.sh" language="plain" options="" >}}
 
 Debe tenerse en cuenta que los anteriores son permisos sobre directorios y son independientes de los permisos de los archivos individuales. Cuando se crea un nuevo archivo es el directorio el que cambia, este es el por qué se necesitan permisos en el directorio.
 
 Otro ejemplo, en este caso para un archivo, no un directorio. La primera letra no es una _d_ sino un _-_, con lo que _foobar_ es un archivo, no un directorio. Los permisos del propietario son _rw-_ de modo que el propietario (_archie_) tiene la capacidad de leer y escribir pero no de ejecutarlo. El permiso de ejecución no es necesario si los archivos son de texto o datos. Los permisos de grupo son _r\-\-_, de modo que el grupo tiene la habilidad de leer el archivo pero no de escribir en él de ninguna forma, esencialmente es un archivo de solo lectura para el grupo. Los permisos para el grupo de otros es el mismo.
 
-{{< code file="permissions-5.sh" language="plaintext" options="" >}}
+{{< code file="permissions-5.sh" language="plain" options="" >}}
 
 Otros esquemas más flexibles pero más complejos son las [listas de control de acceso](https://wiki.archlinux.org/index.php/Access_Control_Lists) o ACL y los sistemas de control de acceso obligatorio o MAC, GNU/Linux también soporta este tipo de seguridades [activando ACL](https://wiki.archlinux.org/index.php/Access_Control_Lists) o [activando SELinux](https://wiki.archlinux.org/index.php/SELinux). Las ACL permiten dar permisos específicos a cualquier usuario o grupo para cualquier archivo.
 

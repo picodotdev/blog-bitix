@@ -44,7 +44,7 @@ En este programa aunque a las variables de los argumentos _x_, _y_ y _w_ se les 
 La lista de la variable _d_ es modificada por el método, se corresponde con la variable _z_, y esos cambios son visibles en el ámbito de _d_, al contrario de las otras variables que aunque se les asigna un nuevo valor en el método fuera de él conservan su valor original aún después de la invocación del método. Esto ocurre porque en el caso de _d_ se ha modificado el objeto mutable al cual tanto _d_ y _z_ apuntan.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 {{% sourcecode command="java Main.java" %}}
 

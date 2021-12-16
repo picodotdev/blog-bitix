@@ -94,7 +94,7 @@ Hay aplicaciones que permite la edición del texto para añadirle el lenguaje de
 
 El texto que he utilizado para hacer pruebas ha sido el de la descripción de mi blog. Con los siguientes resultados.
 
-{{< code file="text.txt" language="plaintext" options="" >}}
+{{< code file="text.txt" language="plain" options="" >}}
 
 Utilizando el servicio Microsoft Text to Speech.
 

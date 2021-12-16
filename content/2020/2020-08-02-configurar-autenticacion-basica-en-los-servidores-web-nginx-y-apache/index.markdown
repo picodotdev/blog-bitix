@@ -35,7 +35,7 @@ Cuando un servidor para el acceso a un recurso requiere autenticación básica e
 
 La autenticación básica en [Nginx][nginx] se activan añadiendo dos directivas, _auth_basic_ y _auth_basic_user_file_, en el archivo de configuración del sitio web y recurso a proteger. En este caso con la raíz del sitio web _/_ cualquier ruta está protegida con autenticación básica.
 
-{{< code file="nginx-default.conf" language="plaintext" options="" >}}
+{{< code file="nginx-default.conf" language="plain" options="" >}}
 
 Utilizando [Docker][docker] se puede crear un contenedor y probar la configuración. Al acceder a la dirección _https:\/\/localhost_ el navegador mostrará el diálogo que solicita el usuario y contraseña. 
 
@@ -57,7 +57,7 @@ El comando de Docker para Apache es similar e incluye el archivo de configuraci�
 
 En el caso del servidor web Apache las directivas necesarias a añadir en la configuración para activar la autenticación básica son: _AuthType_, _AuthName_, _AuthUserFile_ y _Require_.
 
-{{< code file="httpd-vhosts.conf" language="plaintext" options="" >}}
+{{< code file="httpd-vhosts.conf" language="plain" options="" >}}
 
 {{< image
     gallery="true"
@@ -75,7 +75,7 @@ Los archivos _htpasswd_ que guardan las credenciales se crean con la utilidad de
 
 El resultado del archivo es una línea por credencial creada con el nombre del usuario y el _hash_ de la contraseña.
 
-{{< code file=".localhost.htpasswd" language="plaintext" options="" >}}
+{{< code file=".localhost.htpasswd" language="plain" options="" >}}
 
 ### Funcionamiento y cabecera de la autenticación básica
 

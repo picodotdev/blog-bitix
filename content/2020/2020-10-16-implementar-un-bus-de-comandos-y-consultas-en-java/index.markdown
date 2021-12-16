@@ -76,7 +76,7 @@ El siguiente código envía un comando y una consulta al bus de consultas y even
 
 En la salida del programa se observa como se procesa el comando de creación de la orden, la creación de la orden provoca el lanzamiento de un evento de dominio _OrderCreated_, el manejador de este evento de dominio en el dominio de inventario realiza la actualización del _stock_ de los productos de la orden, en caso de no haber suficiente _stock_ se emite un evento de dominio _OrderOversold_, el manejador de evento de dominio _OrderOversoldCommandHandler_ podría marcar la orden como sobrevendida o realizar algún proceso con ella. Este lanzamiento de eventos de dominio muestra como funciona la consistencia eventual con el inventario de los productos.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Estas son las clases que manejan los eventos de dominio que son de interés para el _bounded context_ de inventario.
 

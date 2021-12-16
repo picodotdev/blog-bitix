@@ -24,12 +24,12 @@ Para disponer del proveedor de ratios usable para Java Money deberemos implement
 
 Internamente la implementación de referencia de Java Money usa la clase [ServiceLoader](javadoc8:java/util/ServiceLoader.html). En el archivo _META-INF/services/javax.money.convert.ExchangeRateProvider_ incluimos el nombre cualificado completo de la clase de la implementación de AbstractRateProvider, en este caso _io.github.picodotdev.javamoney.OpenExchangeRatesRateProvider_.
 
-{{< code file="javax.money.convert.ExchangeRateProvider" language="plaintext" options="" >}}
+{{< code file="javax.money.convert.ExchangeRateProvider" language="plain" options="" >}}
 {{< code file="AbstractRateProvider.java" language="java" options="" >}}
 
 También deberemos sobrescribir la propiedad _conversion.default-chain_ en el archivo _javamoney.properties_,  junto con algunas otras propiedades necesarias para que cargue los datos a partir de una URL del servicio que proporciona los ratios. La URL será la del servicio Open Exchange Rates que devolverá un resultado en formato JSON, lo procesaremos y construiremos los ExchangeRates a partir de los datos que nos son proporcionados en la clase _AbstractRateProvider_ con el método _newDataLoaded_ en forma de _InputStream_. En el archivo _javamoney.properties_ el número entre llaves ({}) indica la prioridad de la propiedad cuando haya varios archivos _javamoney.properties_ en diferentes archivos jar, deberemos indicar 0 o más ya que la prioridad por defecto es -1.
 
-{{< code file="javamoney.properties" language="plaintext" options="" >}}
+{{< code file="javamoney.properties" language="plain" options="" >}}
 
 Implementado el servicio de ratios personalizado de Open Exchange Rates y configurado podemos usarlo con las siguientes líneas de código tal y como hacíamos con el servicio del Banco Central Europeo (ECB) proporcionado en la implementación de referencia de la librería de Java Money.
 

@@ -1,0 +1,23 @@
+{
+  "name": "service",
+  "profiles": [
+    "production"
+  ],
+  "label": "1.0",
+  "version": null,
+  "state": null,
+  "propertySources": [
+    {
+      "name": "file:misc/config/service/production/1.0/application.yml",
+      "source": {
+        "app.properties.cloud": "cloud-1.0"
+      }
+    },
+    {
+      "name": "file:misc/config/service/application.yml",
+      "source": {
+        "app.properties.cloud": "cloud-default"
+      }
+    }
+  ]
+}

@@ -44,7 +44,7 @@ En este nivel simplemente se usa HTTP como medio de transporte para hacer llamad
 
 En este nivel de madurez las URLs suelen incluir verbos que es una mala práctica, como en los siguientes ejemplos.
 
-{{< code file="rest-0.txt" language="plaintext" options="" >}}
+{{< code file="rest-0.txt" language="plain" options="" >}}
 
 #### Nivel 1, recursos
 
@@ -54,7 +54,7 @@ En este nivel se aplican varias convenciones como las URLs no incluyen una _/_ a
 
 Los _endpoints_ en este nivel de madurez son de la siguiente forma.
 
-{{< code file="rest-1.txt" language="plaintext" options="" >}}
+{{< code file="rest-1.txt" language="plain" options="" >}}
 
 #### Nivel 2, verbos
 

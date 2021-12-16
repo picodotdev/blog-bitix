@@ -30,12 +30,12 @@ La expresión regular _(^1+$)_ cumple con todas las cadenas que estén formadas 
 
 En la cadena de la expresión regular se observa que el método _quote_ ha insertado varios caracteres antes y después de la cadena escapada _(1+)_.
 
-{{< code file="System.out-1" language="plaintext" options="" >}}
+{{< code file="System.out-1" language="plain" options="" >}}
 
 En caso de no escapar el grupo de caracteres _(^1+$)_ no se encontraría la coincidencia porque los caracteres _(_ _)_ especiales de grupo y el _+_ son interpretados por la expresión regular.
 
 {{< code file="Main-2.java" language="java" options="" >}}
-{{< code file="System.out-2" language="plaintext" options="" >}}
+{{< code file="System.out-2" language="plain" options="" >}}
 
 Escapar una palabra es importante si con ella se construye una expresión regular y esta proviene de un campo de entrada del usuario o de otro sistema. No hacerlo posibilita una forma de inyectar en la expresión regular un patrón que sea interpretado y podría ser un problema de seguridad.
 

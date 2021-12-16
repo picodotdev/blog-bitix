@@ -41,7 +41,7 @@ Con el patrón _Open Session in View_ durante toda la petición se mantiene la c
 
 En Spring hay una variable de configuración con la que se activa o desactiva un filtro que implement el patrón _Open Session in View_.
 
-{{< code file="SpringJpaOpenSessionInView.properties" language="plaintext" options="" >}}
+{{< code file="SpringJpaOpenSessionInView.properties" language="plain" options="" >}}
 
 ### Los problemas, por que se considera una mala práctica
 

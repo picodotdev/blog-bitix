@@ -32,7 +32,7 @@ La herramienta [figlet][figlet] de linea de comandos permite convertir una frase
 Además de instalar el paquete de _figlet_ en la distribución de GNU/Linux hay que descargar los [archivos de las fuentes](http://www.figlet.org/fontdb.cgi) para generar el arte ASCII con el estilo deseado. La fuente se indica en el comando con el parámetro _-f_.
 
 {{< code file="figlet.sh" language="bash" options="" >}}
-{{< code file="figlet.txt" language="plaintext" options="" >}}
+{{< code file="figlet.txt" language="plain" options="" >}}
 
 {{< image
     gallery="true"
@@ -48,7 +48,7 @@ La herramienta [jp2a][jp2a] permite convertir una imagen a arte ASCII. Basta con
 La herramienta _jp2a_ combinada con el [extraer un fotograma de una película][blogbitix-135] permite generar el arte ASCII de un momento de una película.
 
 {{< code file="jp2a.sh" language="bash" options="" >}}
-{{< code file="jp2a.txt" language="plaintext" options="" >}}
+{{< code file="jp2a.txt" language="plain" options="" >}}
 
 {{< image
     gallery="true"

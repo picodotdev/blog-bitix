@@ -39,7 +39,7 @@ La clase DTO es simplemente una nueva clase POJO que contiene los datos de las c
 En esta aplicación de [Spring Boot][spring-boot] se construye una instancia de la clase [ModelMapper](http://modelmapper.org/javadoc/org/modelmapper/ModelMapper.html) y posteriormente con su configuración y convenciones por defecto realiza el copiado de datos de una instancia de la clase _Order_ a una nueva instancia de la clase _OrderDTO_. En la salida del programa en la consola se muestran los valores de las propiedades de _OrderDTO_ copiadas de la clase _Order_.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 El archivo de construcción [Gradle][gradle] contiene la dependencia de ModelMapper.
 

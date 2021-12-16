@@ -59,7 +59,7 @@ Al modelo push le encuentro algunos problemas. Un problema es que el controlador
 
 En Grails (pero podría ser cualquier otro _framework_ o motor de plantillas push) podríamos visualizar el usuario y su dirección si es VIP de la siguiente forma:
 
-{{< code file="push.txt" language="plaintext" options="" >}}
+{{< code file="push.txt" language="plain" options="" >}}
 
 Si usamos [hibernate](http://hibernate.org/) la recuperación de la dirección podemos hacerla navegando la relación pero he querido recuperarla en el controlador expresamente para el ejemplo, si no pudiésemos usar hibernate para recuperar el dato relacionado probablemente lo que haríamos es recuperar el dato en el controlador como en el ejemplo.
 
@@ -67,11 +67,11 @@ Otro problema del modelo push es que si la vista es usada en múltiples controla
 
 En el modelo pull el controlador no debe conocer que datos necesita la vista y si hay lógica para mostrar ciertos datos está lógica solo la tendremos en la vista. Aunque el controlador no deba conocer que datos en concreto necesite la vista si debe ofrecer el soporte para que la vista los recupere cuando necesite. Como se puede ver el código en el siguiente ejemplo la comprobación de si el usuario es VIP solo está en la vista. En Tapestry cada vista tiene asociado una clase Java que es la encargada de ofrecer el soporte para que la vista pueda recuperar los datos, el conjunto de controlador más vista es lo que en Tapestry se conoce como componente, si el componente se usa varias veces en el mismo proyecto no necesitamos duplicar código.
 
-{{< code file="pull.txt" language="plaintext" options="" >}}
+{{< code file="pull.txt" language="plain" options="" >}}
 
 ¿Podemos emplear un modelo pull en un _framework_ que normalmente se suele usar un modelo push? Sí, basta que en el modelo de la vista pasemos un objeto que le permita recuperar los datos que necesite. En Grails empleando un modelo pull el código podría quedarnos de la siguiente forma:
 
-{{< code file="pull-in-push.txt" language="plaintext" options="" >}}
+{{< code file="pull-in-push.txt" language="plain" options="" >}}
 
 Como se ve el if de comprobación en el controlador desaparece, a pesar de todo si la vista fuese usada por varios controladores deberíamos crear algo para evitar tener duplicado el código que permite recuperar los datos a la vista. Aunque esto es perfectamente posible no es la forma habitual de usar los modelos push.
 

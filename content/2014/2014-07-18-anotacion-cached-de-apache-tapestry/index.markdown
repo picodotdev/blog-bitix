@@ -27,7 +27,7 @@ En este ejemplo cada vez que se llama a los métodos getPosts, getPostsCount se 
 
 Algunas veces puede interesarnos que el cacheo dependa de un dato, es decir, que para cada valor de un dato la anotación Cached devuelva diferentes resultados. Y esto es lo que se hace en el ejemplo con el parámetro watch de la anotación, por cada valor de la propiedad label el resultado probablemente sea diferente pero nos interesa que el método solo se ejecute una vez por cada diferente valor, dado que los artículos y el número de ellos únicamente variarán en función de esta propiedad. Esto también puede ser usado para que solo se evalúe los métodos una vez por iteración de un bucle estableciendo la expresión watch al índice del bucle.
 
-{{< code file="Label.tml" language="plaintext" options="" >}}
+{{< code file="Label.tml" language="plain" options="" >}}
 
 Aún así, la anotación Cached funciona a nivel de petición, cada vez que que se haga una petición a la aplicación y se llame al método anotado por primera vez y por cada valor de la expresión watch se ejecutará el método. Si tenemos muchas peticiones o un determinado componente tarda mucho en generar su contenido, por ejemplo, porque depende de un sistema externo lento (base de datos, http, ...) quizá lo que debamos hacer es un componente que almacene durante un tiempo el contenido que genera y sea devuelto en múltiples peticiones, de modo que evitemos emplear un tiempo costoso en cada petición. Para ello, podríamos desarrollar un [componente que usase una librería de cache](https://elblogdepicodev.blogspot.com.es/2011/01/componente-cache-para-tapestry-5.html) como por ejemplo [EHCache](http://ehcache.org/).
 

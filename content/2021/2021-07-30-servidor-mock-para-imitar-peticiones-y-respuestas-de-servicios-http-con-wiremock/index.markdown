@@ -60,7 +60,7 @@ De forma oficial el proyecto ofrece un archivo _jar_ ejecutable que inicia el se
 Este es el comando de inicio de WireMock como aplicación independiente.
 
 {{< code file="wiremock.sh" language="bash" options="" >}}
-{{< code file="wiremock.out" language="plaintext" options="" >}}
+{{< code file="wiremock.out" language="plain" options="" >}}
 
 Por defecto el servidor _mock_ se inicia en el puerto 8080. Con las siguientes peticiones REST es posible aprovisionar manualmente las respuestas, estas peticiones utilizan la API REST de WireMock. También es posible realizar el aprovisionamiento con archivos de configuración creando una carpeta en el directorio de trabajo de nombre _mappings_ creando archivos con extensión _json_ con el contenido del JSON de cada uno de los _mappings_.
 

@@ -148,7 +148,7 @@ Al hacer la petición el resultado que se devuelve es el _nginx-1_.
 
 Traefik al mismo tiempo que realiza la petición a _nginx-1_ se realiza a _nginx-2_ como se observa en las trazas de los servidores Nginx.
 
-{{< code file="curl-mirroring-nginx.out" language="plaintext" options="" >}}
+{{< code file="curl-mirroring-nginx.out" language="plain" options="" >}}
 
 ### Otras funcionalidades
 

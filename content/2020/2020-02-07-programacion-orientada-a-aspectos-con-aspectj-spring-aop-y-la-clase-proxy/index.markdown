@@ -56,7 +56,7 @@ Una de las ventajas de AspectJ es que no requiere usar Spring para utilizarla pe
 
 Las expresiones de los _ponintcuts_ son similares a una definición de la firma del los métodos, ámbitos de visibilidad, tipos de parámetros y tipo de retorno además del paquete. Es posible hacer expresiones boleanas compuestas para hacer más especifica una expresión. Este _pointcut_ se aplica en la ejecución del método _sum_ de la clase _Foo_ que recibe dos parámetros de tipo _int_ y retorna un valor de tipo _int_.
 
-{{< code file="pointcut.txt" language="plaintext" options="" >}}
+{{< code file="pointcut.txt" language="plain" options="" >}}
 
 En la clase _Aspects_ se definen los aspectos con una colección de _pointcuts_ con sus código de _advice_ asociado.
 
@@ -70,7 +70,7 @@ Con la herramienta de construcción [Gradle] hay que incluir un _plugin_ para ap
 
 En la salida del programa para el apartado de AspectJ se observa que el código de los aspectos se ejecuta al llamar a los métodos de la instancia de la clase _Foo_.
 
-{{< code file="System.out-1" language="plaintext" options="" >}}
+{{< code file="System.out-1" language="plain" options="" >}}
 
 * [Getting Started with AspectJ](https://www.eclipse.org/aspectj/doc/released/progguide/starting.html)
 * [Join Points and Pointcuts](https://www.eclipse.org/aspectj/doc/released/progguide/language-joinPoints.html)
@@ -103,7 +103,7 @@ El _plugin_ para realizar el proceso de _weaving_ con AspectJ no es necesario. S
 
 El resultado es el mismo que con AspectJ.
 
-{{< code file="System.out-2" language="plaintext" options="" >}}
+{{< code file="System.out-2" language="plain" options="" >}}
 
 ### Programación orientada a aspectos con la clase Proxy
 
@@ -114,7 +114,7 @@ Para casos muy sencillos donde no sea posible aplicar una de las opciones anteri
 
 En este caso se observa que se ha aplicado el aspecto de AspectJ y además los aspectos de los _proxys_ de este apartado.
 
-{{< code file="System.out-3" language="plaintext" options="" >}}
+{{< code file="System.out-3" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaAOP" command="./gradlew run" %}}
 

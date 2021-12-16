@@ -93,7 +93,7 @@ Con la implementación del bus de eventos que imprime en la consola se muestra u
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="CreateOrderCommandHandler.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 ### Otras preguntas
 

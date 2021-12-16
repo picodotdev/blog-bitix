@@ -1,0 +1,1 @@
+$ ./gradlew service:run --args="--app.properties.argument=argument"

@@ -100,7 +100,7 @@ A continuación se aplica la ordenación a cada una de las listas de forma recur
     caption="Algoritmo quicksort" >}}
 
 {{< code file="QuickSort.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 ### Otros algoritmo de ordenación
 

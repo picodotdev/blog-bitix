@@ -57,7 +57,7 @@ En el ejemplo se usa la misma raíz de documentos que el sitio web para _localho
 
 En el servidor web [Apache HTTPD][apache-httpd] un servidor web virtual se configura con sus propias directivas que igualmente indican el nombre del dominio asociado al servidor web y la ruta raíz de los recursos estáticos. Dependiendo del nombre del dominio por el que se accede al servidor web, se utiliza su configuración.
 
-{{< code file="httpd-vhosts.conf" language="plaintext" options="" >}}
+{{< code file="httpd-vhosts.conf" language="plain" options="" >}}
 {{< code file="docker-apache.sh" language="bash" options="" >}}
 
 Usando Apache también se accede al sitio web por su nombre de dominio _www.127.0.0.1.xip.io_.

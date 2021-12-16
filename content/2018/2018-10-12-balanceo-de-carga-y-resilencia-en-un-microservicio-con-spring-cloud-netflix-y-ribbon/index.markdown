@@ -43,7 +43,7 @@ La clase del servicio y los comandos para iniciar el servicio de registro y desc
 
 Esta es la salida y funcionamiento del cliente realizando balanceado la carga entre las múltiples instancias y que ocurre cuando se añade una nueva o una empieza a fallar y se elimina de la lista.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 [Ribbon posee numerosas propiedades de configuración](https://github.com/Netflix/ribbon/blob/master/ribbon-core/src/main/java/com/netflix/client/config/CommonClientConfigKey.java) a nivel global para todos los clientes de servicios o de forma específica para cada servicio ya sea con la anotación _@RibbonClient_ o mediante la configuración en archivos externos de Spring Boot. Algunas propiedades de configuración interesantes son las de _timeout_ que permiten que un cliente no agote sus recursos esperando a que a los servicios que llama si tardan en responder y a su vez el cliente actuando de servidor recibe muchas llamadas de sus clientes. En un comando de Hystrix también se puede especificar un _timeout_ de modo que si se realizan reintentos el tiempo total para Hystrix deberá ser superior que el tiempo total de todos los posibles reintentos teniendo en cuenta el _timeout_ del cliente con Ribbon. Usando el cliente HTTP [Jersey][jersey] como en este caso también pueden establecerse [_timeouts_ para una petición](https://jersey.github.io/apidocs/1.19.1/jersey/com/sun/jersey/api/client/Client.html).
 

@@ -43,7 +43,7 @@ Y este es el resultado de emitir varias trazas habiendo establecido un identific
 
 En este conjunto las tres primeras corresponden a la petición de una página en la siguiendo el ciclo de vida de una página de [Apache Tapestry][tapestry] se llama primero al método _activate_ y posteriormente al método _setupRender_, estas tres poseen el mismo _UUID_ ya que se ejecutan en la misma petición. Las otras dos corresponden cada una de ellas a una petición AJAX que realiza la página _Index_ al cargarse en el navegador del cliente, cada una de estas dos peticiones AJAX se procesan en un nuevo hilo y por consiguiente poseen un _UUID_ diferente.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Para emitir trazas de forma relacionada esta no es la única posibilidad, también puede interesar [identificar con marcadores las trazas relacionadas emitidas en diferentes clases de una aplicación][blogbitix-9] en diferentes clases pero pertenecientes a la misma funcionalidad, contexto delimitado o _bounded context_.
 

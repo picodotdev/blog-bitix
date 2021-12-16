@@ -27,7 +27,7 @@ En épocas más antiguas una forma de gestionar los errores era y sigue siendo c
 Para obligar a gestionar adecuadamente las condiciones de error e informar de que posibles condiciones de error se pueden producir se incorporaron en algunos lenguajes las excepciones como en Java. Las excepciones _checked_, aquellas que son declaradas y de obligado tratamiento, garantizan que sean tratadas de alguna forma pero algo molestas con las sentencias _try-catch-exception_. Las excepciones _unchecked_, aquellas que no es necesario declararlas y no de obligado tratamiento, son arriesgadas ya que al igual que los códigos de error no obliga a darles un tratamiento además de que no se declaran que excepciones es posible que sean lanzadas.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 En algunos lenguajes con capacidades funcionales se ha propuesto una nueva forma para la gestión de condiciones de error, en Java y con la librería [Vavr][vavr] se proporciona la clase [Either](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Either.html) que es un tipo con la definición de tipo genérico _Either\<L,R\>_. Que un método devuelva _Either<Exception, Integer>_ indica que puede devolver en el caso del ejemplo un _Integer_ en el caso correcto o una excepción en el caso de error. Un potencial fallo de esta opción es que no hay obligación de usar un _try-catch_ pero si se quiere usar el valor devuelto en caso correcto se ha de tener en cuenta el potencial caso de que lo haya es valor derecho. La clase _Either_ proporciona métodos para tratar adecuadamente en caso de que esté presente el valor izquierdo o el valor derecho.
 

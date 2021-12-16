@@ -96,7 +96,7 @@ La siguiente prueba de integración con [Testcontainers][testcontainers], Postgr
 
 En la salida de los teses se muestran la traducción de los objetos _specification_ a las condiciones de las consultas.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Otra de las funcionalidades proporcionadas por Spring Data es hacer [consultas basadas en un objeto ejemplo](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example) o _query by example_.
 

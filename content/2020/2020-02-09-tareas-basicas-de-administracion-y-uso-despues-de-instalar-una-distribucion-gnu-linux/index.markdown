@@ -109,7 +109,7 @@ Sin embargo, para tareas repetitivas o masivas es mas rápido y sencillo utiliza
 
 Además, los comandos se pueden componer de modo que la salida de un comando sea la entrada de otro. En este ejemplo un archivo de texto con una serie de palabras si se desea ordenar de forma ascendente y eliminar las palabras duplicadas. El comando _cat_ lee un archivo y lo emite en su salida, _sort_ realiza la ordenación y _uniq_ que elimina las líneas duplicadas. La salida de un programa se conecta a la entrada de otro usando una barra vertical, |.
 
-{{< code file="texto.txt" language="plaintext" options="" >}}
+{{< code file="texto.txt" language="plain" options="" >}}
 {{< code file="sort.sh" language="bash" options="" >}}
 
 La parte de GNU de GNU/Linux incluye una colección importante y numerosa de comandos algunos de estos son: _cal, date, at, head, tail, vim, nano, sort, alias, grep, cd, chmod, chown, curl, diff, echo, find, history, kill, less, ls, man, mkdir, rmdir, mv, rm, cp, ping, pwd, ssh, sudo, tail, tar, gzip, top, iotp, uname, awk, xargs, unzip, crontab, systemd, mount, whatis, locate, uniq, seq, jq, traceroute_. No es necesario conocerlos todos y sus opciones pero es muy util que existen y saber al menos que hacen, al necesitar usarlos basta con hacer una búsqueda en internet para evr un ejemplo de uso con sus opciones.

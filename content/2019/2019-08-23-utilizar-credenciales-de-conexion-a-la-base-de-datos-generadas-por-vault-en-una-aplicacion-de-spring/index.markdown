@@ -33,7 +33,7 @@ En el archivo de construcción de la aplicación hay que incluir las dependencia
 Obtener la credenciales de conexión a la base de datos es transparente para el código de la aplicación, lo único que se necesita es el usuario y contraseña además de la URL de conexión. 
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 La parte más relevante está en la configuración necesaria de la aplicación. Hay que añadir como configuración la ubicación del servidor Vault, es necesario configurar un método de autenticación para Vault, para el caso de aplicaciones el recomendado es _AppRole_. Con _AppRole_ cada aplicación necesita de un _role-id_ y un _secret-id_ que hay que generar previamente. Y el rol del que obtener las credenciales, _app_.
 

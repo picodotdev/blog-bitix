@@ -31,9 +31,9 @@ En este ejemplo se hace uso de la librería _browscap-java_ y se imprime en la s
 
 Accediendo a la dirección del controlador _http\://localhost:8080_ se obtienen los siguientes resultados dependiendo de con que navegador se acceda, en estos ejemplos con Firefox de escritorio, con Chrome de escritorio, y con Firefox de Android.
 
-{{< code file="response-firefox-desktop.txt" language="plaintext" options="" >}}
-{{< code file="response-chrome-desktop.txt" language="plaintext" options="" >}}
-{{< code file="response-firefox-android.txt" language="plaintext" options="" >}}
+{{< code file="response-firefox-desktop.txt" language="plain" options="" >}}
+{{< code file="response-chrome-desktop.txt" language="plain" options="" >}}
+{{< code file="response-firefox-android.txt" language="plain" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaUserAgent" command="./gradlew run" %}}
 

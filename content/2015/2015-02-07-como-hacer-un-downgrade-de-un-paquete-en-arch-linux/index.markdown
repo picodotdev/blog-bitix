@@ -53,7 +53,7 @@ La secuencia de comandos en una actualización que uso es la siguiente.
 
 Para evitar que un paquete sea actualizado en la siguiente actualización del sistema hay añadirlo a la lista de paquetes ignorados _IgnorePkg_ del archivo _/etc/pacman.conf_.
 
-{{< code file="pacman.conf" language="plaintext" options="" >}}
+{{< code file="pacman.conf" language="plain" options="" >}}
 
 No es recomendable mantener muchos paquetes desactualizados y en la lista de _IgnorePkg_ ya que estos pueden tener dependencias sobre paquetes también desactualizados, solo debe ser empleado para casos puntuales.
 

@@ -51,11 +51,11 @@ Implementada la deduplicación para simular en el ejemplo en envío por duplicad
 
 Sin deduplicación de mensajes si un evento se recibe por duplicado se procesa dos veces, en este caso el inventario se reduce dos veces.
 
-{{< code file="System.out-1" language="plaintext" options="" >}}
+{{< code file="System.out-1" language="plain" options="" >}}
 
 Implementando deduplicación de mensajes los mensajes duplicados se detectan y se ignoran, el inventario solo se reduce una vez.
 
-{{< code file="System.out-2" language="plaintext" options="" >}}
+{{< code file="System.out-2" language="plain" options="" >}}
 
 De _Domain Driven Design_ hay varios libros, el libro de referencia sobre la teoría de DDD son [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/33JmDkv), [Domain-Driven Design Distilled](https://amzn.to/34HkDbA), [Patterns, Principles, and Practices of Domain-Driven Design](https://amzn.to/3ojRzQy) otros más prácticos son [Implementing Domain-Driven Design](https://amzn.to/34yeDSk) y [Domain-Driven Design in PHP: A Highly Practical Guide](https://amzn.to/2SJe2HW).
 

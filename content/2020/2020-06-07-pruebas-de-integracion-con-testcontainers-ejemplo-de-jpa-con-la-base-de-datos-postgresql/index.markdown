@@ -64,7 +64,7 @@ Los datos iniciales de prueba o _fixture_ se insertan de dos formas diferentes e
 
 En la salida de trazas de los teses se observa como Testcontainers inicia el contenedor PostgreSQL y como los teses generan las sentencias SQL de _insert_, _count_ y _delete_ para eliminar los datos del _fixture_.
 
-{{< code file="System.out" language="plaintext" options="" >}}
+{{< code file="System.out" language="plain" options="" >}}
 
 Si fuera necesario [Liquibase][liquibase] permite aplicar cambios en la base con archivos de migración, por ejemplo, para crear algunas tablas, procedimientos almacenados o crear los datos básicos. En el ejemplo el archivo de cambios en base de datos incluye la tabla _Department_. En las trazas se ve la SQL de creación de la tabla, para las pruebas del ejemplo no es necesario pero suele ser una funcionalidad necesaria en un proyecto real.
 
