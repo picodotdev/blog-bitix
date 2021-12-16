@@ -365,20 +365,20 @@
 <h4 id="servicio-de-transformación">Servicio de transformación</h4>
 <p>En vez de cifrado Vault también ofrece un servicio de transformación que permite obtener un dato ofuscado pero que conserva el mismo formato y longitud que el original. Que el dato tenga el formato original es importante en una base de datos relacional ya que la longitud y formato de la columna para guardarlo será el mismo que el original, en el caso de un dato cifrado el campo se ha ade adaptar al resultado cifrado lo que no es deseable.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">$ vault secrets enable transform&#10;...&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ vault secrets enable transform&#10;...&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>vault-transform.sh</span>
     </div>
 </div>
 <p>En este ejemplo se codifica y descodifica un número de tarjeta de crédito conservando el formato.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">$ vault write transform/encode/payments value=1111-2222-3333-4444&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;encoded_value&nbsp;&nbsp;&nbsp;&nbsp;9300-3376-4943-8903</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ vault write transform/encode/payments value=1111-2222-3333-4444&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;encoded_value&nbsp;&nbsp;&nbsp;&nbsp;9300-3376-4943-8903</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>vault-transform-encode.sh</span>
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">$ vault write transform/decode/payments value=9300-3376-4943-8903&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;decoded_value&nbsp;&nbsp;&nbsp;&nbsp;1111-2222-3333-4444</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ vault write transform/decode/payments value=9300-3376-4943-8903&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;decoded_value&nbsp;&nbsp;&nbsp;&nbsp;1111-2222-3333-4444</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>vault-transform-decode.sh</span>
     </div>
@@ -466,7 +466,7 @@
 </div>
 <p>El resultado de cifrar y descifrar el dato se muestra como salida en la consola.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Plaintext: Hello World!&#10;Encrypted: vault:v2:arPaLH7cRy221vCTZvNd8csswtmzOc42caVjBQ+T32SW7+x1tLEH0Q==&#10;Decrypted: Hello World!</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Plaintext: Hello World!&#10;Encrypted: vault:v2:arPaLH7cRy221vCTZvNd8csswtmzOc42caVjBQ+T32SW7+x1tLEH0Q==&#10;Decrypted: Hello World!</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>System.out</span>
     </div>

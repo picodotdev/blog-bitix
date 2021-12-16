@@ -42,28 +42,28 @@
 </div>
 <p>Para usar la estrategia <em>least-connected</em> hay que indicar la directiva <em>least_conn</em> en la directiva <em>upstream</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;least_conn;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;least_conn;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>nginx-least_conn.conf</span>
     </div>
 </div>
 <p>Hay que tener en cuenta que en las estrategias <em>round-robin</em> y <em>least-connected</em> cada petición probablemente sea atendida por un servidor diferente de modo que si los servidores no comparten las sesiones se producirán comportamientos erráticos. Usando la estrategia <em>ip_hash</em> se usará la dirección IP para redirigir todas las peticiones al mismo servidor que se conoce como <em>sticky session</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;ip_hash;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;ip_hash;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>nginx-ip_hash.conf</span>
     </div>
 </div>
 <p>Para que los servidores compartan la sesión y evitar usar <em>sticky session</em> podemos <a href="https://picodotdev.github.io/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">usar Redis como sistema de información para guardar las sesiones de los servidores</a>, si un servidor de aplicaciones deja de funcionar las sesiones que mantuviese no se perderán y las peticiones podrán ser atendida por cualquier servidor. Si hay un servidor que queremos procese más peticiones porque tiene más capacidad podemos dar más peso a este. En esta configuración de cada 5 peticiones 3 serán atendidas por el servidor <em>app1</em>, 1 por el <em>app2</em> y otra por <em>app3</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080 weight=3;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080 weight=3;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>nginx-weight.conf</span>
     </div>
 </div>
 <p>Cuando un servidor falla al servir una petición Nginx lo marca como en estado erróneo y deja de enviarle peticiones, las comprobaciones de salud se hacen de forma pasiva según el resultado de las peticiones que se envían. Con <em>max_fails</em> se establece el máximo número de fallos antes de considerar un servidor con estado erróneo, tiene un valor por defecto de 1. Con <em>fail_timeout</em> se establece el tiempo que un servidor se considera que está en estado erróneo antes de enviar una nueva petición, si enviada una nueva petición responde correctamente se vuelve a considerar en estado correcto. Con la directiva <em>health_check</em> se puede configurar las comprobaciones de estado que hace Nginx para determinar si el servidor de aplicaciones está funcionando correctamente.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080 max_fails=5 fail_timeout=30s;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080 max_fails=1 fail_timeout=60s;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">upstream app {&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app1:8080 max_fails=5 fail_timeout=30s;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app2:8080 max_fails=1 fail_timeout=60s;&#10;&nbsp;&nbsp;&nbsp;&nbsp;server app3:8080;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>nginx-misc.conf</span>
     </div>
@@ -656,15 +656,15 @@
 <p>
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
-<p>Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.htmlindex-amp.html">introducción sobre RequireJS</a> hasta un <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:</p>
+<p>Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">introducción sobre RequireJS</a> hasta un <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.htmlfindex-amp.html">Plantillas con Mustache</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.htmlindex-amp.html"><em>Logging</em> log4javascript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.htmlindex-amp.html">Capturar errores de JavaScript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/introduccion-y-ejemplo-de-backbonejs.htmlindex-amp.html">Modelos con Backbone</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.htmlindex-amp.html">Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.htmlindex-amp.html">Pruebas unitarias con Jasmine y Sinon</a></li>
-<li>El mismo <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.htmlindex-amp.html">ejemplo de lista de tareas con Marionette</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.htmlf">Plantillas con Mustache</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html"><em>Logging</em> log4javascript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html">Capturar errores de JavaScript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/introduccion-y-ejemplo-de-backbonejs.html">Modelos con Backbone</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Pruebas unitarias con Jasmine y Sinon</a></li>
+<li>El mismo <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de lista de tareas con Marionette</a></li>
 <li>Una vez más el mismo <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">ejemplo de lista de tareas con Backbone y React</a> opción que me gustó más que con <a href="https://marionettejs.com/">Marionette</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">Internacionalización (i18n) en JavaScript</a></li>
 </ul>
@@ -918,8 +918,8 @@
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 </ul>
 </div>
@@ -1016,7 +1016,7 @@
     Referencia:<br>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/copia-de-seguridad-con-rsync.htmlindex-amp.html">Copia de seguridad con rsync</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/copia-de-seguridad-con-rsync.html">Copia de seguridad con rsync</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">Cifrar archivos con EncFS en GNU/Linux</a></li>
 </ul>
 </div>
@@ -1050,7 +1050,7 @@
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/libreoffice.svg" width="300" height="58" alt="LibreOffice" title="LibreOffice"  class=""></p>
 </div>
 <p>En el primer artículo de este 2016 comentaba que <a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">Windows y Office aún siguen siendo fáciles de usar sin licencia</a>. Licencia que cuesta nada más ni nada menos que unos 125 € para el <a href="https://amzn.to/3cb4v74">hogar y estudiantes</a> y unos 250 € para <a href="https://amzn.to/3sc4aqv">hogar y empresas</a>, por equipo. Y si el equipo se renueva o estropea requiriendo cambiar algunos componentes debe adquirirse una nueva licencia. Dado el coste nada despreciable de la licencia no es de extrañar que tanto Windows como Office sean unos de los productos más usados sin licencia o pirateados.</p>
-<p>Dada lo fácil que es usar Windows y Office sin licencia junto con el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">impuesto Windows</a> hacen que tengan una cuota de mercado en números prácticamente de monopolio ni hay muestras de que vaya a cambiar a corto plazo. A veces pienso que <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">a Microsoft no le importa que uses Windows u Office sin licencia</a> para uso personal. Sin embargo, hay alternativas tanto para Windows como para Office que tienen poco que envidiarle, mucho más baratas o incluso gratuitas y de software libre incluso con un soporte mejor que el que ofrece <a href="https://www.microsoft.com/">Microsoft</a> para su propio software. Lo que no es recomendables usar activadores por ser una fuente de virús informáticos o de troyanos es mejor <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">comprar una licencia barata de Windows 10 y Microsoft Office</a>.</p>
+<p>Dada lo fácil que es usar Windows y Office sin licencia junto con el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">impuesto Windows</a> hacen que tengan una cuota de mercado en números prácticamente de monopolio ni hay muestras de que vaya a cambiar a corto plazo. A veces pienso que <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">a Microsoft no le importa que uses Windows u Office sin licencia</a> para uso personal. Sin embargo, hay alternativas tanto para Windows como para Office que tienen poco que envidiarle, mucho más baratas o incluso gratuitas y de software libre incluso con un soporte mejor que el que ofrece <a href="https://www.microsoft.com/">Microsoft</a> para su propio software. Lo que no es recomendables usar activadores por ser una fuente de virús informáticos o de troyanos es mejor <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">comprar una licencia barata de Windows 10 y Microsoft Office</a>.</p>
 <ul>
 <li><a href="https://amzn.to/333Df5X">Licencia de Windows 10 Home</a> en Amazon.</li>
 <li><a href="https://amzn.to/3iZ4dBk">Licencia de Windows 10 Pro</a> en Amazon.</li>
@@ -1137,7 +1137,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">A Microsoft no le importa que uses Windows u Office sin licencia</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">El impuesto Windows</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">El impuesto Windows</a></li>
 </ul>
 </div>
 ]]>
@@ -1202,7 +1202,7 @@
 </div>
 <p>Con el filtro y las anteriores clases en la consola se imprimirán los mensajes con el dominio por el que ha sido accedida la aplicación, en este caso <em>localhost</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Host (from page): localhost&#10;...&#10;Host (from service): localhost</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Host (from page): localhost&#10;...&#10;Host (from service): localhost</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>System.out</span>
     </div>

@@ -68,7 +68,7 @@
     "dateModified": "2021-12-09T23:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "2047",
+    "wordCount": "2046",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -280,7 +280,7 @@
     <li><a href="#un-nivel-de-indentación-por-método">Un nivel de indentación por método</a></li>
     <li><a href="#no-usar-la-palabra-clave-del-condicional-_else_">No usar la palabra clave del condicional <em>else</em></a></li>
     <li><a href="#encapsular-los-datos-primitivos">Encapsular los datos primitivos</a></li>
-    <li><a href="#colecciones-de-primera-clase">Colecciones de primera clase</a></li>
+    <li><a href="#encapsular-las-colecciones">Encapsular las colecciones</a></li>
     <li><a href="#un-punto-por-línea-de-código">Un punto por línea de código</a></li>
     <li><a href="#evitar-abreviaturas">Evitar abreviaturas</a></li>
     <li><a href="#mantener-las-clases-pequeñas">Mantener las clases pequeñas</a></li>
@@ -333,7 +333,7 @@
         <span>EncapsulatedPrimitives.java</span>
     </div>
 </div>
-<h3 id="colecciones-de-primera-clase">Colecciones de primera clase</h3>
+<h3 id="encapsular-las-colecciones">Encapsular las colecciones</h3>
 <p>En el mismo sentido que encapsular datos primitivos en clases que representan conceptos del lenguaje de dominio, es añadir las colecciones en una clase sin ningún otro dato de instancia para insertar los métodos que manipulan la colección.</p>
 <p>En este ejemplo teniendo una colección de direcciones y teniendo la necesidad de conocer cuál de ellas representa la dirección principal, en el caso de que la colección no tenga su propia clase el método para obtener la dirección principal si se ubica la clase <em>User</em> el método queda enlazado con la clase <em>User</em> cuando debería estar asociado a la colección de direcciones.</p>
 <div class="code">

@@ -308,7 +308,7 @@
 <p>En este nivel simplemente se usa HTTP como medio de transporte para hacer llamadas remotas sin usar la semántica de la web. Cada petición tiene su propia dirección de <em>endpoint</em>, estas URLs puede que sigan algunas convenciones como utilizar guiones medios para mejorar legibilidad de las URLs, preferiblemente letras en minúsculas y sin extensiones en las URLs, un <em>endpoint</em> puede devolver los datos en el formato solicitado según la cabecera <em>Accept</em> de modo que la extensión es redundante o no es necesaria.</p>
 <p>En este nivel de madurez las URLs suelen incluir verbos que es una mala práctica, como en los siguientes ejemplos.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">/addMessage&#10;/deleteMessage&#10;/getMessage</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">/addMessage&#10;/deleteMessage&#10;/getMessage</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>rest-0.txt</span>
     </div>
@@ -318,7 +318,7 @@
 <p>En este nivel se aplican varias convenciones como las URLs no incluyen una <em>/</em> al final de la dirección, una <em>/</em> representa una relación jerárquica entre diferentes recursos, es posible usar singular o plural para los nombres según se prefiera pero de forma consistente.</p>
 <p>Los <em>endpoints</em> en este nivel de madurez son de la siguiente forma.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">/messsage&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">/messsage&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>rest-1.txt</span>
     </div>

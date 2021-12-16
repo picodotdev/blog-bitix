@@ -321,7 +321,7 @@
 <h3 id="configurar-ssltls-en-lighttpd">Configurar SSL/TLS en Lighttpd</h3>
 <p>Lighttpd es un servidor web de los denominados ligeros que aunque posiblemente no tiene toda la versatilidad de Apache ofrece un mayor rendimiento. Para activar SSL en lighttpd debemos modificar el archivo de configuración y añadir lo siguiente:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">$SERVER[&#34;socket&#34;] == &#34;:443&#34; {&#10;&nbsp;&nbsp;&nbsp;&nbsp;ssl.engine = &#34;enable&#34; &#10;&nbsp;&nbsp;&nbsp;&nbsp;ssl.pemfile = &#34;localhost.pem&#34; &#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$SERVER[&#34;socket&#34;] == &#34;:443&#34; {&#10;&nbsp;&nbsp;&nbsp;&nbsp;ssl.engine = &#34;enable&#34; &#10;&nbsp;&nbsp;&nbsp;&nbsp;ssl.pemfile = &#34;localhost.pem&#34; &#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>lighttpd.conf</span>
     </div>

@@ -5,12 +5,335 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-12-09T23:00:00+01:00</updated>
+    <updated>2021-12-16T19:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/</id>
+        <title>Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config</title>
+        <updated>2021-12-16T19:00:00+01:00</updated>
+        <published>2021-12-16T19:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La configuración de una aplicación es indispensable para su funcionamiento, permite no hardcoredar ciertos valores en el código fuente al mismo tiempo que externalizarlos en archivos de más fácil edición. Externalizar la configuración de la aplicación permite utilizar el mismo artefacto binario en todos los entornos, los valores que cambian en cada entorno es posible proporcionarlos de diferentes formas y formatos desde archivos en el <em>classpath</em> hasta variables de entorno o un servidor de configuración. Spring Boot permite obtener los valores de diferentes fuentes e implementa un mecanismo de prioridad para determinar el valor a usar.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>La configuración de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> proporciona un mecanismo muy flexible para la configuración de diferentes fuentes. Cada fuente tiene un orden de preferencia para establecer los valores de las propiedades, además se integra con el servidor de configuración centralizada de <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a>.</p>
+<p>La configuración permite cambiar el comportamiento de la aplicación sin cambiar el código ni generar un nuevo artefacto. No hardcodear los valores en el código y extraer la configuración permite utilizar el mismo artefacto en cualquier entorno, ya sea desarrollo, pruebas o producción. Utilizar el mismo artefacto para todos los entornos tiene la ventaja de no introducir un error en la construcción del artefacto como cabría la posibilidad generando un artefacto binario para cada uno de los entornos, usar el mismo artefacto es necesario para que las pruebas realizadas sobre el artefacto en el entorno de desarrollo o pruebas se consideren válidas para producción.</p>
+<p>Aunque en algunos sitios se recomienda que la configuración de la aplicación esté separada de artefacto de despliegue, en realidad más que la configuración esté separada es necesario poder tener un mecanismo de orden de preferencia de los valores de configuración. La aplicación puede tener unos valores de configuración por defecto pero es necesario poder sobreescribirlos debido a que algunos no se desean incluir en el código fuente o en el propio artefacto, también es necesario para cambiar los valores por defecto incluidos en el artefacto si se desea corregir un error sin necesidad de generar un nuevo artefacto.</p>
+<p>Por otro lado es aconsejable tener bajo el control de versiones los archivos de configuración como cualquier otro archivo de código fuente de la aplicación, para con el historial del control de versiones ver los cambios que se han hecho o volver a versiones anteriores.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="necesidades-según-el-rol">Necesidades según el rol</h3>
+<p>Las diferentes personas cada una con su rol desea tener la capacidad de configurar la aplicación. A los desarrolladores nos interesa para poder externalizar ciertas variables del código de la aplicación para tener la capacidad de cambiar los valores sin modificar el código. Esto es más fácil que encontrar donde están los valores hardcodeados y modificar las diferentes coincidencias, y evitando tener que recompilar.</p>
+<p>Aunque los archivos de configuración no son código ejecutable forman parte del código de la aplicación si la configuración se incluye dentro del artefacto, también por comodidad el desarrollador desea cambiarlos al mismo tiempo que el código para mantener la consistencia entre el código y la configuración, ya que todas la variables de configuración que requiere el código deben tener un valor sino se produce un error en tiempo de ejecución.</p>
+<p>Las personas con el rol de sistemas o SRE y por las tareas de mantenimiento de sistemas y operaciones también requieren tener la capacidad de cambiar las propiedades ajustando los valores a los adecuados según el entorno de ejecución sin modificar el artefacto, quizá no sobrescribir los valores de todas las propiedades pero si las relevantes desde el punto de vista de sistemas.</p>
+<p>Es necesario para ajustar los valores por defecto o hacer una corrección que no requiera generar un nuevo artefacto sino simplemente ajustar un valor de configuración. Por rapidez y porque hacer una corrección generando un nuevo artefacto requiere pasar todo el proceso de pruebas para asegurar que el nuevo artefacto no incluye algún cambio adicional no deseado.</p>
+<p>También por motivos de seguridad es necesario externalizar los valores de algunas variables como contraseñas, claves y certificados, de modo que aunque alguien tenga acceso al artefacto no tenga acceso a las credenciales de los servicios que usa.</p>
+<p>Los valores adicionales se proporcionan habitualmente como variables de entorno o con archivos externalizados del artefacto que se buscan en el sistema de archivos, de esta forma la configuración incluida en el artefacto por los desarrolladores es sobrescrita por la configuración por la proporcionada por las personas con el rol de sistemas.</p>
+<p>La solución para estas diferentes necesidades de los diferentes roles es obtener los valores de las variables de configuración de varias fuentes junto un de orden de preferencia para determinar que valor se toma en caso de que esté definido en varias fuentes.</p>
+<p>En las configuraciones más avanzadas es necesario un mecanismo para que las aplicaciones obtengan la configuración de un servidor donde esté centralizada. Al igual que un servicio de registro y descubrimiento es esencial para los microservicios un servicio de obtención de configuración de donde obtengan su configuración es también útil. Dado el gran número de microservicios de los que puede estar compuesto un sistema, su carácter efímero, los varios entornos de ejecución (desarrollo, pruebas, producción, &hellip;) mantener centralizada la configuración en un único sitio hace las cosas mucho más sencillas cuando hay que cambiar el valor de alguna propiedad. En vez de las alternativas con un archivo de configuración, aún externalizado del artefacto, en el sistema de archivos del entorno de ejecución o a través de variables de entorno que deben ser aprovisionadas.</p>
+<h3 id="configuración-en-una-aplicación-de-spring-boot">Configuración en una aplicación de Spring Boot</h3>
+<p>Spring Boot integra la funcionalidad de obtener la configuración de varias fuente y define un orden de preferencias en caso de conflicto. Spring Cloud Config Server es un servicio que proporciona un mecanismo adicional para centralizar la configuración de las aplicaciones.</p>
+<p>En una aplicación monolítica, un monolito modular o en un entorno donde no hay muchas aplicaciones el mecanismo de configuración proporcionado Spring Boot es suficiente. Sin embargo, en un entorno de microservicios o donde hay muchas aplicaciones tener una configuración centralizada proporciona varios beneficios. Los beneficios de un servidor de configuración es centralizar en un única fuente lo que facilita su ubicación, modificación y despliegue en las aplicaciones.</p>
+<h4 id="orden-de-preferencia-de-las-propiedades">Orden de preferencia de las propiedades</h4>
+<p>Spring Boot soporta varias fuentes de las que obtener la configuración desde archivos de configuración en el <em>classpath</em>, archivos externalizados en el sistemas de archivos, argumentos del programa, propiedades del sistema de la máquina virtual, variables de entorno e incluso otros mecanismos extensibles personalizados.</p>
+<p>Cada una de estas fuentes tienen un orden de búsqueda y prioridad donde las fuentes posteriores sobrescriben los valores de las anteriores o se añaden nuevas variables.</p>
+<p>En la documentación de Spring Boot están detalladas estas fuentes y prioridad entre ellas. Por ejemplo, la configuración establecida en los archivos de configuración es sobrescrita por la configuración proporcionada como variables de entorno.</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config">Spring Boot, Externalized Configuration</a></li>
+</ul>
+<p>Con Spring Cloud Config las propiedades del servidor de configuración se cargan con posterioridad de los archivos de datos de configuración incluidos en el <em>classpath</em> dentro del artefacto o de los archivos externalizados en el sistema de archivos. Sin embargo, la configuración establecida como variables de entorno siguen teniendo más preferencia.</p>
+<h4 id="archivos-de-datos-de-configuración">Archivos de datos de configuración</h4>
+<p>Los archivos de configuración entre ellos también tienen un orden de búsqueda en varios directorios y prioridad, iguamente detallado en la documentación de Spring Boot. Teniendo más preferencia los archivos externalizados y dentro de estos los más específicos para un entorno de ejecución.</p>
+<p>Las ubicaciones en las que Spring Boot archivos de configuración también tiene una preferencia además de ser a su vez configurable.</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.files">Spring Boot, External Application Properties</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.files.importing">Spring Boot, Importing Additional Data</a></li>
+</ul>
+<p>Los archivos de configuración se pueden definir en el formato <em>properties</em> y <em>yaml</em>. La ventaja del formato <em>yaml</em> es que permite agrupar las propiedades de forma jerárquica que es más legible que el formato <em>properties</em> habitualmente utilizado en las aplicaciones Java por defecto. La desventaja de <em>yaml</em> es que es un formato en el que una mala tabulación genera algún tipo de error o mal funcionamiento.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">app.properties.classpath=classpath&#10;app.properties.external=&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-format.properties</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">properties</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">classpath</span><span class="p">:</span><span class="w"> </span><span class="l">classpath</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">external</span><span class="p">:</span><span class="w"> &#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-format.yml</span>
+    </div>
+</div>
+<h4 id="propiedades-que-afectan-a-la-configuración">Propiedades que afectan a la configuración</h4>
+<p>En el sistema de configuración de Spring hay ciertas variables que afectan y permiten adaptar la configuración por defecto a las preferencias o necesidades de la aplicación.</p>
+<p>Algunas de estas propiedades son el nombre del servicio, los perfiles activos o las ubicaciones de búsqueda de archivos de configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">application</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">service</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l">production</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">additional-location</span><span class="p">:</span><span class="w"> </span><span class="l">optional:classpath:/custom-config/,optional:file:./custom-config/</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>spring-boot-config-properties.yml</span>
+    </div>
+</div>
+<p>Estas otras propiedades se utilizan cuando la aplicación de Spring Boot obtiene la configuración adicionalmente de un servidor de configuración de Spring Cloud Config.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">import</span><span class="p">:</span><span class="w"> </span><span class="l">optional:configserver:http://localhost:8090</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">service</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l">production</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>spring-boot-cloud-config-properties.yml</span>
+    </div>
+</div>
+<p>En las rutas de búsqueda con el prefijo <em>optional:</em> en caso de no encontrarse la fuente el inicio de la aplicación en vez de fallar con una excepción se ignora y se continúa a riesgo de utilizar los valores de las fuentes anteriores e ignorando lo que tuviese esa fuente opcional.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">location</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="l">optional:./config</span><span class="w">&#10;</span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">import</span><span class="p">:</span><span class="w"> </span><span class="l">optional:configserver:http://localhost:8090</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>spring-boot-optional.yml</span>
+    </div>
+</div>
+<h3 id="el-servidor-de-configuración-centralizada-spring-cloud-config-server">El servidor de configuración centralizada Spring Cloud Config Server</h3>
+<p>Un servidor de configuración permite cambiar o proporcionar una forma adicional de la que la aplicación obtiene propiedades y valores de configuración. La aplicación al iniciar realiza una petición al servidor de configuración y obtiene las propiedades adicionales de configuración. En el caso de Spring Cloud Config Server ofrece una interfaz REST que usa las aplicaciones para realizar la petición.</p>
+<p>Por otro lado, la forma de configurar la aplicación cambia, en vez de proporcionar la configuración a la aplicación a cada una de las instancias de su servicio en variables de entorno o en archivos estáticos es cada instancia de la aplicación la que obtiene la configuración de un servidor. Es muy interesante para las personas con el rol de operaciones o SRE y para la arquitectura del sistema.</p>
+<p>Otra de sus utilidades es una forma de que ciertos servicios obtengan la configuración cuando sus entornos y sistemas de archivos son efímeros como es el caso de las <a href="https://cloud.google.com/functions/">funciones de Google Cloud</a> o <a href="https://aws.amazon.com/es/lambda/">lambdas de AWS</a>.</p>
+<p>Dado que este servicio de configuración es esencial para que los microservicios puedan obtener su configuración sin el cual no pueden proporcionar su funcionalidad hay que configurarlo de tal manera que sea  tolerante a fallos. Una de las medidas para hacerlo tolerante a fallos es iniciar varias instancias de servidores de configuración, estas instancias se autorregistran en el servicio de descubrimiento para que  los microservicios puedan descubrirlos y obtener su configuración al iniciarse.</p>
+<h4 id="fuentes-de-configuración">Fuentes de configuración</h4>
+<p>El servidor de configuración centralizada Spring Cloud Config soporta varios sistemas diferentes en los que almacenar las propiedades de configuración o <em>backends</em> para recuperarlos cuando una instancia del servicio la solicite.</p>
+<p>Una opción es utilizar un repositorio de <a href="https://git-scm.com/">Git</a> con las ventajas asociadas del control de versiones como historial para mantener un registro de los cambios o volver a una versión anterior. Otros son un sistema de archivos, en una base de datos relacional con JDBC, <a href="https://redis.io/">Redis</a>, <a href="https://www.vaultproject.io/">Vault</a> y algunos otros específicos más.</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_environment_repository">Spring Cloud Config Server, Environment Repository</a></li>
+</ul>
+<h4 id="propiedades-que-afectan-a-la-configuración-de-spring-cloud-config-server">Propiedades que afectan a la configuración de Spring Cloud Config Server</h4>
+<p>El servidor de configuración de Spring Cloud Config también tiene variables de configuración, varias según el sistema de almacenamiento o <em>backend</em> donde se persisten las propiedades de configuración de los servicios. Otras propiedades son para proporcionar las credenciales de autenticación de los <em>backends</em>.</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_quick_start">Spring Cloud Config, Quick Start</a></li>
+<li><a href="https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_git_backend">Spring Cloud Config Server, Git Backend</a></li>
+<li><a href="https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_file_system_backend">Spring Cloud Config Server, File System Backend</a></li>
+</ul>
+<p>En el caso de Git la propiedad <em>label</em> del servicio en Git puede ser la huella o <em>hash</em> del <em>commit</em>, una rama o una etiqueta.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">git</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l">https://github.com/picodotdev/configuration-repository</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>spring-cloud-config-server-git-properties.yml</span>
+    </div>
+</div>
+<p>En el caso del sistema de archivos como <em>backend</em> esta propiedad permite configurar las rutas en las que buscar los archivos de configuración y la disposición de los archivos de configuración en la estructura de directorios. En este caso la propiedad <em>label</em> es la versión de la aplicación.</p>
+<p>Las propiedades <em>application</em>, <em>profile</em>  y <em>label</em> permiten identificar la configuración de un servicio, para un entorno y  de una versión específica.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l">native</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">native</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">searchLocations</span><span class="p">:</span><span class="w"> </span><span class="l">file:./misc/config/,file:./misc/config/{application}/,file:./misc/config/{application}/{profile}/,file:./misc/config/{application}/{profile}/{label}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>spring-cloud-config-server-filesystem-properties.yml</span>
+    </div>
+</div>
+<h3 id="ejemplo-de-configuración-en-aplicación-de-spring-boot">Ejemplo de configuración en aplicación de Spring Boot</h3>
+<p>Esta aplicación de Spring Boot tiene varias propiedades de configuración. Para mostrar el mecanismo de preferencia en la resolución de los valores cada una de las propiedades se obtiene de una fuente distinta. En esta lista de menor preferencia a mayor preferencia, desde un archivo de configuración en el <em>classpath</em>, archivo externalizado, servidor de configuración, argumento de programa y variable de entorno.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloudconfig.service</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.CommandLineRunner</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${app.properties.classpath}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">classpath</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${app.properties.external}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">external</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${app.properties.argument}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">argument</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${app.properties.environment}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">environment</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${app.properties.cloud}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">cloud</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Application classpath property: &#34;</span> <span class="o">+</span> <span class="n">classpath</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Application external property: &#34;</span> <span class="o">+</span> <span class="n">external</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Application argument property: &#34;</span> <span class="o">+</span> <span class="n">argument</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Application environment property: &#34;</span> <span class="o">+</span> <span class="n">environment</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Application cloud property: &#34;</span> <span class="o">+</span> <span class="n">cloud</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-client.java</span>
+    </div>
+</div>
+<p>Este es el archivo de configuración que se incluye en el <em>classpath</em> y como parte del artefacto, no está externalizado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">service</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l">production</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">import</span><span class="p">:</span><span class="w"> </span><span class="l">optional:configserver:http://localhost:8090</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">failFast</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="m">2.0</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">properties</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">classpath</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;classpath&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">argument</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-classpath.yml</span>
+    </div>
+</div>
+<p>Este archivo de configuración externo al artefacto proporciona el valor de una propiedad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">properties</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;external&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-external.yml</span>
+    </div>
+</div>
+<p>Sin ninguna configuración adicional y con el servidor de configuración no iniciado estos son lo valores que toman las propiedades en la aplicación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-run-1.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Application classpath property: classpath&#10;Application external property: external&#10;Application argument property: &#10;Application environment property: &#10;Application cloud property:</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-1</span>
+    </div>
+</div>
+<p>Añadiendo al iniciar el programa un argumento o variable de entorno para configurar el valor de una propiedad la aplicación toma el valor proporcionado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run --args<span class="o">=</span><span class="s2">&#34;--app.properties.argument=argument&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-run-2.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Application classpath property: classpath&#10;Application external property: external&#10;Application argument property: argument&#10;Application environment property: &#10;Application cloud property:</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-2</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nv">APP_PROPERTIES_ENVIRONMENT</span><span class="o">=</span><span class="s2">&#34;enviroment&#34;</span> ./gradlew service:run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-run-3.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Application classpath property: classpath&#10;Application external property: external&#10;Application argument property: &#10;Application environment property: enviroment&#10;Application cloud property:</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-3</span>
+    </div>
+</div>
+<p>Con el servidor de configuración iniciado la aplicación en este caso adicionalmente toma el valor de la configuración para la aplicación del servidor. En casos casos anteriores la aplicación en el inicio no falla porque la fuente del servidor de Spring Cloud Config Server se considera opcional.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew configserver:run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-run-4.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Application classpath property: classpath&#10;Application external property: external&#10;Application argument property: &#10;Application environment property: &#10;Application cloud property: cloud-default</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-4</span>
+    </div>
+</div>
+<p>Cambiando la propiedad <em>label</em> o como variable de entorno a través de los argumentos en el inicio del servicio es posible cambiar la versión que el servidor de configuración devuelve para el servicio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nv">SPRING_CLOUD_CONFIG_LABEL</span><span class="o">=</span><span class="s2">&#34;1.0&#34;</span> ./gradlew service:run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-run-5.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Application classpath property: classpath&#10;Application external property: external&#10;Application argument property: &#10;Application environment property: &#10;Application cloud property: cloud-1.0</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-5</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nv">SPRING_CLOUD_CONFIG_LABEL</span><span class="o">=</span><span class="s2">&#34;2.0&#34;</span> ./gradlew service:run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradle-run-6.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Application classpath property: classpath&#10;Application external property: external&#10;Application argument property: &#10;Application environment property: &#10;Application cloud property: cloud-2.0</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-6</span>
+    </div>
+</div>
+<p>Las dependencias en el archivo de construcción con <a href="https://gradle.org/">Gradle</a> son las siguientes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-dependencies:2.6.1&#39;</span><span class="o">))</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-dependencies:2021.0.0&#39;</span><span class="o">))</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">def</span> <span class="n">excludeSpringBootStarterLogging</span> <span class="o">=</span> <span class="o">{</span> <span class="n">exclude</span><span class="o">(</span><span class="nl">group:</span> <span class="s1">&#39;org.springframework.boot&#39;</span><span class="o">,</span> <span class="nl">module:</span> <span class="s1">&#39;spring-boot-starter-logging&#39;</span><span class="o">)</span> <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-log4j2&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-starter-config&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtimeOnly</span><span class="o">(</span><span class="s1">&#39;com.google.code.gson:gson:2.8.9&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtimeOnly</span><span class="o">(</span><span class="s1">&#39;com.fasterxml.jackson.core:jackson-databind:2.13.0&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtimeOnly</span><span class="o">(</span><span class="s1">&#39;com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0&#39;</span><span class="o">)</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_17</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">targetCompatibility</span> <span class="o">=</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_17</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.springcloudconfig.service.Main&#39;</span>&#10;<span class="o">}</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build-client.gradle</span>
+    </div>
+</div>
+<h3 id="ejemplo-de-configuración-centralizada-con-spring-cloud-config-server">Ejemplo de configuración centralizada con Spring Cloud Config Server</h3>
+<p>El servidor de configuración de Spring Cloud Config es posible implementarlo como una aplicación de Spring Boot. La aplicación de Spring Boot simplemente requiere utilizar la anotación <em>@EnableConfigServer</em> y configurar el almacenamiento del <em>backend</em> para las propiedades de configuración, en el ejemplo utilizando el sistema de archivos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloudconfig.configserver</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.cloud.config.server.EnableConfigServer</span><span class="o">;</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="nd">@EnableConfigServer</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-server.java</span>
+    </div>
+</div>
+<p>Los archivos de configuración para los microservicios en este ejemplo están en el directorio <em>misc/config</em> donde siguiendo algunas convenciones para asignar el nombre a los archivos se pueden personalizar las configuraciones de los microservicios según el entorno y perfil con el que se active. Spring Cloud Config denomina un <em>backend</em> como el sistema de almacenamiento de los datos de configuración en este caso se utiliza el sistema de archivos, sin embargo, hay otras disponibles como un repositorio de git el cual ofrece varias ventajas propias de un repositorio de código como historial, ramas de trabajo y hacer cambios con un <em>commit</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l">${port:8090}</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l">native</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">configserver</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">cloud</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">config</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">native</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">searchLocations</span><span class="p">:</span><span class="w"> </span><span class="l">file:./misc/config/,file:./misc/config/{application}/,file:./misc/config/{application}/{profile}/,file:./misc/config/{application}/{profile}/{label}</span><span class="w">&#10;</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-server.yml</span>
+    </div>
+</div>
+<p>Con los siguientes archivos de configuración en el servidor para el servicio, en función de la versión de la aplicación solicitada las propiedades devueltas cambian. Estos comandos solicitan al servidor la configuración de la aplicación a través de una petición de red con la interfaz REST, lo datos se devuelven en formato JSON.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">properties</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud-1.0&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-1.0.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">properties</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud-2.0&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-2.0.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">properties</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">cloud</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud-default&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-default.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -v <span class="s2">&#34;http://localhost:8090/service/production/1.0&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-spring-cloud-config-server-1.0.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>&#10;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;service&#34;</span>,&#10;  <span class="s2">&#34;profiles&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;production&#34;</span>&#10;  <span class="o">]</span>,&#10;  <span class="s2">&#34;label&#34;</span>: <span class="s2">&#34;1.0&#34;</span>,&#10;  <span class="s2">&#34;version&#34;</span>: null,&#10;  <span class="s2">&#34;state&#34;</span>: null,&#10;  <span class="s2">&#34;propertySources&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;file:misc/config/service/production/1.0/application.yml&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;source&#34;</span>: <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;app.properties.cloud&#34;</span>: <span class="s2">&#34;cloud-1.0&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;file:misc/config/service/application.yml&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;source&#34;</span>: <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;app.properties.cloud&#34;</span>: <span class="s2">&#34;cloud-default&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;  <span class="o">]</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-spring-cloud-config-server-1.0.out</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -v <span class="s2">&#34;http://localhost:8090/service/production/2.0&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-spring-cloud-config-server-2.0.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>&#10;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;service&#34;</span>,&#10;  <span class="s2">&#34;profiles&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;production&#34;</span>&#10;  <span class="o">]</span>,&#10;  <span class="s2">&#34;label&#34;</span>: <span class="s2">&#34;2.0&#34;</span>,&#10;  <span class="s2">&#34;version&#34;</span>: null,&#10;  <span class="s2">&#34;state&#34;</span>: null,&#10;  <span class="s2">&#34;propertySources&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;file:misc/config/service/production/2.0/application.yml&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;source&#34;</span>: <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;app.properties.cloud&#34;</span>: <span class="s2">&#34;cloud-2.0&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;file:misc/config/service/application.yml&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;source&#34;</span>: <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;app.properties.cloud&#34;</span>: <span class="s2">&#34;cloud-default&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;  <span class="o">]</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-spring-cloud-config-server-2.0.out</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -v <span class="s2">&#34;http://localhost:8090/service/production/&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-spring-cloud-config-server-default.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>&#10;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;service&#34;</span>,&#10;  <span class="s2">&#34;profiles&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;production&#34;</span>&#10;  <span class="o">]</span>,&#10;  <span class="s2">&#34;label&#34;</span>: null,&#10;  <span class="s2">&#34;version&#34;</span>: null,&#10;  <span class="s2">&#34;state&#34;</span>: null,&#10;  <span class="s2">&#34;propertySources&#34;</span>: <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;file:misc/config/service/application.yml&#34;</span>,&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s2">&#34;source&#34;</span>: <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">&#34;app.properties.cloud&#34;</span>: <span class="s2">&#34;cloud-default&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;  <span class="o">]</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl-spring-cloud-config-server-default.out</span>
+    </div>
+</div>
+<p>Dado que el servicio de configuración se convierte en crítico para el inicio de las aplicaciones es recomendable tener varias instancias del mismo para proporcionar tolerancia a fallos. Y en una arquitectura de microservicios quizá utilizando registro y descubrimiento de servicios.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
+</ul>
+<p>Otra necesidad es cifrar algunas propiedades, para ello el servidor de configuración también proporciona dos <em>endpoints</em> uno para hacer el cifrado y otro para hacer el descifrado.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/09/almacenar-cifrados-los-valores-de-configuracion-sensibles-en-spring-cloud-config/">Almacenar cifrados los valores de configuración sensibles en Spring Cloud Config</a></li>
+</ul>
+<p>Incluso es posible recargar la configuración de una aplicación de Spring Boot sin reiniciarla.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/09/recargar-la-configuracion-sin-reiniciar-una-aplicacion-spring-boot-con-spring-cloud-config/">Recargar sin reiniciar la configuración de una aplicación Spring Boot con Spring Cloud Config</a></li>
+</ul>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloudConfig">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew service:run</code></p>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/12/buenas-practicas-de-programacion-sencillas-en-el-codigo-fuente/</id>
         <title>Buenas prácticas de programación sencillas en el código fuente</title>
@@ -71,7 +394,7 @@
         <span>EncapsulatedPrimitives.java</span>
     </div>
 </div>
-<h3 id="colecciones-de-primera-clase">Colecciones de primera clase</h3>
+<h3 id="encapsular-las-colecciones">Encapsular las colecciones</h3>
 <p>En el mismo sentido que encapsular datos primitivos en clases que representan conceptos del lenguaje de dominio, es añadir las colecciones en una clase sin ningún otro dato de instancia para insertar los métodos que manipulan la colección.</p>
 <p>En este ejemplo teniendo una colección de direcciones y teniendo la necesidad de conocer cuál de ellas representa la dirección principal, en el caso de que la colección no tenga su propia clase el método para obtener la dirección principal si se ubica la clase <em>User</em> el método queda enlazado con la clase <em>User</em> cuando debería estar asociado a la colección de direcciones.</p>
 <div class="code">
@@ -218,7 +541,7 @@
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Valid JSON errors: 0&#10;Invalid JSON errors: 3&#10;Type: required&#10;Message: $.productId: is missing but it is required&#10;Type: required&#10;Message: $.productName: is missing but it is required&#10;Type: required&#10;Message: $.price: is missing but it is required</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Valid JSON errors: 0&#10;Invalid JSON errors: 3&#10;Type: required&#10;Message: $.productId: is missing but it is required&#10;Type: required&#10;Message: $.productName: is missing but it is required&#10;Type: required&#10;Message: $.price: is missing but it is required</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>System.out</span>
     </div>
@@ -666,7 +989,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>En el caso de Windows la razón de muchos usuarios de usarlo es sencillamente por ser el sistema operativo preinstalado en la computadora al comprarla, en el caso de los ordenadores mac por ser la única opción ofrecida por Apple para sus equipos. GNU/Linux domina el software de servidor por su flexibilidad y de los <em>smartphones</em> con <a href="https://www.android.com/">Android</a>, con el paso de los años GNU/Linux se ha convertido también en una alternativa perfectamente viable para la mayoría de usuarios tambien en el escritorio que simplemente necesitan un uso ofimático como para los más avanzados de desarrollo y de forma profesional. Hace varios lustros faltaba soporte hardware, era difícil de instalar o requería acceder a la línea de comandos para tareas básicas, hoy en día GNU/Linux es tán fácil de instalar como Windows y sus varios entornos de escritorio tan amigables como los de Windows o macOS.</p>
 <p>En octubre del 2021 se ha lanzado al mercado Windows 11 que equiparán los equipos comerciales vendidos a partir de este momento. Como cada nueva versión los requisitos mínimos son más exigentes y dejan a muchos equipos vendidos con anterioridad sin poder actualizarse a la última versión de Windows.  En Windows 11 muchos ordenadores no serán compatibles por el requerimiento del módulo TPM requerido en aras de la seguridad, por lo menos hasta que vean que mucha gente no se actualiza y se mantiene en Windows 10, Windows sufra de fragmentación y Microsoft decida relajar este u otros requerimientos.</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">De Windows a Arch Linux</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/">Mi primer Mac, yo usuario de GNU/Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/">Tú con tu Mac, yo con mi GNU/Linux</a></li>
@@ -856,7 +1179,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>El servidor NTP utilizado para realizar la sincronización de la fecha y la hora usa la configuración personalizada del archivo <em>/etc/systemd/timesyncd.conf</em> en el que se incluye el dominio del servicio. Sin haber realizado cambios en el archivo todos los valores de está configuración están comentados. Los valores por defecto de esta configuración se definen en tiempo de compilación, en el caso de los paquetes de <a href="https://www.archlinux.org/">Arch Linux</a> en el <a href="https://github.com/archlinux/svntogit-packages/blob/master/systemd/trunk/PKGBUILD">archivo PKGBUILD de systemd</a>.</p>
 <p>En este archivo se pone el servidor NTP deseado si es otro distinto del por defecto como el proporcionado por el Real Instituto y Observatorio de la Armada, <em>hora.roa.es</em> y <em>minuto.roa.es</em>, u otro de los proporcionados por la organización de voluntarios <a href="https://www.ntppool.org/es/">NTP Pool Project</a> que utilizan muchas distribuciones incluida Arch Linux y dispositivos en internet como <em>routers</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">#  This file is part of systemd.&#10;#&#10;#  systemd is free software; you can redistribute it and/or modify it under the&#10;#  terms of the GNU Lesser General Public License as published by the Free&#10;#  Software Foundation; either version 2.1 of the License, or (at your option)&#10;#  any later version.&#10;#&#10;# Entries in this file show the compile time defaults. Local configuration&#10;# should be created by either modifying this file, or by creating &#34;drop-ins&#34; in&#10;# the timesyncd.conf.d/ subdirectory. The latter is generally recommended.&#10;# Defaults can be restored by simply deleting this file and all drop-ins.&#10;#&#10;# See timesyncd.conf(5) for details.&#10;&#10;[Time]&#10;#NTP=&#10;#FallbackNTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org&#10;#RootDistanceMaxSec=5&#10;#PollIntervalMinSec=32&#10;#PollIntervalMaxSec=2048</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">#  This file is part of systemd.&#10;#&#10;#  systemd is free software; you can redistribute it and/or modify it under the&#10;#  terms of the GNU Lesser General Public License as published by the Free&#10;#  Software Foundation; either version 2.1 of the License, or (at your option)&#10;#  any later version.&#10;#&#10;# Entries in this file show the compile time defaults. Local configuration&#10;# should be created by either modifying this file, or by creating &#34;drop-ins&#34; in&#10;# the timesyncd.conf.d/ subdirectory. The latter is generally recommended.&#10;# Defaults can be restored by simply deleting this file and all drop-ins.&#10;#&#10;# See timesyncd.conf(5) for details.&#10;&#10;[Time]&#10;#NTP=&#10;#FallbackNTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org&#10;#RootDistanceMaxSec=5&#10;#PollIntervalMinSec=32&#10;#PollIntervalMaxSec=2048</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>timesyncd.conf</span>
     </div>
@@ -905,7 +1228,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 </div>
 <p>En la cadena de la expresión regular se observa que el método <em>quote</em> ha insertado varios caracteres antes y después de la cadena escapada <em>(1+)</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Quoted (regexp: &#34;a+\Q(1+)\Eb+&#34;, string: &#34;aaa(1+)bbb&#34;): true&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Quoted (regexp: &#34;a+\Q(1+)\Eb+&#34;, string: &#34;aaa(1+)bbb&#34;): true&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>System.out-1</span>
     </div>
@@ -918,7 +1241,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Unquoted (regexp: &#34;a+(1+)b+&#34;, string: &#34;aaa(1+)bbb&#34;): false&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Unquoted (regexp: &#34;a+(1+)b+&#34;, string: &#34;aaa(1+)bbb&#34;): false&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>System.out-2</span>
     </div>
@@ -1357,7 +1680,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 </div>
 <p>Traefik al mismo tiempo que realiza la petición a <em>nginx-1</em> se realiza a <em>nginx-2</em> como se observa en las trazas de los servidores Nginx.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">nginx-1_1  | 172.20.0.2 - - [19/Sep/2021:12:34:39 +0000] &#34;GET / HTTP/1.1&#34; 200 136 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0&#34; &#34;172.20.0.1&#34;&#10;nginx-2_1  | 172.20.0.2 - - [19/Sep/2021:12:34:39 +0000] &#34;GET / HTTP/1.1&#34; 200 136 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0&#34; &#34;172.20.0.1&#34;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">nginx-1_1  | 172.20.0.2 - - [19/Sep/2021:12:34:39 +0000] &#34;GET / HTTP/1.1&#34; 200 136 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0&#34; &#34;172.20.0.1&#34;&#10;nginx-2_1  | 172.20.0.2 - - [19/Sep/2021:12:34:39 +0000] &#34;GET / HTTP/1.1&#34; 200 136 &#34;-&#34; &#34;Mozilla/5.0 (X11; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0&#34; &#34;172.20.0.1&#34;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>curl-mirroring-nginx.out</span>
     </div>
@@ -1680,162 +2003,6 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
                 <category term="planeta-codigo"/>
             
                 <category term="web"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/</id>
-        <title>Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</title>
-        <updated>2021-09-09T10:00:00+02:00</updated>
-        <published>2021-09-09T10:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los entornos de escritorio proporcionan la interfaz gráfica de las computadoras, el aspecto de las ventanas, los estilos de los componentes junto con unas guías de interfaz de usuario que especifican como han de ser las aplicaciones en ese entorno de escritorio. El entorno de escritorio y las guías permiten que todas las aplicaciones tengan uniformidad visual y en su experiencia  que facilite al usuario el uso de las aplicaciones sin tener que aprender unas convenciones únicas para cada aplicación. La mayoría de entornos de escritorio integran unas pocas aplicaciones esenciales como explorador de archivos, visor de documentos e imágenes, editor de texto, terminal, reproductor de vídeo, navegador web y comunicación y gestor de software. El resto de aplicaciones necesarias son proporcionadas por desarrolladores ajenos al entorno de escritorio que no tienen por que seguir las mismas guías de estilos, sin embargo, algunas aplicaciones aún siendo de terceros si siguen las mismas guías de estilos del entorno de escritorio que proporcionan algunas funcionalidades adicionales a las de las aplicaciones esenciales.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME"  class=""></p>
-</div>
-<p>Distribuciones de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hay muchas que se diferencian principalmente en si están patrocinadas por una empresa como <a href="https://fedoraproject.org/">Fedora</a> con <a href="https://www.redhat.com/es">Red Hat</a>, <a href="https://www.ubuntu.com/">Ubuntu</a> con <a href="https://www.canonical.com/">Canonical</a> o si están desarrolladas por una comunidad de usuarios como <a href="https://www.debian.org/">Debian</a> o <a href="https://www.archlinux.org/">Arch Linux</a>, su modelo de publicación de versiones puede seguir un calendario como Ubuntu o estar en continua actualización como Arch Linux, otras diferencias son su popularidad medido por el número de usuarios que la utilizan o el entorno de escritorio o gestor de arranque instalado por defecto.</p>
-<p>Sin embargo, en el uso habitual de cualquier distribución GNU/Linux las diferencias no son tantas, al final una distribución de GNU/Linux es simplemente una recopilación de programas y librerías de software libre. Los programas en cada una de las distribuciones son exactamente los mismos tanto de línea de comandos con los programas de GNU, el entorno de escritorio con sus aplicaciones integradas o las aplicaciones de terceros preinstaladas. Cada distribución suele tener su propia aplicación gestor de paquetes para instalar y desinstalar programas junto a sus dependencias de sus repositorios oficiales pero en esencia tanto el gestor de paquetes de Debian como de Arch Linux realizan la misma función incluso las distribuciones derivadas utilizan el mismo programa gestor de paquetes.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">Elegir una distribución GNU/Linux según el usuario, uso o equipo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</a></li>
-</ul>
-<p>En realidad la distribución GNU/Linux que se utilice no es lo más relevante, lo importante son las aplicaciones usadas para realizan las tareas. Aplicaciones hay muchas con diferentes propósitos que se pueden clasificar en las siguientes categorías:</p>
-<ul>
-<li>Ofimática, documentos y escritorio (editor de documentos ofimáticos, editor de textos avanzado, libros electrónicos y cómics, capturador de pantalla, copias de seguridad).</li>
-<li>Internet y comunicaciones (navegador, correo electrónico, lector de <em>feeds</em>, descargar archivos torrent y descargas directas, mensajería instantánea, videoconferencia, nube privada).</li>
-<li>Fotos y gráficos (retoque fotográfico).</li>
-<li>Multimedia, vídeo y audio (reproductor de vídeo, audio, películas y música, editor de vídeo, conversor de vídeo y audio).</li>
-<li>Juegos.</li>
-<li>Programación y desarrollo (compiladores, entorno integrado de desarrollo, bases de datos y software de servidor, virtualización).</li>
-<li>Seguridad y privacidad.</li>
-</ul>
-<p>En estos artículos he escrito sobre las aplicaciones más conocidas para cada una de las categorías anteriores:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">Listado de programas esenciales según categoría para GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">Consola de juegos retro con Lakka y una Raspberry Pi</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a></li>
-</ul>
-<p>Estas son las aplicaciones de línea de comandos de GNU/Linux de los cuales son instalados en la mayoría de distribuciones como parte del sistema base.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/">50+ comandos básicos y útiles de GNU/Linux</a></li>
-</ul>
-<p>El propio entorno de escritorio que proporciona la interfaz gráfica también incluye una serie de aplicaciones esenciales básicas que hacen el sistema gráfico usable e incluso sin necesitar aplicaciones de terceros adicionales para los mismos propósitos, sólo son necesarias aplicaciones adicionales de terceros en el caso de requerir funcionalidades más avanzadas o necesidades no cubiertas.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones integradas del entorno de escritorio GNOME</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a></li>
-</ul>
-<h3 id="aplicaciones-adicionales-del-círculo-de-gnome">Aplicaciones adicionales del círculo de GNOME</h3>
-<p>Las aplicaciones del entorno de escritorio de GNOME son aplicaciones sencillas que cubren las necesidades más básicas, para propósitos adicionales específicos es necesario instalar aplicaciones desarrolladas por terceros fuera del entorno de escritorio.</p>
-<p>El problema de las aplicaciones de terceros, si es que es un problema, es que no tienen por qué seguir las directrices de diseño de la interfaz del usuario de ningún entorno de escritorio. Esta libertad que tienen las aplicaciones de terceros hacen que las aplicaciones no estén integradas con el escritorio al emplear un diseño totalmente diferente. La <a href="https://developer.gnome.org/hig/">guía de estilos de las aplicaciones de GNOME</a> contiene recomendaciones y normas que las aplicaciones deben seguir para este entorno de escritorio, estas guías permiten uniformidad en las aplicaciones y contienen una colección de buenas prácticas en el diseño de aplicaciones para hacerlas más fáciles de usar e intuitivas para los usuarios.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps_hu1683b4da75bb9e26bb019b3e1888454f_38942_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps_hu1683b4da75bb9e26bb019b3e1888454f_38942_200x150_fit_box_3.png" width="200" height="94" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-1_hu5c7763e69b5be9f8bd2551eb66548670_115844_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-1_hu5c7763e69b5be9f8bd2551eb66548670_115844_200x150_fit_box_3.png" width="200" height="135" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-2_hu136419279a0220907ff14d49514df53b_101448_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-2_hu136419279a0220907ff14d49514df53b_101448_200x150_fit_box_3.png" width="200" height="128" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-3_hube020cac5d1a9a47e43675e30651c98b_78237_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-circle-apps-3_hube020cac5d1a9a47e43675e30651c98b_78237_200x150_fit_box_3.png" width="200" height="124" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a></p>
-<figcaption>Aplicaciones del círculo de GNOME</figcaption>
-</figure>
-</div>
-<p>Algunas aplicaciones aunque desarrolladas por terceros siguen las guías de estilos de diseño de interfaces del escritorio de GNOME dando la sensación que están perfectamente integradas con el entorno de escritorio. Muchas son aplicaciones distribuidas como paquetes en formato <a href="https://flatpak.org/">Flatpak</a> que las hace fácil de instalar en cualquier distribución GNU/Linux sin depender de los paquetes oficiales de la distribución.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
-</ul>
-<p>Las siguientes son aplicaciones sencillas desarrolladas por terceros que siguen las guías de estilos de diseño de interfaces del escritorio de GNOME y que están recomendadas por GNOME, cada una cubre una necesidad específica que si es necesaria permite hacerlo mediante una aplicación con interfaz gráfica en vez de tener que recurrir a otras aplicaciones o la línea de comandos, en conjunto cubren funcionalidades muy diversas, desde un editor de texto en formato <em>markdown</em> hasta un lector de la <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada">Wikipedia</a>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/apostrophe_hu931cdc620fc536505f4c480e04e54302_62011_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/apostrophe_hu931cdc620fc536505f4c480e04e54302_62011_200x150_fit_box_3.png" width="200" height="114" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/curtail_hu71a8a8a15ed836006fa810077f114a35_15383_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/curtail_hu71a8a8a15ed836006fa810077f114a35_15383_200x150_fit_box_3.png" width="200" height="112" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/kooha_hue3c62376f9c3058778bcd54e7d7d42c9_40101_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/kooha_hue3c62376f9c3058778bcd54e7d7d42c9_40101_200x150_fit_box_3.png" width="137" height="150" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/pika-backup_hubc373628fa4019a85dbd1f1cffea859b_40756_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/pika-backup_hubc373628fa4019a85dbd1f1cffea859b_40756_200x150_fit_box_3.png" width="200" height="127" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/shortwave_hu17cb48c50653d99ce7cfb0307bd56f9c_217396_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones del círculo de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/shortwave_hu17cb48c50653d99ce7cfb0307bd56f9c_217396_200x150_fit_box_3.png" width="200" height="138" alt="Aplicaciones del círculo de GNOME" title="Aplicaciones del círculo de GNOME"  class="lozad "></a></p>
-<figcaption>Algunas aplicaciones del círculo de GNOME</figcaption>
-</figure>
-</div>
-<p>En la descripción de cada aplicación y en su página del repositorio en <a href="https://flathub.org/">Flathub</a> están los detalles para instalar la aplicación con Flatpak. Se puede instalar con la aplicación software de GNOME o desde la línea de comandos. Una vez instalada la aplicación Flatpak la mantiene actualizada automáticamente en cada nueva publicación de versión.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-software_hu9b5d59de78941f67d61ed8984e13ac6f_81835_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación gestión de software de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/images/gnome-software_hu9b5d59de78941f67d61ed8984e13ac6f_81835_650x450_fit_box_3.png" width="637" height="450" alt="Aplicación gestión de software de GNOME" title="Aplicación gestión de software de GNOME"  class="lozad "></a></p>
-<figcaption>Aplicación para instalar y desinstalar software de GNOME</figcaption>
-</figure>
-</div>
-<p>Comandos para instalar y ejecutar la aplicación con Flatpak, el identificativo de cada aplicación se muestra en la <a href="https://flathub.org/apps/details/org.gnome.gitlab.somas.Apostrophe">página de descripción de Apostrophe en Flathub</a>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ flatpak install flathub org.gnome.gitlab.somas.Apostrophe&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>flatpak-install.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ flatpak run org.gnome.gitlab.somas.Apostrophe&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>flatpak-run.sh</span>
-    </div>
-</div>
-<ul>
-<li><strong>Apostrophe</strong>: Un editor Markdown elegante y libre de distracciones</li>
-<li><strong>Authenticador</strong>: Generar códigos de autenticación de doble factor</li>
-<li><strong>Blanket</strong>: Escuche diferentes sonidos</li>
-<li><strong>Copia de respaldo Pika</strong>: Respaldos sencillos basados en borg</li>
-<li><strong>Copias de seguridad Déjà Dup</strong>: Mantenga sus documentos importantes a salvo de cualquier peligro</li>
-<li><strong>Cozy</strong>: Un moderno reproductor de audiolibros</li>
-<li><strong>Curtail</strong>: Comprima sus imágenes</li>
-<li><strong>Decodificador</strong>: Escanear y generar códigos QR</li>
-<li><strong>Depósito seguro de contraseñas</strong>: Gestionar sus contraseñas</li>
-<li><strong>Descargador de tipografías</strong>: Instalar tipografías de fuentes en línea</li>
-<li><strong>Dialect</strong>: Traduce entre idiomas</li>
-<li><strong>Dibujo</strong>: Una aplicación de dibujo para el escritorio GNOME</li>
-<li><strong>Fragmentos</strong>: Un cliente de BitTorrent</li>
-<li><strong>Gaphor</strong>: Herramienta de modelado UML y SysML</li>
-<li><strong>Hashbrown</strong>: Comrprueba las huellas digitales de sus archivos</li>
-<li><strong>Health</strong>: Una aplicación para la monitorización de la salud para el escritorio GNOME</li>
-<li><strong>Identity</strong>: Comparar imágenes y vídeos</li>
-<li><strong>Khronos</strong>: Medir el tiempo de cada tarea de una forma simple sin obstrucciones</li>
-<li><strong>Kooha</strong>: Graba tu pantalla elegantemente</li>
-<li><strong>Limpiador de metadatos</strong>: Ver y limpiar los metadatos en los archivos</li>
-<li><strong>Mercados</strong>: Un rastreador de acciones, divisas y criptodivisas</li>
-<li><strong>NewsFlash</strong>: Siga sus blogs y sitios de noticias favoritos.</li>
-<li><strong>Ofuscador</strong>: Censor de información privada</li>
-<li><strong>Plots</strong>: Dibujado de gráficas simple</li>
-<li><strong>Podcasts</strong>: Aplicación de <em>podcast</em> para GNOME</li>
-<li><strong>Recortador de vídeo</strong>: Recortar vídeos rápidamente</li>
-<li><strong>Shortwave</strong>: Escuchar la radio por internet</li>
-<li><strong>Solanum</strong>: Equilibrio entre tiempo de trabajo y de descanso</li>
-<li><strong>Tangram</strong>: Ejecutar aplicaciones web en su escritorio</li>
-<li><strong>Tootle</strong>: Cliente rápido para Mastodon</li>
-<li><strong>Webfont Kit Generator</strong>: Cree fácilmente los <em>kits</em> <em>@font*face</em></li>
-<li><strong>Wike</strong>: Lector de Wikipedia</li>
-</ul>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

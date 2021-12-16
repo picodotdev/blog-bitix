@@ -281,7 +281,7 @@
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">[picodotdev@archlinux ~]$ gcc main.c -o main&#10;[picodotdev@archlinux ~]$ ./main&#10;Enter a number: 7&#10;Number = 7&#10;[picodotdev@archlinux ~]$</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">[picodotdev@archlinux ~]$ gcc main.c -o main&#10;[picodotdev@archlinux ~]$ ./main&#10;Enter a number: 7&#10;Number = 7&#10;[picodotdev@archlinux ~]$</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>main.out</span>
     </div>
@@ -368,7 +368,7 @@
 <p>La razón es que en vez de recolectar los objetos de toda la memoria hay más probabilidad de recolectar más objetos que han dejado de usarse en la zona de objetos jóvenes. Eventualmente también es necesario recolectar los objetos de la zona de objetos viejos.</p>
 <p>Es el recolector de basura por defecto en Java 8 y anteriores. La opción para usar este recolector de basura es la siguiente.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">-XX:+UseParallelGC&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-XX:+UseParallelGC&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>java-option-gc-parallel.txt</span>
     </div>
@@ -387,7 +387,7 @@
 <p>La contrapartida de especificar pausas bajas es que G1 puede no ser capaz de mantener el ritmo de liberación de memoria, en cuyo caso eventualmente opta por parar la aplicación con el modo <em>stop-the-world</em>. Esto implica que el proceso de búsqueda de objetos vivos y el proceso de copiado es realizando mientras los <em>threads</em> de la aplicación están parados. Si G1 no puede cumplir con el objetivo de tiempo de pausa en recolecciones parciales, entonces el recolector de basura necesitará una pausa de mayor tiempo que el límite máximo deseado especificado.</p>
 <p>G1 en general es un recolector con un buen balance entre rendimiento y restricciones de tiempo de pausa. Es el recolector de basura por defecto en Java 9.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">-XX:+UseG1GC -XX:MaxGCPauseMillis=200&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-XX:+UseG1GC -XX:MaxGCPauseMillis=200&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>java-option-gc-g1.txt</span>
     </div>
@@ -400,7 +400,7 @@ Si el programa Java modifica los datos de un objeto que Shenandoah está copiand
 <p>Shenandoah elimina la necesidad de realizar pausas durante la compactación de modo que las pausas cuando se hacen son mucho menores.
 El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del OpenJDK 12 y está siendo portado al JDK 8 y 11. Se puede activar en Java 12 con la siguiente opción de la máquina virtual.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">-XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>java-option-gc-shenandoah.txt</span>
     </div>
@@ -418,7 +418,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
 </div>
 <p>ZGC se puede activar en Java 13 con la siguiente opción para la máquina virtual.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">-XX:+UnlockExperimentalVMOptions -XX:+UseZGC&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-XX:+UnlockExperimentalVMOptions -XX:+UseZGC&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>java-option-gc-zgc.txt</span>
     </div>

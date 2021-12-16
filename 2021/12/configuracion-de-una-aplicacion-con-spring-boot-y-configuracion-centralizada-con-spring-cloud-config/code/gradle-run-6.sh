@@ -1,0 +1,1 @@
+$ SPRING_CLOUD_CONFIG_LABEL="2.0" ./gradlew service:run
