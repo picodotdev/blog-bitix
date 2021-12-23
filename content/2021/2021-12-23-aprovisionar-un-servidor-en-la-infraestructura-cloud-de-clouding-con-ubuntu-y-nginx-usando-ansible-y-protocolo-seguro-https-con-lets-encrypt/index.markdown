@@ -40,8 +40,8 @@ Clouding permite seleccionar los recursos de cómputo para los servidores según
 
 {{< image
     gallery="true"
-    image1="image:clouding-seleccion-recursos.png" optionsthumb1="650x450" title1="Selección de los recursos de cómputo"
-    caption="Selección de los recursos de cómputo" >}}
+    image1="image:clouding-seleccion-recursos.png" optionsthumb1="650x450" title1="Selección de los recursos de cómputo y coste"
+    caption="Selección de los recursos de cómputo y coste" >}}
 
 #### Infraestructura
 

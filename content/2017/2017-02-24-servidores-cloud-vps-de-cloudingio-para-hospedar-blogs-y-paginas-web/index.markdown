@@ -123,6 +123,8 @@ Las reglas del _firewall_ por defecto son demasiado permisivas, si solo necesita
     image1="image:firewall.png" optionsthumb1="300x200" title1="Reglas de firewall"
     caption="Reglas de firewall" >}}
 
+### Conexión mediante línea de comandos con SSH
+
 Las llaves SSH son necesarias para conectarnos al servidor y lanzar comandos desde la terminal. Generada una llave SSH desde el apartado _Llaves SSH_ descargaremos la clave privada, la añadiremos al directorio _~/.ssh_ y configuraremos el archivo _~/.ssh/config_ para acceder al servidor.
 
 {{< image
