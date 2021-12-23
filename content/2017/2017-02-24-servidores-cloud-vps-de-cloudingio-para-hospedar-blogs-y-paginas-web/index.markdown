@@ -11,9 +11,10 @@ rss: true
 sharing: true
 comments: true
 promoted: true
+imageHead: "image:header.png"
 imagePost: "logotype:clouding.svg"
-tags: ["planeta-codigo", "patrocinado"]
-summary: "Al escribir este artículo patrocinado sobre Clouding.io he podido probar de primera mano el crear un servidor virtual basado en la computación en la nube. Después de probarlo me parece una opción sencilla y sin complicaciones, adecuada y más que suficiente para proyectos de presencia en internet, blogs, pequeños y medianos proyectos de páginas web. Además, con soporte en español en caso de necesitar algún tipo de asistencia o ayuda."
+tags: ["gnu-linux", "planeta-codigo", "patrocinado", "software-libre"]
+summary: "Al escribir este artículo patrocinado sobre Clouding.io he podido probar de primera mano el crear un servidor virtual basado en la computación en la nube. Después de probarlo me parece una opción sencilla y sin complicaciones, adecuada y más que suficiente desde el rango de proyectos más pequeños de presencia en internet, blogs o servicios web y con capacidad suficiente hasta los proyectos más grandes y exigentes de cualquier empresa. Además, con la característica diferenciadora de ofrecer soporte en español en caso de necesitar algún tipo de asistencia o ayuda."
 ---
 
 {{% post %}}
@@ -22,41 +23,67 @@ summary: "Al escribir este artículo patrocinado sobre Clouding.io he podido pro
 
 Toda página web, blog y servicio que está accesible en internet ha de ser hospedado en algún servidor. Por motivos de fiabilidad, también coste y flexibilidad se suele contratar un servicio de hospedaje de los muchos que hay en internet. Desde no hace tanto tiempo ha surgido una modalidad de hospedaje que permite mayor flexibilidad, la llamada [cloud computing][cloud-computing] o computación en la nube, cuya características diferenciadoras son permitir variar de forma elástica, aumentando o reduciendo, los recursos de computación utilizados ya sea de procesador, memoria, almacenamiento o transferencia de datos. Otra característica de la computación en la nube es que es inmediata (en cuestión de minutos) sin necesidad de trámites administrativos o tiempos de espera, los servicios de computación en la nube incluyen paneles de administración para los servidores accesibles a través de un navegador con aplicaciones sencillas o incluso interfaces basadas en linea de comandos de modo que es posible automatizar las tareas de sistemas con [DevOps][devops].
 
-Hay múltiples opciones de computación en la nube algunas con más servicios y funcionalidades pero también más complejas y no necesarias para proyectos sencillos y no muy grandes. Una de las opciones de computación en la nube sencilla pero suficiente en muchos casos es [Clouding.io][cloudingio] que en la opción más básica ofrece un servidor con **1 núcleo de CPU, 1 GiB de memoria, 25 GiB de almacenamiento persistente de estado sólido o SSD y 2 TiB de datos de transferencia a un precio de 10 € + IVA al mes** (unos 12 €), precio similar a otras opciones de servidores en la nube. Para un página web con archivos estáticos de presencia en internet o un blog como Blog Bitix que solo utiliza recursos estáticos (HTML, CSS, JavaScript e imágenes) lo más básico ya sería suficiente y para un blog con [Wordpress][wordpress] utilizando 2 GiB y un precio de 12 € + IVA al mes también debería ser más que suficiente para un tráfico respetable en cantidad. Una de las ventajas del _cloud computing_ es la elasticidad que permite cambiar en cualquier momento los recursos reservados según las necesidades como la cantidad de memoria, núcleos de procesador o espacio en disco, tanto para reservar más recursos o para disminuir los recursos utilizados y también el coste. En la página de Clouding.io está la simple política de precios según los recursos reservados. **Desde 1 GiB hasta 32 GiB de memoria, desde 1 hasta 16 cores de CPU y desde 25 GiB hasta 1900 GiB de almacenamiento SSD** por servidor cubriendo las necesidades hasta de las aplicaciones más exigentes.
+Hay múltiples opciones de computación en la nube algunas con más servicios y funcionalidades pero también más complejas y no necesarias para proyectos sencillos y no muy grandes. Una de las opciones de computación en la nube sencilla pero suficiente en muchos casos es [Clouding.io][cloudingio] que en la opción más básica ofrece un servidor con **1/2 núcleo de CPU, 1 GiB de memoria, 5 GiB de almacenamiento persistente de estado sólido o SSD y 2 TiB de datos de transferencia a un precio de 3 € + IVA al mes** (unos 3.5 € con IVA incluido), precio incluso más económica que otras opciones de servidores en la nube. 
+
+Para un página web con archivos estáticos de presencia en internet o un blog como Blog Bitix que solo utiliza recursos estáticos (HTML, CSS, JavaScript e imágenes) lo más básico ya sería suficiente y para un blog con [Wordpress][wordpress] utilizando 2 GiB y un precio de 9 € al mes también debería ser más que suficiente para un tráfico respetable en cantidad.
+
+Una de las ventajas del _cloud computing_ es la elasticidad que permite cambiar en cualquier momento los recursos reservados según las necesidades como la cantidad de memoria, núcleos de procesador o espacio en disco, tanto para reservar más recursos o para disminuir los recursos utilizados y también el coste. En la página de Clouding.io está la simple política de precios según los recursos reservados. **Desde 1 GiB hasta 192 GiB de memoria, desde 1 hasta 48 cores de CPU y desde 5 GiB hasta 1900 GiB de almacenamiento SSD** por servidor cubriendo las necesidades hasta de las aplicaciones más exigentes.
 
 {{< image
     gallery="true"
-    image1="image:web-cloudingio.png" optionsthumb1="300x200" title1="Página web de Clouding.io"
+    image1="image:clouding-web.png" optionsthumb1="650x450" title1="Página web de Clouding.io"
     caption="Página web de Clouding.io" >}}
+
+{{< tableofcontents >}}
+
+### Infraestructura _cloud_ de Clouding
 
 Algunas de las características de Clouding.io algo más detalladas en su página web es que ofrecen soporte en español y discos SSD rápidos para el almacenamiento además de las siguientes:
 
-* Potente: Cores Intel Xeon, Red Cisco 20Gbps, Ceph Storage, OpenStack KVM, Cache Inteligente y Discos SSD.
+* Potente: procesadores de última generación, redes de alta velocidad y baja latencia, almacenamiento redundante, virtualización de alto rendimiento con KVM, cache inteligente y discos SSD.
 * Estable: Triple Réplica, Auto Reparación, Datacenter Tier 4, Calidad Empresarial, Protección de Red, Hosting DNS.
 * Flexible: Cloud Hosting por Horas, Windows Cloud, Linux Cloud, Configuración a medida, Ampliaciones temporales, Activación inmediata.
 * Fácil: Soporte de Calidad, Cloud Pros, Teclado y Monitor Remoto, Como y cuando quieras, DIY: Hazlo tú mismo, Comunidad.
 
-En el blog de Clouding.io hay artículos interesantes y tiene una comunidad con una base de conocimiento y una sección de preguntas y respuestas para resolver cualquier duda que nos surja, todo en español. Las imágenes de sistemas operativos que ofrecen son las siguientes en las que se incluyen la opción de [Windows][windows] aunque siendo este un blog más afín al software libre recomiendo una de las versiones de [GNU][gnu]/[Linux][linux], una ventaja es que el precio es más barato. De [Ubuntu][ubuntu] hay múltiples versiones aunque siendo el propósito prestar un servicio durante periodos de tiempo largos lo recomendable es utilizar una versión <abbr title="Long Term Support">LTS</abbr> o de soporte prolongado:
+En el blog de Clouding.io hay artículos interesantes y tiene una comunidad con una base de conocimiento y una sección de preguntas y respuestas para resolver cualquier duda que nos surja, todo en español. Las imágenes de sistemas operativos que ofrecen son las siguientes en las que se incluyen la opción de [Windows][windows] aunque siendo este un blog más afín al software libre recomiendo una de las versiones de [GNU][gnu]/[Linux][linux], una ventaja es que el precio es más barato. De [Ubuntu][ubuntu] hay múltiples versiones aunque siendo el propósito prestar un servicio durante periodos de tiempo largos lo recomendable es utilizar una versión <abbr title="Long Term Support">LTS</abbr> o de soporte prolongado. También es posible otras distribuciones populares como sistema operativo como [Debian][debian] y [CentOS][centos].
 
-* **CentOS 7**, 6, 5
-* **Debian 8**, 7
-* **Ubuntu 16.04**, 14.04 y versiones no LTS
-* Docker (Ubuntu 14.04)
-* Magento 2.0 (Ubuntu 16.04)
-* Prestashop 1.6.x (Ubuntu 16.04)
-* Plesk 12 (Ubuntu 14.04)
-* Plesk 12 (Windows 2012 R2)
-* Plesk 12.5 (Ubuntu 14.04)
-* **Plesk Onyx** (17.0 Ubuntu 16.04)
-* VestaCP 0.9.8 (Ubuntu 14.04)
-* Windows 10 Professional (Español)
-* Windows 2003 R2 Datacenter (English)
-* Windows 2008 R2 Datacenter (English)
-* Windows 2012 R2 Datacenter (English)
-* **Windows 2016 Datacenter** (English)
-* Windows 8.1 Professional (Español)
+Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación _cloud_, configuración de red privada para mayor seguridad además de una API que permite automatizar tareas. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.
 
-Para probar su servicio ofrecen un cupón de 5 €, que con la opción más básica son unos 15 días de uso continuado para evaluar su servicio sin compromiso. El registro requiere validar una cuenta de correo electrónico, móvil y tarjeta de crédito. Requerir el móvil y la tarjeta de crédito para probar el servicio es algo excesivo pero quizá necesario para evitar _spam_ y usos no deseados. Realizado el registro ya está disponible el acceso al panel de administración desde el que crear nuevos servidores, arrancarlos, modificarlos, pararlos o eliminarlos.
+{{< image
+    gallery="true"
+    image1="image:clouding-caracteristicas-1.png" optionsthumb1="200x150" title1="Características de Clouding"
+    image2="image:clouding-caracteristicas-2.png" optionsthumb2="200x150" title2="Características de Clouding"
+    image3="image:clouding-caracteristicas-3.png" optionsthumb3="200x150" title3="Características de Clouding" >}}
+{{< image
+    gallery="true"
+    image1="image:clouding-caracteristicas-4.png" optionsthumb1="200x150" title1="Características de Clouding"
+    image2="image:clouding-caracteristicas-5.png" optionsthumb2="200x150" title2="Características de Clouding"
+    image3="image:clouding-caracteristicas-6.png" optionsthumb3="200x150" title3="Características de Clouding"
+    caption="Características de Clouding" >}}
+
+Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.
+
+{{< image
+    gallery="true"
+    image1="image:clouding-infraestructura-1.png" optionsthumb1="200x150" title1="Infraestructura de Clouding"
+    image2="image:clouding-infraestructura-2.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
+    image3="image:clouding-infraestructura-3.png" optionsthumb3="200x150" title3="Infraestructura de Clouding" >}}
+{{< image
+    gallery="true"
+    image1="image:clouding-infraestructura-4.png" optionsthumb1="200x150" title1="Infraestructura de Clouding"
+    image2="image:clouding-infraestructura-5.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
+    caption="Infraestructura de Clouding" >}}
+
+Son varias las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.
+
+{{< image
+    gallery="true"
+    image1="image:clouding-clientes.png" optionsthumb1="200x150" title1="Clientes de Clouding"
+    caption="Clientes de Clouding" >}}
+
+### Crear un servidor _cloud_ en Clouding
+
+Para probar su servicio ofrecen un cupón de 5 €, que con la opción más básica son unos 45 días de uso continuado para evaluar su servicio sin compromiso. El registro requiere validar una cuenta de correo electrónico, móvil y tarjeta de crédito. Requerir el móvil y la tarjeta de crédito para probar el servicio es algo excesivo pero quizá necesario para evitar _spam_ y usos no deseados. Realizado el registro ya está disponible el acceso al panel de administración desde el que crear nuevos servidores, arrancarlos, modificarlos, pararlos o eliminarlos.
 
 {{< image
     gallery="true"
@@ -120,7 +147,7 @@ Una de las primeras cosas aconsejables realizar es tener acceso mediante SSH des
     image2="image:consola-vnc.png" optionsthumb2="300x200" title2="Acceso mediante consola VNC"
     caption="Acceso mediante SSH y consola VNC" >}}
 
-Con acceso vía SSH al servidor ya es posible administrarlo con una herramienta como [Ansible][ansible] instalando paquetes, actualizar el servidor y configurar servicios como los servidores web [nginx][nginx] o [Apache][apache-httpd], [Docker][docker] y otra multitud de tareas que permite esta herramienta.
+Con acceso vía SSH al servidor ya es posible administrarlo con una herramienta como [Ansible][ansible] instalando paquetes, actualizar el servidor y configurar servicios como los servidores web [nginx][nginx] o [Apache][apache-httpd], [Docker][docker] y otra multitud de tareas que permite esta herramienta. En el artículo [Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let's Encrypt][blogbitix-614] muestro como aprovisionar de forma automatizada un servidor _cloud_ de Clouding.
 
 {{< image
     gallery="true"

@@ -1,0 +1,59 @@
+$ tree .
+.
+├── ansible-clouding-content-update.sh
+├── ansible-clouding-ping.sh
+├── ansible-clouding-system-init.sh
+├── ansible-clouding-system-install.sh
+├── ansible-clouding-system-update.sh
+├── ansible-env.conf
+├── ansible-env-default.conf
+├── ansible-mkdpasswd.sh
+├── ansible-raspberrypi-ping.sh
+├── ansible-raspberrypi-system-init.sh
+├── ansible-raspberrypi-system-install.sh
+├── ansible-raspberrypi-system-update.sh
+├── ansible-raspberrypi-update-content.sh
+├── ansible-vagrant-content-update.sh
+├── ansible-vagrant-ping.sh
+├── ansible-vagrant-system-init.sh
+├── ansible-vagrant-system-install.sh
+├── ansible-vagrant-system-update.sh
+├── hosts
+├── roles
+│   ├── picodotdev.certbot
+│   │   └── tasks
+│   │       ├── configure.yml
+│   │       └── main.yml
+│   ├── picodotdev.goaccess
+│   │   └── tasks
+│   │       └── main.yml
+│   ├── picodotdev.nginx
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   ├── main.yml
+│   │   │   └── restart.yml
+│   │   └── templates
+│   │       └── https-domain-template.conf
+│   ├── picodotdev.site
+│   │   ├── files
+│   │   │   └── index.html
+│   │   └── tasks
+│   │       ├── main.yml
+│   │       └── nginx-content.yml
+│   ├── picodotdev.system
+│   │   └── tasks
+│   │       ├── install.yml
+│   │       ├── main.yml
+│   │       ├── ssh.yml
+│   │       ├── update.yml
+│   │       └── users.yml
+│   └── picodotdev.ufw
+│       └── tasks
+│           └── main.yml
+├── site-content-update.yml
+├── site-system-init.yml
+├── site-system-install.yml
+└── site-system-update.yml
+
+16 directories, 39 files
