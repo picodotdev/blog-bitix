@@ -5,12 +5,119 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2021-10-10T11:00:00+02:00</updated>
+    <updated>2021-12-23T09:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/</id>
+        <title>Autenticación mediante clave pública y privada con SSH</title>
+        <updated>2019-05-03T20:00:00+02:00</updated>
+        <published>2019-05-03T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma.</p>
+<p>Para generar contraseñas fuertes se puede usar <a href="https://strongpasswordgenerator.com/">Strong Password Generator</a> y para almacenarlas <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">el programa KeePassXC</a>.</p>
+<p>Con <a href="https://www.openssh.com/">OpenSSH</a> también se puede iniciar sesión de línea de comandos en otro sistema proporcionando un usuario y una contraseña que se solicitará. O mejor aún con una clave pública y privada sin necesidad de introducir una contraseña.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh ubuntu@192.168.33.10&#10;Welcome to Ubuntu 18.04.2 LTS <span class="o">(</span>GNU/Linux 4.15.0-48-generic x86_64<span class="o">)</span>&#10;&#10; * Documentation:  https://help.ubuntu.com&#10; * Management:&nbsp;&nbsp;&nbsp;&nbsp; https://landscape.canonical.com&#10; * Support:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ubuntu.com/advantage&#10;&#10;  System information as of Fri May  <span class="m">3</span> 18:04:48 UTC <span class="m">2019</span>&#10;&#10;  System load:  0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Processes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">102</span>&#10;  Usage of /:   10.0% of 9.63GB   Users logged in:&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">1</span>&#10;  Memory usage: 6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP address <span class="k">for</span> enp0s3: 10.0.2.15&#10;  Swap usage:   0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IP address <span class="k">for</span> enp0s8: 192.168.33.10&#10;&#10;&#10;<span class="m">0</span> packages can be updated.&#10;<span class="m">0</span> updates are security updates.&#10;&#10;&#10;Last login: Fri May  <span class="m">3</span> 18:04:00 <span class="m">2019</span> from 192.168.33.1&#10;To run a <span class="nb">command</span> as administrator <span class="o">(</span>user <span class="s2">&#34;root&#34;</span><span class="o">)</span>, use <span class="s2">&#34;sudo &lt;command&gt;&#34;</span>.&#10;See <span class="s2">&#34;man sudo_root&#34;</span> <span class="k">for</span> details.&#10;&#10;ubuntu@ubuntu-bionic:~$&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/images/openssh_hua00e364d197fb1857da25b410a64f760_83550_2560x1440_fit_box_3.png" width="578" height="191" alt="OpenSSH" title="OpenSSH"  class="lozad "></p>
+</figure>
+</div>
+<p>Usar SSH es más seguro y más cómodo que usar contraseñas para realizar la autenticación, es más seguro ya que una clave pública y privada son más largas y es más cómodo ya que no se solicita contraseña constantemente que de otra manera al cabo de un tiempo se convierte en un paso tedioso y molesto. Lo primero que hay que hacer es <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar una clave SSH pública y privada</a> propia. Una clave de 2048 bits ya se considera segura pero como cuesta lo mismo generar una de más bits se puede generar una de 8192 bits para más seguridad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ openssl genrsa -out ubuntu <span class="m">8192</span>&#10;$ ssh-keygen -y -f ubuntu &gt; ubuntu.pub&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-keygen.sh</span>
+    </div>
+</div>
+<p>En el servidor SSH se deben modificar algunas propiedades de configuración del archivo de configuración <em>/etc/ssh/sshd_config</em> para permitir la autenticación con usuario y contraseña para poder copiar la clave pública y una vez copiada la clave para mayor seguridad no permitir la autenticación mediante usuario y contraseña.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">PasswordAuthentication yes&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sshd_config</span>
+    </div>
+</div>
+<p>Una vez generado el par de claves hay que copiar la clave pública al servidor donde se desee iniciar sesión. Manualmente concatenando la clave pública al archivo <em>.ssh/authorized_keys</em> del directorio <em>home</em> del usuario con el que se quiere iniciar sesión o también se puede copiar la clave pública usando el comando <em>ssh-copy-id</em>. Para revocar el acceso mediante esa clave basta con eliminar su linea del archivo de claves autorizadas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh-copy-id -i ~/.ssh/ubuntu ubuntu@192.168.33.10&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-copy-id.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo passwd ubuntu&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>passwd.sh</span>
+    </div>
+</div>
+<p>Si se poseen varios pares de claves públicas y privadas se puede especificar que clave privada usar para cada máquina a la que se desee conectar en el archivo <em>~/.ssh/config</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Host</span> <span class="n">192</span><span class="o">.</span><span class="na">168</span><span class="o">.</span><span class="na">33</span><span class="o">.</span><span class="na">10</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HostName</span> <span class="n">192</span><span class="o">.</span><span class="na">168</span><span class="o">.</span><span class="na">33</span><span class="o">.</span><span class="na">10</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">User</span> <span class="n">ubuntu</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">IdentityFile</span> <span class="o">~/.</span><span class="na">ssh</span><span class="o">/</span><span class="n">ubuntu</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-config</span>
+    </div>
+</div>
+<p>La clave privada debe tener permisos restringidos sino se muestra una advertencia e impide el inicio de sesión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">$</span> <span class="n">chmod</span> <span class="n">600</span> <span class="n">ubuntu</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chmod.sh</span>
+    </div>
+</div>
+<p>Para probar la autenticación con SSH se puede utilizar una máquina virtual de <a href="https://www.virtualbox.org/">VirtualBox</a> creada con <a href="https://www.vagrantup.com/">Vagrant</a>. En el caso de utilizar el usuario <em>ubuntu</em> hay que asignarle una clave con el comando <em>passwd</em> para ejecutar comando <em>ssh-copy-id</em> ya que se solicita su contraseña en este paso, una vez realizado se puede desactivar la autenticación mediante usuario y contraseña cambiando el valor de la configuración <em>PasswordAuthentication</em> a <em>no</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"># -*- mode: ruby -*-&#10;# vi: set ft=ruby :&#10;&#10;Vagrant.configure(&#34;2&#34;) do |config|&#10;  config.vm.box = &#34;ubuntu/bionic64&#34;&#10;&#10;  config.vm.provider :virtualbox do |vb|&#10;&nbsp;&nbsp;&nbsp;&nbsp;vb.name = &#34;Ubuntu 18.04 (Vagrant)&#34;&#10;  end&#10;&#10;  config.vm.network &#34;private_network&#34;, ip: &#34;192.168.33.10&#34;&#10;&#10;  config.vm.provider &#34;virtualbox&#34; do |vb|&#10;&nbsp;&nbsp;&nbsp;&nbsp;vb.memory = &#34;2048&#34;&#10;  end&#10;end</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Vagrantfile</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vagrant up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vagrant.sh</span>
+    </div>
+</div>
+<p>Para mayor seguridad en caso de que la clave publica y privada sean comprometidas es posible <a href="https://picodotdev.github.io/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/">configurar un segundo factor de autenticación con SSH</a> que adicionalmente a la clave privada pide un <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">segundo factor de autenticación generado con la aplicación Google Authenticator o con KeePassXC</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://askubuntu.com/questions/30788/does-ssh-key-need-to-be-named-id-rsa#30792">Does ssh key need to be named id_rsa?</a></li>
+<li><a href="http://stackoverflow.com/questions/3466626/add-private-key-permanently-with-ssh-add-on-ubuntu">How to permanently add a private key with ssh-add on Ubuntu?</a></li>
+<li><a href="http://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke">How do I remove the passphrase for the SSH key without having to create a new key?</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="seguridad"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/12/hemeroteca-14/</id>
         <title>Hemeroteca #14</title>
@@ -1626,73 +1733,6 @@
                 <category term="tapestry"/>
             
                 <category term="gnu-linux"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/</id>
-        <title>Como eliminar metainformación de las fotos en GNU/Linux</title>
-        <updated>2017-12-22T18:00:00+01:00</updated>
-        <published>2017-12-22T18:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>En los archivos de las fotos e imágenes además de su información visual gráfica, los millones de píxeles, se guarda información adicional relacionada con la misma, por ejemplo, con que modelo de cámara se realizó, la fecha y la hora a la que se realizó, e incluso la localización si la cámara dispone de GPS u otro medio de ubicación como posicionamiento mediante la red de datos móvil o WIFI.</p>
-<p>Compartir la foto en redes sociales ya es compartir mucha información y un peligro para la privacidad pero si además va acompañada de esta metainformación lo es algo más. Esta metainformación, información sobre la información, información sobre la imagen, son los <a href="https://es.wikipedia.org/wiki/Exchangeable_image_file_format">datos EXIF</a> y se guardan embebidos en el propio archivo de la foto.</p>
-<p>Podemos obtener la metainformación guardada en la foto de diferentes formas. Una con la herramienta de visualización de imágenes de nuestro entorno de escritorio, en mi caso con el visor de imágenes de <a href="https://www.gnome.org/">GNOME</a> o con las propiedades de archivo de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> (botón derecho del ratón sobre el archivo &gt; Propiedades). Otra es usando la herramienta ImageMagick.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/visor-imagenes_hu4963d27b856a96c5f47e229f55955a16_987189_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Visor de imágenes de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/visor-imagenes_hu4963d27b856a96c5f47e229f55955a16_987189_300x200_fit_box_3.png" width="136" height="200" alt="Visor de imágenes de GNOME" title="Visor de imágenes de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/propiedades-imagen_hu70383a2fb948f1bd506ced73d1cb1367_48909_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Propiedades de imagen con metadatos"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/propiedades-imagen_hu70383a2fb948f1bd506ced73d1cb1367_48909_300x200_fit_box_3.png" width="207" height="200" alt="Propiedades de imagen con metadatos" title="Propiedades de imagen con metadatos"  class="lozad "></a></p>
-<figcaption>Imagen y propiedades con metadatos</figcaption>
-</figure>
-</div>
-<p>Instalado el paquete <a href="https://www.imagemagick.org">ImageMagick</a> de nuestra distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, en este caso con <a href="https://www.archlinux.org/">Arch Linux</a> la metainformación de una foto se obtiene con el comando:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ identify -verbose planton-roble.jpg$ identify -verbose planton-roble.jpg&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>identify.sh</span>
-    </div>
-</div>
-<p>Si la foto incluye personas algunas redes sociales como <a href="https://www.facebook.com/">Facebook</a> permiten identificarlas, acompañada de metainformación además informa de con que, con quién, cuando y donde se tomó la foto. Si te importa y quieres proteger tu privacidad un poco es aconsejable eliminar esta metainformación al subir o compartir las fotos en las redes sociales. Con ImageMagick se puede eliminar la metainformación con los siguientes comandos. El primero modifica el archivo original y el segundo crea una copia de la foto sin la metainformación:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mogrify -strip *.jpg&#10;$ convert -strip source.jpg destination.jpg &#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mogrify-convert.sh</span>
-    </div>
-</div>
-<p><a href="https://help.twitter.com/es/using-twitter/tweeting-gifs-and-pictures">Twitter elimina los datos EXIF</a> de las fotos aunque utiliza la ubicación de la foto para realizar sugerencias de ubicaciones. <a href="https://www.facebook.com/">Facebook</a> creo que también elimina los datos EXIF al menos al visualizarlas, también <a href="https://www.whatsapp.com/">WhatsApp</a> y <a href="https://telegram.org/">Telegram</a>. Pero al compartir los archivos de fotos de forma directa como correo electrónico o por algún otro medio los metadatos seguirán estando presentes.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble_hud0fc0db0d78a6f19c535a581fd7f4ddd_615910_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen con datos EXIF"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble_hud0fc0db0d78a6f19c535a581fd7f4ddd_615910_300x200_fit_q90_box.jpg" width="150" height="200" alt="Imagen con datos EXIF" title="Imagen con datos EXIF"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble-noexif_hu1c1e87beb0ed78012360b8f81c258ebb_646306_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen sin datos EXIF"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble-noexif_hu1c1e87beb0ed78012360b8f81c258ebb_646306_300x200_fit_q90_box.jpg" width="150" height="200" alt="Imagen sin datos EXIF" title="Imagen sin datos EXIF"  class="lozad "></a></p>
-<figcaption>Imagen izquierda con datos EXIF, imagen derecha sin datos EXIF</figcaption>
-</figure>
-</div>
-<p>¿Puedes averiguar el dispositivo, la fecha en la que hizo la foto y con que software fotográfico se editó?</p>
-<p>Independientemente de los datos EXIF al compartir fotos hay que tener un poco de cuidado, si tu privacidad no te importa mucho y compartes cualquier cosa personal tuya y así lo has decidido, tú mismo, eso sí simplemente se respetuoso y respeta la privacidad de las personas de las que tienes intención de compartir fotos. Ten en cuenta que compartir que estás de vacaciones, amigos, familiares y con el resto del historial de tu red social se puede conocer bastante acerca de la vida de una persona.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

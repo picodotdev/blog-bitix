@@ -5,12 +5,134 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2021-10-10T11:00:00+02:00</updated>
+    <updated>2021-12-23T09:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/</id>
+        <title>Ejemplo de JNI, usar código en C desde Java</title>
+        <updated>2017-03-25T10:05:00+01:00</updated>
+        <published>2017-03-25T10:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Para tareas muy específicas que requieran alto rendimiento, baja latencia, tiempo real o haya restricciones de tiempo el lenguaje Java y la JVM pueden mostrar algunas limitaciones obligando a escribir alguna sección crítica de un programa en un lenguaje nativo como C o C++. Para hacer posible la integración entre Java y C existe en Java la API JNI. En este artículo mostraré como realizar un programa Java que emite el mensaje Hola Mundo desde una biblioteca compartida en C y usando JNI.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Nunca hasta ahora había tenido necesidad de crear un programa que no estuviese completamente escrito en el lenguaje Java. La <a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">API de Java</a> ofrece multitud de clases para cualquier funcionalidad que necesitemos desde estructuras de datos hasta algoritmos de búsqueda o criptografía. También porque el rendimiento de un programa en Java es suficiente y similar a un programa equivalente escrito en C o C++ gracias a las optimizaciones que implementa la máquina virtual de Java o <abbr title="Java Virtual Machine">JVM</abbr> aún siendo los programas Java compilados a una representación intermedia de <em>bytecode</em> independiente de la arquitectura de procesador y sistema operativo en archivos de extensión <em>class</em> y posteriormente interpretados y traducidos a la arquitectura de ejecución, lo que le proporciona a Java la conocida frase <em>&ldquo;Write once, run anywhere&rdquo;</em>.</p>
+<p>Sin embargo, en casos que se necesita un alto rendimiento para tareas muy específicas o evitar las imposiciones de la máquina virtual como las paradas que realiza para el recolector de basura una solución es escribir esa funcionalidad crítica en lenguaje C, C++ e incluso en <a href="https://golang.org/">Go</a>. El caso de necesidad que me he encontrado es acceder a un sensor de temperatura DHT11 del <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la electrónica para la Raspberry Pi</a> para leer de él la temperatura y humedad. La forma que tiene el sensor DHT11 de proporcionar los datos tiene restricciones de tiempo, cuando se le requieren los valores envía 80 bits de datos donde un pulso de 27μs significa un 0 y un pulso de más de ese tiempo hasta 70μs significa un 1. Estas restricciones de tiempo del sensor y el hecho de que es en una modesta en potencia <a href="https://www.raspberrypi.org/">Raspberry Pi</a> 1 donde lo usaré hace que Java no sea capaz de leer correctamente los valores del sensor.</p>
+<p>Acceder desde Java a código nativo en C requiere usar <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html">Java Native Interface o por sus siglas JNI</a>. Lo primero que hay que realizar es crear una clase que declare los métodos que serán implementados de forma nativa declarando estos métodos usando la palabra reservada <em>native</em> y que serán enlazados por la JVM cargando una librería compartida con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#loadLibrary-java.lang.String-">System.loadLibrary()</a>. Creada la clase Java se ha de generar el archivo de cabecera <em>.h</em> propia del lenguaje C con el programa de utilidad del JDK <em>javah</em>. Con el archivo de cabecera se implementa la función y se crea una librería compartida en <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> usando el <a href="https://gcc.gnu.org/">compilador gcc</a>. Con la librería compartida se puede iniciar el programa Java. Si la biblioteca compartida no se encuentra se lanzará una excepción del tipo <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/UnsatisfiedLinkError.html">UnsatisfiedLinkError</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/images/UnsatisfiedLinkError_huafbea2a660c5da4daa8f678c6e8bc0ac_46763_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo"><img src="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/images/UnsatisfiedLinkError_huafbea2a660c5da4daa8f678c6e8bc0ac_46763_300x200_fit_box_3.png" width="300" height="193" alt="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo" title="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo"  class="lozad "></a></p>
+<figcaption>Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo</figcaption>
+</figure>
+</div>
+<p>Algunas otras necesidades para hacer uso de JNI son:</p>
+<ul>
+<li>Acceder a características dependientes de la plataforma necesitadas por la aplicación que no están soportadas en la librería estándar de Java.</li>
+<li>Ya hay una librería escrita en otro lenguaje y se quiere hacer accesible a código Java a través de JNI.</li>
+<li>Se quiere implementar una pequeña parte de código crítico en un lenguaje de bajo nivel como ensamblador.</li>
+</ul>
+<p>Desde los métodos de código nativo se puede:</p>
+<ul>
+<li>Crear, inspeccionar y actualizar objetos Java (incluyendo arrays y strings).</li>
+<li>Llamar a métodos Java.</li>
+<li>Capturar y lanzar excepciones.</li>
+<li>Cargar y obtener información de clases.</li>
+<li>Realizar validación de tipos en tiempo de ejecución.</li>
+</ul>
+<p>Los comandos para generar el archivo de cabecera de C y compilarlo con el código nativo en una librería compartida con gcc son:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ javah -d src/main/c -classpath buil/classes/main io.github.picodotdev.blogbitix.javaraspberrypi.JniHelloWorld&#10;$ gcc -I<span class="s2">&#34;/usr/lib/jvm/java-8-openjdk/include&#34;</span> -I<span class="s2">&#34;/usr/lib/jvm/java-8-openjdk/include/linux&#34;</span> -shared -fPIC -L/usr/lib -o src/main/resources/libjnihelloworld-amd64.so src/main/c/JniHelloWorld.c&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;java&#39;</span>&#10;<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;idea&#39;</span>&#10;&#10;<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="mf">1.8</span>&#10;<span class="n">targetCompatibility</span> <span class="o">=</span> <span class="mf">1.8</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="n">task</span> <span class="nf">javah1</span><span class="o">(</span><span class="nl">type:</span><span class="n">Exec</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">commandLine</span> <span class="s2">&#34;javah&#34;</span><span class="o">,</span> <span class="s2">&#34;-d&#34;</span><span class="o">,</span> <span class="s2">&#34;src/main/c&#34;</span><span class="o">,</span> <span class="s2">&#34;-classpath&#34;</span><span class="o">,</span> <span class="n">sourceSets</span><span class="o">.</span><span class="na">main</span><span class="o">.</span><span class="na">output</span><span class="o">.</span><span class="na">classesDir</span><span class="o">,</span> <span class="s2">&#34;io.github.picodotdev.blogbitix.javaraspberrypi.JniHelloWorld&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="n">task</span> <span class="nf">javah</span><span class="o">(</span><span class="nl">dependsOn:</span> <span class="o">[</span><span class="s1">&#39;javah1&#39;</span><span class="o">,</span> <span class="s1">&#39;javah2&#39;</span><span class="o">]){</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">task</span> <span class="nf">gcc1</span><span class="o">(</span><span class="nl">type:</span><span class="n">Exec</span><span class="o">,</span> <span class="nl">dependsOn:</span> <span class="s1">&#39;javah&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">commandLine</span> <span class="s2">&#34;gcc&#34;</span><span class="o">,</span> <span class="s2">&#34;-shared&#34;</span><span class="o">,</span> <span class="s2">&#34;-fPIC&#34;</span><span class="o">,</span> <span class="s2">&#34;-I/usr/lib/jvm/java-8-openjdk/include&#34;</span><span class="o">,</span> <span class="s2">&#34;-I/usr/lib/jvm/java-8-openjdk/include/linux&#34;</span><span class="o">,</span> <span class="s2">&#34;-o&#34;</span><span class="o">,</span> <span class="s2">&#34;src/main/resources/libjnihelloworld-amd64.so&#34;</span><span class="o">,</span> <span class="s2">&#34;src/main/c/JniHelloWorld.c&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">task</span> <span class="nf">gcc</span><span class="o">(</span><span class="nl">dependsOn:</span> <span class="o">[</span><span class="s1">&#39;gcc1&#39;</span><span class="o">]){</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="n">task</span> <span class="nf">executeJniHelloWorldLocal</span><span class="o">(</span><span class="nl">type:</span> <span class="n">JavaExec</span><span class="o">,</span> <span class="nl">dependsOn:</span> <span class="o">[</span><span class="s1">&#39;build&#39;</span><span class="o">,</span> <span class="s1">&#39;gcc&#39;</span><span class="o">])</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">main</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.javaraspberrypi.JniHelloWorld&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">classpath</span> <span class="o">=</span> <span class="n">sourceSets</span><span class="o">.</span><span class="na">main</span><span class="o">.</span><span class="na">runtimeClasspath</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>La cabecera usa varias definiciones de tipos definidas en los archivos <em>jni.h</em> y el archivo que variará según el sistema operativo <em>jni_md.h</em>. En la <a href="http://xdprof.sourceforge.net/doxygen/structJNIEnv__.html">estructura JNIEnv</a> con múltiples funciones de integración en C y Java, también varias definiciones de los tipos Java para usarlos en C como <em>jobject</em>, <em>jstring</em>, <em>jint</em>, <em>jboolean</em>, <em>jlong</em>, <em>jdouble</em>, <em>jchar</em>, etc.</p>
+<p>El programa que emite el mensaje <em>Hello World!</em> desde código nativo en C debe cargar y enlazar la librería de código nativo con el código de la clase Java. Esto se muestra en el bloque de inicialización <em>static</em> de la clase, en este caso usándo el método <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#load-java.lang.String-">System.load()</a>, la librería de código nativo de extensión <em>.so</em> en GNU/Linux como en este caso al construirse el proyecto se incluye en el archivo <em>.jar</em> del artefacto resultante se extráe al directorio temporal y se carga desde esa ubicación temporal. En el programa se llama al método <em>print</em> implementado en código nativo y en el código C se usa la función <em>printf</em> de la librería <em>stdio</em> para emitir el mensaje:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">java.nio.file.StandardCopyOption</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JniHelloWorld</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">static</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">architecture</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&#34;os.arch&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">library</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;/libjnihelloworld-%s.so&#34;</span><span class="o">,</span> <span class="n">architecture</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="n">JniHelloWorld</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getResourceAsStream</span><span class="o">(</span><span class="n">library</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Path</span> <span class="n">path</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="na">createTempFile</span><span class="o">(</span><span class="s">&#34;libjnihelloworld&#34;</span><span class="o">,</span> <span class="s">&#34;so&#34;</span><span class="o">).</span><span class="na">toPath</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Files</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">is</span><span class="o">,</span> <span class="n">path</span><span class="o">,</span> <span class="n">StandardCopyOption</span><span class="o">.</span><span class="na">REPLACE_EXISTING</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">path</span><span class="o">.</span><span class="na">toAbsolutePath</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">native</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">new</span> <span class="n">JniHelloWorld</span><span class="o">().</span><span class="na">print</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>JniHelloWorld.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">&#10;</span><span class="cp">#include</span> <span class="cpf">&#34;io_github_picodotdev_blogbitix_javaraspberrypi_JniHelloWorld.h&#34;</span><span class="cp">&#10;</span><span class="cp"></span>&#10;<span class="n">JNIEXPORT</span> <span class="kt">void</span> <span class="n">JNICALL</span> <span class="nf">Java_io_github_picodotdev_blogbitix_javaraspberrypi_JniHelloWorld_print</span><span class="p">(</span><span class="n">JNIEnv</span> <span class="o">*</span><span class="n">env</span><span class="p">,</span> <span class="n">jobject</span> <span class="n">obj</span><span class="p">)</span>&#10;<span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hello World!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span><span class="p">;</span>&#10;<span class="p">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>JniHelloWorld.c</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="cm">/* DO NOT EDIT THIS FILE - it is machine generated */</span>&#10;<span class="cp">#include</span> <span class="cpf">&lt;jni.h&gt;</span><span class="cp">&#10;</span><span class="cp"></span><span class="cm">/* Header for class io_github_picodotdev_blogbitix_javaraspberrypi_JniHelloWorld */</span>&#10;&#10;<span class="cp">#ifndef _Included_io_github_picodotdev_blogbitix_javaraspberrypi_JniHelloWorld&#10;</span><span class="cp">#define _Included_io_github_picodotdev_blogbitix_javaraspberrypi_JniHelloWorld&#10;</span><span class="cp">#ifdef __cplusplus&#10;</span><span class="cp"></span><span class="k">extern</span> <span class="s">&#34;C&#34;</span> <span class="p">{</span>&#10;<span class="cp">#endif&#10;</span><span class="cp"></span><span class="cm">/*&#10;</span><span class="cm"> * Class:&nbsp;&nbsp;&nbsp;&nbsp; io_github_picodotdev_blogbitix_javaraspberrypi_JniHelloWorld&#10;</span><span class="cm"> * Method:&nbsp;&nbsp;&nbsp;&nbsp;print&#10;</span><span class="cm"> * Signature: ()V&#10;</span><span class="cm"> */</span>&#10;<span class="n">JNIEXPORT</span> <span class="kt">void</span> <span class="n">JNICALL</span> <span class="n">Java_io_github_picodotdev_blogbitix_javaraspberrypi_JniHelloWorld_print</span>&#10;  <span class="p">(</span><span class="n">JNIEnv</span> <span class="o">*</span><span class="p">,</span> <span class="n">jobject</span><span class="p">);</span>&#10;&#10;<span class="cp">#ifdef __cplusplus&#10;</span><span class="cp"></span><span class="p">}</span>&#10;<span class="cp">#endif&#10;</span><span class="cp">#endif&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>JniHelloWorld.h</span>
+    </div>
+</div>
+<p>La librería compartida para un sistema <em>amd64</em> la he compilado en mi equipo de escritorio y para la versión <em>arm</em> en la Raspberry Pi e incluido en el directorio <em>src/main/resources</em> de código fuente del ejemplo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew build&#10;$ java -classpath build/classes/main:build/resources/main io.github.picodotdev.blogbitix.javaraspberrypi.JniHelloWorld&#10;$ ssh -t 192.168.1.101 <span class="s1">&#39;cd /home/raspberrypi/scripts/javaraspberrypi &amp;&amp; java -classpath &#34;*&#34; io.github.picodotdev.blogbitix.javaraspberrypi.JniHelloWorld&#39;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>execute.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/images/JniHelloWorld-amd64_hub2b4c641f5fe198f142e57637f8a6ec4_27206_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Mensaje en la terminal emitido desde código nativo (amd64)"><img src="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/images/JniHelloWorld-amd64_hub2b4c641f5fe198f142e57637f8a6ec4_27206_300x200_fit_box_3.png" width="300" height="193" alt="Mensaje en la terminal emitido desde código nativo (amd64)" title="Mensaje en la terminal emitido desde código nativo (amd64)"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/images/JniHelloWorld-arm_hu6c56be07a094fe8914ade92188032253_34069_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Mensaje en la terminal emitido desde código nativo (ARM)"><img src="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/images/JniHelloWorld-arm_hu6c56be07a094fe8914ade92188032253_34069_300x200_fit_box_3.png" width="300" height="193" alt="Mensaje en la terminal emitido desde código nativo (ARM)" title="Mensaje en la terminal emitido desde código nativo (ARM)"  class="lozad "></a></p>
+<figcaption>Mensaje en la terminal emitido desde código nativo en un sistema amd64 y ARM</figcaption>
+</figure>
+</div>
+<p>Ente ejemplo usa Java 8 y requiere instalar el compilador gcc para compilar la librería con código nativo. <a href="https://gradle.org/">Gradle</a> ofrece soporte para <a href="https://docs.gradle.org/3.4.1/userguide/native_software.html">compilar código nativo con su plugin</a>, sin embargo, he preferido usar y conocer los comandos javah y gcc sin usar Gradle. En el siguiente artículo mostraré el ejemplo del sensor DHT11 usando JNI y código nativo en C llamando a métodos de un objeto Java desde código C.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeJniHelloWorldLocal</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://blog.dogan.io/2015/08/15/java-jni-jnr-go/">GO: Call me maybe, Java!</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html">Java Native Interface Specification</a></li>
+<li><a href="http://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html">Java Programming Tutorial, Java Native Interface (JNI)</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/</id>
         <title>Introducción y ejemplo de cluster de contenedores con Docker Swarm</title>
@@ -44,8 +166,7 @@
 <p>Una de las propiedades interesantes del <em>networking</em> de Docker Swarm es que ofrece incorporado balanceo de carga, esto es, si el servicio de nginx del ejemplo estuviese formado por dos instancias las peticiones se distribuirían entre las instancias usando el método <em>round-robin</em>. Otra característica interesante si se observa el ejemplo con detalle es que da igual el nodo al que hagamos la petición que la respuesta se obtendrá igualmente, esto es, aunque la petición se haga al nodo 01 y realmente el contenedor del servidor nginx se esté ejecutando en el nodo 02 la petición se realizará correctamente gracias al <em>routing mesh</em> del <em>networking</em> de Docker Swarm, esto es gracias a que cada servicio tiene asignada una dirección IP, como se ha visto anteriormente en la salida del comando <code>drill</code>.</p>
 <p>En este vídeo de <a href="https://asciinema.org/">asciinema</a> se ve en funcionamiento todos los anteriores comandos. Y en la aplicación de VirtualBox estarán las máquinas virtuales de cada uno de los nodos que crea el ejemplo. En el vídeo se aprecia que el servicio de nginx se está ejecutando en el nodo 02 cuando se listan los procesos de Docker de cada nodo con <em>docker ps</em>, nótese sin embargo que al hacer un petición HTTP a cualquiera de los nodos se devuelve la página de inicio de nginx ya que gracias al <em>routing mesh</em> de Docker Swarm la petición se redirige de forma transparente para el cliente y el servicio al nodo donde realmente se está ejecutando el contenedor de nginx.</p>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/107868.js" id="asciicast-107868" async></script>
-<noscript><a href="https://asciinema.org/a/107868" target="_blank"><img src="https://asciinema.org/a/107868.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/107868" target="_blank"><amp-img src="https://asciinema.org/a/107868.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <div class="media">
 <figure>
@@ -432,6 +553,205 @@
         
     </entry>
     <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/</id>
+        <title>Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web</title>
+        <updated>2017-11-06T20:00:00+01:00</updated>
+        <published>2017-02-28T22:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Al escribir este artículo patrocinado sobre Clouding.io he podido probar de primera mano el crear un servidor virtual basado en la computación en la nube. Después de probarlo me parece una opción sencilla y sin complicaciones, adecuada y más que suficiente desde el rango de proyectos más pequeños de presencia en internet, blogs o servicios web y con capacidad suficiente hasta los proyectos más grandes y exigentes de cualquier empresa. Además, con la característica diferenciadora de ofrecer soporte en español en caso de necesitar algún tipo de asistencia o ayuda.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/clouding.svg" width="300" height="222" alt="Clouding.io" title="Clouding.io"  class=""></p>
+</div>
+<p>Toda página web, blog y servicio que está accesible en internet ha de ser hospedado en algún servidor. Por motivos de fiabilidad, también coste y flexibilidad se suele contratar un servicio de hospedaje de los muchos que hay en internet. Desde no hace tanto tiempo ha surgido una modalidad de hospedaje que permite mayor flexibilidad, la llamada <a href="https://en.wikipedia.org/wiki/Cloud_computing">cloud computing</a> o computación en la nube, cuya características diferenciadoras son permitir variar de forma elástica, aumentando o reduciendo, los recursos de computación utilizados ya sea de procesador, memoria, almacenamiento o transferencia de datos. Otra característica de la computación en la nube es que es inmediata (en cuestión de minutos) sin necesidad de trámites administrativos o tiempos de espera, los servicios de computación en la nube incluyen paneles de administración para los servidores accesibles a través de un navegador con aplicaciones sencillas o incluso interfaces basadas en linea de comandos de modo que es posible automatizar las tareas de sistemas con <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>.</p>
+<p>Hay múltiples opciones de computación en la nube algunas con más servicios y funcionalidades pero también más complejas y no necesarias para proyectos sencillos y no muy grandes. Una de las opciones de computación en la nube sencilla pero suficiente en muchos casos es <a href="https://clouding.io/">Clouding.io</a> que en la opción más básica ofrece un servidor con <strong>1/2 núcleo de CPU, 1 GiB de memoria, 5 GiB de almacenamiento persistente de estado sólido o SSD y 2 TiB de datos de transferencia a un precio de 3 € + IVA al mes</strong> (unos 3.5 € con IVA incluido), precio incluso más económica que otras opciones de servidores en la nube.</p>
+<p>Para un página web con archivos estáticos de presencia en internet o un blog como Blog Bitix que solo utiliza recursos estáticos (HTML, CSS, JavaScript e imágenes) lo más básico ya sería suficiente y para un blog con <a href="https://wordpress.org/">Wordpress</a> utilizando 2 GiB y un precio de 9 € al mes también debería ser más que suficiente para un tráfico respetable en cantidad.</p>
+<p>Una de las ventajas del <em>cloud computing</em> es la elasticidad que permite cambiar en cualquier momento los recursos reservados según las necesidades como la cantidad de memoria, núcleos de procesador o espacio en disco, tanto para reservar más recursos o para disminuir los recursos utilizados y también el coste. En la página de Clouding.io está la simple política de precios según los recursos reservados. <strong>Desde 1 GiB hasta 192 GiB de memoria, desde 1 hasta 48 cores de CPU y desde 5 GiB hasta 1900 GiB de almacenamiento SSD</strong> por servidor cubriendo las necesidades hasta de las aplicaciones más exigentes.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-web_hu6d459e25f76ec896873005b1fc0287df_217640_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página web de Clouding.io"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-web_hu6d459e25f76ec896873005b1fc0287df_217640_650x450_fit_box_3.png" width="650" height="442" alt="Página web de Clouding.io" title="Página web de Clouding.io"  class="lozad "></a></p>
+<figcaption>Página web de Clouding.io</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="infraestructura-_cloud_-de-clouding">Infraestructura <em>cloud</em> de Clouding</h3>
+<p>Algunas de las características de Clouding.io algo más detalladas en su página web es que ofrecen soporte en español y discos SSD rápidos para el almacenamiento además de las siguientes:</p>
+<ul>
+<li>Potente: procesadores de última generación, redes de alta velocidad y baja latencia, almacenamiento redundante, virtualización de alto rendimiento con KVM, cache inteligente y discos SSD.</li>
+<li>Estable: Triple Réplica, Auto Reparación, Datacenter Tier 4, Calidad Empresarial, Protección de Red, Hosting DNS.</li>
+<li>Flexible: Cloud Hosting por Horas, Windows Cloud, Linux Cloud, Configuración a medida, Ampliaciones temporales, Activación inmediata.</li>
+<li>Fácil: Soporte de Calidad, Cloud Pros, Teclado y Monitor Remoto, Como y cuando quieras, DIY: Hazlo tú mismo, Comunidad.</li>
+</ul>
+<p>En el blog de Clouding.io hay artículos interesantes y tiene una comunidad con una base de conocimiento y una sección de preguntas y respuestas para resolver cualquier duda que nos surja, todo en español. Las imágenes de sistemas operativos que ofrecen son las siguientes en las que se incluyen la opción de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> aunque siendo este un blog más afín al software libre recomiendo una de las versiones de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, una ventaja es que el precio es más barato. De <a href="https://www.ubuntu.com/">Ubuntu</a> hay múltiples versiones aunque siendo el propósito prestar un servicio durante periodos de tiempo largos lo recomendable es utilizar una versión <abbr title="Long Term Support">LTS</abbr> o de soporte prolongado. También es posible otras distribuciones populares como sistema operativo como <a href="https://www.debian.org/">Debian</a> y <a href="https://www.centos.org/">CentOS</a>.</p>
+<p>Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación <em>cloud</em>, configuración de red privada para mayor seguridad además de una API que permite automatizar tareas. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-1_hu47cae0a478570364adf19f84fbfbe4d4_94578_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-1_hu47cae0a478570364adf19f84fbfbe4d4_94578_200x150_fit_box_3.png" width="200" height="115" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-2_hud8f3f8d7341ef400d32f1a50a52163e9_95722_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-2_hud8f3f8d7341ef400d32f1a50a52163e9_95722_200x150_fit_box_3.png" width="200" height="114" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-3_hu5696f2a73e44764296c3694618fa04a5_92878_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-3_hu5696f2a73e44764296c3694618fa04a5_92878_200x150_fit_box_3.png" width="200" height="114" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-4_hu141d7784ad9fac9f3ec5f057f7862247_99197_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-4_hu141d7784ad9fac9f3ec5f057f7862247_99197_200x150_fit_box_3.png" width="200" height="115" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-5_hu36c7e1637319c262e9aab10087164207_92561_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-5_hu36c7e1637319c262e9aab10087164207_92561_200x150_fit_box_3.png" width="200" height="118" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-6_hua7694af4fd912997d20e00b13a1244ee_90902_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-6_hua7694af4fd912997d20e00b13a1244ee_90902_200x150_fit_box_3.png" width="200" height="117" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a></p>
+<figcaption>Características de Clouding</figcaption>
+</figure>
+</div>
+<p>Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-1_hua0b71a493c7e0f9a963194c3eecb131d_129895_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-1_hua0b71a493c7e0f9a963194c3eecb131d_129895_200x150_fit_box_3.png" width="161" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-2_hu26a10119971413dd8558a72c1e104fed_135238_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-2_hu26a10119971413dd8558a72c1e104fed_135238_200x150_fit_box_3.png" width="160" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-3_huee52e53912c36303bac457dd7e3703da_127867_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-3_huee52e53912c36303bac457dd7e3703da_127867_200x150_fit_box_3.png" width="158" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-4_hu5cd5cc7fdf3eed52fa514d1d014559e6_123773_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-4_hu5cd5cc7fdf3eed52fa514d1d014559e6_123773_200x150_fit_box_3.png" width="159" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-5_hu407ad9e63341590400f3617a98a4b99b_124760_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-5_hu407ad9e63341590400f3617a98a4b99b_124760_200x150_fit_box_3.png" width="158" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a></p>
+<figcaption>Infraestructura de Clouding</figcaption>
+</figure>
+</div>
+<p>Son varias las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-clientes_hub824dfca607c3f0a0eb0c96ed75b2a20_126653_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Clientes de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-clientes_hub824dfca607c3f0a0eb0c96ed75b2a20_126653_200x150_fit_box_3.png" width="188" height="150" alt="Clientes de Clouding" title="Clientes de Clouding"  class="lozad "></a></p>
+<figcaption>Clientes de Clouding</figcaption>
+</figure>
+</div>
+<h3 id="crear-un-servidor-_cloud_-en-clouding">Crear un servidor <em>cloud</em> en Clouding</h3>
+<p>Para probar su servicio ofrecen un cupón de 5 €, que con la opción más básica son unos 45 días de uso continuado para evaluar su servicio sin compromiso. El registro requiere validar una cuenta de correo electrónico, móvil y tarjeta de crédito. Requerir el móvil y la tarjeta de crédito para probar el servicio es algo excesivo pero quizá necesario para evitar <em>spam</em> y usos no deseados. Realizado el registro ya está disponible el acceso al panel de administración desde el que crear nuevos servidores, arrancarlos, modificarlos, pararlos o eliminarlos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/registro_huae5c4934c92475d27870cebea28f77ff_60890_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pasos de verificación del registro"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/registro_huae5c4934c92475d27870cebea28f77ff_60890_300x200_fit_box_3.png" width="300" height="143" alt="Pasos de verificación del registro" title="Pasos de verificación del registro"  class="lozad "></a></p>
+<figcaption>Registro</figcaption>
+</figure>
+</div>
+<p>Completado el registro accediendo al panel de administración en la sección servidores podremos crear las instancias y con que cantidad de recursos reservados, para ajustar el precio y dada la elasticidad de los servidores se puede empezar por las opciones mínimas e ir subiendo hasta que los recursos sean suficientes para el correcto funcionamiento de servidor según los recursos necesarios.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/panel-administracion_hua8cc9f49dd164b7b495598d82a88e5ea_30889_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Panel de administración"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/panel-administracion_hua8cc9f49dd164b7b495598d82a88e5ea_30889_300x200_fit_box_3.png" width="300" height="143" alt="Panel de administración" title="Panel de administración"  class="lozad "></a></p>
+<figcaption>Panel de administración</figcaption>
+</figure>
+</div>
+<p>Como utilidad Clouding.io ofrece un panel donde gestionar los registros DNS del dominio que contratemos y conocer los nombre de <em>host</em> y direcciones IP de los servidores de DNS de Clouding.io. Casi seguro que la entidad registradora del dominio que le asignemos al servicio para su acceso también tenga la opción de administrar los registros DNS, usar el de Clouding.io es más por unificar en un solo sitio toda la administración del servidor. En las opciones avanzadas se pueden administrar multitud de tipos de registro DNS.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/dns_hu41e10548ff765daddec6c6cb902f451b_53127_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administración DNS"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/dns_hu41e10548ff765daddec6c6cb902f451b_53127_300x200_fit_box_3.png" width="300" height="143" alt="Administración DNS" title="Administración DNS"  class="lozad "></a></p>
+<figcaption>Administración DNS</figcaption>
+</figure>
+</div>
+<p>La sección principal es la de <em>Servidores</em> donde hay tres pestañas: una para los servidores, otra para las reglas de <em>firewall</em> para controlar el tráfico entrante y saliente de cada servidor y otra para las <em>llaves SSH</em> que usaremos para conectarnos desde nuestro equipo de forma segura. Seleccionado las características del servidor (memoria, procesadores y espacio en disco) al cabo de unos momentos el servidor se iniciará y estará disponible para que nos conectemos mediante SSH o desde la terminal con interfaz web ofrecida. Desde el listado de servidores podremos pararlo, reiniciarlo, redimensionarlo o eliminarlo. En la pestaña <em>Acceso</em> obtendremos el nombre de <em>host</em> asignado y la dirección IP privada y pública asignada, así como la contraseña del usuario <em>root</em>. En la pestaña <em>Estadísticas</em> monitorizaremos el estado del servidor y conoceremos si es necesario redimiensionarlo en algún parámetro.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/servidor_hu3131f9c01206c90471248ec20a9654a7_37137_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Parámetros de acceso de un servidor"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/servidor_hu3131f9c01206c90471248ec20a9654a7_37137_300x200_fit_box_3.png" width="300" height="143" alt="Parámetros de acceso de un servidor" title="Parámetros de acceso de un servidor"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/acceso_huc8456af10ea1e5396a7fdc1b23cabe2c_91973_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Parámetros de acceso de un servidor"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/acceso_huc8456af10ea1e5396a7fdc1b23cabe2c_91973_300x200_fit_box_3.png" width="255" height="200" alt="Parámetros de acceso de un servidor" title="Parámetros de acceso de un servidor"  class="lozad "></a></p>
+<figcaption>Un servidor y sus parámetros de acceso</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nuevo-servidor_hu6fae8938a73c88b555c9f18a38a80ffa_82256_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nuevo servidor"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nuevo-servidor_hu6fae8938a73c88b555c9f18a38a80ffa_82256_300x200_fit_box_3.png" width="290" height="200" alt="Nuevo servidor" title="Nuevo servidor"  class="lozad "></a></p>
+<figcaption>Nuevo servidor</figcaption>
+</figure>
+</div>
+<p>Las reglas del <em>firewall</em> por defecto son demasiado permisivas, si solo necesitamos que el puerto 80, el del servidor web, esté abierto el resto de reglas para otros puertos se pueden eliminar para evitar posibles agujeros de seguridad. Una cosa buena es que se pueden crear múltiples reglas de seguridad y aplicar a cada servidor la más conveniente.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/firewall_hu9d750e187604d5487e9e11027a30a400_116554_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Reglas de firewall"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/firewall_hu9d750e187604d5487e9e11027a30a400_116554_300x200_fit_box_3.png" width="210" height="200" alt="Reglas de firewall" title="Reglas de firewall"  class="lozad "></a></p>
+<figcaption>Reglas de firewall</figcaption>
+</figure>
+</div>
+<p>Las llaves SSH son necesarias para conectarnos al servidor y lanzar comandos desde la terminal. Generada una llave SSH desde el apartado <em>Llaves SSH</em> descargaremos la clave privada, la añadiremos al directorio <em>~/.ssh</em> y configuraremos el archivo <em>~/.ssh/config</em> para acceder al servidor.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/llaves-ssh_huea62ffdec855ca869e85cc274ad4d7d3_30472_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Claves SSH"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/llaves-ssh_huea62ffdec855ca869e85cc274ad4d7d3_30472_300x200_fit_box_3.png" width="300" height="143" alt="Claves SSH" title="Claves SSH"  class="lozad "></a></p>
+<figcaption>Claves SSH</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Host 6ff66804-d8f0-4b4e-a176-1e30a40a0672.clouding.host&#10;&nbsp;&nbsp;&nbsp;&nbsp;HostName 6ff66804-d8f0-4b4e-a176-1e30a40a0672.clouding.host&#10;&nbsp;&nbsp;&nbsp;&nbsp;User root&#10;&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/clouding.pem</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>config</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-----BEGIN RSA PRIVATE KEY-----&#10;MIIEpQIBAAKCAQEA2kXDUI1E8VcfPUf6YLju2bBPAjy3Y8+GTJMHmDikpPt+uTp4&#10;gt5miCFYnZYJB4g3/o/sUPLHBqnQN23jlXn4s0xe/20hKc6iDPSoJEjurqCrpRPj&#10;eYwfnes3xdPXJujgAUXodTtPhoQMfmKHvw9mgEwHA6QKRyU83/ZXKldywBDet3Vh&#10;NcNayFEzBsLWR1niI0/SKu903XLszS2l93tsB+hhQzD44G57AKJgpQZ+wPkXD4yB&#10;KWVUjLodOGSLm00S5EqyQDPZb1QosFu/eFGnriOlA1CY2+Ef+EkQ6ydBRGrS6kY7&#10;uharn+9wZNUAXc+542iUlW7GNfVijd1sAZVxfQIDAQABAoIBAFkVuA2cWtMVd86P&#10;HgVz9Sgr6VNEbKT0AiAmsibSl4AulR4MWzsugjJ1SbGnlq/YTOI843p2W/zAOhcl&#10;ZomPao3jUbJ2W96wUztub2G/0oq7UNLjNyhYpF7TrcO0Hk/nI+XhHmsade603lSG&#10;6lh0dKVQYlx+CyPWcu4FoLXLUy5H80+s40oAbGi4Cd/Ldozcno7ael3CmmAfqc3N&#10;r2xSxZregTEbBtl4vV3a0T4YONgsj6qW9rXj3asC6lu9ndXhzOlTt/yc+uU4/VND&#10;f5oxT/oariimRlH+YAE0hJHcfltsvDAn/XBhndbBb3aIThcoreWHEYeq/TiCR+KO&#10;hPOYEAECgYEA9CRLr3uT1VbOAtjrcnziitI2iJMMqo4W/PXZMBUeWOccBp+bQUQc&#10;vR7gYy605iIh413ytDIbZE8rvR4XVi+DU9S38GO1Wa1NorTUym3LqA2GhzCeaY5F&#10;eeb085SwK7cqha1ye4h+1eHh1jTJcn+6oCcnl0oeUeBvvlCtiQ8s0QECgYEA5N/N&#10;...&#10;-----END RSA PRIVATE KEY-----</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>clouding.pem</span>
+    </div>
+</div>
+<p>En los ajustes veremos el saldo disponible que se irá descontando según los recursos consumidos durante el periodo de tiempo utilizados. Una cosa importante es que aunque el servidor esté apagado seguirá contabilizándose en la facturación. Podemos elegir recibir notificaciones cuando el saldo de la cuenta sea bajo para realizar una recarga.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ajustes_hu3abe75b398785d9c4d59314317679cd1_110183_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ajustes, facturación e informes"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ajustes_hu3abe75b398785d9c4d59314317679cd1_110183_300x200_fit_box_3.png" width="217" height="200" alt="Ajustes, facturación e informes" title="Ajustes, facturación e informes"  class="lozad "></a></p>
+<figcaption>Ajustes, facturación e informes</figcaption>
+</figure>
+</div>
+<p>Una de las primeras cosas aconsejables realizar es tener acceso mediante SSH descargando la clave privada desde le apartado <em>Llaves SSH</em>, con GNU/Linux no se necesita mucho más para conectarse al servidor, en Windows se puede utilizar un programa como <a href="https://www.putty.org/">PuTTY</a>. En cualquier caso siempre está disponible el acceso vía web. Otra de las cosas que a realizar es acceder al servidor SSH mediante un dominio propio que también con anterioridad hay que registrar. Y también es recomendable actualizar todos los paquetes o actualizaciones de seguridad del sistema.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ssh_hu496b30201e505a3438bf4a6b41205b72_78898_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Acceso mediante SSH"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ssh_hu496b30201e505a3438bf4a6b41205b72_78898_300x200_fit_box_3.png" width="300" height="164" alt="Acceso mediante SSH" title="Acceso mediante SSH"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/consola-vnc_hu7a23f71cd1c51143e57e920da827f002_49236_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Acceso mediante consola VNC"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/consola-vnc_hu7a23f71cd1c51143e57e920da827f002_49236_300x200_fit_box_3.png" width="300" height="143" alt="Acceso mediante consola VNC" title="Acceso mediante consola VNC"  class="lozad "></a></p>
+<figcaption>Acceso mediante SSH y consola VNC</figcaption>
+</figure>
+</div>
+<p>Con acceso vía SSH al servidor ya es posible administrarlo con una herramienta como <a href="https://www.ansible.com/">Ansible</a> instalando paquetes, actualizar el servidor y configurar servicios como los servidores web <a href="https://nginx.org/">nginx</a> o <a href="https://httpd.apache.org/">Apache</a>, <a href="https://www.docker.com/">Docker</a> y otra multitud de tareas que permite esta herramienta. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2021/12/aprovisionar-un-servidor-en-la-infraestructura-cloud-de-clouding-con-ubuntu-y-nginx-usando-ansible-y-protocolo-seguro-https-con-lets-encrypt/">Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let’s Encrypt</a> muestro como aprovisionar de forma automatizada un servidor <em>cloud</em> de Clouding.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nginx_hua6e3fe23dbf811bd6c8adc84847a8465_43808_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servidor NGINX"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nginx_hua6e3fe23dbf811bd6c8adc84847a8465_43808_300x200_fit_box_3.png" width="300" height="143" alt="Servidor NGINX" title="Servidor NGINX"  class="lozad "></a></p>
+<figcaption>Servidor NGINX</figcaption>
+</figure>
+</div>
+<p>He encontrado en su blog algunos artículos interesantes y base de conocimiento. Otros artículos de interés son los que escribí en la <a href="https://picodotdev.github.io/blog-bitix/series/web/">serie web</a> en la que comentaba aspectos como HTTP/2, HTTPS, redirecciones o GZIP.</p>
+<p>En definitiva Clouding.io es una opción de computación en la nube sencilla, con una política de precios simple y adecuada para proyectos desde pequeños de páginas web y presencia en internet hasta medianos que requieren una base de datos y tenga un tráfico ya notable, con soporte en español y que se puede probar sin compromiso. Al ser computación en la nube ofrece gran flexibilidad y ajustar el precio a los recursos consumidos, al usar discos SSD el buen rendimiento ya lo he notado al probar su servicio cuando he actualizado los paquetes del servidor e instalado el de nginx. Según las características anunciadas de redundancia la fiabilidad es destacable para que no haya caídas de servicio.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="patrocinado"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
+    <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/</id>
         <title>Desempaquetado del kit de iniciación a la electrónica para la Raspberry Pi</title>
         <updated>2017-02-25T23:30:00+01:00</updated>
@@ -641,8 +961,7 @@
     </div>
 </div>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/102785.js" id="asciicast-102785" async></script>
-<noscript><a href="https://asciinema.org/a/102785" target="_blank"><img src="https://asciinema.org/a/102785.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/102785" target="_blank"><amp-img src="https://asciinema.org/a/102785.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <p>La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.</p>
 <p>Los archivos <em>unit</em> propios deben ser ubicados en el directorio <em>/etc/systemd/system/</em>, siendo el directorio <em>/usr/lib/systemd/system/</em> donde se ubican los instalados por los paquetes del sistema. Iniciado el servicio con el comando <code>sudo systemctl start spring-boot-jaxrs.service</code>, si queremos habilitarlo con el inicio del sistema usamos el comando <code>sudo systemctl enable spring-boot-jaxrs.service</code>. Para ver el estado del servicio usamos el comando <code>sudo systemctl status spring-boot-jaxrs.service</code>.</p>
@@ -863,8 +1182,7 @@ willing to read the documentation, and solve their own problems.</p>
 <h3 id="vídeo-de-instalación-del-sistema-base-con-alis">Vídeo de instalación del sistema base con alis</h3>
 <p>El siguiente vídeo capturado con <a href="https://asciinema.org/">asciinema</a> muestra como utilizando alis se instala Arch Linux en una computadora con el proceso completo de la instalación base del sistema.</p>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
-<noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/418524" target="_blank"><amp-img src="https://asciinema.org/a/418524.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <h3 id="código-fuente-de-alis">Código fuente de alis</h3>
 <p>El código del instalador no es muy complicado y mucho más sencillo que otros <em>scripts</em> interactivos similares, al no mezclar los comandos de la instalación con los mensajes interactivos que hacen preguntas y esperan respuestas, además después de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario introduzca más datos de forma interactiva.</p>
@@ -1537,168 +1855,6 @@ willing to read the documentation, and solve their own problems.</p>
                 <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/09/localizacion-de-un-comando-y-paquete-propietario-de-un-archivo-en-gnu-linux/</id>
-        <title>Localización de un comando y paquete propietario de un archivo en GNU/Linux</title>
-        <updated>2016-09-03T13:00:00+02:00</updated>
-        <published>2016-09-03T13:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/09/localizacion-de-un-comando-y-paquete-propietario-de-un-archivo-en-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
-</div>
-<p>Usando alguna distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en algún momento nos interesará saber a qué paquete de los que tenemos instalados pertenece un determinado comando o a qué paquete pertenece un determinado archivo del sistema.</p>
-<p>Para saber en qué paquete está un determinado archivo primero deberemos conocer la ruta absoluta del archivo en cuestión. Si se trata de un comando con el comando <code>which</code> conoceremos la ubicación absoluta. Por ejemplo, para conocer la ubicación de el comando <code>java</code> usamos:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ which java&#10;/usr/bin/java&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>which.sh</span>
-    </div>
-</div>
-<p>Conociendo la ruta absoluta del archivo y con el gestor de paquetes de la distribución podremos conocer en qué paquete está contenido y por qué paquete ha sido instalado o es su propietario. En <a href="https://www.archlinux.org/">Arch Linux</a> se averigua con el siguiente comando:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pacman -Qo /usr/bin/java&#10;/usr/bin/java está contenido en java-runtime-common 2-2&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-java.sh</span>
-    </div>
-</div>
-<p>En Arch Linux <em>java-runtime-common</em> es un paquete que nos permite cambiar la versión de la máquina virtual a usar en el sistema pudiendo intercambiar entre Java 7 y Java 8, esto se realiza con algunos enlaces simbólicos.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ls -l /usr/bin/java&#10;lrwxrwxrwx <span class="m">1</span> root root <span class="m">37</span> nov  <span class="m">2</span>  <span class="m">2014</span> /usr/bin/java -&gt; /usr/lib/jvm/default-runtime/bin/java&#10;&#10;$ ls -l /usr/lib/jvm/default-runtime&#10;lrwxrwxrwx <span class="m">1</span> root root <span class="m">18</span> dic  <span class="m">4</span>  <span class="m">2014</span> /usr/lib/jvm/default-runtime -&gt; java-8-openjdk/jre</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>ls.sh</span>
-    </div>
-</div>
-<p>Si queremos conocer el paquete del binario <code>java</code> usaremos la ruta absoluta en el comando para averiguarlo con el gestor de paquetes ya sea con <code>pacman</code> o <code>yaourt</code>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pacman -Qo /usr/lib/jvm/java-8-openjdk/bin/java&#10;/usr/lib/jvm/java-8-openjdk/bin/java está contenido en jdk8-openjdk 8.u102-1&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-java8.sh</span>
-    </div>
-</div>
-<p>En las distribuciones basadas en paquetes <em>.deb</em> como <a href="https://www.debian.org/">Debian</a> o <a href="https://www.ubuntu.com/">Ubuntu</a> el comando es el siguiente:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ dpkg -S /usr/bin/java&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>dpkg.sh</span>
-    </div>
-</div>
-<p>Y en las distribuciones basadas en <em>.rpm</em> como como <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RedHat</a> y <a href="https://fedoraproject.org/">Fedora</a>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ rpm -qf /usr/bin/java&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>rpm.sh</span>
-    </div>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/</id>
-        <title>Cómo configurar una impresora HP en red en Arch Linux</title>
-        <updated>2016-08-28T15:00:00+02:00</updated>
-        <published>2016-08-28T10:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Después de mucho tiempo sin tener configurada una impresora en red decidí dedicarle un tiempo a realizar la configuración. Con un par de errores que me encontré finalmente conseguí realizar correctamente la impresión de prueba con el modelo de impresora en concreto del que dispongo.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
-</div>
-<p>Uso <a href="https://www.archlinux.org/">Arch Linux</a> desde hace ya más de un lustro, en mi equipo personal e incluso en el equipo del trabajo. Hasta hace poco cuando necesitaba imprimir llevaba el documento en formato PDF en una memoria USB a una copistería y allí los imprimía dado que no tenía configurado mi equipo para usar la impresora en red, más que nada porque no le había dedicado de tiempo para hacerlo. Por último, encontré un momento y realice la configuración de un impresora en red <em>Hewlett Packard Color LaserJet MFP M476dw</em> con <abbr title="Common Unix Printing System"><a href="https://www.cups.org/">CUPS</a></abbr> en Arch Linux no sin encontrarme con algunos algunos problemas que finalmente conseguí resolver.</p>
-<p>La <a href="https://wiki.archlinux.org/">wiki de Arch Linux</a> es una de la mejores documentaciones que hay en GNU/Linux pero en el caso de la <a href="https://wiki.archlinux.org/index.php/CUPS">versión en inglés de CUPS</a> tiene bastantes secciones desactualizadas, la <a href="https://wiki.archlinux.org/index.php/CUPS_%28Espa%C3%B1ol%29">versión en español de CUPS</a> está mejor pero aún así siguiéndolas no conseguí instalar la impresora. Tuve que hacer varias búsquedas en foros.</p>
-<p>Lo primero necesario a instalar es el paquete de CUPS y el controlador de la impresora en este caso HP, posteriormente iniciar como superusuarios el servicio de CUPS con systemd y avahi para el descubrimiento de impresoras y activarlos con el inicio del sistema si así lo deseamos:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ yaourt -S cups hplip&#10;<span class="c1"># systemctl start org.cups.cupsd.service</span>&#10;<span class="c1"># systemctl start avahi-daemon.service</span>&#10;<span class="c1"># systemctl enable org.cups.cupsd.service</span>&#10;<span class="c1"># systemctl enable avahi-daemon.service</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>install.sh</span>
-    </div>
-</div>
-<p>CUPS posee un panel de administración accesible con el navegador en la dirección <em>http://localhost:631/admin</em>. Pulsando el botón <em>Añadir impresora</em> en el panel de administración de CUPS iniciamos el asistente para añadir la impresora en el que avahi nos detectará la impresora en red y deberemos seleccionar la marca junto con el modelo específico. Al añadir la impresora se nos preguntará por un usuario y contraseña, como nombre usuario deberemos introducir <em>root</em> y como contraseña la que hayamos establecido en el sistema para el superusuario. Desde el panel de impresoras de <a href="https://www.gnome.org/">GNOME</a> se debería poder añadir la impresora, sin embargo, a mi me daba algún tipo de error de modo que lo hice desde CUPS.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-administracion_hudc430c1d0b79fc37f54e2fb488136a47_99627_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administración de CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-administracion_hudc430c1d0b79fc37f54e2fb488136a47_99627_300x200_fit_box_3.png" width="192" height="200" alt="Administración de CUPS" title="Administración de CUPS"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-1_hu23672d541ad28c4b3621647a2a188942_87595_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente añadir impresora en CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-1_hu23672d541ad28c4b3621647a2a188942_87595_300x200_fit_box_3.png" width="192" height="200" alt="Asistente añadir impresora en CUPS" title="Asistente añadir impresora en CUPS"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-2_hua295b5680d61f0c97e4275a5bb18d9ca_76911_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente añadir impresora en CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-2_hua295b5680d61f0c97e4275a5bb18d9ca_76911_300x200_fit_box_3.png" width="192" height="200" alt="Asistente añadir impresora en CUPS" title="Asistente añadir impresora en CUPS"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-3_hua295b5680d61f0c97e4275a5bb18d9ca_88341_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente añadir impresora en CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-3_hua295b5680d61f0c97e4275a5bb18d9ca_88341_300x200_fit_box_3.png" width="192" height="200" alt="Asistente añadir impresora en CUPS" title="Asistente añadir impresora en CUPS"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-4_hua295b5680d61f0c97e4275a5bb18d9ca_125293_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistente añadir impresora en CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-anadir-impresora-4_hua295b5680d61f0c97e4275a5bb18d9ca_125293_300x200_fit_box_3.png" width="192" height="200" alt="Asistente añadir impresora en CUPS" title="Asistente añadir impresora en CUPS"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Finalizado el asistente en la sección <em>Impresoras</em> examinado los detalles de la misma podremos ver los documentos imprimidos o en proceso de impresión. En el desplegable <em>Mantenimiento</em> podremos imprimir una página de prueba con la que comprobaremos que funciona correctamente además de otras acciones sobre los trabajos, en el desplegable <em>Administración</em> podemos eliminarla o modificarla.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-impresoras-1_hu5041c41fde2be410fec7a6c4369d0318_66047_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Impresoras en CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-impresoras-1_hu5041c41fde2be410fec7a6c4369d0318_66047_300x200_fit_box_3.png" width="192" height="200" alt="Impresoras en CUPS" title="Impresoras en CUPS"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-impresoras-2_hu621dbe82b10816177c727ee19c6ff5a8_105575_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Impresoras en CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/cups-impresoras-2_hu621dbe82b10816177c727ee19c6ff5a8_105575_300x200_fit_box_3.png" width="200" height="200" alt="Impresoras en CUPS" title="Impresoras en CUPS"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/gnome-impresoras_hua2343e369c76890d056f3a0712231109_38405_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Impresoras en GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/gnome-impresoras_hua2343e369c76890d056f3a0712231109_38405_300x200_fit_box_3.png" width="300" height="164" alt="Impresoras en GNOME" title="Impresoras en GNOME"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Si la página de prueba no funciona en el archivo <em>/var/log/cups/error_log</em> encontraremos mensajes de error con pistas que nos ayudarán a saber que está fallando. Algunos de los mensajes de error que me encontré al realizar la configuración fué el siguiente.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">[Client 1497] Request from &#34;localhost&#34; using invalid Host: field &#34;HP.local:631&#34;.&#10;No se ha podido obtener el estado de la impresora.&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>error_log</span>
-    </div>
-</div>
-<p>A raíz de este mensaje tuve que añadir en el archivo <em>/etc/hosts</em> el <em>host</em> <em>HP.local</em> con la dirección IP de la impresora en red que averigüé usando la pantalla táctil que ofrece este modelo de impresora (las mayúsculas y minúsculas son importantes).</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">192.168.88.170&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HP.local&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>hosts</span>
-    </div>
-</div>
-<p>Con todo configurado la prueba de impresión realizable tanto desde la página de administración de CUPS como de GNOME se realizó correctamente y este es el resultado. Una vez que esta prueba es satisfactoria podemos imprimir documentos desde las aplicaciones usando el diálogo de impresión donde aparecerá la impresora en red configurada. Además podremos cambiar algunas opciones como imprimir a dos caras o solo a una, imprimir en blanco y negro o a color o usar un perfil de impresión para ahorro de tinta.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/prueba-de-impresion-cups_hu962b3332c45455165946e79fd4853d69_302122_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Prueba de impresión con CUPS"><img src="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/images/prueba-de-impresion-cups_hu962b3332c45455165946e79fd4853d69_302122_300x200_fit_q90_box.jpg" width="179" height="200" alt="Prueba de impresión con CUPS" title="Prueba de impresión con CUPS"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Para otras marcas y modelos de impresoras deberemos instalar otro controlador, en la siguiente <a href="http://www.openprinting.org/printers">base de datos de impresoras</a> encontraremos el controlador aconsejado si en nuestra distribución no está documentado.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.cups.org/">CUPS</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Common_Unix_Printing_System">CUPS</a> (wikipedia)</li>
-<li><a href="https://www.cups.org/documentation.html">Documentación de CUPS</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
         
     </entry>

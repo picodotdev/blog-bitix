@@ -5,12 +5,161 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-12-16T19:00:00+01:00</updated>
+    <updated>2021-12-23T09:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/</id>
+        <title>Introducción y nuevas características de Java EE 7</title>
+        <updated>2016-09-17T12:00:00+02:00</updated>
+        <published>2016-03-11T17:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Java sigue siendo uno de los lenguajes más usado para desarrollar aplicaciones empresariales en entidades públicas o empresas privadas. Proporciona un conjunto de especificaciones que cubren las necesidades funcionales de la mayoría de las aplicaciones y sigue evolucionando, adaptándose a las nuevas tendencias actuales y agregando nuevas funcionalidades de forma estandarizada en la plataforma. Aún así muchas entidades siguen y seguirán usando versiones anteriores a la última tanto de Java EE como de Java.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java-ee.png" width="200" height="213" alt="Java EE" title="Java EE"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Hace ya unos años, en 2013, fue publicada una nueva versión del conjunto de especificaciones que forman parte de <a href="https://www.oracle.com/technetwork/java/javaee/overview/index.html">Java EE</a> con varias novedades y mejoras que aumentan la productividad. Java EE 7 es el conjunto de especificaciones a disposición de las aplicaciones empresariales que son implementadas por cada servidor de aplicaciones donde se ejecutan las <em>apps</em> Java, estas especificaciones describen la funcionalidad y permiten que una aplicación pueda ser ejecutada en cualquier servidor que las implemente ya sea <a href="https://wildfly.org/">WildFly</a>, <a href="https://www.oracle.com/middleware/weblogic/">WebLogic</a> o <a href="https://www.ibm.com/es-es/marketplace/java-ee-runtime/details">WebSphere</a> sin necesidad de grandes cambios o ninguno en absoluto al proporcionar interoperabilidad entre diferentes implementaciones con el objetivo de no estar encadenado a un determinado vendedor.</p>
+<p>Java EE usa como lenguaje de programación Java que incorporando numerosas <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades en la versión 8</a> lo hacen seguir siendo uno de los mejores lenguajes y más usado para el desarrollo de aplicaciones empresariales. Estos son mis <a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 razones para seguir usando Java</a>.</p>
+<p>El modelo clásico de capas en la arquitectura de las aplicaciones Java EE se divide en las siguientes:</p>
+<ul>
+<li>Cliente: normalmente se trata de un navegador pero puede ser un teléfono inteligente o una computadora de escritorio, incluso otra aplicación. Es la que presenta la información al usuario.</li>
+<li>Capa web: se comunica con el cliente y la capa de negocio. Obtiene los datos y los transforman al formato adecuado al cliente generalmente <abbr title="HyperText Markup Language">HTML</abbr> o <abbr title="JavaScript Object Notation">JSON</abbr>.</li>
+<li>Capa de negocio: proporciona y persiste los datos de la capa cliente y contiene la lógica de negocio de la aplicación. Se ejecuta en un servidor de aplicaciones o contenedor de <em>servlets</em>.</li>
+<li>Sistemas de información: donde se persisten los datos de la aplicación, puede ser una base de datos relacional como <a href="https://www.oracle.com/">Oracle</a>, <a href="https://www.mysql.com/">MySQL</a> o <a href="https://www.postgresql.org/">PostgreSQL</a> o una base de datos NoSQL como <a href="https://redis.io/">Redis</a> o <a href="https://www.mongodb.com/">MongoDB</a> u otros sistemas como <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>.</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/images/aplicaciones-multicapa-javaee_hu234c12f8c74ea7af04df3c8545c4ce4e_39774_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones multicapa Java EE"><img src="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/images/aplicaciones-multicapa-javaee_hu234c12f8c74ea7af04df3c8545c4ce4e_39774_300x200_fit_box_3.png" width="291" height="200" alt="Aplicaciones multicapa Java EE" title="Aplicaciones multicapa Java EE"  class="lozad "></a></p>
+<figcaption>Aplicaciones multicapa Java EE</figcaption>
+</figure>
+</div>
+<p>En el <a href="https://www.oracle.com/technetwork/java/javaee/tech/index.html">listado de especificaciones</a> encontramos algunas dedicadas a persistencia en base de datos (JDBC, JPA), transaccionalidad (JTA), procesamiento de peticiones HTTP (Servlets, JSF, REST), generación de HTML (Servlets, JSP, JSF), servicios web basados en REST y SOAP (JAX-RS, JAX-WS), soporte para websockets en el lado del servidor y cliente, <a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">generar, procesar y modificar documentos JSON</a>, validación de objetos, comunicación entre aplicaciones desacoplada con mensajes (JMS), concurrencia, servicios de nombres y descubrimiento o trabajos en lotes entre otras. Las especificaciones y versiones que componen Java EE 7 son:</p>
+<p>Tecnologías aplicaciones Web (websockets, html)</p>
+<ul>
+<li><strong>Java API for WebSocket</strong> 1.0 (nueva)</li>
+<li><strong>Java API for JSON Processing</strong> 1.0 (nueva)</li>
+<li>Java Servlet 3.1</li>
+<li>JavaServer Faces (JSF) 2.2</li>
+<li>Expression Language (EL) 3.0</li>
+<li>JavaServer Pages (JSP) 2.3</li>
+</ul>
+<p>Tecnologías aplicaciones empresariales (persistencia, transaccionalidad, inyección de dependencias, concurrencia, validación, mensajería, correos electrónicos)</p>
+<ul>
+<li><strong>Batch Applications for the Java Platform</strong> 1.0 (nueva)</li>
+<li><strong>Concurrency Utilities for Java EE</strong> 1.0 (nueva)</li>
+<li>Contexts and Dependency Injection for Java (CDI) 1.1</li>
+<li>Dependency Injection for Java 1.0</li>
+<li>Java Persistence (JPA) 2.1</li>
+<li>Java Transaction API (JTA) 1.2</li>
+<li>Java Message Service API (JMS) 2.0</li>
+<li>Enterprise JavaBeans (EJB) 3.2</li>
+<li>Bean Validation 1.1</li>
+<li>JavaMail 1.5</li>
+<li>Interceptors 1.2</li>
+<li>Java EE Connector Architecture (JCA) 1.7</li>
+<li>Common Annotations for the Java Platform 1.2</li>
+</ul>
+<p>Tecnologías servicios web (servicios web REST, SOAP)</p>
+<ul>
+<li>Java API for RESTful Web Services (JAX-RS) 2.0</li>
+<li>Java API for XML-Based Web Services (JAX-WS) 2.2</li>
+<li>Implementing Enterprise Web Services 1.3</li>
+</ul>
+<p>Metadatos de servicios web para la plataforma Java</p>
+<ul>
+<li>Java API for XML-Based RPC (JAX-RPC) 1.1 (Opcional)</li>
+<li>Java API for XML Messaging 1.3</li>
+<li>Java API for XML Registries (JAXR) 1.0</li>
+</ul>
+<p>Tecnologías de gestión y seguridad (autenticación, autorización)</p>
+<ul>
+<li>Java Authentication Service Provider Interface for Containers (JASPIC) 1.1</li>
+<li>Java Authorization Contract for Containers (JACC) 1.5</li>
+<li>Java EE Application Deployment 1.2  (Opcional)</li>
+<li>J2EE Management 1.1</li>
+<li>Debugging Support for Other Languages 1.0</li>
+</ul>
+<p>Especificaciones relacionadas con Java EE en Java SE (bases de datos, XML, gestión)</p>
+<ul>
+<li>Java Database Connectivity (JDBC) 4.0</li>
+<li>Java Architecture for XML Binding (JAXB) 2.2</li>
+<li>Java Management Extensions (JMX) 2.0</li>
+<li>JavaBeans Activation <em>framework</em> (JAF) 1.1</li>
+<li>Java API for XML Processing (JAXP) 1.3</li>
+<li>Streaming API for XML (StAX) 1.0</li>
+</ul>
+<p>Además de incorporar nuevas especificaciones y las existentes recibir mejoras entre las novedades se encuentran varias que facilitan el desarrollo posibilitando en gran medida prescindir de configuración en archivos <abbr title="eXtensible Markup Language">XML</abbr> propensos a errores, ya se inició en Java EE 6, sustituyéndose por definiciones declarativas con anotaciones. Entre las mejoras están:</p>
+<ul>
+<li>Usando la nueva funcionalidad de entrada y salida (NIO) de Java SE los <em>servlets</em> pueden manejar comunicación asíncrona. Se permite <em>upgrade</em> del protocolo lo que permite por ejemplo empezar una petición como HTTP/1.1 y pasar a usar HTTP/2, en WildFly esto es usado para reducir el número de puertos abiertos.</li>
+<li>JPA ahora puede invocar procedimientos almacenados, ejecutar sentencias SQL de <em>update</em> y <em>delete</em> masivas y controlar que entidades son cargadas de forma ansiosa (<em>eager</em>) o vaga (<em>lazy</em>).</li>
+<li>Se continúa avanzando en lo iniciado en versiones anteriores permitiendo usar POJO con anotaciones para facilitar el desarrollo.</li>
+<li>JTA define una nueva anotación que permite a cualquier <em>bean</em> CDI usar transacciones.</li>
+<li>En JAX-RS se añade una API cliente para invocar <em>enpoints</em> REST, se añade soporte para E/S asíncrona tanto para el cliente como para el servidor y <em>hypermedia linking</em>.</li>
+<li>Bean Validation permite validación a nivel de método con mejor integración en el resto de la plataforma Java EE.</li>
+</ul>
+<p>Los servidores de aplicaciones Java pueden implementar todas las especificaciones denominándose <em>full-profile</em> como JBoss/WildFly, WebLogic o WebSphere. Sin embargo, algunas aplicaciones no necesitan todas las funcionalidades definidas en Java EE por lo que algunos servidores como <a href="https://tomee.apache.org/">TomEE</a> también WildFly pueden implementar únicamente un subconjunto para la generación de contenido web, denominándose así <em>web-profile</em>. Otros servidores como <a href="https://tomcat.apache.org/">Tomcat</a> y <a href="https://eclipse.org/jetty/">Jetty</a> son contenedores de <em>servlets</em> que soportan un grupo más reducido de especificaciones de las tecnologías web (únicamente <em>servlet</em>, JSP, EL y WebSocket) pero que siguen siendo suficientes para algunas aplicaciones o usando algunas equivalentes proporcionadas por Spring.</p>
+<p>Tecnologías <em>web-profile</em></p>
+<ul>
+<li>Java Servlet API</li>
+<li>Enterprise Java Bean Lite</li>
+<li>Context and Dependency Injection</li>
+<li>Java Server Faces</li>
+<li>Java Transaction API</li>
+<li>Java Persistence API</li>
+<li>Web Socket</li>
+<li>Bean Validation</li>
+<li>JAX-RS</li>
+<li>JSON-P</li>
+</ul>
+<p>Java EE 7 fué publicada hace ya varios años y muy posiblemente muchas entidades públicas y empresas privadas seguirán usando versiones más antiguas para sus aplicaciones. En el mundo empresarial las aplicaciones se han de mantener funcionando algunos lustros o décadas, para atender este requisito Java en sus 20 años se ha caracterizado por ofrecer compatibilidad hacia atrás en cada nueva versión e incorporar en el lenguaje solo aquellas mejoras que se han mostrado útiles. Esto puede hacer parecer que avanza lentamente, al menos más que otras tecnologías, y que usando las versiones anteriores hoy parezcan obsoletas, en su momento XML era uno de los formatos más empleados para realizar configuración y se usaba profusamente, hoy se están prefiriendo formatos menos verbosos y legibles como JSON y YAML. <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Java 8 ofrece varias novedades en el lenguaje</a> y Java EE 7 usando anotaciones en gran medida hace innecesarios los ficheros XML ambos siguiendo las nuevas tendencias del desarrollo y programación. Algunas personas comparan las tecnologías que prefieren con lo que recuerdan de versiones antiguas de Java o Java EE.</p>
+<p>Java EE ofrece a los desarrolladores un conjunto de especificaciones que cubren las necesidades de un gran número de aplicaciones empresariales y la plataforma ofrece garantías a largo plazo como ha demostrado que le hacen seguir siendo una de opciones preferidas para el desarrollo. La alternativa a Java EE más usada es <a href="https://spring.io/">Spring</a> y sus numerosos proyectos que proporcionan funcionalidades similares sin necesidad de un contenedor <em>full-profile</em>. En cualquiera de estas dos opciones la base de procesamiento y generación de HTML en el lado del servidor son los <em>servlets</em> pero estos trabajan a bajo nivel, no se suelen usar directamente prefiriéndose <em>frameworks</em> de más alto nivel como <a href="https://projects.spring.io/spring-framework/">Spring MVC</a>, <a href="https://tapestry.apache.org/">Apache Tapestry</a>, <a href="https://grails.org/">Grails</a>, <a href="https://struts.apache.org/">Struts</a> u otros. Del mismo modo para el acceso a la base de datos está JDBC pero tampoco se suele usar directamente por ofrecer una API a bajo nivel prefiriendo <a href="https://hibernate.org/">Hibernate</a>, JPA o <a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">jOOQ como alternativa a JDBC a los ORM</a> anteriores. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">Nueva visita a Herramientas para un proyecto Java</a> comento algunas herramientas alternativas o complementarias a algunas de las especificaciones de Java EE.</p>
+<p>Algunos libros que he he leído y me han gustado para conocer las nuevas posibilidades de Java EE 7 son los siguientes, <a href="https://amzn.to/2sEyvVi">Java EE 7 Essentials</a> que no entra en muchos detalles pero hace un repaso general de todo e incluye ejemplos de cada cosa con suficientes pormenores para empezar a programar, <a href="https://amzn.to/2STrgmX">Java EE 7 Development with WildFly</a> entra un poco más en detalle y explica varias cosas del servidor de aplicaciones WildFly, finalmente también es posible consultar el <a href="https://docs.oracle.com/javaee/7/JEETT.pdf">tutorial oficial de Java EE 7</a>.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00EJX7WEQ&amp;linkId=c616c3f3eef393473f0af785d1eb8309" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00RP13D9M&amp;linkId=3708b1d14af899f26e43d0bade797dd7" title="Amazon" class="lozad"></iframe>
+</div>
+<p>El futuro Java EE 8 está planificado para 2017 fecha también planificada para Java 9 en la que se añadirá soporte para HTTP/2 y será la versión 4.0 de los <em>servlets</em>. Pero no hace falta esperar hasta el 2017 para aprovecharnos hoy de las <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">ventajas de HTTP/2 tanto para clientes como servidores</a>, los principales navegadores ya lo soportan y se puede <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">configurar HTTP/2 en varios servidores web y de aplicaciones Java</a> como <a href="https://nginx.org/">Nginx</a>, <a href="https://httpd.apache.org/">Apache HTTPD</a>, WildFly o Jetty. También se ha anunciado que como alternativa a JSF basado en componentes se proporcionará una especificación que implemente el patrón MVC basado en acciones.</p>
+<p>Descrito, en el otro artículo presentaré un <a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/">ejemplo de aplicación usando Java EE 7</a> mostrando algunas de sus funcionalidades como JSF, WebSockets, REST, EJB o JMS usando el <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones WildFly</a>.</p>
+<p>Por cierto, como nota para técnicos, reclutadores, empresas y páginas de empleo, Java EE pasó a llamarse así en el ¡2006!, hace una década, ya es hora actualizarse también y dejar de llamarlo incorrectamente J2EE o JEE.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/">Aplicación de ejemplo usando varias especificaciones de Java EE 7</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Ejemplo de API REST en Java con JAX-RS y Spring Boot</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Java_Platform">Java EE</a></li>
+<li><a href="https://docs.oracle.com/javaee/7/tutorial/">Java EE 7 Tutorial</a></li>
+<li><a href="https://www.oracle.com/technetwork/java/javaee/tech/index.html">Java EE 7 Technologies</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 motivos para seguir usando Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">Introducción al protocolo HTTP/2</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">El servidor de aplicaciones JBoss/WildFly</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">Alternativa a Hibernate u ORM y ejemplo de jOOQ</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/</id>
         <title>Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</title>
@@ -355,8 +504,7 @@
     </div>
 </div>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/36852.js" id="asciicast-36852" async></script>
-<noscript><a href="https://asciinema.org/a/36852" target="_blank"><img src="https://asciinema.org/a/36852.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/36852" target="_blank"><amp-img src="https://asciinema.org/a/36852.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <p>Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.</p>
 <div class="media">
@@ -1268,93 +1416,6 @@ Statistics</em>.</li>
                 <category term="tapestry"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/</id>
-        <title>Cómo buscar los enlaces rotos de un sitio web</title>
-        <updated>2015-12-18T18:00:00+01:00</updated>
-        <published>2015-12-18T18:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Ya tengamos un sitio web, una bitácora, o una aplicación web es recomendable comprobar cada cierto tiempo los enlaces rotos. Las páginas pueden desaparecer o cambiar de dirección y esto provocará páginas no encontradas en los enlaces que las referenciasen. Usando herramientas que automaticen la tarea podemos encontrar enlaces rotos de forma efectiva y rápida.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
-</div>
-<p>La web se basa en un conjunto de páginas donde unas hacen referencia a otras a través de enlaces. Unido a que las páginas que están bajo el control de los sitios referenciados pudiendo desaparecer o cambiar de dirección hace que las referencias puedan dejar de funcionar o necesitar una redirección, el mensaje que nos indicará el navegador es el conocido <em>Página no encontrada</em> o <a href="https://es.wikipedia.org/wiki/Error_404">error 404</a> para indicar lo mismo. Que un sitio web contenga referencias a páginas ya no existentes hace que el usuario no encuentre lo que busque empeorando su experiencia de usuario y que los buscadores tienen en cuenta en el posicionamiento de los resultados de búsqueda. Por estos motivos es recomendable de vez en cuando rastrear los enlaces de un sitio web para buscar <a href="https://en.wikipedia.org/wiki/Link_rot">enlaces rotos</a> cambiándolos por otros nuevos o eliminarlos, ya sean enlaces internos (hacia nuestro propio sitio) o enlaces externos (a otros sitios).</p>
-<p>Otras tareas útiles para mejorar un sitio web es utilizar <a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-para-mejorar-una-pagina-web-en-seo-conformidad-estandares-y-rendimiento/">herramientas para mejorar una página web en SEO, conformidad estándares y rendimiento</a> y hacer las modificaciones detectadas.</p>
-<h3 id="comprobar-enlaces-rotos-con-herramientas-web">Comprobar enlaces rotos con herramientas web</h3>
-<p>Por enlaces o referencias consideramos tanto a páginas como a recursos de imágenes, estilos CSS, JavaScript u otros. Con que un sitio web contenga unas pocas decenas de páginas comprobar manualmente los enlaces se hace una tarea tediosa, que necesita mucho tiempo además de posiblemente no conseguir descubrir todos los enlaces rotos. Hay herramientas disponibles para comprobar los enlaces de forma automatizada. Algunas de estas que he usado recientemente en esta bitácora y con las que he encontrado numerosos enlaces han sido:</p>
-<ul>
-<li><a href="https://validator.w3.org/checklink">W3 Check Link</a></li>
-<li><a href="http://www.drlinkcheck.com">Dr. Link Check</a></li>
-<li><a href="http://www.deadlinkchecker.com/website-dead-link-checker.asp">Deadlink Checker</a></li>
-</ul>
-<p>Después de introducir la dirección del sitio web, que con estas herramientas ha de estar accesible en internet, cada una de ellas nos informará de los enlaces rotos que encuentre indicándonos el enlace roto, el texto del enlace y en qué página está. Con esta información podemos corregir esos enlaces del sitio web, bitácora o aplicación. Después de usarlas hubiera dicho que no tenía tantos en está bitácora, me sirvieron para corregirlos.</p>
-<p>Las ventajas de estas herramientas web sobre las siguientes con wget y LinkChecker es que no requieren instalar ningún software, las desventajas son que suelen tener una limitación en el número de páginas máximo que rastrean y número errores de los que informan, sin embargo, no son excluyentes y utilizando varias da oportunidad de descubrir más enlaces rotos y errores.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/images/w3c-linkchecker_hu291b0b61a136c1cb5589c25a3cbbb5b5_37370_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="W3C Link Checker"><img src="https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/images/w3c-linkchecker_hu291b0b61a136c1cb5589c25a3cbbb5b5_37370_300x200_fit_box_3.png" width="259" height="200" alt="W3C Link Checker" title="W3C Link Checker"  class="lozad "></a></p>
-<figcaption>W3C Link Checker</figcaption>
-</figure>
-</div>
-<h3 id="comprobar-enlaces-rotos-con-wget">Comprobar enlaces rotos con wget</h3>
-<p>Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando <code>wget</code> para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo <em>wget.log</em> tendremos los resultados del rastreo.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ wget –spider -o wget.log -e <span class="nv">robots</span><span class="o">=</span>off -r -p https://picodotdev.github.io/blog-bitix/&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>wget.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">--2020-01-15 21:00:06--  http://xn--spider-vg0c/&#10;Resolviendo xn--spider-vg0c (xn--spider-vg0c)... falló: Nombre o servicio desconocido.&#10;wget: no se pudo resolver la dirección del equipo “xn--spider-vg0c”&#10;--2020-01-15 21:00:06--  https://picodotdev.github.io/blog-bitix/&#10;Cargado certificado CA &#39;/etc/ssl/certs/ca-certificates.crt&#39;&#10;Resolviendo picodotdev.github.io (picodotdev.github.io)... 185.199.108.153, 185.199.109.153, 185.199.111.153, ...&#10;Conectando con picodotdev.github.io (picodotdev.github.io)[185.199.108.153]:443... conectado.&#10;Petición HTTP enviada, esperando respuesta... 200 OK&#10;Longitud: 31602 (31K) [text/html]&#10;Grabando a: “picodotdev.github.io/blog-bitix/index.html”&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp; 0K .......... .......... ..........&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  100% 37,1M=0,001s&#10;&#10;2020-01-15 21:00:07 (37,1 MB/s) - “picodotdev.github.io/blog-bitix/index.html” guardado [31602/31602]&#10;&#10;--2020-01-15 21:00:07--  https://picodotdev.github.io/blog-bitix/assets/favicon.ico&#10;Reutilizando la conexión con picodotdev.github.io:443.&#10;Petición HTTP enviada, esperando respuesta... 200 OK&#10;Longitud: 9662 (9,4K) [image/vnd.microsoft.icon]&#10;Grabando a: “picodotdev.github.io/blog-bitix/assets/favicon.ico”&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp; 0K .........&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100% 80,6M=0s&#10;&#10;2020-01-15 21:00:07 (80,6 MB/s) - “picodotdev.github.io/blog-bitix/assets/favicon.ico” guardado [9662/9662]&#10;&#10;--2020-01-15 21:00:07--  https://picodotdev.github.io/blog-bitix/assets/apple-touch-icon-144-precomposed.png&#10;Reutilizando la conexión con picodotdev.github.io:443.&#10;Petición HTTP enviada, esperando respuesta... 200 OK&#10;Longitud: 4443 (4,3K) [image/png]&#10;Grabando a: “picodotdev.github.io/blog-bitix/assets/apple-touch-icon-144-precomposed.png”&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp; 0K ....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  100% 40,1M=0s&#10;&#10;2020-01-15 21:00:07 (40,1 MB/s) - “picodotdev.github.io/blog-bitix/assets/apple-touch-icon-144-precomposed.png” guardado [4443/4443]&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>wget.log</span>
-    </div>
-</div>
-<p><code>wget</code> es una herramienta con múltiples usos, otro uso que tiene es la de [descargar el contenido de un sitio web completo]</p>
-<h3 id="comprobar-enlaces-rotos-con-linkchecker">Comprobar enlaces rotos con LinkChecker</h3>
-<p>Otra opción es <a href="https://github.com/linkchecker/linkchecker">LinkChecker</a> que además de comprobar los enlaces internos de un sitio web también tiene la opción de comprobar los enlaces del sitio web hacia a los externos. Un modo de ejecución es utilizando <a href="https://www.docker.com/">Docker</a> con lo que no hace falta instalar nada localmente salvo Docker.</p>
-<p>El siguiente comando comprueba los enlaces internos de un sitio web y los externos que contenga generando un archivo de trazas, <em>linkchecker.log</em>, con las comprobaciones de resultado correcto y erróneas. Con el registro de las erróneas es fácil corregirlas.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm -it linkchecker/linkchecker --verbose --check-extern https://picodotdev.github.io/blog-bitix/ &gt; linkchecker.log&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>linkchecker.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">LinkChecker 9.4.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Copyright (C) 2000-2014 Bastian Kleineidam&#10;LinkChecker comes with ABSOLUTELY NO WARRANTY!&#10;This is free software, and you are welcome to redistribute it&#10;under certain conditions. Look at the file `LICENSE&#39; within this&#10;distribution.&#10;Get the newest version at https://linkchecker.github.io/linkchecker/&#10;Write comments and bugs to https://github.com/linkchecker/linkchecker/issues&#10;&#10;Start checking at 2020-01-15 20:06:36+000&#10;&#10;URL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`https://picodotdev.github.io/blog-bitix/&#39;&#10;Real URL   https://picodotdev.github.io/blog-bitix/&#10;Check time 0.586 seconds&#10;D/L time   0.002 seconds&#10;Size&nbsp;&nbsp;&nbsp;&nbsp;   30.86KB&#10;Result&nbsp;&nbsp;&nbsp;&nbsp; Valid: 200 OK&#10;10 threads active,&nbsp;&nbsp;&nbsp;&nbsp;54 links queued,&nbsp;&nbsp;&nbsp;&nbsp;1 link in  65 URLs checked, runtime 1 seconds&#10;&#10;URL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`/blog-bitix/assets/favicon.ico&#39;&#10;Parent URL https://picodotdev.github.io/blog-bitix/, line 19, col 3&#10;Real URL   https://picodotdev.github.io/blog-bitix/assets/favicon.ico&#10;Check time 0.632 seconds&#10;Size&nbsp;&nbsp;&nbsp;&nbsp;   9KB&#10;Result&nbsp;&nbsp;&nbsp;&nbsp; Valid: 200 OK&#10;&#10;URL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`https://picodotdev.github.io/blog-bitix/sitemap.xml&#39;&#10;Parent URL https://picodotdev.github.io/blog-bitix/, line 16&#10;Real URL   https://picodotdev.github.io/blog-bitix/sitemap.xml&#10;Check time 0.912 seconds&#10;D/L time   0.051 seconds&#10;Size&nbsp;&nbsp;&nbsp;&nbsp;   90.27KB&#10;Result&nbsp;&nbsp;&nbsp;&nbsp; Valid: 200 OK&#10;...&#10;URL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http://barrapunto.com/&#39;&#10;Name&nbsp;&nbsp;&nbsp;&nbsp;   `Barrapunto&#39;&#10;Parent URL https://picodotdev.github.io/blog-bitix/pages/links/, line 262, col 5&#10;Real URL   http://barrapunto.com/&#10;Check time 0.260 seconds&#10;Result&nbsp;&nbsp;&nbsp;&nbsp; Error: ConnectionError: HTTPConnectionPool(host=&#39;barrapunto.com&#39;, port=80): Max retries exceeded with url: / (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPConnection object at 0x7f45343fac10&gt;: Failed to establish a new connection: [Errno ...&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>linkchecker.log</span>
-    </div>
-</div>
-<h3 id="comprobar-enlaces-rotos-de-otros-sitios-web-hacia-el-nuestro">Comprobar enlaces rotos de otros sitios web hacia el nuestro</h3>
-<p>Lo anterior nos sirve para detectar los enlaces rotos que tenemos en nuestro sitio hacia otros, seguramente también nos interesará conocer los enlaces rotos que tienen otros sitios hacia el nuestro. Podemos saber a que páginas no encontradas están accediendo los usuarios de nuestro sitio web lanzando un evento personalizado de <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a> en la página para el error 404 que mostremos. Dado que los enlaces hacia nuestro sitio incluidos en otros no podemos modificarlos si se tratase de alguno especialmente importante al menos podremos hacer una redirección para que los usuarios lleguen al contenido más apropiado en vez de a una página no encontrada:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;404&#39;</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">);</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>analytics.js</span>
-    </div>
-</div>
-<p>Al mismo tiempo <a href="https://validator.w3.org/">validar el HTML</a> y <a href="http://jigsaw.w3.org/css-validator/">validar los estilos CSS</a> respecto a su especificación también mejorarán el código del sitio web.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://stackoverflow.com/questions/65515/how-to-find-broken-links-on-a-website">How to find broken links on a website</a></li>
-<li><a href="http://www.commandlinefu.com/commands/view/8234/check-broken-links-using-wget-as-a-spider">Check broken links using wget as a spider</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="web"/>
             
         
     </entry>
