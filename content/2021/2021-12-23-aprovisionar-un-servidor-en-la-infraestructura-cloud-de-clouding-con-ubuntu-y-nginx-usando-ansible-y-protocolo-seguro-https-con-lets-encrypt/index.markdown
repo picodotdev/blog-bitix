@@ -231,7 +231,7 @@ Entre los archivos del rol de Nginx está un archivo que es la plantilla de conf
 {{< code file="ansible/picodotdev.nginx/handlers/main.yml" language="yaml" options="" >}}
 {{< code file="ansible/picodotdev.nginx/templates/nginx-virtual-server.conf" language="plain" options="" >}}
 
-En este ejemplo el contenido del servidor web es simplemente un archivo _html_ con un mensaje de bienvenida inicial que permite comprobar que el servidor funciona correctamente.
+En este ejemplo el contenido del servidor web es simplemente un archivo _html_ con un mensaje de bienvenida inicial que permite comprobar que el servidor funciona correctamente. Este se copia al servidor con Ansible, otra forma de aprovisionamiento del contenido del servidor web virtual podría haber sido utilizar la herramienta _rsync_ para sincronizar una carpeta remota en la raíz de documentos del servidor web y otra opción podría ser hacer un clonado de un repositorio de Git que es por ejemple como funciona [GitHub Pages][github-pages] que es simplemente un rama en un repositorio donde se añade el contenido del sitio web.
 
 {{< code file="ansible/picodotdev.site/files/index.html" language="html" options="" >}}
 
