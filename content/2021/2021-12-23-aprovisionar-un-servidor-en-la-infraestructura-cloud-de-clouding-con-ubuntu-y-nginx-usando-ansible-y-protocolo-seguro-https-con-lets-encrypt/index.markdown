@@ -20,7 +20,7 @@ summary: "La computación _cloud_ permite crear un servidor con unos pocos _clic
 
 {{< logotype image1="clouding.svg" >}}
 
-Para ofrecer un servicio a través de internet es indispensable un servidor que por motivos de fiabilidad entre otros es recomendable contratar a un proveedor de infraestructura. La tendencia es usar servidores _cloud_ con las ventajas de solicitud de creación de los servidores mediante autoservicio con unos pocos clics, de forma rápida en unos pocos minutos y la posibilidad de ampliarlo, o reducirlo, en potencia cómputo, memoria del sistema o almacenamiento, además de una facturación por uso sin importes por adelantado.
+Para ofrecer un servicio a través de internet es indispensable un servidor que por motivos de fiabilidad entre otros es recomendable contratar a un proveedor de infraestructura. La tendencia es usar servidores _cloud_ con las ventajas de solicitud de creación de los servidores mediante autoservicio con unos pocos clics, de forma rápida en unos pocos minutos y la posibilidad de ampliarlo, o reducirlo, en potencia cómputo, memoria del sistema o almacenamiento, además de una facturación por uso.
 
 La parte de tener un servidor accesible en internet para proporcionar un servicio ya se consigue en unos pocos clics, no hace falta presupuestarlo, ni comprar hardware y pagar su precio de forma completa por adelantado, ni recibirlo y montarlo, ni alojarlo en infraestructura propia. La parte más difícil de un servidor es aprovisionarlo y configurarlo para el propósito que se desee y para facilitar esta tarea hay herramientas de software específicas.
 
@@ -28,11 +28,11 @@ La parte de tener un servidor accesible en internet para proporcionar un servici
 
 ### Infraestructura _cloud_ de Clouding
 
-Uno de los proveedores de infraestructura _cloud_ más reconocidos con sede en España es [Clouding][cloudingio], con un servicio de grado empresarial que ofrece un servicio de IaaS con oficinas y centro de datos en Barcelona. Como proveedor de computación _cloud_ ofrece las varias importantes ventajas de este modelo de alojar servicios entre los que están disponer de un servidor en unos pocos clics y en pocos minutos, gran flexibilidad en la selección para configuración del servidor en capacidad de cómputo, memoria y almacenamiento permitiendo ajustar el precio a las necesidad del servicio, flexibilidad para cambiar ya sea ampliar o reducir la configuración del servidor y facturación según uso por unidad de tiempo en horas sin necesidad de pagar importes por adelantado.
+Uno de los proveedores de infraestructura _cloud_ más reconocidos con sede en España es [Clouding][cloudingio], con un servicio de grado empresarial que ofrece un servicio de IaaS con oficinas y centro de datos en Barcelona. Como proveedor de computación _cloud_ ofrece las varias importantes ventajas de este modelo de alojar servicios entre los que están disponer de un servidor en unos pocos clics y en pocos minutos, gran flexibilidad en la selección para configuración del servidor en capacidad de cómputo, memoria y almacenamiento permitiendo ajustar el precio a las necesidad del servicio, flexibilidad para cambiar ya sea ampliar o reducir la configuración del servidor y facturación según uso por unidad de tiempo en horas.
 
 Una de las ventajas determinante y diferenciadora de Clouding sobre otros proveedores es que al tener sede en España ofrece soporte de asistencia en caso de necesidad por personas en España. No es habitual requerir de esta asistencia pero en caso de necesitarla por el impacto que tiene si el servicio es de gran importancia para una empresa o persona si de este depende su facturación, clientes o sus proveedores. La asistencia es una característica determinante para la toma de una decisión al elegir un proveedor para en caso de necesidad restaurar el servicio.
 
-Al crear una cuenta en Clouding ofrecen un cupón de 5 € para probar su servicio gratis, este saldo permite crear una instancia de servidor _cloud_ en su configuración más básica con un tiempo de funcionamiento ininterrumpido de unos 45 días.
+Al crear una cuenta en Clouding ofrecen un cupón de 5 € para probar su servicio gratis, este saldo permite crear una instancia de servidor _cloud_ en su configuración más básica con un tiempo de funcionamiento ininterrumpido de unos 45 días en la configuración más básica.
 
 #### Selección de capacidad de los servidores
 
@@ -45,7 +45,7 @@ Clouding permite seleccionar los recursos de cómputo para los servidores según
 
 #### Infraestructura
 
-Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación _cloud_, configuración de red privada para mayor seguridad además de una API que permite automatizar tareas. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.
+Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación _cloud_ y configuración de red privada para mayor seguridad. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.
 
 {{< image
     gallery="true"
@@ -59,7 +59,7 @@ Clouding ofrece una infraestructura de alta disponibilidad, con servicios de cop
     image3="image:clouding-caracteristicas-6.png" optionsthumb3="200x150" title3="Características de Clouding"
     caption="Características de Clouding" >}}
 
-Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.
+Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos SSD NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.
 
 {{< image
     gallery="true"
@@ -72,7 +72,7 @@ Para garantizar un buen servicio utilizan una infraestructura moderna y de alto 
     image2="image:clouding-infraestructura-5.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
     caption="Infraestructura de Clouding" >}}
 
-Son varias las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.
+Son muchas las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.
 
 {{< image
     gallery="true"

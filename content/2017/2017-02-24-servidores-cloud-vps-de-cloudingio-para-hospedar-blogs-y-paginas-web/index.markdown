@@ -47,7 +47,7 @@ Algunas de las características de Clouding.io algo más detalladas en su págin
 
 En el blog de Clouding.io hay artículos interesantes y tiene una comunidad con una base de conocimiento y una sección de preguntas y respuestas para resolver cualquier duda que nos surja, todo en español. Las imágenes de sistemas operativos que ofrecen son las siguientes en las que se incluyen la opción de [Windows][windows] aunque siendo este un blog más afín al software libre recomiendo una de las versiones de [GNU][gnu]/[Linux][linux], una ventaja es que el precio es más barato. De [Ubuntu][ubuntu] hay múltiples versiones aunque siendo el propósito prestar un servicio durante periodos de tiempo largos lo recomendable es utilizar una versión <abbr title="Long Term Support">LTS</abbr> o de soporte prolongado. También es posible otras distribuciones populares como sistema operativo como [Debian][debian] y [CentOS][centos].
 
-Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación _cloud_, configuración de red privada para mayor seguridad además de una API que permite automatizar tareas. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.
+Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación _cloud_, configuración de red privada para mayor seguridad. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.
 
 {{< image
     gallery="true"
@@ -61,7 +61,7 @@ Clouding ofrece una infraestructura de alta disponibilidad, con servicios de cop
     image3="image:clouding-caracteristicas-6.png" optionsthumb3="200x150" title3="Características de Clouding"
     caption="Características de Clouding" >}}
 
-Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.
+Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos SSD NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.
 
 {{< image
     gallery="true"
@@ -74,7 +74,7 @@ Para garantizar un buen servicio utilizan una infraestructura moderna y de alto 
     image2="image:clouding-infraestructura-5.png" optionsthumb2="200x150" title2="Infraestructura de Clouding"
     caption="Infraestructura de Clouding" >}}
 
-Son varias las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.
+Son muchas las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.
 
 {{< image
     gallery="true"
@@ -83,7 +83,7 @@ Son varias las empresas que confían en Clouding como proveedor de servicios par
 
 ### Crear un servidor _cloud_ en Clouding
 
-Para probar su servicio ofrecen un cupón de 5 €, que con la opción más básica son unos 45 días de uso continuado para evaluar su servicio sin compromiso. El registro requiere validar una cuenta de correo electrónico, móvil y tarjeta de crédito. Requerir el móvil y la tarjeta de crédito para probar el servicio es algo excesivo pero quizá necesario para evitar _spam_ y usos no deseados. Realizado el registro ya está disponible el acceso al panel de administración desde el que crear nuevos servidores, arrancarlos, modificarlos, pararlos o eliminarlos.
+Para probar su servicio ofrecen un cupón de 5 €, que con la opción más básica son unos 45 días de uso continuado en su configuración más básica para evaluar su servicio sin compromiso. El registro requiere validar una cuenta de correo electrónico, móvil y tarjeta de crédito. Requerir el móvil y la tarjeta de crédito para probar el servicio es algo excesivo pero quizá necesario para evitar _spam_ y usos no deseados. Realizado el registro ya está disponible el acceso al panel de administración desde el que crear nuevos servidores, arrancarlos, modificarlos, pararlos o eliminarlos.
 
 {{< image
     gallery="true"
