@@ -76,7 +76,7 @@ Son muchas las empresas que confían en Clouding como proveedor de servicios par
 
 {{< image
     gallery="true"
-    image1="image:clouding-clientes.png" optionsthumb1="200x150" title1="Clientes de Clouding"
+    image1="image:clouding-clientes.png" optionsthumb1="650x450" title1="Clientes de Clouding"
     caption="Clientes de Clouding" >}}
 
 ### Crear un servidor _cloud_ en Clouding
