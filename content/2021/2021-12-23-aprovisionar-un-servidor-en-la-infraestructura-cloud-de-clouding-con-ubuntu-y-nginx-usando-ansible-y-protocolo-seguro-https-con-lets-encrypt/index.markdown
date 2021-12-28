@@ -32,7 +32,7 @@ Uno de los proveedores de infraestructura _cloud_ más reconocidos con sede en E
 
 Una de las ventajas determinante y diferenciadora de Clouding sobre otros proveedores es que al tener sede en España ofrece soporte de asistencia en caso de necesidad por personas en España. No es habitual requerir de esta asistencia pero en caso de necesitarla por el impacto que tiene si el servicio es de gran importancia para una empresa o persona si de este depende su facturación, clientes o sus proveedores. La asistencia es una característica determinante para la toma de una decisión al elegir un proveedor para en caso de necesidad restaurar el servicio.
 
-Al crear una cuenta en Clouding ofrecen un cupón de 5 € para probar su servicio gratis, este saldo permite crear una instancia de servidor _cloud_ en su configuración más básica con un tiempo de funcionamiento ininterrumpido de unos 45 días en la configuración más básica.
+Al crear una cuenta en Clouding ofrecen un cupón de 5 € para probar su servicio gratis, este saldo permite crear una instancia de servidor _cloud_ con un tiempo de funcionamiento ininterrumpido de unos 45 días en la configuración más básica.
 
 #### Selección de capacidad de los servidores
 
