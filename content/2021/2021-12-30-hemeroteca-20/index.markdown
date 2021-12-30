@@ -83,13 +83,13 @@ Ya tengo varias pequeñas ideas para mejorar alis. Más que para el _script_ par
 
 Ya le he añadido Google Analytics para ver cuantas visitas tiene el [sitio web de alis][alis-site], de momento son unas 30 visitas diarias, una vez le añada alguna página más de contenido y mejore algo en SEO supongo que recibirá alguna más. Con estos pocos datos veo si realmente tiene algún impacto los cambios que haga, esto es útil para tomar alguna decisión conociendo datos en vez de solo intuición.
 
-Otra idea que ya he implementado es utilizar el espacio de discusiones o foro que ofrece [GitHub Discussions][github-discussions] para tratar de crear algo de comunidad sobre el _script_ qu seguro me permite obtener información sobre cómo mejorarlo y como una forma de darlo a conocer. La primera pregunta que he hecho ha sido [Why do you use alis?](https://github.com/picodotdev/alis/discussions/150).
+Otra idea que ya he implementado es utilizar el espacio de discusiones o foro que ofrece [GitHub Discussions][github-discussions] para tratar de crear algo de comunidad sobre el _script_ que seguro me permite obtener información sobre cómo mejorarlo y como una forma de darlo a conocer. La primera pregunta que he hecho ha sido [Why do you use alis?](https://github.com/picodotdev/alis/discussions/150).
 
 Otra idea es tratar de monetizarlo. Con publicidad AdSense seguro que no da para mucho, mucho menos que el blog pero aunque sea poco al menos es una forma de mantenerme motivado para seguir mejorándolo y evitar abandonarlo, al escribir algo más de contenido posiblemente tenga alguna visita más. No se si volveré a incluir la opción de donación, y es que PayPal en las cuentas personales al hacer la donación muestra el nombre real del usuario cosa que por privacidad es un problema para mi, no se si volveré a añadir esta opción.
 
-Pero bueno que tampoco sea muy famoso no está mal porque no quiero que que lo usen mas usuarios suponga una gran cantidad de solicitud de _features_, _issues_ y _bugs_ que crezcan a un ritmo que no pueda asumir o que me requiera mucho tiempo.
+Pero bueno que tampoco sea muy famoso no está mal porque no quiero que al usarlo muchos usuarios suponga una gran cantidad de solicitudes de _features_, _issues_ y _bugs_ que crezcan a un ritmo que no pueda asumir o que me requiera mucho tiempo.
 
-He recibido varios _pull request_ que aunque no he incorporado tal cual me han servido como base para hacer los cambios. Durante este año, he hecho el mismo cambio que en el blog para generar el sitio web usando GitHub Actions. He añadido soporte para [PipeWire][pipewire], mejorado el soporte para [systemd-homed][systemd] y posibilidad de configurar la disposición de sobvolúmnes con el sistema de archivos _btrfs_.
+He recibido varios _pull request_ que aunque no he incorporado tal cual me han servido como base para hacer los cambios. Durante este año, he hecho el mismo cambio que en el blog para generar el sitio web usando GitHub Actions. He añadido soporte para [PipeWire][pipewire], mejorado el soporte para [systemd-homed][systemd] y la posibilidad de configurar la disposición de sobvolúmnes con el sistema de archivos _btrfs_.
 
 ### Otras contribuciones
 
@@ -97,7 +97,7 @@ Sigo realizando las traducciones de [VLC][vlc], [KeePassXC][keepassxc] y [Virtua
 
 ### Artículos publicados
 
-Si el 2020 publique unos 90 artículos, este he publicado algunos menos por tiempo y porque no he tenido tantas ideas para escribir artículos. Este 2021 han sido 73 artículos nuevos y algunos pocos más que he actualizado. Los temas son los mismos de siempre. Estos artículos son los del segundo semestre.
+Si en el 2020 publiqué unos 90 artículos, este he publicado algunos menos por tiempo y porque no he tenido tantas ideas para escribir artículos. Este 2021 han sido 73 artículos nuevos y algunos pocos más que he actualizado. Los temas son los mismos de siempre. Estos artículos son los del segundo semestre.
 
 Urte berri on!
 
