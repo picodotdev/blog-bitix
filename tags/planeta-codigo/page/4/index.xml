@@ -5,12 +5,205 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-12-23T09:00:00+01:00</updated>
+    <updated>2021-12-30T10:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/</id>
+        <title>Novedades de Java 16</title>
+        <updated>2021-03-18T19:00:00+01:00</updated>
+        <published>2021-03-18T19:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>En Java 16 los cambios en el lenguaje no son tan notables que en versiones anteriores, aún así  el calendario se sigue manteniendo y en cada versión se incluyen mejoras incrementales destacables. Se publica la versión final y lista para producción de algunas características y se añaden nuevas en forma de vista previa.</strong></p>]]>
+        <![CDATA[<p>Las nuevas versiones se van sucediendo de forma periódica y puntual según la cadencia de seis meses del adoptado calendario de publicación. En esta ocasión la versión 16 de Java publicada el 16 de marzo de 2021, que incluye mejoras incrementales destacando soporte para nuevas plataformas, inclusión de forma final de características que anteriormente estaban marcadas como vista previa y algunas nuevas características destacables que entran en forma de vista previa y nuevas revisiones de vistas previas anteriores.</p>
+<p>La versión 16 de Java será la última antes de la siguiente versión de soporte a largo plazo o LTS, la versión 17 será una versión LTS que sucederá a la anterior LTS publicada de Java 11. La versión 11 fue publicada en septiembre de 2018 y la 17 será publicada en septiembre de 2021.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>No hay cambios importantes en el lenguaje, el más destacado es la inclusión de <em>pattern matching</em> para el operador <em>instanceof</em>, la incorporación de forma final de los <em>Records</em>, soporte para las plataformas Windows/AArch64, distribuciones como Alpine basadas en <em>musl</em> y soporte para la comunicación mediante canales <em>Unix-Domain Socket</em>.</p>
+<p>En los cambios que entran en modo vista previa destacan la Vector API que permite la computación en paralelo aprovechando las instrucciones vectoriales en los procesadores como AVX en x86 y Neon en ARM para acelerar las operaciones de una instrucción múltiples datos o SIMD. Aparte de los destacados hay números cambios más realizados en las APIs de las clases y el añadido de algunas funcionalidades menores, que en las notas de publicación están documentados.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/16/">Características de Java 16</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/16-all-relnotes.html">Notas de publicación de Java 16</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/">Documentación Javadoc de Java 16</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/java-champion-favorite-java16-records-vector-arm64-github">JavaMagazine: From the vector API to records to elastic metaspace, there’s a lot packed into Java 16</a></li>
+</ul>
+<p>Las mejoras incluídas en esta versión son:</p>
+<ul>
+<li>338: <a href="https://openjdk.java.net/jeps/338">Vector API (Incubator)</a></li>
+<li>347: <a href="https://openjdk.java.net/jeps/347">Enable C++14 Language Features</a></li>
+<li>357: <a href="https://openjdk.java.net/jeps/357">Migrate from Mercurial to Git</a></li>
+<li>369: <a href="https://openjdk.java.net/jeps/369">Migrate to GitHub</a></li>
+<li>376: <a href="https://openjdk.java.net/jeps/376">ZGC: Concurrent Thread-Stack Processing</a></li>
+<li>380: <a href="https://openjdk.java.net/jeps/380">Unix-Domain Socket Channels</a></li>
+<li>386: <a href="https://openjdk.java.net/jeps/386">Alpine Linux Port</a></li>
+<li>387: <a href="https://openjdk.java.net/jeps/387">Elastic Metaspace</a></li>
+<li>388: <a href="https://openjdk.java.net/jeps/388">Windows/AArch64 Port</a></li>
+<li>389: <a href="https://openjdk.java.net/jeps/389">Foreign Linker API (Incubator)</a></li>
+<li>390: <a href="https://openjdk.java.net/jeps/390">Warnings for Value-Based Classes</a></li>
+<li>392: <a href="https://openjdk.java.net/jeps/392">Packaging Tool</a></li>
+<li>393: <a href="https://openjdk.java.net/jeps/393">Foreign-Memory Access API (Third Incubator)</a></li>
+<li>394: <a href="https://openjdk.java.net/jeps/394">Pattern Matching for instanceof</a></li>
+<li>395: <a href="https://openjdk.java.net/jeps/395">Records</a></li>
+<li>396: <a href="https://openjdk.java.net/jeps/396">Strongly Encapsulate JDK Internals by Default</a></li>
+<li>397: <a href="https://openjdk.java.net/jeps/397">Sealed Classes (Second Preview)</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/L0tOTN7Dkso" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="habilitar-características-de-c14">Habilitar características de C++14</h4>
+<p>Hasta el JDK 15, las características usadas por el código C++ en el JDK ha estado limitado a los estándares de C++98/02. Con el JDK 11, el código fué actualizado para soportar nuevas versiones del estándar C++, aunque hasta ahora no han sido usadas nuevas características. Esto incluye poder construirse con versiones recientes de varios compiladores que soportan características de C++11/14.</p>
+<p>Ahora se permiten formalmente cambios en el código C++ del JDK para aprovechar las características del lenguaje C++14.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/C%2B%2B14">C++14 wikipedia</a></li>
+<li><a href="https://isocpp.org/wiki/faq/cpp14">C++14</a></li>
+</ul>
+<h4 id="migración-de-mercurial-a-git">Migración de Mercurial a Git</h4>
+<p>Se migra como herramienta de control de versiones de <a href="https://www.mercurial-scm.org/">Mercurial</a> a <a href="https://git-scm.com/">Git</a>. Esto incluye todos los repositorio de los proyectos de OpenJDK preservando el historial, incluyendo las etiquetas y formateando los mensajes de <em>commits</em> según las convenciones de Git.</p>
+<h4 id="migración-a-github">Migración a GitHub</h4>
+<p>Relacionada con la migración de Mercurial a Git es la migración a la plataforma <a href="https://github.com/">GitHub</a> como proveedor de hospedaje para los repositorios. Los diferentes proyectos del OpenJDK están accesibles en GiHub.</p>
+<ul>
+<li><a href="https://github.com/openjdk/">OpenJDK GitHub</a></li>
+</ul>
+<p>Los beneficios de esta migración son tiempos más reducidos en el clonado y obtención de cambios, mayor disponibilidad de los repositorios, posibilidad de interactuar con los repositorios mediante listas de correo, herramientas de línea de comandos y navegadores web.</p>
+<p>Usar un proveedor de hospedaje externo libera a los contribuidores de implementar y administrar el servicio. Las tres razones principales de usar un proveedor externo son el rendimiento, acceso a una API para automatizar las tareas y acceso a una mayor comunidad que proporcione incorpore nuevos contribuidores.</p>
+<p>La razón de usar GitHub es que destaca en las tres razones principales de usar un proveedor externo.</p>
+<h4 id="zgc-procesado-concurrente-de-pila-del-_thread_">ZGC: procesado concurrente de pila del <em>thread</em></h4>
+<p>El recolector de basura ZGC tiene como objetivo hacer que las pausas de recolección de basura sean una cosa del pasado. Muchas de las operaciones del recolector de basura ya se han hecho ya escalables al tamaño de la memoria y del <em>metaespace</em>.</p>
+<p>Las únicas tareas que son realizadas en puntos seguros del recolector de basura son un subconjunto de procesado raíz. Una de ellas son las pilas de trazas de excepciones. Estas tareas de procesado raíz son problemáticas escalan con el número de hilos, en sistemas con muchos hilos estas tareas se convierten en un problema.</p>
+<p>Para conseguir el objetivo de que las pausas seguras del recolector de basura no excedan de un milisegundo, incluso en máquinas grandes, se ha de mover este procesado por hilo incluyendo la inspección de la pila de trazas a una fase concurrente.</p>
+<p>Después de los cambios nada significativo se hará dentro de las pausas seguras del recolector de basura.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">El recolector de basura de Java, qué hace y cómo funciona en cada versión</a></li>
+</ul>
+<h4 id="canales-de-comunicación-unix">Canales de comunicación Unix</h4>
+<p>Se ha añadido soporte para la comunicación mediante <em>sockets</em> Unix a las APIs del paquete <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/nio/channels/package-summary.html">java.nio.channels</a>. Los <em>sockets</em> Unix con una forma de comunicación entre procesos o IPC en la misma máquina. Son similares a los <em>sockets</em> TCP/IP en la mayoría de aspectos excepto que son resueltos por nombres del sistema de archivos en vez de direcciones IP y números de puertos. La comunicación mediante <em>sockets</em> Unix es más segura y eficiente que las conexiones TCP/IP.</p>
+<ul>
+<li>Las comunicaciones son para procesos en el mismo sistema, las aplicaciones que no tiene intención de aceptar conexiones remotas pueden mejorar la seguridad con los <em>sockets</em> Unix.</li>
+<li>Los <em>sockets</em> Unix están protegidos por los mecanismo de seguridad del sistema de archivos.</li>
+<li>Los <em>sockets</em> Unix son más rápidos de establecer y ofrecen mayor tasa de transferencia.</li>
+</ul>
+<p>Los <em>sockets</em> Unix son una característica implementada en la mayoría de sistemas Unix y son soportados en Windows 10 y Windows Server 2019.</p>
+<p>Los elementos de la API son <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/UnixDomainSocketAddress.html">java.net.UnixDomainSocketAddress</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/StandardProtocolFamily.html">java.net.StandardProtocolFamily</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/nio/channels/SocketChannel.html">SocketChannel</a> y <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/nio/channels/ServerSocketChannel.html">ServerSocketChannel</a>.</p>
+<p>Más detalles en <a href="https://inside.java/2021/02/03/jep380-unix-domain-sockets-channels/">JEP-380: Unix domain socket channels</a></p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/images/unix-sockets_hu4da9fcbe4c523ba10cac3597857560ec_33429_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Unix Sockets"><img src="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/images/unix-sockets_hu4da9fcbe4c523ba10cac3597857560ec_33429_650x450_fit_q90_box.jpg" width="650" height="371" alt="Unix Sockets" title="Unix Sockets"  class="lozad "></a></p>
+<figcaption>Unix Sockets</figcaption>
+</figure>
+</div>
+<h4 id="portado-a-alpine-linux">Portado a Alpine Linux</h4>
+<p>Se ha portado el JDK a Alpine Linux y otras distribuciones que usan <a href="https://www.musl-libc.org/">musl</a> como librería C en las arquitecturas x64 y AArch64. <em>musl</em> es una implementación para los sistemas basados en Linux de la librería estándar con su funcionalidad descrita en los estándares de ISO C y POSIX. Varias distribuciones Linux incluyendo <a href="https://www.alpinelinux.org/">Alpine Linux</a> y <a href="https://openwrt.org/">OpenWrt</a> están basadas en <em>musl</em>, mientras que otras proporcionan soporte de forma opcional como <a href="https://www.archlinux.org/">Arch Linux</a>.</p>
+<p>La distribución Alpine Linux es una distribución ampliamente adoptada en los entornos en la nube, microservicios y contenedores debido a su pequeño tamaño de imagen. La imagen base de Alpine Linux por ejemplo es de unos 6 MB lo que la hace atractiva por sus tiempos de arranque, ancho de banda más bajos y mayor seguridad al incluir menos componentes. Habilitar Java para funcionar en estos entornos permite ejecutar de forma nativa <a href="https://tomcat.apache.org/">Tomcat</a>, <a href="https://eclipse.org/jetty/">Jetty</a>, <a href="https://spring.io/">Spring</a> y otros <em>frameworks</em> populares.</p>
+<p>Complementandlo con <em>jlink</em> para reducir el tamaño en tiempo de ejecución del JDK un usuario puede crear imágenes más pequeñas. Por ejemplo, si la aplicación depende solo del módulo <em>java.base</em> entonces una imagen de <a href="https://www.docker.com/">Docker</a> con Alpine Linux y un <em>runtime</em> de Java con solo ese módulo y la máquina virtual de servidor cabe en tan solo 38 MB.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Imágenes de Docker con Alpine Linux</a></li>
+</ul>
+<h4 id="metaspace-elásctico">Metaspace elásctico</h4>
+<p>La memoria no usada de <em>metaespace</em> es retornada al sistema operativo con más rapidez reduciendo el tamaño del <em>metaspace</em> y simplificando el código de <em>metaspace</em> con la intención de reducir los costes de mantenimiento.</p>
+<h4 id="portado-a-windowsaarch64">Portado a Windows/AArch64</h4>
+<p>Con la disponibilidad del nuevo hardware de consumo y servidor basado en la arquitectura AArch64 (ARM64), Windows/AArch64 se ha convertido en una plataforma importante debido a la demanda de los usuarios. Se ha portado el JDK a Windows/AArch64 continuando el trabajo anterior para la portabilidad de Linux/AArch64 (JEP 237) y en un futuro se hará lo equivalente para macOS.</p>
+<h4 id="mensajes-de-advertencias-para-clases-valor">Mensajes de advertencias para clases valor</h4>
+<p>Las clases envoltorio o <em>wrapper</em> de los tipos primitivos se designan como <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/doc-files/ValueBased.html">clases valor</a>, ahora se emiten nuevos mensajes de advertencia en sus constructores marcados como <em>deprecated</em> desde Java 9 y candidatos a ser eliminados en futuras versiones.</p>
+<p>Las clases <em>wrapper</em> de primitivos incluyen las <em>Integer</em>, <em>Float</em>, <em>Double</em>, etc., estas clases satisfacen la mayor parte de los requerimientos de las clases valor con la excepción de que exponen los constructores marcados como obsoletos.</p>
+<p>Esto es un objetivo para el <a href="https://openjdk.java.net/projects/valhalla/">proyecto Valhalla</a> de implementar clases primitivas que mejoran el modelo de programación de Java.</p>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/doc-files/ValueBased.html">Value-based Classes</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/https">Integer(int value)</a></li>
+</ul>
+<h4 id="_packaging-tool_"><em>Packaging Tool</em></h4>
+<p>Se proporciona una herramienta para empaquetar aplicaciones Java que genera instaladores nativos para las diferentes plataformas. La herramienta <em>jpackage</em> fue incorporada en Java 14 y ahora pasa a considerarse con la categoría de listo para producción, su API está en el <a href="https://docs.oracle.com/en/java/javase/16/docs/api/jdk.jpackage/module-summary.html">jdk.jpackage</a>.</p>
+<p>Soporta los formatos de empaquetado nativos de la plataforma para tener una experiencia de instalación natural. Estos formatos incluyen archivos <em>msi</em> y <em>exe</em> en windows, <em>pkg</em> y <em>dmg</em> en macOS, <em>deb</em> y <em>rpm</em> en Linux. Permite especificar en tiempo de empaquetado parámetros a usar en tiempo de ejecución. Se puede invocar de forma directa desde la línea de comandos y de forma programática mediante su API.</p>
+<h4 id="_pattern-matching_-para-_instanceof_"><em>Pattern Matching</em> para <em>instanceof</em></h4>
+<p>Se mejora el soporte del lenguaje para soportar <em>pattern matching</em> en el operador <em>instanceof</em>. Esto evita la necesidad de realizar <em>cast</em> de forma explícita simplificando el código, más legible y seguro.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Antes&#10;</span><span class="c1"></span><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>&#10;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;&#10;<span class="c1">// Ahora, con pattern matching&#10;</span><span class="c1"></span><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;<span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;jdk&#34;</span><span class="o">))</span> <span class="o">{</span>&#10;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>instanceof-pattern-matching-1.java</span>
+    </div>
+</div>
+<p>El uso de <em>pattern matching</em> reduce la necesidad de hacer <em>cast</em> de forma explícita siendo particularmente útil en los métodos de igualdad con <em>equals</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Antes&#10;</span><span class="c1"></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="k">if</span> <span class="o">(!(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span><span class="o">))</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>&#10;   <span class="n">Point</span> <span class="n">other</span> <span class="o">=</span> <span class="o">(</span><span class="n">Point</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>&#10;   <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">x</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">y</span><span class="o">;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="c1">// Ahora, con pattern matching&#10;</span><span class="c1"></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="k">return</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span> <span class="n">other</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">x</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">y</span><span class="o">;</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>instanceof-pattern-matching-2.java</span>
+    </div>
+</div>
+<h4 id="_records_"><em>Records</em></h4>
+<p>Las clases <em>Record</em>  son un nuevo tipo de clases en el lenguaje Java, ayudan a modelar agregados de datos con menos ceremonia que las clases normales. Son clases que actúan como contenedores para datos inmutables, pueden ser considerados como tuplas. La declaración de un <em>record</em> mayormente consiste en la declaración de su estado. No es su objetivo resolver los problemas de las clases mutables que usan las convenciones de nombres de los JavaBeans.</p>
+<p>Se publicaron como primera vista previa en Java 14 y una segunda versión en Java 15.</p>
+<p>Las siguientes dos versiones de la clase <em>Point</em> son equivalentes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{}</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>records-1.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>&#10;   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">x</span><span class="o">;</span>&#10;   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">y</span><span class="o">;</span>&#10;&#10;   <span class="n">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kt">int</span> <span class="nf">x</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">x</span><span class="o">;</span> <span class="o">}</span>&#10;   <span class="kt">int</span> <span class="nf">y</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">y</span><span class="o">;</span> <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">if</span> <span class="o">(!(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span><span class="o">))</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">Point</span> <span class="n">other</span> <span class="o">=</span> <span class="o">(</span><span class="n">Point</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="na">x</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="o">.</span><span class="na">y</span> <span class="o">==</span> <span class="n">y</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">Objects</span><span class="o">.</span><span class="na">hash</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Point[x=%d, y=%d]&#34;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>records-2.java</span>
+    </div>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/tLHUqXeiC4w" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="encapsulación-fuerte-del-clases-internas-del-jdk-por-defecto">Encapsulación fuerte del clases internas del JDK por defecto</h4>
+<p>Se cambia el comportamiento por defecto de la encapsulación de permitido a fuerte para las clases internas del JDK aunque siguiendo posible relajar el comportamiento de la encapsulación con la opción de línea de comandos <em>&ndash;illegal-access=permit</em>, la encapsulación fuerte hace una excepción para ciertas clases internas como <em>sun.misc.Unsafe</em>  que siguen siendo posible utilizarlas. Esto permite continuar con la encapsulación y mantenibilidad del JDK que era el objetivo del proyecto <em>Jigsaw</em> materializado en la incorporación de los módulos en Java 9. Se promueve el uso de APIs estándares para actualizaciones a futuras versiones sin problemas.</p>
+<p>A lo largo de los años los desarrolladores han estado usando clases internas del JDK de los paquetes <em>java.*</em>, <em>sun.*</em>. Nunca se ha aconsejado pero nada impedía su uso hasta la aparición de los módulos. El uso de las clases de estos paquetes supone un problema de seguridad y mantenibilidad en el JDK pero impedir de forma drástica su uso haría que muchas librerías y aplicaciones que las usan dejasen de funcionar.</p>
+<p>Ahora se encapsula de forma más fuerte las API internas que aplica tanto en tiempo de compilación como de ejecución, incluyendo los intentos del código de acceder a elementos mediante <em>reflection</em>.</p>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="vector-api">Vector API</h4>
+<p>El objetivo es proporcionar una API para aprovechar las instrucciones vectoriales hardware de las arquitecturas de CPU que permiten conseguir un mejor rendimiento a las computaciones equivalentes escalares. Las instrucciones vectoriales son conocidas como <a href="https://en.wikipedia.org/wiki/SIMD">Single Instruction Multiple Data</a> (SIMD) que permiten mayor paralelismo al aplicar la misma operación a múltiples datos en un único ciclo de reloj de la CPU.</p>
+<p>Su objetivo es proporcionar una API clara y concisa, agnóstica de la plataforma, de alto rendimiento para las arquitecturas x64 y AArch64 y con soporte de degradado en caso de no estar las instrucciones disponibles.</p>
+<p>La API de vectorial es muy útil para funcionalidases como procesado de imágenes, procesado de sonido, gráficos inteligencia artificial que necesitan realizar la misma operación sobre muchos datos.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/HARDCbSog0c" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="foreign-linker-api">Foreign Linker API</h4>
+<p>El objetivo es ofrecer una API con tipado estático y código Java para acceso a código nativo. Junto con <em>Foreign-Memory Access API</em> simplifica considerablemente el proceso propenso a errores de enlazado a una librería nativa.</p>
+<p>Sus objetivos son facilidad de uso reemplazando JNI con un modelo de desarrollo superior basado puramente en Java, soportar C en las plataformas x64 y AArch64, soportar otras plataformas como 32-bit x86 y otros lenguajes distintos de C como C++ o Fortran y ofrecer un alto rendimiento comparable o mejor que JNI.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/">Ejemplo de JNI, usar código en C desde Java</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/DjiKlOE9ibY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="foreign-memory-access-api">Foreign-Memory Access API</h4>
+<p>Su objetivo es proporcionar a los programas Java una forma segura y eficiente de acceder a memoria fuera de la memoria de la máquina virtual de Java.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/Edls8HIREk4" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="_sealed-classes_"><em>Sealed Classes</em></h4>
+<p>Las clases selladas o <em>sealed classes</em> permiten al autor de la clase o interfaz controlar que código es responsable de implementarlo. Proporcionan una forma de restringir el uso de la superclase distinta de los modificadores de acceso. En un futuro puede ser la base para implementar <em>pattern matching</em> para un análisis exhaustivo de patrones.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">Los modificadores de acceso de clases, propiedades y métodos en Java</a></li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="n">sealed</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="n">permits</span> <span class="n">Circle</span><span class="o">,</span> <span class="n">Rectangle</span><span class="o">,</span> <span class="n">Square</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sealed-classes.java</span>
+    </div>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/</id>
         <title>Repositorio de artefactos privado con Nexus</title>
@@ -876,27 +1069,27 @@
     </div>
 </div>
 <p>Utilizando el servicio Microsoft Text to Speech.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-alvaro.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-elvira.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando el servicio Free TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-enrique.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-lucia.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando Mozilla TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/mozilla-tts.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando espeak.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/espeak.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
 <p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
 <p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
@@ -2003,177 +2196,6 @@
 <li><a href="https://matomo.org/product-features/">Product Features</a></li>
 <li><a href="https://matomo.org/feature-overview/">Feature Overview</a></li>
 <li><a href="https://matomo.org/licences/">Licenses</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="web"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/</id>
-        <title>Analítica web en el servidor sin JavaScript en el cliente con GoAccess</title>
-        <updated>2021-01-07T10:30:00+01:00</updated>
-        <published>2021-01-07T10:30:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Google Analytics es la herramienta más utilizada para implementar la funcionalidad de analítica en un sitio web. Es fácil de usar, de implementar, no requiere mantenimiento de infraestructura propia, es gratuita, ofrece numerosas funcionalidades que ayudan enormemente a obtener información del sitio web, de los usuarios, obtener informes. Sin embargo, Google Analytics es una tercera parte con la que se comparte la información del sitio web que supone una pérdida de privacidad y protección de datos del sitio web y requiere instalar un <em>script</em> de JavaScript que ralentiza la carga de las páginas web. GoAccess ofrece analítica web en tiempo real que al contrario que Analytics obtiene los datos únicamente desde el lado del servidor basándose en los archivos del log del servidor web, es software libre y es utilizable sin necesidad de involucrar a terceras partes.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/goaccess.png" width="250" height="67" alt="GoAccess" title="GoAccess"  class=""></p>
-</div>
-<p>La analítica web es una funcionalidad imprescindible en la mayoría de sitios públicos accesibles desde internet web incluso en aquellos privados. La analítica web es una funcionalidad que proporciona valiosa información acerca del sitio web, desde número de visitas en determinados periodos de tiempo así como información de los usuarios y la interacción de estos con el sitio web.</p>
-<p>La información proporcionada por la analítica web ayuda a la toma de decisiones basadas en datos observando el comportamiento de los usuarios en el sitio web con métricas que permiten conocer cuales son las páginas más visitas, en cuales permanecen más tiempo, que versión de navegador web usan, cuales son los países de los usuarios, cuál es el tráfico por hora del día, las fuentes del tráfico, sitios web de referencia, tráfico según días de la semana, ciertas fechas señaladas, periodos de vacaciones u cualesquiera otras formas de conocimiento interesantes para el negocio.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="google-analytics-la-herramienta-más-utilizada-para-hace-analítica-web">Google Analytics, la herramienta más utilizada para hace analítica web</h3>
-<p>La herramienta más utilizada para hacer analítica web es <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>, es gratuita, fácil de instalar en un sitio web y tiene gran cantidad de funcionalidades básicas y avanzadas que cubren las necesidades de cualesquiera usuarios. Almacena la información recogida a lo largo del tiempo que es consultable con posterioridad incluso pasados varios años de forma muy flexible con diferentes criterios de búsqueda y filtros, también ofrece varios paneles para observar el tráfico en tiempo real.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/google-analytics_hu026987c7702469555a2b5282cc642ea7_264800_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Goolge Analytics"><img src="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/google-analytics_hu026987c7702469555a2b5282cc642ea7_264800_300x200_fit_box_3.png" width="290" height="200" alt="Goolge Analytics" title="Goolge Analytics"  class="lozad "></a></p>
-<figcaption>Goolge Analytics</figcaption>
-</figure>
-</div>
-<p>Basta con tener una cuenta de Google para tener acceso a Google Analytics. Para integrarlo en un sitio web únicamente requiere insertar el <em>script</em> de JavaScript proporcionado por Google Analytics al configurar el sitio web en todas las páginas del sitio web. Este <em>script</em> se ejecuta en el navegador del usuario, recopila información y la envía a Google para su procesamiento y generación de la analítica web.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- Google Analytics --&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>&#10;<span class="nb">window</span><span class="p">.</span><span class="nx">ga</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">ga</span><span class="o">||</span><span class="kd">function</span><span class="p">(){(</span><span class="nx">ga</span><span class="p">.</span><span class="nx">q</span><span class="o">=</span><span class="nx">ga</span><span class="p">.</span><span class="nx">q</span><span class="o">||</span><span class="p">[]).</span><span class="nx">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)};</span><span class="nx">ga</span><span class="p">.</span><span class="nx">l</span><span class="o">=+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">;</span>&#10;<span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">,</span> <span class="s1">&#39;UA-XXXXX-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">);</span>&#10;<span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span> <span class="s1">&#39;pageview&#39;</span><span class="p">);</span>&#10;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;<span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://www.google-analytics.com/analytics.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;<span class="c">&lt;!-- End Google Analytics --&gt;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>google-analytics-script.html</span>
-    </div>
-</div>
-<p>El principal inconveniente de Google Analytics es introducir una tercera parte en la relación entre el sitio web y el usuario, una tercera parte que recoge métricas del sitio web e información de los usuarios. Los sitios web han de tener en cuenta que han de cumplir con las regulaciones y leyes como la <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a> en Europa en el tratamiento de la información de los usuarios para para proteger la privacidad de los usuarios que algunas empresas ponen en riesgo si no fuera por esas leyes que impiden o ponen límites a la recopilación de datos bajo penas de importantes multas, utilizar <em>cookies</em> de seguimiento que permiten identificar a los usuarios de forma inequívoca o el tratamiento de información personal. Leyes que afectan también a la propia Google junto a otras empresas como Amazon, Facebook o Twitter de EEUU con unas regulaciones más permisivas, las leyes les afecta por ejemplo impidiendo transferir los datos de los usuarios europeos fuera de Europa.</p>
-<p>La privacidad del los usuarios ya es un buen motivo para utilizar una alternativa a Google Analytics. Otro motivo es que el <em>script</em> de Google Analytics se ejecuta en el navegador del usuario y afecta en una pequeña medida al rendimiento en la carga de la página web.</p>
-<p>Otros sitios web privados de una intranet u aquellos que tienen interés en proteger la privacidad de sus usuarios prefieren utilizar otras herramientas para realizar analítica del sitio web que no involucren terceras partes.</p>
-<h3 id="goaccess-una-alternativa-de-analítica">GoAccess, una alternativa de analítica</h3>
-<p><a href="https://goaccess.io/">GoAccess</a> es una pequeña utilidad que cubre una pequeña parte de la funcionalidad de analítica de un sitio web, en concreto ofrece la analítica en tiempo real de uno o múltiples sitios web, <a href="https://matomo.org/">Matomo</a> es una <a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-con-matomo-como-alternativa-a-google-analytics/">alternativa equivalente a Google Analytics</a> que ofrece las funcionalidades de <em>tracking</em> de eventos y <em>tag manager</em>. Sus características principales son que es una herramienta sencilla y pequeña, no requiere insertar ningún <em>script</em> en las páginas del sitio web, no involucra terceras partes y es software libre.</p>
-<p>Para realizar la analítica web no requiere insertar ningún <em>script</em> de JavaScript en el cliente lo que mejora el tiempo de carga de las páginas. La analítica la hace completamente en el lado del servidor analizando los archivos de <em>log</em> de acceso y errores del servidor web. Soporta los servidores web más utilizados como <a href="https://nginx.org/">Nginx</a> y <a href="https://httpd.apache.org/">Apache HTTPD</a>.</p>
-<p>GoAccess permite obtener información de analítica en tiempo real del número de usuarios, que navegadores utilizan, URLs solicitadas, distribución de las peticiones en el tiempo, navegadores y sistemas operativos de los usuarios, sitios y URLs de referencia, palabras clave de búsqueda, códigos de estado HTTP, geolocalización, &hellip; Ofrece dos interfaces distintas, una basada en una interfaz de terminal y otra basada en una interfaz web.</p>
-<h3 id="analítica-de-sitio-web-con-goaccess-en-un-servidor-web-nginx">Analítica de sitio web con GoAccess en un servidor web Nginx</h3>
-<p>En el ejemplo de uso de GoAccess para realizar analítica web de un servidor web y acceder a las dos interfaces que ofrece utilizo la herramienta <a href="https://www.docker.com/">Docker</a> que evita tener que instalar estas herramientas de forma directa en la computadora, hace fácil su instalación, prueba, uso y eliminación de la computadora local una vez evaluada la herramienta. En el ejemplo el servidor web que he utilizado ha sido Nginx para Apache HTTPD se sigue el mismo principio de proporcionar a GoAccess los archivos de <em>log</em> de acceso al servidor web.</p>
-<p>Para realizar el ejemplo son de utilidad los siguientes otros artículos en los que me he apoyado para crear este.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Cómo crear una imagen para Docker usando un Dockerfile</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/">Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">Configurar un servidor web virtual en Nginx y Apache</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">Obtener un nombre de dominio para una dirección IP privada</a></li>
-</ul>
-<p>Lo primero es crear una imagen de Docker con GoAccess, la imagen oficial de Docker para GoAccess es <a href="https://hub.docker.com/r/allinurl/goaccess">allinurl/goaccess</a>, sin embargo esta no me ha funcionado y he tenido que crear una propia basada en <a href="https://www.ubuntu.com/">Ubuntu</a>. El archivo <em>Dockerfile</em> para crear la imagen de Docker con GoAccess y el comando para construirla son los siguientes.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">FROM</span><span class="s"> ubuntu:20.04</span><span class="err">&#10;</span><span class="err"></span><span class="k">MAINTAINER</span><span class="s"> picodotdev &lt;pico.dev@gmail.com&gt;</span><span class="err">&#10;</span><span class="err">&#10;</span><span class="err"></span><span class="k">RUN</span> apt-get -y update <span class="o">&amp;&amp;</span> apt-get -y install goaccess<span class="err">&#10;</span><span class="err">&#10;</span><span class="err"></span><span class="k">VOLUME</span><span class="s"> /var/www/goaccess</span><span class="err">&#10;</span><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 7890</span><span class="err">&#10;</span><span class="err">&#10;</span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;/bin/goaccess&#34;</span><span class="p">]</span><span class="err">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Dockerfile</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>docker build -t <span class="s2">&#34;picodotdev/goaccess:1.0&#34;</span> docker/&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-build.sh</span>
-    </div>
-</div>
-<p>Una vez construida la imagen de GoAccess se almacena en el repositorio local de imágenes.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker images&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-images.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">REPOSITORY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAG&nbsp;&nbsp;&nbsp;&nbsp;   IMAGE ID&nbsp;&nbsp;&nbsp;&nbsp;   CREATED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  SIZE&#10;picodotdev/goaccess   1.0&nbsp;&nbsp;&nbsp;&nbsp;   677276d5bc0d   <span class="m">37</span> minutes ago   102MB&#10;allinurl/goaccess&nbsp;&nbsp;&nbsp;&nbsp; latest&nbsp;&nbsp;&nbsp;&nbsp;e48d0ac2f6d1   <span class="m">11</span> hours ago&nbsp;&nbsp;&nbsp;&nbsp; 14.3MB&#10;nginx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; latest&nbsp;&nbsp;&nbsp;&nbsp;ae2feff98a0c   <span class="m">3</span> weeks ago&nbsp;&nbsp;&nbsp;&nbsp;  133MB&#10;ubuntu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20.04&nbsp;&nbsp;&nbsp;&nbsp; f643c72bc252   <span class="m">6</span> weeks ago&nbsp;&nbsp;&nbsp;&nbsp;  72.9MB</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-images.out</span>
-    </div>
-</div>
-<p>Nginx también tiene su propia imagen de Docker, en este caso utilizo la imagen oficial del servidor web. Se requiere iniciar dos contenedores de Docker, uno para el servidor web Nginx con varios volúmenes de datos configurados enlazados con los directorios de la máquina anfitrión para proporcionarle los archivos de configuración para los servidores web virtuales de un sitio web a analizar, el servidor virtual de la interfaz web de GoAccess y para compartir con GoAccess los archivos de <em>log</em> dal servidor web. El segundo contenedor es el de GoAccess utilizando la imagen propia también con varios volúmenes de datos configurados, entre ellos el del directorio con los archivos de <em>log</em> de acceso del servidor web.</p>
-<p>La configuración de Nginx incluye servidores web virtuales y configuración de <em>proxy</em> con <em>WebSockets</em> para ofrecer las métricas en tiempo real desde la interfaz web.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">log_format</span> <span class="s">nginx_vcombined</span> <span class="s">&#39;</span><span class="nv">$host:$server_port</span> <span class="s">&#39;</span> <span class="s">&#39;</span><span class="nv">$remote_addr</span> <span class="s">-</span> <span class="nv">$remote_user</span> <span class="s">[</span><span class="nv">$time_local]</span> <span class="s">&#39;</span> <span class="s">&#39;&#34;</span><span class="nv">$request&#34;</span> <span class="nv">$status</span> <span class="nv">$body_bytes_sent</span> <span class="s">&#39;</span> <span class="s">&#39;&#34;</span><span class="nv">$http_referer&#34;</span> <span class="s">&#34;</span><span class="nv">$http_user_agent&#34;&#39;</span><span class="p">;</span>&#10;&#10;<span class="k">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span> <span class="s">www.127.0.0.1.xip.io</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">access_log</span> <span class="s">/var/log/nginx/nginx-access.log</span> <span class="s">nginx_vcombined</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">error_log</span> <span class="s">/var/log/nginx/nginx-error.log</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;<span class="p">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>www.127.0.0.1.xip.io.conf</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">log_format</span> <span class="s">goaccess_vcombined</span> <span class="s">&#39;</span><span class="nv">$host:$server_port</span> <span class="s">&#39;</span> <span class="s">&#39;</span><span class="nv">$remote_addr</span> <span class="s">-</span> <span class="nv">$remote_user</span> <span class="s">[</span><span class="nv">$time_local]</span> <span class="s">&#39;</span> <span class="s">&#39;&#34;</span><span class="nv">$request&#34;</span> <span class="nv">$status</span> <span class="nv">$body_bytes_sent</span> <span class="s">&#39;</span> <span class="s">&#39;&#34;</span><span class="nv">$http_referer&#34;</span> <span class="s">&#34;</span><span class="nv">$http_user_agent&#34;&#39;</span><span class="p">;</span>&#10;&#10;<span class="k">server</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">server_name</span> <span class="s">goaccess.127.0.0.1.xip.io</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">access_log</span> <span class="s">/var/log/nginx/goaccess-access.log</span> <span class="s">goaccess_vcombined</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">error_log</span> <span class="s">/var/log/nginx/goaccess-error.log</span><span class="p">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/report.html</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">root</span>   <span class="s">/usr/share/goaccess/html</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>&#10;	<span class="kn">proxy_pass</span> <span class="s">http://goaccess:7890</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">&#34;Upgrade&#34;</span><span class="p">;</span>&#10;	<span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>&#10;	<span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>&#10;	<span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="s">https</span><span class="p">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;<span class="p">}</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>goaccess.127.0.0.1.xip.io.conf</span>
-    </div>
-</div>
-<p>En el <a href="https://github.com/allinurl/goaccess/blob/master/config/goaccess.conf">archivo de configuración de GoAccess</a> o en la <a href="https://goaccess.io/man#configuration">configuración desde la linea de comandos</a> se especifican varias propiedades de configuración.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">port 7890&#10;ws-url goaccess.127.0.0.1.xip.io:80&#10;&#10;log-format VCOMBINED&#10;log-file /var/log/nginx/nginx-access.log&#10;log-file /var/log/nginx/goaccess-access.log&#10;&#10;output /usr/share/goaccess/html/report.html&#10;real-time-html true&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>goaccess.conf</span>
-    </div>
-</div>
-<p>Ambos contenedores están definidos en un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.9&#34;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">goaccess</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">picodotdev/goaccess</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;7890&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/goaccess.conf:/etc/goaccess/goaccess.conf</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/nginx/log:/var/log/nginx:ro</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/nginx/goaccess:/usr/share/goaccess/html</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;--no-global-config&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;--config-file=/etc/goaccess/goaccess.conf&#34;</span><span class="p">]</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="s2">&#34;80:80&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/www.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/www.127.0.0.1.xip.io.conf:ro</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/goaccess.127.0.0.1.xip.io.conf:/etc/nginx/conf.d/goaccess.127.0.0.1.xip.io.conf:ro</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/nginx/log:/var/log/nginx</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">${PWD}/nginx/goaccess:/usr/share/goaccess/html:ro</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">goaccess</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose.yml</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose-up.sh</span>
-    </div>
-</div>
-<p>Una vez los contenedores están en ejecución es posible acceder a las interfaces que ofrece GoAccess y observar las métricas que ofrece del acceso a los sitios web.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker ps&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-ps.sh</span>
-    </div>
-</div>
-<h4 id="interfaz-de-terminal">Interfaz de terminal</h4>
-<p>La interfaz de terminal o consola no requiere herramientas adicionales, desde la propia terminal es posible acceder a la información de analítica. Hay que ejecutar el comando de GoAccess, al usar Docker desde dentro de su contenedor. GoAccess se puede iniciar individualmente para acceder a su interfaz basada en la terminal.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run -it --rm <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/nginx/log:/var/log/nginx&#34;</span> <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;picodotdev/goaccess:1.0 goaccess --no-global-config --log-format<span class="o">=</span>VCOMBINED /var/log/nginx/nginx-access.log /var/log/nginx/goaccess-access.log&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>goaccess-run.sh</span>
-    </div>
-</div>
-<p>Es posible navegar entre los diferentes paneles de analítica pulsando varias teclas, la tecla de navegación están documentadas en una ventana de ayuda a la que se accede con la tecla <em>?</em>, en la ayuda están indicadas el reto de teclas de navegación en la interfaz.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/goaccess-terminal-1_hu2554bbca88496b84526c89a4df6e8075_101015_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz consola de analítica GoAccess"><img src="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/goaccess-terminal-1_hu2554bbca88496b84526c89a4df6e8075_101015_300x200_fit_box_3.png" width="210" height="200" alt="Interfaz consola de analítica GoAccess" title="Interfaz consola de analítica GoAccess"  class="lozad "></a></p>
-<figcaption>Interfaz consola de analítica GoAccess</figcaption>
-</figure>
-</div>
-<h4 id="interfaz-de-navegador-web">Interfaz de navegador web</h4>
-<p>La interfaz de terminal no es la más cómoda de usar ni más accesible de forma remota, por ello GoAccess también proporciona una interfaz web accesible con un navegador web.</p>
-<p>Para ello genera un archivo html de informe con los datos que se ha de servir desde un servidor web y ofrece un servidor con <em>WebSockets</em> para las métricas en tiempo real. En el ejemplo su dirección de acceso con el navegador <em>http://goaccess.127.0.0.1.xip.io/report.html</em>, la interfaz se actualiza con analítica de acceso del servidor web Nginx del sitio web <em>http://www.127.0.0.1.xip.io/</em>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/nginx_hu83fe2a6570b41e852a6ef81df997167b_54839_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sitio web con Nginx"><img src="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/nginx_hu83fe2a6570b41e852a6ef81df997167b_54839_200x150_fit_box_3.png" width="200" height="118" alt="Sitio web con Nginx" title="Sitio web con Nginx"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/goaccess-web-1_huad900b61096d893a836c8c25e10e722f_215570_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de analítica GoAccess"><img src="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/goaccess-web-1_huad900b61096d893a836c8c25e10e722f_215570_200x150_fit_box_3.png" width="141" height="150" alt="Interfaz web de analítica GoAccess" title="Interfaz web de analítica GoAccess"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/goaccess-web-2_hue0d9fe6f1684f40e7cfd3c5ada4a4134_542160_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de analítica GoAccess"><img src="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/images/goaccess-web-2_hue0d9fe6f1684f40e7cfd3c5ada4a4134_542160_200x150_fit_box_3.png" width="48" height="150" alt="Interfaz web de analítica GoAccess" title="Interfaz web de analítica GoAccess"  class="lozad "></a></p>
-<figcaption>Sitio web e interfaz web de analítica GoAccess</figcaption>
-</figure>
-</div>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/GoAccess">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./docker-compose up</code></p>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/">Add analytics.js to Your Site</a></li>
 </ul>
 </div>
 ]]>
