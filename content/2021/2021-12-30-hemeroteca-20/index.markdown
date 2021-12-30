@@ -24,7 +24,7 @@ Los blogs quizá han perdido relevancia con la aparición [YouTube][youtube] o [
 
 A día de hoy no me veo como _youtuber_ porque para escribir un _tweet_ algunos necesito editarlos 3 veces para que no quede ninguna falta de ortografía, y el texto de los artículos también los edito por lo mismo o por retocarlos, con un vídeo no podría hacer eso y hay algunos _youtubers_ que hablan sin cortes durante 30 minutos y el trabajo de edición posterior que les hacen a los vídeos es significativo. También por privacidad ya que un canal de _youtuber_ requiere dar imagen, hay algunos canales que solo ponen la voz pero son la minoría.
 
-No se que tiene _YouTube_ para generar a las personas el escribir comentarios pero se escriben muchos más que en cualquier artículo de cualquier blog. Alguna vez he comentado que recibo pocos comentarios pero la realidad es que también escribo pocos, tampoco es algo que sea a lo que más importancia le dé para seguir motivado al escribir artículos.
+No se que tiene YouTube para generar a las personas el escribir comentarios pero se escriben muchos más que en cualquier artículo de cualquier blog. Alguna vez he comentado que recibo pocos comentarios pero la realidad es que también escribo pocos, tampoco es algo que sea a lo que más importancia le dé para seguir motivado al escribir artículos.
 
 Aquí hay una [recopilación bastante exhaustiva de todos los blogs de habla hispana sobre software libre y GNU/Linux](https://proyectotictac.com/blogs-linux/) tanto en de España como de América. El mío no está a pesar de ser uno de ya con 10 años lleve más tiempo que algunos de esos. No interacciono mucho con la comunidad y como digo en mi blog hablo de GNU/Linux pero es un blog solo de GNU/Linux, hablo de Java pero no es un blog solo de Java y desde que tengo una PlayStation 4 estoy hablando de los juegos que voy jugando, no tengo un tema único con lo que no puedo ponerle una solo etiqueta.
 
@@ -32,7 +32,7 @@ Aquí hay una [recopilación bastante exhaustiva de todos los blogs de habla his
 
 ### Retrospectiva 2021
 
-Durante este 2021 he ido escribiendo cada semana el artículo que he publicado cuando años anteriores el tema del artículo que escribía lo tenía apuntado en una de ideas para que no se me olvidase y escrito desde hace varias semanas. Este es uno de los motivos por los que durante este año he estado escribiendo la mayoría de las semanas un solo artículo cuando en el 2020 muchas de las semanas escribí dos a la semana.
+Durante este 2021 he ido escribiendo cada semana el artículo que he publicado cuando años anteriores el tema del artículo que escribía lo tenía apuntado en una lista de ideas para que no se me olvidase y escrito desde hace varias semanas. Este es uno de los motivos por los que durante este año he estado escribiendo la mayoría de las semanas un solo artículo cuando en el 2020 muchas de las semanas escribí dos a la semana.
 
 En el 2022 espero seguir escribiendo un artículo a la semana mientras tenga ideas y no eche de menos el tiempo para hacer otras cosas.
 
@@ -40,7 +40,7 @@ En el 2022 espero seguir escribiendo un artículo a la semana mientras tenga ide
 
 Hay canales de YouTube que en un par de meses tienen 200 suscriptores, en 6 meses 1000 suscriptores y con únicamente 7 vídeos publicados de 1 hora con de 1K a 10K visualizaciones por vídeo. En mi blog no creo que tenga tantas personas suscritas al _feed_ y en _twitter_ solo tengo 400 seguidores. El truco para conseguir crecer en un _blog_ o cualquier sitio de contenido no depende únicamente de crear buen contenido, con eso solo crecer requiere mucho tiempo, sino conseguir además que el contenido sea compartido por cuentas con muchos seguidores que permite llegar a mucha más gente.
 
-Hace unos meses puse en un _tweet_ a un _youtuber_ sobre GNU/Linux que estaba iniciando su canal, aún tenía pocos meses, se me ocurrió relacionarlo con otro creador de contenido mucho más conocido y con una trayectoria de más de una década compartiendo ya que justo hace unos días anunció que iba dejar de hacerlo tan habitualmente y cambiaría de temas, se me ocurrió relacionarlos al que lleva mucho tiempo y lo deja y el que empieza y ayudar al nuevo ya que esperaba que fuera compartido, era un contraste que es la ley de vida para los creadores de contenido, con todos los seguidores que tenía el _youtuber_ conocido al retuitear el mensaje fue difundido a gran cantidad de personas interesadas en el tema, en Twitter consiguió unas decenas de seguidores y en Youtube casi una centena de suscriptores partiendo de unos 200. El mayor mérito lo de la difusión la tuvo el creador de contenido conocido por su gran cantidad de seguidores.
+Hace unos meses puse en un _tweet_ a un _youtuber_ sobre GNU/Linux que estaba iniciando su canal, aún tenía pocos meses, se me ocurrió relacionarlo con otro creador de contenido mucho más conocido y con una trayectoria de más de una década compartiendo ya que justo hace unos días anunció que iba dejar de hacerlo tan habitualmente y cambiaría de temas, se me ocurrió relacionarlos al que lleva mucho tiempo y lo deja y el que empieza y ayudar al nuevo ya que esperaba que fuera compartido, era un contraste que es la ley de vida para los creadores de contenido, con todos los seguidores que tenía el _youtuber_ conocido al retuitear el mensaje fue difundido a gran cantidad de personas interesadas en el tema, en Twitter consiguió unas decenas de seguidores y en YouTube casi una centena de suscriptores partiendo de unos 200. El mayor mérito lo de la difusión la tuvo el creador de contenido conocido por su gran cantidad de seguidores.
 
 Me sorprende que hay varios _youtubers_ de los que tengo constancia que en realidad no son informáticos pero lo usan a nivel doméstico  además comparten contenido en sus canales con éxito seguidos por muchas personas, dos buenos ejemplos son _yoyo_ en su canal de [Salmorejo Geek](https://www.youtube.com/c/SalmorejoGeek) con 16K suscriptores que se dedica a la agricultura y otro _Karla_ en su canal del [Karla's Project](https://www.youtube.com/channel/UCgHXvTpaNOBCIDqCNhOxPkg) con 57K suscriptores.
 
@@ -57,7 +57,7 @@ Al poco tiempo de crear el blog le puse publicidad AdSense, al principio por cur
 
 No he tenido muchas ofertas de artículos patrocinados, sí contactos pero que se materialicen no tantos, varios preguntan pero en cuanto se les indica la cantidad a pagar ya no responden más ni siquiera para decir que no les interesa. Algunos han sido incluso intentos de _phishing_. No he recibido tantos artículos patrocinados que son los que me recargan mi saldo en [PayPal][paypal], pero el final de año ha acabado con uno para el proveedor de infraestructura _cloud_ de [Clouding][cloudingio]. Ya había escrito uno para Clouding y en esta ocasión han querido publicar otro, un artículo enteramente escrito por mi y con total libertad editorial en tema y contenido.
 
-Unos 400 € por ingresos de AdSense, 43 € por afiliado de Amazon y 150 € por patrocinios. No está mal pero que nadie piense que compensa el tiempo dedicado al blog.
+Unos 400 € por ingresos de AdSense, 50 € por afiliado de Amazon y 150 € por patrocinios. No está mal pero que nadie piense que compensa el tiempo dedicado al blog.
 
 {{< image
    gallery="true"
@@ -77,7 +77,7 @@ Otro apartado que requiere tiempo es mejorar la propia infraestructura del blog.
 
 #### Continuando mejorando alis y futuras ideas
 
-Aunque [Arch Linux][archlinux] en el medio de instalación incluye un _script_ para facilitar la instalación aún así hay una buena cantidad de usuarios que siguen usando alis que deduzco porque sigue siendo marcado como favorito y con _forks_. Y es que de los _scripts_ de instalación de Arch Linux que he visto sigo prefiriendo los conceptos en los que se basa alis, automatizado, desatendido, simple y configurable. Otros scripts no complen alguno o varios de estos principios que tengo para alis, aunque alis sea simplemente un _script_ en bash no he visto ninguna implementación mejor en todos los aspectos.
+Aunque [Arch Linux][archlinux] en el medio de instalación incluye un _script_ para facilitar la instalación aún así hay una buena cantidad de usuarios que siguen usando alis que deduzco porque sigue siendo marcado como favorito y con _forks_. Y es que de los _scripts_ de instalación de Arch Linux que he visto sigo prefiriendo los conceptos en los que se basa alis, automatizado, desatendido, simple y configurable. Otros _scripts_ no cumplen alguno o varios de estos principios que tengo para alis, aunque alis sea simplemente un _script_ en bash no he visto ninguna implementación mejor en todos los aspectos.
 
 Ya tengo varias pequeñas ideas para mejorar alis. Más que para el _script_ para seguir promocionándolo. Una de estas mejoras es escribir más contenido para atraer visitas como mejorar su sitio web, una guía de usuario, una descripción más detallada, que opinan los usuarios, opciones alternativas y algo de documentación sobre la configuración. Completar algo más los principios en los que se basa el _script_ y que espera el _script_ de los usuarios que lo usen, alis principalmente no es un _script_ para que un usuario sin ningún conocimiento al igual que Arch sea capaz de instalar Arch Linux sino para facilitarlo a quien ya conoce Arch Linux, el _script_ espera que si no se ajusta a tus necesidades lo modifiques y envíes un _pull request_ si esa funcionalidad es útil para otros usuarios o que el usuario pida ayuda como último recurso en caso de no resolver el problema por sí mismo. En Arch Linux no es recomendable usar una configuración que no sabes como funciona, al menos lo básico, el riesgo de hacerlo es que pierdas los datos en caso de que surja un error o en una actualización y no sepas como repararlo. Para usar GNU/Linux como primer contacto sin complicaciones son mejores distribuciones [Ubuntu][ubuntu], [Fedora][fedora], [openSuse][opensuse] o [elementaryOS][elementary].
 
@@ -93,13 +93,13 @@ He recibido varios _pull request_ que aunque no he incorporado tal cual me han s
 
 ### Otras contribuciones
 
-Sigo realizando las traducciones de [VLC][vlc], [KeePassXC][keepassxc] y [VirtualBox][virtualbox]. La de VLC la estoy dejando algo aparcada, me gustaría que hubiese alguien que pudiese contribuir a traducir VLC sobre todo aquellas partes que yo no uso como la versión para iOS.
+Sigo realizando las traducciones de [VLC][vlc], [KeePassXC][keepassxc] y [VirtualBox][virtualbox]. La de VLC la estoy dejando algo aparcada, me gustaría que hubiese alguien que pudiese contribuir a traducir VLC sobre todo aquellas partes que yo no uso como la versión para iOS y Android.
 
 ### Artículos publicados
 
 Si en el 2020 publiqué unos 90 artículos, este he publicado algunos menos por tiempo y porque no he tenido tantas ideas para escribir artículos. Este 2021 han sido 73 artículos nuevos y algunos pocos más que he actualizado. Los temas son los mismos de siempre. Estos artículos son los del segundo semestre.
 
-Urte berri on!
+Urte berri on!, Buen año nuevo!
 
 #### Artículos sobre Java y programación
 
