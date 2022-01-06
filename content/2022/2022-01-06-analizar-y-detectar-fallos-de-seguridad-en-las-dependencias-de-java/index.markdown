@@ -53,6 +53,11 @@ Esta misma historia ya se repitió en el 2014 con [OpenSSL][openssl] con el deno
 * [Tech giants, chastened by Heartbleed, finally agree to fund OpenSSL](https://arstechnica.com/information-technology/2014/04/tech-giants-chastened-by-heartbleed-finally-agree-to-fund-openssl/)
 * [Of Money, Responsibility, and Pride](https://veridicalsystems.com/blog/of-money-responsibility-and-pride/)
 
+{{< image
+    gallery="false"
+    image1="image:log4shell.png" optionsthumb1="650x450" title1="Logotipo de Log4Shell"
+    caption="Logotipo de Log4Shell" source="https://www.lunasec.io/" >}}
+
 ### Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven
 
 Dado que se volverá a repetir un fallo de seguridad como Log4 2 o _Heartbleed_ y dado que es imposible estar seguro de que una dependencia no se vea afectada en algún momento por un fallo grave de seguridad conviene estar suscrito a los boletines de seguridad y analizar las dependencias, automatizar el análisis de las dependencias es la mejor opción para que la mayor parte del trabajo lo hagan las computadoras en vez de personas y detectar los fallos de seguridad en cuanto sean publicados.
