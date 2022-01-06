@@ -5,12 +5,50 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2021-12-16T19:00:00+01:00</updated>
+    <updated>2022-01-06T11:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/</id>
+        <title>Los tipos de módulos de JPMS añadidos a partir de Java 9</title>
+        <updated>2019-07-07T12:00:00+02:00</updated>
+        <published>2019-07-07T12:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los módulos de Java dotan a la plataforma de nuevas características. Para garantiza la compatibilidad con las librerías existentes y permitir una transición progresiva de una versión sin módulos a una con módulos la plataforma de módulos de Java define varios tipos de módulos.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Con la <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java2-los-modulos/">publicación de Java 9</a> el 2017 se introdujo la importante novedad de los módulos que proporciona a la plataforma Java varias características como encapsulación fuerte, interfaces bien definidas y dependencias explícitas. Todos las clases se organizan en paquetes y en Java 9 también en módulos para lo cual fue necesario reorganizar en módulos todos los paquetes de los que se compone la API de Java.</p>
+<p>Antes de Java 9 todas las clases se proporcionaban en una lista ordenada de archivos <em>jar</em>, lo que se conocía como el <em>classpath</em> y donde cualquier clase tenía acceso a cualquier otra que se encontrase en él respetando los ámbitos de visibilidad (<em>public</em>, <em>protected</em>, <em>private</em> y <em>package</em>). En la definición de cada módulo en su archivo <em>module-info.java</em> se debe especificar cuales son los módulos requeridos para su funcionamiento no permitiendo la máquina virtual de Java el acceso a ninguna otra clase de otros módulos ni a ninguna clase de los paquetes no exportados.</p>
+<p>Para mantener la compatibilidad hacia atrás y hacer más sencillo la transición hacía los módulos, algunas librerías puede que ya no tengan mantenimiento, se pueden dar tres tipos de módulos.</p>
+<ul>
+<li>Módulos con nombre: están compuestos por las librerías que tienen su definición de módulo en el archivo <em>module-info.java</em> y son colocados en el <em>modulepath</em> al iniciar la aplicación. Únicamente leen los módulos que explícitamente se ha indicado en la definición del módulo con la palabra <em>requires</em> y tiene acceso a los paquetes y sus clases exportados de los módulos requeridos.</li>
+<li>Módulos automáticos: son las librerías que no tienen una definición de módulo pero que son colocadas en el <em>modulepath</em>. La máquina virtual de Java le asigna un nombre de módulo de forma automática según el nombre de la librería o según la propiedad <em>Automatic-Module-Name</em> del archivo de manifiesto. Leen todos los otros módulos del sistema, los que se encuentren en el <em>modulepath</em> (incluidos todos los otros automáticos) y de la imagen del JDK, y todas las clases del módulo anónimo. Los módulos automáticos son necesarios para que no requerir convertir una librería a un módulo, esto es no requerir convertir a un módulo todo el código ya existente lo cual es un problema ya que muchas librerías ya no tienen mantenimiento. Ya que no tienen una definición de módulo se exportan todos los paquetes.</li>
+<li>Módulo anónimo: todas las librerías (incluso las que tienen su definición del módulo) que se colocan el <em>classpath</em> forman el módulo anónimo. Leen todos los módulos del sistema y tienen acceso a todos sus paquetes exportados.</li>
+</ul>
+<p>Ya se han publicado varios libros que explican detalladamente la modularidad introducida en Java 9. Cualquiera de ellos es una guía completa de la modularidad de Java.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1484225910&amp;linkId=9c7874501bb32fa3318e285022e0207a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1484227123&amp;linkId=59d96101c25f9c16c4427b8ee9daef1a" title="Amazon" class="lozad"></iframe>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/06/hemeroteca-15/</id>
         <title>Hemeroteca #15</title>
@@ -1124,36 +1162,6 @@
                 <category term="java"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/</id>
-        <title>Colecciones sincronizadas e inmutables en Java</title>
-        <updated>2019-03-01T16:30:00+01:00</updated>
-        <published>2019-03-01T16:30:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
-<p>La interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> es implementada por varias interfaces y clases <em>ArrayList</em>, <em>HashSet</em>, <em>List</em>, <em>Queue</em>, <em>Set</em>, <em>SortedSet</em>, <em>Stack</em>, <em>TreeSet</em> y algunas otras, por otro lado está la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a> para estructuras clave-valor. Las colecciones que mantienen un orden en sus elementos heredan de la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a> que posee métodos con operaciones basadas en un índice como obtener, insertar o eliminar un elemento en una determinada posición. Los <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a> no permiten elementos que sean iguales según determine el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals%28java.lang.Object%29">equals</a> del objeto y los presentes en la colección. Los <em>Map</em> asocian una clave a cada objeto que se utiliza para realizar operaciones en la colección.</p>
-<p>Muchos de los métodos de las colecciones funcionan en términos de los métodos <em>equals</em> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode%28%29">hashCode</a> de modo que si en una determinada clase se sobrescriben se ha de hacer implementando el contrato de estos métodos correctamente de otra manera una aplicación puede presentar errores de difícil depuración.</p>
-<p>La clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">Collections</a> contiene numerosos métodos estáticos entre ellos para hacer una colección que no lo sea en inmutable o sincronizada. Con los métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedCollection%28java.util.Collection%29">synchronizedCollection</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedList%28java.util.List%29">synchronizedList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedMap%28java.util.Map%29">synchronizedMap</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#synchronizedSet%28java.util.Set%29">synchronizedSet</a> para hacerlas sincronizadas y los métodos <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableCollection%28java.util.Collection%29">unmodifiableCollection</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableList%28java.util.List%29">unmodifiableList</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableMap%28java.util.Map%29">unmodifiableMap</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html#unmodifiableSet%28java.util.Set%29">unmodifiableSet</a>. Estos métodos estáticos de la clase <em>Collections</em> reciben como parámetro una colección no sincronizada o inmutable y devuelven una colección sincronizada o inmutable.</p>
-<p>Las colecciones específicas para la concurrencia son más eficientes que convertir una colección no sincronizada en sincronizada con los métodos de <em>Collections</em>. Las colecciones que se convierten en sincronizadas tienen una contención en toda la colección cuando no es necesario para las operaciones de lectura. Si las operaciones de lectura son mayoría las colecciones específicas para la concurrencia son más eficientes, no tienen tanta contención, por ejemplo, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html">ConcurrentHashMap</a> divide el mapa en varios segmentos y solo bloquea los segmentos relevantes lo que permite a múltiples <em>threads</em> acceder a otros segmentos del mismo mapa sin contención. <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CopyOnWriteArrayList.html">CopyOnWriteArrayList</a> permite varios lectores sin necesidad de sincronización y cuando ocurre una escritura copia el <em>ArrayList</em> a uno nuevo.</p>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

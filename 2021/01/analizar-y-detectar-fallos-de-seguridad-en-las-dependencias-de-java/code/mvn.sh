@@ -1,0 +1,1 @@
+$ mvn org.owasp:dependency-check-maven:6.5.2.1:check

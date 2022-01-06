@@ -5,12 +5,130 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-12-30T10:00:00+01:00</updated>
+    <updated>2022-01-06T11:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/</id>
+        <title>Administrar secretos y proteger datos sensibles con Vault</title>
+        <updated>2019-07-27T23:00:00+02:00</updated>
+        <published>2019-07-27T18:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, &hellip;) de ser descifrados y generalmente no está bien protegidos dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en entornos Docker suele usarse.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+</div>
+<p>La seguridad es un aspecto muy importante de los sistemas informáticos, no darle la consideración necesaria puede dar lugar a caídas de servicio y robo de datos potencialmente ocasionando importantes pérdidas de dinero, sanciones y pérdida de confianza de los clientes y proveedores de una organización.</p>
+<p>La seguridad se mantiene mediante mecanismos de autenticación identifican al solicitante solicitante, de autorización permitiendo realiza únicamente las acciones para las que se tienen permisos y mediante firma y cifrado para impedir la modificación de los datos y el acceso a la información sin las credenciales y autorización requerida.</p>
+<p>La infraestructura informática de los sistemas actuales es cada vez más compleja por el número y tipo de las distintas de piezas que emplean como bases de datos, sistemas de mensajes u otros servicios, también por el aspecto efímero en la tendencia actual de microservicios como por la utilización de entornos en la nube con una infraestructura no confiable al estar fuera del control de una organización y estar compartida con otras organizaciones.</p>
+<p>No es seguro utilizar archivos sin cifrar aún utilizando los permisos del sistema de archivos dado que una intrusión en el sistema posibilita el acceso al secreto. Cifrarlos los archivos es el mismo caso de herramientas como <a href="https://www.getchef.com/">Chef</a>, <a href="https://puppet.com/">Puppet</a> y <a href="https://www.ansible.com/">Ansible</a>. Utilizar variables de entorno para proporcionar secretos tampoco es seguro ya que aunque los secretos no están en el sistema de archivos se pueden inspeccionar las variables de entorno de un proceso.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ env <span class="p">|</span> grep SECRET&#10;$ docker inspect&#10;$ sudo cat /proc/<span class="nv">$pid</span>/environ</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>commands.sh</span>
+    </div>
+</div>
+<p>Por otra parte las contraseñas y claves han de rotarse regularmente para limitar en el tiempo el acceso ante el filtrado de las credenciales en un sistema o para denegar el acceso a una persona que en algún momento haya tenido credenciales de acceso como un empleado que ya no pertenece a la compañía.</p>
+<h3 id="vault">Vault</h3>
+<p><a href="https://www.vaultproject.io/">Vault</a> es una herramienta para acceder de forma segura a secretos. Un secreto es cualquier cosa a la que se quiera tener severamente controlado como claves de API, contraseñas y certificados. Vault proporciona una interfaz para cualquier secreto a la vez que mantiene un control de acceso y un <em>log</em> de acceso detallado.</p>
+<ul>
+<li><a href="https://www.vaultproject.io/docs/what-is-vault/index.html">Introduction to Vault</a></li>
+<li><a href="https://www.vaultproject.io/docs/use-cases/index.html">Use Cases</a></li>
+</ul>
+<p>Las características principales de Vault se engloban en tres aspectos de la seguridad: cifrado, control de acceso y ciclo de vida.</p>
+<ul>
+<li>Almacenamiento seguro de secretos: se pueden almacenar secretos arbitrarios clave/valor. Los secretos son cifrados previamente a ser almacenados en el almacenamiento persistente de modo que obtener acceso al almacenamiento persistente no es suficiente para acceder a los secretos. Vault puede almacenar los secretos en disco, <a href="https://www.consul.io/">Consul</a> y más.</li>
+<li>Secretos dinámicos: puede <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar secretos bajo demanda para bases de datos</a> o algunos sistemas como AWS. Por ejemplo, cuando una aplicación necesita acceso a una base de datos SQL solicita a Vault unas credenciales, Vault genera unas credenciales con los permisos adecuados. Después de crear estos secretos dinámicos también los revoca automáticamente una vez pasado su tiempo de concesión.</li>
+<li>Cifrado de datos: puede <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">cifrar y descifrar datos sin almacenarlos</a>. Esto permite definir parámetros de seguridad y los desarrolladores almacenar los datos cifrados en localizaciones como bases de datos sin tener que diseñar sus propios métodos de cifrado.</li>
+<li>Concesión y renovación: todos los secretos en Vault tienen un tiempo de concesión asociado. Al finalizar la concesión Vault los revoca automáticamente, los clientes pueden solicitar renovar las concesiones mediante las API disponibles de Vault.</li>
+<li>Revocación: integra la funcionalidad de revocación, no solo secretos individuales sino jerarquías de secretos. La revocación asiste en la rotación de las claves así como cerrar el sistema en caso de intrusión.</li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/VYfl-DpZ5wM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/NxL2-XuZ3kc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="conceptos">Conceptos</h3>
+<p>Los motores de secretos son uno de los conceptos en el ámbito de Vault. Son componentes que permite almacenar, generar o cifrar datos. Algunos motores de secretos simplemente almacenan y leen datos, otros se conectan a otros servicios y generan credenciales dinámicamente bajo demanda. Otros motores de secretos proporcionan el cifrado como servicio, <em>tokens</em> de un solo uso, certificados y mucho más.</p>
+<ul>
+<li><a href="https://www.vaultproject.io/api/secret/index.html">Secrets Engines</a></li>
+<li><a href="https://www.vaultproject.io/docs/secrets/kv/index.html">KV Secrets Engine</a></li>
+<li><a href="https://www.vaultproject.io/docs/secrets/databases/index.html">Databases Secrets Engine</a></li>
+<li><a href="https://www.vaultproject.io/docs/secrets/rabbitmq/index.html">RabbitMQ Secrets Engine</a></li>
+<li><a href="https://www.vaultproject.io/docs/secrets/pki/index.html">PKI Secrets Engine</a></li>
+<li><a href="https://www.vaultproject.io/docs/secrets/ssh/index.html">SSH Secrets Engine</a></li>
+</ul>
+<p>Otro concepto es la <a href="https://www.vaultproject.io/docs/auth/index.html">autenticación</a>. Permiten realizar la autenticación y son responsables de asignar una identidad y un conjunto de <em>policies</em> a un usuario. Por ejemplo, para los desarrolladores el método de autenticación de GitHub es fácil de usar pero para servidores el método <em>AppRole</em> es el recomendado</p>
+<p>Los secretos necesitan <a href="https://www.vaultproject.io/docs/configuration/storage/index.html">almacenamiento</a>. Algunos tipos de almacenamiento son mejores para la alta disponibilidad y otros facilitan la copia de seguridad y la restauración. Puede ser en memoria, sistema de archivos, una herramienta como Consul o varias bases de datos entre ellas bases de datos relacionales.</p>
+<p>La <a href="https://www.vaultproject.io/docs/audit/index.html">auditoria</a> permite obtener una trazabilidad de las operaciones que se han realizado, dado que todas las operaciones se realizan mediante una API el <em>log</em> de auditoría es simplemente cada interacción autenticada con Vault, incluidas los errores. Puede ser un archivo o un <em>socket</em>.</p>
+<p>Todo en Vault está basado en <em>paths</em>. Las <a href="https://www.vaultproject.io/docs/concepts/policies.html"><em>policies</em></a> permiten o deniegan el acceso a ciertos <em>paths</em>.  Poseen la siguiente sintaxis, donde las <em>capabilities</em> son las operaciones CRUD permitidas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="k">path</span> <span class="s2">&#34;secret/*&#34;</span> {&#10;<span class="n">  capabilities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;create&#34;, &#34;read&#34;, &#34;update&#34;, &#34;delete&#34;, &#34;list&#34;</span><span class="p">]</span>&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>policy.hcl</span>
+    </div>
+</div>
+<h3 id="instalación-y-un-caso-de-uso">Instalación y un caso de uso</h3>
+<p>La <a href="https://www.vaultproject.io/docs/install/index.html">instalación de Vault</a> es muy sencilla ya que es un único binario sin más dependencias. En una distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> estará en los repositorios oficiales. En <a href="https://www.archlinux.org/">Arch Linux</a> se instala con el comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S vault&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install.sh</span>
+    </div>
+</div>
+<p>En el siguiente ejemplo en modo desarrollo de uso de Vault se inicia, se realiza la autenticación con el <em>token</em> <em>root</em> de superusuario y se crea un secreto. Aquí solo se muestra el caso de uso de guardar y recuperar secretos, otros son generar credenciales para conectarse a una base de datos y proporcionar cifrado y descifrado como servicio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault server -dev&#10;<span class="o">==</span>&gt; Vault server configuration:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Api Address: http://127.0.0.1:8200&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cgo: disabled&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cluster Address: https://127.0.0.1:8201&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Listener 1: tcp <span class="o">(</span>addr: <span class="s2">&#34;127.0.0.1:8200&#34;</span>, cluster address: <span class="s2">&#34;127.0.0.1:8201&#34;</span>, max_request_duration: <span class="s2">&#34;1m30s&#34;</span>, max_request_size: <span class="s2">&#34;33554432&#34;</span>, tls: <span class="s2">&#34;disabled&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Log Level: info&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Mlock: supported: true, enabled: <span class="nb">false</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Storage: inmem&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Vault v1.1.1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version Sha: a3dcd63451cf6da1d04928b601bbe9748d53842e&#10;&#10;WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory&#10;and starts unsealed with a single unseal key. The root token is already&#10;authenticated to the CLI, so you can immediately begin using Vault.&#10;&#10;You may need to <span class="nb">set</span> the following environment variable:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;$ <span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span><span class="s1">&#39;http://127.0.0.1:8200&#39;</span>&#10;&#10;The unseal key and root token are displayed below in <span class="k">case</span> you want to&#10;seal/unseal the Vault or re-authenticate.&#10;&#10;Unseal Key: <span class="nv">R6MKrMxcJtTTUuIjeQjwDxnv4sHbKtjmuRn0Fok98zk</span><span class="o">=</span>&#10;Root Token: s.hQoeIivTHHgl1AtsoVz1UF1G&#10;&#10;Development mode should NOT be used in production installations!</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span><span class="s1">&#39;http://127.0.0.1:8200&#39;</span>&#10;$ vault kv put secret/key <span class="nv">key</span><span class="o">=</span>s3cr3t&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;created_time&nbsp;&nbsp;&nbsp;&nbsp; 2019-07-27T17:30:29.559274833Z&#10;deletion_time&nbsp;&nbsp;&nbsp;&nbsp;n/a&#10;destroyed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">false</span>&#10;version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="m">1</span>&#10;$ vault kv get secret/key&#10;<span class="o">======</span> <span class="nv">Metadata</span> <span class="o">======</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;created_time&nbsp;&nbsp;&nbsp;&nbsp; 2019-07-27T17:30:29.559274833Z&#10;deletion_time&nbsp;&nbsp;&nbsp;&nbsp;n/a&#10;destroyed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">false</span>&#10;version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nv">1</span>&#10;&#10;<span class="o">===</span> <span class="nv">Data</span> <span class="o">===</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;-----&#10;key&nbsp;&nbsp;&nbsp;&nbsp;s3cr3t</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>secret.sh</span>
+    </div>
+</div>
+<p>Vault al igual que otras de las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a> como Consul y <a href="https://www.nomadproject.io/">Nomad</a> posee una interfaz gráfica accesible mediante el navegador que permite realizar las mismas operaciones que a través de la API o desde la linea de comandos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz gráfica de Vault"><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_300x200_fit_box_3.png" width="300" height="188" alt="Interfaz gráfica de Vault" title="Interfaz gráfica de Vault"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_300x200_fit_box_3.png" width="300" height="188"  class="lozad "></a></p>
+<figcaption>Interfaz gráfica de Vault</figcaption>
+</figure>
+</div>
+<p>Vault a igual que otras de las herramientas de HashiCorp tiene una muy buena documentación en formato de <a href="https://learn.hashicorp.com/vault">guía</a> y en formato de <a href="https://www.vaultproject.io/docs/">documentación</a>. En una aplicación Java el proyecto <a href="https://spring.io/">Spring</a> facilita su uso con <a href="https://projects.spring.io/spring-vault/">Spring Vault</a> y <a href="https://cloud.spring.io/spring-cloud-vault/">Spring Cloud Vault</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.baeldung.com/vault">An Intro to Vault</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/</id>
         <title>Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep</title>
@@ -946,113 +1064,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/</id>
-        <title>Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</title>
-        <updated>2019-05-26T11:30:00+02:00</updated>
-        <published>2019-05-26T11:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
-</div>
-<p>El registro y descubrimiento de servicios permite a los servicios registrase y a los clientes descubrir la ubicación de otros servicios, la ubicación consiste en la dirección IP y el puerto en el que contactarles. Dado la naturaleza efímera de los servicios donde nuevas instancias de servicios se inician y se detienen en diferentes máquinas y puertos el servicio de descubrimiento es esencial.</p>
-<p>La funcionalidad de registro y descubrimiento consiste en dos partes, por un lado cuando se inicia una instancia de un servicio se registra su ubicación en el servicio de registro y descubrimiento y por otro lado los clientes cuando requieren una instancia de un servicio la buscan en el servicio de descubrimiento.</p>
-<p>El registro en el servicio de descubrimiento puede hacerse de dos formas, que sea el propio servicio el que se registra en el servicio de descubrimiento o que se sea otro servicio el que lo registra. Para el primer caso escribí un artículo con <a href="https://www.consul.io/">Consul</a> como servicio de descubrimiento en una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> que se registra al iniciarse. La ventaja es que es autosuficiente pero adquiere la tarea de autoregistrarse. Por el contrario delegar la tarea de registro permite extraerla de los servicios y ofrecer esa funcionalidad por un servicio con esa misión específicamente.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
-</ul>
-<p>En este artículo se usa <a href="https://github.com/gliderlabs/registrator">GliderLabs Registrator</a> como servicio que se encarga de registrar en un servicio de descubrimiento como Consul los servicios que se inicien en <a href="https://www.docker.com/">Docker</a>, aunque soporta otros como <a href="https://etcd.io/">etcd</a>.</p>
-<p>Registrator es un contenedor de Docker, su funcionamiento es escuchar los eventos del demonio de Docker y monitorizar cuando se inician nuevos contenedores o cuando se paran. La monitorización la hace a través del <em>socket</em> del servicio de Docker, para lo que hay que montar un volumen en este contenedor con el archivo <em>/var/run/docker.sock</em> del <em>host</em>.</p>
-<p>Primero se inicia el servicio de Consul.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ consul agent -dev&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>consul.sh</span>
-    </div>
-</div>
-<p>Luego se inicia el contenedor Registrator indicando la ubicación con dirección IP y puerto del servicio de Consul.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm --name<span class="o">=</span>registrator --net<span class="o">=</span>host --volume<span class="o">=</span>/var/run/docker.sock:/tmp/docker.sock gliderlabs/registrator:latest consul://localhost:8500&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-registrator.sh</span>
-    </div>
-</div>
-<p>Iniciados estos dos servicios en la interfaz de estado de Consul se observa que no hay ningún servicio pero cuando se inicie un nuevo contenedor será registrado en Consul por Registrator.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hudf2f8b03877264bacf83a564e5686ede_36482_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dirección"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hudf2f8b03877264bacf83a564e5686ede_36482_300x200_fit_box_3.png" width="287" height="200" alt="Dirección" title="Dirección"  class="lozad "></a></p>
-</figure>
-</div>
-<p>En este caso se utiliza como servicio una base de datos <a href="https://www.postgresql.org/">PostgreSQL</a>. Dado que el puerto en el que esté disponible el servicio de PostgreSQL es indiferente al utilizar un servicio de registro y descubrimiento se indica el <em>-p</em> sin indicar el puerto del <em>host</em>, de este modo Docker le asigna un puerto público aleatorio.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm --name postgres -e <span class="nv">POSTGRES_USER</span><span class="o">=</span>user -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>password -e <span class="nv">POSTGRES_DB</span><span class="o">=</span>database -p <span class="m">5432</span> postgres:alpine&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-postgres.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker ps&#10;CONTAINER ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   COMMAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  CREATED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  PORTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAMES&#10;cb7602605725&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postgres:alpine&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   <span class="m">54</span> seconds ago&nbsp;&nbsp;&nbsp;&nbsp;   Up <span class="m">53</span> seconds&nbsp;&nbsp;&nbsp;&nbsp;   0.0.0.0:32777-&gt;5432/tcp   postgres&#10;d286341148cb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gliderlabs/registrator:latest   <span class="s2">&#34;/bin/registrator co…&#34;</span>   About a minute ago   Up About a minute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; registrator</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-ps.sh</span>
-    </div>
-</div>
-<p>En la salida del contenedor de Registrator se emite una traza indicando que el servicio de PostgreSQL ha sido registrado en Consul.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">2019/05/26 11:05:29 Starting registrator v7 ...&#10;2019/05/26 11:05:29 Using consul adapter: consul://localhost:8500&#10;2019/05/26 11:05:29 Connecting to backend (0/0)&#10;2019/05/26 11:05:29 consul: current leader  127.0.0.1:8300&#10;2019/05/26 11:05:29 Listening for Docker events ...&#10;2019/05/26 11:05:29 Syncing services on 1 containers&#10;2019/05/26 11:05:29 ignored: d286341148cb no published ports&#10;2019/05/26 11:05:50 added: cb7602605725 archlinux:postgres:5432</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-registrator.out</span>
-    </div>
-</div>
-<p>Una vez iniciado el servicio de postgres en la consola de Consul se muestra con su dirección y puerto en el que se encuentra, en el contenedor utiliza su puerto por defecto <em>5432</em> pero hacia el exterior en este caso al no haber especificado uno Docker le asigna un puerto aleatorio en este caso el <em>32777</em>. Este puerto aleatorio es con el que los clientes acceden a la base de datos.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu5336dadbc35299bcca8969f84d373cf0_39850_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicio de PostgreSQL registrado en Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu5336dadbc35299bcca8969f84d373cf0_39850_300x200_fit_box_3.png" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_huf0df6f6a3d2138a93d9a38f4927788b0_43545_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicio de PostgreSQL registrado en Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_huf0df6f6a3d2138a93d9a38f4927788b0_43545_300x200_fit_box_3.png" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul"  class="lozad "></a></p>
-<figcaption>Servicio de postgres registrado en Consul por Registrator</figcaption>
-</figure>
-</div>
-<p>En vez de iniciar los servicios individualmente con comandos de Docker creando un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> con la definición de todos los contenedores se facilita iniciar todos los contenedores con un comando.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose-up.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.7&#34;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">consul</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">consul:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">consul</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;host&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;consul&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;agent&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-dev&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-ui&#34;</span><span class="p">]</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">registrator</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">gliderlabs/registrator:latest</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">registrator</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;host&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">volumes</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">/var/run/docker.sock:/tmp/docker.sock</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="l">/bin/registrator consul://localhost:8500</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">consul</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">postgres</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">postgres:alpine</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">postgres</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="s2">&#34;5432&#34;</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">POSTGRES_USER=user</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">POSTGRES_PASSWORD=password</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">POSTGRES_DB=database</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">registrator</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose.yml</span>
-    </div>
-</div>
-<p>El proyecto de <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> ofrece soporte para ambas tareas de registrar y descubrir servicios, aunque perfectamente la tarea de registro se puede delegar como en este caso a Registrator y utilizar en los servicios de Spring Boot únicamente la parte de descubrimiento.</p>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Registrator">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./docker-compose-up.sh</code></p>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="software"/>
             
         
     </entry>

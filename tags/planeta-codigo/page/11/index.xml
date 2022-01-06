@@ -5,12 +5,109 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2021-12-30T10:00:00+01:00</updated>
+    <updated>2022-01-06T11:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/</id>
+        <title>Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux</title>
+        <updated>2019-11-04T19:30:00+01:00</updated>
+        <published>2019-11-03T13:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Los directorios de <em>Descargas</em>, <em>Documentos</em>, <em>Música</em>, <em>Imágenes</em>, <em>Vídeos</em>, <em>Escritorio</em>, <em>Plantillas</em> y <em>Público</em> «bien conocidos» por defecto se encuentran en el directorio de inicio o <em>home</em> del usuario, en mi caso sería <em>/home/picodotdev/</em> o abreviadamente <em>~/</em>.</p>
+<p>Por preferencias o necesidad según el usuario, la ubicación de cada uno de estos directorios se puede cambiar individualmente. Por ejemplo, si en la carpeta <em>Documentos</em>, <em>Música</em> e <em>Imágenes</em> se tiene un montón de archivos que ocupan varias decenas de gigabytes que no se usan de forma habitual ni se desea tener en el SSD ocupando espacio la ubicación de estos directorios se puede cambiar por uno que se encuentra en un disco mecánico USB o tarjeta microSD externa.</p>
+<p>Los discos duros SSD se han abaratado muchísimo en los últimos años pero aún no han alcanzado a los discos duros mecánicos en el precio de € por GB. Un <a href="https://amzn.to/2NEWsly">disco duro mecánico de 4 TB</a> tiene un precio bastante asequible. A lo largo del tiempo he ido reaprovechando los discos duros de portátiles para los que compré una caja USB para utilizarlos como discos duros externos USB y ahora tengo varios, uno de 500 GB, otro de 320 GB, y dos de 120 GB.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06VVS7S94&amp;linkId=b3935c0c943be983bce3ceb803928e62" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06W55K9N6&amp;linkId=6abae8dc406222e745a56e1405eb282b" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XG892ZH&amp;linkId=54661b04f99360148ebed3b5528fa2ed" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0713WPGLL&amp;linkId=3f06bc3776d19ba91f5ab5660781d247" title="Amazon" class="lozad"></iframe>
+</div>
+<p>Cuando compré el <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC</a> compré la versión <em>slim</em> sin bahía para disco SATA 2.5&quot; y solo le puse un SSD de 500 GB con conexión M.2. Tenía intención de comprar una <a href="https://amzn.to/2NE97Fg">tarjeta SDXC</a> o una <a href="https://amzn.to/2NE97Fg">memoria USB</a> pequeña para tenerla siempre conectada al ordenador y como una forma de ampliar la capacidad de almacenamiento. Sin embargo, ni la tarjeta microSD ni la memoria USB es barata comparada con el precio de un SSD SATA. Al final he optado por utilizar uno de esos discos duros externos que tengo para el mismo propósito. Lo que necesitaba era cambiar la ubicación de esos directorios por defecto para que en vez de estar en la carpeta de inicio de mi usuario y en el SSD estuviesen en el disco duro externo USB.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B083ZS4HYD&amp;linkId=56990d2fedd9adcebc7b4d5b42e0ddfb" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07HPX38XC&amp;linkId=df0fb3936a8db66682dd9f1c56bc8865" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07P9W5HJV&amp;linkId=94d207e03eb06aae1e957b8ea9fd541a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07H1231S8&amp;linkId=a34fdc7896b0bd98cca4bffe8d532f81" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B085FGBBQT&amp;linkId=53ddc3565d97646edfb49c83ebfaf25e" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFS5657&amp;linkId=186319e6ae3e35777b9412d236a46297" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09D3N9MFH&amp;linkId=cc5b5ec88477019b977e0e5e92c2b712" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFHQGB9&amp;linkId=69626bf45c9c279219546f122fd33a06" title="Amazon" class="lozad"></iframe>
+</div>
+<p>La ubicación de los directorios de usuario se puede cambiar modificando las rutas en el archivo de configuración <em>~/.config/user-dirs.dirs</em>. En este caso poniendo la ubicación del punto de montaje del disco duro externo USB.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"># This file is written by xdg-user-dirs-update&#10;# If you want to change or add directories, just edit the line you&#39;re&#10;# interested in. All local changes will be retained on the next run.&#10;# Format is XDG_xxx_DIR=&#34;$HOME/yyy&#34;, where yyy is a shell-escaped&#10;# homedir-relative path, or XDG_xxx_DIR=&#34;/yyy&#34;, where /yyy is an&#10;# absolute path. No other format is supported.&#10;# &#10;XDG_DESKTOP_DIR=&#34;/run/media/picodotdev/bmovenegro/Escritorio/&#34;&#10;XDG_DOWNLOAD_DIR=&#34;/run/media/picodotdev/bmovenegro/Descargas/&#34;&#10;XDG_TEMPLATES_DIR=&#34;/run/media/picodotdev/bmovenegro/Plantillas/&#34;&#10;XDG_PUBLICSHARE_DIR=&#34;/run/media/picodotdev/bmovenegro/Público/&#34;&#10;XDG_DOCUMENTS_DIR=&#34;$HOME/Documentos&#34;&#10;XDG_MUSIC_DIR=&#34;/run/media/picodotdev/bmovenegro/Música/&#34;&#10;XDG_PICTURES_DIR=&#34;/run/media/picodotdev/bmovenegro/Imágenes/&#34;&#10;XDG_VIDEOS_DIR=&#34;/run/media/picodotdev/bmovenegro/Vídeos/&#34;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>user-dirs.dirs</span>
+    </div>
+</div>
+<p>Cambiar los valores de los directorios de usuario a otro directorio requiere que esos directorios estén disponibles a iniciar sesión de usuario en el entorno de escritorio. Para que el disco duro externo USB se monte al iniciar el sistema he definido un servicio de tipo <em>mount</em> para <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> en la ubicación <em>/etc/systemd/system/run-media-picodotdev-bmovenegro.mount</em> con el siguiente contenido. El disco duro se monta en el directorio <em>/run/media/bmovenegro/</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">[Unit]&#10;Description=Disk bmovenegro mount&#10;&#10;[Mount]&#10;What=/dev/disk/by-uuid/f0fe2765-00aa-4c2a-adef-83a3264b8f4f&#10;Where=/run/media/picodotdev/bmovenegro/&#10;Type=ext4&#10;Options=defaults&#10;&#10;[Install]&#10;WantedBy=multi-user.target</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-media-picodotdev-bmovenegro.mount</span>
+    </div>
+</div>
+<p>El identificador UUID de un dispositivo se obtiene con el comando <em>lsblk</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ lsblk -o +uuid,name&#10;NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   UUID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   NAME&#10;sda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 disk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  sda&#10;└─sda1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  8:1&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 part  /run/media/picodotdev/bmovenegro f0fe2765-00aa-4c2a-adef-83a3264b8f4f   sda1&#10;nvme0n1&nbsp;&nbsp;&nbsp;&nbsp;   259:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,8G  0 disk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  nvme0n1&#10;├─nvme0n1p1   259:1&nbsp;&nbsp;&nbsp;&nbsp;0   511M  0 part  /boot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7869-6341&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  nvme0n1p1&#10;└─nvme0n1p2   259:2&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 part&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   3067348f-58f4-48fd-be4b-7cb3aae80dd1   nvme0n1p2&#10;  └─lvm&nbsp;&nbsp;&nbsp;&nbsp;   254:0&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 crypt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  c0fVvN-1QTv-HccD-tyEt-cl49-GM7M-xDNGJQ lvm&#10;&nbsp;&nbsp;&nbsp;&nbsp;└─vg-root 254:1&nbsp;&nbsp;&nbsp;&nbsp;0 465,3G  0 lvm   /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4b561dc9-bbd6-4433-bc53-c879bde68042   vg-root</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lsblk.sh</span>
+    </div>
+</div>
+<p>Con esta configuración para el explorador de archivos en este caso Nautilus de <a href="https://www.gnome.org/">GNOME</a> la ubicación de estos archivos de usuario es transparente, los directorios aparecen en el panel lateral. Aunque en el directorio <em>home</em> siguen existiendo las carpetas originales de los directorios de usuario realmente cuando se hace clic en el panel lateral del directorio <em>Documentos</em> se muestra el contenido <em>/run/media/bmovenegro/Documentos</em> y no de <em>~/Documentos</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en el directorio home"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/gnome-user-dirs_hu13dde764cc60835d566a7a5526be178a_35122_300x200_fit_box_3.png" width="300" height="161" alt="Directorios de usuario en el directorio home" title="Directorios de usuario en el directorio home"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-user-dirs_hu2434c9f8192fcf97ba39eedbddb085c5_40855_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en disco USB externo"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-user-dirs_hu2434c9f8192fcf97ba39eedbddb085c5_40855_300x200_fit_box_3.png" width="300" height="161" alt="Directorios de usuario en disco USB externo" title="Directorios de usuario en disco USB externo"  class="lozad "></a></p>
+<figcaption>Directorios de usuario en el directorio home y en disco USB externo</figcaption>
+</figure>
+</div>
+<p>En el caso de GNU/Linux los directorios de usuario además están localizados de forma automática, esto es al listar los directorios los nombres están en el idioma del usuario de forma consistente, al contrario de como ocurre en otros sistemas operativos que sus nombres se mantienen en inglés aún en su explorador de archivos aparecer en el idioma del usuario creando una inconsistencia entre los nombres que se listan desde la terminal y los que aparecen en su explorador de archivos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/terminal-user-dirs_hu41e0484bcf94be2a2cd5f9b857ee6811_18873_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en el directorio home"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/terminal-user-dirs_hu41e0484bcf94be2a2cd5f9b857ee6811_18873_300x200_fit_box_3.png" width="272" height="200" alt="Directorios de usuario en el directorio home" title="Directorios de usuario en el directorio home"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-terminal-user-dirs_hu6ad41259ed9f626bde19d488d145fea7_25770_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Directorios de usuario en disco USB externo"><img src="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/images/usb-terminal-user-dirs_hu6ad41259ed9f626bde19d488d145fea7_25770_300x200_fit_box_3.png" width="272" height="200" alt="Directorios de usuario en disco USB externo" title="Directorios de usuario en disco USB externo"  class="lozad "></a></p>
+<figcaption>Directorios de usuario en el directorio home y en disco USB externo</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/XDG_user_directories">XDG user directories</a></li>
+<li><a href="https://sites.google.com/site/installationubuntu/tweaking-ubuntu/change-the-location-of-subfolders-in-your-home-partition">Change the location of subfolders in your Home partition</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/</id>
         <title>Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux</title>
@@ -1286,124 +1383,6 @@
                 <category term="java"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/</id>
-        <title>Administrar secretos y proteger datos sensibles con Vault</title>
-        <updated>2019-07-27T23:00:00+02:00</updated>
-        <published>2019-07-27T18:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, &hellip;) de ser descifrados y generalmente no está bien protegidos dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en entornos Docker suele usarse.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
-</div>
-<p>La seguridad es un aspecto muy importante de los sistemas informáticos, no darle la consideración necesaria puede dar lugar a caídas de servicio y robo de datos potencialmente ocasionando importantes pérdidas de dinero, sanciones y pérdida de confianza de los clientes y proveedores de una organización.</p>
-<p>La seguridad se mantiene mediante mecanismos de autenticación identifican al solicitante solicitante, de autorización permitiendo realiza únicamente las acciones para las que se tienen permisos y mediante firma y cifrado para impedir la modificación de los datos y el acceso a la información sin las credenciales y autorización requerida.</p>
-<p>La infraestructura informática de los sistemas actuales es cada vez más compleja por el número y tipo de las distintas de piezas que emplean como bases de datos, sistemas de mensajes u otros servicios, también por el aspecto efímero en la tendencia actual de microservicios como por la utilización de entornos en la nube con una infraestructura no confiable al estar fuera del control de una organización y estar compartida con otras organizaciones.</p>
-<p>No es seguro utilizar archivos sin cifrar aún utilizando los permisos del sistema de archivos dado que una intrusión en el sistema posibilita el acceso al secreto. Cifrarlos los archivos es el mismo caso de herramientas como <a href="https://www.getchef.com/">Chef</a>, <a href="https://puppet.com/">Puppet</a> y <a href="https://www.ansible.com/">Ansible</a>. Utilizar variables de entorno para proporcionar secretos tampoco es seguro ya que aunque los secretos no están en el sistema de archivos se pueden inspeccionar las variables de entorno de un proceso.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ env <span class="p">|</span> grep SECRET&#10;$ docker inspect&#10;$ sudo cat /proc/<span class="nv">$pid</span>/environ</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>commands.sh</span>
-    </div>
-</div>
-<p>Por otra parte las contraseñas y claves han de rotarse regularmente para limitar en el tiempo el acceso ante el filtrado de las credenciales en un sistema o para denegar el acceso a una persona que en algún momento haya tenido credenciales de acceso como un empleado que ya no pertenece a la compañía.</p>
-<h3 id="vault">Vault</h3>
-<p><a href="https://www.vaultproject.io/">Vault</a> es una herramienta para acceder de forma segura a secretos. Un secreto es cualquier cosa a la que se quiera tener severamente controlado como claves de API, contraseñas y certificados. Vault proporciona una interfaz para cualquier secreto a la vez que mantiene un control de acceso y un <em>log</em> de acceso detallado.</p>
-<ul>
-<li><a href="https://www.vaultproject.io/docs/what-is-vault/index.html">Introduction to Vault</a></li>
-<li><a href="https://www.vaultproject.io/docs/use-cases/index.html">Use Cases</a></li>
-</ul>
-<p>Las características principales de Vault se engloban en tres aspectos de la seguridad: cifrado, control de acceso y ciclo de vida.</p>
-<ul>
-<li>Almacenamiento seguro de secretos: se pueden almacenar secretos arbitrarios clave/valor. Los secretos son cifrados previamente a ser almacenados en el almacenamiento persistente de modo que obtener acceso al almacenamiento persistente no es suficiente para acceder a los secretos. Vault puede almacenar los secretos en disco, <a href="https://www.consul.io/">Consul</a> y más.</li>
-<li>Secretos dinámicos: puede <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar secretos bajo demanda para bases de datos</a> o algunos sistemas como AWS. Por ejemplo, cuando una aplicación necesita acceso a una base de datos SQL solicita a Vault unas credenciales, Vault genera unas credenciales con los permisos adecuados. Después de crear estos secretos dinámicos también los revoca automáticamente una vez pasado su tiempo de concesión.</li>
-<li>Cifrado de datos: puede <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">cifrar y descifrar datos sin almacenarlos</a>. Esto permite definir parámetros de seguridad y los desarrolladores almacenar los datos cifrados en localizaciones como bases de datos sin tener que diseñar sus propios métodos de cifrado.</li>
-<li>Concesión y renovación: todos los secretos en Vault tienen un tiempo de concesión asociado. Al finalizar la concesión Vault los revoca automáticamente, los clientes pueden solicitar renovar las concesiones mediante las API disponibles de Vault.</li>
-<li>Revocación: integra la funcionalidad de revocación, no solo secretos individuales sino jerarquías de secretos. La revocación asiste en la rotación de las claves así como cerrar el sistema en caso de intrusión.</li>
-</ul>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/VYfl-DpZ5wM" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/NxL2-XuZ3kc" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="conceptos">Conceptos</h3>
-<p>Los motores de secretos son uno de los conceptos en el ámbito de Vault. Son componentes que permite almacenar, generar o cifrar datos. Algunos motores de secretos simplemente almacenan y leen datos, otros se conectan a otros servicios y generan credenciales dinámicamente bajo demanda. Otros motores de secretos proporcionan el cifrado como servicio, <em>tokens</em> de un solo uso, certificados y mucho más.</p>
-<ul>
-<li><a href="https://www.vaultproject.io/api/secret/index.html">Secrets Engines</a></li>
-<li><a href="https://www.vaultproject.io/docs/secrets/kv/index.html">KV Secrets Engine</a></li>
-<li><a href="https://www.vaultproject.io/docs/secrets/databases/index.html">Databases Secrets Engine</a></li>
-<li><a href="https://www.vaultproject.io/docs/secrets/rabbitmq/index.html">RabbitMQ Secrets Engine</a></li>
-<li><a href="https://www.vaultproject.io/docs/secrets/pki/index.html">PKI Secrets Engine</a></li>
-<li><a href="https://www.vaultproject.io/docs/secrets/ssh/index.html">SSH Secrets Engine</a></li>
-</ul>
-<p>Otro concepto es la <a href="https://www.vaultproject.io/docs/auth/index.html">autenticación</a>. Permiten realizar la autenticación y son responsables de asignar una identidad y un conjunto de <em>policies</em> a un usuario. Por ejemplo, para los desarrolladores el método de autenticación de GitHub es fácil de usar pero para servidores el método <em>AppRole</em> es el recomendado</p>
-<p>Los secretos necesitan <a href="https://www.vaultproject.io/docs/configuration/storage/index.html">almacenamiento</a>. Algunos tipos de almacenamiento son mejores para la alta disponibilidad y otros facilitan la copia de seguridad y la restauración. Puede ser en memoria, sistema de archivos, una herramienta como Consul o varias bases de datos entre ellas bases de datos relacionales.</p>
-<p>La <a href="https://www.vaultproject.io/docs/audit/index.html">auditoria</a> permite obtener una trazabilidad de las operaciones que se han realizado, dado que todas las operaciones se realizan mediante una API el <em>log</em> de auditoría es simplemente cada interacción autenticada con Vault, incluidas los errores. Puede ser un archivo o un <em>socket</em>.</p>
-<p>Todo en Vault está basado en <em>paths</em>. Las <a href="https://www.vaultproject.io/docs/concepts/policies.html"><em>policies</em></a> permiten o deniegan el acceso a ciertos <em>paths</em>.  Poseen la siguiente sintaxis, donde las <em>capabilities</em> son las operaciones CRUD permitidas.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="k">path</span> <span class="s2">&#34;secret/*&#34;</span> {&#10;<span class="n">  capabilities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;create&#34;, &#34;read&#34;, &#34;update&#34;, &#34;delete&#34;, &#34;list&#34;</span><span class="p">]</span>&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>policy.hcl</span>
-    </div>
-</div>
-<h3 id="instalación-y-un-caso-de-uso">Instalación y un caso de uso</h3>
-<p>La <a href="https://www.vaultproject.io/docs/install/index.html">instalación de Vault</a> es muy sencilla ya que es un único binario sin más dependencias. En una distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> estará en los repositorios oficiales. En <a href="https://www.archlinux.org/">Arch Linux</a> se instala con el comando.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S vault&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>install.sh</span>
-    </div>
-</div>
-<p>En el siguiente ejemplo en modo desarrollo de uso de Vault se inicia, se realiza la autenticación con el <em>token</em> <em>root</em> de superusuario y se crea un secreto. Aquí solo se muestra el caso de uso de guardar y recuperar secretos, otros son generar credenciales para conectarse a una base de datos y proporcionar cifrado y descifrado como servicio.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault server -dev&#10;<span class="o">==</span>&gt; Vault server configuration:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Api Address: http://127.0.0.1:8200&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cgo: disabled&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cluster Address: https://127.0.0.1:8201&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Listener 1: tcp <span class="o">(</span>addr: <span class="s2">&#34;127.0.0.1:8200&#34;</span>, cluster address: <span class="s2">&#34;127.0.0.1:8201&#34;</span>, max_request_duration: <span class="s2">&#34;1m30s&#34;</span>, max_request_size: <span class="s2">&#34;33554432&#34;</span>, tls: <span class="s2">&#34;disabled&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Log Level: info&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Mlock: supported: true, enabled: <span class="nb">false</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Storage: inmem&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Vault v1.1.1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version Sha: a3dcd63451cf6da1d04928b601bbe9748d53842e&#10;&#10;WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory&#10;and starts unsealed with a single unseal key. The root token is already&#10;authenticated to the CLI, so you can immediately begin using Vault.&#10;&#10;You may need to <span class="nb">set</span> the following environment variable:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;$ <span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span><span class="s1">&#39;http://127.0.0.1:8200&#39;</span>&#10;&#10;The unseal key and root token are displayed below in <span class="k">case</span> you want to&#10;seal/unseal the Vault or re-authenticate.&#10;&#10;Unseal Key: <span class="nv">R6MKrMxcJtTTUuIjeQjwDxnv4sHbKtjmuRn0Fok98zk</span><span class="o">=</span>&#10;Root Token: s.hQoeIivTHHgl1AtsoVz1UF1G&#10;&#10;Development mode should NOT be used in production installations!</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>vault.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span><span class="s1">&#39;http://127.0.0.1:8200&#39;</span>&#10;$ vault kv put secret/key <span class="nv">key</span><span class="o">=</span>s3cr3t&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;created_time&nbsp;&nbsp;&nbsp;&nbsp; 2019-07-27T17:30:29.559274833Z&#10;deletion_time&nbsp;&nbsp;&nbsp;&nbsp;n/a&#10;destroyed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">false</span>&#10;version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="m">1</span>&#10;$ vault kv get secret/key&#10;<span class="o">======</span> <span class="nv">Metadata</span> <span class="o">======</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;created_time&nbsp;&nbsp;&nbsp;&nbsp; 2019-07-27T17:30:29.559274833Z&#10;deletion_time&nbsp;&nbsp;&nbsp;&nbsp;n/a&#10;destroyed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">false</span>&#10;version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="nv">1</span>&#10;&#10;<span class="o">===</span> <span class="nv">Data</span> <span class="o">===</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;-----&#10;key&nbsp;&nbsp;&nbsp;&nbsp;s3cr3t</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>secret.sh</span>
-    </div>
-</div>
-<p>Vault al igual que otras de las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a> como Consul y <a href="https://www.nomadproject.io/">Nomad</a> posee una interfaz gráfica accesible mediante el navegador que permite realizar las mismas operaciones que a través de la API o desde la linea de comandos.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz gráfica de Vault"><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_300x200_fit_box_3.png" width="300" height="188" alt="Interfaz gráfica de Vault" title="Interfaz gráfica de Vault"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_300x200_fit_box_3.png" width="300" height="188"  class="lozad "></a></p>
-<figcaption>Interfaz gráfica de Vault</figcaption>
-</figure>
-</div>
-<p>Vault a igual que otras de las herramientas de HashiCorp tiene una muy buena documentación en formato de <a href="https://learn.hashicorp.com/vault">guía</a> y en formato de <a href="https://www.vaultproject.io/docs/">documentación</a>. En una aplicación Java el proyecto <a href="https://spring.io/">Spring</a> facilita su uso con <a href="https://projects.spring.io/spring-vault/">Spring Vault</a> y <a href="https://cloud.spring.io/spring-cloud-vault/">Spring Cloud Vault</a>.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.baeldung.com/vault">An Intro to Vault</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="software"/>
             
         
     </entry>
