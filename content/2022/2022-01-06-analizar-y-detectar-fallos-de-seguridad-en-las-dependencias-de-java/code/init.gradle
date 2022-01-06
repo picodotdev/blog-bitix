@@ -1,0 +1,14 @@
+initscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.owasp:dependency-check-gradle:6.5.2.1'
+    }
+}
+
+allprojects {
+    apply plugin: org.owasp.dependencycheck.gradle.DependencyCheckPlugin
+}
+
