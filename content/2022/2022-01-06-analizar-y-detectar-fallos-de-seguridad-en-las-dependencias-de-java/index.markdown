@@ -24,7 +24,9 @@ Una vez desarrollada una aplicación esta entra en un modo de mantenimiento en e
 
 Aunque en una aplicación heredada ya no se hagan mejoras, ni se actualicen versiones mayores de librerías otro de los motivos por los que una aplicación requiere mantenimiento es por fallos de seguridad. Con el paso del tiempo es muy posible que en una aplicación que tenga dependencias de versiones antiguas de librerías se descubran fallos de seguridad. Si es posible y dependiendo de la gravedad del fallo de seguridad descubierto y la forma de explotarlo es conveniente actualizar a la última versión de la librería o al menos a la última versión compatible con el fallo de seguridad corregido. En una aplicación heredada quizá no sea posible actualizar a la última versión ya que posiblemente por un lado requiere cambios importantes en el código y tiempo para hacerlos y por otro lado se trate de evitar hacer cambios para no introducir errores en el código que está funcionando.
 
-Una de las formas de analizar el código fuente de una aplicación es analizar sus dependencias para conocer si en alguna de ellas se descubre alguna vulnerabilidad. Hay herramientas automatizadas que realizan las dependencias y generan un informe con las vulnerabilidades que tienen.
+Una de las formas de analizar el código fuente de una aplicación es analizar sus dependencias para conocer si en alguna de ellas se descubre alguna vulnerabilidad. Hay herramientas automatizadas que realizan las dependencias y generan un informe con las vulnerabilidades que tienen. En este caso el análisis estático de código se hace sobre las dependencias sobre el código fuente al igual que las comprobaciones que también se pueden hacer sobre el código para comprobar que cumple las convenciones, algunas restricciones y algunos fallos detectables sobre el código fuente que se pueden hacer con [PMD][pmd].
+
+* [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
 
 {{< tableofcontents >}}
 
@@ -62,11 +64,16 @@ Esta misma historia ya se repitió en el 2014 con [OpenSSL][openssl] con el deno
 
 Dado que se volverá a repetir un fallo de seguridad como Log4 2 o _Heartbleed_ y dado que es imposible estar seguro de que una dependencia no se vea afectada en algún momento por un fallo grave de seguridad conviene estar suscrito a los boletines de seguridad y analizar las dependencias, automatizar el análisis de las dependencias es la mejor opción para que la mayor parte del trabajo lo hagan las computadoras en vez de personas y detectar los fallos de seguridad en cuanto sean publicados.
 
-La misma organización OWASP proporciona una herramienta automatizada para comprobar la seguridad de las dependencias de un proyecto. La herramienta se usa como un complemento en las herramientas de construcción [Gradle][gradle] o [Maven][maven] y al ejecutar las tareas que añaden analizan las dependencias y versiones del proyecto y las compara con las bases de datos de errores conocidos. El resultado es un informe con una lista de las vulnerabilidades de cada librería del proyecto si es que tienen alguna.
+La misma organización OWASP proporciona una herramienta automatizada para comprobar la seguridad de las dependencias de un proyecto. La herramienta se usa como un complemento en las herramientas de construcción [Gradle][gradle] o [Maven][maven] y al ejecutar las tareas que añaden analizan las dependencias y versiones del proyecto y las compara con las bases de datos de errores conocidos. El resultado es un informe con una lista de las vulnerabilidades de cada librería del proyecto si es que tienen alguna. El _plugin_ de OWASP también detecta los fallos de seguridad en las dependencias de forma transitiva a las que se declaren en el archivo de construcción de forma explícita.
 
 En el siguiente ejemplo de proyecto con Gradle se incluye como dependencia una versión de Log4j 2 vulnerable, con el _plugin_ de OWASP para detectar vulnerabilidades y la tarea _dependencyCheckAnalyze_ se identifican los CVE a los que es vulnerable cada una de las dependencias en este caso la de Log4j 2. En cada uno de los CVE y en las referencias asociadas se detalla el fallo de seguridad.
 
-* [CVE-2021-44228](https://www.cve.org/CVERecord?id=CVE-2021-44228), [CVE-2021-44832](https://www.cve.org/CVERecord?id=CVE-2021-44832), [CVE-2021-45046](https://www.cve.org/CVERecord?id=CVE-2021-45046), [CVE-2021-45105](https://www.cve.org/CVERecord?id=CVE-2021-45105)
+Estos son los CVE que detecta para la versión 2.14.1.
+
+* [CVE-2021-44228](https://www.cve.org/CVERecord?id=CVE-2021-44228)
+* [CVE-2021-44832](https://www.cve.org/CVERecord?id=CVE-2021-44832)
+* [CVE-2021-45046](https://www.cve.org/CVERecord?id=CVE-2021-45046)
+* [CVE-2021-45105](https://www.cve.org/CVERecord?id=CVE-2021-45105)
 
 {{< code file="build-1.gradle" language="groovy" options="" >}}
 {{< code file="gradle-dependencycheck.sh" language="bash" options="" >}}
