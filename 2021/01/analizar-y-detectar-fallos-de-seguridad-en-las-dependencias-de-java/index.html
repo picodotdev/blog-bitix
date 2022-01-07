@@ -35,14 +35,14 @@
   <!-- Social -->
 <meta property="og:title" content="Analizar y detectar fallos de seguridad en las dependencias de Java">
 <meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_750x750_fit_box_3.png">
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_750x750_fit_box_3.png">
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Analizar y detectar fallos de seguridad en las dependencias de Java">
@@ -61,14 +61,14 @@
     "headline": "Analizar y detectar fallos de seguridad en las dependencias de Java",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        "url": "https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_750x750_fit_box_3.png"
         
       },
     "datePublished": "2022-01-06T11:00:00+01:00",
     "dateModified": "2022-01-06T11:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1597",
+    "wordCount": "1697",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -275,7 +275,10 @@
 </div>
 <p>Una vez desarrollada una aplicación esta entra en un modo de mantenimiento en el que se añaden nuevas funcionalidades a las existentes y se corrigen errores. La mayor parte de la vida de una aplicación es empleada en su mantenimiento con generalmente pequeños cambios incrementales. Algunas aplicaciones son empleadas durante periodos de tiempo muy largos, de lustros o décadas, que quizá ya se consideren como heredadas y en las que ya únicamente se hacen cambios en caso de errores graves.</p>
 <p>Aunque en una aplicación heredada ya no se hagan mejoras, ni se actualicen versiones mayores de librerías otro de los motivos por los que una aplicación requiere mantenimiento es por fallos de seguridad. Con el paso del tiempo es muy posible que en una aplicación que tenga dependencias de versiones antiguas de librerías se descubran fallos de seguridad. Si es posible y dependiendo de la gravedad del fallo de seguridad descubierto y la forma de explotarlo es conveniente actualizar a la última versión de la librería o al menos a la última versión compatible con el fallo de seguridad corregido. En una aplicación heredada quizá no sea posible actualizar a la última versión ya que posiblemente por un lado requiere cambios importantes en el código y tiempo para hacerlos y por otro lado se trate de evitar hacer cambios para no introducir errores en el código que está funcionando.</p>
-<p>Una de las formas de analizar el código fuente de una aplicación es analizar sus dependencias para conocer si en alguna de ellas se descubre alguna vulnerabilidad. Hay herramientas automatizadas que realizan las dependencias y generan un informe con las vulnerabilidades que tienen.</p>
+<p>Una de las formas de analizar el código fuente de una aplicación es analizar sus dependencias para conocer si en alguna de ellas se descubre alguna vulnerabilidad. Hay herramientas automatizadas que realizan las dependencias y generan un informe con las vulnerabilidades que tienen. En este caso el análisis estático de código se hace sobre las dependencias sobre el código fuente al igual que las comprobaciones que también se pueden hacer sobre el código para comprobar que cumple las convenciones, algunas restricciones y algunos fallos detectables sobre el código fuente que se pueden hacer con <a href="https://pmd.github.io/">PMD</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/">Análisis estático de código con PMD y un ejemplo</a></li>
+</ul>
 <div class="alert alert-warning tableofcontents">
     <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
@@ -316,10 +319,14 @@
 </div>
 <h3 id="analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java-con-gradle-y-maven">Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven</h3>
 <p>Dado que se volverá a repetir un fallo de seguridad como Log4 2 o <em>Heartbleed</em> y dado que es imposible estar seguro de que una dependencia no se vea afectada en algún momento por un fallo grave de seguridad conviene estar suscrito a los boletines de seguridad y analizar las dependencias, automatizar el análisis de las dependencias es la mejor opción para que la mayor parte del trabajo lo hagan las computadoras en vez de personas y detectar los fallos de seguridad en cuanto sean publicados.</p>
-<p>La misma organización OWASP proporciona una herramienta automatizada para comprobar la seguridad de las dependencias de un proyecto. La herramienta se usa como un complemento en las herramientas de construcción <a href="https://gradle.org/">Gradle</a> o <a href="https://maven.apache.org/">Maven</a> y al ejecutar las tareas que añaden analizan las dependencias y versiones del proyecto y las compara con las bases de datos de errores conocidos. El resultado es un informe con una lista de las vulnerabilidades de cada librería del proyecto si es que tienen alguna.</p>
+<p>La misma organización OWASP proporciona una herramienta automatizada para comprobar la seguridad de las dependencias de un proyecto. La herramienta se usa como un complemento en las herramientas de construcción <a href="https://gradle.org/">Gradle</a> o <a href="https://maven.apache.org/">Maven</a> y al ejecutar las tareas que añaden analizan las dependencias y versiones del proyecto y las compara con las bases de datos de errores conocidos. El resultado es un informe con una lista de las vulnerabilidades de cada librería del proyecto si es que tienen alguna. El <em>plugin</em> de OWASP también detecta los fallos de seguridad en las dependencias de forma transitiva a las que se declaren en el archivo de construcción de forma explícita.</p>
 <p>En el siguiente ejemplo de proyecto con Gradle se incluye como dependencia una versión de Log4j 2 vulnerable, con el <em>plugin</em> de OWASP para detectar vulnerabilidades y la tarea <em>dependencyCheckAnalyze</em> se identifican los CVE a los que es vulnerable cada una de las dependencias en este caso la de Log4j 2. En cada uno de los CVE y en las referencias asociadas se detalla el fallo de seguridad.</p>
+<p>Estos son los CVE que detecta para la versión 2.14.1.</p>
 <ul>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">CVE-2021-44228</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2021-44832">CVE-2021-44832</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2021-45046">CVE-2021-45046</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2021-45105">CVE-2021-45105</a></li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">CVE-2021-44228</a></li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-44832">CVE-2021-44832</a></li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-45046">CVE-2021-45046</a></li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-45105">CVE-2021-45105</a></li>
 </ul>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s2">&#34;org.owasp.dependencycheck&#34;</span> <span class="n">version</span> <span class="s2">&#34;6.5.2.1&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;org.apache.logging.log4j:log4j-core:2.14.1&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//implementation(&#34;org.apache.logging.log4j:log4j-core:2.17.1&#34;)&#10;</span><span class="c1"></span><span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.dependencycheck.App&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
