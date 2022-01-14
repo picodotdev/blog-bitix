@@ -1,0 +1,580 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Artículo #9 de Yo apoyo al software libre</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/" hreflang="es" title="Artículo #9 de Yo apoyo al software libre">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/index-amp.html" hreflang="es" title="Artículo #9 de Yo apoyo al software libre">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Artículo #9 de Yo apoyo al software libre">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Artículo #9 de Yo apoyo al software libre">
+<meta name="twitter:description" content="Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/"
+    },
+    "headline": "Artículo #9 de Yo apoyo al software libre",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        
+      },
+    "datePublished": "2022-01-13T23:00:00+01:00",
+    "dateModified": "2022-01-13T23:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "756",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Artículo #9 de Yo apoyo al software libre</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>13/01/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>Mucho del software libre además de libre que proporciona a los usuarios varios derechos sobre el programa generalmente es gratuito. Y mucho del software libre es desarrollado sin el objetivo principal de monetizarlo en el tiempo de ocio de sus desarrolladores. Al contrario del software comercial que suelen tener una licencia privativa que entre otras cosas no permite acceso al código fuente para estudiarlo, modificarlo no compartir los cambios con otros usuarios también el software comercial suele tener el objetivo de monetizarlo, requieren pagar una licencia anual y habitualmente cuenta con el soporte de una empresa.</p>
+<p>Los desarrolladores de software libre recurren a un modelo de donaciones en el que instan a los usuarios a realizar una pequeña donación según lo que consideren. En algunos casos estas donaciones sirven para cubrir los gastos que tienen como la compra del dominio o el hospedaje para la página web del proyecto.</p>
+<p>El problema de los desarrolladores surge cuando hay empresas que se basan y lucran con el trabajo de los desarrolladores de software libre y código abierto sin proporcionar ayuda económica a los desarrolladores ni devuelven nada a cambio, los desarrolladores pueden llegar a cansarse de trabajar gratuitamente.</p>
+<p>Desde hace un tiempo y con una pequeña parte de los ingresos del blog tengo la costumbre de hacer una donación al menos cada año a alguno de los programas que uso y que me resultan muy útiles, la donación que hago es sin lugar a dudas mucho menor que si usase una alternativa equivalente comercial pero al menos espero contribuir un poco a que estos programas sigan teniendo nuevas versiones con nuevas características y corrigiendo errores.</p>
+<h3 id="keepassxc">KeePassXC</h3>
+<p><a href="https://keepassxc.org/">KeePassXC</a> es una aplicación que proporciona la funcionalidad de generar y almacenar las credenciales de inicio de sesión de cualquier servicio en una base de datos cifrada protegida por una contraseña o archivo de clave maestro. Esta aplicación de gestor de contraseñas permite mantener varias buenas prácticas de seguridad como generar contraseñas fuertes del número de caracteres que se desee utilizando una combinación de letras, números y símbolos, utilizar una contraseña única para cada servicio, soporta generar códigos del segundo factor de autenticación que hace mucho más difícil ser víctima de un ataque de <em>phishing</em> y permite asociar a cada apunte notas y archivos adjuntos que también se guardan cifrados entre otras funcionalidades.</p>
+<p>En vez de utilizar una única contraseña para todos los servicios o guardar las contraseñas en un archivo de texto sin cifrar es recomendable utilizar una aplicación de gestor de contraseñas como KeePassXC. Es una aplicación de software libre y dispone de versiones para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y <a href="https://www.apple.com/macos/">macOS</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</a></li>
+</ul>
+<p>Ya colaboro realizando la traducción de la aplicación al español, ya he escrito un artículo sobre esa aplicación para describirla con las ventajas de seguridad que proporciona y es el gestor de contraseñas que utilizo para guardar las credenciales, generar contraseñas y generar los códigos de segundo factor de autenticación de varias cuentas.</p>
+<p>Como es una aplicación muy útil para mi y uso de forma habitual hago una pequeña donación que no es muy grande pero seguro que los desarrolladores lo agradecen y espero que sirva como motivación para que sigan manteniendo este programa que se suma a las donaciones que he realizado con anterioridad a otros programas que utilizo o proyectos que me resultan interesantes.</p>
+<div class="media">
+<figure>
+<p>
+<img src="/blog-bitix/assets/images/logotypes/keepassxc.svg" width="300" height="200" alt="KeePassXC" title="KeePassXC" class="" loading="lazy"></p>
+</figure>
+</div>
+<h3 id="comprobante-de-la-donación">Comprobante de la donación</h3>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/images/donacion-keepassxc_hu6ffb71ed032fd03b92dd518bf7384ec0_116758_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación KeePassXC"><img src="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/images/donacion-keepassxc_hu6ffb71ed032fd03b92dd518bf7384ec0_116758_650x450_fit_box_3.png" width="258" height="450" alt="Donación KeePassXC" title="Donación KeePassXC" class="" loading="lazy"></a></p>
+<figcaption>Donación KeePassXC</figcaption>
+</figure>
+</div>
+<table class="table">
+    <thead>
+        <tr class="thead-dark">
+            <th colspan="4">Donaciones que he realizado hasta la última fecha</th>
+        </tr>
+        <tr class="thead-light">
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Proyecto</th>
+            <th>Donación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2015/12</td>
+            <td>Free Software Foundation Europe (FSFE)</td>
+            <td>40 €</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2016/09</td>
+            <td>Wikipedia, Mozilla/Firefox</td>
+            <td>10 €, 10 €</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2017/01</td>
+            <td>elementaryOS, Libre Office, Arch Linux ARM</td>
+            <td>10 €, 10 €, 10 €</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>2017/05</td>
+            <td>GNOME, VideoLAN (VLC), Arch Linux</td>
+            <td>15,31 €, 10 €, 0,31 €</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>2018/01</td>
+            <td>LineageOS, Replicant</td>
+            <td>15 €, 15 €</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>2018/12</td>
+            <td>Wine</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2019/12</td>
+            <td>Calibre</td>
+            <td>$10</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>2020/12</td>
+            <td>Phoronix, Mozilla/Firefox, GnuPG</td>
+            <td>$12, 10 €, 10 €</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>2022/01</td>
+            <td>KeePassXC</td>
+            <td>15 €</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>180 €, $42</td>
+        </tr>
+    </tbody>
+</table>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://staltz.com/software-below-the-poverty-line.html">Software below the poverty line</a></li>
+<li><a href="https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc">Your free trial version of “open-source” has expired, please update to a commercial plan</a></li>
+<li><a href="https://github.com/chrisdutz/blog/blob/main/plc4x/success-stories.adoc">Success stories</a></li>
+<li><a href="https://www.xataka.com/aplicaciones/piropos-aplausos-no-suficientes-otro-desarrollador-open-source-se-harta-trabajar-amor-al-arte-destapa-realidad-injusta">“Los piropos y los aplausos no son suficientes”: otro desarrollador Open Source se harta de trabajar por amor al arte y destapa una realidad injusta</a></li>
+<li><a href="https://www.genbeta.com/desarrollo/programadores-open-source-estan-hartos-quieren-que-empresas-que-se-benefician-su-trabajo-gratuito-empiecen-a-pagar">Los programadores open source están hartos: quieren que las empresas que se benefician de su trabajo gratuito empiecen a pagar</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>donacion</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">Yo apoyo al software libre, tú también</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/09/articulo-2-de-yo-apoyo-al-software-libre/">Artículo #2 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/01/articulo-3-de-yo-apoyo-al-software-libre/">Artículo #3 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/05/articulo-4-de-yo-apoyo-al-software-libre/">Artículo #4 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/">Artículo #5 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/articulo-6-de-yo-apoyo-al-software-libre/">Artículo #6 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/12/articulo-7-de-yo-apoyo-al-software-libre/">Artículo #7 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/">Artículo #8 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/">Artículo #9 de Yo apoyo al software libre</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-617';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/01\/articulo-9-de-yo-apoyo-al-software-libre\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

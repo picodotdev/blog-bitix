@@ -5,12 +5,143 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-06T11:00:00+01:00</updated>
+    <updated>2022-01-13T23:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/</id>
+        <title>50&#43; comandos básicos y útiles de GNU/Linux</title>
+        <updated>2020-04-24T16:00:00+02:00</updated>
+        <published>2020-04-24T16:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Desde la línea de comandos hay disponibles una colección de comandos útiles para realizar ciertas tareas de forma rápida y sencilla. Los comandos se pueden incluir en <em>scripts</em> de bash o pequeños programas para el intérprete de comandos y componer la entrada de unos comandos con la salida de otros a través de tuberías dándoles más versatilidad.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>La parte de GNU de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> proporciona una colección de comandos con numerosas funcionalidades ejecutables desde la línea de comandos. Aún con las interfaces gráficas actuales la línea de comandos sigue siendo una potente herramienta que permite ejecutar una tarea de forma sencilla y rápida conociendo los parámetros necesarios del comando y además automatizable con un script de bash.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">Guía básica del intérprete de comandos Bash</a></li>
+</ul>
+<p>Hay multitud de comandos, las listas a continuación son solo una pequeña parte de todos los programas que ofrecen una interfaz de línea de comandos, algunos programas con interfaz gráfica ofrecen también posibilidades de ejecutarlos mediante línea de comandos. Utilizando tuberías la salida de un comando se convierte en la entrada de otro y en conjunto ofrecer una funcionalidad compuesta por dos comandos individuales.</p>
+<p>Algunos ejemplos de lo que es posible realizar desde la línea de comandos son estas funcionalidades:</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">Cambiar el formato de archivos de vídeo o películas en GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/12/comando-para-convertir-imagenes-jpeg-y-png-a-webp/">Comando para convertir imágenes JPEG y PNG a WebP</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/images/unix-linux-command-reference_hu733c86fbadc38108e8605c8b0b2ee2cf_579214_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Referencia de comandos Unix/Linux"><img src="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/images/unix-linux-command-reference_hu733c86fbadc38108e8605c8b0b2ee2cf_579214_650x450_fit_q90_box.jpg" width="335" height="450" alt="Referencia de comandos Unix/Linux" title="Referencia de comandos Unix/Linux"  class="lozad "></a></p>
+<figcaption>Referencia de comandos Unix/Linux</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="sistema-de-archivos">Sistema de archivos</h3>
+<p>Esta colección de comandos permiten navegar el sistema de archivos, cambiar de directorio actual, copiar, mover y eliminar archivos, crear enlaces simbólicos, crear directorios y eliminar directorios así como cambiar <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-permisos-del-sistema-de-archivos-de-gnu-linux/">los permisos del sistema de archivos</a>.</p>
+<p>Los comandos suelen recibir como parámetros de entrada archivos, los archivos se indican con su nombre completo o con expresiones <em>glob</em> que seleccionan múltiples archivos con una expresión regular limitada.</p>
+<ul>
+<li><code>pwd</code>: imprime el directorio actual de trabajo. Los comandos en su entorno de funcionamiento tiene un directorio actual de trabajo que se toma del directorio actual desde donde se ejecuta el comando. Este directorio puede ser en el que se busquen los archivos de entrada o donde se generen los archivos de salida del comando.</li>
+<li><code>cd</code>: permite cambiar el directorio de trabajo a otro del sistema de archivos.</li>
+<li><code>ls</code>: muestra en la salida un listado de archivos y directorios contenido en un directorio.</li>
+<li><code>cp</code>, <code>mv</code>, <code>rm</code>: permiten copiar, mover y eliminar archivos. El comando de eliminación no usa una papelera de reciclaje como en las interfaces gráficas, la eliminación de un archivo es definitiva.</li>
+<li><code>mkdir</code>, <code>rmdir</code>: permiten crear nuevos directorios y eliminar directorios.</li>
+<li><code>ln</code>: este comando crea enlaces simbólicos, son archivos que apuntan a otro archivo o directorio.</li>
+<li><code>chmod</code>, <code>chown</code>: estos comandos permiten cambiar los permisos de lectura, escritura y ejecución de los archivos, el segundo cambia el usuario y grupo del propietario del archivo.</li>
+<li><code>du</code>: estima el espacio usado por los archivos.</li>
+</ul>
+<h3 id="intérprete-bash">Intérprete bash</h3>
+<p>Los comandos son procesados por un intérprete de comandos algunos están relacionados con el intérprete.</p>
+<ul>
+<li><code>alias</code>: permite definir un sinónimo más corto para un comando con la posibilidad de incluir parte de los argumentos.</li>
+<li><code>history</code>: muestra el historial de comandos ejecutados con anterioridad. Usado junto con el comando <em>grep</em> se puede filtrar en todo en historial. El historial se guarda en <em>~/.bash_history</em>.</li>
+<li><code>echo</code>: imprime un texto en la salida de la consola.</li>
+<li><code>whatis</code>: muestra una descripción de el comando indicado.</li>
+<li><code>apropos</code>: muestra una lista de comandos relacionados con una palabra.</li>
+<li><code>locate</code>: muestra la ubicación en el sistema de archivos del comando indicado.</li>
+<li><code>man</code>: páginas de manual y uso de un comando. Incluye la descripción de un comando, sus parámetros y opciones que posee.</li>
+</ul>
+<h3 id="comunicaciones-por-red">Comunicaciones por red</h3>
+<ul>
+<li><code>ping</code>: suele utilizarse para comprobar si la red funciona correctamente. Por ejemplo, comprobando si se puede conectar con el <em>host</em> <em>google.es</em>.</li>
+<li><code>ip</code>: muestra la dirección IP asociada al equipo, suele ser necesario conocer la dirección IP para las comunicaciones en la red local.</li>
+<li><code>traceroute</code>: muestra los host por los que pasan los paquetes TCP/IP hasta llegar al destino.</li>
+<li><code>wget</code>: permite realizar descargas de páginas y archivos accesibles mediante el protocolo HTTP.</li>
+<li><code>curl</code>: permite realizar peticiones del protocolo HTTP a un servidor.</li>
+<li><code>dig</code>: devuelve información de un dominio del sistema DNS.</li>
+</ul>
+<h3 id="tratamiento-de-archivos">Tratamiento de archivos</h3>
+<ul>
+<li><code>cut</code>, <code>sed</code>, <code>awk</code>, <code>jq</code>: permiten manipular cadenas de texto de la entrada y devolverlas transformadas en la salida. <em>jq</em> es para ,manipular cadenas en formato JSON.</li>
+<li><code>grep</code>: permite buscar coincidencias aplicando expresiones regulares en la entrada de texto.</li>
+<li><code>find</code>: permite recorrer una jerarquía del árbol de directorios y buscar archivos coincidentes según los criterios indicados en para el comando.</li>
+<li><code>xargs</code>: construye y ejecuta líneas de comando desde la entrada estándar del sistema.</li>
+<li><code>diff</code>: muestra las diferencias entre dos archivos de texto.</li>
+<li><code>sort</code>, <code>uniq</code>, <code>seq</code>. <code>shuf</code>: ordena ascendentemente o descendentemente las líneas de un archivo. <em>seq</em> genera una secuencia de números, <em>shuf</em> ordena de forma aleatoria las líneas de entrada.</li>
+<li><code>head</code>, <code>tail</code>, <code>less</code>: muestran las primeras o últimas líneas de un archivo de texto. <em>less</em> permite paginar para navegar archivos de texto en la terminal.</li>
+<li><code>wc</code>: cuenta palabras, líneas, caracteres o bytes de un archivo.</li>
+<li><code>df</code>, <code>du</code>: muestra información de uso en el almacenamiento persistente.</li>
+<li><code>free</code>: muestra el estado de la memoria del sistema.</li>
+</ul>
+<h3 id="editores-de-texto">Editores de texto</h3>
+<ul>
+<li><code>nano</code>: editor de texto básico y sencillo de usar basado en consola.</li>
+<li><code>vim</code>: editor de texto potente y versátil pero que requiere un periodo de aprendizaje para conocer todas sus combinaciones de teclas.</li>
+<li><code>emacs</code>: otro editor de texto potente y versátil pero también con un periodo de aprendizaje mayor que <em>nano</em>.</li>
+</ul>
+<h3 id="monitorización-y-sistema">Monitorización y sistema</h3>
+<ul>
+<li><code>top</code>: monitor de los procesos del sistema en ejecución, en el se muestra el tiempo de CPU que están usando y la memoria que están consumiendo.</li>
+<li><code>htop</code>: monitor de procesos similar a <em>top</em> un poco más avanzado y más personalizable.</li>
+<li><code>iotp</code>: monitor de procesos del sistema para la entrada/salida a almacenamiento persistente, disco duro o SSD.</li>
+<li><code>watch</code>: permite ejecutar un comando cada pocos segundos mostrando en la pantalla su salida.</li>
+<li><code>uname</code>: muestra la versión del kernel que está usando el sistema.</li>
+<li><code>systemctl</code>: comando para administrar y ver el estado de los servicios del sistema del sistema de inicio <em>systemd</em>.</li>
+<li><code>mount</code>: permite montar un nuevo sistema de archivos en un punto del sistema de archivos del sistema.</li>
+<li><code>kill</code>: permite matar la ejecución de un proceso del sistema para aquellos casos que no termina correctamente.</li>
+<li><code>sudo</code>: ejecuta un comando con los permisos de superusuario. Hay que usarlo con precaución ya que su uso incorrecto por poder realizar cualquier cosa en el sistema puede posibilitar acciones indeseadas y fallos en el sistema.</li>
+<li><code>ssh</code>: permite conectarse a otra máquina de forma segura.</li>
+</ul>
+<h3 id="fechas-y-programación-de-tareas">Fechas y programación de tareas</h3>
+<ul>
+<li><code>date</code>: muestra la fecha y hora del sistema actual.</li>
+<li><code>cal</code>: muestra un calendario en la consola.</li>
+<li><code>at</code>: permite programar una tarea para que se ejecuta a una hora determinada.</li>
+<li><code>crontab</code>: permite programar tareas para ejecutarse en los momentos indicados por las expresiones <em>cron</em>.</li>
+</ul>
+<h3 id="compresión-de-archivos-y-directorios">Compresión de archivos y directorios</h3>
+<ul>
+<li><code>tar</code>, <code>gzip</code>, <code>unzip</code>: permiten realizar operaciones de compresión sobre archivos para reducir su tamaño y agrupar múltiples archivos en uno solo.</li>
+</ul>
+<h3 id="utilidades">Utilidades</h3>
+<ul>
+<li><code>yes</code>: repite indefinidamente el mensaje <em>yes</em> en la salida hasta que se finaliza. Útil para ejecutar comandos de forma desatendida que requieren la intervención del usuario.</li>
+<li><code>md5sum</code>: calcula el <em>hash</em> <em>md5</em> de un contenido.</li>
+<li><code>sha1sum</code>: calcula el <em>hash</em> <em>sh1</em> de un contenido.</li>
+</ul>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/</id>
         <title>Argumentos de línea de comandos con JCommander en una aplicación Java</title>
@@ -2278,50 +2409,6 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/</id>
-        <title>10º aniversario del blog</title>
-        <updated>2020-02-06T19:00:00+01:00</updated>
-        <published>2020-02-06T19:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
-</div>
-<p><em>&ldquo;Bueno, ¡pues ya está!, ya tengo mi propio blog, todavía está en fase de construcción así que según vaya teniendo tiempo iré haciendo pequeños cambios en los gadgets y en su disposición. Por ahora me conformo con tenerlo visible [&hellip;].  Pero lo principal, escribir entradas en el blog, es algo que ya puedo realizar. Tratarán sobre temas relacionados con el software libre, incluyendo las dos distribuciones GNU/Linux que en este momento uso más habitualmente que son Ubuntu y Arch Linux, temas de tecnología, quizá temas de programación, experiencias personales sobre los mismos y otras cosas que se me vayan ocurriendo. [&hellip;]&quot;</em>.</p>
-<p>Con el texto anterior empezaba el primer artículo a modo de prestación en <a href="https://elblogdepicodev.blogspot.com.es/2010/02/hola-mundo_06.html">elblogdepicodev</a> en el 2010, este mes de febrero se cumple que hace 10 años creé y empecé a escribir en un blog, durante todo este tiempo habrá habido pocas semanas de las 520 que no he escrito al menos un artículo, es más el total de artículos que he escrito desde entonces ha sido de unos 650 artículos dado que algunas semanas he publicado dos artículos y algunas esporádicamente incluso tres. En total 2,5 millones de páginas vistas, 525K en el último año. Cuando miro <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a> y veo artículos del año 2017, 2016, 2015, 2014, &hellip; que se siguen visitado, no me da la sensación de que hayan pasado varios años desde que los publique.</p>
-<p>Pasados estos 10 años y a pesar del tiempo que requiere escribir y publicar cada artículo aún sigo con ganas de seguir escribiendo y publicando, hay una enorme cantidad de temas interesantes sobre los que escribir, no me he planteado dejarlo, y es que me permite seguir aprendiendo cada semana un poco sobre alguna cosa que me interesa, me gusta compartir con la intención de que a alguien le resulta útil el contenido y quizá en un futuro esto mismo que escribo me resulte útil laboralmente. La temáticas principales siguen siendo <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> y <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> aunque no es un blog solo de Java ni un blog solo de GNU/Linux. Como blog personal en el sentido de individual que es, muy rara vez incluyo información personal, en él ocasionalmente hago desempaquetados de los productos que compro y he probado, algún artículo de opinión o desde hace unos meses que tengo una PS4 escribiré sobre los juegos que voy jugando y completando.</p>
-<p>Como comentaba en la <a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/">última hemeroteca del año 2019</a> el blog no ha crecido en visitas a pesar de haber escrito unos 80 artículos nuevos, por ello quiero hacer algunos cambios. El primero es planificar mejor el contenido que escribo y publico con el objetivo en parte de atraer más visitas que al mismo tiempo sean interesantes de leer pero también manteniendo que el escribir lo sea para mi. Hasta ahora he escrito de lo que me ha apetecido en cada momento de forma un tanto aleatoria sin ningún plan de publicación incluso para las series de artículos relacionados como <a href="https://picodotdev.github.io/blog-bitix/series/docker/">la serie de Docker</a> o <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">la serie sobre GraphQL</a>. Analizando los artículos más vistos alguno de los más sencillos son los más populares de mi blog como <a href="https://picodotdev.github.io/blog-bitix/2017/07/4-formas-de-hacer-un-bucle-for-en-java/">4 formas de hacer un bucle for en Java</a>, me plantearé escribir según se me vayan ocurriendo alguno de estos artículos sencillos, básicos o no sencillos pero esenciales que en algún caso no escribo por ya darlo por sabido. Tampoco quiero dejar de escribir por completo de vez en cuando algún artículo que para mi considero avanzado.</p>
-<p>El segundo punto que ya he empezado, es hacer algunas modificaciones en los estilos del blog para mejorar el porcentaje de rebote, que creo es muy alto casi de un 90%, y aumentar el número de páginas vistas por sesión. Para esto tengo pensado modificar las páginas de lista de artículos como en la página de inicio y los artículos relacionados al final de cada artículo. En vez de que sean un simple enlace que sean el título y una imagen que traigan algo más la atención a dos o tres columnas en vez de a una solo para que quepan más en lugar de un artículo en el mismo espacio. Quizá incluiré en algunas páginas un <em>slider</em> que incluya artículos que considero destacables también para mejorar el porcentaje de rebote y para que artículos antiguos sean un poco más visibles. También mejorar la página de error 404 con estas mismas ideas, que aunque no debería llegarse a ella si se realizan algunas visualizaciones, ahora solo muestro un mensaje sin ningún enlace salvo los de la estructura de la página.</p>
-<p>Esos son los estilos por los que ha pasado el blog.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/images/elblogdepicodev-blogger_hu999671f6e66fc885f110033163260054_209924_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="El blog de pico.dev con Blogger"><img src="https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/images/elblogdepicodev-blogger_hu999671f6e66fc885f110033163260054_209924_200x150_fit_q90_box.jpg" width="200" height="120" alt="El blog de pico.dev con Blogger" title="El blog de pico.dev con Blogger"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/images/blogbitix-octopress_huab010b8380ed6dc95379d0978ff51e36_200631_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Blog Bitix con Octopress"><img src="https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/images/blogbitix-octopress_huab010b8380ed6dc95379d0978ff51e36_200631_200x150_fit_q90_box.jpg" width="200" height="143" alt="Blog Bitix con Octopress" title="Blog Bitix con Octopress"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/images/blogbitix-hugo-2020-02_hu9bd46dad0bcde0cb1220f9eb73fc7b72_1164937_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Blog Bitix con Hugo"><img src="https://picodotdev.github.io/blog-bitix/2020/02/10-aniversario-del-blog/images/blogbitix-hugo-2020-02_hu9bd46dad0bcde0cb1220f9eb73fc7b72_1164937_200x150_fit_box_3.png" width="139" height="150" alt="Blog Bitix con Hugo" title="Blog Bitix con Hugo"  class="lozad "></a></p>
-<figcaption>Rediseños que he ido realizando en el blog</figcaption>
-</figure>
-</div>
-<p>Algunas otras modificaciones ya he realizado, una de ellas crear la versión de <a href="https://picodotdev.github.io/blog-bitix/">páginas AMP</a> del blog para ver que resultado da. En un principio esta versión está mejor adaptada para los móviles, siendo más rápida, con lo que para Google es posible que la considere mejor, y dado que Google es la mayor fuente de usuarios quizá se note algo. Al final de año mediré con Analytics cual ha sido el resultado. En las primeras semanas algunos usuarios ya están accediendo a la versión AMP.</p>
-<p>Otra modificación importante que he realizado ha sido <a href="https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">cargar las imágenes, los comentarios de Disqus e <em>iframes</em> como vídeos de YouTube con <em>lazy load</em></a>. Así estos elementos no se solicitan hasta que realmente son necesarios al ser visualizados, lo que hace que la página se cargue antes y sea más rápida. Mejora la métrica de PageSpeed y Google en su algoritmo de posicionamiento es posible que las posicione mejor en su página de resultados.</p>
-<p>Con algunas nuevas capacidades de Hugo como los <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks">render hooks</a> de enlaces e imágenes es posible implementar cierta lógica para algunas cosas interesantes que simplifiquen la generación del contenido. Aún estoy pendiente de que <a href="https://gohugo.io/">Hugo</a> permita usar el formato de <a href="https://github.com/gohugoio/hugo/issues/5924">imágenes WebP</a> y <a href="https://github.com/gohugoio/hugo/issues/4595">soporte <em>watermarking</em></a>.</p>
-<p>Vamos a ver que ocurre en la década del 2020.</p>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
             
                 <category term="planeta-codigo"/>
             

@@ -5,12 +5,86 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-06T11:00:00+01:00</updated>
+    <updated>2022-01-13T23:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/</id>
+        <title>La controversia sobre las excepciones checked y unchecked</title>
+        <updated>2018-04-20T17:00:00+02:00</updated>
+        <published>2018-04-20T17:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Las excepciones son una forma de gestionar las condiciones de error que se dan en los programas. En el lenguaje C se utiliza el valor de retorno de la función para determinar la condición de error que se ha producido, el problema es que comprobar el valor de retorno puede ignorarse y la gestión de errores está mezclada con la tarea del programa.</p>
+<p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a> subdividiéndose en <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a> y <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBounds</a>, el conocido <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArithmeticException.html">ArithmeticException</a> que se produce al dividir por 0.</p>
+<p>Algunas ventajas de las excepciones son:</p>
+<ul>
+<li>Separar el código que gestiona los errores del código con el caso principal del programa.</li>
+<li>Propagar errores hacia arriba en la pila de llamadas.</li>
+<li>Agrupar y diferenciar entre diferentes tipos de errores.</li>
+</ul>
+<h3 id="los-problemas-de-las-excepciones-_checked_">Los problemas de las excepciones <em>checked</em></h3>
+<p>Hay una cierta polémica sobre si las excepciones <em>checked</em> son una buena idea. Entre los motivos que se alegan en contra de su uso están que cambiar la firma de un método añadiendo una nueva excepción como lanzable hace que el código que usase ese método podría ocasionar errores de compilación y que hace necesario el tratarla o declararla en la cadena de métodos hasta que sea tratada. Otro motivo es que a mayor nivel en la jerarquía de llamada en los métodos se necesitarán manejar una lista amplia de excepciones.</p>
+<p>En el lado contrario las excepciones se consideran que son buenas porque conocer las condiciones de error o excepción que puede lanzar el método forma parte del contrato del método y es necesario para realizar un correcto manejo de errores. Las excepciones <em>checked</em> pueden parecer un incordio pero son necesarias para hacer un correcto manejo de errores y evitar que el programa falle por no tratar las condiciones de error de las que advertirían. Por otro lado no deberían silenciarse con un bloque <em>catch</em> vacío sin una buena razón. En las excepciones <em>checked</em> el compilador es capaz de advertir si alguna excepción no ha sido capturada o lanzada.</p>
+<p>Como regla general las excepciones <em>checked</em> se usan cuando el programa es capaz de recuperarse del error y tratarlo adecuadamente, las <em>unchecked</em> cuando se trata de un error de programación o no se puede hacer nada para recuperarse.</p>
+<p>En el siguiente código se observa como capturar, lanzar y declarar excepciones en las firmas de los métodos en Java en una construcción <em>try catch finally</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bank</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">transfer</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">source</span><span class="o">,</span> <span class="n">BigDecimal</span> <span class="n">target</span><span class="o">,</span> <span class="n">BigDecimal</span> <span class="n">amount</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InvalidAmountException</span><span class="o">,</span> <span class="n">InsufficientFoundsException</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">throw</span> <span class="k">new</span> <span class="n">InvalidAmountException</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">source</span><span class="o">.</span><span class="na">getAmount</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">throw</span> <span class="k">new</span> <span class="n">InsufficientFoundsException</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">target</span><span class="o">.</span><span class="na">substract</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">source</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Bank.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">try</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">brank</span><span class="o">.</span><span class="na">transfer</span><span class="o">(</span><span class="n">source</span><span class="o">,</span> <span class="n">destine</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>&#10;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvalidAmountException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>&#10;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InsufficientFoundsException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>&#10;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Acción finalizada&#34;</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<p>Las excepciones <em>checked</em> presentan los siguientes problemas:</p>
+<ul>
+<li>Son verbosas: requieren utilizar bloques de sentencias <em>try-catch</em> y declarar en la firma del método la excepción en caso de que las lancen. Al mismo tiempo si hay niveles intermedios de métodos entre el método que la lanza y el que la trata la excepción debe ser declarada en los métodos intermedios.</li>
+<li>Promueven malas prácticas: si se intentan manejar en el lugar incorrecto, si se usan bloques de código <em>catch</em> que no hacen nada que las ocultan, si se capturan excepciones generales como <em>Exception</em> en vez de tipos específicos y si se transforman excepciones <em>Exception</em> en <em>RuntimeException</em>.</li>
+<li>Incrementan el acoplamiento entre módulos: si se usa un método de una librería que añade una excepción, entonces todo el código que llame a ese método debe ser actualizado para manejar la excepción o relanzarla.</li>
+<li>Requieren transformar excepciones entre diferentes niveles de abstracción: por ejemplo la capa de acceso a base de datos puede requerir convertir uan excepción por un problema de red en una excepción de base de datos no disponible. Esto es tedioso pero necesario para evitar exponer detalles de implementación.</li>
+<li>No funciona bien con la herencia: si un método se sobreescribe no puede lanzar una excepción si el método sobreescrito no declara que lanza una excepción.</li>
+<li>No funcionan bien con las <em>lambdas</em>: en Java las <em>lambdas</em> se implementan usando interfaces con un único método abstracto, ese método debe o declarar la posible excepción, en cuyo caso todo método que lo use debe manejarla, o el cuerpo de la <em>lambda</em> debe capturar la excepción. Ambas opciones incrementan el código necesario para usar las <em>lambdas</em> reduciendo uno de sus beneficios de ser más concisas.</li>
+</ul>
+<h3 id="la-solución-a-las-excepciones-_checked_-de-otros-lenguajes-posteriores-a-java">La solución a las excepciones <em>checked</em> de otros lenguajes posteriores a Java</h3>
+<p>La solución por la que han optado otros lenguajes más modernos que Java como <a href="https://dotnet.microsoft.com/">C#</a> y <a href="https://kotlinlang.org/">Kotlin</a> es considerar a todas las excepciones como <em>unchecked</em>. Dado que en muchos casos el único tratamiento posible de una excepción posible es relanzarla, para manejar las excepciones en muchos casos es suficiente un manejador global de excepciones que las capture. Otro beneficio del manejador global de excepciones es que centraliza en un único punto el tratamiento de las excepciones.</p>
+<p>Por el contrario dado que las excepciones <em>unchecked</em> no necesitan declararse en los métodos ni el compilador produce ningún error en caso de que una excepción no se capture o lance al usar un método se desconoce que ese método puede lanzar una excepción. Para mitigar el problema de no conocer si un método lanzan una excepción en Java se pueden usar las anotaciones de Javadoc para declararlas al menos en la documentación. Dado que los IDEs muestran la documentación del Javadoc al usar un método no es necesario inspeccionar el cuerpo de un método para conocer si lanza una excepción.</p>
+<p>En el aparatado referencia incluyo unos buenos enlaces que amplían y detallan más apropiadamente la controversia sobre las excepciones <em>checked</em> y <em>unchecked</em>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html">Exceptions tutorial</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html">Unchecked Exceptions — The Controversy</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/advantages.html">Advantages of Exceptions</a></li>
+<li><a href="https://stackoverflow.com/questions/124143/why-are-exceptions-not-checked-in-net#126122">Why are Exceptions not Checked in .NET?</a></li>
+<li><a href="http://www.artima.com/intv/handcuffs.html">The Trouble with Checked Exceptions</a></li>
+<li><a href="https://stackoverflow.com/questions/58639126/whats-the-idea-behind-kotlin-removing-checked-exceptions">What’s the idea behind Kotlin removing checked exceptions?</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/</id>
         <title>Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</title>
@@ -1343,7 +1417,7 @@
 <p>En el libro <a href="http://amzn.to/2BSalVR">Building Maintable Software (Java Edition)</a> en varios capítulos repasan varios aspectos y proporciona consejos sobre cómo desarrollar software más fácilmente mantenible. Algunos son tan sencillos como evitar métodos con muchas líneas de código, con muchos parámetros, con muchas bifurcaciones por sentencias condicionales o de retorno. Estos aspectos influyen en la facilidad de realizar teses, la facilidad de reutilizar el código siendo más fácil probar y reutilizar métodos que hacen pocas cosas que otros que hacen muchas o son complejos. Estos aspectos del código requiere analizar el código.</p>
 <p>Otra forma de análisis estático de código posible es comprobar que los fallos de seguridad conocidos en las dependencias usadas en el proyecto para en caso de detectarse alguna actualizar la versión de la dependencia a una versión sin errores.</p>
 <ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">Analizar y detectar fallos de seguridad en las dependencias de Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">Analizar y detectar fallos de seguridad en las dependencias de Java</a></li>
 </ul>
 <h3 id="qué-es-pmd-y-para-qué-sirve">Qué es PMD y para qué sirve</h3>
 <p>Si la base de código del software es grande será tedioso y costoso revisarlo manualmente sin embargo hay herramientas como <a href="https://pmd.github.io/">PMD</a> que nos permite automatizar la tarea de análisis. PMD es una herramienta de análisis estático de código que sirve para  comprobar que el código sigue las normas de estilo definidas para el proyecto o en una organización además de esos otros aspectos que afectan a la facilidad de mantenimiento del software también útil cuando se incorpora una nueva persona a un proyecto para que siga las normas ya establecidas. Al igual que se deben tener teses unitarios y de integración para comprobar el correcto funcionamiento del software con PMD se obtiene un informe con las violaciones de las reglas que quieran aplicar al analizar el código.</p>
@@ -1386,226 +1460,6 @@
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/</id>
-        <title>Conferencia BilboStack 2018</title>
-        <updated>2018-01-28T23:30:00+01:00</updated>
-        <published>2018-01-27T18:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<p>A diferencia de los seis años anteriores este la <a href="https://bilbostack.com/">BilboStack</a> ha tenido lugar en el <a href="https://www.euskalduna.eus/">Palacio Euskalduna</a> en vez de la <a href="https://www.deusto.es">Universidad de Deusto</a> permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que igualmente si se ponía atención y luego esfuerzo se aprendían cosas interesantes, muchos hemos pasado varios años en ellas.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-1_hue1f64a941f5a3ba1e32eb76074289836_385158_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-1_hue1f64a941f5a3ba1e32eb76074289836_385158_300x200_fit_q90_box.jpg" width="300" height="194" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-2_hu481cb810c34d0fe683ae61403618c5c0_258124_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-2_hu481cb810c34d0fe683ae61403618c5c0_258124_300x200_fit_q90_box.jpg" width="88" height="200" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-3_hudab2cac80d1f9fe5ce2bda5b2d3533be_582530_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-3_hudab2cac80d1f9fe5ce2bda5b2d3533be_582530_300x200_fit_q90_box.jpg" width="267" height="200" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/presentacion_hu417f5cfc388c8cd2afe5e61b3a34f2a4_303863_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Presentación BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/presentacion_hu417f5cfc388c8cd2afe5e61b3a34f2a4_303863_300x200_fit_q90_box.jpg" width="267" height="200" alt="Presentación BilboStack 2018" title="Presentación BilboStack 2018"  class="lozad "></a></p>
-<figcaption>BilboStack 2018</figcaption>
-</figure>
-</div>
-<p>En la presentación inicial se ha comentado como se gestó la primera BilboStack. A la vuelta de otra conferencia los organizadores se preguntaron por que no organizar una ellos en Bilbao para no siempre ir a otras ciudades como Madrid o Barcelona.</p>
-<p>Hasta el momento siempre se ha mantenido gratuita la entrada previa reserva pero este año con la ayuda de los patrocinadores han podido acceder a este gran recinto y costear el viaje a los ponentes, esto demuestra lo agradecidos que debemos estar a los de los  años anteriores ya que además de hacer la presentación compartiendo su conocimiento se pagaban ellos mismos el viaje.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-1_hu719da7a778c0e82331251ba73817ee94_479072_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Palacio Euskalduna"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-1_hu719da7a778c0e82331251ba73817ee94_479072_300x200_fit_q90_box.jpg" width="267" height="200" alt="Palacio Euskalduna" title="Palacio Euskalduna"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-2_hu6b44b9ef729faf8f4b38c670cfef02e4_538134_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Palacio Euskalduna"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-2_hu6b44b9ef729faf8f4b38c670cfef02e4_538134_300x200_fit_q90_box.jpg" width="267" height="200" alt="Palacio Euskalduna" title="Palacio Euskalduna"  class="lozad "></a></p>
-<figcaption>Palacio Euskalduna</figcaption>
-</figure>
-</div>
-<p>700 y pico entradas eran las que se han ofrecido, ni los organizadores creían que se iban a agotar y se jactaban de que habría entradas para todos en los primeros días de poner la primera oleada para la reserva, pues al final ni esas 700 parece que han estado sobradas. Sorprendente ya que en el 2016 los asistentes fueron 332, algo menos de la mitad del aforo de este año. 6 de las 8 presentaciones han sido dadas por mujeres y en años anteriores también ha habido presencia femenina tanto ponentes como asistentes.</p>
-<p>Número de asistentes por año:</p>
-<ul>
-<li>2012: 252</li>
-<li>2013: 261</li>
-<li>2014: 304</li>
-<li>2015: 340</li>
-<li>2016: 332</li>
-<li>2017: ¿?</li>
-<li>2018: 500</li>
-</ul>
-<p>Por supuesto tener a disposición para la conferencia este recinto y los ponente sin que estos se paguen el viaje ha sido más fácil y posible gracias a los patrocinadores que además han ofrecido algunas pegatinas, cuadernillos, folletos a los asistentes e incluso ofertas laborales.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/patrocinadores_hue51a3baaa91d85f10840c82ab7c4fb3a_344148_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrocinadores"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/patrocinadores_hue51a3baaa91d85f10840c82ab7c4fb3a_344148_300x200_fit_box_3.png" width="300" height="120" alt="Patrocinadores" title="Patrocinadores"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/merchandising_hu31a4358e851aec15298dcebddc944b24_347720_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Merchandising"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/merchandising_hu31a4358e851aec15298dcebddc944b24_347720_300x200_fit_q90_box.jpg" width="267" height="200" alt="Merchandising" title="Merchandising"  class="lozad "></a></p>
-<figcaption>Patrocinadores</figcaption>
-</figure>
-</div>
-<p>La agenda del evento en esta edición ha sido la siguiente, dos <em>tracks</em> con cuatro presentaciones en cada una de ellas, en formato de una mañana y el posterior postevento para el que desee.</p>
-<table class="table">
-    <thead class="table-light">
-        <th width="140px">Hora</th>
-        <th>Track 1</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>09:00-09:20</td>
-            <td>Presentación</td>
-        </tr>
-        <tr>
-            <td>09:30-10:20</td>
-            <td>Lo que no se VUE <em>por Angélica Lozano</em></td>
-        </tr>
-        <tr>
-            <td>10:30-11:20</td>
-            <td>Refactoring Mount Doom - Tackling Legacy Code <em>por Franziska Sauerwein</em></td>
-        </tr>
-        <tr>
-            <td>11:30-12:00</td>
-            <td>Networking + Café</td>
-        </tr>
-        <tr>
-            <td>12:00-12:50</td>
-            <td>Camino a producción <em>por Mario Marin</em></td>
-        </tr>
-        <tr>
-            <td>13:00-13:50</td>
-            <td>Evitando el efecto dominó en nuestros (micro)servicios <em>por Javi Ferrer y Rafa Gómez</em></td>
-        </tr>
-        <tr>
-            <td>> 14:00</td>
-            <td>Networking + pintxos y poteo</td>
-        </tr>
-    </tbody>
-</table>
-<table class="table">
-    <thead class="table-light">
-        <th width="140px">Hora</th>
-        <th>Track 2</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>09:00-09:20</td>
-            <td>Presentación</td>
-        </tr>
-        <tr>
-            <td>09:30-10:20</td>
-            <td>Con canvas y a lo loco <em>por Carmen Ansio Ruiz</em></td>
-        </tr>
-        <tr>
-            <td>10:30-11:20</td>
-            <td>CSS Grid Layout en acción <em>por Diana Aceves</em></td>
-        </tr>
-        <tr>
-            <td>11:30-12:00</td>
-            <td>Networking + Café</td>
-        </tr>
-        <tr>
-            <td>12:00-12:50</td>
-            <td>Machine Learning, camino a Skynet <em>por Beatriz Martín</em></td>
-        </tr>
-        <tr>
-            <td>13:00-13:50</td>
-            <td>Aventuras con Agile: retrospectivas <em>por Amalia Hernández</em></td>
-        </tr>
-        <tr>
-            <td>> 14:00</td>
-            <td>Networking + pintxos y poteo</td>
-        </tr>
-    </tbody>
-</table>
-<h3 id="lo-que-no-se-vue-empor-angélica-lozanoem">Lo que no se Vue <em>por Angélica Lozano</em></h3>
-<p>En una aplicación con algunos indicadores para el sector de la automoción en la que el <em>front</em> era «una puta chapuza» la replantean para permitir diferentes dispositivos y desacoplar el <em>frontend</em> y <em>backend</em>. Usando <a href="https://vuejs.org/">Vue</a> las cosas se simplifican al usar sus componentes (componentes&hellip; de que me suena&hellip;) encapsulando la funcionalidad y utilizando un solo fichero en el que se incluye la plantilla para el HTML, el código JavaScript asociado y los estilos CSS.</p>
-<p>Algunas de sus manías o recomendaciones son programar y dar nombres a las cosas en inglés (¿evitar el <em>spanglish</em>, más compacto que el español?, caracter ñ, &hellip;), conocer las herramientas que hace más simple el trabajo, usar <a href="https://es.wikipedia.org/wiki/Poka-yoke">poka-jokes</a> al diseñar el código para no poder usarlo mal ni aposta, evitar sentencias <em>if</em> anidadas utilizando <em>guard-clauses</em>, utilizar una buena semántica según el área de dominio junto con una buena nomenclatura al asignar nombres o usar alguna herramienta para analizar que el código sigue las buenas prácticas adoptadas.</p>
-<p>En las plantillas de Vue se usan algunas directivas como <em>v-if</em>, <em>v-for</em> o <em>v-model</em> para añadirles lógica o para pasar propiedades del componente padre al hijo, con eventos se puede pasar información del hijo al componente padre. Es un <em>framework</em> progresivo en el que se pueden ir usando cosas según se necesitan (vuex, vue-router, vuetify, vue-i18n).</p>
-<p>Llevar el código a las fábricas de automoción es parte del desarrollo y para ello utilizan herramientas como <a href="https://jenkins.io/">Jenkins</a>, <a href="https://www.ansible.com/">Ansible</a> y <a href="https://www.docker.com/">Docker</a>.</p>
-<p>Referencia:</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=8-ymTkrZPLg">La Pull Request Perfecta</a></li>
-<li><a href="https://www.youtube.com/watch?v=zC51h2jU0n4">Meetup Vuex, ¿para qué sirve? ¿lo necesito?</a></li>
-<li><a href="https://www.gitbook.com/book/jdonsan/desarrolla-aplicaciones-con-vuejs/details">Libro Desarrolla aplicaciones con Vue</a></li>
-<li><a href="https://www.youtube.com/watch?v=esFGn_8S_mw">Curso Testing con Vuejs, CodelyTv Pro</a></li>
-</ul>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/lo-que-no-se-vue_hu670e07eb2d467cfd99c03b177cc4864f_340701_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Lo que no se Vue"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/lo-que-no-se-vue_hu670e07eb2d467cfd99c03b177cc4864f_340701_300x200_fit_q90_box.jpg" width="267" height="200" alt="Lo que no se Vue" title="Lo que no se Vue"  class="lozad "></a></p>
-</figure>
-</div>
-<h3 id="css-grid-layout-en-acción-empor-diana-acevesem">CSS Grid Layout en acción <em>por Diana Aceves</em></h3>
-<p>Mas que una charla ha sido una demostración de como implementar con <a href="https://www.w3.org/TR/css-grid-1/">CSS Grid</a> una <a href="http://themes.themewaves.com/fuze/#!layout-1">plantilla existente para Wordpress</a> con once variaciones de <em>layout</em>, una columna y fila con un texto alineado horizontalmente y verticalmente, dos columnas, tres columnas, dos filas, dos filas dos columnas y así hasta once.</p>
-<p>La especificación de CSS Grid es grande y parece complicada pero no hace falta conocerla entera ya que utilizando una pequeña parte y unas pocas propiedades ya es posible hacer cosas interesantes. En las herramientas para desarrolladores de Firefox hay un inspector especifico para los <em>grids</em> útil para depurar e inspeccionar los elementos.</p>
-<p>Algunas de las propiedades de CSS Grid son:</p>
-<ul>
-<li>display: grid;</li>
-<li>grid-template-columns: 4em 4em 4em;</li>
-<li>grid-template-columns: 1fr 1fr 1fr;</li>
-<li>grid-template-rows: repeat(5, 4em);</li>
-<li>grid-gap: 4em;</li>
-<li>grid-row-gap: 4em;</li>
-<li>grid-column: 3;</li>
-<li>grid-row: 2;</li>
-<li>grid-row: span 2;</li>
-<li>grid-row: 1/span 2;</li>
-<li>grid-auto-flow: dense;</li>
-</ul>
-<p>Ah! Que recuerdos de aquella época cuando se maquetaban con tablas e incluso tablas dentro de tablas y gifs de un pixel transparentes&hellip;, luego vinieron los <em>divs</em> y algunos <em>floats</em>, &hellip; las cosas han cambiado con CSS Grid y CSS Flexbox aunque los que no nos dedicamos específicamente al diseño o maquetación sobrevivimos con <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
-<p>Referencia:</p>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid Layout</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout">CSS Flexbox Layout</a></li>
-<li><a href="https://blogs.igalia.com/mrego/2015/02/25/grid-auto-placement-is-ready/">Grid Auto-Placement Is Ready</a></li>
-</ul>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/css-grid-layout-en-accion_hu7fb0e918ac444a23e2228c30481f71d1_249287_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="CSS Grid Layout en acción"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/css-grid-layout-en-accion_hu7fb0e918ac444a23e2228c30481f71d1_249287_300x200_fit_q90_box.jpg" width="267" height="200" alt="CSS Grid Layout en acción" title="CSS Grid Layout en acción"  class="lozad "></a></p>
-</figure>
-</div>
-<h3 id="camino-a-producción-empor-mario-marinem">Camino a producción <em>por Mario Marin</em></h3>
-<p>Había oído algo de la tienda de componentes electrónicos para ordenadores <a href="https://www.pccomponentes.com/">PC Componentes</a> que ahí está luchando con <a href="https://amzn.to/2flFhHA">Amazon</a>, nada más y nada menos, en este nicho de mercado. Es un ejemplo de éxito por como ha pasado de ser una tienda de barrio a convertirse en una de las web de referencia en internet del comercio electrónico. Algunos de sus números en el 2017 son:</p>
-<ul>
-<li>314 millones de facturación</li>
-<li>88 millones de sesiones</li>
-<li>1,5 millones de pedidos</li>
-<li>30 mil pedidos semanales</li>
-</ul>
-<p>Evolucionan en la misma medida que crece el negocio por internet. Surgen necesidades y departamentos (atención al cliente, compras, devoluciones, &hellip;). El desarrollo y el mantenimiento se complica que acaba afectando a la rapidez del desarrollo. También se va acumulando la deuda técnica pero el negocio tiene que seguir funcionando, no se puede parar a resolverla o parar de crearla para llegar antes al mercado o no llegar más tarde que la competencia. El resultado es algo que no funciona bien con errores y que los sistemas a duras penas soportan.</p>
-<p>En este punto es cuando empiezan a mejorar, aprendiendo cosas que antes no conocían a partir de como los demás con problemas similares los resuelven y que aplicándolas van solucionando algunos problemas. También contratando gente específica para desarrollo o sistemas y utilizando herramientas que faciliten el desarrollo como <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://git-scm.com/">Git</a>, <a href="https://jenkins.io/">Jenkins</a>, <a href="https://www.docker.com/">Docker</a>, <a href="https://phpunit.de/">PHPUnit</a>, <a href="https://www.sonarqube.org/">SonarQube</a>, <a href="https://docs.seleniumhq.org/">Selenium</a> y <a href="https://newrelic.com/">New Relic</a>.</p>
-<p>Echando la vista atrás se ve lo que has mejorado y es satisfactorio, a pesar de que quedan muchas cosas por hacer.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/camino-a-produccion_hu51beb7963aea8019fbcf4bc98296e78f_405386_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Camino a producción"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/camino-a-produccion_hu51beb7963aea8019fbcf4bc98296e78f_405386_300x200_fit_q90_box.jpg" width="267" height="200" alt="Camino a producción" title="Camino a producción"  class="lozad "></a></p>
-</figure>
-</div>
-<h3 id="evitando-el-efecto-dominó-en-nuestros-micoservicios-empor-javi-ferrer-y-rafa-gómezem">Evitando el efecto dominó en nuestros (mico)servicios <em>por Javi Ferrer y Rafa Gómez</em></h3>
-<p>Muchas aplicaciones empiezan siendo un monolito, sin embargo aún siendo más fáciles de saber como funcionan y de desarrollar nuevas características no están exentas de problemas como el escalado ante picos de tráfico o que cuando se cae deja de funcionar todo. Los microservicios tratan de solventar algunos de las deficiencias de los monolitos y permiten cosas como múltiples equipos para diferentes funcionalidades, trocear el monolito en partes más pequeñas, usar diferentes lenguajes de programación según se considere el más adecuado para cada parte y escalarlas individualmente.</p>
-<p>Sin embargo, dividir la aplicación en dos no es suficiente ya que puede seguir estando acopladas en la base de datos si la comparten de modo que si una parte sufre un tráfico importante este puede afectar a la otra aplicación por competir con ella en el acceso a la base de datos. Crear dos bases de datos y que las aplicaciones se comuniquen mediante llamadas a una API, por ejemplo con un servicio REST, para acceder una a los datos de la otra sigue habiendo acoplamiento, si una parte falla afecta a la otra. Estas opciones siguen siendo un monolito, distribuido pero monolito.</p>
-<p>Para eliminar este acoplamiento en la infraestructura de las aplicaciones se pueden aplicar los principios <a href="https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29">SOLID</a> e <a href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">inversión de dependencias</a> que ya aplicamos en el código para no depender de una implementación concreta, creando una interfaz de repositorio y luego implementaciones de esta según se necesiten, una implementación del repositorio para guardar en base de datos u otra para enviar un correo electrónico. De esta forma se pueden añadir nuevas implementaciones con nuevas funcionalidades, el sistema está abierto a extensión sin necesidad de modificar el código existente.</p>
-<p>A nivel de la infraestructura una forma de interfaz son los eventos, un sistema los publica y otro u otros suscritos a ellos los consumen. Utilizar un sistema de mensajes y colas como <a href="https://www.rabbitmq.com/">RabbitMQ</a> permite desacoplar los servicios, si el consumidor de eventos cae los mensajes se siguen encolando y se volverán a procesar cuando el consumidor esté de nuevo en funcionamiento. Si se quiere desarrollar una nueva funcionalidad asociada a un evento solo hay que crear una nueva cola y el nuevo consumidor con su funcionalidad.</p>
-<p>Aunque los microservicios solucionan algunos problemas de los monolitos traen consigo nuevo problemas como una consistencia eventual en las diferentes bases de datos que posee cada microservicio, también puede haber duplicados y no se garantiza el orden de los mensajes.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/evitando-el-efecto-domino-en-nuestros-micoservicios_huc63a958d862ca8a76560a8af20c81eb1_422138_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Evitando el efecto dominó en nuestros (mico)servicios"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/evitando-el-efecto-domino-en-nuestros-micoservicios_huc63a958d862ca8a76560a8af20c81eb1_422138_300x200_fit_q90_box.jpg" width="267" height="200" alt="Evitando el efecto dominó en nuestros (mico)servicios" title="Evitando el efecto dominó en nuestros (mico)servicios"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Cuando en diciembre se pusieron las entradas para reserva a no mucho tardar y con las ganas de ir a la conferencia estaba motivado para ir, en los días anteriores siempre da algo de pereza la asistencia ya que después de una semana de trabajo las ganas no son tantas de pasar la mañana o el día también con el mismo tema sin desconectar ni descansar, pero luego después de haber madrugado y las presentaciones queda una buena sensación y de haber merecido la pena el esfuerzo.</p>
-]]>
-        </content>
-        
             
                 <category term="planeta-codigo"/>
             

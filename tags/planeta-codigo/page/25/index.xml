@@ -5,12 +5,102 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-06T11:00:00+01:00</updated>
+    <updated>2022-01-13T23:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/02/como-crear-un-servicio-de-systemd-para-una-aplicacion-con-spring-boot/</id>
+        <title>Cómo crear un servicio de systemd para una aplicación con Spring Boot</title>
+        <updated>2017-02-11T10:00:00+01:00</updated>
+        <published>2017-02-11T10:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/02/como-crear-un-servicio-de-systemd-para-una-aplicacion-con-spring-boot/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La mayoría de distribuciones Linux ya usan systemd como gestor y supervisor de los servicios del sistema.  Creando un descriptor podremos gestionar un servicio propio con los mismos comandos de systemd que usamos para cualquier otro servicio del sistema.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Habiendo creado una aplicación o microservicio, por ejemplo con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, necesitaremos que se inicie con el sistema y una forma de gestionarlo para detenerlo, reiniciarlo y que se reinicie en caso de salida abrupta.</p>
+<p><a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> es el gestor de servicios que han adoptado la mayoría de distribuciones importantes como <a href="https://www.debian.org/">Debian</a>, <a href="https://www.centos.org/">CentOS</a>, <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RHEL</a>, <a href="https://www.opensuse.org/">openSUSE</a>, incluso <a href="https://www.ubuntu.com/">Ubuntu</a> después de abandonar su propio gestor de servicios <a href="https://es.wikipedia.org/wiki/Upstart">Upstart</a>. Podemos usar systemd para que gestione como servicio una aplicación propia. Para ello deberemos crear un archivo <em>unit</em> que describa el servicio y sus dependencias con otros servicios para que se inicie correctamente, él y sus dependencias.</p>
+<p>Los servicios se definen en archivos de texto denominados <em>unit</em> que tienen un formato similar a los archivos <em>.desktop</em> que a su vez están inspirados en los archivos <em>.ini</em> de Windows. En la <a href="http://www.freedesktop.org/software/systemd/man/systemd.unit.html">documentación de los archivos <em>unit</em> de systemd</a> se detalla con amplitud los archivos <em>unit</em> de systemd, tienen tres secciones:</p>
+<ul>
+<li>[Unit]: contiene información genérica independiente del tipo de servicio como descripción, requerimientos, deseos o orden de inicio.</li>
+<li>[Service]: define el tipo de servicio, los comandos de preinicio, inicio, postinicio, parada, postparada, condiciones reinicio y más parámetros comentados en la <a href="http://www.freedesktop.org/software/systemd/man/systemd.service.html">documentación de los sevicios de systemd</a>.</li>
+<li>[Install]: esta sección es usada al habilitar o deshabilitar un servicio en el sistema con el comando <code>systemctl</code>, pudiendo por ejemplo que se inicie este servicio cuando otro se inicie siendo otra forma de declarar dependencias. De este modo se puede indicar que un servicio tiene otros como dependencia pero también se puede indicar que un servicio se inicie cuando otro lo haga.</li>
+</ul>
+<p>Usando la aplicación del <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Ejemplo de API REST en Java con JAX-RS y Spring Boot</a>, crearé un archivo <em>unit</em> de systemd para que se inicie con el sistema y se reinicie en caso de fallo. Primeramente deberemos crear los archivos que definen el servicio para systemd y sus dependencias si las tienen. En los siguientes ejemplos <em>spring-boot-jaxrs.service</em> es una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> con una interfaz REST que simplemente devuelve el mensaje indicado por parámetro con la fecha en la dirección <em>http://localhost:8080/message?message=Hola</em>. <em>spring-boot-jaxrs-postgres.service</em> es el mismo servicio pero que tiene una dependencia sobre un contenedor de <a href="https://www.docker.com/">Docker</a> con una base <a href="https://www.postgresql.org/">PostgreSQL</a>, aunque la aplicación Spring Boot no hace uso de la base de datos PostgreSQL sirve para observar que si se inicia el servicio de la aplicación Java también se inicia el servicio de la base de datos si no estuviera ya en ejecución. <em>postgres.service</em> es el servicio de la base de datos PostgreSQL en un contenedor de Docker y que tiene como dependencia el servicio de Docker.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-systemd" data-lang="systemd"><span class="k">[Unit]</span>&#10;<span class="na">Description</span><span class="o">=</span><span class="s">Spring Boot application</span>&#10;&#10;<span class="k">[Service]</span>&#10;<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>&#10;<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/java -jar /var/apps/SpringBootJaxrs-0.0.1-SNAPSHOT.jar</span>&#10;<span class="na">SuccessExitStatus</span><span class="o">=</span><span class="s">143</span>&#10;&#10;<span class="k">[Install]</span>&#10;<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>spring-boot-jaxrs.service</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-systemd" data-lang="systemd"><span class="k">[Unit]</span>&#10;<span class="na">Description</span><span class="o">=</span><span class="s">Spring Boot application</span>&#10;<span class="na">Requires</span><span class="o">=</span><span class="s">postgres.service</span>&#10;<span class="na">After</span><span class="o">=</span><span class="s">postgres.service</span>&#10;&#10;<span class="k">[Service]</span>&#10;<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>&#10;<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/java -jar /var/apps/SpringBootJaxrs-0.0.1-SNAPSHOT.jar</span>&#10;<span class="na">SuccessExitStatus</span><span class="o">=</span><span class="s">143</span>&#10;&#10;<span class="k">[Install]</span>&#10;<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>spring-boot-jaxrs-postgres.service</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-systemd" data-lang="systemd"><span class="k">[Unit]</span>&#10;<span class="na">Description</span><span class="o">=</span><span class="s">PostgreSQL container</span>&#10;<span class="na">Requires</span><span class="o">=</span><span class="s">docker.service</span>&#10;<span class="na">After</span><span class="o">=</span><span class="s">docker.service</span>&#10;&#10;<span class="k">[Service]</span>&#10;<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>&#10;<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/docker start -a postgres</span>&#10;<span class="na">ExecStop</span><span class="o">=</span><span class="s">/usr/bin/docker stop -t 5 postgres</span>&#10;&#10;<span class="k">[Install]</span>&#10;<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>postgres.service</span>
+    </div>
+</div>
+<div class="media">
+<a href="https://asciinema.org/a/102785" target="_blank"><amp-img src="https://asciinema.org/a/102785.png" width="650" height="563" class="lozad"></amp-img></a>
+</div>
+<p>La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.</p>
+<p>Los archivos <em>unit</em> propios deben ser ubicados en el directorio <em>/etc/systemd/system/</em>, siendo el directorio <em>/usr/lib/systemd/system/</em> donde se ubican los instalados por los paquetes del sistema. Iniciado el servicio con el comando <code>sudo systemctl start spring-boot-jaxrs.service</code>, si queremos habilitarlo con el inicio del sistema usamos el comando <code>sudo systemctl enable spring-boot-jaxrs.service</code>. Para ver el estado del servicio usamos el comando <code>sudo systemctl status spring-boot-jaxrs.service</code>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./gradlew build&#10;sudo mkdir /var/apps&#10;sudo cp build/libs/SpringBootJaxrs-0.0.1-SNAPSHOT.jar /var/apps&#10;sudo cp misc/spring-boot-jaxrs.service /etc/systemd/system&#10;sudo cp misc/spring-boot-jaxrs-postgres.service /etc/systemd/system&#10;sudo cp misc/postgres.service /etc/systemd/system&#10;sudo chmod ugo+x /etc/systemd/system/spring-boot-jaxrs.service&#10;sudo chmod ugo+x /etc/systemd/system/spring-boot-jaxrs-postgres.service&#10;sudo chmod ugo+x /etc/systemd/system/postgres.service&#10;sudo systemctl daemon-reload</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl start docker.service&#10;docker run --name postgres postgres&#10;&#10;sudo systemctl start spring-boot-jaxrs.service&#10;sudo systemctl status spring-boot-jaxrs.service&#10;sudo systemctl stop spring-boot-jaxrs.service&#10;sudo systemctl start spring-boot-jaxrs-postgres.service&#10;sudo systemctl status spring-boot-jaxrs-postgres.service&#10;sudo systemctl stop spring-boot-jaxrs-postgres.service</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>manage.sh</span>
+    </div>
+</div>
+<p>En los enlaces de referencia hay documentación más detallada tanto para gestionar los servicios con systemd como también documentación de sus archivos <em>unit</em>.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootJaxrs">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>sudo systemctl start spring-boot-jaxrs.service</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files">Understanding Systemd Units and Unit Files</a></li>
+<li><a href="http://www.freedesktop.org/software/systemd/man/systemd.unit.html">systemd unit</a></li>
+<li><a href="http://www.freedesktop.org/software/systemd/man/systemd.service.html">systemd service</a></li>
+<li><a href="https://docs.docker.com/engine/admin/host_integration/">Docker host integration</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#deployment-install">Installing Spring Boot applications</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Systemd">Systemd (Arch Linux Wiki)</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/02/conferencia-bilbostack-2017/</id>
         <title>Conferencia BilboStack 2017</title>
@@ -754,8 +844,14 @@ willing to read the documentation, and solve their own problems.</p>
             <td>$12, 10 €, 10 €</td>
         </tr>
         <tr>
+            <td>9</td>
+            <td>2022/01</td>
+            <td>KeePassXC</td>
+            <td>15 €</td>
+        </tr>
+        <tr>
             <td colspan="3">Total</td>
-            <td>165 €, $42</td>
+            <td>180 €, $42</td>
         </tr>
     </tbody>
 </table>
@@ -1326,7 +1422,7 @@ willing to read the documentation, and solve their own problems.</p>
         
         <![CDATA[<div class="logotypes">
 <p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keepassxc.png" width="200" height="200" alt="KeePassXC" title="KeePassXC"  class=""></p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keepassxc.svg" width="200" height="200" alt="KeePassXC" title="KeePassXC"  class=""></p>
 </div>
 <p>La mayor parte de servicios usan aún como forma de autenticación el método de usuario y contraseña. Si la contraseña proporcionada conocida solo por su usuario es correcta el sistema confía en que el usuario es quien dice ser. Las contraseñas deberían ser difíciles de averiguar, se recomienda que tenga una longitud mínima de 8 caracteres y que contenga letras en minúscula y mayúscula, números y símbolos. Sin embargo, cuanto más larga, fuerte y difícil sea de averiguar más difícil es recordarla.</p>
 <p>Además, es muy recomendable utilizar una contraseña distinta en cada servicio para evitar que descubierta la contraseña por un fallo de seguridad en cualquiera en los que se use pueda accederse a todos los otros servicios que utilice ese usuario, por lo que el número de contraseñas a recordar son numerosas. Muchos usuarios terminan usando la misma contraseña en varios servicios con el riesgo que conlleva. Dado que recordar una contraseña única fuerte para cada servicio es difícil y mantenerlas guardadas en un archivo de texto o en un papel no es lo más recomendable se puede usar un programa que las almacene cifradas de forma segura.</p>
@@ -1556,52 +1652,6 @@ willing to read the documentation, and solve their own problems.</p>
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/</id>
-        <title>Mi primer Mac, yo usuario de GNU/Linux</title>
-        <updated>2016-11-25T22:00:00+01:00</updated>
-        <published>2016-11-12T10:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Hace ya más de un lustro pase de usar Windows a usar GNU/Linux incluso en el trabajo, ahora por motivos laborales no me queda opción que usar un Mac, el primer Mac que usaré. En casa a nivel personal seguiré usando la distribución Arch Linux y antes de empezar a usar un Mac seguirá siendo así, ¿usar un Mac me hará cambiar de opinión y usaré un producto de Apple incluido a nivel personal en un futuro?</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apple.svg" width="200" height="200" alt="Apple" title="Apple"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/macos.svg" width="300" height="70" alt="macOS" title="macOS"  class=""></p>
-</div>
-<p>Hasta el momento en el trabajo podía usar GNU/Linux como sistema operativo, concretamente la distribución <a href="https://www.archlinux.org/">Arch Linux</a> con <a href="https://www.gnome.org/">GNOME</a> y <a href="https://www.docker.com/">Docker</a> para el entorno de desarrollo. Sin embargo, algunos cambios han hecho que tuviese que elegir entre <a href="https://www.microsoft.com/es-es/windows/">Windows</a> que no uso desde hace ya más de un lustro o <a href="https://www.apple.com/macos/">macOS</a> que usaría por primera vez. Dado que macOS es más similar a <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> por seguir ambos la filosofía Unix al final opté por un Mac como prácticamente la totalidad de mis compañeros de trabajo. Una razón es que muchas de las herramientas y comandos que están disponibles en GNU/Linux lo están también en macOS.</p>
-<p>Usar un Mac por primera vez es algo relevante desde el punto de vista tecnológico para alguien que le gusta la tecnología. Este artículo lo escribo para mi yo futuro de dentro de unos años para ver si la preferencia del software libre y GNU/Linux que tengo ahora no se ve doblegada en parte por Apple y morderé la manzana más después de escribir cosas como <a href="https://picodotdev.github.io/blog-bitix/2016/08/sobre-los-infimos-impuestos-que-paga-apple/">Sobre los ínfimos impuestos que paga Apple</a> o <a href="https://elblogdepicodev.blogspot.com.es/2011/12/como-seria-si-microsoft-apple-y-linux.html">Como sería si Microsoft, Apple y Linux…</a>.</p>
-<p>Nunca he usado un producto de Apple salvo tocarlos un poco en las tiendas y es que convencido del software libre y el alto precio que tienen nunca he estado atraído por la marca de la manzana mordida, así que comienzo completamente desde cero empezando por tener que aprender de nuevo muchos de los atajos de teclado y combinaciones de teclas. Simplemente por curiosidad conseguí <a href="https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/">usar macOS en una máquina virtual con VirtualBox</a> que es posible tanto en Windows como en GNU/Linux.</p>
-<p>Una de las cosas que me gustaba de Arch Linux es su modelo <em>rolling release</em> de modo que en cada actualización del sistema con <code>pacman -Syu</code> tenía las últimas versiones de cada programa y paquete, esto hace que no necesite reinstalar cada nueva versión ni tuviese que preocuparme de las versiones de los programas, lo único que sabía es que siempre tenía la última versión. Hasta ahora iba por 3 años desde que instalé Arch Linux por última vez. Por lo poco que me he informado en los Mac existe <a href="https://brew.sh/">Homebrew</a> y <a href="https://caskroom.github.io/">Homebrew Cask</a> que es un gestor de paquetes similar a la forma de distribuir software con los gestores de paquetes de las distribuciones GNU/Linux. Casi todo el software que he necesitado está disponible en Homebrew incluyendo Java 8, Java 7, Firefox, Google Chrome, MySQL, Docker, VirtualBox, Git o atom incluidos programas como vim, gimp, cmus o meld.</p>
-<p>El Mac que usaré no es de los últimos con panel táctil en la parte superior del teclado ese que ha eliminado una tecla física tan importante también para los desarrolladores como la tecla escape. El precio del modelo de principios de 2015 está valorado en unos $2000 junto con otros $120 en adaptadores y periféricos, tiene buenas especificaciones siendo un producto de gama alta con sobre todo SSD, pantalla y <em>touchpad</em> y aunque 16 GiB son suficientes es extraño que en ningún modelo de <a href="http://www.apple.com/es/macbook-pro/">MacBook Pro</a> aún no haya opción de instalar 32 GiB para los usuarios más exigentes. Aún así por ese precio uno adquiere varios portátiles como los <a href="https://slimbook.es/">Slimbook</a> y el último pasados unos años tendrá mejores especificaciones en varios aspectos que cualquier Mac actual.</p>
-<p>En mis primeras horas de uso de un Mac destacaré la pantalla retina, su gran resolución de 2560x1600 hace que el texto y las imágenes se vean muy bien sin notar los píxeles, teniendo un monitor de 23&quot; con resolución 1920x1080 o una pantalla de portátil de 14&quot; de resolución 1600x900 las diferencias son claras. Aún así esto es a costa de que la resolución equivalente en un PC sea aproximadamente de 1280x800 en la configuración por defecto haciendo que parezca que entran pocas cosas en la pantalla, otras resoluciones equivalentes seleccionables son 1680x1050, 1440x900, 1280x800 y 1024x640. El <em>touchpad</em> también parece ser otra característica diferenciadora y destacable aunque aún no conozco muchos de los gestos que permite. La interfaz de escritorio de macOS y de GNOME es similar en muchos aspectos con la barra superior, el lanzador de aplicaciones <em>Launchpad</em>, la vista de ventanas <em>Dashboard</em> y la vista de actividades de GNOME.</p>
-<p>Yo futuro, ¿habrás caído en la tentación? ¡Resiste! No olvides y piensa <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">por que empezaste a usar GNU/Linux</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">por que seguiste usando Arch Linux</a>&hellip; por aprender, por el software libre, por la privacidad, por no pagar costosas licencias de software privativo o usar <em>cracks</em>, por no tener software espía, por ser el dueño del equipo y no de la marca cuando decida dejar de darle soporte&hellip;</p>
-<p>Por lo menos ahora podré hablar con un poco más de criterio cuando lo haga sobre Apple y sus productos, como macOS, los MacBook, los adaptadores y periféricos como el <a href="http://www.apple.com/es/shop/product/MLA02ZM/A/magic-mouse-2">Magic Mouse</a>. El siguiente paso es <a href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/">cómo instalar software en macOS con Homebrew</a>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/images/macos_hu4efef5a38679c0c103c8afdcb042057e_281515_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Información del sistema macOS"><img src="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/images/macos_hu4efef5a38679c0c103c8afdcb042057e_281515_300x200_fit_box_3.png" width="300" height="192" alt="Información del sistema macOS" title="Información del sistema macOS"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/images/macos-sierra-desktop_hube35fbb725db4fb468133bba0284c891_426979_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Escritorio de macOS"><img src="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/images/macos-sierra-desktop_hube35fbb725db4fb468133bba0284c891_426979_300x200_fit_q90_box.jpg" width="300" height="188" alt="Escritorio de macOS" title="Escritorio de macOS"  class="lozad "></a></p>
-<figcaption>Información del sistema y escritorio de macOS</figcaption>
-</figure>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="apple"/>
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

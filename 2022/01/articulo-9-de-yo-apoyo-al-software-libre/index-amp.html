@@ -12,17 +12,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas. &hellip;">
+  <meta name="description" content="Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
   
 
-  <title>Analizar y detectar fallos de seguridad en las dependencias de Java</title>
+  <title>Artículo #9 de Yo apoyo al software libre</title>
 
   <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
-  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/index-amp.html" hreflang="es" title="Analizar y detectar fallos de seguridad en las dependencias de Java">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/index-amp.html" hreflang="es" title="Artículo #9 de Yo apoyo al software libre">
   
-  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/" hreflang="es">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/" hreflang="es">
   
   <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,20 +30,20 @@
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
 
   <!-- Social -->
-<meta property="og:title" content="Analizar y detectar fallos de seguridad en las dependencias de Java">
-<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/index-amp.html">
-<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_750x750_fit_box_3.png">
+<meta property="og:title" content="Artículo #9 de Yo apoyo al software libre">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas. &hellip;">
+<meta property="og:description" content="Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_750x750_fit_box_3.png">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
 
 <meta name="twitter:site" content="@picodotdev">
-<meta name="twitter:title" content="Analizar y detectar fallos de seguridad en las dependencias de Java">
-<meta name="twitter:description" content="Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas. &hellip;">
+<meta name="twitter:title" content="Artículo #9 de Yo apoyo al software libre">
+<meta name="twitter:description" content="Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -53,19 +53,19 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/index-amp.html"
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/index-amp.html"
     },
-    "headline": "Analizar y detectar fallos de seguridad en las dependencias de Java",
+    "headline": "Artículo #9 de Yo apoyo al software libre",
     "image": {
         "@type": "ImageObject",
-        "url": "https://picodotdev.github.io/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_750x750_fit_box_3.png"
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
         
       },
-    "datePublished": "2022-01-06T11:00:00+01:00",
-    "dateModified": "2022-01-06T11:00:00+01:00",
+    "datePublished": "2022-01-13T23:00:00+01:00",
+    "dateModified": "2022-01-13T23:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1697",
+    "wordCount": "756",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -81,7 +81,7 @@
             "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
         }
     },
-    "description": "Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas."
+    "description": "Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios."
 }
   </script>
   
@@ -237,31 +237,29 @@
       <div class="col-12">
         
 <article>
-    <h1>Analizar y detectar fallos de seguridad en las dependencias de Java</h1>
+    <h1>Artículo #9 de Yo apoyo al software libre</h1>
     <p class="information">
       
         Escrito por
        
-      <span>picodotdev</span> el <time>06/01/2022</time>.
+      <span>picodotdev</span> el <time>13/01/2022</time>.
       
         <br>
         
-          <a href="/blog-bitix/tags/java/index-amp.html">java</a>
-        
           <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
         
-          <a href="/blog-bitix/tags/seguridad/index-amp.html">seguridad</a>
+          <a href="/blog-bitix/tags/software-libre/index-amp.html">software-libre</a>
         
       
       <br>
-      <a href="/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/index-amp.html">Enlace permanente</a>
+      <a href="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/index-amp.html">Enlace permanente</a>
       
-        <a href="/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/index-amp.html#comments">Comentarios</a>
+        <a href="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/index-amp.html#comments">Comentarios</a>
       
     </p>
 
     
-      <p class="summary">Dada la complejidad de muchas aplicaciones de software hace que estas usen gran cantidad de dependencias, muchas de proyectos de software libre o código abierto. Es muy probable que con el paso del tiempo en alguna de las dependencias de las aplicaciones se descubra un error de seguridad importante y requiera una actualización lo más pronto posible. No es posible estar completamente a salvo de estar afectado por un fallo de seguridad en el software por mucho que se intente, por este motivo la mejor estrategia es detectar proactivamente y temprana los errores de seguridad y actualizar las dependencias a nuevas versiones con el fallo corregido. Varias organizaciones identifican, definen, describen y catalogan los fallos de seguridad de forma pública en una base de datos y hay herramientas automatizadas que con las bases de datos de fallos de seguridad permiten analizar las dependencias de un proyecto. Un ejemplo ha sido el caso de la librería Log4j 2 que por su gravedad y y popularidad muchas organizaciones han estado afectadas.</p>
+      <p class="summary">Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios.</p>
     
     
 
@@ -312,138 +310,113 @@
       
 
 
-      <div class="logotypes" style="min-width: 200px;">
-<p><amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="0.5454545454545454" height="1" alt="Java" title="Java" layout="responsive"  class=""></amp-img></p>
-</div>
-<p>Una vez desarrollada una aplicación esta entra en un modo de mantenimiento en el que se añaden nuevas funcionalidades a las existentes y se corrigen errores. La mayor parte de la vida de una aplicación es empleada en su mantenimiento con generalmente pequeños cambios incrementales. Algunas aplicaciones son empleadas durante periodos de tiempo muy largos, de lustros o décadas, que quizá ya se consideren como heredadas y en las que ya únicamente se hacen cambios en caso de errores graves.</p>
-<p>Aunque en una aplicación heredada ya no se hagan mejoras, ni se actualicen versiones mayores de librerías otro de los motivos por los que una aplicación requiere mantenimiento es por fallos de seguridad. Con el paso del tiempo es muy posible que en una aplicación que tenga dependencias de versiones antiguas de librerías se descubran fallos de seguridad. Si es posible y dependiendo de la gravedad del fallo de seguridad descubierto y la forma de explotarlo es conveniente actualizar a la última versión de la librería o al menos a la última versión compatible con el fallo de seguridad corregido. En una aplicación heredada quizá no sea posible actualizar a la última versión ya que posiblemente por un lado requiere cambios importantes en el código y tiempo para hacerlos y por otro lado se trate de evitar hacer cambios para no introducir errores en el código que está funcionando.</p>
-<p>Una de las formas de analizar el código fuente de una aplicación es analizar sus dependencias para conocer si en alguna de ellas se descubre alguna vulnerabilidad. Hay herramientas automatizadas que realizan las dependencias y generan un informe con las vulnerabilidades que tienen. En este caso el análisis estático de código se hace sobre las dependencias sobre el código fuente al igual que las comprobaciones que también se pueden hacer sobre el código para comprobar que cumple las convenciones, algunas restricciones y algunos fallos detectables sobre el código fuente que se pueden hacer con <a href="https://pmd.github.io/">PMD</a>.</p>
+      <p>Mucho del software libre además de libre que proporciona a los usuarios varios derechos sobre el programa generalmente es gratuito. Y mucho del software libre es desarrollado sin el objetivo principal de monetizarlo en el tiempo de ocio de sus desarrolladores. Al contrario del software comercial que suelen tener una licencia privativa que entre otras cosas no permite acceso al código fuente para estudiarlo, modificarlo no compartir los cambios con otros usuarios también el software comercial suele tener el objetivo de monetizarlo, requieren pagar una licencia anual y habitualmente cuenta con el soporte de una empresa.</p>
+<p>Los desarrolladores de software libre recurren a un modelo de donaciones en el que instan a los usuarios a realizar una pequeña donación según lo que consideren. En algunos casos estas donaciones sirven para cubrir los gastos que tienen como la compra del dominio o el hospedaje para la página web del proyecto.</p>
+<p>El problema de los desarrolladores surge cuando hay empresas que se basan y lucran con el trabajo de los desarrolladores de software libre y código abierto sin proporcionar ayuda económica a los desarrolladores ni devuelven nada a cambio, los desarrolladores pueden llegar a cansarse de trabajar gratuitamente.</p>
+<p>Desde hace un tiempo y con una pequeña parte de los ingresos del blog tengo la costumbre de hacer una donación al menos cada año a alguno de los programas que uso y que me resultan muy útiles, la donación que hago es sin lugar a dudas mucho menor que si usase una alternativa equivalente comercial pero al menos espero contribuir un poco a que estos programas sigan teniendo nuevas versiones con nuevas características y corrigiendo errores.</p>
+<h3 id="keepassxc">KeePassXC</h3>
+<p><a href="https://keepassxc.org/">KeePassXC</a> es una aplicación que proporciona la funcionalidad de generar y almacenar las credenciales de inicio de sesión de cualquier servicio en una base de datos cifrada protegida por una contraseña o archivo de clave maestro. Esta aplicación de gestor de contraseñas permite mantener varias buenas prácticas de seguridad como generar contraseñas fuertes del número de caracteres que se desee utilizando una combinación de letras, números y símbolos, utilizar una contraseña única para cada servicio, soporta generar códigos del segundo factor de autenticación que hace mucho más difícil ser víctima de un ataque de <em>phishing</em> y permite asociar a cada apunte notas y archivos adjuntos que también se guardan cifrados entre otras funcionalidades.</p>
+<p>En vez de utilizar una única contraseña para todos los servicios o guardar las contraseñas en un archivo de texto sin cifrar es recomendable utilizar una aplicación de gestor de contraseñas como KeePassXC. Es una aplicación de software libre y dispone de versiones para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y <a href="https://www.apple.com/macos/">macOS</a>.</p>
 <ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/index-amp.html">Análisis estático de código con PMD y un ejemplo</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/index-amp.html">Guardar contraseñas de forma segura con KeePassXC</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/index-amp.html">Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/index-amp.html">Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#base-de-datos-de-fallos-de-seguridad">Base de datos de fallos de seguridad</a></li>
-    <li><a href="#el-problema-de-seguridad-de-log4j-2">El problema de seguridad de Log4j 2</a></li>
-    <li><a href="#analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java-con-gradle-y-maven">Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven</a>
-      <ul>
-        <li><a href="#analizar-repositorios-de-git">Analizar repositorios de Git</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</div>
-<h3 id="base-de-datos-de-fallos-de-seguridad">Base de datos de fallos de seguridad</h3>
-<p>Los fallos de seguridad descubiertos se identifican, definen y catalogan con un nombre y se añaden a una <a href="https://www.cve.org/">base de datos pública de vulnerabilidades de seguridad</a>. Al definir los fallos de seguridad se les asigna un nivel orientativo de gravedad, dos propiedades importantes que sirven para asignar la gravedad son como es la forma de explotar el fallo de seguridad, si requiere acceso físico al sistema o es posible explotarlo de forma remota, y que permite el fallo de seguridad, como ejecución de código remoto o obtención de información confidencial.</p>
-<p>Aunque algunos fallos de seguridad permiten la ejecución remota de código no se consideran tan importantes si requieren acceso físico al sistema. Los más graves son aquellos que concurren ambas circunstancias, permiten explotar los fallos de seguridad de forma remota y permite realizar acciones graves como ejecución de código remoto, escalar privilegios u obtener información confidencial.</p>
-<p>Por otro lado, la organización <a href="https://owasp.org/">OWASP</a> tiene documentados fallos de seguridad comunes en las aplicaciones y que conviene evitar, por ejemplo, el error de <em>sql injection</em> o <em>cross site scripting</em> que no por ser ya muy conocidos y no complicados de evitar dejan de ser graves si la aplicación no se implementa adecuadamente.</p>
-<h3 id="el-problema-de-seguridad-de-log4j-2">El problema de seguridad de Log4j 2</h3>
-<p>Un caso de error grave de seguridad denominado identificado con el nivel máximo en la escala de gravedad es el de la librería <a href="https://logging.apache.org/log4j/2.x/">Log4j 2</a> en las versiones menores a 2.3.2 (para Java 6), 2.12.4 (para Java 7) y 2.17.1 (para Java 8 y posteriores) que es posible explotarlo de forma remota y permite ejecución remota de código denominado <em>Log4Shell</em>. Log4j 2 es una librería de Java muy utilizada en los proyectos por ser una funcionalidad fundamental para cualquier aplicación que sirve para emitir trazas o <em>logging</em>.</p>
-<ul>
-<li><a href="https://www.lunasec.io/docs/blog/log4j-zero-day/">Log4Shell: RCE 0-day exploit found in log4j 2, a popular Java logging package</a></li>
-</ul>
-<p>Dada la gravedad del error descubierto y el amplio uso de la librería en los proyectos Java muchas organizaciones se han visto afectadas por el error de seguridad. La corrección del error requiere actualizar la versión de la dependencia de Log4j a una que no sea vulnerable al error. El problema es que muchas aplicaciones heredadas actualizar a la última versión no es posible e incluso actualizar a una versión compatible no vulnerable supone gran esfuerzo que requiere actualizar la dependencia en el código fuente, generar el nuevo artefacto, validarlo y hacer su despliegue en el entorno de producción.</p>
-<p>Mientras se realiza la corrección conviene observar los registros de trazas, el uso de la CPU, red, memoria, almacenamiento y registros de <em>log</em> ante cualquier comportamiento anómalo para ver si la aplicación está siendo objeto de ataque.</p>
-<p>Aún siendo Log4j una librería mantenida por tres personas de forma voluntaria su licencia de código abierto y alta calidad que muchas veces es mayor incluso que las opciones equivalentes comerciales es utilizada por muchas empresas incluso con facturaciones mil millonarias debido a que no necesitan pagar licencias de software para usarla. Sin embargo, no todas las empresas mil millonarias que usan un software que es vital para su negocio apoyan económicamente a esos proyectos de software que usan. Aún así, esos tres voluntarios pocas horas después de hacerse público el error con la ayuda de los interesados han publicado varias versiones de la librería con el fallo original y posteriores descubiertos corregidos.</p>
-<p>Esta misma historia ya se repitió en el 2014 con <a href="https://www.openssl.org/">OpenSSL</a> con el denominado <a href="https://en.wikipedia.org/wiki/Heartbleed">Heartbleed</a> y se volverá a repetir con otro ejemplo en el futuro. Proyectos en los que no solo se fundamenta ya una empresa sino en los que se fundamenta internet cuyos desarrolladores trabajan de forma voluntaria sin apoyo económico.</p>
-<ul>
-<li><a href="https://arstechnica.com/information-technology/2014/04/tech-giants-chastened-by-heartbleed-finally-agree-to-fund-openssl/">Tech giants, chastened by Heartbleed, finally agree to fund OpenSSL</a></li>
-<li><a href="https://veridicalsystems.com/blog/of-money-responsibility-and-pride/">Of Money, Responsibility, and Pride</a></li>
-</ul>
+<p>Ya colaboro realizando la traducción de la aplicación al español, ya he escrito un artículo sobre esa aplicación para describirla con las ventajas de seguridad que proporciona y es el gestor de contraseñas que utilizo para guardar las credenciales, generar contraseñas y generar los códigos de segundo factor de autenticación de varias cuentas.</p>
+<p>Como es una aplicación muy útil para mi y uso de forma habitual hago una pequeña donación que no es muy grande pero seguro que los desarrolladores lo agradecen y espero que sirva como motivación para que sigan manteniendo este programa que se suma a las donaciones que he realizado con anterioridad a otros programas que utilizo o proyectos que me resultan interesantes.</p>
 <div class="media">
 <figure>
-<p><amp-img src="/blog-bitix/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_2560x1440_fit_box_3.png" width="650" height="292" alt="Logotipo de Log4Shell" title="Logotipo de Log4Shell"  class=""></amp-img></p>
-<figcaption>Logotipo de Log4Shell <br>Fuente: https://www.lunasec.io/</figcaption>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/keepassxc.svg" width="300" height="200" alt="KeePassXC" title="KeePassXC"  class=""></amp-img></p>
 </figure>
 </div>
-<h3 id="analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java-con-gradle-y-maven">Analizar y detectar fallos de seguridad en las dependencias de Java con Gradle y Maven</h3>
-<p>Dado que se volverá a repetir un fallo de seguridad como Log4 2 o <em>Heartbleed</em> y dado que es imposible estar seguro de que una dependencia no se vea afectada en algún momento por un fallo grave de seguridad conviene estar suscrito a los boletines de seguridad y analizar las dependencias, automatizar el análisis de las dependencias es la mejor opción para que la mayor parte del trabajo lo hagan las computadoras en vez de personas y detectar los fallos de seguridad en cuanto sean publicados.</p>
-<p>La misma organización OWASP proporciona una herramienta automatizada para comprobar la seguridad de las dependencias de un proyecto. La herramienta se usa como un complemento en las herramientas de construcción <a href="https://gradle.org/">Gradle</a> o <a href="https://maven.apache.org/">Maven</a> y al ejecutar las tareas que añaden analizan las dependencias y versiones del proyecto y las compara con las bases de datos de errores conocidos. El resultado es un informe con una lista de las vulnerabilidades de cada librería del proyecto si es que tienen alguna. El <em>plugin</em> de OWASP también detecta los fallos de seguridad en las dependencias de forma transitiva a las que se declaren en el archivo de construcción de forma explícita.</p>
-<p>En el siguiente ejemplo de proyecto con Gradle se incluye como dependencia una versión de Log4j 2 vulnerable, con el <em>plugin</em> de OWASP para detectar vulnerabilidades y la tarea <em>dependencyCheckAnalyze</em> se identifican los CVE a los que es vulnerable cada una de las dependencias en este caso la de Log4j 2. En cada uno de los CVE y en las referencias asociadas se detalla el fallo de seguridad.</p>
-<p>Estos son los CVE que detecta para la versión 2.14.1.</p>
-<ul>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">CVE-2021-44228</a></li>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-44832">CVE-2021-44832</a></li>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-45046">CVE-2021-45046</a></li>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-45105">CVE-2021-45105</a></li>
-</ul>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s2">&#34;org.owasp.dependencycheck&#34;</span> <span class="n">version</span> <span class="s2">&#34;6.5.2.1&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;org.apache.logging.log4j:log4j-core:2.14.1&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//implementation(&#34;org.apache.logging.log4j:log4j-core:2.17.1&#34;)&#10;</span><span class="c1"></span><span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.dependencycheck.App&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build-1.gradle</span>
-    </div>
+<h3 id="comprobante-de-la-donación">Comprobante de la donación</h3>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/images/donacion-keepassxc_hu6ffb71ed032fd03b92dd518bf7384ec0_116758_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación KeePassXC"><amp-img src="/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/images/donacion-keepassxc_hu6ffb71ed032fd03b92dd518bf7384ec0_116758_650x450_fit_box_3.png" width="258" height="450" alt="Donación KeePassXC" title="Donación KeePassXC"  class=""></amp-img></a></p>
+<figcaption>Donación KeePassXC</figcaption>
+</figure>
 </div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew dependencyCheckAnalyze&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>gradle-dependencycheck.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">&gt; Task :app:dependencyCheckAnalyze&#10;Verifying dependencies for project app&#10;Checking for updates and analyzing dependencies for vulnerabilities&#10;Generating report for project app&#10;Found 4 vulnerabilities in project app&#10;&#10;One or more dependencies were identified with known vulnerabilities in app:&#10;&#10;log4j-core-2.14.1.jar (pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1, cpe:2.3:a:apache:log4j:2.14.1:*:*:*:*:*:*:*) : CVE-2021-44228, CVE-2021-44832, CVE-2021-45046, CVE-2021-45105&#10;&#10;See the dependency-check report for more details.&#10;&#10;BUILD SUCCESSFUL in 2m 47s&#10;1 actionable task: 1 executed</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>gradle-dependencycheck-1.out</span>
-    </div>
-</div>
-<p>Detectado el fallo de seguridad basta con cambiar la versión de Log4j 2 a la última no vulnerable y el error desaparece del informe.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s2">&#34;org.owasp.dependencycheck&#34;</span> <span class="n">version</span> <span class="s2">&#34;6.5.2.1&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//implementation(&#34;org.apache.logging.log4j:log4j-core:2.14.1&#34;)&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s2">&#34;org.apache.logging.log4j:log4j-core:2.17.1&#34;</span><span class="o">)</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">application</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.dependencycheck.App&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build-2.gradle</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">&gt; Task :app:dependencyCheckAnalyze&#10;Verifying dependencies for project app&#10;Checking for updates and analyzing dependencies for vulnerabilities&#10;Generating report for project app&#10;Found 0 vulnerabilities in project app</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>gradle-dependencycheck-2.out</span>
-    </div>
-</div>
-<p>En un proyecto con Maven el análisis se realiza con el siguiente comando:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">$</span> <span class="n">mvn</span> <span class="n">org</span><span class="o">.</span><span class="na">owasp</span><span class="o">:</span><span class="n">dependency</span><span class="o">-</span><span class="n">check</span><span class="o">-</span><span class="n">maven</span><span class="o">:</span><span class="n">6</span><span class="o">.</span><span class="na">5</span><span class="o">.</span><span class="na">2</span><span class="o">.</span><span class="na">1</span><span class="o">:</span><span class="n">check</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mvn.sh</span>
-    </div>
-</div>
-<h4 id="analizar-repositorios-de-git">Analizar repositorios de Git</h4>
-<p>En una organización con gran cantidad de repositorios de Git un error como este supone analizar cada uno de los proyectos, para automatizar la tarea el siguiente <em>script</em> clona los repositorios a analizar, detecta si es un repositorio Gradle o Maven y ejecuta la tarea de análisis de las dependencias.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">initscript</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">classpath</span> <span class="s1">&#39;org.owasp:dependency-check-gradle:6.5.2.1&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">allprojects</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">apply</span> <span class="nl">plugin:</span> <span class="n">org</span><span class="o">.</span><span class="na">owasp</span><span class="o">.</span><span class="na">dependencycheck</span><span class="o">.</span><span class="na">gradle</span><span class="o">.</span><span class="na">DependencyCheckPlugin</span>&#10;<span class="o">}</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>init.gradle</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>&#10;<span class="nt">&lt;settings</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/SETTINGS/1.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd&#34;</span><span class="nt">&gt;</span>&#10;<span class="nt">&lt;/settings&gt;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>settings.xml</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">&#10;<span class="c1">#!/usr/bin/env bash</span>&#10;&#10;<span class="c1"># Checks Maven and Gradle dependencies vulnerabilities using OWASP plugins.</span>&#10;<span class="c1"># https://owasp.org/www-project-dependency-check/</span>&#10;&#10;<span class="nv">WORKDIR</span><span class="o">=</span><span class="s2">&#34;repositories&#34;</span>&#10;<span class="nv">USER</span><span class="o">=</span>picodotdev&#10;<span class="nv">REPOSITORIES</span><span class="o">=()</span>&#10;<span class="nv">REGEXP</span><span class="o">=</span><span class="s2">&#34;log4j-core&#34;</span>&#10;&#10;<span class="k">function</span> main<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;mkdir -p <span class="nv">$WORKDIR</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">cd</span> <span class="nv">$WORKDIR</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> I in <span class="si">${</span><span class="p">!REPOSITORIES[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">REPOSITORY</span><span class="o">=</span><span class="si">${</span><span class="nv">REPOSITORIES</span><span class="p">[</span><span class="si">${</span><span class="nv">I</span><span class="si">}</span><span class="p">]</span><span class="si">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;Checking </span><span class="nv">$REPOSITORY</span><span class="s2"> (https://github.com/</span><span class="nv">$USER</span><span class="s2">/</span><span class="nv">$REPOSITORY</span><span class="s2">)&#34;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&#34;</span><span class="nv">$REPOSITORY</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone <span class="s2">&#34;git@github.com:</span><span class="nv">$USER</span><span class="s2">/</span><span class="nv">$REPOSITORY</span><span class="s2">.git&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">else</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">(</span><span class="nb">cd</span> <span class="nv">$REPOSITORY</span> <span class="o">&amp;&amp;</span> git pull origin<span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$REPOSITORY</span><span class="s2">/pom.xml&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checkMaven <span class="nv">$REPOSITORY</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">elif</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$REPOSITORY</span><span class="s2">/build.gradle&#34;</span> -o -f <span class="s2">&#34;</span><span class="nv">$REPOSITORY</span><span class="s2">/settings.gradle&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checkGradle <span class="nv">$REPOSITORY</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">else</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;Not checkeable project </span><span class="nv">$REPOSITORY</span><span class="s2"> (not detected as Maven or Gradle project)&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">done</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> checkMaven<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">REPOSITORY</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">(</span><span class="nb">cd</span> <span class="nv">$REPOSITORY</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;Checking </span><span class="nv">$REPOSITORY</span><span class="s2"> dependencies...&#34;</span> <span class="o">&amp;&amp;</span> mvn --settings ../../settings.xml org.owasp:dependency-check-maven:6.5.2.1:check<span class="o">)</span><span class="p">;</span> <span class="nv">EXIT_CODE</span><span class="o">=</span><span class="nv">$?</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">#(cd $REPOSITORY &amp;&amp; echo &#34;Checking $REPOSITORY dependencies...&#34; &amp;&amp; mvn --settings ../../settings.xml org.owasp:dependency-check-maven:6.5.2.1:check) | grep -E &#34;$REGEXP&#34; | sort | uniq; EXIT_CODE=${PIPESTATUS[0]}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$EXIT_CODE</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;0&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;Check not completed with success (</span><span class="nv">$EXIT_CODE</span><span class="s2">)&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> checkGradle<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">REPOSITORY</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">(</span><span class="nb">cd</span> <span class="nv">$REPOSITORY</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;Checking </span><span class="nv">$REPOSITORY</span><span class="s2"> dependencies...&#34;</span> <span class="o">&amp;&amp;</span> gradle --init-script ../../init.gradle dependencyCheckAnalyze<span class="o">)</span><span class="p">;</span> <span class="nv">EXIT_CODE</span><span class="o">=</span><span class="nv">$?</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">#(cd $REPOSITORY &amp;&amp; echo &#34;Checking $REPOSITORY dependencies...&#34; &amp;&amp; gradle --init-script ../../init.gradle dependencyCheckAnalyze) | grep -E &#34;$REGEXP&#34; | sort | uniq; EXIT_CODE=${PIPESTATUS[0]}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$EXIT_CODE</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;0&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;Check not completed with success (</span><span class="nv">$EXIT_CODE</span><span class="s2">)&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;main&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>owasp-vulnerabilities-check.sh</span>
-    </div>
-</div>
-<div class="alert alert-secondary sourcecode">
-    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DependencyCheck">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew dependencyCheckAnalyze</code></p>
-</div>
+<table class="table">
+    <thead>
+        <tr class="thead-dark">
+            <th colspan="4">Donaciones que he realizado hasta la última fecha</th>
+        </tr>
+        <tr class="thead-light">
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Proyecto</th>
+            <th>Donación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2015/12</td>
+            <td>Free Software Foundation Europe (FSFE)</td>
+            <td>40 €</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2016/09</td>
+            <td>Wikipedia, Mozilla/Firefox</td>
+            <td>10 €, 10 €</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2017/01</td>
+            <td>elementaryOS, Libre Office, Arch Linux ARM</td>
+            <td>10 €, 10 €, 10 €</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>2017/05</td>
+            <td>GNOME, VideoLAN (VLC), Arch Linux</td>
+            <td>15,31 €, 10 €, 0,31 €</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>2018/01</td>
+            <td>LineageOS, Replicant</td>
+            <td>15 €, 15 €</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>2018/12</td>
+            <td>Wine</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2019/12</td>
+            <td>Calibre</td>
+            <td>$10</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>2020/12</td>
+            <td>Phoronix, Mozilla/Firefox, GnuPG</td>
+            <td>$12, 10 €, 10 €</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>2022/01</td>
+            <td>KeePassXC</td>
+            <td>15 €</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>180 €, $42</td>
+        </tr>
+    </tbody>
+</table>
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://jeremylong.github.io/DependencyCheck/dependency-check-gradle/index.html">Dependency Check Gradle Usage</a></li>
-<li><a href="https://owasp.org/www-project-dependency-check/">OWASP Dependency-Check</a></li>
-<li><a href="https://nullbeans.com/how-to-identify-vulnerable-dependencies-in-a-maven-project/">How to identify vulnerable dependencies in a Maven project</a></li>
-<li><a href="https://www.infoworld.com/article/3644492/how-to-detect-the-log4j-vulnerability-in-your-applications.html">How to detect the Log4j vulnerability in your applications</a></li>
-<li><a href="https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/enabling-and-disabling-dependabot-version-updates#enabling-dependabot-version-updates">Enabling Dependabot version updates</a></li>
-<li><a href="https://plugins.jenkins.io/dependency-check-jenkins-plugin/">Jenkins Plugin OWASP Dependency-Check</a></li>
-<li><a href="https://anchore.com/opensource/">Anchore</a></li>
-<li><a href="https://github.com/anchore/syft">Syft</a></li>
-<li><a href="https://github.com/anchore/grype">Grype</a></li>
+<li><a href="https://staltz.com/software-below-the-poverty-line.html">Software below the poverty line</a></li>
+<li><a href="https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc">Your free trial version of “open-source” has expired, please update to a commercial plan</a></li>
+<li><a href="https://github.com/chrisdutz/blog/blob/main/plc4x/success-stories.adoc">Success stories</a></li>
+<li><a href="https://www.xataka.com/aplicaciones/piropos-aplausos-no-suficientes-otro-desarrollador-open-source-se-harta-trabajar-amor-al-arte-destapa-realidad-injusta">“Los piropos y los aplausos no son suficientes”: otro desarrollador Open Source se harta de trabajar por amor al arte y destapa una realidad injusta</a></li>
+<li><a href="https://www.genbeta.com/desarrollo/programadores-open-source-estan-hartos-quieren-que-empresas-que-se-benefician-su-trabajo-gratuito-empiecen-a-pagar">Los programadores open source están hartos: quieren que las empresas que se benefician de su trabajo gratuito empiecen a pagar</a></li>
 </ul>
 </div>
 
@@ -459,6 +432,44 @@
           <hr>
         </div>
         
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>donacion</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/index-amp.html">Yo apoyo al software libre, tú también</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/09/articulo-2-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #2 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/01/articulo-3-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #3 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/05/articulo-4-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #4 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #5 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/articulo-6-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #6 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/12/articulo-7-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #7 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #8 de Yo apoyo al software libre</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/index-amp.html">Artículo #9 de Yo apoyo al software libre</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
 
         
 <div class="row">
@@ -476,93 +487,6 @@
 
 
         
-    
-    
-    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/index-amp.html">
-                <amp-img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_3.png" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring"  class=""></amp-img>
-                <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/tomcat.svg" width="326" height="125" alt="Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session" title="Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session"  class=""></amp-img>
-                <h3>Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras" title="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras"  class=""></amp-img>
-                <h3>Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Autenticación mutua de cliente y servidor con certificados" title="Autenticación mutua de cliente y servidor con certificados"  class=""></amp-img>
-                <h3>Autenticación mutua de cliente y servidor con certificados</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo firmar correos electrónicos con GPG y JavaMail" title="Cómo firmar correos electrónicos con GPG y JavaMail"  class=""></amp-img>
-                <h3>Cómo firmar correos electrónicos con GPG y JavaMail</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/apache-shiro.png" width="326" height="125" alt="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" title="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas"  class=""></amp-img>
-                <h3>Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-
         <div class="row">
           <div class="col-12 adblock-container-billboard">
             <span id="pageBottom"></span>
