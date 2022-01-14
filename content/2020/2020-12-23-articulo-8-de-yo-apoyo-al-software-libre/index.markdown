@@ -71,7 +71,7 @@ como estos además ser una forma de motivarme para continuar escribiendo en el b
     caption="Donación Mozilla" >}}
 {{< image
     gallery="true"
-    image3="image:donacion-gnupg.png" optionsthumb3="650x450" title3="Donación Firefox"
+    image3="image:donacion-gnupg.png" optionsthumb3="650x450" title3="Donación GnuPG"
     caption="Donación GnuPG" >}}
 
 {{< donations >}}

@@ -2,7 +2,8 @@
 pid: 616
 type: "post"
 title: "Analizar y detectar fallos de seguridad en las dependencias de Java"
-url: "/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/"
+url: "/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/"
+aliases: ["/2021/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/"]
 date: 2022-01-06T11:00:00+01:00
 language: "es"
 index: true

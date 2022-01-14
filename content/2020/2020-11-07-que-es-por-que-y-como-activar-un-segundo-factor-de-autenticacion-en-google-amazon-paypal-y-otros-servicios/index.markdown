@@ -17,7 +17,7 @@ summary: "Las contraseñas son un mecanismo de seguridad empleado para autentica
 
 {{% post %}}
 
-{{< logotype image1="keepassxc.png" >}}
+{{< logotype image1="keepassxc.svg" >}}
 
 La autenticación es el mecanismo de seguridad que permite identificar a un usuario y es quien dice ser. Para comprobar que el usuario es quien dice ser se utiliza una contraseña que solo conoce el usuario. Pero las contraseñas como medida de seguridad no son perfectas, ya que algunos de los usuarios utilizan contraseñas débiles con pocos caracteres, con palabras de diccionario o conocidas y utilizan la misma contraseña en varias cuentas de modo que si un servicio sufre un problema de seguridad las cuentas de otros servicios con la misma contraseña quedan vulnerables.
 

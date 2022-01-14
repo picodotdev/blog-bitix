@@ -11,13 +11,13 @@ index: true
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:keepassxc.png"
+imagePost: "logotype:keepassxc.svg"
 tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
 
-{{< logotype image1="keepassxc.png" >}}
+{{< logotype image1="keepassxc.svg" >}}
 
 La mayor parte de servicios usan aún como forma de autenticación el método de usuario y contraseña. Si la contraseña proporcionada conocida solo por su usuario es correcta el sistema confía en que el usuario es quien dice ser. Las contraseñas deberían ser difíciles de averiguar, se recomienda que tenga una longitud mínima de 8 caracteres y que contenga letras en minúscula y mayúscula, números y símbolos. Sin embargo, cuanto más larga, fuerte y difícil sea de averiguar más difícil es recordarla.
 
