@@ -425,7 +425,7 @@ Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [
 * [Buying keyboards and keyboard components from EU](https://gist.github.com/henfiber/a17c7b2a7053473fe37b1a6f80e58efd)
 
 {{< youtube
-    video="3OPLt8xXlDY" >}}
+    video="2siY3SO3ATY" >}}
 
 {{< youtube
     video="nD42ZkgvhTs" >}}

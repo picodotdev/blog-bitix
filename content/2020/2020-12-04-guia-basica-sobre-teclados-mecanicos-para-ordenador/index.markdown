@@ -266,7 +266,7 @@ La marca tiene otros modelos como el [DIERYA DK61 Pro](https://amzn.to/3ttgSo6) 
     asins="B07W5PD6VS,B082PDM3FG,B091TQYTT3" >}}
 
 {{< youtube
-    video="IZye3fBW3Qg" >}}
+    video="2siY3SO3ATY" >}}
 
 #### DREVO Calibur V2 TE
 
@@ -279,7 +279,7 @@ El teclado [DREVO Calibur V2 TE](https://amzn.to/3n7cfwP) ofrece un interedio en
     asins="B07TLMYKWK,B07TKM6DZ4" >}}
 
 {{< youtube
-    video="3OPLt8xXlDY" >}}
+    video="nD42ZkgvhTs" >}}
 
 #### Glorious GMMK TKL
 
