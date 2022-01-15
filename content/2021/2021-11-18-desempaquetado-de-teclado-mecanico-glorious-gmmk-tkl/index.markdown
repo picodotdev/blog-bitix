@@ -413,8 +413,9 @@ Otra fuente de información son los canales de [Twitch][twitch] en los que algun
 
 ### Otras opciones de teclados mecánicos
 
-Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [Keycron][keychron], [Akko][akko], [Royan Kludge][royal-kludge] o [DURGOD][durgod] con los siguientes modelos destacados perfectamente a considerar si la disposición en inglés o en formato ANSI no es ningún inconveniente.
+Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [Keycron][keychron], [Akko][akko], [DIERYA][dierya], [Royal Kludge][royal-kludge] o [DURGOD][durgod] con los siguientes modelos destacados perfectamente a considerar si la disposición en inglés o en formato ANSI no es ningún inconveniente.
 
+* [DIERYA DK61E](https://www.drevo.net/product/keyboard/calibur-v2-te), está [disponible en Amazon](https://amzn.to/33pnaul)
 * [Keychron K8](https://www.keychron.com/products/keychron-k8-tenkeyless-wireless-mechanical-keyboard?variant=32018252955737), está [disponible en Amazon](https://amzn.to/3wYtSSq)
 * [Akko 3084](https://en.akkogear.com/product/silent-3084-bt-5-0white-led-mechanical-keyboard/), está [disponible en Amazon](https://amzn.to/3qTQ3rZ)
 * [DREVO Gramr](https://www.drevo.net/product/keyboard/gramr), está [disponible en Amazon](https://amzn.to/3kOeyTN)
