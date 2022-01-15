@@ -279,7 +279,7 @@ El teclado [DREVO Calibur V2 TE](https://amzn.to/3n7cfwP) ofrece un interedio en
     asins="B07TLMYKWK,B07TKM6DZ4" >}}
 
 {{< youtube
-    video="nD42ZkgvhTs" >}}
+    video="3OPLt8xXlDY" >}}
 
 #### Glorious GMMK TKL
 
