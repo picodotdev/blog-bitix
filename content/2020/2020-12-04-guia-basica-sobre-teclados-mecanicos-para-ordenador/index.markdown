@@ -265,6 +265,9 @@ La marca tiene otros modelos como el [DIERYA DK61 Pro](https://amzn.to/3ttgSo6) 
     linkids="06ca1e820d80f720658f8c74322b8fce,7387f80c99b51e39bf5d5479abb14581,82d726468e9ed79d257999b6c437c1c6"
     asins="B07W5PD6VS,B082PDM3FG,B091TQYTT3" >}}
 
+{{< youtube
+    video="IZye3fBW3Qg" >}}
+
 #### DREVO Calibur V2 TE
 
 El teclado [DREVO Calibur V2 TE](https://amzn.to/3n7cfwP) ofrece un interedio entre TKL y SF, no posee teclas de función pero si las que se enuentran arriba de los TKL muy útiles al programar que permiten seleccionar el texto de una linea y cortar y pegar de forma alternativa a utilizar _Ctrl+X_ y _Ctrl+V_, al estar cerca de las teclas de desplazamiento evita tener que desplazar la mano para posicionar el cursor al escribir texto. El DREVO Calibur no tiene la calidad de los Ducky pero es más económico, compacto y con una disposición de teclas intermedia entre el SF y TKL sin perder ninguna de esas teclas de función de la parte superior de las flechas.
@@ -274,6 +277,9 @@ El teclado [DREVO Calibur V2 TE](https://amzn.to/3n7cfwP) ofrece un interedio en
 {{< amazon
     linkids="bd7e81798a9d04ab4943e6f9754d0072,aaa5f003821ff164674045386933a0a9"
     asins="B07TLMYKWK,B07TKM6DZ4" >}}
+
+{{< youtube
+    video="nD42ZkgvhTs" >}}
 
 #### Glorious GMMK TKL
 

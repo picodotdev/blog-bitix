@@ -425,13 +425,16 @@ Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [
 * [Buying keyboards and keyboard components from EU](https://gist.github.com/henfiber/a17c7b2a7053473fe37b1a6f80e58efd)
 
 {{< youtube
-    video="bOUrAbF59-8" >}}
+    video="IZye3fBW3Qg" >}}
 
 {{< youtube
     video="nD42ZkgvhTs" >}}
 
 {{< youtube
     video="ot8yLjIqRQg" >}}
+
+{{< youtube
+    video="bOUrAbF59-8" >}}
 
 #### Otros complementos
 
