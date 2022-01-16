@@ -325,9 +325,9 @@ Teclados mecánicos económicos. En [PcComponentes][pccomponentes] también hay 
 * [_Keycaps_ disposición español, PBT, dye sub, Cherry MX, perfíl OEM en AliExpress](https://es.aliexpress.com/item/1005003516268627.html)
 * [Buying keyboards and keyboard components from EU](https://gist.github.com/henfiber/a17c7b2a7053473fe37b1a6f80e58efd)
 
-El precio de los teclados mecánicos son superiores a los teclados más baratos de membrana. Un teclado de membrana como el [Logitech MK120](https://amzn.to/33FoXIN) cuesta unos 20 €, los teclados mecánicos baratos a partir de 40 € y los teclados mecánicos de calidad a partir de los 100 €.
+El precio de los teclados mecánicos son superiores a los teclados más baratos de membrana. Un teclado de membrana como el [Logitech MK120](https://amzn.to/33FoXIN) cuesta unos 20 €, los teclados mecánicos baratos a partir de 40 € y los teclados mecánicos de calidad a partir de los 70 €.
 
-En [Amazon][amazon-affiliate] hay gran cantidad de modelos de membrana como el citado MK120 o su modelo inalámbrico [Logitech MK270](https://amzn.to/37v7rrK). Mecánicos hay algunos pero pocos pero son teclados mecánicos de la gama baja y de los que hay muchos no tienen la disposición en español.
+En [Amazon][amazon-affiliate] hay gran cantidad de modelos de membrana como el citado MK120 o su modelo inalámbrico [Logitech MK270](https://amzn.to/37v7rrK). Mecánicos buscando bien hay algunos de buena calidad aunque muchos de los que hay no tienen la disposición de tecldado en español.
 
 Teclados de membrana con cable e inalámbrico.
 
