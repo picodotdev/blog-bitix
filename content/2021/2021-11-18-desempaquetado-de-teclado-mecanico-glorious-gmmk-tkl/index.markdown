@@ -164,7 +164,7 @@ Finalmente, he optado por el Glorious GMMK TKL en su versión barebone principal
 Una vez elegido el modelo de teclado mecánico que más se ajustaba a mis preferencias  y estando disponible en Amazon tanto el teclado como los interruptores Gateron de Glorious, hacer la compra y que llegue a casa como suele ser habitual en Amazon solo pasan unos pocos días. El teclado es el Glorious GMMK TKL en formato ISO y en su modalidad _barebone_, esto es que no está premontado con _switches_ y _keycaps_ sino que es únicamente el teclado, los _swittches_ y _keycaps_ hay que comprarlos aparte. Los _switches_ de la propia marca Glorious también están disponibles en Amazon en los diferentes colores tanto lineales, táctiles y sonoros.
 
 * [Acerca de Glorious](https://www.pcgamingrace.com/pages/about)
-* [¿Quienes somos? de Glorious)](https://www.pcgamingrace.com/pages/who-are-we)
+* [¿Quienes somos? de Glorious](https://www.pcgamingrace.com/pages/who-are-we)
 
 El GMMK TKL en su versión ISO es un modelo lanzado en febrero de 2019, con anterioridad se lanzó la versión ANSI con disposición en inglés y posteriormente una actualización para cambiar el puerto micro USB a pasar a un USB tipo C, la ventaja de este puerto es que el conector es reversible lo que permite conectar el cable independientemente del lado que se tome el cable.
 
