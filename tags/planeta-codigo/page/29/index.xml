@@ -5,12 +5,66 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-13T23:00:00+01:00</updated>
+    <updated>2022-01-20T22:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/</id>
+        <title>Usar Twitter desde Java con twitter4j</title>
+        <updated>2016-04-16T12:30:00+02:00</updated>
+        <published>2016-04-16T12:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p><a href="https://twitter.com/">Twitter</a> ofrece una API para realizar las mismas acciones que como usuarios hacemos con su cliente web, desde publicar <em>tweets</em>, hacer <em>retweets</em>, enviar mensajes directos, leer <em>timelines</em>, &hellip; Con la <a href="https://dev.twitter.com/rest/public">API REST de twitter</a> podemos desde un programa de forma automatizada realizar cualquiera de las anteriores acciones. Por ejemplo, en <a href="https://twitter.com/blogstackinfo">Blog Stack</a> cada vez que agrega un artículo de cualquiera de las fuentes se publica un <em>tweet</em> con el título del artículo y el enlace al mismo en la <a href="https://twitter.com/blogstackinfo">cuenta de Twitter de Blog Stack</a>. En este artículo mostraré como desde lenguaje de programación Java podemos usar la API de Twitter para realizar las acciones que deseemos con la librería <a href="https://twitter4j.org/en/index.html">twitter4j</a>.</p>
+<p>twitter4j nos ofrece una API Java para acceder a la API REST de Twitter de forma más cómoda. Primeramente deberemos crear y registrar una aplicación, esto nos proporcionará varios datos que identificarán a la aplicación y <em>tokens</em> privados para que solo nuestra aplicación en nuestra cuenta pueda realizar las acciones, básicamente son unos datos para autenticar al cliente. La creación de la aplicación se realiza desde la [sección de desarrolladores de twitter] (https://apps.twitter.com/), también veremos las aplicaciones con acceso a la cuenta.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Twitter Apps"><img src="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_300x200_fit_box_3.png" width="274" height="200" alt="Twitter Apps" title="Twitter Apps"  class="lozad "></a></p>
+<figcaption>Twitter Apps</figcaption>
+</figure>
+</div>
+<p>Un a vez creada la aplicación y obtenidos los tokens en la sección <em>Keys and Access Tokens</em> para que la aplicación tenga acceso a la cuenta podemos usar twitter4j. Para publicar un tweet usamos el siguiente código. Creamos el objeto de configuración <a href="http://twitter4j.org/javadoc/twitter4j/conf/ConfigurationBuilder.html">ConfigurationBuilder</a> en el que establecemos los datos de acceso a la API para la aplicación y la cuenta en la que se realizarán las publicaciones y posteriormente con <a href="http://twitter4j.org/javadoc/twitter4j/TwitterFactory.html">TwitterFactory</a> obtenemos la clase <a href="http://twitter4j.org/javadoc/twitter4j/Twitter.html">Twitter</a> con la que realizaremos las operaciones que deseemos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ShareServiceImpl</span> <span class="kd">implements</span> <span class="n">ShareService</span> <span class="o">{</span>&#10;  <span class="o">...</span>&#10;&#10;	<span class="kd">public</span> <span class="nf">ShareServiceImpl</span><span class="o">(</span><span class="n">MainService</span> <span class="n">service</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="k">this</span><span class="o">.</span><span class="na">service</span> <span class="o">=</span> <span class="n">service</span><span class="o">;</span>&#10;&#10;		<span class="n">ConfigurationBuilder</span> <span class="n">cb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConfigurationBuilder</span><span class="o">().</span><span class="na">setOAuthConsumerKey</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.consumerKey&#34;</span><span class="o">))</span>&#10;				<span class="o">.</span><span class="na">setOAuthConsumerSecret</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.consumerSecret&#34;</span><span class="o">))</span>&#10;				<span class="o">.</span><span class="na">setOAuthAccessToken</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.accessToken&#34;</span><span class="o">))</span>&#10;				<span class="o">.</span><span class="na">setOAuthAccessTokenSecret</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.accessTokenSecret&#34;</span><span class="o">));</span>&#10;		<span class="n">TwitterFactory</span> <span class="n">tf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TwitterFactory</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">build</span><span class="o">());</span>&#10;		<span class="n">twitter</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;	&#10;	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">twitter</span><span class="o">(</span><span class="n">PostRecord</span> <span class="n">post</span><span class="o">,</span> <span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">TwitterException</span> <span class="o">{</span>&#10;		<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Tweetting {} as «{}»&#34;</span><span class="o">,</span> <span class="n">post</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">message</span><span class="o">);</span>&#10;&#10;		<span class="n">twitter</span><span class="o">.</span><span class="na">updateStatus</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>&#10;	<span class="o">}</span>&#10;	&#10;	<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ShareServiceImpl.java</span>
+    </div>
+</div>
+<p>Este ejemplo publica un tweet de solo texto pero puede incluir enlaces e imágenes o posición de geolocalización. Los tweets que publiquemos deberán respetar el límite de 140 caracteres como máximo teniendo presente que los enlaces cuentan como 22 independientemente de la longitud del enlace. En la <a href="http://twitter4j.org/en/code-examples.html">sección de ejemplos de twitter4j</a> se puede consultar como <a href="http://twitter4j.org/en/code-examples.html#gettingTimeline">leer el timeline de un usuario</a>, <a href="http://twitter4j.org/en/code-examples.html#directMessage">enviar mensajes directos</a>, <a href="http://twitter4j.org/en/code-examples.html#directMessage">buscar tweets</a> y algunas cosas más, en en <a href="http://twitter4j.org/javadoc/twitter4j/Twitter.html">javadoc de la clase Twitter</a> están documentados los métodos para acceder a los recursos e información de la cuenta  (mensajes directos, favoritos, seguidores, listas, geolocalización, búsquedas, <em>spam</em>, seguidores sugeridos, línea de tiempo, menciones, <em>retweets</em>, tendencias, tweets y usuarios).</p>
+<p>Tener acceso de escritura en la aplicación requiere que introduzcamos nuestro número de teléfono cosa que desde la web no se puede realizar en ciertos países, pero podemos <a href="https://support.twitter.com/articles/365327#">añadir el número de teléfono desde el cliente de Twitter para el móvil</a>, en el siguiente enlace se comenta un <a href="http://meberhard.me/workaround-twitter-application-write-access-mobile-number-accepted-twitter-website/">rodeo para insertar el teléfono móvil</a>.</p>
+<p>Teniendo a nuestra disposición la API de Twitter en nuestra aplicación solo nos queda darle un uso útil.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://twitter4j.org/en/index.html">Twitter4j</a></li>
+<li><a href="https://java.dzone.com/articles/java-twitter-integration">Java Twitter Integration</a></li>
+<li><a href="https://dev.twitter.com/apps">Twitter Apps</a></li>
+<li><a href="https://support.twitter.com/articles/365327#">Añadir tu número de teléfono a tu cuenta de Twitter</a></li>
+<li><a href="http://meberhard.me/workaround-twitter-application-write-access-mobile-number-accepted-twitter-website/">Workaround Twitter application write access mobile number accepted Twitter website</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/</id>
         <title>Aplicación de ejemplo usando varias especificaciones de Java EE 7</title>
@@ -1367,78 +1421,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/</id>
-        <title>Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre</title>
-        <updated>2020-09-12T01:00:00+02:00</updated>
-        <published>2016-01-08T17:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Comentaba en un artículo que es sorprendente que Microsoft con la capacidad que tiene y estando los dispositivos conectados a internet mayoritariamente no sea capaz de evitar usar su software sin licencia. Estoy a punto de ver si con Windows 10 y Office 2016 sigue siendo tan fácil como siempre. También tendré una muestra de la injusta fama de Windows pero que permite Microsoft por el <em>bloatware</em> que preinstalan los fabricantes de dispositivos con su sistema operativo.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft.svg" width="200" height="200" alt="Microsoft" title="Microsoft"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/windows-10.svg" width="200" height="200" alt="Windows 10" title="Windows 10"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft-office.svg" width="200" height="240" alt="Microsoft Office" title="Microsoft Office"  class=""></p>
-</div>
-<p>Este 2016 lo he empezando nada más y nada menos que instalando el sistema operativo y programas de un portátil. Uno de esos favores que habitualmente hacemos los informáticos de los que yo normalmente hago de buen grado, en esta ocasión recibí otro a cambio de otra índole así que perfecto. La necesidad de la reinstalación venía de que el portátil era notablemente lento a pesar de tener un disco duro mecánico y tampoco era porque el equipo fuese antiguo o tuviese poca memoria, el procesador era un AMD Athlon x2 QL-65 con 4 GiB de memoria y 320 GB de disco duro, algo que debería ser más que suficiente para su propósito de navegar por internet, ver películas, escuchar música y tareas ofimáticas. Era lento al iniciarse e al iniciar la ejecución programas además de algún mensaje del antivirus quejándose de que su periodo de prueba había expirado que aparecía al entrar al escritorio. Eso no era todo algún virus había cifrado los archivos personales, fotos y documentos, pidiendo a cambio de recuperarlos algo que ni siquiera me molesté ver en detalle, seguro que nada bueno.</p>
-<p>El equipo tenía varios programas de <em>bloatware</em> típicos de los portátiles con <a href="https://www.microsoft.com/es-es/windows/">Windows</a> proporcionados por los fabricantes, un antivirus que podría encajar con la definición de aquello de lo que intenta proteger que caduca al cabo de un tiempo y lo deja desprotegido, un reproductor que se inicia con el escritorio y se esconde en la parte superior de la pantalla por si atípicamente lo necesitas. Los fabricantes son los que preinstalan estos programas indeseables y serán los principales responsables pero si <a href="https://www.microsoft.com/">Microsoft</a> conociendo el mal nombre que le dan a sus sistemas hasta el momento no lo ha impedido algo de culpa tendrá, si su sistema operativo es una imposición en prácticamente la totalidad de portátiles que se venden en las tiendas, ¿conocéis el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">impuesto Windows</a>?, podría imponer alguna condición para permitir preinstalar Windows y hacer más felices a sus usuarios.</p>
-<p>Por otra parte desde la época de Windows Vista el equipo se puede reinstalar y dejar como de fábrica incluído todo el <em>bloatware</em> anteriormente citado pero para ello se reservan unos 10 GiB del disco duro espacio que no es usable por el usuario. Con discos duros de capacidades de 320 / 500 GB que queden reservados 10 GiB no es mayor problema pero más de uno ha preguntado porque su espacio disponible no se corresponde con las especificaciones del equipo que compró.</p>
-<p>De modo que para corregir los problemas hice una reinstalación limpia.</p>
-<h3 id="inicio-la-instalación">Inicio la instalación</h3>
-<p>Llegado al punto de hacer la reinstalación no tuve mayor problema, el equipo tenía Windows 7 originalmente, se había actualizado a Windows 10 y activado correctamente en el periodo de actualización gratuita que ofrece Microsoft. Como he hecho multitud de veces en años y con versiones anteriores empiezo por <a href="https://www.microsoft.com/es-es/software-download/windows10">descargar la imagen del medio de instalación de Windows 10</a> y el <a href="http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/HomeStudent2019Retail.img">medio de instalación de Microsoft Office, Hogar y Estudiantes</a>. A continuación <a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-windows-10-paso-a-paso-desde-cero/">iniciar la instalación de Windows 10 paso a paso desde cero</a>. Las imágenes del medio de instalación de Windows 10 la ofrece amablemente Microsoft en su propia página web por lo que no me fué necesario buscarla como antiguamente en las redes de compartición de archivos, punto para ellos.</p>
-<p>En uno de los pasos de la instalación borré todas las particiones recuperando el espacio reservado para la partición de recuperación. Unos cuantos minutos de espera, un par de reinicios y varias opciones de privacidad desactivadas que podrían dar a Windows 10 el calificativo de software espía, supuestamente por el bien de usuario, y después de crear la cuenta del usuario el sistema se inicia con todos los dispositivos funcionando correctamente incluidos la tarjeta gráfica, la red y la WiFi. Windows se muestra como activado.</p>
-<p>Toca instalar los programas adicionales básicos con la intención de que sean de software libre o respetando las licencias <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> junto con <a href="https://adblockplus.org/es/">AdBlockPlus</a>, <a href="https://www.videolan.org/vlc/">VLC</a>, <a href="https://www.peazip.org/peazip-64bit.html">PeaZip</a>, <a href="https://www.imgburn.com/">ImgBurn</a>, <a href="https://get.adobe.com/es/reader/otherversions/">Acrobat Reader</a>, <a href="https://freefilesync.org/">FreeFileSync</a>, <a href="https://www.utorrent.com/intl/es/">uTorrent</a> a los que añado <a href="https://www.oracle.com/technetwork/java/index.html">Java</a>. Finalmente me piden que instale la <em>suite</em> ofimática <a href="https://products.office.com/es-es/">Microsoft Office</a> ya que va a ser utilizada, mi intención al traste, me planteo recomendar alguna opción alternativa como <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a> o <a href="https://www.libreoffice.org/">LibreOffice</a>. Sin embargo, Office es lo que usan ¿piden a los alumnos que adquieran una licencia que aún para estudiantes cuesta unos 125 €? ¿250 € para otros mortales?, es inicio del 2016, es fin de semana y no quiero darle muchas vueltas al tema, descargo la última versión de Office y la instalo.</p>
-<h3 id="trato-de-activar-windows-y-office">Trato de activar Windows y Office</h3>
-<p>Inicio el Word y me muestra el mensaje que tras unos 30 días se desactivarán muchas de sus funciones. Llega el momento de probar empíricamente una vez más aquello que dije en <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">A Microsoft no le importa que uses Windows u Office sin licencia</a>, busco algún activador en Google, hay cientos de resultados, descargo uno del enlace que me genera algo de esperanza de no tener virus, inmediatamente descargado el archivo ejecutable Windows Defender avisa de que tiene virus, lo ejecuto a pesar de todo y hago clic en el botón para activar el Office, sale un mensaje indicando que no se ha realizado la activación correctamente, pruebo varias opciones sin efecto aparente ¿a ver si no tengo razón y Microsoft ha hecho lo suyo para evitar la piratería?. Rebusco entre los enlaces y me descargo otro, aviso de virus, todo normal, lo ejecuto, empiezan a aparecer iconos en el escritorio de programas raros que se están instalando y al Firefox se le ha cambiado su página de inicio, ¡vaya! este supuesto activador si que era un virus, Defender tenía razón, toca reinstalar de nuevo todo.</p>
-<h3 id="buscando-un-activador-sin-virus">Buscando un activador sin virus</h3>
-<p>Saco las armas gordas, comienzo una nueva reinstalación de Windows 10 y Office en una máquina virtual con <a href="https://www.virtualbox.org/">VirtualBox</a> que me permitirá hacer las pruebas más fácilmente usando las instantáneas del sistema, si algo va mal podré volver a un punto anterior sin tener que reinstalar todo de nuevo. Objetivo encontrar algún activador que funcione, hace tiempo cuando usaba Windows en el primer o segundo quizá el tercero enlace no más de Google estaba el activador que funcionaba, vuelvo a pensar que igual Microsoft ha protegido mejor su software. Me informo un poco más en algunas de los cientos de páginas, encuentro que tengo que desactivar Windows Defender, en la explicación de esas páginas activar Windows y Office (cualquiera de sus versiones) es tan fácil como recordaba, usar un activador y darle a un botón ¿simplemente no he encontrado el correcto?. Pongo un poco más de interés y busco la página «oficial» de un activador, parece que he encontrado una con buenas sensaciones. Desactivado Windows Defender ejecuto el activador, se abre la ventana y selecciono activar Windows y Office, en unos segundos acaba e informa de que la activación ha sido correcta. Compruebo que Windows está activado y Office también.</p>
-<h3 id="a-la-tercera-instalación-va-la-vencida">A la tercera instalación va la vencida</h3>
-<p>Inicio la tercera instalación de nuevo en el portátil y realizo la activación de la misma forma que en la máquina virtual, salvo que solo de Office ya que el portátil ya tiene licencia de Windows. Office informa de que está activado. Me gustaría no haberlo podido conseguir.</p>
-<p>Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office, más que días del año. Y sigo teniendo razón, usarlos sin licencia sigue siendo tan fácil como siempre una vez encontrados los enlaces adecuados en Google, ¿un martes de parches se instalará alguna actualización de Windows que descubra el <em>crack</em> aplicado al Office? Me enteraré.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/images/windows-10_hu01412616b9d4247c1e6e816e672b7863_485385_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Windows 10"><img src="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/images/windows-10_hu01412616b9d4247c1e6e816e672b7863_485385_300x200_fit_box_3.png" width="300" height="147" alt="Windows 10" title="Windows 10"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/images/microsoft-word-2016_hu5e276bcd423fd85027e59f007dc641f6_49234_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Microsoft Word 2016"><img src="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/images/microsoft-word-2016_hu5e276bcd423fd85027e59f007dc641f6_49234_300x200_fit_box_3.png" width="300" height="147" alt="Microsoft Word 2016" title="Microsoft Word 2016"  class="lozad "></a></p>
-<figcaption>Windows 10 y Microsoft Word 2016</figcaption>
-</figure>
-</div>
-<h3 id="qué-alternativa-hay-a-usar-un-activador">Qué alternativa hay a usar un activador</h3>
-<p>Al final recurrí a un activador pero son inseguros, es mejor comprar una licencia a alguno de los vendedores alternativos a Microsoft que ofrecen códigos de licencia totalmente válidas y legales a unos precios mucho más baratos que los de Microsoft. Microsoft vende las licencias de Windows a partir de 145 € para Windows 10 y de Microsoft Office a partir de 149 €, otros vendedores que se pueden encontrar en <a href="https://amzn.to/2flFhHA">Amazon</a> y <a href="https://www.ebay.es/">eBay</a> ofrecen licencias totalmente legales y mucho más baratas, de entre 10 € y 15 €. Para que no se deshabiliten algunas opciones de personalización en Windows, se deshabilite la edición de documentos en Microsoft Office y no aparezcan más mensajes solicitando la activación hay que <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">comprar una licencia y activar Windows 10 y Office 2019</a>.</p>
-<ul>
-<li><a href="https://www.microsoft.com/es-es/store/b/windows">Licencia de Windows 10</a> en Microsoft.</li>
-<li><a href="https://www.microsoft.com/es-es/microsoft-365/buy/compare-all-microsoft-365-products">Licencia de Microsoft Office 2019</a> en Microsoft.</li>
-<li><a href="https://amzn.to/333Df5X">Licencia de Windows 10 Home</a> en Amazon.</li>
-<li><a href="https://amzn.to/3iZ4dBk">Licencia de Windows 10 Pro</a> en Amazon.</li>
-<li><a href="https://amzn.to/369oJfc">Licencia de Microsoft Office 2019</a> en Amazon.</li>
-<li><a href="https://www.ebay.es/sch/i.html?_from=R40&amp;_trksid=p2334524.m570.l1313&amp;_nkw=windows&#43;10&#43;home&#43;key&#43;64&#43;bits&amp;_sacat=0&amp;LH_TitleDesc=0&amp;_sop=2&amp;_osacat=0&amp;_odkw=windows&#43;10&#43;home&#43;key&#43;64">Licencia de Windows 10 Home</a> en eBay.</li>
-<li><a href="https://www.ebay.es/sch/i.html?_from=R40&amp;_trksid=p2334524.m570.l1313&amp;_nkw=windows&#43;10&#43;professional&#43;digital&#43;key&#43;64&#43;bits&amp;_sacat=0&amp;LH_TitleDesc=0&amp;_sop=2&amp;_osacat=0&amp;_odkw=windows&#43;10&#43;pro&#43;digital&#43;key&#43;64&#43;bits">Licencia de Windows 10 Pro</a> en eBay.</li>
-<li><a href="https://www.ebay.es/sch/i.html?_from=R40&amp;_trksid=p2334524.m570.l1313&amp;_nkw=microsoft&#43;office&#43;2019&#43;&#43;key&amp;_sacat=0&amp;LH_TitleDesc=0&amp;_sop=2&amp;_osacat=0&amp;_odkw=microsoft&#43;office&#43;2019&#43;pro&#43;key">Licencia de Microsoft Office 2019</a> en eBay.</li>
-</ul>
-<p>Si puedes usa software con su licencia, sino usa alguna de las opciones alternativas disponibles tanto para Windows <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">eligiendo una distribución GNU/Linux</a> como para <a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/">Office y alguna de sus 4 alternativas</a> que se adapte tus necesidades. E incluso si se quiere <a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/">comprar un ordenador nuevo sin Windows</a> tanto portátil o de escritorio de buena calidad las marcas <a href="https://slimbook.es/">Slimbook</a> y <a href="https://www.vantpc.es/">VANT</a> ofrecen varios modelos en cada categoría, también están <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">los pequeños Intel NUC</a>.</p>
-]]>
-        </content>
-        
-            
-                <category term="microsoft"/>
-            
-                <category term="opinion"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="windows"/>
             
         
     </entry>

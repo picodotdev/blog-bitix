@@ -5,12 +5,95 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-13T23:00:00+01:00</updated>
+    <updated>2022-01-20T22:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/</id>
+        <title>Productividad y errores de compilación con Apache Tapestry</title>
+        <updated>2015-12-11T22:30:00+01:00</updated>
+        <published>2015-03-27T19:13:12+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Hace ya unos años comentaba <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.htmlindex-amp.html">varios motivos para elegir Apache Tapestry</a> como <em>framework</em> para desarrollar una aplicación o página web. Entre las varias razones comentaba la productividad como característica destacada. Uno de los motivos de esta productividad era por la alta reutilización de código que se puede conseguir al usar los componentes múltiples veces en un mismo proyecto o en diferentes proyectos creando una librería de componentes como comento más detalladamente en el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PugIn Tapestry</a>. Otra parte de la productividad que comentaba más ligeramente era poder detectar de forma rápida errores de compilación no solo en el código Java a través del IDE sino porque con <a href="https://tapestry.apache.org/">Tapestry</a> es posible detectar errores de compilación en todas las plantillas tml que generan el html fácil y rápidamente con un botón sin tener que probar manualmente toda la funcionalidad. El tema de este artículo es mostrar más en detalle como detectar los errores de compilación en las vistas con este <em>framework</em>.</p>
+<p>Por «errores de compilación» me refiero a ese tipo de errores que hace el código ni siquiera pueda ser interpretado correctamente por el computador, puede ser porque falta un <em>import</em>, un nombre de variable, propiedad o método mal puesto y que no existe&hellip; Poder detectar errores de compilación fácilmente en toda la aplicación es tremendamente útil y evitará que lleguen a producción con las consiguientes molestias para los usuarios y que posteriormente tengamos que dedicar tiempo a corregirlos cuando hemos perdido el contexto de las modificaciones hechas. También tendremos más seguridad de que no introducimos errores al hacer <em>refactorizaciones</em> importantes en el código. Los errores de compilación suelen ser fáciles y rápidos de corregir pero igualmente pueden impedir totalmente el uso de la aplicación. Cuando antes detectemos los errores más fácilmente los corregiremos y más productivos seremos ya que evitaremos corregirlos en un momento posterior en que costará más tiempo y esfuerzo, además de tener que realizar un nuevo despliegue con los cambios corregidos que dependiendo del tiempo que nos lleve puede suponer otro problema.</p>
+<p>La errores de compilación no depende de escribir pocas lineas de código o ahorrarnos pulsar unas cuantas teclas, mi experiencia con los lenguajes dinámicos como <a href="https://www.groovy-lang.org/">Groovy</a> y el <em>framework</em> <a href="https://grails.org/">Grails</a> es que se producen ocasionales pero constantes errores de compilación en el código Groovy y en las plantillas de vistas gsp. En parte estos errores se pueden detectar teniendo teses pero la realidad es que en pocos proyectos hay una cobertura del 100% del código sobre todo para esas partes en las que «seguro no se dan errores» o poco relevantes que no merece la pena hacerlos, tener una cobertura completa del código exige tener muchos teses y datos de prueba que los ejerciten para pasar por todas las combinaciones de condiciones y bucles, para detectar errores en las vistas también deberíamos hacer teses y esto ya no suele ser tan habitual hacerlo. Y de forma similar esto se puede extender a algunas otras combinaciones de lenguajes y <em>frameworks</em> web por sus características similares. Si en el proyecto solo participa una persona o el proyecto es pequeño como suele ocurrir en las pruebas de concepto con las que solemos divertirnos el número de errores no debería ser muy elevado ya que el código estará bajo control por esa persona pero cuando en un proyecto real en el que participan unos cuantos programadores haciendo continuamente modificaciones el número de errores de compilación pueden producirse y se producirán en producción. También hay que tener mucho cuidado en <em>merges</em> con conflictos, reemplazos grandes o proyectos grandes con muchos archivos ya que en uno complicado es fácil dejar un código que produce errores de compilación, en un lenguaje dinámico más por no tener la ayuda del compilador que nos avise de los mismos, también hay que resistir la tentación de hacer cambios sin probarlos confiando en que no introduciremos errores.</p>
+<p>Con Java y un IDE podremos detectar los errores de compilación que en un lenguaje dinámico solo observaremos en tiempo de ejecución. En Tapestry además podemos detectar los errores de compilación en las plantillas tml que generan el contenido html con un botón en la <a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/">página Dashboard</a> que ofrece incorporada Tapestry. Usando como ejemplo la aplicación que hice para el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> vamos a ver como detectar estos errores. De forma intencionada introduciré un error en la página que muestra el detalle de un producto en el mantenimiento CRUD del ejemplo. En vez de <em>producto.nombre</em> introduciré el error de compilación poniendo <em>producto.nombra</em>, <em>nombra</em> es una propiedad que no existe en la clase <em>Producto</em>, error que solo detectaremos después de crear un producto en otros <em>frameworks</em> al ejercitar el código pero que en Tapestry detectaremos también desde la página Dashboard. Por otra parte dado que en Tapestry las plantillas tml son xml válido si una etiqueta está mal balanceada también nos avisará.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/producto_hu3a8ae85dbc88bee21e3ebedb7efe3c44_24896_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Edición de un producto"><img src="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/producto_hu3a8ae85dbc88bee21e3ebedb7efe3c44_24896_300x200_fit_box_3.png" width="248" height="200" alt="Edición de un producto" title="Edición de un producto"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">...&#10;<span class="p">&lt;</span><span class="nt">t:form</span> <span class="na">t:id</span><span class="o">=</span><span class="s">&#34;form&#34;</span> <span class="na">context</span><span class="o">=</span><span class="s">&#34;producto.id&#34;</span> <span class="na">validate</span><span class="o">=</span><span class="s">&#34;producto&#34;</span> <span class="na">clientValidation</span><span class="o">=</span><span class="s">&#34;none&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;well&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;form&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">t:errors</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;literal:alert alert-danger&#34;</span> <span class="p">/&gt;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">t:delegate</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;botonesEdicionBlock&#34;</span><span class="p">/&gt;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;margin-top: 10px;&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">t:label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;nombre&#34;</span> <span class="p">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;controls&#34;</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t:type</span><span class="o">=</span><span class="s">&#34;textfield&#34;</span> <span class="na">t:id</span><span class="o">=</span><span class="s">&#34;nombre&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;producto.nombra&#34;</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;100&#34;</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;Nombre&#34;</span> <span class="p">/&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ProductoAdmin.tml</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error_hu478ad772e941c6035d5313d0f9e83830_51520_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Error de compilación al acceder a la página"><img src="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error_hu478ad772e941c6035d5313d0f9e83830_51520_300x200_fit_box_3.png" width="300" height="186" alt="Error de compilación al acceder a la página" title="Error de compilación al acceder a la página"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Entrando a la <a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/">página Dashboard</a> y pulsando el botón <em>Load all pages</em> detectaremos el error sin necesidad de crear un producto. El error es el siguiente que nos indicará claramente en que página o componente se ha producido el error y una descripción bastante clara de la causa del problema.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/dashboard_hu7a4427f88e5298cd4e10bad032714427_36714_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página dashboard"><img src="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/dashboard_hu7a4427f88e5298cd4e10bad032714427_36714_300x200_fit_box_3.png" width="248" height="200" alt="Página dashboard" title="Página dashboard"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error-dashboard_hu40f3082a8609f6e84cb6a7f770f8b464_43382_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página dashboard"><img src="https://picodotdev.github.io/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error-dashboard_hu40f3082a8609f6e84cb6a7f770f8b464_43382_300x200_fit_box_3.png" width="262" height="200" alt="Página dashboard" title="Página dashboard"  class="lozad "></a></p>
+</figure>
+</div>
+<p>En la imagen con el mensaje del error se puede ver de forma muy detallada cual es la causa, nos indica que el error está en la página <em>admin/Producto</em> y que la clase <em>es.com.blogspot.elblogdepicodev.plugintapestry.Producto</em> no tiene una propiedad llamada <em>nombra</em>, con este mensaje rápidamente nos damos cuenta del error de escritura que hemos cometido, corregirlo basta con sustituir <em>nombra</em> por <em>nombre</em> y pulsando de nuevo el botón <em>Load all pages</em> comprobamos que no hay más errores en esa misma página o ninguna otra de la aplicación.</p>
+<p>Los errores en producción son un problema para los usuarios de la aplicación que no podrán trabajar normalmente y para la productividad de los desarrolladores ya que habremos perdido el contexto de los cambios causantes del fallo y nos costará más corregirlos. En caso de que se nos escape algún error la <a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.htmlindex-amp.html">página de excepción</a> nos dará información detallada y un mensaje que suele ser bastante descriptivo por si solo para descubrir donde está el <em>bug</em>. Otro aspecto que ayuda a la productividad y que ya incorporan varios <em>frameworks</em> es la recarga de clases, en Tapestry es posible para los artefactos del <em>framework</em> (páginas, componentes y servicios, recursos i18n, imágenes, estilos css), sí, incluido código Java, con lo que tenemos las ventajas de los lenguajes de <em>scripting</em> y la ayuda del compilador para detectar errores inmediatamente, lo mejor de ambas opciones sin sus debilidades.</p>
+<p>Por supuesto, no evitaremos tener otro tipo de errores en la aplicación pero al menos los de compilación si podremos detectarlos, un error habitual que se puede seguir produciendo son los <em>NullPointerException (NPE)</em> pero que con las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades introducidas en Java 8</a> y usando la <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">clase Optional</a> también deberíamos poder evitarlos. Para mi esto es una gran ayuda tanto para la productividad como para aún mejor evitar que lleguen errores a producción.</p>
+<div class="alert alert-warning">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
+    <h3>Libro PlugIn Tapestry</h3>
+    <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
+    <br style="clear: both;">
+    <div class="buttons">
+        <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">PDF</a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Código fuente ejemplos</a>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Libro PlugIn Tapestry</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/">Página Dashboard de Apache Tapestry</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/tags/tapestry/">Artículos sobre Apache Tapestry</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="tapestry"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/</id>
         <title>Introducción y ejemplo de API RPC con Apache Thrift</title>
@@ -1247,87 +1330,6 @@
 <a href="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Christmastux 2014"><img src="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmastux 2014" title="Christmastux 2014"  class="lozad "></a></p>
 <figcaption>¡Buen 2015! <br>Fuente: klowner.com</figcaption>
 </figure>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/</id>
-        <title>Introducción al gestor de proyectos y tareas Redmine</title>
-        <updated>2015-01-10T12:00:00+01:00</updated>
-        <published>2014-12-19T19:57:31+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="200" height="59" alt="Redmine" title="Redmine"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
-</div>
-<p>Para desarrollar un proyecto de software se hace imprescindible disponer de algunas herramientas que nos permitan realizar las tareas. Una de estas herramientas es un <a href="https://en.wikipedia.org/wiki/Issue_tracking_system">gestor de tareas, peticiones o errores</a>, que nos permite recoger en una herramienta gran parte de la información, conocer el estado, planificar y hacer el seguimiento las tareas necesario para desarrollar de forma ordenada, sin que perdamos nada de información y pudiendo recuperarla en cualquier momento en un futuro.</p>
-<p>Como es habitual herramientas que gestionan tareas disponemos de varias algunas de las más conocidas son <a href="https://www.bugzilla.org/">Bugzilla</a>, <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://www.mantisbt.org/">Mantis</a>, <a href="https://trac.edgewall.org/">Trac</a> y la herramienta de la que hablaré en este artículo, <a href="https://www.redmine.org/">Redmine</a>. Cada una de estas herramientas como gestores de tareas son parecidas pero se diferencian en algunas cosas como la licencia que tiene, el esquema de precios o la funcionalidad que ofrece. Redmine tiene una <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">licencia de software libre GPL</a> y por tanto la podemos usar sin ningún coste, en la siguiente tabla podemos compararla con los <a href="https://www.atlassian.com/software/jira/pricing">precios de JIRA</a> que para pocos usuarios son asumibles pero que a medida que se aumentan los usuarios empiezan a ser notables aunque posiblemente alcanzables en función del tamaño de la empresa. En cualquier siendo JIRA también una herramienta excelente Redmine cumple perfectamente con la misma función. En la wikipedia podemos encontrar <a href="https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems">más opciones y comparar unas con otras</a>.</p>
-<p>Si queremos evaluar Redmine una forma sencilla podemos hacerlo mediante una imagen de Bitnami con VirtualBox. En la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">introducción a Bitnami</a> comento qué es y como nos puede ayudar a disponer de software que en algunos casos no es simple de instalar y que con Bitnami podemos disponer de forma sencilla y rápida, además de como usar con VirtualBox cualquier imagen de Bitnami de las herramientas ofrecidas. Una vez seguidos los pasos de la guía anterior podemos acceder a Redmine con el navegador web y una dirección similar a <em>http://192.168.0.11</em>, el usuario y contraseña para acceder es user y bitnami respectivamente.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Proyecto"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_300x200_fit_box_3.png" width="300" height="181" alt="Proyecto" title="Proyecto"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Petición"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_300x200_fit_box_3.png" width="300" height="185" alt="Petición" title="Petición"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Con Redmine podemos adaptar el flujo de las tareas a la forma de organización que empleemos, podemos personalizar el grafo de estados que siguen las tareas y que personas tiene permisos para hacer cada uno de los cambios de estado. También podemos añadir campos personalizados que queremos recoger para cada petición, por ejemplo, podemos querer dar un tamaño a las tareas en función de si estimamos que es grande, media o pequeña. También podemos crear filtros y guardarlos para encontrar fácilmente tareas.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_300x200_fit_box_3.png" width="300" height="181" alt="Estados" title="Estados"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Propiedades"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_300x200_fit_box_3.png" width="300" height="181" alt="Propiedades" title="Propiedades"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Filtros"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_300x200_fit_box_3.png" width="249" height="200" alt="Filtros" title="Filtros"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Flujo estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_300x200_fit_box_3.png" width="300" height="177" alt="Flujo estados" title="Flujo estados"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Además de gestionar las tareas Redmine dispone de herramientas que nos pueden ser útiles en el proyecto como una wiki para recoger documentación del proyecto y un repositorio de documentos para aquellos que no queremos incluir en la herramienta de control de versiones por su tamaño pero que queremos que estén disponibles para cualquiera que trabaje con el proyecto.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Wiki"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_300x200_fit_box_3.png" width="262" height="200" alt="Wiki" title="Wiki"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_300x200_fit_box_3.png" width="300" height="133" alt="Archivos" title="Archivos"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Pero Redmine es más que una herramienta de gestión de tareas, los complementos pueden añadirle funcionalidad adicional que permite <a href="http://www.redminecrm.com/projects/crm/pages/1">convertirla en un CRM para gestionar las comunicaciones con clientes</a> o en un <a href="http://www.redminecrm.com/projects/helpdesk/pages/1">helpdesk para atender las tareas de clientes</a>. Además de otros como <a href="http://www.redminecrm.com/projects/people/pages/1">personalizar los usuarios de Redmine</a> o crear <a href="http://www.redminecrm.com/projects/checklist/pages/1">pequeñas listas de tareas</a> que nos evitará crear subtareas.</p>
-<p>En el siguiente artículo comentaré como instalar el <a href="http://www.redminecrm.com/projects/agile/pages/1">plugin agile de Redmine</a> con la imagen de Bitnami en VirtualBox de forma que podamos visualizar las tareas en un panel kanban, y de un vistazo y rápidamente conozcamos las tareas que están terminadas, que están en progreso, a punto de empezarse o en la cola de tareas por hacer.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/">Instalar y usar plugin ágil en Redmine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/">Introducción e inicio a Drupal</a></li>
-<li><a href="http://www.luisblasco.com/5-plugins-gratuitos-instalar-en-redmine/">5 plugins gratuitos para instalar a Redmine</a></li>
-<li><a href="http://www.redmine.org/projects/redmine/wiki/RedmineIssueList#Applying-and-saving-filters">Aplicar y guardar filtros</a></li>
-<li><a href="https://stackoverflow.com/questions/9027479/how-do-you-modify-a-filter-in-redmine">Como modificar un filtro</a></li>
-<li><a href="http://www.luisblasco.com/blog/">Blog con varios artículos interesantes sobre Redmine</a></li>
-</ul>
 </div>
 ]]>
         </content>

@@ -5,12 +5,42 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-13T23:00:00+01:00</updated>
+    <updated>2022-01-20T22:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/06/el-lenguaje-de-programacion-framework-y-librerias-importan/</id>
+        <title>El lenguaje de programación, framework y librerías importan</title>
+        <updated>2016-06-26T12:00:00+02:00</updated>
+        <published>2016-06-25T12:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/06/el-lenguaje-de-programacion-framework-y-librerias-importan/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<p>Para programar hay una abundancia tremenda de lenguajes, librerías, <em>frameworks</em>, tecnologías, etc&hellip; disponibles para desarrollar un proyecto. Esto es muy bueno ya que podremos elegir la combinación de cualquiera de ellas que más se ajuste a las necesidades del proyecto, las que mejor conozcamos ya o según nuestras preferencias en base a sus características incluyendo su comunidad, documentación, si tiene un desarrollo activo, fecha de la última versión u otros motivos que consideremos. El lado malo de esta abundancia es que requiere analizar seguramente no todas pero al menos las más nombradas, más usadas, con mejor documentación o con un mantenimiento activo. Por la cantidad de opciones dicha tarea de análisis requiere tiempo y esfuerzo que no debe abrumarnos considerando que cualquiera de ellas vale.</p>
+<p>Algunas personas piensan que las herramientas no son importantes quizá creen que hay tantas que da igual cualquiera de ellas o que solo importan las personas, «lo que hay entre el teclado y la silla». Entre varias herramientas adecuadas ciertamente en un proyecto no serán lo más importante ni usar alguna en concreto es un fin pero eso no quiere decir que no sean importantes. Son importantes porque afectan de forma notable al desarrollo del proyecto, por poner un ejemplo no es lo mismo un lenguaje o <em>framework</em> que evita errores de compilación en producción, un <abbr title="Integrated Development Environment">IDE</abbr> que los detecta según se escribe el código o que permite hacer <em>refactors</em> con más garantías de no introducir errores que un lenguaje en el que necesitas teses que cubran la totalidad del código simplemente para detectarlos, no es lo mismo el número de lineas necesarias o su verbosidad pero es más importante la legibilidad si va a ser mantenido durante mucho tiempo, no es lo mismo elegir una herramienta ampliamente probada que una implementada por nosotros con el tiempo necesario a dedicar a desarrollarla y que probablemente finalmente sea menos flexible que otra existente, no es lo mismo una base de datos relacional que garantiza la integridad de los datos que una base de datos NoSQL sin validación de esquema. Yendo a un extremo creo que nadie considera siquiera usar ensamblador para hacer una aplicación web o usar Java, hasta el momento, para programar un sistema operativo de alto rendimiento que exprima el máximo potencial del hardware. Pero entre algunas opciones equivalentes cualquiera, con matices, nos servirá, por ejemplo, usar el lenguaje <a href="https://secure.php.net/">PHP</a>, <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> para hacer una aplicación web usando para cada opción los <em>frameworks</em> <a href="https://symfony.com/">Symfony</a>, <a href="https://www.asp.net/mvc">ASP.NET MVC</a> o <a href="https://tapestry.apache.org/">Apache Tapestry</a>. Hay grados de lo adecuado que es una herramienta para una necesidad.</p>
+<p>Por otro lado las herramientas consideradas en el inicio de un proyecto no son inmutables durante toda su existencia y cambian en la medida que las necesidades del proyecto cambian. En una <em>startup</em> al principio se necesitará una combinación de herramientas que permita probar la viabilidad del proyecto y evolucionar rápidamente el producto o servicio. Más tarde según se estabiliza el proyecto y crece surgirán nuevas necesidades como mayor fiabilidad, menos errores y escalabilidad tanto en cantidad de código y número de personas trabajando al mismo tiempo en el mismo código fuente.</p>
+<p>También suele haber alguna discusión en si utilizar <em>frameworks</em> o no utilizarlos, usarlos evita tener que desarrollar nosotros mismos mucho código, nos ahorrará tiempo, tendremos mayor flexibilidad y menos errores pero usándolos el proyecto tendrá esa dependencia lo que implica que el código se deberá adaptar a él que aún así igual es algo que queremos para estructurar correctamente el código según el marco de trabajo ofrecido. Por otro lado he presenciado comentarios desfavoreciendo el uso de <em>frameworks</em>, la mayoría de programadores no tienen los conocimientos y tiempo de implementar su propia alternativa con la misma calidad y en la mayoría de los casos basta con reutilizar alguna que cubra la necesidad y más importante esté ampliamente probada.</p>
+<p>Para mi lo importante es que para cualquier librería o <em>framework</em> que elijamos tengamos en un futuro la posibilidad de reemplazarlo sin estar encadenados a él y sin tener que reescribir el proyecto entero, esto forma parte de las más básicas buenas prácticas de desarrollo, precisamente las aplicaciones que se desarrollan en capas y los <em>frameworks</em> que separan modelo, de vista, de controlador tratan de minimizar ese impacto.</p>
+<p>Cada proyecto es distinto y hay que conocer sus requerimientos para seleccionar las herramientas que contribuyan al éxito o a la menor cantidad de dificultades, si se tratan de un proyecto en la plataforma Java probablemente varias herramientas serán las que indico en el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">herramientas para un proyecto Java</a>. Si no está clara la plataforma también puedes echarle un vistazo a <a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 razones para seguir usando Java</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades y nuevas características de Java 8</a>.</p>
+<p>La tecnologías, lenguajes, librerías, <em>frameworks</em>, &hellip; son herramientas a usar para conseguir un fin que es hacer realidad el proyecto, producto o servicio con un componente informático, las herramientas no son un fin en si mismo, no son lo más importante, lo más importante es resolver la necesidad de alguien normalmente con restricciones de tiempo y coste, pero desde luego no son irrelevantes y no da igual usar cualquiera. Son las herramientas equivalentes de un fontanero, pintor, carpintero u otros profesionales que tienen cantidad de ellas para realizar multitud de tareas específicas de forma efectiva y rápida junto con su conocimiento y experiencia. Los lenguajes de programación, <em>frameworks</em> y librerías de no ser importantes no existirían tantas incluso varias con diferentes propiedades para la misma necesidad.</p>
+]]>
+        </content>
+        
+            
+                <category term="opinion"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="software"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/06/combinacion-de-teclas-para-copiar-y-pegar-en-la-terminal/</id>
         <title>Combinación de teclas para copiar y pegar en la terminal</title>
@@ -1258,60 +1288,6 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/05/que-es-el-concepto-de-heap-pollution-en-java/">Qué es el concepto de Heap Pollution en Java</a></li>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/generics/index.html">Java Tutorials: Lesson: Generics</a></li>
 <li><a href="http://javarevisited.blogspot.com.es/2011/09/generics-java-example-tutorial.html">Java 1.5 Generics Tutorial</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/</id>
-        <title>Usar Twitter desde Java con twitter4j</title>
-        <updated>2016-04-16T12:30:00+02:00</updated>
-        <published>2016-04-16T12:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p><a href="https://twitter.com/">Twitter</a> ofrece una API para realizar las mismas acciones que como usuarios hacemos con su cliente web, desde publicar <em>tweets</em>, hacer <em>retweets</em>, enviar mensajes directos, leer <em>timelines</em>, &hellip; Con la <a href="https://dev.twitter.com/rest/public">API REST de twitter</a> podemos desde un programa de forma automatizada realizar cualquiera de las anteriores acciones. Por ejemplo, en <a href="https://twitter.com/blogstackinfo">Blog Stack</a> cada vez que agrega un artículo de cualquiera de las fuentes se publica un <em>tweet</em> con el título del artículo y el enlace al mismo en la <a href="https://twitter.com/blogstackinfo">cuenta de Twitter de Blog Stack</a>. En este artículo mostraré como desde lenguaje de programación Java podemos usar la API de Twitter para realizar las acciones que deseemos con la librería <a href="https://twitter4j.org/en/index.html">twitter4j</a>.</p>
-<p>twitter4j nos ofrece una API Java para acceder a la API REST de Twitter de forma más cómoda. Primeramente deberemos crear y registrar una aplicación, esto nos proporcionará varios datos que identificarán a la aplicación y <em>tokens</em> privados para que solo nuestra aplicación en nuestra cuenta pueda realizar las acciones, básicamente son unos datos para autenticar al cliente. La creación de la aplicación se realiza desde la [sección de desarrolladores de twitter] (https://apps.twitter.com/), también veremos las aplicaciones con acceso a la cuenta.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Twitter Apps"><img src="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_300x200_fit_box_3.png" width="274" height="200" alt="Twitter Apps" title="Twitter Apps"  class="lozad "></a></p>
-<figcaption>Twitter Apps</figcaption>
-</figure>
-</div>
-<p>Un a vez creada la aplicación y obtenidos los tokens en la sección <em>Keys and Access Tokens</em> para que la aplicación tenga acceso a la cuenta podemos usar twitter4j. Para publicar un tweet usamos el siguiente código. Creamos el objeto de configuración <a href="http://twitter4j.org/javadoc/twitter4j/conf/ConfigurationBuilder.html">ConfigurationBuilder</a> en el que establecemos los datos de acceso a la API para la aplicación y la cuenta en la que se realizarán las publicaciones y posteriormente con <a href="http://twitter4j.org/javadoc/twitter4j/TwitterFactory.html">TwitterFactory</a> obtenemos la clase <a href="http://twitter4j.org/javadoc/twitter4j/Twitter.html">Twitter</a> con la que realizaremos las operaciones que deseemos.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ShareServiceImpl</span> <span class="kd">implements</span> <span class="n">ShareService</span> <span class="o">{</span>&#10;  <span class="o">...</span>&#10;&#10;	<span class="kd">public</span> <span class="nf">ShareServiceImpl</span><span class="o">(</span><span class="n">MainService</span> <span class="n">service</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="k">this</span><span class="o">.</span><span class="na">service</span> <span class="o">=</span> <span class="n">service</span><span class="o">;</span>&#10;&#10;		<span class="n">ConfigurationBuilder</span> <span class="n">cb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConfigurationBuilder</span><span class="o">().</span><span class="na">setOAuthConsumerKey</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.consumerKey&#34;</span><span class="o">))</span>&#10;				<span class="o">.</span><span class="na">setOAuthConsumerSecret</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.consumerSecret&#34;</span><span class="o">))</span>&#10;				<span class="o">.</span><span class="na">setOAuthAccessToken</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.accessToken&#34;</span><span class="o">))</span>&#10;				<span class="o">.</span><span class="na">setOAuthAccessTokenSecret</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">service</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;twitter.accessTokenSecret&#34;</span><span class="o">));</span>&#10;		<span class="n">TwitterFactory</span> <span class="n">tf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TwitterFactory</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">build</span><span class="o">());</span>&#10;		<span class="n">twitter</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;	&#10;	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">twitter</span><span class="o">(</span><span class="n">PostRecord</span> <span class="n">post</span><span class="o">,</span> <span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">TwitterException</span> <span class="o">{</span>&#10;		<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Tweetting {} as «{}»&#34;</span><span class="o">,</span> <span class="n">post</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">message</span><span class="o">);</span>&#10;&#10;		<span class="n">twitter</span><span class="o">.</span><span class="na">updateStatus</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>&#10;	<span class="o">}</span>&#10;	&#10;	<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>ShareServiceImpl.java</span>
-    </div>
-</div>
-<p>Este ejemplo publica un tweet de solo texto pero puede incluir enlaces e imágenes o posición de geolocalización. Los tweets que publiquemos deberán respetar el límite de 140 caracteres como máximo teniendo presente que los enlaces cuentan como 22 independientemente de la longitud del enlace. En la <a href="http://twitter4j.org/en/code-examples.html">sección de ejemplos de twitter4j</a> se puede consultar como <a href="http://twitter4j.org/en/code-examples.html#gettingTimeline">leer el timeline de un usuario</a>, <a href="http://twitter4j.org/en/code-examples.html#directMessage">enviar mensajes directos</a>, <a href="http://twitter4j.org/en/code-examples.html#directMessage">buscar tweets</a> y algunas cosas más, en en <a href="http://twitter4j.org/javadoc/twitter4j/Twitter.html">javadoc de la clase Twitter</a> están documentados los métodos para acceder a los recursos e información de la cuenta  (mensajes directos, favoritos, seguidores, listas, geolocalización, búsquedas, <em>spam</em>, seguidores sugeridos, línea de tiempo, menciones, <em>retweets</em>, tendencias, tweets y usuarios).</p>
-<p>Tener acceso de escritura en la aplicación requiere que introduzcamos nuestro número de teléfono cosa que desde la web no se puede realizar en ciertos países, pero podemos <a href="https://support.twitter.com/articles/365327#">añadir el número de teléfono desde el cliente de Twitter para el móvil</a>, en el siguiente enlace se comenta un <a href="http://meberhard.me/workaround-twitter-application-write-access-mobile-number-accepted-twitter-website/">rodeo para insertar el teléfono móvil</a>.</p>
-<p>Teniendo a nuestra disposición la API de Twitter en nuestra aplicación solo nos queda darle un uso útil.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://twitter4j.org/en/index.html">Twitter4j</a></li>
-<li><a href="https://java.dzone.com/articles/java-twitter-integration">Java Twitter Integration</a></li>
-<li><a href="https://dev.twitter.com/apps">Twitter Apps</a></li>
-<li><a href="https://support.twitter.com/articles/365327#">Añadir tu número de teléfono a tu cuenta de Twitter</a></li>
-<li><a href="http://meberhard.me/workaround-twitter-application-write-access-mobile-number-accepted-twitter-website/">Workaround Twitter application write access mobile number accepted Twitter website</a></li>
 </ul>
 </div>
 ]]>
