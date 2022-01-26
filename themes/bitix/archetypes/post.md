@@ -36,6 +36,7 @@ draft: true
     caption="" >}}
 
 {{< amazon
+    tags=""
     linkids=""
     asins="" >}}
 

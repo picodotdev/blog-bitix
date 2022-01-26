@@ -249,28 +249,27 @@ En la siguiente [web de teclados mecánicos](https://mechanicalkeyboard.com/) ti
 
 #### DIERYA DK61E
 
-Un teclado mecánico muy interesante es el [DIERYA DK61E](https://amzn.to/33pnaul). Es de un formato 60% sin las teclas de función, de flechas de desplazammiento y el bloque superior ni teclado numérico que lo hacen muy compacto, por lo que ocupa muy poco en el espacio en la mesa y resulta muy cómodo de utilizar. Con disposición ANSI y teclas en inglés, algunas personas prefieren con esta disposición ya que para ciertas tareas la disposición de los caracteres es más adecuada en vez de la ISO en español, aunque su disposición de fábrica no es mayor problema ya que como cualquier teclado mecánico permite cambiar los _keycaps_ por cualquier otra disposición incluyendo la español y configurar la entrada de teclado en el sistema para adaptarlo a nuestra preferencias.
+Un teclado mecánico muy interesante es el [DIERYA DK61E][amazon-dierya-dk61]. Es de un formato 60% sin las teclas de función, de flechas de desplazammiento y el bloque superior ni teclado numérico que lo hacen muy compacto, por lo que ocupa muy poco en el espacio en la mesa y resulta muy cómodo de utilizar. Con disposición ANSI y teclas en inglés, algunas personas prefieren con esta disposición ya que para ciertas tareas la disposición de los caracteres es más adecuada en vez de la ISO en español, aunque su disposición de fábrica no es mayor problema ya que como cualquier teclado mecánico permite cambiar los _keycaps_ por cualquier otra disposición incluyendo la español y configurar la entrada de teclado en el sistema para adaptarlo a nuestra preferencias.
 
 Los _switches_ son _hot swappable_ que permite cambiarlos por otros en caso de más tarde preferir o probar otros tipos, la sensación de escritira varía significativamente entre unos y otros, son notablemente muy diferentes unos lineales de unos táctiles o _clicky_. Que los _switches_ sean _hot swappable_ es algo que tiene muy significativo de gama alta para su categoría de precio. Se ofrece en una variedad de tipos de _switches_ de la marca Gateron y destacar que son ópticos, nuevamente muy destacable, que ofrece mejor detección de las pulsaciones. Los _keycaps_ son de plástico PBT _double shot_ también algo muy significativo de gama alta para su categoría de precio. Finalmente, dispone de iluminación RGB personalizable con varias configuraciones de iluminación y un cable mallado, acodado y desmontable con conexión USB-C, también dispone de una aplicación para Windows para personalizalo y programar las teclas, la iluminación y macros.
 
 Este teclado por sus características no es que tenga características de teclado mecánico de gama alta, es que es un teclado mecánico de gama alta a un precio muy atractivo para todo lo que ofrece con una excelente relación calidad/precio que lo hace una opción muy recomendable.
 
-La marca tiene otros modelos como el [DIERYA DK61 Pro](https://amzn.to/3ttgSo6) que además de con cable es inalámbrico Bluetooth mediante batería recargable y el [DIERYA DK63](https://amzn.to/3KeA9zJ) también cableado e inalámbrico Bluetooth con teclas de desplazamiento dedicadas.
+La marca tiene otros modelos como el [DIERYA DK61 Pro][amazon-dierya-dk61-pro] que además de con cable es inalámbrico Bluetooth mediante batería recargable y el [DIERYA DK63][amazon-dierya-dk63] también cableado e inalámbrico Bluetooth con teclas de desplazamiento dedicadas.
 
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
 
 {{< amazon
-    linkids="06ca1e820d80f720658f8c74322b8fce,7387f80c99b51e39bf5d5479abb14581,82d726468e9ed79d257999b6c437c1c6"
-    asins="B07W5PD6VS,B082PDM3FG,B091TQYTT3" >}}
+    tags="keyboard-dierya" >}}
 
 {{< youtube
     video="2siY3SO3ATY" >}}
 
 #### DREVO Calibur V2 TE
 
-El teclado [DREVO Calibur V2 TE](https://amzn.to/3n7cfwP) ofrece un interedio entre TKL y SF, no posee teclas de función pero si las que se enuentran arriba de los TKL muy útiles al programar que permiten seleccionar el texto de una linea y cortar y pegar de forma alternativa a utilizar _Ctrl+X_ y _Ctrl+V_, al estar cerca de las teclas de desplazamiento evita tener que desplazar la mano para posicionar el cursor al escribir texto. El DREVO Calibur no tiene la calidad de los Ducky pero es más económico, compacto y con una disposición de teclas intermedia entre el SF y TKL sin perder ninguna de esas teclas de función de la parte superior de las flechas.
+El teclado [DREVO Calibur V2 TE][amazon-drevo-calibur-v2-te] ofrece un interedio entre TKL y SF, no posee teclas de función pero si las que se enuentran arriba de los TKL muy útiles al programar que permiten seleccionar el texto de una linea y cortar y pegar de forma alternativa a utilizar _Ctrl+X_ y _Ctrl+V_, al estar cerca de las teclas de desplazamiento evita tener que desplazar la mano para posicionar el cursor al escribir texto. El DREVO Calibur no tiene la calidad de los Ducky pero es más económico, compacto y con una disposición de teclas intermedia entre el SF y TKL sin perder ninguna de esas teclas de función de la parte superior de las flechas.
 
 * [Página del fabricante del teclado DREVO Calibur V2 TE](https://www.drevo.net/product/keyboard/calibur-v2-te)
 
@@ -283,7 +282,7 @@ El teclado [DREVO Calibur V2 TE](https://amzn.to/3n7cfwP) ofrece un interedio en
 
 #### Glorious GMMK TKL
 
-Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL](https://amzn.to/3vEzfpt), es un teclado en formato ISO con la característica destacada de ser personalizable tanto en los interruptores como en las teclas, los interruptores son intercambiables compatibles con los de la marca Cherry como Gateron y Kailh. Aparte Glorious ofrece como producto independiente los interruptores Gateron y los _keykaps_ del material ABS con la disposición de teclado española. Se vende tanto en Amazon como en [Coolmod][coolmod] y algunos elementos en PcComponentes. Soporta macros y pefiles configurados por software y personalización de varios efectos de luz.
+Otra opción muy interesante es el [Glorious PC Gaming Race GMMK TKL][amazon-glorious-gmmk-tkl], es un teclado en formato ISO con la característica destacada de ser personalizable tanto en los interruptores como en las teclas, los interruptores son intercambiables compatibles con los de la marca Cherry como Gateron y Kailh. Aparte Glorious ofrece como producto independiente los interruptores Gateron y los _keykaps_ del material ABS con la disposición de teclado española. Se vende tanto en Amazon como en [Coolmod][coolmod] y algunos elementos en PcComponentes. Soporta macros y pefiles configurados por software y personalización de varios efectos de luz.
 
 * [Página del fabricante del teclado Glorious PC Gaming Race GMMK TKL](https://www.pcgamingrace.com/products/gmmk-tkl-tenkeyless-brown-switch)
 

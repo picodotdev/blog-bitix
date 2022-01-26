@@ -121,8 +121,7 @@ Otras características destacadas es que su cable es desconectable para una mayo
 En sus defectos le encuentro que su material de construcción es completamente de plástico y que los soportes para levantar el teclado para mejor ergonomía es mediante un elemento magnético en vez de ser la tradicional pestaña que se despliega para formar el apoyo en la parte trasera a cada lado.
 
 {{< amazon
-    linkids="bd7e81798a9d04ab4943e6f9754d0072,aaa5f003821ff164674045386933a0a9"
-    asins="B07TLMYKWK,B07TKM6DZ4" >}}
+    tags="keyboard-drevo" >}}
 
 #### Ducky One 2 TKL
 
@@ -415,7 +414,7 @@ Otra fuente de información son los canales de [Twitch][twitch] en los que algun
 
 Marcas de teclados mecánicos reconocidos por su calidad son los [Anne][anne], [Keycron][keychron], [Akko][akko], [DIERYA][dierya], [Royal Kludge][royal-kludge] o [DURGOD][durgod] con los siguientes modelos destacados perfectamente a considerar si la disposición en inglés o en formato ANSI no es ningún inconveniente.
 
-* [DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard), está [disponible en Amazon](https://amzn.to/33pnaul)
+* [DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard), está [disponible en Amazon][amazon-dierya-dk61]
 * [Keychron K8](https://www.keychron.com/products/keychron-k8-tenkeyless-wireless-mechanical-keyboard?variant=32018252955737), está [disponible en Amazon](https://amzn.to/3wYtSSq)
 * [Akko 3084](https://en.akkogear.com/product/silent-3084-bt-5-0white-led-mechanical-keyboard/), está [disponible en Amazon](https://amzn.to/3qTQ3rZ)
 * [DREVO Gramr](https://www.drevo.net/product/keyboard/gramr), está [disponible en Amazon](https://amzn.to/3kOeyTN)
