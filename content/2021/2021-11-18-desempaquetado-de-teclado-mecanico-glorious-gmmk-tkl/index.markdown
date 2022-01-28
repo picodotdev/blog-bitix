@@ -108,9 +108,19 @@ Teniendo en cuenta mis requerimientos he tenido principalmente tres teclados mec
 
 Las tres opciones que he estado siguiendo son estos tres teclados mecánicos. Cada uno de estos modelos tienen algo que me gusta, la opción ideal para mi sería una combinación de las cosas que me gustan de cada uno.
 
+* [DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [DREVO Calibur V2 TE](https://www.drevo.net/product/keyboard/calibur-v2-te)
 * [Ducky One 2 TKL](https://www.duckychannel.com.tw/en/Keyboards/One2-Series), [Ducky One 3 TKL](https://www.duckychannel.com.tw/en/Keyboards/One3-Series)
 * [Glorious GMMK TKL](https://www.pcgamingrace.com/products/gmmk-tkl-tenkeyless-brown-switch)
+
+#### DIERYA DK61E
+
+Más tarde he podido probar un teclado compacto DIERYA DK61E, un teclado mecánico compacto en formato del 60% sin teclas dedicadas de desplazamiento, las del bloque superior a estas y de función con una disposición de teclas en inglés. El DK61E es un teclado con unas características de teclado de gama alta pero con un precio muy ajustado para todo lo que ofrece, con _switches_ ópticos, _hot swappable_, _keycaps_ PBT _double shot_, USB 3.0 o cable tipo A reversible por citar unas pocas y que en otros modelos de otras marcas tiene un precio notablemente superior. Es un teclado premontado con la ventaja de incluir todo ni tener que buscar y comprar aparte los _switches_ y _keycaps_.
+
+* [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
+
+{{< amazon
+    tags="keyboard-dierya" >}}
 
 #### DREVO Calibur V2 TE
 
