@@ -1,0 +1,1 @@
+$ APP_PASSWORD="java" ./gradlew run

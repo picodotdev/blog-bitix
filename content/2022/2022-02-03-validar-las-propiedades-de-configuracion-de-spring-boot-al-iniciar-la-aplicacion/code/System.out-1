@@ -1,0 +1,27 @@
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Binding to target org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'app' to io.github.picodotdev.blogbitix.springbootconfigvalidated.AppConfiguration$$EnhancerBySpringCGLIB$$ae0ed48d failed:
+
+    Property: app.regexp
+    Value: 0000
+    Origin: class path resource [application.yml] - 7:11
+    Reason: debe coincidir con "[A-Z]\d{3,}"
+
+    Property: app.password
+    Value: 
+    Origin: class path resource [application.yml] - 8:12
+    Reason: no debe estar vacío
+
+    Property: app.numeric
+    Value: 0
+    Origin: class path resource [application.yml] - 6:12
+    Reason: debe ser mayor que o igual a 3
+
+
+Action:
+
+Update your application's configuration
