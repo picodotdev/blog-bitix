@@ -5,12 +5,184 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2022-01-20T22:00:00+01:00</updated>
+    <updated>2022-02-03T18:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/</id>
+        <title>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</title>
+        <updated>2020-06-21T07:30:00+02:00</updated>
+        <published>2020-06-21T07:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>El lenguaje de programación Java utiliza un paradigma orientado a objetos pero también emplea otros paradigmas como el funcional con la incorporación de las <em>lambas</em> en Java 8 y el imperativo en los bloques de sentencias de los métodos. En este artículo están los tipos de sentencias de control de flujo disponibles en el lenguaje de programación Java: condicionales, de repetición, de asignación, de gestión de excepciones e invocación de métodos en Java.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Java es un lenguaje orientado a objetos donde aplicando los principios de encapsulación, herencia y polimorfismo, el código está dentro de los métodos de las clases de los objetos. El código dentro de los métodos sigue los principios de los lenguajes imperativos con una secuencia de sentencias de asignación, control de flujo, llamada a otros métodos y de repetición, más recientemente con la <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">incorporación de las <em>lambdas</em> y referencias a métodos en Java 8</a> es posible emplear también un enfoque de programación funcional.</p>
+<p>La orientación a objetos es una forma de organizar el código y los datos que maneja ese código de modo que se respeten los principios de encapsulación, una forma de reutilizar el código con herencia y una forma de abstraer el comportamiento dependiendo de la clase concreta que implementa el método. Pero el código de Java no es únicamente código orientado a objetos también es un lenguaje imperativo para el código de los métodos.</p>
+<p>El código imperativo se basa en la ejecución de forma secuencial de un conjunto de sentencias. Las sentencias de un método o programa son de diferente tipo: de asignación, condicionales, de repetición, de gestión de excepciones para controlar errores y de llamadas a funciones, en el caso de los lenguajes orientados a objetos llamadas a métodos. Estas sentencias individuales se pueden anidar unas dentro de otras por ejemplo tener una sentencia de repetición dentro del bloque de sentencias de una condicional.</p>
+<p>Cada uno de estos tipos de sentencias forman las piezas básicas de construcción de los programas, combinadas en múltiples lineas de código forman programas complejos que sirven para el propósito para que el programa fue escrito.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="sentencias-de-asignación">Sentencias de asignación</h3>
+<p>Las sentencias de asignación sirven para asignar nuevos valores y referencias a objetos a variables y propiedades de objetos. La sintaxis de la asignación consta del nombre de variable que toma el valor a la izquierda, el operador de asignación en el medio y de la expresión a la derecha. El valor de una variable o propiedad cambia con una sentencia de asignación, el valor anterior se reemplaza por el nuevo valor. El nuevo valor de la variable es el resultado de evaluar la expresión que proporciona el valor, con una asignación de inicialización es posible asignar un valor al mismo tiempo que se declara una variable o propiedad de un objeto.</p>
+<p>Una variable tiene un valor si se trata de un tipo primitivo de datos, en caso de tener como tipo una clase contiene una referencia a una instancia de un objeto de ese tipo o la referencia nula. Una expresión devuelve como resultado un valor y este es el asignado a la variable por la sentencia de asignación.</p>
+<p>Una expresión puede contener múltiples operadores: para datos booleanos (de lógica <em>&amp;&amp;, ||, !</em> y de comparación <em>==, !=, &lt;, &gt;, &lt;=, &gt;=</em>), aritméticos para datos numéricos (<em>+, -, *, /, %, ++, &ndash;</em>) o operadores para datos binarios (<em>&amp;, |, ^, ~, &laquo;, &raquo;, &raquo;&gt;</em>). Otros operadores de asignación (<em>+=, -=, *=, /=, %=, &laquo;=, &raquo;=, &amp;=, ^=, |=</em>) toman como primer operando el valor de la variable, esto evita repetir el nombre de la variable en la expresión y facilita la legibilidad del código.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">variable</span> <span class="o">=</span> <span class="n">expresión</span><span class="o">;</span>&#10;&#10;<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>&#10;<span class="n">List</span> <span class="n">list</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;1&#34;</span><span class="o">,</span> <span class="s">&#34;2&#34;</span><span class="o">);</span>&#10;&#10;<span class="n">x</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span>&#10;<span class="n">list</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;3&#34;</span><span class="o">,</span> <span class="s">&#34;4&#34;</span><span class="o">);</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Asignacion.java</span>
+    </div>
+</div>
+<p>El operador ternario <em>?:</em> es una expresión condicional que devuelve el valor de la expresión según el resultado de evaluar una expresión booleana.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">variable</span> <span class="o">=</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">)</span> <span class="o">?</span> <span class="n">expresionTrue</span> <span class="o">:</span> <span class="n">expresionFalse</span><span class="o">;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>CondicionalTernario.java</span>
+    </div>
+</div>
+<h3 id="setencias-condicionales-if-switch">Setencias condicionales (if, switch)</h3>
+<p>Las sentencias condicionales son un tipo de sentencia que evalúa una expresión booleana y dependiendo de su valor verdadero o falso ejecuta o no su su bloque de sentencias asociado para cada caso. Las sentencias a continuación de la condición se ejecutan si la sentencia <em>if</em> se evalúa como verdadero. La sentencia <em>if</em> además puede tener otro bloque de sentencias a ejecutar si la expresión booleana se evalúa como falso, el bloque de sentencias <em>else</em>. Las sentencias <em>if</em> y <em>else</em> se pueden encadenar.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if_hu24be44068bad4ad403a69b425c847805_22416_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia if"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if_hu24be44068bad4ad403a69b425c847805_22416_300x200_fit_box_3.png" width="200" height="200" alt="Diagrama sentencia if" title="Diagrama sentencia if"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia if-else"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_300x200_fit_box_3.png" width="200" height="200" alt="Diagrama sentencia if-else" title="Diagrama sentencia if-else"  class="lozad "></a></p>
+<figcaption>Diagramas sentencias if e if-else <br>Fuente: beginnersbook.com</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">if</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">)</span>&#10;   <span class="n">sentenciaTrue</span>&#10;&#10;<span class="nf">if</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentenciasTrue</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">if</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentenciasTrue</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentenciasFalse</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">if</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentenciasTrue</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentenciasTrue</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">bloqueSentenciasFalse</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">3</span><span class="o">;</span>&#10;<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span>&#10;<span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;a es mayor que b&#34;</span><span class="o">);</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;a no es mayor que b&#34;</span><span class="o">);</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>CondicionalIf.java</span>
+    </div>
+</div>
+<p>Cuando una sentencia <em>if</em> tiene muchas ramas y la expresión condicional comprueba en todos los casos diferentes valores de una misma variable se utiliza la sentencia <em>switch</em>. Si el valor de la variable coincide con el valor del bloque del caso se ejecutan las sentencias de ese bloque. Cada bloque ha de estar finalizado con sentencia <em>break</em> para no evaluar las sentencias del siguiente bloque. El caso <em>default</em> permite ejecutar un bloque de sentencias si el valor de la expresión no coincide con ninguno de los valores de los casos, siendo como la parte <em>else</em> de las sentencias <em>if</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-switch_hue79c7c08074a91052aa727bb0477f63b_30615_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia switch"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-switch_hue79c7c08074a91052aa727bb0477f63b_30615_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia switch" title="Diagrama sentencia switch"  class="lozad "></a></p>
+<figcaption>Diagrama sentencia switch <br>Fuente: beginnersbook.com</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">switch</span> <span class="o">(</span><span class="n">variable</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="k">case</span> <span class="n">1</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">bloqueSentencias</span>&#10;   <span class="o">}</span> <span class="k">break</span><span class="o">;</span>&#10;   <span class="k">case</span> <span class="n">2</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">bloqueSentencias</span>&#10;   <span class="k">case</span> <span class="n">3</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">bloqueSentencias</span>&#10;   <span class="o">}</span> <span class="k">break</span><span class="o">;</span>&#10;   <span class="k">default</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">bloqueSentencias</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>CondicionalSwitch.java</span>
+    </div>
+</div>
+<p>La sentencia <em>if</em> equivalente del <em>switch</em> anterior sería el siguiente. si es posible se prefiere usar la sentencia <em>switch</em> sobre la <em>if</em> equivalente, más si hay un varias ramas, ya que es mas sencilla, legible y no hace falta indicar en cada expresión de condición la expresión que devuelve el valor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">if</span> <span class="o">(</span><span class="n">variable</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentencias</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">variable</span> <span class="o">==</span> <span class="n">2</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentencias</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">variable</span> <span class="o">==</span> <span class="n">3</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentencias</span>&#10;<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentencias</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>CondicionalSwitchIf.java</span>
+    </div>
+</div>
+<p>Las sentencias <em>if</em> se pueden anidar unas dentro de otras esto dificulta la legibilidad del código, para evitar <a href="https://picodotdev.github.io/blog-bitix/2017/10/evitar-niveles-de-anidacion-de-sentencias-condicionales-con-guard-clauses/">múltiples anidaciones y crear varias ramas  se utilizan guard clauses</a> que simplifican el flujo del programa.</p>
+<h3 id="sentencias-de-repetición-for-foreach-while-do-while-break-continue">Sentencias de repetición (for, foreach, while, do-while, break, continue)</h3>
+<p>Las sentencias de repetición permiten ejecutar un bloque de sentencias durante un número determinado de veces o mientras se cumpla una condición. En cada iteración después de ejecutar el bloque de sentencias la condición se vuelve a evaluar si se sigue cumpliendo, si se cumple se realiza una nueva iteración si no se cumple se sale del bucle y se continua con la siguiente sentencia del programa. Esta evaluación de la condición y ejecución del bloque de sentencias se realiza hasta que la condición del bucle <em>while</em> no se cumpla. Hay varios tipos de bucles.</p>
+<p>La sentencia <em>while</em> ejecuta un bloque de sentencias mientras se cumpla una condición, puede ocurrir el caso de que la condición de la sentencia <em>while</em> no se cumpla y por tanto el bloque de sentencias de repetición no se ejecute ninguna vez. La comprobación de la condición se realiza antes de entrar al bucle.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-while_huf093fb746d2329da27a844c76e69b7da_26135_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia while"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-while_huf093fb746d2329da27a844c76e69b7da_26135_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia while" title="Diagrama sentencia while"  class="lozad "></a></p>
+<figcaption>Diagrama sentencia while <br>Fuente: beginnersbook.com</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">while</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">sentences</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>RepeticionWhile.java</span>
+    </div>
+</div>
+<p>En el bucle <em>do-while</em> la comprobación de la condición está después del bloque de sentencias de repetición, a diferencia del bucle <em>while</em> en el <em>do-while</em> el bloque de sentencias se ejecutan al menos una vez.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-do-while_hu629e120eb684631fa9ee57f6de9a81d1_24851_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia do-while"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-do-while_hu629e120eb684631fa9ee57f6de9a81d1_24851_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia do-while" title="Diagrama sentencia do-while"  class="lozad "></a></p>
+<figcaption>Diagrama sentencia do-while <br>Fuente: beginnersbook.com</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">do</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentencias</span>&#10;<span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">condicionExpresionBoleana</span><span class="o">);</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>RepeticionDoWhile.java</span>
+    </div>
+</div>
+<p>La sentencia <em>for</em> utilizan otra sintaxis para realizar bucles, una de las <a href="https://picodotdev.github.io/blog-bitix/2017/07/4-formas-de-hacer-un-bucle-for-en-java/">4 formas de hacer un bucle for</a> contiene una inicialización, condición de repetición e incremento además del bloque de sentencias a ejecutar. Otras formas de bucle <em>for</em> son el <em>forearch</em> para colecciones de objetos.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-for_hud5f47070ff90265ccb71bfee4101b702_32192_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia for"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-for_hud5f47070ff90265ccb71bfee4101b702_32192_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia for" title="Diagrama sentencia for"  class="lozad "></a></p>
+<figcaption>Diagrama sentencia for <br>Fuente: beginnersbook.com</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">for</span> <span class="o">(</span><span class="n">inicializacion</span><span class="o">;</span> <span class="n">condicionExpresionBoleana</span><span class="o">;</span> <span class="n">incremento</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentencias</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;&#10;<span class="c1">// Foreach&#10;</span><span class="c1"></span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">collection</span> <span class="o">=</span> <span class="o">...;</span>&#10;<span class="k">for</span> <span class="o">(</span><span class="n">Object</span> <span class="n">object</span> <span class="o">:</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">object</span><span class="o">);</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>RepeticionFor.java</span>
+    </div>
+</div>
+<p>Dentro de las sentencias de bucle se pueden emplear las palabras reservadas <em>break</em> y <em>continue</em>. La sentencia <em>break</em> permite salir del bucle inmediatamente sin necesidad de evaluar la condición. La palabra <em>continue</em> dejar de ejecutar sentencias del bucle y evaluar de nuevo la condición de bucle, si se sigue cumpliendo la condición se ejecuta de nuevo el bloque de sentencias. Las sentencias <em>break</em> y <em>continue</em> normalmente se utilizan dentro de una sentencia condicional <em>if</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-continue_hubff1e9b9e07bd4ea44d8fd04d9b9a57c_28193_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia continue"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-continue_hubff1e9b9e07bd4ea44d8fd04d9b9a57c_28193_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia continue" title="Diagrama sentencia continue"  class="lozad "></a></p>
+<figcaption>Diagrama sentencia continue <br>Fuente: beginnersbook.com</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Break&#10;</span><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">5</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">break</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;&#10;<span class="c1">// Resultado&#10;</span><span class="c1"></span><span class="n">0</span>&#10;<span class="n">1</span>&#10;<span class="n">2</span>&#10;<span class="n">3</span>&#10;<span class="n">4</span>&#10;&#10;<span class="c1">// Continue&#10;</span><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">5</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">continue</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>&#10;<span class="o">}</span>&#10;&#10;<span class="c1">// Resultado&#10;</span><span class="c1"></span><span class="n">0</span>&#10;<span class="n">1</span>&#10;<span class="n">2</span>&#10;<span class="n">3</span>&#10;<span class="n">4</span>&#10;<span class="n">6</span>&#10;<span class="n">7</span>&#10;<span class="n">8</span>&#10;<span class="n">9</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>BreakContinue.java</span>
+    </div>
+</div>
+<p>Un bucle infinito es en un bucle que se itera contnuamente porque la condición de iteración se cumple siempre. Ejecutar continuamente un bloque de sentencias hace que el procesador consuma todos los recursos que se disponen de cómputo de procesador o una alta actividad de entrada y salida que degrada el rendimiento del sistema sin producir ningún resultado útil cuanto menos si no genera errores en el resto de programas del sistema. Suele ser por un error de programación y para resolverlo habitualmente hay que matar el proceso del programa y reiniciarlo, si no se corrige el error en el bucle en las mismas condiciones se producirá de nuevo el bucle infinito.</p>
+<h3 id="setencias-de-control-de-expceciones-try-catch-throw">Setencias de control de expceciones (try-catch, throw)</h3>
+<p>Las expresiones <em>try-catch</em> son <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">el mecanismo de control de errores en Java</a>. Estas expresiones permiten tratar las excepciones lanzadas por la palabra reservada <em>throw</em> en los métodos invocados de su bloque de sentencias.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="k">try</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentencias</span>&#10;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;   <span class="n">bloqueSentenciasTratamientoExcepcion</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TryCatch.java</span>
+    </div>
+</div>
+<p>Las excepciones se lanzan con la palabra reservada <em>throw</em>, toda excepción ha de heredar de <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a> y si no hereda de <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">RuntimeExecption</a> ha de declararse en la firma del método para indicar que el método puede lanzar esa excepción en caso de no ser tratada dentro del mismo método con un <em>try-catch</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">exception</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="o">();</span>&#10;<span class="o">}</span>&#10;&#10;<span class="kt">void</span> <span class="nf">runtime</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">();</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Throw.java</span>
+    </div>
+</div>
+<h3 id="invocación-de-métodos">Invocación de métodos</h3>
+<p>Las funciones en los lenguajes orientados a objetos dentro de las clases, las clases encapsulan las variables y las funciones o métodos. Los métodos tiene acceso además de a los parámetros que recibe a las variables del objeto en las están contenido y otros métodos de la misma clase u otros objetos respetando los <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">ámbitos de visibilidad de las palabras reservadas <em>public</em>, <em>protected</em>, <em>private</em> y <em>default</em></a>.</p>
+<p>Las expresiones de invocación a métodos se componen del objeto que recibe la llamada a uno de sus métodos separado por un punto y nombre del método. Si el método llamado devuelve un objeto se puede encadenar otra nueva llamada a un método del objeto devuelto. El valor o referencia a objeto devuelto se puede asignar a una variable también.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">string</span> <span class="o">=</span> <span class="s">&#34;Hola Mundo!&#34;</span><span class="o">;</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">string</span><span class="o">);</span>&#10;&#10;<span class="c1">// Resultado&#10;</span><span class="c1"></span><span class="n">Hola</span> <span class="n">Mundo</span><span class="o">!</span>&#10;&#10;<span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>&#10;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">string</span><span class="o">);</span>&#10;&#10;<span class="c1">// Resultado&#10;</span><span class="c1"></span><span class="n">HOLA</span> <span class="n">MUNDO</span><span class="o">!</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Invocacion.java</span>
+    </div>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/06/generar-en-el-dominio-los-identificativos-de-las-entidades-aplicando-ddd-antes-de-persistirlas-en-la-base-de-datos/</id>
         <title>Generar en el dominio los identificativos de las entidades aplicando DDD antes de persistirlas en la base de datos</title>
@@ -1574,137 +1746,6 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/</id>
-        <title>Hemeroteca #16</title>
-        <updated>2019-12-31T19:30:00+01:00</updated>
-        <published>2019-12-27T19:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
-</div>
-<p>Se acaba otro año y en este caso además la década, en el siguiente 2020 harán 10 años ya desde que empecé a escribir artículos técnicos principalmente sobre <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y Java, algunos artículos de opinión y desempaquetados los productos que compro relacionados con la tecnología. Una década escribiendo uno o dos artículos semanales, no es fácil aguantar durante todo este tiempo y conservar la motivación y tener el tiempo que requieren cada uno de los artículos. Muchos surgen de ideas del trabajo que en muchos casos no puedo aplicar laboralmente, salvo alguna pequeña excepción, por implementarlos en Java por mi preferencia en el caso de los de programación y usar otras tecnologías laboralmente.</p>
-<p>Este segundo semestre he escrito algunos artículos menos, 34, frente a los 48 del primer semestre y es que con la <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">compra de una PlayStation 4</a> estoy dedicando parte del tiempo que antes dedicaba al blog e investigar tecnología a jugar a algunos videojuegos, aún así esa cantidad de artículos sigue siendo al menos uno por semana que es mi cadencia mínima de publicación que deseo. En total en el 2019 he publicado 82 artículos para llegar a la cifra de 453 artículos en el tiempo de vida de Blog Bitix desde finales del 2013, son muchos más teniendo en cuenta para ser algo que dedico en mi tiempo libre y cada caracter de los artículos requiere teclearlo, corregir las faltas de ortografía, hacer que las frases estén bien construidas sintácticamente y sean fáciles de comprender, cada idea e imagen a recortar y capturar está colocada de forma artesanal y manual, lo único automatizado es generar la versión estática de la web que gracias a <a href="https://gohugo.io/">Hugo</a> junto con <a href="https://pages.github.com/">GitHub Pages</a> y algunos comandos de GNU/Linux me permite centrarme más en solo escribir el contenido.</p>
-<p>Pero los artículos no es lo único que he hecho este 2019, he recibido algunas <em>pull request</em> e <em>issues</em> para <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a> y <a href="https://github.com/picodotdev/alis/">el repositorio en GitHub</a> tiene una buena cantidad de <em>stars</em> y <em>forks</em>, he continuado manteniendo la traducción al español de <a href="https://www.videolan.org/vlc/">VLC</a>, he enviado una actualización con las nuevas cadenas y corregidos algunos errores de la traducción al español para la reciente versión 6.1 de <a href="https://www.virtualbox.org/">VirtualBox</a> y tratado de mejorar la de <a href="https://keepassxc.org/">KeePassXC</a>, algunas mejoras internas para generar el blog, incluido <a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">rediseñarlo para que el contenido esté centrado, más grande horizontalmente y publicidad lateral <em>sticky</em></a>.</p>
-<p>Listando los <a href="https://picodotdev.github.io/blog-bitix/2019/">artículos que he escrito durante el año 2019</a> y este semestre, en la categoría de artículos de desempaquetado he escrito sobre la PlayStation 4.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">Desempaquetado de PlayStation 4 Slim de 1 TB</a></li>
-</ul>
-<p>Dos de opinión.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/smartcards-en-vez-de-discos-para-una-futura-generacion-de-consolas/">Smartcards en vez de discos para una futura generación de consolas</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/12/sobre-los-planes-de-pensiones-analizando-sus-ventajas-fiscales-y-rentabilidad/">Sobre los planes de pensiones, analizando sus ventajas fiscales y rentabilidad</a></li>
-</ul>
-<p>Una de las temáticas principales de este blog es GNU/Linux, dentro de ella de diversa temática desde programación hasta el entorno de escritorio.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/">Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/">Administrar secretos y proteger datos sensibles con Vault</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/">Guía de inicio del gestor de terminales y sesiones tmux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/">Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/">Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/">Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">Nube privada para documentos personales con Nextcloud y OnlyOffice</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/12/comando-para-convertir-imagenes-jpeg-y-png-a-webp/">Comando para convertir imágenes JPEG y PNG a WebP</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/">Buscar en el historial desde la barra de direcciones inteligente de Firefox</a></li>
-</ul>
-<p>La otra temática principal de mi blog es la programación con el lenguaje <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> donde están la mayoría de los artículos que he escrito.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/">¿Donde comprar un ordenador sin Windows o con GNU/Linux?</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/">Los tipos de módulos de JPMS añadidos a partir de Java 9</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/">Recuperar datos eficientemente en GraphQL usando batching con data loaders</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/07/publicacion-y-suscripcion-de-eventos-con-guava-eventbus-en-una-aplicacion-java/">Publicación y suscripción de eventos con Guava EventBus en una aplicación Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/">Implementar tolerancia a fallos con Resilience4j</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/">Iniciar una aplicación de Spring Boot en un puerto aleatorio</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/">Ejemplo sencillo de como crear un documento PDF con Java y PDFBox</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/">Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/">Novedades de Java 13</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/ventajas-de-usar-un-tipo-especifico-para-los-identificadores-de-las-entidades-en-vez-de-un-tipo-basico/">Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/">Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/">Rotar los archivos de trazas con log4j por fecha o tamaño</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/extraer-informacion-del-navegador-del-usuario-en-el-servidor-de-una-aplicacion-web-java/">Extraer información del navegador del usuario en el servidor de una aplicación web Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">Implementar un segundo factor de autenticación en una aplicación web Java con Spring</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/">Generar documentos, informes y facturas en formato PDF con JasperReports y Java</a></li>
-</ul>
-<p>Pasado el año está bien hacer un pequeño balance de como ha sido para evaluar si hay algo que se puede hacer para mejorar, en cuanto a las cifras del blog en número de visitas se ha mantenido prácticamente igual al 2018 con ~500K páginas vistas, a pesar de la cifra anualizada no son más de 1.5K al día que no es mucho, hay mucho margen de mejora. Aunque siempre es un punto de motivación normalmente no pienso en escribir artículos que atraigan a más lectores sino antes en lo que me apetece escribir y publicar. Aún escribiendo artículos más avanzados uno de los artículos más visitados es a pesar de su sencillez y simplicidad <a href="https://picodotdev.github.io/blog-bitix/2017/07/4-formas-de-hacer-un-bucle-for-en-java/">4 formas de hacer un bucle for  en Java</a>, he escrito artículos mucho más complejos que mostrar varias formas de hacer un bucle <em>for</em> pero parece que los artículos sencillos tienen un público más amplio que los artículos más complejos.</p>
-<p>He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desdeñando conseguir más visitas pero sin ser esta la principal motivación de escribir algo. Como cada año, para observar las métricas pasados varios, hago públicos los datos de visitas en Analytics, ingresos de AdSense y de afiliación de Amazon. Por si a alguien sin blog, con uno o por comparar le resultan interesantes y quiere hacerse una idea.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/analytics-2019_hu3aadba81fd120c0c2335c999e048002a_85387_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Analytics 2019 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/analytics-2019_hu3aadba81fd120c0c2335c999e048002a_85387_600x450_fit_box_3.png" width="600" height="301" alt="Analytics 2019 de Blog Bitix" title="Analytics 2019 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-2019_hu93d307567eb4898927b97f2f60790f43_39622_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="AdSense 2019 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-2019_hu93d307567eb4898927b97f2f60790f43_39622_600x450_fit_box_3.png" width="600" height="205" alt="AdSense 2019 de Blog Bitix" title="AdSense 2019 de Blog Bitix"  class="lozad "></a></p>
-<figcaption>Evolución visitas e ingresos en 2019</figcaption>
-</figure>
-</div>
-<p>En cuanto a ingresos algunos menos 410 € frente a 480 € del año anterior, aún así todos los meses de forma consistente los ingresos están alrededor de entre 20 y 30 € que no está mal.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-ingresos-2019_hu0aa956c9569059650f34c2752c61017b_152870_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ingresos 2018 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-ingresos-2019_hu0aa956c9569059650f34c2752c61017b_152870_300x200_fit_box_3.png" width="113" height="200" alt="Ingresos 2018 de Blog Bitix" title="Ingresos 2018 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-paginas-vistas-2019_hu0aa956c9569059650f34c2752c61017b_145755_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Páginas vistas 2018 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-paginas-vistas-2019_hu0aa956c9569059650f34c2752c61017b_145755_300x200_fit_box_3.png" width="113" height="200" alt="Páginas vistas 2018 de Blog Bitix" title="Páginas vistas 2018 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-clics-2019_hu0aa956c9569059650f34c2752c61017b_132963_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Clics 2018 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-clics-2019_hu0aa956c9569059650f34c2752c61017b_132963_300x200_fit_box_3.png" width="113" height="200" alt="Clics 2018 de Blog Bitix" title="Clics 2018 de Blog Bitix"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-crt-2019_hu551692485b029c60d17a806c35ed45f1_135718_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="CRT 2019 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-crt-2019_hu551692485b029c60d17a806c35ed45f1_135718_300x200_fit_box_3.png" width="113" height="200" alt="CRT 2019 de Blog Bitix" title="CRT 2019 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-cpc-2019_hu551692485b029c60d17a806c35ed45f1_136700_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="CPC 2019 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-cpc-2019_hu551692485b029c60d17a806c35ed45f1_136700_300x200_fit_box_3.png" width="113" height="200" alt="CPC 2019 de Blog Bitix" title="CPC 2019 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-rpm-2019_hu4d0311e47a28d048756f6c372bf1e390_149757_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="RPM 2019 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-rpm-2019_hu4d0311e47a28d048756f6c372bf1e390_149757_300x200_fit_box_3.png" width="113" height="200" alt="RPM 2019 de Blog Bitix" title="RPM 2019 de Blog Bitix"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-tipos-de-puja-2019_hu575030924d3b34d66186c7282c3aa5e6_28921_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Tipos de puja 2019 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-tipos-de-puja-2019_hu575030924d3b34d66186c7282c3aa5e6_28921_300x200_fit_box_3.png" width="269" height="200" alt="Tipos de puja 2019 de Blog Bitix" title="Tipos de puja 2019 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-plataformas-2019_hu1498e501818e09698b427f346bd2eb00_23757_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Plataformas 2019 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/gadsense-plataformas-2019_hu1498e501818e09698b427f346bd2eb00_23757_300x200_fit_box_3.png" width="270" height="200" alt="Plataformas 2019 de Blog Bitix" title="Plataformas 2019 de Blog Bitix"  class="lozad "></a></p>
-<figcaption>Métricas de AdSense</figcaption>
-</figure>
-</div>
-<p>En los ingresos por enlaces de afiliado de <a href="https://amzn.to/2flFhHA">Amazon</a> ha habido algunos meses especialmente notables y me sorprende que un solo blog como este le proporcione a Amazon facturar esa cantidad de dinero.</p>
-<p>Aparte de la publicidad de AdSense la monetización por afiliación es una gran estrategia para conseguir ventas en un negocio beneficioso para las tres partes el editor que obtiene una recompensa por la venta motivándole a seguir escribiendo artículos que los usuarios consideren buenos como para finalizar en una compra, el usuario que dependiendo del artículo obtiene información objetiva que le disipa las dudas como para realizar con mayores garantías de hacer una buena compra y el vendedor que aumenta su facturación y en caso de que no se produzca la venta coloca enlaces dando su página de comercio electrónico a conocer con los enlaces disponibles para una futura ocasión u otros usuarios.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/amazon-2019_hu1f7631baac4fc4eec3dca222c90f695d_72924_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Facturación e ingresos Amazon"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/amazon-2019_hu1f7631baac4fc4eec3dca222c90f695d_72924_600x450_fit_box_3.png" width="600" height="289" alt="Facturación e ingresos Amazon" title="Facturación e ingresos Amazon"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Esto es todo, ¡buen 2020!</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/christmas-tux-2019_huecfaa36dd6ae7c1b61b7a88cd415ec19_534749_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Christmas Tux 2019"><img src="https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/images/christmas-tux-2019_huecfaa36dd6ae7c1b61b7a88cd415ec19_534749_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmas Tux 2019" title="Christmas Tux 2019"  class="lozad "></a></p>
-<figcaption>¡Buen 2020! <br>Fuente: klowner.com</figcaption>
-</figure>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="gnu-linux"/>
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

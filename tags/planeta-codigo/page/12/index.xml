@@ -5,12 +5,82 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-20T22:00:00+01:00</updated>
+    <updated>2022-02-03T18:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/</id>
+        <title>Iniciar una aplicación de Spring Boot en un puerto aleatorio</title>
+        <updated>2019-08-09T18:00:00+02:00</updated>
+        <published>2019-08-09T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>En una arquitectura basada en microservicios es normal iniciar varias instancias de un mismo servicio, si están en la misma máquina ha de asignarse a cada instancia un puerto diferente. Asignar los puertos manualmente no es recomendable cuando se quieren varias instancias, Spring Boot ofrece la funcionalidad de iniciar la aplicación en un puerto aleatorio.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Mediante configuración se puede especificar el puerto en el que se desea iniciar una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> que ofrece un servicio de red. El puerto por convención suele ser el <em>8080</em> y la propiedad de configuración de Spring Boot para modificarlo es <em>server.port</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l">${port:8080}</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-1.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run&#10;...&#10;2019-08-09 17:02:40,417  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port<span class="o">(</span>s<span class="o">)</span>: <span class="m">8080</span> <span class="o">(</span>http<span class="o">)</span> with context path <span class="s1">&#39;&#39;</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-1.sh</span>
+    </div>
+</div>
+<p>Cuando se tiene únicamente una aplicación este puerto por defecto es suficiente pero si se desean iniciar varias instancias de una aplicación o microservicio en una misma máquina es necesario asignar a cada una de ellas un puerto diferente para que no haya conflictos a usar el mismo puerto de red. Se puede hacer manualmente aunque con muchas instancias también se puede dejar a Spring Boot elegir un puerto aleatorio.</p>
+<p>Para dejar a Spring Boot elegir el puerto de forma aleatoria basta con especificar el puerto con valor <em>0</em> en la propiedad de configuración <em>server.port</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l">${port:0}</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-2.yml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew service:run --args<span class="o">=</span><span class="s2">&#34;--port=0&#34;</span>&#10;...&#10;2019-08-09 17:02:40,417  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port<span class="o">(</span>s<span class="o">)</span>: <span class="m">45871</span> <span class="o">(</span>http<span class="o">)</span> with context path <span class="s1">&#39;&#39;</span>&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-2.sh</span>
+    </div>
+</div>
+<p>Usando un <a href="https://picodotdev.github.io/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/">servicio de registro y descubrimiento como Eureka</a> el servicio registra su ubicación y los servicios que quieran acceder a él obtendrán del mismo servicio de registro y descubrimiento su ubicación, de forma que para los clientes es transparente en qué puerto se inicie.</p>
+<p>Sin embargo, por algún motivo con Eureka los servicios no se registran en el puerto aleatorio en el que realmente se inician sino que se registran incorrectamente en el puerto <em>0</em>, quizá utilizando <a href="https://www.consul.io/">Consul</a> el servicio de Spring Boot si se inicie en un puerto aleatorio.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run.sh</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://javadeveloperzone.com/spring-boot/spring-boot-random-server-port/">Spring Boot Random Server Port</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/08/smartcards-en-vez-de-discos-para-una-futura-generacion-de-consolas/</id>
         <title>Smartcards en vez de discos para una futura generación de consolas</title>
@@ -1024,48 +1094,6 @@
                 <category term="java"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/06/pruebas-de-carga-y-rendimiento-de-un-servicio-web-con-apache-bench/</id>
-        <title>Pruebas de carga y rendimiento de un servicio web con Apache Bench</title>
-        <updated>2019-06-14T17:00:00+02:00</updated>
-        <published>2019-06-14T17:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/06/pruebas-de-carga-y-rendimiento-de-un-servicio-web-con-apache-bench/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>En algunos que un servicio devuelva los datos esperados no es suficiente, otros requisitos no funcionales o de términos de servicio son que sus tiempos de respuesta sean menores al especificado en sus requisitos, que sea capaz de soportar cierto número de peticiones concurrentes o de atender un número de peticiones por minuto. Para asegurar que el servicio es capaz de cumplir estos requisitos funcionales hay que utilizar herramientas que permitan evaluar su desempeño, una de ellas muy fácil de utilizar y que proporciona valiosa información es Apache Bench.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache.svg" width="200" height="353" alt="Apache" title="Apache"  class=""></p>
-</div>
-<p>Para hacer pruebas de carga o medir el rendimiento de cualquier servicio que funcione mediante el protocolo HTTP hay multitud de herramientas. Una de las más sencillas de utilizar y con un informe con información interesante es <a href="https://httpd.apache.org/docs/current/programs/ab.html">Apache Bench</a> o simplemente <em>ab</em>. Este comando se puede utilizar con simplemente tres parámetros el <em>endpoint</em> a probar, el número de peticiones en total a realizar (<em>-n</em>) y cuantas peticiones concurrentes al mismo tiempo (<em>-c</em>). Otos parámetros son los datos POST a enviar, cabeceras (<em>-H</em>) y <em>cookies</em> (<em>-C</em>) de las peticiones, tiempos de <em>timeout</em> (<em>-s</em>) o certificado de cliente (<em>-E</em>) entre algunos otros. En vez limitar las pruebas a un número de peticiones las pruebas se pueden limitar a un tiempo determinado por ejemplo 60 segundos (<em>-t</em>).</p>
-<p>Es una herramienta que se utiliza para medir el rendimiento de el servidor Apache pero utilizable para cualquier otro servicio por ejemplo una web o una API REST o <a href="https://graphql.org/">GraphQL</a>. Está disponible por supuesto para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> pero también para <a href="https://www.apple.com/macos/">macOS</a> y para <a href="https://www.microsoft.com/es-es/windows/">Windows</a>.</p>
-<p>Si quisiese medir el rendimiento en mi blog alojado en <a href="https://pages.github.com/">GitHub Pages</a> podría hacerlo lanzando 1000 peticiones para que sea una muestra suficientemente amplia con 20 usuarios de forma concurrente que son los que en los momentos de más tráfico tiene mi blog. Mi conexión de internet es un ADSL que no llega a 1 MB/s de subida por lo que la conexión en cierta medida limite el test.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ab -n <span class="m">1000</span> -c <span class="m">20</span> https://picodotdev.github.io/blog-bitix/&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>ab.sh</span>
-    </div>
-</div>
-<p>El informe de resultado que ofrece <em>ab</em> al finalizar la prueba incluye el tiempo dedicado en la conexión, en el procesado, esperando y en total con los valores para cada uno de ellos con mínimo y máximo, de media y la mediana. El tiempo total empleado por la prueba, el protocolo SSL/TLS usado, los bytes devueltos en la petición, el número de peticiones servidas por segundo, el tiempo de media empleado de media por cada petición y de media teniendo en cuenta la concurrencia, la tasa de transferencia en la respuesta y finalmente el tiempo de respuesta según percentil que van que desde el 50 al 100, es decir, que el 50% de las peticiones se han respondido en el tiempo en milisegundos indicado. Si las hubiera también muestra las peticiones fallidas y las que han devuelto un código de respuesta distinto de 200.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">This is ApacheBench, Version 2.3 &lt;$Revision: 1843412 $&gt;&#10;Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/&#10;Licensed to The Apache Software Foundation, http://www.apache.org/&#10;&#10;Benchmarking picodotdev.github.io (be patient)&#10;Completed 100 requests&#10;Completed 200 requests&#10;Completed 300 requests&#10;Completed 400 requests&#10;Completed 500 requests&#10;Completed 600 requests&#10;Completed 700 requests&#10;Completed 800 requests&#10;Completed 900 requests&#10;Completed 1000 requests&#10;Finished 1000 requests&#10;&#10;&#10;Server Software:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GitHub.com&#10;Server Hostname:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picodotdev.github.io&#10;Server Port:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;443&#10;SSL/TLS Protocol:&nbsp;&nbsp;&nbsp;&nbsp;   TLSv1.2,ECDHE-RSA-AES128-GCM-SHA256,2048,128&#10;Server Temp Key:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X25519 253 bits&#10;TLS Server Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picodotdev.github.io&#10;&#10;Document Path:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /blog-bitix/&#10;Document Length:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28389 bytes&#10;&#10;Concurrency Level:&nbsp;&nbsp;&nbsp;&nbsp;  20&#10;Time taken for tests:   29.220 seconds&#10;Complete requests:&nbsp;&nbsp;&nbsp;&nbsp;  1000&#10;Failed requests:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&#10;Total transferred:&nbsp;&nbsp;&nbsp;&nbsp;  29007394 bytes&#10;HTML transferred:&nbsp;&nbsp;&nbsp;&nbsp;   28389000 bytes&#10;Requests per second:&nbsp;&nbsp;&nbsp;&nbsp;34.22 [#/sec] (mean)&#10;Time per request:&nbsp;&nbsp;&nbsp;&nbsp;   584.404 [ms] (mean)&#10;Time per request:&nbsp;&nbsp;&nbsp;&nbsp;   29.220 [ms] (mean, across all concurrent requests)&#10;Transfer rate:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  969.45 [Kbytes/sec] received&#10;&#10;Connection Times (ms)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  min  mean[+/-sd] median   max&#10;Connect:&nbsp;&nbsp;&nbsp;&nbsp;  149  349 149.7&nbsp;&nbsp;&nbsp;&nbsp;303&nbsp;&nbsp;&nbsp;&nbsp;1361&#10;Processing:   122  225  75.5&nbsp;&nbsp;&nbsp;&nbsp;207&nbsp;&nbsp;&nbsp;&nbsp; 586&#10;Waiting:&nbsp;&nbsp;&nbsp;&nbsp;   53  122  68.8&nbsp;&nbsp;&nbsp;&nbsp;108&nbsp;&nbsp;&nbsp;&nbsp; 481&#10;Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;329  574 174.0&nbsp;&nbsp;&nbsp;&nbsp;512&nbsp;&nbsp;&nbsp;&nbsp;1612&#10;&#10;Percentage of the requests served within a certain time (ms)&#10;  50%&nbsp;&nbsp;&nbsp;&nbsp;512&#10;  66%&nbsp;&nbsp;&nbsp;&nbsp;534&#10;  75%&nbsp;&nbsp;&nbsp;&nbsp;555&#10;  80%&nbsp;&nbsp;&nbsp;&nbsp;744&#10;  90%&nbsp;&nbsp;&nbsp;&nbsp;832&#10;  95%&nbsp;&nbsp;&nbsp;&nbsp;915&#10;  98%   1104&#10;  99%   1171&#10; 100%   1612 (longest request)</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>ab.out</span>
-    </div>
-</div>
-<p>Esta herramienta puede ser utilizada para par medir el rendimiento de cualquier servicio web. Un blog de <a href="https://wordpress.org/">Wordpress</a>, una página de una organización, un <em>endpoint</em> de un servicio REST o GraphQL, etc&hellip; Es muy sencilla de utilizar y genera un informe corto pero con interesante información sobre el rendimiento. Si se hacen cambios se puede medir el antes y el después y comparar los resultados para observar de que modo han afectado al rendimiento si de forma positiva o negativa y en que grado.</p>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software"/>
-            
-                <category term="web"/>
             
         
     </entry>

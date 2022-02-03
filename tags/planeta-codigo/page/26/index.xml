@@ -5,12 +5,136 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-01-20T22:00:00+01:00</updated>
+    <updated>2022-02-03T18:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/</id>
+        <title>Instalar programas con Homebrew en macOS</title>
+        <updated>2021-07-26T19:00:00+02:00</updated>
+        <published>2016-11-19T12:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Para no tener que descargar binarios e instalarlos manualmente y estar pendiente de nuevas versiones que se publiquen en un futuro en macOS está Homebrew. Homebrew es un gestor de paquetes similar a los existentes en las distribuciones GNU/Linux con el que podremos buscar software, instalar, actualizar, ver que hemos instalado, cuales están desactualizados, iniciar y parar servicios y desinstalar los paquetes o programas. Esta es una guía básica sobre como instalar software en macOS con Homebrew y como instalar iTerm2 que es una mejor terminal que la propia del sistema con iterm.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apple.svg" width="200" height="200" alt="Apple" title="Apple"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/macos.svg" width="300" height="70" alt="macOS" title="macOS"  class=""></p>
+</div>
+<p>Como nuevo usuario de <a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/">mi primer mac</a> he tenido que empezar instalando los programas que voy a usar. Una de las cosas buenas de las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> es la forma de obtener e instalar programas. Cada distribución de GNU/Linux tiene su repositorio de paquetes y programas de los que el gestor de paquetes obtiene e instala. Los gestores paquetes se encargan de instalar, actualizar y desinstalar cada paquete junto las dependencias que requiera. Con el gestor de paquetes y desde la terminal es posible instalar múltiples programas rápidamente con un comando. En <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y <a href="https://www.apple.com/macos/">macOS</a> los programas se instalan descargando un binario y ejecutándolo que inicia un asistente. Instalar programas de esta forma en Windows y macOS tiene los inconvenientes de que hay que hay que ir a la página oficial de programa y descargar el último binario disponible, además cuando se publique una nueva versión hay que descargar el nuevo binario y volverlo a instalar, también es una fuente de introducción de virus si se descarga e instala el software de fuentes no confiables. En GNU/Linux el gestor de paquetes se encarga de actualizar los paquetes y programas que estén desactualizados cuando haya nuevas versiones.</p>
+<h3 id="el-gestor-de-paquete-homebrew-para-macos">El gestor de paquete Homebrew para macOS</h3>
+<p>En macOS existe un gestor de paquetes similar a los existentes en GNU/Linux, <a href="https://brew.sh/">Homebrew</a> se define así mismo como el gestor de paquetes que le falta a macOS. Con Homebrew podemos instalar los programas y mantenerlos actualizados sin tener que estar observando cuando se publica una nueva versión de cada programa. Con Homebrew también podremos instalar muchos de los comandos que están disponibles en GNU/Linux como wget, cmus, gimp, &hellip; <a href="https://caskroom.github.io/">Homebrew Cask</a> es un añadido que proporciona los mismo para los binarios de los programas de macOS. Con estas dos herramientas podemos instalar y mantener actualizado la mayor parte del software que utilicemos.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/images/homebrew_hub9dd0128b0794568ca848b7d9ec10eef_23281_2560x1440_fit_box_3.png" width="200" height="200" alt="Homebrew" title="Homebrew"  class="lozad "></p>
+</figure>
+</div>
+<p>Para instalar Homebrew ejecutamos el siguiente comando en la terminal:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ /bin/bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>homebrew.sh</span>
+    </div>
+</div>
+<h3 id="comandos-para-tareas-administrativas-de-paquetes">Comandos para tareas administrativas de paquetes</h3>
+<p>Lo siguiente será buscar los programas en el repositorio de brew que queramos instalar:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew search firefox&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-search.sh</span>
+    </div>
+</div>
+<p>Para instalar Firefox, Google Chrome, iTerm2, Visual Studio Code, VirtualBox y Docker:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew install --cask firefox google-chrome iterm2 visual-studio-code virtualbox docker&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-cask-install.sh</span>
+    </div>
+</div>
+<p>Algunos otros programas que podemos instalar si programamos son:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew install wget vim git mysql redis rabbitmq elasticsearch&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-install.sh</span>
+    </div>
+</div>
+<p>Algunos paquetes contienen servicios del sistema como bases de datos realcionales. Los servicios como MySQL o Redis se pueden iniciar y parar, además de ver cuales hay instalados:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew services list&#10;$ brew services start mysql&#10;$ brew services start redis&#10;$ brew services start rabbitmq&#10;$ brew services start elasticsearch&#10;$ brew services stop mysql&#10;$ brew services stop redis&#10;$ brew services stop rabbitmq&#10;$ brew services stop elasticsearch</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-services.sh</span>
+    </div>
+</div>
+<p>También podemos listar que paquetes y programas tenemos instalados:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew list&#10;$ brew list --cask&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-list.sh</span>
+    </div>
+</div>
+<p>Para ver que programas y paquetes tenemos desactualizados:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew update&#10;$ brew outdated&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-outdated.sh</span>
+    </div>
+</div>
+<p>Para actualizar todos los paquetes desactualizados, actualizar o reinstalar uno individualmente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew upgrade&#10;$ brew upgrade wget&#10;$ brew reinstall --cask virtualbox</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-upgrade.sh</span>
+    </div>
+</div>
+<p>Si queremos mantener desactualizado un paquete podemos fijar la versión que tengamos instalada:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew pin mysql&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-pin.sh</span>
+    </div>
+</div>
+<p>Y para desinstalar paquetes:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew uninstall vim&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>brew-uninstall.sh</span>
+    </div>
+</div>
+<h3 id="otras-utilidades-y-administración-de-software">Otras utilidades y administración de software</h3>
+<p>En caso de utilizar Java como lenguaje de programación para el desarrollo de aplicaciones es recomendable utilizar <a href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">la herramienta SDKMAN que permite instalar varias versiones del JDK y software de la plataforma Java</a>, además de cambiar fácilmente entre las diferentes versiones.</p>
+<p>Otras opciones son <a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">personalizar el <em>prompt</em> del sistema del intérprete de comandos Bash</a> y <a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">personalizar el <em>prompt</em> para el directorio de trabajo cuando contiene un repositorio del control de versiones git</a>.</p>
+<p>La terminal incluida de serie en macOS es muy básica por ello mucha gente suele instalar una más avanzada como <a href="http://iterm2.com/">iTerm2</a>. iTerm2 añade funcionalidades como pestañas y podemos dividir una terminal horizontal y verticalmente. También se puede instalar <a href="https://ohmyz.sh/">oh-my-zsh</a> que permite gestionar la configuración del intérprete de comandos <a href="https://zsh.sourceforge.net/">zsh</a> pudiendo añadir temas para modificar el <em>prompt</em> del sistema o cambiarlo según la información del directorio actual, por ejemplo, si estamos en un directorio de git veremos en que rama estamos y si hay cambios realizados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>oh-my-zsh.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/images/iterm2_hud525fa492f7c1dac306e4b9425161296_31458_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="iTerm2"><img src="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/images/iterm2_hud525fa492f7c1dac306e4b9425161296_31458_300x200_fit_box_3.png" width="285" height="200" alt="iTerm2" title="iTerm2"  class="lozad "></a></p>
+<figcaption>Terminal iTerm2</figcaption>
+</figure>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="apple"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/</id>
         <title>Usar una imagen de fondo aleatoria al cargar una página web</title>
@@ -1406,155 +1530,6 @@
                 <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/</id>
-        <title>Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</title>
-        <updated>2016-10-07T09:00:00+02:00</updated>
-        <published>2016-09-24T12:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Keycloak es un proveedor de OAuth que podemos usar en nuestras aplicaciones y servicios para proporcionar autenticación, autorización, SSO y también añadir seguridad a los servicios REST que desarrollemos como muestro en este artículo. OAuth tiene varias ventajas sobre usar autenticación <em>Basic</em>.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png" width="200" height="45" alt="Keycloak" title="Keycloak"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Una forma de autenticar a los clientes de un servicio REST es usar <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">autenticación Basic</a> que se basa en añadir una cabecera en la petición en la que se incluye un usuario y contraseña. La autenticación Basic es sencilla pero para que sea segura ha de <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS</a>.</p>
-<p>Sin embargo, presenta otros inconvenientes y es que si al servicio van a acceder varios clientes y a uno queremos impedirle el acceso no podremos hacerlo sin cambiar el usuario y contraseña lo que obligará al resto de clientes actualizarse para usar las nuevas credenciales si las comparten, que no siempre es posible sobre todo si esos clientes están fuera de nuestro control. Para solventar el segundo problema tenemos la posibilidad de securizar el servicio REST con el <a href="https://oauth.net/">protocolo OAuth</a>.</p>
-<p>Teniendo un <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">servicio web REST implementado con JAX-RS y Spring Boot</a> añadirle seguridad con OAuth mediante el proveedor <a href="https://www.keycloak.org/">Keycloak</a> es lo que muestro en este artículo. En el servicio REST bastará que usemos el <a href="https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/latest/topics/oidc/java/java-adapters.html">adaptador para Spring Boot de Keycloak</a> y añadamos en Keycloak cierta configuración que consistirá en un <em>realm</em> y el registro de un cliente. Para acceder al servicio REST usaremos el flujo <em>client_credentials</em> que nos permitirá obtener un <em>token</em> usando las credenciales del cliente.</p>
-<p>Iniciado Keycloak con <a href="https://www.docker.com/">Docker</a> y <a href="https://docs.docker.com/compose/">Docker Compose</a> accedemos al panel de administración con el navegador, en mi caso en <em>http://localhost:9080</em> con el usuario <em>admin</em> y contraseña <em>admin</em> según lo indicado en el archivo <em>docker-compose.yml</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">keycloak</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">jboss/keycloak</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="m">9080</span><span class="p">:</span><span class="m">8080</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">KEYCLOAK_USER=admin</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>- <span class="l">KEYCLOAK_PASSWORD=admin</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose.yml</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose-up.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu0ec9394193d8bbbf68380a77dba4d5a3_130625_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de sesión de Keycloak"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu0ec9394193d8bbbf68380a77dba4d5a3_130625_300x200_fit_box_3.png" width="300" height="183" alt="Inicio de sesión de Keycloak" title="Inicio de sesión de Keycloak"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Creamos un <em>realm</em>, en el ejemplo llamado <em>springbootjaxrs</em> y un cliente con id <em>client</em>, además crearemos un rol <em>api</em> y se lo asignaremos al cliente.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-client_hu0d578958d6bc77546f209532dc988bf2_70695_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Registro del cliente"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-client_hu0d578958d6bc77546f209532dc988bf2_70695_300x200_fit_box_3.png" width="300" height="164" alt="Registro del cliente" title="Registro del cliente"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-role_huf5ee2852477b4051ac9706654bff3bd2_68986_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Creación de rol"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-role_huf5ee2852477b4051ac9706654bff3bd2_68986_300x200_fit_box_3.png" width="300" height="183" alt="Creación de rol" title="Creación de rol"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-service-account-roles_hu476d0958a34d6ac0a8cdc494ca9a225f_88309_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asignación de roles al cliente"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-service-account-roles_hu476d0958a34d6ac0a8cdc494ca9a225f_88309_300x200_fit_box_3.png" width="300" height="183" alt="Asignación de roles al cliente" title="Asignación de roles al cliente"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Una vez realizada la configuración en el servidor de OAuth/Keycloak obtendremos la configuración para el adaptador de Keycloak para el servicio REST desde la pestaña <em>Installation</em> que añadiremos en el fichero de configuración de Spring Boot <em>application.yml</em>. Además, indicaremos que el cliente solo aceptará <em>access tokens</em> mediante la opción <em>bearer-only</em> de modo que no hará redirecciones para autenticar.</p>
-<p>Indicaremos también el rol que deberá poseer el cliente para acceder al servicio REST junto que URLs del servicio estarán autenticadas por OAuth. Añadida la configuración al archivo <em>application.yml</em> el servicio REST es totalmente inconsciente de la autenticación que se realizará con OAuth y Keycloak.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8443</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ssl</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">key-store</span><span class="p">:</span><span class="w"> </span><span class="l">classpath:keystore.jks</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">key-store-password</span><span class="p">:</span><span class="w"> </span><span class="l">secret</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">key-password</span><span class="p">:</span><span class="w"> </span><span class="l">secret</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">keycloak</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">realm</span><span class="p">:</span><span class="w"> </span><span class="l">springbootjaxrs</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">realmKey</span><span class="p">:</span><span class="w"> </span><span class="l">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkTsyao42k7UyRE5LLlHXUaA7yM5MIMdQYqhaypZCOC5tOX8c+QlbBVzyhS55sDqmar5pelKyHT/6Zpr40GtxCnOqTBJ1pI28QXdOnPC8OVXJSNttuyeb2b3PK6xstm/jCpi1Dduw7fVmQDBKUXhmQwTdoOGQe8F3O0OaL2ht/H3Tu+LcvobWGtfN2vj1LACfUCO4qom9soWS755Km7KqE2xNnOPaEZ+IxDfTNJu7VHekak+OjbjM3EZdhOWkhw6M3+pnQ+9FKgHczPfYHiIG3wRlQm2ly7FQUnW1LKnvrMsjdaTlebCDnSmCcn6ByT+vC53URbGdb8a0+UAh+66kowIDAQAB</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">bearer-only</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">auth-server-url</span><span class="p">:</span><span class="w"> </span><span class="l">http://localhost:9080/auth</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">ssl-required</span><span class="p">:</span><span class="w"> </span><span class="l">external</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="l">client</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">use-resource-role-mappings</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">securityConstraints[0]</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">securityCollections[0]</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">api</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">authRoles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">api</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">patterns</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="l">/api/*</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>application.yml</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootjaxrsoauth</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">javax.ws.rs.GET</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.ws.rs.Path</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.ws.rs.Produces</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.ws.rs.QueryParam</span><span class="o">;</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="nd">@Path</span><span class="o">(</span><span class="s">&#34;/message&#34;</span><span class="o">)</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageResource</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">MessageService</span> <span class="n">messageService</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@GET</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Produces</span><span class="o">(</span><span class="s">&#34;application/json&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Message</span> <span class="nf">message</span><span class="o">(</span><span class="nd">@QueryParam</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">messageService</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>MessageResource.java</span>
-    </div>
-</div>
-<p>Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> podemos iniciar el proceso de obtención de un <em>access token</em> y llamar al servicio proporcionando el <em>access token</em> obtenido y ver que pasa si no proporcionamos <em>token</em> o uno modificado o inválido. Para obtener el <em>access token</em> podemos emplear <em>curl</em> accediendo al <em>endpoint</em> de Keycloak para obtenerlos.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -i http://localhost:9080/auth/realms/springbootjaxrs/.well-known/openid-configuration&#10;$ curl -i http://localhost:9080/auth/realms/springbootjaxrs/protocol/openid-connect/token -d <span class="s2">&#34;grant_type=client_credentials&amp;client_id=client&amp;client_secret=751e83fe-ee29-4239-81f8-ceafab189c66&#34;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>curl-token.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-access-token_hu3c9c3fd1cd5f0d81ab0d4597529d12ea_278842_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Obtención de un token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-access-token_hu3c9c3fd1cd5f0d81ab0d4597529d12ea_278842_300x200_fit_box_3.png" width="300" height="164" alt="Obtención de un token" title="Obtención de un token"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Obtenido el <em>access token</em> si no lo proporcionamos en la llamada al servicio REST observaremos que la respuesta que obtenemos es un <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">código de estado HTTP 401</a> indicando que se necesitan proporcionar las credenciales que con OAuth es un <em>token</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -ik https://localhost:8443/api/message?message<span class="o">=</span>Hola&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>curl-401.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-no-token_huea5aeabab77440df127b63b74c89a6dc_33962_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Llamada al servicio REST sin token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-no-token_huea5aeabab77440df127b63b74c89a6dc_33962_300x200_fit_box_3.png" width="300" height="195" alt="Llamada al servicio REST sin token" title="Llamada al servicio REST sin token"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Proporcionando el token mediante una cabecera de la petición el servicio nos devolverá los datos que proporciona. Si el <em>token</em> no es válido obtendremos un error HTTP 401.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ curl -ik -H <span class="s2">&#34;Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJteEh2a2FwRC1xSXRUVEhqZXZnRDdxYXVKeXU5Ry01RFp4VVpqMjJlZVc0In0.eyJqdGkiOiJiMWY0OTA5YS00N2JkLTRkNGMtOGVlNS0yMTE1ZmMxODliMGQiLCJleHAiOjE0NzQ3MDg4ODMsIm5iZiI6MCwiaWF0IjoxNDc0NzA4NTgzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwODAvYXV0aC9yZWFsbXMvc3ByaW5nYm9vdGpheHJzIiwiYXVkIjoiY2xpZW50Iiwic3ViIjoiNzcyZWU4MDktMDJjOC00NGEyLTllMTctYTUxMzllYTkwM2Y5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNzY2MzY2OTktZTQzOS00ZjE4LTgxMzMtODFjYTU4NjNhZjg0IiwiYWNyIjoiMSIsImNsaWVudF9zZXNzaW9uIjoiYjUwYTRjOWQtMDI1Yy00ZTU1LWFjOWYtYmUxMzE3YTY5ZGUxIiwiYWxsb3dlZC1vcmlnaW5zIjpbXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFwaSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImNsaWVudCI6eyJyb2xlcyI6WyJhcGkiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJjbGllbnRIb3N0IjoiMTcyLjE3LjAuMSIsImNsaWVudElkIjoiY2xpZW50IiwibmFtZSI6IiIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1zcHJpbmdib290amF4cnMiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjE3LjAuMSIsImVtYWlsIjoic2VydmljZS1hY2NvdW50LXNwcmluZ2Jvb3RqYXhyc0BwbGFjZWhvbGRlci5vcmcifQ.QvS5azEf5DgHon-Nd5ghhB95CR7z7aVxz611gfWOfEOMxhHlVvahcyCYzHpott1AOj7h9tbjNJe1abUX_BlVlbQ7jvQg_zp1h67dHl5u1kdqxUZlWaucp0bWaDlmfHQV-JJOOp7lpfWcM2H63A0fu6uMVIrumKlwaprw_R5_wTxmEuNdekEVCRaPh2X2s3c92AGOWtqvfDed5nW6DECH6mt1I4nA56RQPs0FAb6DTh-oYR-ZHFsDTprrUu-HZ5R9bl8459zyqFDl08e9qe8HgdSd5vAiHsfmzMd2T6ZqCRHI391rIs-at947OKQH82r4wvSYCwlTB75m2Lhzidto_A&#34;</span> https://localhost:8443/api/message?message<span class="o">=</span>Hola&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>curl.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-ouath_hu8975a3bd1d49dfd03cc9671f420fb963_127240_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Llamada al servicio REST con token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-ouath_hu8975a3bd1d49dfd03cc9671f420fb963_127240_300x200_fit_box_3.png" width="300" height="164" alt="Llamada al servicio REST con token" title="Llamada al servicio REST con token"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-token-tampered_hu8975a3bd1d49dfd03cc9671f420fb963_126066_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Llamada al servicio REST con token inválido"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-token-tampered_hu8975a3bd1d49dfd03cc9671f420fb963_126066_300x200_fit_box_3.png" width="300" height="164" alt="Llamada al servicio REST con token inválido" title="Llamada al servicio REST con token inválido"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir algunas dependencias al proyecto que usando <a href="https://gradle.org/">Gradle</a> como herramienta de construcción serían las siguientes.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="o">...</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-web&#39;</span><span class="o">)</span>&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-jersey&#39;</span><span class="o">)</span>&#10;&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.keycloak:keycloak-spring-boot-adapter:2.2.0.Final&#39;</span><span class="o">)</span>&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.keycloak:keycloak-tomcat8-adapter:2.2.0.Final&#39;</span><span class="o">)</span>&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.keycloak:keycloak-core:2.2.0.Final&#39;</span><span class="o">)</span>&#10;&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.apache.httpcomponents:httpcomponents-client:4.5.2&#39;</span><span class="o">)</span>&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;javax.json:javax.json-api:1.0&#39;</span><span class="o">)</span>&#10;	<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.glassfish:javax.json:1.0.4&#39;</span><span class="o">)</span>&#10;&#10;	<span class="n">testCompile</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-test&#39;</span><span class="o">)</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build.gradle</span>
-    </div>
-</div>
-<p>Un buen libro sobre OAuth que he leído es <a href="https://amzn.to/2cUkF9d">Mastering OAuth 2.0</a> que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un <em>token</em> además del mostrado en este artículo usando las credenciales del cliente.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1784395404&amp;linkId=726dc0d3e4914bc672e6b127da045db2&amp;internal=1" title="Amazon" class="lozad"></iframe>
-</div>
-<p>En el siguiente artículo mostraré un <a href="https://picodotdev.github.io/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth2-en-java/">cliente del servicio REST autenticado con OAuth en Java</a> que haga las mismas llamadas que con <em>curl</em> pero usando código Java mediante la librería <a href="https://hc.apache.org/">HttpComponents</a>.</p>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootJaxrsOauth">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle run</code></p>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Servicio web REST implementado con JAX-RS y Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/">Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot&quot;</a></li>
-<li><a href="https://blog.pivotal.io/pivotal-cloud-foundry/products/securing-restful-web-services-with-oauth2">Securing RESTful Web Services with OAuth2</a></li>
-<li><a href="http://docs.apigee.com/api-services/content/oauth-20-client-credentials-grant-type">Implementing the client credentials grant type</a></li>
-<li><a href="https://stackoverflow.com/questions/28658735/what-are-keycloaks-oauth2-openid-connect-endpoints">What are Keycloak’s OAuth2 / OpenID Connect endpoints?</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/">Serie de artículos sobre Docker</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

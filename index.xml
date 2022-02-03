@@ -5,12 +5,118 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2022-01-27T19:00:00+01:00</updated>
+    <updated>2022-02-03T18:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/</id>
+        <title>Validar las propiedades de configuración de Spring Boot al iniciar la aplicación</title>
+        <updated>2022-02-03T18:00:00+01:00</updated>
+        <published>2022-02-03T18:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete <em>javax.validation</em> que se utilizan para validar <em>beans</em> de Java se pueden utilizar para validar los valores de configuración de Spring.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+</div>
+<p>Al recibir datos los programas tienen varias opciones. Una es ser estricto, validar los datos y en caso de que no sean válidos emitir un mensaje y devolver un error impidiendo continuar. Otra opción es ser flexible para validar los datos y en caso de que sean incorrectos tomar valores por defecto para al menos realizar la tarea aunque sea en un modo degradado. La opción final es no validar los datos y dar por supuesto que son correctos.</p>
+<p>No validar los datos tiene varios problemas que se pueden manifestar en la aplicación de diferentes formas, fallando en el procesado de los datos quizá habiendo realizado parte de la tarea, ocasionando algún fallo de seguridad o generando resultados incorrectos o inconsistencias en otros datos. Cualquiera de estas formas de errores son manifestaciones que pueden tener como causa unos datos no válidos de entrada, errores cuya causa raíz pueden no ser fácilmente identificable al intentar depurar el programa y que suelen requerir muchas horas de investigación. Por ello validar los datos es una buena práctica al crear aplicaciones, sobre todo validar datos que provienen de fuentes no confiables como información introducida por el usuario o programas externos.</p>
+<p>La configuración de una aplicación es otra forma de datos que un programa utiliza, en este caso para variar su comportamiento en tiempo de ejecución sin necesidad de recompilar la aplicación o generar un nuevo artefacto binario para su ejecución. Sobre las variables de configuración también es posible realizar validaciones y en caso de que las variables de configuración sean incorrectas fallar de forma temprana en vez de fallar más tarde cuando se realiza una acción.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</a></li>
+    <li><a href="#ejemplo-de-código">Ejemplo de código</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</h3>
+<p>La configuración de una aplicación son simplemente variables a la que se les da un nombre y a través del cual se recupera un valor. El programa no tiene hardcodeado en el código el valor e incluyéndose en un archivo de configuración permite cambiarlo sin cambiar el código.</p>
+<p>Por ejemplo, si un programa necesita conectarse a una base de datos seguramente necesite unas credenciales compuestas por el <em>host</em> del servidor de base de datos, un usuario y una contraseña de conexión. Estos datos de configuración para el programa son requeridos ya que quizá sin poder conectarse a la base de datos va a fallar. Otros datos quizá deban ser numéricos, no vacíos, deban tener un valor mínimo o máximo o deban cumplir una expresión regular.</p>
+<p>El <em>framework</em> Spring proporciona varias funcionalidades útiles para las aplicaciones relacionadas con la configuración desde <a href="https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/">un mecanismo muy flexible de proporcionar los valores de las propiedades de diferentes fuentes hasta un servidor de configuración centralizada</a>. Otra de sus funcionalidades es precisamente validar las propiedades de configuración a través de anotaciones.</p>
+<p>Aunque no sean validaciones complejas son útiles ya que normalmente las variables las crean los desarrolladores pero al desplegar la aplicación o tener que cambiar algún valor puede que lo realicen personas con el rol de sistemas que quizá no conozcan tan en detalle las variables de configuración existentes y sus reglas de validación. Al añadir las validaciones si alguna falla se obtiene un mensaje de error bastante descriptivo de cual es el problema de configuración.</p>
+<h3 id="ejemplo-de-código">Ejemplo de código</h3>
+<p>Una forma de recuperar los valores de configuración en una aplicación de Spring es trasladando los valores de los archivos de configuración a clases Java que contengan sus valores y sean fácilmente usables desde el lenguaje Java. Es en estas clases Java donde se colocan las anotaciones  de validación.</p>
+<p>Las anotaciones que se pueden utilizar son <a href="https://javaee.github.io/javaee-spec/javadocs/javax/validation/constraints/package-summary.html">las anotaciones del paquete javax.validation</a>, realmente son las mismas anotaciones para realizar validaciones sobre cualquier otro tipo de objeto Java, en este caso simplemente son clases con propiedades de configuración.</p>
+<p>Este es un ejemplo de archivo de configuración de una aplicación en la que hay una serie de propiedades. Dependiendo del entorno y de los valores proporcionados en tiempo de ejecución a través de este archivo de configuración, propiedades del sistema o variables de entorno las propiedades tendrán unos valores u otros y algunos valores como las contraseñas por motivos de seguridad es preferible no incluirlos en los archivos de configuración del código fuente para no compartirlas en el sistema de control de versiones.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">numeric</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;A0000&#34;</span><span class="w">&#10;</span><span class="w">  </span><span class="l">password:</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-2.yaml</span>
+    </div>
+</div>
+<p>Dado que algunas propiedades es necesario proporcionarle en tiempo de ejecución la aplicación como medida de precaución valida que los valores de las propiedades son válidas. Esta es una clase que tiene el objetivo de cargar y proporcionar acceso a los valores de configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigvalidated</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.Max</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.Min</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.NotBlank</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.Pattern</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.context.properties.ConfigurationProperties</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.validation.annotation.Validated</span><span class="o">;</span>&#10;&#10;<span class="nd">@Configuration</span>&#10;<span class="nd">@ConfigurationProperties</span><span class="o">(</span><span class="n">prefix</span> <span class="o">=</span> <span class="s">&#34;app&#34;</span><span class="o">)</span>&#10;<span class="nd">@Validated</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppConfiguration</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Min</span><span class="o">(</span><span class="n">3</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Max</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Integer</span> <span class="n">numeric</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Pattern</span><span class="o">(</span><span class="n">regexp</span> <span class="o">=</span> <span class="s">&#34;[A-Z]\\d{3,}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">regexp</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@NotBlank</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getNumeric</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">numeric</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNumeric</span><span class="o">(</span><span class="n">Integer</span> <span class="n">numeric</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">numeric</span> <span class="o">=</span> <span class="n">numeric</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getRegexp</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">regexp</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRegexp</span><span class="o">(</span><span class="n">String</span> <span class="n">regexp</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">regexp</span> <span class="o">=</span> <span class="n">regexp</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getPassword</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">password</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPassword</span><span class="o">(</span><span class="n">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>AppConfiguration.java</span>
+    </div>
+</div>
+<p>La clase al estar anotada con la anotación <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html">@Configuration</a> de Spring la identifica como una clase de configuración y con el atributo <em>prefix</em> Spring carga los valores de las variables de configuración cuyos nombres coinciden con los nombres de las propiedades. La clase incluye también la anotación <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/annotation/Validated.html">@Validated</a> que indica que debe ser validada con las anotaciones de validación que incluya. Finalmente, las propiedades que necesitan validaciones se anotan con la anotación correspondiente para hacer la propiedad requerida u otro tipo de validación sobre su valor.</p>
+<p>Realizando validaciones sobre los valores de las propiedades de configuración si la aplicación se inicia y una o varias propiedades no cumplen una validación, la aplicación en vez de continuar finaliza inmediatamente con un mensaje de error que indica que una propiedad no cumple las validaciones.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">numeric</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0000&#34;</span><span class="w">&#10;</span><span class="w">  </span><span class="l">password:</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-1.yaml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-1.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">***************************&#10;APPLICATION FAILED TO START&#10;***************************&#10;&#10;Description:&#10;&#10;Binding to target org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under &#39;app&#39; to io.github.picodotdev.blogbitix.springbootconfigvalidated.AppConfiguration$$EnhancerBySpringCGLIB$$ae0ed48d failed:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;Property: app.regexp&#10;&nbsp;&nbsp;&nbsp;&nbsp;Value: 0000&#10;&nbsp;&nbsp;&nbsp;&nbsp;Origin: class path resource [application.yml] - 7:11&#10;&nbsp;&nbsp;&nbsp;&nbsp;Reason: debe coincidir con &#34;[A-Z]\d{3,}&#34;&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;Property: app.password&#10;&nbsp;&nbsp;&nbsp;&nbsp;Value: &#10;&nbsp;&nbsp;&nbsp;&nbsp;Origin: class path resource [application.yml] - 8:12&#10;&nbsp;&nbsp;&nbsp;&nbsp;Reason: no debe estar vacío&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;Property: app.numeric&#10;&nbsp;&nbsp;&nbsp;&nbsp;Value: 0&#10;&nbsp;&nbsp;&nbsp;&nbsp;Origin: class path resource [application.yml] - 6:12&#10;&nbsp;&nbsp;&nbsp;&nbsp;Reason: debe ser mayor que o igual a 3&#10;&#10;&#10;Action:&#10;&#10;Update your application&#39;s configuration</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-1</span>
+    </div>
+</div>
+<p>Cambiando el comando de inicio para proporcionar el valor requerido y que las otras propiedades sean válidas la aplicación se inicia correctamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">numeric</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;A0000&#34;</span><span class="w">&#10;</span><span class="w">  </span><span class="l">password:</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-2.yaml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nv">APP_PASSWORD</span><span class="o">=</span><span class="s2">&#34;java&#34;</span> ./gradlew run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-2.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ APP_PASSWORD=&#34;java&#34; ./gradlew run&#10;&#10;&gt; Task :app:run&#10;&#10;  .   ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__ _ _&#10; /\\ / ___&#39;_ __ _ _(_)_ __  __ _ \ \ \ \&#10;( ( )\___ | &#39;_ | &#39;_| | &#39;_ \/ _` | \ \ \ \&#10; \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;  &#39;  |____| .__|_| |_|_| |_\__, | / / / /&#10; =========|_|==============|___/=/_/_/_/&#10; :: Spring Boot ::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v2.6.2)&#10;&#10;2022-02-03 19:11:28.623  INFO 11424 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.springbootconfigvalidated.Main   : Starting Main using Java 17.0.1 on archlinux with PID 11424 (/home/picodotdev/Documentos/Software/personal/blog-ejemplos/SpringBootConfigValidated/app/build/classes/java/main started by picodotdev in /home/picodotdev/Documentos/Software/personal/blog-ejemplos/SpringBootConfigValidated/app)&#10;2022-02-03 19:11:28.626  INFO 11424 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.springbootconfigvalidated.Main   : No active profile set, falling back to default profiles: local&#10;2022-02-03 19:11:29.164  INFO 11424 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.springbootconfigvalidated.Main   : Started Main in 0.887 seconds (JVM running for 1.141)</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-2</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootConfigValidated">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/01/desempaquetado-y-analisis-de-teclado-mecanico-compacto-dierya-dk61e/</id>
@@ -2779,144 +2885,6 @@
         
             
                 <category term="planeta-codigo"/>
-            
-                <category term="seguridad"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/</id>
-        <title>Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos</title>
-        <updated>2021-10-28T19:00:00+02:00</updated>
-        <published>2021-10-28T19:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del delincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el <em>phishing</em> que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar <em>salted pasword hashing</em>. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños.</strong></p>]]>
-        <![CDATA[<p>Algunos ataques informáticos están dirigidos a las empresas y sus sistemas de computación explotando alguna vulnerabilidad de seguridad. Tener un fallo de seguridad ya de por sí es un grave problema para la imagen de la empresa también con consecuencias económicas de pérdida de clientes o valor en la bolsa sino también legales con posibles cuantiosas multas , además de otras consecuencias intangibles como la reputación entre sus clientes y usuarios.</p>
-<p>Otros ataques están dirigidos hacia los usuarios como el robo de datos personales, bancarios o credenciales con técnicas de suplantación de identidad o <em>phishing</em>. Aún hoy en día muchas personas apenas tienen unos conocimientos básicos de tecnología y la mayoría desconoce las medidas básicas de seguridad. Estas personas aún con una alfabetización digital muy básica están rodeadas de tecnología y realizan importantes tareas como compras y transacciones bancarias. Muchas personas son víctimas de fraudes y estafas por internet, a veces por su desconocimiento pero también a veces porque las empresas no implementan medidas de seguridad suficientes para que sus servicios sean más difícil de ser explotados.</p>
-<p>Los informáticos tenemos una gran responsabilidad para diseñar sistemas seguros aplicando las mejores prácticas de seguridad no solo como algo adicional a la finalización de una funcionalidad, sino involucrando al rol de <em>security operations</em>  o <em>SecOps</em> desde el inicio, al igual que no se deben dejar las pruebas de aseguramiento de calidad para el final la seguridad tampoco debería.
-Los bancos utilizan medidas adicionales para realizar operaciones pero algunas medidas de seguridad dejan que desear en varios aspectos como requerir para todas las cuentas bancarias  iniciar sesión en la banca <em>online</em> con el número del DNI y un código de seis dígitos, no implementar medidas de notificación de pagos, transferencias o falta un registro de actividad completo en la cuenta digital.</p>
-<p>Sin embargo, me da miedo que un banco que debería ser un referente en medidas de seguridad incluyan en la página donde los usuarios introducen sus credenciales para el acceso a la banca online recursos JavaScript de <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> y de dominios ajenos al banco que no controlan para hacer analítica web de seguimiento de usuarios.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#inyección-de-sql-xss-_tabnabbing_-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</a></li>
-    <li><a href="#_salted-password-hashing_"><em>Salted Password Hashing</em></a></li>
-    <li><a href="#implementación-de-segundo-factor-de-autenticación">Implementación de segundo factor de autenticación</a></li>
-    <li><a href="#notificación-de-acciones-relevantes">Notificación de acciones relevantes</a></li>
-    <li><a href="#registro-de-actividad">Registro de actividad</a></li>
-    <li><a href="#establecer-límites-de-uso">Establecer límites de uso</a></li>
-    <li><a href="#cifrar-información-personal">Cifrar información personal</a></li>
-    <li><a href="#informar-a-los-usuarios">Informar a los usuarios</a></li>
-    <li><a href="#comunicaciones-entre-servicios">Comunicaciones entre servicios</a></li>
-    <li><a href="#contraseñas-en-repositorios-de-código-fuente-y-artefactos-compilados">Contraseñas en repositorios de código fuente y artefactos compilados</a></li>
-    <li><a href="#otras">Otras</a></li>
-  </ul>
-</nav>
-</div>
-<h3 id="inyección-de-sql-xss-_tabnabbing_-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</h3>
-<p>Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.</p>
-<p>La fundación OWASP mantiene un registro detallado de los diferentes tipos de seguridad, explicando el problema de seguridad y cómo evitarlos. También publicar cada ciertos años una lista de los 10 errores más comunes durante ese año.</p>
-<ul>
-<li><a href="https://owasp.org/www-community/attacks/">List of Attacks</a></li>
-<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">SQL Injection Prevention Cheat Sheet</a></li>
-<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html">XSS Filter Evasion Cheat Sheet</a></li>
-<li><a href="https://owasp.org/www-community/attacks/Reverse_Tabnabbing">Reverse Tabnabbing</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</a></li>
-</ul>
-<h3 id="_salted-password-hashing_"><em>Salted Password Hashing</em></h3>
-<p>Una aplicación que guarda credenciales para autenticar a los usuarios habitualmente solicita dos datos, un identificador del usuario o de la cuenta y una contraseña que como solo conoce el legítimo usuario permite identificarle en el sistema al iniciar sesión. Los identificadores de los usuarios y las contraseñas la aplicación necesita guardarlas en una base de datos para que la aplicación las compare con las que proporciona un usuario al iniciar sesión.</p>
-<p>Guardar la contraseña en la base de datos el valor original que el usuario ha proporcionado es un peligro ya que cualquier persona con acceso a la base de datos es capaz de conocer el valor de la contraseña. Para no guardar el valor original es posible utilizar una función de <em>hash</em> de un solo sentido que permite transformar el valor original en otro derivador a partir del cual no es posible conocer el valor original pero permite conocer si es válido aplicando la función al dato proporcionado y comparándolo con el guardado en la base de datos. Sin embargo, usar una función <em>hash</em> no es suficiente ya que utilizando un ataque de diccionario con valores precalculados de <em>hashes</em> de  valores comunes de contraseñas permite identificar cuentas con contraseñas débiles.</p>
-<p>La forma correcta de guardar contraseñas es utilizando cifrado o sin cifrado utilizando una versión modificada de <em>hash</em> denominada <em>salted password hashing</em> que evita ataques de diccionario.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</a></li>
-</ul>
-<h3 id="implementación-de-segundo-factor-de-autenticación">Implementación de segundo factor de autenticación</h3>
-<p>Muchos usuarios no tienen conocimientos de informática, ni una alfabetización digital avanzada. Estos usuarios con unos conocimientos mínimos utilizan la tecnología por ser necesaria ya para muchas tareas o permitir realizarlas de forma más rápida y sencilla. Pero incluso usuarios con muchos conocimientos avanzados de tecnología también son vulnerables a ciertos tipos de ataques como los de <em>phishing</em> sin las precauciones adecuadas. Los ataques de suplantación de identidad o <em>phishing</em> son empleados por los delincuentes para robar información personal, credenciales de acceso a cualquier tipo de servicio y datos bancarios como tarjetas de crédito.</p>
-<p>Las aplicaciones que ofrecen el segundo factor de autenticación y los usuarios que lo emplean mantienen su cuenta a salvo incluso si son víctimas de un ataque de <em>phishing</em>. Con el segundo factor de autenticación además de la contraseña que es el algo que solo el usuario sabe se requiere algo que se tiene que sería un generador de códigos temporales. En un ataque de <em>phishing</em> los delincuentes se hacen con lo que se sabe, si esto es lo único que permite el acceso a una cuenta es suficiente para que los delincuentes accedan a ella. Con el segundo factor de autenticación la contraseña no es suficiente se requiere un código adicional, en caso de que un ataque de <em>phishing</em> robase el código temporal sólo permitiría iniciar sesión en la cuenta durante un breve periodo de tiempo habitualmente de 30 segundos.</p>
-<p>Los servicios más conocidos implementan el segundo factor de autenticación que los usuarios deben activar, no es difícil de implementar en Java.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">Implementar un segundo factor de autenticación en una aplicación web Java con Spring</a></li>
-</ul>
-<h3 id="notificación-de-acciones-relevantes">Notificación de acciones relevantes</h3>
-<p>Algunas operaciones son relevantes desde el punto de vista de seguridad, como el inicio de sesión, un intento fallido de inicio de sesión, cambio de contraseña o realización de algunas operaciones en el ámbito de la aplicación. Para mejorar la seguridad conviene enviar en este tipo de acciones una notificación al usuario que permita advertir ante acciones que se puedan realizar sin su conocimiento. Las notificaciones permiten al usuario tomar medidas en caso de que detecte acciones fraudulentas. Las notificaciones pueden ser a través de un correo electrónico, mensaje SMS o a través de mensajería instantánea.</p>
-<p>Estos son dos ejemplos de correos electrónicos que envía <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> y <a href="https://es.wallapop.com/">Wallapop</a> para notificar al usuario de un nuevo inicio de sesión en su cuenta.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_huee3b0496a171157529c82e29f9f8cebc_80671_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Notificación de Gmail de inicio de sesión"><img src="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_huee3b0496a171157529c82e29f9f8cebc_80671_300x200_fit_box_3.png" width="161" height="200" alt="Notificación de Gmail de inicio de sesión" title="Notificación de Gmail de inicio de sesión"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu62f37908c47c484e5c6522c4c79fd755_123506_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Notificación de Wallapop de inicio de sesión"><img src="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu62f37908c47c484e5c6522c4c79fd755_123506_300x200_fit_box_3.png" width="103" height="200" alt="Notificación de Wallapop de inicio de sesión" title="Notificación de Wallapop de inicio de sesión"  class="lozad "></a></p>
-<figcaption>Correos electrónicos de notificación de inicio de sesión</figcaption>
-</figure>
-</div>
-<h3 id="registro-de-actividad">Registro de actividad</h3>
-<p>Mantener un registro de la actividad es otra variante para dar visibilidad y permitirle al usuario identificar actividad fraudulenta en su cuenta en caso de que haya sido víctima de un ataque o sus credenciales hayan sido robadas. Algunos servicios mantienen un registro con las fechas de los últimos inicios de sesión, la dirección IP de la computadora junto con su geolocalización que permite conocer su ubicación aproximada, el navegador usado, sistema operativo o fecha de últimos cambios de contraseña.</p>
-<p>Además de proporcionar al usuario un registro de actividad al mismo tiempo este conviene guardarlo en los registros del propio servicio en caso de necesitar investigar actividad sospechosa.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu684b93583f6beeef0a82426816b767c2_138167_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Registro de actividad en una cuenta de Gmail"><img src="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu684b93583f6beeef0a82426816b767c2_138167_300x200_fit_box_3.png" width="178" height="200" alt="Registro de actividad en una cuenta de Gmail" title="Registro de actividad en una cuenta de Gmail"  class="lozad "></a></p>
-<figcaption>Registro de actividad en una cuenta de Gmail</figcaption>
-</figure>
-</div>
-<h3 id="establecer-límites-de-uso">Establecer límites de uso</h3>
-<p>Ya sea por una fallo de seguridad en un servicio vulnerable que ha sufrido un ataque o por un ataque dirigido al usuario por ejemplo con un ataque de <em>phishing</em> es posible implementar medidas no dirigidas a evitar los ataques sino a mitigar o reducir los posibles daños de un posible ataque.</p>
-<p>Para mitigar los posibles daños un servicio puede implementar medidas para limitar los datos como establecer un límite de intentos fallidos de inicio de sesión antes de bloquear la cuenta de forma temporal. Los bancos por ejemplo permiten activar o desactivar las tarjetas de crédito a petición del cliente que impidan la autorización de operaciones, con esta medida aunque un usuario haya sido atacado y un delincuente haya robado los datos de su tarjeta de crédito este puede desactivarla para evitar operaciones fraudulentas con ella unido a la notificación de acciones relevante un usuario puede actuar para evitar más daños. Otras medidas que utilizan los bancos son establecer límites de disposición de efectivo diario, importe máximo de transferencias, importe máximo en comercios físicos y electrónicos y de compras por internet.</p>
-<h3 id="cifrar-información-personal">Cifrar información personal</h3>
-<p>Los datos personales están protegidos por leyes, un fallo de seguridad con el resultado de robo de datos personales también tiene consecuencias legales para la empresa con importantes multas y económicas por pérdida de clientes y mala imagen.</p>
-<p>Los datos a proteger de los usuario son aquellos que permita identificarlos como nombre y apellidos, DNI, dirección de correo electrónico, dirección del domicilio, número de teléfono y por supuesto datos bancarios como número de cuenta y tarjetas de crédito.</p>
-<p>Para evitar el riesgo de un ataque dirigido al servicio que ocasione una fuga de datos es conveniente cifrarlos. Incluso para que los empleados que trabajan en la empresa no conozcan a quién corresponden esos datos.</p>
-<p>Cifrados los datos aun teniendo acceso a ellos la información está protegida ya que es necesario descifrarlos para obtener el valor original.</p>
-<p>Vault es una aplicación que ofrece el cifrado como servicio entre otras funcionalidades de seguridad.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a></li>
-</ul>
-<h3 id="informar-a-los-usuarios">Informar a los usuarios</h3>
-<p>Para prevenir fraudes otras medidas sencillas son informar a los usuarios de unas medidas básicas de prevención de fraude y explicar cómo son los procedimientos de comunicación.</p>
-<p>Algunos son desconfiar de mensajes inesperados, no acceder a enlaces de mensajes SMS, de mensajería instantánea y leer con atención la dirección en el navegador de los enlaces a los que se acceder.</p>
-<p>Nunca facilitar datos personales, credenciales de acceso a una cuenta no datos de tarjetas bancarias. Tampoco descargar ni instalar aplicaciones si no provienen de las tiendas oficiales del dispositivo. Y activar las notificaciones para conocer la actividad en la cuenta del servicio.</p>
-<h3 id="comunicaciones-entre-servicios">Comunicaciones entre servicios</h3>
-<p>La arquitectura de las aplicaciones tienden a diseñarse de forma que ofrezcan un medio de invocar sus funcionalidades mediante llamadas de red ya sea con el protocolo HTTP mediante REST, GraphQL o gRPC.</p>
-<p>Para autorizar las llamadas a los servicios estos han de implementar alguna forma de autenticación y autorización por ejemplo con OAuth y JWT.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a></li>
-</ul>
-<p>Otra forma de proteger los servicios más sencilla sin que cada uno de ellos tenga que implementar las funcionalidades de autenticación y autorización es utilizar un <em>service mesh</em>. <a href="https://www.consul.io/">Consul</a> además de ser un servicio que ofrece registro y descubrimiento ofrece la funcionalidad de conexión entre servicios con cifrado, autenticación mutua y autorización especificando qué servicio está autorizado a comunicarse con cual.</p>
-<p>Con las funcionalidades de conexión de Consul los servicios no es necesario que implementen el cifrado, autenticación y autorización. Los servicios tienen menos responsabilidades, son más sencillos y la autorización de la comunicación es gestionada desde Consul.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a></li>
-</ul>
-<h3 id="contraseñas-en-repositorios-de-código-fuente-y-artefactos-compilados">Contraseñas en repositorios de código fuente y artefactos compilados</h3>
-<p>La seguridad de las aplicaciones se basa en contraseñas, claves privadas y certificados que únicamente las aplicaciones y los administradores de los servicios deben tener acceso.</p>
-<p>Las credenciales deben ser guardadas aparte del código fuente de la aplicación, fuera de la herramienta de control de versiones. Incluso las credenciales en una clase Java compila a <em>bytecode</em> es posible acceder a ellas.</p>
-<p>Estos secretos deben proporcionarse a las aplicaciones en tiempo de ejecución por el orquestador de procesos, el entorno de ejecución en la nube o de un servicio específico de seguridad del que obtenerlo. Para mayor seguridad las propiedades con secretos de los archivos de configuración en el sistema de archivos deben evitarse.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/">Las contraseñas e información sensible en el código fuente o <em>bytecode</em> de Java no son seguras</a></li>
-</ul>
-<h3 id="otras">Otras</h3>
-<p>Otra medida de seguridad es ofrecer la posibilidad de eliminar una cuenta o desactivarla tras un periodo de inactividad prolongado.</p>
-<ul>
-<li><a href="https://www.whitesourcesoftware.com/resources/blog/application-security-best-practices/">Application Security Best Practices</a></li>
-<li><a href="https://techbeacon.com/security/7-must-dos-delivering-app-focused-security">7 must-dos for delivering app-focused security</a></li>
-</ul>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Application_security">Application security</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
                 <category term="seguridad"/>
             

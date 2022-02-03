@@ -1,0 +1,605 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete javax.validation que se utilizan para validar beans de Java se pueden utilizar para validar los valores de configuración de Spring. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Validar las propiedades de configuración de Spring Boot al iniciar la aplicación</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/" hreflang="es" title="Validar las propiedades de configuración de Spring Boot al iniciar la aplicación">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/index-amp.html" hreflang="es" title="Validar las propiedades de configuración de Spring Boot al iniciar la aplicación">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Validar las propiedades de configuración de Spring Boot al iniciar la aplicación">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete javax.validation que se utilizan para validar beans de Java se pueden utilizar para validar los valores de configuración de Spring. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Validar las propiedades de configuración de Spring Boot al iniciar la aplicación">
+<meta name="twitter:description" content="Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete javax.validation que se utilizan para validar beans de Java se pueden utilizar para validar los valores de configuración de Spring. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/"
+    },
+    "headline": "Validar las propiedades de configuración de Spring Boot al iniciar la aplicación",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png"
+        
+      },
+    "datePublished": "2022-02-03T18:00:00+01:00",
+    "dateModified": "2022-02-03T18:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1186",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete javax.validation que se utilizan para validar beans de Java se pueden utilizar para validar los valores de configuración de Spring."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+<article>
+    <h1>Validar las propiedades de configuración de Spring Boot al iniciar la aplicación</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>03/02/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Spring permite realizar validaciones sobre las propiedades de configuración antes de iniciar la aplicación, esto permite evitar errores en tiempo de ejecución más difíciles de depurar ya que la excepción que se origine quizá sea difícil de asociar a que el valor una variable de configuración es incorrecta, por ejemplo, que una variable de configuración no tiene valor y si fuese una contraseña de base de datos originar un fallo de conexión a la base de datos o que un servicio REST devolviese un error 403 por no proporcionar la credencial. Con las mismas anotaciones de validación sobre las propiedades de configuración del paquete <em>javax.validation</em> que se utilizan para validar <em>beans</em> de Java se pueden utilizar para validar los valores de configuración de Spring.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+      <div class="adsense adsense-leaderboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-full-width-responsive="true"></ins>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+</div>
+<p>Al recibir datos los programas tienen varias opciones. Una es ser estricto, validar los datos y en caso de que no sean válidos emitir un mensaje y devolver un error impidiendo continuar. Otra opción es ser flexible para validar los datos y en caso de que sean incorrectos tomar valores por defecto para al menos realizar la tarea aunque sea en un modo degradado. La opción final es no validar los datos y dar por supuesto que son correctos.</p>
+<p>No validar los datos tiene varios problemas que se pueden manifestar en la aplicación de diferentes formas, fallando en el procesado de los datos quizá habiendo realizado parte de la tarea, ocasionando algún fallo de seguridad o generando resultados incorrectos o inconsistencias en otros datos. Cualquiera de estas formas de errores son manifestaciones que pueden tener como causa unos datos no válidos de entrada, errores cuya causa raíz pueden no ser fácilmente identificable al intentar depurar el programa y que suelen requerir muchas horas de investigación. Por ello validar los datos es una buena práctica al crear aplicaciones, sobre todo validar datos que provienen de fuentes no confiables como información introducida por el usuario o programas externos.</p>
+<p>La configuración de una aplicación es otra forma de datos que un programa utiliza, en este caso para variar su comportamiento en tiempo de ejecución sin necesidad de recompilar la aplicación o generar un nuevo artefacto binario para su ejecución. Sobre las variables de configuración también es posible realizar validaciones y en caso de que las variables de configuración sean incorrectas fallar de forma temprana en vez de fallar más tarde cuando se realiza una acción.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</a></li>
+    <li><a href="#ejemplo-de-código">Ejemplo de código</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</h3>
+<p>La configuración de una aplicación son simplemente variables a la que se les da un nombre y a través del cual se recupera un valor. El programa no tiene hardcodeado en el código el valor e incluyéndose en un archivo de configuración permite cambiarlo sin cambiar el código.</p>
+<p>Por ejemplo, si un programa necesita conectarse a una base de datos seguramente necesite unas credenciales compuestas por el <em>host</em> del servidor de base de datos, un usuario y una contraseña de conexión. Estos datos de configuración para el programa son requeridos ya que quizá sin poder conectarse a la base de datos va a fallar. Otros datos quizá deban ser numéricos, no vacíos, deban tener un valor mínimo o máximo o deban cumplir una expresión regular.</p>
+<p>El <em>framework</em> Spring proporciona varias funcionalidades útiles para las aplicaciones relacionadas con la configuración desde <a href="https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/">un mecanismo muy flexible de proporcionar los valores de las propiedades de diferentes fuentes hasta un servidor de configuración centralizada</a>. Otra de sus funcionalidades es precisamente validar las propiedades de configuración a través de anotaciones.</p>
+<p>Aunque no sean validaciones complejas son útiles ya que normalmente las variables las crean los desarrolladores pero al desplegar la aplicación o tener que cambiar algún valor puede que lo realicen personas con el rol de sistemas que quizá no conozcan tan en detalle las variables de configuración existentes y sus reglas de validación. Al añadir las validaciones si alguna falla se obtiene un mensaje de error bastante descriptivo de cual es el problema de configuración.</p>
+<h3 id="ejemplo-de-código">Ejemplo de código</h3>
+<p>Una forma de recuperar los valores de configuración en una aplicación de Spring es trasladando los valores de los archivos de configuración a clases Java que contengan sus valores y sean fácilmente usables desde el lenguaje Java. Es en estas clases Java donde se colocan las anotaciones  de validación.</p>
+<p>Las anotaciones que se pueden utilizar son <a href="https://javaee.github.io/javaee-spec/javadocs/javax/validation/constraints/package-summary.html">las anotaciones del paquete javax.validation</a>, realmente son las mismas anotaciones para realizar validaciones sobre cualquier otro tipo de objeto Java, en este caso simplemente son clases con propiedades de configuración.</p>
+<p>Este es un ejemplo de archivo de configuración de una aplicación en la que hay una serie de propiedades. Dependiendo del entorno y de los valores proporcionados en tiempo de ejecución a través de este archivo de configuración, propiedades del sistema o variables de entorno las propiedades tendrán unos valores u otros y algunos valores como las contraseñas por motivos de seguridad es preferible no incluirlos en los archivos de configuración del código fuente para no compartirlas en el sistema de control de versiones.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">numeric</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;A0000&#34;</span><span class="w">&#10;</span><span class="w">  </span><span class="l">password:</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-2.yaml</span>
+    </div>
+</div>
+<p>Dado que algunas propiedades es necesario proporcionarle en tiempo de ejecución la aplicación como medida de precaución valida que los valores de las propiedades son válidas. Esta es una clase que tiene el objetivo de cargar y proporcionar acceso a los valores de configuración.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigvalidated</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.Max</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.Min</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.NotBlank</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">javax.validation.constraints.Pattern</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.context.properties.ConfigurationProperties</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.validation.annotation.Validated</span><span class="o">;</span>&#10;&#10;<span class="nd">@Configuration</span>&#10;<span class="nd">@ConfigurationProperties</span><span class="o">(</span><span class="n">prefix</span> <span class="o">=</span> <span class="s">&#34;app&#34;</span><span class="o">)</span>&#10;<span class="nd">@Validated</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppConfiguration</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Min</span><span class="o">(</span><span class="n">3</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Max</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Integer</span> <span class="n">numeric</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Pattern</span><span class="o">(</span><span class="n">regexp</span> <span class="o">=</span> <span class="s">&#34;[A-Z]\\d{3,}&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">regexp</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@NotBlank</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getNumeric</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">numeric</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNumeric</span><span class="o">(</span><span class="n">Integer</span> <span class="n">numeric</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">numeric</span> <span class="o">=</span> <span class="n">numeric</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getRegexp</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">regexp</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRegexp</span><span class="o">(</span><span class="n">String</span> <span class="n">regexp</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">regexp</span> <span class="o">=</span> <span class="n">regexp</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getPassword</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">password</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPassword</span><span class="o">(</span><span class="n">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>AppConfiguration.java</span>
+    </div>
+</div>
+<p>La clase al estar anotada con la anotación <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html">@Configuration</a> de Spring la identifica como una clase de configuración y con el atributo <em>prefix</em> Spring carga los valores de las variables de configuración cuyos nombres coinciden con los nombres de las propiedades. La clase incluye también la anotación <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/annotation/Validated.html">@Validated</a> que indica que debe ser validada con las anotaciones de validación que incluya. Finalmente, las propiedades que necesitan validaciones se anotan con la anotación correspondiente para hacer la propiedad requerida u otro tipo de validación sobre su valor.</p>
+<p>Realizando validaciones sobre los valores de las propiedades de configuración si la aplicación se inicia y una o varias propiedades no cumplen una validación, la aplicación en vez de continuar finaliza inmediatamente con un mensaje de error que indica que una propiedad no cumple las validaciones.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">numeric</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0000&#34;</span><span class="w">&#10;</span><span class="w">  </span><span class="l">password:</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-1.yaml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-1.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">***************************&#10;APPLICATION FAILED TO START&#10;***************************&#10;&#10;Description:&#10;&#10;Binding to target org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under &#39;app&#39; to io.github.picodotdev.blogbitix.springbootconfigvalidated.AppConfiguration$$EnhancerBySpringCGLIB$$ae0ed48d failed:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;Property: app.regexp&#10;&nbsp;&nbsp;&nbsp;&nbsp;Value: 0000&#10;&nbsp;&nbsp;&nbsp;&nbsp;Origin: class path resource [application.yml] - 7:11&#10;&nbsp;&nbsp;&nbsp;&nbsp;Reason: debe coincidir con &#34;[A-Z]\d{3,}&#34;&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;Property: app.password&#10;&nbsp;&nbsp;&nbsp;&nbsp;Value: &#10;&nbsp;&nbsp;&nbsp;&nbsp;Origin: class path resource [application.yml] - 8:12&#10;&nbsp;&nbsp;&nbsp;&nbsp;Reason: no debe estar vacío&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;Property: app.numeric&#10;&nbsp;&nbsp;&nbsp;&nbsp;Value: 0&#10;&nbsp;&nbsp;&nbsp;&nbsp;Origin: class path resource [application.yml] - 6:12&#10;&nbsp;&nbsp;&nbsp;&nbsp;Reason: debe ser mayor que o igual a 3&#10;&#10;&#10;Action:&#10;&#10;Update your application&#39;s configuration</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-1</span>
+    </div>
+</div>
+<p>Cambiando el comando de inicio para proporcionar el valor requerido y que las otras propiedades sean válidas la aplicación se inicia correctamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">numeric</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;A0000&#34;</span><span class="w">&#10;</span><span class="w">  </span><span class="l">password:</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application-2.yaml</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nv">APP_PASSWORD</span><span class="o">=</span><span class="s2">&#34;java&#34;</span> ./gradlew run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-2.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ APP_PASSWORD=&#34;java&#34; ./gradlew run&#10;&#10;&gt; Task :app:run&#10;&#10;  .   ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__ _ _&#10; /\\ / ___&#39;_ __ _ _(_)_ __  __ _ \ \ \ \&#10;( ( )\___ | &#39;_ | &#39;_| | &#39;_ \/ _` | \ \ \ \&#10; \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;  &#39;  |____| .__|_| |_|_| |_\__, | / / / /&#10; =========|_|==============|___/=/_/_/_/&#10; :: Spring Boot ::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v2.6.2)&#10;&#10;2022-02-03 19:11:28.623  INFO 11424 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.springbootconfigvalidated.Main   : Starting Main using Java 17.0.1 on archlinux with PID 11424 (/home/picodotdev/Documentos/Software/personal/blog-ejemplos/SpringBootConfigValidated/app/build/classes/java/main started by picodotdev in /home/picodotdev/Documentos/Software/personal/blog-ejemplos/SpringBootConfigValidated/app)&#10;2022-02-03 19:11:28.626  INFO 11424 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.springbootconfigvalidated.Main   : No active profile set, falling back to default profiles: local&#10;2022-02-03 19:11:29.164  INFO 11424 --- [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   main] i.g.p.b.springbootconfigvalidated.Main   : Started Main in 0.887 seconds (JVM running for 1.141)</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out-2</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootConfigValidated">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/01/las-clases-para-logging-del-paquete-jul-incluidas-en-la-api-de-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las clases para logging del paquete JUL incluidas en la API de Java" title="Las clases para logging del paquete JUL incluidas en la API de Java" class="" loading="lazy">
+                <h3>Las clases para logging del paquete JUL incluidas en la API de Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">
+                <img src="/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/images/log4shell_hu2e0ccf3c77b1c1f3f2f8efc9cb83304b_24996_875x0_resize_box_3.png" width="326" height="125" alt="Analizar y detectar fallos de seguridad en las dependencias de Java" title="Analizar y detectar fallos de seguridad en las dependencias de Java" class="" loading="lazy">
+                <h3>Analizar y detectar fallos de seguridad en las dependencias de Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config" title="Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config" class="" loading="lazy">
+                <h3>Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/buenas-practicas-de-programacion-sencillas-en-el-codigo-fuente/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Buenas prácticas de programación sencillas en el código fuente" title="Buenas prácticas de programación sencillas en el código fuente" class="" loading="lazy">
+                <h3>Buenas prácticas de programación sencillas en el código fuente</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/01/validar-documentos-json-con-json-schema/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Validar documentos JSON con JSON Schema" title="Validar documentos JSON con JSON Schema" class="" loading="lazy">
+                <h3>Validar documentos JSON con JSON Schema</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/09/escapar-simbolos-especiales-en-una-expresion-regular-en-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Escapar símbolos especiales en una expresión regular en Java" title="Escapar símbolos especiales en una expresión regular en Java" class="" loading="lazy">
+                <h3>Escapar símbolos especiales en una expresión regular en Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-620';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/02\/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
