@@ -1,0 +1,686 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Artículos del año 2018</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/posts/2018/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/posts/2018/" hreflang="es" title="Artículos del año 2018">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/posts/2018/index-amp.html" hreflang="es" title="Artículos del año 2018">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/posts/2018/index.xml" hreflang="es" title="Artículos del año 2018">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
+  <!-- Social -->
+<meta property="og:title" content="Artículos del año 2018">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/posts/2018/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Artículos del año 2018">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/08/sobre-las-competiciones-deportivas-de-videojuegos-o-esports/">Sobre las competiciones deportivas de videojuegos o eSports</a></h1>
+        <span class="information">
+          <time>15/08/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            El sector de los videojuegos es una industria que mueve miles de millones de euros en todo el mundo mayor que sectores con más historia como la industria del cine, los juegos triple A poseen inversiones y desarrollos cinematográficos. Los computadores y aparatos electrónicos están muy relacionados con los videojuegos ya desde hace mucho tiempo desde que aparecieran en 1947 el primer videojuego. En la actualidad los videojuegos son unos programas informáticos de los que en la computación personal más de cómputo requieren a los ordenadores, una buena parte de la presión para mejorar los computadores proviene de los videojuegos con tarjetas gráficas muy potentes, cantidades de memoria consideradas enormes hasta hace una década, procesadores más potentes en la guerra actual por añadir más núcleos a las CPU.
+          
+          <br>
+          <a href="/blog-bitix/2018/08/sobre-las-competiciones-deportivas-de-videojuegos-o-esports/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/">Personalizar el mensaje emitido de un objeto en Log4j</a></h1>
+        <span class="information">
+          <time>10/08/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Usar una librería como Log4j es probablemente indispensable en una aplicación para obtener información de su funcionamiento, mensajes informativos, advertencias, errores o excepciones que se están produciendo o se han producido. Los mensajes que se emiten contienen información útil para monitorización en tiempo real o su inspección pasado un tiempo.
+En cada punto de la aplicación en la que se desea emitir una traza es necesario proporcionar el formato del mensaje y sus parámetros extraídos de las propiedades de los objetos con la intención obtener una traza con los valores de determinadas propiedades.
+          
+          <br>
+          <a href="/blog-bitix/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">Después de la guerra del número de núcleos en los procesadores, ¿vendrá la guerra de la computación heterogénea o manycores?</a></h1>
+        <span class="information">
+          <time>03/08/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Hace alguna década los procesadores eran de un solo núcleo y hasta la aparición de Windows NT y GNU/Linux los sistemas operativos no se aprovechaban plenamente las capacidades de multiprogramación de los procesadores que ya se incluían desde los Intel 386.
+La mejora de rendimiento en los procesadores se conseguía a base de mejores diseños en los procesadores como la segmentación, superescalaridad, caches de datos e caches de instrucciones más grandes que era posible debido también en parte al mayor número de transistores que permitían incluir los procesos de litografía de tamaño más reducidos para los transistores, también por la adición de nuevas instrucciones en el conjunto de la arquitectura o ISA, o mayor número de registros y de mayor tamaño entre otras cosas.
+          
+          <br>
+          <a href="/blog-bitix/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Identificar todas las trazas de una petición en una aplicación web Java con Log4j</a></h1>
+        <span class="information">
+          <time>30/07/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de logging como Log4j las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones.
+          
+          <br>
+          <a href="/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/">Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie</a></h1>
+        <span class="information">
+          <time>27/07/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Instalar un sistema GNU/Linux es sencillo y está muy bien, también es importante saber como intentar recuperarlo cuando una actualización de software provoca que el sistema no se inicie con normalidad hasta el entorno de escritorio gráfico, el motivo puede ser incluso un <em>kernel panic</em>. El objetivo de la recuperación es corregir el problema del inicio, si no es posible, recuperar los valiosos documentos, imágenes, vídeos u otros archivos antes de finalmente llegar al punto de reinstalar el sistema para devolverlo a un estado correcto aunque quizá perdiendo los datos que tuviese.
+          
+          <br>
+          <a href="/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">La librería Log4j para emitir trazas en aplicaciones Java</a></h1>
+        <span class="information">
+          <time>15/07/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            La librería Log4j es una librería para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Es la librería sucesora de logback y aunque no es imprescindible suele usarse en combinación con slf4j ya que esta permite cambiar de librería de logging subyacente sin hacer ningún cambio en la aplicación.
+Algunas de las nuevas características de log4j son:
+ Rendimiento mejorado usando funcionalidades asíncronas en los loggers.
+          
+          <br>
+          <a href="/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/07/sobre-la-venta-entre-particulares-de-ebay-milanuncios-y-wallapop/">Sobre la venta entre particulares de eBay, milanuncios y Wallapop</a></h1>
+        <span class="information">
+          <time>08/07/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+          
+        </span>
+        <p>
+          
+            Ya he escrito en un varios artículos relacionados comentando que estoy interesando en comprar un Intel NUC pero como lo que quiero aún no se comercializa la espera ya se me está haciendo muy larga, me estoy aburriendo un poco de impaciencia y para entretenerme mientras me ha dado por buscar NUCs en las principales páginas de venta entre particulares y de segunda mano como eBay, milanuncios y Wallapop. Por curiosidad a ver que precio tienen y si me resultaría atractivo comprar un NUC de una generación anterior en vez de la última que saldrá ya no a mucho tardar.
+          
+          <br>
+          <a href="/blog-bitix/2018/07/sobre-la-venta-entre-particulares-de-ebay-milanuncios-y-wallapop/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/">Pruebas funcionales con Geb en una aplicación web Java</a></h1>
+        <span class="information">
+          <time>06/07/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Las pruebas automatizados permiten comprobar que una aplicación se comporta de la manera esperada en los casos probados, creando pruebas automatizadas se evita hacer las aburridas y repetitivas pruebas manuales que consumen gran cantidad de tiempo. Hay diferentes categorías de pruebas: unitarias, de integración y las funcionales. Para las pruebas unitarias y de integración en la plataforma Java unas de las más populares herramientas son JUnit y Spock, para las pruebas funcionales están Selenium y la herramienta que explicaré en este artículo Geb que puede usarse junto con Spock haciendo que el código de los teses sea muy descriptivo.
+          
+          <br>
+          <a href="/blog-bitix/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/">Qué es un SUT, fake, stub, mock y spy en las pruebas con un ejemplo</a></h1>
+        <span class="information">
+          <time>04/07/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Las pruebas unitarias y de integración tratan de probar que el comportamiento del sujeto bajo prueba es el esperado. Este sujeto bajo prueba usará colaboradores que en las pruebas deben ser reemplazados por <em>fakes</em> para probar las condiciones deseadas del de sujeto bajo prueba. Dependiendo del comportamiento asignado al colaborador tenemos varios tipos: <em>stub</em>, <em>mock</em> o <em>spy</em>.
+          
+          <br>
+          <a href="/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/06/hemeroteca-13/">Hemeroteca #13</a></h1>
+        <span class="information">
+          <time>30/06/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/blog/">blog</a>
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/software/">software</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+          
+        </span>
+        <p>
+          
+            El primer semestre del 2018 ya ha pasado. Estos primeros meses he publicado 38 artículos sobre la temática habitual de esta bitácora como programación, software libre, GNU/Linux algunos de opinión relacionados con la tecnología. Las visitas e ingresos de AdSense no han crecido tanto como en ocasiones anteriores pero se han mantenido a un nivel similar sobre los 30K páginas vistas y los 30 € de ingresos en AdSense que no están nada mal.
+          
+          <br>
+          <a href="/blog-bitix/2018/06/hemeroteca-13/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/">Decidido a comprar un Intel NUC entre las opciones que he evaluado</a></h1>
+        <span class="information">
+          <time>23/06/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+          
+        </span>
+        <p>
+          
+            El ordenador portátil que tenía sigue siendo perfectamente útil, sin embargo, en algunos casos concretos de mi uso la cantidad de memoria que tenía se me estaba quedando corta y cuando me pasa esto suelo aprovechar si alguien de mi entorno necesita ordenador traspasarlo y yo comprarme otro nuevo.
+El ordenador que tenía era un Sony VAIO de finales del 2012 con un procesador Intel i5-3210M con gráfica integrada HD 4000, 8 GiB de memoria, almacenamiento de estado sólido Samsung 840 EVO de 256 GiB con interfaz SATA y una pantalla de resolución 1600x900.
+          
+          <br>
+          <a href="/blog-bitix/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/">Java Magazine, la publicación gratuita sobre Java</a></h1>
+        <span class="information">
+          <time>15/06/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            La revista Java Magazine es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista @Oraclejavamag.
+          
+          <br>
+          <a href="/blog-bitix/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/">Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry</a></h1>
+        <span class="information">
+          <time>09/06/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/javascript/">javascript</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+          
+        </span>
+        <p>
+          
+            Para desarrollar aplicaciones web con el lenguaje de programación Java hay gran cantidad de frameworks que proponen un marco de trabajo para proporcionar la mayor parte de la funcionalidad de infraestructura necesaria para una aplicación. La mayoría basados en acciones y unos pocos basados en componentes. Una aplicación web no solo consta de la parte del servidor y desde hace tiempo la parte de cliente ha cobrado gran importancia.
+          
+          <br>
+          <a href="/blog-bitix/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry</a></h1>
+        <span class="information">
+          <time>03/06/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+          
+        </span>
+        <p>
+          
+            El framework Apache Tapestry para el desarrollo de aplicaciones web Java basado en componentes aparte de ser un framework para el desarrollo de la capa de presentación del lado del servidor y lógica de negocio también ofrece soporte para el desarrollo de funcionalidad del lado del cliente. Incorpora de serie las librerías RequireJS para la gestión de módulos y dependencias de JavaScript, la popular jQuery para la manipulación de elementos del HTML y Underscore que añade algunas utilidades que no tiene el lenguaje JavaScript y Bootstrap para los estilos además de alguna otra librería JavaScript de menor relevancia que estas.
+          
+          <br>
+          <a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/">Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java</a></h1>
+        <span class="information">
+          <time>01/06/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+              <a href="/blog-bitix/tags/tapestry/">tapestry</a>
+            
+          
+        </span>
+        <p>
+          
+            Una aplicación web se compone de código de lado de servidor, en el caso de utilizar el lenguaje de programación Java de código Java normalmente utilizando algún de los muchos framework web, por otra parte se compone de código de lado de cliente con una gran variedad de librerías de JavaScript como jQuery, React, Underscore o Bootstrap para los estilos. En las aplicaciones Java las librerías de lado de servidor se gestionan como dependencias del proyecto y con herramientas como Gradle se puede automatizar el descargar la librería de repositorios como Maven Central y la versión que se necesite así como hacer sencillo actualizar a una nueva.
+          
+          <br>
+          <a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+      <a href="/blog-bitix/posts/2018/page/4/" aria-label="Next"><span aria-hidden="true">&laquo;</span> Más antiguo</a>
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+      <a href="/blog-bitix/posts/2018/page/2/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

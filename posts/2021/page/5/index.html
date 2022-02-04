@@ -1,0 +1,591 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Artículos del año 2021</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/posts/2021/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/posts/2021/" hreflang="es" title="Artículos del año 2021">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/posts/2021/index-amp.html" hreflang="es" title="Artículos del año 2021">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/posts/2021/index.xml" hreflang="es" title="Artículos del año 2021">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex">
+
+  <!-- Social -->
+<meta property="og:title" content="Artículos del año 2021">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/posts/2021/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Artículos del año 2021">
+<meta name="twitter:description" content="Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  <script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+              <div class="adblock-sidebar-container-right">
+                <div class="adsense adsense-vertical">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="7450235768"
+        data-full-width-responsive="true"></ins>
+</div>
+              </div>
+            </div>
+            
+<ul class="list-unstyled">
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">Herramientas para convertir texto a audio de voz natural</a></h1>
+        <span class="information">
+          <time>14/02/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural.
+          
+          <br>
+          <a href="/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/">Guía de instalación de GNU/Linux para la Raspberry Pi</a></h1>
+        <span class="information">
+          <time>12/02/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            El propósito original del computador de pequeño tamaño Raspberry Pi es el educativo y aprendizaje de progamación e introducción a la  electrónica, sin embargo, debido a su bajo coste y ser una computador de propósito general es utilizado con otros múltiples propósitos. El primer paso para empezar a usar una Raspberry Pi es instalarle un sistema operativo, dos opciones son el ofrecido por la fundación de la Raspberry Pi o la versión ofrecida por Ubuntu.
+          
+          <br>
+          <a href="/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/02/introduccion-a-ddd-y-arquitectura-hexagonal-con-un-ejemplo-de-aplicacion-en-java/">Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java</a></h1>
+        <span class="information">
+          <time>07/02/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            La arquitectura de una aplicación define la estructura, organización y relación entre los componentes de la misma. En aplicaciones complejas utilizar DDD y arquitectura hexagonal son una opción recomendada. Hay varios libros técnicos dedicados a cada uno de ellos. En este artículo hago una introducción a DDD y arquitectura hexagonal y proporciono un ejemplo con el código fuente con el que implementar, analizar y ejecutar los conceptos teóricos en los que se basan.
+          
+          <br>
+          <a href="/blog-bitix/2021/02/introduccion-a-ddd-y-arquitectura-hexagonal-con-un-ejemplo-de-aplicacion-en-java/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></h1>
+        <span class="information">
+          <time>05/02/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/software-libre/">software-libre</a>
+            
+          
+        </span>
+        <p>
+          
+            Hay varias categorías de licencias de software que los desarrolladores como autores del software le asignan al software que crean o en el caso de empresas le asignan para proteger su propiedad intelectual. En la década de los años 80 Richard Stallman lanzo el movimiento de software libre creando software equivalente al de UNIX utilizando una licencia de software libre con unos principios éticos. Otras categorías de licencias son las privativas y las de código abierto.
+          
+          <br>
+          <a href="/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/las-metodologias-oocss-bem-y-smacss-para-organizar-los-estilos-css/">Las metodologías OOCSS, BEM y SMACSS para organizar los estilos CSS</a></h1>
+        <span class="information">
+          <time>31/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+          
+        </span>
+        <p>
+          
+            OOCSS, BEM y SMACSS son tres de las metodologías más conocidas para organizar el código CSS con la intención de que sea legible y mantenible. Cada una de estas metodologías define una serie de convenciones y reglas que han de seguir los estilos y propiedades CSS.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/las-metodologias-oocss-bem-y-smacss-para-organizar-los-estilos-css/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/despues-de-dos-anos-de-comprar-un-intel-nuc-cambiaria-algo-en-el-futuro/">Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?</a></h1>
+        <span class="information">
+          <time>29/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/hardware/">hardware</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/opinion/">opinion</a>
+            
+          
+        </span>
+        <p>
+          
+            La tecnología informática sigue avanzado, no todos los días o semanas hay cambios pero con el paso de los semestres y lanzamientos de nuevos productos o estándares que se hacen cada año las mejoras son incrementales. Entre la adquisición de un ordenador y la necesidad del siguiente las mejoras son apreciables. Un procesador significativamente más potente, memoria RAM en cantidades absurdamente grandes, almacenamiento SSD a unos precios mucho más económicos, en mayores cantidades o aún más rápidos. No se cual será mi siguiente equipo a mi Intel NUC dependerá de la situación de los productos disponibles en el mercado y mis necesidades, el requisito de que sea lo más pequeño que me satisfaga seguirá manteniéndose, a partir de ahí depende de cosas de cómo evolucionen los juegos en la nube y si tengo fibra en vez de ADSL.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/despues-de-dos-anos-de-comprar-un-intel-nuc-cambiaria-algo-en-el-futuro/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/">Qué es la variable PATH del sistema y cómo cambiarla en GNU/Linux</a></h1>
+        <span class="information">
+          <time>24/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+            
+          
+        </span>
+        <p>
+          
+            Al ejecutar un comando en la terminal el intérprete de comandos de GNU/Linux lo busca en los directorios especificados en la variable de entorno del sistema PATH, esta variable de entorno contiene una lista de directorios separados por el caracter : en la que se busca por orden. Al instalar un paquete seguramente el programa ejecutable se instale en /usr/bin, directorio que por defecto está incluido en la variable PATH.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/">En Java, ¿los argumentos se pasan por valor o por referencia?</a></h1>
+        <span class="information">
+          <time>22/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+          
+        </span>
+        <p>
+          
+            En el lenguaje de programación Java los punteros no existen de la misma forma que en otros lenguajes como C o C++. En Java existen los punteros o referencias pero no son libres de apuntar a cualquier dirección de memoria del programa, en C y C++ lenguajes más destinados a la programación de sistemas y cercanos al lenguaje de la máquina ofrecen manipulación de punteros pudiendo obtener un puntero con la dirección de memoria de una variable.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/documentacion-para-registrar-las-decisiones-de-arquitectura-en-software-e-infraestructura/">Documentación para registrar las decisiones de arquitectura en software e infraestructura</a></h1>
+        <span class="information">
+          <time>16/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            Las tareas de un programador no consisten únicamente en escribir líneas de código o de un arquitecto decidir que usar o no usar y como. Una tarea importante de un programador o un arquitecto debe ser también escribir o mantener documentación actualizada. La arquitectura empleada en una aplicación permite conocer cuáles son sus componentes y piezas específicas de las que se compone sin tener que analizar el código fuente. La arquitectura de una aplicación puede ser de muchas formas, las decisiones de arquitectura también son un aspecto susceptible de ser documentadas, que permitan conocer cuáles fueron las motivaciones para elegir entre unas opciones y otras y que cambios de arquitectura ha sufrido una aplicación y por que motivos.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/documentacion-para-registrar-las-decisiones-de-arquitectura-en-software-e-infraestructura/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/analitica-web-con-matomo-como-alternativa-a-google-analytics/">Analítica web con Matomo como alternativa a Google Analytics</a></h1>
+        <span class="information">
+          <time>15/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+          
+        </span>
+        <p>
+          
+            Matomo es una alternativa a Google Analytics con funciones similares que cubren las necesidades de la mayoría de sitios web. Es software libre con algunas funciones <em>premium</em> que requieren comprar una licencia anual de uso. Matomo se puede hospedar <em>on-premise</em> que requiere administrar esa infraestructura o en la nube ofrecida por la propia Matomo. En el artículo muestro en un ejemplo como empezar a usar Matomo en un sitio web con Docker.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/analitica-web-con-matomo-como-alternativa-a-google-analytics/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a></h1>
+        <span class="information">
+          <time>10/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            El juego World of Warships es un juego de estrategia en el que la habilidad en el manejo del mando o disparo no es tan importante para ser un jugador que tenga un nivel por encima de la media. Otra parte importante de este juego es el juego en equipo en la que cada miembro según clase de barco y características ha de desempeñar su papel para que el equipo consiga la victoria. Conocer la misión de cada barco, las características de barco propio y del contrario junto con otras nociones básicas como que objetivos enemigos son los prioritarios, dónde posicionarse y que errores comunes no cometer también contribuyen a ser un mejor jugador.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/">Analítica web en el servidor sin JavaScript en el cliente con GoAccess</a></h1>
+        <span class="information">
+          <time>07/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/web/">web</a>
+            
+          
+        </span>
+        <p>
+          
+            Google Analytics es la herramienta más utilizada para implementar la funcionalidad de analítica en un sitio web. Es fácil de usar, de implementar, no requiere mantenimiento de infraestructura propia, es gratuita, ofrece numerosas funcionalidades que ayudan enormemente a obtener información del sitio web, de los usuarios, obtener informes. Sin embargo, Google Analytics es una tercera parte con la que se comparte la información del sitio web que supone una pérdida de privacidad y protección de datos del sitio web y requiere instalar un <em>script</em> de JavaScript que ralentiza la carga de las páginas web. GoAccess ofrece analítica web en tiempo real que al contrario que Analytics obtiene los datos únicamente desde el lado del servidor basándose en los archivos del log del servidor web, es software libre y es utilizable sin necesidad de involucrar a terceras partes.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h1><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a></h1>
+        <span class="information">
+          <time>02/01/2021</time>
+          
+            
+              <a href="/blog-bitix/tags/juegos/">juegos</a>
+            
+          
+        </span>
+        <p>
+          
+            El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos.
+          
+          <br>
+          <a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    
+  </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            
+
+
+<nav>
+  <div class="row">
+    <div class="col-md-4 text-left">
+    
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo</a>
+    </div>
+    <div class="col-md-4 text-right">
+    
+      <a href="/blog-bitix/posts/2021/page/4/" aria-label="Previous">Más reciente <span aria-hidden="true">&raquo;</span></a>
+    
+    </div>
+  </div>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <ins class="adsbygoogle"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-full-width-responsive="true"></ins>
+</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>
