@@ -46,12 +46,12 @@ require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, bluei
                 'upfeathers.png'
             ]
         };
-    
+
         var i = random(0, spec.backgrounds.length - 1);
         var b = spec.backgrounds[i];
         $('body').css('background-image', 'url("' + relUrl('assets/images/backgrounds/' + b) + '")');
     }
-    
+
     function initSearch() {
         $("form[name='query']").on('submit', function() {
             var query = $("input[name='q']", "form[name='query']").val();

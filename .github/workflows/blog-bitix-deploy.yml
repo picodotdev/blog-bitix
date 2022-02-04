@@ -73,8 +73,6 @@ jobs:
           ls deploy/
       - name: Deploy
         run: |
-          cp 404.html deploy/pages/advertiising/index.html
-          rm -f deploy/pages/advertiising/index-amp.html
           cd deploy/
           git config user.name github-actions
           git config user.email github-actions@github.com
