@@ -5,12 +5,72 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2021-12-23T09:00:00+01:00</updated>
+    <updated>2022-02-17T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/</id>
+        <title>Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux</title>
+        <updated>2019-06-21T19:00:00+02:00</updated>
+        <published>2019-06-21T19:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los dispositivos de almacenamiento se han de formatear con un sistema de archivos. Algunos de los sistemas de archivos están mejor soportados y son compatibles con una mayor número de sistemas y dispositivos, por tanto al formatear un dispositivo de almacenamiento ha de elegirse como sistema de archivos uno compatible, dependiendo del uso es más adecuado uno u otro. Para los dispositivos extraíbles la opción recomendable es exFAT o en su defecto NTFS o FAT.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME"  class=""></p>
+</div>
+<p>Cada sistema operativo posee uno o varios formatos de sistemas de archivos que soporta de forma nativa. Así por ejemplo <a href="https://www.microsoft.com/es-es/windows/">Windows</a> como sistema de archivos para el sistema se utiliza <a href="https://es.wikipedia.org/wiki/NTFS">NTFS</a> y <a href="https://en.wikipedia.org/wiki/File_Allocation_Table">FAT</a>, <a href="https://fr.wikipedia.org/wiki/FAT32">FAT32</a> o <a href="https://es.wikipedia.org/wiki/ExFAT">exFAT</a> para los medios extraíbles. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> para el sistema se suele utilizar <a href="https://en.wikipedia.org/wiki/Ext4">ext4</a>. Y en <a href="https://www.apple.com/macos/">macOS</a> se utiliza <a href="https://en.wikipedia.org/wiki/HFS_Plus">HFS+</a> o <a href="https://en.wikipedia.org/wiki/Apple_File_System">APFS</a>. Cada unos posee unas propiedades y los más antiguos para evitar sus limitaciones han sido sustituidos por unos sistemas de archivos más modernos.</p>
+<p>Los sistemas de archivos más compatibles son los que tradicionalmente se han utilizado por <a href="https://www.microsoft.com/">Microsoft</a> dada su amplia cuota de mercado en los sistemas de escritorio, estos son FAT y FAT32. Sin embargo, estos poseen unas limitaciones que no los hacen adecuados si el tamaño de los archivos superan los 4 GiB o la capacidad del sistemas de almacenamiento supera los 2 TiB, que son precisamente los límites máximos de FAT32. Para superar estas limitaciones Microsoft ha desarrollado exFAT como nuevo sistema de archivos para los medios extraíbles con unos límites de 16 EiB (16 x 1024 PiB x 1024 TiB, 16.6M TiB) para los tamaños de archivo y 64 ZiB (64 x 1024 EiB, 65536 EiB) para el sistema de almacenamiento son unos límites varios órdenes de magnitud más grandes (y considerarse infinitos) que las capacidades de la tecnología actual (aunque al ritmo del avance de la tecnología puede que se llegue a ellos dentro de unas décadas).</p>
+<p>En GNU/Linux puede utilizarse FAT32, NTFS y exFAT tanto en modo lectura como escritura, pero Windows solo permite sus propios formatos nativos y ha de utilizarse alguno de los anteriores, macOS soporta FAT en modo lectura y escritura, NTFS en modo lectura y para exFAT soporta también lectura y escritura. Otros dispositivos como <em>Smart TV</em> suelen soportar alguno de los sistemas de archivos de Microsoft ya sea FAT32, NTFS y exFAT. Salvo que se quiera la máxima compatibilidad con FAT32 para con versiones antiguas de Windows o dispositivos con algunos años la opción más recomendable a usar es exFAT.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/_h30HBYxtws" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>En GNU/Linux para formatear y utilizar particiones en NTFS hay que instalar el paquete <a href="https://www.archlinux.org/packages/extra/x86_64/ntfs-3g/">ntfs-3g</a> y para exFAT el paquete <a href="https://www.archlinux.org/packages/community/x86_64/exfat-utils/">exfat-utils</a>, estos son los paquetes para <a href="https://www.archlinux.org/">Arch Linux</a> otras distribuciones tienen un paquete equivalente.</p>
+<p>Para formatear una unidad ya sea una memoria USB o disco duro externo con formato exFAT en GNU/Linux con el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a> se realiza con el programa <em>Discos</em>, aunque también es posible realizarlo desde la linea de comandos.</p>
+<p>En la parte izquierda se encuentra los dispositivos conectados y reconocidos por el sistema. En mi caso el disco del sistema, un Samsung 970 EVO de 500 GB, un disco duro externo USB de 500 GB y una memoria USB de 16 GB sin ningún formato.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dispositivos de almacenamiento del sistema"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_300x200_fit_box_3.png" width="278" height="200" alt="Dispositivos de almacenamiento del sistema" title="Dispositivos de almacenamiento del sistema"  class="lozad "></a></p>
+<figcaption>Unidades del sistema</figcaption>
+</figure>
+</div>
+<p>Primero es importante identificar correctamente la unidad que se quiere formatear para no perder los datos al elegir por error otra. Se introduce el nombre del volumen que identifica al dispositivo y se elige el sistema de archivos, como opciones más comunes se ofrece ext4, NTFS y FAT pero pulsando en <em>Otro</em> aparecen más, entre ellos exFAT. Pulsando el botón <em>Siguiente</em> al cabo de unos segundos la partición queda formateada con exFAT y lista para usarse tanto en GNU/Linux como en Windows, macOS o un Smart TV.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_200x150_fit_box_3.png" width="200" height="144" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a></p>
+<figcaption>Formatear dispositivo de almacenamiento</figcaption>
+</figure>
+</div>
+<p>No está de más recordar que en el caso de desechar un dispositivo de almacenamiento es recomendable hacerle un formateo completo para que los datos que contenga no sean accedidos por la persona a la que se le entregue el dispositivo ya que incluso se pueden <a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">recuperar datos previamente eliminados incluso en una unidad corrupta</a>. Por otro lado en GNU/Linux si se desea mayor seguridad se puede cifrar la partición con la opción LUKS.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/</id>
         <title>Autenticación mediante clave pública y privada con SSH</title>
@@ -1613,126 +1673,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/</id>
-        <title>Hemeroteca #12</title>
-        <updated>2018-01-13T11:35:00+01:00</updated>
-        <published>2017-12-30T09:30:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<p>Cuarto año de Blog Bitix y en febrero serán ocho desde que empecé con <a href="https://elblogdepicodev.blogspot.com.es">El blog del pico.dev</a>. En los últimos seis meses he seguido publicando casi a dos artículos por semana y durante el 2017 ha sido casi siempre así, en este semestre han sido 48 artículos, que juntos con los 39 del primero son 87 durante el año 2017, mi mayor tasa de publicación en un año.</p>
-<p>En estas hemerotecas siempre repaso cual es la evolución de visitas e ingresos de AdSense que quizá a alguien más le resulte de interés. En Junio y Julio alcance unas 50K páginas vistas el mayor pico de visitas, aunque en meses posteriores han descendido, al principio lo achacaba a los meses vacacionales de verano pero luego se han mantenido no se si por alguna penalización de Google o algún artículo que recibía muchas visitas y haya descendido en su posicionamiento. En cualquier caso en los últimos meses del año las visitas han tenido una tendencia ascendente, de unas 40K páginas vistas y superior respecto a las de hace una año que comparándolas han sido de 25K en 2016 y de 38K en 2017 un crecimiento de un 85%. No está mal, si el año siguiente fuese igual me daría por muy satisfecho.</p>
-<p>En el apartado de ingresos por la publicidad AdSense, algunos artículos patrocinados y enlaces de afiliación también ha estado bien. En estos momentos por AdSense es raro el día que no recibo al menos un euro y algún día excepcional he recibido 8, otros algo menos de 2 y 3, mensualmente ya es habitual que esté en un rango de 30 y 45 €, los ingresos de AdSense se relacionan en gran medida con el número de visitas. Al final el artículo que publiqué sobre los <a href="https://picodotdev.github.io/blog-bitix/2017/02/cursos-de-formacion-de-keepcoding/">cursos de formación de KeepCoding</a> han merecido la pena como artículo patrocinado con la compra de dos usuario de tres cursos (aunque la mayoría de gente se registran a los cursos gratuitos), pero esto junto con los artículos patrocinados es más esporádico y por el momento poco habitual para mi.</p>
-<p>En alguna ocasión me han comentado que me donarían algo por los artículos que escribo, una posibilidad sería usar <a href="https://www.patreon.com/">Patreon</a> o <a href="https://www.paypal.com/">PayPal</a>, sin embargo, no me convence mucho la donación directa por ser demasiado generosa y he preferido añadir una <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">página con ciertos productos tecnológicos y <em>gamers</em> seleccionados</a> para que si alguien le gusta mis artículos, se acuerda y quiere donarme algo lo haga a través de estos enlaces de afiliación. Al que compra le cuesta lo mismo pero yo recibo una comisión. Esto me recuerda que debería hacer alguna nueva donación a proyectos de software libre y estoy pensando en <a href="https://lineageos.org/">Lineage OS</a> y <a href="https://www.replicant.us/">Replicant</a>.</p>
-<p>Quien crea que es mucho que pruebe a crearse una bitácora, un canal en <a href="https://www.youtube.com/">YouTube</a> o un <em>podcast</em> y verá rápidamente que o se acierta en la temática y se es muy bueno creando contenido que genera interés o primero verá que han de pasar dos años y dedicar una ingente cantidad de horas a crear ese contenido para llegar a estas cifras que tampoco son altas, no en vano muchos de estos proyectos son abandonados al cabo de unos meses, por algo será.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/analytics-2017_hu9673f1dbb4b3f428b854147e70d639bf_62017_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Analytics 2017 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/analytics-2017_hu9673f1dbb4b3f428b854147e70d639bf_62017_300x200_fit_box_3.png" width="300" height="117" alt="Analytics 2017 de Blog Bitix" title="Analytics 2017 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/gadsense-2017_hu3955e30c6b90da6e9f89725e82304470_34878_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="AdSense 2017 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/gadsense-2017_hu3955e30c6b90da6e9f89725e82304470_34878_300x200_fit_box_3.png" width="300" height="91" alt="AdSense 2017 de Blog Bitix" title="AdSense 2017 de Blog Bitix"  class="lozad "></a></p>
-<figcaption>Evolución visitas e ingresos en 2017</figcaption>
-</figure>
-</div>
-<p>Pero por otra parte he recibido buenos comentarios sobre lo que escribo en Blog Bitix, por algunas personas vía <a href="https://twitter.com/">Twitter</a> y otras en algún comentario que me anima a seguir escribiendo y compartiendo como hasta ahora lo que voy aprendiendo e investigando que algún día espero utilizar en algún trabajo antes de que me jubile o pruebe ser un jardinero o barrendero.</p>
-<p>Este <a href="https://picodotdev.github.io/blog-bitix/2017/">año 2017 he escrito los artículos</a> y este semestre me propuse publicar una mayor cantidad de artículos relacionados con el lenguaje de programación Java con motivo de la pasada publicación de Java 9. Pero primero empecé con un par de artículos sobre <em>portlets</em> y <a href="https://tapestry.apache.org/">Apache Tapestry</a> que en algún momento espero añadirlos en alguna sección del libro <a href="https://picodotdev.github.io/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/">PlugIn Tapestry</a>. Por supuesto, varios artículos comentando las novedades más relevantes de Java 9 publicado en septiembre entre ellas la modularidad y otras no menos notables.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/introduccion-a-los-portales-y-ejemplo-de-portlet-con-liferay/">Introducción a los portales y ejemplo de portlet con Liferay</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/portlets-con-el-framework-apache-tapestry-y-apache-pluto/">Portlets con el framework Apache Tapestry y Apache Pluto</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">Iniciación a la programación concurrente en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/4-formas-de-hacer-un-bucle-for-en-java/">4 formas de hacer un bucle for en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/ejecutar-varias-tareas-de-forma-concurrente-en-java/">Ejecutar varias tareas de forma concurrente en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">El antipatrón de inicialización de variables con dobles llaves en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/08/cache-simple-de-datos-y-con-ehcache-en-java/">Cache simple de datos y con Ehcache en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/los-cuantificadores-greedy-reluctant-y-possessive-en-expresiones-regulares/">Los cuantificadores greedy, reluctant y possessive en expresiones regulares</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-en-java/">Los tipos de referencias débiles soft, weak y phantom en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">La herramienta de documentación Javadoc de Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/como-generar-la-documentacion-javadoc-con-gradle/">Cómo generar la documentación Javadoc con Gradle</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">Crear anotaciones de Javadoc personalizadas con taglets</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/">Cambiar y personalizar los estilos de la documentación Javadoc</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java2-los-modulos/">Novedades y nuevas características de Java 9, los módulos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/">Novedades de Java 9, más allá de la modularidad</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/">JShell la herramienta REPL incorporada en Java 9</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/evitar-niveles-de-anidacion-de-sentencias-condicionales-con-guard-clauses/">Evitar niveles de anidación de sentencias condicionales con guard clauses</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/ejemplo-con-el-cliente-http-2-de-java/">Ejemplo con el cliente HTTP/2 de Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/">Obtener el mínimo o máximo de dos, una lista o stream de valores en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">Las excepciones para gestionar errores en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/obtener-informacion-de-la-pila-de-las-excepciones/">Obtener información de la pila de las excepciones</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/formas-de-reducir-el-codigo-de-las-clases-pojo-de-java/">Formas de reducir el código de las clases POJO de Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">Visualizar datos y generar gráficas en Java con JFreeChart</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">La forma correcta de ordenar alfabéticamente cadenas en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/12/introduccion-a-la-programacion-funcional-con-java-y-la-libreria-vavr/">Introducción a la programación funcional con Java y la librería Vavr</a></li>
-</ul>
-<p>Una serie de artículos sobre <a href="https://graphql.org/">GraphQL</a> como alternativa a una API REST que tiene algunas ventajas. Aún me queda publicar uno de esta serie, en cuanto se acepte un <em>pull request</em> a raíz de una petición que cree con <a href="https://github.com/graphql-java/graphql-java-tools/issues/93">un problema que me encontré</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/">Usar un resolver para recuperar propiedades en GraphQL</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/">Consultas con parámetros para filtrar datos en GraphQL</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/paginacion-usando-cursores-en-graphql-y-java/">Paginación usando cursores en GraphQL y Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/12/definir-nuevos-tipos-de-datos-escalares-en-graphql/">Definir nuevos tipos de datos escalares en GraphQL</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/">Devolver mensajes de error descriptivos en GraphQL</a></li>
-</ul>
-<p>De los menos en este semestre están relacionados con el software libre. De <a href="https://about.gitlab.com/">GitLab</a> tengo otro par de artículos por publicar para realizar integración continua y mostrando más en detalles su gestión de peticiones, wiki y páginas. Si estas navidades tienes algún momento para ver la televisión en uno de los siguientes artículos encontrarás varias ideas relacionadas con la tecnología.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/">Instalar y renovar un certificado de Let’s Encrypt en Nginx</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/">El buscador que respeta tu privacidad, DuckDuckGo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/12/peliculas-sobre-tecnologia-o-informatica-series-documentales-videos-libros-gnu-linux-y-software-libre/">Películas sobre tecnología o informática, series, documentales, vídeos, libros, GNU/Linux y software libre</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/">Como eliminar metainformación de las fotos en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/">GitLab, la completa herramienta integrada para desarrollo de software</a></li>
-</ul>
-<p>O de opinión.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/la-triste-realidad-de-java-versiones-antiguas/">La triste realidad de Java, versiones antiguas</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/10/consejos-para-empresas-y-gente-de-recursos-humanos-que-busquen-talento/">Consejos para empresas y gente de recursos humanos que busquen talento</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/microsoft-does-not-care-if-you-use-windows-or-office-without-a-license/">Microsoft does not care if you use Windows or Office without a license</a></li>
-</ul>
-<p>Algunos artículos de tema alternativos en la temática principal de este blog pero que también me gusta compartir, comentando el cambio que hice de compañía eléctrica a <a href="https://www.holaluz.com/">Holaluz</a>, de caldera a termo eléctrico y la diferencia en la factura entre tener caldera y tener termo eléctrico. Un par de artículos de los robles que he plantado que espero prosperen, publicaré alguno más. También algún artículo de desempaquetado.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/desempaquetado-maletin-herramientas-mannesmann-y-bandejas-melamina-balvi/">Desempaquetado maletín herramientas Mannesmann y bandejas melamina Balvi</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/07/la-busqueda-de-ejemplares-de-roble-comun/">La búsqueda de ejemplares de roble común</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/09/como-seleccionar-y-hacer-germinar-facilmente-semillas-de-roble/">Cómo seleccionar y hacer germinar fácil semillas de roble</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/08/sustituir-caldera-de-gas-por-un-termo-electrico-fleck-duo-7-50/">Sustituir caldera de gas por un termo eléctrico Fleck Duo 7 50</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/comparando-la-factura-entre-caldera-de-gas-y-termo-electrico/">Comparando la factura entre caldera de gas y termo eléctrico</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/me-cambio-a-la-electrica-holaluz/">Me cambio a la eléctrica Holaluz</a></li>
-</ul>
-<p>Una buena colección de libros técnicos que he leído durante el último trío de años y me han gustado junto con una selección de productos tecnológicos.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/08/37-buenos-libros-sobre-sobre-java-linux-devops-y-desarrollo-que-he-leido/">37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/11/8-plus-ideas-de-productos-tecnologicos-para-comprar-o-regalar/">8+ ideas de productos tecnológicos para comprar o regalar</a></li>
-</ul>
-<p>Espero seguir escribiendo como hasta ahora en el 2018 si el tiempo del que dispongo me lo permite y continuo con motivación. Por lo pronto son unos cuantos artículos que ya tengo escritos a falta de retocar en el momento que los publique. Puedes aprovechar para repasar esta lista y leer alguno si te lo perdiste, por supuesto si aún no lo has hecho, suscríbete con tu lector preferido al <a href="https://picodotdev.github.io/blog-bitix/index.xml"><em>feed</em> a Blog Bitix</a>. Finalmente, ya solo me queda desearos con la siguiente imagen linuxera de <a href="http://www.klowner.com/">Klowner</a>&hellip; ¡Buen <strike>2016</strike> 2018!</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/christmas-tux-2017_hu4666a9b653f218359d1cc8abe813ce9a_529979_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="¡Buen 2018!"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/christmas-tux-2017_hu4666a9b653f218359d1cc8abe813ce9a_529979_600x450_fit_q90_box.jpg" width="600" height="338" alt="¡Buen 2018!" title="¡Buen 2018!"  class="lozad "></a></p>
-<figcaption>¡Buen 2018! <br>Fuente: klowner.com</figcaption>
-</figure>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-                <category term="tapestry"/>
-            
-                <category term="gnu-linux"/>
             
         
     </entry>

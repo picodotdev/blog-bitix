@@ -1,0 +1,1 @@
+$ chezmoi add --template ~/.bashrc

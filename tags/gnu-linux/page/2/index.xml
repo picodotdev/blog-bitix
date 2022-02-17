@@ -5,12 +5,199 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2021-12-23T09:00:00+01:00</updated>
+    <updated>2022-02-17T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/</id>
+        <title>Cifrado y descifrado como servicio con Vault</title>
+        <updated>2021-02-26T16:00:00+01:00</updated>
+        <published>2021-02-26T16:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Implementar la seguridad en una aplicación no es sencillo, cuando un sistema se compone de múltiples aplicaciones los posibles fallos de seguridad se multiplican. Vault es una herramienta que permite centralizar y delegar varios aspectos de las aplicaciones relativos a la seguridad, uno de ellos es el cifrado y descifrado de los datos para su almacenamiento y recuperación de una base de datos. Entre sus funcionalidades Vault ofrece como servicio el cifrado y descifrado de datos.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+</div>
+<p>La seguridad en una aplicación involucra a los datos, tanto en la transmisión entre aplicaciones como en el almacenamiento a ambos se les conoce por la seguridad de los datos en tránsito o <em>transit</em> y por la seguridad en persistencia o <em>rest</em>. La seguridad de los datos en tránsito se consigue utilizando protocolos de comunicación seguros como TLS y la seguridad de los datos en persistencia se consigue cifrando los datos ya sea a nivel de sistema de archivos, base de datos o datos específicos aplicando un algoritmo de cifrado.</p>
+<p>No es fácil implementar la seguridad, por un lado hay que utilizar algoritmos de cifrado considerados seguros, en un sistema grande en el que hay múltiples aplicaciones que utilizan potencialmente diferentes lenguajes de programación y librerías han de tener soporte para esos algoritmos de cifrado. Por otro lado, al tener múltiples aplicaciones requiere que cada una de ellas mantenga seguras las claves privadas en las que se fundamenta la seguridad de cifrado y descifrado, con múltiples aplicaciones los posibles puntos vulnerables son varios.</p>
+<p>La seguridad de los datos es muy importante, ciertos datos personales sensibles y que permiten identificar a personas están protegidos por leyes. El no cumplimiento de las leyes implica potencialmente a una empresa recibir importantes multas o descrédito que afecte a la viabilidad del negocio o suponga una reducción de facturación. Algunos datos candidatos a ser cifrados o transformados al guardarse en base de datos son, datos personales e identificativos como nombre y apellidos, DNI, dirección, tarjetas de crédito, bancarios u otros datos que estén regulados por las leyes de protección de datos.</p>
+<p>Los datos protegidos incluso no es deseable que sean accesibles por cualesquiera trabajadores de la propia empresa, solo debería tener acceso a ellos aquellos trabajadores que los necesitan para desempeñar su trabajo y ofrecer el servicio que proporciona la empresa. Para el desarrollo de una aplicación los programadores necesitan una base de datos con el mismo esquema de la base de datos de producción y un conjunto de datos, una opción es <a href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/">obtener una copia de la base de datos</a> de producción, sin embargo, obtener una copia de la base de datos de producción otorga acceso a los programadores acceso a los datos, al hacer la copia es posible aplicar un proceso que ofusque los datos sin embargo esto sigue sin solventar el problema de mantener seguros los datos en la propia base de datos de producción o sus réplicas. Si algunos datos se guardan cifrados aunque se tenga acceso a la base de datos los datos cifrados siguen protegidos.</p>
+<p>Una de las funcionalidades que ofrece <a href="https://www.vaultproject.io/">Vault</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> es ofrecer el cifrado y descifrado como servicio. Este artículo está basado en la <a href="https://learn.hashicorp.com/tutorials/vault/eaas-spring-demo?in=vault/encryption-as-a-service">guía de Vault sobre la funcionalidad de cifrado y descifrado</a>.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</h3>
+<p>Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar credenciales de acceso bajo demanda a recursos como bases de datos</a> entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.</p>
+<p>Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplicaciones no han de mantener credenciales para el acceso a una base de datos sino que es Vault el que crea las credenciales válidas únicamente por un periodo de tiempo corto con posibilidad de renovación. Esto aumenta la seguridad ya que una aplicación no ha de mantener unas credenciales para la base de datos válidas por un tiempo indefinido, al mismo tiempo las claves de cifrado están centralizadas en vez estar incluidas en cada aplicación. En caso necesario Vault es capaz de revocar las credenciales de cualquier aplicación.</p>
+<p>Vault ofrece dos servicios para proteger los datos, el servicio de cifrado y descifrado está disponible en Vault y el de transformación requiere la versión <em>Enterprise</em>.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/HVK-a8SKqvc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/DOw0Y6ig1i4" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h4 id="servicio-de-cifrado-y-descifrado">Servicio de cifrado y descifrado</h4>
+<p>El servicio de cifrado y descifrado de Vault consisten simplemente en aplicar un algoritmo de cifrado a un dato en texto plano y devolverlo cifrado y realizar la operación contraria aplicar el algoritmo de descifrado a un dato cifrado y devolverlo en texto plano. Además de mantener las claves de cifrado con la posibilidad rotarlas, es decir, crear nuevas claves.</p>
+<p>El proceso de cifrado de Vault transforma el dato original en un valor que no tiene ningún sentido sin aplicar el proceso de descifrado. El formato del dato original se pierde, esto es, si el dato original es un número de teléfono con el formato <em>(+34) 666554433</em> el dato cifrado es una secuencia de caracteres de cierta longitud con otro formato. Esta pérdida de formato es un inconveniente al guardar el dato en la base de datos para solventarlo Vault ofrece el servicio de transformación.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption_hua0680acd84a53d760197920946a57315_65049_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Uso del servicio de cifrado y descifrado de Vault"><img src="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption_hua0680acd84a53d760197920946a57315_65049_650x450_fit_box_3.png" width="650" height="242" alt="Uso del servicio de cifrado y descifrado de Vault" title="Uso del servicio de cifrado y descifrado de Vault"  class="lozad "></a></p>
+<figcaption>Uso del servicio de cifrado y descifrado de Vault</figcaption>
+</figure>
+</div>
+<h4 id="servicio-de-transformación">Servicio de transformación</h4>
+<p>En vez de cifrado Vault también ofrece un servicio de transformación que permite obtener un dato ofuscado pero que conserva el mismo formato y longitud que el original. Que el dato tenga el formato original es importante en una base de datos relacional ya que la longitud y formato de la columna para guardarlo será el mismo que el original, en el caso de un dato cifrado el campo se ha ade adaptar al resultado cifrado lo que no es deseable.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ vault secrets enable transform&#10;...&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-transform.sh</span>
+    </div>
+</div>
+<p>En este ejemplo se codifica y descodifica un número de tarjeta de crédito conservando el formato.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ vault write transform/encode/payments value=1111-2222-3333-4444&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;encoded_value&nbsp;&nbsp;&nbsp;&nbsp;9300-3376-4943-8903</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-transform-encode.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">$ vault write transform/decode/payments value=9300-3376-4943-8903&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;decoded_value&nbsp;&nbsp;&nbsp;&nbsp;1111-2222-3333-4444</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-transform-decode.sh</span>
+    </div>
+</div>
+<h4 id="proveedor-de-claves">Proveedor de claves</h4>
+<p>En un caso de uso en el que es necesario cifrar volúmenes de datos grandes, como <em>blobs</em> de 1 GB, requiere codificar en <em>base64</em> y enviar a Vault por red y obtener la respuesta de tal volumen de datos, esto no es deseable para obtener el mejor rendimiento. En vez de enviar los datos se pueden cifrar los datos localmente con la clave obtenida de Vault. La idea es permitir a la aplicación cifrar y descifrar los datos sin necesidad de llamadas y retornos a Vault con grandes volúmenes de datos.</p>
+<p>La respuesta para obtener la clave de cifrado contiene la clave de datos tanto en texto plano como en forma cifrada. Con la clave de datos en texto plano se pueden cifrar los datos y almacenar la clave de datos cifrada junto a los datos. Al necesitar descifrar los datos se solicita a Vault descifrar la clave de datos cifrada para obtener la clave de datos en texto plano permitiendo de esta forma descifrar los datos localmente. Esto es, una vez que el <em>blob</em> está cifrado no es necesario almacenar la clave de datos, solo se necesita almacenar la versión cifrada de la misma.</p>
+<p>Esta idea permite cifrar y descifrar grandes volúmenes de datos a la aplicación sin realizar comunicaciones de red costosas con Vault. En este caso Vault no proporciona el servicio de cifrado y descifrado sino que lo hace la aplicación, sin embargo, Vault administra la gestión de las claves usadas por la aplicación que no ha de mantener ninguna clave privada.</p>
+<h3 id="ejemplo-de-cifrado-y-descifrado-de-datos">Ejemplo de cifrado y descifrado de datos</h3>
+<p>Vault dispone tres métodos de acceso a sus funcionalidades entre ellas el servicio de cifrado y descifrado. Los tres métodos son mediante línea de comandos, mediante API REST o mediante la consola web de administración. En este ejemplo solo se muestra la versión de línea de comandos, la opción mediante API REST es posible probarla mediante una herramienta de linea de comandos como <em>curl</em>.</p>
+<p>El primer paso es iniciar Vault, en este caso por simplicidad en modo desarrollo y habilitar el <em>transit engine</em> que proporciona el servicio de cifrado y descifrado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault server -dev&#10;$ <span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span><span class="s1">&#39;http://127.0.0.1:8200&#39;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-start.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault secrets <span class="nb">enable</span> transit&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-enable-transit.sh</span>
+    </div>
+</div>
+<p>El siguiente paso es obtener una clave, Vault la devuelve en texto plano o <em>plaintext</em> y cifrada o <em>ciphertext</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault write -f transit/keys/app&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-create-key.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault write -f transit/datakey/plaintext/app&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   │&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   │&#10;ciphertext&nbsp;&nbsp;&nbsp;&nbsp; vault:v1:l5Y2HZn+LLq6O5ttSlquXo+x2OMzNH/7ReLpgi47DOWeIGUXmdxHBkk0OtqJe4hqmpyz5QCSx99kwyZu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   │&#10;key_version&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   │&#10;plaintext&nbsp;&nbsp;&nbsp;&nbsp;  k0n6o+vBAy0g2IFGqoRi5G4t1pMypljY9G4+wWewrEg<span class="o">=</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-key.sh</span>
+    </div>
+</div>
+<p>Una vez creada la clave, se solicita a Vault cifrar y descifrar datos. Los datos han de proporcionase en codificados en <em>base64</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault write transit/encrypt/app <span class="nv">plaintext</span><span class="o">=</span><span class="k">$(</span>base64 <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;4111 1111 1111 1111&#34;</span><span class="k">)</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----&#10;ciphertext&nbsp;&nbsp;&nbsp;&nbsp; vault:v1:kYVkH1OxTEai1zjO+uQ9FKiHanlbaQ2bF5b5GYwUiEef5d31ProquZ5grVJfDWrc&#10;key_version&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">1</span>&#10;&#10;$ vault write transit/decrypt/app <span class="nv">ciphertext</span><span class="o">=</span><span class="s2">&#34;vault:v1:kYVkH1OxTEai1zjO+uQ9FKiHanlbaQ2bF5b5GYwUiEef5d31ProquZ5grVJfDWrc&#34;</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;plaintext&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NDExMSAxMTExIDExMTEgMTExMQo</span><span class="o">=</span>&#10;&#10;$ base64 --decode <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;NDExMSAxMTExIDExMTEgMTExMQo=&#34;</span>&#10;<span class="m">4111</span> <span class="m">1111</span> <span class="m">1111</span> <span class="m">1111</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-encrypt-decrypt.sh</span>
+    </div>
+</div>
+<p>Algunas aplicaciones para aumentar la seguridad y evitar usar una única clave que en el tiempo quede comprometida Vault proporciona la opción de generar una nueva versión de la misma, la clave antigua sigue siendo válida pero los datos serán cifrados con la última versión. Una vez todos los datos hayan sido cifrados con una versión más reciente las versiones antiguas se pueden deshabilitar.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault write -f transit/keys/app/rotate&#10;$ vault write transit/encrypt/app <span class="nv">plaintext</span><span class="o">=</span><span class="k">$(</span>base64 <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;4111 1111 1111 1111&#34;</span><span class="k">)</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----&#10;ciphertext&nbsp;&nbsp;&nbsp;&nbsp; vault:v2:aVuvvlcyPX5J4sPYXFWHL53sIDx3HP9oBBTNjhY6NyshliMZzw8g8Ir9+BRpI8FJ&#10;key_version&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">2</span>&#10;&#10;$ vault write transit/encrypt/app <span class="nv">plaintext</span><span class="o">=</span><span class="k">$(</span>base64 <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;4111 1111 1111 1111&#34;</span><span class="k">)</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----&#10;ciphertext&nbsp;&nbsp;&nbsp;&nbsp; vault:v2:8coGwMB2WZsWb8Ogm4Fi8zGgzJq45V+VgYXYaMLHoVSCv9IJXs7Js6Jp5bqDGTUV&#10;key_version&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">2</span>&#10;&#10;$ vault write transit/decrypt/app <span class="nv">ciphertext</span><span class="o">=</span><span class="s2">&#34;vault:v2:8coGwMB2WZsWb8Ogm4Fi8zGgzJq45V+VgYXYaMLHoVSCv9IJXs7Js6Jp5bqDGTUV&#34;</span>&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -----&#10;plaintext&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NDExMSAxMTExIDExMTEgMTExMQo</span><span class="o">=</span>&#10;&#10;$ base64 --decode <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;NDExMSAxMTExIDExMTEgMTExMQo=&#34;</span>&#10;<span class="m">4111</span> <span class="m">1111</span> <span class="m">1111</span> <span class="m">1111</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-rotate-key.sh</span>
+    </div>
+</div>
+<h3 id="ejemplo-aplicación-con-spring">Ejemplo aplicación con Spring</h3>
+<p><a href="https://spring.io/">Spring</a> proporciona clases de soporte para el acceso al servicio de Vault. Tanto para la configuración de acceso a Vault como para usar sus servicios mediante una API de clases Java sin tener que recurrir a la API REST de Vault directamente. La clase <a href="https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultOperations.html">VaultOperations</a> contiene las referencias de clases para el acceso a las API de Vault, para el caso de el servicio de cifrado y descifrado con la clase <a href="https://docs.spring.io/spring-vault/docs/current/api/org/springframework/vault/core/VaultTransitOperations.html">VaultTransitOperations</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption-java_hudea10222b8f8a519c16c06b964997b0f_48852_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java"><img src="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/images/vault-encryption-java_hudea10222b8f8a519c16c06b964997b0f_48852_650x450_fit_box_3.png" width="650" height="251" alt="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java" title="Uso del servicio de cifrado y descifrado de Vault en una aplicación Java"  class="lozad "></a></p>
+<figcaption>Uso del servicio de cifrado y descifrado de Vault en una aplicación Java</figcaption>
+</figure>
+</div>
+<p>Para usar el servicio de cifrado y descifrado en una aplicación de Spring, Vault permite la autenticación mediante el mecanismo <em>AppRole</em>. <em>AppRole</em> es un método de autenticación destinadas a las aplicaciones, básicamente proporciona unas credenciales como un usuario y contraseña. El <em>policy</em> se asocia con las credenciales de la aplicación para permitirle el acceso a la clave de cifrado y descifrado <em>app</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault auth <span class="nb">enable</span> approle&#10;&#10;$ vault policy write app -<span class="s">&lt;&lt;EOF&#10;</span><span class="s">path &#34;transit/encrypt/app&#34; {&#10;</span><span class="s">   capabilities = [ &#34;update&#34; ]&#10;</span><span class="s">}&#10;</span><span class="s">path &#34;transit/decrypt/app&#34; {&#10;</span><span class="s">   capabilities = [ &#34;update&#34; ]&#10;</span><span class="s">}&#10;</span><span class="s">EOF</span>&#10;&#10;$ vault write auth/approle/role/app <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">secret_id_ttl</span><span class="o">=</span>10m <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">token_num_uses</span><span class="o">=</span><span class="m">10</span> <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">token_ttl</span><span class="o">=</span>20m <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">token_max_ttl</span><span class="o">=</span>30m <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">secret_id_num_uses</span><span class="o">=</span><span class="m">40</span> <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">policies</span><span class="o">=</span>app</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>app-vault-approle.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vault <span class="nb">read</span> auth/approle/role/app/role-id&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----&#10;role_id&nbsp;&nbsp;&nbsp;&nbsp;c0b643d1-9507-dae1-ffbd-6e405e082f1d&#10;&#10;$ vault write -f auth/approle/role/app/secret-id&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   -----&#10;secret_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9b1b6fe6-0ee5-4182-c08d-245d20a59351&#10;secret_id_accessor&nbsp;&nbsp;&nbsp;&nbsp;b9f5af8e-29ee-694c-2751-6f65d5361caf</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>app-vault-role.sh</span>
+    </div>
+</div>
+<p>Credo el rol <em>app</em> para la aplicación las credenciales formadas por el <em>role_id</em> y <em>secret_id</em> ponen en el archivo de configuración de la aplicación de Spring.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring.cloud.vault</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l">http://127.0.0.1:8200</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">authentication</span><span class="p">:</span><span class="w"> </span><span class="l">APPROLE</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">app-role</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">role-id</span><span class="p">:</span><span class="w"> </span><span class="l">c0b643d1-9507-dae1-ffbd-6e405e082f1d</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">secret-id</span><span class="p">:</span><span class="w"> </span><span class="l">9b1b6fe6-0ee5-4182-c08d-245d20a59351</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l">app</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">app-role-path</span><span class="p">:</span><span class="w"> </span><span class="l">approle</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application.yml</span>
+    </div>
+</div>
+<p>El cifrado y descifrado en la aplicación consiste simplemente en hacer uso de la API que proporciona Spring para el acceso a Vault, esta API hace transparente las llamadas REST subyacentes que se hacen a Vault.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloudvaultcipher</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.CommandLineRunner</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.vault.core.VaultOperations</span><span class="o">;</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">VaultOperations</span> <span class="n">vault</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">plaintext</span> <span class="o">=</span> <span class="s">&#34;Hello World!&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">encrypted</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="na">opsForTransit</span><span class="o">().</span><span class="na">encrypt</span><span class="o">(</span><span class="s">&#34;app&#34;</span><span class="o">,</span> <span class="n">plaintext</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">decrypted</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="na">opsForTransit</span><span class="o">().</span><span class="na">decrypt</span><span class="o">(</span><span class="s">&#34;app&#34;</span><span class="o">,</span> <span class="n">encrypted</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Plaintext: &#34;</span> <span class="o">+</span> <span class="n">plaintext</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Encrypted: &#34;</span> <span class="o">+</span> <span class="n">encrypted</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Decrypted: &#34;</span> <span class="o">+</span> <span class="n">decrypted</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<p>El resultado de cifrar y descifrar el dato se muestra como salida en la consola.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Plaintext: Hello World!&#10;Encrypted: vault:v2:arPaLH7cRy221vCTZvNd8csswtmzOc42caVjBQ+T32SW7+x1tLEH0Q==&#10;Decrypted: Hello World!</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>System.out</span>
+    </div>
+</div>
+<p>En el archivo de dependencias de la aplicación se ha de incluir la que proporciona Spring para añadir el soporte a Vault.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;java&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.springcloudvaultcipher.Main&#39;</span>&#10;&#10;<span class="n">repositories</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">configurations</span> <span class="o">{</span>&#10;	<span class="n">all</span> <span class="o">{</span>&#10;		<span class="n">exclude</span> <span class="nl">group:</span> <span class="s1">&#39;org.springframework.boot&#39;</span><span class="o">,</span> <span class="nl">module:</span> <span class="s1">&#39;spring-boot-starter-logging&#39;</span>&#10;	<span class="o">}</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-dependencies:2.4.3&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-dependencies:2020.0.1&#39;</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-log4j2&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-starter-config&#39;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-starter-vault-config&#39;</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtimeOnly</span> <span class="s1">&#39;com.fasterxml.jackson.core:jackson-databind:2.12.1&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtimeOnly</span> <span class="s1">&#39;com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.1&#39;</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloudVaultEncryption">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.vaultproject.io/use-cases/data-encryption">Encrypt Application Data in Low Trust Networks</a></li>
+<li><a href="https://learn.hashicorp.com/tutorials/vault/eaas-transit?in=vault/encryption-as-a-service">Encryption as a Service: Transit Secrets Engine</a></li>
+<li><a href="https://www.vaultproject.io/docs/secrets/transit">Transit Secrets Engine</a></li>
+<li><a href="https://www.vaultproject.io/docs/secrets/transform">Transform Secrets Engine</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/</id>
         <title>Herramientas para convertir texto a audio de voz natural</title>
@@ -2018,108 +2205,6 @@
 </figure>
 </div>
 <p>Esta es una pequeña utilidad que cuando se necesita se agradece mucho por el tiempo que ahorra en realizar el renombrado de archivos.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/05/sobre-el-futuro-de-las-distribuciones-gnu-linux-y-los-sistemas-operativos/</id>
-        <title>Sobre el futuro de las distribuciones GNU/Linux y los sistemas operativos</title>
-        <updated>2020-05-03T11:00:00+02:00</updated>
-        <published>2020-05-03T09:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/sobre-el-futuro-de-las-distribuciones-gnu-linux-y-los-sistemas-operativos/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Linux es uno de los mejores sistemas operativos actuales y sobre todo usable y completo. Eso no quiere decir que en el futuro no tan lejano haya cambios importantes en como hemos conocido las distribuciones de GNU/Linux hasta hoy. Ya se están produciendo cambios y surgiendo nuevas basadas en tecnologías y principios significativamente diferentes que mejoran algunas deficiencias de la actual generación en la que están basadas la mayoría de las distribuciones más populares actuales.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>Las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> tal y como las conocemos hoy es muy posible que cambien en el futuro en varios aspectos, ya lo están haciendo.</p>
-<p>Uso <a href="https://www.archlinux.org/">Arch Linux</a> y estoy muy contento con ella por su excelente <a href="https://wiki.archlinux.org/">documentación con su wiki</a>, es rápida y bastante estable, el tener siempre el sistema junto con sus aplicaciones actualizadas y un sistema con únicamente las aplicaciones que necesito, pero eso no quiere decir que algunos de sus aspectos sean mejorables.</p>
-<p>Un aspecto mejorable es que el gestor de paquetes <em>pacman</em> no descarga los paquetes de forma paralela con esto los usuarios que tengan una velocidad de descarga rápida reducirían el tiempo de descarga sensiblemente. Otro aspecto mejorable es que una actualización es susceptible de dejar el sistema roto en algún aspecto, puede ser simplemente que el sonido no funciona hasta en el caso más grave que el sistema no se inicie y haya arrancar el sistema en modo recuperación y hacer el <a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/"><em>downgrade</em> del paquete que causa el error</a>. Por suerte, lo normal es que las actualizaciones funcionen correctamente sin introducir ningún error.</p>
-<p>En cualquier caso las actualizaciones son frágiles tal como las conocemos, esto es algo que ni siquiera han resuelto <a href="https://www.microsoft.com/es-es/windows/">Windows</a> ni <a href="https://www.apple.com/macos/">macOS</a> que seguramente tendrán los mejores ingenieros de software de sistemas que el dinero puede pagar.</p>
-<p>Hay cuatro puntos en los que es muy posible que los sistemas operativos cambien tal y como los conocemos: actualizaciones, aplicaciones, lenguaje de programación y <em>kernel</em>. Otros cambios que ya se han producido es la sustitución del antiguo sistema de inicio y gestor de servicios <a href="https://es.wikipedia.org/wiki/System_V">System V</a> por <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> y del servidor gráfico <a href="https://www.x.org/wiki/">Xorg</a> por <a href="https://es.wikipedia.org/wiki/Wayland_%28protocolo%29">Wayland</a> pero estos no son los únicos cambios que próximamente llegarán a algunas distribuciones GNU/Linux o surgirán nuevas basadas en estos nuevos principios y herramientas.</p>
-<h3 id="actualizaciones">Actualizaciones</h3>
-<p>Dada la fragilidad de las actualizaciones es deseable que en caso de que una produzca algún error sea posible volver a un estado anterior bueno conocido.</p>
-<p>Ya se están produciendo cambios y surgiendo nuevas distribuciones. <a href="https://silverblue.fedoraproject.org/">Fedora Silverblue</a> es un sistema inmutable que utiliza <a href="https://en.wikipedia.org/wiki/OSTree">OSTree</a> como sistema para versionar las actualizaciones en los sistemas Linux, <a href="#ZgotmplZ">Toolbox</a> basado en contenedores donde instalar las herramientas de desarrollo sin afectar al sistema operativo inmutable y Flatpak para instalar aplicaciones de usuario. <a href="https://endlessos.com/es/">endless OS</a> también utiliza OSTree y Flatpak, cada instalación es exactamente igual que en cualquier otro equipo de modo que no hay ninguna diferencia lo que proporciona mayor estabilidad y menos errores. Por otro lado las actualizaciones son muy rápidas y el sistema está preparado para volver a una versión anterior si algo no funciona.</p>
-<p><a href="https://guix.gnu.org/">GNU Guix</a> es una distribución que usa un gestor de paquetes transaccional de modo que en una actualización se actualizan todos los paquetes correctamente o no se actualiza ninguno evitando dejar un sistema inconsistente por algún error que se produzcan en el proceso de la actualización.</p>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora-silverblue.svg" width="200" height="150" alt="Fedora Silverblue" title="Fedora Silverblue"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/endlessos.svg" width="200" height="150" alt="endless OS" title="endless OS"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu-guix.svg" width="200" height="150" alt="GNU Guix" title="GNU Guix"  class="lozad "></p>
-<figcaption>Tres des las distribuciones de la siguiente generación</figcaption>
-</figure>
-</div>
-<h3 id="aplicaciones">Aplicaciones</h3>
-<p>Hasta hoy una parte característica de cada distribución es que tiene su propio repositorio de paquetes con el software que ofrece. Cada paquete de cada distribución es compilado y probado específicamente para cada distribución, cada paquete de cada distribución es mantenido por una persona lo que requiere mucho tiempo del escaso tiempo que tienen estos mantenedores más teniendo en cuenta que muchos de ellos lo hacen en su tiempo libre y no están respaldados económicamente por ninguna organización.</p>
-<p>Otro problema de los paquetes de cada distribución es que algunas anteponen la estabilidad a las nuevas versiones lo que hace que incluyan software que está por detrás en varias versiones de la última. Al mismo tiempo para corregir problemas del software de algunos paquetes por fallos o errores de seguridad los mantenedores aplican parches y cambios adicionales que no son los del software original, a veces con buenos motivos pero que hacen que no todas las distribuciones se beneficien de esos cambios.</p>
-<p>Han surgido varias formas de distribuir software y aplicaciones de usuario distintas a los paquetes de las distribuciones, tres de ellas son <a href="https://flatpak.org/">Flatpak</a>, <a href="https://snapcraft.io/">Snapcraft</a> y <a href="https://appimage.org/">AppImage</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
-</ul>
-<p>Estas tres opciones son independientes de la distribución, el software es distribuido por los autores originales de la aplicación y permiten tener software actualizado incluso en distribuciones que sus paquetes equivalentes están desactualizados. No necesitan de un mantenedor en cada distribución ya que son los propios autores originales del software los que se encargan de la distribución de su software.</p>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/flatpak.svg" width="200" height="150" alt="Flatpak" title="Flatpak"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/snapcraft.svg" width="200" height="150" alt="Snapcraft" title="Snapcraft"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/appimage.svg" width="200" height="150" alt="AppImage" title="AppImage"  class="lozad "></p>
-<figcaption>Diferentes gestores de aplicaciones para instalar software y programas</figcaption>
-</figure>
-</div>
-<h3 id="lenguaje-de-programación">Lenguaje de programación</h3>
-<p>Mucho del software actual y sobre todo el de sistemas y los sistemas operativos ha sido desarrollado en el lenguaje de programación C por su abstracción del lenguaje máquina en un lenguaje de alto nivel pero conservando la proximidad al modo del funcionamiento de las máquinas. Bien empleado es capaz de obtener el máximo rendimiento de una máquina.</p>
-<p>Pero el lenguaje C también tiene algunos inconvenientes uno de ellos es que delega en el programador algunas tareas. Dos de ellas son la solicitud y liberación de la memoria del sistema, un error en esta lógica hace que un programa no libere memoria que ha solicitado y cada vez ocupe más, degradando el sistema con el uso lo que afecta al resto de aplicaciones y el rendimiento del sistema además de requerir al programador dedicar tiempo a implementar esta lógica. El segundo problema de C es que por sí mismo no impone restricciones en el acceso a la memoria, muchos errores de seguridad provienen de que cierto código no comprueba correctamente los límites de memoria de una estructura de datos, esto provoca que cierta zona de memoria contigua pueda ser sobrescrita con datos no deseados o leer datos como claves. Incluso un programador experimentado dada la naturaleza compleja del software cometen estos errores.</p>
-<p>Lenguajes más recientes como <a href="https://golang.org/">Go</a> o <a href="https://www.rust-lang.org/">Rust</a> los más conocidos es posible que sustituyan a C como lenguaje de sistemas. En Rust ya hay alguna implementación de sistema operativo, <a href="https://www.redox-os.org/">Redox</a> y es posible que si Google construye un sistema alternativo a <a href="https://www.android.com/">Andoid</a> esté basado en Go.</p>
-<p>Es difícil que surja un nuevo sistema operativo que sustituya rápidamente a los existentes pero es posible que los existentes vayan cambiando su lenguaje de programación o surjan nuevos con esos lenguajes.</p>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/rust.svg" width="200" height="150" alt="Rust" title="Rust"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/go.svg" width="200" height="150" alt="Go" title="Go"  class="lozad "></p>
-<figcaption>Lenguajes de sistemas que pueden reemplazar a C</figcaption>
-</figure>
-</div>
-<h3 id="kernel">Kernel</h3>
-<p>El kernel de Linux es monolítico no porque sea lo mejor sino porque como <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> considera es lo más pragmático por su mayor facilidad de desarrollo. Pero un fallo en cualquier parte de su gran cantidad de código sobre todo el los controladores de dispositivos hace que el sistema produzca un volcado del sistema y deje de funcionar completamente. También es más inseguro ya que cualquier código que el kernel cargue y funcione en modo superusuario supone un potencial problema ya que es capaz de realizar cualquier cosa.</p>
-<p>Los kernels basados en microkernels son más seguros al ser su núcleo mucho más pequeños, de unos pocos miles de líneas de código contra los millones de Linux, el resto de funcionalidades se implementan en modo de usuario. También son más seguros y fiables. Una parte del sistema no tiene por que hacer que el sistema completo colapse, el kernel puede reiniciar esa parte sin ni siquiera el usuario ser consciente de que ha habido un error, Minix tiene un servicio de reencarnación que reinicia otros servicios en caso de fallo. Dado que la mayor parte del sistema se ejecuta en modo usuario son más seguros ya que los procesos no tienen permisos para hacer cualquier cosa.</p>
-<p>Ejemplos de kernels basados en microkernel son <a href="https://www.minix3.org/">Minix</a>, <a href="#ZgotmplZ">GNU/Hurd</a>, el propio Redox o <a href="https://genode.org/">Genode</a>. A pesar de todo ninguno de ellos ha tomado suficiente relevancia para hacer no ya sombra a Linux sino tampoco a los BSD. Sus desventajas es que hasta ahora no han demostrado alcanzar el mismo rendimiento que los kernels monolíticos y como en el caso de GNU/Hurd su desarrollo esté muy lejos de completarse por su mayor dificultad de desarrollo.</p>
-<p>Si a Linux le surge una alternativa no será porque es malo sino porque no tiene algunas características. Un ámbito puede ser el de coches autónomos en los que un fallo puede suponer un accidente con víctimas mortales o algún sistema que necesite gran fiabilidad como operaciones bursátiles.</p>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/minix.jpg" width="200" height="150" alt="Minix" title="Minix"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hurd.svg" width="200" height="150" alt="GNU/hurd" title="GNU/hurd"  class="lozad "></p>
-<figcaption>Sistemas operativos basados en microkernel</figcaption>
-</figure>
-</div>
-<h3 id="sistema-de-archivos">Sistema de archivos</h3>
-<p>Aún ext4 sigue siendo el sistema de archivos mayoritariamente empleado por la distribuciones GNU/Linux. Pero hay algunos otros sistemas que pretenden reemplazarlo, uno de ellos es <a href="https://en.wikipedia.org/wiki/ZFS">ZFS</a> y su reencarnación <a href="https://en.wikipedia.org/wiki/OpenZFS">openzfs</a> originario de la extinta <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a> que como características destacadas tiene <em>snapshoting</em>, evitar corrupción de datos en metadatos y un mayor límite de espacio de almacenamiento máximo teórico que puede considerarse hoy en día infinito y únicamente relevante para superordenadores.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Comparison_of_file_systems">Comparison of file systems</a></li>
-</ul>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openzfs.svg" width="200" height="150" alt="OpenZFS" title="OpenZFS"  class="lozad "></p>
-<figcaption>Sistema de archivos avanzado OpenZFS</figcaption>
-</figure>
-</div>
 ]]>
         </content>
         

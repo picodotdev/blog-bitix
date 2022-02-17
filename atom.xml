@@ -5,12 +5,260 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2022-02-03T18:00:00+01:00</updated>
+    <updated>2022-02-17T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/02/que-son-y-como-gestionar-archivos-dotfiles-con-chezmoi/</id>
+        <title>Qué son y cómo gestionar archivos dotfiles con chezmoi</title>
+        <updated>2022-02-17T20:00:00+01:00</updated>
+        <published>2022-02-17T20:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/02/que-son-y-como-gestionar-archivos-dotfiles-con-chezmoi/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los archivos <em>dotfiles</em> son utilizados para guardar información de configuración de las aplicaciones que se almacenan en el directorio del usuario. Se denominan <em>dotfiles</em> porque son archivos que empiezan por un punto o están en una carpeta que empieza por un punto, además en GNU/Linux los archivos que empiezan por un punto son archivos ocultos que por defecto los exploradores de archivos no muestran. Para no perder la configuración de estos archivos adaptada por el usuario a sus preferencias al migrar a otro sistema o compartir la configuración entre varios sistemas hay varios programas con la funcionalidad específica de gestionar los archivos <em>dotfiles</em>.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>A lo largo de los meses y años de uso de un equipo los usuarios vamos configurando el sistema con las aplicaciones necesarias y configurando esas aplicaciones a las preferencias de cada usuario. El problema es que cuando hay que mudarse a otro sistema porque se cambia a un equipo más nuevo y potente o porque deja de funcionar por un motivo de software o por una mala actualización que requiere reinstalar el sistema. Para estos casos y como medida de seguridad es recomendable <a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">hacer copias de seguridad de los datos</a> con lo que migrarlos a otro equipo es menos complicada. Sin embargo, hacer copias de las configuraciones de los programas no es tán habitual con lo que si no se hace al instalar un nuevo sistema requiere configurarlo tal como se tenía anteriormente lo que requiere una buena cantidad de tiempo que hay que volver a dedicar en una nueva instalación.</p>
+<p>En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> buena parte de los archivos de configuración de los programas se guardan en los archivos <em>dotfiles</em>.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-son-los-archivos-_dotfiles_">Qué son los archivos <em>dotfiles</em></a></li>
+    <li><a href="#cómo-gestionar-los-archivos-_dotfiles_">Cómo gestionar los archivos <em>dotfiles</em></a></li>
+    <li><a href="#el-programa-chezmoi-y-guía-de-uso-para-gestionar-archivos-_dotfiles_">El programa chezmoi y guía de uso para gestionar archivos <em>dotfiles</em></a>
+      <ul>
+        <li><a href="#inicialización-del-repositorio">Inicialización del repositorio</a></li>
+        <li><a href="#compartir-archivos-_dotfiles_-entre-máquinas">Compartir archivos <em>dotfiles</em> entre máquinas</a></li>
+        <li><a href="#ver-cambios-sin-aplicarlos">Ver cambios sin aplicarlos</a></li>
+        <li><a href="#realizar-cambios-en-los-archivos-_dotfiles_">Realizar cambios en los archivos <em>dotfiles</em></a></li>
+        <li><a href="#subir-al-repositorio-cambios-en-los-archivos-_dotfiles_">Subir al repositorio cambios en los archivos <em>dotfiles</em></a></li>
+        <li><a href="#variables-y-plantillas">Variables y plantillas</a></li>
+        <li><a href="#gestionar-secretos">Gestionar secretos</a></li>
+        <li><a href="#otras-características">Otras características</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="qué-son-los-archivos-_dotfiles_">Qué son los archivos <em>dotfiles</em></h3>
+<p>Los archivos <em>dotfiles</em> son archivos dedicados a guardar la configuración de los programas. Se guardan en la carpeta personal del usuario (<em>/home/${usuario}</em>) y se denominan <em>dotfiles</em> porque su nombre empieza por un punto, en GNU/Linux los archivos que empiezan por punto son especiales ya que son archivos que los exploradores de archivos ocultan por defecto.</p>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Dotfiles">Arch Linux Wiki Dotfiles</a></li>
+</ul>
+<p>En GNU/Linux uno de los principales archivos <em>dotfiles</em> es el archivo de configuración de inicio del intérprete de línea de comandos, que en el caso de <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> su archivo <em>dotfile</em> es <em>~/.bashrc</em> y en el caso de <a href="https://zsh.sourceforge.net/">zsh</a> es <em>~/.zshrc</em>. Al igual que estos dos archivos <em>dotfiles</em> en la carpeta personal del usuario se guardan multitud de otros como la configuración para realizar conexiones SSH cuyos <em>dotfiles</em> de configuración del usuario se guardan en el directorio <em>~/.ssh</em>. Los propios entornos de escritorio guardan otra buena cantidad de archivos <em>dotfiles</em> con las configuraciones integradas en el entorno de escritorio.</p>
+<p>Este es el contenido de mi archivo <em>~/.bashrc</em> en el que he configurado los colores de los elementos del símbolo del sistema en la línea de comandos, cierta configuración para que el símbolo del sistema cambien cuando el directorio de trabajo es una carpeta de código fuente del sistema de control de versiones de <a href="https://git-scm.com/">Git</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#</span>&#10;<span class="c1"># ~/.bashrc</span>&#10;<span class="c1">#</span>&#10;&#10;<span class="c1"># If not running interactively, don&#39;t do anything</span>&#10;<span class="o">[[</span> <span class="nv">$-</span> !<span class="o">=</span> *i* <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>&#10;&#10;<span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>&#10;<span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;[\u@\h \W]\$ &#39;</span>&#10;&#10;<span class="c1">#</span>&#10;<span class="nb">complete</span> -cf sudo&#10;&#10;<span class="nv">GIT_PS1_SHOWDIRTYSTATE</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;<span class="nv">GIT_PS1_SHOWSTASHSTATE</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;<span class="nv">GIT_PS1_SHOWUNTRACKEDFILES</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;<span class="nv">GIT_PS1_SHOWUPSTREAM</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;<span class="nv">GIT_PS1_SHOWCOLORHINTS</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;<span class="nb">source</span> ~/.git-prompt.sh&#10;&#10;<span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W]\$ &#39;</span>&#10;<span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">&#39;__git_ps1 &#34;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;</span>&#10;&#10;<span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>vim&#10;&#10;<span class="nb">export</span> <span class="nv">SDKMAN_DIR</span><span class="o">=</span><span class="s2">&#34;/home/picodotdev/.sdkman&#34;</span>&#10;<span class="o">[[</span> -s <span class="s2">&#34;/home/picodotdev/.sdkman/bin/sdkman-init.sh&#34;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> <span class="s2">&#34;/home/picodotdev/.sdkman/bin/sdkman-init.sh&#34;</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>.bashrc</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2022/02/que-son-y-como-gestionar-archivos-dotfiles-con-chezmoi/images/bash-prompt_hu31ebed19cd91ad4dd48952be674278bf_18802_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Terminal personalizada"><img src="https://picodotdev.github.io/blog-bitix/2022/02/que-son-y-como-gestionar-archivos-dotfiles-con-chezmoi/images/bash-prompt_hu31ebed19cd91ad4dd48952be674278bf_18802_650x450_fit_box_3.png" width="610" height="450" alt="Terminal personalizada" title="Terminal personalizada"  class="lozad "></a></p>
+<figcaption>Terminal con los colores del símbolo del sistema personalizados e información del repositorio de Git</figcaption>
+</figure>
+</div>
+<h3 id="cómo-gestionar-los-archivos-_dotfiles_">Cómo gestionar los archivos <em>dotfiles</em></h3>
+<p>Una forma de migrar los archivos <em>dotfiles</em> de un sistema a otro es haciendo una copia de estos y restaurándolos en el otro sistema. Sin embargo, los problemas son que las copias de seguridad no permiten mantener un registro de los cambios que se realizan a cada uno de estos archivos, no es tan fácil mantener sincronizadas todas las copias de los archivos entre varios equipos que pueden ser de diferentes sistemas operativos como GNU/Linux, <a href="https://www.apple.com/macos/">macOS</a> o <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y algunos archivos de configuración tienen requerimientos de seguridad que hay que mantener depositados en un almacén seguro como son las claves privadas SSH de conexión o algunas credenciales. Además de programas como <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">el programa KeePassXC para guadar contraseñas y secretos de forma segura</a> también soportan funcionalidades de cifrado y descifrado para algunos datos.</p>
+<p>Para dar solución a los problemas de la gestión de los archivos <em>dotfiles</em> hay varios programas específicos para la tarea, en GNU/Linux es <a href="https://github.com/twpayne/chezmoi">chezmoi</a> que también está disponible para otros sistemas operativos como macOS e incluso Windows. También es posible utilizarlo en máquinas virtuales.</p>
+<h3 id="el-programa-chezmoi-y-guía-de-uso-para-gestionar-archivos-_dotfiles_">El programa chezmoi y guía de uso para gestionar archivos <em>dotfiles</em></h3>
+<p>chezmoi es uno de los programas dedicados a la tarea de gestionar los archivos de configuración <em>dotfiles</em>, hay otros varios pero chezmoi en su <a href="https://www.chezmoi.io/comparison-table/">lista de características que soporta chezmoi comparándolo con las alternativas</a> lo hacen más potente, además al estar basado en Go generalmente los programas en este lenguaje se componen de un único binario hace que sean muy fácilmente de instalar y fiable al carecer de dependencias externas.</p>
+<p>Muchas de estas herramientas para gestionar archivos <em>dotfiles</em> se basan en un repositorio de Git en el que mantienen el control de versiones de los archivos y de cada uno de los cambios que se realizan en ellos. Entre las funcionalidades que ofrecen además de mantener el control de versiones están facilitar las tareas de uso básico como subir cambios al repositorio de Git para aplicar a otros sistemas o a un nuevo sistema y aplicar cambios al sistema local provenientes de otros sistemas, soportan variables y plantillas con las que generar el contenido de los archivos de forma dinámica y obtener datos de programas de base de datos que guardan secretos como KeePassXC entre muchos otros gestores de contraseñas.</p>
+<h4 id="inicialización-del-repositorio">Inicialización del repositorio</h4>
+<p>En la distribución <a href="https://www.archlinux.org/">Arch Linux</a> el programa chezmoi se instala instalando su paquete con el gestor de paquetes. En otras distribuciones basadas en <a href="https://www.debian.org/">Debian</a> o <a href="https://fedoraproject.org/">Fedora</a> basta con buscar el nombre del paquete equivalente en esas distribuciones e instalarlo con su gestor de paquetes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S chezmoi&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman-install-chezmoi.sh</span>
+    </div>
+</div>
+<p>El siguiente paso es crear el repositorio de Git en local con los siguientes comandos,  añadir el origen del repositorio remoto que hay que crear previamente en este caso usando un repositorio de <a href="https://github.com/">GitHub</a> y subir el contenido inicial.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi <span class="nb">cd</span>&#10;$ git remote add origin https://github.com/picodotdev/dotfiles.git&#10;$ git push -u origin main&#10;$ exit</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-create-repository.sh</span>
+    </div>
+</div>
+<h4 id="compartir-archivos-_dotfiles_-entre-máquinas">Compartir archivos <em>dotfiles</em> entre máquinas</h4>
+<p>Para inicializar el repositorio de Git de los archivos <em>dotfiles</em> a partir del contenido de uno existente se utiliza este comando. Aunque los archivos se puede compartir entre máquinas incluso de diferentes sistemas operativos la intención es que todos esos archivos de <em>dotfiles</em> de un usuario compartan la mayor similitud posible, aunque a veces por las diferencias de las máquinas no es completamente posible. Para ayudar a compartir lo más posible están las variables y plantillas, en caso de necesidad es posible administrar un <em>dotfile</em> completamente diferente según el sistema operativo añadiendo condiciones en las plantillas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi init https://github.com/picodotdev/dotfiles.git&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-init.sh</span>
+    </div>
+</div>
+<h4 id="ver-cambios-sin-aplicarlos">Ver cambios sin aplicarlos</h4>
+<p>El siguiente comando aplica los cambios a los archivos <em>dotfiles</em> locales a partir del contenido del repositorio de archivos <em>dotfiles</em> de chezmoi. Con las opciones <em>-v</em> se muestra información más detallada de los cambios que se aplican, y con <em>-n</em> permite ver que cambios se aplicarían en caso de realizar la acción sin la opción, sus opciones en formato largo son <em>-verbose</em> y <em>&ndash;dry-run</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi --verbose --dry-run update&#10;$ chezmoi update&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-update.sh</span>
+    </div>
+</div>
+<p>El comando <em>update</em> actualiza el repositorio Git local con los cambios del repositorio origen y aplica los cambios a los archivos <em>dotfiles</em>. Otros comandos útiles son <em>diff</em> para ver las diferencias entre el repositorio de Git y los archivos locales, el comando <em>apply</em> aplica los cambios sobre los archivos <em>dotfiles</em>. Es importante tener en cuenta que los cambios en los <em>dotfiles</em> locales se sobrescriben y se pierden en caso de tener diferencias con su versión en el repositorio de Git de chezmoi.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi diff&#10;$ chezmoi apply&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-diff-apply.sh</span>
+    </div>
+</div>
+<h4 id="realizar-cambios-en-los-archivos-_dotfiles_">Realizar cambios en los archivos <em>dotfiles</em></h4>
+<p>Al empezar a usar chezmoi y a medida que se desean guardar las configuraciones de los archivos <em>dotfiles</em> hay que añadir los archivos y sus cambios al repositorio de Git de los archivos <em>dotfiles</em>. El comando que permite añadir un archivo al repositorio es <em>add</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi add .bashrc&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-add.sh</span>
+    </div>
+</div>
+<p>chezmoi permite editar el contenido de un archivo y añadirlo al repositorio automáticamente con el comando <em>edit</em>. Si un archivo <em>dotfile</em> se modifica con un programa externo hay que utilizar el comando <em>add</em> para añadirlo al repositorio después de que la aplicación haya hecho el cambio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi edit .bashrc&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-edit.sh</span>
+    </div>
+</div>
+<p>Editar un archivo con un programa externo</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ vim .bashrc&#10;$ chezmoi add .bashrc&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-edit-external.sh</span>
+    </div>
+</div>
+<ul>
+<li><a href="https://www.chezmoi.io/user-guide/daily-operations/">Daily operations</a></li>
+<li><a href="https://www.chezmoi.io/user-guide/frequently-asked-questions/usage/#how-do-i-edit-my-dotfiles-with-chezmoi">How do I edit my dotfiles with chezmoi?</a></li>
+</ul>
+<p>El editar un <em>dotfile</em> se puede configurar para que chezmoi lo añada al repositorio y lo suba al origen. El propio archivo de configuración de chezmoi ubicado en <em>~/.config/chezmoi/chezmoi.yaml</em> es un <em>dotfile</em> que se puede añadir al repositorio de <em>dotfiles</em>. El archivo de configuración soporta varios formatos entre ellos <em>toml</em> y <em>yaml</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">git</span><span class="p">:</span><span class="w">&#10;</span><span class="w">   </span><span class="nt">autoCommit</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">   </span><span class="nt">autoPush</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi.yaml</span>
+    </div>
+</div>
+<h4 id="subir-al-repositorio-cambios-en-los-archivos-_dotfiles_">Subir al repositorio cambios en los archivos <em>dotfiles</em></h4>
+<p>Después de realizar cambios en los archivos <em>dotfiles</em> estos quedan en el repositorio de Git local en el directorio de trabajo, para subir los archivos al repositorio de Git origen es necesario hacer el <em>commit</em> y el <em>push</em> en el repositorio. chezmoi proporciona varios comandos de utilidad para trabajar con el repositorio de Git en el que se guardan los <em>dotfiles</em>.</p>
+<p>Con el comando <em>cd</em> se entra en un modo de edición del repositorio de Git, usándolo el directorio actual de trabajo se cambia a la carpeta del repositorio de Git. Para salir de este modo hay que usar el comando <em>exit</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chemoi <span class="nb">cd</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-cd.sh</span>
+    </div>
+</div>
+<p>Con la carpeta de trabajo del símbolo del sistema en el repositorio de Git es posible utilizar los comandos como en cualquier otro repositorio de Git.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ git status&#10;$ git add .&#10;$ git commit -m <span class="s2">&#34;Initial commit&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>git-commit.sh</span>
+    </div>
+</div>
+<p>Si no se quiere entrar en el modo de edición del repositorio de Git se ofrece un comando para actuar contra el repositorio de Git de los <em>dotfiles</em> aunque el directorio de trabajo actual sea otro, anteponiendo chezmoi a lo que es el comando de git que se aplica sobre el repositorio de Git de los <em>dotfiles</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi git status&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-git.sh</span>
+    </div>
+</div>
+<h4 id="variables-y-plantillas">Variables y plantillas</h4>
+<p>Algunos datos de los archivos <em>dotfiles</em> para compartirlos entre máquinas o para externalizarlos de los archivos permite guardarlos de forma externa. chezmoi soporta plantillas, una plantilla se procesa junto varias las variables y genera el contenido del archivo final del <em>dotfile</em>. Las plantillas no solo soportan variables sino también expresiones con condiciones.</p>
+<ul>
+<li><a href="https://www.chezmoi.io/user-guide/templating/#more-complicated-logic">More complicated logic</a></li>
+</ul>
+<p>En el caso de querer considerar a un archivo como una plantilla hay que usar el siguiente comando al añadir lo para que sea administrado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi add --template ~/.bashrc&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-add-template.sh</span>
+    </div>
+</div>
+<p>Las variables se definen en el archivo de configuración de chezmoi.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">data</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">linux</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">picodotdev</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">macos</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">worker</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-2.yaml</span>
+    </div>
+</div>
+<p>Además de variables propias en el archivo de configuración, chezmoi añade las suyas entre las que se pueden utilizar.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi data&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-data.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">{</span>&#10;  <span class="s">&#34;chezmoi&#34;</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;arch&#34;</span><span class="o">:</span> <span class="s">&#34;amd64&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;args&#34;</span><span class="o">:</span> <span class="o">[</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;chezmoi&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;data&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">],</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;cacheDir&#34;</span><span class="o">:</span> <span class="s">&#34;/home/picodotdev/.cache/chezmoi&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;configFile&#34;</span><span class="o">:</span> <span class="s">&#34;/home/picodotdev/.config/chezmoi/chezmoi.yaml&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;executable&#34;</span><span class="o">:</span> <span class="s">&#34;/usr/bin/chezmoi&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;fqdnHostname&#34;</span><span class="o">:</span> <span class="s">&#34;archlinux&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;group&#34;</span><span class="o">:</span> <span class="s">&#34;picodotdev&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;homeDir&#34;</span><span class="o">:</span> <span class="s">&#34;/home/picodotdev&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;hostname&#34;</span><span class="o">:</span> <span class="s">&#34;archlinux&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;kernel&#34;</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;osrelease&#34;</span><span class="o">:</span> <span class="s">&#34;5.16.5-arch1-1&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;ostype&#34;</span><span class="o">:</span> <span class="s">&#34;Linux&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;version&#34;</span><span class="o">:</span> <span class="s">&#34;#1 SMP PREEMPT Tue, 01 Feb 2022 21:42:50 +0000&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;os&#34;</span><span class="o">:</span> <span class="s">&#34;linux&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;osRelease&#34;</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;ansiColor&#34;</span><span class="o">:</span> <span class="s">&#34;38;2;23;147;209&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;bugReportURL&#34;</span><span class="o">:</span> <span class="s">&#34;https://bugs.archlinux.org/&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;buildID&#34;</span><span class="o">:</span> <span class="s">&#34;rolling&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;documentationURL&#34;</span><span class="o">:</span> <span class="s">&#34;https://wiki.archlinux.org/&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;homeURL&#34;</span><span class="o">:</span> <span class="s">&#34;https://archlinux.org/&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;id&#34;</span><span class="o">:</span> <span class="s">&#34;arch&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;logo&#34;</span><span class="o">:</span> <span class="s">&#34;archlinux-logo&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;name&#34;</span><span class="o">:</span> <span class="s">&#34;Arch Linux&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;prettyName&#34;</span><span class="o">:</span> <span class="s">&#34;Arch Linux&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;supportURL&#34;</span><span class="o">:</span> <span class="s">&#34;https://bbs.archlinux.org/&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;sourceDir&#34;</span><span class="o">:</span> <span class="s">&#34;/home/picodotdev/.local/share/chezmoi&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;username&#34;</span><span class="o">:</span> <span class="s">&#34;picodotdev&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;version&#34;</span><span class="o">:</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;builtBy&#34;</span><span class="o">:</span> <span class="s">&#34;&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;commit&#34;</span><span class="o">:</span> <span class="s">&#34;&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;date&#34;</span><span class="o">:</span> <span class="s">&#34;2022-02-02T13:17:34Z&#34;</span><span class="o">,</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;version&#34;</span><span class="o">:</span> <span class="s">&#34;2.11.0&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">},</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;workingTree&#34;</span><span class="o">:</span> <span class="s">&#34;/home/picodotdev/.local/share/chezmoi&#34;</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-data.json</span>
+    </div>
+</div>
+<p>En los archivos de plantilla las variables se referencian con la siguiente expresión entre llaves.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">{{ .chezmoi.username }} {{ .chezmoi.os }}&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-template.file</span>
+    </div>
+</div>
+<p>El comando <em>execute-template</em> permite evaluar una plantilla con el contenido de las variables, esto permite comprobar el funcionamiento de las plantillas y comprobar que generan el contenido deseado al evaluarse, a partir de una plantilla proporcionada como argumento del programa o desde el contenido de un archivo de plantilla.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ chezmoi execute-template <span class="s2">&#34;{{ .chezmoi.username }} {{ .chezmoi.os }}&#34;</span>&#10;$ chezmoi execute-template &lt; dot_zshrc.tmpl&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-execute-template.sh</span>
+    </div>
+</div>
+<h4 id="gestionar-secretos">Gestionar secretos</h4>
+<p>Algunas variables por su contenido sensible por motivos de seguridad hay que protegerlos y no deben ser compartidos, esto es importante tenerlo en cuenta ya que el contenido que se usa al repositorio de los <em>dotfiles</em> cualquier usuario que tenga acceso a él puede ver su contenido, esto incluye credenciales e incluso claves SSH. Estos secretos se han de almacenar de forma diferente y no el repositorio de Git de los <em>dotfiles</em> sobre todo si el repositorio de Git es público como puede ser el caso de si se utiliza un hospedaje como GitHub.</p>
+<p>La forma que utiliza chezmoi para guardar estos secretos es utilizar un programa de base de datos cifrada para guardar credenciales como los gestores de contraseñas. Uno de ellos es KeePassXC pero chezmoi soporta muchos entre los que están los más populares. chezmoi es capaz de recuperar usuarios, contraseñas e incluso valores de atributos del apunte guardado en la base de datos cifrada.</p>
+<ul>
+<li><a href="https://www.chezmoi.io/user-guide/password-managers/">Password manager integration</a></li>
+</ul>
+<p>La siguiente variable de configuración indica donde se guarda la base de datos de secretos en este caso de KeePassXC.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">keepassxc</span><span class="p">:</span><span class="w">&#10;</span><span class="w">   </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/home/user/Credentials.kdbx&#34;</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-3.yaml</span>
+    </div>
+</div>
+<p>Y en las plantillas se utiliza la siguiente expresión para recuperar credenciales del apunte indicado y valores de atributos que puede ser cualquier contenido como una clave SSH privada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">username = {{ (keepassxc &#34;example.com&#34;).UserName }}&#10;password = {{ (keepassxc &#34;example.com&#34;).Password }}&#10;{{ keepassxcAttribute &#34;SSH Key&#34; &#34;private-key&#34; }}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chezmoi-template-2.file</span>
+    </div>
+</div>
+<h4 id="otras-características">Otras características</h4>
+<p>Los <em>dotfiles</em> de algunos programas son más complejos de los de este ejemplo y hay varios programas que los utilizan, ¿no sería maravilloso poder utilizar los archivos de otros usuarios que comparten en sus repositorios de <em>dotfiles</em>? lo es y es posible utilizar estos archivos <em>dotfiles</em> de otros usuarios, no solo para utilizarlos sino como ejemplo de cómo se configura alguna propiedad del <em>dotfile</em> sobre todo si la documentación oficial del <em>dotfile</em> no es amplia o no es lo suficientemente clara. En la wiki de Arch Linux hay una <a href="https://wiki.archlinux.org/title/Dotfiles#User_repositories">colección de repositorios de usuarios con ejemplos de <em>dotfiles</em></a> con ejemplos para intérpretes de línea de comandos, gestores de ventanas y entornos de escritorio, editores, terminal, multiplexores de terminal entre varios otros programas.</p>
+<ul>
+<li><a href="https://www.chezmoi.io/user-guide/include-dotfiles-from-elsewhere/">Include dotfiles from elsewhere</a></li>
+</ul>
+<p>chezmoi también soporta cifrado con la utilidad de cifrado <a href="https://www.gnupg.org/index.html">gpg</a> y <a href="https://github.com/FiloSottile/age">age</a>, si se quiere guardar algún <em>dotfile</em> sensible en el repositorio de Git sin exponer su contenido pero sin utilizar un gestor de contraseñas.</p>
+<ul>
+<li><a href="https://www.chezmoi.io/user-guide/encryption/">Encryption</a></li>
+</ul>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.chezmoi.io/user-guide/frequently-asked-questions/general/#i-like-chezmoi-how-do-i-say-thanks">I like chezmoi. How do I say thanks?</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/</id>
@@ -2836,50 +3084,6 @@
 <p>Por ello conviene tomar una serie de medidas como establecer límites transferencias y tarjeta de crédito más bajos que los que establecen por defecto los bancos que suelen ser muy generosos, activar el segundo factor de autenticación para que aunque roben las credenciales de una cuenta evitar el ataque o permitirlo únicamente durante un breve periodo de tiempo si la página de <em>phishing</em> fuera tan avanzada como para estar preparada para obtener también el segundo factor de autenticación.</p>
 <p>En una de estas situaciones de ataque informático conviene que el atacante sepa lo menos posible de uno, por ello conviene <a href="https://picodotdev.github.io/blog-bitix/2021/11/por-que-proteger-tu-privacidad-y-que-informacion-tuya-se-puede-encontrar-con-una-busqueda-en-internet/">proteger tu privacidad y minimizar la información tuya se puede encontrar con una búsqueda en internet</a>.</p>
 <p>No hay otra opción de que quede impune, si es un delincuente y parece serlo por los varios indicios va a continuar haciendo su actividad y algún usuario más incauto sea su víctima, está claro que si realizan esta actividad es porque obtienen algún beneficio. La conclusión en cualquier caso es, se bueno pero ten un poco de joputismo para conocer a los malos, hay una buena cantidad de joputas malos por ahí.</p>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="seguridad"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/11/por-que-proteger-tu-privacidad-y-que-informacion-tuya-se-puede-encontrar-con-una-busqueda-en-internet/</id>
-        <title>Por qué proteger tu privacidad y qué información tuya se puede encontrar con una búsqueda en internet</title>
-        <updated>2021-11-04T19:00:00+01:00</updated>
-        <published>2021-11-04T19:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/11/por-que-proteger-tu-privacidad-y-que-informacion-tuya-se-puede-encontrar-con-una-busqueda-en-internet/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<p>La privacidad de las personas es un derecho. Un derecho que con internet y el tratamiento de datos que hacen ya todos los negocios y servicios no es fácil proteger. O aceptas los términos y condiciones de los servicios en los que quieres crear una cuenta o no permiten crearla, algunos servicios permiten cambiar algunas opciones para no recibir comunicaciones comerciales por correo electrónico pero el tratamiento de datos está implícito en la aceptación de las condiciones.</p>
-<p>Un buscador como <a href="https://www.google.es/">Google</a> permite encontrar datos de una persona relacionada con ella incluso pasado algún lustro. A través de las redes sociales es posible conocer cualquier cosa que una persona comparta de forma pública.</p>
-<h3 id="por-qué-proteger-tu-privacidad">Por qué proteger tu privacidad</h3>
-<p>Internet ofrece muchas posibilidades pero también tiene otros inconvenientes. Uno de ellos es que es muy fácil perder el control de la privacidad. Una vez algo se ha publicado a través de internet es difícil revocar la información y ejercer el derecho al olvido para que esa información que se desea eliminar lo sea. Una vez publicado algo en internet cualquier persona que tenga acceso lo puede copiar o republicar en cualquier otra ubicación en la que ya no se tiene el control. Lo que en un momento se considera como poco importante publicar más adelante puede desearse que no hubiese sido publicado, el problema es que publicar algo es muy fácil pero eliminar algo publicado es muy difícil.</p>
-<p>Las redes sociales como <a href="https://www.facebook.com/">Facebook</a>, <a href="https://www.instagram.com/">Instagram</a> o <a href="https://twitter.com/">Twitter</a> permiten relacionarse con personas en cualquier parte del mundo, conocidas y desconocidas. En estas redes sociales se publica gran cantidad de información personal que alguien interesado en conocerla le permite un acceso sencillo. Con algo tan simple como publicar el nombre y apellidos de una persona ya es posible encontrar mucha otra información utilizando un buscador como Google, cualquier página pública a la que Google tenga acceso la indexa en su buscador, y a partir de aquí a más información en las redes sociales que esté como pública.</p>
-<p>En los términos y condiciones que nadie lee al crear una cuenta en un servicio se detallan las autorizaciones que se otorga a la empresa por el hecho de usar su servicio, en esos términos con una jerga legal dificil de entender y larga para agotar en su lectura se incluyen apartados que suele detallar que el propietario del servicio procesa y compartirá los datos con terceras partes. A partir de compartir estos datos luego uno no sabe porque le llegan llamadas comerciales telefónicas cuando no se ha tenido relación ninguna con esa empresa de la que nos llama el comercial o mensajes SMS al teléfono móvil.</p>
-<p>Algunos ataques informáticos son realizados de forma masiva pero otros son llevados a cabo de forma individualizada más laboriosa pero menos, que alguien que está intentando perpetrar un ataque informático sepa cosas de la víctima le da mayor conocimiento para realizar un ataque de ingeniería social.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención</a></li>
-</ul>
-<h3 id="busca-información-tuya-a-través-de-datos-que-te-identifican">Busca información tuya a través de datos que te identifican</h3>
-<p>Es fácil averiguar cuánta información personal de uno mismo hay publicada en internet con una simple búsqueda en Google cualquier dato personal que identifique a una persona. A partir de uno de estos datos personales es posible encontrar mucha información de lo que hace una persona, que piensa a través de lo que dice, fotos suyas, de sus familiares y amigos, su ciudad y lugar de residencia, de vacaciones, lugar de trabajo y profesión, aficiones, &hellip;</p>
-<p>Los datos personales a través de los que averiguar la información que haya en internet de una persona son: nombre y un apellido, nombre y dos apellidos, DNI, número de teléfono móvil, dirección de correo electrónico o si utiliza su seudónimo. Si se sabe algo de esa persona como su ciudad de residencia permite descartar coincidencias en caso de obtener varias.</p>
-<p>Pon en Google tu nombre y apellidos, DNI, tu correo electrónico, tu número de móvil que son algunas cosas que te identifican y mira la información que encuentras de ti mismo. Cuando se dice que Google conoce más de ti que tú mismo es cierto en el aspecto de que muy posiblemente hay cosas que tu ya has olvidado pero Google es capaz de encontrar.</p>
-<p>Y Google también es capaz de reconocer texto en las imágenes. Busca también en <a href="https://www.google.com/imghp">Google Imágenes</a> ahí también se encuentran fotos a partir de los datos identificativos.</p>
-<h3 id="conclusión">Conclusión</h3>
-<p>Quizá te asustes de lo que puede conocer alguien de ti con interés por información que tú mismo has publicado. En el momento de publicar la información quizá no se le da importancia pero en el futuro en alguna circunstancia quizá se desease eliminar esa información cosa que erá muy difícil o quizá no sea posible.</p>
-<p>Cada uno es libre de hacer con su privacidad lo que mejor le parezca. Yo recomiendo protegerla porque es fácil perderla pero muy difícil recuperarla. La privacidad no involucra solo la de uno mismo sino también la de los demás, si tú no le das importancia a tu privacidad otras personas si se la damos por ello si publicas datos o fotos no publiques ninguna que incluya a ninguna persona de la que no tengas su consentimiento.</p>
-<p>La razón de utilizar un pseudónimo en internet es para utilizar un nombre que no sea el nombre y apellidos reales, esto permite separar en parte el <em>alter ego</em> de la persona real y desecharlo en caso de desearlo.</p>
-<p>Yo suelo decir&hellip;</p>
-<blockquote>
-<p>A mi me encanta LinkedIn, y eso que no tengo cuenta.</p>
-<p>-  picodotdev</p>
-</blockquote>
 ]]>
         </content>
         

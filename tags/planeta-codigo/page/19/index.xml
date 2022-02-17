@@ -5,12 +5,91 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-02-03T18:00:00+01:00</updated>
+    <updated>2022-02-17T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/</id>
+        <title>Personalizar el prompt del sistema del intérprete de comandos Bash</title>
+        <updated>2018-04-29T21:30:00+02:00</updated>
+        <published>2018-04-29T10:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>El <em>prompt</em> de la terminal es el símbolo del sistema que precede al comando que introducimos en la terminal y por defecto indica el directorio de trabajo que utilizarán los comandos y el directorio que utilizarán las rutas relativas. El <em>prompt</em> del intérprete de comandos <em>Bash</em> se puede personalizar para por ejemplo modificar el color de su texto y la información que incluye con las preferencias del usuario.</p>
+<p>El <em>prompt</em> se configura con la variable de entorno <em>PS1</em> que en <em>Bash</em> está en el directorio personal definido en el archivo <em>.bashrc</em>. Los colores se especifican con una secuencia de caracteres y números que forman códigos de escape que son interpretados de forma especial, estas secuencias están mezclados con las secuencias de la información a mostrar. Como conocer las secuencias de caracteres con los códigos de escape ANSI para los colores y letras para la información es complicado de escribir o conocer al detalle en la web <a href="https://www.kirsle.net/wizards/ps1.html">Bash $PS1 Generator</a> hay un asistente que facilita el crear un <em>prompt</em> a nuestro gusto de forma sencilla y correcta.</p>
+<p>El siguiente es el que utilizo en mi sistema con colores, el nombre del usuario, el nombre sistema y el directorio de trabajo actual.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal personalizado"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado" title="Prompt de la terminal personalizado"  class="lozad "></a></p>
+<figcaption>Prompt de la terminal personalizado</figcaption>
+</figure>
+</div>
+<p>Según se edita el <em>prompt</em> el asistente previsualiza como queda en la sección <em>Preview</em>, una vez que el <em>prompt</em> es el que deseamos en la sección <em>Result</em> el asistente ofrece el contenido de la variable de entorno <em>PS1</em> que hay que añadir o cambiar en el archivo <em>~/.bashrc</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">#&#10;# ~/.bashrc&#10;#&#10;&#10;# If not running interactively, don&#39;t do anything&#10;[[ $- != *i* ]] &amp;&amp; return&#10;&#10;alias ls=&#39;ls --color=auto&#39;&#10;#PS1=&#39;[\u@\h \W$ &#39;&#10;&#10;#&#10;GIT_PS1_SHOWDIRTYSTATE=&#34;true&#34;&#10;GIT_PS1_SHOWSTASHSTATE=&#34;true&#34;&#10;GIT_PS1_SHOWUNTRACKEDFILES=&#34;true&#34;&#10;GIT_PS1_SHOWUPSTREAM=&#34;true&#34;&#10;GIT_PS1_SHOWCOLORHINTS=&#34;true&#34;&#10;source ~/.git-prompt.sh&#10;&#10;PS1=&#39;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W]\$ &#39;&#10;PROMPT_COMMAND=&#39;__git_ps1 &#34;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>bashrc</span>
+    </div>
+</div>
+<p>Si quieres mostrar alguna información que sea el resultado de algún comando también se puede añadir al <em>prompt</em>. Por ejemplo, supón que se desea añadir la hora del sistema al <em>prompt</em> útil si se quiere a modo de registro para conocer posteriormente a que hora se lanzó un comando, la información de la hora entre otras posibles cosas relacionadas con la fecha la devuelve el comando <em>date</em>. El siguiente <em>script</em> de <em>Bash</em> usando el comando <em>date</em> proporciona la información de la hora a añadir en este caso.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ date +%H:%M&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>date.sh</span>
+    </div>
+</div>
+<p>Ahora hay que incluir esta información en el <em>prompt</em> de la siguiente forma.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">...&#10;&#10;PROMPT_COMMAND=&#39;__git_ps1 &#34;($(date +%H:%M))[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>bashrc-date</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal personalizado con el resultado de un comando"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado con el resultado de un comando" title="Prompt de la terminal personalizado con el resultado de un comando"  class="lozad "></a></p>
+<figcaption>Prompt de la terminal personalizado con el resultado de un comando</figcaption>
+</figure>
+</div>
+<p>Otro caso habitual es añadir la rama de git del directorio actual de trabajo y si esta tiene cambios como comento en <a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</a>. El <em>script</em> necesario que proporciona <a href="https://git-scm.com/">Git</a> es más complejo que el caso anterior pero con la misma finalidad, el <em>script</em> está en <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh">git-prompt.sh</a> y requiere modificar la variable de entorno <em>PS1</em> o bien <em>PROMPT_COMMAND</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal por defecto"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto"  class="lozad "></a></p>
+<figcaption>Prompt de la terminal personalizado en carpeta de git</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://stackoverflow.com/questions/9200862/short-date-in-bash-ps1-prompt">Short date in bash PS1 prompt</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/04/la-clase-optional-de-java-para-evitar-la-excepcion-nullpointerexception/</id>
         <title>La clase Optional de Java para evitar la excepción NullPointerException</title>
@@ -1327,112 +1406,6 @@
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/</id>
-        <title>Las 6&#43;2 formas normales de las bases de datos relacionales</title>
-        <updated>2018-02-10T13:00:00+01:00</updated>
-        <published>2018-02-10T13:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>En la universidad se explican las formas normales, en mi caso que yo recuerde hasta la tercera forma normal. Conocer la tercera forma normal suele ser suficiente pero en la teoría existe hasta la sexta forma normal. Cumplir las formas normales evita redundancias e inconsistencias en los datos a costa de crear más tablas que en algunos consultas puede hacerlas lentas. El proceso contrario de la normalización es la desnormalización, puede producir inconsistencias pero los datos son más sencillos y en algunos casos más rápido de consultar.</strong></p>]]>
-        <![CDATA[<p>Las bases de datos relacionales desarrolladas en los años 70 son la forma más utilizada aún en la actualidad para almacenar la información en la mayoría de las aplicaciones informáticas de cualquier ámbito. Los datos se guardan en tablas separadas en campos y con un tipo, los datos almacenados en cada tabla están relacionados entre sí, por ejemplo, podría ser la información de una persona, nombre, apellidos, fecha de nacimiento, ciudad de residencia, teléfono, &hellip; Además las tablas pueden relacionarse con otras tablas. Siguiendo el ejemplo podríamos tener una tabla de películas o libros y relacionarlas con la tabla de personas de forma que conozcamos que películas ha visto o libros ha leído una persona, de cada película podemos guardar su director, de los libros el autor y de cada uno de ellos los actores o personajes.</p>
-<p>Al almacenar la información en la base de datos debemos evitar las redundancias e inconsistencias de forma que la información que obtengamos al consultarla esté libre de inconsistencias. Por ejemplo, guardando la ciudad de residencia en la tabla persona deberemos actualizar todos los registros de las personas que residan en ella al cambiar de nombre a una ciudad o acabaremos con que la misma ciudad está referida por varios términos. Para evitar inconsistencias en las bases de datos se definieron las formas normales, hay seis formas normales y dos adicionales aunque normalmente con aplicar hasta la tercera es suficiente ya que por las relaciones de los datos no es necesario aplicar formas normales superiores.</p>
-<p>Las formas normales son las siguientes:</p>
-<ul>
-<li><a href="https://es.wikipedia.org/wiki/Forma_normal_%28base_de_datos%29">Forma normal de base de datos</a></li>
-<li><a href="https://es.wikipedia.org/wiki/1NF">Primera forma normal, 1FN</a></li>
-<li><a href="https://es.wikipedia.org/wiki/2NF">Segunda forma normal, 2FN</a></li>
-<li><a href="https://es.wikipedia.org/wiki/3NF">Tercera forma normal, 3FN</a></li>
-<li><a href="https://es.wikipedia.org/wiki/BCNF">Forma normal de Boyce-Codd, BCNF</a></li>
-<li><a href="https://es.wikipedia.org/wiki/4NF">Cuarta forma normal, 4FN</a></li>
-<li><a href="https://es.wikipedia.org/wiki/5NF">Quinta forma normal, 5FN</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Sixth_normal_form">Sexta forna normal, 6FN</a></li>
-<li><a href="https://es.wikipedia.org/wiki/DKNF">Forma normal de dominio/clave, DNFN</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Denormalizaci%C3%B3n_%28base_de_datos%29">Desnormalización</a></li>
-</ul>
-<p>En los enlaces de la wikipedia está incluida una explicación más detallada de cada forma normal, a continuación solo haré un breve resumen. En anexo final del libro <a href="https://amzn.to/2G2oRN1">SQL Antipatterns</a> también hay una explicación muy detallada de las diferentes formas normales, que problemas pueden ocasionar y como corregirlos. En el libro se tratan varias recomendaciones al trabajar con bases de datos relacionales y evitar emplear prácticas consideradas como malas, un uno de sus capítulos se trata <a href="https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">como guardar relaciones jerárquicas en una base de datos relacional</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="primera-forma-normal-1fn">Primera forma normal, 1FN</h3>
-<p>No hay grupos repetidos de columnas, ni una columna guarda múltiples valores. Por ejemplo, si de una persona queremos guardar varios teléfonos deberíamos crear una tabla de teléfonos y relacionarla con la tabla de usuarios.</p>
-<p>En el caso del ejemplo los grupos repetidos de columnas implica que de una persona solo se pueden guardar hasta tres teléfonos como máximo, han de crearse las columnas por adelantado aunque no se usen y si hay que actualizar un teléfono no sabríamos en que campo de la tabla está obligando a realizar una consulta de actualización en los tres campos.</p>
-<p>Las columnas con múltiples valores son difíciles de actualizar con sentencias SQL por el formato que emplea la columna para guardar el dato, en este caso utilizando una barra como separador.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-- Grupos reptidos de columnas&#10;Persona (id_persona, nombre, teléfono1, teléfono2, telefono3)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, Maria,  555123456, 555234567, 555345678&#10;&#10;-- Una columna con múltiples valores&#10;Persona (id_persona, nombre, teléfonos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ) &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, María,  555123456/555234567/555345678 &#10;&#10;-- 1FN&#10;Usuario (id_persona, nombre)&nbsp;&nbsp;&nbsp;&nbsp;Teléfono (persona_id, telefono)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, María&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1, 555123456&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1, 555123456&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1, 555234567&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1, 555345678</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>1fn.txt</span>
-    </div>
-</div>
-<h3 id="segunda-forma-normal-2fn">Segunda forma normal, 2FN</h3>
-<p>Cada columna de una tabla está relacionada con todas las columnas de la clave primaria y no solo por una combinación de parte de la clave primaria. En este caso en que se guarda las las persona que trabajan en una empresa, cumple la 1FN al no tener columnas repetidas ni múltiples valores en una columna pero no cumple la 2FN estando la clave primaria formada por los campos <em>id_persona</em> e <em>id_empresa</em> y el campo <em>direccion_empresa</em> siendo solo dependiente del campo <em>id_empresa</em>.</p>
-<p>En este caso el problema además de contener posibles inconsistencias en los valores de las direcciones es que si se quisiera actualizar la dirección de una empresa habría que actualizar todos los registros de los empleados y empresa.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-- Campos dependientes de un subconjunto de la clave primaria&#10;Persona (id_persona, id_empresa, direccion_empresa, puesto,&nbsp;&nbsp;&nbsp;&nbsp; horas semanales)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, C\ Rue el Percebe, jardinero,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   40&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, C\ Rue el Percebe, barrendero,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  35&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, C\ Rue el Percebe, jardinero,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   40&#10;&#10;-- 2 FN&#10;Empresa (id_persona, id_empresa, puesto,&nbsp;&nbsp;&nbsp;&nbsp; horas semanales)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, jardinero,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   40&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, barrendero,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  35 &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, jardienro,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   40&#10;&#10;Dirección (id_empresa, dirección)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1, C\ Rue el Percebe</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>2fn.txt</span>
-    </div>
-</div>
-<h3 id="tercera-forma-normal-3fn">Tercera forma normal, 3FN</h3>
-<p>Cada columna de una tabla está relacionada directamente con las columnas de la clave primaria, no de forma transitiva a través de otro campo. En el mismo caso anterior que cumple la 2FN no cumple la tercera si el campo <em>horas semanales</em> depende del puesto.</p>
-<p>Podría haber inconsistencias de datos si dos personas tuviesen diferentes horas semanales para el mismo puesto.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">-- 3 FN&#10;Empresa (id_persona, id_empresa, puesto)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, jardinero&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, barrendero&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1, jardinero&#10;&#10;Puesto (puesto,&nbsp;&nbsp;&nbsp;&nbsp; horas semanales)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jardinero,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   40&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;barrendero,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  35</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>3fn.txt</span>
-    </div>
-</div>
-<h3 id="formas-normales-adicionales">Formas normales adicionales</h3>
-<p>Hasta la tercera forma normal se pueden aplicar independientemente del dominio tratado, a partir de la cuarta forma normal las relaciones las cumplen o no en función de las reglas y condiciones que se establezcan para el dominio. Cuanto mayor sea la forma normal de una tabla o una base de datos menos casos existirán de que contengan inconsistencias, una tabla que cumpla una forma normal cumple las formas normales de menor nivel.</p>
-<h4 id="forma-normal-de-boyce-codd-bcnf">Forma normal de Boyce-Codd, BCNF</h4>
-<p>Una tabla está en BCNF y está en 3FN y todos los campos tienen como determinante (dependen) la clave primaria. En un caso en que un trabajador trabaja en varias empresas con un responsable asignado e introduciendo la restricción de que en una empresa solo hay un responsable para todos los trabajadores, el campo <em>id_responsable</em> tiene una dependencia sobre el campo <em>id_empresa</em> que no es clave primaria.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Trabajador (id_persona, id_empresa, id_responsable)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3 &#10;&#10;-- BCFN&#10;Trabajador (id_persona, id_empresa)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1  &#10;&#10;Empresa (id_empresa, id_responsable)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>bcfn.txt</span>
-    </div>
-</div>
-<h4 id="cuarta-forma-normal-4fn">Cuarta forma normal, 4FN</h4>
-<p>No existen dos o más relaciones independientes en una misma tabla. En una relación que guarde las empresas de un trabajador y las localidades en las que trabaja, si las empresas y las localidades son independientes hay redundancia de datos por guardar para cada empresa cada una de las localidades del trabajador. Aplicando la 4FN en vez de utilizar 6 filas se utilizan 2 y 3 filas en las tablas <em>Trabajador</em> y <em>Localidad</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Zona (id_persona, id_empresa, id_localidad)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&#10;&#10;-- 4FN&#10;Trabajador (id_persona, id_empresa)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2&#10;&#10;Localidad (id_persona, id_localidad)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp;&nbsp;&nbsp;   1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp;&nbsp;&nbsp;   2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp;&nbsp;&nbsp;   3</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>4fn.txt</span>
-    </div>
-</div>
-<h4 id="quinta-forma-normal-5fn">Quinta forma normal, 5FN</h4>
-<p>En el mismo caso anterior si se introduce una relación entre empresa y localidades en las que trabaja y la condición de que es cierto que las localidades de un trabajador están incluídas en el conjunto de las localidades de una empresa si no se aplicase la 5FN y un trabajador empezase a trabajar en una nueva empresa habría que insertar una fila nueva en la tabla <em>Zona</em> por cada localidad del trabajador.</p>
-<p>Si el trabajador 1 empezase a trabajar en la empresa 2 sin aplicar la 5FN habría que insertar dos nuevas filas en la tabla <em>Zona</em>. Aplicando la 5FN bastaría con insertar una en la tabla <em>TrabajadorEmpresa (id_persona: 1, id_empresa: 2)</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Zona (id_persona, id_empresa, id_localidad)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&#10;-- Nuevas filas si 1 empezase a trabajar en la empresa 2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&#10;&#10;&#10;-- 5FN&#10;TrabajadorLocalidad (id_persona, id_localidad)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3&#10;&#10;TrabajadorEmpresa (id_persona, id_empresa)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1&#10;&#10;EmpresaLocalidad (id_empresa, id_localidad)&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>5fn.txt</span>
-    </div>
-</div>
-<h4 id="sexta-forma-normal-6fn">Sexta forma normal, 6FN</h4>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Sixth_normal_form">Sixth normal form</a></li>
-</ul>
-<h4 id="forma-normal-de-dominioclave-dnfn">Forma normal de dominio/clave, DNFN</h4>
-<ul>
-<li><a href="https://es.wikipedia.org/wiki/Forma_normal_de_dominio/clave">Forma normal de dominio/clave</a></li>
-</ul>
-<h3 id="desnormalización">Desnormalización</h3>
-<p>Aplicar las reglas de las formas normales para cumplirlas implica separar los datos que antes estaban en una tabla en varias, con las formas normales evitaremos inconsistencias pero consultar los datos de forma agrupada puede ser más lento al tener la base de datos que unir las tablas. Normalmente, llegar al nivel de 3FN es suficiente si los datos no tienen reglas especiales y si cumple la 3FN es habitual que cumpla la 5FN sin cambios adicionales.</p>
-<p>La desnormalización consiste el proceso contrario tratando de balancear la rapidez de consulta con el hecho de obtener datos inconsistentes. Dependiendo de los datos y sus reglas se puede aceptar cierto grado de desnormalización. Algunas bases de datos tienen un concepto similar al que existe en la base de datos <a href="https://www.postgresql.org/">PostgreSQL</a>, las <a href="https://www.postgresql.org/docs/current/static/rules-materializedviews.html">materialized views</a>. Las vistas materializadas son vistas de los datos pero cuyos datos son guardados de forma similar a una tabla, esto tiene la ventaja de que consultar la vista basta para consultar los datos que es más rápido que realizar de nuevo la consulta original de la vista. Con las vistas y las vistas materializadas podemos guardar los datos en la forma normal que consideremos y si por rendimiento debemos realizar una desnormalización con las vistas y vistas materializadas podemos hacerlo, en el caso de las vistas materializadas deberemos refrescarlas de forma regular.</p>
-<p>La información es una de las cosas más importantes para una organización y por tanto también para las aplicaciones. En el libro <a href="http://amzn.to/2G2oRN1">SQL Antipatterns</a> se comentan varios situaciones en las bases de datos que conviene conocer para evitarlos, que problemas causan, cuando son aplicables y cuales son las soluciones. En libro muy recomendable y útil ya que independientemente del lenguaje o tipo de aplicación este conocimiento sobre las bases de datos relacionales es de provecho, como en la práctica totalidad de las aplicaciones se usa una base de datos relacional para persistir los datos será en casi todos los casos.</p>
-]]>
-        </content>
-        
             
                 <category term="planeta-codigo"/>
             

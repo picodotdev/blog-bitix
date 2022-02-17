@@ -5,12 +5,114 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2021-12-23T09:00:00+01:00</updated>
+    <updated>2022-02-17T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/05/sobre-el-futuro-de-las-distribuciones-gnu-linux-y-los-sistemas-operativos/</id>
+        <title>Sobre el futuro de las distribuciones GNU/Linux y los sistemas operativos</title>
+        <updated>2020-05-03T11:00:00+02:00</updated>
+        <published>2020-05-03T09:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/sobre-el-futuro-de-las-distribuciones-gnu-linux-y-los-sistemas-operativos/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Linux es uno de los mejores sistemas operativos actuales y sobre todo usable y completo. Eso no quiere decir que en el futuro no tan lejano haya cambios importantes en como hemos conocido las distribuciones de GNU/Linux hasta hoy. Ya se están produciendo cambios y surgiendo nuevas basadas en tecnologías y principios significativamente diferentes que mejoran algunas deficiencias de la actual generación en la que están basadas la mayoría de las distribuciones más populares actuales.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> tal y como las conocemos hoy es muy posible que cambien en el futuro en varios aspectos, ya lo están haciendo.</p>
+<p>Uso <a href="https://www.archlinux.org/">Arch Linux</a> y estoy muy contento con ella por su excelente <a href="https://wiki.archlinux.org/">documentación con su wiki</a>, es rápida y bastante estable, el tener siempre el sistema junto con sus aplicaciones actualizadas y un sistema con únicamente las aplicaciones que necesito, pero eso no quiere decir que algunos de sus aspectos sean mejorables.</p>
+<p>Un aspecto mejorable es que el gestor de paquetes <em>pacman</em> no descarga los paquetes de forma paralela con esto los usuarios que tengan una velocidad de descarga rápida reducirían el tiempo de descarga sensiblemente. Otro aspecto mejorable es que una actualización es susceptible de dejar el sistema roto en algún aspecto, puede ser simplemente que el sonido no funciona hasta en el caso más grave que el sistema no se inicie y haya arrancar el sistema en modo recuperación y hacer el <a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/"><em>downgrade</em> del paquete que causa el error</a>. Por suerte, lo normal es que las actualizaciones funcionen correctamente sin introducir ningún error.</p>
+<p>En cualquier caso las actualizaciones son frágiles tal como las conocemos, esto es algo que ni siquiera han resuelto <a href="https://www.microsoft.com/es-es/windows/">Windows</a> ni <a href="https://www.apple.com/macos/">macOS</a> que seguramente tendrán los mejores ingenieros de software de sistemas que el dinero puede pagar.</p>
+<p>Hay cuatro puntos en los que es muy posible que los sistemas operativos cambien tal y como los conocemos: actualizaciones, aplicaciones, lenguaje de programación y <em>kernel</em>. Otros cambios que ya se han producido es la sustitución del antiguo sistema de inicio y gestor de servicios <a href="https://es.wikipedia.org/wiki/System_V">System V</a> por <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> y del servidor gráfico <a href="https://www.x.org/wiki/">Xorg</a> por <a href="https://es.wikipedia.org/wiki/Wayland_%28protocolo%29">Wayland</a> pero estos no son los únicos cambios que próximamente llegarán a algunas distribuciones GNU/Linux o surgirán nuevas basadas en estos nuevos principios y herramientas.</p>
+<h3 id="actualizaciones">Actualizaciones</h3>
+<p>Dada la fragilidad de las actualizaciones es deseable que en caso de que una produzca algún error sea posible volver a un estado anterior bueno conocido.</p>
+<p>Ya se están produciendo cambios y surgiendo nuevas distribuciones. <a href="https://silverblue.fedoraproject.org/">Fedora Silverblue</a> es un sistema inmutable que utiliza <a href="https://en.wikipedia.org/wiki/OSTree">OSTree</a> como sistema para versionar las actualizaciones en los sistemas Linux, <a href="#ZgotmplZ">Toolbox</a> basado en contenedores donde instalar las herramientas de desarrollo sin afectar al sistema operativo inmutable y Flatpak para instalar aplicaciones de usuario. <a href="https://endlessos.com/es/">endless OS</a> también utiliza OSTree y Flatpak, cada instalación es exactamente igual que en cualquier otro equipo de modo que no hay ninguna diferencia lo que proporciona mayor estabilidad y menos errores. Por otro lado las actualizaciones son muy rápidas y el sistema está preparado para volver a una versión anterior si algo no funciona.</p>
+<p><a href="https://guix.gnu.org/">GNU Guix</a> es una distribución que usa un gestor de paquetes transaccional de modo que en una actualización se actualizan todos los paquetes correctamente o no se actualiza ninguno evitando dejar un sistema inconsistente por algún error que se produzcan en el proceso de la actualización.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora-silverblue.svg" width="200" height="150" alt="Fedora Silverblue" title="Fedora Silverblue"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/endlessos.svg" width="200" height="150" alt="endless OS" title="endless OS"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu-guix.svg" width="200" height="150" alt="GNU Guix" title="GNU Guix"  class="lozad "></p>
+<figcaption>Tres des las distribuciones de la siguiente generación</figcaption>
+</figure>
+</div>
+<h3 id="aplicaciones">Aplicaciones</h3>
+<p>Hasta hoy una parte característica de cada distribución es que tiene su propio repositorio de paquetes con el software que ofrece. Cada paquete de cada distribución es compilado y probado específicamente para cada distribución, cada paquete de cada distribución es mantenido por una persona lo que requiere mucho tiempo del escaso tiempo que tienen estos mantenedores más teniendo en cuenta que muchos de ellos lo hacen en su tiempo libre y no están respaldados económicamente por ninguna organización.</p>
+<p>Otro problema de los paquetes de cada distribución es que algunas anteponen la estabilidad a las nuevas versiones lo que hace que incluyan software que está por detrás en varias versiones de la última. Al mismo tiempo para corregir problemas del software de algunos paquetes por fallos o errores de seguridad los mantenedores aplican parches y cambios adicionales que no son los del software original, a veces con buenos motivos pero que hacen que no todas las distribuciones se beneficien de esos cambios.</p>
+<p>Han surgido varias formas de distribuir software y aplicaciones de usuario distintas a los paquetes de las distribuciones, tres de ellas son <a href="https://flatpak.org/">Flatpak</a>, <a href="https://snapcraft.io/">Snapcraft</a> y <a href="https://appimage.org/">AppImage</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
+</ul>
+<p>Estas tres opciones son independientes de la distribución, el software es distribuido por los autores originales de la aplicación y permiten tener software actualizado incluso en distribuciones que sus paquetes equivalentes están desactualizados. No necesitan de un mantenedor en cada distribución ya que son los propios autores originales del software los que se encargan de la distribución de su software.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/flatpak.svg" width="200" height="150" alt="Flatpak" title="Flatpak"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/snapcraft.svg" width="200" height="150" alt="Snapcraft" title="Snapcraft"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/appimage.svg" width="200" height="150" alt="AppImage" title="AppImage"  class="lozad "></p>
+<figcaption>Diferentes gestores de aplicaciones para instalar software y programas</figcaption>
+</figure>
+</div>
+<h3 id="lenguaje-de-programación">Lenguaje de programación</h3>
+<p>Mucho del software actual y sobre todo el de sistemas y los sistemas operativos ha sido desarrollado en el lenguaje de programación C por su abstracción del lenguaje máquina en un lenguaje de alto nivel pero conservando la proximidad al modo del funcionamiento de las máquinas. Bien empleado es capaz de obtener el máximo rendimiento de una máquina.</p>
+<p>Pero el lenguaje C también tiene algunos inconvenientes uno de ellos es que delega en el programador algunas tareas. Dos de ellas son la solicitud y liberación de la memoria del sistema, un error en esta lógica hace que un programa no libere memoria que ha solicitado y cada vez ocupe más, degradando el sistema con el uso lo que afecta al resto de aplicaciones y el rendimiento del sistema además de requerir al programador dedicar tiempo a implementar esta lógica. El segundo problema de C es que por sí mismo no impone restricciones en el acceso a la memoria, muchos errores de seguridad provienen de que cierto código no comprueba correctamente los límites de memoria de una estructura de datos, esto provoca que cierta zona de memoria contigua pueda ser sobrescrita con datos no deseados o leer datos como claves. Incluso un programador experimentado dada la naturaleza compleja del software cometen estos errores.</p>
+<p>Lenguajes más recientes como <a href="https://golang.org/">Go</a> o <a href="https://www.rust-lang.org/">Rust</a> los más conocidos es posible que sustituyan a C como lenguaje de sistemas. En Rust ya hay alguna implementación de sistema operativo, <a href="https://www.redox-os.org/">Redox</a> y es posible que si Google construye un sistema alternativo a <a href="https://www.android.com/">Andoid</a> esté basado en Go.</p>
+<p>Es difícil que surja un nuevo sistema operativo que sustituya rápidamente a los existentes pero es posible que los existentes vayan cambiando su lenguaje de programación o surjan nuevos con esos lenguajes.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/rust.svg" width="200" height="150" alt="Rust" title="Rust"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/go.svg" width="200" height="150" alt="Go" title="Go"  class="lozad "></p>
+<figcaption>Lenguajes de sistemas que pueden reemplazar a C</figcaption>
+</figure>
+</div>
+<h3 id="kernel">Kernel</h3>
+<p>El kernel de Linux es monolítico no porque sea lo mejor sino porque como <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> considera es lo más pragmático por su mayor facilidad de desarrollo. Pero un fallo en cualquier parte de su gran cantidad de código sobre todo el los controladores de dispositivos hace que el sistema produzca un volcado del sistema y deje de funcionar completamente. También es más inseguro ya que cualquier código que el kernel cargue y funcione en modo superusuario supone un potencial problema ya que es capaz de realizar cualquier cosa.</p>
+<p>Los kernels basados en microkernels son más seguros al ser su núcleo mucho más pequeños, de unos pocos miles de líneas de código contra los millones de Linux, el resto de funcionalidades se implementan en modo de usuario. También son más seguros y fiables. Una parte del sistema no tiene por que hacer que el sistema completo colapse, el kernel puede reiniciar esa parte sin ni siquiera el usuario ser consciente de que ha habido un error, Minix tiene un servicio de reencarnación que reinicia otros servicios en caso de fallo. Dado que la mayor parte del sistema se ejecuta en modo usuario son más seguros ya que los procesos no tienen permisos para hacer cualquier cosa.</p>
+<p>Ejemplos de kernels basados en microkernel son <a href="https://www.minix3.org/">Minix</a>, <a href="#ZgotmplZ">GNU/Hurd</a>, el propio Redox o <a href="https://genode.org/">Genode</a>. A pesar de todo ninguno de ellos ha tomado suficiente relevancia para hacer no ya sombra a Linux sino tampoco a los BSD. Sus desventajas es que hasta ahora no han demostrado alcanzar el mismo rendimiento que los kernels monolíticos y como en el caso de GNU/Hurd su desarrollo esté muy lejos de completarse por su mayor dificultad de desarrollo.</p>
+<p>Si a Linux le surge una alternativa no será porque es malo sino porque no tiene algunas características. Un ámbito puede ser el de coches autónomos en los que un fallo puede suponer un accidente con víctimas mortales o algún sistema que necesite gran fiabilidad como operaciones bursátiles.</p>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/minix.jpg" width="200" height="150" alt="Minix" title="Minix"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hurd.svg" width="200" height="150" alt="GNU/hurd" title="GNU/hurd"  class="lozad "></p>
+<figcaption>Sistemas operativos basados en microkernel</figcaption>
+</figure>
+</div>
+<h3 id="sistema-de-archivos">Sistema de archivos</h3>
+<p>Aún ext4 sigue siendo el sistema de archivos mayoritariamente empleado por la distribuciones GNU/Linux. Pero hay algunos otros sistemas que pretenden reemplazarlo, uno de ellos es <a href="https://en.wikipedia.org/wiki/ZFS">ZFS</a> y su reencarnación <a href="https://en.wikipedia.org/wiki/OpenZFS">openzfs</a> originario de la extinta <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a> que como características destacadas tiene <em>snapshoting</em>, evitar corrupción de datos en metadatos y un mayor límite de espacio de almacenamiento máximo teórico que puede considerarse hoy en día infinito y únicamente relevante para superordenadores.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_file_systems">Comparison of file systems</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openzfs.svg" width="200" height="150" alt="OpenZFS" title="OpenZFS"  class="lozad "></p>
+<figcaption>Sistema de archivos avanzado OpenZFS</figcaption>
+</figure>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/</id>
         <title>50&#43; comandos básicos y útiles de GNU/Linux</title>
@@ -1821,66 +1923,6 @@
                 <category term="gnu-linux"/>
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/</id>
-        <title>Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux</title>
-        <updated>2019-06-21T19:00:00+02:00</updated>
-        <published>2019-06-21T19:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los dispositivos de almacenamiento se han de formatear con un sistema de archivos. Algunos de los sistemas de archivos están mejor soportados y son compatibles con una mayor número de sistemas y dispositivos, por tanto al formatear un dispositivo de almacenamiento ha de elegirse como sistema de archivos uno compatible, dependiendo del uso es más adecuado uno u otro. Para los dispositivos extraíbles la opción recomendable es exFAT o en su defecto NTFS o FAT.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME"  class=""></p>
-</div>
-<p>Cada sistema operativo posee uno o varios formatos de sistemas de archivos que soporta de forma nativa. Así por ejemplo <a href="https://www.microsoft.com/es-es/windows/">Windows</a> como sistema de archivos para el sistema se utiliza <a href="https://es.wikipedia.org/wiki/NTFS">NTFS</a> y <a href="https://en.wikipedia.org/wiki/File_Allocation_Table">FAT</a>, <a href="https://fr.wikipedia.org/wiki/FAT32">FAT32</a> o <a href="https://es.wikipedia.org/wiki/ExFAT">exFAT</a> para los medios extraíbles. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> para el sistema se suele utilizar <a href="https://en.wikipedia.org/wiki/Ext4">ext4</a>. Y en <a href="https://www.apple.com/macos/">macOS</a> se utiliza <a href="https://en.wikipedia.org/wiki/HFS_Plus">HFS+</a> o <a href="https://en.wikipedia.org/wiki/Apple_File_System">APFS</a>. Cada unos posee unas propiedades y los más antiguos para evitar sus limitaciones han sido sustituidos por unos sistemas de archivos más modernos.</p>
-<p>Los sistemas de archivos más compatibles son los que tradicionalmente se han utilizado por <a href="https://www.microsoft.com/">Microsoft</a> dada su amplia cuota de mercado en los sistemas de escritorio, estos son FAT y FAT32. Sin embargo, estos poseen unas limitaciones que no los hacen adecuados si el tamaño de los archivos superan los 4 GiB o la capacidad del sistemas de almacenamiento supera los 2 TiB, que son precisamente los límites máximos de FAT32. Para superar estas limitaciones Microsoft ha desarrollado exFAT como nuevo sistema de archivos para los medios extraíbles con unos límites de 16 EiB (16 x 1024 PiB x 1024 TiB, 16.6M TiB) para los tamaños de archivo y 64 ZiB (64 x 1024 EiB, 65536 EiB) para el sistema de almacenamiento son unos límites varios órdenes de magnitud más grandes (y considerarse infinitos) que las capacidades de la tecnología actual (aunque al ritmo del avance de la tecnología puede que se llegue a ellos dentro de unas décadas).</p>
-<p>En GNU/Linux puede utilizarse FAT32, NTFS y exFAT tanto en modo lectura como escritura, pero Windows solo permite sus propios formatos nativos y ha de utilizarse alguno de los anteriores, macOS soporta FAT en modo lectura y escritura, NTFS en modo lectura y para exFAT soporta también lectura y escritura. Otros dispositivos como <em>Smart TV</em> suelen soportar alguno de los sistemas de archivos de Microsoft ya sea FAT32, NTFS y exFAT. Salvo que se quiera la máxima compatibilidad con FAT32 para con versiones antiguas de Windows o dispositivos con algunos años la opción más recomendable a usar es exFAT.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/_h30HBYxtws" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<p>En GNU/Linux para formatear y utilizar particiones en NTFS hay que instalar el paquete <a href="https://www.archlinux.org/packages/extra/x86_64/ntfs-3g/">ntfs-3g</a> y para exFAT el paquete <a href="https://www.archlinux.org/packages/community/x86_64/exfat-utils/">exfat-utils</a>, estos son los paquetes para <a href="https://www.archlinux.org/">Arch Linux</a> otras distribuciones tienen un paquete equivalente.</p>
-<p>Para formatear una unidad ya sea una memoria USB o disco duro externo con formato exFAT en GNU/Linux con el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a> se realiza con el programa <em>Discos</em>, aunque también es posible realizarlo desde la linea de comandos.</p>
-<p>En la parte izquierda se encuentra los dispositivos conectados y reconocidos por el sistema. En mi caso el disco del sistema, un Samsung 970 EVO de 500 GB, un disco duro externo USB de 500 GB y una memoria USB de 16 GB sin ningún formato.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dispositivos de almacenamiento del sistema"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_300x200_fit_box_3.png" width="278" height="200" alt="Dispositivos de almacenamiento del sistema" title="Dispositivos de almacenamiento del sistema"  class="lozad "></a></p>
-<figcaption>Unidades del sistema</figcaption>
-</figure>
-</div>
-<p>Primero es importante identificar correctamente la unidad que se quiere formatear para no perder los datos al elegir por error otra. Se introduce el nombre del volumen que identifica al dispositivo y se elige el sistema de archivos, como opciones más comunes se ofrece ext4, NTFS y FAT pero pulsando en <em>Otro</em> aparecen más, entre ellos exFAT. Pulsando el botón <em>Siguiente</em> al cabo de unos segundos la partición queda formateada con exFAT y lista para usarse tanto en GNU/Linux como en Windows, macOS o un Smart TV.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_200x150_fit_box_3.png" width="200" height="144" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a></p>
-<figcaption>Formatear dispositivo de almacenamiento</figcaption>
-</figure>
-</div>
-<p>No está de más recordar que en el caso de desechar un dispositivo de almacenamiento es recomendable hacerle un formateo completo para que los datos que contenga no sean accedidos por la persona a la que se le entregue el dispositivo ya que incluso se pueden <a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">recuperar datos previamente eliminados incluso en una unidad corrupta</a>. Por otro lado en GNU/Linux si se desea mayor seguridad se puede cifrar la partición con la opción LUKS.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
             

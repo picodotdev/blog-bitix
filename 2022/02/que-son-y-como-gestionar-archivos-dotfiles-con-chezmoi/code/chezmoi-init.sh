@@ -1,0 +1,1 @@
+$ chezmoi init https://github.com/picodotdev/dotfiles.git
