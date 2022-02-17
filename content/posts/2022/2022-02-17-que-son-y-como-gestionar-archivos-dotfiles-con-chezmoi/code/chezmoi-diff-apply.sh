@@ -1,0 +1,2 @@
+$ chezmoi diff
+$ chezmoi apply
