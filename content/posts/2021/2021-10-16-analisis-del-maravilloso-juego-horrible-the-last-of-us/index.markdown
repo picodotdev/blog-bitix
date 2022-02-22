@@ -37,7 +37,7 @@ A veces me cuesta encender la Play y ponerme a jugar pero este al igual o más q
 {{< image
     gallery="true"
     image1="image:the-last-of-us-remasterizado.jpg" optionsthumb1="200x150" title1="Portada"
-    image2="image:left-behind.jpg" optionsthumb2="20x150" title2="Portada"
+    image2="image:left-behind.jpg" optionsthumb2="200x150" title2="Portada"
     image3="image:naughty-dog.jpg" optionsthumb3="200x150" title3="Portada"
     caption="Portada" >}}
 

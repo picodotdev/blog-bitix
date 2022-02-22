@@ -1,8 +1,9 @@
 ---
 pid: 621
 type: "post"
-title: "Qué son y cómo gestionar archivos dotfiles con chezmoi"
-url: "/2022/02/que-son-y-como-gestionar-archivos-dotfiles-con-chezmoi/"
+title: "Qué son los archivos dotfiles y cómo gestionarlos con chezmoi"
+url: "/2022/02/que-son-los-archivos-dotfiles-y-como-gestionarlos-con-chezmoi/"
+aliases: ["/2022/02/que-son-y-como-gestionar-archivos-dotfiles-con-chezmoi/"]
 date: 2022-02-17T20:00:00+01:00
 language: "es"
 index: true
