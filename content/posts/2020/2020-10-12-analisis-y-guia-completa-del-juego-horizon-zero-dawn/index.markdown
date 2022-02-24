@@ -41,6 +41,10 @@ Al final del juego te queda la sensación de todas las aventuras, toda la histor
     gallery="true"
     image1="image:horizon-zero-dawn.jpg" optionsthumb1="300x200" title1="Pantalla inicial y menú"
     caption="Pantalla inicial y menú" >}}
+{{< image
+    gallery="true"
+    image1="image:horizon-zero-dawn-cover.jpg" optionsthumb1="200x150" title1="Portada del juego Horizon Zero Dawn"
+    caption="Portada del juego Horizon Zero Dawn" >}}
 
 {{< game-spoiler >}}
 

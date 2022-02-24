@@ -21,6 +21,10 @@ summary: "Algunos juegos están enfocados a la parte de habilidad y acción con 
 
 Aún no he jugado a muchos juegos de [la PlayStation 4 que compré][blogbitix-417] casi al final de su ciclo de vida, me quedan por jugar un montón de ellos de los más reconocidos de la amplia y excepcional generación de esta consola. Uno de ellos al que tenía muchas ganas era [The Last of Us](https://www.igdb.com/games/the-last-of-us) de [Naughty Dog](https://www.igdb.com/companies/naughty-dog) desarrollado para la PS3 en el año 2013 y [remasterizado en el año 2014 para la PS4](https://www.igdb.com/games/the-last-of-us-remastered). Tiene una segunda parte con [The Last of Us 2](https://www.igdb.com/games/the-last-of-us-part-ii) publicado para la PS4 en el año 2020 que continúa la historia.
 
+Naughty Dog es la misma desarrolladora de otra de las sagas de juegos para PlayStation, la saga de Uncharted también juegos de historia lineal para un jugador del aventurero y cazatestoros Nathan Drake y su compañero Sully.
+
+* [Análisis de los juegos de aventuras Uncharted The Nathan Drake Collection][blogbitix-622]
+
 Es un juego con muy buenas críticas que ya sabía antes de jugarlo que me iba a gustar y me apetecía jugar por su estilo de juego de historia lineal para descansar de juegos largos y de mundo abierto. A veces un juego tiene buenas críticas pero por diferentes circunstancias no siempre a uno le gusta lo que a la mayoría y a veces uno está deseando un juego y también por lo que sea al final no le resulta tan interesante o entretenido como deseaba.
 
 Ya terminado, a falta de la precuela que incluye la versión remasterizada, para mí es una maravilla de juego como ya esperaba. A pesar de la antigüedad del juego no conocía ningún detalle importante de la historia, por ejemplo no conocía como empezaba ni cómo se iba a desarrollar el juego ni ningún otro personaje, solo sabía un poco de su ambientación general y los dos personajes principales del juego que aparecen en la portada del juego, Joel y Ellie. No conocía mucho del juego porque también he tratado de evitar conocer detalles del mismo, en un juego lineal en el que la historia al mismo nivel que las partes de acción conocer un detalle importante de la trama puede cambiar mucho la percepción del juego por la falta de sorpresa.
@@ -51,6 +55,11 @@ El juego se desarrolla en un mundo apocalíptico que muestra la historia de prin
 Hay una mezcla de parte jugable de exploración y acción con varias secuencias cinemáticas que guían la historia con siempre el mismo desarrollo que no depende de ninguna de las acciones del jugador. Posee varios niveles de dificultad, algunos usuarios prefieren la parte de habilidad y acción de los juegos como diversión y juegan en niveles más difíciles para que el juego sea un reto de mayor habilidad, otros usuarios la parte de los juegos que más les gusta es disfrutar de la historia y prefieren jugar en un nivel fácil o normal. También tiene un modo _plus_ que permite volver a empezar la historia sin perder las mejoras de nivel de los personajes.
 
 El juego para la PS4 es una versión _remasterizada_ del original para la PS3, consta de la historia principal y _Left Behind_ con una precuela al mismo tiempo que _spin-off_ con el desarrollo de un punto de la historia principal, el juego completo tiene una duración de unas 30 horas en tiempo de juego. Es un juego de historia lineal en el que no se puede volver a atrás como ocurre en los juegos de mundo abierto, cada zona es única y nueva por la que solo se transita una sola vez. Los escenarios aunque lineales con un único destino tienen pequeñas zonas que explorar y permiten afrontar las misiones de varias alternativas en el mapa según como se quieran resolver los combates. Al avanzar siempre a nuevos escenarios motiva a explorar más concienzudamente para encontrar todos los objetos y coleccionables. Una vez completada la historia por primera vez el juego muestra el número de coleccionables y artefactos que no se han encontrado para repetir el capítulo si se desea encontrarlos todos.
+
+{{< image
+    gallery="true"
+    image1="image:the-last-of-us-cover.jpg" optionsthumb1="200x150" title1="Portada del juego The Last of Us"
+    caption="Portada del juego The Last of Us" >}}
 
 The Last of Us se cataloga en el género de _survival horror_ en el que los recursos son limitados que obliga a racionarlos. Los combates han de afrontarse con una mezcla de táctica, sigilo y en ocasiones con armas de fuego. No se proporciona ningún mapa pero los escenarios no son muy amplios que simplifica su exploración necesaria para ir obteniendo recursos que se van gastando del equipo y encontrar diferentes artefactos que proporcionan mejoras. Aunque no es un juego de rol tiene varios componentes del género como la fabricación de objetos a partir de recursos, varios tipos de armas y mejora de las mismas así como una pequeña serie de mejoras en la ficha del personaje que dan cierta libertad al jugador de elegir. Aparte de acción y exploración en algunos momentos hay pequeñas mecánicas de puzzle para superar obstáculos.
 
@@ -131,6 +140,13 @@ Los coleccionables no están especialmente escondidos, basta con explorar un poc
     image2="image:colgante-luciernaga-2.jpg" optionsthumb2="200x150" title2="Colgantes de luciérnaga"
     image3="image:colgante-luciernaga-3.jpg" optionsthumb3="200x150" title3="Colgantes de luciérnaga"
     caption="Colgantes de luciérnaga" >}}
+
+### Comparación versión original y remasterizadas
+
+Remasterizar un juego aporta mejoras visuales para aprovechar la mayor capacidad gráfica de la nueva generación de consolas. En el siguiente vídeo se muestran las diferencias visuales entre la versión no remasterizada y remasterizada, teniendo estas últimas más detalles gráficos como vegetación y elementos en el escenario. Sin embargo, desde el punto de vista de la historia entre ambas versiones no hay ninguna diferencia.
+
+{{< youtube
+    video="a99dEkiuJjo" >}}
 
 ### Banda sonora original
 

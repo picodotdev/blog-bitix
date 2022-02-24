@@ -52,6 +52,13 @@ Los juegos en toda la saga narran la historia de tres personajes Pontius un caba
 
 {{< image
     gallery="true"
+    image1="image:trine-1-cover.jpg" optionsthumb1="200x150" title1="Portada Trine 1"
+    image2="image:trine-2-cover.jpg" optionsthumb2="200x150" title2="Portada Trine 2"
+    image3="image:trine-3-cover.jpg" optionsthumb3="200x150" title3="Portada Trine 3"
+    caption="Portadas de los juegos Trine" >}}
+
+{{< image
+    gallery="true"
     image1="image:trine-1-inicio.jpg" optionsthumb1="300x200" title1="Inicio de nivel en Trine 1"
     image2="image:trine-2-inicio.jpg" optionsthumb2="300x200" title2="Inicio de nivel en Trine 2"
     caption="Inicios de nivel en Trine 1 y 2" >}}

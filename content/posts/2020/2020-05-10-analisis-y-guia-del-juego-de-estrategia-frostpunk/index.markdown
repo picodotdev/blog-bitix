@@ -31,6 +31,10 @@ No es un juego complicado pero requiere plantear bien las prioridades y construc
     image2="image:frostpunk-intro.jpg" optionsthumb2="200x150" title2="Pantalla inicial"
     image3="image:frostpunk-menu.jpg" optionsthumb3="200x150" title3="Menú"
     caption="Pantalla inicial y menú" >}}
+{{< image
+    gallery="true"
+    image1="image:frostpunk-cover.jpg" optionsthumb1="200x150" title1="Portada del juego Frostpunk"
+    caption="Portada del juego Frostpunk" >}}
 
 Frostpunk es un juego corto sabiendo cual es la estrategia para sobrevivir. En mi caso me ha gustado mucho y me he divertido bastante con él tomando las decisiones que finalmente me han permitido superar con éxito el juego. Una vez acabada el modo historia inicial se habilitan otros modos de juego que permiten rejugarlo durante más tiempo. Más recientemente también se ha publicado una expansión del juego [Frostpunk The last Autumn](https://www.frostpunkgame.com/) ambientada en un punto anterior en la línea temporal de Frostpunk que permite conocer más detalles de esta historia.
 

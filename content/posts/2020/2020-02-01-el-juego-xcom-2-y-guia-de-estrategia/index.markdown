@@ -43,6 +43,10 @@ Si te gusta el modo de juego de XCOM 2 otros juegos similares son:
     image1="image:xcom-2.jpg" optionsthumb1="300x250" title1="Pantalla inicial"
     image2="image:xcom-2-menu.jpg" optionsthumb2="300x250" title2="Menú"
     caption="Pantalla inicial y menú del juego XCOM 2" >}}
+{{< image
+    gallery="true"
+    image1="image:xcom-2-cover.jpg" optionsthumb1="200x150" title1="Portada del juego XCOM 2"
+    caption="Portada del juego XCOM 2" >}}
 
 En un momento de oferta en la [PlayStation Store][playstation-store] en formato digital está en por 13 € desde un precio original de 50 €, un gran precio precio para un gran juego que ofrece una buena cantidad de horas de entretenimiento, más si una vez acabado el juego se optar por rejugarlo en un nivel más difícil. En [Amazon][amazon-affiliate] está en formato físico. Al menos en la versión de la PlayStation 4 del juego en momentos concretos se producen tirones no se si por capacidad de la la PS4 o por un _port_ deficiente en la consola, además los tiempos de carga y guardado incluso para mostrar los menús es significativo en parte puede ser debido a que la PS4 tiene disco duro mecánico y es común a todos los juegos de esta generación de consolas.
 
