@@ -23,6 +23,7 @@ Estos son algunos artículos patrocinados que he publicado.
 * [Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP][blogbitix-381]
 * [Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let's Encrypt][blogbitix-614]
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
+* [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
 
 Mi dirección de correo electrónico es [pico.dev@gmail.com](mailto:pico.dev@gmail.com) mediante la cual me puedes contactar sin compromiso, ¡consúltame!.
 

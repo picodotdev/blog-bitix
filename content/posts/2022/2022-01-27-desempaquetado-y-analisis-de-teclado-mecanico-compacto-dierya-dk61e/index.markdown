@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:dierya-dk61e-1.jpg"
 imagePost: "image:dierya-dk61e-1.jpg"
 series: ["desempaquetado-tecnologia"]
-summary: "Desde hace un tiempo he cambiado un teclado de membrana completo por uno mecánico qu ocupe menos espacio que uno completo. La ventaja es que los teclados mecánicos ofrecen mejor experiencia de escritura y personalización, y los TKL o 60% son más compactos y ocupan menos espacio, su contrapartida es que suelen ser algo más caros pero su mayor precio al usarlos a algunos usuarios es algo justificado para uno de los principales dispositivos del ordenador. La marca DIERYA me ha enviado un ejemplar del modelo DK61E con formato 60% y disposición en inglés, un teclado con unas especificaciones de teclado de gama alta pero con un precio muy ajustado que consigue ser un producto con una buena relación calidad/precio y una buena opción de compra a considerar. En este artículo hago el desempaquetado y análisis del teclado mecánico DIERYA DK61E."
+summary: "Desde hace un tiempo he cambiado un teclado de membrana completo por uno mecánico dado que quería que ocupase menos espacio. Otra ventaja es que los teclados mecánicos ofrecen mejor experiencia de escritura y personalización, y los TKL o 60% son más compactos y ocupan menos espacio, su contrapartida es que suelen ser algo más caros pero su mayor precio al usarlos a algunos usuarios es algo justificado para uno de los principales dispositivos del ordenador. La marca DIERYA me ha enviado un ejemplar del modelo DK61E con formato 60% y disposición en inglés, un teclado con unas especificaciones de teclado de gama alta pero con un precio muy ajustado que consigue ser un producto con una buena relación calidad/precio y una buena opción de compra a considerar. En este artículo hago el desempaquetado y análisis del teclado mecánico DIERYA DK61E."
 ---
 
 {{% post %}}
@@ -36,26 +36,28 @@ El teclado tiene un formato ANSI y la serigrafía de las teclas es de una dispos
 
 El cable de conexión es desmontable con conexión USB de tipo C al teclado y USB de tipo A al ordenador siendo este último reversible de modo que puede conectarse en ambas orientaciones del cable. El cable es mallado y posee una brida para recoger el cable sobrante.
 
-La marca ofrece una aplicación para Windows con la que configurar la iluminación del teclado y efectos de luz asi como crear macros.
+La marca ofrece una aplicación para [Windows][windows] con la que configurar la iluminación del teclado y efectos de luz asi como crear macros.
 
 En resumen estas son las especificaciones técnicas del DIERYA DK61E:
 
-* Cuerpo del teclado de plástico robusto, no regulable en altura.
+* Cuerpo del teclado de plástico robusto y buena construcción, no regulable en altura.
 * Formato teclado 60%, 61 teclas.
 * ANSI con _keycaps_ serigrafiadas en disposición en inglés.
 * Premontado, incluye _switches_ y _keycaps_.
-* _Switches_ _hot swappable_ Gateron _brown_ táctiles y ópticos (disponibles otros tipos lineales y _clicky_). Con tipo de montaje _cherry mx_.
+* _Switches_ intercambiables o _hot swappable_ Gateron _brown_ táctiles y ópticos (disponibles otros tipos lineales y _clicky_). Con tipo de montaje _cherry mx_.
 * Material _keycaps_ PBT _double shot_ de perfil OEM.
+* _Switches_ y _keycaps_ incluídos y premontados.
 * Iluminación RGB con varios efectos de luz.
 * Conexión por cable USB, incluye cable mallado y acodado desmontable USB-C y reversible ambos extremos. Conexión USB nativa 3.0 compatible con USB 2.0.
 * Aplicación para Windows para configuración y macros.
 
-El [teclado mecánico DIERYA DK61E se vende en Amazon][amazon-dierya-dk61] a un precio de 70 € con la posibilidad de elegir entre varios tipos de _switches_ según preferencia. En periodos en los que está en oferta se encuentra con un descuento sobre el precio original y la marca me ha proporcionado el código promocional **KONQSAHM** para aprovechar un 15% de descuento válido hasta el 13/02/2022 en el proceso de la compra [aplicando el código según la ayuda de Amazon](https://www.amazon.es/gp/help/customer/display.html?nodeId=GPAU9BCECRXQBFQR). El modelo [DIERYA DK61 Pro][amazon-dierya-dk61-pro] es exactamente igual pero ofreciendo conexión inalámbrica adicionalmente a la cableada, el modelo [DIERYA DK63][amazon-dierya-dk63] es similar pero adicionalmente de la conexión con cable ofrece conexión inalámbrica por bluetooth y teclas dedicadas de flechas de desplazamiento.
+El [teclado mecánico DIERYA DK61E se vende en Amazon][amazon-dierya-dk61] a un precio de 70 € con la posibilidad de elegir entre varios tipos de _switches_ según preferencia. En periodos en los que está en oferta se encuentra con un descuento sobre el precio original. El modelo [DIERYA DK61 Pro][amazon-dierya-dk61-pro] es exactamente igual pero ofreciendo conexión inalámbrica adicionalmente a la cableada, el modelo [DIERYA DK63][amazon-dierya-dk63] es similar pero adicionalmente de la conexión con cable ofrece conexión inalámbrica por bluetooth y teclas dedicadas de flechas de desplazamiento.
 
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
 * [Manual de usuario del teclado DIERYA DK61](https://www.kemovebbs.com/usermanuel/DIERYADK61.pdf)
+* [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
 
 {{< amazon
     tags="keyboard-dierya" >}}
@@ -87,11 +89,7 @@ La caja es una caja especial  con un diseño estético completamente en blanco s
     gallery="true"
     image1="image:dierya-dk61e-caja-4.jpg" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK61E"
     image2="image:dierya-dk61e-caja-5.jpg" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-caja-6.jpg" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK61E" >}}
-{{< image
-    gallery="true"
-    image1="image:dierya-dk61e-caja-7.jpg" optionsthumb1="200x150" title1="Caja del teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-caja-8.jpg" optionsthumb2="200x150" title2="Caja del teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-caja-6.jpg" optionsthumb3="200x150" title3="Caja del teclado DIERYA DK61E"
     caption="Caja del teclado DIERYA DK61E" >}}
 
 #### El contenido de la caja
@@ -137,17 +135,17 @@ El teclado tiene un cuerpo completamente de plástico y no posee patas para regu
 {{< image
     gallery="true"
     image1="image:dierya-dk61e-teclado-1.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-teclado-2.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E" >}}
+    image2="image:dierya-dk61e-teclado-2.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-teclado-4.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-teclado-4.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-teclado-5.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-teclado-6.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-teclado-5.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-teclado-6.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
+    image3="image:dierya-dk61e-teclado-7.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
-    image1="image:dierya-dk61e-teclado-7.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
-    image2="image:dierya-dk61e-teclado-8.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E"
-    image3="image:dierya-dk61e-teclado-9.jpg" optionsthumb3="200x150" title3="Teclado DIERYA DK61E" >}}
+    image1="image:dierya-dk61e-teclado-8.jpg" optionsthumb1="200x150" title1="Teclado DIERYA DK61E"
+    image2="image:dierya-dk61e-teclado-9.jpg" optionsthumb2="200x150" title2="Teclado DIERYA DK61E" >}}
 {{< image
     gallery="true"
     image1="image:dierya-dk61e-teclado-10.jpg" optionsthumb1="300x250" title1="Teclado DIERYA DK61E"
@@ -231,7 +229,7 @@ El sonido de los teclados mecánicos es notablemente diferente de los de membran
 
 El cable es mallado con una útil brida para recoger el cable sobrante lo que permite mantener la mesa ordenada y sin molestias de cables. Un detalle destacable es que el extremo que se conecta al ordenador es de tipo A reversible con lo que tiene la misma ventaja de los cables USB de tipo C de poder conectarlos en cualquier orientación, esto evita estar probando en qué orientación hay que conectar el cable sobre todo en los casos en los que el conector del ordenador no tenga fácil alcance.
 
-Es completamente compatible con GNU/Linux y también funciona en macOS, en ambos se detectan todas las teclas incluidas las de función multimedia, fechas de desplazamiento y el bloque de teclas que en los teclados TKL y completos están encima de las flechas de desplazamiento como insertar o suprimir.
+Es completamente compatible con [GNU][gnu]/[Linux][linux] y también funciona en [macOS][macos], en ambos se detectan todas las teclas incluidas las de función multimedia, fechas de desplazamiento y el bloque de teclas que en los teclados TKL y completos están encima de las flechas de desplazamiento como insertar o suprimir.
 
 Incluye un pequeño manual en el que se indican las teclas de función, útil sobre todo si se cambian los _keycaps_ por otros. Y ofrece una [aplicación para el sistema operativo Windows](https://www.dieryatech.com/collection/dk61e) desde la que realizar la programación del teclado, configuración del RGB y configuración de macros.
 
@@ -275,13 +273,13 @@ Finalmente, comentar que la marca DIERYA y [KEMOVE][kemove] son marcas del mismo
 
 ### Complementos para el teclado
 
-Al comprar un teclado mecánico puede interesar comprar a la vez otros complementos para el teclado, como un [concentrador USB](https://amzn.to/3H4zsan) para tener los puertos de conexión cerca especialmente si se suele estar conectando y desconectando dispositivos o el ordenador tiene difícil acceso a los puertos USB estando en la parte trasera del ordenador de torre.
+Al comprar un teclado mecánico puede interesar comprar a la vez otros complementos para el teclado, como un [concentrador USB](https://amzn.to/3Hpch9P) para tener los puertos de conexión cerca especialmente si se suele estar conectando y desconectando dispositivos o el ordenador tiene difícil acceso a los puertos USB estando en la parte trasera del ordenador de torre.
 
-Si al cabo de un tiempo se quieren probar otros _switches_ a los originales del teclado es posible cambiarlos sin necesidad de comprar otro teclado en la página de la marca KEMOVE asociada a DIERYA se venden varios tipos de _switches_ en varios colores a un precio también muy ajustado para lo que suele ser habitual. En páginas como [AliExpreses][aliexpress] hay multitud de vendedores que venden conjuntos de _keycaps_ y la marca KEMOVE vende un [conjunto de _keycaps_ tipo _pudding_](https://amzn.to/3ADpjPw) especialmente diseñados para los teclados RBG al dejar pasar mejor la luz y en la página de KEMOVE ofrece [_switches_ ópticos Gateron](https://kmovetech.com/gateron-optical-white-switch-diy-replaceable-switches-for-mechanical-gaming-keyboard-10-pcs-white-p0021-p0021.html).
+Si al cabo de un tiempo se quieren probar otros _switches_ a los originales del teclado es posible cambiarlos sin necesidad de comprar otro teclado en la página de la marca KEMOVE asociada a DIERYA se venden varios tipos de _switches_ en varios colores a un precio también muy ajustado para lo que suele ser habitual. En páginas como [AliExpreses][aliexpress] hay multitud de vendedores que venden conjuntos de _keycaps_ y la marca KEMOVE vende un [conjunto de _keycaps_ tipo _pudding_](https://amzn.to/3ADpjPw) especialmente diseñados para los teclados RGB al dejar pasar mejor la luz y en la página de KEMOVE ofrece [_switches_ ópticos Gateron](https://kmovetech.com/gateron-optical-white-switch-diy-replaceable-switches-for-mechanical-gaming-keyboard-10-pcs-white-p0021-p0021.html).
 
 Otro producto interesante es una alfombrilla de gran tamaño que permite colocar tanto el teclado como el ratón, permite evitar el desgaste de la mesa o ensuciarla. Algunas [alfombrillas incluso con iluminación RGB](https://amzn.to/3Aztewq) que aparte de su efecto estético puede resultar también útil en condiciones de baja iluminación.
 
-Finalmente, en caso de querer transportar el teclado es aconsejable es buena idea comprar una [funda para protegerlo en el transporte](https://amzn.to/3AIbLSQ) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
+Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://amzn.to/3AIbLSQ) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
 
 {{< amazon
     tags="storage-usb-hub" >}}

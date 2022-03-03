@@ -1,4 +1,4 @@
-{{ $isOutputFormatAmp := eq (.Scratch.Get "outputFormat") "AMP" }}
-{{ $isOutputFormatHtml := eq (.Scratch.Get "outputFormat") "HTML" }}
+{{- $isOutputFormatAmp := eq (.Scratch.Get "outputFormat") "AMP" -}}
+{{- $isOutputFormatHtml := eq (.Scratch.Get "outputFormat") "HTML" -}}
 
-{{ .Scratch.Set "images" (partial "images-post.html" .) }}
+{{- .Scratch.Set "images" (partial "images-post.html" .) -}}

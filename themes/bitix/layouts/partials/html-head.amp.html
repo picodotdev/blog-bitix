@@ -1,5 +1,5 @@
-{{ .Scratch.Set "outputFormat" "AMP" }}
-{{ partial "globals.html" . }}
+{{- .Scratch.Set "outputFormat" "AMP" -}}
+{{- partial "globals.html" . -}}
 <!DOCTYPE html>
 <html amp lang="{{ .Site.Language.Lang }}">
 <head>

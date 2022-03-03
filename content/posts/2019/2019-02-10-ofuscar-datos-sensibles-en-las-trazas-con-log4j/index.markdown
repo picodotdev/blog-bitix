@@ -34,7 +34,7 @@ Con los parámetros de configuración _replace_, _regex_ y _replacement_ el reem
 
 {{< code file="log4j2.yaml" language="yaml" options="" >}}
 
-En la salida del ejemplo la primera traza corresponde al uso de la clase _SecurdMessage_ y la segunda al _PatternLayout_.
+En la salida del ejemplo la primera traza corresponde al uso de la clase _SecuredMessage_ y la segunda al _PatternLayout_.
 
 {{< code file="System.out" language="plain" options="" >}}
 

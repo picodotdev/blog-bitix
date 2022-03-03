@@ -92,7 +92,7 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 
 En español también hay algunos blogs personales con artículos desde la programación hasta los aspectos de organización y gestión.
 
-* [Arquitectura Java](https://www.arquitecturajava.com/): artículos sobre el lenguaje java principalmente y de un nivel no muy avanzado, aún así merece agregarlo al lector de _feeds_.
+* [Arquitectura Java](https://www.arquitecturajava.com/): artículos sobre el lenguaje Java principalmente, en muchas ocasiones explicando los fundamentos del lenguaje, de programación y la programación web. Ideal para empezar con el lenguaje y la plataforma Java.
 * [Adictos al trabajo](https://www.adictosaltrabajo.com/): la bitácora de la gente que trabaja en [Autentia](https://www.autentia.com/) con artículos y tutoriales muy interesantes, muchos sobre Java y bastante elaborados.
 * [Apuntes de Java](https://www.apuntesdejava.com/): como su nombre indica una bitácora con artículos sobre Java que ya tiene una larga trayectoria iniciada el año 2006.
 * [Diario de Programación](http://http://blog.chuidiang.org/): no publica todas las semanas pero los artículos que contiene son muy interesantes y tienen una buena calidad. En este blog prima la calidad sobre la cantidad.

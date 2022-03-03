@@ -5,17 +5,19 @@
       <div class="col-12">
         {{ partial "head.html" . }}
         <div class="row">
-          <div class="col-12 adblock-container-billboard">
-            {{ partial "adsense/billboard.html" . }}
+          <div class="col-12">
+            <div class="adblock-container-billboard mt-3 mb-3">
+              {{ partial "adsense/billboard.html" . }}
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <div class="adblock-sidebar-container">
-              <div class="adblock-sidebar-container-left">
+            <div class="adblock-container-sidebar">
+              <div class="adblock-container-sidebar-left">
                 {{ partial "adsense/auto-vertical.html" . }}
               </div>
-              <div class="adblock-sidebar-container-right">
+              <div class="adblock-container-sidebar-right">
                 {{ partial "adsense/auto-vertical.html" . }}
               </div>
             </div>
@@ -33,9 +35,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 adblock-container-billboard">
+          <div class="col-12">
             <span id="pageBottom"></span>
-            {{ partial "adsense/billboard.html" . }}
+            <div class="adblock-container-billboard mt-3 mb-3">
+              {{ partial "adsense/billboard.html" . }}
+            </div>
           </div>
         </div>
         <div class="row">
