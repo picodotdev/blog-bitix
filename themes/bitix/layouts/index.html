@@ -6,7 +6,7 @@
         {{ partial "head.html" . }}
         <div class="row">
           <div class="col-12">
-            <div class="adblock-container-billboard mt-3 mb-3">
+            <div class="adblock-container-billboard mt-3 mb-3 p-0">
               {{ partial "adsense/billboard.html" . }}
             </div>
           </div>
@@ -15,10 +15,10 @@
           <div class="col-12">
             <div class="adblock-container-sidebar">
               <div class="adblock-container-sidebar-left">
-                {{ partial "adsense/auto-vertical.html" . }}
+                {{ partial "adsense/vertical.html" . }}
               </div>
               <div class="adblock-container-sidebar-right">
-                {{ partial "adsense/auto-vertical.html" . }}
+                {{ partial "adsense/vertical.html" . }}
               </div>
             </div>
             {{ partial "article-list.html" . }}
@@ -37,7 +37,7 @@
         <div class="row">
           <div class="col-12">
             <span id="pageBottom"></span>
-            <div class="adblock-container-billboard mt-3 mb-3">
+            <div class="adblock-container-billboard mt-3 mb-3 p-0">
               {{ partial "adsense/billboard.html" . }}
             </div>
           </div>
