@@ -86,7 +86,7 @@ En cuanto a consideraciones específicas del DK63 está que al usarse en modo in
 
 Es compatible con GNU/Linux usando la disposición de teclado _Inglés internacional con teclas muertas por AltGr_, con esta disposición las tildes se escriben con la combinación de teclas _Alt derecho+vocal_. También es compatible con macOS usando la disposición de teclado _US internacional - PC_, con esta disposición las tildes se escriben con la combinación de teclas _Option+e_ para poner primero la tilde y luego la vocal.
 
-### Desempaquetado del teclado mecánico DIERYA DK61E
+### Desempaquetado del teclado mecánico DIERYA DK63
 
 #### La caja
 
