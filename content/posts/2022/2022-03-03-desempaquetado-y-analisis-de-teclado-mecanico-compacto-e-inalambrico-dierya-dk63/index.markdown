@@ -36,7 +36,7 @@ Ambos, son teclados compactos de formato 60%, el DK63 tiene 63 teclas y el DK61E
 
 Tener menos teclas tiene como ventaja que su tamaño es menor, ocupa menos espacio en la mesa, pesan menos y son más fácilmente transportables. Aunque tienen menos teclas físicas dedicadas las que no están siguen pudiéndose usar como una combinación de teclas, por ejemplo la tecla de función _F2_ que se suele utilizar para renombrar archivos tanto en Windows como en GNU/Linux se ha de usar con la combinación de teclas _FN+2_. Aunque los teclados  mecánicos 60% tiene menos teclas físicas en realidad tienen las mismas teclas que los completos simplemente que algunas teclas se han de usar como una combinación de teclas. La desventaja de los teclados mecánicos compactos está en que precisamente esas teclas que han de usarse como una combinación de teclas es más incómodo de usar que con la tecla dedicada de los teclados completos.
 
-Los _switches_ son de la marca Outemu no son intercambiables o _hot swappable_, y en el ejemplar que he probado de tipo tácil _brown_. La disposición de teclas es ANSI en inglés. Los _keycaps_ son de plástico ABS de doble disparo o _double shot_ para la serigrafía de los caracteres principales y serigrafía _pad printing_ para los caracteres de las teclas de función.
+Los _switches_ son de la marca TMKB no son intercambiables o _hot swappable_, y en el ejemplar que he probado de tipo tácil _brown_. La disposición de teclas es ANSI en inglés. Los _keycaps_ son de plástico ABS de doble disparo o _double shot_ para la serigrafía de los caracteres principales y serigrafía _pad printing_ para los caracteres de las teclas de función.
 
 Tiene iluminación RGB con varios efectos de luz, posibilidad de cambiar los colores y de regular tanto el nivel de intensidad de la luz como la velocidad del efecto de luz.
 
@@ -46,7 +46,7 @@ Se puede usar tanto con cable como en modo inalámbrico con conexión Bluetooth,
 * Teclado 60%, 63 teclas.
 * Con teclas de desplazamiento.
 * ANSI EN.
-* _Switches_ Outemu Brown (no intercambiables o _hot swapabble_).
+* _Switches_ TMKB Brown (no intercambiables o _hot swapabble_).
 * _Keycaps_ ABS de doble disparo para la leyenda principal, _pad printing_ para la serigrafía de función.
 * _Switches_ y _keycaps_ incluídos y premontados.
 * Iluminación RGB con varios efectos de luz.
@@ -72,7 +72,7 @@ Aunque con el tiempo posiblemente uno se acostumbra a usar la combinación de te
 
 Por otro lado, para acomodar 63 teclas en el mismo espacio que el DK61, en el teclado DK63 algunas teclas tienen un tamaño de 1x en vez de 1.25x. En el DK63 la tecla _shift_ derecha tiene un tamaño algo menor que en el DK61E, las teclas _Alt derecho_ y la tecla de función tienen un tamaño menor y se prescinde de la tecla _Ctrl derecho_. Por otro lado la tecla _/_ está movida de sitio a la derecha de la tecla de flecha hacia arriba. Todo esto para dar cabida a las teclas de desplazamiento en el mismo espacio.
 
-Otras diferencias entre ambos modelos de teclado son que en el caso del DK63 los _switches_ no son intercambiables o _hot swapable_ con lo que una vez elegido el tipo de _switches_ no se pueden cambiar. Cambiar el tipo de _switches_ no es algo que se haga cada poco tiempo pero es una opción a considerar si más tarde se desea cambiar a otro tipo de _switch_ entre los diferentes lineales, táctiles y _clicky_. Los _switches_ en el DK63 son de la marca Outemu y de tipo eléctrico cuando en el DK61E son de la marca [Gateron][gateron] y de tipo óptico. A pesar de estas diferencia en los tipos de _switches_ en cuanto a experiencia de uso es difícil notar algo diferente entre uno y otro teclado.
+Otras diferencias entre ambos modelos de teclado son que en el caso del DK63 los _switches_ no son intercambiables o _hot swapable_ con lo que una vez elegido el tipo de _switches_ no se pueden cambiar. Cambiar el tipo de _switches_ no es algo que se haga cada poco tiempo pero es una opción a considerar si más tarde se desea cambiar a otro tipo de _switch_ entre los diferentes lineales, táctiles y _clicky_. Los _switches_ en el DK63 son de la marca TMKB y de tipo eléctrico cuando en el DK61E son de la marca [Gateron][gateron] y de tipo óptico. A pesar de estas diferencia en los tipos de _switches_ en cuanto a experiencia de uso es difícil notar algo diferente entre uno y otro teclado.
 
 También hay diferencias entre el DK63 y el DK61E en cuanto a los _keycaps_, en el primero los _keycaps_ son de plástico ABS de _double shot_ y la serigrafía de las teclas de función serigrafiadas con la técnica _pad printing_. En el DK61E los keycaps son de plástico PBT y la serigrafía de las teclas de función serigrafiadas con la técnica _laser engraved_. Algunos usuarios prefieren el plástico ABS por ser más adecuado para los teclados con iluminación RGB ya que al ser menos gruesas dejan pasar mejor la luz, sin embargo, el plástico PBT se considera que tiene mejor durabilidad en cuanto a desgaste no adquiriendo un tono brillante con el uso intenso del que sufren los _keycaps_ de plástico ABS. Que la serigrafía de las teclas de función sea mediante _pad printing_ puede hacer que con el paso de tiempo y uso continuado haga que se borren. Sin embargo, las teclas teclas ABS y _pad printing_ son más económicas y hacen que el precio el teclado no sea mayor.
 
@@ -168,12 +168,12 @@ El teclado aunque es compacto tiene las mismas teclas que un teclado completo, h
 
 #### Los _switches_
 
-Los switches del teclado son de la marca Outemu conocida como una de las alternativas más económicas de calidad a los _switches_ de la marca [Cherry MX][cherrymx], y en este ejemplar táctiles _brown_ aunque también se ofrece el switches de tipo lineales y _clicky_. Son eléctricos y el teclado no es _hot swappable_ con lo que no es posible cambiar los _switches_ por los de otro tipo o marca o cambiar algunos de ellos.
+Los _switches_ del teclado son de la marca TMKB que son montados en algunos teclados de DIERYA y KEMOVE más desconocida de entre las alternativas de las alternativas más económicas de calidad a los _switches_ de la marca [Cherry MX][cherrymx], y en este ejemplar táctiles _brown_ aunque también se ofrece el switches de tipo lineales y _clicky_. Son eléctricos y el teclado no es _hot swappable_ con lo que no es posible cambiar los _switches_ por los de otro tipo o marca o cambiar algunos de ellos.
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-switches-1.jpg" optionsthumb1="300x200" title1="Swicthes electricos Outemu y etabilizador del DIERYA DK63"
-    caption="Swicthes electricos Outemu y etabilizador del DIERYA DK63" >}}
+    image1="image:dierya-dk63-switches-1.jpg" optionsthumb1="300x200" title1="Swicthes electricos TMKB y etabilizador del DIERYA DK63"
+    caption="Swicthes electricos TMKB y etabilizador del DIERYA DK63" >}}
 
 #### Los _keycaps_
 
@@ -198,7 +198,7 @@ Para realizar la conexión hay que primero configurar el teclado para su funcion
     image2="image:dierya-dk63-bluetooth-macos-1.png" optionsthumb2="300x200" title2="Configuración del teclado con conexión inalámbrica en macOS"
     caption="Configuración del teclado con conexión inalámbrica en GNU/Linux y macOS" >}}
 
-Quizá lo más que puedo comentar de forma adicional es que aún incluyendo la funcionalidad de poder usar una conexión por cable o Bluetooth según se prefiera o según la situación tiene un precio similar que el DK61E que no es inalámbrico. Sin embargo, hay algunas concesiones que hace el DK63 para mantener el precio como es no ser _hot swappable_, montar _keycaps_ de plástico ABS y serigrafía _pad printing_ y utilizar _switches_ de tipo Outemu eléctrico en vez de Gateron ópticos.
+Quizá lo más que puedo comentar de forma adicional es que aún incluyendo la funcionalidad de poder usar una conexión por cable o Bluetooth según se prefiera o según la situación tiene un precio similar que el DK61E que no es inalámbrico. Sin embargo, hay algunas concesiones que hace el DK63 para mantener el precio como es no ser _hot swappable_, montar _keycaps_ de plástico ABS y serigrafía _pad printing_ y utilizar _switches_ de tipo TMKB eléctrico en vez de Gateron ópticos.
 
 La posibilidad de conexión inalámbrica con hasta tres dispositivos seguramente es muy útil para algunos usuarios que quieren usar un teclado inalámbrico con distintos ordenadores en el mismo sitio o en diferentes sitios. Que la conexión sea inalámbrica sea por Bluetooth es una ventaja sobre los teclados inalámbricos por señal de radio frecuencia, el Bluetooth permite usar varios dispositivos con el mismo teclado, cambiar de uno a otro según se desee y no requiere de un receptor conectado en un puerto USB que ocupa el espacio de un USB y no permite cambiar de un dispositivo a otro tan fácilmente. Por el contrario como desventaja que es solucionable es que en el modo inalámbrico el teclado solo funciona cuando el sistema operativo tiene iniciado el Bluetooth, para solucionarlo basta usar el cable, en la instalación del sistema operativo y en el momento que se desee entrar en la BIOS.
 
