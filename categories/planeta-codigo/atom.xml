@@ -5,12 +5,171 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-02-17T20:00:00+01:00</updated>
+    <updated>2022-03-10T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/03/cambiar-el-comportamiento-de-la-aplicacion-con-configuracion-anotaciones-y-condicionales-en-spring-boot/</id>
+        <title>Cambiar el comportamiento de la aplicación con configuración, anotaciones y condicionales en Spring Boot</title>
+        <updated>2022-03-10T20:00:00+01:00</updated>
+        <published>2022-03-10T20:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/cambiar-el-comportamiento-de-la-aplicacion-con-configuracion-anotaciones-y-condicionales-en-spring-boot/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Aparte de un sistema de configuración muy flexible para proporcionar configuración de diferentes fuentes, Spring permite cambiar el comportamiento de la aplicación en base a los valores resueltos de las propiedades de configuración. Mediante configuración y sin realizar cambios en el código fuente el contenedor de inversión de dependencias determina las instancias y sus dependencias que crea.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+</div>
+<p>Programar sobre interfaces permite crear varias implementaciones diferentes y cambiar de una a otra sin cambiar ninguna de las clases que usan la interfaz. Una implementación puede ser para persistir o recuperar datos de una base de datos relacional como <a href="https://www.postgresql.org/">PostgreSQL</a> o usando la misma interfaz guardar y recuperar los datos en una base de datos NoSQL como <a href="https://www.mongodb.com/">MongoDB</a>, otro ejemplo es una interfaz de almacenamiento para guardar el contenido de un archivo en el sistema de archivos local o cambiando la implementación guardar los archivos en un sistema de almacenamiento en al nube.</p>
+<p>Aunque los diferentes entornos de la aplicación en que se ejecuta son conocidos sigue siendo útil programar sobre interfaces, quizá en el entorno de producción se usa un almacenamiento en la nube pero en tiempo de desarrollo no es posible y es más fácil usar una implementación para guardar el contenido en el sistema de archivos local utilizando la misma interfaz que representa el sistema de almacenamiento. Con una interfaz la implementación queda encapsulada y cada sistema de almacenamiento tendrá la suya. También es útil para empezar a desarrollar con una implementación sencilla en memoria o en el sistema de archivos local y una vez en el despliegue en un entorno de pruebas o producción crear nuevas implementaciones de las interfaces adecuados para esos entornos.</p>
+<p>Con varias implementaciones de las interfaces es necesario seleccionar de alguna forma que implementación en concreto a usar de entre las disponibles. En el entorno local se usará la implementación en memoria o el sistema de archivos local cuando en el entorno de producción se usará el almacenamiento en el sistema de almacenamiento de objetos del proveedor de la nube, en <a href="https://aws.amazon.com/es/s3/">Amazon es S3</a> y en <a href="https://cloud.google.com/storage/">Google Cloud es Storage</a>. La selección de la implementación a usar es recomendable realizarla en base a configuración en tiempo de ejecución con la intención de evitar de que solo cambie la configuración y no el código de modo que el mismo artefacto ejecutable sea el mismo en todos los entornos.</p>
+<p>El <em>framework</em> <a href="https://spring.io/">Spring</a> proporciona un mecanismo muy flexible para proporcionar y sobrescribir la configuración de la aplicación con varias fuentes de propiedades y una prioridad entre ellas del que coger el valor en caso de que en alguna esté presente la propiedad, ya sea en un archivo dentro del artefacto ejecutable, en un archivo externo, mediante propiedades del sistema o variables de entorno entre otras formas.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/12/configuracion-de-una-aplicacion-con-spring-boot-y-configuracion-centralizada-con-spring-cloud-config/">Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config</a></li>
+</ul>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="anotaciones-y-condicionales-para-crear-_beans_">Anotaciones y condicionales para crear <em>beans</em></h3>
+<p>Una de las funcionalidades proporcionadas por Spring es el contenedor de <em>beans</em> que realiza la construcción de las instancias mediante la inyección de dependencias. Mediante la inyección de dependencias la aplicación ya no es responsable de realizar la creación de la instancias sino que esta tarea es delegada al contenedor de <em>beans</em> que es capaz de elegir las implementaciones según diferentes condiciones y valores. A través del los perfiles de inicio de la aplicación, valores de configuración, de anotaciones y mediante un lenguaje de expresiones el contenedor de <em>beans</em> crea las instancias de las implementaciones de las interfaces deseadas según la configuración proporcionada a la aplicación en tiempo de ejecución.</p>
+<p>En Spring los <em>beans</em> se definen con las siguientes anotaciones:</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html">@Bean</a>: se aplica sobre un método e indica que el método devuelve una instancia del tipo de retorno para que el contenedor la proporcione como dependencia a otra instancia que tenga como dependencia la del tipo devuelto.</li>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Component.html">@Component</a>: permite definir una clase para que el contenedor cree una instancias de la clase y procese sus anotaciones cuando necesite proporcionar una instancia de la clase  como dependencia.</li>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Controller.html">@Controller</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Service.html">@Service</a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Repository.html">@Repository</a>: estas anotaciones son especializaciones más semánticas de la anotación <em>Component</em>. Tienen el mismo comportamiento que la anotación <em>Component</em>.</li>
+</ul>
+<p>En los sitios en los que se pueden aplicar las anotaciones anteriores es posible aplicar las siguientes anotaciones para que las instancias de esos <em>beans</em> se añadan al contenedor de forma condicional. Además de las anotaciones condicionales más importantes indicadas en esta lista en el paquete <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/boot/autoconfigure/condition/package-summary.html">org.springframework.boot.autoconfigure.condition</a> hay unas cuantas más.</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Profile.html">@Profile</a>: en caso de que el perfil indicado coincida con alguno de los perfiles de la aplicación el <em>bean</em> se añade al contenedor.</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnProperty.html">@ConditionalOnProperty</a>: crea la instancia de forma condicional en base a una propiedad de configuración.</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnBean.html">@ConditionalOnBean</a>: crea la instancia de forma condicional en base a la existencia de una instancia de una interfaz.</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnClass.html">@ConditionalOnClass</a>: crea la instancia de forma condicional en base a la existencia de una clase.</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnMissingBean.html">@ConditionalOnMissingBean</a>: crea la instancia de forma condicional cuando no existe de una instancia de una interfaz.</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnExpression.html">@ConditionalOnExpression</a>: mediante un <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#expressions">lenguaje de expresiones</a> es posible crear condiciones complejas con las que decidir si una instancia de un <em>bean</em> se crea o no.</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnResource.html">@ConditionalOnResource</a>: crea una instancia de forma condicional cuando existe un recurso en el <em>classpath</em>.</li>
+<li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Primary.html">@Primary</a>: en caso de que a través de varias anotaciones sea posible construir una instancia con la misma interfaz este método permite eliminar la ambigüedad seleccionado la instancia donde se aplica esta anotación. Solo es posible aplicar la anotación <em>Primary</em> sobre la misma interfaz.</li>
+</ul>
+<p>Además de las anteriores anotaciones proporcionadas por Spring es posible crear anotaciones condicionales propias implementando una clase de la interfaz <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Condition.html">Condition</a> y usando la anotación <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Conditional.html">Conditional</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Conditional</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.conditional.OnLinuxCondition</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.conditional.OperatingSystem</span><span class="o">;</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Beans</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Bean</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Conditional</span><span class="o">(</span><span class="n">OnLinuxCondition</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">OperatingSystem</span> <span class="nf">linuxSystemBean</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">new</span> <span class="n">OperatingSystem</span><span class="o">(</span><span class="s">&#34;Linux&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Bean</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@ConditionalOnMissingBean</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">OperatingSystem</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">OperatingSystem</span> <span class="nf">windowsSystemBean</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="k">new</span> <span class="n">OperatingSystem</span><span class="o">(</span><span class="s">&#34;Other&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Beans.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.conditional</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Condition</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.ConditionContext</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.core.type.AnnotatedTypeMetadata</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OnLinuxCondition</span> <span class="kd">implements</span> <span class="n">Condition</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">matches</span><span class="o">(</span><span class="n">ConditionContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">AnnotatedTypeMetadata</span> <span class="n">metadata</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&#34;os.name&#34;</span><span class="o">).</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;Linux&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>OnLinuxCondition.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.conditional</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperatingSystem</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">OperatingSystem</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">name</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>OperatingSystem.java</span>
+    </div>
+</div>
+<h3 id="ejemplo-de-_beans_-condicionales-de-con-spring-boot">Ejemplo de <em>beans</em> condicionales de con Spring Boot</h3>
+<p>En este pequeño ejemplo de aplicación se definen dos implementaciones de una interfaz. En base al valor de una propiedad de configuración proporcionada por configuración y con la posibilidad de cambiar su valor en tiempo de ejecución con una variable de entorno se selecciona la implementación deseada utilizando las anotaciones condicionales.</p>
+<p>La interfaz del ejemplo simplemente tiene un método que devuelve un mensaje según el idioma que le corresponde.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.service</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Message</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="nf">get</span><span class="o">();</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Message.java</span>
+    </div>
+</div>
+<p>Creando varias implementaciones de la interfaz de ejemplo cada implementación devuelve el mensaje en un idioma diferente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.service</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.condition.ConditionalOnProperty</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="nd">@ConditionalOnProperty</span><span class="o">(</span><span class="n">prefix</span> <span class="o">=</span> <span class="s">&#34;app.message&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;implementation&#34;</span><span class="o">,</span> <span class="n">havingValue</span> <span class="o">=</span> <span class="s">&#34;spanish&#34;</span><span class="o">)</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpanishMessage</span> <span class="kd">implements</span> <span class="n">Message</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="s">&#34;¡Hola mundo!&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>SpanishMessage.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.service</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.condition.ConditionalOnProperty</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="nd">@ConditionalOnProperty</span><span class="o">(</span><span class="n">prefix</span> <span class="o">=</span> <span class="s">&#34;app.message&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;implementation&#34;</span><span class="o">,</span> <span class="n">havingValue</span> <span class="o">=</span> <span class="s">&#34;english&#34;</span><span class="o">)</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EnglishMessage</span> <span class="kd">implements</span> <span class="n">Message</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="s">&#34;Hello World!&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>EnglishMessage.java</span>
+    </div>
+</div>
+<p>Cambiando el valor de la propiedad Spring decide que implementación usar e inyectar en las dependencias. De esta forma el comportamiento de la aplicación cambia no cambiando el código sino cambiando la configuración de la aplicación y sin tener que implementar la lógica condicional mediante código propio sino usando las facilidades proporcionadas por Spring.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.CommandLineRunner</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>&#10;&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.conditional.OperatingSystem</span><span class="o">;</span>&#10;<span class="kn">import</span> <span class="nn">io.github.picodotdev.blogbitix.springbootconfigconditional.service.Message</span><span class="o">;</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;  <span class="nd">@Autowired</span>&#10;  <span class="kd">private</span> <span class="n">Message</span> <span class="n">message</span><span class="o">;</span>&#10;&#10;  <span class="nd">@Autowired</span>&#10;  <span class="kd">private</span> <span class="n">OperatingSystem</span> <span class="n">os</span><span class="o">;</span>&#10;&#10;  <span class="nd">@Override</span>&#10;  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Operating system: &#34;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">message</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>&#10;  <span class="o">}</span>&#10;&#10;  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local&#34;</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">app</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">message</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">implementation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;spanish&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>application.yml</span>
+    </div>
+</div>
+<p>En función del valor de la propiedad <em>app.message.implementation</em> proporcionado en la configuración y los argumentos del programa la implementación seleccionado por spring cambia y a su vez el comportamiento del programar sin necesidad de cambiar código.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Operating system: Linux&#10;Message: ¡Hola mundo!&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run.out</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run --args<span class="o">=</span><span class="s2">&#34;--app.message.implementation=spanish&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-spanish.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Operating system: Linux&#10;Message: ¡Hola mundo!&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-spanish.out</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run --args<span class="o">=</span><span class="s2">&#34;--app.message.implementation=english&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-english.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Operating system: Linux&#10;Message: Hello World!&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-run-english.out</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBootConfigConditional">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://reflectoring.io/spring-boot-conditionals/">Conditional Beans with Spring Boot</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/02/que-son-los-archivos-dotfiles-y-como-gestionarlos-con-chezmoi/</id>
         <title>Qué son los archivos dotfiles y cómo gestionarlos con chezmoi</title>
@@ -2224,154 +2383,6 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
                 <category term="planeta-codigo"/>
             
                 <category term="seguridad"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/10/razones-para-cambiar-a-gnu-linux-en-vez-de-usar-windows-y-macos/</id>
-        <title>Razones para cambiar a GNU/Linux en vez usar Windows y macOS</title>
-        <updated>2021-10-10T11:00:00+02:00</updated>
-        <published>2021-10-10T11:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/10/razones-para-cambiar-a-gnu-linux-en-vez-de-usar-windows-y-macos/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>GNU/Linux no te obliga a actualizaciones forzosas aplicadas en un momento inapropiado, tiene una licencia libre mayoritariamente gratuito al igual que sus aplicaciones disponibles para cualquier propósito y finalidad, los juegos triple A son jugables a través de Steam, es tan o más seguro que cualquier otra opción y respeta mejor la privacidad de los usuarios, es apto para ordenadores que se convierten incompatibles con otros sistemas operativos por sus nuevas versiones, altamente personalizable según las preferencias del usuario, es una buena opción para los desarrolladores y profesionales, la mayoría del hardware común no requiere instalar controladores adicionales y  tiene una comunidad que aunque pequeña parece más grande por ser muy activa y colaborativa. Finalmente, es posible probarlo antes de instalarlo para estar convencido del cambio.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>Para las computadoras personales hay cuatro sistemas operativos destacados, los comerciales desarrollados por empresas que son <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a> y <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a>, por otro lado están los alternativos con licencia libres como <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> formado por multitud de distribuciones desarrolladas por los propios usuarios algunas con el respaldo de una compañía, finalmente está <a href="https://www.freebsd.org/es/">FreeBSD</a> siendo una opción elegida de forma más minoritaria. Estos sistemas operativos no son iguales se diferencian en el modelo de desarrollo y licencia comercial o libre, en la interfaz gráfica y coste entre otras características.</p>
-<p>En el caso de Windows la razón de muchos usuarios de usarlo es sencillamente por ser el sistema operativo preinstalado en la computadora al comprarla, en el caso de los ordenadores mac por ser la única opción ofrecida por Apple para sus equipos. GNU/Linux domina el software de servidor por su flexibilidad y de los <em>smartphones</em> con <a href="https://www.android.com/">Android</a>, con el paso de los años GNU/Linux se ha convertido también en una alternativa perfectamente viable para la mayoría de usuarios tambien en el escritorio que simplemente necesitan un uso ofimático como para los más avanzados de desarrollo y de forma profesional. Hace varios lustros faltaba soporte hardware, era difícil de instalar o requería acceder a la línea de comandos para tareas básicas, hoy en día GNU/Linux es tán fácil de instalar como Windows y sus varios entornos de escritorio tan amigables como los de Windows o macOS.</p>
-<p>En octubre del 2021 se ha lanzado al mercado Windows 11 que equiparán los equipos comerciales vendidos a partir de este momento. Como cada nueva versión los requisitos mínimos son más exigentes y dejan a muchos equipos vendidos con anterioridad sin poder actualizarse a la última versión de Windows.  En Windows 11 muchos ordenadores no serán compatibles por el requerimiento del módulo TPM requerido en aras de la seguridad, por lo menos hasta que vean que mucha gente no se actualiza y se mantiene en Windows 10, Windows sufra de fragmentación y Microsoft decida relajar este u otros requerimientos.</p>
-<ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">De Windows a Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/">Mi primer Mac, yo usuario de GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/">Tú con tu Mac, yo con mi GNU/Linux</a></li>
-</ul>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="100" height="100" alt="Ubuntu" title="Ubuntu"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/opensuse.svg" width="100" height="100" alt="openSUSE" title="openSUSE"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/debian.svg" width="100" height="100" alt="Debian" title="Debian"  class="lozad "></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="100" height="100" alt="Arch Linux" title="Arch Linux"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora.svg" width="100" height="100" alt="Fedora" title="Fedora"  class="lozad ">
-
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elementary.svg" width="100" height="100" alt="elementary OS" title="elementary OS"  class="lozad "></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/trisquel.svg" width="100" height="100" alt="Trisquel" title="Trisquel"  class="lozad "></p>
-<figcaption>Logotipos de varias de las distribuciones GNU/Linux más importantes y usadas</figcaption>
-</figure>
-</div>
-<p>Estas son algunas razones por las que usar GNU/Linux en vez de Windows y macOS.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="razones-para-cambiar-a-gnulinux">Razones para cambiar a GNU/Linux</h3>
-<h4 id="linux-es-libre-y-gratuito">Linux es libre y gratuito</h4>
-<p>Las licencias de Windows y macOS que deben ser aceptadas antes de realizar la instalación en realidad únicamente dan el derecho al uso del software. Un usuario que ha comprado una licencia de Windows, una computadora con Windows preinstalado o un mac con macOS no tiene acceso al código fuente lo que impide examinarlo para conocer que funciones implementa.</p>
-<p>GNU/Linux y muchas aplicaciones para este sistema operativo tienen una licencia de software libre según la <a href="https://www.fsf.org/">Free Software Foundation</a> como aquel que proporciona a los usuarios las 4 libertades básicas que define la <a href="http://www.gnu.org/philosophy/free-sw.es.html">filosofía del software libre</a>:</p>
-<ul>
-<li>La libertad de ejecutar el programa como se desee, con cualquier propósito (libertad 0).</li>
-<li>La libertad de estudiar cómo funciona el programa, y cambiarlo para que haga lo que se desee (libertad 1). El acceso al código fuente es una condición necesaria para ello.</li>
-<li>La libertad de redistribuir copias para ayudar a otros (libertad 2).</li>
-<li>La libertad de distribuir copias de sus versiones modificadas a terceros (libertad 3). Esto le permite ofrecer a toda la comunidad la oportunidad de beneficiarse de las modificaciones. El acceso al código fuente es una condición necesaria para ello.</li>
-</ul>
-<p>Aunque software libre no es sinónimo de gratuito, mucho del software libre es gratuito. La licencia de Windows cuesta unos 150€ comprada a Microsoft y unos 15€ en páginas alternativas completamente legales, en el caso de estar preinstalado en la computadora como ocurre generalmente el precio de Windows no está separado del de la computadora, en los mac el sistema operativo macOS es parte del producto y está incluido en sus precios pero son significativamente más caros que productos equivalentes.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">Cómo comprar una licencia y activar Windows 10 y Office 2019</a></li>
-</ul>
-<h4 id="linux-cubre-las-necesidades-esenciales">Linux cubre las necesidades esenciales</h4>
-<p>Muchas de las aplicaciones están disponibles tanto en Windows, macOS como en GNU/Linux siendo exactamente las mismas en cuanto a funcionalidad para el usuario como el navegador web <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> entre muchas otras. Otras aplicaciones disponibles en Windows y macOS tiene su equivalente en GNU/Linux que cubren las necesidades de la mayoría de usuarios como el programa para manipular imágenes <a href="https://www.gimp.org/">GIMP</a>. Desde programas de línea de comandos como aplicaciones de interfaz gráfica.</p>
-<p>Los entornos de escritorio integran una serie de aplicaciones sencillas sin funcionalidades avanzadas pero que cubren las necesidades básicas de los usuarios. Otras aplicaciones sirven para propósitos específicos e incluyen funcionalidades más avanzadas como ofimática y documentos, editor de texto avanzado, internet y comunicaciones, fotos y gráficos, multimedia, vídeo y audio, programación y desarrollo o seguridad y privacidad.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/04/50-plus-comandos-basicos-y-utiles-de-gnu-linux/">50+ comandos básicos y útiles de GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones integradas del entorno de escritorio GNOME</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/09/aplicaciones-adicionales-disenadas-para-el-entorno-de-escritorio-gnome/">Aplicaciones adicionales diseñadas para el entorno de escritorio GNOME</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">Listado de programas esenciales según categoría para GNU/Linux</a></li>
-</ul>
-<h4 id="los-juegos-mejor-que-nunca">Los juegos mejor que nunca</h4>
-<p>Uno de los motivos por los que muchos usuarios continúan con Windows y no migran a GNU/Linux es porque una de sus necesidades es poder jugar a juegos los cuales por cuota de mercado de los sistemas operativos son lanzados para Windows, esto hace que la situación se perpetúe. El soporte para juegos en GNU/Linux ha mejorado mucho en los últimos años y sigue mejorando notablemente cada pocos meses, actualmente es posible jugar a muchos juegos triple A perfectamente y con el mismo rendimiento que en Windows.</p>
-<p>El soporte de Steam como plataforma de juegos ha contribuido a que la mayoría de juegos de Windows estén disponibles en GNU/Linux, incluso las últimas novedades. También es posible jugar a juegos retro y arcade míticos de máquinas recreativas y consolas antiguas junto a otros de culto como los <em>Monkey Island</em>, <em>Day of Tentacle</em> y <em>Maniac Mansion</em>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">La aplicación cliente de Steam en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a></li>
-</ul>
-<h4 id="sin-actualizaciones-forzosas">Sin actualizaciones forzosas</h4>
-<p>Mantener el sistema operativo y aplicaciones actualizadas a las últimas versiones es importante ya que corrigen errores de seguridad, incorporan nuevas funcionalidades o mejoran las existentes. El problema surge cuando estás actualizaciones aún con sus riesgos no son opcionales ni se tiene el control de cuando se aplican.</p>
-<p>En los sistemas operativos comerciales Windows y macOS tanto Microsoft como Apple tienen el poder de aplicar parches de seguridad y otras actualizaciones que no son de seguridad cuando deseen sin el consentimiento del usuario. Algunas de esas actualizaciones son notificadas que deben ser aplicadas en un momento a conveniencia del usuario pero con una fecha límite en la que se instalan de forma forzosa. Algunas de las actualizaciones requieren que Windows y macOS tomen por completo el control del equipo con el único propósito de aplicar la actualización, tiempo en el que el usuario no puede utilizar la computadora que es un gran problema para muchos usuarios que los utilizan como herramienta de trabajo ya que es tiempo laboral en el que no pueden hacer sus tareas.</p>
-<p>En las distribuciones de GNU/Linux es el usuario el que elige el momento en el que aplicar las actualizaciones de seguridad y de las aplicaciones, estas se aplican sin tomar el control del equipo lo que permite seguir trabajando, salvo algunas críticas que involucran la actualización del firmware. Algunas actualizaciones requieren reiniciar la computadora para que surtan efecto, en GNU/Linux nuevamente es el usuario el que decide el momento de hacerlo, en Windows y macOS algunas requieren reiniciar de forma inmediata haciendo que el usuario deba interrumpir y guardar las tareas que esté haciendo y documentos que esté editando para continuarlas una vez realizado el reinicio.</p>
-<h4 id="linux-es-más-seguro">Linux es más seguro</h4>
-<p>No hay ningún sistema operativo exento de problemas de seguridad pero dado que la cuota de usuarios de GNU/Linux es minoritaria comparada con Windows o macOS la mayoría de ataques se dirigen a estos últimos sistemas. Por otro lado, como cada distribución GNU/Linux es diferente y con diferentes versiones de los paquetes es más difícil explotar la misma vulnerabilidad en todos ellos.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/distribuciones-gnu-linux-mas-seguras-que-windows/">Distribuciones GNU/Linux, ¿más seguras que Windows?</a></li>
-</ul>
-<h4 id="linux-protege-la-privacidad">Linux protege la privacidad</h4>
-<p>Tanto Windows como macOS incluyen funcionalidades que con el consentimiento del usuario recopilan información de la computadora, de su uso, del usuario como el patrón de voz con la funcionalidad de reconocimiento los asistentes de voz y que la envían a Microsoft y Apple que la utilizan para sus propósitos o la venden a terceras partes aún siendo de forma anónima.</p>
-<p>GNU/Linux es un sistema que no incluye este tipo de funcionalidades y que da mucha importancia a la privacidad de los usuarios y a la información que terceras partes pueden recopilar del usuario por su actividad. GNU/Linux no obtiene ningún beneficio ni está interesada en recopilar datos de sus usuarios.</p>
-<h4 id="linux-revive-ordenadores-viejos">Linux revive ordenadores viejos</h4>
-<p>Cada nueva versión de Windows impone unos requerimientos más restrictivos, algunos muy ajustados a las especificaciones incluso de computadoras nuevas. Cada nueva versión deja a muchas computadoras sin cumplir los requisitos mínimos para realizar la actualización, Windows 11 por ejemplo requiere un módulo de seguridad TPM que incluso computadoras con dos años de antigüedad y en el momento de salida no lo cumplen, impidiendo su actualización a la última versión. Tanto Apple como Microsoft suelen ofrecer amplios tiempos de soporte de parches de seguridad y corrección de errores, en cualquier caso el periodo de soporte lo deciden ellos con sus propios intereses y no el de sus usuarios. En GNU/Linux hay distribuciones específicas con requerimientos más modestos para computadoras antiguas.</p>
-<p>Algunos fabricantes de computadoras con Windows incluyen numerosos programas adicionales que se mantienen en ejecución en segundo plano consumiendo recursos, reciben el calificativo de <em>blotware</em> y hacen que incluso una computadora nueva ofrezca un rendimiento inferior al que debería.</p>
-<h4 id="linux-es-altamente-personalizable">Linux es altamente personalizable</h4>
-<p>No hay un único GNU/Linux, los desarrolladores de cada distribución eligen los principios en los que se basa, el entorno de escritorio, los componentes, paquetes de software y aplicaciones que selecciona en la instalación por defecto.</p>
-<p>Algunas distribuciones están orientadas a tener gran estabilidad durante largos periodos de tiempo en los que se solo se actualizan para corregir fallos de seguridad y errores importantes pero generalmente no actualizando a nuevas versiones de los paquetes, un ejemplo es <a href="https://www.debian.org/">Debian</a> y otro las versiones LTS de <a href="https://www.ubuntu.com/">Ubuntu</a>.</p>
-<p>Otras distribuciones están orientadas a usuarios que desean obtener las últimas versiones de cada paquete cuando son publicadas que incorporan nuevas funcionalidades, mejoras de rendmiento o mejor compatibilidad con hardware nuevo. Aunque también son estables a veces requieren algunos cambios o incompatibilidades, un ejemplo de estas distribuciones en constante cambio denominadas <em>rolling release</em> es <a href="https://www.archlinux.org/">Arch Linux</a>.</p>
-<p><a href="https://www.opensuse.org/">openSUSE</a> tiene una versión para los usuarios que buscan estabilidad con <em>Leap</em> y usuarios que buscan actualizaciones con <em>Tumbleweed</em>. Otras distribuciones están destinadas a equipos antiguos con recursos más modestos que no requieren compatibilidad con el último hardware o versiones destinadas a no incluir ningún componente privativo, un ejemplo de este tipo de distribuciones es <a href="https://trisquel.info/es">Triquel</a>.</p>
-<p>Como distribuciones hay muchas los usuarios de GNU/Linux eligen la que más se adapta a sus necesidades, aparte de las categorías anteriores hay muchas otras por ejemplo aquellas destinadas a los usuarios que proporcionan un primer contacto con GNU/Linux con una experiencia de usuario tán fácil como la de Windows y macOS. Que haya muchas distribuciones no quiere decir que haya una para cada necesidad, algunas distribuciones son adecuadas para usuarios distintos, por ejemplo Ubuntu es adecuada tanto para ser la primera distribución de GNU/Linux usada como para usuarios con grandes conocimientos de GNU/Linux y llevan usándolo muchos años. Elegir una distribución no es algo definitivo, si en algún momento las necesidades del usuario cambian muchos cambian a otra que se ajuste mejor a sus nuevas necesidades.</p>
-<p>Windows y macOS ofrecen un único entorno de escritorio para todos los usuarios, el escritorio único evita la fragmentación y que los usuarios no tengan que aprender uno nuevo  pero obliga a hacer concesiones para intentar satisfacer a mayoría aunque no a todos, solo admiten algunas pocas opciones de personalización cosméticas.</p>
-<h4 id="linux-es-una-buena-opción-para-desarrolladores">Linux es una buena opción para desarrolladores</h4>
-<p>Una categoría adicional a las anteriores de tipos de usuarios es el de los desarrolladores de software. Aunque GNU/Linux en el escritorio tiene una pequeña cuota de uso ocurre exactamente lo contrario en los servidores de las compañías que proporcionan servicios en internet. La mayor parte de los servidores están basados en GNU/Linux por su flexibilidad, seguridad y ahorro en costes de licencias.</p>
-<p>Cualquier persona que desee aprender sobre desarrollo tiene a su disposición gran cantidad de software libre y recursos de documentación para el aprendizaje sin necesidad de pagar costosas licencias de software, el mismo software que usan muchas de las grandes tecnológicas. El uso de GNU/Linux en las empresas permite optar a trabajos de tecnología altamente cualificados y en muchas empresas bien remunerados con oportunidades importantes para la carrera profesional.</p>
-<p>GNU/Linux es el sistema operativo de software libre con más éxito y utilizado por muchos desarrolladores que crean herramientas de desarrollo de software libre para otros desarrolladores desde lenguajes de programación, compiladores y entornos integrados de desarrollo hasta servidores. Esto hace que sea fácil encontrar herramientas para desarrolladores en este sistema operativo.</p>
-<p>Incluso otros profesionales dedicados a la tecnología o que utilizan tecnología para su trabajo tiene programas equivalentes a los propietarios en otras plataformas, GIMP para la edición de imágenes, <a href="https://inkscape.org/es/">Inkscape</a> y <a href="https://www.blender.org/">Blender</a> para para el diseño artístico de imágenes vectoriales y modelado en tres dimensiones, programas para la composición musical para los que <a href="https://pipewire.org/">PipeWire</a> resuelve varios de los problemas que tenían los artistas musicales en GNU/Linux, varias <em>suites</em> ofimáticas alternativas como <a href="https://www.libreoffice.org/">LibreOffice</a>, <a href="https://www.onlyoffice.com/es/">OnlyOffice</a> y <a href="https://www.wps.com/">WPS Office</a> alternativas a <a href="https://products.office.com/es-es/">Microsoft Office</a>.</p>
-<h4 id="la-comunidad-de-linux">La comunidad de Linux</h4>
-<p>Aunque la cuota de uso de GNU/Linux es pequeña la comunidad da la sensación de ser muy grande por ser muy activa, comparte información y tutoriales en numerosos artículos, vídeos, <em>podcast</em> y foros. Hay muchas personas dispuestas a ayudar GNU/Linux como este blog y otros varios que incluyo en la sección <a href="https://picodotdev.github.io/blog-bitix/pages/enlaces-a-otros-blogs-y-webs/">Enlaces a otros blogs y webs</a>, aún así seguramente otro usuario haya tenido el mismo problema antes y la respuesta con la solución haya sido contestada que se puede encontrar con una sencilla búsqueda en internet.</p>
-<h3 id="por-dónde-empezar">Por dónde empezar</h3>
-<p>Si estos motivos te convencen o estás dispuesto a investigar más los siguientes artículos son de ayuda para saber por dónde empezar.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">Elegir una distribución GNU/Linux según el usuario, uso o equipo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</a></li>
-</ul>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/10/razones-para-cambiar-a-gnu-linux-en-vez-de-usar-windows-y-macos/images/archlinux-gnome_hub7ca341783031d7ea2a094964ac51505_3644625_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arch Linux con el entorno de escritorio GNOME"><img src="https://picodotdev.github.io/blog-bitix/2021/10/razones-para-cambiar-a-gnu-linux-en-vez-de-usar-windows-y-macos/images/archlinux-gnome_hub7ca341783031d7ea2a094964ac51505_3644625_650x450_fit_box_3.png" width="650" height="366" alt="Arch Linux con el entorno de escritorio GNOME" title="Arch Linux con el entorno de escritorio GNOME"  class="lozad "></a></p>
-<figcaption>Arch Linux con el entorno de escritorio GNOME</figcaption>
-</figure>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.makeuseof.com/switch-to-linux-reasons-to-abandon-windows/">Isn’t It Time to Switch to Linux? 12 Reasons to Abandon Windows</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

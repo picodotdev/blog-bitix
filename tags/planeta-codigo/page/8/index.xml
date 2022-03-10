@@ -5,12 +5,173 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-02-17T20:00:00+01:00</updated>
+    <updated>2022-03-10T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/</id>
+        <title>Las diferencias entre GNU/Linux, BSD y sus distribuciones</title>
+        <updated>2020-07-05T11:00:00+02:00</updated>
+        <published>2020-07-05T11:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Las distribuciones BSD tienen aún menor cuota de uso que las distribuciones GNU/Linux pero al igual que estas tiene una licencia de software libre aún más permisiva que las GNU/Linux y también se basan en la filosofía UNIX. Pero también tienen diferencias importantes en varios aspectos.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bsd.svg" width="250" height="116" alt="BSD" title="BSD"  class=""></p>
+</div>
+<p>De los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a> es el más popular en el uso en empresas y en los ordenadores personales con una cuota de uso del 90% prácticamente de monopolio. La siguiente opción más popular a nivel de usuario es <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a> como única opción de sus equipos portátiles y de escritorio, macOS tiene una cuota de uso de un 7%. Con una cota de uso en el escritorio de apenas el el 3% la siguiente opción es alguna de las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, tiene una cuota de uso tan pequeña porque prácticamente todos los equipos vendidos en grandes superficies incorporan Windows preinstalado, para usar GNU/Linux son los usuarios los que de forma expresa han de instalar GNU/Linux reemplazando a Windows aunque en los últimos años hay varias marcas que ofrecen GNU/Linux como opción entre ellas <a href="https://slimbook.es/">Slimbook</a> y <a href="https://www.vantpc.es/">Vant</a>. En el lado del servidor GNU/Linux si tiene una mucha mayor cuota de uso por encima incluso de Windows, muchos de los servicios ofrecidos por las compañías más importantes usan alguna distribución de GNU/Linux como sistema operativo. Las distribuciones empresariales GNU/Linux más populares son <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RHEL</a> de <a href="https://www.redhat.com/es">RedHat</a>, <a href="https://www.ubuntu.com/">Ubuntu</a> de <a href="https://www.canonical.com/">Canonical</a> o <a href="https://www.suse.com/es-es/products/server/">SLES</a> de <a href="https://www.suse.com/es-es/">SUSE</a>.</p>
+<p>Otra familia de sistemas operativos basados en UNIX al igual que GNU/Linux son las distribuciones BSD. Si la cuota de uso a nivel personal de GNU/Linux es muy reducida la de los sistemas operativos BSD es aún mucho más reducida, no llega al 0,5%, teniendo algo de mayor presencia como sistema de servidores con una comunidad de usuarios pequeña pero al igual que la de GNU/Linux activa que comparte y colabora en el desarrollo.</p>
+<p>Los parecidos en las distribuciones GNU/Linux y BSD es que ambos proyectos están basados en UNIX, implementan el estándar <a href="https://es.wikipedia.org/wiki/POSIX">POSIX</a> que define una interfaz con el sistema operativo para permitir que las aplicaciones sean portables entre sistemas y están desarrollados como proyectos de código abierto en los que participan organizaciones, personas como contribuidores apoyados por el interés de algunas organizaciones y personas individuales sin intereses comerciales, aún así tienen notables diferencias en varios apartados importantes. Las diferencias entre las distribuciones GNU/Linux y BSD están en la licencia que usan, en su modelo de desarrollo, en la ya comentada cuota de uso o en aspectos importantes para los usuarios como el soporte del hardware.</p>
+<p>Aunque solo para representar a los proyectos una diferencia está en su mascota, en Linux es <em>Tux</em>, en BSD es <em>Beastie</em> y en GNU es un ñu.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" data-gallery="data-gallery" title="Tux la mascota de Linux"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="300" height="200" alt="Tux la mascota de Linux" title="Tux la mascota de Linux"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" data-gallery="data-gallery" title="Bestie la mascota de BSD"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" width="300" height="200" alt="Bestie la mascota de BSD" title="Bestie la mascota de BSD"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" data-gallery="data-gallery" title="GNU la mascota de GNU"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="300" height="200" alt="GNU la mascota de GNU" title="GNU la mascota de GNU"  class="lozad "></a></p>
+<figcaption>Mascotas de Linux, BSD y GNU</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="diferencias-en-el-modelo-de-desarrollo">Diferencias en el modelo de desarrollo</h3>
+<p>Lo que conocemos como Linux es simplemente el núcleo del sistema operativo de las distribuciones GNU/Linux. Las distribuciones GNU/Linux están compuestas por otra multitud de programas de usuario que forman el sistema operativo completo y lo hacen usable, estos programas son muchos de los programados bajo los proyectos de la fundación GNU. Este es el motivo de que las distribuciones GNU/Linux incluyan los términos de ambos proyectos. Las distribuciones GNU/Linux son una recopilación de programas de terceras partes, todos estos programas GNU y no GNU incluidos en los sistemas GNU/Linux están desarrollados por diferentes programadores ajenos a Linux y los creadores de la distribución. Los creadores de las distribuciones GNU/Linux son los encargados de juntar los diferentes programas de cada fuente y empaquetarlas como un sistema usable, estable y libre de errores.</p>
+<p>Las distribuciones BSD son muy diferentes en este aspecto ya que los desarrolladores del núcleo son los mismos que desarrollan los programas de usuario que hacen el sistema operativo completo.</p>
+<p>Por otro lado, la arquitectura del sistema base y las aplicaciones de usuario tienen diferentes enfoques. En GNU/Linux hay dos variaciones usar una colección fija de paquetes donde solo se incorporan modificaciones de seguridad o un modelo en constante actualización o <em>rolling release</em>. Ubuntu y Debian son ejemplos de distribuciones de colecciones fijas en los ciclos de vida de las versiones y Arch Linux y <a href="https://voidlinux.org/">Void Linux</a> son ejemplos que están en constante actualización.</p>
+<p>Las distribuciones BSD siguen un enfoque en el que el sistema base es fijo pero las aplicaciones de usuario se actualizan con nuevas versiones. El sistema base es pequeño, estable y solo incorpora cambios siguiendo un calendario de publicaciones. Los programas de usuario como <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a>, <a href="https://www.libreoffice.org/">LibreOffice</a> o el entorno de escritorio utilizan la última versión disponible de cada proyecto. Esto permite a las distribuciones BSD usar las últimas versiones sin comprometer la estabilidad del sistema al haber errores en el núcleo del sistema. Algunas distribuciones GNU/Linux proporcionan un modelo similar a las BSD como <a href="https://silverblue.fedoraproject.org/">Fedora Silverblue</a> con una base estable y aplicaciones de usuario actualizadas.</p>
+<p>Esta diferencia en el modelo de desarrollo del sistema base e independiente de las aplicaciones hace que en BSD las aplicaciones se instalen de forma independiente a los paquetes del sistema. Los <em>ports</em> son la colección de paquetes con las aplicaciones instalables en los sistemas BSD.</p>
+<h3 id="diferencias-en-la-licencia">Diferencias en la licencia</h3>
+<p>Otro aspecto importante con diferencias está en la licencia del código fuente. Mientras que Linux usa una <a href="https://www.gnu.org/licenses/gpl-3.0.html">licencia <em>GNU General Public License</em> o GPL</a> los sistemas BSD usan una de las diferentes <a href="https://en.wikipedia.org/wiki/BSD_licenses">licencias BSD</a> que tiene diferentes versiones según su número de clausulas de cuatro a cero en cuyo caso es considerado software de dominio público. Ambas son licencias consideradas como software libre.</p>
+<p>La diferencia entre la licencia GPL y BSD está en que la BSD es más permisiva, la licencia GPL impone restricciones a los programas distribuidos requiriendo que el código fuente del software también sea entregado y obliga a que el código sea compartido. Por el contrario, la licencia BSD no impone el requerimiento a los programas de que el código fuente sea entregado en su forma original del programa compilado en formato binario. En algunos casos la licencia BSD es más atractiva para algunas empresas que pueden usar su software sin necesidad de tener que distribuir el código fuente del software en el que se basan ni sus modificaciones si han hecho alguna lo que les permite mantener su propiedad intelectual oculta a sus competidores.</p>
+<p>Las licencias BSD no imponen unos requerimientos éticos y morales, la licencia GPL usada por Linux tiene un mayor activismo para promover y proteger el software libre. En BSD se centran más en el desarrollo que en el activismo del software libre y de código abierto.</p>
+<p>En los últimos años el soporte de hardware en Linux ha mejorado notablemente y salvo hardware muy específico o raro lo normal es que todo funcione sin  problemas importantes. El soporte de los fabricantes se centra más hacer compatible su hardware con Windows o macOS que en Linux y es mas raro aún que ofrezcan soporte para algún BSD. De modo que el soporte de hardware en los BSD es más limitado.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></li>
+</ul>
+<h3 id="distribuciones-más-importantes-bsd">Distribuciones más importantes BSD</h3>
+<p>Al igual que en GNU/Linux ha varias distribuciones BSD con algunos propósitos más prioritarios en cada una de ellas. Soportan múltiples arquitecturas de procesadores incluyendo x86, ARM, MIPS, PowerPC y UltraSPARC. Estas son algunas de las distribuciones BSD más conocidas:</p>
+<ul>
+<li><a href="https://www.freebsd.org/es/">FreeBSD</a>: es el BSD más popular, con el objetivo de proporcionar alto rendimiento y facilidad de uso. Soporta múltiples <a href="https://www.freebsd.org/platforms/">plataformas de 32 y 64 bits</a>.</li>
+<li><a href="https://www.openbsd.org/">OpenBSD</a>: esta distribución está diseñada para la máxima seguridad realizando modificaciones de forma proactiva que otros vendedores no son capaces de hacer e integrando  criptografía.</li>
+<li><a href="https://www.netbsd.org/">NetBSD</a>: uno de sus principios es hacer el sistema operativo altamente portable, valores por defecto seguros, calidad de código, corrección y adhesión a estándares.</li>
+<li><a href="https://www.midnightbsd.org/">MidnightBSD</a>: es una distribución BSD orientada al escritorio que incluye las aplicaciones de usuario básicas como navegador, correo electrónico, procesador de textos, juegos y muchos más.</li>
+<li><a href="https://nomadbsd.org/">NomadBSD</a>: es una distribución que funciona desde un medio vivo orientada a uso con entorno de escritorio.</li>
+</ul>
+<p>Hay otros sistemas BSD notables:</p>
+<ul>
+<li><a href="https://www.dragonflybsd.org/">DragonFly BSD</a>: sigue un camino diferente al de las anteriores BSD. Algunas características diferenciadoras son su sistema de archivos de alto rendimiento HAMMER, kernels virtuales, alto rendimiento en múltiples procesadores con SMP con poca contención.</li>
+<li><a href="https://en.wikipedia.org/wiki/Darwin_%28operating_system%29">Darwin</a> / Mac OS X: los sistema de Apple con Mac OS X están basados en BSD.</li>
+<li><a href="https://es.wikipedia.org/wiki/PlayStation_4">PlayStation 4</a>: el sistema operativo Orbis de esta consola está basado en FreeBSD 9.</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/freebsd.svg" width="150" height="150" alt="FreeBSD" title="FreeBSD"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openbsd.svg" width="150" height="150" alt="OpenBSD" title="OpenBSD"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/netbsd.svg" width="150" height="150" alt="NetBSD" title="NetBSD"  class="lozad "></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/midnightbsd.svg" width="150" height="150" alt="MidnightBSD" title="MidnightBSD"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dragonflybsd.svg" width="150" height="150" alt="DragonFly" title="DragonFly"  class="lozad "></p>
+<figcaption>Varias de las distribuciones más importantes de BSD</figcaption>
+</figure>
+</div>
+<p>La publicación digital <a href="https://bsdmag.org/">BSD Magazine</a> gratuita bajo suscripción se publica de forma mensual con varios artículos técnicos dedicados a las diferentes distribuciones BSD. Permite adentrarse en el mundo de la distribuciones BSD. Más información sobre las distribuciones en la Wikipedia.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/FreeBSD">Wikipedia FreeBSD</a></li>
+<li><a href="https://en.wikipedia.org/wiki/OpenBSD">Wikipedia OpenBSD</a></li>
+<li><a href="https://en.wikipedia.org/wiki/NetBSD">Wikipedia NetBSD</a></li>
+<li><a href="https://en.wikipedia.org/wiki/DragonFly_BSD">Wikipedia DragonFly BSD</a></li>
+<li><a href="https://en.wikipedia.org/wiki/MacOS">Wikipedia macOS</a></li>
+</ul>
+<h3 id="razones-por-las-que-usar-y-no-usar-una-distribución-bsd">Razones por las que usar y no usar una distribución BSD</h3>
+<p>Entre las razones para usar BSD están:</p>
+<ul>
+<li>Posibilidad de usar características de Solaris como el avanzado sistema de archivos <a href="https://en.wikipedia.org/wiki/OpenZFS">ZFS</a> o <a href="https://en.wikipedia.org/wiki/DTrace">DTrace</a>.</li>
+<li>La comunidad BSD se centra más en la tecnología que en los aspectos de licencia y políticos del software libre.</li>
+<li>Estabilidad y sistema bien estructurado.</li>
+<li>Alto rendimiento y gran desempeño en tareas de red.</li>
+<li>Menos fragmentación en distribuciones como ocurren en Linux donde algunas no tiene objetivos claros diferenciadores.</li>
+<li>La licencia BSD.</li>
+<li>ZFS.</li>
+</ul>
+<p>Algunas de las razones por las que no usar BSD están:</p>
+<ul>
+<li>Falta de soporte hardware.</li>
+<li>No hay soporte para suspender y continuar en portátiles.</li>
+<li>Ausencia en móviles y algunas funcionalidades inexistentes.</li>
+<li>Más fácil de usa Mac OS X que FreeBSD.</li>
+<li><em>ports</em> rotos.</li>
+<li>Menos información y ayuda en internet que de GNU/Linux.</li>
+</ul>
+<h3 id="distribuciones-más-importantes-de-gnulinux">Distribuciones más importantes de GNU/Linux</h3>
+<p>Las distribuciones GNU/Linux son más numerosas si bien es cierto que muchas de ellas no tienen un objetivo que las diferencie claramente de otras. Algunas importantes son:</p>
+<ul>
+<li><a href="https://fedoraproject.org/">Fedora</a>, <a href="https://www.centos.org/">CentOS</a>, RHEL.</li>
+<li>Ubuntu, <a href="https://www.debian.org/">Debian</a>, <a href="https://www.linuxmint.com/">Linux Mint</a>, <a href="https://elementary.io/es/">elementary OS</a>.</li>
+<li><a href="https://www.opensuse.org/">openSUSE</a>.</li>
+<li><a href="https://www.archlinux.org/">Arch Linux</a>.</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="150" height="150" alt="Ubuntu" title="Ubuntu"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/opensuse.svg" width="150" height="150" alt="openSUSE" title="openSUSE"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/debian.svg" width="150" height="150" alt="Debian" title="Debian"  class="lozad "></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="150" height="150" alt="Arch Linux" title="Arch Linux"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora.svg" width="150" height="150" alt="Fedora" title="Fedora"  class="lozad ">
+
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elementary.svg" width="150" height="150" alt="elementary OS" title="elementary OS"  class="lozad "></p>
+</figure>
+</div>
+<p>He escrito algunos artículos para <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">elegir la mejor distribución GNU/Linux</a> según las necesidades del usuario o uso. <a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Cómo descargar e instalar Ubuntu paso paso desde cero</a>, una de las distribuciones más populares y recomendadas para los usuarios recién llegados a GNU/Linux y que muchos usuarios con experiencia siguen usando. <a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones del entorno de escritorio GNOME</a> con las que los usuarios interaccionan con la computadora o <a href="https://picodotdev.github.io/blog-bitix/2020/05/introduccion-y-uso-basico-de-la-distribucion-gnu-linux-fedora-silverblue/">la distribución Fedora Silverblue</a> con una aproximación diferente a la mayoría de las distribuciones con un sistema inmutable y basado en contenedores que le dota de mayor fiabilidad al realizar actualizaciones del sistema que en ciertos aspectos se parece a las distribuciones BSD al separar el sistema base de las aplicaciones.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.howtogeek.com/190773/htg-explains-whats-the-difference-between-linux-and-bsd/">What’s the Difference Between Linux and BSD?</a></li>
+<li><a href="https://fossbytes.com/difference-linux-bsd-open-source/">Difference Between Linux And BSD | Open Source Operating Systems</a></li>
+<li><a href="https://en.wikipedia.org/wiki/BSD_licenses">BSD licenses</a></li>
+<li><a href="https://distrowatch.com/weekly.php?issue=20200622#qa">BSD versus Linux distribution development</a></li>
+<li><a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=MTExMDg">Why Should You Use FreeBSD? Here’s Some Reasons</a></li>
+<li><a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=MTExMjE">Reasons Why You Should Not Use FreeBSD</a></li>
+<li><a href="https://www.freebsd.org/ports/">FreeBSD Ports</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/</id>
         <title>Tareas programadas de forma periódica con Quartz y Spring en Java</title>
@@ -1655,114 +1816,6 @@
                 <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/</id>
-        <title>Copia de seguridad, restauración y carga de datos en PostgreSQL y MySQL</title>
-        <updated>2020-05-09T09:30:00+02:00</updated>
-        <published>2020-05-09T09:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Siempre es recomedable tener una copia de seguridad de algo tan importante como suelen ser los datos en una base de datos. Esa copia de seguridad sirve para en caso de desastre restaurar la mayor parte de los datos, también sirven para restaurarlos en otras máquinas diferentes a la principal. Tanto PostgreSQL como MySQL tienen comandos para hacer copias de seguridad y restaurarlas, también tiene opciones para cargar datos de forma masiva de forma rápida y más eficiente que con sentencias SQL.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/mysql.svg" width="200" height="136" alt="MySql" title="MySql"  class=""></p>
-</div>
-<p>Los datos contenidos en las bases de datos relacionales son de los más importante en una aplicación. Hacer copias de seguridad o volcados de forma regular es indispensable para poder restaurar los datos en caso de desastre en el servidor. Las bases de datos proporcionan herramientas para hacer estas copias de seguridad y restaurado tanto de los datos como del esquema de las bases de datos. Las copias de seguridad y restaurado también nos sirven para disponer en nuestro entorno de desarrollo de una base de datos con datos reales con los que probar la aplicación.</p>
-<p>En la base de datos <a href="https://www.postgresql.org/">PosgreSQL</a> disponemos de los comandos <a href="https://www.postgresql.org/docs/current/app-pgdump.html"><em>pg_dump</em></a> para hacer la copia de seguridad o extraer el esquema y los datos y el comando <a href="https://www.postgresql.org/docs/current/app-pgrestore.html"><em>pg_restore</em></a> para cargarlos en un nuevo servidor u otro esquema. En <a href="https://www.mysql.com/">MySQL</a> disponemos de los comandos <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html">mysqldump</a> y depende de como hagamos las copias de seguridad <a href="https://dev.mysql.com/doc/refman/8.0/en/mysqlimport.html">mysqlimport</a>.</p>
-<h3 id="postgresql">PostgreSQL</h3>
-<p>Los comandos básicos para hacer la copia de seguridad y restauración en PostgreSQL de una base de datos completa son lo siguientes:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump database &gt; database.sql&#10;&#10;$ psql -d database -f database.sql</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>postgresql-backup.sh</span>
-    </div>
-</div>
-<p>PosgreSQL usando un formato de copia de seguridad personalizado con la opción <em>-Fc</em> permite restaurar posteriormente partes de la base de datos, por ejemplo, una tabla o un índice en concreto.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump -Fc database &gt; db.dump&#10;&#10;$ pg_restore -d database db.dump&#10;$ pg_restore -U <span class="nv">$username</span> --dbname<span class="o">=</span><span class="nv">$dbname</span> --table<span class="o">=</span><span class="nv">$tablename</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>postgresql-backup-format-custom.sh</span>
-    </div>
-</div>
-<p>También es posible separar la definición y los datos de las copias de seguridad con las opciones <em>&ndash;schema-only</em> y <em>&ndash;data-only</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump -Fc --schema-only database &gt; database-ddl.dump&#10;$ pg_dump -Fc --data-only database &gt; database-data.dump&#10;&#10;$ psql -d database -f database-ddl.sql&#10;$ psql -d database -f database-data.sql</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>postgresql-schema-data.sh</span>
-    </div>
-</div>
-<p>Como las bases de datos pueden llegar a ser de varias decenas de GiB generar las copias de seguridad comprimidas que reducirán su tamaño notablemente. Los volcados con la opción <em>-Fc</em> ya está comprimidos con lo que esto solo es necesario si generamos volcados en archivos <em>.sql</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pg_dump database <span class="p">|</span> gzip &gt; database-backup.sql.gz&#10;&#10;$ gunzip &lt; database-backup.sql.gz <span class="p">|</span> psql -d database</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>postgresql-compress.sh</span>
-    </div>
-</div>
-<h3 id="mysql">MySQL</h3>
-<p>En MySQL los comandos de copia de seguridad y restauración son similares.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump database &gt; database.sql&#10;$ mysql database &lt; database.sql&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mysql-backup.sh</span>
-    </div>
-</div>
-<p>Con la opción <em>&ndash;extended-insert</em> la importación posterior del volcado será algo más rápida al incluir sentencias <em>insert</em> con múltiples datos de vez de un <em>insert</em> por cada fila.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump --extended-insert database &gt; database.sql&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mysql-backup-extended-insert.sh</span>
-    </div>
-</div>
-<p>También es posible separar los datos de la definición del esquema con las opciones <em>&ndash;no-data</em> y <em>&ndash;no-create-info</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump --no-data database &gt; database-ddl.sql&#10;$ mysqldump --no-create-info database &gt; database-data.sql&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mysql-schema-data.sh</span>
-    </div>
-</div>
-<p>Para generar y restaurar copias de seguridad comprimidas se debe usar el comando <em>gzip</em> y <em>gunzip</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mysqldump database <span class="p">|</span> gzip &gt; database.sql.gz&#10;$ gunzip &lt; database.sql.gz <span class="p">|</span> mysql database&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mysql-compress.sh</span>
-    </div>
-</div>
-<h3 id="carga-masiva-de-datos">Carga masiva de datos</h3>
-<p>Si se desean cargar datos de una fuente externa de forma masiva a una base de datos PostgreSQL o MySQL en vez de generar un archivo con varios cientos de miles las sentencias <em>insert</em> es mejor generar un archivo en formato <em>csv</em> o <em>txt</em> con algunos delimitadores y usar el comando <a href="https://www.postgresql.org/docs/current/sql-copy.html"><em>COPY</em></a> en PostgreSQL o el comando <a href="https://dev.mysql.com/doc/refman/8.0/en/load-data.html"><em>LOAD DATA</em></a> en MySQL complemento de <a href="https://dev.mysql.com/doc/refman/8.0/en/select-into.html">SELECT … INTO</a>. Estos comandos están diseñados para cargar datos de forma masiva en la base de datos con lo que la importación será mucho más rápida.</p>
-<p>En ambos casos las exportaciones e importaciones soportan archivos en formato texto y csv con la posibilidad de personalizar los caracteres separadores de las columnas y las columnas en las que importar los datos.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">COPY table_name <span class="o">[</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FROM <span class="o">{</span> <span class="s1">&#39;filename&#39;</span> <span class="p">|</span> PROGRAM <span class="s1">&#39;command&#39;</span> <span class="p">|</span> STDIN <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> <span class="o">[</span> WITH <span class="o">]</span> <span class="o">(</span> option <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> WHERE condition <span class="o">]</span>&#10;&#10;COPY <span class="o">{</span> table_name <span class="o">[</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span> <span class="p">|</span> <span class="o">(</span> query <span class="o">)</span> <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;TO <span class="o">{</span> <span class="s1">&#39;filename&#39;</span> <span class="p">|</span> PROGRAM <span class="s1">&#39;command&#39;</span> <span class="p">|</span> STDOUT <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span> <span class="o">[</span> WITH <span class="o">]</span> <span class="o">(</span> option <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="o">]</span>&#10;&#10;where option can be one of:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORMAT format_name&#10;&nbsp;&nbsp;&nbsp;&nbsp;FREEZE <span class="o">[</span> boolean <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;DELIMITER <span class="s1">&#39;delimiter_character&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;NULL <span class="s1">&#39;null_string&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;HEADER <span class="o">[</span> boolean <span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;QUOTE <span class="s1">&#39;quote_character&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;ESCAPE <span class="s1">&#39;escape_character&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORCE_QUOTE <span class="o">{</span> <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span> <span class="p">|</span> * <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORCE_NOT_NULL <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;FORCE_NULL <span class="o">(</span> column_name <span class="o">[</span>, ...<span class="o">]</span> <span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;ENCODING <span class="s1">&#39;encoding_name&#39;</span>&#10;&#10;COPY table TO <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span>&#10;&#10;COPY table FROM <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>postgresql-copy.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">LOAD DATA&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>LOW_PRIORITY <span class="p">|</span> CONCURRENT<span class="o">]</span> <span class="o">[</span>LOCAL<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;INFILE <span class="s1">&#39;file_name&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>REPLACE <span class="p">|</span> IGNORE<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;INTO TABLE tbl_name&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>PARTITION <span class="o">(</span>partition_name <span class="o">[</span>, partition_name<span class="o">]</span> ...<span class="o">)]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>CHARACTER SET charset_name<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[{</span>FIELDS <span class="p">|</span> COLUMNS<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>TERMINATED BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[[</span>OPTIONALLY<span class="o">]</span> ENCLOSED BY <span class="s1">&#39;char&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>ESCAPED BY <span class="s1">&#39;char&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>LINES&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>STARTING BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>TERMINATED BY <span class="s1">&#39;string&#39;</span><span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>IGNORE number <span class="o">{</span>LINES <span class="p">|</span> ROWS<span class="o">}]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[(</span>col_name_or_user_var&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>, col_name_or_user_var<span class="o">]</span> ...<span class="o">)]</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>SET <span class="nv">col_name</span><span class="o">={</span>expr <span class="p">|</span> DEFAULT<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>, <span class="nv">col_name</span><span class="o">={</span>expr <span class="p">|</span> DEFAULT<span class="o">}]</span> ...<span class="o">]</span>&#10;&#10;SELECT * FROM table INTO <span class="s1">&#39;data.txt&#39;</span><span class="p">;</span>&#10;&#10;LOAD DATA INFILE <span class="s1">&#39;data.txt&#39;</span> INTO TABLE database.table<span class="p">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mysql-load.sh</span>
-    </div>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.postgresql.org/docs/current/populate.html">Populating a Database, Performance Tips</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

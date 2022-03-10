@@ -5,12 +5,119 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2022-02-03T18:00:00+01:00</updated>
+    <updated>2022-03-10T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/</id>
+        <title>Los modificadores de acceso de clases, propiedades y métodos en Java</title>
+        <updated>2020-02-04T20:00:00+01:00</updated>
+        <published>2020-01-31T17:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Uno de los principios básicos de los lenguajes orientados a objetos es la encapsulación, mediante la cual se garantiza que los datos de una clase solo son modificados por las operaciones apropiadas implementadas en los métodos de sus clases para preservar su invariante, las reglas que define la clase y el estado consistente de su estado.</p>
+<p>El acceso a las propiedades y métodos se determina mediante las palabras reservadas de los modificadores de acceso, en Java hay cuatro modificadores de acceso que definen ámbitos de visibilidad de más restrictivos a menos restrictivos:</p>
+<ul>
+<li><code>private</code>: únicamente la clase puede acceder a la propiedad o método.</li>
+<li><code>package private</code> (valor por defecto si no se indica ninguno): solo las clases en el mismo paquete pueden acceder a la propiedad o método.</li>
+<li><code>protected</code>: las clases del mismo paquete y que heredan de la clase pueden acceder a la propiedad o método.</li>
+<li><code>public</code>: la propiedad o método es accesible desde cualquier método de otra clase.</li>
+</ul>
+<p>Las clases tienen uno de los modificadores de acceso <code>public</code> o <code>package private</code> con el mismo significado que en las propiedades y métodos, visibles desde cualquier otro paquete y solo visible desde su propio paquete.</p>
+<p>Los modificadores de acceso son una palabra reservada del lenguaje y se colocan delante de la propiedad o método, el modificador de acceso <code>package private</code> no tiene palabra reservada se aplica en caso de que no se especifique un modificador de acceso explícitamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>&#10;&#10;  <span class="kd">private</span> <span class="n">String</span> <span class="n">property1</span><span class="o">;</span>&#10;  <span class="n">String</span> <span class="n">property2</span><span class="o">;</span>&#10;  <span class="kd">protected</span> <span class="n">String</span> <span class="n">property3</span><span class="o">;</span>&#10;  <span class="kd">public</span> <span class="n">property4</span><span class="o">;</span>&#10;&#10;  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getProperty1</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">format</span><span class="o">;</span>&#10;  <span class="o">}</span>&#10;&#10;  <span class="n">String</span> <span class="nf">getProperty2</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">property2</span><span class="o">;</span>&#10;  <span class="o">}</span>&#10;&#10;  <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getProperty3</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">property3</span><span class="o">;</span>&#10;  <span class="o">}</span>&#10;&#10;  <span class="kd">private</span> <span class="n">String</span> <span class="nf">getProperty4</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">property4</span><span class="o">;</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Foo.java</span>
+    </div>
+</div>
+<p>Los ámbitos de visibilidad según el modificador de acceso y el origen de acceso a la propiedad o método son los siguientes.</p>
+<table class="table">
+   <thead class="table-light">
+       <th width="250px">Modificador de acceso</th>
+       <th>Misma clase o anidada</th>
+       <th>Clase en el mismo paquete</th>
+       <th>Clase que hereda en otro paquete</th>
+       <th>Clase que no hereda en otro paquete</th>
+   </thead>
+   <tbody>
+       <tr>
+           <td>private</td>
+           <td>Sí</td>
+           <td>No</td>
+           <td>No</td>
+           <td>No</td>
+       </tr>
+       <tr>
+           <td>default (package private)</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>No</td>
+           <td>No</td>
+       </tr>
+       <tr>
+           <td>protected</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>No</td>
+       </tr>
+       <tr>
+           <td>public</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>Sí</td>
+           <td>Sí</td>
+       </tr>
+   </tbody>
+</table>
+<p>En este gráfico hay representados paquetes que contienen clases, clases con rectángulos, las flechas indican herencia entre clases y las clases que están coloreadas indican que tienen visibilidad de la propiedad y método según el ámbito de acceso, la ubicación de la clase que accede y si hay una relación de herencia. En esencia es la misma información de la tabla pero representada de forma gráfica.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Modificadores de acceso en Java"><img src="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_600x450_fit_q90_box.jpg" width="537" height="409" alt="Modificadores de acceso en Java" title="Modificadores de acceso en Java"  class="lozad "></a></p>
+<figcaption>Modificadores de acceso en Java <br>Fuente: wikipedia.org</figcaption>
+</figure>
+</div>
+<p>Una detalle a tener en cuenta es que los modificadores afectan a las clases, una propiedad privada de una clase es accesible para todas las instancias de esa clase. En concreto, este código es válido y el resultado es <em>two</em>, <em>bar1</em> puede acceder a la propiedad <em>thing</em> de la instancia <em>bar2</em> aún siendo privada en la clase.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bar</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="n">String</span> <span class="n">thing</span><span class="o">;</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Bar</span><span class="o">(</span><span class="n">String</span> <span class="n">thing</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">thing</span> <span class="o">=</span> <span class="n">thing</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getOtherThing</span><span class="o">(</span><span class="n">Bar</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="na">thing</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">Bar</span> <span class="n">bar1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bar</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">Bar</span> <span class="n">bar2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bar</span><span class="o">(</span><span class="s">&#34;two&#34;</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">thing</span> <span class="o">=</span> <span class="n">bar1</span><span class="o">.</span><span class="na">getOtherThing</span><span class="o">(</span><span class="n">bar2</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">thing</span><span class="o">);</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Bar.java</span>
+    </div>
+</div>
+<p>No hay encapsulación entre las instancias de la misma clase, la encapsulación es para la clase accedida desde otras clases según los modificadores de acceso. Pero aunque una instancia tenga acceso y capacidad de modificar las propiedades de otra instancia se ha de seguir manteniendo la invariante, si una instancia modifica los datos de otra instancia ha de seguir manteniendo la invariante de la clase de esa otra instancia. Para mantener la invariante y la encapsulación generalmente se proporciona acceso a un método y no directamente a las propiedades.</p>
+<h3 id="la-modularidad-a-partir-java-9">La modularidad a partir Java 9</h3>
+<p>Los ámbitos de visibilidad es un mecanismo bastante limitado ni es suficiente para proporcionar encapsulación. No hay ningún impedimento a que cualquiera pueda crear una clase en un paquete que contiene clases privadas de paquete o métodos <em>package private</em> o heredar de esas clases y de esta manera tener acceso a clases, métodos y propiedades que el autor original no las diseñó para esos propósitos. Puede ser incluso un problema de seguridad.</p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java2-los-modulos/">La modularidad añadida en Java 9</a> viene a complementar y dar una solución más completa a los ámbitos de visibilidad así como garantizar mejor la encapsulación tal y como el programador del paquete original ha diseñado.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Java_syntax">Java syntax</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Class_invariant">Class invariant</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/12/hemeroteca-16/</id>
         <title>Hemeroteca #16</title>
@@ -1239,7 +1346,7 @@
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Generar documentos e informes de salida en una una tarea básica de cualquier aplicación y una forma de exportar los datos a otros formatos. Con <a href="https://poi.apache.org/">Apache POI</a> se pueden generar hojas de cálculo excel para su procesamiento con <a href="https://www.libreoffice.org/">LibreOffice</a> o <a href="https://products.office.com/es-es/">Microsoft Office Excel</a>. En ocasiones también es necesario <a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">generar gráficas para visualizar un conjunto grande de datos</a> para ser más fáciles de interpretar, descubrir tendencias, comparar, sacar conclusiones en base a las cuales tomar alguna acción. Los archivos PDF también son muy utilizados para imprimirlos en formato en papel o enviarlos adjuntos en correos electrónicos.</p>
-<p>Uno de estos casos podría ser la generación de una factura en base a una plantilla e incluir el el importe y consumo realizado por un cliente y que este pueda obtenerla en formato electrónico o le sea enviada por correo electrónico como un documento adjunto o <a href="https://elblogdepicodev.blogspot.com.es/2011/02/enviar-correos-mediante-java-mail.htmlindex-amp.html">enviar un correo electrónico</a> para indicar que tiene la factura disponible en su área de cliente lista para su descarga. Este es el caso de muchas empresas que ofrecen servicios como compañías eléctricas, de telecomunicaciones, servicios municipales de agua y basura, bancos para su justificantes y comprobantes, comercios, etc&hellip;</p>
+<p>Uno de estos casos podría ser la generación de una factura en base a una plantilla e incluir el el importe y consumo realizado por un cliente y que este pueda obtenerla en formato electrónico o le sea enviada por correo electrónico como un documento adjunto o <a href="https://elblogdepicodev.blogspot.com.es/2011/02/enviar-correos-mediante-java-mail.html">enviar un correo electrónico</a> para indicar que tiene la factura disponible en su área de cliente lista para su descarga. Este es el caso de muchas empresas que ofrecen servicios como compañías eléctricas, de telecomunicaciones, servicios municipales de agua y basura, bancos para su justificantes y comprobantes, comercios, etc&hellip;</p>
 <div class="alert alert-warning tableofcontents">
     <h2>Contenido del artículo</h2>
     <toc></toc>
@@ -1507,75 +1614,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/</id>
-        <title>Implementar tolerancia a fallos con Resilience4j</title>
-        <updated>2019-08-02T17:00:00+02:00</updated>
-        <published>2019-08-02T17:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/resilience4j.png" width="200" height="200" alt="Resilience4j" title="Resilience4j"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es <a href="https://github.com/resilience4j/resilience4j">Resilience4j</a>. Resilience4j proporciona las características similares con algunas ventajas adicionales.</p>
-<p>Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son:</p>
-<ul>
-<li><em>Circuit breaker</em>: para dejar de hacer peticiones cuando un servicio invocado está fallando.</li>
-<li><em>Retry</em>: realiza reintentos cuando un servicio ha fallado de forma temporal.</li>
-<li><em>Bulkhead</em>: limita el número de peticiones concurrentes salientes a un servicio para no sobrecargarlo.</li>
-<li><em>Rate limit</em>: limita el número de llamadas que recibe un servicio en un periodo de tiempo.</li>
-<li><em>Cache</em>: intenta obtener un valor de la cache y si no está presente de la función de la que lo recupera.</li>
-<li><em>Time limiter</em>: limita el tiempo de ejecución de una función para no esperar indifinidamente a una respuesta.</li>
-<li>Además de la funcionalidad de métricas.</li>
-</ul>
-<p>La ventaja de Resilience4j es que todos estos patrones para los microservicios se ejecutan en el mismo hilo que el principal y no en un aparte como en Hystrix. Su uso además no requiere de crear clases específicas para hacer uso de los patrones y pueden emplearse las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">funciones <em>lambda</em> incorporadas en Java 8</a>.</p>
-<p>Este artículo actualiza el ejemplo que usaba <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> y <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> que implementé en su momento para la <a href="https://picodotdev.github.io/blog-bitix/series/spring-cloud/">serie de artículos sobre Spring Cloud</a> añadiendo una implementación del cliente de un microservicio con Resilience4j.</p>
-<p>La configuración de Resilience4j se puede proporcionar mediante código Java, con anotaciones y con la <a href="https://resilience4j.readme.io/docs/getting-started-3">integración para Spring Boot</a> con parámetros en el archivo de configuración de la aplicación. La aplicación además de varias cosas de Spring Cloud para otros artículos de la serie consiste para el de este artículo en un servicio cliente y un servicio servidor que para ser tolerantes a fallos hacen uso de los patrones <em>circuit breaker</em> y <em>time limiter</em> para demostrar su uso.</p>
-<p>Resilience4j para implementar los patrones lo que hace es decorar la función objetivo que hace la invocación del servicio. Si se quieren aplicar varios patrones hay que encadenar las decoraciones, por ejemplo, si se quiere limitar el número de llamadas salientes con <em>bulkhead</em> y el patrón <em>circuit breaker</em> hay que aplicar una decoración sobre la otra. En este ejemplo se aplica un <em>time limiter</em> y un <em>circuit breaker</em> usando código Java. La variable <em>get</em> es la que realmente contiene la llamada al servicio.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloud.client</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Resilience4jProxyService</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">LoadBalancerClient</span> <span class="n">loadBalancer</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracing</span> <span class="n">tracing</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracer</span> <span class="n">tracer</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">CircuitBreakerConfig</span> <span class="n">circuitBreakerConfiguration</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">TimeLimiterConfig</span> <span class="n">timeLimiterConfiguration</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Resilience4jProxyService</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">circuitBreakerConfiguration</span> <span class="o">=</span> <span class="n">CircuitBreakerConfig</span><span class="o">.</span><span class="na">custom</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">failureRateThreshold</span><span class="o">(</span><span class="n">50</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">recordExceptions</span><span class="o">(</span><span class="n">IOException</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">TimeoutException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">build</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">timeLimiterConfiguration</span> <span class="o">=</span> <span class="n">TimeLimiterConfig</span><span class="o">.</span><span class="na">custom</span><span class="o">()</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">timeoutDuration</span><span class="o">(</span><span class="n">Duration</span><span class="o">.</span><span class="na">ofMillis</span><span class="o">(</span><span class="n">2500</span><span class="o">))</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">cancelRunningFuture</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">build</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ServiceInstance</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">loadBalancer</span><span class="o">.</span><span class="na">choose</span><span class="o">(</span><span class="s">&#34;proxy&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">URI</span> <span class="n">uri</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="na">getUri</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">resource</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%s%s&#34;</span><span class="o">,</span> <span class="n">uri</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span> <span class="s">&#34;/service&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Invocation</span><span class="o">.</span><span class="na">Builder</span> <span class="n">builder</span> <span class="o">=</span> <span class="n">ClientBuilder</span><span class="o">.</span><span class="na">newClient</span><span class="o">().</span><span class="na">target</span><span class="o">(</span><span class="n">resource</span><span class="o">).</span><span class="na">request</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">CircuitBreaker</span> <span class="n">circuitBreaker</span> <span class="o">=</span> <span class="n">CircuitBreaker</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;resilience4jCircuitBreakerProxyService&#34;</span><span class="o">,</span> <span class="n">circuitBreakerConfiguration</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">TimeLimiter</span> <span class="n">timeLimiter</span> <span class="o">=</span> <span class="n">TimeLimiter</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">timeLimiterConfiguration</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Supplier</span><span class="o">&lt;</span><span class="n">CompletableFuture</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">get</span> <span class="o">=</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">CompletableFuture</span><span class="o">.</span><span class="na">supplyAsync</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">readEntity</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">};</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Callable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">getLimiter</span> <span class="o">=</span> <span class="n">TimeLimiter</span><span class="o">.</span><span class="na">decorateFutureSupplier</span><span class="o">(</span><span class="n">timeLimiter</span><span class="o">,</span> <span class="n">get</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Callable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">getCircuitBreaker</span> <span class="o">=</span> <span class="n">CircuitBreaker</span><span class="o">.</span><span class="na">decorateCallable</span><span class="o">(</span><span class="n">circuitBreaker</span><span class="o">,</span> <span class="n">getLimiter</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">Try</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">getCircuitBreaker</span><span class="o">::</span><span class="n">call</span><span class="o">).</span><span class="na">recover</span><span class="o">((</span><span class="n">throwable</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">getFallback</span><span class="o">()).</span><span class="na">get</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="nf">getFallback</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="s">&#34;Fallback&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Resilience4jProxyService.java</span>
-    </div>
-</div>
-<p>Las dependencias que hay que añadir en el proyecto son:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">plugins</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;org.springframework.boot&#39;</span> <span class="n">version</span> <span class="s1">&#39;2.1.6.RELEASE&#39;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.springcloud.client.Main&#39;</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-dependencies:2.1.6.RELEASE&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="nf">platform</span><span class="o">(</span><span class="s2">&#34;org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR1&#34;</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Spring&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">def</span> <span class="n">excludeSpringBootStarterLogging</span> <span class="o">=</span> <span class="o">{</span> <span class="n">exclude</span><span class="o">(</span><span class="nl">group:</span> <span class="s1">&#39;org.springframework.boot&#39;</span><span class="o">,</span> <span class="nl">module:</span> <span class="s1">&#39;spring-boot-starter-logging&#39;</span><span class="o">)</span> <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.springframework.boot:spring-boot-starter-web&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-starter-config&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;io.github.resilience4j:resilience4j-spring-boot2:0.17.0&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s1">&#39;io.micrometer:micrometer-registry-prometheus:1.1.5&#39;</span><span class="o">)</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build.gradle</span>
-    </div>
-</div>
-<p>Resilience4j proporciona añadidos de integración con Spring Boot y exportación de métricas para <a href="https://prometheus.io/">Prometheus</a>.</p>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloud">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradle-run.sh</code></p>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://dzone.com/articles/resilience4j-intro">Achieving Fault Tolerance With Resilience4j</a></li>
-<li><a href="https://www.baeldung.com/resilience4j">Guide to Resilience4j</a></li>
-<li><a href="https://spring.io/blog/2019/01/23/spring-cloud-greenwich-release-is-now-available">Spring Cloud Greenwich.RELEASE</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
