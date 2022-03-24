@@ -54,4 +54,4 @@
   {{- $rel = strings.TrimLeft " " (print (default "" $rel) " " "sponsored") -}}
 {{- end -}}
 
-<a href="{{ $href }}"{{ with $title }} title="{{ . }}"{{ end }}{{ with $rel }} rel="{{ . }}"{{ end }}{{ with $target }} target="{{ . }}"{{ end }}{{ with $class }} class="{{ . }}"{{ end }}>{{ $text | markdownify }}</a>
+<a href="{{ $href }}"{{ with $title }} title="{{ . }}"{{ end }}{{ with $rel }} rel="{{ . }}"{{ end }}{{ with $target }} target="{{ . }}"{{ end }}{{ with $class }} class="{{ . }}"{{ end }}>{{ safeHTML $text }}</a>
