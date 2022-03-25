@@ -255,7 +255,7 @@
 <h3 id="cómo-hacer-_downgrade_-de-un-paquete">Cómo hacer <em>downgrade</em> de un paquete</h3>
 <p>El proceso de desactualización o <em>downgrade</em> no tiene complicación, basta con lanzar un comando, se desactualiza el paquete y sus dependencias con la limitación de que en el caso de conflictos con otros paquetes también hay que desactualizar esos otros paquetes.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -U /var/cache/pacman/pkg/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -U /var/cache/pacman/pkg/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-downgrade.sh</span>
     </div>
@@ -266,7 +266,7 @@
 <p>Otra posibilidad es usar <a href="https://wiki.archlinux.org/index.php/Arch_Rollback_Machine">Arch Rollback Machine</a> que va almacenando instantáneas de las últimas versiones de los paquetes, de los repositorios organizados por fecha y de las imágenes iso del medio de instalación. Usando estas instantáneas de paquetes se puede encontrar una versión desactualizada de cualquier paquete individual. En los casos más extremos Arch Rollback Machine ofrece la posibilidad de desactualizar un equipo completamente a una fecha concreta, aunque no es recomendable.</p>
 <p>Indicando en el comando la dirección completa del paquete este es descargado y desactualizado.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -U https://archive.archlinux.org/packages/n/networkmanager/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -U https://archive.archlinux.org/packages/n/networkmanager/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-arm.sh</span>
     </div>
@@ -274,7 +274,7 @@
 <p>Cómo práctica recomendable es mantener hasta la siguiente actualización los paquetes en la caché, una vez actualizado el sistema y comprobado que todo sigue funcionando correctamente. Antes de una actualización se puede eliminar de la cache los paquetes viejos no usados, se actualiza el sistema, con lo que se tiene en la cache los paquetes nuevos y viejos, se comprueba que el sistema funciona correctamente y si hay que hacer un <em>downgrade</em> de alguno se dispone de él en la cache local.</p>
 <p>La secuencia de comandos en una actualización que uso es la siguiente.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -Sc&#10;$ sudo pacman -Syu&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -Sc&#10;</span></span><span class="line"><span class="cl">$ sudo pacman -Syu&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-update.sh</span>
     </div>
@@ -282,7 +282,7 @@
 <h3 id="cómo-evitar-que-un-paquete-se-actualice">Cómo evitar que un paquete se actualice</h3>
 <p>Para evitar que un paquete sea actualizado en la siguiente actualización del sistema hay añadirlo a la lista de paquetes ignorados <em>IgnorePkg</em> del archivo <em>/etc/pacman.conf</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">IgnorePkg = networkmanager&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">IgnorePkg = networkmanager&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman.conf</span>
     </div>

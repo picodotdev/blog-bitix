@@ -307,7 +307,7 @@
 <p>Sin más, comencemos con la guía. Lo primero que deberemos hacer es <a href="https://www.archlinux.org/download/">descargar el medio de instalación</a> de algún espejo de la red. Los medios con la coletilla -dual nos servirán tanto para sistemas de x86 (32 bits) como para sistemas x86_64 (64 bits). Una vez descargado deberemos grabarlo en un CD o más recomendable en una memoria USB.</p>
 <p>Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/sdx por el dispositivo de la memoria USB en la que queramos grabar el medio cosa que en linux podemos conocer usando el comando lsblk:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ lsblk&#10;<span class="c1"># dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx &amp;&amp; sync</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ lsblk&#10;</span></span><span class="line"><span class="cl"><span class="c1"># dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx &amp;&amp; sync</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-0.sh</span>
     </div>
@@ -323,14 +323,14 @@
 </div>
 <p>Una vez estemos en el prompt inicial de la instalación deberemos cargar el mapa según nuestro teclado, para un teclado español usaremos normalmente:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># loadkeys es</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># loadkeys es</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-1.sh</span>
     </div>
 </div>
 <p>Modificamos también el archivo locale.gen y descomentamos el dato es_ES.UTF-8 UTF-8, finalmente lo exportamos para el shell:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nano /etc/locale.gen</span>&#10;<span class="c1"># export LANG=es_ES.UTF-8</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># nano /etc/locale.gen</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># export LANG=es_ES.UTF-8</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-2.sh</span>
     </div>
@@ -338,7 +338,7 @@
 <h4 id="11-particionar-el-disco">1.1 Particionar el disco</h4>
 <p>El siguiente paso es particionar el disco duro y antes de hacerlo deberemos asegurarnos de que hemos hecho una copia de seguridad de los datos ya que en el siguiente paso se perderá el contenido del disco duro o SSD. Usaremos el siguiente comando para hacer el <a href="https://wiki.archlinux.org/index.php/GUID_Partition_Table">particionado usando GPT</a>. En función de si nuestro sistema tiene BIOS o EFI las particiones son distintas, si es un ordenador de unos dos años o menos o venía con Windows 8 preinstalador probablemente tenga EFI.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cgdisk /dev/sda</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># cgdisk /dev/sda</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-3.sh</span>
     </div>
@@ -346,7 +346,7 @@
 <h5 id="111-para-un-sistema-con-bios">1.1.1 Para un sistema con BIOS</h5>
 <p>En un sistema BIOS usando GPT el esquema de particiones será el siguiente:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;10 MiB&nbsp;&nbsp;&nbsp;&nbsp; BIOS Boot Partition (ef02)&#10;resto&nbsp;&nbsp;&nbsp;&nbsp;  Linux filesystem (8300)</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;</span></span><span class="line"><span class="cl">10 MiB&nbsp;&nbsp;&nbsp;&nbsp; BIOS Boot Partition (ef02)&#10;</span></span><span class="line"><span class="cl">resto&nbsp;&nbsp;&nbsp;&nbsp;  Linux filesystem (8300)</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-42.txt</span>
     </div>
@@ -354,14 +354,14 @@
 <h5 id="112-para-un-sistema-con-efi">1.1.2 Para un sistema con EFI</h5>
 <p>En un sistema EFI las particiones deberán ser las siguientes:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;512 MiB&nbsp;&nbsp;&nbsp;&nbsp;EFI System Partition (ef00)&#10;resto&nbsp;&nbsp;&nbsp;&nbsp;  Linux filesystem (8300)</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;</span></span><span class="line"><span class="cl">512 MiB&nbsp;&nbsp;&nbsp;&nbsp;EFI System Partition (ef00)&#10;</span></span><span class="line"><span class="cl">resto&nbsp;&nbsp;&nbsp;&nbsp;  Linux filesystem (8300)</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-43.txt</span>
     </div>
 </div>
 <p>Si tenemos un sistema con 8 GiB o más de memoria probablemente podamos prescindir de la partición de swap. Sino podemos crear una tal que:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;4 GiB&nbsp;&nbsp;&nbsp;&nbsp;  swap (8200)&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Tamaño&nbsp;&nbsp;&nbsp;&nbsp; Tipo&#10;</span></span><span class="line"><span class="cl">4 GiB&nbsp;&nbsp;&nbsp;&nbsp;  swap (8200)&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-44.txt</span>
     </div>
@@ -369,14 +369,14 @@
 <h4 id="12-formatear-las-particiones">1.2 Formatear las particiones</h4>
 <p>Una vez tenemos las particiones creados deberemos formatearlas, sustituimos sdaX por lo que corresponda según el orden en que hemos creado las particiones:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mkfs.fat -F32 /dev/sda1</span>&#10;<span class="c1"># mkfs.ext4 /dev/sda2</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># mkfs.fat -F32 /dev/sda1</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mkfs.ext4 /dev/sda2</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-4.sh</span>
     </div>
 </div>
 <p>Y si tenemos partición de swap:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mkswap /dev/sdaX</span>&#10;<span class="c1"># swapon /dev/sdaX</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># mkswap /dev/sdaX</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># swapon /dev/sdaX</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-5.sh</span>
     </div>
@@ -384,21 +384,21 @@
 <h4 id="13-montar-las-particiones">1.3 Montar las particiones</h4>
 <p>Lo siguiente que haremos es montar las particiones para empezar a usarlas, primero la partición root (/), que en esta guía es sda2 y luego la partición boot (/boot):</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mount /dev/sda2 /mnt</span>&#10;<span class="c1"># mkdir -p /mnt/boot</span>&#10;<span class="c1"># mount /dev/sda1 /mnt/boot</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># mount /dev/sda2 /mnt</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mkdir -p /mnt/boot</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mount /dev/sda1 /mnt/boot</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-6.sh</span>
     </div>
 </div>
 <p>Si nuestro sistema tiene EFI hacemos:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mount /dev/sda2 /mnt</span>&#10;<span class="c1"># mkdir -p /mnt/boot</span>&#10;<span class="c1"># mount /dev/sda1 /mnt/boot</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># mount /dev/sda2 /mnt</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mkdir -p /mnt/boot</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mount /dev/sda1 /mnt/boot</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-7.sh</span>
     </div>
 </div>
 <p>Si tenemos un disco SSD montamos las particiones usando las opciones de montaje adecuados para que se use TRIM:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mount -o noatime,discard /dev/sda2 /mnt</span>&#10;<span class="c1"># mkdir -p /mnt/boot</span>&#10;<span class="c1"># mount -o noatime,discard /dev/sda1 /mnt/boot</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># mount -o noatime,discard /dev/sda2 /mnt</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mkdir -p /mnt/boot</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># mount -o noatime,discard /dev/sda1 /mnt/boot</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-8.sh</span>
     </div>
@@ -407,7 +407,7 @@
 <p>Debemos seleccionar un espejo del que se descargarán los paquetes del sistema base, modificamos el archivo /etc/pacman.d/mirrrorlist y ponemos el primero el que deseemos, yo suelo usar:</p>
 <p>Server = http://mirrors.kernel.org/archlinux/$repo/os/$arch</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nano /etc/pacman.d/mirrrorlist</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># nano /etc/pacman.d/mirrrorlist</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-9.sh</span>
     </div>
@@ -415,7 +415,7 @@
 <h4 id="15-instalar-paquetes-del-sistema-base">1.5 Instalar paquetes del sistema base</h4>
 <p>Lo siguiente será instalar los archivos del sistema base el siguiente comando que descargará del espejo de paquetes que hayamos elegido los paquetes del sistema base:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacstrap /mnt base base-devel</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacstrap /mnt base base-devel</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-10.sh</span>
     </div>
@@ -423,7 +423,7 @@
 <h4 id="16-generar-de-fstab">1.6 Generar de fstab</h4>
 <p>Generamos el archivo fstab que contendrá las características de nuestras particiones y opciones de montaje:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-11.sh</span>
     </div>
@@ -432,28 +432,28 @@
 <h4 id="17-chroot-y-configuración-de-sistema-base">1.7 Chroot y configuración de sistema base</h4>
 <p>Hacemos un chroot para cambiar el directorio root que estamos usando para configurar nuestro sistema.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># arch-chroot /mnt /bin/bash</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># arch-chroot /mnt /bin/bash</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-12.sh</span>
     </div>
 </div>
 <p>Editamos /etc/locale.gen, lo generamos y exportamos las variables:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nano /etc/locale.gen</span>&#10;<span class="c1"># locale-gen</span>&#10;<span class="c1"># echo LANG=es_ES.UTF-8 &gt; /etc/locale.conf</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># nano /etc/locale.gen</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># locale-gen</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># echo LANG=es_ES.UTF-8 &gt; /etc/locale.conf</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-13.sh</span>
     </div>
 </div>
 <p>Editamos el archivo /etc/vconsole.conf para cambiar el mapa de teclas de las terminales TTY:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nano /etc/vconsole.conf</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># nano /etc/vconsole.conf</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-14.sh</span>
     </div>
 </div>
 <p>Introducimos el siguiente contenido:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">KEYMAP=es&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">KEYMAP=es&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-15.txt</span>
     </div>
@@ -461,14 +461,14 @@
 <h4 id="18-establecer-la-zona-horaria">1.8 Establecer la zona horaria</h4>
 <p>Establecemos la zona horaria de nuestro sistema:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ln -s /usr/share/zoneinfo/Europe/Madrid /etc/localtime</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># ln -s /usr/share/zoneinfo/Europe/Madrid /etc/localtime</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-16.sh</span>
     </div>
 </div>
 <h4 id="19-modificar-el-nombre-de-nuesta-máquina">1.9 Modificar el nombre de nuesta máquina</h4>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># echo archlinux &gt; /etc/hostname</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># echo archlinux &gt; /etc/hostname</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-17.sh</span>
     </div>
@@ -476,14 +476,14 @@
 <h4 id="110-instalar-el-gestor-de-redes">1.10 Instalar el gestor de redes</h4>
 <p>NetworkManager puede servirnos, lo instalamos con el gestor de paquetes de arch pacman y activamos el servicio:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -S networkmanager</span>&#10;<span class="c1"># systemctl enable NetworkManager.service</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S networkmanager</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># systemctl enable NetworkManager.service</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-18.sh</span>
     </div>
 </div>
 <h4 id="111-cambiar-la-contraseña-de-root">1.11 Cambiar la contraseña de root</h4>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># passwd</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># passwd</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-19.sh</span>
     </div>
@@ -492,7 +492,7 @@
 <p>Este es el punto más delicado y que más problemas puede dar, ya que si no lo hacemos bien probablemente nuestro sistema no arrancará y por desgracia está al final de todo el proceso.</p>
 <p>Para un sistema con BIOS:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -S grub</span>&#10;<span class="c1"># grub-install --target=i386-pc --recheck /dev/sda</span>&#10;<span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S grub</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># grub-install --target=i386-pc --recheck /dev/sda</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-20.sh</span>
     </div>
@@ -500,56 +500,56 @@
 <p>Para un sistema con EFI:</p>
 <p>En mi equipo que es un Sony Vaio SVE con EFI aún no he conseguido que GRUB me arranque correctamente (al inicial parece que se queda con la pantalla en negro y aparentemente bloqueado aunque puedo reiniciarlo con ctrl-alt-supr) y he tenido que usar <a href="https://wiki.archlinux.org/index.php/REFInd">rEFInd</a>. Aún así también tengo instalado Grub que iniciándolo a través de rEFInd si funciona bien.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -S grub efibootmgr dosfstools</span>&#10;<span class="c1"># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck</span>&#10;<span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S grub efibootmgr dosfstools</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-21.sh</span>
     </div>
 </div>
 <p>Posteriormente instalo rEFInd:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -S rEFInd</span>&#10;<span class="c1"># cp /usr/share/refind/refind_x64.efi /boot/EFI/refind/refind_x64.efi</span>&#10;<span class="c1"># cp /usr/share/refind/refind.conf-sample  /boot/EFI/refind/refind.conf</span>&#10;<span class="c1"># cp -r /usr/share/refind/icons /boot/EFI/refind/</span>&#10;<span class="c1"># cp -r /usr/share/refind/fonts /boot/EFI/refind/</span>&#10;<span class="c1"># cp -r /usr/share/refind/drivers_x64 /boot/EFI/refind</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S rEFInd</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># cp /usr/share/refind/refind_x64.efi /boot/EFI/refind/refind_x64.efi</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># cp /usr/share/refind/refind.conf-sample  /boot/EFI/refind/refind.conf</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># cp -r /usr/share/refind/icons /boot/EFI/refind/</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># cp -r /usr/share/refind/fonts /boot/EFI/refind/</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># cp -r /usr/share/refind/drivers_x64 /boot/EFI/refind</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-22.sh</span>
     </div>
 </div>
 <p>Edito el archivo /boot/FI/refind/refind.conf modificando el timeout y la opción seleccionada por defecto:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">timeout 5&#10;default_selection &#34;bzImage,vmlinuz&#34;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">timeout 5&#10;</span></span><span class="line"><span class="cl">default_selection &#34;bzImage,vmlinuz&#34;&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-23.txt</span>
     </div>
 </div>
 <p>También debemos modificar el archivo /boot/refind_linux.conf</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cp /usr/share/refind/refind_linux.conf-sample /boot/refind_linux.conf</span>&#10;<span class="c1"># blkid &gt;&gt; /boot/refind_linux.conf</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># cp /usr/share/refind/refind_linux.conf-sample /boot/refind_linux.conf</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># blkid &gt;&gt; /boot/refind_linux.conf</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-24.sh</span>
     </div>
 </div>
 <p>En el archivo sustituiremos los PARTUUID por los que correspondan en nuestro sistema, con el comando blkid los habremos añadido al final del archivo, el contenido debe quedarnos algo como:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">## This file should be present in the same directory as the EFISTUB kernel and initramfs files&#10;## More info at http://www.rodsbooks.com/refind/linux.html , http://www.rodsbooks.com/efi-bootloaders/efistub.html&#10;&#10;&#34;Boot with defaults&#34;&nbsp;&nbsp;&nbsp;&nbsp;&#34;root=PARTUUID=4e1f91cf-0e6c-41df-82f0-a16134c5973a rootfstype=ext4 rw initrd=/boot/initramfs-linux.img&#34;&#10;&#34;Boot to terminal&#34;&nbsp;&nbsp;&nbsp;&nbsp;  &#34;root=PARTUUID=4e1f91cf-0e6c-41df-82f0-a16134c5973a rootfstype=ext4 rw systemd.unit=multi-user.target initrd=/boot/initramfs-linux.img&#34;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">## This file should be present in the same directory as the EFISTUB kernel and initramfs files&#10;</span></span><span class="line"><span class="cl">## More info at http://www.rodsbooks.com/refind/linux.html , http://www.rodsbooks.com/efi-bootloaders/efistub.html&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&#34;Boot with defaults&#34;&nbsp;&nbsp;&nbsp;&nbsp;&#34;root=PARTUUID=4e1f91cf-0e6c-41df-82f0-a16134c5973a rootfstype=ext4 rw initrd=/boot/initramfs-linux.img&#34;&#10;</span></span><span class="line"><span class="cl">&#34;Boot to terminal&#34;&nbsp;&nbsp;&nbsp;&nbsp;  &#34;root=PARTUUID=4e1f91cf-0e6c-41df-82f0-a16134c5973a rootfstype=ext4 rw systemd.unit=multi-user.target initrd=/boot/initramfs-linux.img&#34;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-25.txt</span>
     </div>
 </div>
 <p>Además, con rEFInd hemos de crear el gestor de arranque con el comando efobootmgr. Pero en mi caso para que funcione primero he de borrar todos los que ya existen sino parece que en mi caso se recrea y usa el gestor de arranque EFI de Windows y al inicial el sistema me sale el mensaje «Operating System Not Found», podemos ver los gestores de arranque con:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># efibootmgr</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># efibootmgr</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-26.sh</span>
     </div>
 </div>
 <p>Los borramos con el siguiente comando, donde xxxx se corresponde con el número de gestor de arranque:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># efibootmgr -b xxxx -B</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># efibootmgr -b xxxx -B</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-27.sh</span>
     </div>
 </div>
 <p>Finalmente, creamos el gestor de arranque para rEFInd:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># efibootmgr -c -d /dev/sda -p 1 -l /EFI/refind/refind_x64.efi -L &#34;rEFInd&#34;</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># efibootmgr -c -d /dev/sda -p 1 -l /EFI/refind/refind_x64.efi -L &#34;rEFInd&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-28.sh</span>
     </div>
@@ -557,7 +557,7 @@
 <h4 id="113-finalizar-la-instalación">1.13 Finalizar la instalación</h4>
 <p>Finalmente, salimos del entorno enjaulado, desmontamos las particiones y reiniciamos el sistema:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># exit</span>&#10;<span class="c1"># umount -R /mnt</span>&#10;<span class="c1"># reboot</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># exit</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># umount -R /mnt</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># reboot</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-29.sh</span>
     </div>
@@ -567,28 +567,28 @@
 <h4 id="21-creación-de-usuario">2.1 Creación de usuario</h4>
 <p>Creamos un usuario para no usar el usuario root, sustituimos picodotdev por el nuestro:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># useradd -m -G wheel -s /bin/bash picodotdev</span>&#10;<span class="c1"># passwd picodotdev</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># useradd -m -G wheel -s /bin/bash picodotdev</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># passwd picodotdev</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-30.sh</span>
     </div>
 </div>
 <p>Permitirmos a los usuarios del grupo wheel usar el comando sudo:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -S sudo</span>&#10;<span class="c1"># visudo</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S sudo</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># visudo</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-31.sh</span>
     </div>
 </div>
 <p>Descomentamos la siguiente linea:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">%wheel ALL=(ALL) ALL&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">%wheel ALL=(ALL) ALL&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-32.txt</span>
     </div>
 </div>
 <p>Editamos el archivo <em>pacman.conf</em> según nuestras preferencias, por ejemplo, para permitir el color en la terminal y para mostrar el progreso global.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nano /etc/pacman.conf</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># nano /etc/pacman.conf</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-33.sh</span>
     </div>
@@ -596,7 +596,7 @@
 <h4 id="22-instalar-el-entorno-gráfico">2.2 Instalar el entorno gráfico</h4>
 <p>Instalamos los paquetes básicos del entorno gráfico, en este caso los controladores para una tarjeta gráfica intel:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S xorg-server xorg-xinit xorg-server-utils mesa xf86-video-intel&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S xorg-server xorg-xinit xorg-server-utils mesa xf86-video-intel&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-34.sh</span>
     </div>
@@ -604,14 +604,14 @@
 <h4 id="23-instalar-el-entorno-de-escritorio">2.3 Instalar el entorno de escritorio</h4>
 <p>Instalamos el entorno de escritorio según nuestras preferencias, en mi caso GNOME:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S gnome gnome-extra gnome-tweak-tool&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S gnome gnome-extra gnome-tweak-tool&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-35.sh</span>
     </div>
 </div>
 <p>Habilitamos el servicio del gestor de escritorio GDM:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo systemctl <span class="nb">enable</span> gdm.service&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl <span class="nb">enable</span> gdm.service&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-36.sh</span>
     </div>
@@ -619,21 +619,21 @@
 <h4 id="24-instalación-de-yaourt">2.4 Instalación de yaourt</h4>
 <p>Si pretendemos usar algún paquete de <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository">AUR</a> deberemos instalar la herramienta <em>yaourt</em>:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nano /etc/pacman.conf</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># nano /etc/pacman.conf</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-37.sh</span>
     </div>
 </div>
 <p>Añadimos su repositorio:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">[archlinuxfr]&#10;SigLevel=Optional TrustAll&#10;Server=http://repo.archlinux.fr/$arch</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">[archlinuxfr]&#10;</span></span><span class="line"><span class="cl">SigLevel=Optional TrustAll&#10;</span></span><span class="line"><span class="cl">Server=http://repo.archlinux.fr/$arch</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-38.txt</span>
     </div>
 </div>
 <p>Lo instalamos con:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -Syu&#10;$ sudo pacman -S yaourt&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -Syu&#10;</span></span><span class="line"><span class="cl">$ sudo pacman -S yaourt&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-39.sh</span>
     </div>
@@ -642,7 +642,7 @@
 <h4 id="25-instalar-de-programas">2.5 Instalar de programas</h4>
 <p>Los programas que instalaremos cambiarán según nuestras preferencias, estos son casi todos los que suelo utilizar:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ yaourt -S vim vim-spell-es chromium firefox firefox-i18n-es-es ntfs-3g faenza-icon-theme gimp filezilla imagemagick gparted ufw shotwell libreoffice vlc gstreamer0.10-plugins calibre ntp flashplugin tomcat-native rsync jdk7-openjdk mariadb redis wget git subversion openssh unrar base-devel&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ yaourt -S vim vim-spell-es chromium firefox firefox-i18n-es-es ntfs-3g faenza-icon-theme gimp filezilla imagemagick gparted ufw shotwell libreoffice vlc gstreamer0.10-plugins calibre ntp flashplugin tomcat-native rsync jdk7-openjdk mariadb redis wget git subversion openssh unrar base-devel&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-40.sh</span>
     </div>
@@ -650,7 +650,7 @@
 <h4 id="26-activar-el-servicio-de-sincronización-de-hora">2.6 Activar el servicio de sincronización de hora</h4>
 <p>Para mantener la hora de nuestro sistema correctamente podemos usar un servicio que se encargue de mantenerla con un servicio a través de la red.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo systemctl <span class="nb">enable</span> ntpd.service&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl <span class="nb">enable</span> ntpd.service&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>script-41.sh</span>
     </div>

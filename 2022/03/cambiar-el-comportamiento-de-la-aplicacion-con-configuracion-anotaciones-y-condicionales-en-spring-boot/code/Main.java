@@ -11,19 +11,19 @@ import io.github.picodotdev.blogbitix.springbootconfigconditional.service.Messag
 @SpringBootApplication
 public class Main implements CommandLineRunner {
 
-  @Autowired
-  private Message message;
+    @Autowired
+    private Message message;
 
-  @Autowired
-  private OperatingSystem os;
+    @Autowired
+    private OperatingSystem os;
 
-  @Override
-  public void run(String... args) throws Exception {
-    System.out.println("Operating system: " + os.getName());
-    System.out.println("Message: " + message.get());
-  }
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("Operating system: " + os.getName());
+        System.out.println("Message: " + message.get());
+    }
 
-  public static void main(String[] args) throws Exception {
-    SpringApplication.run(Main.class, args);
-  }
+    public static void main(String[] args) throws Exception {
+      SpringApplication.run(Main.class, args);
+    }
 }

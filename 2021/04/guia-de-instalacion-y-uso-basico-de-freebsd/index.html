@@ -508,27 +508,27 @@
 <p>La instalación del entorno de escritorio requiere instalar el servidor gráfico y el entorno de escritorio deseado. Los entornos de escritorio disponibles son los mismos que están disponibles en GNU/Linux entre ellos <a href="https://www.gnome.org/">GNOME</a>, <a href="https://www.kde.org/">KDE</a> y <a href="https://xfce.org/">XFCE</a> con lo que la experiencia de usuario es en gran medida la misma que en una distribución GNU/Linux, la mayor diferencia es que las versión del entorno de escritorio de FreeBSD disponible sea la versión anterior o tarde más tiempo en estar disponible desde su publicación.</p>
 <p>A partir de la consola de inicio de sesión en modo texto hay que instalar los paquete del servidor gráfico <a href="https://www.x.org/wiki/">Xorg</a>, el paquete del entorno de escritorio deseado y cambiar un archivo de configuración si se desea iniciar el entorno de escritorio al inicio del sistema.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg install xorg</span>&#10;<span class="c1"># pw groupmod video -m freebsd || pw groupmod wheel -m freebsd</span>&#10;<span class="c1"># pkg install gnome3</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg install xorg</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pw groupmod video -m freebsd || pw groupmod wheel -m freebsd</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg install gnome3</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pkg-gnome.sh</span>
     </div>
 </div>
 <p>Para iniciar el gestor de sesión GNOME en el inicio del sistema hay que cambiar la configuración en los archivos <em>/etc/rc.conf</em> y <em>~/.xinitrc</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">dbus_enable=&#34;YES&#34;&#10;gdm_enable=&#34;YES&#34;&#10;gdm_lang=&#34;es_ES.UTF-8&#34;&#10;gnome_enable=&#34;YES&#34;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">dbus_enable=&#34;YES&#34;&#10;</span></span><span class="line"><span class="cl">gdm_enable=&#34;YES&#34;&#10;</span></span><span class="line"><span class="cl">gdm_lang=&#34;es_ES.UTF-8&#34;&#10;</span></span><span class="line"><span class="cl">gnome_enable=&#34;YES&#34;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>rc-gnome.conf</span>
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">exec /usr/local/bin/gnome-session&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">exec /usr/local/bin/gnome-session&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>xinitrc.conf</span>
     </div>
 </div>
 <p>Para establecer como idioma el español se requiere añadir la siguiente configuración en el archivo <em>/usr/local/etc/gdm/locale.conf</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">LANG=&#34;es_ES.UTF-8&#34;&#10;LC_CTYPE=&#34;es_ES.UTF-8&#34;&#10;LC_MESSAGES=&#34;es_ES.UTF-8&#34;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">LANG=&#34;es_ES.UTF-8&#34;&#10;</span></span><span class="line"><span class="cl">LC_CTYPE=&#34;es_ES.UTF-8&#34;&#10;</span></span><span class="line"><span class="cl">LC_MESSAGES=&#34;es_ES.UTF-8&#34;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>locale.conf</span>
     </div>
@@ -560,13 +560,13 @@
 <p>Por seguridad algunas tareas administrativas y de edición de archivos de configuración requieren permisos de superusuario <em>root</em>. Esto es posible iniciando sesión en el sistema como el usuario <em>root</em> o obteniendo los privilegios de superusuario con el programa <em>su</em> o <em>sudo</em>.</p>
 <p>Hay un único superusuario en el sistema cuyo nombre de usuario es <em>root</em>, este usuario tiene permisos para realizar cualquier acción en el sistema. La contraseña es necesaria para iniciar sesión, es la proporcionada en la instalación del sistema, y se solicita al obtener privilegios de superusuario en la línea de comandos con el comando <em>su</em>. El resto de usuarios distintos a <em>root</em> son usuarios regulares, para que un usuario regular obtenga privilegios de supersusaurio se ha de utilizar el comando <em>su</em> pertenecer al grupo <em>wheel</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pw groupmod whell -M freebsd</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pw groupmod whell -M freebsd</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pw-add-user-to-wheel.sh</span>
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ su -&#10;<span class="c1">#</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ su -&#10;</span></span><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>su.sh</span>
     </div>
@@ -583,13 +583,13 @@
 <p>FreeBSD diferencia los programas de dos formas en como están distribuidos, los paquetes con binarios precompilados para su fácil y rápida instalación y los <em>ports</em> que requieren la compilación a partir del código fuente. En este sentido los paquetes de de FreeBSD son similares a los de los repositorios oficiales <a href="https://www.archlinux.org/">Arch Linux</a> y los <em>ports</em> al <a href="https://aur.archlinux.org/">repositorio AUR</a> que requieren igualmente ser compilados a partir del código fuente.</p>
 <p>La instalación de un paquete se realiza con el comando <em>pkg</em> para buscar su nombre e instalarlo.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg search gnome</span>&#10;<span class="c1"># pkg search firefox</span>&#10;<span class="c1"># pkg search libreoffice</span>&#10;<span class="c1"># pkg search gimp</span>&#10;<span class="c1"># pkg search vlc</span>&#10;<span class="c1"># pkg search vim</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg search gnome</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search firefox</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search libreoffice</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search gimp</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search vlc</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># pkg search vim</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pkg-search.sh</span>
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg install libreoffice</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg install libreoffice</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pkg-install.sh</span>
     </div>
@@ -601,35 +601,35 @@
 </ul>
 <p>La actualización de parches de seguridad de FreeBSD se realiza con los siguientes dos comandos. El sistema base del sistema operativo de FreeBSD se actualiza independientemente de los programas instalados como paquetes.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># freebsd-update fetch</span>&#10;<span class="c1"># freebsd-update install</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># freebsd-update fetch</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># freebsd-update install</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>freebsd-update.sh</span>
     </div>
 </div>
 <p>El siguiente comando permite revertir la actualización en caso de algún error.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># freebsd-update rollback</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># freebsd-update rollback</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>freebsd-update-rollback.sh</span>
     </div>
 </div>
 <p>Para actualizar a versiones mayores se realiza con el siguiente comando en el que se indica la versión a la que actualizar.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># freebsd-update -r 13.0-RELEASE upgrade</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># freebsd-update -r 13.0-RELEASE upgrade</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>freebsd-update-upgrade.sh</span>
     </div>
 </div>
 <p>Los paquetes se actualizan independientemente del sistema base de FreeBSD con el siguiente comando.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg upgrade</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg upgrade</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pkg-upgrade.sh</span>
     </div>
 </div>
 <p>En caso de una actualización a una versión mayor de FreeBSD se requiere una reinstalación de todos los paquetes y <em>ports</em> con los siguientes comandos.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg-static upgrade -f</span>&#10;<span class="c1"># portmaster -af</span>&#10;<span class="c1"># freebsd-update install</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pkg-static upgrade -f</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># portmaster -af</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># freebsd-update install</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>freebsd-pkg-upgrade.sh</span>
     </div>

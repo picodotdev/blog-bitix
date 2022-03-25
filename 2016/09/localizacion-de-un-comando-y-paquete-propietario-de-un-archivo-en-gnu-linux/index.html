@@ -255,42 +255,42 @@ Para saber en qué paquete está un determinado archivo primero deberemos conoce
 <p>Usando alguna distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en algún momento nos interesará saber a qué paquete de los que tenemos instalados pertenece un determinado comando o a qué paquete pertenece un determinado archivo del sistema.</p>
 <p>Para saber en qué paquete está un determinado archivo primero deberemos conocer la ruta absoluta del archivo en cuestión. Si se trata de un comando con el comando <code>which</code> conoceremos la ubicación absoluta. Por ejemplo, para conocer la ubicación de el comando <code>java</code> usamos:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ which java&#10;/usr/bin/java&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ which java&#10;</span></span><span class="line"><span class="cl">/usr/bin/java&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>which.sh</span>
     </div>
 </div>
 <p>Conociendo la ruta absoluta del archivo y con el gestor de paquetes de la distribución podremos conocer en qué paquete está contenido y por qué paquete ha sido instalado o es su propietario. En <a href="https://www.archlinux.org/">Arch Linux</a> se averigua con el siguiente comando:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pacman -Qo /usr/bin/java&#10;/usr/bin/java está contenido en java-runtime-common 2-2&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pacman -Qo /usr/bin/java&#10;</span></span><span class="line"><span class="cl">/usr/bin/java está contenido en java-runtime-common 2-2&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-java.sh</span>
     </div>
 </div>
 <p>En Arch Linux <em>java-runtime-common</em> es un paquete que nos permite cambiar la versión de la máquina virtual a usar en el sistema pudiendo intercambiar entre Java 7 y Java 8, esto se realiza con algunos enlaces simbólicos.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ls -l /usr/bin/java&#10;lrwxrwxrwx <span class="m">1</span> root root <span class="m">37</span> nov  <span class="m">2</span>  <span class="m">2014</span> /usr/bin/java -&gt; /usr/lib/jvm/default-runtime/bin/java&#10;&#10;$ ls -l /usr/lib/jvm/default-runtime&#10;lrwxrwxrwx <span class="m">1</span> root root <span class="m">18</span> dic  <span class="m">4</span>  <span class="m">2014</span> /usr/lib/jvm/default-runtime -&gt; java-8-openjdk/jre</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ls -l /usr/bin/java&#10;</span></span><span class="line"><span class="cl">lrwxrwxrwx <span class="m">1</span> root root <span class="m">37</span> nov  <span class="m">2</span>  <span class="m">2014</span> /usr/bin/java -&gt; /usr/lib/jvm/default-runtime/bin/java&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ ls -l /usr/lib/jvm/default-runtime&#10;</span></span><span class="line"><span class="cl">lrwxrwxrwx <span class="m">1</span> root root <span class="m">18</span> dic  <span class="m">4</span>  <span class="m">2014</span> /usr/lib/jvm/default-runtime -&gt; java-8-openjdk/jre</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>ls.sh</span>
     </div>
 </div>
 <p>Si queremos conocer el paquete del binario <code>java</code> usaremos la ruta absoluta en el comando para averiguarlo con el gestor de paquetes ya sea con <code>pacman</code> o <code>yaourt</code>:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pacman -Qo /usr/lib/jvm/java-8-openjdk/bin/java&#10;/usr/lib/jvm/java-8-openjdk/bin/java está contenido en jdk8-openjdk 8.u102-1&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pacman -Qo /usr/lib/jvm/java-8-openjdk/bin/java&#10;</span></span><span class="line"><span class="cl">/usr/lib/jvm/java-8-openjdk/bin/java está contenido en jdk8-openjdk 8.u102-1&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-java8.sh</span>
     </div>
 </div>
 <p>En las distribuciones basadas en paquetes <em>.deb</em> como <a href="https://www.debian.org/">Debian</a> o <a href="https://www.ubuntu.com/">Ubuntu</a> el comando es el siguiente:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ dpkg -S /usr/bin/java&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dpkg -S /usr/bin/java&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>dpkg.sh</span>
     </div>
 </div>
 <p>Y en las distribuciones basadas en <em>.rpm</em> como como <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RedHat</a> y <a href="https://fedoraproject.org/">Fedora</a>:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ rpm -qf /usr/bin/java&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ rpm -qf /usr/bin/java&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>rpm.sh</span>
     </div>

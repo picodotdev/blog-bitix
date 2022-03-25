@@ -265,21 +265,21 @@
 <p>Algunos de los paquetes del sistema como el <em>kernel linux</em>, el gestor de arranque como <em>grub</em> o <em>refind</em> o el gestor del sistema como <em>systemd</em> requieren realizar un reinicio del sistema para usar las nuevas versiones. Puede que solo queramos reiniciar el sistema al finalizar la sesión pero sin tener que esperar a que se descarguen la mayoría de los paquetes del repositorio que usemos. Dependiendo de la frecuencia con que actualicemos el sistema el tamaño de la descarga variará, en mi caso que suelo hacer una actualización cada dos semanas el tamaño total de la descarga ronda entre los 300 y 500 MiB.</p>
 <p>Para descargar las bases de datos de paquetes usamos la opción <code>-y</code> y para realizar la actualización completa de los paquetes desactualizados que tengamos instalados con la opción <code>-u</code>. Poniendo el comando completo usando <code>pacman</code> o la alternativa <code>yaourt</code>:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -Syu</span>&#10;$ yaourt -Syu --aur&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -Syu</span>&#10;</span></span><span class="line"><span class="cl">$ yaourt -Syu --aur&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-update.sh</span>
     </div>
 </div>
 <p>Si queremos actualizar las bases de datos de paquetes y descargar los paquetes a actualizar pero sin realizar la actualización añadimos simplemente la opción <code>-w</code> de tal forma que los comandos anteriores nos quedarían:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pacman -Syuw</span>&#10;$ yaourt -Syuw&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -Syuw</span>&#10;</span></span><span class="line"><span class="cl">$ yaourt -Syuw&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-download.sh</span>
     </div>
 </div>
 <p>Esta opción puede ayudarnos a ahorrarnos algo de tiempo cada vez que hagamos una actualización al evitarnos esperar a la descarga de los paquetes. En la página de <a href="https://www.archlinux.org/pacman/pacman.8.html">manual de pacman</a> podemos ver la multitud de opciones que tenemos disponibles aunque como usuarios las anteriores serán las que más usemos.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ man pacman&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ man pacman&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>pacman-man.sh</span>
     </div>

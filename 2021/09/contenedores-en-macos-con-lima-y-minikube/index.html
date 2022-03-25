@@ -296,41 +296,41 @@
 </ul>
 <p><a href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/">El gestor de paquetes homebrew para macOS</a> permite instalar fácilmente minikube simplemente con un comando. minikube y Kubernetes utilizan Docker para la ejecución de contenedores, aunque el propósito de minikube es ejecutar aplicaciones en contenedores permite el uso de las herramientas de línea de comandos <em>docker</em> y <em>docker-compose</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew install minikube&#10;$ brew install docker docker-compose&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew install minikube&#10;</span></span><span class="line"><span class="cl">$ brew install docker docker-compose&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>minikube-install.sh</span>
     </div>
 </div>
 <p>Una vez instalado minikube hay que iniciar la máquina virtual con el siguiente comando.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ minikube start&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ minikube start&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>minikube-start.sh</span>
     </div>
 </div>
 <p>Para que la herramienta de línea de comandos interaccione con el servidor de Docker en la máquina virtual de minikube el siguiente comando permite establecer varias variables de entorno.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">eval</span> <span class="k">$(</span>minikube docker-env<span class="k">)</span>&#10;$ docker images&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">eval</span> <span class="k">$(</span>minikube docker-env<span class="k">)</span>&#10;</span></span><span class="line"><span class="cl">$ docker images&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>minikube-docker-env.sh</span>
     </div>
 </div>
 <p>Hecha la configuración previa iniciar un contenedor de Docker es exactamente igual que en GNU/Linux de forma nativa, en realidad el comando docker interacciona con el servidor de Docker en la máquina virtual. Por otro lado dado que los contenedores de Docker se ejecutan dentro de la máquina virtual y los puertos se exponen en ella es necesario acceder a la máquina virtual es con su dirección IP, dirección IP proporcionada por el siguiente comando y si se desea añadirla al archivo <em>/etc/hosts</em> con un nombre de dominio.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm -p 8080:80 nginx:latest&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm -p 8080:80 nginx:latest&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>minikube-docker-run.sh</span>
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ minikube ip&#10;$ <span class="nb">echo</span> <span class="s2">&#34;`minikube ip` docker.local&#34;</span> <span class="p">|</span> sudo tee -a /etc/hosts &gt; /dev/null&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ minikube ip&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;`minikube ip` docker.local&#34;</span> <span class="p">|</span> sudo tee -a /etc/hosts &gt; /dev/null&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>minikube-ip.sh</span>
     </div>
 </div>
 <p>Para destruir la máquina virtual que usa minikube hay otro comando.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ minikube stop&#10;$ minikube delete&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ minikube stop&#10;</span></span><span class="line"><span class="cl">$ minikube delete&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>minikube-delete.sh</span>
     </div>
@@ -341,28 +341,28 @@
 <p>Lima como entorno de ejecución de contenedores utiliza <a href="https://containerd.io/">containerd</a>, pero dado que las imágenes de los contenedores de Docker de DockerHub siguen el estándar OCI son compatibles con <em>containerd</em> lo que permite usar exactamente las mismas imágenes.</p>
 <p>Lima se instala también con un comando usando homebrew.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew install lima&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew install lima&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>lima-install.sh</span>
     </div>
 </div>
 <p>La máquina virtual con GNU/Linux y docker en la que se ejecutan los contenedores con el siguiente comando.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ limactl start&#10;$ lima uname -a&#10;Linux lima-default 5.11.0-34-generic <span class="c1">#36-Ubuntu SMP Thu Aug 26 19:22:09 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ limactl start&#10;</span></span><span class="line"><span class="cl">$ lima uname -a&#10;</span></span><span class="line"><span class="cl">Linux lima-default 5.11.0-34-generic <span class="c1">#36-Ubuntu SMP Thu Aug 26 19:22:09 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>lima-start.sh</span>
     </div>
 </div>
 <p>Para ejecutar un contenedor el comando a usar es <em>lima nerdctl</em>, el resto de opciones y parámetros son los mismos a los habituales a los del comando <em>docker</em> están en la <a href="https://github.com/containerd/nerdctl#command-reference">documentación de comandos de nerdctl</a>. En este caso se inicia un contenedor del servidor web <a href="https://nginx.org/">Nginx</a> que se se accede con la dirección <em>http://localhost:8080</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ lima nerdctl run --rm -p 8080:80 nginx:latest&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ lima nerdctl run --rm -p 8080:80 nginx:latest&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>lima-run.sh</span>
     </div>
 </div>
 <p>Para destruir la máquina virtual que usa lima hay otro comando.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ limactl stop&#10;$ limactl delete&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ limactl stop&#10;</span></span><span class="line"><span class="cl">$ limactl delete&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>lima-delete.sh</span>
     </div>

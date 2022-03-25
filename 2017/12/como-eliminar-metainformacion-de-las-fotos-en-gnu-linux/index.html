@@ -270,14 +270,14 @@
 </div>
 <p>Instalado el paquete <a href="https://www.imagemagick.org">ImageMagick</a> de nuestra distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, en este caso con <a href="https://www.archlinux.org/">Arch Linux</a> la metainformación de una foto se obtiene con el comando:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ identify -verbose planton-roble.jpg$ identify -verbose planton-roble.jpg&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ identify -verbose planton-roble.jpg$ identify -verbose planton-roble.jpg&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>identify.sh</span>
     </div>
 </div>
 <p>Si la foto incluye personas algunas redes sociales como <a href="https://www.facebook.com/">Facebook</a> permiten identificarlas, acompañada de metainformación además informa de con que, con quién, cuando y donde se tomó la foto. Si te importa y quieres proteger tu privacidad un poco es aconsejable eliminar esta metainformación al subir o compartir las fotos en las redes sociales. Con ImageMagick se puede eliminar la metainformación con los siguientes comandos. El primero modifica el archivo original y el segundo crea una copia de la foto sin la metainformación:</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mogrify -strip *.jpg&#10;$ convert -strip source.jpg destination.jpg &#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mogrify -strip *.jpg&#10;</span></span><span class="line"><span class="cl">$ convert -strip source.jpg destination.jpg &#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>mogrify-convert.sh</span>
     </div>
