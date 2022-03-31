@@ -5,12 +5,81 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2022-03-10T20:00:00+01:00</updated>
+    <updated>2022-03-31T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/</id>
+        <title>JShell la herramienta REPL incorporada en Java 9</title>
+        <updated>2017-09-29T22:00:00+02:00</updated>
+        <published>2017-09-29T21:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Una de las <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java2-los-modulos/">novedades de Java 9</a> es la incorporación de una herramienta <em>Read-Evaluation-Print-Loop</em> o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java.</p>
+<p>El comando de la herramienta <a href="https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm">JShell</a> es <em>jshell</em> que inicia un símbolo del sistema donde empezar a introducir las expresiones, se sale de <em>jshell</em> con el comando <code>/exit</code>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="JShell"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell_hu5a1a6eb162003e8d56cf630d98bb91a2_16664_300x200_fit_box_3.png" width="300" height="187" alt="JShell" title="JShell"  class="lozad "></a></p>
+<figcaption>JShell</figcaption>
+</figure>
+</div>
+<p>Se pueden crear variables, crear y modificar definiciones de métodos y clases. Cada una de estas expresiones crea un <em>snippet</em> de código que pueden listarse con el comando <code>/list</code>. Al introducir las expresiones se soporta completado y asistencia de código con la tecla tabulador como ayuda para saber que métodos tiene un objeto.</p>
+<p>Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci implementada con un <a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html">Stream</a> de la cual se muestran los elementos de la serie menores que el número 100.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Expresiones"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-expressions_hu8473ae5cdf472fd51dbd7b04958fec3d_20059_300x200_fit_box_3.png" width="300" height="187" alt="Expresiones" title="Expresiones"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asistencia de código"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-completion_hu84ffb55c3f34fd3a881938a61fb6728e_45958_300x200_fit_box_3.png" width="300" height="187" alt="Asistencia de código" title="Asistencia de código"  class="lozad "></a></p>
+<figcaption>Expresiones y asistencia de código</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Serie de Fibonacci con un Stream en un método"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-methods_hu80347eb88bdb9a3c5ac7fae1de2c8c4a_34305_300x200_fit_box_3.png" width="300" height="129" alt="Serie de Fibonacci con un Stream en un método" title="Serie de Fibonacci con un Stream en un método"  class="lozad "></a></p>
+<figcaption>Serie de Fibonacci con un Stream en un método</figcaption>
+</figure>
+</div>
+<p>Para diferenciar las expresiones de código de los comandos estos últimos son precedidos por el caracter <em>/</em>. Hay varios como los ya citados para listar los <em>snippets</em> de código y salir de <em>jshell</em>, otros son para listar las definiciones de variables con <code>/vars</code>, métodos con <code>/methods</code>, tipos con <code>/types</code> e <em>imports</em> con <code>/imports</code>. La lista completa de comandos puede obtenerse pulsando la tecla tabulador después de la barra de comando.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comandos"><img src="https://picodotdev.github.io/blog-bitix/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/images/jshell-commands_huf7dd9e64613ad7ff7eae2f90be6c431f_18353_300x200_fit_box_3.png" width="300" height="187" alt="Comandos" title="Comandos"  class="lozad "></a></p>
+<figcaption>Comandos</figcaption>
+</figure>
+</div>
+<p>Para los <em>snippets</em> multilínea o algo complejos puede utilizarse un editor externo con el comando <code>/edit</code>. El editor de nuestra preferencia se establece con el comando <code>/set</code>.</p>
+<p>También se pueden <a href="https://docs.oracle.com/javase/9/jshell/external-code.htm">añadir módulos o librerías</a> para usar las clases y tipos que contengan con el comando <code>/env</code> y las opciones <code>\-\-add-modules</code>  <code>\-\-module-path</code> y <code>\-\-class-path</code>. Los <em>snippets</em> creados en una sesión pueden guardarse en un archivo con el comando <code>/save</code> y ser cargados al inicio de JShell o con el comando <code>/open</code>.</p>
+<p>En la <a href="https://docs.oracle.com/javase/9/jshell/toc.htm">guía oficial de JShell</a> se comenta algunas opciones más de esta nueva herramienta.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.pluralsight.com/guides/getting-started-with-jshell-part-1">Getting Started with JShell</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/</id>
         <title>Novedades de Java 9, más allá de la modularidad</title>
@@ -225,6 +294,7 @@
 <ul>
 <li><a href="https://docs.oracle.com/javase/9/index.html">Oracle JDK 9 Documentation</a></li>
 <li><a href="https://docs.oracle.com/javase/9/whatsnew/toc.htm">What’s New in Oracle JDK 9</a></li>
+<li><a href="https://docs.oracle.com/javase/9/docs/api/overview-summary.html">JDK 9 Documentation</a></li>
 <li><a href="https://docs.oracle.com/javase/9/javase-docs.htm">Guías descargables con documentación del JDK 9</a></li>
 <li><a href="https://www.oracle.com/java/java9-screencasts.html">Varios <em>screencasts</em> sobre varias de las novedades de Java 9</a></li>
 <li><a href="http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter">Java Magazine Sep/Oct 2017</a></li>
@@ -1249,7 +1319,8 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/130161" target="_blank"><amp-img src="https://asciinema.org/a/130161.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/130161.js" id="asciicast-130161" async></script>
+<noscript><a href="https://asciinema.org/a/130161" target="_blank"><img src="https://asciinema.org/a/130161.png" width="650" height="450"></a></noscript>
 </div>
 <div class="alert alert-secondary sourcecode">
     <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
@@ -1407,7 +1478,8 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129084" target="_blank"><amp-img src="https://asciinema.org/a/129084.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129084.js" id="asciicast-129084" async></script>
+<noscript><a href="https://asciinema.org/a/129084" target="_blank"><img src="https://asciinema.org/a/129084.png" width="650" height="450"></a></noscript>
 </div>
 <p>Dos de los problemas más conocidos en la programación concurrente son el de <a href="https://es.wikipedia.org/wiki/Problema_de_la_cena_de_los_fil%C3%B3sofos">La cena de los filósofos</a> y el de <a href="https://es.wikipedia.org/wiki/Problema_del_barbero_durmiente">El barbero durmiente</a>. Usando algunas de las primitivas comentadas en este artículo este sería el código para para resolver ambos problemas en Java.</p>
 <p>En este código del problema de los filósofos la clase <em>Table</em> crea los filósofos asignándoles los <em>Fork</em> que tienen que compartir para comer después de estar un tiempo pensando. En la ejecución se observa que el primer filósofo que intenta comer puede hacerlo ya que sus tenedores adyacentes está libres pero posteriormente se observa que en algunas ocasiones algún filósofo no puede hacerlo porque sus tenedores están siendo usados por alguno de sus compañeros adyacentes.</p>
@@ -1439,7 +1511,8 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129083" target="_blank"><amp-img src="https://asciinema.org/a/129083.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129083.js" id="asciicast-129083" async></script>
+<noscript><a href="https://asciinema.org/a/129083" target="_blank"><img src="https://asciinema.org/a/129083.png" width="650" height="450"></a></noscript>
 </div>
 <p>En el caso de ejemplo del barbero cuando solo hay un barbero los clientes se acumulan ya que estos entran en la tienda a razón de 1 entre 1500 y 3500ms y el barbero tarda afeitar un cliente entre 2000 y 7000ms. Poniendo en la barbería dos barberos los clientes ya no se acumulan en la sala de espera.</p>
 <div class="code">
@@ -1473,10 +1546,12 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129098" target="_blank"><amp-img src="https://asciinema.org/a/129098.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129098.js" id="asciicast-129098" async></script>
+<noscript><a href="https://asciinema.org/a/129098" target="_blank"><img src="https://asciinema.org/a/129098.png" width="650" height="450"></a></noscript>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/129099" target="_blank"><amp-img src="https://asciinema.org/a/129099.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/129099.js" id="asciicast-129099" async></script>
+<noscript><a href="https://asciinema.org/a/129099" target="_blank"><img src="https://asciinema.org/a/129099.png" width="650" height="450"></a></noscript>
 </div>
 <p>Estos no son los únicos ejemplos clásicos otro es el del <a href="https://picodotdev.github.io/blog-bitix/2018/03/el-problema-de-concurrencia-del-agente-y-los-fumadores-resuelto-en-java/">agente y los fumadores</a>.</p>
 <div class="alert alert-secondary sourcecode">
@@ -1490,72 +1565,6 @@ X{n,m}  X{n,m}?    X{n,m}+     X, al menos n veces pero no mas de m
 <li><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/">Tutorial sobre la concurrencia en Java</a></li>
 </ul>
 </div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/</id>
-        <title>Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr</title>
-        <updated>2017-07-09T13:00:00+02:00</updated>
-        <published>2017-07-09T13:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gradle.svg" width="200" height="165" alt="Gradle" title="Gradle"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.</p>
-<p>Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso.</p>
-<p>En <a href="https://maven.apache.org/">Maven</a> existen los arquetipos que construyen el esqueleto básico del proyecto en base a unas plantillas. En <a href="https://gradle.org/">Gradle</a> el equivalente es el <a href="https://docs.gradle.org/current/userguide/build_init_plugin.html"><em>plugin</em> init </a> pudiendo elegir crear la estructura de una librería o aplicación Java, <a href="https://www.groovy-lang.org/">Groovy</a> o <a href="https://www.scala-lang.org/">Scala</a> ejecutable. También se puede elegir el <em>framework</em> para hacer las pruebas automatizadas unitarias, de integración o funcionales.</p>
-<p>Al usar el <em>plugin</em> <em>init</em> de Gradle se especifica el tipo de artefacto, aplicación o librería, y el <em>framework</em> para las pruebas unitarias en este caso <a href="https://code.google.com/p/spock/">Spock</a>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mkdir java-application <span class="o">&amp;&amp;</span> <span class="nb">cd</span> java-application&#10;</span></span><span class="line"><span class="cl">$ gradle init --type java-application --test-framework spock&#10;</span></span><span class="line"><span class="cl">$ tree java-application/&#10;</span></span><span class="line"><span class="cl">java-application&#10;</span></span><span class="line"><span class="cl">├── build.gradle&#10;</span></span><span class="line"><span class="cl">├── gradle&#10;</span></span><span class="line"><span class="cl">│   └── wrapper&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── gradle-wrapper.jar&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; └── gradle-wrapper.properties&#10;</span></span><span class="line"><span class="cl">├── gradlew&#10;</span></span><span class="line"><span class="cl">├── gradlew.bat&#10;</span></span><span class="line"><span class="cl">├── settings.gradle&#10;</span></span><span class="line"><span class="cl">└── src&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;├── main&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   └── java&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│  &nbsp;&nbsp;&nbsp;&nbsp; └── App.java&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="nb">test</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── groovy&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── AppTest.groovy&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="m">7</span> directories, <span class="m">8</span> files&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ mkdir java-library <span class="o">&amp;&amp;</span> <span class="nb">cd</span> java-library&#10;</span></span><span class="line"><span class="cl">$ gradle init --type java-library --test-framework spock&#10;</span></span><span class="line"><span class="cl">$ tree java-library/&#10;</span></span><span class="line"><span class="cl">java-library/&#10;</span></span><span class="line"><span class="cl">├── build.gradle&#10;</span></span><span class="line"><span class="cl">├── gradle&#10;</span></span><span class="line"><span class="cl">│   └── wrapper&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── gradle-wrapper.jar&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; └── gradle-wrapper.properties&#10;</span></span><span class="line"><span class="cl">├── gradlew&#10;</span></span><span class="line"><span class="cl">├── gradlew.bat&#10;</span></span><span class="line"><span class="cl">├── settings.gradle&#10;</span></span><span class="line"><span class="cl">└── src&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;├── main&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   └── java&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│  &nbsp;&nbsp;&nbsp;&nbsp; └── Library.java&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="nb">test</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── groovy&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── LibraryTest.groovy&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="m">7</span> directories, <span class="m">8</span> files</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>gradle-init.sh</span>
-    </div>
-</div>
-<p>Para proyectos que usen <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> está disponible la herramienta <a href="https://start.spring.io/">Spring Initializr</a> que en pocos minutos permite disponer de una aplicación funcional con las propiedades que se seleccionen. Se puede elegir la herramienta de construcción, Maven o Gradle, la versión de Spring Boot, los metadatos de la aplicación para el paquete de las clases y artefacto, las dependencias de otros módulos de Spring y otras librerías populares.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/images/spring-initalizr_hu837a89d1f375b96d9e43360e1572c25a_83897_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Generador de proyectos Spring Initalizr"><img src="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/images/spring-initalizr_hu837a89d1f375b96d9e43360e1572c25a_83897_300x200_fit_box_3.png" width="300" height="197" alt="Generador de proyectos Spring Initalizr" title="Generador de proyectos Spring Initalizr"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Cambiando a la versión completa del generador es posible cambiar el tipo de empaquetado (<em>jar</em> o <em>war</em>), la versión de Java o el lenguaje de programación, además seleccionar aquellas dependencias que inicialmente sean necesarias, muchas son de otros proyectos de Spring. Las dependencias están agrupadas por categorías y van desde seguridad, <em>framework</em> web, motores de plantillas, SQL, NoSQL, numerosas herramientas para la nube, integración con redes sociales, entrada/salida o utilidades para operaciones.</p>
-<p>Una vez seleccionadas las opciones se genera el proyecto y descarga un archivo comprimido <em>zip</em>. Con el comando <code>gradlew bootRun</code> si inicia la aplicación, pero dependiendo de las dependencias incluidas quizá sea necesaria hacer alguna configuración adicional antes de poder iniciar la aplicación, por ejemplo si seleccionamos la dependencia de <a href="https://www.jooq.org/">jOOQ</a> hay que definir las propiedades para el <a href="https://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html">DataSource</a> en el archivo <em>application.properties</em> con las que el contenedor inversión de control de Spring pueda crear las conexiones a la base de datos.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree initializr&#10;</span></span><span class="line"><span class="cl">initializr&#10;</span></span><span class="line"><span class="cl">├── build.gradle&#10;</span></span><span class="line"><span class="cl">├── gradle&#10;</span></span><span class="line"><span class="cl">│   └── wrapper&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; ├── gradle-wrapper.jar&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; └── gradle-wrapper.properties&#10;</span></span><span class="line"><span class="cl">├── gradlew&#10;</span></span><span class="line"><span class="cl">├── gradlew.bat&#10;</span></span><span class="line"><span class="cl">└── src&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;├── main&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   ├── java&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   │   └── io&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   │  &nbsp;&nbsp;&nbsp;&nbsp; └── github&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── picodotdev&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── blogbitix&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── spring&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── initializr&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── InitializrApplication.java&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│   └── resources&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│  &nbsp;&nbsp;&nbsp;&nbsp; ├── application.properties&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│  &nbsp;&nbsp;&nbsp;&nbsp; ├── static&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;│  &nbsp;&nbsp;&nbsp;&nbsp; └── templates&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="nb">test</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── java&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── io&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── github&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── picodotdev&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── blogbitix&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── spring&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── initializr&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── InitializrApplicationTests.java&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="m">22</span> directories, <span class="m">8</span> files</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>tree-initializr.sh</span>
-    </div>
-</div>
-<p>Como con todos los generadores de código es recomendable saber suficientemente que es código que generan para en caso de modificaciones posteriores saber como aplicarlas. También es posible que no se adapte exactamente a lo que necesitamos, por ejemplo, si queremos hacer un <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">multiproyecto con Gradle</a> o si una dependencia necesaria no está incluida en la lista de categorías hay añadirla después. A partir de aquí se empieza a programar el proyecto.</p>
-<p>En el libro <a href="https://amzn.to/2tvCJMs">Spring Boot in Action</a> se comenta detalladamente Spring Boot que ofrece múltiples nuevas posibilidades que hace más fácil el desarrollo de un proyecto con Spring. Por otro lado para conocer más detalladamente y ampliamente el ecosistema de Spring está el libro <a href="https://amzn.to/2tZInqM">Mastering Spring 5.0</a> que también incluye secciones sobre Spring Boot.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1617292540&amp;linkId=86ce91eca968f6de1d0a777f48ca3069" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1617292540&amp;linkId=61b49fc8ef6bdf7c80975908df76d4af" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01N750Z7H&amp;linkId=e4f7f44a8b854b00a547d526b83f6469" title="Amazon" class="lozad"></iframe>
-</div>
-<p>En definitiva el <em>plugin</em> <em>init</em> de Gradle y la utilidad Spring Initializr son unas buenas herramientas para empezar un proyecto Java rápidamente y en pocos minutos disponer de un proyecto básico funcional y listo para implementar la funcionalidad de la aplicación.</p>
 ]]>
         </content>
         

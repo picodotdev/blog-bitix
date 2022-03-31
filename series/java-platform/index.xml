@@ -5,12 +5,142 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/series/java-platform/</id>
-    <updated>2021-09-16T20:00:00+02:00</updated>
+    <updated>2022-03-31T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/</id>
+        <title>Novedades de Java 18</title>
+        <updated>2022-03-31T20:00:00+01:00</updated>
+        <published>2022-03-31T20:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Las novedades de Java 18 no añaden nada en el lenguaje pero sí incorpora algunas relevantes en la plataforma como el uso de UTF-8 por defecto, una utilidad de línea de comandos para disponer de un servidor web simple, poder añadir fragmentos de código en los comentarios de la documentación Javadoc así como el marcado para su eliminación en futuras versiones de la finalización de objetos. También publican otras novedades en incubación, nuevas versiones en vistas previa de otras características se publicarán de forma definitiva en siguientes versiones y otros numerosos cambios menores.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Las mejoras incrementales se siguen añadiendo en cada nueva versión lanzada cada seis meses. En marzo de 2022 ha sido publicada la versión de Java 18 como siguiente versión después de Java 17 que es una versión con soporte extendido o LTS. Seguramente no muchos van a poder utilizar esta nueva versión por restricciones en los proyectos que seguirán usando versiones ya consideradas bastante antiguas incluyendo Java 8 y más en los casos que utilizan versiones anteriores. Por otro lado, otra parte de usuarios quizá esperen a la siguiente versión LTS para actualizar las aplicaciones en el caso de que ya estén utilizando Java 17.</p>
+<p>La lista de características de Java 18 no es muy amplia pero hay algunas destacadas.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>Con el paso de los meses muchas librerías y entornos de desarrollo irán publicando nuevas versiones compatibles con Java 18 y añadiendo soporte. Cuatro de las características más destacada son la utilización de la codificación de caracteres UTF-8 por defecto, la inclusión de un pequeño servidor web, soporte para añadir fragmentos de código en la documentación Javadoc y finalmente marcar para ser eliminada en una siguiente versión la finalización de objetos. Otras mejoras son nuevas vistas previas de características que están disponibles para obtener comentarios pero que en una siguiente versión podrían cambiar.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/18/">Características de Java 18</a></li>
+<li><a href="https://jdk.java.net/18/release-notes">Notas de publicación de Java 18</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/18/">Documentación de Java 18</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/index.html">Documentación Javadoc de Java 18</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/post/java-jdk-18-generally-available">JavaMagazine: Java 18 is here: 9 JEPs with core library improvements and updates</a></li>
+</ul>
+<p>Las mejoras incluidas en esta versión son:</p>
+<ul>
+<li>400: <a href="https://openjdk.java.net/jeps/400">UTF-8 by Default</a></li>
+<li>408: <a href="https://openjdk.java.net/jeps/408">Simple Web Server</a></li>
+<li>413: <a href="https://openjdk.java.net/jeps/413">Code Snippets in Java API Documentation</a></li>
+<li>416: <a href="https://openjdk.java.net/jeps/416">Reimplement Core Reflection with Method Handles</a></li>
+<li>417: <a href="https://openjdk.java.net/jeps/417">Vector API (Third Incubator)</a></li>
+<li>418: <a href="https://openjdk.java.net/jeps/418">Internet-Address Resolution SPI</a></li>
+<li>419: <a href="https://openjdk.java.net/jeps/419">Foreign Function &amp; Memory API (Second Incubator)</a></li>
+<li>420: <a href="https://openjdk.java.net/jeps/420">Pattern Matching for switch (Second Preview)</a></li>
+<li>421: <a href="https://openjdk.java.net/jeps/421">Deprecate Finalization for Removal</a></li>
+</ul>
+<p>En los siguientes vídeos hace una explicación de estas nuevas características.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/Nu225G7pMHw" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/5GfE1-vEl1A" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>Con el nuevo calendario de publicaciones se observa claramente que los desarrolladores pueden predecir de forma más mucho fiable cuando se publicará una nueva versión. Se observa que el tiempo entre versiones se ha reducido considerablemente respecto a lo que tardaron las versiones Java 6 y 7 y se observa la incorporación de novedades de forma constante.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Publicaciones de Java"><img src="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_650x450_fit_q90_box.jpg" width="650" height="309" alt="Publicaciones de Java" title="Publicaciones de Java"  class="lozad "></a></p>
+<figcaption>Publicaciones de Java</figcaption>
+</figure>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="codificación-de-caracteres-utf-8-por-defecto">Codificación de caracteres UTF-8 por defecto</h4>
+<p>Las operaciones que hacían entrada y salida como en el caso del sistema de archivos se utilizaban por defecto si no se indicaba uno explícitamente la codificación del sistema operativo. Dado que cada sistema operativo es capaz de definir su codificación de caracteres esto creaba algunas inconsistencias cuando las aplicaciones se ejecutan en diferentes sistemas operativos. Ahora en caso de que no se indique una codificación de caracteres se utiliza UTF-8 ofreciendo una mejor consistencia entre las diferentes plataformas.</p>
+<h4 id="servidor-web-simple">Servidor web simple</h4>
+<p>Se añade una utilidad de línea de comandos y una API para iniciar un sencillo servidor web para archivos estáticos. La finalidad es que no haya que recurrir a utilidades externas al JDK y sirva para hacer pruebas. No es su intención reemplazar servidores web más completos como <a href="https://httpd.apache.org/">Apache</a> o <a href="https://nginx.org/">Nginx</a> ni ofrece funcionalidades dinámicas como un contenedor de <em>servlets</em> como <a href="https://tomcat.apache.org/">Tomcat</a>.</p>
+<p>Dado que es un servidor web simple tiene algunas limitaciones, como que solo soporta el protocolo HTTP/1.1, no soporta el protocolo seguro HTTPS, solo soporta operaciones idempotentes de los verbos HEAD y GET devolviendo el resto de versos un código de error 501 <em>Not Implemented</em> o 405 <em>Not Allowed Response</em>. Algunos MIME types son configurados de forma automática como los archivos con extensión <em>html</em> que son servidos con la cabecera de contenido <em>text/html</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">$</span> <span class="n">jwebserver</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>jwebserver.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Binding</span> <span class="n">to</span> <span class="n">loopback</span> <span class="n">by</span> <span class="k">default</span><span class="o">.</span> <span class="n">For</span> <span class="n">all</span> <span class="n">interfaces</span> <span class="n">use</span> <span class="s">&#34;-b 0.0.0.0&#34;</span> <span class="n">or</span> <span class="s">&#34;-b ::&#34;</span><span class="o">.</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Serving</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">picodotdev</span> <span class="n">and</span> <span class="n">subdirectories</span> <span class="n">on</span> <span class="n">127</span><span class="o">.</span><span class="na">0</span><span class="o">.</span><span class="na">0</span><span class="o">.</span><span class="na">1</span> <span class="n">port</span> <span class="n">8000</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">URL</span> <span class="n">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8000/&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>jwebserver.out</span>
+    </div>
+</div>
+<p>Además de la línea de comandos se ofrece una API para iniciar el servidor web mediante código.</p>
+<ul>
+<li><a href="https://inside.java/2021/12/06/working-with-the-simple-web-server/">Working with the Simple Web Server</a></li>
+</ul>
+<h4 id="fragmentos-de-código-en-comentarios-javadoc">Fragmentos de código en comentarios Javadoc</h4>
+<p>Algunos de los comentarios de Javadoc incluyen ejemplos de código. Hasta ahora los fragmentos de código insertaban con el <em>taglet</em> <em>@code</em> que tenía varias deficiencias como no ofrecer resaltado de sintaxis, no poder incluir fragmentos de código de archivos existentes con lo que puede quedar obsoleto y no poder hacer pruebas unitarias sobre este código con lo que podría no funcionar.</p>
+<p>Se añade el <em>taglet</em> <em>@snippet</em> que permite incluir fragmentos o <em>snippets</em> de código en los comentarios de Javadoc, con resaltado de sintaxis y soporte para acceder a los <em>taglets</em> para procesar el código de la anotación. La anotación permite incluir en los comentarios de Javadoc regiones de archivos externos y aplicar transformaciones en el contenido a incorporar en el Javadoc. Pudiendo añadir fragmentos de código de archivos externos y pudiendo realizar transformaciones no hace falta copiar código y pegar código en los comentarios Javadoc sino que los fragmentos de código se extraen directamente de los archivos de código fuente.</p>
+<p>Además se ofrece una API para acceder a esos fragmentos de código pudiendo hacer pruebas unitarias del código incluido en el Javadoc, esto no es solo para los desarrolladores del JDK sino también para cualquier programador que añada fragmentos de su código Java en la documentación Javadoc.</p>
+<p>Los fragmentos de código no están limitados a archivos de código Java sino que también es posible incluir otros formatos utilizados comúnmente en aplicaciones Java como archivos <em>properties</em>,  <em>html</em> u otros. En esta guía se detalla como usar los fragmentos de código con ejemplos de código.</p>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/18/code-snippet/index.html">Programmer&rsquo;s Guide to Snippets</a></li>
+</ul>
+<h4 id="reimplementación-de-la-reflexión-con-manejadores-de-métodos">Reimplementación de la reflexión con manejadores de métodos</h4>
+<p>Se reimplementan varias funcionalidades relacionadas con la reflexión utilizando los manejadores de eventos con la intención de facilitar el mantenimiento del JDK. Los <em>MethodHandlers</em> ofrecen una alternativa a la reflexión con mejor rendimiento a la vez que es más legible. Es un cambio interno más para los desarrolladores del JDK que para los usuarios.</p>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandles.html">MethodHandles</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandle.html">MethodHandle</a></li>
+</ul>
+<h4 id="proveedor-para-resolver-direcciones-ip">Proveedor para resolver direcciones IP</h4>
+<p>Hasta ahora el JDK utilizaba el mecanismo del sistema operativo para resolver direcciones IP. Este es compartido por todas las aplicaciones y la operación de resolución es bloqueante que es un problema para la incorporación de los <em>threads</em> ligeros del <a href="http://openjdk.java.net/projects/loom/">project Loom</a>. Se ha añadido un mecanismo extensible para proporcionar otras formas de resolución y soportar nuevos protocolos como DNS sobre QUIC, TLS y HTTPS. Ahora las aplicaciones tiene más control sobre el mecanismo de resolución y es útil en el contexto de pruebas automatizadas.</p>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<p>Como ya es habitual en el JDK se van incluyendo algunas características en modo vista previa que pueden ser utilizadas pero que en una siguiente versión y el código que las usen deberá ser modificado. Se ofrecen para que los usuarios puedan experimentar con ellas y los desarrolladores obtengan comentarios y si es necesario hacer cambios en siguientes versiones.</p>
+<h4 id="vector-api">Vector API</h4>
+<p>Se proporciona una nueva versión de la Vector API que permite aprovechar las instrucciones SIMD de los procesadores con una API de Java común  para todas las arquitecturas de procesadores. Se aprovechan las características disponibles de los procesadores y en aquellos que no tengan alguna se ofrece un modo de funcionamiento degradado.</p>
+<p>En esta nueva versión se soportan las instrucciones <em>Scalar Vector Extension</em> (SVE) de la plataforma <a href="https://www.arm.com/">ARM</a>. También se mejora el rendimiento de las operaciones que aceptan enmascaramiento en las arquitecturas hardware que soportan enmascaramiento.</p>
+<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
+<p>Esta API permite acceder a memoria de procesos externos y utilizar librerías programadas en otros lenguajes como una alternativa más fácil de usar, de mayor rendimiento, más general para diferentes arquitecturas y más simple que la anterior alternativa con JNI. En esta nueva versión se mejora la API para soportar y facilitar operaciones con diferentes tipos y accesos a memoria.</p>
+<h3 id="_pattern-matching_-para-las-sentencias-_switch_"><em>Pattern Matching</em> para las sentencias <em>switch</em></h3>
+<p>El <em>parttern matching</em> en las sentencias <em>switch</em> permite al compilador comprobar de la expresión del <em>switch</em> contra los casos de la expresión del <em>switch</em>. En esta nueva revisión de esta característica el compilador lanza un error en caso de que un patrón domine al siguiente, sea más general siempre se cumpla antes que uno menos general. Ahora también el compilador es más preciso al comprobar la completitud de todos casos del <em>switch</em> en las clases <em>sealed</em>.</p>
+<h3 id="otros-cambios">Otros cambios</h3>
+<h4 id="finalización-de-objetos-marcado-para-ser-eliminado">Finalización de objetos marcado para ser eliminado</h4>
+<p>Java es un lenguaje que ha ofrecido recolección de basura desde las primeras versiones. Los programadores nunca han tenido que liberar la memoria de los objetos de forma explícita sino que de esta tarea se encarga la máquina virtual de Java. Pero también Java desde las primeras versiones ha ofrecido un mecanismo para la finalización de objetos que el tiempo ha demostrado que tiene varios fallos de diseño que no lo hacen útil y se desaconseja su utilización.</p>
+<p>Algunos fallos de su diseño son que tiene una latencia impredecible y arbitraria sin garantía de que la finalización del objeto se realice. Las acciones de finalización no tienen ninguna restricción pudiendo revivir una referencia de objeto. Siempre está activo para cada instancia de una clase se use o no, ni se puede cancelar. Tampoco hay un orden predefinido en un entorno multihilo de modo que la ejecución de la finalización se puede ejecutar en cualquier orden.</p>
+<p>Por los defectos anteriores la eliminación de la finalización de objetos en Java ha sido algo pendiente de realizar, en esta versión de Java aunque no se elimina se marca para la eliminación en versiones futuras de Java de modo que los que lo usen tengan tiempo de actualizar sus librerías y aplicaciones.</p>
+<p>Esto solo impactará a algunos usuarios que realicen tareas avanzadas en las que necesiten la finalización de objetos, no es algo que en circunstancias normales se use. La alternativa a la finalización de objetos es usar la sentencia <em>try-with-resources</em> y en los objetos que tengan un ámbito mayor de vida utilizar la clase <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/Cleaner.html">Cleaner</a> que permite asociar acciones de finalización a una referencia de objeto cuando esta se convierte en una <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/PhantomReference.html">referencia <em>phantom</em></a>.</p>
+<h4 id="otros-cambios-1">Otros cambios</h4>
+<p>Los anteriores son los cambios más destacados de Java 18 pero otro buen número de cambios menores e internos en el JDK. En las notas de publicación se incluye una lista detallada de todos.</p>
+<p>Estos son artículos que también hacen resúmenes de las novedades de Java 18.</p>
+<ul>
+<li><a href="https://blogs.oracle.com/java/post/the-arrival-of-java-18">The Arrival of Java 18</a></li>
+<li><a href="https://www.oracle.com/news/announcement/oracle-releases-java-18-2022-03-22/">Oracle Announces Java 18</a></li>
+<li><a href="https://www.infoworld.com/article/3630510/jdk-18-the-new-features-in-java-18.html">JDK 18: The new features in Java 18</a></li>
+<li><a href="https://blog.jetbrains.com/idea/2022/03/java-18-features-support/">Java 18 Features Support (IntelliJ)</a></li>
+<li><a href="https://seanjmullan.org/blog/2022/03/23/jdk18">JDK 18 Security Enhancements</a></li>
+<li><a href="https://inside.java/2022/03/22/podcast-023/">Episode 23 “Java 18 is Here!”</a></li>
+<li><a href="https://www.itprotoday.com/programming-languages/java-18-brings-new-features-accelerate-software-development">Java 18 Brings New Features to Accelerate Software Development</a></li>
+</ul>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/09/novedades-y-nuevas-caracteristicas-de-java-17/</id>
         <title>Novedades y nuevas características de Java 17</title>
@@ -37,7 +167,8 @@
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/17/">Características de Java 17</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/17-all-relnotes.html">Notas de publicación de Java 17</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/">Documentación Javadoc de Java 17</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/">Documentación de Java 17</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/index.html">Documentación Javadoc de Java 17</a></li>
 <li><a href="https://blogs.oracle.com/javamagazine/java-jdk-17-generally-available">JavaMagazine: Java 17 is here: 14 JEPs with exciting new language and JVM features</a></li>
 </ul>
 <p><a href="https://spring.io/">Spring</a> ha anunciado que la versión 6 de este <em>framework</em> junto a <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> 3 ampliamente usados se basarán en Java 17 y <a href="https://jakarta.ee/">Jakarta EE</a> 9. Estas versiones serán la base mínima requerida de la siguiente generación de aplicaciones Java.</p>
@@ -235,7 +366,8 @@
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/16/">Características de Java 16</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/16-all-relnotes.html">Notas de publicación de Java 16</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/">Documentación Javadoc de Java 16</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/16/">Documentación de Java 16</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/index.html">Documentación Javadoc de Java 16</a></li>
 <li><a href="https://blogs.oracle.com/javamagazine/java-champion-favorite-java16-records-vector-arm64-github">JavaMagazine: From the vector API to records to elastic metaspace, there’s a lot packed into Java 16</a></li>
 </ul>
 <p>Las mejoras incluídas en esta versión son:</p>
@@ -431,7 +563,8 @@
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/15/">Características de Java 15</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html">Notas de publicación de Java 15</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/15/docs/api/">Documentación Javadoc de Java 15</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/15/">Documentación de Java 15</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/15/docs/api/index.html">Documentación Javadoc de Java 15</a></li>
 <li><a href="https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets">JavaMagazine: Inside Java 15: Fourteen JEPs in five buckets</a></li>
 </ul>
 <p>Esta es la lista de novedades de Java 15, algunas son cambios que no tiene gran impacto en el lenguaje ni la plataforma al ser más cambios internos que reimplementan y modernizan código existente, otras son versiones preliminares y segundas versiones preliminares no definitivas, algunas características en versiones anteriores se marcan como públicas dejando de ser preliminares, otras que se marcan como obsoletas desaconsejándose su uso y otras ya marcadas como obsoletas anteriormente son eliminadas.</p>
@@ -560,7 +693,8 @@
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/14/">Características de Java 14</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html">Notas de publicación de Java 14</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/14/docs/api/">Documentación Javadoc de Java 14</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/14/">Documentación de Java 14</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/14/docs/api/index.html">Documentación Javadoc de Java 14</a></li>
 <li><a href="https://blogs.oracle.com/javamagazine/java-14-arrives-with-a-host-of-new-features">JavaMagazine: Java 14 Arrives with a Host of New Features</a></li>
 </ul>
 <p>Las mejoras incluídas en esta versión son:</p>
@@ -726,7 +860,8 @@
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/13/">Características de Java 13</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html">Notas de publicación de Java 13</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/13/docs/api/">Documentación Javadoc de Java 13</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/13/">Documentación de Java 13</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/13/docs/api/index.html">Documentación Javadoc de Java 13</a></li>
 <li><a href="https://blogs.oracle.com/javamagazine/october-2019-v2">JavaMagazine: Inside Java 13</a></li>
 </ul>
 <p>Las mejoras incluídas en esta versión son:</p>
@@ -825,7 +960,8 @@
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/12/">Características de Java 12</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/12-relnote-issues.html">Notas de publicación de Java 12</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/12/docs/api/">Documentación Javadoc de Java 12</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/12/">Documentación de Java 12</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/12/docs/api/overview-summary.html">Documentación Javadoc de Java 12</a></li>
 </ul>
 <p>Las mejoras incluídas en esta versión son:</p>
 <ul>
@@ -986,7 +1122,8 @@
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/11/">Características de Java 11</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/11-relnote-issues.html">Notas de publicación de Java 11</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/">Java 11 Javadoc</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/">Documentación de Java 11</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/overview-summary.html">Documentación Javadoc de Java 11</a></li>
 </ul>
 <p>Las mejoras incluídas en esta versión son:</p>
 <ul>
@@ -1143,7 +1280,8 @@
 <ul>
 <li><a href="http://openjdk.java.net/projects/jdk/10/">Características de Java 10</a></li>
 <li><a href="https://www.oracle.com/java/technologies/javase/10-relnote-issues.html">Notas de publicación de Java 10</a></li>
-<li><a href="https://docs.oracle.com/javase/10/docs/api/">Documentación Javadoc de Java 10</a></li>
+<li><a href="https://docs.oracle.com/javase/10/">Documentación de Java 10</a></li>
+<li><a href="https://docs.oracle.com/javase/10/docs/api/overview-summary.html">Documentación Javadoc de Java 10</a></li>
 </ul>
 <p>La lista más relevante de es la siguiente:</p>
 <ul>
@@ -1459,6 +1597,7 @@
 <ul>
 <li><a href="https://docs.oracle.com/javase/9/index.html">Oracle JDK 9 Documentation</a></li>
 <li><a href="https://docs.oracle.com/javase/9/whatsnew/toc.htm">What’s New in Oracle JDK 9</a></li>
+<li><a href="https://docs.oracle.com/javase/9/docs/api/overview-summary.html">JDK 9 Documentation</a></li>
 <li><a href="https://docs.oracle.com/javase/9/javase-docs.htm">Guías descargables con documentación del JDK 9</a></li>
 <li><a href="https://www.oracle.com/java/java9-screencasts.html">Varios <em>screencasts</em> sobre varias de las novedades de Java 9</a></li>
 <li><a href="http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter">Java Magazine Sep/Oct 2017</a></li>
@@ -1917,14 +2056,19 @@
 <p>
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
-<p>El 18 de marzo de 2014 se publicó la nueva versión de la plataforma <a href="https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html">Java 8</a>, Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como <em>lambdas</em> o <em>closures</em> o una demandada nueva API para el manejo de fechas entre otras muchas características más. La <a href="http://openjdk.java.net/projects/jdk8/features">lista completa de novedades</a> es bastante amplia, a continuación pondré lo que me ha parecido más destacable:</p>
-<p>A continuación algunas características de Java explicadas con un poco más de detalle.</p>
+<p>El 18 de marzo de 2014 se publicó la nueva versión de la plataforma <a href="https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html">Java 8</a>, Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como <em>lambdas</em> o <em>closures</em> o una demandada nueva API para el manejo de fechas entre otras muchas características más. La <a href="http://openjdk.java.net/projects/jdk8/features">lista completa de novedades</a> es bastante amplia, a continuación algunas características de Java explicadas con un poco más de detalle.</p>
 <div class="alert alert-warning tableofcontents">
     <h2>Contenido del artículo</h2>
     <toc></toc>
 </div>
 <h3 id="introducción">Introducción</h3>
 <p>Java 8 representa una evolución notable en este lenguaje de programación al mismo nivel o más del que supuso la versión Java 5. Aunque tengas varios años de experiencia quizá aún no has tenido oportunidad de usar todas las novedades que se han incorporado en cada versión en proyectos reales, probablemente porque los caminos de migración de las empresas son lentos y muchas siguen usando versiones antiguas en sus aplicaciones. Para conocer y aprovechar todas estas novedades de Java recomiendo los siguientes libros que son de lo mejor que he encontrado como documentación, el primer libro es <a href="https://amzn.to/2Qt2Mzv">Thinking in Java</a> que nos introduce en este lenguaje de programación desde el inicio, aunque ya conozcas o uses Java el libro <a href="https://amzn.to/39FqX5c">Effective Java</a> contiene gran cantidad de información y consejos para usar Java de una forma más efectiva haciendo un repaso de las características del lenguaje que aunque no esté actualizado con las novedades que introduce Java 8 casi todo sigue siendo aplicable, el último libro es <a href="https://amzn.to/2QNW1XJ">Java 8 in Action</a> que explica en mucho más detalle que lo hecho en este artículo cada una de las nuevas características de Java 8 y complementa el libro Effective Java pero aprovechando las novedades introducidas en el lenguaje.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk8/">Características de Java 8</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/8-relnotes.html">Documentación de Java 8</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">Documentación Javadoc de Java 8</a></li>
+</ul>
+<p>La lista de novedades es la siguiente:</p>
 <ul>
 <li>Se añaden las expresiones <em>lambda</em> o closures y se adapta la API para usarlas en los sitios que se pueda.</li>
 <li>Se definen nuevos perfiles compactos para dispositivos que no necesitan toda la API Java, esto es una alternativa a la modularización. Inicialmente la modularización era una característica que estaba planificada para Java 8 pero finalmente se ha aplazado a posteriores versiones.</li>

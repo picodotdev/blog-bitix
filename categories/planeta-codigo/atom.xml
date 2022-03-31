@@ -5,12 +5,142 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-03-24T22:00:00+01:00</updated>
+    <updated>2022-03-31T20:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/</id>
+        <title>Novedades de Java 18</title>
+        <updated>2022-03-31T20:00:00+01:00</updated>
+        <published>2022-03-31T20:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Las novedades de Java 18 no añaden nada en el lenguaje pero sí incorpora algunas relevantes en la plataforma como el uso de UTF-8 por defecto, una utilidad de línea de comandos para disponer de un servidor web simple, poder añadir fragmentos de código en los comentarios de la documentación Javadoc así como el marcado para su eliminación en futuras versiones de la finalización de objetos. También publican otras novedades en incubación, nuevas versiones en vistas previa de otras características se publicarán de forma definitiva en siguientes versiones y otros numerosos cambios menores.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Las mejoras incrementales se siguen añadiendo en cada nueva versión lanzada cada seis meses. En marzo de 2022 ha sido publicada la versión de Java 18 como siguiente versión después de Java 17 que es una versión con soporte extendido o LTS. Seguramente no muchos van a poder utilizar esta nueva versión por restricciones en los proyectos que seguirán usando versiones ya consideradas bastante antiguas incluyendo Java 8 y más en los casos que utilizan versiones anteriores. Por otro lado, otra parte de usuarios quizá esperen a la siguiente versión LTS para actualizar las aplicaciones en el caso de que ya estén utilizando Java 17.</p>
+<p>La lista de características de Java 18 no es muy amplia pero hay algunas destacadas.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>Con el paso de los meses muchas librerías y entornos de desarrollo irán publicando nuevas versiones compatibles con Java 18 y añadiendo soporte. Cuatro de las características más destacada son la utilización de la codificación de caracteres UTF-8 por defecto, la inclusión de un pequeño servidor web, soporte para añadir fragmentos de código en la documentación Javadoc y finalmente marcar para ser eliminada en una siguiente versión la finalización de objetos. Otras mejoras son nuevas vistas previas de características que están disponibles para obtener comentarios pero que en una siguiente versión podrían cambiar.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/18/">Características de Java 18</a></li>
+<li><a href="https://jdk.java.net/18/release-notes">Notas de publicación de Java 18</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/18/">Documentación de Java 18</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/index.html">Documentación Javadoc de Java 18</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/post/java-jdk-18-generally-available">JavaMagazine: Java 18 is here: 9 JEPs with core library improvements and updates</a></li>
+</ul>
+<p>Las mejoras incluidas en esta versión son:</p>
+<ul>
+<li>400: <a href="https://openjdk.java.net/jeps/400">UTF-8 by Default</a></li>
+<li>408: <a href="https://openjdk.java.net/jeps/408">Simple Web Server</a></li>
+<li>413: <a href="https://openjdk.java.net/jeps/413">Code Snippets in Java API Documentation</a></li>
+<li>416: <a href="https://openjdk.java.net/jeps/416">Reimplement Core Reflection with Method Handles</a></li>
+<li>417: <a href="https://openjdk.java.net/jeps/417">Vector API (Third Incubator)</a></li>
+<li>418: <a href="https://openjdk.java.net/jeps/418">Internet-Address Resolution SPI</a></li>
+<li>419: <a href="https://openjdk.java.net/jeps/419">Foreign Function &amp; Memory API (Second Incubator)</a></li>
+<li>420: <a href="https://openjdk.java.net/jeps/420">Pattern Matching for switch (Second Preview)</a></li>
+<li>421: <a href="https://openjdk.java.net/jeps/421">Deprecate Finalization for Removal</a></li>
+</ul>
+<p>En los siguientes vídeos hace una explicación de estas nuevas características.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/Nu225G7pMHw" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/5GfE1-vEl1A" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>Con el nuevo calendario de publicaciones se observa claramente que los desarrolladores pueden predecir de forma más mucho fiable cuando se publicará una nueva versión. Se observa que el tiempo entre versiones se ha reducido considerablemente respecto a lo que tardaron las versiones Java 6 y 7 y se observa la incorporación de novedades de forma constante.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Publicaciones de Java"><img src="https://picodotdev.github.io/blog-bitix/2022/03/novedades-de-java-18/images/java-releases_hu5c2d03569c43c17cbc0d1487d1032ffa_144383_650x450_fit_q90_box.jpg" width="650" height="309" alt="Publicaciones de Java" title="Publicaciones de Java"  class="lozad "></a></p>
+<figcaption>Publicaciones de Java</figcaption>
+</figure>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="codificación-de-caracteres-utf-8-por-defecto">Codificación de caracteres UTF-8 por defecto</h4>
+<p>Las operaciones que hacían entrada y salida como en el caso del sistema de archivos se utilizaban por defecto si no se indicaba uno explícitamente la codificación del sistema operativo. Dado que cada sistema operativo es capaz de definir su codificación de caracteres esto creaba algunas inconsistencias cuando las aplicaciones se ejecutan en diferentes sistemas operativos. Ahora en caso de que no se indique una codificación de caracteres se utiliza UTF-8 ofreciendo una mejor consistencia entre las diferentes plataformas.</p>
+<h4 id="servidor-web-simple">Servidor web simple</h4>
+<p>Se añade una utilidad de línea de comandos y una API para iniciar un sencillo servidor web para archivos estáticos. La finalidad es que no haya que recurrir a utilidades externas al JDK y sirva para hacer pruebas. No es su intención reemplazar servidores web más completos como <a href="https://httpd.apache.org/">Apache</a> o <a href="https://nginx.org/">Nginx</a> ni ofrece funcionalidades dinámicas como un contenedor de <em>servlets</em> como <a href="https://tomcat.apache.org/">Tomcat</a>.</p>
+<p>Dado que es un servidor web simple tiene algunas limitaciones, como que solo soporta el protocolo HTTP/1.1, no soporta el protocolo seguro HTTPS, solo soporta operaciones idempotentes de los verbos HEAD y GET devolviendo el resto de versos un código de error 501 <em>Not Implemented</em> o 405 <em>Not Allowed Response</em>. Algunos MIME types son configurados de forma automática como los archivos con extensión <em>html</em> que son servidos con la cabecera de contenido <em>text/html</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">$</span> <span class="n">jwebserver</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>jwebserver.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Binding</span> <span class="n">to</span> <span class="n">loopback</span> <span class="n">by</span> <span class="k">default</span><span class="o">.</span> <span class="n">For</span> <span class="n">all</span> <span class="n">interfaces</span> <span class="n">use</span> <span class="s">&#34;-b 0.0.0.0&#34;</span> <span class="n">or</span> <span class="s">&#34;-b ::&#34;</span><span class="o">.</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Serving</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">picodotdev</span> <span class="n">and</span> <span class="n">subdirectories</span> <span class="n">on</span> <span class="n">127</span><span class="o">.</span><span class="na">0</span><span class="o">.</span><span class="na">0</span><span class="o">.</span><span class="na">1</span> <span class="n">port</span> <span class="n">8000</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">URL</span> <span class="n">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8000/&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>jwebserver.out</span>
+    </div>
+</div>
+<p>Además de la línea de comandos se ofrece una API para iniciar el servidor web mediante código.</p>
+<ul>
+<li><a href="https://inside.java/2021/12/06/working-with-the-simple-web-server/">Working with the Simple Web Server</a></li>
+</ul>
+<h4 id="fragmentos-de-código-en-comentarios-javadoc">Fragmentos de código en comentarios Javadoc</h4>
+<p>Algunos de los comentarios de Javadoc incluyen ejemplos de código. Hasta ahora los fragmentos de código insertaban con el <em>taglet</em> <em>@code</em> que tenía varias deficiencias como no ofrecer resaltado de sintaxis, no poder incluir fragmentos de código de archivos existentes con lo que puede quedar obsoleto y no poder hacer pruebas unitarias sobre este código con lo que podría no funcionar.</p>
+<p>Se añade el <em>taglet</em> <em>@snippet</em> que permite incluir fragmentos o <em>snippets</em> de código en los comentarios de Javadoc, con resaltado de sintaxis y soporte para acceder a los <em>taglets</em> para procesar el código de la anotación. La anotación permite incluir en los comentarios de Javadoc regiones de archivos externos y aplicar transformaciones en el contenido a incorporar en el Javadoc. Pudiendo añadir fragmentos de código de archivos externos y pudiendo realizar transformaciones no hace falta copiar código y pegar código en los comentarios Javadoc sino que los fragmentos de código se extraen directamente de los archivos de código fuente.</p>
+<p>Además se ofrece una API para acceder a esos fragmentos de código pudiendo hacer pruebas unitarias del código incluido en el Javadoc, esto no es solo para los desarrolladores del JDK sino también para cualquier programador que añada fragmentos de su código Java en la documentación Javadoc.</p>
+<p>Los fragmentos de código no están limitados a archivos de código Java sino que también es posible incluir otros formatos utilizados comúnmente en aplicaciones Java como archivos <em>properties</em>,  <em>html</em> u otros. En esta guía se detalla como usar los fragmentos de código con ejemplos de código.</p>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/18/code-snippet/index.html">Programmer&rsquo;s Guide to Snippets</a></li>
+</ul>
+<h4 id="reimplementación-de-la-reflexión-con-manejadores-de-métodos">Reimplementación de la reflexión con manejadores de métodos</h4>
+<p>Se reimplementan varias funcionalidades relacionadas con la reflexión utilizando los manejadores de eventos con la intención de facilitar el mantenimiento del JDK. Los <em>MethodHandlers</em> ofrecen una alternativa a la reflexión con mejor rendimiento a la vez que es más legible. Es un cambio interno más para los desarrolladores del JDK que para los usuarios.</p>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandles.html">MethodHandles</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/invoke/MethodHandle.html">MethodHandle</a></li>
+</ul>
+<h4 id="proveedor-para-resolver-direcciones-ip">Proveedor para resolver direcciones IP</h4>
+<p>Hasta ahora el JDK utilizaba el mecanismo del sistema operativo para resolver direcciones IP. Este es compartido por todas las aplicaciones y la operación de resolución es bloqueante que es un problema para la incorporación de los <em>threads</em> ligeros del <a href="http://openjdk.java.net/projects/loom/">project Loom</a>. Se ha añadido un mecanismo extensible para proporcionar otras formas de resolución y soportar nuevos protocolos como DNS sobre QUIC, TLS y HTTPS. Ahora las aplicaciones tiene más control sobre el mecanismo de resolución y es útil en el contexto de pruebas automatizadas.</p>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<p>Como ya es habitual en el JDK se van incluyendo algunas características en modo vista previa que pueden ser utilizadas pero que en una siguiente versión y el código que las usen deberá ser modificado. Se ofrecen para que los usuarios puedan experimentar con ellas y los desarrolladores obtengan comentarios y si es necesario hacer cambios en siguientes versiones.</p>
+<h4 id="vector-api">Vector API</h4>
+<p>Se proporciona una nueva versión de la Vector API que permite aprovechar las instrucciones SIMD de los procesadores con una API de Java común  para todas las arquitecturas de procesadores. Se aprovechan las características disponibles de los procesadores y en aquellos que no tengan alguna se ofrece un modo de funcionamiento degradado.</p>
+<p>En esta nueva versión se soportan las instrucciones <em>Scalar Vector Extension</em> (SVE) de la plataforma <a href="https://www.arm.com/">ARM</a>. También se mejora el rendimiento de las operaciones que aceptan enmascaramiento en las arquitecturas hardware que soportan enmascaramiento.</p>
+<h4 id="_foreign-function--memory-api_"><em>Foreign Function &amp; Memory API</em></h4>
+<p>Esta API permite acceder a memoria de procesos externos y utilizar librerías programadas en otros lenguajes como una alternativa más fácil de usar, de mayor rendimiento, más general para diferentes arquitecturas y más simple que la anterior alternativa con JNI. En esta nueva versión se mejora la API para soportar y facilitar operaciones con diferentes tipos y accesos a memoria.</p>
+<h3 id="_pattern-matching_-para-las-sentencias-_switch_"><em>Pattern Matching</em> para las sentencias <em>switch</em></h3>
+<p>El <em>parttern matching</em> en las sentencias <em>switch</em> permite al compilador comprobar de la expresión del <em>switch</em> contra los casos de la expresión del <em>switch</em>. En esta nueva revisión de esta característica el compilador lanza un error en caso de que un patrón domine al siguiente, sea más general siempre se cumpla antes que uno menos general. Ahora también el compilador es más preciso al comprobar la completitud de todos casos del <em>switch</em> en las clases <em>sealed</em>.</p>
+<h3 id="otros-cambios">Otros cambios</h3>
+<h4 id="finalización-de-objetos-marcado-para-ser-eliminado">Finalización de objetos marcado para ser eliminado</h4>
+<p>Java es un lenguaje que ha ofrecido recolección de basura desde las primeras versiones. Los programadores nunca han tenido que liberar la memoria de los objetos de forma explícita sino que de esta tarea se encarga la máquina virtual de Java. Pero también Java desde las primeras versiones ha ofrecido un mecanismo para la finalización de objetos que el tiempo ha demostrado que tiene varios fallos de diseño que no lo hacen útil y se desaconseja su utilización.</p>
+<p>Algunos fallos de su diseño son que tiene una latencia impredecible y arbitraria sin garantía de que la finalización del objeto se realice. Las acciones de finalización no tienen ninguna restricción pudiendo revivir una referencia de objeto. Siempre está activo para cada instancia de una clase se use o no, ni se puede cancelar. Tampoco hay un orden predefinido en un entorno multihilo de modo que la ejecución de la finalización se puede ejecutar en cualquier orden.</p>
+<p>Por los defectos anteriores la eliminación de la finalización de objetos en Java ha sido algo pendiente de realizar, en esta versión de Java aunque no se elimina se marca para la eliminación en versiones futuras de Java de modo que los que lo usen tengan tiempo de actualizar sus librerías y aplicaciones.</p>
+<p>Esto solo impactará a algunos usuarios que realicen tareas avanzadas en las que necesiten la finalización de objetos, no es algo que en circunstancias normales se use. La alternativa a la finalización de objetos es usar la sentencia <em>try-with-resources</em> y en los objetos que tengan un ámbito mayor de vida utilizar la clase <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/Cleaner.html">Cleaner</a> que permite asociar acciones de finalización a una referencia de objeto cuando esta se convierte en una <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/ref/PhantomReference.html">referencia <em>phantom</em></a>.</p>
+<h4 id="otros-cambios-1">Otros cambios</h4>
+<p>Los anteriores son los cambios más destacados de Java 18 pero otro buen número de cambios menores e internos en el JDK. En las notas de publicación se incluye una lista detallada de todos.</p>
+<p>Estos son artículos que también hacen resúmenes de las novedades de Java 18.</p>
+<ul>
+<li><a href="https://blogs.oracle.com/java/post/the-arrival-of-java-18">The Arrival of Java 18</a></li>
+<li><a href="https://www.oracle.com/news/announcement/oracle-releases-java-18-2022-03-22/">Oracle Announces Java 18</a></li>
+<li><a href="https://www.infoworld.com/article/3630510/jdk-18-the-new-features-in-java-18.html">JDK 18: The new features in Java 18</a></li>
+<li><a href="https://blog.jetbrains.com/idea/2022/03/java-18-features-support/">Java 18 Features Support (IntelliJ)</a></li>
+<li><a href="https://seanjmullan.org/blog/2022/03/23/jdk18">JDK 18 Security Enhancements</a></li>
+<li><a href="https://inside.java/2022/03/22/podcast-023/">Episode 23 “Java 18 is Here!”</a></li>
+<li><a href="https://www.itprotoday.com/programming-languages/java-18-brings-new-features-accelerate-software-development">Java 18 Brings New Features to Accelerate Software Development</a></li>
+</ul>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/</id>
         <title>Detectar errores y comprobar la sintaxis de los scripts de Bash</title>
@@ -2191,129 +2321,6 @@
         
             
                 <category term="planeta-codigo"/>
-            
-                <category term="seguridad"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/</id>
-        <title>Medidas de seguridad a implementar para prevenir y minimizar daños en ataques informáticos</title>
-        <updated>2021-10-28T19:00:00+02:00</updated>
-        <published>2021-10-28T19:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los ataques informáticos dirigidos a los usuarios tienen el objetivo con una motivación económica del delincuente de robarles las credenciales de sus cuentas, datos de tarjetas de crédito y datos personales, otros ataques están dirigidos a los servicios que usan los usuarios. De los ataques dirigidos a los usuarios implementando las medidas de seguridad adecuadas en el servicio varios tipos de ataques son evitables como el <em>phishing</em> que es uno de los más comunes ofreciendo inicio de sesión con segundo factor de autenticación y con otras medidas los daños y riesgos son limitables. Otras medidas de seguridad implementadas en el servicio evita riesgos como usar <em>salted pasword hashing</em>. Como programadores los servicios deben hacer uso de buenas prácticas e implementar medidas adicionales para evitar riesgos y daños.</strong></p>]]>
-        <![CDATA[<p>Algunos ataques informáticos están dirigidos a las empresas y sus sistemas de computación explotando alguna vulnerabilidad de seguridad. Tener un fallo de seguridad ya de por sí es un grave problema para la imagen de la empresa también con consecuencias económicas de pérdida de clientes o valor en la bolsa sino también legales con posibles cuantiosas multas , además de otras consecuencias intangibles como la reputación entre sus clientes y usuarios.</p>
-<p>Otros ataques están dirigidos hacia los usuarios como el robo de datos personales, bancarios o credenciales con técnicas de suplantación de identidad o <em>phishing</em>. Aún hoy en día muchas personas apenas tienen unos conocimientos básicos de tecnología y la mayoría desconoce las medidas básicas de seguridad. Estas personas aún con una alfabetización digital muy básica están rodeadas de tecnología y realizan importantes tareas como compras y transacciones bancarias. Muchas personas son víctimas de fraudes y estafas por internet, a veces por su desconocimiento pero también a veces porque las empresas no implementan medidas de seguridad suficientes para que sus servicios sean más difícil de ser explotados.</p>
-<p>Los informáticos tenemos una gran responsabilidad para diseñar sistemas seguros aplicando las mejores prácticas de seguridad no solo como algo adicional a la finalización de una funcionalidad, sino involucrando al rol de <em>security operations</em>  o <em>SecOps</em> desde el inicio, al igual que no se deben dejar las pruebas de aseguramiento de calidad para el final la seguridad tampoco debería.
-Los bancos utilizan medidas adicionales para realizar operaciones pero algunas medidas de seguridad dejan que desear en varios aspectos como requerir para todas las cuentas bancarias  iniciar sesión en la banca <em>online</em> con el número del DNI y un código de seis dígitos, no implementar medidas de notificación de pagos, transferencias o falta un registro de actividad completo en la cuenta digital.</p>
-<p>Sin embargo, me da miedo que un banco que debería ser un referente en medidas de seguridad incluyan en la página donde los usuarios introducen sus credenciales para el acceso a la banca online recursos JavaScript de <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> y de dominios ajenos al banco que no controlan para hacer analítica web de seguimiento de usuarios.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="inyección-de-sql-xss-_tabnabbing_-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</h3>
-<p>Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.</p>
-<p>La fundación OWASP mantiene un registro detallado de los diferentes tipos de seguridad, explicando el problema de seguridad y cómo evitarlos. También publicar cada ciertos años una lista de los 10 errores más comunes durante ese año.</p>
-<ul>
-<li><a href="https://owasp.org/www-community/attacks/">List of Attacks</a></li>
-<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">SQL Injection Prevention Cheat Sheet</a></li>
-<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html">XSS Filter Evasion Cheat Sheet</a></li>
-<li><a href="https://owasp.org/www-community/attacks/Reverse_Tabnabbing">Reverse Tabnabbing</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/">El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</a></li>
-</ul>
-<h3 id="_salted-password-hashing_"><em>Salted Password Hashing</em></h3>
-<p>Una aplicación que guarda credenciales para autenticar a los usuarios habitualmente solicita dos datos, un identificador del usuario o de la cuenta y una contraseña que como solo conoce el legítimo usuario permite identificarle en el sistema al iniciar sesión. Los identificadores de los usuarios y las contraseñas la aplicación necesita guardarlas en una base de datos para que la aplicación las compare con las que proporciona un usuario al iniciar sesión.</p>
-<p>Guardar la contraseña en la base de datos el valor original que el usuario ha proporcionado es un peligro ya que cualquier persona con acceso a la base de datos es capaz de conocer el valor de la contraseña. Para no guardar el valor original es posible utilizar una función de <em>hash</em> de un solo sentido que permite transformar el valor original en otro derivador a partir del cual no es posible conocer el valor original pero permite conocer si es válido aplicando la función al dato proporcionado y comparándolo con el guardado en la base de datos. Sin embargo, usar una función <em>hash</em> no es suficiente ya que utilizando un ataque de diccionario con valores precalculados de <em>hashes</em> de  valores comunes de contraseñas permite identificar cuentas con contraseñas débiles.</p>
-<p>La forma correcta de guardar contraseñas es utilizando cifrado o sin cifrado utilizando una versión modificada de <em>hash</em> denominada <em>salted password hashing</em> que evita ataques de diccionario.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</a></li>
-</ul>
-<h3 id="implementación-de-segundo-factor-de-autenticación">Implementación de segundo factor de autenticación</h3>
-<p>Muchos usuarios no tienen conocimientos de informática, ni una alfabetización digital avanzada. Estos usuarios con unos conocimientos mínimos utilizan la tecnología por ser necesaria ya para muchas tareas o permitir realizarlas de forma más rápida y sencilla. Pero incluso usuarios con muchos conocimientos avanzados de tecnología también son vulnerables a ciertos tipos de ataques como los de <em>phishing</em> sin las precauciones adecuadas. Los ataques de suplantación de identidad o <em>phishing</em> son empleados por los delincuentes para robar información personal, credenciales de acceso a cualquier tipo de servicio y datos bancarios como tarjetas de crédito.</p>
-<p>Las aplicaciones que ofrecen el segundo factor de autenticación y los usuarios que lo emplean mantienen su cuenta a salvo incluso si son víctimas de un ataque de <em>phishing</em>. Con el segundo factor de autenticación además de la contraseña que es el algo que solo el usuario sabe se requiere algo que se tiene que sería un generador de códigos temporales. En un ataque de <em>phishing</em> los delincuentes se hacen con lo que se sabe, si esto es lo único que permite el acceso a una cuenta es suficiente para que los delincuentes accedan a ella. Con el segundo factor de autenticación la contraseña no es suficiente se requiere un código adicional, en caso de que un ataque de <em>phishing</em> robase el código temporal sólo permitiría iniciar sesión en la cuenta durante un breve periodo de tiempo habitualmente de 30 segundos.</p>
-<p>Los servicios más conocidos implementan el segundo factor de autenticación que los usuarios deben activar, no es difícil de implementar en Java.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">Implementar un segundo factor de autenticación en una aplicación web Java con Spring</a></li>
-</ul>
-<h3 id="notificación-de-acciones-relevantes">Notificación de acciones relevantes</h3>
-<p>Algunas operaciones son relevantes desde el punto de vista de seguridad, como el inicio de sesión, un intento fallido de inicio de sesión, cambio de contraseña o realización de algunas operaciones en el ámbito de la aplicación. Para mejorar la seguridad conviene enviar en este tipo de acciones una notificación al usuario que permita advertir ante acciones que se puedan realizar sin su conocimiento. Las notificaciones permiten al usuario tomar medidas en caso de que detecte acciones fraudulentas. Las notificaciones pueden ser a través de un correo electrónico, mensaje SMS o a través de mensajería instantánea.</p>
-<p>Estos son dos ejemplos de correos electrónicos que envía <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> y <a href="https://es.wallapop.com/">Wallapop</a> para notificar al usuario de un nuevo inicio de sesión en su cuenta.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_huee3b0496a171157529c82e29f9f8cebc_80671_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Notificación de Gmail de inicio de sesión"><img src="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-inicio-sesion_huee3b0496a171157529c82e29f9f8cebc_80671_300x200_fit_box_3.png" width="161" height="200" alt="Notificación de Gmail de inicio de sesión" title="Notificación de Gmail de inicio de sesión"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu62f37908c47c484e5c6522c4c79fd755_123506_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Notificación de Wallapop de inicio de sesión"><img src="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/wallapop-inicio-sesion_hu62f37908c47c484e5c6522c4c79fd755_123506_300x200_fit_box_3.png" width="103" height="200" alt="Notificación de Wallapop de inicio de sesión" title="Notificación de Wallapop de inicio de sesión"  class="lozad "></a></p>
-<figcaption>Correos electrónicos de notificación de inicio de sesión</figcaption>
-</figure>
-</div>
-<h3 id="registro-de-actividad">Registro de actividad</h3>
-<p>Mantener un registro de la actividad es otra variante para dar visibilidad y permitirle al usuario identificar actividad fraudulenta en su cuenta en caso de que haya sido víctima de un ataque o sus credenciales hayan sido robadas. Algunos servicios mantienen un registro con las fechas de los últimos inicios de sesión, la dirección IP de la computadora junto con su geolocalización que permite conocer su ubicación aproximada, el navegador usado, sistema operativo o fecha de últimos cambios de contraseña.</p>
-<p>Además de proporcionar al usuario un registro de actividad al mismo tiempo este conviene guardarlo en los registros del propio servicio en caso de necesitar investigar actividad sospechosa.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu684b93583f6beeef0a82426816b767c2_138167_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Registro de actividad en una cuenta de Gmail"><img src="https://picodotdev.github.io/blog-bitix/2021/10/medidas-de-seguridad-a-implementar-para-prevenir-y-minimizar-danos-en-ataques-informaticos/images/gmail-registro-actividad_hu684b93583f6beeef0a82426816b767c2_138167_300x200_fit_box_3.png" width="178" height="200" alt="Registro de actividad en una cuenta de Gmail" title="Registro de actividad en una cuenta de Gmail"  class="lozad "></a></p>
-<figcaption>Registro de actividad en una cuenta de Gmail</figcaption>
-</figure>
-</div>
-<h3 id="establecer-límites-de-uso">Establecer límites de uso</h3>
-<p>Ya sea por una fallo de seguridad en un servicio vulnerable que ha sufrido un ataque o por un ataque dirigido al usuario por ejemplo con un ataque de <em>phishing</em> es posible implementar medidas no dirigidas a evitar los ataques sino a mitigar o reducir los posibles daños de un posible ataque.</p>
-<p>Para mitigar los posibles daños un servicio puede implementar medidas para limitar los datos como establecer un límite de intentos fallidos de inicio de sesión antes de bloquear la cuenta de forma temporal. Los bancos por ejemplo permiten activar o desactivar las tarjetas de crédito a petición del cliente que impidan la autorización de operaciones, con esta medida aunque un usuario haya sido atacado y un delincuente haya robado los datos de su tarjeta de crédito este puede desactivarla para evitar operaciones fraudulentas con ella unido a la notificación de acciones relevante un usuario puede actuar para evitar más daños. Otras medidas que utilizan los bancos son establecer límites de disposición de efectivo diario, importe máximo de transferencias, importe máximo en comercios físicos y electrónicos y de compras por internet.</p>
-<h3 id="cifrar-información-personal">Cifrar información personal</h3>
-<p>Los datos personales están protegidos por leyes, un fallo de seguridad con el resultado de robo de datos personales también tiene consecuencias legales para la empresa con importantes multas y económicas por pérdida de clientes y mala imagen.</p>
-<p>Los datos a proteger de los usuario son aquellos que permita identificarlos como nombre y apellidos, DNI, dirección de correo electrónico, dirección del domicilio, número de teléfono y por supuesto datos bancarios como número de cuenta y tarjetas de crédito.</p>
-<p>Para evitar el riesgo de un ataque dirigido al servicio que ocasione una fuga de datos es conveniente cifrarlos. Incluso para que los empleados que trabajan en la empresa no conozcan a quién corresponden esos datos.</p>
-<p>Cifrados los datos aun teniendo acceso a ellos la información está protegida ya que es necesario descifrarlos para obtener el valor original.</p>
-<p>Vault es una aplicación que ofrece el cifrado como servicio entre otras funcionalidades de seguridad.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a></li>
-</ul>
-<h3 id="informar-a-los-usuarios">Informar a los usuarios</h3>
-<p>Para prevenir fraudes otras medidas sencillas son informar a los usuarios de unas medidas básicas de prevención de fraude y explicar cómo son los procedimientos de comunicación.</p>
-<p>Algunos son desconfiar de mensajes inesperados, no acceder a enlaces de mensajes SMS, de mensajería instantánea y leer con atención la dirección en el navegador de los enlaces a los que se acceder.</p>
-<p>Nunca facilitar datos personales, credenciales de acceso a una cuenta no datos de tarjetas bancarias. Tampoco descargar ni instalar aplicaciones si no provienen de las tiendas oficiales del dispositivo. Y activar las notificaciones para conocer la actividad en la cuenta del servicio.</p>
-<h3 id="comunicaciones-entre-servicios">Comunicaciones entre servicios</h3>
-<p>La arquitectura de las aplicaciones tienden a diseñarse de forma que ofrezcan un medio de invocar sus funcionalidades mediante llamadas de red ya sea con el protocolo HTTP mediante REST, GraphQL o gRPC.</p>
-<p>Para autorizar las llamadas a los servicios estos han de implementar alguna forma de autenticación y autorización por ejemplo con OAuth y JWT.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a></li>
-</ul>
-<p>Otra forma de proteger los servicios más sencilla sin que cada uno de ellos tenga que implementar las funcionalidades de autenticación y autorización es utilizar un <em>service mesh</em>. <a href="https://www.consul.io/">Consul</a> además de ser un servicio que ofrece registro y descubrimiento ofrece la funcionalidad de conexión entre servicios con cifrado, autenticación mutua y autorización especificando qué servicio está autorizado a comunicarse con cual.</p>
-<p>Con las funcionalidades de conexión de Consul los servicios no es necesario que implementen el cifrado, autenticación y autorización. Los servicios tienen menos responsabilidades, son más sencillos y la autorización de la comunicación es gestionada desde Consul.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a></li>
-</ul>
-<h3 id="contraseñas-en-repositorios-de-código-fuente-y-artefactos-compilados">Contraseñas en repositorios de código fuente y artefactos compilados</h3>
-<p>La seguridad de las aplicaciones se basa en contraseñas, claves privadas y certificados que únicamente las aplicaciones y los administradores de los servicios deben tener acceso.</p>
-<p>Las credenciales deben ser guardadas aparte del código fuente de la aplicación, fuera de la herramienta de control de versiones. Incluso las credenciales en una clase Java compila a <em>bytecode</em> es posible acceder a ellas.</p>
-<p>Estos secretos deben proporcionarse a las aplicaciones en tiempo de ejecución por el orquestador de procesos, el entorno de ejecución en la nube o de un servicio específico de seguridad del que obtenerlo. Para mayor seguridad las propiedades con secretos de los archivos de configuración en el sistema de archivos deben evitarse.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/">Las contraseñas e información sensible en el código fuente o <em>bytecode</em> de Java no son seguras</a></li>
-</ul>
-<h3 id="otras">Otras</h3>
-<p>Otra medida de seguridad es ofrecer la posibilidad de eliminar una cuenta o desactivarla tras un periodo de inactividad prolongado.</p>
-<ul>
-<li><a href="https://www.whitesourcesoftware.com/resources/blog/application-security-best-practices/">Application Security Best Practices</a></li>
-<li><a href="https://techbeacon.com/security/7-must-dos-delivering-app-focused-security">7 must-dos for delivering app-focused security</a></li>
-</ul>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Application_security">Application security</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
                 <category term="seguridad"/>
             
