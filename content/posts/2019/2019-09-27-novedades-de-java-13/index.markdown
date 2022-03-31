@@ -31,7 +31,8 @@ Casi coincidiendo con la publicación de Java 13 se publicado [Jakarta EE][jakar
 
 * [Características de Java 13](https://openjdk.java.net/projects/jdk/13/)
 * [Notas de publicación de Java 13](https://www.oracle.com/java/technologies/javase/13-relnote-issues.html)
-* [Documentación Javadoc de Java 13](https://docs.oracle.com/en/java/javase/13/docs/api/)
+* [Documentación de Java 13](https://docs.oracle.com/en/java/javase/13/)
+* [Documentación Javadoc de Java 13](javadoc13:index.html)
 * [JavaMagazine: Inside Java 13](https://blogs.oracle.com/javamagazine/october-2019-v2)
 
 Las mejoras incluídas en esta versión son:

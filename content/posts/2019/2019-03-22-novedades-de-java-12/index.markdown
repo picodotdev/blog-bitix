@@ -29,7 +29,8 @@ Las características destacadas de Java 12 son la incorporación de forma experi
 
 * [Características de Java 12](https://openjdk.java.net/projects/jdk/12/)
 * [Notas de publicación de Java 12](https://www.oracle.com/java/technologies/javase/12-relnote-issues.html)
-* [Documentación Javadoc de Java 12](https://docs.oracle.com/en/java/javase/12/docs/api/)
+* [Documentación de Java 12](https://docs.oracle.com/en/java/javase/12/)
+* [Documentación Javadoc de Java 12](javadoc12:overview-summary.html)
 
 Las mejoras incluídas en esta versión son:
 

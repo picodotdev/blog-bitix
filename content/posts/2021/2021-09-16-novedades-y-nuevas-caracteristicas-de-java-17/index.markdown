@@ -37,7 +37,8 @@ En el caso de pasar de la versión 11, anterior LTS, o previas, la versión 17 i
 
 * [Características de Java 17](https://openjdk.java.net/projects/jdk/17/)
 * [Notas de publicación de Java 17](https://www.oracle.com/java/technologies/javase/17-all-relnotes.html)
-* [Documentación Javadoc de Java 17](https://docs.oracle.com/en/java/javase/17/docs/api/)
+* [Documentación de Java 17](https://docs.oracle.com/en/java/javase/17/)
+* [Documentación Javadoc de Java 17](javadoc17:index.html)
 * [JavaMagazine: Java 17 is here: 14 JEPs with exciting new language and JVM features](https://blogs.oracle.com/javamagazine/java-jdk-17-generally-available)
 
 [Spring][spring] ha anunciado que la versión 6 de este _framework_ junto a [Spring Boot][spring-boot] 3 ampliamente usados se basarán en Java 17 y [Jakarta EE][jakartaee] 9. Estas versiones serán la base mínima requerida de la siguiente generación de aplicaciones Java.

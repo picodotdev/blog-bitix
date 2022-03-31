@@ -19,15 +19,19 @@ summary: "La octava versión de Java añade numerosas novedades importantes al l
 
 {{< logotype image="java.svg" >}}
 
-El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como _lambdas_ o _closures_ o una demandada nueva API para el manejo de fechas entre otras muchas características más. La [lista completa de novedades](http://openjdk.java.net/projects/jdk8/features) es bastante amplia, a continuación pondré lo que me ha parecido más destacable:
-
-A continuación algunas características de Java explicadas con un poco más de detalle.
+El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como _lambdas_ o _closures_ o una demandada nueva API para el manejo de fechas entre otras muchas características más. La [lista completa de novedades](http://openjdk.java.net/projects/jdk8/features) es bastante amplia, a continuación algunas características de Java explicadas con un poco más de detalle.
 
 {{< tableofcontents >}}
 
 ### Introducción
 
 Java 8 representa una evolución notable en este lenguaje de programación al mismo nivel o más del que supuso la versión Java 5. Aunque tengas varios años de experiencia quizá aún no has tenido oportunidad de usar todas las novedades que se han incorporado en cada versión en proyectos reales, probablemente porque los caminos de migración de las empresas son lentos y muchas siguen usando versiones antiguas en sus aplicaciones. Para conocer y aprovechar todas estas novedades de Java recomiendo los siguientes libros que son de lo mejor que he encontrado como documentación, el primer libro es [Thinking in Java](https://amzn.to/2Qt2Mzv) que nos introduce en este lenguaje de programación desde el inicio, aunque ya conozcas o uses Java el libro [Effective Java](https://amzn.to/39FqX5c) contiene gran cantidad de información y consejos para usar Java de una forma más efectiva haciendo un repaso de las características del lenguaje que aunque no esté actualizado con las novedades que introduce Java 8 casi todo sigue siendo aplicable, el último libro es [Java 8 in Action](https://amzn.to/2QNW1XJ) que explica en mucho más detalle que lo hecho en este artículo cada una de las nuevas características de Java 8 y complementa el libro Effective Java pero aprovechando las novedades introducidas en el lenguaje.
+
+* [Características de Java 8](https://openjdk.java.net/projects/jdk8/)
+* [Documentación de Java 8](https://www.oracle.com/java/technologies/javase/8-relnotes.html)
+* [Documentación Javadoc de Java 8](javadoc8:overview-summary.html)
+
+La lista de novedades es la siguiente:
 
 * Se añaden las expresiones _lambda_ o closures y se adapta la API para usarlas en los sitios que se pueda.
 * Se definen nuevos perfiles compactos para dispositivos que no necesitan toda la API Java, esto es una alternativa a la modularización. Inicialmente la modularización era una característica que estaba planificada para Java 8 pero finalmente se ha aplazado a posteriores versiones.

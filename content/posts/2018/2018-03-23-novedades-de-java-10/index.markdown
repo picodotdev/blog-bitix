@@ -33,7 +33,8 @@ En Java es un principio no añadir características según lo que está de moda 
 
 * [Características de Java 10](http://openjdk.java.net/projects/jdk/10/)
 * [Notas de publicación de Java 10](https://www.oracle.com/java/technologies/javase/10-relnote-issues.html)
-* [Documentación Javadoc de Java 10](https://docs.oracle.com/javase/10/docs/api/)
+* [Documentación de Java 10](https://docs.oracle.com/javase/10/)
+* [Documentación Javadoc de Java 10](javadoc10:overview-summary.html)
 
 La lista más relevante de es la siguiente:
 

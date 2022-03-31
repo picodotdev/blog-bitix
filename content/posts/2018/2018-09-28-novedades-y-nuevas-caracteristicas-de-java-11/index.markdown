@@ -33,7 +33,8 @@ En esta nueva versión de Java 11 publicada el 25 de septiembre de 2018 las nove
 
 * [Características de Java 11](https://openjdk.java.net/projects/jdk/11/)
 * [Notas de publicación de Java 11](https://www.oracle.com/java/technologies/javase/11-relnote-issues.html)
-* [Java 11 Javadoc](https://docs.oracle.com/en/java/javase/11/docs/api/)
+* [Documentación de Java 11](https://docs.oracle.com/en/java/javase/11/)
+* [Documentación Javadoc de Java 11](javadoc11:overview-summary.html)
 
 Las mejoras incluídas en esta versión son:
 

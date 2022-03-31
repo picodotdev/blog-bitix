@@ -33,7 +33,8 @@ En los cambios que entran en modo vista previa destacan la Vector API que permit
 
 * [Características de Java 16](https://openjdk.java.net/projects/jdk/16/)
 * [Notas de publicación de Java 16](https://www.oracle.com/java/technologies/javase/16-all-relnotes.html)
-* [Documentación Javadoc de Java 16](https://docs.oracle.com/en/java/javase/16/docs/api/)
+* [Documentación de Java 16](https://docs.oracle.com/en/java/javase/16/)
+* [Documentación Javadoc de Java 16](javadoc16:index.html)
 * [JavaMagazine: From the vector API to records to elastic metaspace, there’s a lot packed into Java 16](https://blogs.oracle.com/javamagazine/java-champion-favorite-java16-records-vector-arm64-github)
 
 Las mejoras incluídas en esta versión son:
