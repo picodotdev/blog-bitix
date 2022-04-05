@@ -76,7 +76,7 @@ En el ámbito Java el proyecto [Spring][spring] se compone de varios adaptados a
 * [Spring Session][spring-session] para hacer que los microservicios web no mantengan estado y sean escalables.
 * [Spring Boot Actautor][spring-boot-actuator] para monitorización y métricas.
 * [Eureka][netflix-eureka] para registro y descubrimiento de servicios.
-* [Hystrix][netflix-hystrix] con una implementación del patrón _circuit breaker_ para proporcionar resilencia.
+* [Hystrix][netflix-hystrix] con una implementación del patrón _circuit breaker_ para proporcionar resiliencia.
 
 De varios de estos proyectos ya he escrito varios artículos pero escribiré algunos más para completar varias áreas que aún no he comentado. Algunos de ellos serán:
 

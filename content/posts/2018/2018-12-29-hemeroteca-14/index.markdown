@@ -44,7 +44,7 @@ También he escrito varios artículos de la serie sobre [Spring Cloud][blogbitix
 * [Servicio de configuración para microservicios con Spring Cloud Config][blogbitix-346]
 * [Almacenar cifrados los valores de configuración sensibles en Spring Cloud Config][blogbitix-351]
 * [Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix][blogbitix-352]
-* [Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon][blogbitix-353]
+* [Balanceo de carga y resiliencia en un microservicio con Spring Cloud Netflix y Ribbon][blogbitix-353]
 * [Proxy para microservicios con Spring Cloud Netflix y Zuul][blogbitix-354]
 
 Algunos pocos artículos sobre GNU/Linux.
