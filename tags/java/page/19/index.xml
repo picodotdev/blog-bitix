@@ -5,12 +5,53 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2022-03-31T20:00:00+01:00</updated>
+    <updated>2022-04-07T19:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/10/que-es-y-como-hacer-web-scraping-en-java/</id>
+        <title>Qué es y cómo hacer «web scraping» en Java</title>
+        <updated>2015-05-26T20:00:00+02:00</updated>
+        <published>2014-10-10T21:22:40+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/10/que-es-y-como-hacer-web-scraping-en-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>A falta de una forma estructurada para obtener datos de una fuente podemos extraerla directamente del contenido html de una página, a esto se le denomina «web scraping». En Java y con la librería jsoup podemos obtener la información que necesitamos de forma sencilla.</strong></p>]]>
+        <![CDATA[<div class="logotypes"> 
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Algunas aplicaciones en internet necesitan intercambiar información para hacer algún tipo de integración. La tendencia actual es proporcionar una API REST o algún tipo de archivo descargable con cierto formato que permita procesarlo de forma automatizada y a las aplicaciones obtener la información de forma sencilla y precisa. Sin embargo, hay ocasiones en las que las aplicaciones de las que necesitamos extraer la información no proporcionan ni una API REST ni un archivo descargable con lo que no nos queda más remedio que extraer los datos de la propias páginas web inspeccionando el código HTML, esto en inglés se le conoce como <a href="https://es.wikipedia.org/wiki/Web_scraping">«web scraping»</a>.</p>
+<p>En este artículo explicaré como hacer web «scraping» usando la librería <a href="https://jsoup.org/">jsoup</a> y usando el lenguaje de programación Java. jsoup proporciona una <a href="http://jsoup.org/apidocs/">API</a> para poder extraer la información que necesitemos, ya sean las URLs de los enlaces, determinado texto que contiene una valor, imágenes, &hellip; . A través de los selectores similares a los usados en <a href="https://jquery.com/">jquery</a> podemos llegar a los elementos que queremos de forma simple sin tener que hacer complicados algoritmos.</p>
+<p>Dada la URL, archivo o String con contenido HTML podemos extraer los enlaces de imágenes, enlaces, hojas de estilos, iconos como se muestra en el siguiente ejemplo:</p>
+<ul>
+<li><a href="http://jsoup.org/cookbook/extracting-data/example-list-links">Example program: list links</a></li>
+</ul>
+<p>Un ejemplo práctico en el que podríamos hacer «scraping» es por ejemplo para extraer los enlaces torrent de descarga de todos los libros de un determinado autor o determinada serie de la página <a href="https://www.epublibre.org/">epublibre</a>, esto nos ahorraría tener que hacerlo manualmente. Además si usamos transmission a través de su API podríamos automatizar la descarga.</p>
+<p>El algoritmo o algoritmos que necesitemos para extraer la información será específico según la estructura HTML de cada página web, si esta cambia deberemos cambiar el algoritmo o los selectores, en cualquier caso es mejor que tener que hacer la tarea manualmente constantemente que al cabo de un tiempo será tediosa, aburrida y repetitiva.</p>
+<p>Pero hay que tener cuidado con el contenido «scrapeado» y se debe tratar como una fuente de datos no segura. Por seguridad hay que tener especial cuidado con los scripts del contenido importado que podrían hacer que nuestra aplicación al mostrarlos tuviese algún problema de seguridad. La siguiente semana explicaré <a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/">como «scrapear» contenido de forma segura</a> en un ejemplo real como es el agregador de bitácoras <a href="https://twitter.com/blogstackinfo">Blog Stack</a> donde solo se permiten los scripts de fuentes consideradas seguras como presentaciones de <a href="https://speakerdeck.com/">Speakerdeck</a>, <a href="https://gist.github.com/">Gist</a> de GitHub, <a href="https://www.youtube.com/">YouTube</a>, <a href="https://vimeo.com/">Vimeo</a> o publicidad del <a href="https://afiliados.amazon.es">programa de afiliados de Amazon</a>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/">Cómo filtrar contenido HTML de forma segura</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/01/como-hacer-un-substring-de-una-cadena-html/">Cómo hacer un substring de una cadena html</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="programacion"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2014/10/generar-urls-semanticas-y-amigables/</id>
         <title>Generar URLs semánticas y amigables</title>
@@ -439,7 +480,7 @@ metadata while the program is running.</p>
         <span>build.gradle</span>
     </div>
 </div>
-<p>La anotación @Secure en Tapestry es suficiente pero podemos hacer lo mismo empleando <a href="https://shiro.apache.org/">Shiro</a>. <a href="https://elblogdepicodev.blogspot.com.es/2013/05/seguridad-en-aplicacion-web-con-apache.html">Integrando Shiro con Tapestry nos permite realizar autenticación y autorización</a>, pero además empleando Shiro también podemos obligar a usar el protocolo https del mismo modo que lo hacemos con la anotación Secure. Cualquiera de las dos formas es perfectamente válida y depende más de cual prefiramos. Con la anotación @Secure deberemos anotar cada página, con Shiro podemos tener centralizado en un único punto en que páginas requerimos https. Con Shiro la configuración se hace con una contribución al servicio SecurityConfiguration y usando el método contributeSecurityConfiguration del módulo y la clase SecurityFilterChainFactory y su método ssl(). Un ejemplo es el siguiente:</p>
+<p>La anotación @Secure en Tapestry es suficiente pero podemos hacer lo mismo empleando <a href="https://shiro.apache.org/">Shiro</a>. <a href="https://elblogdepicodev.blogspot.com.es/2013/05/seguridad-en-aplicacion-web-con-apache.htmlindex-amp.html">Integrando Shiro con Tapestry nos permite realizar autenticación y autorización</a>, pero además empleando Shiro también podemos obligar a usar el protocolo https del mismo modo que lo hacemos con la anotación Secure. Cualquiera de las dos formas es perfectamente válida y depende más de cual prefiramos. Con la anotación @Secure deberemos anotar cada página, con Shiro podemos tener centralizado en un único punto en que páginas requerimos https. Con Shiro la configuración se hace con una contribución al servicio SecurityConfiguration y usando el método contributeSecurityConfiguration del módulo y la clase SecurityFilterChainFactory y su método ssl(). Un ejemplo es el siguiente:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">es.com.blogspot.elblogdepicodev.plugintapestry.services</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppModule</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="o">....</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">contributeSecurityConfiguration</span><span class="o">(</span><span class="n">Configuration</span><span class="o">&lt;</span><span class="n">SecurityFilterChain</span><span class="o">&gt;</span> <span class="n">configuration</span><span class="o">,</span> <span class="n">SecurityFilterChainFactory</span> <span class="n">factory</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="n">configuration</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">factory</span><span class="o">.</span><span class="na">createChain</span><span class="o">(</span><span class="s">&#34;/admin/**&#34;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">factory</span><span class="o">.</span><span class="na">authc</span><span class="o">()).</span><span class="na">add</span><span class="o">(</span><span class="n">factory</span><span class="o">.</span><span class="na">ssl</span><span class="o">()).</span><span class="na">build</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="o">....</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -1092,88 +1133,6 @@ metadata while the program is running.</p>
 </figure>
 </div>
 <p>Probablemente necesitaremos configurar muchas cosas adicionales como usar <a href="https://github.com/bmuschko/gradle-tomcat-plugin">Tomcat como servidor embebido</a> en vez de Jetty o añadir la <a href="https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html">configuración necesaria para ejecutar los teses unitarios y de integración</a>, Tapestry no es un <em>framework</em> <em>fullstack</em> y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.</p>
-<div class="alert alert-warning">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
-    <h3>Libro PlugIn Tapestry</h3>
-    <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
-    <br style="clear: both;">
-    <div class="buttons">
-        <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">PDF</a>
-        <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Código fuente ejemplos</a>
-    </div>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Libro PlugIn Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">Documentación sobre Apache Tapestry</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="programacion"/>
-            
-                <category term="tapestry"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/</id>
-        <title>Página Dashboard de Apache Tapestry</title>
-        <updated>2015-05-27T23:00:00+02:00</updated>
-        <published>2014-06-13T17:37:24+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
-</div>
-<p>Con la versión 5.4 de Tapestry las <a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">páginas PageCatalog, ServiceStatus e HibernateStaticstis</a> han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de <a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html">informe de error incluso para las peticiones ajax</a>, los mensajes de logging y con estás páginas de información de estado.</p>
-<p>La página <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/pages/T5Dashboard.html">T5Dashboard</a> está incluida en el propio core de <a href="http://tapestry.apache.org/">Apache Tapestry</a> y disponible en todas las aplicaciones en modo desarrollo y accediendo de forma local al servidor de aplicaciones. Si se incluye en la aplicación la dependencia tapestry-hibernate además en T5Dashboard podremos ver estadísticas de uso de Hibernate. La página T5Dashboard nos puede resultar muy útil ya que nos proporciona mucha información y alguna acción interesante.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estado de la aplicación Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_300x200_fit_box_3.png" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Como se ve en la imagen podemos ver las páginas disponibles, cargadas, cuanto tiempo llevó construirlas, que complejidad y por cuantos componentes están formadas. Y algo que nos resultará muy útil es provocar la acción de cargar todas las páginas quizá después de hacer un despliegue para evitar tiempos de inicialización en las primeras peticiones pero tan o más importante nos permitirá descubrir errores en los archivos tml de los componentes ¿cuantas veces te ha ocurrido que en un php, jsp, gsp, &hellip; hasta que no se usa esa plantilla no descubres un error digamos &ldquo;de compilación&rdquo; (variable con nombre que no existe, atributo mal entrecomillado, &hellip;) ? Seguramente como a mi, muchas. Los archivos de plantilla tml son xml válido con lo que si no están bien formados se nos notificará del error, nuevamente ¿te ha ocurrido alguna vez tener un php, jsp o gsp que no genera html bien balanceado? Pero también si se está usando un componente que no existe, varios componentes con el mismo nombre, &hellip; . Aunque parezca que no estos tipos de errores se pueden producir con relativa facilidad tanto en desarrollo y con mayor peligro si tenemos un flujo de trabajo con varias ramas donde vamos mergeando los cambios de trunk a la rama que se despliega en producción y nos ocurren conflictos en los merges que tenemos que resolver manualmente con la posibilidad de cometer un error.</p>
-<p>En otra sección también podemos ver el estado de los servicios que puede ser:</p>
-<ul>
-<li>Builtin: A servicio fundamentar que existe incluso antes de la creación del registro.</li>
-<li>Defined: El servicio está definido pero aún no ha sido referenciado.</li>
-<li>Virtual: El servicio ha sido referenciado (normalmente como ejecución de otro servicio) pero aún no ha sido hecho efectivo con una instancia del servicio. El hacerse efectivo ocurre con la primera invocación en el proxy del servicio.</li>
-<li>Real: El servicio se ha hecho efectivo: se ha instanciado, las dependencias han sido inyectadas, se ha decorado con interceptores y el totalmente operacional.</li>
-</ul>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_300x200_fit_box_3.png" width="300" height="138"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Finalmente, en la sección HibernateStatistics podemos obtener un montón de datos que nos pueden servir para detectar situaciones anómalas en la aplicación como un gran número de sql que se lanzan en una página como podría ser en un problema de carga N+1 en una relación entre dos entidades, el estado de la cache de segundo nivel que nos permitirá optimizar las caches, la cache de queries, número de transacciones realizadas y otra gran cantidad de información.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estadísticas de Hibernate en Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_300x200_fit_box_3.png" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Para que hibernate genere estadísticas es necesario indica en el archivo hibernate.cfg.xml la propiedad hibernate.generate_statistics:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE hibernate-configuration PUBLIC&#10;</span></span></span><span class="line"><span class="cl"><span class="cp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;-//Hibernate/Hibernate Configuration DTD 3.0//EN&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="cp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;http://www.hibernate.org/dtd//hibernate-configuration-3.0.dtd&#34;&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nt">&lt;hibernate-configuration&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;session-factory&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;hibernate.connection.driver_class&#34;</span><span class="nt">&gt;</span>org.h2.Driver<span class="nt">&lt;/property&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;hibernate.connection.url&#34;</span><span class="nt">&gt;</span>jdbc:h2:mem:test<span class="nt">&lt;/property&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;hibernate.connection.username&#34;</span><span class="nt">&gt;</span>sa<span class="nt">&lt;/property&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;hibernate.connection.password&#34;</span><span class="nt">&gt;</span>sa<span class="nt">&lt;/property&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;hibernate.dialect&#34;</span><span class="nt">&gt;</span>org.hibernate.dialect.H2Dialect<span class="nt">&lt;/property&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;hibernate.hbm2ddl.auto&#34;</span><span class="nt">&gt;</span>update<span class="nt">&lt;/property&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;hibernate.generate_statistics&#34;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/property&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/session-factory&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nt">&lt;/hibernate-configuration&gt;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>hibernate.cfg.xml</span>
-    </div>
-</div>
-<p>Y para activar la cache de segundo nivel añadir la propiedad del proveedor de cache (hibernate.cache.provider_class) y usar en las entidades la anotación @Cache, como se indica en la <a href="https://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html/ch06.html">documentación de hibernate</a>.</p>
-<p>Está página de Tapestry es similar a <a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">una que podemos crear en Grails con información similar</a>.</p>
 <div class="alert alert-warning">
     <img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
     <h3>Libro PlugIn Tapestry</h3>

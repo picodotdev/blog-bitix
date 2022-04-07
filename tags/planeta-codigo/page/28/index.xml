@@ -5,12 +5,87 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-03-31T20:00:00+01:00</updated>
+    <updated>2022-04-07T19:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/</id>
+        <title>Las cabeceras de cache del protocolo HTTP</title>
+        <updated>2016-07-24T22:00:00+02:00</updated>
+        <published>2016-07-22T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Establecer directivas de cacheo en los recursos devueltos en una página o aplicación web tiene las ventajas de reducir el número de peticiones que llegan al servidor mejorando la latencia y el rendimiento pudiendo atender a más usuarios y mejora los tiempos de carga de las páginas. Usando varias directivas de cacheo la aplicación es capaz de determinar cómo quiere que el contenido devuelto o los recursos sean cacheados por los clientes o servidores de cache intermedios.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
+</div>
+<p>Cachear aquella información que es costosa de generar y es muy solicitada consigue por un lado evitar que el servidor sea capaz de atender todo el tráfico reduciendo la cantidad de capacidad necesaria del servidor y por otro lado consigue que la información sea devuelta en menor tiempo. Para aquella información que no necesite estar completamente actualizada o que no cambia cada poco tiempo es candidata a cachearla en caso necesario. La cache se puede realizar en los navegadores guardando estos recursos como imágenes y hojas de estilos que consiguen reducir el número de peticiones al servidor y mostrando la página más rápidamente al usuario. La cache también se puede hacer en el lado del servidor usando soluciones específicas como <a href="https://varnish-cache.org/">Varnish</a>, <a href="https://memcached.org/">memcached</a> o para los casos más habituales que serán la mayoría las funcionalidades incorporadas en el servidor web como en el caso de <a href="https://nginx.org/">Nginx</a>.</p>
+<p>El cacheo o almacenamiento temporal de datos puede hacerse a diferentes niveles sin ser exclusivos y de diferentes tipos de información. En la base de datos, en la aplicación, a nivel de página, con servidor intermedio o en el cliente.</p>
+<p>Según la cantidad de tiempo de expiración que establezcamos como cache para el contenido conseguiremos variar el número de aciertos en la cache, aumentando el tiempo unos pocos segundos el tiempo que almacenamos en la cache el contenido conseguimos aumentar el porcentaje de aciertos en mayor medida. Con un tiempo de cache de un minuto ya se consiguen porcentajes elevados de aciertos según el número de peticiones realizadas en ese periodo de tiempo.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/images/cache-hit_hudc615f1ae90aec737c335abd2694f309_25816_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Petición con acierto en cache"><img src="https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/images/cache-hit_hudc615f1ae90aec737c335abd2694f309_25816_300x200_fit_box_3.png" width="300" height="80" alt="Petición con acierto en cache" title="Petición con acierto en cache"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/images/cache-miss_hudc615f1ae90aec737c335abd2694f309_26206_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Petición con fallo en cache"><img src="https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/images/cache-miss_hudc615f1ae90aec737c335abd2694f309_26206_300x200_fit_box_3.png" width="300" height="80" alt="Petición con fallo en cache" title="Petición con fallo en cache"  class="lozad "></a></p>
+<figcaption>Petición con acierto y fallo en la cache</figcaption>
+</figure>
+</div>
+<p>En el protocolo HTTP 1.1 se definieron tres mecanismos para las caches:</p>
+<ul>
+<li>Validez: permite usar un recurso sin hacer ninguna comprobación con el servidor ni para revalidarlo. Por ejemplo, la cabecera <em>Expires</em> indica en que momento el recurso puede haberse quedado obsoleto y se debería revalidar. La cabecera <em>Cache-Control: max-age</em> indica durante cuanto tiempo el recurso puede considerarse válido. Esto evita hacer peticiones al servidor si los recursos se consideran válidos.</li>
+<li>Validación: una vez que un recurso se considera que puede ser obsoleto se debería comprobar haciendo una petición al servidor para conocer si sigue siendo válido y si no lo es obtener una nueva versión. Usando las cabeceras <em>If-Modified-Since</em> o <em>Etag</em> puede comprobarse si el recurso ha sido modificado con posterioridad a una fecha o ha variado. Se ha de hacer una petición para comprobar la validez del recurso pero los casos que sigan siendo válidos no hará falta descargarlos de nuevo. Si el recurso sigue siendo válido el servidor responde con el <a href="https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#3xx:_Redirecciones">código de estado 304</a> y sin el contenido en la respuesta.</li>
+<li>Invalidación: las peticiones que usen los métodos <em>PUT</em>, <em>POST</em> y <em>DELETE</em> pueden invalidar recursos ya que modifican el estado del servidor.</li>
+</ul>
+<p>El servidor especifica como quiere que el contenido o recursos que devuelve sean cacheados a través de varias directivas del protocolo HTTP, establecidas como cabeceras en la respuesta cuando se solicita el contenido o recurso. Algunas cabeceras realizan funciones similares habiendo cierto solapamiento de funcionalidad. Son las siguientes:</p>
+<ul>
+<li>Cache-Control: private | public, no-cache, no-store, max-age, s-maxage, must-revalidate, no-transform, proxy-revalidate
+<ul>
+<li>El valor <em>private</em> indica que el recurso es privado para el usuario y no debería ser cacheado. Esto no hace el recurso más seguro ya que la información no se transmite cifrada para ello hay que <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar un protocolo seguro con TLS/SSL</a>.</li>
+<li><em>no-cache</em> el recurso no debería ser cacheado.</li>
+<li><em>no-store</em> el recurso no debería ser almacenado.</li>
+<li><em>max-age</em> normalmente se ha usado la directiva <em>Expires</em> pero esta permite establecer el máximo tiempo especificado en segundos a cachear un recurso.</li>
+<li><em>s-maxage</em> similar a max-age pero para las caches intermedias entre el cliente y el servidor.</li>
+<li><em>must-revalidate</em> cuando un recurso se queda obsoleto no se debe usar sin antes validar contra el servidor si sigue siendo válido.</li>
+<li><em>no-transform</em> indica que el contenido original no debe ser modificado, por ejemplo, modificando el recurso para optimizarlo si por ejemplo se trata de una imagen.</li>
+<li><em>proxy-revalidate</em> lo mismo que <em>must-revalidate</em> pero para las caches intermedias.</li>
+</ul>
+</li>
+<li>If-Modified-Since: si el recurso solicitado con su variante no ha sido modificado con posterioridad a una fecha se devolverá un código de estado 304 sin el contenido.</li>
+<li>Expires: es una marca de tiempo que indica cuando el recurso expira, dado que se basa en el tiempo no es muy precisa ya que los relojes de cada ordenador no están perfectamente sincronizados y hay variaciones incluso de minutos. Preferiblemente es mejor usar <em>Etag</em> o <em>max-age</em>.</li>
+<li><a href="https://es.wikipedia.org/wiki/HTTP_ETag">Etag</a>: <em>entity-tag</em> o <em>etag</em> es un código <em>hash</em> único del contenido que permite conocer si el recurso ha cambiado. Si el recurso no ha cambiado no hace falta devolver el recurso, si ha cambiado se devuelve en la misma petición. Al no depender de una marca de tiempo como <em>Expires</em> o <em>max-age</em> es más fiable.</li>
+<li>Vary: indica que el recurso varía según alguna cabecera proporcionada por el cliente como por ejemplo <em>User-Agent</em> o <em>Accept-Encoding</em>.</li>
+<li>Pragma: esta es una directiva antigua que indicada como <em>pragma: no-cache</em>, se interpreta como <em>cache-control: no-cache</em>.</li>
+</ul>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://dev.mobify.com/blog/beginners-guide-to-http-cache-headers/">A Beginner&rsquo;s Guide to HTTP Cache Headers</a></li>
+<li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">Header Field Definitions</a></li>
+<li><a href="https://librosweb.es/libro/symfony_2_x/capitulo_14.html">Capítulo 14. La caché de HTTP</a></li>
+<li><a href="https://librosweb.es/libro/symfony_2_x/capitulo_14/introduccion_a_la_cache_de_http.html">14.3. Introducción a la caché de HTTP</a></li>
+<li><a href="https://librosweb.es/libro/symfony_2_x/capitulo_14/caducidad_y_validacion_http.html">14.4. Caducidad y validación HTTP</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+                <category term="web"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/</id>
         <title>Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java</title>
@@ -969,15 +1044,15 @@ el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash<
 <p>
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
-<p>Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">introducción sobre RequireJS</a> hasta un <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:</p>
+<p>Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.htmlindex-amp.html">introducción sobre RequireJS</a> hasta un <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.htmlf">Plantillas con Mustache</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html"><em>Logging</em> log4javascript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html">Capturar errores de JavaScript</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/introduccion-y-ejemplo-de-backbonejs.html">Modelos con Backbone</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Pruebas unitarias con Jasmine y Sinon</a></li>
-<li>El mismo <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de lista de tareas con Marionette</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.htmlfindex-amp.html">Plantillas con Mustache</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.htmlindex-amp.html"><em>Logging</em> log4javascript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.htmlindex-amp.html">Capturar errores de JavaScript</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/introduccion-y-ejemplo-de-backbonejs.htmlindex-amp.html">Modelos con Backbone</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.htmlindex-amp.html">Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.htmlindex-amp.html">Pruebas unitarias con Jasmine y Sinon</a></li>
+<li>El mismo <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.htmlindex-amp.html">ejemplo de lista de tareas con Marionette</a></li>
 <li>Una vez más el mismo <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">ejemplo de lista de tareas con Backbone y React</a> opción que me gustó más que con <a href="https://marionettejs.com/">Marionette</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">Internacionalización (i18n) en JavaScript</a></li>
 </ul>
@@ -1231,8 +1306,8 @@ el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash<
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 </ul>
 </div>
@@ -1245,130 +1320,6 @@ el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash<
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/</id>
-        <title>4 opciones ofimáticas alternativas gratuitas a Microsoft Office</title>
-        <updated>2019-11-22T18:00:00+01:00</updated>
-        <published>2016-05-20T19:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Office es la suite ofimática de Microsoft con un margen de diferencia en la cuota de uso muy amplio sobre la siguiente opción en los sistemas con Windows. Es muy completa que incluye más funciones incluso que la mayoría de usuarios conoce o necesita pero también es una opción más cara que otras alternativas que incluso llegan a ser gratuitas sin tener nada que envidiarle para la mayoría de usuarios y casos de uso.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/microsoft.svg" width="200" height="200" alt="Microsoft" title="Microsoft"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/libreoffice.svg" width="300" height="58" alt="LibreOffice" title="LibreOffice"  class=""></p>
-</div>
-<p>En el primer artículo de este 2016 comentaba que <a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">Windows y Office aún siguen siendo fáciles de usar sin licencia</a>. Licencia que cuesta nada más ni nada menos que unos 125 € para el <a href="https://amzn.to/3cb4v74">hogar y estudiantes</a> y unos 250 € para <a href="https://amzn.to/3sc4aqv">hogar y empresas</a>, por equipo. Y si el equipo se renueva o estropea requiriendo cambiar algunos componentes debe adquirirse una nueva licencia. Dado el coste nada despreciable de la licencia no es de extrañar que tanto Windows como Office sean unos de los productos más usados sin licencia o pirateados.</p>
-<p>Dada lo fácil que es usar Windows y Office sin licencia junto con el <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">impuesto Windows</a> hacen que tengan una cuota de mercado en números prácticamente de monopolio ni hay muestras de que vaya a cambiar a corto plazo. A veces pienso que <a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">a Microsoft no le importa que uses Windows u Office sin licencia</a> para uso personal. Sin embargo, hay alternativas tanto para Windows como para Office que tienen poco que envidiarle, mucho más baratas o incluso gratuitas y de software libre incluso con un soporte mejor que el que ofrece <a href="https://www.microsoft.com/">Microsoft</a> para su propio software. Lo que no es recomendables usar activadores por ser una fuente de virús informáticos o de troyanos es mejor <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">comprar una licencia barata de Windows 10 y Microsoft Office</a>.</p>
-<ul>
-<li><a href="https://amzn.to/333Df5X">Licencia de Windows 10 Home</a> en Amazon.</li>
-<li><a href="https://amzn.to/3iZ4dBk">Licencia de Windows 10 Pro</a> en Amazon.</li>
-<li><a href="https://amzn.to/369oJfc">Licencia de Microsoft Office 2019</a> en Amazon.</li>
-<li><a href="https://www.ebay.es/sch/i.html?_from=R40&amp;_trksid=p2334524.m570.l1313&amp;_nkw=windows&#43;10&#43;home&#43;key&#43;64&#43;bits&amp;_sacat=0&amp;LH_TitleDesc=0&amp;_sop=2&amp;_osacat=0&amp;_odkw=windows&#43;10&#43;home&#43;key&#43;64">Licencia de Windows 10 Home</a> en eBay.</li>
-<li><a href="https://www.ebay.es/sch/i.html?_from=R40&amp;_trksid=p2334524.m570.l1313&amp;_nkw=windows&#43;10&#43;professional&#43;digital&#43;key&#43;64&#43;bits&amp;_sacat=0&amp;LH_TitleDesc=0&amp;_sop=2&amp;_osacat=0&amp;_odkw=windows&#43;10&#43;pro&#43;digital&#43;key&#43;64&#43;bits">Licencia de Windows 10 Pro</a> en eBay.</li>
-<li><a href="https://www.ebay.es/sch/i.html?_from=R40&amp;_trksid=p2334524.m570.l1313&amp;_nkw=microsoft&#43;office&#43;2019&#43;&#43;key&amp;_sacat=0&amp;LH_TitleDesc=0&amp;_sop=2&amp;_osacat=0&amp;_odkw=microsoft&#43;office&#43;2019&#43;pro&#43;key">Licencia de Microsoft Office 2019</a> en eBay.</li>
-</ul>
-<p>Las alternativas a Windows son los caros productos de <a href="https://www.apple.com/">Apple</a> muy orientados a gamas altas sobre todo por el precio o alguna de las muchas distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> que son prácticamente en su totalidad gratuitas y de software libre, aunque el software libre no tiene por que ser gratuito en la mayoría de los casos lo es.</p>
-<p>En este artículo me centraré más en las alternativas a Office que también son varias. Obviando el tema del software libre, Office es una buena y completa suite ofimática con más opciones de la que muchos usuarios necesitarán.</p>
-<h3 id="microsoft-office">Microsoft Office</h3>
-<p>Microsoft Office incluye Word como procesador de textos, Powerpoint para presentaciones, Excel para hojas de cálculo, Access para bases de datos, Outlook como cliente de correo electrónico, OneNote para tomar notas o Publisher para publicaciones. Solo está disponible para Windows y Mac para el escritorio, y las versiones web para estos y otros sistemas. <a href="https://www.microsoft.com/es-es/microsoft-365/explore-microsoft-365-for-home">Office 365</a> tiene un coste alrededor de 8,80 € por usuario y mes según el plan que incluye más o menos aplicaciones.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/microsoft-office-word_hued8ef3b72921858644a854c3b1324ffa_40429_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Microsoft Office Word"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/microsoft-office-word_hued8ef3b72921858644a854c3b1324ffa_40429_200x150_fit_box_3.png" width="200" height="110" alt="Microsoft Office Word" title="Microsoft Office Word"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/microsoft-office-excel_hu39f0ca1f7066a4bb750b82543f03fc4a_58994_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Microsoft Office Excel"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/microsoft-office-excel_hu39f0ca1f7066a4bb750b82543f03fc4a_58994_200x150_fit_box_3.png" width="200" height="111" alt="Microsoft Office Excel" title="Microsoft Office Excel"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/microsoft-office-powerpoint_hu2816baad2ecd1c1a3ea7883c966833fa_53636_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Microsoft Office Powerpoint"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/microsoft-office-powerpoint_hu2816baad2ecd1c1a3ea7883c966833fa_53636_200x150_fit_box_3.png" width="200" height="111" alt="Microsoft Office Powerpoint" title="Microsoft Office Powerpoint"  class="lozad "></a></p>
-<figcaption>Microsoft Office</figcaption>
-</figure>
-</div>
-<h3 id="libreoffice">LibreOffice</h3>
-<p>La alternativa libre y gratuita equivalente de Office es <a href="https://www.libreoffice.org/">LibreOffice</a>. Incluye un editor de textos con Writer, hojas de cálculo con Calc, presentaciones con Impress, Draw para crear gráficos y Base para bases de datos sencillas. Sin embargo, la interfaz es el similar al de Office en las ediciones anteriores a la incorporación de <em>ribbon</em> con una estética sin la sensación de estar cuidada. Los menús son largos y encontrar un opción entre las muchas disponibles no es sencillo, al abrir una opción de menú uno se puede sentir intimidado por la longitud del mismo y es algo más difícil encontrar rápidamente la opción buscada entre todas las mostradas. Habrá usuarios que prefieran la interfaz de menús y barras de herramientas, yo soy de los que les gusta más <em>ribbon</em>. Está disponible para Windows, Linux y Mac.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/libreoffice-writer_hu9cba1ad2385911d1b9b85745ef14d342_66983_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="LibreOffice Writer"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/libreoffice-writer_hu9cba1ad2385911d1b9b85745ef14d342_66983_200x150_fit_box_3.png" width="200" height="112" alt="LibreOffice Writer" title="LibreOffice Writer"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/libreoffice-calc_hudca12bc47e9281c5e1a1d5ed7f4e8975_80819_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="LibreOffice Calc"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/libreoffice-calc_hudca12bc47e9281c5e1a1d5ed7f4e8975_80819_200x150_fit_box_3.png" width="200" height="102" alt="LibreOffice Calc" title="LibreOffice Calc"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/libreoffice-impress_hu9dd7b9ba5c5111503976899ed8e24a14_89813_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="LibreOffice Impress"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/libreoffice-impress_hu9dd7b9ba5c5111503976899ed8e24a14_89813_200x150_fit_box_3.png" width="200" height="107" alt="LibreOffice Impress" title="LibreOffice Impress"  class="lozad "></a></p>
-<figcaption>LibreOffice</figcaption>
-</figure>
-</div>
-<h3 id="wps-office">WPS Office</h3>
-<p>Si nos gusta más la interfaz <em>ribbon</em> sin menús con multitud de opciones y que esté más cuidada en cuanto a diseño que LibreOffice similar a la usada en Microsoft Office, <a href="https://www.wps.com/">WPS Office</a> es una opción muy a tener en cuenta, también puede activarse en modo clásico con menús y barras de herramientas soportando editar varios documentos en tabuladores. Ofrece únicamente los programas básicos de una suite ofimática: editor de textos, hojas de cálculo y presentaciones. Para un uso personal es gratuita con algunas limitaciones al imprimir y exportar documentos a formato PDF pero más que suficiente aún sin todas las opciones solo disponibles en la opción de pago.</p>
-<p>Para el ámbito empresarial o con todas sus opciones su licencia tiene un coste mucho más razonable que el de Microsoft Office, 45 € para una licencia de un año y 80 € para la licencia de por vida por usuario.</p>
-<p>Está disponible para Windows (XP, Vista, 7, 8, 10) incluso en versiones para los que ni Microsoft Office ya ofrece soporte, Linux, Android e iOS. Su instalador ocupa únicamente unos 80 MiB contra los más de 3 GiB de Office.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/wpsoffice-writer_hu764b11800dd8ab25b46e98956e24c767_87448_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="WPS Office"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/wpsoffice-writer_hu764b11800dd8ab25b46e98956e24c767_87448_200x150_fit_box_3.png" width="200" height="115" alt="WPS Office" title="WPS Office"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/wpsoffice-spreadsheets_hu300b88b9ee13dcb8049307c6cb78e238_98971_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="WPS Office"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/wpsoffice-spreadsheets_hu300b88b9ee13dcb8049307c6cb78e238_98971_200x150_fit_box_3.png" width="200" height="105" alt="WPS Office" title="WPS Office"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/wpsoffice-presentation_hub75d47bbe5410f6dfa02f671f9594f61_96057_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="WPS Office"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/wpsoffice-presentation_hub75d47bbe5410f6dfa02f671f9594f61_96057_200x150_fit_box_3.png" width="200" height="119" alt="WPS Office" title="WPS Office"  class="lozad "></a></p>
-<figcaption>WPS Office</figcaption>
-</figure>
-</div>
-<h3 id="google-docs">Google Docs</h3>
-<p>Another alternative to Office is <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a>, it does not have all the options that Office has, but for most users it is enough. It is enough to have a Google account to use it, which includes a text editor, spreadsheet, presentation editor and the possibility of creating forms. It runs in the browser, the documents are saved in the Google cloud in the space associated with the account with which it is accessed and although it is possible to work without an internet connection at specific times it is required. By storing the documents in the cloud, we will not lose them if our equipment breaks down, we will be able to access the documents from any of our devices such as a smartphone, edit the same document with two or more people simultaneously or share the documents with other people. . Another advantage due to the fact that it is cloud-based, no software updates are necessary except for the browser. The counterpart of the advantages of storing documents in the cloud is the loss of privacy, Google has the documents and can access them.</p>
-<p>For companies, it is offered at a price of € 4 per user per month that includes the Gmail email client, calendars, video calls and 30 GB of storage. It will be € 8 with more storage and retention options for messages.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/googledocs-documento_hu135c38afbabef8694e3240bb2db17fb8_55051_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Google Docs"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/googledocs-documento_hu135c38afbabef8694e3240bb2db17fb8_55051_200x150_fit_box_3.png" width="200" height="127" alt="Google Docs" title="Google Docs"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/googledocs-hoja-de-calculo_hu634845f4752449e9466b0f15924fb435_60785_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Google Docs"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/googledocs-hoja-de-calculo_hu634845f4752449e9466b0f15924fb435_60785_200x150_fit_box_3.png" width="200" height="127" alt="Google Docs" title="Google Docs"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/googledocs-presentacion_hu223a0e001f4a346baf50abb12abe82ea_84650_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Google Docs"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/googledocs-presentacion_hu223a0e001f4a346baf50abb12abe82ea_84650_200x150_fit_box_3.png" width="200" height="127" alt="Google Docs" title="Google Docs"  class="lozad "></a></p>
-<figcaption>Google Docs</figcaption>
-</figure>
-</div>
-<h3 id="onlyoffice">OnlyOffice</h3>
-<p><a href="https://www.onlyoffice.com/es/">OnlyOffice</a> ofrece también un paquete ofimático básico que se compone de documentos, hojas de cálculo y presentaciones. Tiene una aplicación de escritorio para los principales sistemas operativos y también se puede ejecutar en una nube propia hospedada con <a href="https://nextcloud.com/">Nextcloud</a> conservando la propiedad de los documentos y sin el inconveniente de pérdida de privacidad de Google Docs. Son aplicaciones sin todas las opciones que ofrecen Microsoft Office o LibreOffice pero para un uso básico suficiente.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/onlyoffice-documentos_hu5c09b13a1cf720455c6988c5abbc2b8b_64552_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="OnlyOffice Documentos"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/onlyoffice-documentos_hu5c09b13a1cf720455c6988c5abbc2b8b_64552_200x150_fit_box_3.png" width="200" height="121" alt="OnlyOffice Documentos" title="OnlyOffice Documentos"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/onlyoffice-hojas-de-calculo_hu0c3d99c9233fa37ff218116983367b96_64612_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="OnlyOffice Hojas de cálculo"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/onlyoffice-hojas-de-calculo_hu0c3d99c9233fa37ff218116983367b96_64612_200x150_fit_box_3.png" width="200" height="121" alt="OnlyOffice Hojas de cálculo" title="OnlyOffice Hojas de cálculo"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/onlyoffice-presentaciones_hu895c492b74f8884e6ca1145603e19f25_69031_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="OnlyOffice Presentaciones"><img src="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/images/onlyoffice-presentaciones_hu895c492b74f8884e6ca1145603e19f25_69031_200x150_fit_box_3.png" width="200" height="121" alt="OnlyOffice Presentaciones" title="OnlyOffice Presentaciones"  class="lozad "></a></p>
-<figcaption>OnlyOffice</figcaption>
-</figure>
-</div>
-<h3 id="otras-alternativas">Otras alternativas</h3>
-<p>Alguna otra opción que merece ser comentada es <a href="https://www.calligra.org/">Calligra</a> la <em>suite</em> del <a href="https://www.kde.org/">entorno de escritorio KDE</a>, <a href="https://www.abisource.com/">Abiword</a>, <a href="https://www.lyx.org/">Lyx</a> o <a href="http://www.gnumeric.org/">Gnumeric</a>.</p>
-<p>La próxima vez que me pidan reinstalar Windows u Office en vez de instalar la suite ofimática de Microsoft sin licencia creo que instalaré la opción para uso personal de WPS Office, recomendaré usar Google Docs, OnlyOffice o LibreOffice que espero mejore y actualice a los tiempos modernos su interfaz cuando tenga que instalarlo.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">A Microsoft no le importa que uses Windows u Office sin licencia</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">El impuesto Windows</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="microsoft"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>
