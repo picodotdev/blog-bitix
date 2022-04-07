@@ -17,7 +17,7 @@ summary: "Tener trazabilidad entre el código fuente y el código que se está e
 
 {{% post %}}
 
-{{< logotype image1="java.svg" image2="gradle.svg" title2="Gradle" width2="200" >}}
+{{< logotype image1="java.svg" image2="gradle.svg" >}}
 
 Toda aplicación en último término genera un artefacto destinado a ejecutarse en el entorno de producción o un entregable a su destinatario. En Java según el tipo de aplicación el artefacto es un archivo _jar_ ejecutable, un archivo _war_ si es una aplicación web, un archivo _zip_ si proporcionamos el código fuente o la documentación en formato Javadoc de las clases del proyecto. Un aspecto importante que tarde o temprano nos interesará conocer es que versión de la aplicación y por tanto que código está desplegada en el entorno de producción. Con [Gradle][gradle] no es muy complicado añadir la suficiente información para conseguir esta trazabilidad.
 
