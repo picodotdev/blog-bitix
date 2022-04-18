@@ -5,12 +5,222 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-15T21:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/</id>
+        <title>Novedades y nuevas características de Java 8</title>
+        <updated>2016-03-12T12:00:00+01:00</updated>
+        <published>2014-03-21T16:03:27+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La octava versión de Java añade numerosas novedades importantes al lenguaje. Algunas de las más destacadas son las expresiones lambdas y los streams que dotan al lenguaje de características de programación funcional pero también lo hacen en muchas construcciones de código comunes más expresivo, menos extenso y más legible. Pero hay otras novedades relevantes que detallo en el artículo como los métodos por defecto en interfaces o la nueva API para fechas.</strong></p>]]>
+        <![CDATA[<div class="logotypes"> 
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>El 18 de marzo de 2014 se publicó la nueva versión de la plataforma <a href="https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html">Java 8</a>, Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como <em>lambdas</em> o <em>closures</em> o una demandada nueva API para el manejo de fechas entre otras muchas características más. La <a href="http://openjdk.java.net/projects/jdk8/features">lista completa de novedades</a> es bastante amplia, a continuación algunas características de Java explicadas con un poco más de detalle.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>Java 8 representa una evolución notable en este lenguaje de programación al mismo nivel o más del que supuso la versión Java 5. Aunque tengas varios años de experiencia quizá aún no has tenido oportunidad de usar todas las novedades que se han incorporado en cada versión en proyectos reales, probablemente porque los caminos de migración de las empresas son lentos y muchas siguen usando versiones antiguas en sus aplicaciones. Para conocer y aprovechar todas estas novedades de Java recomiendo los siguientes libros que son de lo mejor que he encontrado como documentación, el primer libro es <a href="https://amzn.to/2Qt2Mzv">Thinking in Java</a> que nos introduce en este lenguaje de programación desde el inicio, aunque ya conozcas o uses Java el libro <a href="https://amzn.to/39FqX5c">Effective Java</a> contiene gran cantidad de información y consejos para usar Java de una forma más efectiva haciendo un repaso de las características del lenguaje que aunque no esté actualizado con las novedades que introduce Java 8 casi todo sigue siendo aplicable, el último libro es <a href="https://amzn.to/2QNW1XJ">Java 8 in Action</a> que explica en mucho más detalle que lo hecho en este artículo cada una de las nuevas características de Java 8 y complementa el libro Effective Java pero aprovechando las novedades introducidas en el lenguaje.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk8/">Características de Java 8</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/8-relnotes.html">Documentación de Java 8</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">Documentación Javadoc de Java 8</a></li>
+</ul>
+<p>La lista de novedades es la siguiente:</p>
+<ul>
+<li>Se añaden las expresiones <em>lambda</em> o closures y se adapta la API para usarlas en los sitios que se pueda.</li>
+<li>Se definen nuevos perfiles compactos para dispositivos que no necesitan toda la API Java, esto es una alternativa a la modularización. Inicialmente la modularización era una característica que estaba planificada para Java 8 pero finalmente se ha aplazado a posteriores versiones.</li>
+<li>Incluido nuevo <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/index.html">motor de JavaScript Nashorn</a> que implementa ECMAscript 5.1 y es más rápido que su predecesor Rhino.</li>
+<li>Eliminación de espacio de memoria Permanent Generation (PermGen) que pasa a llamarse Metaspace. Su tamaño
+será dinámico pero no evitará fugas de memoria.</li>
+<li>Soporte para la creación de una máquina virtual menor a 3 MB.</li>
+<li>Acceso mediante reflection a los nombres de los parámetros. Mejorará la legibilidad del código que use reflection y permitirá mejorar el soporte en los IDE.</li>
+<li>Ordenación en java.util.Arrays de forma paralela.</li>
+<li>Operaciones masivas sobre colecciones tales como filter/map/reduce (streams) de forma serializada o paralela.</li>
+<li>Soporte de forma estándar para la codificación y decodificación Base64.</li>
+<li>Nueva API para Date y Time.</li>
+<li>Varias mejoras de seguridad.</li>
+<li>Se incorporan en la máquina virtual Java HotSpot características que estaban en JRockit, convergiendo ambas máquinas virtuales. Se incorpora Mission Control.</li>
+<li>Mejoras en JDBC la base para el acceso en bases de datos en Java.</li>
+<li><a href="http://openjdk.java.net/projects/jdk8/features">Otras novedades</a>.</li>
+</ul>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=0131872486&amp;linkId=13cd447a466645c3dd9162d935caf076" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00B8V09HY&amp;linkId=8bb841ba7a877bb075e20d754e9df4fd" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1617291994&amp;linkId=51d39d999467395851bae9f3931e788c" title="Amazon" class="lozad"></iframe>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="streams">Streams</h4>
+<p>Los streams no son un nuevo tipo de colección son una nueva forma de recorrer las colecciones distinta a los <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html">Iterator</a>. La ventaja de los streams es que pueden procesarse de forma serializada o paralela y proporcionan un estilo de operaciones más funcionales. Un flujo consiste un una fuente (una colección), varias operaciones intermedias (de filtrado o transformación) y una operación final que produce un resultado (suma, cuenta&hellip;). Los streams son lazy de modo que las operaciones solo se realizan cuando se llama a la operación final, también son eficientes no necesitando en algunos casos procesar todos los elementos del stream para devolver el resultado final.</p>
+<p>Tradicionalmente en la API de colecciones la iteración sobre los elementos debíamos proporcionarla de forma externa. Con Java 8 podemos expresarla de forma interna, de la siguiente manera.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">alturaMedia</span> <span class="o">=</span> <span class="n">personas</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">mapToInt</span><span class="o">((</span><span class="n">Persona</span> <span class="n">p</span><span class="o">)</span> <span class="err">–</span><span class="o">&gt;</span> <span class="o">{</span> <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="na">getAltura</span><span class="o">();</span> <span class="o">})</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">average</span><span class="o">();</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Stream.java</span>
+    </div>
+</div>
+<h4 id="lambda">Lambda</h4>
+<p>Esta es una de las principales novedades y que más se estaba echando de menos en Java de otros lenguajes como <a href="https://www.groovy-lang.org/">Groovy</a> o <a href="https://www.python.org/">Python</a>. Las expresiones <em>lambda</em> son funciones que no está asociadas a un determinado nombre y que pueden pasarse como argumento a otras funciones. Tienen el siguiente aspecto:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">(</span><span class="n">Persona</span> <span class="n">persona</span><span class="o">)</span> <span class="err">–</span><span class="o">&gt;</span> <span class="o">{</span> <span class="k">return</span> <span class="n">persona</span><span class="o">.</span><span class="na">getAltura</span><span class="o">();</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Lambda.java</span>
+    </div>
+</div>
+<p>El uso de expresiones lambdas junto con el stream API proporciona a Java 8 características de programación funcional, pero sobre todo hace el código más sencillo, menos extenso, más expresivo y más legible. En las expresiones <em>lambda</em> de Java podemos seguir aprovechándonos de la compilación estática y del tipado fuerte.</p>
+<h4 id="referencias-de-métodos">Referencias de métodos</h4>
+<p>Todo el código desarrollado previamente a Java 8 no hace uso de las lambdas, pero con las <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html">referencias a métodos</a> podemos usar esos métodos ya implementados como si se tratasen de funciones lambdas. Hay diferentes formas de hacer referencias a métodos:</p>
+<ul>
+<li>A métodos estáticos</li>
+<li>A un método de una instancia concreta</li>
+<li>A un método de instancia de una instancia arbitraria de un tipo</li>
+<li>A un constructor</li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Método estático&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">Persona:</span><span class="o">:</span><span class="n">compareAltura</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Método de una instancia concreta&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">persona:</span><span class="o">:</span><span class="n">getAltura</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Método de instancia de una instancia arbitraria de un tipo&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">Persona:</span><span class="o">:</span><span class="n">getAltura</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Constructor&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">Persona:</span><span class="o">:</span><span class="k">new</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ReferenciaMetodos.java</span>
+    </div>
+</div>
+<h4 id="interfaces-funcionales">Interfaces funcionales</h4>
+<p>Una interfaz funcional es aquella que solo tiene un método abstracto (sin implementación). Algunos ejemplos de interfaces funcionales son <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html">Runnable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html">ActionListener</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html">Callable</a>. Para definir una interfaz funcional se puede usar la anotación <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html">@FunctionalInterface</a> y pueden representarse con una expresión lambda. En el siguiente ejemplo puede apreciarse que con las interfaces funcionales y las lambdas podemos hacer lo mismo de forma más clara, menos verbosa y con código más legible.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personas</span><span class="o">,</span> <span class="k">new</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Persona</span> <span class="n">p1</span><span class="o">,</span> <span class="n">Persona</span> <span class="n">p2</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">p1</span><span class="o">.</span><span class="na">getAltura</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">p2</span><span class="o">.</span><span class="na">getAltura</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">});</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>InterfazFuncional-1.java</span>
+    </div>
+</div>
+<p>En Java 8 podemos hacer:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personas</span><span class="o">,</span> <span class="o">(</span><span class="n">Persona</span> <span class="n">p1</span><span class="o">,</span> <span class="n">Persona</span> <span class="n">p2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p2</span><span class="o">.</span><span class="na">getAltura</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">p2</span><span class="o">.</span><span class="na">getAltura</span><span class="o">())</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">});</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>InterfazFuncional-2.java</span>
+    </div>
+</div>
+<p>Java 8 incorpora varias interfaces funcionales que puede ser usadas en expresiones <em>lambda</em>, entre ellas están:</p>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html">Predicate</a>: función que retorna un booleano dado un argumento.</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html">Function</a>: función que retorna un valor dado un argumento.</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Supplier</a>: producen un tipo, al contrario que las funciones no tienen argumento</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a>: representa una operación a realizarse en un argumento.</li>
+</ul>
+<h4 id="métodos-por-defecto-en-interfaces">Métodos por defecto en interfaces</h4>
+<p>Hasta ahora las interfaces en Java solo podían definir métodos pero no sus implementaciones. El problema con las interfaces es que cuando se modifican se rompen todas las clases que las usan. Esto se ha resuelto de tal forma que se puedan añadir nuevos métodos con implementación a las interfaces y ha sido necesario para incorporar las lambdas a interfaces existentes como List. En Java 8 las interfaces podrán incorporar implementaciones para algunos de sus métodos, teniendo así algo parecido a herencia múltiple.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Math</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="kt">int</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>MetodosDefault.java</span>
+    </div>
+</div>
+<h4 id="métodos-estáticos-en-interfaces">Métodos estáticos en interfaces</h4>
+<p>Además de definir métodos por defecto en las interfaces a partir de ahora podemos definir métodos estáticos. Definiendo métodos estáticos en las interfaces evitaremos tener que crear clases de utilidad. Podremos incluir en un mismo tipo (la interfaz) todos los métodos relacionados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Persona</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="nf">getNombre</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="nf">getAltura</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">static</span> <span class="n">String</span> <span class="nf">toStringDatos</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">getNombre</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">getAltura</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>MetodosStatic.java</span>
+    </div>
+</div>
+<h4 id="mejoras-en-la-programación-asíncrona">Mejoras en la programación asíncrona</h4>
+<p>Los procesadores actuales están aumentando su capacidad de proceso más a base de concurrencia proporcionando más núcleos que a base de hacerlos más rápidos en Ghz o <a href="https://es.wikipedia.org/wiki/Instrucciones_por_ciclo">instrucciones por ciclo</a>, los lenguajes de programación tienen que adaptarse para facilitar su aprovechamiendo de forma fácil. Desde las primeras versiones de Java ya se incluía soporte para trabajar con hilos o threads sin embargo su programación es propensa a errores y difícil de depurar. Java 7 con el nuevo soporte conocido como <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html">Fork/Join</a> mejoraba la situación.</p>
+<p>Por otra parte para maximizar el aprovechamiento de los recursos disponibles cuando surgen bloqueos de entrada/salida como acceso a disco o comunicación por red surge la programación asíncrona. Para ello Java 8 mejora el soporte existente desde Java 7 con la clase <a href="https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html">Future</a> que permite recoger el resultado de una operación mientras se realiza otra al mismo tiempo, en Java 8 se proporciona la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html">CompletableFuture</a> que implementa la interfaz Future. La clase CompletableFuture soporta el uso de lambdas, hace más fácil la programación concurrente y programación asíncrona que el Fork/Join y el Future respectivamente permitiendo igualmente ejecutar tareas de forma concurrente, combinar el resultado de dos tareas que se ejecutan al mismo tiempo, realizar otra tarea al terminar una prevía o por supuesto esperar a que todas las tareas concurrentes finalicen.</p>
+<h4 id="anotaciones-en-cualquier-uso-de-tipos">Anotaciones en cualquier uso de tipos</h4>
+<p>Con la introducción de anotaciones en Java 5 podemos usar anotaciones en la declaración de los tipos (definición de clases, interfaces, propiedades, métodos, &hellip;). Desde ahora podremos usar las anotaciones en el uso de cualquier tipo como por ejemplo expresiones new, casts, cláusulas implements y cláusulas throws.</p>
+<h4 id="java-time">Java Time</h4>
+<p>Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente ha sido molesto, para tratar de mejorar la situación podíamos usar la librería JodaTime. Finalmente, después de mucho tiempo esperando a que se hiciera se va a proporcionar una mejor <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">API en el JDK 8 para trabajar con fechas, horas y zonas horarias</a>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_300x200_fit_box_3.png" width="282" height="200"  class="lozad "></a></p>
+</figure>
+</div>
+<h3 id="futuro-con-java-9">Futuro con Java 9</h3>
+<p>Viendo el pasado reciente de Java hablar del futuro puede ser precipitado, quizá la característica más comentada sea la modularización con el proyecto conocido como <a href="http://openjdk.java.net/projects/jigsaw/">Jigsaw</a>, pero ha sido abandonada para Java 8 según tengo entendido por ser difícil incorporarla manteniendo la compatibilidad hacia atrás, por el momento dispondremos de una solución intermedia con los compact profiles.</p>
+<p>Otro de los puntos donde parece que se pondrá énfasis es en el soporte para entornos en la nube que son en estos momentos la tendencia hacia la que evolucionan las aplicaciones.</p>
+<h3 id="versiones-anteriores-de-java">Versiones anteriores de Java</h3>
+<p>Las versiones de Java 5, 6 y 7 también incluyeron varias novedades y dado que en el ámbito empresarial la tecnología se adopta de forma lenta es posible que mucha gente (incluido yo mismo) aún desconozca cuales eran algunas de las principales novedades y características de versiones anteriores.</p>
+<h4 id="java-7">Java 7</h4>
+<ul>
+<li>Project coin</li>
+<li>Strings en switchs</li>
+<li>Gestión automática de recursos en sentencias try-catch</li>
+<li>Multicatch</li>
+<li>Rethrow de excepciones más precisos</li>
+<li>Operador diamante &lt;&gt;</li>
+<li>Literales binarios</li>
+<li>Guiones bajos en literales numéricos</li>
+<li>Fork/Join y utilidades de concurrencia</li>
+<li>Mejoras en trabajo con archivos y carpetas</li>
+</ul>
+<p>Más en <a href="https://www.oracle.com/technetwork/java/javase/jdk7-relnotes-418459.html">Java 7 New Features and Enhancements</a> y <a href="https://www.javacodegeeks.com/2013/10/java7-a-look-back.html">Java 7 a look back</a></p>
+<h4 id="java-6">Java 6</h4>
+<ul>
+<li>Lenguajes de scripting</li>
+<li>API para el compilador</li>
+<li>Nuevas anotaciones</li>
+<li>Nueva API para XML (StaX)</li>
+</ul>
+<p>Más en <a href="https://www.oracle.com/technetwork/java/javase/features-141434.html">Java 6 New Features and Enhancements</a> y <a href="https://www.javabeat.net/introduction-to-java-6-0-new-features-part-i/">Introduction to java 6 new features</a></p>
+<h4 id="java-5">Java 5</h4>
+<ul>
+<li>Generics</li>
+<li>Bucle for mejorado</li>
+<li>Autoboxing/unboxing</li>
+<li>Enums</li>
+<li>Varargs</li>
+<li>Static import</li>
+<li>Anotaciones</li>
+</ul>
+<p>Más en <a href="https://docs.oracle.com/javase/1.5.0/docs/relnotes/features.html">Java 5 New Features and Enhancements</a></p>
+<h3 id="presentación">Presentación</h3>
+<p>Finalmente, una presentación muy interesante en forma de <a href="https://www.youtube.com/watch?v=FTfAP29TjUk">vídeo de Youtube</a> en español y la <a href="http://www.javahispano.org/storage/documentacion/2013-JUG-Madrid.pdf">presentación de la que se habla en formato pdf</a> que fue publicada en <a href="http://www.javahispano.org/portada/2014/3/10/video-y-presentacion-de-la-charla-sobre-java-8.html">JavaHispano</a>, en él se habla de muchas de las novedades y de algunas futuras en Java 9.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/FTfAP29TjUk" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<hr>
+<p>En los <a href="https://docs.oracle.com/javase/tutorial/">tutoriales de Java</a> hay algunos de estos puntos más ampliados y algunos apartados no comentados en esta entrada. Otros artículos muy completos son <a href="http://winterbe.com/posts/2014/03/16/java-8-tutorial/">Java 8 Tutorial</a> y <a href="http://www.techempower.com/blog/2013/03/26/everything-about-java-8/">Everything about Java 8</a>, en el apartado de referencia al final de la entrada hay algún enlace más digno de lectura.</p>
+<p>Java es usado ampliamente en entornos empresariales ya sean públicos o privados, pequeños o grandes que con las <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">especificaciones de Java EE 7</a> proporcionan a las aplicaciones un conjunto de funcionalidades estadarizadas con las que tendremos posibilidad de elegir la implementación que mejor consideremos no encadenándonos a un determinado vendedor.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://openjdk.java.net/projects/jdk8/">JDK 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2013/10/java8.html">Java 8</a></li>
+<li><a href="http://winterbe.com/posts/2014/03/16/java-8-tutorial/">Java 8 Tutorial</a></li>
+<li><a href="http://zeroturnaround.com/rebellabs/java-8-explained-default-methods/">Java 8 Explained Default Methods</a></li>
+<li><a href="https://www.javacodegeeks.com/2013/10/introduction-to-java-lambdas.html">Introduction to Java lambdas</a></li>
+<li><a href="http://zeroturnaround.com/rebellabs/java-8-revealed-lambdas-default-methods-and-bulk-data-operations/">Java 8 revealed, lambdas, default methods and bulk data operations</a></li>
+<li><a href="https://www.javacodegeeks.com/2013/07/lambdas-coming-to-a-java-8-near-you.html">Lambdas coming to a Java 8 near you</a></li>
+<li><a href="http://viralpatel.net/blogs/java-8-default-methods-tutorial/">Java 8 default methods</a></li>
+<li><a href="http://unpocodejava.wordpress.com/2014/01/22/novedades-relevantes-java-8/">Novedades relevantes Java 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/03/the-optional-type-api.html">The optional type API</a></li>
+<li><a href="http://www.techempower.com/blog/2013/03/26/everything-about-java-8/">Everything about Java 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/03/8-new-features-for-java-8.html">8 new features for java 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/03/happy-8th-birthday-java.html">Happy 8th birthday Java</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/01/compiling-lambda-expressions-scala-vs-java-8.html">Compiling lambda expressions scala vs Java 8</a></li>
+<li><a href="https://java.dzone.com/articles/java-8-permgen-metaspace">Java 8 PermGen to metaspace</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="programacion"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/</id>
         <title>Guía para la creación de un blog con Octopress</title>
@@ -254,7 +464,7 @@
 <p>
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
 </div>
-<p>En entradas anteriores he explicado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">en que consiste la criptografía y GPG</a> y como podemos usarlo a nivel personal para firmar y cifrar archivos y <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">firmar correos electrónicos con el cliente de correo Evolution</a>. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">cómo crear un certificado con OpenSSL y como convertirlo a diferentes formatos</a>. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificados SSL, de empresa, «wildcard» y de validación extendida</a> para proporcionar acceso cifrado al servidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores <a href="http://tomcat.apache.org/">Tomcat</a>, <a href="http://www.lighttpd.net/">Lighttpd</a>, <a href="http://jbossas.jboss.org/">JBoss</a>/<a href="http://wildfly.org/">WildFly</a>, <a href="http://nginx.org/">Nginx</a> y <a href="http://www.apache.org/">Apache</a>.</p>
+<p>En entradas anteriores he explicado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">en que consiste la criptografía y GPG</a> y como podemos usarlo a nivel personal para firmar y cifrar archivos y <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">firmar correos electrónicos con el cliente de correo Evolution</a>. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">cómo crear un certificado con OpenSSL y como convertirlo a diferentes formatos</a>. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificados SSL, de empresa, «wildcard» y de validación extendida</a> para proporcionar acceso cifrado al servidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores <a href="http://tomcat.apache.org/">Tomcat</a>, <a href="http://www.lighttpd.net/">Lighttpd</a>, <a href="http://jbossas.jboss.org/">JBoss</a>/<a href="http://wildfly.org/">WildFly</a>, <a href="http://nginx.org/">Nginx</a> y <a href="http://www.apache.org/">Apache</a>.</p>
 <p>Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.</p>
 <p>Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">protocolo HTTP/2</a> que es más eficiente tanto para el cliente como para el servidor y con menores latencias. <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty</a> es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones. Utilizar el protocolo seguro HTTPS es también una condición necesaria por seguridad al <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">utilizar autenticación básica</a>.</p>
 <div class="alert alert-warning tableofcontents">
@@ -568,7 +778,7 @@
 </figure>
 </div>
 <p>En las <a href="http://wildfly.org/news/2014/02/11/WildFly8-Final-Released/">notas de publicación de WildFly 8</a> pueden consultarse las numerosas e interesantes funcionalidades añadidas. También en el siguiente <a href="http://wildfly.org/news/2013/11/21/WildFly-8-Webinar/">vídeo</a> se explican muchos de los detalles que incorpora.</p>
-<p>En posteriores entradas y siguiendo la serie de entradas de seguridad (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">II</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">III</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">IV</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">V</a> y <a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">VI</a>) comentaré como crear certificados para usarlos con el protocolo seguro SSL y como configurar diferentes servidores web y de aplicaciones Java, entre ellos WildFly, para usar SSL y el protocolo HTTPS.</p>
+<p>En posteriores entradas y siguiendo la serie de entradas de seguridad (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">II</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">III</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">IV</a>, <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">V</a> y <a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">VI</a>) comentaré como crear certificados para usarlos con el protocolo seguro SSL y como configurar diferentes servidores web y de aplicaciones Java, entre ellos WildFly, para usar SSL y el protocolo HTTPS.</p>
 <div class="reference">
     Referencia:<br>
 <ul>
@@ -733,9 +943,9 @@
     Referencia:<br>
 <ul>
 <li><a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PatronNoOperation">Código fuente del ejemplo del patrón de diseño No Operation</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.htmlindex-amp.html">Patrones de diseño en la programación orientada a objetos</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.htmlindex-amp.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño State</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">Patrones de diseño en la programación orientada a objetos</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">Ejemplo del patrón de diseño State</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a></li>
 </ul>
 </div>
@@ -769,38 +979,38 @@
 <p>También he escrito otras cuantas entradas sobre Tapestry que me han servido para posteriormente incluirlo como contenido en el libro.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Libro sobre desarrollo de aplicaciones con Apache Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/07/dao-generico-para-jpa-orm.htmlindex-amp.html">DAO genérico para JPA (ORM)</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.htmlindex-amp.html">Personalizar la página de informe de error en Apache Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/07/redefinicion-de-paginas-de-error-404.htmlindex-amp.html">Personalizar las páginas de error (404, 500, &hellip;) en Apache Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/solucion-al-problema-de-seguridad-csrf.htmlindex-amp.html">Solución al problema de seguridad CSRF en Apache Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/solucion-al-doble-envio-de-peticiones.htmlindex-amp.html">Solución al doble envío de peticiones en aplicaciones web</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/integracion-y-transacciones-con-spring.htmlindex-amp.html">Integración y transacciones con Spring en Apache Tapestry</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/transacciones-en-apache-tapestry.htmlindex-amp.html">Transacciones en Apache Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/07/dao-generico-para-jpa-orm.html">DAO genérico para JPA (ORM)</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html">Personalizar la página de informe de error en Apache Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/07/redefinicion-de-paginas-de-error-404.html">Personalizar las páginas de error (404, 500, &hellip;) en Apache Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/solucion-al-problema-de-seguridad-csrf.html">Solución al problema de seguridad CSRF en Apache Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/solucion-al-doble-envio-de-peticiones.html">Solución al doble envío de peticiones en aplicaciones web</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/integracion-y-transacciones-con-spring.html">Integración y transacciones con Spring en Apache Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/transacciones-en-apache-tapestry.html">Transacciones en Apache Tapestry</a></li>
 </ul>
 <p>También a destacar ha sido el cambio de plataforma de_blogging_ que he realizado de <a href="http://www.blogger.com">Blogger</a> a <a href="http://octopress.org/">Octopress</a> con la que me será más cómodo escribir y publicar contenido en el blog que en este mes ya estoy notando. Además, Octopress tiene la ventaja de que el html final es más semántico, tiene un diseño «responsive» con lo que la experiencia de lectura con un dispositivo móvil será más agradable entre otras series de ventajas que comentaba en la <a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">primera entrada del nuevo blog</a>. Empezar el nuevo blog va a ser como empezar desde cero, hasta que alcance el número de visitas que tiene ahora <a href="https://elblogdepicodev.blogspot.com.es">elblogdepicodev</a> van a pasar muchos meses pero poco a poco con constancia cada semana con una entrada de nuevo contenido el número de visitas irán aumentando paulatinamente.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">¡Hola nuevo mundo!</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/12/adios-viejo-mundo.htmlindex-amp.html">¡Adios viejo mundo!</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/12/adios-viejo-mundo.html">¡Adios viejo mundo!</a></li>
 </ul>
-<p>El resto de entradas han sido sobre diversos temas no relacionados como varias sobre programación en Java (algún patrón de diseño, pruebas unitarias, hibernate, &hellip;), la <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">serie de entradas sobre seguridad, criptografía, GPG y DNI electrónico</a> de la que todavía me quedan un par de artículos más enfocados a los servidores de aplicaciones y como usar certificados digitales para proporcionar conexiones sobre el protocolo https con SSL, una pequeña continuación con la <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.htmlindex-amp.html">lista de tareas pero implementada con Marionette</a> de la serie de entradas con javascript que empecé en la primera mitad del 2013 con la <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.htmlindex-amp.html">Introducción y ejemplo de RequireJS</a>.</p>
+<p>El resto de entradas han sido sobre diversos temas no relacionados como varias sobre programación en Java (algún patrón de diseño, pruebas unitarias, hibernate, &hellip;), la <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">serie de entradas sobre seguridad, criptografía, GPG y DNI electrónico</a> de la que todavía me quedan un par de artículos más enfocados a los servidores de aplicaciones y como usar certificados digitales para proporcionar conexiones sobre el protocolo https con SSL, una pequeña continuación con la <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">lista de tareas pero implementada con Marionette</a> de la serie de entradas con javascript que empecé en la primera mitad del 2013 con la <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">Introducción y ejemplo de RequireJS</a>.</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">Introducción a la criptografía e inicio con GPG</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux </a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">Como usar GPG con Evolution </a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">Introducción a la criptografía e inicio con GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux </a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">Como usar GPG con Evolution </a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">Usar el DNI electrónico con Firefox en Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">Enviar correos electrónicos firmados con el DNIe y Evolution</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">Firmar digitalmente documentos con el DNIe y Sinadura</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/relaciones-jerarquicas-en-bases-de-datos-relacionales.htmlindex-amp.html">Relaciones jerárquicas en bases de datos relacionales</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/archivo-de-log-de-sentencias-sql-en-mysql-mariadb.htmlindex-amp.html">Archivo de log de sentencias SQL en MySQL o MariaDB</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/trazas-en-un-gsp-de-grails.htmlindex-amp.html">Trazas en un gsp de Grails</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/archivos-properties-con-codificacion-utf8.htmlindex-amp.html">Archivos properties con codificación UTF-8</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/guia-basica-del-reproductor-de-musica-cmus.htmlindex-amp.html">Guía básica del reproductor de música cmus</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/como-optimizar-modulos-de-requirejs-y-archivos-javascript-II.htmlindex-amp.html">Como optimizar módulos de RequireJS y archivos JavaScript (II)</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.htmlindex-amp.html">Ejemplo lista de tareas con Marionette</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño State</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/pruebas-unitarias-de-codigo-que-accede-a-base-de-datos.htmlindex-amp.html">Pruebas unitarias de código que accede a base de datos</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.htmlindex-amp.html">Búsquedas de texto completo en objetos de dominio</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/acceso-base-de-datos-con-hibernate-y-jpa.htmlindex-amp.html">Acceso a base de datos con Hibernate y JPA</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/relaciones-jerarquicas-en-bases-de-datos-relacionales.html">Relaciones jerárquicas en bases de datos relacionales</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/10/archivo-de-log-de-sentencias-sql-en-mysql-mariadb.html">Archivo de log de sentencias SQL en MySQL o MariaDB</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/trazas-en-un-gsp-de-grails.html">Trazas en un gsp de Grails</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/archivos-properties-con-codificacion-utf8.html">Archivos properties con codificación UTF-8</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/guia-basica-del-reproductor-de-musica-cmus.html">Guía básica del reproductor de música cmus</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/09/como-optimizar-modulos-de-requirejs-y-archivos-javascript-II.html">Como optimizar módulos de RequireJS y archivos JavaScript (II)</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">Ejemplo lista de tareas con Marionette</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">Ejemplo del patrón de diseño State</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/pruebas-unitarias-de-codigo-que-accede-a-base-de-datos.html">Pruebas unitarias de código que accede a base de datos</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html">Búsquedas de texto completo en objetos de dominio</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/acceso-base-de-datos-con-hibernate-y-jpa.html">Acceso a base de datos con Hibernate y JPA</a></li>
 </ul>
 <p>El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, tengo apuntados algunos temas interesantes que en las próximas semanas y meses iré publicando. ¡Feliz navidad!</p>
 <div class="media">
@@ -837,7 +1047,7 @@
 <p>
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sinadura.png" width="200" height="118" alt="Sinadura" title="Sinadura"  class=""></p>
 </div>
-<p>Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">como instalar un lector de tarjetas inteligentes en linux para usar el DNI electrónico</a> y que una vez instalado podemos darle algún uso útil como por ejemplo <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">autenticarnos con en DNI</a> en las páginas que lo soporten como medio de autenticación y el navegador Firefox. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">como usar el DNI con el cliente de correo Evolution para enviar correos firmados digitalmente</a>.</p>
+<p>Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">como instalar un lector de tarjetas inteligentes en linux para usar el DNI electrónico</a> y que una vez instalado podemos darle algún uso útil como por ejemplo <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">autenticarnos con en DNI</a> en las páginas que lo soporten como medio de autenticación y el navegador Firefox. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">como usar el DNI con el cliente de correo Evolution para enviar correos firmados digitalmente</a>.</p>
 <p>En esta entrada voy a comentar como firmar digitalmente documentos en cualquier formato electrónico con la aplicación de software libre <a href="http://www.sinadura.net/es/">Sinadura</a>. La firma que hagamos con el DNIe sobre estos documentos puede tener la misma validez legal que la firma manuscrita.</p>
 <p>Primeramente deberemos descargar la última versión de <a href="http://www.sinadura.net/es/">Sinadura</a> según la arquitectura de nuestro procesador, de 32 bits o de 64 bits y la plataforma linux o windows. El archivo descargado es un instalador que deberemos ejecutarlo, como es un programa Java deberemos tener instalado previamente un entorno de ejecución de Java como el <a href="http://openjdk.java.net/">OpenJDK</a>. Lo ejecutamos con:</p>
 <div class="code">
@@ -913,9 +1123,9 @@
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">Crear una par de claves GPG</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">Como firmar correos electrónicos con GPG</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux </a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">Crear una par de claves GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">Como firmar correos electrónicos con GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux </a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">Usar el DNI electrónico con Firefox en Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">Enviar correos electrónicos firmados con el DNIe y Evolution</a></li>
 </ul>
@@ -951,7 +1161,7 @@
 <p>
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
 </div>
-<p>Otra forma de la que podemos sacar partido al DNI electrónico además de para <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">identificarnos en sitios web</a> que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">como firmar correos electrónicos con GPG</a> pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">crear una par de claves GPG</a> sino que con tener el DNI e <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">instalar un lector de tarjetas inteligentes</a> será suficiente.</p>
+<p>Otra forma de la que podemos sacar partido al DNI electrónico además de para <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">identificarnos en sitios web</a> que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">como firmar correos electrónicos con GPG</a> pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">crear una par de claves GPG</a> sino que con tener el DNI e <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">instalar un lector de tarjetas inteligentes</a> será suficiente.</p>
 <p>En esta entrada explicaré como usar el DNI electrónico para firmar digitalmente correos usando el cliente de correo <a href="https://projects.gnome.org/evolution/">Evolution</a>. Primeramente necesitaremos hacer una configuración adicional a la que hemos necesitado para poder usar el lector de tarjetas inteligentes y el DNIe en Linux. Y es usar el siguiente comando tal y como está comentado en <a href="https://forja.cenatic.es/plugins/mediawiki/wiki/opendnie/index.php/Documentacion_Aplicaciones_Evolution#Configuraci.C3.B3n_del_DNIe_en_el_cliente_de_correo_Evolution">esta página</a> cambiando el directorio home del usuario por el que corresponda:</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ modutil -add <span class="s2">&#34;OpenSC-OpenDNIe&#34;</span> -libfile /usr/lib/opensc-pkcs11.so -dbdir sql:/home/picodotdev/.pki/nssdb&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -986,9 +1196,9 @@
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">Crear una par de claves GPG</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">Como firmar correos electrónicos con GPG</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux </a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">Crear una par de claves GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">Como firmar correos electrónicos con GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux </a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">Usar el DNI electrónico con Firefox en Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/">Firmar digitalmente documentos con el DNIe y Sinadura</a></li>
 </ul>
@@ -1064,7 +1274,7 @@
 <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Consultar puntos cárnet DGT"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_300x200_fit_q90_box.jpg" width="300" height="162" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"  class="lozad "></a></p>
 </figure>
 </div>
-<p>Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio <em>pcscd</em>, manualmente o con el inicio del sistema (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">consultar la guía de instalación del DNIe en Linux</a>).</p>
+<p>Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio <em>pcscd</em>, manualmente o con el inicio del sistema (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">consultar la guía de instalación del DNIe en Linux</a>).</p>
 <p>En algún momento en el proceso de autenticación se nos pedirá el PIN secreto que posibilita usar el DNIe, apareciéndonos una ventana similar a la siguiente para introducirlo.</p>
 <div class="media">
 <figure>
@@ -1087,10 +1297,10 @@
     Referencia:<br>
 <ul>
 <li><a href="http://web.cenatic.es/dnie/index.php?option=com_content&amp;view=article&amp;id=104&amp;Itemid=139">Configuración del DNI electrónico en Mozilla / Firefox</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.htmlindex-amp.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">Enviar correos electrónicos firmados con el DNIe y Evolution</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">Crear una par de claves GPG</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.htmlindex-amp.html">Como firmar correos electrónicos con GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">Crear una par de claves GPG</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">Como firmar correos electrónicos con GPG</a></li>
 </ul>
 </div>
 ]]>
@@ -1122,14 +1332,14 @@
 </div>
 <p>Esta es la última entrada que publicaré en el <a href="https://elblogdepicodev.blogspot.com.es">elblogdepicodev.blogspot.com.es</a> o la primera de <a href="https://picodotdev.github.io/blog-bitix/">picodotdev.github.io/blog-bitix</a> dependiendo del blog al que hayas accedido, es decir, seguiré teniendo un blog y escribiendo sobre la temática alrededor de la tecnología como hasta ahora pero a partir de este momento todo el nuevo contenido que publique lo haré en el nuevo blog <a href="https://picodotdev.github.io/blog-bitix/">picodotdev.github.io/blog-bitix</a>, por lo que si estás suscrito al feed de elblogdepicodev te recomiendo que te suscribas al <a href="https://picodotdev.github.io/blog-bitix/index.xml">feed de bitix</a> para no perderte ninguna de las nuevas entradas que publique.</p>
 <h3 id="que-está-por-venir-en-bitix">Que está por venir en Bitix</h3>
-<p>Tengo bastante cotenido por publicar en el futuro más o menos inmediato empezando por continuar con la <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.htmlindex-amp.html">serie de artículos sobre criptografía, GPG y DNI electrónico</a>, instalar la <a href="https://www.raspberrypi.org/">Raspberry Pi</a> en una memoria USB o disco duro externo para ganar velocidad en vez de en la tarjeta SD como he explicado en la <a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.htmlindex-amp.html">guía de instalación con Arch Linux para la RPi</a>, como usar la Raspberry Pi como «media center» con <a href="https://www.geexbox.org/">GeeXboX</a>, explicar como usar <a href="http://octopress.org/">Octopress</a> y <a href="https://pages.github.com/">GitHub Pages</a> para bloggear y como personalizarlo, programas para «scrapear» webs, mi experiencia y consejos como blogger, el patrón de diseño no operation, usar marcadores con herramientas de logging como <a href="http://www.slf4j.org/">SLF4J</a>, el servidor de aplicaciones <a href="http://jbossas.jboss.org/">JBoss</a> y <a href="http://www.wildfly.org/">Wildfly</a> y muchas otras cosas que tengo apuntadas o que se me vayan ocurriendo según publico estas. Desde luego tengo contenido para seguir escribiendo en el nuevo blog que al ritmo de una entrada por semana continuaré publicando.</p>
+<p>Tengo bastante cotenido por publicar en el futuro más o menos inmediato empezando por continuar con la <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">serie de artículos sobre criptografía, GPG y DNI electrónico</a>, instalar la <a href="https://www.raspberrypi.org/">Raspberry Pi</a> en una memoria USB o disco duro externo para ganar velocidad en vez de en la tarjeta SD como he explicado en la <a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">guía de instalación con Arch Linux para la RPi</a>, como usar la Raspberry Pi como «media center» con <a href="https://www.geexbox.org/">GeeXboX</a>, explicar como usar <a href="http://octopress.org/">Octopress</a> y <a href="https://pages.github.com/">GitHub Pages</a> para bloggear y como personalizarlo, programas para «scrapear» webs, mi experiencia y consejos como blogger, el patrón de diseño no operation, usar marcadores con herramientas de logging como <a href="http://www.slf4j.org/">SLF4J</a>, el servidor de aplicaciones <a href="http://jbossas.jboss.org/">JBoss</a> y <a href="http://www.wildfly.org/">Wildfly</a> y muchas otras cosas que tengo apuntadas o que se me vayan ocurriendo según publico estas. Desde luego tengo contenido para seguir escribiendo en el nuevo blog que al ritmo de una entrada por semana continuaré publicando.</p>
 <h3 id="por-que-este-cambio">¿Por que este cambio?</h3>
 <p>Por varias razones, <a href="https://www.blogger.com/">blogger</a> es una plataforma estupenda y a mi durante todo este tiempo me ha servidor perfectamente, es sencillo usarla y en muy poco tiempo se puede tener un blog listo para empezar a escribir en él sin necesidad de muchos conocimientos. Pero también tiene varias desventajas, algunas de ellas son:</p>
 <ul>
 <li>Las entradas han de ser escritas con su <a href="https://es.wikipedia.org/wiki/WYSIWYG">editor wysiwyg</a> y como muchos editores en los que ves es lo que obtienes a veces para dejar las cosas como uno quiere hay que acceder al código html que genera y modificarlo directamente, esto consume tiempo que podría dedicarse a escribir contenido en el blog y no en la publicación. Yo suelo escribir las entradas en un bloc de notas (con gedit) en texto plano, el pasarlo a blogger y formatearlo posteriormente con su editor me consume también bastante tiempo, tanto o más que en escribir una primera versión de la entrada.</li>
 <li>La edición de la entrada con el editor de blogger requiere conexión a internet, si no estamos conectados a internet no podemos editar o nos obliga a usar un bloc de notas y posteriormente cuando dispongamos de conexión a internet transpasarlo al editor y darle formato.</li>
 <li>Las imágenes hay que subirlas usando la propia herramienta de blogger en el momento de publicación de la entrada y conectado a internet. La gestión de las mismas no es muy cómoda, para borrar una imagen una vez subida hay que ir a los álbumes de picasa y cuando se tienen muchas imágenes ya subidas al blog encontrar una en toda la lista se vuelve complicado y lento.</li>
-<li>Ajustar el diseño de blogger no es muy complicado pero para personalizarlo de forma avanzada requiere editar el HTML de la plantilla. Esta edición no es nada amigable para un usuario con pocos conocimientos y para algunas cosas hay que hacerlo, como por ejemplo, <a href="https://elblogdepicodev.blogspot.com.es/2012/03/karmacracy-y-como-integrarlo-en-blogger.htmlindex-amp.html">integrar Karmacracy en blogger</a>.</li>
+<li>Ajustar el diseño de blogger no es muy complicado pero para personalizarlo de forma avanzada requiere editar el HTML de la plantilla. Esta edición no es nada amigable para un usuario con pocos conocimientos y para algunas cosas hay que hacerlo, como por ejemplo, <a href="https://elblogdepicodev.blogspot.com.es/2012/03/karmacracy-y-como-integrarlo-en-blogger.html">integrar Karmacracy en blogger</a>.</li>
 <li>Parece que blogger no es una de las herramientas que Google cuide (al igual que otras varias), las actualizaciones son escasas y con el tiempo van surgiendo herramientas mejores que blogger.</li>
 <li>Los ejemplos de código los añado a cada entrada utilizando <a href="https://gist.github.com/">Gist</a> e introducir la referencias adecuadas en cada entrada implica editar e introducir código en la vista html. Además en la vista del editor wysiwyg los gist no se visualizan y si no se tiene cuidado se pueden borrar sin querer con lo que hay que volver a introducirlos. Nuevamente incluir las referencias de los gist me consume tiempo.</li>
 </ul>

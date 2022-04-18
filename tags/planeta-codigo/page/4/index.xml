@@ -5,12 +5,120 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-15T21:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/</id>
+        <title>El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</title>
+        <updated>2021-05-14T16:00:00+02:00</updated>
+        <published>2021-05-14T16:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>El patrón de diseño <em>Factory</em> es uno de los patrones dedicados a la creación de instancias. El patrón <em>Factory</em> proporciona varias ventajas sobre la palabra reservada <em>new</em> que proporcionan los lenguajes de programación orientada a objetos para la creación de instancias. Es muy utilizado en muchas librerías, en ocasiones también es necesario implementar una clase que implemente este patrón por lo que es muy útil conocer y usar este patrón en las ocasiones que sea adecuado.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>El patrón de diseño factoría o <em>Factory</em> es uno de los más empleados en multitud de ocasiones en el código propio y aunque no se implemente al ser usado en multitud de librerías también en muchos casos conviene conocer sus principios y ventajas frente a otros métodos.</p>
+<p>El patrón de diseño <em>Factory</em> es uno de patrones ya identificados como útiles en los que su aplicación es adecuada. Los patrones de diseño se clasifican en las áreas funcionales de creacionales dedicados a la creación de objetos, de comportamiento centrados en la comunicación entre objetos, estructurales para mantener de forma sencilla relaciones entre entidades y finalmente los patrones de concurrencia empleados en la aplicación concurrente con múltiples hilos de ejecución.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="las-limitaciones-de-instanciar-objetos-con-la-palabra-reservada-_new_">Las limitaciones de instanciar objetos con la palabra reservada <em>new</em></h3>
+<p>Los lenguajes de programación orientada a objetos modelan los conceptos que trata una aplicación mediante clases que define las propiedades del objeto y los métodos que permiten el acceso o modifican el estado del objeto, esto proporciona encapsulación y es uno de los <a href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">conceptos fundamentales de la programación orientada a objetos</a> entre los que también se encuentran el polimorfismo, herencia y composición.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Shape.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">double</span> <span class="n">radious</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Circle</span><span class="o">(</span><span class="kt">double</span> <span class="n">radious</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">radious</span> <span class="o">=</span> <span class="n">radious</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">2</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radious</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radious</span> <span class="o">*</span> <span class="n">radious</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Circle.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kt">double</span> <span class="n">length</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">Square</span><span class="o">(</span><span class="kt">double</span> <span class="n">length</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">length</span> <span class="o">=</span> <span class="n">length</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">4</span> <span class="o">*</span> <span class="n">length</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Override</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">2</span> <span class="o">*</span> <span class="n">length</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Square.java</span>
+    </div>
+</div>
+<p>Las clases son una definición de las entidades de una aplicación en tiempo de compilación, en tiempo de ejecución un programa crea instancias individuales de las clases. En el lenguaje de programación Java para la creación de instancias de objetos se usa la palabra reservada <em>new</em>. Al emplear esta palabra reservada el lenguaje en tiempo de ejecución devuelve una referencia a la instancia creada, habitualmente se asigna la referencia a una variable.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Shape</span> <span class="n">shape1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Square</span><span class="o">(</span><span class="n">2d</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape perimeter: %s%n&#34;</span><span class="o">,</span> <span class="n">shape1</span><span class="o">.</span><span class="na">getPerimeter</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape area: %s%n&#34;</span><span class="o">,</span> <span class="n">shape1</span><span class="o">.</span><span class="na">getArea</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Shape</span> <span class="n">shape2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="o">(</span><span class="n">2d</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape perimeter: %s%n&#34;</span><span class="o">,</span> <span class="n">shape2</span><span class="o">.</span><span class="na">getPerimeter</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape area: %s%n&#34;</span><span class="o">,</span> <span class="n">shape2</span><span class="o">.</span><span class="na">getArea</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-new.java</span>
+    </div>
+</div>
+<p>La palabra reservada <em>new</em> o una equivalente es el mecanismo que emplean muchos lenguajes de programación orientados a objetos como Java y C#. Al ser un mecanismo proporcionado por el lenguaje es sencillo de utilizar en la mayoría de ocasiones.</p>
+<p>Aunque la palabra reservada <em>new</em> es una opción válida para crear instancias tiene algunas limitaciones que en algunas ocasiones requieren una alternativa.</p>
+<p>Una de sus limitaciones es que la palabra reservada <em>new</em> siempre devuelve una instancia del tipo concreto que explícitamente se crea, a veces el tipo concreto de la instancia no se conoce en tiempo de compilación, por ejemplo en tiempo de compilación se sabe que se necesita un <em>Shape</em> pero solo hasta en tiempo de ejecución no se sabe si la instancia a construir es un <em>Square</em> o un <em>Circle</em>.</p>
+<p>Otra limitación es que el código que usa <em>new</em> tiene la responsabilidad de crear las instancias, a veces interesa delegar esta responsabilidad en otra clase para no repetirla múltiples veces.</p>
+<p>Para evitar las las limitaciones de la palabra <em>new</em> se suele emplear alguno de los patrones creacionales, como el patrón de diseño <em>Factory</em>.</p>
+<h3 id="el-patrón-de-diseño-factory">El patrón de diseño Factory</h3>
+<p>El patrón <em>Factory</em> es un patrón de diseño creacional que tiene como función crear instancias de objetos sin las limitaciones de la palabra reservada <em>new</em>. El patrón <em>Factory</em> solventa las dos limitaciones comentadas de <em>new</em>, pudiendo crear diferentes tipos de instancias que implementen una interfaz o hereden de una clase común, al mismo tiempo el código de creación de las instancias queda encapsulado en la clase que implementa el patrón <em>Factory</em> abstrayendo al código que lo usa de la responsabilidad de creación de instancias.</p>
+<p>La creación de instancias es una de las tareas más comunes que realiza un programa, de modo que habitualmente es necesario implementar una clase factoría o en caso de usar una librería utilizar una factoría implementada por una clase de la librería. Un contenedor de IoC y su inyección de dependencias que también tienen como misión delegar en ellos la creación de instancias requieren implementar una factoría propia que el contenedor invoca.</p>
+<p>El patrón <em>Factory</em> es tan simple como una clase con uno o varios métodos que devuelven la instancia que la factoría crea, el método de la factoría puede recibir parámetros. El método factoría puede ser estático si la creación de las instancias depende de únicamente los parámetros que recibe el método o el método puede ser de instancia y estar basado además de los parámetros que recibe en propiedades de la instancia de la factoría.</p>
+<p>El patrón <em>Factory</em> hay dos categorías: <em>Factory Method Pattern</em> que se basan en un único método y <em>Abstract Factory Pattern</em> que son una indirección más pudiendo sustituir una implementación de factoría por otra haciendo posible devolver cada una diferentes instancias.</p>
+<p>Como muchos patrones de diseño añade cierta complejidad en el diseño de las clases del programa con lo que su uso debe estar justificado con el objetivo de simplificar el código o la necesidad de evitar las limitaciones de la palabra <em>new</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/images/factory-pattern_hu4b0e5b64764ca232fd8a3cd1a9bf2738_28764_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama de clases del patrón de diseño Factory"><img src="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/images/factory-pattern_hu4b0e5b64764ca232fd8a3cd1a9bf2738_28764_650x450_fit_box_3.png" width="500" height="240" alt="Diagrama de clases del patrón de diseño Factory" title="Diagrama de clases del patrón de diseño Factory"  class="lozad "></a></p>
+<figcaption>Diagrama de clases del patrón de diseño Factory</figcaption>
+</figure>
+</div>
+<h4 id="diferencias-con-el-patrón-de-diseño-_builder_">Diferencias con el patrón de diseño <em>Builder</em></h4>
+<p>El patrón de diseño <em>Builder</em> es otro patrón creacional dedicado a la creación de instancias, aunque comparte objetivos las implementación es diferente del patrón <em>Factory</em>.</p>
+<p>Una diferencia entre el patrón <em>Factory</em> y el patrón <em>Builder</em> es que el patrón <em>Factory</em> crea la instancia en un único paso con la invocación de un método de la factoría que lo devuelve inmediatamente, el patrón <em>Builder</em> suele requerir la invocación de varios métodos y un método final <em>build</em> que realiza la creación de la instancia con una API fluída.</p>
+<p>Los <em>Builder</em> son objetos con estado y requieren crear una instancia de <em>Builder</em>, el patrón <em>Factory</em> no requiere crear una instancia y se puede compartir entre varios objetos que la necesitan.</p>
+<p>Por el contrario el patrón <em>Builder</em> proporciona más control sobre los pasos de la creación de la instancia y proporciona más flexibilidad para variar la representación interna de la instancia creada. Otra diferencia es que el <em>Builder</em> crea instancias con diferente composición de objetos.</p>
+<h3 id="ejemplo-de-patrón-de-diseño-_factory_">Ejemplo de patrón de diseño <em>Factory</em></h3>
+<p>En el siguiente ejemplo de implementación en Java de patrón <em>Factory Method</em>  se observa que el método factoría en función del parámetro se devuelve una instancia u otra empleando una sentencia <em>if-else</em>. Esta factoría además contiene otros dos métodos de factoría específicos para tipos concretos de <em>Shape</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ShapeFactory</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Shape</span> <span class="nf">create</span><span class="o">(</span><span class="n">String</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">if</span> <span class="o">(</span><span class="n">type</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;square&#34;</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="k">new</span> <span class="n">Square</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">type</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;circle&#34;</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="k">new</span> <span class="n">Circle</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Square</span> <span class="nf">createSquare</span><span class="o">(</span><span class="kt">double</span> <span class="n">length</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="k">new</span> <span class="n">Square</span><span class="o">(</span><span class="n">length</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Circle</span> <span class="nf">createCircle</span><span class="o">(</span><span class="kt">double</span> <span class="n">radious</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="k">new</span> <span class="n">Circle</span><span class="o">(</span><span class="n">radious</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ShapeFactory.java</span>
+    </div>
+</div>
+<p>La sentencia <em>if-else</em> hace que no se cumpla el principio <em>O</em> (<em>Open-closed</em>) de SOLID, si se añade un nuevo tipo requiere modificar el código del método en vez de proporcionar una extensión. Para <a href="https://picodotdev.github.io/blog-bitix/2015/10/como-crear-clases-factoria-sin-usar-if-else/">evitar la sentencia <em>if-else</em> en una factoría</a> hay varias opciones.</p>
+<p>Con la incorporación de los <em>default methods</em> en Java el método factoría es posible implementarlo en una interfaz de <em>Shape</em> no requiriendo una clase <em>ShapeFactory</em> dedicada que lo contenga.</p>
+<p>El siguiente programa crea una figura según el parámetro indicado que solo se conoce en tiempo de ejecución según el argumento proporcionado al lanzar el programa y una instancia de cada tipo de figura, se observa que la clase <em>Main</em> no utiliza directamente los constructores de ninguna figura.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">shapeType</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="n">0</span><span class="o">];</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Shape</span> <span class="n">shape1</span> <span class="o">=</span> <span class="n">ShapeFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">shapeType</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape perimeter: %s%n&#34;</span><span class="o">,</span> <span class="n">shape1</span><span class="o">.</span><span class="na">getPerimeter</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape area: %s%n&#34;</span><span class="o">,</span> <span class="n">shape1</span><span class="o">.</span><span class="na">getArea</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Shape</span> <span class="n">shape2</span> <span class="o">=</span> <span class="n">ShapeFactory</span><span class="o">.</span><span class="na">createSquare</span><span class="o">(</span><span class="n">2d</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape perimeter: %s%n&#34;</span><span class="o">,</span> <span class="n">shape2</span><span class="o">.</span><span class="na">getPerimeter</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape area: %s%n&#34;</span><span class="o">,</span> <span class="n">shape2</span><span class="o">.</span><span class="na">getArea</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Shape</span> <span class="n">shape3</span> <span class="o">=</span> <span class="n">ShapeFactory</span><span class="o">.</span><span class="na">createCircle</span><span class="o">(</span><span class="n">2d</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape perimeter: %s%n&#34;</span><span class="o">,</span> <span class="n">shape3</span><span class="o">.</span><span class="na">getPerimeter</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Shape area: %s%n&#34;</span><span class="o">,</span> <span class="n">shape3</span><span class="o">.</span><span class="na">getArea</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main-factory.java</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Software_design_pattern#Creational_patterns">Patrones de diseño creacionales</a></li>
+<li><a href="http://www.oodesign.com/factory-pattern.html">Patrón de diseño Factoría</a></li>
+<li><a href="https://medium.com/javarevisited/design-patterns-101-factory-vs-builder-vs-fluent-builder-da2babf42113">Software Design Patterns: Factory and Builder in a Nutshell</a></li>
+<li><a href="https://dzone.com/articles/everything-you-need-to-know-about-factory-and-buil">Everything You Need to Know About Factory and Builder Design Patterns</a></li>
+<li><a href="http://stackoverflow.com/questions/757743/what-is-the-difference-between-builder-design-pattern-and-factory-design-pattern">What is the difference between Builder Design pattern and Factory Design pattern?</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/05/herramientas-para-mejorar-una-pagina-web-en-seo-conformidad-estandares-y-rendimiento/</id>
         <title>Herramientas para mejorar una página web en SEO, conformidad estándares y rendimiento</title>
@@ -2303,142 +2411,6 @@
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/</id>
-        <title>Herramientas para convertir texto a audio de voz natural</title>
-        <updated>2021-02-14T00:30:00+01:00</updated>
-        <published>2021-02-14T00:30:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural.</strong></p>]]>
-        <![CDATA[<p>Al grabar un audio de voz se crea un archivo binario con la grabación en formato <em>wav</em> o comprimido con <em>mp3</em>. Estos formatos de audio son archivos poco editables, no se puede sustituir una palabra, frase o realizar una corrección. La única edición que permite un audio de voz es cortar un trozo o añadir un trozo de audio nuevo. Sin embargo, la edición no es perfecta y el tono de la voz de la parte editada puede variar con la parte anterior y posterior. Además, grabar un audio de voz requiere el tiempo para realizar la grabación.</p>
-<p>Hay herramientas que usando un sintetizador de voz permiten transformar un texto en un audio, dando solución a dos de los problemas de la grabación de voz a partir de texto. Al convertir un texto a voz es más fácil la edición ya que basta simplemente cambiar el texto y generar de nuevo el audio y es más rápido ya que la generación del audio es más rápido que grabarlo en tiempo real. Algunos sintetizadores y herramientas además permiten seleccionar el idioma de la voz o ser una voz masculina o femenina.</p>
-<p>Una de estas herramientas es <a href="https://github.com/mozilla/TTS">TTS: Text-to-Speech</a>, un proyecto de <a href="https://www.mozilla.org/">Mozilla</a> y las ofrecidas por Amazon, Google y Microsoft. Esta y otras herramientas alternativas de conversión de texto a voz producen audios de voz bastante fieles a la voz humana natural. Para ayudar en la interpretación del texto se enriquece con un lenguaje de marcado que indica a la computadora como entonar e interpretar el texto.</p>
-<p>En la actualidad hay herramientas de conversión de texto a voz natural que producen resultados difícilmente indisinguibles de si la voz ha sido producida por un humano por una computadora. Otra tarea para la que hay herramientas que producen buenos resultados es <a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">reconocimiento de texto en imágenes con OCR</a>. Estas son tareas aparentemente simples pero significativamente complejas para una computadora que a pesar de su rapidez y capacidad enorme de cálculo no posee la inteligencia humana.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="convertir-texto-a-voz-natural">Convertir texto a voz natural</h3>
-<h4 id="herramientas-web">Herramientas web</h4>
-<p>Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio sin necesidad de software adicional a un navegador web. Algunas con limitaciones de número de caracteres pero suficiente para un uso básico. También algunas permiten descargar el archivo de audio, en caso de que no ofrezcan la descargar se puede reproducir y capturar con el <a href="https://www.videolan.org/vlc/">reproductor multimedia VLC</a> en la opción <em>Captura de audio &gt; Monitor de audio interno (HDMI) &gt; Guardar</em>.</p>
-<ul>
-<li><a href="https://www.texttospeechfree.com/">TextToSpeechFree</a></li>
-<li><a href="https://freetts.com/">Free TTS</a></li>
-<li><a href="http://fromtexttospeech.com/">Free online Text To Speech</a></li>
-</ul>
-<h4 id="servicios-de-conversión">Servicios de conversión</h4>
-<p>Para un uso más profesional y avanzado hay algunas aplicaciones para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y entre los muchos servicios que ofrecen <a href="https://aws.amazon.com/es/ec2/">Amazon AWS</a>, <a href="https://www.google.es/">Google</a> y <a href="https://www.microsoft.com/">Microsoft</a> para hacer la operación de convertir audio a texto que realmente producen unos resultados muy buenos con una voz natural difícil de distinguir de una real.</p>
-<p>Aplicaciones.</p>
-<ul>
-<li><a href="https://www.microsoft.com/en-us/p/any-text-to-voice-convert-text-to-speech-text-to-audio-mp3-for-free/9n92n3shd1mv?activetab=pivot:overviewtab#">Any Text to Voice</a></li>
-<li><a href="https://www.microsoft.com/en-us/p/convert-text-to-speech/9wzdncrddlsc?activetab=pivot:overviewtab#">Convert Text to Speech</a></li>
-</ul>
-<p>Servicios.</p>
-<ul>
-<li><a href="https://aws.amazon.com/es/polly/">Amazon Polly</a></li>
-<li><a href="https://aws.amazon.com/es/transcribe/">Amazon Transcribe</a></li>
-<li><a href="https://cloud.google.com/text-to-speech/">Google Text‑to‑Speech</a></li>
-<li><a href="https://azure.microsoft.com/es-es/services/cognitive-services/text-to-speech/">Microsoft Text to Speech</a></li>
-</ul>
-<h4 id="mozilla-tts">Mozilla TTS</h4>
-<p>La herramienta TTS es capaz de generar un audio de voz sintética a partir de un texto de bastante buena calidad. El audio de voz sintética no es perfecta ni tiene todos los matices en tono, velocidad de habla, contiene algunos defectos y otros matices de las voces humanas pero es aceptablemente bueno.</p>
-<p>TTS se ofrece como una imagen de <a href="https://www.docker.com/">Docker</a> que permite una instalación y uso sencillo de la herramienta. Previamente hay que <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">instalar Docker</a>, una vez instalado descargar la <a href="https://github.com/synesthesiam/docker-mozillatts">imagen del contenedor TTS</a> e iniciar un contenedor de la herramienta TTS.</p>
-<p>Hay varias voces disponibles específicas para cada idioma, la del español se indica con <em>es</em>, la de inglés con <em>en</em></p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm -it -p 5002:5002 synesthesiam/mozillatts:es&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker.sh</span>
-    </div>
-</div>
-<p>Iniciado el servidor de TTS este ofrece dos interfaces una interfaz web en la dirección <em>http://localhost:5002/</em> y una interfaz de linea de comandos con una API REST. Tanto en la interfaz web como en la interfaz de linea de comandos se ha de indicar el texto que convertir a audio. Esto genera como resultado un archivo de audio en formato <em>wav</em>. Para que ocupe menos es posible convertirlo a <em>mp3</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl -o voice.wav -X POST -H <span class="s1">&#39;Content-Type: text/plain&#39;</span> --data <span class="s1">&#39;@text.txt&#39;</span> http://localhost:5002/api/tts&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>curl.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Mozilla TTS"><img src="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_300x200_fit_box_3.png" width="250" height="200" alt="Interfaz web de Mozilla TTS" title="Interfaz web de Mozilla TTS"  class="lozad "></a></p>
-<figcaption>Interfaz web de Mozilla TTS</figcaption>
-</figure>
-</div>
-<h4 id="espeak">espeak</h4>
-<p><em>espeak</em> y <em>espeak-ng</em> son dos herramientas de linea de comandos que aunque producen una voz sintetizada con un tono fácilmente reconocible como generado por computadora, robótico y metálico, son otras opciones conocidas.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ espeak -f text.txt -v europe/es -w voice.wav&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>espeak.sh</span>
-    </div>
-</div>
-<h3 id="lenguaje-de-marcado-de-síntesis-de-voz-ssml">Lenguaje de marcado de síntesis de voz (SSML)</h3>
-<p>Dependiendo de la herramienta de conversión de texto a voz la calidad de las voces de resultado son más fieles a la voz humana o son fácilmente reconocibles como haber sido generadas por una computadora. Algunas de estas herramientas ya producen conversiones de texto a voz que imitan con fidelidad las voces humanas haciendo uso de redes neuronales entrenadas. Un aspecto por el que son todavía fácilmente identificables es por la entonación y personalidad que los humanos imprimimos en el habla, sin ayuda las conversiones sintéticas de texto a voz son monótonas.</p>
-<p>El <a href="https://cloud.google.com/text-to-speech/docs/ssml">lenguaje de marcado de síntesis de voz</a> o SSML es un lenguaje que sirve de ayuda a la computadora para interpretar y dar entonación al texto a convertir a voz. Es un lenguaje similar al HTML, con etiquetas atributos y valores, utilizado en las páginas web pero con el propósito de la conversión a voz.</p>
-<p>Hay aplicaciones que permite la edición del texto para añadirle el lenguaje de marcado SSML.</p>
-<ul>
-<li><a href="https://www.getwoord.com/ssml-editor">getwoord ssml-editor</a></li>
-<li><a href="https://www.ssml-editor.com/">SSML Editor</a></li>
-<li><a href="https://www.amazon.com/-/es/dp/B07L64KVNR">SSML Editor</a> para Alexa, <a href="https://topvoiceapps.com/ssml">SSML WYSIWYG editor y probador</a></li>
-</ul>
-<h3 id="resultado-y-ejemplo-de-conversión-de-texto-a-voz">Resultado y ejemplo de conversión de texto a voz</h3>
-<p>El texto que he utilizado para hacer pruebas ha sido el de la descripción de mi blog. Con los siguientes resultados.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux,&#10;</span></span><span class="line"><span class="cl">lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática.&#10;</span></span><span class="line"><span class="cl">El contenido puede contener trazas de asuntos fuera de tema.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Publicando de uno a tres artículos únicos a la semana desde el año 2010.</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>text.txt</span>
-    </div>
-</div>
-<p>Utilizando el servicio Microsoft Text to Speech.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/microsoft-alvaro.mp3" type="audio/mpeg">
-</audio>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/microsoft-elvira.mp3" type="audio/mpeg">
-</audio>
-<p>Utilizando el servicio Free TTS.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/freetts-enrique.mp3" type="audio/mpeg">
-</audio>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/freetts-lucia.mp3" type="audio/mpeg">
-</audio>
-<p>Utilizando Mozilla TTS.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/mozilla-tts.mp3" type="audio/mpeg">
-</audio>
-<p>Utilizando espeak.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
-  <source src="audios/espeak.mp3" type="audio/mpeg">
-</audio>
-<h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
-<p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
-<p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ffmpeg -i voice.wav -codec:a libmp3lame voice.mp3&#10;</span></span><span class="line"><span class="cl">$ ffmpeg -i voice.wav -codec:a libvorbis voice.ogg&#10;</span></span><span class="line"><span class="cl">$ ffmpeg -i voice.mp3 -codec:a libvorbis voice.ogg&#10;</span></span><span class="line"><span class="cl">$ ffmpeg -i voice.mp3 -codec:a libmp3lame -b:a 128k voice.mp3</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>convert.sh</span>
-    </div>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://alternativeto.net/software/from-text-to-speech/">From Text to Speech Alternatives</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Comparison_of_speech_synthesizers">Comparison of speech synthesizers</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
             

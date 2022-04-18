@@ -5,12 +5,148 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-15T21:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/</id>
+        <title>Herramientas para convertir texto a audio de voz natural</title>
+        <updated>2021-02-14T00:30:00+01:00</updated>
+        <published>2021-02-14T00:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural.</strong></p>]]>
+        <![CDATA[<p>Al grabar un audio de voz se crea un archivo binario con la grabación en formato <em>wav</em> o comprimido con <em>mp3</em>. Estos formatos de audio son archivos poco editables, no se puede sustituir una palabra, frase o realizar una corrección. La única edición que permite un audio de voz es cortar un trozo o añadir un trozo de audio nuevo. Sin embargo, la edición no es perfecta y el tono de la voz de la parte editada puede variar con la parte anterior y posterior. Además, grabar un audio de voz requiere el tiempo para realizar la grabación.</p>
+<p>Hay herramientas que usando un sintetizador de voz permiten transformar un texto en un audio, dando solución a dos de los problemas de la grabación de voz a partir de texto. Al convertir un texto a voz es más fácil la edición ya que basta simplemente cambiar el texto y generar de nuevo el audio y es más rápido ya que la generación del audio es más rápido que grabarlo en tiempo real. Algunos sintetizadores y herramientas además permiten seleccionar el idioma de la voz o ser una voz masculina o femenina.</p>
+<p>Una de estas herramientas es <a href="https://github.com/mozilla/TTS">TTS: Text-to-Speech</a>, un proyecto de <a href="https://www.mozilla.org/">Mozilla</a> y las ofrecidas por Amazon, Google y Microsoft. Esta y otras herramientas alternativas de conversión de texto a voz producen audios de voz bastante fieles a la voz humana natural. Para ayudar en la interpretación del texto se enriquece con un lenguaje de marcado que indica a la computadora como entonar e interpretar el texto.</p>
+<p>En la actualidad hay herramientas de conversión de texto a voz natural que producen resultados difícilmente indisinguibles de si la voz ha sido producida por un humano por una computadora. Otra tarea para la que hay herramientas que producen buenos resultados es <a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">reconocimiento de texto en imágenes con OCR</a>. Estas son tareas aparentemente simples pero significativamente complejas para una computadora que a pesar de su rapidez y capacidad enorme de cálculo no posee la inteligencia humana.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="convertir-texto-a-voz-natural">Convertir texto a voz natural</h3>
+<h4 id="herramientas-web">Herramientas web</h4>
+<p>Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio sin necesidad de software adicional a un navegador web. Algunas con limitaciones de número de caracteres pero suficiente para un uso básico. También algunas permiten descargar el archivo de audio, en caso de que no ofrezcan la descargar se puede reproducir y capturar con el <a href="https://www.videolan.org/vlc/">reproductor multimedia VLC</a> en la opción <em>Captura de audio &gt; Monitor de audio interno (HDMI) &gt; Guardar</em>.</p>
+<ul>
+<li><a href="https://www.texttospeechfree.com/">TextToSpeechFree</a></li>
+<li><a href="https://freetts.com/">Free TTS</a></li>
+<li><a href="http://fromtexttospeech.com/">Free online Text To Speech</a></li>
+</ul>
+<h4 id="servicios-de-conversión">Servicios de conversión</h4>
+<p>Para un uso más profesional y avanzado hay algunas aplicaciones para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y entre los muchos servicios que ofrecen <a href="https://aws.amazon.com/es/ec2/">Amazon AWS</a>, <a href="https://www.google.es/">Google</a> y <a href="https://www.microsoft.com/">Microsoft</a> para hacer la operación de convertir audio a texto que realmente producen unos resultados muy buenos con una voz natural difícil de distinguir de una real.</p>
+<p>Aplicaciones.</p>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/p/any-text-to-voice-convert-text-to-speech-text-to-audio-mp3-for-free/9n92n3shd1mv?activetab=pivot:overviewtab#">Any Text to Voice</a></li>
+<li><a href="https://www.microsoft.com/en-us/p/convert-text-to-speech/9wzdncrddlsc?activetab=pivot:overviewtab#">Convert Text to Speech</a></li>
+</ul>
+<p>Servicios.</p>
+<ul>
+<li><a href="https://aws.amazon.com/es/polly/">Amazon Polly</a></li>
+<li><a href="https://aws.amazon.com/es/transcribe/">Amazon Transcribe</a></li>
+<li><a href="https://cloud.google.com/text-to-speech/">Google Text‑to‑Speech</a></li>
+<li><a href="https://azure.microsoft.com/es-es/services/cognitive-services/text-to-speech/">Microsoft Text to Speech</a></li>
+</ul>
+<h4 id="mozilla-tts">Mozilla TTS</h4>
+<p>La herramienta TTS es capaz de generar un audio de voz sintética a partir de un texto de bastante buena calidad. El audio de voz sintética no es perfecta ni tiene todos los matices en tono, velocidad de habla, contiene algunos defectos y otros matices de las voces humanas pero es aceptablemente bueno.</p>
+<p>TTS se ofrece como una imagen de <a href="https://www.docker.com/">Docker</a> que permite una instalación y uso sencillo de la herramienta. Previamente hay que <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">instalar Docker</a>, una vez instalado descargar la <a href="https://github.com/synesthesiam/docker-mozillatts">imagen del contenedor TTS</a> e iniciar un contenedor de la herramienta TTS.</p>
+<p>Hay varias voces disponibles específicas para cada idioma, la del español se indica con <em>es</em>, la de inglés con <em>en</em></p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm -it -p 5002:5002 synesthesiam/mozillatts:es&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker.sh</span>
+    </div>
+</div>
+<p>Iniciado el servidor de TTS este ofrece dos interfaces una interfaz web en la dirección <em>http://localhost:5002/</em> y una interfaz de linea de comandos con una API REST. Tanto en la interfaz web como en la interfaz de linea de comandos se ha de indicar el texto que convertir a audio. Esto genera como resultado un archivo de audio en formato <em>wav</em>. Para que ocupe menos es posible convertirlo a <em>mp3</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl -o voice.wav -X POST -H <span class="s1">&#39;Content-Type: text/plain&#39;</span> --data <span class="s1">&#39;@text.txt&#39;</span> http://localhost:5002/api/tts&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Mozilla TTS"><img src="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_300x200_fit_box_3.png" width="250" height="200" alt="Interfaz web de Mozilla TTS" title="Interfaz web de Mozilla TTS"  class="lozad "></a></p>
+<figcaption>Interfaz web de Mozilla TTS</figcaption>
+</figure>
+</div>
+<h4 id="espeak">espeak</h4>
+<p><em>espeak</em> y <em>espeak-ng</em> son dos herramientas de linea de comandos que aunque producen una voz sintetizada con un tono fácilmente reconocible como generado por computadora, robótico y metálico, son otras opciones conocidas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ espeak -f text.txt -v europe/es -w voice.wav&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>espeak.sh</span>
+    </div>
+</div>
+<h3 id="lenguaje-de-marcado-de-síntesis-de-voz-ssml">Lenguaje de marcado de síntesis de voz (SSML)</h3>
+<p>Dependiendo de la herramienta de conversión de texto a voz la calidad de las voces de resultado son más fieles a la voz humana o son fácilmente reconocibles como haber sido generadas por una computadora. Algunas de estas herramientas ya producen conversiones de texto a voz que imitan con fidelidad las voces humanas haciendo uso de redes neuronales entrenadas. Un aspecto por el que son todavía fácilmente identificables es por la entonación y personalidad que los humanos imprimimos en el habla, sin ayuda las conversiones sintéticas de texto a voz son monótonas.</p>
+<p>El <a href="https://cloud.google.com/text-to-speech/docs/ssml">lenguaje de marcado de síntesis de voz</a> o SSML es un lenguaje que sirve de ayuda a la computadora para interpretar y dar entonación al texto a convertir a voz. Es un lenguaje similar al HTML, con etiquetas atributos y valores, utilizado en las páginas web pero con el propósito de la conversión a voz.</p>
+<p>Hay aplicaciones que permite la edición del texto para añadirle el lenguaje de marcado SSML.</p>
+<ul>
+<li><a href="https://www.getwoord.com/ssml-editor">getwoord ssml-editor</a></li>
+<li><a href="https://www.ssml-editor.com/">SSML Editor</a></li>
+<li><a href="https://www.amazon.com/-/es/dp/B07L64KVNR">SSML Editor</a> para Alexa, <a href="https://topvoiceapps.com/ssml">SSML WYSIWYG editor y probador</a></li>
+</ul>
+<h3 id="resultado-y-ejemplo-de-conversión-de-texto-a-voz">Resultado y ejemplo de conversión de texto a voz</h3>
+<p>El texto que he utilizado para hacer pruebas ha sido el de la descripción de mi blog. Con los siguientes resultados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux,&#10;</span></span><span class="line"><span class="cl">lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática.&#10;</span></span><span class="line"><span class="cl">El contenido puede contener trazas de asuntos fuera de tema.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Publicando de uno a tres artículos únicos a la semana desde el año 2010.</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>text.txt</span>
+    </div>
+</div>
+<p>Utilizando el servicio Microsoft Text to Speech.</p>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/microsoft-alvaro.mp3" type="audio/mpeg">
+</amp-audio>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/microsoft-elvira.mp3" type="audio/mpeg">
+</amp-audio>
+<p>Utilizando el servicio Free TTS.</p>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/freetts-enrique.mp3" type="audio/mpeg">
+</amp-audio>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/freetts-lucia.mp3" type="audio/mpeg">
+</amp-audio>
+<p>Utilizando Mozilla TTS.</p>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/mozilla-tts.mp3" type="audio/mpeg">
+</amp-audio>
+<p>Utilizando espeak.</p>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+  <source src="audios/espeak.mp3" type="audio/mpeg">
+</amp-audio>
+<h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
+<p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
+<p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ffmpeg -i voice.wav -codec:a libmp3lame voice.mp3&#10;</span></span><span class="line"><span class="cl">$ ffmpeg -i voice.wav -codec:a libvorbis voice.ogg&#10;</span></span><span class="line"><span class="cl">$ ffmpeg -i voice.mp3 -codec:a libvorbis voice.ogg&#10;</span></span><span class="line"><span class="cl">$ ffmpeg -i voice.mp3 -codec:a libmp3lame -b:a 128k voice.mp3</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>convert.sh</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://alternativeto.net/software/from-text-to-speech/">From Text to Speech Alternatives</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_speech_synthesizers">Comparison of speech synthesizers</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/</id>
         <title>Guía de instalación de GNU/Linux para la Raspberry Pi</title>
@@ -1852,218 +1988,6 @@ como estos además ser una forma de motivarme para continuar escribiendo en el b
                 <category term="java"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/</id>
-        <title>La herramienta Weblate para traducir una aplicación a múltiples idiomas</title>
-        <updated>2020-12-10T23:00:00+01:00</updated>
-        <published>2020-12-10T23:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>La internacionalización (i18n) y localización (i10n) en un proyecto de software es muy habitual y necesario cuando la aplicación ha de soportar múltiples lenguajes, países, regiones, culturas o en el mismo país diferentes idiomas oficiales según la región. La traducción necesita un flujo de trabajo coordinado entre los desarrolladores de la aplicación que realizan la internacionalización y los traductores que realizan la localización. Para facilitar el flujo de trabajo y funcionalidades útiles para los traductores hay herramientas específicas para la tarea, una herramienta para traducciones de software libre es Weblate.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/weblate.svg" width="200" height="200" alt="Weblate" title="Weblate"  class=""></p>
-</div>
-<p>En el desarrollo de un producto internacional destinado a los usuarios de múltiples lenguajes, países, regiones, culturas o en un mismo país en el que hay varias lenguas oficiales es un requerimiento ofrecer el producto o aplicación en el lenguaje preferido por los usuarios. Esto significa que la aplicación ha de soportar múltiples lenguajes y mostrar las cadenas de texto en la interfáz gráfica en el lenguaje preferido por el usuario.</p>
-<p>Para que una aplicación soporte múltiples lenguajes ha de implementar internacionalización (i18n) y la localización (i10n), la internacionalización y localización son los procesos implementados en el código fuente de la aplicación que le habilita para mostrar las cadenas en un determinado lenguaje.  La localización consiste en traducir las cadenas de texto a cada uno de los lenguajes que soporte la aplicación.</p>
-<p>La internacionalización y localización no es simplemente traducir una cadena a otro idioma, es un proceso con cierta complejidad en el que hay que tener en cuenta numerosos aspectos:</p>
-<ul>
-<li>Formas plurales. El español tiene dos formas plurales, uno y más de uno, pero otros lenguajes tienen más formas plurales algunos hasta seis formas plurales y otros lenguajes solo una forma plural.</li>
-<li>El formato de los horarios.</li>
-<li>El formato de las fechas. En español las fechas se escriben siguiendo el patrón día/mes/año pero en Estados Unidos se escribe mes/día/año.</li>
-<li>Monedas internacionales. Según el país, región o cantidad monetaria el formato y símbolo que representa la moneda es distinto.</li>
-<li>Sistema de pesos y medidas (pulgadas/centímetros, libras/gramos, etc.).</li>
-<li>Códigos de caracteres (cirílico, kanji, árabe, &hellip;).</li>
-<li>Formato de números. El formato de escribir los números varía para los separadores decimales, separadores de miles, etc.</li>
-<li>Las imágenes no es un formato de texto pero también es un recurso susceptible de ser localizado.</li>
-<li>Según el alfabeto y caracteres las reglas para <a href="https://picodotdev.github.io/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">ordenar alfabéticamente correctamente cadenas de texto</a>.</li>
-<li>Algunos valores ha de insertarse en las cadenas como fechas, números u palabras.</li>
-</ul>
-<p>En los puntos anteriores también hay que tener en cuenta que las traducciones y localización han de realizarlas múltiples personas o traductores, quizá tantos traductores como idiomas haya de soportar la aplicación que entiendan tanto el idioma original en el que se entregan las cadenas para traducir como el idioma, región y cultura a la que hay que localizar.</p>
-<p>Para coordinar y facilitar el proceso de localización de una aplicación a los múltiples idiomas se suele utilizar una herramienta específica para esta tarea de traducción y localización. Los recursos localizados son utilizados en la aplicación para <a href="https://picodotdev.github.io/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">localizar y formatear cadenas, cadenas con múltiples formas plurales, fechas, números e importes en un idioma</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="cómo-funciona-el-proceso-de-internacionalización-i18n">Cómo funciona el proceso de internacionalización (i18n)</h3>
-<p>El proceso de internacionalización realiza cambios en el código fuente de la aplicación para que la aplicación pueda ser localizada a múltiples lenguajes, países, regiones o culturas. Se ha de tener en cuenta los números aspectos de la internacionalización y localización de la lista anterior como formas plurales, formato de fechas, formatos monetarios, formato de números, etc.</p>
-<p>El proceso de internacionalización genera como resultado un archivo fuente de cadenas originales que es proporcionado a la herramienta de traducción para su localización por los traductores. A lo largo del tiempo habrá cadenas que se modifiquen y requieran una nueva traducción, nuevas cadenas que se añadan y cadenas que se eliminen. Las cadenas originales suelen estar en inglés por ser el lenguaje compartido en los lenguajes de programación y el más común entendido por los posibles traductores.</p>
-<h3 id="cómo-funciona-el-proceso-de-localización-i10n">Cómo funciona el proceso de localización (i10n)</h3>
-<p>El proceso de localización consisten en traducir el archivo fuente de cadenas originales generado en el proceso de internacionalización a un lenguaje, país, región o cultura. El traductor es la persona que tiene conocimiento para realizar correctamente la localización, la herramienta de traducción y localización es la que facilita la traducción.</p>
-<p>La herramienta de traducción y localización ofrece al traductor varias funcionalidades que facilitan su tarea.</p>
-<h3 id="herramientas-de-traducción-y-localización">Herramientas de traducción y localización</h3>
-<p>Para facilitar la tarea de los traductores con diferentes funcionalidades y gestionar el ciclo de vida de las cadenas se utiliza una herramienta u aplicación especializada en la tarea. El archivo fuente de cadenas originales generadas en el proceso de internacionalización se importan en la herramienta de traducción par que los traductores realicen la traducción, una vez los traductores completan la traducción la aplicación genera como resultado un archivo localizado que se importa en la aplicación para su uso en el lenguaje, país, región o cultura adecuado.</p>
-<p>Las funcionalidades que ofrecen las herramientas de traducciones facilitan la tarea a los traductores y permiten gestionar las cadenas cuando se modifica alguna existente, se añaden nuevas o se eliminan. Algunas funcionalidades que ofrecen son:</p>
-<ul>
-<li>Glosario: un glosario de términos para emplear siempre el mismo término en todas las cadenas en el que algunas palabras hay varias posibilidades de traducción y que la localización sea consiste en toda la localización.</li>
-<li>Estado de la traducción: una de las principales funcionalidades es permitir encontrar fácilmente las cadenas que faltan por traducir y obtener métricas y estadísticas de las cadenas totales, cuantas están traducidas en cada lenguaje, cuantas faltan por traducir o cuantas están traducidas pero marcadas a revisar. Las estadísticas permiten conocer el estado de la localización en cada uno de los idiomas a localizar. En los flujos de trabajo más complejos se soporta un proceso de revisión y aprobación de traducciones.</li>
-<li>Historial: con un historial el traductor tiene cuales son las traducciones que han sido empleadas para una cadena para volver a una anterior o conocer cual era la traducción en una determinada fecha.</li>
-<li>Comentarios: los comentarios permiten añadir notas explicativas.</li>
-<li>Cadenas iguales y similares: en las cadenas originales la cadena puede estar repetida lo que evita repetir la misma traducción o proporciona parte y aumenta la consistencia.</li>
-<li>Búsquedas con filtros: otra funcionalidad es poder buscar cadenas por el texto en la cadena original, en la cadena traducida, por su estado o por filtros de fecha en la que se ha realizado la traducción o última modificación. Otra funcionalidad es buscar y reemplazar cuando se cambia un término o para hacer una corrección de forma masiva.</li>
-<li>Formatos de archivos de cadenas originales: según el lenguaje de programación o tecnología se utilizan diferentes formatos de archivo para los recursos que contienen las cadenas originales como los recursos localizados. Las aplicaciones han de soportar múltiples formatos de archivos de recursos, en Java por ejemplo se suelen utilizar los archivos <em>properties</em>, las aplicaciones de Android  e iOS tienen su propio formato.</li>
-<li>Imagen de contexto: para que el traductor comprenda el contexto en el que se muestra la cadena se puede adjuntar una imagen.</li>
-<li>Notificaciones: enviar notificaciones a los traductores cuando se añadan nuevas cadenas o se modifiquen de forma que sean traducidas de manera más rápida y automatizando la comunicación, o cuando se completa una traducción.</li>
-<li>Integraciones: las herramientas ofrecen una API para integrarlas en los procesos de desarrollo y automatizar las tareas de importación de nuevas cadenas o de exportación de las cadenas e incluso con los repositorios de código fuente de <a href="https://git-scm.com/">Git</a> como <a href="https://github.com/">GitHub</a> o <a href="https://about.gitlab.com/">GitLab</a>.</li>
-<li>Autenticación: la herramienta será utilizada tanto por desarrolladores como por múltiples traductores, esto hace necesario que posea un sistema de autenticación y permisos.</li>
-</ul>
-<h4 id="alternativas-de-herramientas">Alternativas de herramientas</h4>
-<p>Dos de las herramientas más conocidas con <a href="https://www.transifex.com/">Transifex</a> y <a href="https://crowdin.com/">Crowdin</a>, son herramientas comerciales ofrecidas como SaaS aunque para proyectos de software libre permiten su uso sin ningún coste. Otra alternativa a estas de software libre es <a href="https://weblate.org/es/">Weblate</a> que además de ofrecerse como SaaS con un coste por el servicio permite autoalojarlo.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/transifex_huc0c275fdf01c78a514b45baff8805270_276922_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Web de Transifex"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/transifex_huc0c275fdf01c78a514b45baff8805270_276922_300x200_fit_box_3.png" width="300" height="158" alt="Web de Transifex" title="Web de Transifex"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/crowdin_hu9daa5a129846979a2e6ce949452e2457_342699_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Web de Crowdin"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/crowdin_hu9daa5a129846979a2e6ce949452e2457_342699_300x200_fit_box_3.png" width="300" height="158" alt="Web de Crowdin" title="Web de Crowdin"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate_hufdf0abc6e5f3578837117b921f2a5b5b_569278_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Web de Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate_hufdf0abc6e5f3578837117b921f2a5b5b_569278_300x200_fit_box_3.png" width="300" height="158" alt="Web de Weblate" title="Web de Weblate"  class="lozad "></a></p>
-<figcaption>Webs de Transifex, Crowdin y Weblate</figcaption>
-</figure>
-</div>
-<h4 id="costes">Costes</h4>
-<p>Los costes de las herramientas suelen varia en función del número de cadenas o palabras originales a traducir, algunas funcionalidades solo está disponibles en función del plan contratado y algunos tienen limitaciones en el número de proyectos. No tiene un coste insignificante que pueden partir de unos 100 € al mes pero llegar a 600 € o 1000 € en proyectos de tamaño medio y grande.</p>
-<p>Weblate permite autoalojarlo sin coste por el servicio salvo por el coste que tenga gestionar el servicio uno mismo. Las herramientas de traducciones son usadas de forma intensiva en el proceso inicial de traducción, una vez las traducciones están completadas la tarea de traducción es de mantenimiento con unas pocas cadenas a traducir o modificar cada cierto tiempo de forma esporádica, estár afrontando sus costes mensuales para esos momentos quizá no compensa o cuando se pretenden ahorrar costes o ser más eficiente en los mismos.</p>
-<p>Dependiendo del caso Weblate es una opción más económica que Transifex y Crowdin.</p>
-<ul>
-<li><a href="https://www.transifex.com/pricing/">Precios Transifex</a></li>
-<li><a href="https://crowdin.com/pricing#annual">Precios Crowdin</a></li>
-<li><a href="https://weblate.org/es/hosting/">Precios Weblate</a></li>
-</ul>
-<h3 id="la-herramienta-para-traducciones-weblate">La herramienta para traducciones Weblate</h3>
-<p>Weblate es una de las herramientas disponibles para realizar traducciones de aplicaciones de software. Su característica diferenciadora con respecto a Transifex y Crowdin es que es software libre, esto permite hospedarlo uno mismo y un coste más económico por la funcionalidad.</p>
-<p>Posee las múltiples funcionalidades que tienen estas herramientas de utilidad para los traductores y para gestionar las traducciones en la aplicación. Posee una API para integrar Weblate y automatizar los procesos de desarrollo y autenticación con cuentas OpenID/OAuth con los que gestionar de forma centraliza las múltiples cuentas y accesos de los usuarios que usen la herramienta.</p>
-<p>En la extensa y detallada <a href="https://docs.weblate.org/en/latest/">documentación de Weblate</a> se ofrece un manual de usuario y administración de la herramienta tanto para instalarla con <a href="https://www.docker.com/">Docker</a>, configurarla como para realizar copias de seguridad y actualizaciones a nuevas versiones.</p>
-<h3 id="formatos-de-archivos-de-traducciones">Formatos de archivos de traducciones</h3>
-<p>Weblate soporta numerosos <a href="https://docs.weblate.org/en/latest/formats.html">formatos de archivos</a>. Cada formato de archivo soporta diferentes características, el formato de archivo a utilizar dependen del lenguaje de programación utilizado en la aplicación, librerías o <em>framework</em> de desarrollo. Algunos formatos de archivo soportan múltiples idiomas en el mismo archivo de recurso, múltiples formas normales, comentarios, contexto, ubicación dela cadena en el código fuente o indicadores para las cadenas como no traducida, traducida o por revisar.</p>
-<p>El formato de archivo para los recursos de traducciones en Java son los archivos <em>properties</em>. Los archivos <em>properties</em> empleados en Java para los recursos de traducciones son un archivo de texto con una linea por cadena compuesta por la clave o identificador de la cadena y el texto de la cadena. Los archivos <em>properties</em> no soportan múltiples formas plurales. Para implementar múltiples formas plurales se ha de utilizar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/ChoiceFormat.html">ChoiceFormat</a>, las cadenas con múltiples formas plurales necesitan un formato de cadena especial. Por otro lado las cadenas pueden tener ciertos datos o <em>placeholders</em> que son proporcionadas por la aplicación en el momento de ejecución al construir la cadena definitiva que ve el usuario, los datos son un nombre, número o un importe, la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html">MessageFormat</a> permite realizar la inserción de estas palabras en los <em>placeholders</em> de las cadenas.</p>
-<p>Otros formatos de archivos de recursos son para las aplicaciones Android, iOS, PHP, i18next para JavaScript entre otros muchos.</p>
-<h4 id="inicio-usando-docker">Inicio usando Docker</h4>
-<p>Weblate proporciona un archivo de <a href="https://docs.docker.com/compose/">Docker Compose</a> con el que iniciar la herramienta fácilmente. Weblate utiliza una base de datos <a href="https://www.postgresql.org/">PostgreSQL</a> y <a href="https://redis.io/">Redis</a> que en el archivo de Docker Compose se inician al mismo tiempo que el contenedor de Weblate. En el archivo de Docker Compose se indica en nombre de usuario y contraseña entre otras muchas <a href="https://docs.weblate.org/en/latest/admin/install/docker.html">variables de entorno de configuración</a> con el que realizar la autenticación en la página <em>http://localhost</em> de inicio de sesión.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone https://github.com/WeblateOrg/docker-compose.git weblate-docker&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> weblate-docker&#10;</span></span><span class="line"><span class="cl">$ docker-compose up</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>weblate-docker.sh</span>
-    </div>
-</div>
-<p>Es necesario crear un archivo <em>docker-compose.override.yml</em>, dos de ellas se utilizan para el inicio de sesión con el nombre de usuario administrador y su contraseña.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">weblate</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ports</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span>- <span class="m">80</span><span class="p">:</span><span class="m">8080</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">environment</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">WEBLATE_SITE_DOMAIN</span><span class="p">:</span><span class="w"> </span><span class="l">weblate.127.0.0.1.xip.io</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">WEBLATE_ADMIN_EMAIL</span><span class="p">:</span><span class="w"> </span><span class="l">weblate.admin@weblate.127.0.0.1.xip.io</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">WEBLATE_ADMIN_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">password</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>docker-compose.override.yml</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-authentication_hu4be762018011bed221104a683fba417c_121655_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-authentication_hu4be762018011bed221104a683fba417c_121655_300x200_fit_box_3.png" width="300" height="186" alt="Autenticación en Weblate" title="Autenticación en Weblate"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-start_huc39fa1b15cfd2d057e6b7f47c7d27771_62315_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de inicio de Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-start_huc39fa1b15cfd2d057e6b7f47c7d27771_62315_300x200_fit_box_3.png" width="300" height="186" alt="Página de inicio de Weblate" title="Página de inicio de Weblate"  class="lozad "></a></p>
-<figcaption>Autenticación en Weblate</figcaption>
-</figure>
-</div>
-<p>Los diferentes recursos de una aplicación se agrupan en proyectos y componentes. El primer paso es crear un proyecto y los componentes como sean necesarios para realizar la traducción de cada uno de los recursos a traducir. Los componentes son los recursos a traducir, es posible obtener el archivo de traducciones desde el repositorio de código fuente o crearlo desde un archivo. Al crear el componente desde un archivo hay que especificar los parámetros <em>Plantilla para traducciones nuevas</em>, <em>Máscara de archivos</em>, <em>Formato de archivo</em> y <em>Archivo de base monolingüe</em>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-create-project_hu3136b7d4f86b9eb36e9d3c6fad23e05f_98486_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear un proyecto en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-create-project_hu3136b7d4f86b9eb36e9d3c6fad23e05f_98486_300x200_fit_box_3.png" width="292" height="200" alt="Crear un proyecto en Weblate" title="Crear un proyecto en Weblate"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-components_hue1ebb78b951c48e260dec85060d8e126_73062_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componentes en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-components_hue1ebb78b951c48e260dec85060d8e126_73062_300x200_fit_box_3.png" width="292" height="200" alt="Componentes en Weblate" title="Componentes en Weblate"  class="lozad "></a></p>
-<figcaption>Creación de un proyecto en Weblate</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-create-component-01_hua23196935a0036805aa6a0ee1135496e_131010_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear un componente en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-create-component-01_hua23196935a0036805aa6a0ee1135496e_131010_300x200_fit_box_3.png" width="292" height="200" alt="Crear un componente en Weblate" title="Crear un componente en Weblate"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-create-component-02_hufc9df35ecd08845b4f570eaebfeb8151_108388_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear un componente en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-create-component-02_hufc9df35ecd08845b4f570eaebfeb8151_108388_300x200_fit_box_3.png" width="292" height="200" alt="Crear un componente en Weblate" title="Crear un componente en Weblate"  class="lozad "></a></p>
-<figcaption>Creación de un componente en Weblate</figcaption>
-</figure>
-</div>
-<p>Este es un ejemplo de archivo original <em>properties</em> de Java con varias cadenas a traducir.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">key1=Hello World&#10;</span></span><span class="line"><span class="cl">key2=Hello World&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>web.properties</span>
-    </div>
-</div>
-<p>El siguiente paso es definir los idiomas deseados en los que realizar la traducción del componente con el botón <em>Comenzar una traducción nueva</em>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-component-01_hu9772a45d7ed417061e1b7d692f2e3ac3_80053_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componente en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-component-01_hu9772a45d7ed417061e1b7d692f2e3ac3_80053_300x200_fit_box_3.png" width="292" height="200" alt="Componente en Weblate" title="Componente en Weblate"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-component-02_hua7147cfc8426c4e80237fdb6d6fbabe2_82029_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componente en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-component-02_hua7147cfc8426c4e80237fdb6d6fbabe2_82029_300x200_fit_box_3.png" width="292" height="200" alt="Componente en Weblate" title="Componente en Weblate"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-start-translation_hu3554153bd5b74437c67986df42d40ea8_102543_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Iniciar una traducción en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-start-translation_hu3554153bd5b74437c67986df42d40ea8_102543_300x200_fit_box_3.png" width="292" height="200" alt="Iniciar una traducción en Weblate" title="Iniciar una traducción en Weblate"  class="lozad "></a></p>
-<figcaption>Componente e iniciar una traducción en Weblate</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-component-03_hud853787990e00023427caa78440cc02a_92077_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componente en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-component-03_hud853787990e00023427caa78440cc02a_92077_300x200_fit_box_3.png" width="292" height="200" alt="Componente en Weblate" title="Componente en Weblate"  class="lozad "></a></p>
-<figcaption>Componente en Weblate</figcaption>
-</figure>
-</div>
-<p>La herramienta de traducción muestra la cadena a traducir del archivo fuente de traducciones, lac clave de la cadena y múltiples herramientas para asistir en la traducción. Algunas de estas herramientas de asistencia en la traducción son un glosario de términos para que la traducción sea consistente, sugerencias a partir de otras cadenas iguales o similares ya traducidas, comentarios, un historial o como se ha traducido en otros idiomas además de permitir adjuntar una captura de pantalla con el contexto en el que se muestra la cadena.</p>
-<p>Se ofrecen también un filtro para buscar cadenas por su estado o por coincidencias en la traducción de la cadena origen o en las cadenas traducidas de los diferentes idiomas o según la fecha de traducción.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-translation_hu75bbb25127ce4a9ed2e65655e7ff0600_177014_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Traducción en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-translation_hu75bbb25127ce4a9ed2e65655e7ff0600_177014_300x200_fit_box_3.png" width="292" height="200" alt="Traducción en Weblate" title="Traducción en Weblate"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-search_hua0d0c87edda07561a11e92e98dfdab26_169649_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Búsqueda en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-search_hua0d0c87edda07561a11e92e98dfdab26_169649_300x200_fit_box_3.png" width="292" height="200" alt="Búsqueda en Weblate" title="Búsqueda en Weblate"  class="lozad "></a></p>
-<figcaption>Traducción en Weblate</figcaption>
-</figure>
-</div>
-<p>Una vez las cadenas se han traducido y localizado es posible descargar los archivos de recursos localizados a importar en el código fuente de la aplicación, también es posible hacerlo de forma manual o de forma automatizada. Los archivos <em>properties</em> siguen una convención en los nombres de archivos de recursos compuesta por el nombre del recurso, idioma, opcionalmente país y variante separados por una barra baja con el siguiente formato <em>resource_es_ES.properties</em>. La descarga manual se realiza desde <em>Archivos &gt; Descargar archivos de traducción en archivador ZIP</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">key1=Hola mundo&#10;</span></span><span class="line"><span class="cl">key2=Hola mundo&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>web_es.properties</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">key1=Hola mundo&#10;</span></span><span class="line"><span class="cl">key2=Hola mundo&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>web_es-ES.properties</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">key1=Hola mundo&#10;</span></span><span class="line"><span class="cl">key2=Hola mundo&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>web_es-MX.properties</span>
-    </div>
-</div>
-<p>La operación final para completar el flujo de trabajo de traducción es actualizar las cadenas a traducir cuando por modificaciones en la aplicación haya nuevas cadenas por traducir, se hayan modificado existentes o se haya eliminado alguna. La carga del nuevo archivo fuente de traducciones se realiza desde <em>Archivos &gt; Cargar traducción</em> en el idioma base de la traducción, para el caso de que el archivo fuente tenga nuevas cadenas a traducir hay que seleccionar la opción <em>Reemplazar traducción existente</em>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-update-translations_hud2f558406dce55d8ce30d570478b02d3_144943_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Actualizar traducciones en Weblate"><img src="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/images/weblate-update-translations_hud2f558406dce55d8ce30d570478b02d3_144943_300x200_fit_box_3.png" width="292" height="200" alt="Actualizar traducciones en Weblate" title="Actualizar traducciones en Weblate"  class="lozad "></a></p>
-<figcaption>Actualizar traducciones en Weblate</figcaption>
-</figure>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals">Localization and Plurals</a></li>
-<li><a href="https://unicode-org.github.io/cldr-staging/charts/37/supplemental/language_plural_rules.html">Language Plural Rules</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>
