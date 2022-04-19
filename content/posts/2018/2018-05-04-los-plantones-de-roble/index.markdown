@@ -11,7 +11,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "logotype:quercus-robur.png"
-tags: ["jardineria", "fuera-de-tema"]
+tags: ["fuera-de-tema"]
 series: ["quercus-robur"]
 ---
 

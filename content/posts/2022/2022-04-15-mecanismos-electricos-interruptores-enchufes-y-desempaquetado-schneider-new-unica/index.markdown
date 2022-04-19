@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imageHead: "image:schneider-new-unica.jpg"
 imagePost: "image:schneider-750.png"
-tags: ["planeta-codigo"]
+tags: []
 series: ["desempaquetado-otros"]
 summary: "Los mecanismos de la instalación eléctrica que tenía de mi vivienda ya tienen alguno más de 20 años, con el uso y paso del tiempo algunos interruptores estaban sucios y ni aún intentando limpiarlos quedaban completamente limpios, por otro lado un par de interruptores me estaban haciendo ruido y arco eléctrico con la consecuencia de que alguna bombilla se me estaban fundiendo no cada más de tres o más años que duran las bombillas LED sino en menos de un año. Por estos motivos y también por el motivo estético he reemplazado tanto los interruptores como los enchufes. Reemplazar los mecanismos eléctricos no es difícil con uno mínimos conocimientos pero por seguridad al manipular elementos eléctricos hay que conocerlos y no tener ninguna duda ni cometer ningún error para no tener un accidente."
 ---
