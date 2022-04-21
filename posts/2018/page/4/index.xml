@@ -21,8 +21,7 @@
         <content type="html">
         <![CDATA[<p><strong>Las aplicaciones Java se distribuyen en uno o varios archivos <em>jar</em>. Si queremos facilitar la distribución de la aplicación con un único archivo <em>jar</em> existe la posibilidad de reempaquetar el <em>jar</em> de la aplicación y sus dependencias en tiempo de ejecución en un nuevo archivo <em>jar</em> que lo contenga todo, a este nuevo <em>jar</em> se le conoce como <em>uberjar</em> o <em>fatjar</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La forma de distribuir el código compilado a <em>bytecode</em> en Java es a través de archivos de extensión <em>jar</em>. Los archivos <em>jar</em> no son más que archivos comprimidos den formato <em>zip</em>. Si se les cambia de extensión y se descomprimen se extrae su contenido seguramente con una buena cantidad de archivos de extensión <em>class</em> que es la extensión para los archivos Java compilados a <em>bytecode</em> y que la máquina virtual interpreta para su ejecución. Las librerías que use la aplicación también se deben distribuir junto a esta para que funcione, por lo que la aplicación se distribuirá en forma de una colección de archivos <em>jar</em>.</p>
 <p>Una aplicación distribuida en forma de múltiples archivos archivos <em>jar</em> se ejecuta con una línea de comandos como la siguiente en la que el parámetro <em>-cp</em> indica las ubicaciones donde se buscarán librerías <em>jar</em> y archivos <em>class</em> si se distribuyen de forma individual, el segundo parámetro indica la clase que contiene el método <em>main</em> que inicia la aplicación. Previamente hay que generar el artefacto del proyecto con <a href="https://gradle.org/">Gradle</a>.</p>
@@ -41,8 +40,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_huc5e97e866c8f221ce837f09f2c7241ed_30113_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación de ejemplo ejecutada con classpath"><img src="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_huc5e97e866c8f221ce837f09f2c7241ed_30113_650x450_fit_box_3.png" width="650" height="211" alt="Aplicación de ejemplo ejecutada con classpath" title="Aplicación de ejemplo ejecutada con classpath"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_huc5e97e866c8f221ce837f09f2c7241ed_30113_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación de ejemplo ejecutada con classpath"><img src="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-classpath_huc5e97e866c8f221ce837f09f2c7241ed_30113_650x450_fit_box_3.png" width="650" height="211" alt="Aplicación de ejemplo ejecutada con classpath" title="Aplicación de ejemplo ejecutada con classpath"  class="lozad "></a></p>
 <figcaption>Aplicación de ejemplo ejecutada con classpath</figcaption>
 </figure>
 </div>
@@ -90,8 +88,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hua368d34e22c6b491003ab57badfbc0e7_27343_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación de ejemplo ejecutada con uberjar"><img src="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hua368d34e22c6b491003ab57badfbc0e7_27343_650x450_fit_box_3.png" width="650" height="211" alt="Aplicación de ejemplo ejecutada con uberjar" title="Aplicación de ejemplo ejecutada con uberjar"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hua368d34e22c6b491003ab57badfbc0e7_27343_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación de ejemplo ejecutada con uberjar"><img src="https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/images/java-jar-uberjar_hua368d34e22c6b491003ab57badfbc0e7_27343_650x450_fit_box_3.png" width="650" height="211" alt="Aplicación de ejemplo ejecutada con uberjar" title="Aplicación de ejemplo ejecutada con uberjar"  class="lozad "></a></p>
 <figcaption>Aplicación de ejemplo ejecutada con uberjar</figcaption>
 </figure>
 </div>
@@ -134,8 +131,7 @@
         <content type="html">
         <![CDATA[<p><strong>Hugo es un de las mejores herramientas en la categoría de generadores de páginas web estáticas, también puede utilizarse para generar bitácoras. Su fácil instalación, rapidez, personalización o su gran sistema de plantillas y taxonomía son varias de sus características destacadas. Con Hugo conseguí resolver varias de las necesidades que tenía para Blog Bitix, la gestión de enlaces internos y externos, personalización de diseño y procesado de imágenes.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
 </div>
 <p>En diciembre del 2013 pase de usar <a href="https://www.blogger.com/">Blogger</a> a usar <a href="http://octopress.org/">Ocotpress</a> junto con <a href="https://pages.github.com/">GitHub Pages</a> para el hospedaje. En mayo del 2015 modifiqué mi bitácora para usar en vez de <a href="http://octopress.org/">Octopress</a> la herramienta equivalente <a href="https://gohugo.io/">Hugo</a>, ambas sirven para generar sitios web estáticos formados únicamente por HTML, CSS, imágenes, documentos y JavaScript. Tanto Octopress, <a href="https://jekyllrb.com/">Jekyll</a> como Hugo y otros como <a href="https://docs.getpelican.com/en/stable/">Pelican</a> son similares, a partir de archivos normalmente en formato <em>markdown</em> genera el HTML de la página web o bitácora junto con los recursos estáticos que necesite. Cada una de estas opciones son adecuadas para páginas de presencia en internet y bitácoras.</p>
 <p>Varían en el lenguaje de programación que emplean, Octopress usa <a href="https://www.ruby-lang.org/es/">Ruby</a> y Hugo usa <a href="https://golang.org/">Go</a>, y el formato de las plantillas que utilizan para personalizar la generación del contenido. La <a href="https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/">migración desde Blogger a Octopress</a> que hice en 2013 me supuso una gran mejora al editar los artículos. La edición de los artículos se puede hacer con cualquier editor de textos en la computadora local en vez de usar una editor en un navegador mucho más limitado y lento, además de editar el texto la gestión de las imágenes es mucho más simple al tratarse como simples archivos que basta colocar entre el código fuente de la bitácora que usará el generador para producir la página web o bitácora y no menos importante aprovechar la corrección ortográfica de las palabras que en mi caso hago con <a href="https://www.vim.org/">vim</a>, no me imagino la gran cantidad de errores que tendré en los artículos de Blogger y no me habré dado cuenta a pesar de siempre leer un par de veces cada artículo antes de publicarlo. El <a href="https://picodotdev.github.io/blog-bitix/2015/05/nuevo-diseno-en-blog-bitix/">cambio de Octopress a Hugo</a> más tarde me permitió otros aspectos importantes a la hora de editar los artículos.</p>
@@ -175,8 +171,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <p>Dada una consulta con los datos a recuperar <a href="https://graphql.org/">GraphQL</a> hace una llamada al correspondiente <em>resolver</em> o <em>data fecher</em> para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un <em>java bean</em> esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.</p>
 <p>Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">artículos sobre GraphQL</a> de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al <em>resolver</em> que recupera los comentarios. En este ejemplo no ya que están los datos en memoria y no se usa una base de datos pero si recuperar los comentarios de cada libro supusiera una consulta SQL en una base de datos relacional (o tráfico de red en una base de datos NoSQL u otro servicio) y la lista de libros devuelta fuese grande cada vez que se realizará esta consulta el número de sentencias SQL a ejecutar sería grande y el tiempo de respuesta pobre y con una carga mayor para el servidor de base de datos.</p>
@@ -249,8 +244,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
 <p>Los navegadores web utilizan la palabra clave sentencia <em>debugger;</em> como punto de ruptura para iniciar el depurado de un código JavaScript. En vez de poner el punto de ruptura desde el navegador utilizando la herramienta de depuración para desarrolladores con esta instrucción se puede poner en el código fuente donde se desee, de esta forma se evita buscar entre los múltiples recursos que haya cargados en la página e ir a la línea en la que se desea iniciar la depuración poniendo un punto de ruptura.</p>
 <p>Suponiendo que se desea poner un punto de ruptura en un código JavaScript hay que editar el archivo JavaScript de código fuente e incluir la sentencia <em>debugger;</em> como en el siguiente caso. Cuando el navegador ejecute esa sentencia iniciará, tiendo las herramientas de depuración abiertas, el depurador.</p>
@@ -262,8 +256,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/depurar-codigo-javascript-con-la-instruccion-debugger/images/javascript-debugger_hu846d34e90b5e643f744d4823c28f732f_278539_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="JavaScript Debugger"><img src="https://picodotdev.github.io/blog-bitix/2018/05/depurar-codigo-javascript-con-la-instruccion-debugger/images/javascript-debugger_hu846d34e90b5e643f744d4823c28f732f_278539_300x200_fit_box_3.png" width="300" height="176" alt="JavaScript Debugger" title="JavaScript Debugger"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/depurar-codigo-javascript-con-la-instruccion-debugger/images/javascript-debugger_hu846d34e90b5e643f744d4823c28f732f_278539_2560x1440_fit_box_3.png" data-gallery="" title="JavaScript Debugger"><img src="https://picodotdev.github.io/blog-bitix/2018/05/depurar-codigo-javascript-con-la-instruccion-debugger/images/javascript-debugger_hu846d34e90b5e643f744d4823c28f732f_278539_300x200_fit_box_3.png" width="300" height="176" alt="JavaScript Debugger" title="JavaScript Debugger"  class="lozad "></a></p>
 <figcaption>JavaScript Debugger</figcaption>
 </figure>
 </div>
@@ -296,12 +289,10 @@
         <content type="html">
         <![CDATA[<p><strong>Internet es la revolución de finales del sigo XX e inicio del siglo XXI equivalente a la revolución industrial de los siglos anteriores. Está transformando la sociedad y cambiando aquellos sectores en los que se adentra.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amazon.svg" width="350" height="70" alt="Amazon" title="Amazon"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amazon.svg" width="350" height="70" alt="Amazon" title="Amazon"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elcorteingles.svg" width="400" height="94" alt="El Corte Inglés" title="El Corte Inglés"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elcorteingles.svg" width="400" height="94" alt="El Corte Inglés" title="El Corte Inglés"  class=""></p>
 </div>
 <p>Inicialmente la <em>world wide web</em> permitía acceder y compartir información de forma instantánea a nivel planetario. Uno de los primeros sectores cambiados por internet fue el de la música que junto con el formato de archivo <em>mp3</em> permitió compartir entre los usuarios toda su colección de música. Al igual que la sustitución del correo tradicional por carta por el correo electrónico y la digitalización de documentos con el consiguiente ahorro en papel.</p>
 <p>En un primer momento en que la industria no ofrecía y se mostraba contraria a lo que los usuarios obtenían por otras vías estos optaron por acceder a la música a través de programas de compartición de archivos vía <a href="https://www.emule-project.net">eMule</a> o <a href="https://es.wikipedia.org/wiki/BitTorrent">BitTorrent</a>, a día de hoy ya se ofrecen plataformas en internet para acceder a la música sin necesidad de violar los derechos de autor. Aún con las campañas de cierre de web dedicadas a contener archivos para acceder a contenidos mediante torrent y más posibilidades de acceder a contenidos sin violar los derechos de autor siempre existirá un nivel de de lo denominado como <em>piratería</em>. <a href="https://www.spotify.com/es/">Spotify</a>, <a href="https://www.apple.com/es/apple-music/">Apple Music</a> o <a href="https://music.amazon.es/home">Amazon Music</a> son algunas de las plataformas que permiten adquirir canciones individuales o álbumes completos a precios similares a lo que antes de distribuía mediante disco físicos.</p>
@@ -310,8 +301,7 @@
 <p>Los pequeños comercios locales difícilmente pueden competir con estos gigantes e incluso peces gordos como <a href="https://www.elcorteingles.es/">El Corte Inglés</a> se están viendo afectados. Aún ganan en el asesoramiento que uno puede obtener de los dependientes si uno tiene suerte de encontrase uno amable y de poder ver o probar físicamente el producto antes de comprarlo o llevárselo con inmediatez pero en cuanto a catálogo y precio difícilmente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/sobre-el-comercio-electronico-el-corte-ingles-y-amazon/images/the-new-yorker_hu96d32213ea2daf5cd66b1e3eecc0ee5e_144157_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Portada The New Yorker"><img src="https://picodotdev.github.io/blog-bitix/2018/05/sobre-el-comercio-electronico-el-corte-ingles-y-amazon/images/the-new-yorker_hu96d32213ea2daf5cd66b1e3eecc0ee5e_144157_650x450_fit_q90_box.jpg" width="306" height="450" alt="Portada The New Yorker" title="Portada The New Yorker"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/sobre-el-comercio-electronico-el-corte-ingles-y-amazon/images/the-new-yorker_hu96d32213ea2daf5cd66b1e3eecc0ee5e_144157_2560x1440_fit_q90_box.jpg" data-gallery="" title="Portada The New Yorker"><img src="https://picodotdev.github.io/blog-bitix/2018/05/sobre-el-comercio-electronico-el-corte-ingles-y-amazon/images/the-new-yorker_hu96d32213ea2daf5cd66b1e3eecc0ee5e_144157_650x450_fit_q90_box.jpg" width="306" height="450" alt="Portada The New Yorker" title="Portada The New Yorker"  class="lozad "></a></p>
 <figcaption>Portada The New Yorker</figcaption>
 </figure>
 </div>
@@ -354,8 +344,7 @@
         <content type="html">
         <![CDATA[<p><strong>A lo largo del tiempo han surgido varias formas de gestionar las excepciones. En C hace muchos años eran con códigos de error, en Java se incorporaron en el lenguaje las excepciones <em>checked</em> o <em>unchecked</em> o la nueva clase Optional en Java cada una con sus ventajas y y algunas deficiencias. Más recientemente usando un tipo tal que <em>Either&lt;L,R&gt;</em> son otra forma para el tratamiento de errores sobre las opciones anteriores.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una parte importante para el correcto funcionamiento de un programa corresponde a la gestión de errores que pueden producirse en su ejecución. Si se trata de un programa que se comunica vía interfaz de red ha de estar preparado ante la situación que la conexión se pierda o se produzcan errores en la transmisión porque por ejemplo se ha desconectado el cable de red o la WiFi no es estable. Si se trata de un programa que guarda datos en el almacenamiento persistente también pueden producirse errores como que el archivo ya existe, el directorio no existe o el espacio del disco se ha agotado. Los posibles casos de error que pueden producirse en un programa son muchos y variados.</p>
 <p>En épocas más antiguas una forma de gestionar los errores era y sigue siendo con códigos de error donde la función o el código de salida de un programa retorna un 0 si no se ha producido ningún error o un número distinto de cero si se ha producido algún error, con un código de salida diferente por cada error. Dado que no hay obligación de gestionar adecuadamente el código de salida a veces no se hace con el consiguiente posible mal funcionamiento del programa. Otra forma de código de error es retornar un valor <em>null</em> en un método o función pero que no tratado adecuadamente producirá una excepción de tipo <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a>. Con la introducción de la clase <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html">Optional</a> entre otras <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades de Java 8</a> los punteros nulos se gestionan más adecuadamente pero en los casos en los que se devuelve un puntero <em>null</em> no se proporciona información de cuál ha sido la condición de error que se ha producido.</p>
@@ -410,16 +399,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/quercus-robur.png" width="175" height="265" alt="Quercus Robur" title="Quercus Robur"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/quercus-robur.png" width="175" height="265" alt="Quercus Robur" title="Quercus Robur"  class=""></p>
 </div>
 <p>Ya han pasado varios meses desde que hice germinar en septiembre varias bellotas de roble, ha pasado el invierno, ha llegado la primavera y ahora tengo unos pequeños plantones de roble. Al germinar y crecer hasta la altura entre unos 10 o 15 centímetros en un primer momento desarrollaron unas siete hojas de un tamaño bastante grande. Con el invierno las hojas se les comenzaron a amarillear y aún en mayo todavía tienen varias aunque en algún momento se les caerán, cuando veo que la hoja ya está bastante amarilla pruebo a ver si la hora se desprende fácilmente sin hacer mucha fuerza.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171001_094507_hudfbc8ac31384d51f12495be1647be235_1510890_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Plantones germinando desde la semilla"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171001_094507_hudfbc8ac31384d51f12495be1647be235_1510890_300x200_fit_q90_box.jpg" width="158" height="200" alt="Plantones germinando desde la semilla" title="Plantones germinando desde la semilla"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171021_144607_hueb63642c6df3bd65d12cd9b1d5506b8d_1724940_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Plantones después de 20 días"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171021_144607_hueb63642c6df3bd65d12cd9b1d5506b8d_1724940_300x200_fit_q90_box.jpg" width="184" height="200" alt="Plantones después de 20 días" title="Plantones después de 20 días"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171001_094507_hudfbc8ac31384d51f12495be1647be235_1510890_2560x1440_fit_q90_box.jpg" data-gallery="" title="Plantones germinando desde la semilla"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171001_094507_hudfbc8ac31384d51f12495be1647be235_1510890_300x200_fit_q90_box.jpg" width="158" height="200" alt="Plantones germinando desde la semilla" title="Plantones germinando desde la semilla"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171021_144607_hueb63642c6df3bd65d12cd9b1d5506b8d_1724940_2560x1440_fit_q90_box.jpg" data-gallery="" title="Plantones después de 20 días"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171021_144607_hueb63642c6df3bd65d12cd9b1d5506b8d_1724940_300x200_fit_q90_box.jpg" width="184" height="200" alt="Plantones después de 20 días" title="Plantones después de 20 días"  class="lozad "></a></p>
 <figcaption>Plantones germinando y después de 20 días</figcaption>
 </figure>
 </div>
@@ -427,51 +413,40 @@
 <p>Después de recoger un montón de bellotas mi intención era hacer germinar otra tanda en enero pero cuando llegó esa fecha e hice la prueba de viabilidad de las semillas todas flotaban al sumergirlas en agua y cuando esto ocurre quiere decir que han perdido su poder de germinación con que por la experiencia que he tenido este año cuando recoja una nueva cosecha de bellotas las haré germinar sin esperar muchos días.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171230_171135_hu3976fc538220ee943b1009d148a5bfda_3238995_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Roble sin hojas"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171230_171135_hu3976fc538220ee943b1009d148a5bfda_3238995_300x200_fit_q90_box.jpg" width="150" height="200" alt="Roble sin hojas" title="Roble sin hojas"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_165558_hud5c0e4646d5b99965f54b184537e2379_4424699_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Roble brotando"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_165558_hud5c0e4646d5b99965f54b184537e2379_4424699_300x200_fit_q90_box.jpg" width="150" height="200" alt="Roble brotando" title="Roble brotando"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180429_160000_hu85fcaf2ce3add6717a290bb14be7098c_1945750_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Roble después de un mes de empezar a brotar"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180429_160000_hu85fcaf2ce3add6717a290bb14be7098c_1945750_300x200_fit_q90_box.jpg" width="150" height="200" alt="Roble después de un mes de empezar a brotar" title="Roble después de un mes de empezar a brotar"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171230_171135_hu3976fc538220ee943b1009d148a5bfda_3238995_2560x1440_fit_q90_box.jpg" data-gallery="" title="Roble sin hojas"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20171230_171135_hu3976fc538220ee943b1009d148a5bfda_3238995_300x200_fit_q90_box.jpg" width="150" height="200" alt="Roble sin hojas" title="Roble sin hojas"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_165558_hud5c0e4646d5b99965f54b184537e2379_4424699_2560x1440_fit_q90_box.jpg" data-gallery="" title="Roble brotando"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_165558_hud5c0e4646d5b99965f54b184537e2379_4424699_300x200_fit_q90_box.jpg" width="150" height="200" alt="Roble brotando" title="Roble brotando"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180429_160000_hu85fcaf2ce3add6717a290bb14be7098c_1945750_2560x1440_fit_q90_box.jpg" data-gallery="" title="Roble después de un mes de empezar a brotar"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180429_160000_hu85fcaf2ce3add6717a290bb14be7098c_1945750_300x200_fit_q90_box.jpg" width="150" height="200" alt="Roble después de un mes de empezar a brotar" title="Roble después de un mes de empezar a brotar"  class="lozad "></a></p>
 <figcaption>Roble sin hojas, brotando y después de un mes de empezar a brotar</figcaption>
 </figure>
 </div>
 <p>Así han empezado a brotar los plantones de nuevo en primavera. Tenía dudas de si realmente los había cuidado bien sobre todo en la cantidad de agua, si han empezado a brotar en primavera tan mal no los he tratado.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180324_111057_hu8b224f13c944994d8415ff87b590a1c2_506198_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Yemas germinando por primavera"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180324_111057_hu8b224f13c944994d8415ff87b590a1c2_506198_300x200_fit_q90_box.jpg" width="169" height="200" alt="Yemas germinando por primavera" title="Yemas germinando por primavera"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164111_hu3874e9fdba1bcc54d93e254c360da160_701414_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Yemas germinando por primavera"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164111_hu3874e9fdba1bcc54d93e254c360da160_701414_300x200_fit_q90_box.jpg" width="136" height="200" alt="Yemas germinando por primavera" title="Yemas germinando por primavera"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164025_hu33d07fe991a74b8b4d6992eca84048b4_915375_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Yemas germinando por primavera"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164025_hu33d07fe991a74b8b4d6992eca84048b4_915375_300x200_fit_q90_box.jpg" width="134" height="200" alt="Yemas germinando por primavera" title="Yemas germinando por primavera"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180324_111057_hu8b224f13c944994d8415ff87b590a1c2_506198_2560x1440_fit_q90_box.jpg" data-gallery="" title="Yemas germinando por primavera"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180324_111057_hu8b224f13c944994d8415ff87b590a1c2_506198_300x200_fit_q90_box.jpg" width="169" height="200" alt="Yemas germinando por primavera" title="Yemas germinando por primavera"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164111_hu3874e9fdba1bcc54d93e254c360da160_701414_2560x1440_fit_q90_box.jpg" data-gallery="" title="Yemas germinando por primavera"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164111_hu3874e9fdba1bcc54d93e254c360da160_701414_300x200_fit_q90_box.jpg" width="136" height="200" alt="Yemas germinando por primavera" title="Yemas germinando por primavera"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164025_hu33d07fe991a74b8b4d6992eca84048b4_915375_2560x1440_fit_q90_box.jpg" data-gallery="" title="Yemas germinando por primavera"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180329_164025_hu33d07fe991a74b8b4d6992eca84048b4_915375_300x200_fit_q90_box.jpg" width="134" height="200" alt="Yemas germinando por primavera" title="Yemas germinando por primavera"  class="lozad "></a></p>
 <figcaption>Yemas y germinando por primavera</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083246_hu6a4c8f4ff21ed7a01f9fbd5b6d1475ec_2361253_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Plantones de roble"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083246_hu6a4c8f4ff21ed7a01f9fbd5b6d1475ec_2361253_300x200_fit_q90_box.jpg" width="166" height="200" alt="Plantones de roble" title="Plantones de roble"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083257_hu01a24fbf60d58ae3ff9277afef051053_1217781_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Plantones de roble"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083257_hu01a24fbf60d58ae3ff9277afef051053_1217781_300x200_fit_q90_box.jpg" width="111" height="200" alt="Plantones de roble" title="Plantones de roble"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083305_hu5b72e515a9e4f358b0fcaef5d5a00230_1499804_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Plantones de roble"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083305_hu5b72e515a9e4f358b0fcaef5d5a00230_1499804_300x200_fit_q90_box.jpg" width="161" height="200" alt="Plantones de roble" title="Plantones de roble"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083246_hu6a4c8f4ff21ed7a01f9fbd5b6d1475ec_2361253_2560x1440_fit_q90_box.jpg" data-gallery="" title="Plantones de roble"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083246_hu6a4c8f4ff21ed7a01f9fbd5b6d1475ec_2361253_300x200_fit_q90_box.jpg" width="166" height="200" alt="Plantones de roble" title="Plantones de roble"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083257_hu01a24fbf60d58ae3ff9277afef051053_1217781_2560x1440_fit_q90_box.jpg" data-gallery="" title="Plantones de roble"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083257_hu01a24fbf60d58ae3ff9277afef051053_1217781_300x200_fit_q90_box.jpg" width="111" height="200" alt="Plantones de roble" title="Plantones de roble"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083305_hu5b72e515a9e4f358b0fcaef5d5a00230_1499804_2560x1440_fit_q90_box.jpg" data-gallery="" title="Plantones de roble"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180503_083305_hu5b72e515a9e4f358b0fcaef5d5a00230_1499804_300x200_fit_q90_box.jpg" width="161" height="200" alt="Plantones de roble" title="Plantones de roble"  class="lozad "></a></p>
 <figcaption>Plantones de roble</figcaption>
 </figure>
 </div>
 <p>Los he estado regando con un pequeño tapón para echar aproximadamente la misma medida de agua siempre, una vez a la semana con un tapón, algunas veces dos medidas.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180504_184743_huf386b4c3a783364abd784b48cb66d9c4_514153_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Medida de agua para el riego con tapón"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180504_184743_huf386b4c3a783364abd784b48cb66d9c4_514153_300x200_fit_q90_box.jpg" width="165" height="200" alt="Medida de agua para el riego con tapón" title="Medida de agua para el riego con tapón"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180504_184743_huf386b4c3a783364abd784b48cb66d9c4_514153_2560x1440_fit_q90_box.jpg" data-gallery="" title="Medida de agua para el riego con tapón"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20180504_184743_huf386b4c3a783364abd784b48cb66d9c4_514153_300x200_fit_q90_box.jpg" width="165" height="200" alt="Medida de agua para el riego con tapón" title="Medida de agua para el riego con tapón"  class="lozad "></a></p>
 <figcaption>Medida de agua para el riego con tapón</figcaption>
 </figure>
 </div>
 <p>Inicialmente los tiestos que pretendía utilizar era un tetrabrik de leche de un litro rectangulares pero encontré otros también de un litro un poco más altos y finalmente estos fueron los que estoy utilizando. En la base del tiesto les hice unos agujeros y en el fondo les puse un poco de papel de cocina para que la tierra no se saliese. No se si será lo más adecuado. La tierra de sustrato la compré en <a href="https://amzn.to/2flFhHA">Amazon</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20170930_085351_hu51152f0f1ff65c66f954a21ac039892c_902767_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Tiestos"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20170930_085351_hu51152f0f1ff65c66f954a21ac039892c_902767_300x200_fit_q90_box.jpg" width="103" height="200" alt="Tiestos" title="Tiestos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20170930_085351_hu51152f0f1ff65c66f954a21ac039892c_902767_2560x1440_fit_q90_box.jpg" data-gallery="" title="Tiestos"><img src="https://picodotdev.github.io/blog-bitix/2018/05/los-plantones-de-roble/images/IMG_20170930_085351_hu51152f0f1ff65c66f954a21ac039892c_902767_300x200_fit_q90_box.jpg" width="103" height="200" alt="Tiestos" title="Tiestos"  class="lozad "></a></p>
 <figcaption>Tiestos</figcaption>
 </figure>
 </div>
@@ -498,8 +473,7 @@
         <content type="html">
         <![CDATA[<p><strong>Apache Tapestry es uno de los mejores <em>frameworks</em> web para Java que he usado, sin embargo, también tiene algún incordio o curiosidad. Una de ellas es que las plantillas han de ser XML bien formado y en este caso que comento en el que necesitaríamos una plantilla con etiquetas desbalanceadas nos obliga a buscar una solución, esta es la que uso.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Las plantillas en <a href="https://tapestry.apache.org/">Apache Tapestry</a> son XHTML, esto quiere decir que al ser <a href="https://es.wikipedia.org/wiki/Validaci%C3%B3n_XML#Documento_Bien_Formado">archivos xml han de estar bien formados</a> con sus etiquetas bien balanceadas y anidadas. Esto tiene la ventaja de que Tapestry nos avisará cuando se intente generar código HTML mal formado con el contenido de plantilla, una especie de compilación que si no es correcta no pasará desapercibida como en otros <em>frameworks</em> y que puede generar otro tipo de errores. Sin embargo, también tiene una desventaja y es que si necesitamos generar una etiqueta de inicio dentro de un componente <em>if</em> la plantilla no será válida.</p>
 <p>Supongamos que queremos generar un contenido a tres columnas de una serie de elementos, en cada tercer elemento de la fila tendremos que cerrar la fila anterior y abrir una nueva. El ejemplo de lo que no se puede hacer es el siguiente:</p>
@@ -559,20 +533,17 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>El <em>prompt</em> de la terminal es el símbolo del sistema que precede al comando que introducimos en la terminal y por defecto indica el directorio de trabajo que utilizarán los comandos y el directorio que utilizarán las rutas relativas. El <em>prompt</em> del intérprete de comandos <em>Bash</em> se puede personalizar para por ejemplo modificar el color de su texto y la información que incluye con las preferencias del usuario.</p>
 <p>El <em>prompt</em> se configura con la variable de entorno <em>PS1</em> que en <em>Bash</em> está en el directorio personal definido en el archivo <em>.bashrc</em>. Los colores se especifican con una secuencia de caracteres y números que forman códigos de escape que son interpretados de forma especial, estas secuencias están mezclados con las secuencias de la información a mostrar. Como conocer las secuencias de caracteres con los códigos de escape ANSI para los colores y letras para la información es complicado de escribir o conocer al detalle en la web <a href="https://www.kirsle.net/wizards/ps1.html">Bash $PS1 Generator</a> hay un asistente que facilita el crear un <em>prompt</em> a nuestro gusto de forma sencilla y correcta.</p>
 <p>El siguiente es el que utilizo en mi sistema con colores, el nombre del usuario, el nombre sistema y el directorio de trabajo actual.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal personalizado"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado" title="Prompt de la terminal personalizado"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal personalizado"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado" title="Prompt de la terminal personalizado"  class="lozad "></a></p>
 <figcaption>Prompt de la terminal personalizado</figcaption>
 </figure>
 </div>
@@ -599,16 +570,14 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal personalizado con el resultado de un comando"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado con el resultado de un comando" title="Prompt de la terminal personalizado con el resultado de un comando"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal personalizado con el resultado de un comando"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado con el resultado de un comando" title="Prompt de la terminal personalizado con el resultado de un comando"  class="lozad "></a></p>
 <figcaption>Prompt de la terminal personalizado con el resultado de un comando</figcaption>
 </figure>
 </div>
 <p>Otro caso habitual es añadir la rama de git del directorio actual de trabajo y si esta tiene cambios como comento en <a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</a>. El <em>script</em> necesario que proporciona <a href="https://git-scm.com/">Git</a> es más complejo que el caso anterior pero con la misma finalidad, el <em>script</em> está en <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh">git-prompt.sh</a> y requiere modificar la variable de entorno <em>PS1</em> o bien <em>PROMPT_COMMAND</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal por defecto"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal por defecto"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto"  class="lozad "></a></p>
 <figcaption>Prompt de la terminal personalizado en carpeta de git</figcaption>
 </figure>
 </div>
@@ -638,8 +607,7 @@
         <content type="html">
         <![CDATA[<p><strong>Con la clase <em>Optional</em> añadida en el JDK en la versión 8 del lenguaje Java se puede evitar una de las excepciones más comunes que se produce cuando se hace uso de una referencia nula a un objeto.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una de las excepciones que más se producen en un programa hecho con el lenguaje Java es la conocida <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a> que ocurre cuando se hace uso de una variable que referencia a un objeto pero que el contenido de la variable es <em>null</em>, sin valor o sin contener una referencia a un objeto de modo que la llamada al método no es posible. La excepción <em>NullPointerException</em> extiende de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> por lo que es una <em>unchecked exception</em> y por ello no es necesario capturarla o lanzarla, cuando se produce hay un error en el programa.</p>
 <p>Entre las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades que Java 8 incluyó en el lenguaje y JDK</a> está la inclusión de la clase <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html">Optional</a> con la que haciendo uso de ella se pueden evitar los <em>NullPointerException</em>. Un objeto de tipo <em>Optional</em> contiene o no una referencia a otro tipo de objeto. Por ejemplo, una variable de tipo <em>Optional&lt;String&gt;</em> contiene una referencia a un objeto <em>Optional</em> que a su vez contiene o no una referencia a una cadena <em>String</em>. El uso de la variable <em>Optional</em> no producirá un <em>NullPointerException</em> y con sus métodos es posible saber si contiene o no una referencia al tipo usado en el genérico. Con el método <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html#isPresent%28%29">isPresent()</a> es posible saber si el <em>Optional</em> contiene una referencia, con <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html#orElse%28T%29">orElse()</a> y <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html#orElseGet%28java.util.function.Supplier%29">orElseGet()</a> se obtiene la referencia que indiquemos en caso de que no tenga una referencia y con los métodos estáticos a modo de constructores <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html#of%28T%29">of()</a> y <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html#ofNullable%28T%29">ofNullable()</a> se obtiene respectivamente una instancia de <em>Optional</em> con la referencia indicada que no puede ser nula o un <em>Optional</em> que podría contener una referencia nula.</p>
@@ -680,8 +648,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una de las novedades que incorporó Java 7 es la sentencia <em>try-with-resources</em> con el objetivo de cerrar los recursos de forma automática en la sentencia <em>try-catch-finally</em> y hacer más simple el código. Aquellas variables cuyas clases implementan la interfaz <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a> pueden declararse en el bloque de inicialización de la sentencia <em>try-with-resources</em> y sus métodos <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html#close%28%29">close()</a> serán llamados después del bloque <em>finally</em> como si su código estuviese de forma explícita.</p>
 <p>Un ejemplo de código que lee una línea de un fichero usando la sentencia <em>try-with-resources</em> es la siguiente de Java 7. Como se observa no es necesario llamar de forma explícita al método <em>close</em> para liberar los recursos de la instancia de la clase <a href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedReader.html">BufferedReader</a>.</p>
@@ -743,8 +710,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Las excepciones son una forma de gestionar las condiciones de error que se dan en los programas. En el lenguaje C se utiliza el valor de retorno de la función para determinar la condición de error que se ha producido, el problema es que comprobar el valor de retorno puede ignorarse y la gestión de errores está mezclada con la tarea del programa.</p>
 <p>El lenguaje Java utiliza un <a href="https://picodotdev.github.io/blog-bitix/2017/10/las-excepciones-para-gestionar-errores-con-java/">mecanismo de excepciones</a>, las excepciones son objetos que se lanzan cuando se produce una condición de error. Todas las excepciones en Java heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a> subdividiéndose en <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a> y <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>, las primeras son condiciones de error del sistema y las segundas condiciones de error del programa. A su vez las <em>Exception</em> pueden ser <em>checked</em> si heredan de esta y son aquellas que el compilador fuerza a que sean capturadas no pudiendo ignorarse, han de capturarse en una construcción <em>try catch</em> o declarar que el método puede lanzar la excepción no capturada. Las excepciones <em>unchecked</em> heredan de <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> que heredan a su vez de <em>Exception</em> pero tienen la particularidad de que no es necesario capturarlas ni declararlas como que se pueden lanzar debido a que se consideran condiciones de error en la programación como un acceso a un <em>array</em> fuera de rango que produce un <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBounds</a>, el conocido <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a> cuando se utiliza una referencia nula, otro es <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArithmeticException.html">ArithmeticException</a> que se produce al dividir por 0.</p>
@@ -817,21 +783,17 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>Uno de los sistemas de control de versiones más utilizado es <a href="https://git-scm.com/">Git</a>. <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> es el intérprete de comandos por defecto en la mayoría de distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o <em>prompt</em>.</p>
 <p>El intérprete <a href="https://zsh.sourceforge.net/">Zsh</a> y <a href="https://ohmyz.sh/">Oh-My-Zsh</a> ofrece mediante sus temas soporte para los repositorios de git modificando el símbolo del sistema para mostrar más información acerca del estado. En Bash también es posible añadir soporte para que muestre información como la rama actual en la que se está trabajando, si hay archivos modificados o no añadidos al control de versiones, si hay archivos en el <em>stash</em> y una comparación entre la rama actual y la del origen o <em>upstream</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal por defecto"><img src="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Prompt de la terminal en carpeta git"><img src="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal en carpeta git" title="Prompt de la terminal en carpeta git"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal por defecto"><img src="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal en carpeta git"><img src="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal en carpeta git" title="Prompt de la terminal en carpeta git"  class="lozad "></a></p>
 <figcaption>Prompt de la terminal por defecto y en carpeta de git</figcaption>
 </figure>
 </div>
@@ -881,8 +843,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/slimbook.jpg" width="200" height="86" alt="Slimbook" title="Slimbook"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/slimbook.jpg" width="200" height="86" alt="Slimbook" title="Slimbook"  class=""></p>
 </div>
 <p>Hace unos días <a href="https://slimbook.es/">Slimbook</a> presentaba el nuevo equipo <a href="https://slimbook.es/aio-curve-el-all-in-one-curvo-de-gnu-linux">AIO Curve</a> con una pantalla de 24 pulgadas ampliando su catálogo de productos en una nueva categoría, un todo en uno, <em>all-in-one</em> o AIO. Como es el caso de estos modelos el equipo consta de un monitor en el que en parte trasera de la pantalla está integrada el procesador, memoria, almacenamiento SSD, todas las piezas como salida de red, wifi, audio y conexiones. La características de estos equipos es que no necesitan de mucho espacio, solo el que ocupe el monitor, son silenciosos y requiere de algún cable menos.</p>
 <p>El nuevo modelo que parte de los 849 € con un <a href="https://ark.intel.com/es-es/products/95443/Intel-Core-i5-7200U-Processor-3M-Cache-up-to-3_10-GHz">Intel Core i5-7200</a> y 8 GiB de RAM y de 949 € con un <a href="https://ark.intel.com/es-es/products/95451/Intel-Core-i7-7500U-Processor-4M-Cache-up-to-3_50-GHz-">Intel Core i7-7500</a> con la misma cantidad de RAM. Se le puede ampliar la RAM, poner almacenamiento SSD con interfaz SATA y NVMe así como un disco mecánico para mayor capacidad de almacenamiento y WiFi AC, tiene varios puertos USB 2.0 y 3.0, salida de red ethernet Gigabit y audio. Sin tener que pagar <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">el impuesto Windows</a> y con procesadores Intel aunque con <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">el fallo de seguridad Meltdown y Spectre</a> incluido. La pantalla es de 24 pulgadas en formato algo curvado con una resolución de 1920x1080 con unos bordes de pantalla muy reducidos salvo en la parte inferior.</p>
@@ -894,24 +855,19 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-1_hua0f7e1666c48fe34f77c3117ae953405_426288_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-1_hua0f7e1666c48fe34f77c3117ae953405_426288_650x450_fit_q90_box.jpg" width="650" height="278" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-1_hua0f7e1666c48fe34f77c3117ae953405_426288_2560x1440_fit_q90_box.jpg" data-gallery="" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-1_hua0f7e1666c48fe34f77c3117ae953405_426288_650x450_fit_q90_box.jpg" width="650" height="278" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-2_hue4c6285c6132b953dd6ae7d52ba2348f_274109_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-2_hue4c6285c6132b953dd6ae7d52ba2348f_274109_300x200_fit_q90_box.jpg" width="300" height="172" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-3_hu0d6c9a6f9c76e9f38b10efff8bfa8795_533433_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-3_hu0d6c9a6f9c76e9f38b10efff8bfa8795_533433_300x200_fit_q90_box.jpg" width="300" height="172" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-2_hue4c6285c6132b953dd6ae7d52ba2348f_274109_2560x1440_fit_q90_box.jpg" data-gallery="" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-2_hue4c6285c6132b953dd6ae7d52ba2348f_274109_300x200_fit_q90_box.jpg" width="300" height="172" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-3_hu0d6c9a6f9c76e9f38b10efff8bfa8795_533433_2560x1440_fit_q90_box.jpg" data-gallery="" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-3_hu0d6c9a6f9c76e9f38b10efff8bfa8795_533433_300x200_fit_q90_box.jpg" width="300" height="172" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-4_hu00cf42b4c3d3607816c830104460a3d0_589569_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-4_hu00cf42b4c3d3607816c830104460a3d0_589569_300x200_fit_q90_box.jpg" width="300" height="164" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-5_hu6d31952ed4fdca8e7f1772857b03ec6b_233337_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-5_hu6d31952ed4fdca8e7f1772857b03ec6b_233337_300x200_fit_q90_box.jpg" width="300" height="128" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-4_hu00cf42b4c3d3607816c830104460a3d0_589569_2560x1440_fit_q90_box.jpg" data-gallery="" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-4_hu00cf42b4c3d3607816c830104460a3d0_589569_300x200_fit_q90_box.jpg" width="300" height="164" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-5_hu6d31952ed4fdca8e7f1772857b03ec6b_233337_2560x1440_fit_q90_box.jpg" data-gallery="" title="Slimbook AIO Curve"><img src="https://picodotdev.github.io/blog-bitix/2018/04/sobre-el-slimbook-aio-curve/images/slimbook-curve-5_hu6d31952ed4fdca8e7f1772857b03ec6b_233337_300x200_fit_q90_box.jpg" width="300" height="128" alt="Slimbook AIO Curve" title="Slimbook AIO Curve"  class="lozad "></a></p>
 <figcaption>Slimbook AIO Curve</figcaption>
 </figure>
 </div>
@@ -944,8 +900,7 @@
         <content type="html">
         <![CDATA[<p><strong>Una de las tareas más importante que realizan algunas aplicaciones es el manejo de la entrada y salida ya sea al sistema de ficheros o a la red. Desde las versiones iniciales de Java se ha mejorado soporte añadiendo programación asíncrona de E/S, permitir obtener información de atributos propios del sistema de archivos, reconocimiento de enlaces simbólicos y facilitado de algunas operaciones básicas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En las primeras versiones de Java el sistema de entrada/salida proporcionado en el paquete <a href="https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html"><em>java.io</em></a> era básico. En la versión 1.4 de Java se añadió un nuevo sistema de entrada/salida llamado NIO para suplir algunas de sus deficiencias que posteriormente en Java 7 se mejoró aún más con NIO.2. Entre las mejoras se incluyen permitir navegación de directorios sencillo, soporte para reconocer enlaces simbólicos, leer atributos de ficheros como permisos e información como última fecha de modificación, soporte de entrada/salida asíncrona y soporte para operaciones básicas sobre ficheros como copiar y mover ficheros.</p>
 <p>Las clases principales de esta nueva API para el manejo de rutas, ficheros y operaciones de entrada/salida son las siguientes:</p>

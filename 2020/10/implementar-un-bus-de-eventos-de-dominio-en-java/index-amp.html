@@ -260,7 +260,7 @@
 <p>Una solución es utilizar únicamente la base de datos. Los eventos se guardan en una tabla en la misma transacción que el resto de datos, de tal modo que si la transacción finaliza correctamente los eventos generados están almacenados y si la transacción falla no se guarda ninguno. Una vez los eventos están guardados otro proceso se encarga de emitirlos. Nuevamente este proceso que emite los eventos puede fallar y ocasionar que un evento sea lanzado dos veces pero al menos garantiza que si se ha generado un evento se emita al menos una vez en el sistema. Este es el patón <em>outbox pattern</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Outbox Pattern"><amp-img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_650x450_fit_box_3.png" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern"  class=""></amp-img></a></p>
+<p><a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_2560x1440_fit_box_3.png" data-gallery="" title="Outbox Pattern"><amp-img src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_650x450_fit_box_3.png" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern"  class=""></amp-img></a></p>
 <figcaption>Outbox Pattern</figcaption>
 </figure>
 </div>

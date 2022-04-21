@@ -128,16 +128,16 @@ La comprobación desde el navegador se realiza con JavaScript, con la propiedad 
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -263,8 +263,7 @@ La comprobación desde el navegador se realiza con JavaScript, con la propiedad 
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En una aplicación web dependiendo de las características del cliente si es de escritorio, móvil u otro dispositivo y tamaño, lenguaje o <a href="https://picodotdev.github.io/blog-bitix/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/">dependiendo de la ubicación mediante su dirección IP</a> puede servirse diferente contenido adaptado a las propiedades del cliente.</p>
 <p>La comprobación desde el navegador se realiza con JavaScript, con la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID">window.navigator.userAgent</a> se obtienen propiedades básicas del agente del usuario como navegador, versión y plataforma. Con la librería JavaScript <a href="https://modernizr.com/">Modernizr</a> se obtiene las características que soporta el navegador. Pero el código JavaScript se ejecuta en el cliente y la primera petición de un usuario llega al servidor cuando aún no se ha cargado ninguna página ni código JavaScript, sólo se dispone del agente de usuario, lenguaje preferido y dirección IP con lo que es necesario una librería en el lado de servidor que procese el agente del usuario u otra información que este envíe para actúa en consecuencia.</p>

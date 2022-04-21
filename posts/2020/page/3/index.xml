@@ -21,8 +21,7 @@
         <content type="html">
         <![CDATA[<p><strong>A diferencia de una API basada REST una API basada GraphQL posee un esquema en el que quedan definidos los tipos, propiedades y tipos de esas propiedades. Para suplir las carencias de una API basada en REST se suele utilizar #Swagger como documentación y entorno de pruebas. GraphQL incluye la documentación en el propio código fuente y ofrece un IDE sin necesidad de herramientas adicionales. En el propio esquema de la API basada en GraphQL se pueden añadir descripciones a los tipos y propiedades para mayor detalle.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <p>Una de las mayores dificultades de usar una API es disponer una documentación clara y completa para conocer los <em>endpoints</em> que dispone, los parámetros que acepta, sus tipos y las estructuras de datos devueltas, los códigos de estado y error que devuelve asi como un entorno para proba la API en ejecución. Una API REST no ofrece ningún soporte para suplir sus carencias de documentar toda esta información y se suele recurrir a alguna otra herramienta como <a href="https://swagger.io/">Swagger</a>.</p>
 <p>En <a href="https://graphql.org/">GraphQL</a> mucho de esto se proporciona en la definición del esquema de GraphQL donde quedan definidos los tipos de los que se compone el esquema, las propiedades de esos tipos así como el tipos de datos de esas propiedades, por otro lado el editor <a href="https://github.com/graphql/graphiql">GraphiQL</a> ofrece un pequeño IDE para probar la API con asistencia de código y ver su documentación.</p>
@@ -56,10 +55,8 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-documentation_hu3c11d1febb905ce4b3f1a5687473832a_146324_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Editor GraphiQL mostrando la descripción de los campos"><img src="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-documentation_hu3c11d1febb905ce4b3f1a5687473832a_146324_300x200_fit_box_3.png" width="254" height="200" alt="Editor GraphiQL mostrando la descripción de los campos" title="Editor GraphiQL mostrando la descripción de los campos"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-type_hu375f334319df30779e43f183d7b0ba9f_142215_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consulta e GraphiQL para inspeccionar un tipo"><img src="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-type_hu375f334319df30779e43f183d7b0ba9f_142215_300x200_fit_box_3.png" width="254" height="200" alt="Consulta e GraphiQL para inspeccionar un tipo" title="Consulta e GraphiQL para inspeccionar un tipo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-documentation_hu3c11d1febb905ce4b3f1a5687473832a_146324_2560x1440_fit_box_3.png" data-gallery="" title="Editor GraphiQL mostrando la descripción de los campos"><img src="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-documentation_hu3c11d1febb905ce4b3f1a5687473832a_146324_300x200_fit_box_3.png" width="254" height="200" alt="Editor GraphiQL mostrando la descripción de los campos" title="Editor GraphiQL mostrando la descripción de los campos"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-type_hu375f334319df30779e43f183d7b0ba9f_142215_2560x1440_fit_box_3.png" data-gallery="" title="Consulta e GraphiQL para inspeccionar un tipo"><img src="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/images/graphiql-type_hu375f334319df30779e43f183d7b0ba9f_142215_300x200_fit_box_3.png" width="254" height="200" alt="Consulta e GraphiQL para inspeccionar un tipo" title="Consulta e GraphiQL para inspeccionar un tipo"  class="lozad "></a></p>
 <figcaption>Editor GraphiQL mostrando la descripción de los campos</figcaption>
 </figure>
 </div>
@@ -90,8 +87,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <p>Las APIs devuelven información habitualmente en formato JSON si es reciente y si la API es algo más antigua quizá en XML. En cualquiera de los formatos la información está estructurada en propiedades con un nombre del campo y su valor. El nombre del campo es el que le asignó el diseñador de la API en el momento de crearla. En el momento de consumir la API quizá por adaptarla a su uso, para añadirle más semántica al caso de uso específico o por mayor claridad interese cambiar el nombre de los campos.</p>
 <p>En una API que está siendo usada cambiar el nombre a un campo devuelto o recibido implica cambios incompatibles con versiones anteriores y hace que los consumidores de la API deban modificarse para tener en cuenta el nuevo nombre del campo. En una API REST un cambio de nombre a un campo implica modificar las clases DTO o el código para tener en cuenta el nuevo nombre de campo en la respuesta o en la petición.</p>
@@ -142,12 +138,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/css.svg" width="200" height="209" alt="CSS" title="CSS"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/css.svg" width="200" height="209" alt="CSS" title="CSS"  class=""></p>
 </div>
 <p>Las páginas web están formadas por varios elementos separados, por un lado está el código HTML que forma el contenido de la página con las referencias a elementos externos que use como hojas de estilo CSS, imágenes o archivos JavaScript. Las imágenes son recursos gráficos soportando todos los navegadores los formatos <em>png</em>, <em>jpg</em> para fotos e imágenes vectoriales como <em>svg</em>. Los archivos JavaScript permite incorporar a la página código ejecutable con el propósito de añadir ciertos comportamientos mediante programación. Finalmente, están las hojas de estilo CSS que proporcionan los estilos y cambian el aspecto visual y maquetación de los elementos, el contenido HTML puede ser el mismo pero con una hoja de estilos diferente la visualización muy diferente.</p>
 <p>Las hojas de estilos cambian propiedades de visualización de diferentes elementos como tipo de letra, tamaño de texto, formato, color, alineación, bordes, etc&hellip; La etiqueta <em>h1</em> representa el título principal de la página, con el siguiente código se establecen varias propiedades a cada una de las etiquetas.</p>
@@ -218,16 +212,13 @@
         <content type="html">
         <![CDATA[<p><strong>HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
 </div>
 <p>La empresa <a href="https://www.hashicorp.com/">HashiCorp</a> cataloga las necesidades de las aplicaciones basadas en la computación en la nube u orientadas a microservicios en cuatro aspectos que necesitan: aprovisionamiento, registro y conexión, seguridad y ejecución. HashiCorp en base a estos cuatro aspectos de las aplicaciones ha desarrollado para cada una de ellas una aplicación específica integrable con las otras pero también con la posibilidad de usar cada una de forma individual e independiente que permiten disponer de un centro de datos y cubre varias de las necesidades computacionales de una empresa en entornos modernos basados en nube que son dinámicos y requieren elasticidad.</p>
 <p>En muchas organizaciones los desarrolladores solo se encargan del desarrollo de la aplicación o servicio, del despliegue y administración se encargan los administradores de sistemas. Los centros de datos se operan en base a peticiones entre los desarrolladores y los administradores de sistemas, este modelo organización es lento y propenso a ineficiencias, para evitarlo hay que tratar que los desarrolladores sean lo más autosuficientes posible para operar el entorno de ejecución de sus servicios haciendo que estos no solo desarrollen sus aplicaciones sino que también tengan capacidad de desplegarlas y monitorizarlas.</p>
@@ -243,8 +234,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_650x450_fit_box_3.png" width="650" height="285" alt="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_2560x1440_fit_box_3.png" data-gallery="" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_650x450_fit_box_3.png" width="650" height="285" alt="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"  class="lozad "></a></p>
 <figcaption>Diferencias entre entornos estáticos anteriores y dinámicos nuevos</figcaption>
 </figure>
 </div>
@@ -272,31 +262,23 @@
 <h3 id="servicios-de-hashicorp">Servicios de HashiCorp</h3>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hucb41f3f4a0c4e341c8fa5add26daf72f_433163_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Productos de HashiCorp"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hucb41f3f4a0c4e341c8fa5add26daf72f_433163_200x150_fit_box_3.png" width="200" height="103" alt="Productos de HashiCorp" title="Productos de HashiCorp"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Productos de HashiCorp"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_200x150_fit_box_3.png" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Productos de HashiCorp"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_200x150_fit_box_3.png" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hucb41f3f4a0c4e341c8fa5add26daf72f_433163_2560x1440_fit_box_3.png" data-gallery="" title="Productos de HashiCorp"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-1_hucb41f3f4a0c4e341c8fa5add26daf72f_433163_200x150_fit_box_3.png" width="200" height="103" alt="Productos de HashiCorp" title="Productos de HashiCorp"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_2560x1440_fit_box_3.png" data-gallery="" title="Productos de HashiCorp"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_200x150_fit_box_3.png" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_2560x1440_fit_box_3.png" data-gallery="" title="Productos de HashiCorp"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-products-2_hu941b4f685cfa5efd43f26f6f6c4ba507_301964_200x150_fit_box_3.png" width="200" height="117" alt="Productos de HashiCorp" title="Productos de HashiCorp"  class="lozad "></a></p>
 <figcaption>Productos de HashiCorp</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_huda1232b206f99140993a7a4fc131887b_205943_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Antes y después con Consul"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_huda1232b206f99140993a7a4fc131887b_205943_200x150_fit_box_3.png" width="200" height="135" alt="Antes y después con Consul" title="Antes y después con Consul"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu4179baf61d235b37bc3c87f7b3fc2feb_126149_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Antes y después con Vault"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu4179baf61d235b37bc3c87f7b3fc2feb_126149_200x150_fit_box_3.png" width="200" height="140" alt="Antes y después con Vault" title="Antes y después con Vault"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu6c36a4999c82fd8d966d5a10a753b488_178820_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Antes y después con Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu6c36a4999c82fd8d966d5a10a753b488_178820_200x150_fit_box_3.png" width="192" height="150" alt="Antes y después con Nomad" title="Antes y después con Nomad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_huda1232b206f99140993a7a4fc131887b_205943_2560x1440_fit_box_3.png" data-gallery="" title="Antes y después con Consul"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-consul-before-after_huda1232b206f99140993a7a4fc131887b_205943_200x150_fit_box_3.png" width="200" height="135" alt="Antes y después con Consul" title="Antes y después con Consul"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu4179baf61d235b37bc3c87f7b3fc2feb_126149_2560x1440_fit_box_3.png" data-gallery="" title="Antes y después con Vault"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-vault-before-after_hu4179baf61d235b37bc3c87f7b3fc2feb_126149_200x150_fit_box_3.png" width="200" height="140" alt="Antes y después con Vault" title="Antes y después con Vault"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu6c36a4999c82fd8d966d5a10a753b488_178820_2560x1440_fit_box_3.png" data-gallery="" title="Antes y después con Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-nomad-before-after_hu6c36a4999c82fd8d966d5a10a753b488_178820_200x150_fit_box_3.png" width="192" height="150" alt="Antes y después con Nomad" title="Antes y después con Nomad"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Antes y después con Terraform"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_200x150_fit_box_3.png" width="164" height="150" alt="Antes y después con Terraform" title="Antes y después con Terraform"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ecosistema con Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_200x150_fit_box_3.png" width="164" height="150" alt="Ecosistema con Nomad" title="Ecosistema con Nomad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_2560x1440_fit_box_3.png" data-gallery="" title="Antes y después con Terraform"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_200x150_fit_box_3.png" width="164" height="150" alt="Antes y después con Terraform" title="Antes y después con Terraform"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_2560x1440_fit_box_3.png" data-gallery="" title="Ecosistema con Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-terraform-before-after_hu1a3e99fc282fe180d5fa3b2050b8cada_177982_200x150_fit_box_3.png" width="164" height="150" alt="Ecosistema con Nomad" title="Ecosistema con Nomad"  class="lozad "></a></p>
 <figcaption>Ecosistema con Nomad</figcaption>
 </figure>
 </div>
@@ -335,12 +317,9 @@
 <p>Estos son los esquemas de las arquitecturas de referencia de Consul, Vault y Nomad para configuraciones de producción formado por varios servidores, clientes y regiones o centros de datos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu44169003e1adff259ec31b6c8aa75355_115945_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arquitectura de referencia de Consul"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu44169003e1adff259ec31b6c8aa75355_115945_200x150_fit_box_3.png" width="145" height="150" alt="Arquitectura de referencia de Consul" title="Arquitectura de referencia de Consul"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hub96d9a47201c2cff1173d26e179d39dc_82391_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arquitectura de referencia de Vault"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hub96d9a47201c2cff1173d26e179d39dc_82391_200x150_fit_box_3.png" width="200" height="148" alt="Arquitectura de referencia de Vault" title="Arquitectura de referencia de Vault"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hue8f6b812b8cda77506103d14e4ef96ee_43308_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arquitectura de referencia de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hue8f6b812b8cda77506103d14e4ef96ee_43308_200x150_fit_box_3.png" width="200" height="141" alt="Arquitectura de referencia de Nomad" title="Arquitectura de referencia de Nomad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu44169003e1adff259ec31b6c8aa75355_115945_2560x1440_fit_box_3.png" data-gallery="" title="Arquitectura de referencia de Consul"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-reference-architecture_hu44169003e1adff259ec31b6c8aa75355_115945_200x150_fit_box_3.png" width="145" height="150" alt="Arquitectura de referencia de Consul" title="Arquitectura de referencia de Consul"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hub96d9a47201c2cff1173d26e179d39dc_82391_2560x1440_fit_box_3.png" data-gallery="" title="Arquitectura de referencia de Vault"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-reference-architecture_hub96d9a47201c2cff1173d26e179d39dc_82391_200x150_fit_box_3.png" width="200" height="148" alt="Arquitectura de referencia de Vault" title="Arquitectura de referencia de Vault"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hue8f6b812b8cda77506103d14e4ef96ee_43308_2560x1440_fit_box_3.png" data-gallery="" title="Arquitectura de referencia de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-reference-architecture_hue8f6b812b8cda77506103d14e4ef96ee_43308_200x150_fit_box_3.png" width="200" height="141" alt="Arquitectura de referencia de Nomad" title="Arquitectura de referencia de Nomad"  class="lozad "></a></p>
 <figcaption>Arquitecturas de referencia de Consul, Vault y Nomad</figcaption>
 </figure>
 </div>
@@ -454,8 +433,7 @@
 <p>Vault se comunica con Consul para utilizar el almacén de clave-valor o KV en el que Vault almacena los datos cifrados, Nomad se comunica con Vault para proporcionar a las aplicaciones algunos requerimientos de seguridad y con Consul para obtener datos de su KV y proporcionarlos a las instancias de los servicios, también para registrar en Consul las instancias de los servicios y si lo utilizan proporcionales sus necesidades de comunicación con <em>Consul Connect</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu7e0f4556887a85d7014492c191ac5a11_199415_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu7e0f4556887a85d7014492c191ac5a11_199415_300x250_fit_box_3.png" width="300" height="224" alt="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu7e0f4556887a85d7014492c191ac5a11_199415_2560x1440_fit_box_3.png" data-gallery="" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/virtualbox_hu7e0f4556887a85d7014492c191ac5a11_199415_300x250_fit_box_3.png" width="300" height="224" alt="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" title="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"  class="lozad "></a></p>
 <figcaption>Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant</figcaption>
 </figure>
 </div>
@@ -492,8 +470,7 @@
 <p>Consul tiene la función de servidor DNS con el catálogo de servicios registrados. Para dar acceso a las máquinas virtuales al servidor de nombres DNS de Consul es necesario redirigir el tráfico del puerto 53 al puerto 8600 y modificar el archivo <em>resolv.conf</em>. Esto requiere un poco de configuración en Ubuntu modificando <em>iptables</em> y utilizar <em>iptables-persistent</em> para que los cambios sean permanentes entre reinicios.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_huac6fb6b58138cf8f40ea6c567899a579_105867_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicio DNS de Consul accedido desde el servidor de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_huac6fb6b58138cf8f40ea6c567899a579_105867_300x250_fit_box_3.png" width="300" height="216" alt="Servicio DNS de Consul accedido desde el servidor de Nomad" title="Servicio DNS de Consul accedido desde el servidor de Nomad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_huac6fb6b58138cf8f40ea6c567899a579_105867_2560x1440_fit_box_3.png" data-gallery="" title="Servicio DNS de Consul accedido desde el servidor de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-dns_huac6fb6b58138cf8f40ea6c567899a579_105867_300x250_fit_box_3.png" width="300" height="216" alt="Servicio DNS de Consul accedido desde el servidor de Nomad" title="Servicio DNS de Consul accedido desde el servidor de Nomad"  class="lozad "></a></p>
 <figcaption>Servicio DNS de Consul que expone el catálogo de servicios accedido desde el servidor de Nomad</figcaption>
 </figure>
 </div>
@@ -582,18 +559,14 @@
 <p>Las consolas de administración muestran el estado de centro de datos y con todos los servicios está disponibles.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hucd5d737b76f12ee85ce465ae0112def7_63882_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola web de Consul con los servicios registrados y su estado de salud"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hucd5d737b76f12ee85ce465ae0112def7_63882_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Consul con los servicios registrados y su estado de salud" title="Consola web de Consul con los servicios registrados y su estado de salud"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu8a20f6ed6ab107f307a3ba354fd1a7b8_58226_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola web de Consul con los nodos registrados y su estado de salud"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu8a20f6ed6ab107f307a3ba354fd1a7b8_58226_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Consul con los nodos registrados y su estado de salud" title="Consola web de Consul con los nodos registrados y su estado de salud"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hucd5d737b76f12ee85ce465ae0112def7_63882_2560x1440_fit_box_3.png" data-gallery="" title="Consola web de Consul con los servicios registrados y su estado de salud"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console_hucd5d737b76f12ee85ce465ae0112def7_63882_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Consul con los servicios registrados y su estado de salud" title="Consola web de Consul con los servicios registrados y su estado de salud"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu8a20f6ed6ab107f307a3ba354fd1a7b8_58226_2560x1440_fit_box_3.png" data-gallery="" title="Consola web de Consul con los nodos registrados y su estado de salud"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-console-nodes_hu8a20f6ed6ab107f307a3ba354fd1a7b8_58226_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Consul con los nodos registrados y su estado de salud" title="Consola web de Consul con los nodos registrados y su estado de salud"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu47fc894059bf643b5ee1841f3679b829_45849_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola web de Vault"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu47fc894059bf643b5ee1841f3679b829_45849_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Vault" title="Consola web de Vault"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu3baa982141d2bb7b569d1f3eab3dffb7_46853_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola web de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu3baa982141d2bb7b569d1f3eab3dffb7_46853_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Nomad" title="Consola web de Nomad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu47fc894059bf643b5ee1841f3679b829_45849_2560x1440_fit_box_3.png" data-gallery="" title="Consola web de Vault"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/vault-console_hu47fc894059bf643b5ee1841f3679b829_45849_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Vault" title="Consola web de Vault"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu3baa982141d2bb7b569d1f3eab3dffb7_46853_2560x1440_fit_box_3.png" data-gallery="" title="Consola web de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-console_hu3baa982141d2bb7b569d1f3eab3dffb7_46853_300x250_fit_box_3.png" width="300" height="209" alt="Consola web de Nomad" title="Consola web de Nomad"  class="lozad "></a></p>
 <figcaption>Consolas web de Consul, Vault y Nomad y estados de salud de los servicios y nodos</figcaption>
 </figure>
 </div>
@@ -628,19 +601,15 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hub8d6050723820277433dddbe7b2cbc64_53726_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estado de un job en la consola web de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hub8d6050723820277433dddbe7b2cbc64_53726_300x250_fit_box_3.png" width="300" height="209" alt="Estado de un job en la consola web de Nomad" title="Estado de un job en la consola web de Nomad"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu18471b6e09c62b777f1265e24914b3e0_52377_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu18471b6e09c62b777f1265e24914b3e0_52377_300x250_fit_box_3.png" width="300" height="209" alt="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hub8d6050723820277433dddbe7b2cbc64_53726_2560x1440_fit_box_3.png" data-gallery="" title="Estado de un job en la consola web de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nomad-job-status_hub8d6050723820277433dddbe7b2cbc64_53726_300x250_fit_box_3.png" width="300" height="209" alt="Estado de un job en la consola web de Nomad" title="Estado de un job en la consola web de Nomad"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu18471b6e09c62b777f1265e24914b3e0_52377_2560x1440_fit_box_3.png" data-gallery="" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/nginx_hu18471b6e09c62b777f1265e24914b3e0_52377_300x250_fit_box_3.png" width="300" height="209" alt="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker" title="Servicio de Nginx ejecutado en Nomad como un contenedor de Docker"  class="lozad "></a></p>
 <figcaption>Ejecución, estado de un job con un servicio de Nginx ejecutando en un contenedor de Docker en la consola web de Nomad</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu550da182edc89129de2577701546a57e_69257_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicios en consul con el servicio de Nginx registrado por Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu550da182edc89129de2577701546a57e_69257_300x250_fit_box_3.png" width="300" height="209" alt="Servicios en consul con el servicio de Nginx registrado por Nomad" title="Servicios en consul con el servicio de Nginx registrado por Nomad"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hub36b2b3205cc19448b0ebeb7c5c066eb_95694_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Información de estado del centro de datos obtenido desde la línea de comandos"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hub36b2b3205cc19448b0ebeb7c5c066eb_95694_300x250_fit_box_3.png" width="300" height="216" alt="Información de estado del centro de datos obtenido desde la línea de comandos" title="Información de estado del centro de datos obtenido desde la línea de comandos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu550da182edc89129de2577701546a57e_69257_2560x1440_fit_box_3.png" data-gallery="" title="Servicios en consul con el servicio de Nginx registrado por Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/consul-services-web_hu550da182edc89129de2577701546a57e_69257_300x250_fit_box_3.png" width="300" height="209" alt="Servicios en consul con el servicio de Nginx registrado por Nomad" title="Servicios en consul con el servicio de Nginx registrado por Nomad"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hub36b2b3205cc19448b0ebeb7c5c066eb_95694_2560x1440_fit_box_3.png" data-gallery="" title="Información de estado del centro de datos obtenido desde la línea de comandos"><img src="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/datacenter-commandline-information_hub36b2b3205cc19448b0ebeb7c5c066eb_95694_300x250_fit_box_3.png" width="300" height="216" alt="Información de estado del centro de datos obtenido desde la línea de comandos" title="Información de estado del centro de datos obtenido desde la línea de comandos"  class="lozad "></a></p>
 <figcaption>Servicios en consul con el servicio de Nginx registrado por Nomad e información de estado del centro de datos obtenido desde la línea de comandos</figcaption>
 </figure>
 </div>
@@ -681,12 +650,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD"  class=""></p>
 </div>
 <p>La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/"><em>proxy</em> entre en navegador y la aplicación de <em>backend</em></a> que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación <em>backend</em> usando el protocolo HTTP, <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">añadir autenticación básica a ciertas rutas</a> o utilizar <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">el protocolo HTTP/2</a>.</p>
 <p>Los servidores web no requieren una capacidad de cómputo elevada, para aprovechar al máximo la capacidad e una máquina y para no requerir un servidor web por cada sitio web se utilizan los servidores web virtuales. Un servidor web virtual es un servidor web que sirve el contenido de un sitio web normalmente asociado a un nombre de dominio aunque también es posible estar asociado a una dirección IP. Por ejemplo, empleando servidores web virtuales la misma instancia de servidor web puede servir el contenido de varios sitios web diferentes como <em>site1.127.0.0.1.xip.io</em>, <em>site2.127.0.0.1.xip.io</em> y  <em>site3.127.0.0.1.xip.io</em>. El servidor web obtiene el nombre del dominio por el que es accedido y determina el servidor web al que redirigir la solicitud.</p>
@@ -724,8 +691,7 @@
 <p>En el ejemplo se usa la misma raíz de documentos que el sitio web para <em>localhost</em>, si se añaden archivos de contenido en una raíz de documentos propia para el servidor web virtual el contenido devuelto cambia o si cambia la raíz de documentos al directorio <em>/usr/share/nginx</em> que Nginx no tiene permitido el acceso se observa que cuando se accede al servidor por el nombre del dominio <em>localhost</em> se muestra la página de inicio y cuando se accede por el nombre del dominio <em>www.127.0.0.1.xip.io</em> se devuelve un error <em>HTTP 403 Forbidden</em> por falta de permisos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servidor web virtual en Nginx"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_300x200_fit_box_3.png" width="300" height="196" alt="Servidor web virtual en Nginx" title="Servidor web virtual en Nginx"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_2560x1440_fit_box_3.png" data-gallery="" title="Servidor web virtual en Nginx"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_300x200_fit_box_3.png" width="300" height="196" alt="Servidor web virtual en Nginx" title="Servidor web virtual en Nginx"  class="lozad "></a></p>
 <figcaption>Servidor web virtual en Nginx</figcaption>
 </figure>
 </div>
@@ -746,8 +712,7 @@
 <p>Usando Apache también se accede al sitio web por su nombre de dominio <em>www.127.0.0.1.xip.io</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servidor web virtual en Apache"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_300x200_fit_box_3.png" width="300" height="196" alt="Servidor web virtual en Apache" title="Servidor web virtual en Apache"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_2560x1440_fit_box_3.png" data-gallery="" title="Servidor web virtual en Apache"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_300x200_fit_box_3.png" width="300" height="196" alt="Servidor web virtual en Apache" title="Servidor web virtual en Apache"  class="lozad "></a></p>
 <figcaption>Servidor web virtual en Apache</figcaption>
 </figure>
 </div>
@@ -782,8 +747,7 @@
         <content type="html">
         <![CDATA[<p><strong>Los certificados autofirmados no son suficientes para un entorno de producción. En producción hay que usar certificados firmados por una entidad de confianza. AWS Certificate Manager ofrece la suya pero tiene un coste elevado y los certificados de otras entidades tampoco son baratos. Para certificados de uso interno en una organización que proporcionan comunicaciones seguras OpenSSL permite con una serie de comandos crear una autoridad de certificación o CA en la que los servidores y clientes internos confíen. Las funciones de la CA incluyen crear certificados a partir de las solicitudes de los certificados para los servidores y también la revocación y renovación de certificados.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
 </div>
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
@@ -808,8 +772,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos y directorios de la autoridad de certificación con OpenSSL"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_300x250_fit_box_3.png" width="300" height="202" alt="Archivos y directorios de la autoridad de certificación con OpenSSL" title="Archivos y directorios de la autoridad de certificación con OpenSSL"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_2560x1440_fit_box_3.png" data-gallery="" title="Archivos y directorios de la autoridad de certificación con OpenSSL"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/archivos-ca_hu33cc35349f9d029cdda225fd09a64c32_41594_300x250_fit_box_3.png" width="300" height="202" alt="Archivos y directorios de la autoridad de certificación con OpenSSL" title="Archivos y directorios de la autoridad de certificación con OpenSSL"  class="lozad "></a></p>
 <figcaption>Archivos y directorios de la autoridad de certificación con OpenSSL</figcaption>
 </figure>
 </div>
@@ -899,26 +862,22 @@
 <p>Los navegadores incluyen los certificados de algunas autoridades de certificados en las que se confía. En el caso de crear una CA propia como lo mostrado en este artículo y un certificado para un servidor firmado por esta autoridad de certificados el navegador mostrará una advertencia indicando que el certificado presentado no es de confianza antes de permitir entrar al sitio web, con este mensaje el usuario es consciente de que el certificado del servidor no es de confianza y si el usuario lo desea se permite el acceso al sitio web. Aún así el navegador muestra una advertencia en el icono de seguridad del sitio web de que hay un problema con el certificado.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Advertencia con certificado no de confianza en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_300x250_fit_box_3.png" width="300" height="196" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Advertencia con certificado no de confianza en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_300x250_fit_box_3.png" width="300" height="195" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_2560x1440_fit_box_3.png" data-gallery="" title="Advertencia con certificado no de confianza en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-security-warning_hufe8f9d8a0431282fd659700381041a92_85469_300x250_fit_box_3.png" width="300" height="196" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_2560x1440_fit_box_3.png" data-gallery="" title="Advertencia con certificado no de confianza en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-warning_hue64cb2700b0868b63449437b8bc142f9_77265_300x250_fit_box_3.png" width="300" height="195" alt="Advertencia con certificado no de confianza en Firefox" title="Advertencia con certificado no de confianza en Firefox"  class="lozad "></a></p>
 <figcaption>Advertencia con certificado no de confianza en Firefox</figcaption>
 </figure>
 </div>
 <p>Para eliminar el mensaje de advertencia al acceder al sitio web y la advertencia del icono de seguridad del sitio web hay que instalar en el navegador el certificado de la CA raíz o intermedia. En el navegador web <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> se importa un nuevo certificado de una CA en la que se confía desde la opción <em>Preferencias &gt; Privacidad y seguridad &gt; Ver certificados &gt; Autoridades &gt; Importar</em> en el navegador <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> desde <em>Configuración &gt; Privacidad y seguridad &gt; Gestionar certificados</em>. Por defecto los navegadores web ya incorporan los certificados de varias CA importantes de internet.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Certificados de autoridades de certificación de confianza en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_300x250_fit_box_3.png" width="300" height="200" alt="Certificados de autoridades de certificación de confianza en Firefox" title="Certificados de autoridades de certificación de confianza en Firefox"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_2560x1440_fit_box_3.png" data-gallery="" title="Certificados de autoridades de certificación de confianza en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificates_hu3f247b7f03583946d46a95e4b00c73b3_62141_300x250_fit_box_3.png" width="300" height="200" alt="Certificados de autoridades de certificación de confianza en Firefox" title="Certificados de autoridades de certificación de confianza en Firefox"  class="lozad "></a></p>
 <figcaption>Certificados de autoridades de certificación de confianza en Firefox</figcaption>
 </figure>
 </div>
 <p>Una vez se importa el certificado de la CA el navegador muestra el icono de seguridad del sitio web con el icono sin advertencias indicando que no hay ningún problema de seguridad en la conexión con el sitio web, tampoco se muestra la página inicial de advertencia.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Certificado de confianza y conexión segura en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_300x250_fit_box_3.png" width="300" height="195" alt="Certificado de confianza y conexión segura en Firefox" title="Certificado de confianza y conexión segura en Firefox"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_2560x1440_fit_box_3.png" data-gallery="" title="Certificado de confianza y conexión segura en Firefox"><img src="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/images/firefox-certificate-valid_hua2bad78e16f7f5135943a01bcdd1e7a8_83586_300x250_fit_box_3.png" width="300" height="195" alt="Certificado de confianza y conexión segura en Firefox" title="Certificado de confianza y conexión segura en Firefox"  class="lozad "></a></p>
 <figcaption>Certificado de confianza y conexión segura en Firefox</figcaption>
 </figure>
 </div>
@@ -986,20 +945,17 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache.svg" width="150" height="264" alt="Apache HTTPD" title="Apache HTTPD"  class=""></p>
 </div>
 <p>La autenticación básica o <em>basic auth</em> es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.</p>
 <p>La autenticación básica por seguridad requiere <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">utilizar en el servidor web el protocolo seguro HTTPS</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">obtener un certificado para el nombre del dominio del servidor web</a> ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">configurar un servidor web virtual</a> para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura.</p>
 <p>Cuando un servidor para el acceso a un recurso requiere autenticación básica el navegador muestra una ventana emergente en la que se solicita un usuario y contraseña.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Solicitud de credenciales por el navegador con autenticación básica"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_300x200_fit_box_3.png" width="300" height="193" alt="Solicitud de credenciales por el navegador con autenticación básica" title="Solicitud de credenciales por el navegador con autenticación básica"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_2560x1440_fit_box_3.png" data-gallery="" title="Solicitud de credenciales por el navegador con autenticación básica"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_300x200_fit_box_3.png" width="300" height="193" alt="Solicitud de credenciales por el navegador con autenticación básica" title="Solicitud de credenciales por el navegador con autenticación básica"  class="lozad "></a></p>
 <figcaption>Solicitud de credenciales por el navegador con autenticación básica</figcaption>
 </figure>
 </div>
@@ -1025,10 +981,8 @@
 <p>Si los datos proporcionados no son correctos se devuelve el código de estado <em>401</em> que indica que el acceso no se ha autorizado y se requiere autorización. Si las credenciales son válidas se muestra el recurso solicitado.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Solicitud de credenciales"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_300x200_fit_box_3.png" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_huf1d50a05a82b362bea6942c07bacda72_50623_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Acceso al recurso solicitado"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_huf1d50a05a82b362bea6942c07bacda72_50623_300x200_fit_box_3.png" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_2560x1440_fit_box_3.png" data-gallery="" title="Solicitud de credenciales"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-401_hufeb88d6ffa3015c5aa9875e01d09f1d9_52216_300x200_fit_box_3.png" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_huf1d50a05a82b362bea6942c07bacda72_50623_2560x1440_fit_box_3.png" data-gallery="" title="Acceso al recurso solicitado"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-web_huf1d50a05a82b362bea6942c07bacda72_50623_300x200_fit_box_3.png" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado"  class="lozad "></a></p>
 <figcaption>Solicitud de credenciales y acceso al recurso solicitado</figcaption>
 </figure>
 </div>
@@ -1049,10 +1003,8 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hud0a32989a4341b498270d1870adf55e2_67820_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Solicitud de credenciales"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hud0a32989a4341b498270d1870adf55e2_67820_300x200_fit_box_3.png" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hued13048bcd845fcaf0d503bdfab6e3a3_19802_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Acceso al recurso solicitado"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hued13048bcd845fcaf0d503bdfab6e3a3_19802_300x200_fit_box_3.png" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hud0a32989a4341b498270d1870adf55e2_67820_2560x1440_fit_box_3.png" data-gallery="" title="Solicitud de credenciales"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-401_hud0a32989a4341b498270d1870adf55e2_67820_300x200_fit_box_3.png" width="300" height="193" alt="Solicitud de credenciales" title="Solicitud de credenciales"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hued13048bcd845fcaf0d503bdfab6e3a3_19802_2560x1440_fit_box_3.png" data-gallery="" title="Acceso al recurso solicitado"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/apache-web_hued13048bcd845fcaf0d503bdfab6e3a3_19802_300x200_fit_box_3.png" width="300" height="193" alt="Acceso al recurso solicitado" title="Acceso al recurso solicitado"  class="lozad "></a></p>
 <figcaption>Solicitud de credeciales y acceso al recurso solicitado</figcaption>
 </figure>
 </div>
@@ -1076,8 +1028,7 @@
 <p>El formulario de autenticación solo se presenta una vez una vez introducidas unas credenciales correctas, dado que el protocolo HTTP es un protocolo sin estado el navegador en cada solicitud de cada página y recurso envía la cabecera <em>Authorization</em> que contiene el usuario y contraseña codificadas en base64. Esta cabecera y su valor aunque codificadas no tienen un mecanismo adicional de seguridad por eso es necesario utilizar el protocolo seguro HTTPS cuando se utiliza autenticación básica de modo que los datos incluidos en las cabeceras se transmitan cifrados.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_huf645b6c66ae16ba7b954e7e373c4f2fa_132903_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Cabecera enviada en la petición con las credenciales de acceso al recurso"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_huf645b6c66ae16ba7b954e7e373c4f2fa_132903_300x200_fit_box_3.png" width="300" height="193" alt="Cabecera enviada en la petición con las credenciales de acceso al recurso" title="Cabecera enviada en la petición con las credenciales de acceso al recurso"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_huf645b6c66ae16ba7b954e7e373c4f2fa_132903_2560x1440_fit_box_3.png" data-gallery="" title="Cabecera enviada en la petición con las credenciales de acceso al recurso"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/nginx-header_huf645b6c66ae16ba7b954e7e373c4f2fa_132903_300x200_fit_box_3.png" width="300" height="193" alt="Cabecera enviada en la petición con las credenciales de acceso al recurso" title="Cabecera enviada en la petición con las credenciales de acceso al recurso"  class="lozad "></a></p>
 <figcaption>Cabecera enviada en la petición con las credenciales de acceso al recurso</figcaption>
 </figure>
 </div>
@@ -1098,8 +1049,7 @@
 <p>El servidor web indica al navegador que el recurso solicitado requiere autenticación básica devolviendo en la respuesta el <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status/401">código de estado 401 Unauthorized</a> y la cabecera <em>www-authenticate</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu96ac9785f0db24b400db7522627a28f3_36023_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu96ac9785f0db24b400db7522627a28f3_36023_650x450_fit_box_3.png" width="650" height="307" alt="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu96ac9785f0db24b400db7522627a28f3_36023_2560x1440_fit_box_3.png" data-gallery="" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"><img src="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/images/http-auth_hu96ac9785f0db24b400db7522627a28f3_36023_650x450_fit_box_3.png" width="650" height="307" alt="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica" title="Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica"  class="lozad "></a></p>
 <figcaption>Esquema de peticiones, cabeceras y respuestas del protocolo de autenticación básica</figcaption>
 </figure>
 </div>
@@ -1179,12 +1129,10 @@
         <content type="html">
         <![CDATA[<p><strong>Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
 </div>
 <p>En el desarrollo de una aplicación se dedica un considerable esfuerzo a tener la mayor seguridad que los cambios no introducen errores, se realizan numerosas pruebas unitarias, pruebas de integración, si es una aplicación web pruebas funcionales simulando la interacción de un usuario. Todas estas pruebas se ejecutan además del equipo de cada desarrollador en un entorno de integración continua o CI en cada <em>commit</em> al repositorio de control de versiones del código fuente, el equipo de desarrollo recibe una notificación con inmediatez en caso de fallar alguna prueba. Aún se hacen mas pruebas algunas manuales en un entorno de <em>staging</em> que tiene una configuración similar al de producción. Finalmente, se despliega la versión validada en producción todavía haciendo más comprobaciones con estrategias de despliegue <em>blue/green</em> y <em>canary</em>, si no se ha descubierto ningún error se promociona la versión en todas las instancias.</p>
 <p>Y aún con todo estos procesos de pruebas en ocasiones se descubren errores en producción. Si la causa del error se descubre rápido y es fácil de solucionar se opta por corregirlo, crear una nueva versión y desplegarla. Si el error es leve y no afecta a una funcionalidad importante se puede esperar a la siguiente versión para corregirlo. Pero algunos errores impactan en una funcionalidad vital para el negocio, tanto que obligan al equipo a dejar las tareas planificadas que están haciendo aún siendo también importantes para descubrir la causa del error y corregirlo, a veces la causa y la corrección se realiza rápido. En otras ocasiones la causa es difícil de determinar o la corrección es compleja, en estas ocasiones la opción adecuada es volver a la versión anterior buena conocida haciendo un <em>revert</em> o <em>rollback</em>. Se pierden las otras nuevas funcionalidades incorporadas en la misma versión pero se evita hacer cambios que introducen deuda técnica por la presión de dar solución rápido al error y se evita al equipo trabajar en un desagradable bajo presión.</p>
@@ -1249,12 +1197,9 @@
 <p>Desde la consola web de administración también se ven las definiciones de los jobs y sus versiones con sus diferencias.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-1_hu46d56fa32dedc34aa925f05a6e74ed43_123650_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Versión 1 del servicio"><img src="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-1_hu46d56fa32dedc34aa925f05a6e74ed43_123650_200x150_fit_box_3.png" width="155" height="150" alt="Versión 1 del servicio" title="Versión 1 del servicio"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-2_hua65f376519e85a3e38c7d189b5a61580_132252_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Versión 2 del servicio"><img src="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-2_hua65f376519e85a3e38c7d189b5a61580_132252_200x150_fit_box_3.png" width="148" height="150" alt="Versión 2 del servicio" title="Versión 2 del servicio"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Versiones del servicio"><img src="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_200x150_fit_box_3.png" width="200" height="150" alt="Versiones del servicio" title="Versiones del servicio"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-1_hu46d56fa32dedc34aa925f05a6e74ed43_123650_2560x1440_fit_box_3.png" data-gallery="" title="Versión 1 del servicio"><img src="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-1_hu46d56fa32dedc34aa925f05a6e74ed43_123650_200x150_fit_box_3.png" width="155" height="150" alt="Versión 1 del servicio" title="Versión 1 del servicio"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-2_hua65f376519e85a3e38c7d189b5a61580_132252_2560x1440_fit_box_3.png" data-gallery="" title="Versión 2 del servicio"><img src="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-service-2_hua65f376519e85a3e38c7d189b5a61580_132252_200x150_fit_box_3.png" width="148" height="150" alt="Versión 2 del servicio" title="Versión 2 del servicio"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_2560x1440_fit_box_3.png" data-gallery="" title="Versiones del servicio"><img src="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_200x150_fit_box_3.png" width="200" height="150" alt="Versiones del servicio" title="Versiones del servicio"  class="lozad "></a></p>
 <figcaption>Versiones del servicio</figcaption>
 </figure>
 </div>
@@ -1278,16 +1223,13 @@
         <content type="html">
         <![CDATA[<p><strong>La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
 </div>
 <p>El método habitual para proporcionar seguridad a varios sistemas que se comunican por red ha sido utilizar protocolos de comunicaciones cifrados, poner cortafuegos e impedir una comunicación directa con algunos sistemas como las base de datos en ocasiones en base a direcciones IP. La configuración estática cuando hay que adaptarla por añadir nuevos sistemas es difícil de cambiarla.</p>
 <p>En un entorno en la nube, aún con sus propias medidas de seguridad y aislamiento que implementan, la infraestructura no es confiable por ser compartida con otras organizaciones como demuestran los <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">fallos de seguridad de meltdown y spectre de los procesadores</a> por su ejecución especulativa. En una arquitectura dinámica de múltiples microservicios e instancias una configuración estática no es práctica para un sistema que por naturaleza es altamente dinámico y en un medio de computación compartido no confiable hay que adoptar medidas adicionales.</p>
@@ -1295,27 +1237,22 @@
 <p>Una de estas herramientas es <a href="https://www.consul.io/">Consul</a> que proporciona la funcionalidad de registro y descubrimiento de servicios y conectividad entre esos servicios. Consul Connect proporciona comunicaciones seguras de forma transparente para las aplicaciones.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu40ea92732f7c799eac78c9ecc53c9f1e_687720_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura estática"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu40ea92732f7c799eac78c9ecc53c9f1e_687720_300x200_fit_box_3.png" width="270" height="200" alt="Infraestructura estática" title="Infraestructura estática"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hue0ef08cc5d3ec3fec4e79c39218b6127_43440_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura estática"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hue0ef08cc5d3ec3fec4e79c39218b6127_43440_300x200_fit_box_3.png" width="267" height="200" alt="Infraestructura estática" title="Infraestructura estática"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu40ea92732f7c799eac78c9ecc53c9f1e_687720_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura estática"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu40ea92732f7c799eac78c9ecc53c9f1e_687720_300x200_fit_box_3.png" width="270" height="200" alt="Infraestructura estática" title="Infraestructura estática"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hue0ef08cc5d3ec3fec4e79c39218b6127_43440_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura estática"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hue0ef08cc5d3ec3fec4e79c39218b6127_43440_300x200_fit_box_3.png" width="267" height="200" alt="Infraestructura estática" title="Infraestructura estática"  class="lozad "></a></p>
 <figcaption>Infraestructura estática</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hud792d9ccac62b58fc59867570540fb55_748281_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura dinámica"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hud792d9ccac62b58fc59867570540fb55_748281_300x200_fit_box_3.png" width="239" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_huc588b2a2c6815d010814db891979b214_44789_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Infraestructura dinámica"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_huc588b2a2c6815d010814db891979b214_44789_300x200_fit_box_3.png" width="267" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hud792d9ccac62b58fc59867570540fb55_748281_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura dinámica"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hud792d9ccac62b58fc59867570540fb55_748281_300x200_fit_box_3.png" width="239" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_huc588b2a2c6815d010814db891979b214_44789_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura dinámica"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_huc588b2a2c6815d010814db891979b214_44789_300x200_fit_box_3.png" width="267" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica"  class="lozad "></a></p>
 <figcaption>Infraestructura dinámica</figcaption>
 </figure>
 </div>
 <p>El esquema de funcionamiento de <a href="https://www.consul.io/docs/connect">Consul Connect</a> es hacer que los servicios no se comuniquen directamente entre ellos sino que utilizan <em>proxys</em>, la creación del enlace de comunicación se delega en Consul que crea los <em>proxys</em> y con ellos le es posible proporcionar comunicaciones seguras, con autenticación mutua y posibilitando autorización con intenciones. Las intenciones son los permisos que establece el operador de Consul para establecer que dos servicios tiene permitido la comunicación entre ellos, cualquier intento de comunicación si no está aprobado de forma explícita por su intención no se permite.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Comunicación servicio a servicio con Consul Connect"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_300x200_fit_box_3.png" width="300" height="98" alt="Comunicación servicio a servicio con Consul Connect" title="Comunicación servicio a servicio con Consul Connect"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_2560x1440_fit_box_3.png" data-gallery="" title="Comunicación servicio a servicio con Consul Connect"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_300x200_fit_box_3.png" width="300" height="98" alt="Comunicación servicio a servicio con Consul Connect" title="Comunicación servicio a servicio con Consul Connect"  class="lozad "></a></p>
 <figcaption>Comunicación servicio a servicio con Consul Connect</figcaption>
 </figure>
 </div>
@@ -1369,12 +1306,9 @@
 <p>El resultado es esta aplicación sencilla de ejemplo que muestra un contador en una página web con el tiempo se va incrementando. En las consolas de administración de Consul se observan los servicios registrados y en Nomad la ejecución de los mismos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu8c985d25713a41703bcc650f7b57262b_79368_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola de administración de Consul"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu8c985d25713a41703bcc650f7b57262b_79368_300x200_fit_box_3.png" width="226" height="200" alt="Consola de administración de Consul" title="Consola de administración de Consul"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu54fd55ff47624b201af619067639abdb_116271_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola de administración de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu54fd55ff47624b201af619067639abdb_116271_300x200_fit_box_3.png" width="226" height="200" alt="Consola de administración de Nomad" title="Consola de administración de Nomad"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu9efa3299b8ef7dc069eb9ec8b701f4f9_94363_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicio count-dashboard"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu9efa3299b8ef7dc069eb9ec8b701f4f9_94363_300x200_fit_box_3.png" width="226" height="200" alt="Servicio count-dashboard" title="Servicio count-dashboard"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu8c985d25713a41703bcc650f7b57262b_79368_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración de Consul"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu8c985d25713a41703bcc650f7b57262b_79368_300x200_fit_box_3.png" width="226" height="200" alt="Consola de administración de Consul" title="Consola de administración de Consul"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu54fd55ff47624b201af619067639abdb_116271_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu54fd55ff47624b201af619067639abdb_116271_300x200_fit_box_3.png" width="226" height="200" alt="Consola de administración de Nomad" title="Consola de administración de Nomad"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu9efa3299b8ef7dc069eb9ec8b701f4f9_94363_2560x1440_fit_box_3.png" data-gallery="" title="Servicio count-dashboard"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu9efa3299b8ef7dc069eb9ec8b701f4f9_94363_300x200_fit_box_3.png" width="226" height="200" alt="Servicio count-dashboard" title="Servicio count-dashboard"  class="lozad "></a></p>
 <figcaption>Consola de administración de Consul y Nomad y servicio count-dashboard</figcaption>
 </figure>
 </div>
@@ -1382,19 +1316,15 @@
 <p>En el modo desarrollo de Consul aún sin una intención la comunicación se autorizan las comunicaciones pero si se crea una intención que deniegue la comunicación desde el servicio <em>count-dashboard</em> a <em>count-api</em> el servicio <em>count-dashboard</em> no es capaz de recuperar el contador y se muestra desconectado. Cambiando la intención para que autorice el tráfico la comunicación se restaura y el servicio <em>count-dashboard</em> vuelve a mostrar el contador.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_huc2f2a2db30104806a5ceb8366b35ea2e_64077_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Intención que deniega la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_huc2f2a2db30104806a5ceb8366b35ea2e_64077_300x200_fit_box_3.png" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hud397b3ca088678316e0c34eec5fcdf4d_92971_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Intención que deniega la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hud397b3ca088678316e0c34eec5fcdf4d_92971_300x200_fit_box_3.png" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_huc2f2a2db30104806a5ceb8366b35ea2e_64077_2560x1440_fit_box_3.png" data-gallery="" title="Intención que deniega la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_huc2f2a2db30104806a5ceb8366b35ea2e_64077_300x200_fit_box_3.png" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hud397b3ca088678316e0c34eec5fcdf4d_92971_2560x1440_fit_box_3.png" data-gallery="" title="Intención que deniega la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hud397b3ca088678316e0c34eec5fcdf4d_92971_300x200_fit_box_3.png" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación"  class="lozad "></a></p>
 <figcaption>Intención que deniega la comunicación</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu6eee299d1329773eb700066625f2c9e3_63546_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Intención que permite la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu6eee299d1329773eb700066625f2c9e3_63546_300x200_fit_box_3.png" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu66268335fb29c6245f012040cb0b70ca_96387_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Intención que permite la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu66268335fb29c6245f012040cb0b70ca_96387_300x200_fit_box_3.png" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu6eee299d1329773eb700066625f2c9e3_63546_2560x1440_fit_box_3.png" data-gallery="" title="Intención que permite la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu6eee299d1329773eb700066625f2c9e3_63546_300x200_fit_box_3.png" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu66268335fb29c6245f012040cb0b70ca_96387_2560x1440_fit_box_3.png" data-gallery="" title="Intención que permite la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu66268335fb29c6245f012040cb0b70ca_96387_300x200_fit_box_3.png" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación"  class="lozad "></a></p>
 <figcaption>Intención que permite la comunicación</figcaption>
 </figure>
 </div>
@@ -1418,8 +1348,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <p>La necesidad puede ser hacer una copia de seguridad periódicas para conservar el historial del sitio web, descargar el contenido para procesarlo de alguna forma, para consultarlo sin conexión a internet u <em>offline</em> si nuestra conexión es lenta o inestable o el servidor está caído, migrar un sitio web de un servidor web a otro o descargar los archivos de vídeo, audio, imágenes o multimedia.</p>
 <p>Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de descargar y guardar en el sistema de archivos la página que se está visualizando, está es la opción más simple ya que no se necesitan herramientas adicionales si solo se quiere guardar una página de las muchas de un sitio web. Su desventaja es que no sirve para guardar un sitio web completo por requerir hacer la operación manualmente por cada página, de forma que para realizar la operación de forma másiva y automatizada para el sitio web completo hay que utilizar alguna herramienta especializada.</p>
@@ -1439,8 +1368,7 @@
 <p>Terminado el proceso de descarga el contenido del sitio web se guarda en el sistema de archivos conservando la jerarquía de carpetas de las URLs de los recursos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos del sitio web en el explorador de archivos"><img src="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_650x450_fit_box_3.png" width="650" height="375" alt="Archivos del sitio web en el explorador de archivos" title="Archivos del sitio web en el explorador de archivos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_2560x1440_fit_box_3.png" data-gallery="" title="Archivos del sitio web en el explorador de archivos"><img src="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_650x450_fit_box_3.png" width="650" height="375" alt="Archivos del sitio web en el explorador de archivos" title="Archivos del sitio web en el explorador de archivos"  class="lozad "></a></p>
 <figcaption>Archivos del sitio web en el explorador de archivos</figcaption>
 </figure>
 </div>
@@ -1474,12 +1402,10 @@
         <content type="html">
         <![CDATA[<p><strong>En el navegador del usuario hay varias formas de guardar información con diferentes propósitos que perdure entre las visitas realizadas en varias sesiones. Los navegadores ofrecen tres formas de guardar datos: cookies, LocalStorage y SessionStorage e IndexedDB cada una con diferentes características y utilizables con código JavaScript.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
 <p>Las aplicaciones web utilizan la arquitectura cliente/servidor comunicándose mediante la red para enviar y recibir datos. El cliente ya sea un navegador web en un ordenador de escritorio o portátil o bien sea un dispositivo móvil inicia las solicitudes al servidor y el servidor devuelve una respuesta. La respuesta del servidor puede ser contenido HTML o datos en formato JSON en el caso de recursos REST o <a href="https://graphql.org/">GraphQL</a>.</p>
 <p>Aún con la cada vez mayor ancho de banda de las redes cada petición al servidor con comunicación mediante la red implica una latencia en la respuesta de unas decenas de milisegundos que se aprecia en la fluidez de las aplicaciones. Para evitar estas latencias y mejorar la experiencia de uso de las aplicaciones web hay varias estrategias, reducir el número de peticiones de una página web o aplicación web, reducir la cantidad de datos transmitidos y cuando sea posible cachear los recursos y datos para no tener que solicitarlos en cada petición ni en futuras visitas al servidor.</p>
@@ -1517,8 +1443,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos almacenados con cookies"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_650x450_fit_box_3.png" width="650" height="283" alt="Datos almacenados con cookies" title="Datos almacenados con cookies"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_2560x1440_fit_box_3.png" data-gallery="" title="Datos almacenados con cookies"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_650x450_fit_box_3.png" width="650" height="283" alt="Datos almacenados con cookies" title="Datos almacenados con cookies"  class="lozad "></a></p>
 <figcaption>Inspección de datos almacenados con cookies</figcaption>
 </figure>
 </div>
@@ -1551,8 +1476,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos almacenados con LocalStorage"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_650x450_fit_box_3.png" width="650" height="270" alt="Datos almacenados con LocalStorage" title="Datos almacenados con LocalStorage"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_2560x1440_fit_box_3.png" data-gallery="" title="Datos almacenados con LocalStorage"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_650x450_fit_box_3.png" width="650" height="270" alt="Datos almacenados con LocalStorage" title="Datos almacenados con LocalStorage"  class="lozad "></a></p>
 <figcaption>Inspección de datos almacenados con LocalStorage</figcaption>
 </figure>
 </div>
@@ -1578,8 +1502,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos almacenados con IdexedDB"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_650x450_fit_box_3.png" width="650" height="321" alt="Datos almacenados con IdexedDB" title="Datos almacenados con IdexedDB"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_2560x1440_fit_box_3.png" data-gallery="" title="Datos almacenados con IdexedDB"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_650x450_fit_box_3.png" width="650" height="321" alt="Datos almacenados con IdexedDB" title="Datos almacenados con IdexedDB"  class="lozad "></a></p>
 <figcaption>Inspección de datos almacenados con IndexedDB</figcaption>
 </figure>
 </div>
@@ -1793,8 +1716,7 @@
         <content type="html">
         <![CDATA[<p><strong>Las distribuciones BSD tienen aún menor cuota de uso que las distribuciones GNU/Linux pero al igual que estas tiene una licencia de software libre aún más permisiva que las GNU/Linux y también se basan en la filosofía UNIX. Pero también tienen diferencias importantes en varios aspectos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bsd.svg" width="250" height="116" alt="BSD" title="BSD"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bsd.svg" width="250" height="116" alt="BSD" title="BSD"  class=""></p>
 </div>
 <p>De los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a> es el más popular en el uso en empresas y en los ordenadores personales con una cuota de uso del 90% prácticamente de monopolio. La siguiente opción más popular a nivel de usuario es <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a> como única opción de sus equipos portátiles y de escritorio, macOS tiene una cuota de uso de un 7%. Con una cota de uso en el escritorio de apenas el el 3% la siguiente opción es alguna de las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, tiene una cuota de uso tan pequeña porque prácticamente todos los equipos vendidos en grandes superficies incorporan Windows preinstalado, para usar GNU/Linux son los usuarios los que de forma expresa han de instalar GNU/Linux reemplazando a Windows aunque en los últimos años hay varias marcas que ofrecen GNU/Linux como opción entre ellas <a href="https://slimbook.es/">Slimbook</a> y <a href="https://www.vantpc.es/">Vant</a>. En el lado del servidor GNU/Linux si tiene una mucha mayor cuota de uso por encima incluso de Windows, muchos de los servicios ofrecidos por las compañías más importantes usan alguna distribución de GNU/Linux como sistema operativo. Las distribuciones empresariales GNU/Linux más populares son <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RHEL</a> de <a href="https://www.redhat.com/es">RedHat</a>, <a href="https://www.ubuntu.com/">Ubuntu</a> de <a href="https://www.canonical.com/">Canonical</a> o <a href="https://www.suse.com/es-es/products/server/">SLES</a> de <a href="https://www.suse.com/es-es/">SUSE</a>.</p>
 <p>Otra familia de sistemas operativos basados en UNIX al igual que GNU/Linux son las distribuciones BSD. Si la cuota de uso a nivel personal de GNU/Linux es muy reducida la de los sistemas operativos BSD es aún mucho más reducida, no llega al 0,5%, teniendo algo de mayor presencia como sistema de servidores con una comunidad de usuarios pequeña pero al igual que la de GNU/Linux activa que comparte y colabora en el desarrollo.</p>
@@ -1802,12 +1724,9 @@
 <p>Aunque solo para representar a los proyectos una diferencia está en su mascota, en Linux es <em>Tux</em>, en BSD es <em>Beastie</em> y en GNU es un ñu.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" data-gallery="data-gallery" title="Tux la mascota de Linux"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="300" height="200" alt="Tux la mascota de Linux" title="Tux la mascota de Linux"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" data-gallery="data-gallery" title="Bestie la mascota de BSD"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" width="300" height="200" alt="Bestie la mascota de BSD" title="Bestie la mascota de BSD"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" data-gallery="data-gallery" title="GNU la mascota de GNU"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="300" height="200" alt="GNU la mascota de GNU" title="GNU la mascota de GNU"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" data-gallery="" title="Tux la mascota de Linux"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="300" height="200" alt="Tux la mascota de Linux" title="Tux la mascota de Linux"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" data-gallery="" title="Bestie la mascota de BSD"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" width="300" height="200" alt="Bestie la mascota de BSD" title="Bestie la mascota de BSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" data-gallery="" title="GNU la mascota de GNU"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="300" height="200" alt="GNU la mascota de GNU" title="GNU la mascota de GNU"  class="lozad "></a></p>
 <figcaption>Mascotas de Linux, BSD y GNU</figcaption>
 </figure>
 </div>
@@ -1846,19 +1765,14 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/freebsd.svg" width="150" height="150" alt="FreeBSD" title="FreeBSD"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/freebsd.svg" width="150" height="150" alt="FreeBSD" title="FreeBSD"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openbsd.svg" width="150" height="150" alt="OpenBSD" title="OpenBSD"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/netbsd.svg" width="150" height="150" alt="NetBSD" title="NetBSD"  class="lozad "></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/midnightbsd.svg" width="150" height="150" alt="MidnightBSD" title="MidnightBSD"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/midnightbsd.svg" width="150" height="150" alt="MidnightBSD" title="MidnightBSD"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dragonflybsd.svg" width="150" height="150" alt="DragonFly" title="DragonFly"  class="lozad "></p>
 <figcaption>Varias de las distribuciones más importantes de BSD</figcaption>
 </figure>
@@ -1901,21 +1815,15 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="150" height="150" alt="Ubuntu" title="Ubuntu"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="150" height="150" alt="Ubuntu" title="Ubuntu"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/opensuse.svg" width="150" height="150" alt="openSUSE" title="openSUSE"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/debian.svg" width="150" height="150" alt="Debian" title="Debian"  class="lozad "></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="150" height="150" alt="Arch Linux" title="Arch Linux"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="150" height="150" alt="Arch Linux" title="Arch Linux"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora.svg" width="150" height="150" alt="Fedora" title="Fedora"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elementary.svg" width="150" height="150" alt="elementary OS" title="elementary OS"  class="lozad "></p>
 </figure>
 </div>
@@ -1954,8 +1862,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En las aplicaciones web basadas en el protocolo HTTP la petición al servidor es el desencadenante de la ejecución de la acción que le da respuesta. Algunas acciones no dependen de la solicitud de un usuario o de la recepción de un mensaje sino que se han de ejecutar de forma periódica cada cierto tiempo o de forma planificada en tiempos determinados. Por ejemplo, una tarea que necesite ejecutarse todos los días a las 3 de la mañana o cada 5 minutos.</p>
 <p><a href="https://quartz-scheduler.org/">Quartz</a> es una de las librerías en la plataforma Java que proporciona la funcionalidad de planificador de tareas, permite ejecutar tareas de forma periódica o de forma planificada en determinados tiempos utilizando <a href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">expresiones cron</a>.</p>

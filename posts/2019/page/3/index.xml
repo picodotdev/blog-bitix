@@ -21,8 +21,7 @@
         <content type="html">
         <![CDATA[<p><strong>Guava EventBus es una solución simple para la publicación y suscripción de eventos en una misma aplicación y como tal no posee muchas de las capacidades que si tiene JMS o RabbitMQ, sin embargo, en algunos casos puede ser muy útil, una solución sencilla y sin requerimientos adicionales de infraestructura.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En programación los eventos son una buena forma de comunicación que permite desacoplar el emisor del evento del receptor o receptores. Los eventos permiten reaccionar a situaciones que se producen a la aplicación. El emisor los lanza cuando considera adecuado y los receptores se suscriben a los eventos que quieren recibir y actúan según su funcionalidad.</p>
 <p>Hay herramientas especificas para eventos en Java está JMS si la aplicación está basada en <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">la plataforma en Java EE</a>, en caso de necesitar un servidor de mensajes adecuado para múltiples plataformas y lenguajes uno de los más conocidos es <a href="https://www.rabbitmq.com/">RabbitMQ</a>. Estas opciones permiten que el emisor y los receptores estén aplicaciones distintas.</p>
@@ -104,12 +103,10 @@
         <content type="html">
         <![CDATA[<p><strong>Al diferencia de una API REST donde cada recurso posee un <em>endpoint</em> propio en GraphQL los recursos están relacionados y forman un grafo. Por otro lado las propiedades devueltas en una consulta de GraphQL son las que se indiquen en la consulta en vez de prefijadas como en una API REST. Hay que tener en cuenta que GraphQL para recuperar las propiedades de las entidades usa un <em>resolver</em> y las recupera una a una, si se devuelve una lista de elementos y de cada uno de esos elementos otra propiedad para la que hay que generar una consulta adicional a la base de datos el rendimiento no será bueno. Los <em>data loaders</em> permiten recuperar las propiedades relacionadas de una colección de entidades eficientemente evitando el problema 1+N.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una de las dificultades a resolver en GraphQL es evitar los problemas de generar 1+N consultas dado que en algunas peticiones se recupera una lista de elementos para recuperar alguna otra propiedad de esos elementos para la que se realiza otra consulta. Suele ocurrir al navegar las relaciones de las entidades, por ejemplo al solicitar una lista de libros y de cada libro obtener su autor, para obtener los libros se necesita una consulta y hay que evitar que para recuperar el autor de cada libro generar otra consulta, si el número de libros recuperados es grande el número de consultas será grande y la consulta será poco eficiente, lenta y generará una carga a evitar en el servidor de base de datos.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a> comentaba una estrategia para evitar este problema que consistía en dados una serie de elementos recuperados y si la propiedad estaba presente en la consulta se obtenían los identificativos de esos elementos y se recuperaba la propiedad para todos los elementos en una única consulta.</p>
@@ -168,8 +165,7 @@
         <content type="html">
         <![CDATA[<p><strong>Los módulos de Java dotan a la plataforma de nuevas características. Para garantiza la compatibilidad con las librerías existentes y permitir una transición progresiva de una versión sin módulos a una con módulos la plataforma de módulos de Java define varios tipos de módulos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Con la <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">publicación de Java 9</a> el 2017 se introdujo la importante novedad de los módulos que proporciona a la plataforma Java varias características como encapsulación fuerte, interfaces bien definidas y dependencias explícitas. Todos las clases se organizan en paquetes y en Java 9 también en módulos para lo cual fue necesario reorganizar en módulos todos los paquetes de los que se compone la API de Java.</p>
 <p>Antes de Java 9 todas las clases se proporcionaban en una lista ordenada de archivos <em>jar</em>, lo que se conocía como el <em>classpath</em> y donde cualquier clase tenía acceso a cualquier otra que se encontrase en él respetando los ámbitos de visibilidad (<em>public</em>, <em>protected</em>, <em>private</em> y <em>package</em>). En la definición de cada módulo en su archivo <em>module-info.java</em> se debe especificar cuales son los módulos requeridos para su funcionamiento no permitiendo la máquina virtual de Java el acceso a ninguna otra clase de otros módulos ni a ninguna clase de los paquetes no exportados.</p>
@@ -206,30 +202,24 @@
         <content type="html">
         <![CDATA[<p><strong>Hace no tanto tiempo era prácticamente imposible adquirir un equipo sin Windows preinstalado y salvo algunas excepciones en muchos comercios solo incluyen equipos con Windows o macOS. Pero a día hoy si alguien quiere comprar un equipo sin Windows para instalarle GNU/Linux hay varias posibilidades.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/slimbook.jpg" width="200" height="86" alt="Slimbook" title="Slimbook"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/slimbook.jpg" width="200" height="86" alt="Slimbook" title="Slimbook"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/vant.svg" width="200" height="61" alt="VANT" title="VANT"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/vant.svg" width="200" height="61" alt="VANT" title="VANT"  class=""></p>
 </div>
 <p>En todos los comercios, grandes superficies e incluso en las pequeñas tiendas especializadas en informática solo hay dos opciones para comprar un portátil o lo compras con <a href="https://www.microsoft.com/es-es/windows/">Windows</a> incluído o optas por los caros mac de <a href="https://www.apple.com/">Apple</a>, los ordenadores de marca en formato torre o todo en uno también vienen todos con Windows. Hasta el momento no he encontrado ningún portátil con la posibilidad de adquirirlos con GNU/Linux en las tiendas en las que he estado. En el caso de los ordenadores de torre que montan las pequeñas tiendas a medida es posible adquirirlos sin sistema operativo pero para los usuarios con pocos conocimientos es un problema ya que no saben como instalárselo. Aún así tampoco he visto a ningún pequeño comercio ofrecer el servicio de instalarle alguna distribución de GNU/Linux sin coste al adquirir el equipo o con un coste mucho más reducido que la licencia de Windows.</p>
 <p>Sin embargo, desde hace un tiempo es posible adquirir un ordenador con GNU/Linux y sin la licencia de Windows ni su coste, que no tienen nada que envidiar a cualquier otro equipo comercial de una marca más grande. En el caso de portátil están los <a href="https://slimbook.es/">Slimbook</a> o de <a href="https://www.vantpc.es/">VANT</a> que tiene unas características muy notables con el Slimbook PRO X a un precio razonable, con última generación de procesadores Intel, posibilidad de dos SSD NVMe, 32 GiB de memoria, pantalla con resolución 1920x1080 de marcos reducidos. En el caso de Slimbook ofrecen también un modelo de mini PC, el Slimbook ONE o con disipación pasiva el ZERO. En el caso de VANT sus portátiles MOOVE y de escritorio BLOCK, CELL y LIFE incluso con procesadores <a href="https://www.amd.com/es/ryzen">AMD Ryzen</a>. En ambos casos hay posibilidad de elegir entre algunas distribuciones de GNU/Linux con las que se quiere que venga preinstalado y estos son solo algunos de los modelos que tienen disponibles, Slimbook tiene también algún modelo tipo AIO o <em>all-in-one</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Portátiles Slimbook PRO y X"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_300x200_fit_q90_box.jpg" width="300" height="163" alt="Portátiles Slimbook PRO y X" title="Portátiles Slimbook PRO y X"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Portátiles VANT MOOVE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_300x200_fit_q90_box.jpg" width="283" height="200" alt="Portátiles VANT MOOVE" title="Portátiles VANT MOOVE"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_2560x1440_fit_q90_box.jpg" data-gallery="" title="Portátiles Slimbook PRO y X"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_300x200_fit_q90_box.jpg" width="300" height="163" alt="Portátiles Slimbook PRO y X" title="Portátiles Slimbook PRO y X"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_2560x1440_fit_q90_box.jpg" data-gallery="" title="Portátiles VANT MOOVE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_300x200_fit_q90_box.jpg" width="283" height="200" alt="Portátiles VANT MOOVE" title="Portátiles VANT MOOVE"  class="lozad "></a></p>
 <figcaption>Portátiles Slimbook y VANT</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Ordenadores de escritorio Slimbook ONE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_300x200_fit_q90_box.jpg" width="267" height="200" alt="Ordenadores de escritorio Slimbook ONE" title="Ordenadores de escritorio Slimbook ONE"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Ordenadores de escritorio VANT PURE-A"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_300x200_fit_q90_box.jpg" width="200" height="200" alt="Ordenadores de escritorio VANT PURE-A" title="Ordenadores de escritorio VANT PURE-A"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_2560x1440_fit_q90_box.jpg" data-gallery="" title="Ordenadores de escritorio Slimbook ONE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_300x200_fit_q90_box.jpg" width="267" height="200" alt="Ordenadores de escritorio Slimbook ONE" title="Ordenadores de escritorio Slimbook ONE"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_2560x1440_fit_q90_box.jpg" data-gallery="" title="Ordenadores de escritorio VANT PURE-A"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_300x200_fit_q90_box.jpg" width="200" height="200" alt="Ordenadores de escritorio VANT PURE-A" title="Ordenadores de escritorio VANT PURE-A"  class="lozad "></a></p>
 <figcaption>Ordenadores de escritorio Slimbook y VANT</figcaption>
 </figure>
 </div>
@@ -259,8 +249,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
 </div>
 <p>Estos seis primeros meses del 2019 han transcurrido como todos los años anteriores, sigo manteniendo la constancia de publicar dos artículos nuevos y únicos, algunas semanas sólo uno las menos tres.</p>
 <p>En cuanto al blog durante este tiempo le he hecho un cambio de diseño para que el contenido quede centrado en la pantalla y tenga más espacio horizontal lo que creo hace más agradable la lectura del texto y los extractos de código se ven mejor con menos necesidad de hacer desplazamiento horizontal.</p>
@@ -365,12 +354,10 @@
         <content type="html">
         <![CDATA[<p><strong>El Intel NUC que adquirí hace unos meses no es el ideal para jugar sobre todo por su pequeño tamaño y temperaturas, en mi caso como jugador ocasional es suficiente pero unido a que soy usuario de GNU/Linux hace que deba usar Wine o Steam para los juegos con lo que hay algunos juegos que me llaman la atención que no tengo disponibles. La PlayStation 4 está ya al final de su ciclo de vida, ya hay noticias de la PlayStation 5 y Google Stadia ofrecerá una nueva experiencia de juego ¿comprar una PlayStation 4? ¿o seguir con Diablo 3 mientras se lanzan la PlayStation 5 o a Stadia?.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/playstation.svg" width="200" height="155" alt="PlayStation" title="PlayStation"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/playstation.svg" width="200" height="155" alt="PlayStation" title="PlayStation"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/google-stadia.svg" width="200" height="133" alt="Google Stadia" title="Google Stadia"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/google-stadia.svg" width="200" height="133" alt="Google Stadia" title="Google Stadia"  class=""></p>
 </div>
 <p>Desde que me compré un <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC</a> he estado jugando a <a href="https://eu.diablo3.com/es/">Diablo 3</a> en <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> con <a href="https://www.winehq.org/">Wine</a> en la distribución <a href="https://www.archlinux.org/">Arch Linux</a> perfectamente, al menos de forma jugable con una resolución de 1600x900 en un <a href="https://picodotdev.github.io/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/">monitor BenQ PD2700Q</a> y con unos detalles de calidad gráfica medios. El NUC con un <a href="https://en.wikipedia.org/wiki/Intel_Graphics_Technology#Kaby_Lake_Refresh_/_Coffee_Lake">gráfica Intel integrada Iris 655</a> es notablemente mejor que la típica UHD 630 de otros modelos de procesador Intel que cumple para un jugador ocasional pero no se puede comparar con una dedicada NVIDIA o AMD de un equipo más grande. Y aunque funciona sin problemas la temperatura que alcanza llega a a entre los 75º y 80º, teniendo en cuenta que es un equipo de 10cm x 10 cm x 3.5cm es una temperatura para la que probablemente no sea recomendable mantener durante largos periodos de tiempo.</p>
 <p>Por otro lado el hecho de usar Linux hace que no todos los juegos estén disponibles, con el gran trabajo de <a href="https://store.steampowered.com/">Steam</a> hay mayor número de títulos disponibles pero algunos únicamente siguen estando disponibles para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> como <a href="https://store.steampowered.com/app/243470/Watch_Dogs/">Watch Dogs</a>. Probablemente la mejor alternativa para un usuario de Linux y para mi es usar una consola para tener un catálogo amplio de juegos, sin problemas de compatibilidad y con buen rendimiento. La consola candidata que evaluaría sería una <a href="https://www.playstation.com/es-es/">PlayStation</a>.</p>
@@ -430,12 +417,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/mysql.svg" width="200" height="136" alt="MySql" title="MySql"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/mysql.svg" width="200" height="136" alt="MySql" title="MySql"  class=""></p>
 </div>
 <p>El lenguaje SQL es un potente lenguaje declarativo usado en las bases de datos relacionales como <a href="https://www.mysql.com/">MySQL</a> o <a href="https://www.postgresql.org/">PostgreSQL</a>. En el lenguaje SQL se declara que datos se quieren recuperar, qué condiciones han de cumplir cumplir y qué funciones se aplican a los datos pero no se define como han de recuperarse los datos, es la base de datos la que decide como guardarlos e interpretando la sentencia SQL la que decide cómo recuperarlos.</p>
 <p>El lenguaje SQL se compone de diferentes tipos de sentencias según el tipo de operación, lectura de datos con <em>SELECT</em>, inserción de datos con <em>INSERT</em>, actualización con <em>UPDATE</em> y eliminación con <em>DELETE</em>.</p>
@@ -493,8 +478,7 @@
 <p>El informe que proporciona incluye información sobre el certificado del servidor entre ella su tiempo de validez y fecha de expiración, y si es de confianza para los navegadores y plataformas como Mozilla, Apple, Android, Java o Windows. Los datos de configuración como protocolos soportados, <em>cipher suites</em> y una simulación de <em>handshake</em> con una gran variedad de versiones de navegadores en diferentes plataformas y versiones incluyendo dispositivos móviles y de escritorio que permite conocer si algún dispositivo pudiera tener algún problema con la configuración de TLS en la conexión, también otros detalle del protocolo.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/images/ssllabs_hu45897026cba3d1771fd184de0c40861a_124032_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Informe de seguridad TLS"><img src="https://picodotdev.github.io/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/images/ssllabs_hu45897026cba3d1771fd184de0c40861a_124032_650x450_fit_box_3.png" width="373" height="450" alt="Informe de seguridad TLS" title="Informe de seguridad TLS"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/images/ssllabs_hu45897026cba3d1771fd184de0c40861a_124032_2560x1440_fit_box_3.png" data-gallery="" title="Informe de seguridad TLS"><img src="https://picodotdev.github.io/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/images/ssllabs_hu45897026cba3d1771fd184de0c40861a_124032_650x450_fit_box_3.png" width="373" height="450" alt="Informe de seguridad TLS" title="Informe de seguridad TLS"  class="lozad "></a></p>
 <figcaption>Informe de seguridad TLS</figcaption>
 </figure>
 </div>
@@ -547,8 +531,7 @@
         <content type="html">
         <![CDATA[<p><strong>Haciendo un seguimiento de los precios en Amazon los de algunos productos se mantienen estables a lo largo del tiempo pero en la mayoría varían significativamente. Con la página CamelCamelCamel es posible conocer la evolución e historial de los precios de los productos en Amazon, su disponibilidad y saber si están en un periodo de precio alto o en su mínimo histórico.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amazon.svg" width="350" height="70" alt="Amazon" title="Amazon"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amazon.svg" width="350" height="70" alt="Amazon" title="Amazon"  class=""></p>
 </div>
 <p>La tecnología avanza notablemente en periodos de meses y por este avance los precios se van reduciendo o aparecen nuevos productos con mejores prestaciones. Uno de estos ejemplos notables el de los dispositivos de almacenamiento SSD cuyo coste se está reduciendo rápidamente u ofreciendo mayor capacidad al mismo precio. Ocurre otro tanto de los mismo en los procesadores, para aumentar su rendimiento actualmente están evolucionando a incorporar más número de núcleos, las generaciones anteriores quedan superadas y se encuentran a unos precios rebajados. Las tarjetas gráficas suelen tener un precio similar que el de la anterior generación pero siendo sensiblemente más potentes y al igual que los procesadores para eliminar sus existencias de inventario reducen su precio.</p>
 <p>Un ejemplo atípico ha sido el de la memoria RAM que ha costado casi el doble que hace un par de años. La razón de esta rareza en el mundo tecnológico es que muchos fabricantes han orientado su producción al de las memorias NAND utilizada en los SSD y al aumento de la demanda por la mayor demanda de los dispositivos móviles entre otros dispositivos.</p>
@@ -557,12 +540,9 @@
 <p>Como ejemplo se puede mostrar el precio de un SDD <a href="https://amzn.to/2XuRE9p">Samsung 970 EVO en formato M.2 de 250 GiB</a> o de <a href="https://amzn.to/2IvJJjU">1 TB</a> y <em>kit</em> de memorias de <a href="https://amzn.to/2XwfQrS">HyperX Impact de 32 GiB DDR4 a 2400Mhz</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-1_hubc213cbaa067184d0e1d8a78b5e33286_34364_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Precio SSD 500 GB"><img src="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-1_hubc213cbaa067184d0e1d8a78b5e33286_34364_200x150_fit_box_3.png" width="200" height="133" alt="Precio SSD 500 GB" title="Precio SSD 500 GB"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-2_hubc86e2fbaf93153dd7604252e9bfc532_39085_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Precio SSD 1 TB"><img src="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-2_hubc86e2fbaf93153dd7604252e9bfc532_39085_200x150_fit_box_3.png" width="200" height="131" alt="Precio SSD 1 TB" title="Precio SSD 1 TB"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-3_hu6900bea838e63a6e384345b75bac41d1_42358_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Precio 32 GB de memoria"><img src="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-3_hu6900bea838e63a6e384345b75bac41d1_42358_200x150_fit_box_3.png" width="200" height="133" alt="Precio 32 GB de memoria" title="Precio 32 GB de memoria"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-1_hubc213cbaa067184d0e1d8a78b5e33286_34364_2560x1440_fit_box_3.png" data-gallery="" title="Precio SSD 500 GB"><img src="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-1_hubc213cbaa067184d0e1d8a78b5e33286_34364_200x150_fit_box_3.png" width="200" height="133" alt="Precio SSD 500 GB" title="Precio SSD 500 GB"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-2_hubc86e2fbaf93153dd7604252e9bfc532_39085_2560x1440_fit_box_3.png" data-gallery="" title="Precio SSD 1 TB"><img src="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-2_hubc86e2fbaf93153dd7604252e9bfc532_39085_200x150_fit_box_3.png" width="200" height="131" alt="Precio SSD 1 TB" title="Precio SSD 1 TB"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-3_hu6900bea838e63a6e384345b75bac41d1_42358_2560x1440_fit_box_3.png" data-gallery="" title="Precio 32 GB de memoria"><img src="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/images/precios-amazon-3_hu6900bea838e63a6e384345b75bac41d1_42358_200x150_fit_box_3.png" width="200" height="133" alt="Precio 32 GB de memoria" title="Precio 32 GB de memoria"  class="lozad "></a></p>
 <figcaption>Evolución de precios en Amazon</figcaption>
 </figure>
 </div>
@@ -584,16 +564,13 @@
         <content type="html">
         <![CDATA[<p><strong>Los dispositivos de almacenamiento se han de formatear con un sistema de archivos. Algunos de los sistemas de archivos están mejor soportados y son compatibles con una mayor número de sistemas y dispositivos, por tanto al formatear un dispositivo de almacenamiento ha de elegirse como sistema de archivos uno compatible, dependiendo del uso es más adecuado uno u otro. Para los dispositivos extraíbles la opción recomendable es exFAT o en su defecto NTFS o FAT.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME"  class=""></p>
 </div>
 <p>Cada sistema operativo posee uno o varios formatos de sistemas de archivos que soporta de forma nativa. Así por ejemplo <a href="https://www.microsoft.com/es-es/windows/">Windows</a> como sistema de archivos para el sistema se utiliza <a href="https://es.wikipedia.org/wiki/NTFS">NTFS</a> y <a href="https://en.wikipedia.org/wiki/File_Allocation_Table">FAT</a>, <a href="https://fr.wikipedia.org/wiki/FAT32">FAT32</a> o <a href="https://es.wikipedia.org/wiki/ExFAT">exFAT</a> para los medios extraíbles. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> para el sistema se suele utilizar <a href="https://en.wikipedia.org/wiki/Ext4">ext4</a>. Y en <a href="https://www.apple.com/macos/">macOS</a> se utiliza <a href="https://en.wikipedia.org/wiki/HFS_Plus">HFS+</a> o <a href="https://en.wikipedia.org/wiki/Apple_File_System">APFS</a>. Cada unos posee unas propiedades y los más antiguos para evitar sus limitaciones han sido sustituidos por unos sistemas de archivos más modernos.</p>
 <p>Los sistemas de archivos más compatibles son los que tradicionalmente se han utilizado por <a href="https://www.microsoft.com/">Microsoft</a> dada su amplia cuota de mercado en los sistemas de escritorio, estos son FAT y FAT32. Sin embargo, estos poseen unas limitaciones que no los hacen adecuados si el tamaño de los archivos superan los 4 GiB o la capacidad del sistemas de almacenamiento supera los 2 TiB, que son precisamente los límites máximos de FAT32. Para superar estas limitaciones Microsoft ha desarrollado exFAT como nuevo sistema de archivos para los medios extraíbles con unos límites de 16 EiB (16 x 1024 PiB x 1024 TiB, 16.6M TiB) para los tamaños de archivo y 64 ZiB (64 x 1024 EiB, 65536 EiB) para el sistema de almacenamiento son unos límites varios órdenes de magnitud más grandes (y considerarse infinitos) que las capacidades de la tecnología actual (aunque al ritmo del avance de la tecnología puede que se llegue a ellos dentro de unas décadas).</p>
@@ -606,20 +583,16 @@
 <p>En la parte izquierda se encuentra los dispositivos conectados y reconocidos por el sistema. En mi caso el disco del sistema, un Samsung 970 EVO de 500 GB, un disco duro externo USB de 500 GB y una memoria USB de 16 GB sin ningún formato.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dispositivos de almacenamiento del sistema"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_300x200_fit_box_3.png" width="278" height="200" alt="Dispositivos de almacenamiento del sistema" title="Dispositivos de almacenamiento del sistema"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_2560x1440_fit_box_3.png" data-gallery="" title="Dispositivos de almacenamiento del sistema"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-1_hu3d94dbe95fb176f8833a2957fc8f471b_68562_300x200_fit_box_3.png" width="278" height="200" alt="Dispositivos de almacenamiento del sistema" title="Dispositivos de almacenamiento del sistema"  class="lozad "></a></p>
 <figcaption>Unidades del sistema</figcaption>
 </figure>
 </div>
 <p>Primero es importante identificar correctamente la unidad que se quiere formatear para no perder los datos al elegir por error otra. Se introduce el nombre del volumen que identifica al dispositivo y se elige el sistema de archivos, como opciones más comunes se ofrece ext4, NTFS y FAT pero pulsando en <em>Otro</em> aparecen más, entre ellos exFAT. Pulsando el botón <em>Siguiente</em> al cabo de unos segundos la partición queda formateada con exFAT y lista para usarse tanto en GNU/Linux como en Windows, macOS o un Smart TV.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_200x150_fit_box_3.png" width="200" height="144" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_2560x1440_fit_box_3.png" data-gallery="" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-2_hu23b2a5c2c2c53afb1bef6504f674b772_36277_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_2560x1440_fit_box_3.png" data-gallery="" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-3_huf713219edf0a2a8f08b77fcede61f612_48000_200x150_fit_box_3.png" width="200" height="117" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_2560x1440_fit_box_3.png" data-gallery="" title="Formatear dispositivo de almacenamiento"><img src="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/images/gnome-disks-4_huf2aa1a56d9573c99eb0951d2ad459bcf_76787_200x150_fit_box_3.png" width="200" height="144" alt="Formatear dispositivo de almacenamiento" title="Formatear dispositivo de almacenamiento"  class="lozad "></a></p>
 <figcaption>Formatear dispositivo de almacenamiento</figcaption>
 </figure>
 </div>
@@ -644,8 +617,7 @@
         <content type="html">
         <![CDATA[<p><strong>Una API REST no ofrece introspección y por tanto hay que recurrir a un sistema de documentación que puede estar desactualizado y hay que mantener para conocer como usar la API y cuales son sus tipos y parámetros. Por el contrario GraphQL incorpora un sistema de introspección que permite conocer sus tipos y campos, a través del editor GraphiQL o si fuese necesario de forma automatizada con código.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <p>Una de las cosas que me gustan de GraphQL sobre REST es que la API de un servicio se define en un esquema. Tanto las operaciones de consulta, de modificación con sus nombres de parámetros, tipos y si son requeridos o no. Esta información es básica para hacer un buen uso de esa API y conocer cual es su contrato. Además con <a href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">la herramienta GraphiQL</a> se pueden crear y realizar consultas con un pequeño IDE con asistencia de código. GraphQL genera los metadatos e ofrece la instrospección a partir únicamente de la definición del esquema del servicio sin ningún esfuerzo adicional por parte del creador del servicio.</p>
 <p>En el ejemplo de esta <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> he usado el siguiente esquema que utiliza como modelo de datos el de una librería.</p>
@@ -759,8 +731,7 @@
         <content type="html">
         <![CDATA[<p><strong>En algunos que un servicio devuelva los datos esperados no es suficiente, otros requisitos no funcionales o de términos de servicio son que sus tiempos de respuesta sean menores al especificado en sus requisitos, que sea capaz de soportar cierto número de peticiones concurrentes o de atender un número de peticiones por minuto. Para asegurar que el servicio es capaz de cumplir estos requisitos funcionales hay que utilizar herramientas que permitan evaluar su desempeño, una de ellas muy fácil de utilizar y que proporciona valiosa información es Apache Bench.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache.svg" width="200" height="353" alt="Apache" title="Apache"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache.svg" width="200" height="353" alt="Apache" title="Apache"  class=""></p>
 </div>
 <p>Para hacer pruebas de carga o medir el rendimiento de cualquier servicio que funcione mediante el protocolo HTTP hay multitud de herramientas. Una de las más sencillas de utilizar y con un informe con información interesante es <a href="https://httpd.apache.org/docs/current/programs/ab.html">Apache Bench</a> o simplemente <em>ab</em>. Este comando se puede utilizar con simplemente tres parámetros el <em>endpoint</em> a probar, el número de peticiones en total a realizar (<em>-n</em>) y cuantas peticiones concurrentes al mismo tiempo (<em>-c</em>). Otos parámetros son los datos POST a enviar, cabeceras (<em>-H</em>) y <em>cookies</em> (<em>-C</em>) de las peticiones, tiempos de <em>timeout</em> (<em>-s</em>) o certificado de cliente (<em>-E</em>) entre algunos otros. En vez limitar las pruebas a un número de peticiones las pruebas se pueden limitar a un tiempo determinado por ejemplo 60 segundos (<em>-t</em>).</p>
 <p>Es una herramienta que se utiliza para medir el rendimiento de el servidor Apache pero utilizable para cualquier otro servicio por ejemplo una web o una API REST o <a href="https://graphql.org/">GraphQL</a>. Está disponible por supuesto para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> pero también para <a href="https://www.apple.com/macos/">macOS</a> y para <a href="https://www.microsoft.com/es-es/windows/">Windows</a>.</p>
@@ -801,12 +772,10 @@
         <content type="html">
         <![CDATA[<p><strong>Hay múltiples lenguajes y librerías donde cada una publica nuevas versiones. Una vez elegida una esa decisión no tiene que ser para siempre si las circunstancias de un proyecto cambian o una nueva versión incorpora las funcionalidades por las que se eligió otra. Si se reconsideran de nuevo el conjunto de todos los parámetros la decisión puede ser distinta. Esto me ha ocurrido al evaluar de nuevo JUnit comparándolo con Spock, teniendo en cuenta que en JUnit 5 han incorporado los teses parametrizados y el lenguaje que utiliza cada una de ellas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/junit.png" width="200" height="200" alt="JUnit" title="JUnit"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/junit.png" width="200" height="200" alt="JUnit" title="JUnit"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En mis preferencias de herramientas que elegiría para un proyecto basado en la plataforma Java estaba <a href="https://code.google.com/p/spock/">Spock</a>, por la legibilidad de los teses con su lenguaje específico de dominio  o DSL con sus diferentes secciones <em>given</em>, <em>when</em>, <em>then</em>. Otro motivo era la posibilidad de ejercitar un mismo test pero con diferentes parámetros para ejecutar todas las condiciones del sujeto bajo prueba con la sección <em>where</em> y las posibilidades de <em>mocking</em> incorporadas. Pero Spock usa el lenguaje <a href="https://www.groovy-lang.org/">Groovy</a>. Es menos verboso, es dinámico pero que no posee igual la asistencia de código de los IDEs y por su naturaleza dinámica con posibilidad de errores de compilación no detectados hasta en tiempo de ejecución. En mis preferencias está el lenguaje Java así que he revisado si estás características de Spock son ofrecidas por <a href="https://junit.org/junit5/">JUnit</a> desde la última vez que lo use.</p>
 <p>El primer motivo de usar Spock sobre la legibilidad del test se puede suplir añadiendo un comentario de línea con la sección. El segundo motivo es que en JUnit también se pueden crear teses parametrizados con varios casos de prueba. Para los teses parametrizados se puede usar la anotación <a href="https://junit.org/junit5/docs/current/api/org/junit/jupiter/params/ParameterizedTest.html">@ParameterizedTest</a> con una serie de valores que en el test se reciben como un parámetro.</p>
@@ -859,12 +828,10 @@
         <content type="html">
         <![CDATA[<p><strong>Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas <em>limit</em> ni <em>offset</em> que habitualmente se utilizan sino con <em>seek</em>. Además de que <em>limit</em> y <em>offset</em> da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La paginación habitualmente se implementa con las palabras reservadas <em>limit</em> y <em>offset</em> del lenguaje SQL pero esto es ineficiente ya que para llegar los resultados de las últimas páginas la base de datos ha de recuperar antes todos los resultados anteriores. Cuando hay varios cientos de miles o millones de filas en una tabla esto es ineficiente y hace que las consultas sean lentas y añadan una importante carga al servidor de base de datos que al final afecta al rendimiento de la aplicación o su capacidad para atender a gran número de peticiones.</p>
 <p>Además del rendimiento, otro problema de la paginación con <em>limit</em> y <em>offset</em> es que si se insertan filas en una página anterior mientras se están recorriendo los resultados, uno o varios resultados al avanzar por las páginas en la típica tabla de resultados en una aplicación web podría aparecer dos veces, en un proceso automatizado sería aún peor ya que un resultado podría procesarse dos veces.</p>
@@ -914,12 +881,10 @@
         <content type="html">
         <![CDATA[<p><strong>En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>El registro y descubrimiento de servicios permite a los servicios registrase y a los clientes descubrir la ubicación de otros servicios, la ubicación consiste en la dirección IP y el puerto en el que contactarles. Dado la naturaleza efímera de los servicios donde nuevas instancias de servicios se inician y se detienen en diferentes máquinas y puertos el servicio de descubrimiento es esencial.</p>
 <p>La funcionalidad de registro y descubrimiento consiste en dos partes, por un lado cuando se inicia una instancia de un servicio se registra su ubicación en el servicio de registro y descubrimiento y por otro lado los clientes cuando requieren una instancia de un servicio la buscan en el servicio de descubrimiento.</p>
@@ -946,8 +911,7 @@
 <p>Iniciados estos dos servicios en la interfaz de estado de Consul se observa que no hay ningún servicio pero cuando se inicie un nuevo contenedor será registrado en Consul por Registrator.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hudf2f8b03877264bacf83a564e5686ede_36482_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dirección"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hudf2f8b03877264bacf83a564e5686ede_36482_300x200_fit_box_3.png" width="287" height="200" alt="Dirección" title="Dirección"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hudf2f8b03877264bacf83a564e5686ede_36482_2560x1440_fit_box_3.png" data-gallery="" title="Dirección"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul_hudf2f8b03877264bacf83a564e5686ede_36482_300x200_fit_box_3.png" width="287" height="200" alt="Dirección" title="Dirección"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En este caso se utiliza como servicio una base de datos <a href="https://www.postgresql.org/">PostgreSQL</a>. Dado que el puerto en el que esté disponible el servicio de PostgreSQL es indiferente al utilizar un servicio de registro y descubrimiento se indica el <em>-p</em> sin indicar el puerto del <em>host</em>, de este modo Docker le asigna un puerto público aleatorio.</p>
@@ -973,10 +937,8 @@
 <p>Una vez iniciado el servicio de postgres en la consola de Consul se muestra con su dirección y puerto en el que se encuentra, en el contenedor utiliza su puerto por defecto <em>5432</em> pero hacia el exterior en este caso al no haber especificado uno Docker le asigna un puerto aleatorio en este caso el <em>32777</em>. Este puerto aleatorio es con el que los clientes acceden a la base de datos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu5336dadbc35299bcca8969f84d373cf0_39850_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicio de PostgreSQL registrado en Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu5336dadbc35299bcca8969f84d373cf0_39850_300x200_fit_box_3.png" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_huf0df6f6a3d2138a93d9a38f4927788b0_43545_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicio de PostgreSQL registrado en Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_huf0df6f6a3d2138a93d9a38f4927788b0_43545_300x200_fit_box_3.png" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu5336dadbc35299bcca8969f84d373cf0_39850_2560x1440_fit_box_3.png" data-gallery="" title="Servicio de PostgreSQL registrado en Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-1_hu5336dadbc35299bcca8969f84d373cf0_39850_300x200_fit_box_3.png" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_huf0df6f6a3d2138a93d9a38f4927788b0_43545_2560x1440_fit_box_3.png" data-gallery="" title="Servicio de PostgreSQL registrado en Consul"><img src="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/images/consul-postgres-2_huf0df6f6a3d2138a93d9a38f4927788b0_43545_300x200_fit_box_3.png" width="300" height="165" alt="Servicio de PostgreSQL registrado en Consul" title="Servicio de PostgreSQL registrado en Consul"  class="lozad "></a></p>
 <figcaption>Servicio de postgres registrado en Consul por Registrator</figcaption>
 </figure>
 </div>

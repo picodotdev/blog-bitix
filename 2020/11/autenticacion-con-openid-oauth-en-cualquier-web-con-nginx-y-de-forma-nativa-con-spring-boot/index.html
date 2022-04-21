@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -270,12 +270,10 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>La funcionalidad de autenticación y autorización es básica en la mayoría de aplicaciones web y servicios REST. La forma de implementar la autenticación y autorización es posible de varias formas. Sin embargo, con los métodos anteriores las aplicaciones gestionan sus propios usuarios y cada aplicación ha de implementar la autenticación y autorización. Otras formas comunes de autenticación son emplear <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">autenticación básica en el servidor web</a>, <a href="https://picodotdev.github.io/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/">autenticación mutua entre el servidor y el cliente</a> o con una implementación específica en la que una parte importante es <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">guardar las contraseña de forma segura con salted-password-hashing</a>.</p>
 <p>Gestionar los usuarios de en cada una aplicación se convierte en un problema cuando el número de aplicaciones y servicios son varios, ya que a lo largo del tiempo hay que dar de alta a los usuarios nuevos y de baja a los usuarios que ya no deben acceder a la aplicación por ejemplo porque ya no forman parte de una organización. Por otro, lado hay aplicaciones heredadas o <em>legacy</em> que no se pueden modificar para añadirles la autenticación que necesitan.</p>
@@ -299,8 +297,7 @@
 <p>Para añadir autenticación OpenId Connect en una aplicación web se suele configurar con el servidor web actuando de <em>proxy</em> y un <em>proxy</em> de OAuth. La función del servidor web y el <em>proxy</em> es requerir que el usuario esté autenticado en el proveedor de autenticación. De este modo entre el usuario y la página web están el servidor web, el intermediario de OAuth y el proveedor de autenticación, el esquema es el siguiente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_300x200_fit_box_3.png" width="300" height="192" alt="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_2560x1440_fit_box_3.png" data-gallery="" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_300x200_fit_box_3.png" width="300" height="192" alt="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" class="" loading="lazy"></a></p>
 <figcaption>Modos de funcionamiento de oauth2-proxy (con y sin Nginx)</figcaption>
 </figure>
 </div>
@@ -344,20 +341,16 @@
 <p>Al acceder a la página en el dominio <em>nginx.127.0.0.1.xip.io</em> se solicita el inicio de sesión o selección de cuenta.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación con cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_300x200_fit_box_3.png" width="259" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google" class="" loading="lazy"></a>
-
-<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación con cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_300x200_fit_box_3.png" width="269" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_2560x1440_fit_box_3.png" data-gallery="" title="Autenticación con cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_300x200_fit_box_3.png" width="259" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_2560x1440_fit_box_3.png" data-gallery="" title="Autenticación con cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_300x200_fit_box_3.png" width="269" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google" class="" loading="lazy"></a></p>
 <figcaption>Autenticación con cuenta de Google</figcaption>
 </figure>
 </div>
 <p>Una vez autenticado el usuario se permite el acceso a la página web, en este caso la página por defecto de Nginx, también se observa la creación de la <em>cookie</em> que mantiene la sesión.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página web y cookie de sesión"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión" class="" loading="lazy"></a>
-
-<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página web y cookie de sesión"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_2560x1440_fit_box_3.png" data-gallery="" title="Página web y cookie de sesión"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_2560x1440_fit_box_3.png" data-gallery="" title="Página web y cookie de sesión"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión" class="" loading="lazy"></a></p>
 <figcaption>Página web y cookie de sesión</figcaption>
 </figure>
 </div>
@@ -408,8 +401,7 @@
 <p>Al acceder a una de las URLs del cliente se solicita la autenticación con una cuenta de Google, una vez autenticado se accede a la página que en este caso obtiene la información del usuario como el nombre y correo electrónico.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación de Spring autenticada con una cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación de Spring autenticada con una cuenta de Google" title="Aplicación de Spring autenticada con una cuenta de Google" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación de Spring autenticada con una cuenta de Google"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación de Spring autenticada con una cuenta de Google" title="Aplicación de Spring autenticada con una cuenta de Google" class="" loading="lazy"></a></p>
 <figcaption>Aplicación de Spring autenticada con una cuenta de Google</figcaption>
 </figure>
 </div>
@@ -429,8 +421,7 @@
 <p>Al crear las credenciales para el cliente se indican las URL de retorno permitidas a las que se retorna al <em>proxy</em> o a la aplicación después del inicio de sesión.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pasos para la creación de credenciales en Google para la autenticación OAuth"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_300x200_fit_box_3.png" width="226" height="200" alt="Pasos para la creación de credenciales en Google para la autenticación OAuth" title="Pasos para la creación de credenciales en Google para la autenticación OAuth" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_2560x1440_fit_box_3.png" data-gallery="" title="Pasos para la creación de credenciales en Google para la autenticación OAuth"><img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_300x200_fit_box_3.png" width="226" height="200" alt="Pasos para la creación de credenciales en Google para la autenticación OAuth" title="Pasos para la creación de credenciales en Google para la autenticación OAuth" class="" loading="lazy"></a></p>
 <figcaption>Pasos para la creación de credenciales en Google para la autenticación OAuth</figcaption>
 </figure>
 </div>

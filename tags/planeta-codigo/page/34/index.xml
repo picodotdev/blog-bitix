@@ -5,12 +5,64 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-19T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/01/convertir-fechas-y-husos-horarios-en-java/</id>
+        <title>Convertir fechas y husos horarios en Java</title>
+        <updated>2015-08-11T23:00:00+01:00</updated>
+        <published>2015-01-31T11:32:35+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/01/convertir-fechas-y-husos-horarios-en-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes"> 
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicación que trabaje con diferentes países y fechas probablemente deberemos tener en cuenta múltiples <a href="https://es.wikipedia.org/wiki/Huso_horario">husos horarios</a> o zonas horarias. Según estos husos horarios, por ejemplo, en el momento que son las 12:00 en Madrid hora local no son las 12:00 en Buenos Aires, si dos ciudades emplean diferente huso horario hay que tenerlo en cuenta para obtener la hora local en cada ciudad.</p>
+<p>Hasta la versión 7 de Java el trabajo con fechas era complicado con las clases proporcionadas <a href="https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/sql/Date.html">Date</a>, una alternativa a la API de Java para el manejo de fechas hasta esta versión era emplear la librería <a href="https://www.joda.org/joda-time/">JodaTime</a>. JodaTime ofrece una API mejor y más completa para el manejo de fechas hasta la versión de Java 7. Con la <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">nueva API para fechas de Java 8</a>, <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">entre otras novedades incluídas</a>, la situación ha mejorado pero hasta que tengamos oportunidad de usar esta versión puede que pase bastante tiempo y sigamos obligados a usar JodaTime si tenemos posibilidad de usar esta librería o usar directamente la API de Java 7 si no podemos.</p>
+<p>Otro aspecto que debemos tener en cuenta en una aplicación es en que huso horario vamos a guardar las fechas en la base de datos, para simplificar lo recomendable es guardar siempre las fechas en el mismo huso horario. Podemos elegir cualquier huso horario quizá la local del lugar donde estamos o una mas genérica como UTC.</p>
+<p>Podemos convertir la fecha de un huso horario a otro ya sea usando JodaTime, Java 7 o Java 8, por ejemplo ¿si en Madrid (España) son las 12:00 que hora sería en ese momento en Buenos Aires (Argentina)? El código que podemos emplear en Java para cambiar de zona horaria y averiguarlo es el siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.timezone</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.GregorianCalendar</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.TimeZone</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.joda.time.DateTime</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.joda.time.DateTimeZone</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">		<span class="c1">// JodaTime&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">DateTime</span> <span class="n">fecha</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DateTime</span><span class="o">(</span><span class="n">2015</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">31</span><span class="o">,</span> <span class="n">12</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">DateTimeZone</span><span class="o">.</span><span class="na">forID</span><span class="o">(</span><span class="s">&#34;Europe/Madrid&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;JodaTime&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Madrid:\t\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Buenos Aires:\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">.</span><span class="na">withZone</span><span class="o">(</span><span class="n">DateTimeZone</span><span class="o">.</span><span class="na">forID</span><span class="o">(</span><span class="s">&#34;America/Argentina/Buenos_Aires&#34;</span><span class="o">)));</span>&#10;</span></span><span class="line"><span class="cl">		<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">		&#10;</span></span><span class="line"><span class="cl">		<span class="c1">// Java 8&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">ZonedDateTime</span> <span class="n">fecha</span> <span class="o">=</span> <span class="n">ZonedDateTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2015</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">31</span><span class="o">,</span> <span class="n">12</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">00</span><span class="o">,</span> <span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Europe/Madrid&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;\nJava 8&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Madrid:\t\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Buenos Aires:\t %s\n&#34;</span><span class="o">,</span> <span class="n">fecha</span><span class="o">.</span><span class="na">withZoneSameInstant</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;America/Argentina/Buenos_Aires&#34;</span><span class="o">)));</span>			&#10;</span></span><span class="line"><span class="cl">		<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">		<span class="c1">// Java 7&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GregorianCalendar</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">2015</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">31</span><span class="o">,</span> <span class="n">12</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">			<span class="n">SimpleDateFormat</span> <span class="n">sdfMadrid</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">sdfMadrid</span><span class="o">.</span><span class="na">setTimeZone</span><span class="o">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="na">getTimeZone</span><span class="o">(</span><span class="s">&#34;Europe/Madrid&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">			<span class="n">SimpleDateFormat</span> <span class="n">sdfArgentina</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">sdfArgentina</span><span class="o">.</span><span class="na">setTimeZone</span><span class="o">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="na">getTimeZone</span><span class="o">(</span><span class="s">&#34;America/Argentina/Buenos_Aires&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;\nJava 7&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Madrid:\t\t %s\n&#34;</span><span class="o">,</span> <span class="n">sdfMadrid</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">()));</span>&#10;</span></span><span class="line"><span class="cl">			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Hora Buenos Aires:\t %s\n&#34;</span><span class="o">,</span> <span class="n">sdfArgentina</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">getTime</span><span class="o">()));</span>&#10;</span></span><span class="line"><span class="cl">		<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">	<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">JodaTime&#10;</span></span><span class="line"><span class="cl">Hora Madrid:		 2015-01-31T12:00:00.000+01:00&#10;</span></span><span class="line"><span class="cl">Hora Buenos Aires:	 2015-01-31T08:00:00.000-03:00&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Java 8&#10;</span></span><span class="line"><span class="cl">Hora Madrid:		 2015-01-31T12:00+01:00[Europe/Madrid]&#10;</span></span><span class="line"><span class="cl">Hora Buenos Aires:	 2015-01-31T08:00-03:00[America/Argentina/Buenos_Aires]&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Java 7&#10;</span></span><span class="line"><span class="cl">Hora Madrid:		 2015-01-31T12:00:00+01:00&#10;</span></span><span class="line"><span class="cl">Hora Buenos Aires:	 2015-01-31T08:00:00-03:00</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>output.txt</span>
+    </div>
+</div>
+<p>Java 7 requiere unas pocas líneas de código fuente más y en este caso se hace usando un SimpleDateFormat, en el caso de JodaTime y Java 8 el código es bastante similar.</p>
+<p>El huso horario de Madrid es <em>Europe/Madrid</em> y el huso horario de Buenos Aires es <em>America/Argentina/Buenos_Aires</em> en el momento de escribir este artículo Madrid tiene un desplazamiento respecto a UTC de +01:00 y Buenos Aires de -03:00 con lo que entre estas dos ciudades hay una diferencia de cuatro horas en tiempo local. Quizá nos interese conocer el <a href="http://www.timeanddate.com/worldclock/">tiempo local actual en una ciudad</a> y con el <a href="http://www.timeanddate.com/worldclock/converter.html">conversor entre husos horarios</a> podemos comprobar que hemos programado correctamente la conversión en código.</p>
+<p>Finalmente, hay que tener en cuenta que los <a href="https://es.wikipedia.org/wiki/Horario_de_verano">horarios de verano</a> que se establecen en cada país con la intención de ajustar normalmente el horario a las horas de luz y de este modo ahorrar energía. Estos horarios de verano los establece cada país y varían más a menudo de lo que podemos creer, a veces son una cuestión política. En el JDK para actualizar estos horarios de verano debemos actualizar el JDK esperando que <a href="https://www.oracle.com/">Oracle</a> los haya actualizado debidamente o usar la herramienta <a href="https://www.oracle.com/us/technologies/java/tzupdater-readme-136440.html">Timezone Updater Tool</a>. El actualizar el JDK o usar la herramienta Timezone Updater Tool en un servidor para esto puede ser un problema o simplemente es algo que no controlamos como desarrolladores de la aplicación por no estar el servidor bajo nuestro control, esta es otra ventaja de usar JodaTime ya que esta librería como dependencia del proyecto si está bajo nuestro control y podemos ir actualizando la versión de la misma en la que los horarios de verano si están actualizados.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/util/Date.html">Java 7 Date API</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">Java 8 Time API</a></li>
+<li><a href="https://www.joda.org/joda-time/">JodaTime</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/</id>
         <title>Internacionalización (i18n) en JavaScript</title>
@@ -21,8 +73,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
 <p>Si desarrollamos una aplicación web, que es usada en múltiples idiomas y el lado del cliente tiene cierta complejidad quizá nos encontremos con la necesidad de proporcionar internacionalización (i18n) para los textos o mensajes mediante una librería javascript. Una de la que más me ha gustado de las que he encontrado ha sido <a href="https://www.i18next.com/">i18next</a> pero hay <a href="https://stackoverflow.com/questions/3084675/internationalization-in-javascript">varias opciones más</a>, incluidas dos que merecen ser nombradas que son <a href="http://airbnb.github.io/polyglot.js/">polyglot</a> y <a href="https://github.com/SlexAxton/messageformat.js">messageformat</a>, estas tres opciones son parecidas pero no tienen exactamente las mismas funcionalidades, deberemos evaluarlas para elegir una según lo que necesitemos.</p>
 <p>La documentación de i18next no es muy extensa pero es suficiente, las funcionalidades que ofrece son:</p>
@@ -74,35 +125,28 @@
 <p>Cambiando el idioma preferido en el navegador podemos ver los textos de la aplicación según el mismo:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-es_hu4fffc33330c7356efb7d78fb0bf1042f_112035_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación en español"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-es_hu4fffc33330c7356efb7d78fb0bf1042f_112035_300x200_fit_box_3.png" width="296" height="200" alt="Aplicación en español" title="Aplicación en español"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-en_hu29c1d8e2333171926bcb978ef1032464_111310_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación en inglés"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-en_hu29c1d8e2333171926bcb978ef1032464_111310_300x200_fit_box_3.png" width="296" height="200" alt="Aplicación en inglés" title="Aplicación en inglés"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-es_hu4fffc33330c7356efb7d78fb0bf1042f_112035_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación en español"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-es_hu4fffc33330c7356efb7d78fb0bf1042f_112035_300x200_fit_box_3.png" width="296" height="200" alt="Aplicación en español" title="Aplicación en español"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-en_hu29c1d8e2333171926bcb978ef1032464_111310_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación en inglés"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/lista-tareas-en_hu29c1d8e2333171926bcb978ef1032464_111310_300x200_fit_box_3.png" width="296" height="200" alt="Aplicación en inglés" title="Aplicación en inglés"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El texto que indica cuantas tareas están completadas usa las diferentes formas plurales del lenguaje, en el caso del español dos, singular y plural cuando se marca una o dos tareas completadas.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/una-tarea-completada_hu19880757f83886461346764de6ace85a_113614_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Una tarea completada"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/una-tarea-completada_hu19880757f83886461346764de6ace85a_113614_300x200_fit_box_3.png" width="296" height="200" alt="Una tarea completada" title="Una tarea completada"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/dos-tareas-completadas_hu19880757f83886461346764de6ace85a_114028_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dos tareas completadas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/dos-tareas-completadas_hu19880757f83886461346764de6ace85a_114028_300x200_fit_box_3.png" width="296" height="200" alt="Dos tareas completadas" title="Dos tareas completadas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/una-tarea-completada_hu19880757f83886461346764de6ace85a_113614_2560x1440_fit_box_3.png" data-gallery="" title="Una tarea completada"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/una-tarea-completada_hu19880757f83886461346764de6ace85a_113614_300x200_fit_box_3.png" width="296" height="200" alt="Una tarea completada" title="Una tarea completada"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/dos-tareas-completadas_hu19880757f83886461346764de6ace85a_114028_2560x1440_fit_box_3.png" data-gallery="" title="Dos tareas completadas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/dos-tareas-completadas_hu19880757f83886461346764de6ace85a_114028_300x200_fit_box_3.png" width="296" height="200" alt="Dos tareas completadas" title="Dos tareas completadas"  class="lozad "></a></p>
 </figure>
 </div>
 <p>i18next se encarga de obtener los archivos de traducciones automáticamente según el idioma en que se deba mostrar la aplicación, para el caso de que el usuario tenga como idioma preferido es-ES se buscarán los archivos localizados es-ES, es y finalmente dev:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-es-ES_huece4ec21fc827eead67df2f890a04fc9_155599_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Búsqueda de traducciones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-es-ES_huece4ec21fc827eead67df2f890a04fc9_155599_300x200_fit_box_3.png" width="296" height="200" alt="Búsqueda de traducciones" title="Búsqueda de traducciones"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-dev_huce496a18efce224633be7674a57166e8_154965_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Búsqueda de traducciones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-dev_huce496a18efce224633be7674a57166e8_154965_300x200_fit_box_3.png" width="296" height="200" alt="Búsqueda de traducciones" title="Búsqueda de traducciones"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-es-ES_huece4ec21fc827eead67df2f890a04fc9_155599_2560x1440_fit_box_3.png" data-gallery="" title="Búsqueda de traducciones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-es-ES_huece4ec21fc827eead67df2f890a04fc9_155599_300x200_fit_box_3.png" width="296" height="200" alt="Búsqueda de traducciones" title="Búsqueda de traducciones"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-dev_huce496a18efce224633be7674a57166e8_154965_2560x1440_fit_box_3.png" data-gallery="" title="Búsqueda de traducciones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/peticiones-locales-dev_huce496a18efce224633be7674a57166e8_154965_300x200_fit_box_3.png" width="296" height="200" alt="Búsqueda de traducciones" title="Búsqueda de traducciones"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javascript comprobamos que todos siguen pasando correctamente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/teses_hu1a324ee03e7c394df7b271af0c2fb1f3_36608_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pruebas unitarias"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/teses_hu1a324ee03e7c394df7b271af0c2fb1f3_36608_300x200_fit_box_3.png" width="300" height="171" alt="Pruebas unitarias" title="Pruebas unitarias"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/teses_hu1a324ee03e7c394df7b271af0c2fb1f3_36608_2560x1440_fit_box_3.png" data-gallery="" title="Pruebas unitarias"><img src="https://picodotdev.github.io/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/images/teses_hu1a324ee03e7c394df7b271af0c2fb1f3_36608_300x200_fit_box_3.png" width="300" height="171" alt="Pruebas unitarias" title="Pruebas unitarias"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podrían utilizar como base para algo real, usa <a href="https://requirejs.org/">RequireJS</a>, <a href="https://mustache.github.io/">Mustache</a>, <a href="https://backbonejs.org/">Backbone</a>, <a href="https://reactjs.org/">React</a>, <a href="https://jasmine.github.io/">Jasmine</a>, <a href="https://gruntjs.com/">Grunt</a> y ahora <a href="https://www.i18next.com/">i18next</a> por la parte cliente y <a href="https://resteasy.jboss.org/">RESTEasy</a> y <a href="https://tapestry.apache.org/">Apache Tapestry</a> por la parte servidor, cada una de estas tecnologías las he comentado individualmente en varios artículos.</p>
@@ -154,14 +198,12 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bilbostack.png" width="300" height="78" alt="BilboStack" title="BilboStack"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bilbostack.png" width="300" height="78" alt="BilboStack" title="BilboStack"  class=""></p>
 </div>
 <p>Un año más una de las primeras conferencias del año se ha celebrado en Bilbao, la <a href="https://bilbostack.com/">BilboStack</a> 2015. Esta edición del 2015 ha sido la cuarta entrega donde varios profesionales del sector de las tecnologías han hablado de diversos temas, desde programación hasta metodologías de desarrollo y algunas otras cosas relacionadas con la tecnología y el desarrollo. Cada año la BilboStack acoge a más asistentes en la <a href="http://www.deusto.es">Universidad de Deusto</a> dando lugar este año a un cambio de ubicación dentro de la propia universidad para poder dar cabida a todos de forma más cómoda. Como en ediciones anteriores este año ha seguido manteniéndose gratuita, lo único necesario ha sido el registro para adquirir la entrada.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/universidad_hubc8aa6765d5e99e6c97092ce358c3155_148077_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Universidad de Deusto"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/universidad_hubc8aa6765d5e99e6c97092ce358c3155_148077_300x200_fit_q90_box.jpg" width="267" height="200" alt="Universidad de Deusto" title="Universidad de Deusto"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/universidad_hubc8aa6765d5e99e6c97092ce358c3155_148077_2560x1440_fit_q90_box.jpg" data-gallery="" title="Universidad de Deusto"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/universidad_hubc8aa6765d5e99e6c97092ce358c3155_148077_300x200_fit_q90_box.jpg" width="267" height="200" alt="Universidad de Deusto" title="Universidad de Deusto"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minutos en dos tracks simultáneos en horario únicamente de mañana y durante un día, siendo la agenda de este 2015 la siguiente:</p>
@@ -223,14 +265,12 @@
 </table>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track1_huf31e4ef64f7c3f38e59a34285a9f11b2_59977_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Sala track 1"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track1_huf31e4ef64f7c3f38e59a34285a9f11b2_59977_300x200_fit_q90_box.jpg" width="266" height="200" alt="Sala track 1" title="Sala track 1"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track1_huf31e4ef64f7c3f38e59a34285a9f11b2_59977_2560x1440_fit_q90_box.jpg" data-gallery="" title="Sala track 1"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track1_huf31e4ef64f7c3f38e59a34285a9f11b2_59977_300x200_fit_q90_box.jpg" width="266" height="200" alt="Sala track 1" title="Sala track 1"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track2_hu5c46c924b6c660f63c9a07b86fab3514_127174_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Sala track 2"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track2_hu5c46c924b6c660f63c9a07b86fab3514_127174_300x200_fit_q90_box.jpg" width="300" height="168" alt="Sala track 2" title="Sala track 2"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track2_hu5c46c924b6c660f63c9a07b86fab3514_127174_2560x1440_fit_q90_box.jpg" data-gallery="" title="Sala track 2"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/track2_hu5c46c924b6c660f63c9a07b86fab3514_127174_300x200_fit_q90_box.jpg" width="300" height="168" alt="Sala track 2" title="Sala track 2"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Como cada año no puede faltar alguna presentación del ubicuo JavaScript y en las presentaciones de años anteriores ha habido de PHP, Python, Groovy y .NET pero aún no ha habido ninguna de Java (a pesar de que será uno de los más usados por los asistentes). Después de revisar la agenda de este año he asistido únicamente y a todas a las presentaciones del track 1. Del track 2 me llamaban la atención la de ReactJS, pero es una herramienta que ya conozco y que me parece de lo mejor para su propósito aún así intuía que iba a conocer poco nuevo después de escribir el artículo <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">Ejemplo lista de tareas con Backbone y React</a> y usarlo en el ejemplo simple pero ilustrativo mostrado. También me llamaba la atención Wordpress al límite y Arquitectura frontend de CartoDB. A continuación un resumen breve de cada una de las presentaciones a las que he asistido.</p>
@@ -241,8 +281,7 @@
 <p>Después de la presentación me planteo aprender algo de .NET porque siendo pragmático hay una buena cantidad de ofertas de trabajo solicitando conocimientos en esta plataforma y algunas aparentemente interesantes.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/dotnet_hu0deb91fb81ffe484194292803dd4d9b1_147114_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Desarrollo de aplicaciones web con .NET en MAC o Linux"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/dotnet_hu0deb91fb81ffe484194292803dd4d9b1_147114_300x200_fit_q90_box.jpg" width="267" height="200" alt="Desarrollo de aplicaciones web con .NET en MAC o Linux" title="Desarrollo de aplicaciones web con .NET en MAC o Linux"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/dotnet_hu0deb91fb81ffe484194292803dd4d9b1_147114_2560x1440_fit_q90_box.jpg" data-gallery="" title="Desarrollo de aplicaciones web con .NET en MAC o Linux"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/dotnet_hu0deb91fb81ffe484194292803dd4d9b1_147114_300x200_fit_q90_box.jpg" width="267" height="200" alt="Desarrollo de aplicaciones web con .NET en MAC o Linux" title="Desarrollo de aplicaciones web con .NET en MAC o Linux"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="google-es-ciego-empor-oihana-alberdiem">Google es ciego <em>por Oihana Alberdi</em></h3>
@@ -250,8 +289,7 @@
 <p>En la mejora de la accesibilidad de una página intervienen tanto diseñadores (tipografía, colores, estilos externalizados) como desarrolladores (código html limpio, javascript no intrusivo) y pueden ayudarse de herramientas como <a href="http://validator.w3.org/">validadores de HTML</a>, <a href="http://jigsaw.w3.org/css-validator/">validadores de CSS</a>, <a href="http://www.tawdis.net/">validadores de accesibilidad</a>. También podemos comprobar como se ve una página sin estilos (como es accedida por google), con javascript deshabilitado, añadiendo atributos alt (como a imágenes), añadiendo teclas de acceso, &hellip; algunas de estas cosas pueden probarse rápidamente con el <a href="https://addons.mozilla.org/es/firefox/addon/web-developer/">plugin web developer de Firefox</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/google-es-ciego_hu4e3ba4a773c576ae9d446c72b9ac5705_139286_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Google es ciego"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/google-es-ciego_hu4e3ba4a773c576ae9d446c72b9ac5705_139286_300x200_fit_q90_box.jpg" width="267" height="200" alt="Google es ciego" title="Google es ciego"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/google-es-ciego_hu4e3ba4a773c576ae9d446c72b9ac5705_139286_2560x1440_fit_q90_box.jpg" data-gallery="" title="Google es ciego"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/google-es-ciego_hu4e3ba4a773c576ae9d446c72b9ac5705_139286_300x200_fit_q90_box.jpg" width="267" height="200" alt="Google es ciego" title="Google es ciego"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="descubriendo-los-beacons-empor-borja-reinaresem">Descubriendo los Beacons <em>por Borja Reinares</em></h3>
@@ -261,8 +299,7 @@
 <p>Los <em>beacons</em> y BLE puede ser un nuevo campo tecnológico, veremos si realmente se convierte en útil y se implanta su uso o si finalmente desaparece y posteriormente resurge como un nuevo concepto basado en el anterior que finalmente sea usado.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/beacons_hu8e5352d39ff844a44f798ffe49b90533_127858_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Descubriendo los Beacons"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/beacons_hu8e5352d39ff844a44f798ffe49b90533_127858_300x200_fit_q90_box.jpg" width="267" height="200" alt="Descubriendo los Beacons" title="Descubriendo los Beacons"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/beacons_hu8e5352d39ff844a44f798ffe49b90533_127858_2560x1440_fit_q90_box.jpg" data-gallery="" title="Descubriendo los Beacons"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/beacons_hu8e5352d39ff844a44f798ffe49b90533_127858_300x200_fit_q90_box.jpg" width="267" height="200" alt="Descubriendo los Beacons" title="Descubriendo los Beacons"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="qué-es-eso-de-iot-empor-quique-martinezem">¿Qué es eso de IoT? <em>por Quique Martinez</em></h3>
@@ -271,8 +308,7 @@
 <p>Otro nuevo área tecnológico en el que descubrir aplicaciones útiles y con gran potencial.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/iot_hu95c163bb02b27e595f59df6e5b03e2e8_119780_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Internet de las cosas (IoT)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/iot_hu95c163bb02b27e595f59df6e5b03e2e8_119780_300x200_fit_q90_box.jpg" width="267" height="200" alt="Internet de las cosas (IoT)" title="Internet de las cosas (IoT)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/iot_hu95c163bb02b27e595f59df6e5b03e2e8_119780_2560x1440_fit_q90_box.jpg" data-gallery="" title="Internet de las cosas (IoT)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/iot_hu95c163bb02b27e595f59df6e5b03e2e8_119780_300x200_fit_q90_box.jpg" width="267" height="200" alt="Internet de las cosas (IoT)" title="Internet de las cosas (IoT)"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="bomberos-pirómanos-empor-ujue-agudo-y-aritz-suescunem">Bomberos pirómanos <em>por Ujue Agudo y Aritz Suescun</em></h3>
@@ -285,8 +321,7 @@
 </ol>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/bomberos-piromanos_hu6e6c455272234a8f6a921f0ab199aecb_112858_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Bombero pirómano"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/bomberos-piromanos_hu6e6c455272234a8f6a921f0ab199aecb_112858_300x200_fit_q90_box.jpg" width="267" height="200" alt="Bombero pirómano" title="Bombero pirómano"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/bomberos-piromanos_hu6e6c455272234a8f6a921f0ab199aecb_112858_2560x1440_fit_q90_box.jpg" data-gallery="" title="Bombero pirómano"><img src="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/images/bomberos-piromanos_hu6e6c455272234a8f6a921f0ab199aecb_112858_300x200_fit_q90_box.jpg" width="267" height="200" alt="Bombero pirómano" title="Bombero pirómano"  class="lozad "></a></p>
 </figure>
 </div>
 <hr>
@@ -319,8 +354,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una de las cosas que he tenido que resolver en <a href="https://twitter.com/blogstackinfo">Blog Stack</a> es como conseguir un extracto del contenido completo de una cadena que es HTML. Esto lo he usado en los diferentes feeds de Blog Stack donde solo se muestra el extracto de cada artículo y no el texto completo. A primera vista puede parecer fácil pero no lo es tanto, cortar una cadena que es html haciendo un substring puede ocasionar problemas si se hace en un mal punto de la cadena y luego esa cadena cortada se inserta como contenido de nuevo el una página web. Lo más probable que ocurra es una desmaquetación de la página o que los estilos aparezcan mal pero puede dejar estropeada la página completa.</p>
 <p>Por ejemplo, si tenemos la siguiente cadena y la cortamos en un mal punto y luego insertamos en una página html ese contenido lo que ocurrirá es que todo el texto a continuación de él aparecerá en negrita.</p>
@@ -354,8 +388,7 @@
 <p>El resultado aplicando está solución puede verse en el <a href="https://picodotdev.github.io/blog-bitix/index.xml">feed de la portada de Blog Stack</a> donde se muestra una entradilla o extracto del inicio del contenido de cada uno de los artículos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/como-hacer-un-substring-de-una-cadena-html/images/blogstack_hu136623f3657149380e94f9bb052c5761_271412_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Portada Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2015/01/como-hacer-un-substring-de-una-cadena-html/images/blogstack_hu136623f3657149380e94f9bb052c5761_271412_300x200_fit_box_3.png" width="300" height="171" alt="Portada Blog Stack" title="Portada Blog Stack"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/como-hacer-un-substring-de-una-cadena-html/images/blogstack_hu136623f3657149380e94f9bb052c5761_271412_2560x1440_fit_box_3.png" data-gallery="" title="Portada Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2015/01/como-hacer-un-substring-de-una-cadena-html/images/blogstack_hu136623f3657149380e94f9bb052c5761_271412_300x200_fit_box_3.png" width="300" height="171" alt="Portada Blog Stack" title="Portada Blog Stack"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El código fuente de Blog Stack está disponible en un <a href="https://github.com/picodotdev/blog-stack/tree/master">repositorio de GitHub</a> donde puede verse el código completo.</p>
@@ -388,57 +421,45 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal"  class=""></p>
 </div>
 <p>Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">Sistemas de gestión de contenidos</a> (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.</p>
 <p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
 <p>Drupal como decía está desarrollado sobre PHP pero solo necesitaremos conocer este lenguaje en el momento que queramos desarrollar y personalizarlo. Como usuarios para crear contenido y gestionar la disposición de los elementos en la página web no necesitamos conocer nada de PHP solo necesitaremos conocer como funciona la herramienta de administración que ofrece Drupal. El tipo de los proyectos para los que puede estar indicado Durpal puede ser aquellos en los que los usuarios quieran crear y publicar nuevo contenido y quieran ellos mismos modificar los elementos de las páginas sin necesidad de solicitar un desarrollo. Algunos casos de uso pueden ser instituciones de la administración pública, empresas, tiendas, comercios, &hellip; aquellos que quieran tener una presencia en internet y puedan necesitar añadir, modificar o eliminar en algún momento el contenido de su web. La tarea de los desarrolladores consistirá en personalizar la instalación de Drupal a las necesidades del cliente y sus usuarios ya sea adaptando el aspecto de la web a crear, creando la taxonomía del contenido, definiendo los tipos de contenidos y que información contiene, usuarios y roles, &hellip;</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio Drupal"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_300x200_fit_box_3.png" width="282" height="200" alt="Inicio Drupal" title="Inicio Drupal"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio Drupal (Administración)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_300x200_fit_box_3.png" width="284" height="200" alt="Inicio Drupal (Administración)" title="Inicio Drupal (Administración)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_2560x1440_fit_box_3.png" data-gallery="" title="Inicio Drupal"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_300x200_fit_box_3.png" width="282" height="200" alt="Inicio Drupal" title="Inicio Drupal"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_2560x1440_fit_box_3.png" data-gallery="" title="Inicio Drupal (Administración)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_300x200_fit_box_3.png" width="284" height="200" alt="Inicio Drupal (Administración)" title="Inicio Drupal (Administración)"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Por defecto Drupal ofrece dos tipos de contenido páginas y artículos que poseen un título y un cuerpo aunque podemos crear nuevos tipos de contenido con información adicional como podría ser eventos que recojan además una fecha y hora de inicio, fecha y hora de fin, lugar, &hellip;. Podemos crear usuarios y roles y asignarles permisos como poder crear contenidos, crear menús con enlaces a ciertos contenidos que queramos destacar. Podemos usar taxonomía para categorizar el contenido y que este esté organizado y sea fácilmente encontrado por los usuarios. Asociar tipos de contenido con ciertos tipo de taxonomía. Modificar los bloques como menús, formulario de inicio de sesión, &hellip; y hacer que solo se vean en ciertas páginas, para algunos tipos de contenidos, ciertos roles o usuarios. Hacer vistas o listas de los contenidos. Modificar la disposición o layout de las páginas por ejemplo para que tenga dos, tres columnas, una cabecera y un pie, &hellip;. Finalmente también podemos modificar y personalizar el aspecto del sitio web con temas que podemos descargar o desarrollar nosotros mismos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear página"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_300x200_fit_box_3.png" width="268" height="200" alt="Crear página" title="Crear página"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear artículo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_300x200_fit_box_3.png" width="268" height="200" alt="Crear artículo" title="Crear artículo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_2560x1440_fit_box_3.png" data-gallery="" title="Crear página"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_300x200_fit_box_3.png" width="268" height="200" alt="Crear página" title="Crear página"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_2560x1440_fit_box_3.png" data-gallery="" title="Crear artículo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_300x200_fit_box_3.png" width="268" height="200" alt="Crear artículo" title="Crear artículo"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Tipos de contenido"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_300x200_fit_box_3.png" width="268" height="200" alt="Tipos de contenido" title="Tipos de contenido"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_300x200_fit_box_3.png" width="268" height="200" alt="Taxonomía" title="Taxonomía"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_2560x1440_fit_box_3.png" data-gallery="" title="Tipos de contenido"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_300x200_fit_box_3.png" width="268" height="200" alt="Tipos de contenido" title="Tipos de contenido"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_2560x1440_fit_box_3.png" data-gallery="" title="Taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_300x200_fit_box_3.png" width="268" height="200" alt="Taxonomía" title="Taxonomía"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Etiquetas taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_300x200_fit_box_3.png" width="268" height="200" alt="Etiquetas taxonomía" title="Etiquetas taxonomía"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Bloques"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_300x200_fit_box_3.png" width="268" height="200" alt="Bloques" title="Bloques"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_2560x1440_fit_box_3.png" data-gallery="" title="Etiquetas taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_300x200_fit_box_3.png" width="268" height="200" alt="Etiquetas taxonomía" title="Etiquetas taxonomía"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_2560x1440_fit_box_3.png" data-gallery="" title="Bloques"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_300x200_fit_box_3.png" width="268" height="200" alt="Bloques" title="Bloques"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_300x200_fit_box_3.png" width="268" height="200" alt="Personas" title="Personas"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Permisos personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_300x200_fit_box_3.png" width="268" height="200" alt="Permisos personas" title="Permisos personas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_2560x1440_fit_box_3.png" data-gallery="" title="Personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_300x200_fit_box_3.png" width="268" height="200" alt="Personas" title="Personas"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_2560x1440_fit_box_3.png" data-gallery="" title="Permisos personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_300x200_fit_box_3.png" width="268" height="200" alt="Permisos personas" title="Permisos personas"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Roles personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_300x200_fit_box_3.png" width="268" height="200" alt="Roles personas" title="Roles personas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_2560x1440_fit_box_3.png" data-gallery="" title="Roles personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_300x200_fit_box_3.png" width="268" height="200" alt="Roles personas" title="Roles personas"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Drupal es ampliamente <a href="https://www.drupal.org/project/project_module">extensible mediante módulos</a> permitiendo agregarle funcionalidades de diferentes categorías (contenido, administración, integración con terceros, comercio electrónico, &hellip;) si las incorporadas por defecto no nos son suficientes. Algunos de  los módulos más empleados son <a href="https://www.drupal.org/project/panels">Panels</a> que permite definir contenedores (barra izquierda, región contenido, barra derecha, pie, cabecera, &hellip;) en una página y asignar el contenido que queremos que aparezca en cada uno de ellos, <a href="https://www.drupal.org/project/cck">Content Construction Kit (CCK)</a>, <a href="https://www.drupal.org/project/views">Views</a> para definir vistas de una colección de elementos, <a href="https://www.drupal.org/project/pathauto">Pathauto</a> para hacer las URLs amigables al usuario y buscadores mejorando el SEO del sitio, <a href="https://www.drupal.org/project/webform">Webform</a> para crear formularios y recoger información y otros muchos más para infinidad de cosas. Sin embargo, conviene usar los más populares que están ampliamente probados y hayan demostrado su utilidad, los que tenga buen soporte y un mantenimiento activo, estas cosas las podemos seleccionar con el filtro en el formulario de búsqueda de módulos.</p>
@@ -480,15 +501,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="300" height="89" alt="Redmine" title="Redmine"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="300" height="89" alt="Redmine" title="Redmine"  class=""></p>
 </div>
 <p>Las metodologías ágiles para la gestión de proyectos son ya ampliamente usadas, como <a href="https://es.wikipedia.org/wiki/Scrum_%28desarrollo_de_software%29">scrum</a> o <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_extrema">programación extrema</a> (XP). Una diferencia entre las metodologías ágiles y las metodologías empleadas tradicionalmente como el modelo en cascada es que en las metodologías ágiles se tiene en cuenta que se pueden producir cambios en el desarrollo del proyecto y suelen ser más flexibles y adaptables ante estos cambios.</p>
 <p>En el modelo de metodología ágil podemos usar un panel kanban donde ver de un vistazo rápido las tareas terminadas, las que están en progreso y las próximas tareas planificadas reflejando la realidad del equipo de desarrollo. Reorganizándolas según prioridades que pueden cambiar de una semana a otra, en las metodologías ágiles no se realiza una planificación completa inicial sino que se va realizando a medida que el proyecto progresa.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Panel Kanban de Redmine"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_300x200_fit_box_3.png" width="300" height="136" alt="Panel Kanban de Redmine" title="Panel Kanban de Redmine"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_2560x1440_fit_box_3.png" data-gallery="" title="Panel Kanban de Redmine"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_300x200_fit_box_3.png" width="300" height="136" alt="Panel Kanban de Redmine" title="Panel Kanban de Redmine"  class="lozad "></a></p>
 </figure>
 </div>
 <p>También para la gestión de las tareas de los proyectos se suele usar algún tipo de herramienta que permita recoger y gestionar las peticiones adaptada a la metodología que usemos, una de estas herramientas puede ser <a href="https://www.redmine.org/">Redmine</a>. En la <a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">introducción sobre Redmine</a> comentaba que es lo nos puede ofrecer para gestionar el proyecto.</p>
@@ -504,17 +523,14 @@
 <p>Finalmente, debemos activar el plugin agile en el proyecto usando la opción Administration&gt; Agile.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Activación panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_300x200_fit_box_3.png" width="300" height="139" alt="Activación panel Kanban" title="Activación panel Kanban"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_2560x1440_fit_box_3.png" data-gallery="" title="Activación panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_300x200_fit_box_3.png" width="300" height="139" alt="Activación panel Kanban" title="Activación panel Kanban"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez activado ya podemos ver el panel kanban mostrado en la primera captura en la pestaña ágil. Por defecto en Redmine solo veremos las columnas New, In progress, Resolved y Feedback pero podemos modificar el flujo de las peticiones adaptándolo a nuestra metodología u organización, podemos hacer esto desde Administración&gt; Estados de peticiones para crear nuevos estados y Administración&gt; Flujo de trabajo para establecer el grafo de estados determinando a que estados puede cambiar una petición desde su estado actual.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estados de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_300x200_fit_box_3.png" width="300" height="139" alt="Estados de peticiones" title="Estados de peticiones"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Flujo de trabajo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_300x200_fit_box_3.png" width="300" height="139" alt="Flujo de trabajo" title="Flujo de trabajo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_2560x1440_fit_box_3.png" data-gallery="" title="Estados de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_300x200_fit_box_3.png" width="300" height="139" alt="Estados de peticiones" title="Estados de peticiones"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_2560x1440_fit_box_3.png" data-gallery="" title="Flujo de trabajo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_300x200_fit_box_3.png" width="300" height="139" alt="Flujo de trabajo" title="Flujo de trabajo"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="reference">
@@ -549,8 +565,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>Seis nuevos meses para el Blog Bitix cumpliendo un año como tal y siendo la continuación de los casi cuatro años de <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a>. Otro año que finaliza y toca hacer <a href="https://picodotdev.github.io/blog-bitix/2014/">recapitulación de los que he escrito durante este tiempo</a>, 26 nuevos artículos escritos con puntualidad uno por semana y publicados el viernes o sábado.</p>
 <p>Aunque aún no puedo usar profesionalmente el <em>framework</em> web <a href="https://tapestry.apache.org/">Apache Tapestry</a> con el realmente me divierto programando sigo escribiendo sobre él con algunos temas interesantes tales que cómo usar un CDN, cómo crear plantillas para dar un aspecto común a todas las páginas de la aplicación, una comparativa entre el modelo «pull» que usa Tapestry y el modelo «push» que normalmente se usa en los <em>framework</em> basados en acciones, cómo crear una doble barra de botones sin duplicar el mismo código, como forzar el uso de https o la anotación Cached. Todo este contenido lo he añadido al <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> y que puedes descargar de forma totalmente libre en varios formatos. No está mal y aún tengo más contenido pendiente por publicar tal que como embeber una aplicación web usando tomcat-embed de forma que la aplicación esté autocontenida y el despliegue sea más sencillo y evitemos problemas, hacer un ejemplo con el componente Grid que muestre sus grandes posibilidades y la gran cantidad de trabajo que nos puede ahorrar, &hellip;</p>
@@ -592,8 +607,7 @@
 <p>Y para finalizar quiero agradecer a <a href="https://twitter.com/fran_mosteiro">Fran Mosteiro</a>, <a href="https://twitter.com/josetesan">Jose Luís Sánchez</a>, <a href="https://twitter.com/jbravo">Joaquín Bravo</a>, <a href="https://twitter.com/mbmerayo">Marcos Bello</a> y algunos otros que esporádicamente también suelen hacer RT o marcar como favoritos los tweets de esta bitácora y que me ayudan un poquito o mucho a difundir lo que escribo ¡muchas gracias!, un saludo y ¡que comencéis bien el nuevo año 2015! :)</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Christmastux 2014"><img src="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmastux 2014" title="Christmastux 2014"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_2560x1440_fit_q90_box.jpg" data-gallery="" title="Christmastux 2014"><img src="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmastux 2014" title="Christmastux 2014"  class="lozad "></a></p>
 <figcaption>¡Buen 2015! <br>Fuente: klowner.com</figcaption>
 </figure>
 </div>
@@ -621,48 +635,38 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="200" height="59" alt="Redmine" title="Redmine"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="200" height="59" alt="Redmine" title="Redmine"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
 </div>
 <p>Para desarrollar un proyecto de software se hace imprescindible disponer de algunas herramientas que nos permitan realizar las tareas. Una de estas herramientas es un <a href="https://en.wikipedia.org/wiki/Issue_tracking_system">gestor de tareas, peticiones o errores</a>, que nos permite recoger en una herramienta gran parte de la información, conocer el estado, planificar y hacer el seguimiento las tareas necesario para desarrollar de forma ordenada, sin que perdamos nada de información y pudiendo recuperarla en cualquier momento en un futuro.</p>
 <p>Como es habitual herramientas que gestionan tareas disponemos de varias algunas de las más conocidas son <a href="https://www.bugzilla.org/">Bugzilla</a>, <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://www.mantisbt.org/">Mantis</a>, <a href="https://trac.edgewall.org/">Trac</a> y la herramienta de la que hablaré en este artículo, <a href="https://www.redmine.org/">Redmine</a>. Cada una de estas herramientas como gestores de tareas son parecidas pero se diferencian en algunas cosas como la licencia que tiene, el esquema de precios o la funcionalidad que ofrece. Redmine tiene una <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">licencia de software libre GPL</a> y por tanto la podemos usar sin ningún coste, en la siguiente tabla podemos compararla con los <a href="https://www.atlassian.com/software/jira/pricing">precios de JIRA</a> que para pocos usuarios son asumibles pero que a medida que se aumentan los usuarios empiezan a ser notables aunque posiblemente alcanzables en función del tamaño de la empresa. En cualquier siendo JIRA también una herramienta excelente Redmine cumple perfectamente con la misma función. En la wikipedia podemos encontrar <a href="https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems">más opciones y comparar unas con otras</a>.</p>
 <p>Si queremos evaluar Redmine una forma sencilla podemos hacerlo mediante una imagen de Bitnami con VirtualBox. En la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">introducción a Bitnami</a> comento qué es y como nos puede ayudar a disponer de software que en algunos casos no es simple de instalar y que con Bitnami podemos disponer de forma sencilla y rápida, además de como usar con VirtualBox cualquier imagen de Bitnami de las herramientas ofrecidas. Una vez seguidos los pasos de la guía anterior podemos acceder a Redmine con el navegador web y una dirección similar a <em>http://192.168.0.11</em>, el usuario y contraseña para acceder es user y bitnami respectivamente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Proyecto"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_300x200_fit_box_3.png" width="300" height="181" alt="Proyecto" title="Proyecto"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Petición"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_300x200_fit_box_3.png" width="300" height="185" alt="Petición" title="Petición"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_2560x1440_fit_box_3.png" data-gallery="" title="Proyecto"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_300x200_fit_box_3.png" width="300" height="181" alt="Proyecto" title="Proyecto"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_2560x1440_fit_box_3.png" data-gallery="" title="Petición"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_300x200_fit_box_3.png" width="300" height="185" alt="Petición" title="Petición"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Con Redmine podemos adaptar el flujo de las tareas a la forma de organización que empleemos, podemos personalizar el grafo de estados que siguen las tareas y que personas tiene permisos para hacer cada uno de los cambios de estado. También podemos añadir campos personalizados que queremos recoger para cada petición, por ejemplo, podemos querer dar un tamaño a las tareas en función de si estimamos que es grande, media o pequeña. También podemos crear filtros y guardarlos para encontrar fácilmente tareas.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_300x200_fit_box_3.png" width="300" height="181" alt="Estados" title="Estados"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Propiedades"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_300x200_fit_box_3.png" width="300" height="181" alt="Propiedades" title="Propiedades"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_2560x1440_fit_box_3.png" data-gallery="" title="Estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_300x200_fit_box_3.png" width="300" height="181" alt="Estados" title="Estados"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_2560x1440_fit_box_3.png" data-gallery="" title="Propiedades"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_300x200_fit_box_3.png" width="300" height="181" alt="Propiedades" title="Propiedades"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Filtros"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_300x200_fit_box_3.png" width="249" height="200" alt="Filtros" title="Filtros"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Flujo estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_300x200_fit_box_3.png" width="300" height="177" alt="Flujo estados" title="Flujo estados"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_2560x1440_fit_box_3.png" data-gallery="" title="Filtros"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_300x200_fit_box_3.png" width="249" height="200" alt="Filtros" title="Filtros"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_2560x1440_fit_box_3.png" data-gallery="" title="Flujo estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_300x200_fit_box_3.png" width="300" height="177" alt="Flujo estados" title="Flujo estados"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Además de gestionar las tareas Redmine dispone de herramientas que nos pueden ser útiles en el proyecto como una wiki para recoger documentación del proyecto y un repositorio de documentos para aquellos que no queremos incluir en la herramienta de control de versiones por su tamaño pero que queremos que estén disponibles para cualquiera que trabaje con el proyecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Wiki"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_300x200_fit_box_3.png" width="262" height="200" alt="Wiki" title="Wiki"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_300x200_fit_box_3.png" width="300" height="133" alt="Archivos" title="Archivos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_2560x1440_fit_box_3.png" data-gallery="" title="Wiki"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_300x200_fit_box_3.png" width="262" height="200" alt="Wiki" title="Wiki"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_2560x1440_fit_box_3.png" data-gallery="" title="Archivos"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_300x200_fit_box_3.png" width="300" height="133" alt="Archivos" title="Archivos"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Pero Redmine es más que una herramienta de gestión de tareas, los complementos pueden añadirle funcionalidad adicional que permite <a href="http://www.redminecrm.com/projects/crm/pages/1">convertirla en un CRM para gestionar las comunicaciones con clientes</a> o en un <a href="http://www.redminecrm.com/projects/helpdesk/pages/1">helpdesk para atender las tareas de clientes</a>. Además de otros como <a href="http://www.redminecrm.com/projects/people/pages/1">personalizar los usuarios de Redmine</a> o crear <a href="http://www.redminecrm.com/projects/checklist/pages/1">pequeñas listas de tareas</a> que nos evitará crear subtareas.</p>
@@ -720,8 +724,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/ejercicios-katas-para-mejorar-habilidades-de-programacion-practicando/images/teses-junit_hufd5df9af52eaf6ce499b5244effa36fc_31631_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ejecución de teses"><img src="https://picodotdev.github.io/blog-bitix/2014/12/ejercicios-katas-para-mejorar-habilidades-de-programacion-practicando/images/teses-junit_hufd5df9af52eaf6ce499b5244effa36fc_31631_300x200_fit_box_3.png" width="300" height="167" alt="Ejecución de teses" title="Ejecución de teses"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/ejercicios-katas-para-mejorar-habilidades-de-programacion-practicando/images/teses-junit_hufd5df9af52eaf6ce499b5244effa36fc_31631_2560x1440_fit_box_3.png" data-gallery="" title="Ejecución de teses"><img src="https://picodotdev.github.io/blog-bitix/2014/12/ejercicios-katas-para-mejorar-habilidades-de-programacion-practicando/images/teses-junit_hufd5df9af52eaf6ce499b5244effa36fc_31631_300x200_fit_box_3.png" width="300" height="167" alt="Ejecución de teses" title="Ejecución de teses"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Aun practicando estas katas no va a hacer que luego nuestro código en un proyecto real sea perfecto ni siquiera algo cercano a ello más bien hará que sea un poquito mejor, estos ejercicios son bastante simples que no tienen las complejidades de algunos casos reales, aún así siguen mereciendo realizarlos. También hay que tener en cuenta que no son realmente para aprender a programar aunque si pueden servir para aprender un nuevo lenguaje sobre todo si se hacen con otra persona que ya lo conoce y mientras se realiza la kata podemos preguntarle y nos resuelva las dudas que nos vayan surgiendo de la sintaxis, API o herramientas de ese lenguaje.</p>
@@ -824,8 +827,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
 </div>
 <p>Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados.</p>
 <p><a href="https://bitnami.com/">Bitnami</a> es una amplia colección de servicios populares que permite instalarlos y disponer de ellos rápidamente completamente configurados sin necesidad de dedicar tiempo a conocer como instalarlos, además, si empleamos virtualización con <a href="https://www.virtualbox.org/">VirtualBox</a> se consigue que el equipo quede completamente limpio una vez que el servicio sea desinstalado bastando únicamente eliminar la máquina virtual. Esta colección de servicios se pueden instalar en el propio equipo, en una máquina virtual con VirtualBox, <a href="https://www.vmware.com/">VMware</a>, <a href="https://www.linux-kvm.org/page/Main_Page">KVM</a> o en la nube por ejemplo de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> o <a href="https://cloud.google.com/">Google Cloud</a> y próximamente usando <a href="https://www.docker.com/">Docker</a>.</p>
@@ -836,10 +838,8 @@
 <p>Teniendo instalado previamente VirtualBox, primeramente necesitaremos descargar la imagen del disco que contiene la <a href="https://bitnami.com/stack/gitlab">aplicación de Bitnami para GitLab</a>. Accedida a la sección <a href="https://bitnami.com/stack/gitlab/virtual-machine"><em>Local Install</em></a> pulsamos el botón <em>Download</em> según la versión del sistema operativo que prefiramos, en este caso usaré la basada en <a href="https://www.debian.org/">Debian</a>. A continuación hay que crear una máquina virtual en VirtualBox mediante la opción <em>Importar servicio virtualizado&hellip;</em> del menú <em>Archivo</em> donde hay que seleccionar el archivo de extensión <em>ova</em> y cambiaremos la memoria asignada a la máquina virtual al menos 2048 MiB.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Importación de servicio virtualizado en VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_300x200_fit_box_3.png" width="300" height="198" alt="Importación de servicio virtualizado en VirtualBox" title="Importación de servicio virtualizado en VirtualBox"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquina virtual de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_300x200_fit_box_3.png" width="296" height="200" alt="Máquina virtual de GitLab" title="Máquina virtual de GitLab"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_2560x1440_fit_box_3.png" data-gallery="" title="Importación de servicio virtualizado en VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_300x200_fit_box_3.png" width="300" height="198" alt="Importación de servicio virtualizado en VirtualBox" title="Importación de servicio virtualizado en VirtualBox"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_2560x1440_fit_box_3.png" data-gallery="" title="Máquina virtual de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_300x200_fit_box_3.png" width="296" height="200" alt="Máquina virtual de GitLab" title="Máquina virtual de GitLab"  class="lozad "></a></p>
 <figcaption>Importación de servicio virtualizado de Bitnami en VirtualBox</figcaption>
 </figure>
 </div>
@@ -847,10 +847,8 @@
 <p>Accediendo con el navegador a la dirección <em>https://192.168.1.3</em> se accede a la aplicación de GitLab que pide un usuario y contraseña para iniciar sesión, el usuario y contraseña están indicados en la página de descarga de la imagen del servicio.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de sesión de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_300x200_fit_box_3.png" width="284" height="200" alt="Inicio de sesión de GitLab" title="Inicio de sesión de GitLab"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_300x200_fit_box_3.png" width="266" height="200" alt="GitLab" title="GitLab"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_300x200_fit_box_3.png" width="284" height="200" alt="Inicio de sesión de GitLab" title="Inicio de sesión de GitLab"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_2560x1440_fit_box_3.png" data-gallery="" title="GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_300x200_fit_box_3.png" width="266" height="200" alt="GitLab" title="GitLab"  class="lozad "></a></p>
 <figcaption>Servicio de GitLab</figcaption>
 </figure>
 </div>
@@ -897,12 +895,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>En la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción de Docker</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">inicio básico de docker</a> explicaba como usar Docker y en la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">introducción a Ansible</a> explicaba las características de Ansible y como usarlo. Podemos usar <a href="https://www.docker.com/">Docker</a> y <a href="https://www.ansible.com/">Ansible</a> de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son <a href="http://docs.ansible.com/docker_module.html">docker</a> y <a href="http://docs.ansible.com/docker_image_module.html">docker_image</a>.</p>
 <p>Usando tareas de ansible podemos automatizar el arranque del servicio de docker, la construcción de las imágenes con los Dokerfile y el inicio o parada de los contenedores de docker. En el ejemplo se construye una imagen base en la que se basarán el resto de imágenes, se crea una imagen con mysql, otra de redis y finalmente la imagen apps donde se ejecutarán las aplicaciones que usarán los servicios de mysql y redis.</p>
@@ -956,8 +952,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
 </div>
 <p>Siempre que nos sea posible deberíamos automatizar las tareas que realizamos. Automatizar tareas hará sencillo realizarlas permitiéndonos hacer todos los despliegues de una aplicación que queramos con menos posibilidades de cometer errores manuales o nos permitirá disponer de una nueva máquina aprovisionada exactamente como pueda estar la máquina de producción en mucho menos tiempo. En el ámbito del aprovisionamiento de máquinas y administración de la infraestructura IT hay varias opciones, entre ellas están <a href="https://www.getchef.com/">Chef</a>, <a href="https://puppet.com/">Puppet</a> y <a href="https://www.ansible.com/">Ansible</a>.</p>
 <p>En este artículo haré una breve introducción de Ansible que principalmente se emplea en servidores pero también podríamos emplearlo para nuestra propia máquina. Con Ansible podremos:</p>
@@ -983,8 +978,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ansible"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_300x200_fit_box_3.png" width="300" height="155" alt="Ansible" title="Ansible"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_2560x1440_fit_box_3.png" data-gallery="" title="Ansible"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_300x200_fit_box_3.png" width="300" height="155" alt="Ansible" title="Ansible"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El parámetro -m indica el módulo de Ansible que usamos y a continuación indicamos los parámetros. Ansible dispone de una amplia <a href="http://docs.ansible.com/list_of_all_modules.html">colección de módulos</a> que nos permiten hacer cantidad de tareas.</p>
@@ -1047,8 +1041,7 @@
         <content type="html">
         <![CDATA[<p><strong>Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas herramientas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile.</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>Las imágenes de <a href="https://www.docker.com/">Docker</a> son el sistema de archivos que usa el proceso o procesos que se arrancan en los contenedores. Si nos convencen las <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">características de Docker</a> y estamos decididos a usarlo y ya sabemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">como administrar de forma básica los contenedores</a> si queremos disponer de una imagen adaptada a los servicios que necesitamos para iniciar contenedores tendremos que crearla, en este artículo explicaré cómo crear una imagen para docker personalizada.</p>
 <p>Antes de crear una imagen para docker podemos buscar en el <a href="https://registry.hub.docker.com/">registro de imágenes de Docker</a> que han creado otros usuarios y los han compartido por si hay alguna que ya se adapte a nuestras necesidades, si nos sirve alguna y es algo popular nos evitaremos tener que modificarla nosotros mismos según salgan nuevas versiones de los servicios que use. El registro de imágenes de docker es un servicio en el que las organizaciones publican versiones oficiales junto a otros usuarios que comparten y colaboran en la creación de las imágenes. Para los servicios más conocidos dispondremos ya de las imágenes como podrían ser: <a href="https://registry.hub.docker.com/_/mysql/">mysql</a>, <a href="https://registry.hub.docker.com/_/redis/">redis</a>, <a href="https://registry.hub.docker.com/_/postgres/">postgresql</a>, <a href="https://registry.hub.docker.com/_/ubuntu/">ubuntu</a>, <a href="https://registry.hub.docker.com/_/wordpress/">wordpress</a>, <a href="https://registry.hub.docker.com/_/nginx/">nginx</a>, <a href="https://registry.hub.docker.com/_/mongo/">mongodb</a>, &hellip;</p>
@@ -1133,8 +1126,7 @@
 <p>Accediendo con el navegador al servidor nginx del contenedor se devuelve la página por defecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nginx"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_300x200_fit_box_3.png" width="300" height="176" alt="Nginx" title="Nginx"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_2560x1440_fit_box_3.png" data-gallery="" title="Nginx"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_300x200_fit_box_3.png" width="300" height="176" alt="Nginx" title="Nginx"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para aprender más sobre Docker es buena idea seguir un manual de referencia como los libros <a href="https://amzn.to/3DgQj7G">Docker: Up &amp; Running</a> y <a href="https://amzn.to/3pH6uEr">Docker in Action</a>.</p>
@@ -1176,8 +1168,7 @@
         <content type="html">
         <![CDATA[<p><strong>La tecnología de contenedores nos ofrece múltiples ventajas para nuestras aplicaciones. Docker es una de las más nombradas y que está creciendo muy rápidamente. Es muy sencillo empezarla a usar como mostraré en unos pocos comandos a continuación.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>En el <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">artículo anterior introductorio sobre Docker</a> comentaba cuales son sus principales características, que diferencias tiene con la virtualización y algunos casos y motivos por los que nos puede interesar usarlo. El objetivo de este artículo será a modo de guía rápida como empezar a usar <a href="https://www.docker.com/">Docker</a>. Comentaré cuales son los comandos básicos para manejar Docker, las imágenes y los contenedores.</p>
 <p>Antes de empezar con la guía propiamente hay que tener en cuenta que otra de las características de Docker es que únicamente se inicia un solo proceso, cuando este finaliza finaliza la instancia del contenedor. Aunque en principio un contenedor solo tiene un proceso, podemos usar como proceso inicial uno que arranque otros, la <a href="https://registry.hub.docker.com/u/phusion/baseimage/">imagen pushion</a> tiene un sistema de inicio adaptado al funcionamiento de Docker (no siendo así upstart de las imágenes de ubuntu o systemd usado por otras distribuciones) con el que podemos iniciar otros procesos, en cualquier caso es recomendable que un contenedor sino tiene un solo proceso tenga unos pocos procesos relacionados con el servicio que proporciona la imagen, la recomendación es no proporcionar una imagen con un montón de servicios/procesos sino varias pequeñas cuyos servicios colaboren. Una imagen de un contenedor es básicamente el sistema de archivos que usará el proceso que iniciamos en el contenedor, necesitamos obtener o construir una imagen para iniciar los contenedores y trabajar con Docker.</p>
@@ -1211,8 +1202,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="docker-images"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_300x200_fit_box_3.png" width="300" height="163" alt="docker-images" title="docker-images"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_2560x1440_fit_box_3.png" data-gallery="" title="docker-images"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_300x200_fit_box_3.png" width="300" height="163" alt="docker-images" title="docker-images"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Con los comandos <em>docker rm [contenedor]</em> y <em>docker rmi [imagen]</em> podemos eliminar las instancias de contenedores y las imágenes que no estén siendo usadas por ningún contenedor, si están siendo usadas deberemos eliminar primero el contenedor.</p>
@@ -1226,8 +1216,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="docker-pull"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_300x200_fit_box_3.png" width="300" height="148" alt="docker-pull" title="docker-pull"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_2560x1440_fit_box_3.png" data-gallery="" title="docker-pull"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_300x200_fit_box_3.png" width="300" height="148" alt="docker-pull" title="docker-pull"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez descargada la imagen podemos iniciar un contenedor de la imagen con:</p>
@@ -1242,8 +1231,7 @@
 <p>Si usamos el comando «uname -a» puede verse que aunque el contenedor usa el sistema de archivos de una distribución debian el kernel empleado es el del sistema anfitrión, esto es así porque los contenedores Docker en esencia no son más que procesos dentro del sistema.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="docker-run"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_300x200_fit_box_3.png" width="300" height="163" alt="docker-run" title="docker-run"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_2560x1440_fit_box_3.png" data-gallery="" title="docker-run"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_300x200_fit_box_3.png" width="300" height="163" alt="docker-run" title="docker-run"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Continuando esta serie de artículos sobre Docker explicaré como construir una imagen mediante los Dockerfiles con la que podamos usar una base de datos mysql y explicaré en más detalle como podemos conseguir la persistencia que necesitaremos para almacenar los datos de la base de datos usando otro contenedor con este propósito.</p>
@@ -1258,76 +1246,6 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
 <li><a href="https://registry.hub.docker.com/">Docker Hub Registry</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/</id>
-        <title>Introducción y características de Docker</title>
-        <updated>2017-05-02T23:00:00+02:00</updated>
-        <published>2014-10-25T10:52:34+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los contenedores no son una tecnología nueva pero Docker ha reunido las características necesarias para hacerla sencilla y popular en Linux. Suponen un cambio en la infraestructura de las aplicaciones con algunas ventajas sobre la virtualización y la instalación de los servicios directamente en el sistema.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
-</div>
-<p><a href="https://www.docker.com/">Docker</a> es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que <a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">cambian la forma de desarrollar aplicaciones</a>. Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.</p>
-<p>Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.</p>
-<p>La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como <a href="https://openvz.org/">OpenVZ</a> también en Linux, <a href="http://www.freebsd.org/doc/handbook/jails.html">FreeBSD Jails</a> o los <a href="https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html">contenedores de Solaris</a>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquinas virtuales"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_300x200_fit_box_3.png" width="300" height="114" alt="Máquinas virtuales" title="Máquinas virtuales"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Docker"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_300x200_fit_box_3.png" width="300" height="110" alt="Docker" title="Docker"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Docker tiene varias características interesantes. Es ligero ya que no hay virtualización aprovechándose mejor el hardware y únicamente necesitando el sistema de archivos mínimo para que funcionen los servicios. Los contenedores son autosuficientes (aunque pueden depender de otros contenedores, por ejemplo, un wordpress que necesita una base de datos mysql) no necesitando nada más que la imagen del contenedor para que funcionen los servicios que ofrece. Las imágenes de docker son portables entre diferentes plataformas el único requisito es que en el sistema huésped esté disponible docker. Es seguro, pudiendo hacer que los contenedores se comuniquen por un túnel solo disponible para ellos, los contenedores están aislados en el sistema mediante namespaces y control groups.</p>
-<p>Para los desarrolladores tiene las siguientes ventajas:</p>
-<ul>
-<li>Podemos disponer de un entorno de desarrollo (devbox) o servicio en varios minutos/horas en vez de algún día. Esto es así porque la configuración y los servicios necesarios están automatizados en la construcción de las imágenes de los contenedores mediante <a href="https://docs.docker.com/reference/builder/">Dockerfiles</a>.</li>
-<li>Al estar los servicios en contenedores no hace falta instalarlos en la máquina en la que son alojados, de forma que podemos disponer de los servicios y después eliminarlos de forma sencilla sin &ldquo;ensuciar&rdquo; el sistema huésped.</li>
-<li>Nos permite tener versiones más parecidas o iguales a las usadas en producción. Por ejemplo, en Arch Linux nos permite tener un mysql de la distribución <a href="https://www.ubuntu.com/">Ubuntu</a> usando la misma versión.</li>
-</ul>
-<p>El <a href="https://registry.hub.docker.com/">registro de contenedores de Docker</a> es una forma colaborativa de ofrecer imágenes. Hay disponibles multitud de contenedores con los servicios más populares: <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.postgresql.org/">PostgreSQL</a>, <a href="https://redis.io/">Redis</a>, <a href="https://nginx.org/">Nginx</a>, <a href="https://wordpress.org/">WordPress</a>, &hellip;</p>
-<p>Para los administradores de sistemas tiene las siguientes ventajas:</p>
-<ul>
-<li>Pueden proporcionar entornos similares o iguales a los entornos de pruebas, QA o producción independientemente de la distribución que se use.</li>
-<li>Es posible desplegar un contenedor en cualquier infraestructura Linux.</li>
-<li>La creación de los contenedores puede ponerse bajo un sistema de control de versiones.</li>
-</ul>
-<p>En la siguiente presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.</p>
-<div class="media">
-    <script async class="speakerdeck-embed" data-id="c02e6030ee52013165c72a37516b560d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-    <noscript>$TODO</noscript>
-</div>
-<p>Una vez conocidos los aspectos básicos y en que se diferencia docker de la virtualización así como el caso de uso de por ejemplo un <em>devbox</em> o disponer de entornos similares a los de producción de una aplicación, en el siguiente artículo comentaré <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">cómo instalar docker, cómo empezar a usarlo, cómo obtener imágenes de servicios y pararlos y administrarlos</a>. En la siguiente <a href="http://www.nkode.io/2014/08/24/valuable-docker-links.html">lista de enlaces sobre Docker</a> se puede encontrar mucha información reunida dispersa en la red, desde introducciones, opiniones, como usarlo, como empaquetar las aplicaciones, como monitorizar o como usarlo en microservicios.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492036730&amp;linkId=666d0aff3a2629cd87c205370bc5ae87" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1633430235&amp;linkId=9d344246cd59cd65a952305379c2556a" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.docker.com/">Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
-<li><a href="https://docs.docker.com/articles/security/">Seguridad Docker</a></li>
-<li><a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">Four ways Docker fundamentally changes application development</a></li>
-<li><a href="https://openwebinars.net/docker-que-es-sus-principales-caracteristicas/">Docker, qué es y sus principales características</a></li>
 </ul>
 </div>
 ]]>

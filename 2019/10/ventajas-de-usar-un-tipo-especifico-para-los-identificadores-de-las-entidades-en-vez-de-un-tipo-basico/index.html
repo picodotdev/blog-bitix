@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -259,16 +259,13 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="200" alt="Hibernate" title="Hibernate" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="200" alt="Hibernate" title="Hibernate" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ" class="" loading="false"></p>
 </div>
 <p>Al persistir una entidad de dominio en la base de datos su identificador se guarda como un tipo de datos soportado por la base de datos. Si es una base de datos relacional habitualmente es el equivalente a un <em>bigint</em> o en una base de datos de documentos quizá un UUID. En las entidades de dominio el tipo de datos usado para el identificador es el equivalente de la base de datos en el lenguaje de programación. Por ejemplo, si en una base de datos la clave primaria es un <em>bigint</em> el identificador en la entidad de dominio es un <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html">Long</a>. Esto es lo mas simple pero tiene algún inconveniente.</p>
 <p>El inconveniente es que al ser el identificador un tipo de datos básico cualquier <em>Long</em> es aceptado, con lo que se hacen posibles errores o malos comportamientos al usar un identificador de otra entidad de dominio si también es un <em>Long</em> donde no se debería. El compilador no captura este tipo de errores porque entiende como correcto cualquier <em>Long</em> independientemente de su significado desde el punto de vista de la aplicación.</p>

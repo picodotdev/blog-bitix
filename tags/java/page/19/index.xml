@@ -21,8 +21,7 @@
         <content type="html">
         <![CDATA[<p><strong>A falta de una forma estructurada para obtener datos de una fuente podemos extraerla directamente del contenido html de una página, a esto se le denomina «web scraping». En Java y con la librería jsoup podemos obtener la información que necesitamos de forma sencilla.</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Algunas aplicaciones en internet necesitan intercambiar información para hacer algún tipo de integración. La tendencia actual es proporcionar una API REST o algún tipo de archivo descargable con cierto formato que permita procesarlo de forma automatizada y a las aplicaciones obtener la información de forma sencilla y precisa. Sin embargo, hay ocasiones en las que las aplicaciones de las que necesitamos extraer la información no proporcionan ni una API REST ni un archivo descargable con lo que no nos queda más remedio que extraer los datos de la propias páginas web inspeccionando el código HTML, esto en inglés se le conoce como <a href="https://es.wikipedia.org/wiki/Web_scraping">«web scraping»</a>.</p>
 <p>En este artículo explicaré como hacer web «scraping» usando la librería <a href="https://jsoup.org/">jsoup</a> y usando el lenguaje de programación Java. jsoup proporciona una <a href="http://jsoup.org/apidocs/">API</a> para poder extraer la información que necesitemos, ya sean las URLs de los enlaces, determinado texto que contiene una valor, imágenes, &hellip; . A través de los selectores similares a los usados en <a href="https://jquery.com/">jquery</a> podemos llegar a los elementos que queremos de forma simple sin tener que hacer complicados algoritmos.</p>
@@ -62,8 +61,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En algunas web las urls incluyen el identificativo del objeto de la base de datos a partir de cual se muestra el contenido principal de la página, en <a href="https://twitter.com/blogstackinfo">Blog Stack</a> esto podría ser un artículo pero en otras páginas webs podría ser un producto. Esto genera direcciones de páginas webs «feas» de cara al usuario y al <a href="https://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a> de los buscadores además de exponer cierta información de la base de datos que probablemente no interese a nadie excepto al desarrollador de la página. En este artículo voy a explicar una forma de generar <a href="https://es.wikipedia.org/wiki/URL_sem%C3%A1ntica">urls semánticas</a>, «bonitas» o amigables de cara al usuario y al SEO para los buscadores y como lo he implementado en un ejemplo real como es Blog Stack.</p>
 <p>Lo primero que debemos conseguir es que las direcciones urls sean únicas para cualquier página de la web, por tanto, en la url deberemos incluir tanta información como sea necesaria pero al mismo tiempo la mínima para hacerlas únicas, sean cortas y que nos permitan identificar de forma unequívoca el contenido a mostrar o el objeto que nos permite obtener la información a visualizar en la página, esta información formará el denominado <em>slug</em>. En el caso de Blog Stack las direcciones «bonitas» se emplean en este momento en dos sitios, para los artículos y para las etiquetas. La información mínima para un artículo es el nombre de la fuente, el año, el mes y el título, para las etiquetas es simplemente el nombre de la etiqueta. Este es un desglose de las partes que forman una dirección url.</p>
@@ -147,8 +145,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En las dos últimas entradas he explicado <a href="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/">como compilar un archivo de código fuente Java desde una aplicación</a> y como cargar esa clase compilada de forma dinámica para ser utilizada en un programa, la segunda entrada trataba el <a href="https://picodotdev.github.io/blog-bitix/2014/09/monitorizar-archivos-con-java/">como monitorizar un directorio o archivo para ver si han tenido cambios</a> con la nueva API que a partir de Java 7 disponemos.</p>
 <p>En esta entrada quiero explicar un ejemplo de como aprovechar estas dos funcionalidades diferentes en un caso práctico y que nos puede ser útil en algún caso. La idea del ejemplo es definir la configuración de una aplicación como podría ser una aplicación web en un archivo de código fuente Java y que cuando se produjese algún cambio se recargase de forma dinámica.</p>
@@ -182,8 +179,7 @@ metadata while the program is running.</p>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/09/configuracion-usando-codigo-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Salida programa Main.java"><img src="https://picodotdev.github.io/blog-bitix/2014/09/configuracion-usando-codigo-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_300x200_fit_box_3.png" width="300" height="104" alt="Salida programa Main.java" title="Salida programa Main.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/09/configuracion-usando-codigo-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_2560x1440_fit_box_3.png" data-gallery="" title="Salida programa Main.java"><img src="https://picodotdev.github.io/blog-bitix/2014/09/configuracion-usando-codigo-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_300x200_fit_box_3.png" width="300" height="104" alt="Salida programa Main.java" title="Salida programa Main.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Esta idea de no utilizar archivos de configuración sino emplear código como la mejor forma y más breve de definirla es algo que hace <a href="https://gradle.org/">Gradle</a> con los archivos de configuración del proyecto y <a href="https://tapestry.apache.org/">apache tapestry</a> para definir los módulos y la configuración del contenedor de inversión de control, parece una tendencia por el hecho de tener las propiedades y ventajas comentadas sobre otro tipo de archivos ya sean xml o sus sustitutos más recientes como yaml, json, &hellip; que son más compactos y legibles que xml pero que siguen adoleciendo de algunos de los mismos defectos.</p>
@@ -210,8 +206,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Java a partir de la versión 7 del JDK ofrece el soporte para recibir notificaciones de cambios en el sistema de archivos sin tener que estar monitorizándolos constantemente en busca de actividad. No tener que estar monitorizando los archivos de <a href="https://es.wikipedia.org/wiki/Polling">forma «polling»</a> para buscar cambios además de hacer que el código sea más sencillo desde el punto de vista de la programación hace que no se malgasten recursos del sistema si los cambios son esporádicos.</p>
 <p>Para ofrecer esta funcionalidad y a partir de Java 7 hay disponibles unas pocas nuevas clases dentro de lo que se conoce como la <a href="https://docs.oracle.com/javase/7/docs/api/java/nio/package-summary.html">nueva API de entrada y salida (NIO)</a> que sustituye al método tradicional de entrada y salida con las clases del paquete <a href="https://docs.oracle.com/javase/7/docs/api/java/io/package-summary.html">java.io</a> entre otras cosas para trabajar con el sistema de archivos.</p>
@@ -225,8 +220,7 @@ metadata while the program is running.</p>
 <p>En este ejemplo solo se monitorizan los cambios de los archivos pero usando otras propiedades se pueden monitorizar la eliminación y creación, en la clase <a href="https://docs.oracle.com/javase/7/docs/api/java/nio/file/StandardWatchEventKinds.html">StandardWatchEventKinds</a> pueden verse estas propiedades. Una cosa a tener en cuenta es que se pueden monitorizar directorios no archivos en concreto, pero como en el ejemplo una vez que recibimos las notificaciones de monitorización es algo que podemos hacer nosotros. Ejecutando el programa una salida del su funcionamiento podría ser la siguiente en el que la clase se recarga cuando se detectan cambios en ella variando los valores que se emiten en la consola.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/09/monitorizar-archivos-con-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Salida programa Main.java"><img src="https://picodotdev.github.io/blog-bitix/2014/09/monitorizar-archivos-con-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_300x200_fit_box_3.png" width="300" height="104" alt="Salida programa Main.java" title="Salida programa Main.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/09/monitorizar-archivos-con-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_2560x1440_fit_box_3.png" data-gallery="" title="Salida programa Main.java"><img src="https://picodotdev.github.io/blog-bitix/2014/09/monitorizar-archivos-con-java/images/main_hu8b068bba2353bdbd15e6919d7eeefd19_24838_300x200_fit_box_3.png" width="300" height="104" alt="Salida programa Main.java" title="Salida programa Main.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Esta funcionalidad de monitorización de cambios de archivos junto con la <a href="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/">compilación y carga dinámica de archivos con código fuente Java</a> puede utilizarse para hacer que la configuración de una aplicación esté definida en código Java y se cargue dinámicamente sin tener que reiniciar la aplicación. Y esto es lo que mostraré en la siguiente entrada y explicaré con más detalles que ventajas tienen esta idea.</p>
@@ -263,8 +257,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Desde la versión 1.6 del JDK disponemos de una API para acceder al compilador desde un programa Java. En el ejemplo de este artículo utilizaré varias clases de esa API para conseguir compilar un archivo con la definición de una clase Java y posteriormente instanciarla y usarla. En posteriores artículos comentaré un ejemplo práctico y muy útil con el que podemos sacar provecho de esta funcionalidad.</p>
 <p>Las clases que necesitaremos de esa API son:</p>
@@ -297,8 +290,7 @@ metadata while the program is running.</p>
 <p>Con este ejemplo puede intuirse el ejemplo práctico que comentaré que no es más que utilizar código Java para definir la configuración de una aplicación, esto tiene varias ventajas sobre utilizar un xml u otro tipo de formato de archivo de configuración de la aplicación (una de ellas que utilizando un IDE el compilador nos informará de errores y nos ofrecerá asistencia al escribir código). Esta idea junto con la posibilidad de monitorizar un archivo para ver si se han producido cambios en él (también con la API de Java) y recargarlo puede darnos como resultado una funcionalidad en la que la configuración se basa en código Java y que la configuración pueda recargarse de forma dinámica, si la aplicación se utiliza en un servidor de aplicaciones podríamos cambiar la configuración sin tener que reiniciar la aplicación.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/images/main1_hu328714695d20411c508d1e1adbbc62cf_18547_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Salida programa Main1.java"><img src="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/images/main1_hu328714695d20411c508d1e1adbbc62cf_18547_300x200_fit_box_3.png" width="300" height="101" alt="Salida programa Main1.java" title="Salida programa Main1.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/images/main1_hu328714695d20411c508d1e1adbbc62cf_18547_2560x1440_fit_box_3.png" data-gallery="" title="Salida programa Main1.java"><img src="https://picodotdev.github.io/blog-bitix/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/images/main1_hu328714695d20411c508d1e1adbbc62cf_18547_300x200_fit_box_3.png" width="300" height="101" alt="Salida programa Main1.java" title="Salida programa Main1.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Casi para terminar las clases de utilidad:</p>
@@ -344,14 +336,12 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Hace un poco más de una año publiqué el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> que como su nombre ya adelanta versa sobre el <em>framework</em> <a href="https://tapestry.apache.org/">Apache Tapestry</a> para el desarrollo de aplicaciones y páginas web con Java. Casi 300 páginas de documentación que describen este <em>framework</em>, como usarlo y va más allá explicando como realizar algunas de las tareas comunes que es necesario hacer en casi todas las aplicaciones web independientemente del <em>framework</em> que elijamos pero en este caso visto desde el punto de vista de Tapestry.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/images/PugInTapestry_Portada_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Portada libro PlugIn Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/images/PugInTapestry_Portada_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200" alt="Portada libro PlugIn Tapestry" title="Portada libro PlugIn Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/images/PugInTapestry_Portada_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery="" title="Portada libro PlugIn Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/images/PugInTapestry_Portada_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200" alt="Portada libro PlugIn Tapestry" title="Portada libro PlugIn Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En esta actualización he revisado capítulos como el Inicio rápido para empezar a desarrollar en unos pocos minutos, la sección que trata sobre Plantillas para dar a las páginas un aspecto común, la sección que trata sobre unas Convenciones para los archivos de literales, ampliada la sección de Principios en la que se detalla cuales son las ideas y objetivos por los que se rige el <em>framework</em>, también reescrita la sección de Integración con Spring, una de las librerías más usadas y que facilita el desarrollo enormemente.</p>
@@ -387,14 +377,12 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Por motivos de usabilidad en algunas páginas se incluyen dos barra de botones, una antes de una larga sección y otra después. El motivo de la doble barra de botones inicial es que no sea necesario hacer «scroll» hasta el final de la página para acceder a los botones y realizar la acción que permitan. Por el contrario, incluir la barra de botones al final de la página permite que una vez seleccionados los elementos o revisado el contenido de la sección hacer disponibles las acciones que es probable que se quieran realizar.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/images/doble-barra-botones_huea66ab1892bbc5f0cb1dd6ffb2bd04e0_24264_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Doble barra de botones"><img src="https://picodotdev.github.io/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/images/doble-barra-botones_huea66ab1892bbc5f0cb1dd6ffb2bd04e0_24264_300x200_fit_box_3.png" width="216" height="200" alt="Doble barra de botones" title="Doble barra de botones"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/images/doble-barra-botones_huea66ab1892bbc5f0cb1dd6ffb2bd04e0_24264_2560x1440_fit_box_3.png" data-gallery="" title="Doble barra de botones"><img src="https://picodotdev.github.io/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/images/doble-barra-botones_huea66ab1892bbc5f0cb1dd6ffb2bd04e0_24264_300x200_fit_box_3.png" width="216" height="200" alt="Doble barra de botones" title="Doble barra de botones"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Dependiendo del <em>framework</em> web que utilicemos podremos hacerlo de una o varias formas pero de lo que estamos seguros es que copiar y pegar haciendo que el código esté duplicado no es una buena idea por los problemas de mantenimiento que puede suponer. Pero crear una pequeña plantilla o archivo exclusivo para incluir la barra de botones tampoco es la solución ideal, ¿por que? pues porque creando un archivo específico con la botonera puede que nos ocasione un problema que denominaré de «microgestión», es decir, nos obliga a crear un montón de pequeños archivos pequeñitos y hacer referencia o utilizar el mecanismo de inclusión que dispongamos para usar el contenido en unos de otros. En una aplicación grande esta microgestión si nos vemos obligados a ella puede llegar a ser molesta al desarrollar cuanto menos.</p>
@@ -454,8 +442,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>El <a href="https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure">protocolo seguro https</a> hace que los datos que viajan entre el servidor y el cliente a través de internet estén cifrados de modo que nadie más pueda saber cual es es la información intercambiada ni se pueda alterar sin el conocimiento entre las dos partes. Estas propiedades nos son de interés para ciertas partes de una aplicación o en algunos casos la aplicación entera. ¿Cuales son estos casos? Son aquellos en los que queramos garantizar una mayor seguridad, estos pueden ser para proteger usuarios y contraseñas de autenticación para iniciar sesión, ciertos datos sensibles como datos personales, datos de tarjetas de crédito, &hellip; evitando que una tercera parte los obtenga y los utilice para su provecho propio y supongan un problema de seguridad en la aplicación.</p>
 <p>Es casi obligatorio forzar a que ciertas páginas de una aplicación o página web funcionen mediante el protocolo seguro https como las páginas de inicio de sesión donde los usuarios se autentican normalmente introduciendo su usuario y contraseña, páginas de compra donde los usuarios introducen los datos de su tarjeta de crédito o algunas secciones de una aplicación como las secciones de las cuentas de los usuarios o un backoffice.</p>
@@ -490,8 +477,7 @@ metadata while the program is running.</p>
 <p>En cualquiera de los dos casos mostrados en este ejemplo se obliga a usar https en la página de login:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/images/plugin-tapestry-https_hu8be718460db9292afee033b73c6a0600_58871_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="PlugIn Tapestry con https"><img src="https://picodotdev.github.io/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/images/plugin-tapestry-https_hu8be718460db9292afee033b73c6a0600_58871_300x200_fit_box_3.png" width="192" height="200" alt="PlugIn Tapestry con https" title="PlugIn Tapestry con https"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/images/plugin-tapestry-https_hu8be718460db9292afee033b73c6a0600_58871_2560x1440_fit_box_3.png" data-gallery="" title="PlugIn Tapestry con https"><img src="https://picodotdev.github.io/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/images/plugin-tapestry-https_hu8be718460db9292afee033b73c6a0600_58871_300x200_fit_box_3.png" width="192" height="200" alt="PlugIn Tapestry con https" title="PlugIn Tapestry con https"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="alert alert-warning">
@@ -536,8 +522,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p><a href="https://tapestry.apache.org/">Apache Tapestry</a> es un <em>framework</em> de desarrollo para aplicaciones o páginas web en el que habitualmente se emplea el lenguaje Java y se despliega en un servidor de aplicaciones como entorno de ejecución. Pero Tapestry es una pieza de software que se compone de diferentes partes algunas de las cuales pueden ser utilizadas fuera del contexto de una aplicación web. Este es el caso del contenedor de dependencias que proporciona <a href="https://en.wikipedia.org/wiki/Inversion_of_control">IoC</a> (IoC, «Inversion of Control») en Tapestry, podemos usarlo en una aplicación «standalone», es decir, en un programa que se inicia con el típico «public static void main(String[] args)» de las aplicaciones Java.</p>
 <p>El contenedor de dependencias de Tapestry tiene algunas propiedades interesantes como que dos servicios pueden ser mutuamente dependientes y que se puede contribuir configuración a cualquier servicio para cambiar en cierta medida su comportamiento además de otras características que explico más en detalle en el libro <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry</a>. Para usarlo en una un programa que se ejecuta de la linea de comandos usando el main de una clase Java primeramente deberemos incluir en el proyecto la dependencia sobre tapestry-ioc, si usamos <a href="https://gradle.org/">Gradle</a> de la siguiente manera:</p>
@@ -625,8 +610,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Un <a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</a> (CDN) no es más que un servidor, servidores o servicio dedicado a servir el contenido estático o actuar de cache para los clientes. Alguno de los motivos por los que podríamos querer usar un CDN en una aplicación son:</p>
 <ul>
@@ -637,8 +621,7 @@ metadata while the program is running.</p>
 <p><a href="http://aws.amazon.com/es/cloudfront/">Amazon ClodFront</a> es una de las opciones que podemos usar como CDN. En este artículo voy a comentar como tener un CDN para servir el contenido estático en una aplicación que emplee el <em>framework</em> de desarrollo de aplicaciones web en la plataforma Java <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)"><img src="https://picodotdev.github.io/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_300x200_fit_box_3.png" width="300" height="129" alt="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_2560x1440_fit_box_3.png" data-gallery="" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)"><img src="https://picodotdev.github.io/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/images/nocdn-cdn_hu4bda5a96fc7e95afc34c0e3629c45f5e_124009_300x200_fit_box_3.png" width="300" height="129" alt="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" title="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para que el contenido estático se sirva del CDN debemos hacer que las URL de las imágenes y hojas de estilo se generen con la URL propia del CDN, al menos, deberemos cambiar el host de esas URL. No hay que hacer mucho más ya que CloudFront creo que se puede configurar para que cuando le lleguen las peticiones del contenido si no las tiene las delegue en la aplicación, una vez que las tiene cacheadas ya no necesita solicitarselas a la aplicación y las sirve él mismo.</p>
@@ -745,8 +728,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Como he comentado en un artículo anterior sobre los <a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/">modelos push y pull empleados en los motores de plantillas</a> donde comentaba algunas diferencias entre ellos, en el modelo pull es la vista la que pide los datos al controlador y no el controlador el que proporciona los datos a la vista como se hace en el modelo push. Un problema que puede plantear el que la vista pida los datos al controlador es que si la devolución de los datos solicitados son costosos en tiempo del cálculo, carga para el sistema en CPU o memoria, o intensivos en entrada/salida de disco o red y se piden varias veces puede suponer como resultado que el tiempo empleado para generar la página sea elevado o la aplicación consuma recursos innecesarios.</p>
 <p><a href="http://tapestry.apache.org/">Apache Tapestry</a> que emplea el modelo pull dispone de la <a href="http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/annotations/Cached.html">anotación Cached</a> que permite cachear el resultado de un método a nivel de componente y página durante la generación de la misma. Su uso sería el siguiente:</p>
@@ -808,15 +790,13 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Una página web está formada por un conjunto de páginas enlazadas entre ellas. Cada página está formado por un html diferente pero normalmente todas las páginas de una misma web comparten el mismo aspecto variando solo una sección donde está el contenido propio de la página. La cabecera de la página, el pie de la página o los menús de navegación suelen estar presentes en todas las páginas de la web y suelen ser los mismos.</p>
 <p>En este artículo voy a explicar como crear un componente que nos de a todas las páginas un aspecto común de una aplicación usando apache Tapestry como <em>framework</em> web de tal forma que esa parte común no esté duplicada en la aplicación y pueda ser reutilizada fácilmente. En el caso de <a href="http://www.blogstack.info">Blog Stack</a> las páginas se componen de las siguientes partes.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Plantilla de Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_300x200_fit_box_3.png" width="300" height="138" alt="Plantilla de Blog Stack" title="Plantilla de Blog Stack"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_2560x1440_fit_box_3.png" data-gallery="" title="Plantilla de Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_300x200_fit_box_3.png" width="300" height="138" alt="Plantilla de Blog Stack" title="Plantilla de Blog Stack"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El esquema de la plantilla será una cabecera, una barra de navegación con enlaces a diferentes secciones de la web, un menú lateral con contenido variable según la página, el contenido que variará según la página y un pie de página. Como todo componente de <a href="http://tapestry.apache.org/">Apache Tapestry</a> está formado de una clase Java y una plantilla. El componente puede tener diferentes parámetros, y en el caso del de la plantilla muchos para poder variar el contenido por defecto de las diferentes secciones de la página, estos son aside1, aside2, aside3, aside4.</p>
@@ -890,8 +870,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>En la mayoría de <em>frameworks</em> de desarrollo de aplicaciones o páginas web para producir el contenido HTML que se envía al cliente se emplea un modelo en el que el controlador proporciona los datos que combinados con una plantilla producen el HTML. Este modelo también es el empleado habitualmente en muchos motores de plantillas (<a href="http://www.thymeleaf.org/">thymeleaf</a>, <a href="http://mustache.github.io/">mustache</a>, &hellip;). Sin embargo, hay dos modelos que se pueden seguir para producir un texto como resultado dada una plantilla y datos:</p>
 <ul>
@@ -899,8 +878,7 @@ metadata while the program is running.</p>
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Modelo push"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_300x200_fit_box_3.png" width="300" height="176" alt="Modelo push" title="Modelo push"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_2560x1440_fit_box_3.png" data-gallery="" title="Modelo push"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_300x200_fit_box_3.png" width="300" height="176" alt="Modelo push" title="Modelo push"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los pasos que se siguen en este modelo son:</p>
@@ -917,8 +895,7 @@ metadata while the program is running.</p>
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Modelo pull"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_300x200_fit_box_3.png" width="300" height="185" alt="Modelo pull" title="Modelo pull"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_2560x1440_fit_box_3.png" data-gallery="" title="Modelo pull"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_300x200_fit_box_3.png" width="300" height="185" alt="Modelo pull" title="Modelo pull"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:</p>
@@ -999,8 +976,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>Cada seis meses hago un recopilatorio de los artículos que he publicado durante este periodo de tiempo. En estos seis meses he mantenido mi ritmo de publicación de una entrada a la semana que publico casi siempre los viernes a la tarde, en total han sido 26 nuevos artículos con este. Los temas tratados durante este tiempo han sido en gran medida la programación, un poco de linux y la Raspberry Pi y el análisis de un SSD.</p>
 <p>A destacar durante este semestre ha sido que he publicado un proyecto personal, Blog Stack. <a href="http://www.blogstack.info/">Blog Stack</a> es una agregador o planeta de bitácoras sobre desarrollo, programación, gnu/linux y tecnología. A casi todos los bloggeros que le he propuesto agregarle a Blog Stack me han contestado positivamente. 17 son las bitácoras agregadas actualmente y aunque no son muchas hacen que prácticamente todos los días haya algo nuevo que leer. En un artículo hacía la presentación del proyecto y en otro explicaba cual es el funcionamiento en cuanto a hospedaje y arquitectura (interesante para aquellos que quieran realizar un proyecto en internet con un coste mínimo). Son los siguientes artículos:</p>
@@ -1083,8 +1059,7 @@ metadata while the program is running.</p>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura que nos puede llevar un tiempo en crearlos. Normalmente cuando empezamos un nuevo proyecto solemos basarnos en otro existente  copiando y pegando contenido de él. Pero ademas de tiempo podemos cometer errores o no seguir algunas convenciones propias de Java o del <em>framework</em> web que usemos. Para un proyecto grande esa dedicación al inicio del proyecto no nos importará pero para un proyecto pequeño o para hacer una prueba puede que queramos tener algo más rápido y con menos esfuerzo para estar en disposición de empezar a desarrollar en muy poco tiempo.</p>
 <p>Para crear el esqueleto de una aplicación rápidamente en <a href="http://tapestry.apache.org/">Apache Tapestry</a> hay disponible un arquetipo de <a href="http://maven.apache.org/">Maven</a> que puede generar una aplicación en unos pocos minutos. Para usarlo deberemos instalar maven previamente. Una vez instalado Maven basta con que usemos el siguiente comando.</p>
@@ -1097,23 +1072,19 @@ metadata while the program is running.</p>
 <p>El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, <em>org.apache.tapestry:quickstart</em>. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo <em>io.github.picodotdev.bitix</em> y como nombre de artefacto inicio rápido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos tanto para trabajar con Maven como con <a href="http://www.gradle.org/">Gradle</a>, una vez que tenemos la aplicación generada podemos usar el que prefiramos, probablemente mejor Gradle. Los archivos generados son los siguientes:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_300x200_fit_box_3.png" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_2560x1440_fit_box_3.png" data-gallery="" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_300x200_fit_box_3.png" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez generada la aplicación podemos iniciarla con un servidor embebido <a href="http://www.eclipse.org/jetty/">Jetty</a> con la aplicación desplegada en él ya usando <a href="http://www.gradle.org/">Gradle</a>:</p>
@@ -1126,10 +1097,8 @@ metadata while the program is running.</p>
 <p>Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_300x200_fit_box_3.png" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación en el navegador"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_2560x1440_fit_box_3.png" data-gallery="" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_300x200_fit_box_3.png" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación en el navegador"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Probablemente necesitaremos configurar muchas cosas adicionales como usar <a href="https://github.com/bmuschko/gradle-tomcat-plugin">Tomcat como servidor embebido</a> en vez de Jetty o añadir la <a href="https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html">configuración necesaria para ejecutar los teses unitarios y de integración</a>, Tapestry no es un <em>framework</em> <em>fullstack</em> y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.</p>

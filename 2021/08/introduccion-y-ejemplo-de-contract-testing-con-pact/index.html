@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -266,12 +266,10 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/pact.svg" width="200" height="166" alt="Pact" title="Pact" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/pact.svg" width="200" height="166" alt="Pact" title="Pact" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las aplicaciones que ofrecen una API establecen un contrato con los consumidores, los consumidores al usar la API crean una dependencia. Para que un cambio API sea compatible hacia atrás no debe requerir cambios en los consumidores, si el cambio en la API requiere cambios en los consumidores estos corren el riesgo de dejar de funcionar correctamente. Los cambios no compatibles hacia atrás son un problema ya que requieren coordinar el cambio con los consumidores, los desarrolladores de la API tienen control sobre el proveedor pero en algunos casos no sobre los consumidores que deben ser adaptados por sus propietarios.</p>
 <p>Idealmente todos los cambios deberían ser compatibles hacia atrás, sin embargo, en ocasiones no queda más alternativa que introducir un cambio no compatible. Para evitar el problema una opción es versionar la API de tal modo que los nuevos consumidores utilicen la nueva API y los consumidores de una versión anterior tengan un tiempo para adaptarse a la nueva API, durante un tiempo la API antigua y la nueva funcionan simultáneamente, pasado un tiempo y cuando los consumidores hayan pasado a usar la nueva API la versión antigua se elimina.</p>
@@ -304,8 +302,7 @@
 <p>Pact en la parte consumidor también hace las funciones de servidor sin embargo adicionalmente <a href="https://picodotdev.github.io/blog-bitix/2021/07/servidor-mock-para-imitar-peticiones-y-respuestas-de-servicios-http-con-wiremock/">el servidor <em>mock</em> de WireMock</a> permite guardar esas interacciones y realizar las pruebas para la parte productora. Esto permite detectar problemas de que un cambio introduzca problemas de incompatibilidad y poder probar de forma desacoplada el consumidor y productor.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pruebas de contrato con Pact"><img src="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_650x450_fit_box_3.png" width="603" height="450" alt="Pruebas de contrato con Pact" title="Pruebas de contrato con Pact" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_2560x1440_fit_box_3.png" data-gallery="" title="Pruebas de contrato con Pact"><img src="/blog-bitix/2021/08/introduccion-y-ejemplo-de-contract-testing-con-pact/images/pact-summary_hu608f14cb4f6721a7d3618a9d2cbb1c9f_404885_650x450_fit_box_3.png" width="603" height="450" alt="Pruebas de contrato con Pact" title="Pruebas de contrato con Pact" class="" loading="lazy"></a></p>
 <figcaption>Pruebas de contrato con Pact</figcaption>
 </figure>
 </div>

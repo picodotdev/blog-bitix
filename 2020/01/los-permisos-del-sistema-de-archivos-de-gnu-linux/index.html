@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -266,12 +266,10 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
 </div>
 <p>En un sistema multiprogramado como son cualquiera de los actuales modernos que son utilizados por varios usuarios y programas es necesario que tengan algún mecanismo de seguridad y permisos para proteger los recursos. En el caso del sistema de archivos GNU/Linux usa un sistema simple pero suficiente para una buena parte de casos de uso.</p>
 <p>En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> implemenan un <a href="https://es.wikipedia.org/wiki/Control_de_Acceso_Discrecional">control de acceso discrecional</a> o DAC en el que los permisos de cada archivo se dividen en lectura, escritura y ejecución, identificados por las letras <em>rwx</em> respectivamente, para el propietario del archivo, el grupo de usuarios al que pertenece y para el resto de usuarios, identificados estos grupos con las letras <em>ugo</em> respectivamente. Para saber si se posee el permiso de lectura, escritura y ejecución se utiliza un bit para cada uno de ellos. Para el conjunto de usuario, grupo y resto de usuarios en total se utilizan 9 bits. Estos 9 bits forman la cadena <em>rwxrwxrwx</em> que para escribirlos de forma numérica y más simple se pueden utilizar base octal, por ejemplo 744 se traduce a binario en 111100100 significando que el usuario tiene permisos para leer, escribir y ejecutar el archivo, dados los tres primeros bits, y el grupo de usuario y resto de usuarios solo tienen el permiso de lectura.</p>

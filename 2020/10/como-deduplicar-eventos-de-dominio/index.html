@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -268,8 +268,7 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>El patrón <em>outbox pattern</em> garantiza que los eventos de dominio se envíen al menos una vez, pero que se envíe una vez no impide que sean enviados varias veces. La deduplicación de eventos permite evitar procesar el mismo evento varias veces si se envía repetido. Una forma de conseguir de duplicación de eventos es asignando a cada evento un identificativo único y que la parte receptora de los eventos compruebe si el evento recibido ha sido ya procesado. La parte receptora para determinar si un evento ha sido ya procesado guarda los identificativos de los ya procesados.</p>
 <p>Los servicios de una aplicación pueden <a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/">utilizar comunicación con mensajes mediante RabbitMQ</a>. La parte receptora lee los mensajes y los procesa en la misma transacción que el resto de operaciones guardando en la base de datos el identificativo del evento procesado, de modo que si es recibido varias veces la parte receptora lo deduplica. Si la transacción falla el evento no se marca como recibido y el sistema de mensajería lo mantiene para enviarlo de nuevo hasta que se procese correctamente, si la transacción se completa pero el mensaje del evento no se notifica como procesado correctamente en el sistema de mensajería el sistema de mensajería lo enviará de nuevo pero la parte receptora lo deduplica. Si la parte receptora completa la transacción y notifica como procesado el mensaje en el sistema de mensajería el sistema de mensajería ya no lo enviará de nuevo.</p>

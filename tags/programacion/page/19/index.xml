@@ -5,12 +5,118 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2021-12-09T23:00:00+01:00</updated>
+    <updated>2022-04-19T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/</id>
+        <title>Modelo «push» contra modelo «pull» en frameworks web</title>
+        <updated>2015-06-06T11:00:00+02:00</updated>
+        <published>2014-07-06T10:58:10+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes"> 
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+</div>
+<p>En la mayoría de <em>frameworks</em> de desarrollo de aplicaciones o páginas web para producir el contenido HTML que se envía al cliente se emplea un modelo en el que el controlador proporciona los datos que combinados con una plantilla producen el HTML. Este modelo también es el empleado habitualmente en muchos motores de plantillas (<a href="http://www.thymeleaf.org/">thymeleaf</a>, <a href="http://mustache.github.io/">mustache</a>, &hellip;). Sin embargo, hay dos modelos que se pueden seguir para producir un texto como resultado dada una plantilla y datos:</p>
+<ul>
+<li>Push: este es el modelo comentado. El controlador recupera de antemano todos los datos que necesita la vista, el controlador también determina la vista o plantilla que se usar. Combinando los datos y la plantilla se produce el resultado.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_2560x1440_fit_box_3.png" data-gallery="" title="Modelo push"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_300x200_fit_box_3.png" width="300" height="176" alt="Modelo push" title="Modelo push"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Los pasos que se siguen en este modelo son:</p>
+<ol>
+<li>La petición llega al servidor</li>
+<li>El dispatcher redirige la petición al controlador</li>
+<li>El controlador solicita los datos a la base de datos</li>
+<li>El controlador obtiene los datos de la base de datos</li>
+<li>El controlador redirige a la vista y le envía los datos que necesita</li>
+<li>La vista genera el contenido y se envía al cliente</li>
+</ol>
+<ul>
+<li>Pull: en este modelo el controlador no conoce los datos que usará la vista y es esta la que los solicita según necesita. La vista tira del controlador, el controlador solo debe ofrecer el soporte par que la vista pueda recuperar los datos que necesite.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_2560x1440_fit_box_3.png" data-gallery="" title="Modelo pull"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_300x200_fit_box_3.png" width="300" height="185" alt="Modelo pull" title="Modelo pull"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:</p>
+<ol>
+<li>La petición llega al servidor</li>
+<li>El dispatcher redirige la petición al controlador</li>
+<li>El controlador redirige a la vista</li>
+<li>La vista pide los datos que necesita al controlador y el controlador los pide a la base de datos</li>
+<li>La vista obtiene los datos que ha pedido del controlador</li>
+<li>La vista genera el contenido y se envía al cliente</li>
+</ol>
+<p>El modelo push es empleado en muchos de los <em>frameworks</em> web más usados, algunos ejemplos son <a href="http://symfony.com/">Symfony</a>, <a href="https://www.djangoproject.com/">Django</a>, <a href="https://grails.org/">Grails</a> o <a href="http://www.asp.net/mvc">ASP.NET MVC</a>. En la categoría de <em>frameworks</em> que usan un modelo pull está <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
+<p>Al modelo push le encuentro algunos problemas. Un problema es que el controlador debe conocer que datos necesita la vista y si la vista tiene cierta lógica esta la tendremos duplicada tanto en en controlador como en la vista. Supongamos que en una aplicación tenemos un usuario y dirección con una relación de 1 a 1 entre ambos y que debemos mostrar en una página el usuario y su dirección solo si solo si es un usuario VIP. En el controlador tendremos que recuperar el usuario, comprobar si es VIP y si lo es recuperar su dirección. El problema está que en la vista deberemos hacer también una comprobación si el cliente es VIP o al menos si a la vista se le ha proporcionado una dirección, como resultado la comprobación la tendremos duplicada tanto en el controlador como en la vista, como sabemos la duplicación de código y lógica habitualmente no es buena idea ya que a la larga dificulta el mantenimiento de la aplicación.</p>
+<p>En Grails (pero podría ser cualquier otro <em>framework</em> o motor de plantillas push) podríamos visualizar el usuario y su dirección si es VIP de la siguiente forma:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// Grails&#10;</span></span><span class="line"><span class="cl">// Controlador (groovy)&#10;</span></span><span class="line"><span class="cl">def showUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def usuario = Usuario.get(params.long(&#39;id&#39;))&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def direccion = null&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;if (usuario.isVIP()) {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direccion = usuario.direccion&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;render(view:&#39;show&#39;, model: [usuario:usuario, direccion:direccion])&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">// Vista (gsp)&#10;</span></span><span class="line"><span class="cl">Nombre: ${usuario.nombre}&#10;</span></span><span class="line"><span class="cl">&lt;g:if test=&#34;${usuario.vip}&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Dirección: ${direccion.toString()}&#10;</span></span><span class="line"><span class="cl">&lt;/g:if&gt;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>push.txt</span>
+    </div>
+</div>
+<p>Si usamos <a href="http://hibernate.org/">hibernate</a> la recuperación de la dirección podemos hacerla navegando la relación pero he querido recuperarla en el controlador expresamente para el ejemplo, si no pudiésemos usar hibernate para recuperar el dato relacionado probablemente lo que haríamos es recuperar el dato en el controlador como en el ejemplo.</p>
+<p>Otro problema del modelo push es que si la vista es usada en múltiples controladores, y precisamente la separación entre vistas y controladores uno de sus motivos es para esto, todos estos controladores van a compartir el código para recuperar los datos que necesite la vista, dependiendo del número de datos y de veces que empleemos una vista en múltiples controladores quizá debamos hacer una clase asociada a la vista que recupere los datos para evitar tener código duplicado (y exactamente esto es lo que se hace en Tapestry).</p>
+<p>En el modelo pull el controlador no debe conocer que datos necesita la vista y si hay lógica para mostrar ciertos datos está lógica solo la tendremos en la vista. Aunque el controlador no deba conocer que datos en concreto necesite la vista si debe ofrecer el soporte para que la vista los recupere cuando necesite. Como se puede ver el código en el siguiente ejemplo la comprobación de si el usuario es VIP solo está en la vista. En Tapestry cada vista tiene asociado una clase Java que es la encargada de ofrecer el soporte para que la vista pueda recuperar los datos, el conjunto de controlador más vista es lo que en Tapestry se conoce como componente, si el componente se usa varias veces en el mismo proyecto no necesitamos duplicar código.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// Tapestry&#10;</span></span><span class="line"><span class="cl">// Controlador (java)&#10;</span></span><span class="line"><span class="cl">public Usuario getUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;return usuarioDAO.get(id);&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">public Direccion getDirecion() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;return getUsuario().getDireccion();&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">// Vista (tml)&#10;</span></span><span class="line"><span class="cl">Nombre: ${usuario.nombre}&#10;</span></span><span class="line"><span class="cl">&lt;t:if test=&#34;usuario.vip&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Direccion: ${direccion.toString()}&#10;</span></span><span class="line"><span class="cl">&lt;t:if&gt;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pull.txt</span>
+    </div>
+</div>
+<p>¿Podemos emplear un modelo pull en un <em>framework</em> que normalmente se suele usar un modelo push? Sí, basta que en el modelo de la vista pasemos un objeto que le permita recuperar los datos que necesite. En Grails empleando un modelo pull el código podría quedarnos de la siguiente forma:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// Grails&#10;</span></span><span class="line"><span class="cl">// Controlador (groovy)&#10;</span></span><span class="line"><span class="cl">def showUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;render(view:&#39;show&#39;, model: [view:new View(params)])&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">private class View {&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Map params&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;View(Map params) {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.params = params&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def getUsuario() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Usuario.get(params.long(&#39;id&#39;))&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;def getDireccion() {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return usuario.direccion&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">// Vista (gsp)&#10;</span></span><span class="line"><span class="cl">Nombre: ${view.usuario.nombre}&#10;</span></span><span class="line"><span class="cl">&lt;g:if test=&#34;${view.usuario.vip}&#34;&gt;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Dirección: ${view.direccion.toString()}&#10;</span></span><span class="line"><span class="cl">&lt;/g:if&gt;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pull-in-push.txt</span>
+    </div>
+</div>
+<p>Como se ve el if de comprobación en el controlador desaparece, a pesar de todo si la vista fuese usada por varios controladores deberíamos crear algo para evitar tener duplicado el código que permite recuperar los datos a la vista. Aunque esto es perfectamente posible no es la forma habitual de usar los modelos push.</p>
+<p>Este ejemplo es muy sencillo y empleando cualquiera de los dos modelos es viable, pero cuando el número de datos a recuperar en las vistas y el número de veces que se reutiliza una vista aumenta (y en teoría la separación entro controlador y vista uno de sus motivos es posiblemente para reutilizarlas) el modelo push presenta los problemas que he comentado que el modelo pull no tiene.</p>
+<div class="alert alert-warning">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
+    <h3>Libro PlugIn Tapestry</h3>
+    <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
+    <br style="clear: both;">
+    <div class="buttons">
+        <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">PDF</a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Código fuente ejemplos</a>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://www.guyrutenberg.com/2008/04/26/pull-vs-push-mvc-architecture/">Pull vs. Push MVC Architecture</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">Libro PlugIn Tapestry</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">Documentación sobre Apache Tapestry</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="programacion"/>
+            
+                <category term="tapestry"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2014/06/hemeroteca-5/</id>
         <title>Hemeroteca #5</title>
@@ -21,8 +127,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>Cada seis meses hago un recopilatorio de los artículos que he publicado durante este periodo de tiempo. En estos seis meses he mantenido mi ritmo de publicación de una entrada a la semana que publico casi siempre los viernes a la tarde, en total han sido 26 nuevos artículos con este. Los temas tratados durante este tiempo han sido en gran medida la programación, un poco de linux y la Raspberry Pi y el análisis de un SSD.</p>
 <p>A destacar durante este semestre ha sido que he publicado un proyecto personal, Blog Stack. <a href="http://www.blogstack.info/">Blog Stack</a> es una agregador o planeta de bitácoras sobre desarrollo, programación, gnu/linux y tecnología. A casi todos los bloggeros que le he propuesto agregarle a Blog Stack me han contestado positivamente. 17 son las bitácoras agregadas actualmente y aunque no son muchas hacen que prácticamente todos los días haya algo nuevo que leer. En un artículo hacía la presentación del proyecto y en otro explicaba cual es el funcionamiento en cuanto a hospedaje y arquitectura (interesante para aquellos que quieran realizar un proyecto en internet con un coste mínimo). Son los siguientes artículos:</p>
@@ -105,8 +210,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura que nos puede llevar un tiempo en crearlos. Normalmente cuando empezamos un nuevo proyecto solemos basarnos en otro existente  copiando y pegando contenido de él. Pero ademas de tiempo podemos cometer errores o no seguir algunas convenciones propias de Java o del <em>framework</em> web que usemos. Para un proyecto grande esa dedicación al inicio del proyecto no nos importará pero para un proyecto pequeño o para hacer una prueba puede que queramos tener algo más rápido y con menos esfuerzo para estar en disposición de empezar a desarrollar en muy poco tiempo.</p>
 <p>Para crear el esqueleto de una aplicación rápidamente en <a href="http://tapestry.apache.org/">Apache Tapestry</a> hay disponible un arquetipo de <a href="http://maven.apache.org/">Maven</a> que puede generar una aplicación en unos pocos minutos. Para usarlo deberemos instalar maven previamente. Una vez instalado Maven basta con que usemos el siguiente comando.</p>
@@ -119,23 +223,19 @@
 <p>El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, <em>org.apache.tapestry:quickstart</em>. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo <em>io.github.picodotdev.bitix</em> y como nombre de artefacto inicio rápido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos tanto para trabajar con Maven como con <a href="http://www.gradle.org/">Gradle</a>, una vez que tenemos la aplicación generada podemos usar el que prefiramos, probablemente mejor Gradle. Los archivos generados son los siguientes:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_300x200_fit_box_3.png" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_2560x1440_fit_box_3.png" data-gallery="" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_300x200_fit_box_3.png" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez generada la aplicación podemos iniciarla con un servidor embebido <a href="http://www.eclipse.org/jetty/">Jetty</a> con la aplicación desplegada en él ya usando <a href="http://www.gradle.org/">Gradle</a>:</p>
@@ -148,10 +248,8 @@
 <p>Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_300x200_fit_box_3.png" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación en el navegador"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_2560x1440_fit_box_3.png" data-gallery="" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_300x200_fit_box_3.png" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación en el navegador"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Probablemente necesitaremos configurar muchas cosas adicionales como usar <a href="https://github.com/bmuschko/gradle-tomcat-plugin">Tomcat como servidor embebido</a> en vez de Jetty o añadir la <a href="https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html">configuración necesaria para ejecutar los teses unitarios y de integración</a>, Tapestry no es un <em>framework</em> <em>fullstack</em> y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.</p>
@@ -196,15 +294,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Con la versión 5.4 de Tapestry las <a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">páginas PageCatalog, ServiceStatus e HibernateStaticstis</a> han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de <a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html">informe de error incluso para las peticiones ajax</a>, los mensajes de logging y con estás páginas de información de estado.</p>
 <p>La página <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/pages/T5Dashboard.html">T5Dashboard</a> está incluida en el propio core de <a href="http://tapestry.apache.org/">Apache Tapestry</a> y disponible en todas las aplicaciones en modo desarrollo y accediendo de forma local al servidor de aplicaciones. Si se incluye en la aplicación la dependencia tapestry-hibernate además en T5Dashboard podremos ver estadísticas de uso de Hibernate. La página T5Dashboard nos puede resultar muy útil ya que nos proporciona mucha información y alguna acción interesante.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estado de la aplicación Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_300x200_fit_box_3.png" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_2560x1440_fit_box_3.png" data-gallery="" title="Estado de la aplicación Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_300x200_fit_box_3.png" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Como se ve en la imagen podemos ver las páginas disponibles, cargadas, cuanto tiempo llevó construirlas, que complejidad y por cuantos componentes están formadas. Y algo que nos resultará muy útil es provocar la acción de cargar todas las páginas quizá después de hacer un despliegue para evitar tiempos de inicialización en las primeras peticiones pero tan o más importante nos permitirá descubrir errores en los archivos tml de los componentes ¿cuantas veces te ha ocurrido que en un php, jsp, gsp, &hellip; hasta que no se usa esa plantilla no descubres un error digamos &ldquo;de compilación&rdquo; (variable con nombre que no existe, atributo mal entrecomillado, &hellip;) ? Seguramente como a mi, muchas. Los archivos de plantilla tml son xml válido con lo que si no están bien formados se nos notificará del error, nuevamente ¿te ha ocurrido alguna vez tener un php, jsp o gsp que no genera html bien balanceado? Pero también si se está usando un componente que no existe, varios componentes con el mismo nombre, &hellip; . Aunque parezca que no estos tipos de errores se pueden producir con relativa facilidad tanto en desarrollo y con mayor peligro si tenemos un flujo de trabajo con varias ramas donde vamos mergeando los cambios de trunk a la rama que se despliega en producción y nos ocurren conflictos en los merges que tenemos que resolver manualmente con la posibilidad de cometer un error.</p>
@@ -217,15 +313,13 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_300x200_fit_box_3.png" width="300" height="138"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_300x200_fit_box_3.png" width="300" height="138"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Finalmente, en la sección HibernateStatistics podemos obtener un montón de datos que nos pueden servir para detectar situaciones anómalas en la aplicación como un gran número de sql que se lanzan en una página como podría ser en un problema de carga N+1 en una relación entre dos entidades, el estado de la cache de segundo nivel que nos permitirá optimizar las caches, la cache de queries, número de transacciones realizadas y otra gran cantidad de información.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estadísticas de Hibernate en Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_300x200_fit_box_3.png" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_2560x1440_fit_box_3.png" data-gallery="" title="Estadísticas de Hibernate en Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_300x200_fit_box_3.png" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para que hibernate genere estadísticas es necesario indica en el archivo hibernate.cfg.xml la propiedad hibernate.generate_statistics:</p>
@@ -278,12 +372,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly"  class=""></p>
 </div>
 <p>Los class loaders del <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones JBoss/WildFly</a> habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en <a href="http://jbossas.jboss.org/">JBoss</a> se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el <em>classloader</em> de la aplicación (war). Ya en las últimas versiones como JBoss 7 y <a href="http://wildfly.org/">WildFly</a> la forma de cargar las clases es más parecido al modelo habitual que se sigue en las aplicaciones Java EE y en servidores como Tomcat buscando primero en el directorio classes WEB-INF/classes y entre las librerías de la carpeta WEB-INF/lib del archivo war. Además, con la inclusión de JBoss Modules se puede seguir un esquema OSGi con lo que incluso podríamos usar simultáneamente en el servidor diferentes versiones de la misma librería.</p>
 <p>Sin embargo, a pesar de seguir el esquema estándar de buscar las clases y usar OSGi para que Tapestry encuentre los archivos que necesita, como plantillas, imágenes, literales que pueden estar embebidos en los archivos jar de librerías es necesario hacer algunas modificaciones. En una <a href="http://wiki.apache.org/tapestry/HowToRunTapestry5OnJBoss7Dot1">guía de uso de Tapestry con JBoss</a> se explica como conseguir hacer funcionar una aplicación Tapestry tanto en JBoss 7 como en WildFly 8. La solución consiste en proporcionar una clase para que encuentre correctamente los archivos que Tapestry necesita y esta clase será la que veremos en el siguiente ejemplo.</p>
@@ -360,8 +452,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="200" height="200" alt="Grails" title="Grails"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="200" height="200" alt="Grails" title="Grails"  class=""></p>
 </div>
 <p>Una base de datos relacional guarda los datos de forma diferente al modelo orientado a objetos que utilizamos en lenguajes como <a href="https://www.oracle.com/us/technologies/java/overview/index.html">Java</a>, <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.python.org/">Python</a>. Los <a href="https://en.wikipedia.org/wiki/Object-relational_mapping">ORM (Object-relational mapping)</a> tratan de hacer una correspondencia entre los dos modelos, el relacional de las bases de datos y el orientado a objetos de los lenguajes. Una de las ventajas de usar en una aplicación un ORM para acceder a la base de datos es que podemos hacer una correspondencia entre los datos de una base de datos relacional y trabajar con esos datos utilizando el modelo orientado a objetos del lenguaje de programación que usemos.</p>
 <p>Sin embargo, el ORM envía sentencias SQL para recuperar los datos de la base de datos relacional según vamos navegando con los métodos de acceso a otros objetos y sus relaciones. Depende de como el ORM haga las consultas para recuperar los datos de la base de datos relacional puede generar muchas SQL, producir un bajo rendimiento en la aplicación y una carga de trabajo considerable para la base de datos.</p>
@@ -418,8 +509,7 @@
 <p>El resultado es el siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estadísticas de Hibernate en Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_300x200_fit_box_3.png" width="175" height="200" alt="Estadísticas de Hibernate en Grails" title="Estadísticas de Hibernate en Grails"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_2560x1440_fit_box_3.png" data-gallery="" title="Estadísticas de Hibernate en Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_300x200_fit_box_3.png" width="175" height="200" alt="Estadísticas de Hibernate en Grails" title="Estadísticas de Hibernate en Grails"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En la imagen se puede apreciar las consultas lanzadas y que parámetros se han empleado. El método doTest del controlador HibernateController cada vez que es ejecutado persiste una entidad de dominio Autor y posteriormente la borra lanzando una sentencia insert y otra delete, cada vez que es ejecutado las estadísticas cambian acordemente.</p>
@@ -455,8 +545,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails"  class=""></p>
 </div>
 <p>No es la primera vez que comento algo similar (<a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">II</a>) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.</p>
 <p>La página de error de <a href="https://grails.org/">Grails</a> por defecto da poca información, a poco más da la traza de la excepción y un extracto de los archivos relacionados donde se ha producido, podría ser mejor. Podría informar de los parámetros que se enviaron en la petición, las cabeceras http o las cookies además de los parámetros de sesión, a veces esta información nos puede servir para identificar la causa más rápidamente ya que la excepción puede estar produciéndose con el valor de un determinado parámetro o un determinado navegador, esta información no la tenemos en una simple traza de la excepción.</p>
@@ -477,10 +566,8 @@
 <p>El resultado se puede ver en la siguiente captura de pantalla.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de error por defecto de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_300x200_fit_box_3.png" width="300" height="166" alt="Página de error por defecto de Grails" title="Página de error por defecto de Grails"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de error personalizada de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_300x200_fit_box_3.png" width="211" height="200" alt="Página de error personalizada de Grails" title="Página de error personalizada de Grails"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_2560x1440_fit_box_3.png" data-gallery="" title="Página de error por defecto de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_300x200_fit_box_3.png" width="300" height="166" alt="Página de error por defecto de Grails" title="Página de error por defecto de Grails"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_2560x1440_fit_box_3.png" data-gallery="" title="Página de error personalizada de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_300x200_fit_box_3.png" width="211" height="200" alt="Página de error personalizada de Grails" title="Página de error personalizada de Grails"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los estilos mostrados en las capturas de pantalla podrían ser mejores pero la esencia está en la información que se muestra. En otro artículo publicaré como <a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">obtener estadísticas de Hibernate para detectar problemas de N+1 u obtener las consultas sql que se están realizando en cada página de una aplicación Grails</a>, esta información nos puede ayudar bastante y no es excesivamente complicado hacerla. Con ambas conseguiremos que las aplicaciones que desarrollemos con Grails sean un poco más informativas.</p>
@@ -512,8 +599,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogstack.png" width="300" height="65" alt="Blog Stack" title="Blog Stack"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogstack.png" width="300" height="65" alt="Blog Stack" title="Blog Stack"  class=""></p>
 </div>
 <p>Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado <a href="http://www.blogstack.info/">Blog Stack</a>, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de <del>Planeta Linux</del> y <a href="http://gallir.wordpress.com/2009/12/30/como-montamos-meneame-en-amazon-ec2/">Meneame</a>, otros proyectos web.</p>
 <p>Blog Stack (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología, en definitiva es un servicio que está disponible en una dirección de internet, <a href="http://www.blogstack.info">www.blogstack.info</a>.</p>
@@ -523,15 +609,13 @@
 <p>Con todo la arquitectura de despliegue y hospedaje de Blog Stack es la siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_300x200_fit_box_3.png" width="168" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_300x200_fit_box_3.png" width="168" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En cuanto a la aplicación y el código Java en si las partes importantes están en un <a href="https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/IndexerServiceImpl.java">servicio que se encarga de la indexación</a> extrayendo el contenido de las fuentes y guardalo en una base de datos, otro <a href="https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/GeneratorServiceImpl.java">servicio para la generación del contenido</a> del sitio de forma estática (html, css, js, imgs, &hellip;) y finalmente el <a href="https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/cli/Main.java">programa Java principal</a> que sirve para lanzarlo desde la linea de comandos, el resto son las <a href="https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/entities">clases del modelo de datos</a>  y los <a href="https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/services/dao">DAO de persistencia y acceso a dataos</a>. La aplicación sigue el esquema tradicional de 3 capas, la de presentación (páginas y componentes de tapestry), la de lógica de negocio formada por los servicios de indexación, generación y los DAOs (formada por el contenedor de servicios de tapestry y spring) y finalmente la capa de datos formada por una base de datos H2 (donde hibernate interviene). En realidad en BS no hay un servidor de aplicaciones sino que se usa Tapestry en una aplicación «standalone».</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_300x200_fit_box_3.png" width="300" height="123"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_300x200_fit_box_3.png" width="300" height="123"  class="lozad "></a></p>
 </figure>
 </div>
 <p>La raíz del proyecto fue que quería usar <a href="http://tapestry.apache.org/">Apache Tapestry</a> de alguna forma en algún proyecto que fuese de utilidad para otras personas, al mismo tiempo que meditaba la idea <a href="http://planetalinux.org/">Planeta Linux</a> dejó de funcionar durante unas semanas y tampoco estaba contento del todo con los otros planetas en los que tenía mi bitácora agregada. Con <a href="http://planeta.archlinux-es.org/">Planeta Arch Linux</a> porque después de unos meses seguía sin ni siquiera respuesta a la solicitud de agregación y <a href="http://www.planetacodigo.com/">Planeta Código</a> ya que creía que podría ofrecer mejor funcionalidad, por ejemplo, los gist no se importaban bien (utilizan javascript y por seguridad deben estar excluidos). Ya que empezaba el proyecto creía que podría proporcionar alguna idea que permitiese descubrir contenido a los usuarios a través de como hace <a href="https://stackoverflow.com/">stackoverflow</a> con las etiquetas de modo que una persona se pueda suscribir (mediante rss/atom) a una etiqueta para recibir el contenido de solo el tema que le interese de cualquier bitácora agregada, descubrir nuevas bitácoras con contenido interesante a veces no es fácil. La opción más parecida y mejor que he encontrado es <a href="http://bitacoras.com/">bitacoras.com</a>, salvo las votaciones, el ranking y que tiene un ámbito más amplio al poder incluir bitácoras de más temáticas y que la agregación de bitácoras no está automatizada, BS en lo importante ofrece lo mismo de forma más simple y está más especializado tanto en la temática de las bitácoras como en la suscripción por etiquetas.</p>
@@ -572,14 +656,12 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogstack.png" width="300" height="65" alt="Blog Stack" title="Blog Stack"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogstack.png" width="300" height="65" alt="Blog Stack" title="Blog Stack"  class=""></p>
 </div>
 <p>Con este artículo quiero presentar un nuevo proyecto, Blog Stack. <a href="http://www.blogstack.info/">Blog Stack</a> (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu340b56fc393dee703dec6a4fb7fc71ae_275117_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Portada de Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu340b56fc393dee703dec6a4fb7fc71ae_275117_300x200_fit_box_3.png" width="216" height="200" alt="Portada de Blog Stack" title="Portada de Blog Stack"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu340b56fc393dee703dec6a4fb7fc71ae_275117_2560x1440_fit_box_3.png" data-gallery="" title="Portada de Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2014/05/presentacion-blog-stack/images/blogstack-portada_hu340b56fc393dee703dec6a4fb7fc71ae_275117_300x200_fit_box_3.png" width="216" height="200" alt="Portada de Blog Stack" title="Portada de Blog Stack"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa adicional como poder suscribirse a únicamente el contenido etiquetado en que cada uno esté interesando (programación, desarrollo-ágil, java, python, linux, ubuntu, &hellip;) o recibir el contenido publicado en todas las bitácoras agregadas sin tener que suscribirse individualmente a cada una de ellas. BS aún está en desarrollo y posiblemente vaya incorporando nuevas ideas que me surjan o se me propongan pero en el estado actual ya cumple con la función básica de agregador.</p>
@@ -621,8 +703,7 @@
         <content type="html">
         <![CDATA[<p><strong>Elasticsearch es una potente herramienta que nos permite indexar una gran volumen de datos y posteriormente hacer consultas sobre ellos soportando entre otras muchas cosas búsquedas aproximadas, facetas y resaltado. Un uso puede ser hacer consultas de texto completo, al estar los datos indexados los resultados se obtienen de forma muy rápida.</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elastic-elasticsearch.svg" width="200" height="200" alt="Elasticsearch" title="Elasticsearch"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elastic-elasticsearch.svg" width="200" height="200" alt="Elasticsearch" title="Elasticsearch"  class=""></p>
 </div>
 <p>Continuando con la forma de como dar solución a la búsquedas en las entidades de dominio en esta entrada profundizaré en la solución que comentaba de usar <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>. Elasticsearch se basa en <a href="https://lucene.apache.org/core/">Lucene</a> pero expone su funcionalidad a través de una interfaz REST recibiendo y enviando datos en formato JSON y oculta mediante esta interfaz los detalles internos de Lucene. Esta interfaz permite que pueda ser utilizada por cualquier plataforma no solo Java, puede usarse desde Python, .NET, PHP o incluso desde un navegador con JavaScript. Es persistente, es decir, que lo que indexemos en ella sobrevivirá a un reinicio del servidor.</p>
 <p>Como comentaba en <a href="https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html">el artículo anterior de búsquedas sobre entidades de dominio</a> ES nos puede servir para hacer búsquedas a texto completo pero también podemos hacer otra serie de cosas adicionales que no podemos con una base de datos relacional aunque soporte en su lenguaje SQL búsqueda a texto completo, por ejemplo, resaltado (highlight) y facetas (facets), también permite hacer búsquedas vagas (fuzzy) y soporta diferentes analizadores según el idioma de la propiedad en que se busque. El indexar y desindexar los datos en elasticsearch para que luego puedan ser buscados es responsabilidad nuestra y además de insertarlos o eliminarlos en la base de datos debemos hacer lo mismo en ES ya sea haciéndolo en ambos sitios a la vez o mediante un proceso de fondo que se encargue de ello.</p>
@@ -636,8 +717,7 @@
 <p>Después de unos segundos deberemos ver algo como lo siguiente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_300x200_fit_box_3.png" width="300" height="126"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/elasticsearch_hu7ee877f142c7fa41ee5fe0416e5b8906_76248_300x200_fit_box_3.png" width="300" height="126"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Elasticsearch usa sus propios conceptos y aunque no es una base de datos relacional algunos pueden ser similares. Lo que en en una base de datos relacional es un esquema en ES es un índice, lo que en la primera es una tabla en ES es un tipo, continuando una fila en ES es un documento y finalmente una columna es una propiedad en ES.</p>
@@ -700,8 +780,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Categorías de productos (facets) en Amazon"><img src="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_300x200_fit_box_3.png" width="85" height="200" alt="Categorías de productos (facets) en Amazon" title="Categorías de productos (facets) en Amazon"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_2560x1440_fit_box_3.png" data-gallery="" title="Categorías de productos (facets) en Amazon"><img src="https://picodotdev.github.io/blog-bitix/2014/04/introduccion-a-elasticsearch/images/categorias-amazon_hu1dcef78c0f3b8024ebdf2c7c44f6bce9_17382_300x200_fit_box_3.png" width="85" height="200" alt="Categorías de productos (facets) en Amazon" title="Categorías de productos (facets) en Amazon"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Otra de las funcionalidades que nos puede interesar es que ES nos ofrezca sugerencias para determinados términos, en el siguiente ejemplo solicitamos además de la búsqueda sugerencias para algunas palabras que tienen fallos de escritura.</p>
@@ -754,12 +833,10 @@
         <content type="html">
         <![CDATA[<p><strong>He desarrollado este ejemplo de lista de tareas usando diferentes herramientas javascript primeramente con solo Backbone y después con Marionette. En este caso realizaré el mismo ejemplo para ver las diferencias usando la combinación Backbone para los modelos y React para las vistas junto con otras herramientas como ReactJS, Mustache, Jasmine, Grunt e i18n. Un ejemplo bastante completo de lo que ofrece javascript en estos momentos con la composición de herramientas que más me ha gustado.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/backbone.svg" width="200" height="35" alt="Backbone" title="Backbone"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/backbone.svg" width="200" height="35" alt="Backbone" title="Backbone"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/react.svg" width="200" height="200" alt="React" title="React"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/react.svg" width="200" height="200" alt="React" title="React"  class=""></p>
 </div>
 <p>En anteriores entradas explicaba como hacer el típico ejemplo que se suele usar como demostración en los <em>framework</em> MVC de JavaScript que consiste en una lista de tareas en la que se pueden añadir nuevas, marcarlas como completadas y eliminarlas. Realice este ejemplo en uno de ellos <a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">usando solo Backbone</a> y posteriormente <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">usando Marionette</a>. Estos ejemplos eran parte de una serie de artículos sobre JavaScript que la que mostraba como usar muchas otras herramientas como <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">Require JS</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html">Mustache</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html">logging con javscript</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html">capturar errores en javascript</a>, <a href="http://elblogdepicodev.blogspot.com/2013/04/introduccion-y-ejemplo-de-backbonejs.html">introducción a Backbone</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">lista de tarea con Backbone, RESTEasy y Tapestry</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">pruebas unitarias con Jasmine y Sinon</a>, <a href="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/">Usar Grunt para ejecutar teses unitarios de código JavaScript</a> y que constituyen parte del actual «estado del arte» en cuanto a desarrollo con JavaScript.</p>
 <p>La lista de tareas aunque es un ejemplo sencillo sirve perfectamente como ejercicio para mostrar el uso de los <em>frameworks</em> MVC. En esta entrada voy a mostrar como hacer el mismo ejemplo usando <a href="http://backbonejs.org/">Backbone</a> y <a href="https://reactjs.org/">React</a> y veremos, en mi opinión, que el ejemplo es mucho mas sencillo y lógico.</p>
@@ -775,8 +852,7 @@
 <p>El resultado es el siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/images/backbone-react_hua47f19bdb771f96b8f9ecc179db0dc06_133834_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/images/backbone-react_hua47f19bdb771f96b8f9ecc179db0dc06_133834_300x200_fit_box_3.png" width="237" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/images/backbone-react_hua47f19bdb771f96b8f9ecc179db0dc06_133834_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/images/backbone-react_hua47f19bdb771f96b8f9ecc179db0dc06_133834_300x200_fit_box_3.png" width="237" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los elementos de las vistas se recomienda definirlas con los elementos que proporciona React con React.DOM, pueden definirse más al estilo de html con jsx pero esto hace que el javascript haya de compilarse para transformar ese jsx/html a los elementos React.DOM, el mayor problema es que esto es un proceso costoso lo que puede ralentizar la carga de una página y que el compilador tiene un tamaño considerable de unos 300 KiB. El JSX es más claro y parecido al resultado final que el código equivalente React.DOM pero aún así el código javascript es suficientemente claro. Si aún así quisiésemos usar JSX lo recomendable sería que los archivos con contenido jsx se precompilase en un momento anterior de enviarlo al cliente, posiblemente antes del despliegue de la aplicación en el servidor.</p>
@@ -858,8 +934,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grunt.png" width="200" height="236" alt="Grunt" title="Grunt"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grunt.png" width="200" height="236" alt="Grunt" title="Grunt"  class=""></p>
 </div>
 <p>En la <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">serie de artículos que escribí sobre javascript</a> hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como <a href="https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html">RequireJS</a>, <a href="http://www.genbetadev.com/desarrollo-web/patron-de-diseno-mvc-del-lado-cliente-con-backbonejs">Backbone</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">Marionette</a>, <a href="https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html">Jasmine y Sinon</a>. En el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html">ejemplo de la lista de tareas con estas herramientas</a> hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar <a href="http://jasmine.github.io/">Jasmine</a>.</p>
 <p>Sin embargo, para ejecutar las pruebas unitarias se necesitaba un navegador y hacerlo de forma manual cuando quisiéramos comprobar el estado de las pruebas. Lo ideal tal y como se comenta en el libro <a href="https://amzn.to/2SVraLu">The Pragmatic programmer</a>, es que las pruebas unitarias se ejecuten de forma automatizada con la herramienta de construcción que usemos, esto evitará que se nos olvide ejecutarlas en cada cambio y así descubriremos los errores pronto, también podremos hacer que se ejecuten en un entorno de integración continua como podría ser <a href="http://jenkins-ci.org/">Jenkins</a>. En esta entrada mostraré como ejecutar esas pruebas unitarias de javascript con una tarea de la herramienta <a href="http://www.gradle.org/">Gradle</a> y usando una herramienta similar a Gradle pero para JavaScript llamada <a href="http://gruntjs.com/">Grunt</a>.</p>
@@ -913,8 +988,7 @@
 <p>Veremos como salida el siguiente resultado en la terminal.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/images/grunt-jasmine_hu79f9c7ae54435c10e67b3a5309b3972b_34504_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ejecutar teses Jasmine con Grunt"><img src="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/images/grunt-jasmine_hu79f9c7ae54435c10e67b3a5309b3972b_34504_300x200_fit_box_3.png" width="300" height="147" alt="Ejecutar teses Jasmine con Grunt" title="Ejecutar teses Jasmine con Grunt"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/images/grunt-jasmine_hu79f9c7ae54435c10e67b3a5309b3972b_34504_2560x1440_fit_box_3.png" data-gallery="" title="Ejecutar teses Jasmine con Grunt"><img src="https://picodotdev.github.io/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/images/grunt-jasmine_hu79f9c7ae54435c10e67b3a5309b3972b_34504_300x200_fit_box_3.png" width="300" height="147" alt="Ejecutar teses Jasmine con Grunt" title="Ejecutar teses Jasmine con Grunt"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Al hacer esta entrada de forma que las pruebas se ejecuten con Grunt he movido las plantillas de Mustache de lugar, antes estaban embebidas en el html en el ejemplo <a href="https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html">Backbone</a> y las he movido a dentro del javascript de la aplicación de la lista de tareas. Esto hace que para pasar las pruebas no tengamos una dependencia sobre un archivo html externo en el que buscar las plantillas, también así el javascript es más autónomo y está incluido en él todo lo que necesita.</p>
@@ -957,8 +1031,7 @@
         <content type="html">
         <![CDATA[<p><strong>La octava versión de Java añade numerosas novedades importantes al lenguaje. Algunas de las más destacadas son las expresiones lambdas y los streams que dotan al lenguaje de características de programación funcional pero también lo hacen en muchas construcciones de código comunes más expresivo, menos extenso y más legible. Pero hay otras novedades relevantes que detallo en el artículo como los métodos por defecto en interfaces o la nueva API para fechas.</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>El 18 de marzo de 2014 se publicó la nueva versión de la plataforma <a href="https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html">Java 8</a>, Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como <em>lambdas</em> o <em>closures</em> o una demandada nueva API para el manejo de fechas entre otras muchas características más. La <a href="http://openjdk.java.net/projects/jdk8/features">lista completa de novedades</a> es bastante amplia, a continuación algunas características de Java explicadas con un poco más de detalle.</p>
 <div class="alert alert-warning tableofcontents">
@@ -1075,8 +1148,7 @@ será dinámico pero no evitará fugas de memoria.</li>
 <p>Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente ha sido molesto, para tratar de mejorar la situación podíamos usar la librería JodaTime. Finalmente, después de mucho tiempo esperando a que se hiciera se va a proporcionar una mejor <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">API en el JDK 8 para trabajar con fechas, horas y zonas horarias</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_300x200_fit_box_3.png" width="282" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_300x200_fit_box_3.png" width="282" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="futuro-con-java-9">Futuro con Java 9</h3>
@@ -1167,8 +1239,7 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         <![CDATA[<p><strong>JMS es una especificación de Java que define en esta plataforma una forma comunicación entre aplicaciones basada en el intercambio de mensajes. Los mensajes permiten a las aplicaciones no conocerse entre sí y comunicarse de forma asíncrona pudiendo hacer que los mensajes de una cola solo sean consumidos por un único receptor o por varios suscriptores interesados en un determinado tema. En el código de ejemplo muestro tanto la comunicación con colas (queues) como con temas (topics)</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p><a href="https://en.wikipedia.org/wiki/Java_Platform">La plataforma Java EE</a> (Java Enterprise Edition) pone a disposición de los desarrolladores varias especificaciones, estas especificaciones describen las funcionalidades y la API que deben proporcionar las implementaciones y proporcionan al desarrollador herramientas para facilitar, hacer mejor las aplicaciones y de forma estándar según estas especificaciones. Haciendo uso de una de estas especificaciones es posible cambiar de una implementación a otra de forma transparente y sin modificar ninguna línea de código de la aplicación (en teoría). Hay especificaciones para persistencia en base de datos (JPA), para transaccionalidad (JTA), para servicios web (JAX-WS ) y REST (JAX-RS) entre otras. En el siguiente enlace puede encontrarse el <a href="https://glassfish.java.net/downloads/ri/">listado completo de especificaciones y sus versiones de JEE 7</a>.</p>
 <p>Una de ellas es el <a href="https://es.wikipedia.org/wiki/Java_Message_Service">servicio de mensajería JMS</a> (Java Message Service). JMS es un sistema de comunicación entre aplicaciones en base a mensajes. El usar mensajes como forma de comunicación entre aplicaciones tiene los siguientes beneficios o ventajas:</p>
@@ -1195,8 +1266,7 @@ será dinámico pero no evitará fugas de memoria.</li>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultado de Topic.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_300x200_fit_box_3.png" width="300" height="136" alt="Resultado de Topic.java" title="Resultado de Topic.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_2560x1440_fit_box_3.png" data-gallery="" title="Resultado de Topic.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_300x200_fit_box_3.png" width="300" height="136" alt="Resultado de Topic.java" title="Resultado de Topic.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:</p>
@@ -1208,8 +1278,7 @@ será dinámico pero no evitará fugas de memoria.</li>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultado de Queue.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_300x200_fit_box_3.png" width="300" height="95" alt="Resultado de Queue.java" title="Resultado de Queue.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_2560x1440_fit_box_3.png" data-gallery="" title="Resultado de Queue.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_300x200_fit_box_3.png" width="300" height="95" alt="Resultado de Queue.java" title="Resultado de Queue.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Comentar que los mensajes se procesan en serie por cada MessageListener, esto es, hasta que no termina el consumo de uno no se consume el siguiente. Esto se aplica por MensajeListener y sesión.</p>
@@ -1263,8 +1332,7 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         <![CDATA[<p><strong>Usando los comandos expuestos en este artículo y con OpenSSL podemos crear una clave pública y privada para usarlo con ssh o para cifrar y descifrar mensajes, un certificado autofirmado que podremos usar en un servidor de aplicaciones para usar un protocolo seguro y también convertir las claves y certificados a uno de los formatos aceptados por la aplicación que usemos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
 </div>
 <p>Para un uso personal como enviar correos o archivos cifrados o firmados digitalmente usar <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">GnuPG</a> es una buena opción. En Internet los servidores también se aprovechan del uso de criptografía para realizar comunicaciones seguras entre el usuario y el servidor.</p>
 <p>Para hacer uso en un servidor de una comunicación https donde los datos viajan cifrados y sin que otras partes salvo el usuario y el servidor puedan acceder a los datos necesitamos un certificado digital. Un certificado es un archivo que contiene la clave pública sirviéndonos para verificar su autenticidad. Un certificado autofirmado es un certificado firmado con la misma clave privada asociada a la clave pública que contiene el certificado. Un certificado autofirmado es suficiente para un entorno de pruebas pero en un servidor para proporcionar confianza a los usuarios deberemos solicitar que una autoridad de certificados que nos firme con su clave nuestro certificado, si el usuario confía en esa autoridad de certificado puede de esta manera confiar en nuestro certificado y clave pública. Varias entidades de registro de dominios o alojamiento web ofrecen la compra de certificados SSL, en el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificado SSL, de empresa, «wildcard» y de validación extendida</a> comento con un poco más detalle los varios tipos de certificados y algunas opciones donde obtenerlos o comprarlos.</p>
@@ -1415,118 +1483,6 @@ será dinámico pero no evitará fugas de memoria.</li>
                 <category term="software-libre"/>
             
                 <category term="web"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/</id>
-        <title>Libro sobre desarrollo de aplicaciones con Apache Tapestry</title>
-        <updated>2015-04-10T20:00:00+02:00</updated>
-        <published>2014-02-14T20:10:34+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
-</div>
-<p>Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el <em>framework</em> <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
-<h3 id="plugin-tapestry">PlugIn Tapestry</h3>
-<p>Apache Tapestry es un <em>framework</em> orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como <a href="http://projects.spring.io/spring-framework/">Spring</a>, <a href="https://grails.org/">Grails</a> y <a href="http://www.playframework.com/">Play!</a> y también de los muchos otros en los que la principal diferencia es el lenguaje como <a href="https://www.djangoproject.com/">Django</a> (Python), <a href="http://symfony.com/">Symfony</a> (PHP), <a href="http://www.asp.net/mvc">ASP.NET MVC</a> (C#) o <a href="http://rubyonrails.org/">Ruby On Rails</a> (Ruby).</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Incluyendo la descripción de las características del <em>framework</em> el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:</p>
-<ul>
-<li>Introducción, principios y características</li>
-<li>Inicio rápido</li>
-<li>Páginas y componentes</li>
-<li>Contenedor de dependencias (IoC)</li>
-<li>Assets (imágenes, estilos, javascript) y módulos RequireJS</li>
-<li>Formularios</li>
-<li>Internacionalización (i18n) y localización (l10n)</li>
-<li>Persistencia web</li>
-<li>Persistencia en bases de datos</li>
-<li>Ajax</li>
-<li>Seguridad (autenticación, autorización, XSS, Inyección SQL, HTTPS)</li>
-<li>Librerías de componentes</li>
-<li>Pruebas unitarias, de integración y funcionales (<a href="http://junit.org/">JUnit</a>/<a href="http://code.google.com/p/mockito/">Mockito</a>, <a href="http://code.google.com/p/spock/">Spock</a>, <a href="http://www.gebish.org/">Geb</a>)</li>
-<li>Y algunas cosas más sin entrar en muchos detalles como envió de correos, generación de informes, gráficas, una API REST, analizadores estáticos de código, CDN, &hellip;</li>
-</ul>
-<p>El libro está basado en la siguiente versión de Tapestry, la 5.4, que actualmente está en estado beta (aunque la mayoría servirá para la versión final y para la versión 5.3 actual). Esta nueva versión tiene como principal novedad la parte cliente de las aplicaciones con la inclusión de RequireJS y la definición de los archivos JavaScript mediante módulos. También incorpora una capa de abstracción que permite usar cualquier librería como apoyo a la funcionalidad que necesita proporcionar ya sea Prototype, jQuery o cualquier otra que prefiramos o nueva que se desarrolle en un futuro.</p>
-<p>Además del libro he desarrollado una <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry">pequeña aplicación con unos pocos ejemplos</a> (disponible en mi repositorio de GitHub) que puedes probar en tu equipo sin necesidad de instalar nada previamente, salvo Git y el JDK. Más de 250 páginas de documentación que permitirán al lector descubrir mucha de la magia que puede ofrecer este <em>framework</em>. Además en <a href="https://picodotdev.github.io/blog-bitix/">mi blog</a> (y <a href="https://elblogdepicodev.blogspot.com.es">elblogdepicodev</a>) puedes encontrar varias entradas sobre muchos de los temas tratados de forma individual y que he utilizado para escribir el libro.</p>
-<p>Puedes obtenerlo desde los enlaces que proporciono de forma totalmente libre y al inmejorable precio de 0,00 € impuestos incluidos. Por si fuera poco puedes conseguirlo en el formato electrónico PDF. Tienes mi permiso (es más, animo a ello) para compartirlo, distribuirlo en redes P2P, subirlo a cualquier página web o «piratearlo» cuantas veces quieras, siempre que respetes la licencia Creative Commons bajo la cual lo he publicado.</p>
-<div class="buttons">
-    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">Descargar el libro (PDF)</a>
-    <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Obtener código fuente ejemplos</a>
-</div>
-<div class="share-this" style="text-align: center; margin-bottom: 20px">
-  <h3>¡Y luego compártelo!</h3>
-  <div class="sharethis-inline-share-buttons">
-  <span class="st_twitter_vcount" st_title="He descargado el libro sobre desarrollo de apps web con Apache Tapestry. ¡Obtén tu copia! #PlugIn" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" st_via="picodotdev"></span>
-  <span class="st_facebook_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icontext-600.png"></span>
-  <span class="st_googleplus_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icontext-600.png"></span>
-  <span class="st_linkedin_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icontext-600.png"></span>
-  </div>
-</div>
-<h3 id="apache-tapestry">Apache Tapestry</h3>
-<p>Algunas características destacadas de Apache Tapestry son:</p>
-<h4 id="java">Java</h4>
-<p>Normalmente se usa el lenguaje Java con lo que el compilador y el asistente de código de tu IDE te ayudarán.</p>
-<h4 id="políglota">Políglota</h4>
-<p>Si prefieres puedes utilizar Groovy, Scala o cualquier otro lenguaje soportado por la JVM.</p>
-<h4 id="productivo">Productivo</h4>
-<p>La recarga de clases en caliente evitará que tengas que reiniciar el servidor para ver tus cambios aplicados. Simplemente actualiza el navegador.</p>
-<h4 id="rápido">Rápido</h4>
-<p>El <em>framework</em> está programado en Java sin hacer uso de reflection. Incorpora varias optimizaciones que harán tu aplicación más eficiente sin trabajo por tu parte como compresión gzip, minificación y agregación css/javascript, cacheo agresivo en el cliente de assets, supresión de espacios en blanco innecesarios, &hellip;</p>
-<h4 id="basado-en-componentes">Basado en componentes</h4>
-<p>Los componentes son piezas autónomas y resusables de código. Para usar uno simplemente necesitarás conocer sus parámetros todo lo demás como archivos javascript, hojas de estilo y mensajes localizados son proporcionados por el componente. Los componentes pueden lanzar eventos y diferentes contenedores comportarse de diferente forma ante el mismo evento.</p>
-<h4 id="informe-de-error-avanzado">Informe de error avanzado</h4>
-<p>El informe te proporciona mucha más información que simplemente la traza de la excepción, verás que se estaba haciendo, que fué mal y como corregirlo. Con toda esta información solucionar las excepciones será mucho más rápido y fácil. El informe de error también es presentado en caso de errores en las peticiones AJAX.</p>
-<h4 id="testable">Testable</h4>
-<p>Puedes probar los componentes de forma unitaria, el html generado o hacer pruebas de integración y funcionales. Los componentes son POJOs que no necesitan heredar ni implementar ninguna clase del <em>framework</em>. Podrás utilizar la herramienta que desees JUnit/Mockito, Spock, Geb, &hellip;</p>
-<h4 id="extensible-adaptable-y-modular">Extensible, adaptable y modular</h4>
-<p>Gracias al contenedor de dependencias y a que los servicios están programados en base a interfaces puedes definir una nueva implementación que modifique el comportamiento del <em>framework</em>. Todo servicio en el contenedor de dependencias puede ser redefinido, la mayoría de las cosas son servicios. Existen módulos para Hibernate, Apache Shiro, Quartz, &hellip; y si no existe puedes usar cualquier librería como RESTEasy, JasperReports, EHCache, JFreeChart, RestFB&hellip;</p>
-<h4 id="i18n-y-l10n">i18n y l10n</h4>
-<p>Puedes tener catálogos de mensajes por componente o de manera global en la aplicación. Los assets (imágenes, css, &hellip;) también son localizables y tener una plantilla con un contenido totalmente diferente según el idioma del usuario.</p>
-<h4 id="convención-sobre-configuración">Convención sobre configuración</h4>
-<p>Las convenciones permiten evitar la configuración y los posibles errores que podemos cometer al realizarla. Pero más importante, hace que cualquier programador que conozca las convenciones sepa inmediatamente como están organizadas todas las cosas con lo que el tiempo de aprendizaje se reduce considerablemente.</p>
-<h4 id="librerías-de-componentes">Librerías de componentes</h4>
-<p>Los componentes comunes a varios proyectos pueden ser agregados en una librería de componentes (no es más que un archivo jar) para ser reutilizados. Nuevamente para usar los componentes solo tendrás que preocuparte de los parámetros, todos los recursos que necesiten serán extraídos de la librería. No necesitarás copiar y pegar archivos de un proyecto a otro, solo agregar una dependencia o jar a tu proyecto.</p>
-<p>Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java Champion en 2010 <a href="https://java.net/website/java-champions/bios.html#Ship">[1]</a> y Duke&rsquo;s Choice Award por el <em>framework</em> <a href="https://www.java.net/dukeschoice/2006">[2]</a> en la categoría <em>open source</em>), y modestia aparte, piensa que Tapestry ha sido un líder desde una perspectiva puramente tecnológica. Estas son algunas cosas que cree que hizo primero y todavía piensa que lo hace mejor que nadie:</p>
-<ul>
-<li>Componentes reusables (2001)</li>
-<li>Informe de excepción detallado y útil (2001)</li>
-<li>Instrumentación invisible en las plantillas (2002)</li>
-<li>Informe de error con precisión de linea (2004)</li>
-<li>Metaprogramación y modificación de bytecode (2005)</li>
-<li>Recarga de clases en caliente (2006)</li>
-<li>Informe de error completo para peticiones Ajax (2012)</li>
-<li>Integración con RequireJS, less/sass y CoffeeScript (2013)</li>
-</ul>
-<p>¿Te ha parecido poco? <a href="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">¡Descubre alguna más en una presentación!</a>.</p>
-<p>¡Que lo disfrutéis!, usar el siguiente <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf">enlace para ¡descargarlo!</a></p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">Documentación sobre Apache Tapestry</a> (elblogdepicodev)</li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="tapestry"/>
             
         
     </entry>

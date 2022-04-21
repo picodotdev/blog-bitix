@@ -21,12 +21,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Hace ya unos años escribí un <a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">ejemplo y un artículo con una implementación propia de una máquina de estado en Java</a>, para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de <a href="https://spring.io/">Spring</a> útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto <a href="https://projects.spring.io/spring-statemachine/">Spring Statemachine</a> que precisamente tiene el mismo objetivo de implementar una máquina de estados cubriendo muchos casos de uso.</p>
 <p>El uso de una máquina de estados permite modelar un proceso con cierta complejidad. Puede ser el ciclo de vida de una compra, un envío, un proceso documental, financiero, &hellip; cualquiera en el que intervengan estados, transiciones entre esos estados y realización de acciones necesarias para proporcionar la funcionalidad deseada.</p>
@@ -35,8 +33,7 @@
 <p>En el ejemplo he definido el siguiente grafo de estados y transiciones que contiene estado inicial, <em>choice</em>, <em>fork</em>, <em>join</em>, jerarquía de estados con en el estado <em>Tasks</em> y un estado final. Una selección completa del conjunto de tipos de estados. En este caso las flechas van únicamente en una dirección pero perfectamente el flujo podría tener transiciones que volviesen a estados anteriores creando ciclos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Grafo de la máquina de estados"><img src="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_600x450_fit_box_3.png" width="600" height="99" alt="Grafo de la máquina de estados" title="Grafo de la máquina de estados"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_2560x1440_fit_box_3.png" data-gallery="" title="Grafo de la máquina de estados"><img src="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/images/graph_hue3316206d4ba6e494d0821f7656ed998_24142_600x450_fit_box_3.png" width="600" height="99" alt="Grafo de la máquina de estados" title="Grafo de la máquina de estados"  class="lozad "></a></p>
 <figcaption>Grafo de la máquina de estados</figcaption>
 </figure>
 </div>
@@ -158,8 +155,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Algunas aplicaciones en su salida en la terminal muestran una barra de progreso para la cual necesitan utilizar la secuencia de escape de la terminal o el caracter de carro para posicionar el cursor al inicio de la línea. En algunos casos incluso se muestran varias barras de progreso. Estos son los casos de los gestores de paquetes de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como <em>pacman</em> al realizar una actualización del sistema o de <a href="https://gradle.org/">Gradle</a> al descargar las dependencias.</p>
 <p>Con las <a href="http://www.termsys.demon.co.uk/vtansi.htm">secuencias de escape</a> se pueden cambiar los colores de los caracteres tanto del propio caracter como el color de fondo. Otras aplicaciones como el reproductor de música <a href="https://cmus.github.io/">cmus</a> muestran en la terminal una interfaz basada en texto con un barra de estado y varios paneles con la lista de las canciones del tamaño que tenga la terminal. Para esto es necesario conocer cuál es el tamaño de la terminal de columnas a lo ancho y de filas a lo alto.</p>
@@ -231,8 +227,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>El 19 de marzo del 2019 se publicaba la versión Java 12 siguiendo el calendario de lanzar una nueva versión cada seis meses incorporando nuevas funcionalidades de forma incremental. La versión 12 no es una versión con soporte extendido y dejará de tener actualizaciones cuando se publique la siguiente versión. La primera versión LTS con la funcionalidad de módulos es la 11 y la recomendada para proyectos de larga duración o bajo mantenimiento, la siguiente LTS será la versión 17 que según lo planificado se publicará en septiembre de 2021 después de tres años.</p>
 <div class="alert alert-warning tableofcontents">
@@ -321,8 +316,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Los <em>streams</em> representan un flujo de elementos producidos por un productor y consumidos por uno o más consumidores. Para procesar los elementos del <em>stream</em> se pueden emplear dos modelos, el modelo <em>push</em> donde el productor produce elementos para el consumidor que es avisado cuando hay un nuevo elemento disponible y el modelo <em>pull</em> en el que es el consumidor el que solicita al productor nuevos elementos que los genera bajo demanda. Ambos modelos presentan problemas cuando el productor y el consumidor no funcionan a la misma velocidad de elementos producidos o procesados. La solución es proporcionar un <em>stream</em> que se adapta a la velocidad de ambos. Los <em>reactive streams</em> son empleados cuando los elementos son producidos y consumidos en tiempo real como en sistemas de mensajes o peticiones HTTP en vez de un flujo constante como un dispositivo de almacenamiento.</p>
 <p>Una estrategia es conocida como <em>backpressure</em> que consiste en que el suscriptor notifica al productor cuántos elementos puede procesar de modo que el productor solo envía el número de elementos solicitados. La implementación de la solución son los <em>reactive stream</em> que proporcionan un mecanismo estándar asíncrono para el <em>stream</em> con <em>backpressure</em>. Estos evitan que el productor se bloquee por no poder entregarlos al ser rápido produciendo elementos o el suscriptor tenga un <em>buffer</em> grande o descarte algunos elementos por ser lento al consumirlos o se bloquee esperando nuevos elementos si es rápido consumiéndolos.</p>
@@ -372,8 +366,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.</p>
 <ul>
@@ -409,8 +402,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">API de Java</a> hay un conjunto amplio de <a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">estructuras de datos de diferentes tipos para guardar información</a> de forma eficiente según sea la necesidad de la aplicación. Desde listas de elementos ordenados, conjuntos de elementos no repetidos, estructuras clave-valor, árboles, pilas, colas, &hellip; Este conjunto de estructuras se encuentran agrupadas en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collections.html">API de colecciones</a>. Además de las estructuras de datos se les puede añadir funcionalidades en algunos casos necesarias para hacerlas inmutables de modo que no puedan ser modificadas, y para hacerlas sincronizadas en los casos que varios <em>threads</em> hagan operaciones de consulta y alguno operaciones de escritura de modo que las estructuras no se corrompan, una colección no sincronizada se puede convertir en una sincronizada o también existen colecciones sincronizadas diseñadas específicamente para ser eficientes en las aplicaciones concurrentes.</p>
 <p>La interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> es implementada por varias interfaces y clases <em>ArrayList</em>, <em>HashSet</em>, <em>List</em>, <em>Queue</em>, <em>Set</em>, <em>SortedSet</em>, <em>Stack</em>, <em>TreeSet</em> y algunas otras, por otro lado está la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a> para estructuras clave-valor. Las colecciones que mantienen un orden en sus elementos heredan de la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a> que posee métodos con operaciones basadas en un índice como obtener, insertar o eliminar un elemento en una determinada posición. Los <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a> no permiten elementos que sean iguales según determine el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals%28java.lang.Object%29">equals</a> del objeto y los presentes en la colección. Los <em>Map</em> asocian una clave a cada objeto que se utiliza para realizar operaciones en la colección.</p>
@@ -439,8 +431,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html">Collection</a> y la otra es <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a>, estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.</p>
 <p><em>Collection</em> tiene métodos para saber si un determinado elementos está en la colección con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#contains%28java.lang.Object%29">contains</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#containsAll%28java.util.Collection%29">containsAll</a> basándose en el método <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals%28java.lang.Object%29">equals</a>, iterar los elementos de la colección con iterator, desde Java 8 convertir la colección en un <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html">Stream</a>, añadir elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#add%28E%29">add</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#addAll%28java.util.Collection%29">addAll</a>, eliminar elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#remove%28java.lang.Object%29">remove</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#removeAll%28java.util.Collection%29">removeAll</a>, comprobar si la colección está vacía con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#isEmpty%28%29">isEmpty</a>, vaciar la colección con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#clear%28%29">clear</a>, obtener el número de elementos con <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html#size%28%29">size</a> y algunos pocos métodos más.</p>
@@ -480,8 +471,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Las expresiones regulares son un gran invento y muy útil para comprobar que una cadena cumple el patrón definido en la expresión regular, hay coincidencias en partes de la cadena y para reemplazar coincidencias. Son muy potentes para realizar estas tareas pero al mismo tiempo pueden volverse en cierta medida complicadas.</p>
 <p>Una de las funcionalidades que soportan las cadenas es búsqueda hacia delante o <em>lookahead</em> y búsqueda hacia atrás o <em>lookbehind</em>. La primera permite examinar los siguientes caracteres de la cadena analizada y la segunda los caracteres pasados.</p>
@@ -548,8 +538,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Por regla general en Java cada clase se define en su propio archivo de código fuente, pdor ejemplo, una clase de nombre <em>Order</em> se ha de definir en el archivo <em>Order.java</em>. Sin embargo, esta no es la única forma de definir clases, es posible definir clases <em>inner</em> y anónimas que evita tener que crear un nuevo archivo de código fuente.</p>
 <p>Las clases <em>inner</em> se definen dentro de otra clase cuando esa clase <em>inner</em> tiene alta cohesión (su lógica está muy relacionada con la clase que la contiene), en algunos casos se emplean para ocultar los tipos que implementan la lógica. Dependiendo de si la clase <em>inner</em> debe acceder a los datos de la clase que la contiene o no la clase <em>inner</em> se define como no estática o como estática con la palabra reservada <em>static</em>. Las clases <em>inner</em> estáticas no necesitan una referencia a la clase que la contiene y por ello son algo más eficientes y el método preferido de definirlas, si la clase <em>inner</em> debe acceder a los miembros de la clase contenedora hay que definirla como no estática. Para desambiguar la referencia <em>this</em> y miembros con el mismo nombre de la clase <em>inner</em> con la de la clase contenedora se puede utilizar en el ejemplo <em>Order.this.products</em> quitando los <em>static</em> de las clases.</p>
@@ -607,8 +596,7 @@
         <content type="html">
         <![CDATA[<p><strong>Ciertos datos son sensibles y hay que protegerlos al guardarlos en una base de datos, pero no sirve de nada si estos datos son emitidos en texto plano en las trazas de la aplicación invalidando cualesquiera otras medidas implementadas por muy correctas que sean en la aplicación. Los archivos de <em>log</em> también necesitan tener en cuenta ciertas medidas de seguridad para los datos que se emiten. Una de las medidas es no emitir en los <em>logs</em> los datos sensibles y otra ofuscarlos para que estén incompletos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Los archivos de trazas o <em>logs</em> contienen información de lo que ha realizado la aplicación. Estos registros de información contienen los datos que el desarrollador considera de utilidad en caso de necesitar su consulta. Algunos datos son especialmente sensibles ya que su obtención permiten acceder a cuentas de usuario, obtener datos como tarjetas de crédito o cuentas bancarias, contraseñas o <em>bearer tokens</em> de peticiones HTTP que autorizan el acceso. <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Proteger las contraseñas <em>hasheandolas</em> aún con <em>salt</em></a> y cifrar información por motivos seguridad y privacidad es inútil si luego esta información está presente en los archivos de <em>log</em> en texto plano.</p>
 <p><a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una de las librerías más utilizadas para añadir la funcionalidad de las trazas en una aplicación Java. Proteger algunos datos sensibles se puede hacer de varias formas. Una de ellas es hacer que sea la aplicación la que se encargue de no emitir estos datos en las trazas u ofuscarla enmascarándola al toda o parte. Para este caso se pueden <a href="https://picodotdev.github.io/blog-bitix/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/">utilizar objetos Message</a> que adaptan los objetos de la aplicación a los datos a emitir en las trazas pero requiere modificar en todos los puntos de la aplicación.</p>
@@ -673,12 +661,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Hace unos días encontré un <a href="https://www.idealista.com/labs/blog/spring-framework/autenticando-el-api-de-idealista-hipotecas-con-spring-oauth2-y-zuul/">articulo del blog técnico de los desarrolladores de Idealista</a>. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando <a href="https://spring.io/">Spring</a> como <em>framework</em>, <a href="https://spring.io/projects/spring-security-oauth">Spring Security OAuth</a> como forma de autenticación y autorización y JWT como forma de codificar el <em>token</em> que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja.</p>
 <p>Ya había oído mencionar JWT pero este artículo me ha permitido conocer su utilidad, y no es poca. Como se menciona en el artículo JWT tiene la ventaja de que que no es necesario persistirlo en una base de datos y contiene toda la información que el servidor de recursos necesita para realizar la autorización ya que es capaz de cargar con información arbitraria que el servicio desee en el momento de la emisión, la autenticación y comprobación de que ha sido emitido por el servidor OAuth la realiza sabiendo que el <em>token</em> está firmado.</p>
@@ -694,9 +680,7 @@
 <p>Los servicios los mantengo separados ya que al combinarlos pueden surgir problemas de integración al usar diferentes versiones de librerías de Spring aún cuando todos los proyectos son de Spring. Por ejemplo, Spring Cloud Gateway utiliza Spring WebFlux que puede ser diferente del lo que utilice Spring Security OAuth y la integración puede no estar exenta de problemas.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jwt.svg" width="318" height="168" alt="JWT" title="JWT"  class="lozad "></p>
 </figure>
 </div>
@@ -736,8 +720,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu1ab378b072a97342bd947994d891fa06_108022_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Token JWT codificado y decodificado"><img src="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu1ab378b072a97342bd947994d891fa06_108022_600x450_fit_box_3.png" width="494" height="450" alt="Token JWT codificado y decodificado" title="Token JWT codificado y decodificado"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu1ab378b072a97342bd947994d891fa06_108022_2560x1440_fit_box_3.png" data-gallery="" title="Token JWT codificado y decodificado"><img src="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/images/encoded-decoded-jwt_hu1ab378b072a97342bd947994d891fa06_108022_600x450_fit_box_3.png" width="494" height="450" alt="Token JWT codificado y decodificado" title="Token JWT codificado y decodificado"  class="lozad "></a></p>
 <figcaption>Token JWT codificado y decodificado</figcaption>
 </figure>
 </div>
@@ -830,8 +813,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Continuando la serie de pequeños artículos sobre cómo procesar JSON después de ver anteriormente otras dos formas, <a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">Generar, procesar y modificar documentos JSON con JSON-P en Java</a> y <a href="https://picodotdev.github.io/blog-bitix/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/">Usar expresiones JSONPath para extraer datos de un JSON en Java</a>, en este artículo hay una tercera.</p>
 <p>En las dos primeras si los datos son muchos o son todos la tarea de recuperar los datos uno a uno requiere una buena cantidad de código. Dado que un JSON no son nada más que valores, arrays y mapas utilizando la estructuras de datos equivalentes de Java se puede hacer una correspondencia entre los datos del JSON a objetos POJO siguiendo ciertas convenciones.</p>
@@ -933,8 +915,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Para tratar JSON en Java hay varias alternativas una de ellas es <a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">utilizar la API de bajo nivel JSON-P</a>, otra es <a href="http://json-b.net/">JSON-B</a> que requiere construir una o varias clases de Java a las que hacer la correspondencia entre el JSON y los objetos Java. Otra alternativa es utilizar expresiones o selectores que seleccionen los datos de JSON de forma similar a como se puede hacer con <a href="https://www.w3.org/TR/xpath/all/">XPath</a> para el caso de XML o <a href="https://jquery.com/">jQuery</a> con los elementos de HTML.</p>
 <p>Las expresiones de <a href="https://goessner.net/articles/JsonPath/">JSONPath</a> o <em>XPath for JSON</em> se componen de operadores, funciones, operadores de filtrado y predicados con los que dado un JSON y una expresión permite seleccionar, extraer y transformar los datos de forma precisa. La librería <a href="https://github.com/json-path/JsonPath">JsonPath</a> es una implementación en Java de la especificación JSONPath.</p>
@@ -994,12 +975,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg"  class=""></p>
 </div>
 <p>En la API de Java en el paquete <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/package-summary.html">javax.sound.sampled</a> hay unas pocas clases que permiten reproducir archivos de música o sonidos y en el paquete <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/package-summary.html">java.sound.midi</a> contiene clases para la música o sonidos digitales o sintetizados. Los tipos de archivos de música o sonidos soportados son <em>wav, au, aif</em> para los archivos <em>sampled</em>, y archivos <em>midi</em> para los digitales. Nativamente Java con las clases incluidas en el JDK no puede reproducir varios formatos de archivo de sonido populares como <em>mp3</em> u <em>ogg</em>.</p>
 <p>Como Java no soporta muchos tipos de archivos para reproducir los no soportados hay que hacer una conversión a alguno de los si soportados, por ejemplo de <em>mp3</em> a <em>wav</em>. <a href="https://www.ffmpeg.org/">FFmpeg</a> es un programa con el que se pueden hacer <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">conversiones de archivos de sonido</a> y <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">recodificaciones de archivos de vídeo</a> que junto con la posibilidad de <a href="https://picodotdev.github.io/blog-bitix/2016/03/como-ejecutar-un-proceso-del-sistema-con-java/">invocar desde Java un proceso del sistema</a> habilita reproducir archivos <em>mp3</em> u <em>ogg</em> desde Java.</p>
@@ -1108,8 +1087,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Los servicios que ofrecen una API REST normalmente emplean JSON como formato para intercambiar datos tanto en las peticiones como en las respuestas. En Java hay varias formas de generar y procesar JSON para obtener los datos que contiene.</p>
 <p>Una de las formas estándar es usando la <a href="https://javaee.github.io/jsonp/">especificación JSON-P</a> que convierte un JSON a una estructura de objetos Java que representan los datos del JSON como son los objetos <a href="https://static.javadoc.io/javax.json/javax.json-api/1.1.4/javax/json/Json.html">Json</a>, <a href="https://static.javadoc.io/javax.json/javax.json-api/1.1.4/javax/json/JsonObject.html">JsonObject</a>, <a href="https://static.javadoc.io/javax.json/javax.json-api/1.1.4/javax/json/JsonArray.html">JsonArray</a>, <a href="https://static.javadoc.io/javax.json/javax.json-api/1.1.4/javax/json/JsonString.html">JsonString</a> o <a href="https://static.javadoc.io/javax.json/javax.json-api/1.1.4/javax/json/JsonNumber.html">JsonNumber</a>. Esta API permite convertir una cadena de texto en formato JSON a objetos de la API y una jerarquía de objetos de la API a una cadena.</p>

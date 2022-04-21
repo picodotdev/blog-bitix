@@ -21,8 +21,7 @@
         <content type="html">
         <![CDATA[<p><strong>Arch Linux es una distribución que deja al usuario decidir en gran medida los componentes que quiere usar. Desde el sistema de arranque, el entorno de escritorio hasta los programas. Para ello no proporciona un instalador ni en modo texto ni con interfaz gráfica que guíe al usuario en diferentes pasos en la instalación de la distribución, en vez de eso proporciona una guía con la información relevante que el usuario necesita conocer para el mismo mediante comandos instale y configure el sistema con los componentes que desee. Este anexo complementa y reúne los comandos que sigo para instalar Arch Linux desde la imagen de instalación hasta el entorno de escritorio GNOME.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
 <p>Antes de migrar a una distribución como <a href="https://www.archlinux.org/">Arch Linux</a> es recomendable ver si esta distribución GNU/Linux es la adecuada para nosotros en función de su <a href="https://wiki.archlinux.org/index.php/The_Arch_Way">filosofía (The Arch Way)</a>, sus <a href="https://wiki.archlinux.org/index.php/Arch_Linux">principales características</a> y las <a href="https://wiki.archlinux.org/index.php/FAQ">preguntas frecuentes</a>. Arch Linux es una distribución orientada a personas que no les importa dedicar un tiempo a aprender como instalarla y posteriormente mantenerla actualizada, esto tampoco debe asustarnos, la <a href="https://wiki.archlinux.org/">wiki de arch</a> es de las mejores fuentes de información que hay para cualquier cosa que necesitemos. Si la wiki no es suficiente ayuda en los <a href="https://bbs.archlinux.org/">foros</a> muy posiblemente encontraremos la solución. Pero para alguien que vaya a <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">migrar de Windows o Mac a Linux</a> creo que es más recomendable empezar con alguna distribución que lo pone más fácil para empezar con unos pocos clics, las más conocidas son <a href="http://www.ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, <a href="http://www.debian.org/">Debian</a>, <a href="https://www.opensuse.org/">openSUSE</a>, o al menos primeramente probarla en un máquina virtual como <a href="https://www.virtualbox.org/">VirtualBox</a>.</p>
 <p>Dado que Arch Linux es una distribución <a href="https://en.wikipedia.org/wiki/Rolling_release">«rolling release»</a> hacer una guía de instalación detallada para ella haría que se quedase obsoleta en ciertos aparatados al cabo de un tiempo. Por ello y aunque a continuación escribiré una guía de instalación es muy recomendable leer la <a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">guía oficial de Arch Linux</a> y la <a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">guía de principiante</a> más detallada y en cualquier caso entendamos las acciones que estamos haciendo con cada comando.</p>
@@ -44,10 +43,8 @@
 <p>Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La forma de hacerlo cambiará según la marca de nuestro ordenador pero normalmente es usando alguna tecla de entre ESC, F2, F8, F10, F10, en el caso de mi Sony Vaio es usando la tecla ASSIST y con el sistema apagado.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux_hubb820d9a5eaf0d8ae98c7f69b9bf8a1b_54396_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Menú instalación Arch Linux"><img src="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux_hubb820d9a5eaf0d8ae98c7f69b9bf8a1b_54396_300x200_fit_box_3.png" width="267" height="200" alt="Menú instalación Arch Linux" title="Menú instalación Arch Linux"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux-prompt_hu99ffacce89647591c52857ba2efec9e0_2199_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio instalación Arch Linux"><img src="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux-prompt_hu99ffacce89647591c52857ba2efec9e0_2199_300x200_fit_box_3.png" width="300" height="167" alt="Inicio instalación Arch Linux" title="Inicio instalación Arch Linux"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux_hubb820d9a5eaf0d8ae98c7f69b9bf8a1b_54396_2560x1440_fit_box_3.png" data-gallery="" title="Menú instalación Arch Linux"><img src="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux_hubb820d9a5eaf0d8ae98c7f69b9bf8a1b_54396_300x200_fit_box_3.png" width="267" height="200" alt="Menú instalación Arch Linux" title="Menú instalación Arch Linux"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux-prompt_hu99ffacce89647591c52857ba2efec9e0_2199_2560x1440_fit_box_3.png" data-gallery="" title="Inicio instalación Arch Linux"><img src="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/instalacion-arch-linux-prompt_hu99ffacce89647591c52857ba2efec9e0_2199_300x200_fit_box_3.png" width="300" height="167" alt="Inicio instalación Arch Linux" title="Inicio instalación Arch Linux"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez estemos en el prompt inicial de la instalación deberemos cargar el mapa según nuestro teclado, para un teclado español usaremos normalmente:</p>
@@ -387,8 +384,7 @@
 <p>El resultado de la instalación y usando GNOME es el siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/escritorio-gnome_hu23bbeee9dabb636c901d0c64f6ff7acd_101598_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/escritorio-gnome_hu23bbeee9dabb636c901d0c64f6ff7acd_101598_300x200_fit_q90_box.jpg" width="300" height="169"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/escritorio-gnome_hu23bbeee9dabb636c901d0c64f6ff7acd_101598_2560x1440_fit_q90_box.jpg" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/images/escritorio-gnome_hu23bbeee9dabb636c901d0c64f6ff7acd_101598_300x200_fit_q90_box.jpg" width="300" height="169"  class="lozad "></a></p>
 </figure>
 </div>
 ]]>
@@ -415,8 +411,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>En la <a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">primera entrada de este blog usando Octopress</a> ya comentaba las razones por las que he pasado de usar <a href="http://www.blogger.com">Blogger</a> a usar <a href="http://octopress.org/">Octopress</a>. Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.</p>
 <p>En esta entrada quiero escribir una guía con los pasos necesarios para crear un blog en Octopress de forma rápida y algunas funcionalidades a tener en cuenta o que deberemos realizar.</p>
@@ -549,8 +544,7 @@
         <content type="html">
         <![CDATA[<p><strong>Tanto en un servidor web como de aplicaciones podemos hacer que la comunicación entre el cliente y el servidor esté cifrada usando un protocolo seguro. La configuración para usar un protocolo seguro en cada servidor es diferente pero todos se basan en lo mismo, usar un certificado y un clave. En este artículo muestro la configuración necesaria en los servidores web y de aplicaciones más populares.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
 </div>
 <p>En entradas anteriores he explicado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">en que consiste la criptografía y GPG</a> y como podemos usarlo a nivel personal para firmar y cifrar archivos y <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">firmar correos electrónicos con el cliente de correo Evolution</a>. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">cómo crear un certificado con OpenSSL y como convertirlo a diferentes formatos</a>. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificados SSL, de empresa, «wildcard» y de validación extendida</a> para proporcionar acceso cifrado al servidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores <a href="http://tomcat.apache.org/">Tomcat</a>, <a href="http://www.lighttpd.net/">Lighttpd</a>, <a href="http://jbossas.jboss.org/">JBoss</a>/<a href="http://wildfly.org/">WildFly</a>, <a href="http://nginx.org/">Nginx</a> y <a href="http://www.apache.org/">Apache</a>.</p>
 <p>Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.</p>
@@ -653,8 +647,7 @@
         <content type="html">
         <![CDATA[<p><strong>Usando los comandos expuestos en este artículo y con OpenSSL podemos crear una clave pública y privada para usarlo con ssh o para cifrar y descifrar mensajes, un certificado autofirmado que podremos usar en un servidor de aplicaciones para usar un protocolo seguro y también convertir las claves y certificados a uno de los formatos aceptados por la aplicación que usemos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
 </div>
 <p>Para un uso personal como enviar correos o archivos cifrados o firmados digitalmente usar <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">GnuPG</a> es una buena opción. En Internet los servidores también se aprovechan del uso de criptografía para realizar comunicaciones seguras entre el usuario y el servidor.</p>
 <p>Para hacer uso en un servidor de una comunicación https donde los datos viajan cifrados y sin que otras partes salvo el usuario y el servidor puedan acceder a los datos necesitamos un certificado digital. Un certificado es un archivo que contiene la clave pública sirviéndonos para verificar su autenticidad. Un certificado autofirmado es un certificado firmado con la misma clave privada asociada a la clave pública que contiene el certificado. Un certificado autofirmado es suficiente para un entorno de pruebas pero en un servidor para proporcionar confianza a los usuarios deberemos solicitar que una autoridad de certificados que nos firme con su clave nuestro certificado, si el usuario confía en esa autoridad de certificado puede de esta manera confiar en nuestro certificado y clave pública. Varias entidades de registro de dominios o alojamiento web ofrecen la compra de certificados SSL, en el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificado SSL, de empresa, «wildcard» y de validación extendida</a> comento con un poco más detalle los varios tipos de certificados y algunas opciones donde obtenerlos o comprarlos.</p>
@@ -818,16 +811,14 @@
         <content type="html">
         <![CDATA[<p><strong>La Raspberry Pi utiliza para arrancar una tarjeta SD en todo caso, sin embargo, dada la lentitud de lectura y escritura de esta es recomendable instalar el sistema en una memoria USB o disco duro externo. No es muy complicado y el aumento de rendimiento es notable.</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
 </div>
 <p>Por defecto la Raspberry Pi se instala en una tarjeta SD y se inicia desde ella, sin embargo, la tarjeta SD es muy lenta tanto en la lectura como en la escritura de datos y cuando tiene que hacerlo de forma intensiva el sistema queda sin responder y aparentemente atascado. Para aumentar muy notablemente el rendimiento de la Raspberry Pi podemos instalar la partición del sistema en una memoria USB o disco duro externo.</p>
 <p>En la guía de <a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Instalación de la Raspberry Pi</a> expliqué como instalar la distribución <a href="https://archlinuxarm.org/">Arch Linux ARM</a> en una tarjeta SD, esa guía será el punto de partida para esta entrada. La Raspberry Pi inicia el sistema desde la tarjeta SD por lo que aunque instalemos el sistema en un dispositivo USB seguiremos necesitando la tarjeta SD para que contenga al menos la partición de arranque (boot).</p>
 <p>Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando <em>lsblk</em>:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu8c4cf5de9d804ac479808dece73576ba_51781_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu8c4cf5de9d804ac479808dece73576ba_51781_300x200_fit_box_3.png" width="300" height="167"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu8c4cf5de9d804ac479808dece73576ba_51781_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/lsbk_hu8c4cf5de9d804ac479808dece73576ba_51781_300x200_fit_box_3.png" width="300" height="167"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="code">
@@ -846,8 +837,7 @@
 <p>Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con <a href="http://gparted.org/">GParted</a> podemos hacerlo de forma muy sencilla. Seleccionamos <em>/dev/sdb1</em>, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar&gt; Aplicar operaciones».</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu4379d86290f2ec785f27113182f1f999_34060_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Redimiensionado de patición con GParted"><img src="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu4379d86290f2ec785f27113182f1f999_34060_300x200_fit_box_3.png" width="288" height="200" alt="Redimiensionado de patición con GParted" title="Redimiensionado de patición con GParted"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu4379d86290f2ec785f27113182f1f999_34060_2560x1440_fit_box_3.png" data-gallery="" title="Redimiensionado de patición con GParted"><img src="https://picodotdev.github.io/blog-bitix/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/images/gparted_hu4379d86290f2ec785f27113182f1f999_34060_300x200_fit_box_3.png" width="288" height="200" alt="Redimiensionado de patición con GParted" title="Redimiensionado de patición con GParted"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea <em>/dev/sda1</em>, con este valor modificamos el archivo <em>cmdline.txt</em> y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:</p>
@@ -897,12 +887,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/geexbox.png" width="200" height="52" alt="GeeXboX" title="GeeXboX"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/geexbox.png" width="200" height="52" alt="GeeXboX" title="GeeXboX"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
 </div>
 <p>La Raspberry Pi es un computador del tamaño de una tarjeta de crédito que se puede usar para diferentes propósitos. Hasta hace no mucho a mi me servía para descargar películas mediante torrent, sin embargo, puede usarse perfectamente para otros propósitos muy interesantes como usarla como Media Center en una televisión que no es una Smart TV o como Media Center con más opciones.</p>
 <p>Dada la popularidad que tiene la Raspberry Pi disponemos de varias distribuciones con soporte para usar la Raspberry Pi como centro multimedia de nuestro salón. Las principales son:</p>
@@ -931,26 +919,20 @@
 <p>Este comando tardará un poco de tiempo dada la lentitud de las tarjetas SD. Una vez termine quizá debamos expandir la partición del sistema para aprovechar todo el espacio de la tarjeta SD. Para expandir la partición del sistema podemos usar <a href="http://gparted.org/">GParted</a>. Y esto es lo mínimo imprescindible para instalar GeeXboX en una tarjeta SD para la Pi. GeeXboX tiene el siguiente aspecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-inicio_hu14095cfdd1099308f825400c6b863e20_41205_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-inicio_hu14095cfdd1099308f825400c6b863e20_41205_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes_hudf5748fba26e5e08f4132ecad86ae975_87113_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes_hudf5748fba26e5e08f4132ecad86ae975_87113_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-inicio_hu14095cfdd1099308f825400c6b863e20_41205_2560x1440_fit_q90_box.jpg" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-inicio_hu14095cfdd1099308f825400c6b863e20_41205_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes_hudf5748fba26e5e08f4132ecad86ae975_87113_2560x1440_fit_q90_box.jpg" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes_hudf5748fba26e5e08f4132ecad86ae975_87113_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes-video_hu6a81883a71640b42b0aed8e136ba7b31_54712_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes-video_hu6a81883a71640b42b0aed8e136ba7b31_54712_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-apariencia-ajustes_hu7515213a32809a4c7d6a205fdeced3b3_48935_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-apariencia-ajustes_hu7515213a32809a4c7d6a205fdeced3b3_48935_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes-video_hu6a81883a71640b42b0aed8e136ba7b31_54712_2560x1440_fit_q90_box.jpg" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-ajustes-video_hu6a81883a71640b42b0aed8e136ba7b31_54712_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-apariencia-ajustes_hu7515213a32809a4c7d6a205fdeced3b3_48935_2560x1440_fit_q90_box.jpg" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-apariencia-ajustes_hu7515213a32809a4c7d6a205fdeced3b3_48935_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-servicios_hu42e34e584910479e390e4c74e3dce1fc_35019_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-servicios_hu42e34e584910479e390e4c74e3dce1fc_35019_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-reproduccion_hu3e550307345196d79d008cda983a37b6_61532_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-reproduccion_hu3e550307345196d79d008cda983a37b6_61532_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-servicios_hu42e34e584910479e390e4c74e3dce1fc_35019_2560x1440_fit_q90_box.jpg" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-servicios_hu42e34e584910479e390e4c74e3dce1fc_35019_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-reproduccion_hu3e550307345196d79d008cda983a37b6_61532_2560x1440_fit_q90_box.jpg" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/raspberry-pi-como-media-center-con-geexbox/images/geexbox-reproduccion_hu3e550307345196d79d008cda983a37b6_61532_300x200_fit_q90_box.jpg" width="262" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Como apunte a tener en cuenta es que para reproducir películas en formato imagen de DVD (iso) <em>intuyo</em> que se necesita adquirir la licencia MPEG-2 en la <a href="http://www.raspberrypi.com/license-keys/">tienda de la propia página de Raspberry Pi</a>. Para otros formatos como DivX (avi) o Matroska (mkv) no tendremos ningún problema en reproducir las películas y van totalmente fluídas. Otras opciones son bastante más potentes pero Pi ya tiene capacidad suficiente para reproducir películas a 1080p.</p>
@@ -995,12 +977,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sinadura.png" width="200" height="118" alt="Sinadura" title="Sinadura"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sinadura.png" width="200" height="118" alt="Sinadura" title="Sinadura"  class=""></p>
 </div>
 <p>Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">como instalar un lector de tarjetas inteligentes en linux para usar el DNI electrónico</a> y que una vez instalado podemos darle algún uso útil como por ejemplo <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">autenticarnos con en DNI</a> en las páginas que lo soporten como medio de autenticación y el navegador Firefox. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">como usar el DNI con el cliente de correo Evolution para enviar correos firmados digitalmente</a>.</p>
 <p>En esta entrada voy a comentar como firmar digitalmente documentos en cualquier formato electrónico con la aplicación de software libre <a href="http://www.sinadura.net/es/">Sinadura</a>. La firma que hagamos con el DNIe sobre estos documentos puede tener la misma validez legal que la firma manuscrita.</p>
@@ -1013,8 +993,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Instalador Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_300x200_fit_box_3.png" width="267" height="200" alt="Instalador Sinadura" title="Instalador Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_2560x1440_fit_box_3.png" data-gallery="" title="Instalador Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_300x200_fit_box_3.png" width="267" height="200" alt="Instalador Sinadura" title="Instalador Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez instalado sinadura y también teniendo instalado el lector de tarjetas inteligentes para el DNI y funcionando deberemos conectarlo al ordenador e introducir el DNI. Iniciaremos sinadura con que se encuentra dentro del directorio de instalación de Sinadura:</p>
@@ -1027,29 +1006,25 @@
 <p>Inicialmente veremos una pantalla como la siguiente con una lista de archivos vacíos y una serie de botones para realizar varias acciones.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_300x200_fit_box_3.png" width="285" height="200" alt="Sinadura" title="Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_2560x1440_fit_box_3.png" data-gallery="" title="Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_300x200_fit_box_3.png" width="285" height="200" alt="Sinadura" title="Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Con Sinadura y el DNI podemos firmar digitalmente cualquier tipo de archivo pero entre los archivos de tipo pdf y el resto hay diferencias. En el caso de los pdf la firma se incrusta en el propio documento y en resto se crea un nuevo archivo con la firma y el documento original, el archivo nuevo creado tiene la extensión .sar. Para firmar un documento deberemos añadirlo a la vista con el botón «Añadir documento» y posteriormente firmarlo con el botón «Firmar». Para realizar la firma se nos pedirá que introduzcamos el PIN secreto que nos proporcionaron al emitirnos el DNI en la oficina de expedición.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_300x200_fit_box_3.png" width="300" height="124" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_2560x1440_fit_box_3.png" data-gallery="" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_300x200_fit_box_3.png" width="300" height="124" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En el caso de los archivos pdf Sinadura por defecto incrusta además de la firma una marca de agua en la primera página aunque se pueden cambiar algunas preferencias en «Archivo&gt; Preferencias»:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_300x200_fit_box_3.png" width="277" height="200" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_2560x1440_fit_box_3.png" data-gallery="" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_300x200_fit_box_3.png" width="277" height="200" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los archivos .sar creados para archivos que no son pdf tienen el siguiente contenido, además del archivo original una serie de archivos .xml que contendrán la firma (son archivos zip con extensión .sar):</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documento firmado con Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_300x200_fit_box_3.png" width="259" height="200" alt="Documento firmado con Sinadura" title="Documento firmado con Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_2560x1440_fit_box_3.png" data-gallery="" title="Documento firmado con Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_300x200_fit_box_3.png" width="259" height="200" alt="Documento firmado con Sinadura" title="Documento firmado con Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez firmados los archivos podemos enviarlos por correo electrónico y la persona que los reciba podrá validarlos también con Sinadura. Para ello se debe añadir el archivo y pulsar el botón «Validar».</p>
@@ -1109,12 +1084,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
 </div>
 <p>Otra forma de la que podemos sacar partido al DNI electrónico además de para <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">identificarnos en sitios web</a> que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">como firmar correos electrónicos con GPG</a> pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">crear una par de claves GPG</a> sino que con tener el DNI e <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">instalar un lector de tarjetas inteligentes</a> será suficiente.</p>
 <p>En esta entrada explicaré como usar el DNI electrónico para firmar digitalmente correos usando el cliente de correo <a href="https://projects.gnome.org/evolution/">Evolution</a>. Primeramente necesitaremos hacer una configuración adicional a la que hemos necesitado para poder usar el lector de tarjetas inteligentes y el DNIe en Linux. Y es usar el siguiente comando tal y como está comentado en <a href="https://forja.cenatic.es/plugins/mediawiki/wiki/opendnie/index.php/Documentacion_Aplicaciones_Evolution#Configuraci.C3.B3n_del_DNIe_en_el_cliente_de_correo_Evolution">esta página</a> cambiando el directorio home del usuario por el que corresponda:</p>
@@ -1127,25 +1100,20 @@
 <p>A continuación, el proceso es similar a como se configura la firma con claves GPG, con el lector de tarjetas inteligentes conectado al equipo y el DNI electrónico introducido accedemos a las propiedades de la cuenta, a la sección seguridad y en el apartado MIME seguro (S/MIME) seleccionamos nuestro certificado. Si queremos que nuestros mensajes se firmen automaticamente debemos marcar la opción «Firmar siempre los mensajes salientes cuando se use esta cuenta». Habiendo ejecutado el comando <em>modutil</em> cuando pulsemos el botón seleccionar en el apartado S/MIME se nos solicitará el PIN secreto de nuestro DNIe.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_300x200_fit_box_3.png" width="300" height="105" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Selección de certificado digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_300x200_fit_box_3.png" width="300" height="132" alt="Selección de certificado digital con el DNIe" title="Selección de certificado digital con el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_2560x1440_fit_box_3.png" data-gallery="" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_300x200_fit_box_3.png" width="300" height="105" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_2560x1440_fit_box_3.png" data-gallery="" title="Selección de certificado digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_300x200_fit_box_3.png" width="300" height="132" alt="Selección de certificado digital con el DNIe" title="Selección de certificado digital con el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_300x200_fit_box_3.png" width="247" height="200" alt="Diálogo de preferencias de seguridad de Evolution para el DNIe" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_2560x1440_fit_box_3.png" data-gallery="" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_300x200_fit_box_3.png" width="247" height="200" alt="Diálogo de preferencias de seguridad de Evolution para el DNIe" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez con las propiedades de la cuenta configurada para que Evolution use nuestro DNI electrónico, si no hemos marcado la opción «Firmar siempre los mensajes&hellip;» podemos realizarlo al escribir el propio correo marcando la opción «Opciones&gt; Firmar con S/MIME». Al enviar un correo electrónico firmado se añadirá automáticamente un adjunto con la firma de nombre «smime.sp7». Al contrario que GPG la firma está en un formato binario y es dificilmente legible con un lector de texto plano.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Confirmación de firma digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_300x200_fit_box_3.png" width="300" height="121" alt="Confirmación de firma digital con el DNIe" title="Confirmación de firma digital con el DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Mensaje firmado con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_300x200_fit_box_3.png" width="300" height="121" alt="Mensaje firmado con el DNIe" title="Mensaje firmado con el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_2560x1440_fit_box_3.png" data-gallery="" title="Confirmación de firma digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_300x200_fit_box_3.png" width="300" height="121" alt="Confirmación de firma digital con el DNIe" title="Confirmación de firma digital con el DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_2560x1440_fit_box_3.png" data-gallery="" title="Mensaje firmado con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_300x200_fit_box_3.png" width="300" height="121" alt="Mensaje firmado con el DNIe" title="Mensaje firmado con el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="reference">
@@ -1182,27 +1150,22 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
 </div>
 <p>Una vez hemos conseguido <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">instalar el DNIe en Linux</a> correctamente podemos empezar a darle alguna utilidad más allá de cuando se nos require para acreditar nuestra identidad. Como veremos en esta entrada podemos usar el DNI electrónico para hacer varios trámites administrativos y consultas con la administración pública, empresas o entidades que en su web soporten el DNIe como medio de autenticación.</p>
 <p>En esta entrada explicaré como usar el DNIe electrónico con la combinación del navegador <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> y <a href="https://www.linux.com/">Linux</a>. Para ello primeramente debemos hacer que Firefox detecte el lector de tarjetas inteligentes, desde el menú de Firefox vamos a «Preferencias&gt; Avanzado&gt; Certificados&gt; Dispositivos de seguridad».</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administrador de dispositivos (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_300x200_fit_box_3.png" width="217" height="200" alt="Administrador de dispositivos (1)" title="Administrador de dispositivos (1)"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_300x200_fit_box_3.png" width="300" height="116"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_2560x1440_fit_box_3.png" data-gallery="" title="Administrador de dispositivos (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_300x200_fit_box_3.png" width="217" height="200" alt="Administrador de dispositivos (1)" title="Administrador de dispositivos (1)"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_300x200_fit_box_3.png" width="300" height="116"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administrador de dispositivos (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_300x200_fit_box_3.png" width="300" height="100" alt="Administrador de dispositivos (2)" title="Administrador de dispositivos (2)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_2560x1440_fit_box_3.png" data-gallery="" title="Administrador de dispositivos (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_300x200_fit_box_3.png" width="300" height="100" alt="Administrador de dispositivos (2)" title="Administrador de dispositivos (2)"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En esta pantalla pulsamos el botón «Cargar» e introducimos los siguientes datos:</p>
@@ -1213,37 +1176,30 @@
 <p>Pulsamos «Aceptar», salimos del diálogo «Dispositivos de seguridad» y reiniciamos Firefox. Para que Firefox reconozca el lector junto con el DNIe este debe estar introducido al iniciarlo sino no se nos aparecerá el diálogo solicitando el PIN del DNIe en el momento de la autenticación y no podremos usarlo, esto es así posiblemente por algún tipo de circunstancia que impide detectar el DNIe en el momento de introducirlo en Firefox, sabiéndolo no supone mayor problema. Por lo demás, esa es toda la configuración adicional necesaria para usar el DNIe con Firefox.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Lector de tarjetas inteligentes y DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_300x200_fit_q90_box.jpg" width="149" height="200" alt="Lector de tarjetas inteligentes y DNIe" title="Lector de tarjetas inteligentes y DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="DNI electrónico"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_300x200_fit_q90_box.jpg" width="300" height="188" alt="DNI electrónico" title="DNI electrónico"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_2560x1440_fit_q90_box.jpg" data-gallery="" title="Lector de tarjetas inteligentes y DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_300x200_fit_q90_box.jpg" width="149" height="200" alt="Lector de tarjetas inteligentes y DNIe" title="Lector de tarjetas inteligentes y DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_2560x1440_fit_q90_box.jpg" data-gallery="" title="DNI electrónico"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_300x200_fit_q90_box.jpg" width="300" height="188" alt="DNI electrónico" title="DNI electrónico"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para probar que tenemos instalado el DNIe crrectamente y que Firefox es capaz de utilizarlo podemos usar la <a href="http://www.dnielectronico.es/como_utilizar_el_dnie/verificar.html">página preparada para probar el DNI</a>. Al final de la misma hay un enlace «Comprobación de certificados» que deberemos pulsar, se nos pedirá el PIN y si todo es correcto veremos una página con diversa información de nuestro DNI.</p>
 <p>Con el DNI electrónico preparado podemos hacer distintos tipos de trámites o consultas, por ejemplo, muchos bancos ofrecen medios para acceder de forma electrónica, online y mediante un navegador la consulta del saldo de nuestras cuentas y operaciones que se han realizado o para hacer transferencias. Alguno de los que he visto que soportan el DNIe como medio de autenticación son <a href="https://portal.bbk.es">BBK</a>, <a href="https://www.bancosantander.es">Santander</a> y el infame <a href="http://www.bankia.com/es/">Bankia</a>, seguro que hay unos cuantos más. También otro tipo de consulta que podemos hacer es consultar los puntos de carnet de conducir que poseemos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación BBK con DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_300x200_fit_box_3.png" width="163" height="200" alt="Autenticación BBK con DNIe" title="Autenticación BBK con DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Consultar puntos cárnet DGT"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_300x200_fit_q90_box.jpg" width="300" height="162" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_2560x1440_fit_box_3.png" data-gallery="" title="Autenticación BBK con DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_300x200_fit_box_3.png" width="163" height="200" alt="Autenticación BBK con DNIe" title="Autenticación BBK con DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_2560x1440_fit_q90_box.jpg" data-gallery="" title="Consultar puntos cárnet DGT"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_300x200_fit_q90_box.jpg" width="300" height="162" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio <em>pcscd</em>, manualmente o con el inicio del sistema (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">consultar la guía de instalación del DNIe en Linux</a>).</p>
 <p>En algún momento en el proceso de autenticación se nos pedirá el PIN secreto que posibilita usar el DNIe, apareciéndonos una ventana similar a la siguiente para introducirlo.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_300x200_fit_box_3.png" width="300" height="114" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_2560x1440_fit_box_3.png" data-gallery="" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_300x200_fit_box_3.png" width="300" height="114" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El PIN secreto de nuestro DNI se facilita en el momento de solicitar o renovar el documento nacional de identidad, es proporcionado en un documento como el siguiente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Documento con el PIN del DNIe (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_300x200_fit_q90_box.jpg" width="300" height="184" alt="Documento con el PIN del DNIe (1)" title="Documento con el PIN del DNIe (1)"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Documento con el PIN del DNIe (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_300x200_fit_q90_box.jpg" width="194" height="200" alt="Documento con el PIN del DNIe (2)" title="Documento con el PIN del DNIe (2)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_2560x1440_fit_q90_box.jpg" data-gallery="" title="Documento con el PIN del DNIe (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_300x200_fit_q90_box.jpg" width="300" height="184" alt="Documento con el PIN del DNIe (1)" title="Documento con el PIN del DNIe (1)"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_2560x1440_fit_q90_box.jpg" data-gallery="" title="Documento con el PIN del DNIe (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_300x200_fit_q90_box.jpg" width="194" height="200" alt="Documento con el PIN del DNIe (2)" title="Documento con el PIN del DNIe (2)"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Al introducir el PIN hay que poner cuidado y atención, suelen ser unos cuantos números, letras y caracteres especiales que hay que teclear correctamente. Disponemos varios intentos para introducirlos correctamente, al tercero fallido el DNIe se bloqueará y tendremos que acudir a la oficina de expedición de nuestra ciudad para desbloquearlo, también podremos acudir a él para cambiar el PIN. Una vez introducido correctamente podremos continuar con nuestra consulta o trámite.</p>

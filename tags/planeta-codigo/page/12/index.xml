@@ -5,12 +5,111 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-19T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/</id>
+        <title>Novedades de Java 13</title>
+        <updated>2019-10-22T19:00:00+02:00</updated>
+        <published>2019-09-27T16:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Continuando las mejoras incrementales cada seis meses el 17 de septiembre se publico Java 13. Java 13 incorpora algunas nuevas características interesantes que mejoran un facilitan la lectura del código, entre las más destacadas están los bloques de texto y las expresiones <em>switch</em> mejoradas.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>Casi coincidiendo con la publicación de Java 13 se publicado <a href="https://jakarta.ee/">Jakarta EE</a> 8 que únicamente tiene como novedad que su propiedad ha pasado a estar baja la fundación Eclipse, es totalmente compatible con <a href="https://picodotdev.github.io/blog-bitix/2018/11/novedades-de-java-ee-8/">Java EE 8 y sus últimas mejoras</a>, las novedades vendrán en versiones posteriores de Jakarta EE en las que se dará importancia a la tendencia de las aplicaciones para su funcionamiento en entornos orientados a la nube. Casi al mismo tiempo se ha publicado <a href="https://openjfx.io/">JavaFX</a> 13 ya fuera del JDK en onde puede seguir su propio ciclo de publicaciones independiente del JDK.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/13/">Características de Java 13</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html">Notas de publicación de Java 13</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/13/">Documentación de Java 13</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/13/docs/api/index.html">Documentación Javadoc de Java 13</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/october-2019-v2">JavaMagazine: Inside Java 13</a></li>
+</ul>
+<p>Las mejoras incluídas en esta versión son:</p>
+<ul>
+<li>JEP 350: <a href="https://openjdk.java.net/jeps/350">Dynamic CDS Archives</a></li>
+<li>JEP 351: <a href="https://openjdk.java.net/jeps/351">ZGC: Uncommit Unused Memory</a></li>
+<li>JEP 353: <a href="https://openjdk.java.net/jeps/353">Reimplement the Legacy Socket API</a></li>
+<li>JEP 354: <a href="https://openjdk.java.net/jeps/354">Switch Expressions (Preview)</a></li>
+<li>JEP 355: <a href="https://openjdk.java.net/jeps/355">Text Blocks (Preview)</a></li>
+</ul>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="bloques-de-texto">Bloques de texto</h4>
+<p>Para definir una cadena de caracteres que tuviese varias lineas en Java había que emplear concatenación de cadenas, si esa cadena contiene el caracter comilla doble <em>&quot;</em> de inicio de cadena había que escaparlo, si esa cadena contenía saltos de línea había que emplear el caracter de escape de salto de línea <em>\n</em>. El resultado es una cadena con problemas de legibilidad por los caracteres de escape que incluye en el código fuente del lenguaje. Esto podría se al definir una cadena de texto que tuviese elementos HTML, JSON, sentencias SQL o expresiones regulares.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&lt;html&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;   &lt;body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p class=\&#34;text\&#34;&gt;Hello, Escapes&lt;/p&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;   &lt;/body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;&lt;/html&gt;\n&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlock-1.java</span>
+    </div>
+</div>
+<p>Con los bloques de texto se emplean una triple comilla doble <em>&quot;</em> para la apertura y cierre de la cadena.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class=&#34;</span><span class="n">text</span><span class="s">&#34;&gt;Hello, Text Blocks&lt;/p&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/html&gt;&#34;&#34;&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlock-2.java</span>
+    </div>
+</div>
+<p>Como ayuda a las cadenas de texto en la clase <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html">String</a> se han añadido varios métodos para eliminar la indentación (<em>String::stripIndent</em>), traducir los caracteres secuencia de escape (<em>String::translateEscapes</em>) y formatear una cadena usando un método de instancia (<em>String::formatted</em>).</p>
+<ul>
+<li><a href="https://blogs.oracle.com/javamagazine/text-blocks-come-to-java">Text Blocks Come to Java</a></li>
+</ul>
+<h4 id="expresiones-_switch_-mejoradas">Expresiones <em>switch</em> mejoradas</h4>
+<p>En las <a href="https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/">novedades de Java 12</a> se añadió la posibilidad de los <em>switch</em> fueran expresiones que retornan un valor en vez de sentencias y se evita el uso de la palabra reservada <em>break</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">numericString</span> <span class="o">=</span> <span class="k">switch</span><span class="o">(</span><span class="n">integer</span><span class="o">)</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">0</span> <span class="o">-&gt;</span> <span class="s">&#34;zero&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">9</span> <span class="o">-&gt;</span> <span class="s">&#34;odd&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">2</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">6</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">10</span> <span class="o">-&gt;</span> <span class="s">&#34;even&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">default</span> <span class="o">-&gt;</span> <span class="s">&#34;N/A&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl"><span class="o">};</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Switch-1.java</span>
+    </div>
+</div>
+<p>En Java 13 en vez únicamente el valor a retornar se permite crear bloques de sentencias para cada rama <em>case</em> y retornar el valor con la palabra reservada <em>yield</em>. En los bloques de sentencias puede haber algún cálculo más complejo que directamente retornar el valor deseado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">numericString</span> <span class="o">=</span> <span class="k">switch</span><span class="o">(</span><span class="n">integer</span><span class="o">)</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">0</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateZero</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span> <span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">9</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateOdd</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">};</span>&#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">2</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">6</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">10</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateEven</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">};</span>&#10;</span></span><span class="line"><span class="cl">   <span class="k">default</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateDefault</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">};</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">};</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Switch-2.java</span>
+    </div>
+</div>
+<ul>
+<li><a href="https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api">Inside Java 13’s switch Expressions and Reimplemented Socket API</a></li>
+</ul>
+<h4 id="otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</h4>
+<p>Las las otras tres características destacadas <em>Dynamic CDS Archives</em>, <em>ZGC: Uncommit Unused Memory</em> para la mejora del recolector de basura y <em>Reimplement the Legacy Socket API</em> reescribiendo el código para los <em>sockets</em> en lenguaje Java son cambios internos que afectan a la plataforma Java pero no al lenguaje.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.mkyong.com/java/what-is-new-in-java-13/">What is new in Java 13</a></li>
+<li><a href="https://blog.codefx.org/java/java-13-guide/">Definitive Guide To Java 13</a></li>
+<li><a href="https://jaxenter.com/java-13-jdk-deep-dive-new-features-162272.html">Java 13 – a deep dive into the JDK’s new features</a></li>
+<li><a href="https://jaxenter.com/java-13-text-blocks-162278.html">Java 13 – why text blocks are worth the wait</a></li>
+<li><a href="https://jaxenter.com/jakarta-ee-8-future-enterprise-java-161984.html">Jakarta EE 8 is sprinting towards an exciting future for enterprise Java</a></li>
+<li><a href="https://dzone.com/articles/the-differences-between-java-ee-jakarta-ee-and-mic"> The Differences Between Java EE, Jakarta EE, and MicroProfile</a></li>
+<li><a href="https://jakarta.ee/documents/insights/cloud_native_java_ebook.pdf">Cloud Native Java</a></li>
+<li><a href="https://jaxenter.com/openjfx-13-interview-dirk-lemmermann-161967.html">OpenJFX 13 – &ldquo;JavaFX gets its own identity&rdquo;</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/</id>
         <title>Librería editor de markdown JavaScript y procesador de markdown para generar HTML con Java</title>
@@ -21,8 +120,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
 <p>Algunas aplicaciones permiten escribir contenido para posteriormente mostrarse en una página web. Permitir introducir directamente en texto en formato HTML es peligroso ya que puede causar problemas si no es correcto y ha de validarse para no permitir introducir archivos CSS, archivos JavaScript u otras etiquetas que supongan un problema de seguridad o desmaqueten la página web. Una alternativa es utilizar como entrada texto en formato <em>markdown</em> y posteriormente transformarlo a contenido en formato HTML.</p>
 <p><em>Markdown</em> es un formato de texto simple con una sintaxis que permite introducir títulos, negritas, itálica, listas y listas numeradas, enlaces o imágenes. El texto en formato <em>markdown</em> se puede transformar posteriormente a formato HTML. Hay múltiples librerías de JavaScript para crear un editor <em>markdown</em> con algunos botones para introducir las opciones básicas e incluso previsualizar el contenido.</p>
@@ -35,8 +133,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu8590a6b882a54d9f2c5070316e74f92a_151427_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Editor JavaScript de markdown"><img src="https://picodotdev.github.io/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu8590a6b882a54d9f2c5070316e74f92a_151427_650x450_fit_box_3.png" width="650" height="278" alt="Editor JavaScript de markdown" title="Editor JavaScript de markdown"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu8590a6b882a54d9f2c5070316e74f92a_151427_2560x1440_fit_box_3.png" data-gallery="" title="Editor JavaScript de markdown"><img src="https://picodotdev.github.io/blog-bitix/2019/09/libreria-editor-de-markdown-javascript-y-procesador-de-markdown-para-generar-html-con-java/images/editor-md_hu8590a6b882a54d9f2c5070316e74f92a_151427_650x450_fit_box_3.png" width="650" height="278" alt="Editor JavaScript de markdown" title="Editor JavaScript de markdown"  class="lozad "></a></p>
 <figcaption>Editor JavaScript de markdown</figcaption>
 </figure>
 </div>
@@ -84,12 +181,10 @@
         <content type="html">
         <![CDATA[<p><strong>Durante unos años he estado sin jugar a juegos porque al haberme pasado a GNU/Linux creía que no se podía al menos a los juegos comerciales actuales, en GNU/Linux hay algunos juegos que funcionan perfectamente como juegos retro con RetroArch, SuperTux, OpenTTD o Battle for Wesnoth en entre algunos de diversos géneros. Pero la realidad es que con Wine y el cliente de Steam son dos posibilidades para jugar a algunos perfectamente y tener un catálogo que no llega a la altura de Windows pero bastante amplio.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/steam.svg" width="200" height="200" alt="Steam" title="Steam"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/steam.svg" width="200" height="200" alt="Steam" title="Steam"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>La plataforma de juegos <a href="https://store.steampowered.com/">Steam</a> es una de las más populares. Con su cliente de juegos es posible comprar, descargar e instalar juegos para tanto para Windows, macOS y también para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. Steam y <a href="https://www.valvesoftware.com/es/">Valve</a> han posibilitado que se puedan jugar a varios juegos triple A en GNU/Linux, Valve se está esforzando para que muchos juegos sean jugables en la plataforma del pingüino.</p>
 <p>Steam ofrece un cliente nativo para GNU/Linux que en Arch Linux se ofrece en los repositorios oficiales. Requiere además habilitar el repositorio <em>multilib</em> para paquetes de 32 bits e instalar el controlador gráfico de la tarjeta gráfica de 32 bits.</p>
@@ -116,28 +211,23 @@
 <p>Hecho esto se puede iniciar el cliente, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego <a href="https://store.steampowered.com/app/231430/Company_of_Heroes_2/">Company of Heroes 2</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Cliente de Steam en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_300x200_fit_box_3.png" width="300" height="196" alt="Cliente de Steam en GNU/Linux" title="Cliente de Steam en GNU/Linux"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam-juegos_hu862c9b8ce63fe5e2b05d74745d47c023_758202_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Cliente de Steam en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam-juegos_hu862c9b8ce63fe5e2b05d74745d47c023_758202_300x200_fit_box_3.png" width="300" height="196" alt="Cliente de Steam en GNU/Linux" title="Cliente de Steam en GNU/Linux"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_2560x1440_fit_box_3.png" data-gallery="" title="Cliente de Steam en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam_hu386a3aacce6261c68b735c492818c5bc_2210975_300x200_fit_box_3.png" width="300" height="196" alt="Cliente de Steam en GNU/Linux" title="Cliente de Steam en GNU/Linux"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam-juegos_hu862c9b8ce63fe5e2b05d74745d47c023_758202_2560x1440_fit_box_3.png" data-gallery="" title="Cliente de Steam en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/cliente-steam-juegos_hu862c9b8ce63fe5e2b05d74745d47c023_758202_300x200_fit_box_3.png" width="300" height="196" alt="Cliente de Steam en GNU/Linux" title="Cliente de Steam en GNU/Linux"  class="lozad "></a></p>
 <figcaption>Cliente de Steam en GNU/Linux</figcaption>
 </figure>
 </div>
 <p>Instalado el juego se puede iniciar desde el cliente de Steam. Aún con una gráfica integrada Intel de un <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Intel NUC8i5BEK (Bean Canyon)</a> se pueden jugar a muchos juegos bajando algo los detalles y resolución.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-1_huea5b4f88ea59be99439e3ff4a18a0bc7_1095947_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Company of Heroes 2"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-1_huea5b4f88ea59be99439e3ff4a18a0bc7_1095947_300x200_fit_q90_box.jpg" width="300" height="169" alt="Company of Heroes 2" title="Company of Heroes 2"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-2_huabc35dbfdbacf82b53fa980a1d00c9a3_2173718_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Cliente de Steam en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-2_huabc35dbfdbacf82b53fa980a1d00c9a3_2173718_300x200_fit_q90_box.jpg" width="300" height="169" alt="Cliente de Steam en GNU/Linux" title="Cliente de Steam en GNU/Linux"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-1_huea5b4f88ea59be99439e3ff4a18a0bc7_1095947_2560x1440_fit_q90_box.jpg" data-gallery="" title="Company of Heroes 2"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-1_huea5b4f88ea59be99439e3ff4a18a0bc7_1095947_300x200_fit_q90_box.jpg" width="300" height="169" alt="Company of Heroes 2" title="Company of Heroes 2"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-2_huabc35dbfdbacf82b53fa980a1d00c9a3_2173718_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cliente de Steam en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/company-of-heroes-2-2_huabc35dbfdbacf82b53fa980a1d00c9a3_2173718_300x200_fit_q90_box.jpg" width="300" height="169" alt="Cliente de Steam en GNU/Linux" title="Cliente de Steam en GNU/Linux"  class="lozad "></a></p>
 <figcaption>Company of Heroes 2</figcaption>
 </figure>
 </div>
 <p>Los juegos ofrecen diferente nivel de soporte para GNU/Linux, para <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> y Steam+Linux, los que deben funcionar sin problema son los de la última categoría. Los de Windows pueden funcionar a través de una capa de emulación desarrollada por Steam, para activarla hay que ir a <em>Steam &gt; Parámetros &gt; Steam Play</em> y activar las opciones <em>Enable Steam Play for Supported title</em> y <em>Activar Steam para todos los demás títulos</em>. Sin embargo, no hay garantía que los juegos con solo soporte de Windows funcionen correctamente, he probado con <a href="https://store.steampowered.com/app/552990/World_of_Warships/">World of Warships</a> y no se iniciaba correctamente mostrando únicamente una pequeña ventana negra.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/steam-play-settings_hu68634886819c7bb8c65fa463fe5e149a_55047_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Steam Play Settings"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/steam-play-settings_hu68634886819c7bb8c65fa463fe5e149a_55047_300x200_fit_box_3.png" width="253" height="200" alt="Steam Play Settings" title="Steam Play Settings"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/steam-play-settings_hu68634886819c7bb8c65fa463fe5e149a_55047_2560x1440_fit_box_3.png" data-gallery="" title="Steam Play Settings"><img src="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/images/steam-play-settings_hu68634886819c7bb8c65fa463fe5e149a_55047_300x200_fit_box_3.png" width="253" height="200" alt="Steam Play Settings" title="Steam Play Settings"  class="lozad "></a></p>
 <figcaption>Steam Play Settings</figcaption>
 </figure>
 </div>
@@ -162,8 +252,7 @@
         <content type="html">
         <![CDATA[<p><strong>Leer un CSV, escribir un CSV, archivos excel, generar gráficas para visualizar datos junto con generar documentos PDF son tareas comunes de las aplicaciones como forma de exportar los datos de la base de datos de una aplicación. Generar un archivo PDF con PDFBox requiere unas pocas lineas de código para documentos con cierta complejidad quizá sea más adecuado usar la librería JasperReports.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Generar documentos e informes de salida en una una tarea básica de cualquier aplicación y una forma de exportar los datos a otros formatos. Con <a href="https://poi.apache.org/">Apache POI</a> se pueden generar hojas de cálculo excel para su procesamiento con <a href="https://www.libreoffice.org/">LibreOffice</a> o <a href="https://products.office.com/es-es/">Microsoft Office Excel</a>. En ocasiones también es necesario <a href="https://picodotdev.github.io/blog-bitix/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/">generar gráficas para visualizar un conjunto grande de datos</a> para ser más fáciles de interpretar, descubrir tendencias, comparar, sacar conclusiones en base a las cuales tomar alguna acción. Los archivos PDF también son muy utilizados para imprimirlos en formato en papel o enviarlos adjuntos en correos electrónicos.</p>
 <p>Uno de estos casos podría ser la generación de una factura en base a una plantilla e incluir el el importe y consumo realizado por un cliente y que este pueda obtenerla en formato electrónico o le sea enviada por correo electrónico como un documento adjunto o <a href="https://elblogdepicodev.blogspot.com.es/2011/02/enviar-correos-mediante-java-mail.html">enviar un correo electrónico</a> para indicar que tiene la factura disponible en su área de cliente lista para su descarga. Este es el caso de muchas empresas que ofrecen servicios como compañías eléctricas, de telecomunicaciones, servicios municipales de agua y basura, bancos para su justificantes y comprobantes, comercios, etc&hellip;</p>
@@ -188,12 +277,10 @@
 </div>
 <h4 id="documento-pdf-generado">Documento PDF generado</h4>
 <p>El resultado es el siguiente <a href="/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/resources/document.pdf" title="">documento PDF</a> que puedes visualizar sin necesidad de instalar programas adicionales en tu ordenador usando el visor en línea de <a href="https://smallpdf.com/">Smallpdf</a> que permite la <a href="https://smallpdf.com/es/blog?type=tutoriales&amp;tool=insertar-pdf">incrustación de documentos PDF en varios tipos de páginas web</a>.</p>
-<p><a href="https://smallpdf.com/es/editar-pdf#open=https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/resources/document.pdf">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/open-with-smallpdf-es.svg" width="200" height="40" alt="Abrir con Smallpdf" title="Abrir con Smallpdf"  class="lozad "></a></p>
+<p><a href="https://smallpdf.com/es/editar-pdf#open=https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/resources/document.pdf"><img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/open-with-smallpdf-es.svg" width="200" height="40" alt="Abrir con Smallpdf" title="Abrir con Smallpdf"  class="lozad "></a></p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu045f61ea51f8069add370066a9a061bc_45351_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documento generado con PDFBox"><img src="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu045f61ea51f8069add370066a9a061bc_45351_600x450_fit_box_3.png" width="391" height="450" alt="Documento generado con PDFBox" title="Documento generado con PDFBox"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu045f61ea51f8069add370066a9a061bc_45351_2560x1440_fit_box_3.png" data-gallery="" title="Documento generado con PDFBox"><img src="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/images/document_hu045f61ea51f8069add370066a9a061bc_45351_600x450_fit_box_3.png" width="391" height="450" alt="Documento generado con PDFBox" title="Documento generado con PDFBox"  class="lozad "></a></p>
 <figcaption>Documento generado con PDFBox</figcaption>
 </figure>
 </div>
@@ -238,12 +325,10 @@
         <content type="html">
         <![CDATA[<p><strong>Spring Cloud Vault facilita la integración con Vault, una de sus usos es utilizarlo para obtener unas credenciales de conexión a la base de datos generadas bajo demanda y con un tiempo de vida limitado en vez de embeberlas en la configuración de la aplicación y con u tiempo de vida indefinido.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
 </div>
 <p>La herramienta <a href="https://www.vaultproject.io/">Vault</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> permite almacenar secretos, otra de sus funcionalidad es ser capaz de generar credenciales de forma dinámica. Habitualmente una aplicación para conectarse a una base de datos incluye en su configuración las credenciales, usuario y contraseña, para autenticarse y crear las conexiones, estas credenciales tiene un tiempo de vida indefinido y comprometidas proporcionan acceso a la base de datos.</p>
 <p>Vault permite centralizar la seguridad, otorgar a cada aplicación los permisos para conectarse a una base de datos a través de la obtención de credenciales (usuario y contraseña), auditar su uso y limitar el tiempo de validez de las credenciales a unas horas en vez de forma indefinida.</p>
@@ -378,12 +463,10 @@
         <content type="html">
         <![CDATA[<p><strong>Una de las funcionalidades proporcionada por Vault es generar credenciales dinámicas para la conexión a bases de datos. Generar las credenciales de forma dinámica proporciona varios beneficios: no hay unas credenciales que usen las aplicaciones que tengan un tiempo de vida indefinido, las aplicaciones no necesitan guardar en su configuración las credenciales, las credenciales se rotan de forma automática y los permisos para obtenerlas se pueden revocar de forma centralizada con Vault para cuales quiera bases de datos que se utilicen. Soporta las bases de datos más populares entre ellas PostgreSQL.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL"  class=""></p>
 </div>
 <p>Las base de datos para proteger los datos realizan autenticación del usuario que se conecta. Normalmente utilizando un usuario y contraseña, una vez autenticado el usuario mediante permisos se realiza la autorización de las operaciones que puede realizar, a que bases de datos se puede conectar, que tablas puede acceder y que operaciones puede realizar.</p>
 <p>Este modelo de autenticación tiene algunos inconvenientes. Uno de los inconvenientes es que los usuarios y contraseñas para mayor seguridad han de cambiarse con cierta frecuencia para evitar que si las credenciales quedan comprometidas no puedan utilizarse indefinidamente. Otro problema es que cada aplicación ha de conocer las credenciales de la base de datos, esto hace que haya múltiples posibilidades de que las credenciales queden comprometidas. Por otro lado el uso de las credenciales no queda registrado de forma centralizada que es necesario para saber ante una brecha de seguridad qué datos han sido accedidos y por quien.</p>
@@ -480,12 +563,10 @@
         <content type="html">
         <![CDATA[<p><strong>En una arquitectura basada en microservicios es normal iniciar varias instancias de un mismo servicio, si están en la misma máquina ha de asignarse a cada instancia un puerto diferente. Asignar los puertos manualmente no es recomendable cuando se quieren varias instancias, Spring Boot ofrece la funcionalidad de iniciar la aplicación en un puerto aleatorio.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Mediante configuración se puede especificar el puerto en el que se desea iniciar una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> que ofrece un servicio de red. El puerto por convención suele ser el <em>8080</em> y la propiedad de configuración de Spring Boot para modificarlo es <em>server.port</em>.</p>
 <div class="code">
@@ -550,12 +631,10 @@
         <content type="html">
         <![CDATA[<p><strong>Todo indica que el formato físico de los juegos está a punto de desaparecer en una futura generación de consolas no muy lejana como ya ha ocurrido en gran medida con la música o los libros. Pero los juegos digitales crean otros problemas que los juegos físicos no tienen y es el motivo por el que algunos usuarios son contrarios a solo los digitales, ¿sería posible solución a los problemas de los juegos físicos y de los digitales? Aquí teorizo sobre este tema y planteo una solución, las <em>smartcards</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/playstation.svg" width="200" height="155" alt="PlayStation" title="PlayStation"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/playstation.svg" width="200" height="155" alt="PlayStation" title="PlayStation"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/xbox.svg" width="200" height="197" alt="Xbox" title="Xbox"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/xbox.svg" width="200" height="197" alt="Xbox" title="Xbox"  class=""></p>
 </div>
 <p>Hasta recientemente la forma de distribuir los juegos en las consolas y PC ha sido a través de cartuchos y discos CD, DVD, y Blu-Ray, si embargo con la masificación de internet y con anchos de banda asequibles para las conexiones residenciales de los usuarios de entre 30 Mbps, 600 Mbps y en un futuro aún más parece que es el momento de que los fabricantes y algunos usuarios estén prefiriendo un modelo de distribución basado en la descarga digital por internet. De hecho <a href="https://www.microsoft.com/">Microsoft</a> con la <a href="https://www.xbox.com">Xbox</a> One All-Digital ya ni siquiera posee lector de discos y todos los juegos ha de ser adquiridos a través de su tienda, la <a href="https://www.playstation.com/es-es/">PlayStation</a> de <a href="https://www.sony.es/">Sony</a> también posee su modelo de distribución digital.</p>
 <p>El lector de discos junto con el posible sobrecalentamiento es uno los causantes de el mayor número de averías. Tarde o temprano el lector falla al ser algo mecánico, más temprano cuanto más uso se le da. Es uno de los motivos por los que si yo tuviese una consola me platearía adquirir los juegos digitales en vez de físicos estando a un precio similar o incluso un poco mayor, esto no quiere decir que considere que los digitales deberían ser mas baratos porque la distribución de los mismos es más sencilla y barata. En la actualidad de momento no hay interés en mantener una competencia de precios entre la tienda digital y la física, salvo ofertas puntuales aunque los físicos de segunda mano se suelen encontrar a precios menores que en las ediciones digitales. Otro motivo por el prefiero los juegos digitales es porque me ocupan espacio y en mi caso no estoy apegado a tener las cosas tangibles para adorarlas como si fuesen totems de dioses, vamos que no necesito verlas colocadas en una balda cogiendo polvo. Los discos pueden estropearse con rayaduras y necesitan de todas formas descargar actualizaciones con contenido mejorado o adicional.</p>
@@ -565,8 +644,7 @@
 <p>El concepto de una <em>smartcard</em> es un objeto tangible como una tarjeta de crédito que correspondería a la posesión física de un disco al que reemplazaría, al contrario de los discos no tendría almacenamiento sino que simplemente sería algún tipo de credencial de que su poseedor concede el derecho a usar un juego. Lógicamente esta <em>smartcard</em> debería estar dotada de suficientes medidas de seguridad para que no pueda ser suplantada. El lector de disco con partes mecánicas sería reemplazado por un lector de tarjetas inteligentes por contacto o <em>contacless</em> como ya funciona numerosas tarjetas de crédito y bonos de medios de transporte.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/2019/08/smartcards-en-vez-de-discos-para-una-futura-generacion-de-consolas/images/smartcard-contactless_huae5e9a1b0a8b801392f690f17fa110e2_56001_2560x1440_fit_box_3.png" width="250" height="250" alt="Smartcard contactless" title="Smartcard contactless"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/2019/08/smartcards-en-vez-de-discos-para-una-futura-generacion-de-consolas/images/smartcard-contactless_huae5e9a1b0a8b801392f690f17fa110e2_56001_2560x1440_fit_box_3.png" width="250" height="250" alt="Smartcard contactless" title="Smartcard contactless"  class="lozad "></p>
 </figure>
 </div>
 <p>Quedada resuelta la posesión física de los juegos con la <em>smartcard</em>, queda como descargarlos y en este modelo que planteo la descarga se realizaría a través de internet tal como ocurre en los juegos digitales. Una vez descargado el juego ya no sería necesaria la conexión a internet y solo introducir la <em>smartcard</em> en cada inicio del juego, en cada 3 inicios o cada 3 días para evitar la incomodidad de tener que usar la <em>smartcard</em> en cada inicio.</p>
@@ -596,12 +674,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/resilience4j.png" width="200" height="200" alt="Resilience4j" title="Resilience4j"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/resilience4j.png" width="200" height="200" alt="Resilience4j" title="Resilience4j"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es <a href="https://github.com/resilience4j/resilience4j">Resilience4j</a>. Resilience4j proporciona las características similares con algunas ventajas adicionales.</p>
 <p>Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son:</p>
@@ -665,12 +741,10 @@
         <content type="html">
         <![CDATA[<p><strong>Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, &hellip;) de ser descifrados y generalmente no está bien protegidos dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en entornos Docker suele usarse.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
 </div>
 <p>La seguridad es un aspecto muy importante de los sistemas informáticos, no darle la consideración necesaria puede dar lugar a caídas de servicio y robo de datos potencialmente ocasionando importantes pérdidas de dinero, sanciones y pérdida de confianza de los clientes y proveedores de una organización.</p>
 <p>La seguridad se mantiene mediante mecanismos de autenticación identifican al solicitante solicitante, de autorización permitiendo realiza únicamente las acciones para las que se tienen permisos y mediante firma y cifrado para impedir la modificación de los datos y el acceso a la información sin las credenciales y autorización requerida.</p>
@@ -747,10 +821,8 @@
 <p>Vault al igual que otras de las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a> como Consul y <a href="https://www.nomadproject.io/">Nomad</a> posee una interfaz gráfica accesible mediante el navegador que permite realizar las mismas operaciones que a través de la API o desde la linea de comandos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz gráfica de Vault"><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_300x200_fit_box_3.png" width="300" height="188" alt="Interfaz gráfica de Vault" title="Interfaz gráfica de Vault"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_300x200_fit_box_3.png" width="300" height="188"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_2560x1440_fit_box_3.png" data-gallery="" title="Interfaz gráfica de Vault"><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-1_hu835606e7b9de313fbe556011bb61b531_35945_300x200_fit_box_3.png" width="300" height="188" alt="Interfaz gráfica de Vault" title="Interfaz gráfica de Vault"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/images/vault-ui-2_hu643c4f275edb6aabb6ede21353b42f5b_36609_300x200_fit_box_3.png" width="300" height="188"  class="lozad "></a></p>
 <figcaption>Interfaz gráfica de Vault</figcaption>
 </figure>
 </div>
@@ -783,12 +855,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>Algunos archivos de texto tienen un tamaño de cientos de megas, a veces incluso sin ningún salto de línea. Visualizar el contenido de estos archivos en una aplicación con interfaz gráfica no suele ser posible porque la aplicación se queda bloqueada al intentar cargar tan enormes archivos. Incluso tampoco puede ser posible con un editor mucho más ligero como <a href="https://www.vim.org/">vim</a>. Hacer un <em>cat</em> del archivo tampoco es útil.</p>
 <p>Sin embargo, sigue siendo necesario ver parte del contenido de estos archivos de texto grande para validar que el contenido de los mismos es el correcto. La opción que se puede utilizar es ver los primeros o últimos caracteres o lineas con los comandos <em>head</em> o <em>tail</em> usándolos de la siguiente forma.</p>
@@ -865,8 +935,7 @@
         <content type="html">
         <![CDATA[<p><strong>Guava EventBus es una solución simple para la publicación y suscripción de eventos en una misma aplicación y como tal no posee muchas de las capacidades que si tiene JMS o RabbitMQ, sin embargo, en algunos casos puede ser muy útil, una solución sencilla y sin requerimientos adicionales de infraestructura.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En programación los eventos son una buena forma de comunicación que permite desacoplar el emisor del evento del receptor o receptores. Los eventos permiten reaccionar a situaciones que se producen a la aplicación. El emisor los lanza cuando considera adecuado y los receptores se suscriben a los eventos que quieren recibir y actúan según su funcionalidad.</p>
 <p>Hay herramientas especificas para eventos en Java está JMS si la aplicación está basada en <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">la plataforma en Java EE</a>, en caso de necesitar un servidor de mensajes adecuado para múltiples plataformas y lenguajes uno de los más conocidos es <a href="https://www.rabbitmq.com/">RabbitMQ</a>. Estas opciones permiten que el emisor y los receptores estén aplicaciones distintas.</p>
@@ -948,12 +1017,10 @@
         <content type="html">
         <![CDATA[<p><strong>Al diferencia de una API REST donde cada recurso posee un <em>endpoint</em> propio en GraphQL los recursos están relacionados y forman un grafo. Por otro lado las propiedades devueltas en una consulta de GraphQL son las que se indiquen en la consulta en vez de prefijadas como en una API REST. Hay que tener en cuenta que GraphQL para recuperar las propiedades de las entidades usa un <em>resolver</em> y las recupera una a una, si se devuelve una lista de elementos y de cada uno de esos elementos otra propiedad para la que hay que generar una consulta adicional a la base de datos el rendimiento no será bueno. Los <em>data loaders</em> permiten recuperar las propiedades relacionadas de una colección de entidades eficientemente evitando el problema 1+N.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una de las dificultades a resolver en GraphQL es evitar los problemas de generar 1+N consultas dado que en algunas peticiones se recupera una lista de elementos para recuperar alguna otra propiedad de esos elementos para la que se realiza otra consulta. Suele ocurrir al navegar las relaciones de las entidades, por ejemplo al solicitar una lista de libros y de cada libro obtener su autor, para obtener los libros se necesita una consulta y hay que evitar que para recuperar el autor de cada libro generar otra consulta, si el número de libros recuperados es grande el número de consultas será grande y la consulta será poco eficiente, lenta y generará una carga a evitar en el servidor de base de datos.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a> comentaba una estrategia para evitar este problema que consistía en dados una serie de elementos recuperados y si la propiedad estaba presente en la consulta se obtenían los identificativos de esos elementos y se recuperaba la propiedad para todos los elementos en una única consulta.</p>
@@ -1012,8 +1079,7 @@
         <content type="html">
         <![CDATA[<p><strong>Los módulos de Java dotan a la plataforma de nuevas características. Para garantiza la compatibilidad con las librerías existentes y permitir una transición progresiva de una versión sin módulos a una con módulos la plataforma de módulos de Java define varios tipos de módulos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Con la <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">publicación de Java 9</a> el 2017 se introdujo la importante novedad de los módulos que proporciona a la plataforma Java varias características como encapsulación fuerte, interfaces bien definidas y dependencias explícitas. Todos las clases se organizan en paquetes y en Java 9 también en módulos para lo cual fue necesario reorganizar en módulos todos los paquetes de los que se compone la API de Java.</p>
 <p>Antes de Java 9 todas las clases se proporcionaban en una lista ordenada de archivos <em>jar</em>, lo que se conocía como el <em>classpath</em> y donde cualquier clase tenía acceso a cualquier otra que se encontrase en él respetando los ámbitos de visibilidad (<em>public</em>, <em>protected</em>, <em>private</em> y <em>package</em>). En la definición de cada módulo en su archivo <em>module-info.java</em> se debe especificar cuales son los módulos requeridos para su funcionamiento no permitiendo la máquina virtual de Java el acceso a ninguna otra clase de otros módulos ni a ninguna clase de los paquetes no exportados.</p>
@@ -1050,30 +1116,24 @@
         <content type="html">
         <![CDATA[<p><strong>Hace no tanto tiempo era prácticamente imposible adquirir un equipo sin Windows preinstalado y salvo algunas excepciones en muchos comercios solo incluyen equipos con Windows o macOS. Pero a día hoy si alguien quiere comprar un equipo sin Windows para instalarle GNU/Linux hay varias posibilidades.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/slimbook.jpg" width="200" height="86" alt="Slimbook" title="Slimbook"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/slimbook.jpg" width="200" height="86" alt="Slimbook" title="Slimbook"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/vant.svg" width="200" height="61" alt="VANT" title="VANT"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/vant.svg" width="200" height="61" alt="VANT" title="VANT"  class=""></p>
 </div>
 <p>En todos los comercios, grandes superficies e incluso en las pequeñas tiendas especializadas en informática solo hay dos opciones para comprar un portátil o lo compras con <a href="https://www.microsoft.com/es-es/windows/">Windows</a> incluído o optas por los caros mac de <a href="https://www.apple.com/">Apple</a>, los ordenadores de marca en formato torre o todo en uno también vienen todos con Windows. Hasta el momento no he encontrado ningún portátil con la posibilidad de adquirirlos con GNU/Linux en las tiendas en las que he estado. En el caso de los ordenadores de torre que montan las pequeñas tiendas a medida es posible adquirirlos sin sistema operativo pero para los usuarios con pocos conocimientos es un problema ya que no saben como instalárselo. Aún así tampoco he visto a ningún pequeño comercio ofrecer el servicio de instalarle alguna distribución de GNU/Linux sin coste al adquirir el equipo o con un coste mucho más reducido que la licencia de Windows.</p>
 <p>Sin embargo, desde hace un tiempo es posible adquirir un ordenador con GNU/Linux y sin la licencia de Windows ni su coste, que no tienen nada que envidiar a cualquier otro equipo comercial de una marca más grande. En el caso de portátil están los <a href="https://slimbook.es/">Slimbook</a> o de <a href="https://www.vantpc.es/">VANT</a> que tiene unas características muy notables con el Slimbook PRO X a un precio razonable, con última generación de procesadores Intel, posibilidad de dos SSD NVMe, 32 GiB de memoria, pantalla con resolución 1920x1080 de marcos reducidos. En el caso de Slimbook ofrecen también un modelo de mini PC, el Slimbook ONE o con disipación pasiva el ZERO. En el caso de VANT sus portátiles MOOVE y de escritorio BLOCK, CELL y LIFE incluso con procesadores <a href="https://www.amd.com/es/ryzen">AMD Ryzen</a>. En ambos casos hay posibilidad de elegir entre algunas distribuciones de GNU/Linux con las que se quiere que venga preinstalado y estos son solo algunos de los modelos que tienen disponibles, Slimbook tiene también algún modelo tipo AIO o <em>all-in-one</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Portátiles Slimbook PRO y X"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_300x200_fit_q90_box.jpg" width="300" height="163" alt="Portátiles Slimbook PRO y X" title="Portátiles Slimbook PRO y X"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Portátiles VANT MOOVE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_300x200_fit_q90_box.jpg" width="283" height="200" alt="Portátiles VANT MOOVE" title="Portátiles VANT MOOVE"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_2560x1440_fit_q90_box.jpg" data-gallery="" title="Portátiles Slimbook PRO y X"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-pro-x_hua5b4c2398d82a8510ad8beb8449d6998_256649_300x200_fit_q90_box.jpg" width="300" height="163" alt="Portátiles Slimbook PRO y X" title="Portátiles Slimbook PRO y X"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_2560x1440_fit_q90_box.jpg" data-gallery="" title="Portátiles VANT MOOVE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-moove14_hu29d2fed7b21b31ea77145089791cd423_65756_300x200_fit_q90_box.jpg" width="283" height="200" alt="Portátiles VANT MOOVE" title="Portátiles VANT MOOVE"  class="lozad "></a></p>
 <figcaption>Portátiles Slimbook y VANT</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Ordenadores de escritorio Slimbook ONE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_300x200_fit_q90_box.jpg" width="267" height="200" alt="Ordenadores de escritorio Slimbook ONE" title="Ordenadores de escritorio Slimbook ONE"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Ordenadores de escritorio VANT PURE-A"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_300x200_fit_q90_box.jpg" width="200" height="200" alt="Ordenadores de escritorio VANT PURE-A" title="Ordenadores de escritorio VANT PURE-A"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_2560x1440_fit_q90_box.jpg" data-gallery="" title="Ordenadores de escritorio Slimbook ONE"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/slimbook-one_hu0be15977841ffc9244bd69210fb6289e_54789_300x200_fit_q90_box.jpg" width="267" height="200" alt="Ordenadores de escritorio Slimbook ONE" title="Ordenadores de escritorio Slimbook ONE"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_2560x1440_fit_q90_box.jpg" data-gallery="" title="Ordenadores de escritorio VANT PURE-A"><img src="https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/images/vant-pure-a_huc5bfaab33d770c183ceef3f016afefa9_24859_300x200_fit_q90_box.jpg" width="200" height="200" alt="Ordenadores de escritorio VANT PURE-A" title="Ordenadores de escritorio VANT PURE-A"  class="lozad "></a></p>
 <figcaption>Ordenadores de escritorio Slimbook y VANT</figcaption>
 </figure>
 </div>
@@ -1090,112 +1150,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="windows"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/06/hemeroteca-15/</id>
-        <title>Hemeroteca #15</title>
-        <updated>2019-06-30T10:30:00+02:00</updated>
-        <published>2019-06-30T10:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/06/hemeroteca-15/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
-</div>
-<p>Estos seis primeros meses del 2019 han transcurrido como todos los años anteriores, sigo manteniendo la constancia de publicar dos artículos nuevos y únicos, algunas semanas sólo uno las menos tres.</p>
-<p>En cuanto al blog durante este tiempo le he hecho un cambio de diseño para que el contenido quede centrado en la pantalla y tenga más espacio horizontal lo que creo hace más agradable la lectura del texto y los extractos de código se ven mejor con menos necesidad de hacer desplazamiento horizontal.</p>
-<p>Para que la publicidad y los ingresos de Adsense no se viesen perjudicados y para mejorarlos más aún si cabe he puesto un bloque <em>billboard</em> en la cabecera, he mantenido el <em>leaderboard</em> después del resumen del articulo en aquellos que lo tienen y la publicidad lateral he hecho que sea <em>sticky</em> de manera que permanece mas tiempo visible con la consiguiente mejora en el numero de clic.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky</a></li>
-</ul>
-<p>Sólo han pasado dos meses con el nuevo diseño pero creo que ha sido un acierto, para la lectura del usuario como para los ingresos de Adsense que apreciablemente sigue mejorado respecto al año anterior. Estos meses de verano el tráfico suele descender algo y las visitas ya no me continúan creciendo mes a mes, los mejores meses son los de octubre, noviembre y diciembre con lo que esas fechas podré comparar mejor con las del año pasado. El número de visitas se mantiene más o menos contante y no de crecimiento como semestres anteriores.</p>
-<p>En cuanto a los artículos que he escrito han sido sobre las temáticas habituales a las que dedicó este blog. Como desde hace poco estoy pudiendo usar Java 11 (¡por fin!, algo al menos) en el trabajo espero poder escribir algunos artículos con lo que considere destacable, por el momento he actualizado el ejemplo de código de la <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos de GraphQL</a> de los que tengo pendiente publicar alguno más. Los artículos de este semestre han sido los siguientes. En total 47 nuevos.</p>
-<p>En la categoría de Java.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/">Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/acceder-a-hojas-de-calculo-de-google-docs-mediante-api-desde-una-aplicacion-java/">Acceder a hojas de cálculo de Google Docs mediante API desde una aplicación Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/comandos-para-compilar-codigo-fuente-y-ejecutar-programas-java/">Compilar el código fuente y ejecutar con los comandos javac, java y jar en Java 8 o anteriores</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/">Generar, procesar y modificar documentos JSON con JSON-P en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/reproducir-audio-y-musica-midi-y-sampled-wav-mp3-ogg-con-java-y-ffmpeg/">Reproducir audio y música MIDI y sampled (wav, mp3, ogg) con Java y FFmpeg</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/">Usar expresiones JSONPath para extraer datos de un JSON en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/">Ofuscar datos sensibles en las trazas con Log4j</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/">Las clases anidadas inner, anónimas y locales en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/lookahead-y-lookbehind-en-expresiones-regulares-con-java/">Lookahead y lookbehind en expresiones regulares con Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/">Las colecciones de Java, estructuras de datos para guardar referencias a objetos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/">Colecciones sincronizadas e inmutables en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-reactive-streams-en-java/">Ejemplo de Reactive Streams en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/">Novedades de Java 12</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/escribir-en-la-misma-linea-de-la-consola-y-obtener-el-ancho-y-alto-de-la-terminal-con-java/">Escribir en la misma línea de la consola y obtener el ancho y alto de la terminal con Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/">Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/">Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/">Ejemplo de máquina de estados con Spring Statemachine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/el-concepto-de-wildcard-capture-en-java/">El concepto de wildcard capture en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">Trazabilidad en microservicios con Spring Cloud Sleuth</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/">Lanzar excepciones checked como si fueran unchecked en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/">Log de sentencias SQL, sentencias lentas y otra información en jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/teses-unitarios-parametrizados-con-junit/">Teses unitarios parametrizados con JUnit</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/metadatos-e-introspeccion-en-graphql/">Metadatos e introspección en GraphQL</a></li>
-</ul>
-<p>En la categoría de GNU/Linux.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">Autenticación mediante clave pública y privada con SSH</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/">Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux</a></li>
-</ul>
-<p>Unos sobre algunas de las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a>, los que me gustaría seguir ampliando en el futuro.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/">Introducción a Nomad para gestionar aplicaciones y microservicios</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/">Estrategias de despliegue para microservicios con Nomad</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/">Servicios con persistencia en el orquestador de microservicos Nomad</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a></li>
-</ul>
-<p>Varios sobre JavaScript y desarrollo web.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/">Componentes en el cliente con Web Components usando JavaScript, HTML y CSS</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/">Codificar los datos para evitar ataques XSS en una página web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/combinaciones-de-teclado-en-html-javascript-y-paginas-web/">Combinaciones de teclado en HTML, JavaScript y páginas web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/pruebas-de-carga-y-rendimiento-de-un-servicio-web-con-apache-bench/">Pruebas de carga y rendimiento de un servicio web con Apache Bench</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/">Comprobar la seguridad de un sitio web que use SSL/TLS</a></li>
-</ul>
-<p>Sobre SQL destacando el dedicado a como hacer paginación correctamente con <em>seek</em> en vez de como habitualmente con <em>ofsset</em>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/log-de-sqls-y-de-sqls-lentas-en-myql-y-postgresql/">Log de SQLs y de SQLs lentas en MySQL y PostgreSQL</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/">Implementar la paginación eficientemente en consultas SQL con seek</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/orden-de-ejecucion-de-las-clausulas-de-las-sentencias-select-de-sql/">Orden de ejecución de las cláusulas de las sentencias SELECT de SQL</a></li>
-</ul>
-<p>Otros que no entran en las categorias anteriores y otro de opinión.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/01/conferencia-bilbostack-2019/">Conferencia BilboStack 2019</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/">De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/historial-y-evolucion-de-precios-en-amazon-con-camelcamelcamel/">Historial y evolución de los precios en Amazon con CamelCamelCamel</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/06/sobre-la-playstation-4-playstation-5-y-google-stadia/">Sobre la PlayStation 4, PlayStation 5 y Google Stadia</a></li>
-</ul>
-<p>Los dedicados al blog.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/9-aniversario-del-blog/">9º aniversario del blog</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/">Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky</a></li>
-</ul>
-<p>Y finalmente uno que estuvo patrocinado.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/02/proyecto-de-mejora-de-smart-tv-usando-una-vpn-para-acceder-a-contenido-restringido-por-ip/">Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP</a></li>
-</ul>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="gnu-linux"/>
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

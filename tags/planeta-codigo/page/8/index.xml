@@ -5,12 +5,137 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-19T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/</id>
+        <title>Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</title>
+        <updated>2020-07-24T15:00:00+02:00</updated>
+        <published>2020-07-24T15:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La configuración de seguridad estática y basada en direcciones IP no es adecuada en un entorno en el que los recursos de computación está compartidos y no son confiables, ni para aplicaciones basadas en microservicios cuyo número de servicios e instancias cambia a lo largo del tiempo. Consul y Consul Connect ofrecen un mecanismo de comunicación segura adaptados a la computación en la nube y adecuado para aplicaciones basadas en microservicios.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="200" height="278" alt="HashiCorp Consul" title="HashiCorp Consul"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp.svg" width="200" height="200" alt="HashiCorp" title="HashiCorp"  class=""></p>
+</div>
+<p>El método habitual para proporcionar seguridad a varios sistemas que se comunican por red ha sido utilizar protocolos de comunicaciones cifrados, poner cortafuegos e impedir una comunicación directa con algunos sistemas como las base de datos en ocasiones en base a direcciones IP. La configuración estática cuando hay que adaptarla por añadir nuevos sistemas es difícil de cambiarla.</p>
+<p>En un entorno en la nube, aún con sus propias medidas de seguridad y aislamiento que implementan, la infraestructura no es confiable por ser compartida con otras organizaciones como demuestran los <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">fallos de seguridad de meltdown y spectre de los procesadores</a> por su ejecución especulativa. En una arquitectura dinámica de múltiples microservicios e instancias una configuración estática no es práctica para un sistema que por naturaleza es altamente dinámico y en un medio de computación compartido no confiable hay que adoptar medidas adicionales.</p>
+<p>La propuesta que ofrecen algunas herramientas nativas para la computación en la nube es proporcionar seguridad realizando cada comunicación servicio a servicio de forma cifrada y transparente para las aplicaciones incluso si estas no implementan comunicación cifrada de forma nativa, con autenticación mutua entre los dos servicios utilizando su identidad en vez de direcciones IP y con autorizaciones basadas en intenciones fáciles de administrar y cambiar.</p>
+<p>Una de estas herramientas es <a href="https://www.consul.io/">Consul</a> que proporciona la funcionalidad de registro y descubrimiento de servicios y conectividad entre esos servicios. Consul Connect proporciona comunicaciones seguras de forma transparente para las aplicaciones.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu40ea92732f7c799eac78c9ecc53c9f1e_687720_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura estática"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static_hu40ea92732f7c799eac78c9ecc53c9f1e_687720_300x200_fit_box_3.png" width="270" height="200" alt="Infraestructura estática" title="Infraestructura estática"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hue0ef08cc5d3ec3fec4e79c39218b6127_43440_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura estática"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-static-approach_hue0ef08cc5d3ec3fec4e79c39218b6127_43440_300x200_fit_box_3.png" width="267" height="200" alt="Infraestructura estática" title="Infraestructura estática"  class="lozad "></a></p>
+<figcaption>Infraestructura estática</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hud792d9ccac62b58fc59867570540fb55_748281_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura dinámica"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic_hud792d9ccac62b58fc59867570540fb55_748281_300x200_fit_box_3.png" width="239" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_huc588b2a2c6815d010814db891979b214_44789_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura dinámica"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/infrastructure-dynamic-approach_huc588b2a2c6815d010814db891979b214_44789_300x200_fit_box_3.png" width="267" height="200" alt="Infraestructura dinámica" title="Infraestructura dinámica"  class="lozad "></a></p>
+<figcaption>Infraestructura dinámica</figcaption>
+</figure>
+</div>
+<p>El esquema de funcionamiento de <a href="https://www.consul.io/docs/connect">Consul Connect</a> es hacer que los servicios no se comuniquen directamente entre ellos sino que utilizan <em>proxys</em>, la creación del enlace de comunicación se delega en Consul que crea los <em>proxys</em> y con ellos le es posible proporcionar comunicaciones seguras, con autenticación mutua y posibilitando autorización con intenciones. Las intenciones son los permisos que establece el operador de Consul para establecer que dos servicios tiene permitido la comunicación entre ellos, cualquier intento de comunicación si no está aprobado de forma explícita por su intención no se permite.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_2560x1440_fit_box_3.png" data-gallery="" title="Comunicación servicio a servicio con Consul Connect"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_300x200_fit_box_3.png" width="300" height="98" alt="Comunicación servicio a servicio con Consul Connect" title="Comunicación servicio a servicio con Consul Connect"  class="lozad "></a></p>
+<figcaption>Comunicación servicio a servicio con Consul Connect</figcaption>
+</figure>
+</div>
+<p>Otra de las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a> es <a href="https://www.nomadproject.io/">Nomad</a> que proporciona la funcionalidad de orquestador de servicios, creando las instancias de los servicios necesarias en los diferentes nodos de computación. Nomad se integra con Consul y Consul Connect haciendo más sencillo utilizar todas estas tecnologías.</p>
+<p>En el siguiente ejemplo sigo la <a href="https://www.nomadproject.io/docs/integrations/consul-connect">guía de ejemplo para probar Consul Connect</a> con Nomad utilizando <a href="https://www.envoyproxy.io/">Envoy</a> para crear los <em>proxys</em>. Para ejecutar el ejemplo es necesario obtener los binarios de Consul, Nomad y Envoy además de las utilidades de comunicaciones de <em>cni-plugins</em> y <a href="https://www.docker.com/">Docker</a>.</p>
+<p>Hay que instalar los paquetes de Consul, Nomad, Envoy y <em>cni-plugins</em> de la distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> o la descarga directa de sus binarios accesibles en la variable <em>PATH</em> del sistema utilizada por los intérpretes de comandos para buscar comandos. Para obtener Envoy hay que ejecutar el siguiente comando que instala el binario de Envoy en la carpeta <em>/usr/local/bin</em> que incluida en la variable <em>PATH</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl -L https://getenvoy.io/cli <span class="p">|</span> bash -s -- -b /usr/local/bin&#10;</span></span><span class="line"><span class="cl">$ getenvoy run standard:1.11.2 -- --version&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>getenvoy.sh</span>
+    </div>
+</div>
+<p>Nomad requiere que los <em>cni-plugins</em> esté ubicados en la carpeta <em>/opt/cni/bin</em>, en Arch Linux se instalan en la carpeta <em>/usr/lib/cni/</em> por lo que hay que crear un enlace simbólico para que sean encontrados por Nomad. En Ubuntu la opción es realizar la instalación descargando el paquete manualmente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ curl -L -o cni-plugins.tgz https://github.com/containernetworking/plugins/releases/download/v0.8.6/cni-plugins-linux-amd64-v0.8.6.tgz&#10;</span></span><span class="line"><span class="cl">$ sudo mkdir -p /opt/cni/bin&#10;</span></span><span class="line"><span class="cl">$ sudo tar -C /opt/cni/bin -xzf cni-plugins.tgz</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install-cni-plugins.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -s cni-plugins&#10;</span></span><span class="line"><span class="cl">$ sudo ln -s /usr/lib/cni/ /opt/cni/bin&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install-cni-plugins-archlinux.sh</span>
+    </div>
+</div>
+<p>Con los binarios necesarios instalados hay que iniciar Consul y Nomad con los siguientes comandos que los arrancan en su configuración de desarrollo y con el soporte para Consul Connect en Nomad.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ consul agent -dev&#10;</span></span><span class="line"><span class="cl">$ sudo nomad agent -dev-connect&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>start-consul-nomad.sh</span>
+    </div>
+</div>
+<p>El siguiente paso es enviar el Nomad la definición de los servicios para que planifique su ejecución, en este caso utilizando contenedores de Docker que ha de estar instalado previamente y con su servicio del sistema iniciado.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
+</ul>
+<p>La definición incluye dos servicios uno que proporciona un contador y otro que obtiene el valor de ese contador y lo muestra en una página web. En la definición del servicio <em>count-api</em> se define que va a ofrecer su comunicación por red en el puerto 9001 asociado a la interfaz de red <em>localhost</em> de modo que este puerto solo pueda ser accedido por Consul a través del <em>proxy</em> que crea, la definición del servicio <em>count-dashboard</em>  ofrece su servicio en el puerto 9002 y que tiene tiene como dependencia el servicio <em>count-api</em> para el que Consul crea un nuevo <em>proxy</em>, el servicio <em>count-dashboard</em> se conecta al puerto <em>8080</em> para comunicarse con el  servicio <em>count-api</em> mediante los <em>proxys</em> de Consul Connect. Los servicios solo se comunican con los <em>proxys</em> y son los <em>proxys</em> los que se comunican entre ellos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nomad run connect.nomad&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>nomad-run.sh</span>
+    </div>
+</div>
+<p>En la definición de <em>job</em> las partes relativas a Consul Connect están en los bloques o <em>stanzas</em> <em>connect</em>, en el caso de <em>count-api</em> simplemente para indicar que desea un <em>proxy</em> y en el caso de <em>count-dashboard</em> para indicar que desea un <em>proxy</em> para conectarse al servicio <em>count-api</em>, la variable de entorno <em>COUNTING_SERVICE_URL</em> contiene la dirección del <em>proxy</em> que permite la conexión con <em>count-api</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-hcl" data-lang="hcl"><span class="line"><span class="cl"><span class="k">job</span> <span class="s2">&#34;countdash&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">  datacenters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;dc1&#34;</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="k">group</span> <span class="s2">&#34;api&#34;</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">network</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  mode</span> <span class="o">=</span> <span class="s2">&#34;bridge&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  name</span> <span class="o">=</span> <span class="s2">&#34;count-api&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="s2">&#34;9001&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">connect</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">sidecar_service</span> {}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;web&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image</span> <span class="o">=</span> <span class="s2">&#34;hashicorpnomad/counter-api:v1&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">  <span class="k">group</span> <span class="s2">&#34;dashboard&#34;</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">network</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  mode</span> <span class="o">=</span> <span class="s2">&#34;bridge&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">port</span> <span class="s2">&#34;http&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static</span> <span class="o">=</span> <span class="m">9002</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="o">=</span> <span class="m">9002</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">service</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  name</span> <span class="o">=</span> <span class="s2">&#34;count-dashboard&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  port</span> <span class="o">=</span> <span class="s2">&#34;9002&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">connect</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">sidecar_service</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">proxy</span> {&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">upstreams</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  destination_name</span> <span class="o">=</span> <span class="s2">&#34;count-api&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  local_bind_port</span>  <span class="o">=</span> <span class="m">8080</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">task</span> <span class="s2">&#34;dashboard&#34;</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;  driver</span> <span class="o">=</span> <span class="s2">&#34;docker&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">env</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COUNTING_SERVICE_URL</span> <span class="o">=</span> <span class="s2">&#34;http://${NOMAD_UPSTREAM_ADDR_count_api}&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  <span class="k">config</span> {&#10;</span></span><span class="line"><span class="cl"><span class="n">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image</span> <span class="o">=</span> <span class="s2">&#34;hashicorpnomad/counter-dashboard:v1&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;  }&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;}&#10;</span></span><span class="line"><span class="cl">  }&#10;</span></span><span class="line"><span class="cl">}&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>connect.nomad</span>
+    </div>
+</div>
+<p>El resultado es esta aplicación sencilla de ejemplo que muestra un contador en una página web con el tiempo se va incrementando. En las consolas de administración de Consul se observan los servicios registrados y en Nomad la ejecución de los mismos.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu8c985d25713a41703bcc650f7b57262b_79368_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración de Consul"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-console_hu8c985d25713a41703bcc650f7b57262b_79368_300x200_fit_box_3.png" width="226" height="200" alt="Consola de administración de Consul" title="Consola de administración de Consul"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu54fd55ff47624b201af619067639abdb_116271_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/nomad-console_hu54fd55ff47624b201af619067639abdb_116271_300x200_fit_box_3.png" width="226" height="200" alt="Consola de administración de Nomad" title="Consola de administración de Nomad"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu9efa3299b8ef7dc069eb9ec8b701f4f9_94363_2560x1440_fit_box_3.png" data-gallery="" title="Servicio count-dashboard"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard_hu9efa3299b8ef7dc069eb9ec8b701f4f9_94363_300x200_fit_box_3.png" width="226" height="200" alt="Servicio count-dashboard" title="Servicio count-dashboard"  class="lozad "></a></p>
+<figcaption>Consola de administración de Consul y Nomad y servicio count-dashboard</figcaption>
+</figure>
+</div>
+<p>Dado que el servicio <em>count-dashboard</em> se conecta con el servicio <em>count-api</em> a través de los <em>proxys</em> que crea Consul, Consul es capaz de permitir o denegar la comunicación con las intenciones. Las intenciones son las autorizaciones concedidas a cada servicio origen y servicio destino de comunicación. La ventaja de las intenciones es que son agnósticas de la red como redes físicas, en la nube, basadas en software o cualesquiera otras ya que están basadas en la identidades de los servicios.</p>
+<p>En el modo desarrollo de Consul aún sin una intención la comunicación se autorizan las comunicaciones pero si se crea una intención que deniegue la comunicación desde el servicio <em>count-dashboard</em> a <em>count-api</em> el servicio <em>count-dashboard</em> no es capaz de recuperar el contador y se muestra desconectado. Cambiando la intención para que autorice el tráfico la comunicación se restaura y el servicio <em>count-dashboard</em> vuelve a mostrar el contador.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_huc2f2a2db30104806a5ceb8366b35ea2e_64077_2560x1440_fit_box_3.png" data-gallery="" title="Intención que deniega la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-deny_huc2f2a2db30104806a5ceb8366b35ea2e_64077_300x200_fit_box_3.png" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hud397b3ca088678316e0c34eec5fcdf4d_92971_2560x1440_fit_box_3.png" data-gallery="" title="Intención que deniega la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-deny_hud397b3ca088678316e0c34eec5fcdf4d_92971_300x200_fit_box_3.png" width="226" height="200" alt="Intención que deniega la comunicación" title="Intención que deniega la comunicación"  class="lozad "></a></p>
+<figcaption>Intención que deniega la comunicación</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu6eee299d1329773eb700066625f2c9e3_63546_2560x1440_fit_box_3.png" data-gallery="" title="Intención que permite la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-intentions-allow_hu6eee299d1329773eb700066625f2c9e3_63546_300x200_fit_box_3.png" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu66268335fb29c6245f012040cb0b70ca_96387_2560x1440_fit_box_3.png" data-gallery="" title="Intención que permite la comunicación"><img src="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/dashboard-allow_hu66268335fb29c6245f012040cb0b70ca_96387_300x200_fit_box_3.png" width="226" height="200" alt="Intención que permite la comunicación" title="Intención que permite la comunicación"  class="lozad "></a></p>
+<figcaption>Intención que permite la comunicación</figcaption>
+</figure>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/</id>
         <title>Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web</title>
@@ -21,8 +146,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <p>La necesidad puede ser hacer una copia de seguridad periódicas para conservar el historial del sitio web, descargar el contenido para procesarlo de alguna forma, para consultarlo sin conexión a internet u <em>offline</em> si nuestra conexión es lenta o inestable o el servidor está caído, migrar un sitio web de un servidor web a otro o descargar los archivos de vídeo, audio, imágenes o multimedia.</p>
 <p>Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de descargar y guardar en el sistema de archivos la página que se está visualizando, está es la opción más simple ya que no se necesitan herramientas adicionales si solo se quiere guardar una página de las muchas de un sitio web. Su desventaja es que no sirve para guardar un sitio web completo por requerir hacer la operación manualmente por cada página, de forma que para realizar la operación de forma másiva y automatizada para el sitio web completo hay que utilizar alguna herramienta especializada.</p>
@@ -42,8 +166,7 @@
 <p>Terminado el proceso de descarga el contenido del sitio web se guarda en el sistema de archivos conservando la jerarquía de carpetas de las URLs de los recursos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos del sitio web en el explorador de archivos"><img src="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_650x450_fit_box_3.png" width="650" height="375" alt="Archivos del sitio web en el explorador de archivos" title="Archivos del sitio web en el explorador de archivos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_2560x1440_fit_box_3.png" data-gallery="" title="Archivos del sitio web en el explorador de archivos"><img src="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_650x450_fit_box_3.png" width="650" height="375" alt="Archivos del sitio web en el explorador de archivos" title="Archivos del sitio web en el explorador de archivos"  class="lozad "></a></p>
 <figcaption>Archivos del sitio web en el explorador de archivos</figcaption>
 </figure>
 </div>
@@ -77,12 +200,10 @@
         <content type="html">
         <![CDATA[<p><strong>En el navegador del usuario hay varias formas de guardar información con diferentes propósitos que perdure entre las visitas realizadas en varias sesiones. Los navegadores ofrecen tres formas de guardar datos: cookies, LocalStorage y SessionStorage e IndexedDB cada una con diferentes características y utilizables con código JavaScript.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/javascript.svg" width="200" height="200" alt="JavaScript" title="JavaScript"  class=""></p>
 </div>
 <p>Las aplicaciones web utilizan la arquitectura cliente/servidor comunicándose mediante la red para enviar y recibir datos. El cliente ya sea un navegador web en un ordenador de escritorio o portátil o bien sea un dispositivo móvil inicia las solicitudes al servidor y el servidor devuelve una respuesta. La respuesta del servidor puede ser contenido HTML o datos en formato JSON en el caso de recursos REST o <a href="https://graphql.org/">GraphQL</a>.</p>
 <p>Aún con la cada vez mayor ancho de banda de las redes cada petición al servidor con comunicación mediante la red implica una latencia en la respuesta de unas decenas de milisegundos que se aprecia en la fluidez de las aplicaciones. Para evitar estas latencias y mejorar la experiencia de uso de las aplicaciones web hay varias estrategias, reducir el número de peticiones de una página web o aplicación web, reducir la cantidad de datos transmitidos y cuando sea posible cachear los recursos y datos para no tener que solicitarlos en cada petición ni en futuras visitas al servidor.</p>
@@ -120,8 +241,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos almacenados con cookies"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_650x450_fit_box_3.png" width="650" height="283" alt="Datos almacenados con cookies" title="Datos almacenados con cookies"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_2560x1440_fit_box_3.png" data-gallery="" title="Datos almacenados con cookies"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/cookie_hu9ef5d2a4228b75841797f159c0f1ef0a_37913_650x450_fit_box_3.png" width="650" height="283" alt="Datos almacenados con cookies" title="Datos almacenados con cookies"  class="lozad "></a></p>
 <figcaption>Inspección de datos almacenados con cookies</figcaption>
 </figure>
 </div>
@@ -154,8 +274,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos almacenados con LocalStorage"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_650x450_fit_box_3.png" width="650" height="270" alt="Datos almacenados con LocalStorage" title="Datos almacenados con LocalStorage"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_2560x1440_fit_box_3.png" data-gallery="" title="Datos almacenados con LocalStorage"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/localstorage_hu3cf176b99ebcaf68cf723dc7513b2237_32565_650x450_fit_box_3.png" width="650" height="270" alt="Datos almacenados con LocalStorage" title="Datos almacenados con LocalStorage"  class="lozad "></a></p>
 <figcaption>Inspección de datos almacenados con LocalStorage</figcaption>
 </figure>
 </div>
@@ -181,8 +300,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Datos almacenados con IdexedDB"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_650x450_fit_box_3.png" width="650" height="321" alt="Datos almacenados con IdexedDB" title="Datos almacenados con IdexedDB"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_2560x1440_fit_box_3.png" data-gallery="" title="Datos almacenados con IdexedDB"><img src="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/images/indexeddb_hu2acdc3aecfe002671329bd6251b124cb_35516_650x450_fit_box_3.png" width="650" height="321" alt="Datos almacenados con IdexedDB" title="Datos almacenados con IdexedDB"  class="lozad "></a></p>
 <figcaption>Inspección de datos almacenados con IndexedDB</figcaption>
 </figure>
 </div>
@@ -396,8 +514,7 @@
         <content type="html">
         <![CDATA[<p><strong>Las distribuciones BSD tienen aún menor cuota de uso que las distribuciones GNU/Linux pero al igual que estas tiene una licencia de software libre aún más permisiva que las GNU/Linux y también se basan en la filosofía UNIX. Pero también tienen diferencias importantes en varios aspectos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bsd.svg" width="250" height="116" alt="BSD" title="BSD"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bsd.svg" width="250" height="116" alt="BSD" title="BSD"  class=""></p>
 </div>
 <p>De los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a> es el más popular en el uso en empresas y en los ordenadores personales con una cuota de uso del 90% prácticamente de monopolio. La siguiente opción más popular a nivel de usuario es <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a> como única opción de sus equipos portátiles y de escritorio, macOS tiene una cuota de uso de un 7%. Con una cota de uso en el escritorio de apenas el el 3% la siguiente opción es alguna de las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, tiene una cuota de uso tan pequeña porque prácticamente todos los equipos vendidos en grandes superficies incorporan Windows preinstalado, para usar GNU/Linux son los usuarios los que de forma expresa han de instalar GNU/Linux reemplazando a Windows aunque en los últimos años hay varias marcas que ofrecen GNU/Linux como opción entre ellas <a href="https://slimbook.es/">Slimbook</a> y <a href="https://www.vantpc.es/">Vant</a>. En el lado del servidor GNU/Linux si tiene una mucha mayor cuota de uso por encima incluso de Windows, muchos de los servicios ofrecidos por las compañías más importantes usan alguna distribución de GNU/Linux como sistema operativo. Las distribuciones empresariales GNU/Linux más populares son <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RHEL</a> de <a href="https://www.redhat.com/es">RedHat</a>, <a href="https://www.ubuntu.com/">Ubuntu</a> de <a href="https://www.canonical.com/">Canonical</a> o <a href="https://www.suse.com/es-es/products/server/">SLES</a> de <a href="https://www.suse.com/es-es/">SUSE</a>.</p>
 <p>Otra familia de sistemas operativos basados en UNIX al igual que GNU/Linux son las distribuciones BSD. Si la cuota de uso a nivel personal de GNU/Linux es muy reducida la de los sistemas operativos BSD es aún mucho más reducida, no llega al 0,5%, teniendo algo de mayor presencia como sistema de servidores con una comunidad de usuarios pequeña pero al igual que la de GNU/Linux activa que comparte y colabora en el desarrollo.</p>
@@ -405,12 +522,9 @@
 <p>Aunque solo para representar a los proyectos una diferencia está en su mascota, en Linux es <em>Tux</em>, en BSD es <em>Beastie</em> y en GNU es un ñu.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" data-gallery="data-gallery" title="Tux la mascota de Linux"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="300" height="200" alt="Tux la mascota de Linux" title="Tux la mascota de Linux"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" data-gallery="data-gallery" title="Bestie la mascota de BSD"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" width="300" height="200" alt="Bestie la mascota de BSD" title="Bestie la mascota de BSD"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" data-gallery="data-gallery" title="GNU la mascota de GNU"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="300" height="200" alt="GNU la mascota de GNU" title="GNU la mascota de GNU"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" data-gallery="" title="Tux la mascota de Linux"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="300" height="200" alt="Tux la mascota de Linux" title="Tux la mascota de Linux"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" data-gallery="" title="Bestie la mascota de BSD"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/beastie.png" width="300" height="200" alt="Bestie la mascota de BSD" title="Bestie la mascota de BSD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" data-gallery="" title="GNU la mascota de GNU"><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="300" height="200" alt="GNU la mascota de GNU" title="GNU la mascota de GNU"  class="lozad "></a></p>
 <figcaption>Mascotas de Linux, BSD y GNU</figcaption>
 </figure>
 </div>
@@ -449,19 +563,14 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/freebsd.svg" width="150" height="150" alt="FreeBSD" title="FreeBSD"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/freebsd.svg" width="150" height="150" alt="FreeBSD" title="FreeBSD"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openbsd.svg" width="150" height="150" alt="OpenBSD" title="OpenBSD"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/netbsd.svg" width="150" height="150" alt="NetBSD" title="NetBSD"  class="lozad "></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/midnightbsd.svg" width="150" height="150" alt="MidnightBSD" title="MidnightBSD"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/midnightbsd.svg" width="150" height="150" alt="MidnightBSD" title="MidnightBSD"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dragonflybsd.svg" width="150" height="150" alt="DragonFly" title="DragonFly"  class="lozad "></p>
 <figcaption>Varias de las distribuciones más importantes de BSD</figcaption>
 </figure>
@@ -504,21 +613,15 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="150" height="150" alt="Ubuntu" title="Ubuntu"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="150" height="150" alt="Ubuntu" title="Ubuntu"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/opensuse.svg" width="150" height="150" alt="openSUSE" title="openSUSE"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/debian.svg" width="150" height="150" alt="Debian" title="Debian"  class="lozad "></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="150" height="150" alt="Arch Linux" title="Arch Linux"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="150" height="150" alt="Arch Linux" title="Arch Linux"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora.svg" width="150" height="150" alt="Fedora" title="Fedora"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/elementary.svg" width="150" height="150" alt="elementary OS" title="elementary OS"  class="lozad "></p>
 </figure>
 </div>
@@ -557,8 +660,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En las aplicaciones web basadas en el protocolo HTTP la petición al servidor es el desencadenante de la ejecución de la acción que le da respuesta. Algunas acciones no dependen de la solicitud de un usuario o de la recepción de un mensaje sino que se han de ejecutar de forma periódica cada cierto tiempo o de forma planificada en tiempos determinados. Por ejemplo, una tarea que necesite ejecutarse todos los días a las 3 de la mañana o cada 5 minutos.</p>
 <p><a href="https://quartz-scheduler.org/">Quartz</a> es una de las librerías en la plataforma Java que proporciona la funcionalidad de planificador de tareas, permite ejecutar tareas de forma periódica o de forma planificada en determinados tiempos utilizando <a href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">expresiones cron</a>.</p>
@@ -680,8 +782,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
 </div>
 <p>Que leáis este blog para mi es mucho aparte de para compartir conocimiento que voy aprendiendo me permite canalizar la frustración de no poder usar en el trabajo mucho de lo que escribo, demasiados años ya. Los pocos comentarios, <em>retweets</em> y favoritos en twitter que recibo me hacen no perder la esperanza y en cierta medida me anima a seguir escribiendo. Aunque se que mi motivación no debería depender de esto si encima no recibiese vistas sería algo que me desmotivaría.</p>
 <p>En meses anteriores he mejorado el diseño del blog, aún tengo mejoras pendientes que realizar pero no el suficiente tiempo para realizarlas. En los siguientes meses quiero aprender al menos a un nivel básico más sobre temas de SEO para que el tiempo que dedico al blog tenga el máximo rendimiento. Empezaré al publicar los artículos haciendo un pequeño análisis de palabras clave y primeras posiciones de resultados para el título que ponga en el artículo en el buscador Google y en la herramienta Google Search Console. Para los nuevos artículos que escribo pero también para los más visitados que he escrito, introduciendo en ellos algunos pequeños cambios y actualizaciones. Otro aspecto de SEO que tendré en cuenta es la intención de búsqueda, es decir, lo que un usuario espera encontrar cuando hace una búsqueda, normalmente la respuesta que se espera es a la pregunta ¿qué es? o ¿cómo? con lo que incluir un párrafo la respuesta a estas preguntas posiblemente los artículos posicionan mejor en Google.</p>
@@ -774,8 +875,7 @@
         <content type="html">
         <![CDATA[<p><strong>El lenguaje de programación Java utiliza un paradigma orientado a objetos pero también emplea otros paradigmas como el funcional con la incorporación de las <em>lambas</em> en Java 8 y el imperativo en los bloques de sentencias de los métodos. En este artículo están los tipos de sentencias de control de flujo disponibles en el lenguaje de programación Java: condicionales, de repetición, de asignación, de gestión de excepciones e invocación de métodos en Java.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Java es un lenguaje orientado a objetos donde aplicando los principios de encapsulación, herencia y polimorfismo, el código está dentro de los métodos de las clases de los objetos. El código dentro de los métodos sigue los principios de los lenguajes imperativos con una secuencia de sentencias de asignación, control de flujo, llamada a otros métodos y de repetición, más recientemente con la <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">incorporación de las <em>lambdas</em> y referencias a métodos en Java 8</a> es posible emplear también un enfoque de programación funcional.</p>
 <p>La orientación a objetos es una forma de organizar el código y los datos que maneja ese código de modo que se respeten los principios de encapsulación, una forma de reutilizar el código con herencia y una forma de abstraer el comportamiento dependiendo de la clase concreta que implementa el método. Pero el código de Java no es únicamente código orientado a objetos también es un lenguaje imperativo para el código de los métodos.</p>
@@ -806,10 +906,8 @@
 <p>Las sentencias condicionales son un tipo de sentencia que evalúa una expresión booleana y dependiendo de su valor verdadero o falso ejecuta o no su su bloque de sentencias asociado para cada caso. Las sentencias a continuación de la condición se ejecutan si la sentencia <em>if</em> se evalúa como verdadero. La sentencia <em>if</em> además puede tener otro bloque de sentencias a ejecutar si la expresión booleana se evalúa como falso, el bloque de sentencias <em>else</em>. Las sentencias <em>if</em> y <em>else</em> se pueden encadenar.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if_hu24be44068bad4ad403a69b425c847805_22416_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia if"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if_hu24be44068bad4ad403a69b425c847805_22416_300x200_fit_box_3.png" width="200" height="200" alt="Diagrama sentencia if" title="Diagrama sentencia if"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia if-else"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_300x200_fit_box_3.png" width="200" height="200" alt="Diagrama sentencia if-else" title="Diagrama sentencia if-else"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if_hu24be44068bad4ad403a69b425c847805_22416_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama sentencia if"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if_hu24be44068bad4ad403a69b425c847805_22416_300x200_fit_box_3.png" width="200" height="200" alt="Diagrama sentencia if" title="Diagrama sentencia if"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama sentencia if-else"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_300x200_fit_box_3.png" width="200" height="200" alt="Diagrama sentencia if-else" title="Diagrama sentencia if-else"  class="lozad "></a></p>
 <figcaption>Diagramas sentencias if e if-else <br>Fuente: beginnersbook.com</figcaption>
 </figure>
 </div>
@@ -822,8 +920,7 @@
 <p>Cuando una sentencia <em>if</em> tiene muchas ramas y la expresión condicional comprueba en todos los casos diferentes valores de una misma variable se utiliza la sentencia <em>switch</em>. Si el valor de la variable coincide con el valor del bloque del caso se ejecutan las sentencias de ese bloque. Cada bloque ha de estar finalizado con sentencia <em>break</em> para no evaluar las sentencias del siguiente bloque. El caso <em>default</em> permite ejecutar un bloque de sentencias si el valor de la expresión no coincide con ninguno de los valores de los casos, siendo como la parte <em>else</em> de las sentencias <em>if</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-switch_hue79c7c08074a91052aa727bb0477f63b_30615_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia switch"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-switch_hue79c7c08074a91052aa727bb0477f63b_30615_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia switch" title="Diagrama sentencia switch"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-switch_hue79c7c08074a91052aa727bb0477f63b_30615_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama sentencia switch"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-switch_hue79c7c08074a91052aa727bb0477f63b_30615_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia switch" title="Diagrama sentencia switch"  class="lozad "></a></p>
 <figcaption>Diagrama sentencia switch <br>Fuente: beginnersbook.com</figcaption>
 </figure>
 </div>
@@ -846,8 +943,7 @@
 <p>La sentencia <em>while</em> ejecuta un bloque de sentencias mientras se cumpla una condición, puede ocurrir el caso de que la condición de la sentencia <em>while</em> no se cumpla y por tanto el bloque de sentencias de repetición no se ejecute ninguna vez. La comprobación de la condición se realiza antes de entrar al bucle.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-while_huf093fb746d2329da27a844c76e69b7da_26135_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia while"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-while_huf093fb746d2329da27a844c76e69b7da_26135_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia while" title="Diagrama sentencia while"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-while_huf093fb746d2329da27a844c76e69b7da_26135_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama sentencia while"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-while_huf093fb746d2329da27a844c76e69b7da_26135_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia while" title="Diagrama sentencia while"  class="lozad "></a></p>
 <figcaption>Diagrama sentencia while <br>Fuente: beginnersbook.com</figcaption>
 </figure>
 </div>
@@ -860,8 +956,7 @@
 <p>En el bucle <em>do-while</em> la comprobación de la condición está después del bloque de sentencias de repetición, a diferencia del bucle <em>while</em> en el <em>do-while</em> el bloque de sentencias se ejecutan al menos una vez.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-do-while_hu629e120eb684631fa9ee57f6de9a81d1_24851_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia do-while"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-do-while_hu629e120eb684631fa9ee57f6de9a81d1_24851_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia do-while" title="Diagrama sentencia do-while"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-do-while_hu629e120eb684631fa9ee57f6de9a81d1_24851_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama sentencia do-while"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-do-while_hu629e120eb684631fa9ee57f6de9a81d1_24851_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia do-while" title="Diagrama sentencia do-while"  class="lozad "></a></p>
 <figcaption>Diagrama sentencia do-while <br>Fuente: beginnersbook.com</figcaption>
 </figure>
 </div>
@@ -874,8 +969,7 @@
 <p>La sentencia <em>for</em> utilizan otra sintaxis para realizar bucles, una de las <a href="https://picodotdev.github.io/blog-bitix/2017/07/4-formas-de-hacer-un-bucle-for-en-java/">4 formas de hacer un bucle for</a> contiene una inicialización, condición de repetición e incremento además del bloque de sentencias a ejecutar. Otras formas de bucle <em>for</em> son el <em>forearch</em> para colecciones de objetos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-for_hud5f47070ff90265ccb71bfee4101b702_32192_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia for"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-for_hud5f47070ff90265ccb71bfee4101b702_32192_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia for" title="Diagrama sentencia for"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-for_hud5f47070ff90265ccb71bfee4101b702_32192_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama sentencia for"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-for_hud5f47070ff90265ccb71bfee4101b702_32192_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia for" title="Diagrama sentencia for"  class="lozad "></a></p>
 <figcaption>Diagrama sentencia for <br>Fuente: beginnersbook.com</figcaption>
 </figure>
 </div>
@@ -888,8 +982,7 @@
 <p>Dentro de las sentencias de bucle se pueden emplear las palabras reservadas <em>break</em> y <em>continue</em>. La sentencia <em>break</em> permite salir del bucle inmediatamente sin necesidad de evaluar la condición. La palabra <em>continue</em> dejar de ejecutar sentencias del bucle y evaluar de nuevo la condición de bucle, si se sigue cumpliendo la condición se ejecuta de nuevo el bloque de sentencias. Las sentencias <em>break</em> y <em>continue</em> normalmente se utilizan dentro de una sentencia condicional <em>if</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-continue_hubff1e9b9e07bd4ea44d8fd04d9b9a57c_28193_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama sentencia continue"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-continue_hubff1e9b9e07bd4ea44d8fd04d9b9a57c_28193_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia continue" title="Diagrama sentencia continue"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-continue_hubff1e9b9e07bd4ea44d8fd04d9b9a57c_28193_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama sentencia continue"><img src="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-continue_hubff1e9b9e07bd4ea44d8fd04d9b9a57c_28193_650x450_fit_box_3.png" width="400" height="400" alt="Diagrama sentencia continue" title="Diagrama sentencia continue"  class="lozad "></a></p>
 <figcaption>Diagrama sentencia continue <br>Fuente: beginnersbook.com</figcaption>
 </figure>
 </div>
@@ -946,8 +1039,7 @@
         <content type="html">
         <![CDATA[<p><strong>Las bases de datos tiene la capacidad de generar identificativos para los datos que se insertan. En el caso de las bases de datos relacionales con secuencias que generan en el momento de inserción la clave primaria de la fila en una tabla, normalmente es un número y utilizando Java con JPA con las anotaciones <em>Id</em>, <em>GeneratedValue</em> y <em>SequenceGenerator</em> en la clase Java que representa a la entidad. Para Domain Driven Design delegar en el momento de inserción la generación del identificativo de la entidad es un problema ya que hace que la entidad sea inválida al no tener identidad hasta persistirla y la base de datos es un elemento externo que debe ser independizado del dominio de la aplicación. En este artículo comento una implementación siguiendo los principios de DDD para dar solución a estos dos problemas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Tradicionalmente la tarea de generar los identificativos de las entidades de dominio se delega en la base de datos en el momento de persistir la entidad. La base de datos en la columna de la tabla de la entidad para el identificativo generalmente es de tipo numérico y la base de datos le asigna un valor incremental para cada fila o entidad guardada.</p>
 <p>Este modelo de delegar en la base de datos el generar la identificativos de las entidades tiene dos problemas en la teoría de <a href="https://en.wikipedia.org/wiki/Domain-driven_design">Domain Driven Design</a> o <em>DDD</em>:</p>
@@ -1058,21 +1150,17 @@
         <content type="html">
         <![CDATA[<p><strong>El formato de imagen SVG tiene la ventaja de permitir el escalado de la imagen sin pérdida de calidad y suele tener menor tamaño que la imagen equivalente en formato PNG y JPG. Si es necesario la imagen SVG es exportable a formato de imagen PNG y JPG con el tamaño deseado o color de fondo. El editor de imágenes Inkscape permite con su utilidad de línea de comandos automatizar y exportar archivos SVG a PNG y JPG y ocultar y mostrar las capas deseadas del archivo original para obtener el resultado deseado en la exportación.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/inkscape.svg" width="200" height="200" alt="Inkscape" title="Inkscape"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/inkscape.svg" width="200" height="200" alt="Inkscape" title="Inkscape"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <p>El formato de imagen SVG es un formato de imagen vectorial donde las líneas, formas, posición y colores se describen en formato texto, tiene la ventaja de ser un formato escalable que no pierde resolución independiente del tamaño de imagen en la que se represente, es decir, la imagen tiene la misma calidad al tamaño <em>full hd</em> 1920x1080 que a 4K 3840x2560 que en 800x600 píxeles.</p>
 <p>Con las imágenes de fotos en formato JPG y sin pérdida de calidad PNG la resolución adecuada para mostrar estas imágenes es la original del archivo a otra resolución hay que hacer un escalado con un algoritmo para añadir o quitar píxeles, el escalado es una operación imprecisa que resta algo de calidad a la imagen. <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/">Escalar el tamaño de una imagen JPG o PNG</a> es necesario para obtener la imagen en otros tamaños, dependiendo del número de píxeles a añadir si se hace más grande que la original o píxeles a quitar si se reduce el tamaño la pérdida de calidad se nota más o menos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen en formato JPG original"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_300x200_fit_q90_box.jpg" width="300" height="200" alt="Imagen en formato JPG original" title="Imagen en formato JPG original"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607-thumb-300x200_hue65376be7c7ffd5e9c6116f7adcd1047_48389_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen en formato JPG escalada a 300x200 píxeles"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607-thumb-300x200_hue65376be7c7ffd5e9c6116f7adcd1047_48389_300x200_fit_q90_box.jpg" width="300" height="200" alt="Imagen en formato JPG escalada a 300x200 píxeles" title="Imagen en formato JPG escalada a 300x200 píxeles"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_2560x1440_fit_q90_box.jpg" data-gallery="" title="Imagen en formato JPG original"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_300x200_fit_q90_box.jpg" width="300" height="200" alt="Imagen en formato JPG original" title="Imagen en formato JPG original"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607-thumb-300x200_hue65376be7c7ffd5e9c6116f7adcd1047_48389_2560x1440_fit_q90_box.jpg" data-gallery="" title="Imagen en formato JPG escalada a 300x200 píxeles"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/201607-thumb-300x200_hue65376be7c7ffd5e9c6116f7adcd1047_48389_300x200_fit_q90_box.jpg" width="300" height="200" alt="Imagen en formato JPG escalada a 300x200 píxeles" title="Imagen en formato JPG escalada a 300x200 píxeles"  class="lozad "></a></p>
 <figcaption>Imagen en formato JPG original y escalada a 300x200 píxeles</figcaption>
 </figure>
 </div>
@@ -1087,8 +1175,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry.svg" data-gallery="data-gallery" title="Imagen original en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry.svg" width="300" height="200" alt="Imagen original en formato SVG" title="Imagen original en formato SVG"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry.svg" data-gallery="" title="Imagen original en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry.svg" width="300" height="200" alt="Imagen original en formato SVG" title="Imagen original en formato SVG"  class="lozad "></a></p>
 <figcaption>Imagen original en formato SVG</figcaption>
 </figure>
 </div>
@@ -1101,26 +1188,20 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-light_hu7e5404fb1aa31fe342672ad8214b2b9f_60725_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-light_hu7e5404fb1aa31fe342672ad8214b2b9f_60725_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-dark_hub5b4d74b8d14e46515940c00029d3bc7_61131_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-dark_hub5b4d74b8d14e46515940c00029d3bc7_61131_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-light_hu7e5404fb1aa31fe342672ad8214b2b9f_60725_2560x1440_fit_box_3.png" data-gallery="" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-light_hu7e5404fb1aa31fe342672ad8214b2b9f_60725_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-dark_hub5b4d74b8d14e46515940c00029d3bc7_61131_2560x1440_fit_box_3.png" data-gallery="" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-800-dark_hub5b4d74b8d14e46515940c00029d3bc7_61131_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-light_hu63592ed543dc04b632a0db3b544af56d_82881_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-light_hu63592ed543dc04b632a0db3b544af56d_82881_300x200_fit_box_3.png" width="200" height="200" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-dark_hu5561b3fa2c992556c74875e00a747250_83588_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-dark_hu5561b3fa2c992556c74875e00a747250_83588_300x200_fit_box_3.png" width="200" height="200" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-light_hu63592ed543dc04b632a0db3b544af56d_82881_2560x1440_fit_box_3.png" data-gallery="" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-light_hu63592ed543dc04b632a0db3b544af56d_82881_300x200_fit_box_3.png" width="200" height="200" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-dark_hu5561b3fa2c992556c74875e00a747250_83588_2560x1440_fit_box_3.png" data-gallery="" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-800-dark_hu5561b3fa2c992556c74875e00a747250_83588_300x200_fit_box_3.png" width="200" height="200" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-light_hu71918ce05912a609bbe5cfa98bdae2be_39579_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-light_hu71918ce05912a609bbe5cfa98bdae2be_39579_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-dark_hud4e768763c312754ca970d2d59adcda4_39231_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-dark_hud4e768763c312754ca970d2d59adcda4_39231_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-light_hu71918ce05912a609bbe5cfa98bdae2be_39579_2560x1440_fit_box_3.png" data-gallery="" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-light_hu71918ce05912a609bbe5cfa98bdae2be_39579_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-dark_hud4e768763c312754ca970d2d59adcda4_39231_2560x1440_fit_box_3.png" data-gallery="" title="Imagen en formato PNG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-800-dark_hud4e768763c312754ca970d2d59adcda4_39231_300x200_fit_box_3.png" width="300" height="134" alt="Imagen en formato PNG" title="Imagen en formato PNG"  class="lozad "></a></p>
 <figcaption>Diferentes versiones de la imagen SVG en formato PNG</figcaption>
 </figure>
 </div>
@@ -1133,26 +1214,20 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-light.svg" data-gallery="data-gallery" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-light.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="white-background lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-dark.svg" data-gallery="data-gallery" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-dark.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="black-background lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-light.svg" data-gallery="" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-light.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="white-background lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-dark.svg" data-gallery="" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icontext-dark.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="black-background lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-light.svg" data-gallery="data-gallery" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-light.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="white-background lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-dark.svg" data-gallery="data-gallery" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-dark.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="black-background lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-light.svg" data-gallery="" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-light.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="white-background lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-dark.svg" data-gallery="" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-icon-dark.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="black-background lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-light.svg" data-gallery="data-gallery" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-light.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="white-background lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-dark.svg" data-gallery="data-gallery" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-dark.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="black-background lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-light.svg" data-gallery="" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-light.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="white-background lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-dark.svg" data-gallery="" title="Imagen en formato SVG"><img src="https://picodotdev.github.io/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/images/apache-tapestry-text-dark.svg" width="300" height="200" alt="Imagen en formato SVG" title="Imagen en formato SVG"  class="black-background lozad "></a></p>
 <figcaption>Diferentes versiones de la misma imagen SVG</figcaption>
 </figure>
 </div>
@@ -1178,12 +1253,10 @@
         <content type="html">
         <![CDATA[<p><strong>Los métodos de búsqueda y consulta permiten recuperar objetos de las bases de datos según los criterios deseados. Dependiendo del tamaño de la aplicación y sus casos de uso el número de consultas será más o menos grande. Con un número de consultas grande estas se vuelven complejas de mantener y generan duplicación de lógica de negocio. Para simplificar el mantenimiento de un número grande de consultas y evitar duplicidad de lógica de negocio una solución es implementar el patrón de diseño <em>Specification</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <p>Dado un objeto suele ser necesario comprobar si cumple una o más condiciones. Estas condiciones pueden implementarse tanto en un método del objeto como en la lógica de persistencia en la base de datos.</p>
 <p>Esta aproximación tiene dos inconvenientes, el número de métodos de consulta crece significativamente en las aplicaciones grandes y las consultas son conjunto fijo sin posibilidad de extensión salvo añadir nuevos métodos, las consultas no son fáciles de externalizar y reutilizar.</p>
@@ -1347,8 +1420,7 @@
         <content type="html">
         <![CDATA[<p><strong>Algunas partes del código no es posibles probarlas con teses unitarios ya que tienen dependencias como una base de datos. En estos casos es necesario realizar un test de integración, la dificultad reside en tener esta dependencia en el entorno de pruebas. La herramienta Testcontainers permite iniciar un contenedor Docker con la dependencia cuando el test se ejecuta.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/testcontainers.svg" width="200" height="200" alt="Testcontainers" title="Testcontainers"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/testcontainers.svg" width="200" height="200" alt="Testcontainers" title="Testcontainers"  class=""></p>
 </div>
 <p>Las pruebas automatizadas permiten validar que el comportamiento del software es el esperado. Permiten verificar que ante cambios no se introducen errores, generan mayor confianza en que el software funciona como se espera y evitan la necesidad de realizar pruebas manuales lentas y repetitivas.</p>
 <p>Las pruebas más numerosas son las unitarias que prueban un componente del software de forma aislada de sus dependencias sin invocar operaciones de red. Las dependencias del componente bajo la prueba no son las reales, las dependencias simulan el comportamiento de los componentes a los que sustituyen por <em>stubs</em> o <em>mocks</em> para analizar cómo se comporta el sujeto bajo la prueba o SUT. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/">qué es un SUT, fake, stub, mock y spy</a> describo este tipo de objetos que sustituyen a las dependencias reales.</p>
@@ -1455,8 +1527,7 @@
         <content type="html">
         <![CDATA[<p><strong>En ocasiones es necesario tener instaladas varias versiones de JDK según el proyecto, unos quizá usen Java 8 y otros quizá usen Java 11 o posterior. El gestor de software SDKMAN permite instalar múltiples versiones del JDK de forma simultánea y usar la deseada a conveniencia. Adicionalmente también permite instalar otras herramientas de la plataforma Java como Gradle y Maven o lenguajes como Groovy entre otros SDK comunes disponibles.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sdkman.svg" width="300" height="175" alt="SDKMAN" title="SDKMAN"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sdkman.svg" width="300" height="175" alt="SDKMAN" title="SDKMAN"  class=""></p>
 </div>
 <p>Cuando usaba <a href="https://www.microsoft.com/es-es/windows/">Windows</a> para instalar el JDK para programar en Java siempre me lo descargaba de la página de <a href="https://www.oracle.com/">Oracle</a>, el típico instalador de Windows con un asistente que dejaba el JDK instalado en el sistema. Desde que uso <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> siempre he usado la versión del JDK del proyecto <a href="https://openjdk.java.net/">OpenJDK</a> del que el JDK de Oracle toma como fuente y posteriormente la empresa de Larry Ellison añade sus modificaciones y extensiones algunas no libres.</p>
 <p>El inconveniente surge cuando hay que instalar una nueva versión, lo que posiblemente implica desinstalar la antigua y repetir el proceso de instalación con la nueva. En Windows hasta donde he conocido un proceso manual que ahora con WinGet al estilo de los gestores de paquetes de GNU/Linux lo mantenga actualizado al actualizar el sistema sin apenas intervención por parte del usuario.</p>
@@ -1510,8 +1581,7 @@
         <content type="html">
         <![CDATA[<p><strong>Las clases DTO son clases usadas como contenedores de datos sin ninguna lógica o con muy poca, se construyen con datos copiados de otras clases. Un uso de estas clases DTO es para evitar emplear el uso del patrón <em>Open Session in View</em> ya que aunque ofrece algunos beneficios también tiene algunos inconvenientes. La librería ModelMapper permite realizar los copiados de datos de un objeto origen a una nueva instancia destino de otra clase.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En ocasiones es necesario copiar datos de un tipo de objeto a otro tipo, no es una operación complicada basta con llamar al método <em>getter</em> de la propiedad a copiar para obtener su valor del objeto origen y posteriormente llamar al <em>setter</em> para establecer el valor en objeto destino. Aún siendo una operación sencilla es tediosa y puede complicarse si se han de copiar listas de objetos y si esos objetos a copiar tienen referencias a otros objetos que también hay que copiar. Si además esta es una operación común en el código es conveniente utilizar una librería específica para este propósito, una de ellas es <a href="http://modelmapper.org/">ModelMapper</a>.</p>
 <p>ModelMapper es una librería Java para copiar o <em>mapear</em> propiedades de un tipo de objeto a otro tipo de objeto, permitiendo copiar también los datos de las referencias a los objetos que contengan. Soporta diferentes convenciones, copiados explícitos, conversiones y proveedores para construir los objetos destino e integraciones con diferentes librerías, una de ellas <a href="https://www.jooq.org/">jOOQ</a>.</p>
@@ -1595,8 +1665,7 @@
         <content type="html">
         <![CDATA[<p><strong>En patrón <em>Open Session in View</em> lo que hace es mantener abierta la conexión a la base de datos durante toda la petición a un servidor. Esto tiene la ventaja de que en cualquier momento es posible recuperar datos de la base de datos, incluso desde las vistas pero tiene inconvenientes ya que las conexiones a la base de datos son un recurso escaso. Si además durante la petición se hacen peticiones a otros servicios que añaden tiempo de procesamiento la aplicación es posible que tenga problemas de escalabilidad con muchos usuarios y peticiones durante un corto periodo de tiempo.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La librería <a href="https://hibernate.org/">Hibernate</a> proporciona persistencia del modelo de objetos del lenguaje Java al modelo de las bases de datos relacionales de una forma sin que el programador necesite lanzar las consultas SQL directamente por lo general. Con Hibernate los objetos de las relaciones se cargan de los datos de las filas de la base de datos cuando son solicitadas si la relación es <em>lazy</em> o al obtener el objeto en el modo <em>eager</em>.</p>
 <p>El modo <em>lazy</em> tiene la ventaja de que los datos de las relaciones solo se cargan si se necesitan pero tiene el inconveniente de producir más SQLs a la base de datos. El modelo <em>eager</em> carga los datos con menos SQLs pero carga más datos de los necesarios si no se necesitan.</p>
@@ -1605,8 +1674,7 @@
 <p>En este diagrama se aprecia su funcionamiento. La primera acción en una petición es abrir una sesión para obtener datos de la base de datos, lo que se traduce en apropiarse de una conexión a la base de datos. El flujo del programa procesa la petición invocando la lógica de la aplicación y empleando los diferentes servicios en las diferentes capas formadas por el controlador, servicio y DAO para el acceso a la base de datos. El último paso es generar el resultado que es devuelto al cliente, puede ser contenido HTML o un resultado en formato JSON si es un servicio REST. En este punto se accede de nuevo a la base de datos para recuperar las relaciones <em>lazy</em> de los objetos que fueron devueltas por el servicio, esto es habitual en el caso de emplear un ORM como Hibernate o JPA.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama del patrón open session in view"><img src="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_650x450_fit_box_3.png" width="650" height="286" alt="Diagrama del patrón open session in view" title="Diagrama del patrón open session in view"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama del patrón open session in view"><img src="https://picodotdev.github.io/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_650x450_fit_box_3.png" width="650" height="286" alt="Diagrama del patrón open session in view" title="Diagrama del patrón open session in view"  class="lozad "></a></p>
 <figcaption>Diagrama del patrón open session in view <br>Fuente: vladmihalcea.com</figcaption>
 </figure>
 </div>
@@ -1654,84 +1722,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/</id>
-        <title>El problema de seguridad tabnabbing y phishing en los enlaces en nuevas pestañas a páginas externas y cómo solucionarlo</title>
-        <updated>2020-05-24T10:00:00+02:00</updated>
-        <published>2020-05-24T10:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>A medida que las personas dependen en mayor medida para operar en internet como compras, acceso a cuentas bancarias o trámites administrativos la seguridad de las aplicaciones web es más crítica. Una parte de la seguridad es responsabilidad del usuario pero otra parte importante es responsabilidad del sitio web. Un potencial problema de seguridad está en los simples y aparentemente inocentes enlaces abiertos en nuevas páginas si al mismo tiempo es posible insertar contenido en la página que otros usuarios obtengan. El resultado es una vulnerabilidad de <em>tabnabbing</em> y <em>phishing</em>.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/html.svg" width="200" height="200" alt="HTML" title="HTML"  class=""></p>
-</div>
-<p>Es bueno conocer los problemas de seguridad más comunes en las aplicaciones web. Aún siendo la lista de <a href="https://owasp.org/www-project-top-ten/">los 10 problemas de seguridad más importantes</a> muy conocidos aún siguen siendo de los más importantes por seguir habiendo aplicaciones vulnerables a ellos y por su gravedad para la seguridad de los datos así como para explotar una aplicación.</p>
-<p>Aún así no son los únicos importantes, algunos ni siquiera requieren complejas técnicas para explotarlos. Uno de ellos son los enlaces externos que se abren en páginas en blanco. El problema de seguridad reside en que el modo de funcionamiento por defecto de estos enlaces se permite el acceso a la ventana origen desde la página abierta. Esto hace que la página abierta potencialmente sea capaz de tomar el control de la ventana origen y modificar su contenido, por ejemplo cargando una página maliciosa para hacer un peligroso ataque de suplantación de identidad o <em>phishing</em> que simule una página legítima con la intención de robar las contraseñas de algún servicio importante de un usuario.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="hl"><span class="lnt"> 8&#10;</span></span><span class="hl"><span class="lnt"> 9&#10;</span></span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span> <span class="p">/&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;</span></span><span class="line hl"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;external.html&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>Open page<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;</span></span><span class="line hl"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;external.html&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;noopener noreferrer&#34;</span><span class="p">&gt;</span>Open page (secure)<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>page.html</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-1_hue72212653050e8e7191533ee0a6df7cd_19649_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página con enlaces a otras páginas abiertas en una nueva pestaña"><img src="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-1_hue72212653050e8e7191533ee0a6df7cd_19649_300x200_fit_box_3.png" width="261" height="200" alt="Página con enlaces a otras páginas abiertas en una nueva pestaña" title="Página con enlaces a otras páginas abiertas en una nueva pestaña"  class="lozad "></a></p>
-<figcaption>Página con enlaces a otras páginas abiertas en una nueva pestaña</figcaption>
-</figure>
-</div>
-<p>El problema es que los navegadores cuando se abre un enlace en una página en blanco o nueva, el navegador hace accesible a la ventana abierta el <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">objeto Window</a> de la página que lo abre. Y teniendo acceso al objeto <em>Window</em> una página maliciosa cargada tiene la posibilidad de cargar una nueva página en la página original o acceder a las cookies entre ellas las que permiten mantener la sesión en el servidor. Por ejemplo, con la variable <em>window.location</em> es posible cargar una página de autenticación falsa que le pida al usuario introducir sus datos y realmente realice el robo de la contraseña.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="hl"><span class="lnt"> 7&#10;</span></span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span> <span class="p">/&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Unknown<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>&#10;</span></span><span class="line hl"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">&#39;https://www.google.com&#39;</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;You have heen tabnabbed!&#39;</span><span class="p">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>external.html</span>
-    </div>
-</div>
-<p>Es un problema peligroso porque se aprovecha de los navegadores basados en pestañas, en este caso en una página fuera de la atención del usuario se carga un contenido nuevo, el usuario inadvertido al volver a esa pestaña puede pensar que el contenido cambiado de esa pestaña es legítimo sin ser consciente de que no lo es, sin embargo, ser víctima de este peligro de seguridad conocido como <a href="https://en.wikipedia.org/wiki/Tabnabbing">tabnabbing</a> combinado con <a href="https://es.wikipedia.org/wiki/Phishing">phishing</a>. Por ello se recomienda y es importante comprobar que el dominio de la página mostrado por el navegador en la barra de direcciones se corresponda con el contenido, que la página utilice un protocolo seguro no es suficiente si el ataque es de <em>phishing</em>.</p>
-<p>Este ataque es realmente sencillo pero ha de complementarse con una forma de ataque <a href="https://es.wikipedia.org/wiki/Cross-site_scripting">XSS</a> no tanto por permitir insertar código JavaScript pero si por permitir insertar contenido inseguro sin control de forma que otros usuarios tangan posibilidad de abrirlos y ser potenciales victimas en este caso enlaces que abran una página maliciosa.</p>
-<p>El enlace que abre una página en una nueva pestaña es vulnerable a <em>tabnabbing</em>. Al ir al enlace se abre una pestaña, el usuario pierde el foco de la página original y en ella la página abierta carga una nueva página produciéndose el <em>tabnabbing</em>.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-2_hu22643fffb0ba0f7644311b38531b1ce2_19858_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"><img src="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-2_hu22643fffb0ba0f7644311b38531b1ce2_19858_300x200_fit_box_3.png" width="261" height="200" alt="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-3_hu560700057f11b8d116c6384704b49653_44735_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"><img src="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-3_hu560700057f11b8d116c6384704b49653_44735_300x200_fit_box_3.png" width="177" height="200" alt="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña" title="Problema de tabnabbing en enlaces que abren páginas en nueva pestaña"  class="lozad "></a></p>
-<figcaption>Problema de tabnabbing en enlaces que abren páginas en nueva pestaña</figcaption>
-</figure>
-</div>
-<p>La solución más sencilla es añadir el atributo <em>rel=&ldquo;noopener noreferrer&rdquo;</em> a los enlaces que se abran en una nueva página, esto informa al navegador para que no proporcione a la página abierta el acceso a la variable <em>window.opener</em>, como se muestra en el segundo enlace del ejemplo de código <em>page.html</em>, si la página abierta hace uso de ella se produce un error de JavaScript.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-4_hu097818c1a0d12ef276d1e1742bc40f22_34321_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="La variable window.opener es nula en el enlace seguro"><img src="https://picodotdev.github.io/blog-bitix/2020/05/el-problema-de-seguridad-tabnabbing-y-phishing-en-los-enlaces-en-nuevas-pestanas-a-paginas-externas-y-como-solucionarlo/images/link-target-blank-4_hu097818c1a0d12ef276d1e1742bc40f22_34321_300x200_fit_box_3.png" width="261" height="200" alt="La variable window.opener es nula en el enlace seguro" title="La variable window.opener es nula en el enlace seguro"  class="lozad "></a></p>
-<figcaption>La variable window.opener es nula en el enlace seguro</figcaption>
-</figure>
-</div>
-<p>Otras medidas recomendables son <a href="https://picodotdev.github.io/blog-bitix/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/">codificar los datos para evitar ataques XSS</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/10/como-filtrar-contenido-html-de-forma-segura/">filtrar el contenido enviado por los usuarios o devuelto por la página</a> sobre todo si proviene de fuentes externas a la aplicación ya sea de formularios introducidos por el usuario, parámetros, cabeceras u otras aplicaciones.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener">window.opener</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="seguridad"/>
-            
-                <category term="web"/>
             
         
     </entry>

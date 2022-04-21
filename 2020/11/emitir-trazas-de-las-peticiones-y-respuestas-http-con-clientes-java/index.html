@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -268,8 +268,7 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Hay varios aspectos de la aplicación en los que es muy útil añadir trazas, los más comunes son añadir trazas en determinados puntos del código que permiten averiguar cuál ha sido el camino seguido en el procesamiento, también ciertos valores de variables. Las trazas es un aspecto importante en la monitorización de una aplicación.</p>
 <p>Otra información interesante a emitir en las trazas son las sentencias SQL que genera una aplicación ya sea en el momento de desarrollo para detectar problemas de rendimiento ocasionados por un 1+N al usar algún ORM como JPA o Hibernate. También por una consulta que tiene mal rendimiento ya que no hace uso de índices lo que hace que el motor de la base de datos tenga acceder a demasiados registros o hace demasiadas <em>joins</em>. Conocer la SQL exacta o consultas con mal rendimiento que se están ejecutando permite optimizarlas.</p>

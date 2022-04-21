@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -268,8 +268,7 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los archivos de trazas o <em>logs</em> contienen información de lo que ha realizado la aplicación. Estos registros de información contienen los datos que el desarrollador considera de utilidad en caso de necesitar su consulta. Algunos datos son especialmente sensibles ya que su obtención permiten acceder a cuentas de usuario, obtener datos como tarjetas de crédito o cuentas bancarias, contraseñas o <em>bearer tokens</em> de peticiones HTTP que autorizan el acceso. <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">Proteger las contraseñas <em>hasheandolas</em> aún con <em>salt</em></a> y cifrar información por motivos seguridad y privacidad es inútil si luego esta información está presente en los archivos de <em>log</em> en texto plano.</p>
 <p><a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es una de las librerías más utilizadas para añadir la funcionalidad de las trazas en una aplicación Java. Proteger algunos datos sensibles se puede hacer de varias formas. Una de ellas es hacer que sea la aplicación la que se encargue de no emitir estos datos en las trazas u ofuscarla enmascarándola al toda o parte. Para este caso se pueden <a href="https://picodotdev.github.io/blog-bitix/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/">utilizar objetos Message</a> que adaptan los objetos de la aplicación a los datos a emitir en las trazas pero requiere modificar en todos los puntos de la aplicación.</p>

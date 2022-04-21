@@ -21,12 +21,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Este artículo es introductorio a los siguientes que escribiré y publicaré sobre el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la electrónica para la Raspberry Pi</a>. Antes de empezar a cacharrear con los sensores y dispositivos de entrada y salida, con los <em>pines</em> GPIO y para hacerlo de forma cómoda crearé un entorno de desarrollo y despliegue en la <a href="https://www.raspberrypi.org/">Raspberry Pi</a> usando <a href="https://es.wikipedia.org/wiki/Secure_Shell">SSH</a>, <a href="https://rsync.samba.org/">rsync</a> para copiar los artefactos del equipo de desarrollo a la RPi y <a href="https://www.ansible.com/">Ansible</a> usándolo desde <a href="https://gradle.org/">Gradle</a> para lanzar comandos y ejecutar los ejemplos de forma remota aunque si no se quiere usar Ansible se pueden lanzar los comandos mediante SSH.</p>
 <p>En la Raspberry Pi deberemos instalar por supuesto <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> (es posible usar Java 8) junto con SSH y rsync, configurar el servidor SSH en la RPi modificando el archivo <em>/etc/ssh/sshd_config</em>, habilitar el servidor SSH, copiar nuestra <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">clave pública ssh generada previamente</a> al archivo <em>~/.ssh/authorized_keys</em> del usuario e instalar <a href="https://www.python.org/">Python</a> como requerimiento de Ansible. Los programas Java los escribiremos en un equipo más potente que la Raspberry Pi ya sea un portátil o un equipo de sobremesa con un IDE ya sea <a href="https://www.jetbrains.com/idea/">IntelliJ</a>, <a href="https://eclipse.org">eclipse</a> u otro, también deberemos instalar Gradle, Ansible y rsync. En Arch Linux con los siguientes comandos del gestor de paquetes:</p>
@@ -77,8 +75,7 @@
 <p>El resultado de este ejemplo es un mensaje en la terminal que es emitido por un programa Java ejecutado en la Raspberry Pi y lanzado de forma remota.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu585c23adafa45cad29f054ba5093037a_44814_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ejemplo Hello World con Java en la Raspberry Pi"><img src="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu585c23adafa45cad29f054ba5093037a_44814_300x200_fit_box_3.png" width="300" height="165" alt="Ejemplo Hello World con Java en la Raspberry Pi" title="Ejemplo Hello World con Java en la Raspberry Pi"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu585c23adafa45cad29f054ba5093037a_44814_2560x1440_fit_box_3.png" data-gallery="" title="Ejemplo Hello World con Java en la Raspberry Pi"><img src="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/images/java-raspberrypi-hello-world_hu585c23adafa45cad29f054ba5093037a_44814_300x200_fit_box_3.png" width="300" height="165" alt="Ejemplo Hello World con Java en la Raspberry Pi" title="Ejemplo Hello World con Java en la Raspberry Pi"  class="lozad "></a></p>
 <figcaption>Ejemplo Hello World con Java en la Raspberry Pi</figcaption>
 </figure>
 </div>
@@ -112,12 +109,10 @@
         <content type="html">
         <![CDATA[<p><strong>Entre las ventajas de integrar dos aplicaciones mediante el envío de mensajes están que evita que estén acopladas y la comunicación es asíncrona. Con RabbitMQ también podremos implementar cada uno de ellas con el lenguaje de programación que prefiramos de entre las varias posibilidades para las que ofrece clientes y por esto último podemos preferir usarlo en vez de las especificación JMS propia de Java EE que nos obligaría a usar un servidor de aplicaciones que lo implemente, posiblemente JBoss/Wildfly o Weblogic en vez de Tomcat o Jetty. En el artículo incluyo un ejemplo para el lenguaje Java mostrando el envío y recepción de mensajes junto con la aplicación de administración que nos proporcionará información útil.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/rabbitmq.svg" width="200" height="211" alt="RabbitMQ" title="RabbitMQ"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/rabbitmq.svg" width="200" height="211" alt="RabbitMQ" title="RabbitMQ"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Las aplicaciones que se integran mediante el envío y recepción de mensajes evitan el acoplamiento y sincronía junto con la posibilidad de implementar cada una de ellas con diferentes lenguajes o plataformas. Entre las especificaciones que componen Java EE está &lt;abbr title=”Java Message Service”&gt;JMS</abbr> pero tanto la aplicación que envía como la que recibe mensajes deben estar programadas en el lenguaje Java, a menos que incluyamos un adaptador que permita a la aplicación no Java interactuar con JMS.</p>
 <p><a href="https://www.rabbitmq.com/">RabbitMQ</a> es un software de servidor que actúa como intermediario o <em>broker</em> de mensajería entre dos o más aplicaciones que se comunican o envían notificaciones con mensajes, proporciona una funcionalidad similar a JMS pero con la ventaja que ofrece soporte para los lenguajes más populares incluido <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> y <a href="https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java"><abbr title="Java Virtual Machine">JVM</abbr></a>, <a href="https://www.ruby-lang.org/es/">Ruby</a>, <a href="https://www.python.org/">Python</a>, <a href="https://www.microsoft.com/net">.NET</a>, <a href="https://secure.php.net/">PHP</a>, <a href="https://nodejs.org/en/">Node.js</a>, <a href="https://golang.org/">Go</a> y varios más. Usa varios conceptos similares a los presentes en JMS como que el emisor envía los mensajes a una cola y el receptor los lee.</p>
@@ -168,20 +163,16 @@
 <p>Una vez iniciado el contenedor y con el código fuente del ejemplo, iniciamos en cualquier orden la parte receptora de los mensajes y la parte emisora de mensajes con los comandos <code>./gradlew receive</code> y <code>./gradlew send</code> respectivamente, momento en el cual veremos que en la consola salen las notificaciones de recepción y envío.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_huf8ebe18827887e014241fb82fa202cfd_68838_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación de ejemplo enviando mensajes"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_huf8ebe18827887e014241fb82fa202cfd_68838_300x200_fit_box_3.png" width="300" height="165" alt="Aplicación de ejemplo enviando mensajes" title="Aplicación de ejemplo enviando mensajes"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu74d142a9c5988e8761ef4d64b6fedb89_70279_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación de ejemplo recibiendo mensajes"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu74d142a9c5988e8761ef4d64b6fedb89_70279_300x200_fit_box_3.png" width="300" height="165" alt="Aplicación de ejemplo recibiendo mensajes" title="Aplicación de ejemplo recibiendo mensajes"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_huf8ebe18827887e014241fb82fa202cfd_68838_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación de ejemplo enviando mensajes"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/send_huf8ebe18827887e014241fb82fa202cfd_68838_300x200_fit_box_3.png" width="300" height="165" alt="Aplicación de ejemplo enviando mensajes" title="Aplicación de ejemplo enviando mensajes"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu74d142a9c5988e8761ef4d64b6fedb89_70279_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación de ejemplo recibiendo mensajes"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/receive_hu74d142a9c5988e8761ef4d64b6fedb89_70279_300x200_fit_box_3.png" width="300" height="165" alt="Aplicación de ejemplo recibiendo mensajes" title="Aplicación de ejemplo recibiendo mensajes"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En la comunicación con RabbitMQ se puede usar <a href="http://www.rabbitmq.com/ssl.html">TLS/SSL</a> así como mecanismos de <a href="http://www.rabbitmq.com/authentication.html">autenticación</a> y <a href="http://www.rabbitmq.com/access-control.html">autorización</a> para mayor seguridad. Usando confirmaciones si el receptor falla en el procesado el mensaje no se pierde ya que no se habrá declarado como <em>acknowledge</em> aún así si RabbitMQ falla los mensajes se perderán a menos que las colas se declaren como persistentes las cuales se guardarán en disco perdurando a una catástrofe.</p>
 <p>RabbitMQ posee un <a href="https://www.rabbitmq.com/management.html"><em>plugin</em> para la administración</a> con el que podemos administrar permisos, tener una vista global, ver ratios de mensajes, estadísticas, colas, <em>exchanges</em> y más información, nos da información muy interesante sobre el estado del procesamiento de mensajes. Es accesible mediante el navegador y la URL <em>http://localhost:15672/</em>. En la captura del estado de la cola <em>hello</em> hay 10 mensajes encolados pendientes de entregar a algún receptor.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_huec6c3e7834fb461d5accc97854c9ff68_101295_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación web de administración de RabbitMQ"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_huec6c3e7834fb461d5accc97854c9ff68_101295_300x200_fit_box_3.png" width="300" height="164" alt="Aplicación web de administración de RabbitMQ" title="Aplicación web de administración de RabbitMQ"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu4e54c3cb2be4db8f762ad98e132b349b_66191_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Información de estado de una cola"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu4e54c3cb2be4db8f762ad98e132b349b_66191_300x200_fit_box_3.png" width="274" height="200" alt="Información de estado de una cola" title="Información de estado de una cola"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_huec6c3e7834fb461d5accc97854c9ff68_101295_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación web de administración de RabbitMQ"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-management_huec6c3e7834fb461d5accc97854c9ff68_101295_300x200_fit_box_3.png" width="300" height="164" alt="Aplicación web de administración de RabbitMQ" title="Aplicación web de administración de RabbitMQ"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu4e54c3cb2be4db8f762ad98e132b349b_66191_2560x1440_fit_box_3.png" data-gallery="" title="Información de estado de una cola"><img src="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/images/rabbitmq-queue_hu4e54c3cb2be4db8f762ad98e132b349b_66191_300x200_fit_box_3.png" width="274" height="200" alt="Información de estado de una cola" title="Información de estado de una cola"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son <a href="https://amzn.to/2lTGMQc">Learning RabbitMQ</a> y <a href="https://amzn.to/2lW9qwF">Matering RabbitMQ</a> cubriendo temas más avanzados como <em>clustering</em>, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.</p>
@@ -226,12 +217,10 @@
         <content type="html">
         <![CDATA[<p><strong>La mayoría de distribuciones Linux ya usan systemd como gestor y supervisor de los servicios del sistema.  Creando un descriptor podremos gestionar un servicio propio con los mismos comandos de systemd que usamos para cualquier otro servicio del sistema.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Habiendo creado una aplicación o microservicio, por ejemplo con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, necesitaremos que se inicie con el sistema y una forma de gestionarlo para detenerlo, reiniciarlo y que se reinicie en caso de salida abrupta.</p>
 <p><a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> es el gestor de servicios que han adoptado la mayoría de distribuciones importantes como <a href="https://www.debian.org/">Debian</a>, <a href="https://www.centos.org/">CentOS</a>, <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RHEL</a>, <a href="https://www.opensuse.org/">openSUSE</a>, incluso <a href="https://www.ubuntu.com/">Ubuntu</a> después de abandonar su propio gestor de servicios <a href="https://es.wikipedia.org/wiki/Upstart">Upstart</a>. Podemos usar systemd para que gestione como servicio una aplicación propia. Para ello deberemos crear un archivo <em>unit</em> que describa el servicio y sus dependencias con otros servicios para que se inicie correctamente, él y sus dependencias.</p>
@@ -317,12 +306,10 @@
         <content type="html">
         <![CDATA[<p><strong>Tradicionalmente el conectar un servicio con sus servicios dependientes se ha realizado por configuración, normalmente mediante un nombre de dominio y su puerto. Esta configuración estática es suficiente para unos pocos servicios y que no varían durante su funcionamiento. Con el advenimiento de los microservicios con su estado y número cambiantes en el tiempo han surgido varias herramientas para en vez de usar configuración usar descubrimiento. Una de estas herramientas Consul para la que Spring Cloud proporciona integración.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En una aplicación con una arquitectura de microservicios esta se compone de múltiples partes cambiantes. Los microservicios pueden aparecer, desaparecer, variar en número o cambiar de ubicación, la aplicación debe ser tolerante a esos cambios y seguir proporcionando su servicio. Por tanto, la configuración de red de los servicios no se puede realizar usando direcciones <abbr title="Internet Protocol">IP</abbr> ya que no se conocen las que utilizarán los microservicios y usar nombres de dominio de <abbr title="Domain Name System">DNS</abbr> puede no ser viable ya que los cambios tardan en propagarse. Conocer el nombre de <em>host</em> y puerto reales de los microservicios es proporcionado por la funcionalidad de descubrimiento de servicios o <em>service discovery</em> que proporcionan algunos servicios como <a href="https://github.com/Netflix/eureka">Eureka</a>, <a href="https://www.consul.io/">Consul</a> o <a href="https://zookeeper.apache.org/">Apache Zookeper</a>.</p>
 <p>En este artículo explicaré como usar la parte de descubrimiento de servicios de Consul usando una aplicación con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> y  con <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a>. Spring Cloud proporciona varias cosas comunes para aplicaciones basadas en microservicios. Si aún no conoces las herramientas en las que se basará el ejemplo puedes consultar los siguientes artículos específicos como introducción:</p>
@@ -335,8 +322,7 @@
 <p>Consul además de descubrimiento de servicios proporciona otras funcionalidades como detección de fallos o caídas para prevenir enviar peticiones a máquinas fuera de servicio y almacenamiento básico clave/valor para configuración dinámica o activación de características. Dispone de una aplicación web en la que podemos ver el estado de los servicios, una <a href="https://www.consul.io/api/index.html">API REST</a> con la que comunicarse con Consul en una aplicación o en cada microservicio y un servidor de nombres <abbr>DNS</abbr>, podemos usar cualquiera de las dos interfaces de consulta, la basada en la <abbr>API</abbr> <abbr>REST</abbr> o la basada en DNS para obtener las direcciones IP con la ubicación de los servicios.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul_hu5e35c35c046c258a2599a40c947fcc52_11502_2560x1440_fit_box_3.png" width="200" height="199" alt="Consul" title="Consul"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul_hu5e35c35c046c258a2599a40c947fcc52_11502_2560x1440_fit_box_3.png" width="200" height="199" alt="Consul" title="Consul"  class="lozad "></p>
 </figure>
 </div>
 <p>Instalar Consul es muy sencillo basta con <a href="https://www.consul.io/downloads.html">descargar un binario</a> y descargar la interfaz web si queremos tener el <em>dashboard</em> con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel <em>dashboard</em> con la dirección <em>http://localhost:8500</em> con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.</p>
@@ -362,8 +348,7 @@
 <p>Spring Cloud proporciona además un servicio que podemos usar para conocer los servicios registrados en Consul, con la clase <em>DiscoveryClient</em> podemos conocer los nombres de los servicios, su nombre de máquina y puerto desde una aplicación Java. En el método <em>run</em> de la clase <em>Main</em> se usa en este ejemplo para imprimir en la salida el listado de servicios registrados en Consul. Uno de esos servicios esta aplicación de ejemplo, ya que se registra en Consul cuando se inicia.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu7b6922ae49f41ee0813233022d6adc1c_56113_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Servicios registrados en Consul"><img src="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu7b6922ae49f41ee0813233022d6adc1c_56113_300x200_fit_box_3.png" width="300" height="145" alt="Servicios registrados en Consul" title="Servicios registrados en Consul"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu7b6922ae49f41ee0813233022d6adc1c_56113_2560x1440_fit_box_3.png" data-gallery="" title="Servicios registrados en Consul"><img src="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/consul-services_hu7b6922ae49f41ee0813233022d6adc1c_56113_300x200_fit_box_3.png" width="300" height="145" alt="Servicios registrados en Consul" title="Servicios registrados en Consul"  class="lozad "></a></p>
 <figcaption>Servicios registrados en Consul</figcaption>
 </figure>
 </div>
@@ -376,8 +361,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu2c85a088e3fa0b2999e15f12aba27016_73001_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Endpoint de estado de servicio"><img src="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu2c85a088e3fa0b2999e15f12aba27016_73001_300x200_fit_box_3.png" width="135" height="200" alt="Endpoint de estado de servicio" title="Endpoint de estado de servicio"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu2c85a088e3fa0b2999e15f12aba27016_73001_2560x1440_fit_box_3.png" data-gallery="" title="Endpoint de estado de servicio"><img src="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/images/service-health_hu2c85a088e3fa0b2999e15f12aba27016_73001_300x200_fit_box_3.png" width="135" height="200" alt="Endpoint de estado de servicio" title="Endpoint de estado de servicio"  class="lozad "></a></p>
 <figcaption>Endpoint de estado de servicio</figcaption>
 </figure>
 </div>
@@ -428,10 +412,8 @@
 <p>A pesar de la gran mejora en número de visitas mensuales durante este año cuesta un horror hacer crecer al blog y escribir y publicar al ritmo que lo he estado haciendo durante estos últimos meses. Hay que tener un poco de intuición y algo de suerte para acertar con artículos que se posicionen bien en los buscadores si lo que queremos es aumentar las visitas.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/analytics-2016_hu52b97d14fdb79a9a1e591311aa490e6d_58595_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Analytics 2016 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/analytics-2016_hu52b97d14fdb79a9a1e591311aa490e6d_58595_300x200_fit_box_3.png" width="300" height="111" alt="Analytics 2016 de Blog Bitix" title="Analytics 2016 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/gadsense-2016_hu2446445dc01efb419e83d5bf5a4644fa_34745_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="AdSense 2016 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/gadsense-2016_hu2446445dc01efb419e83d5bf5a4644fa_34745_300x200_fit_box_3.png" width="300" height="89" alt="AdSense 2016 de Blog Bitix" title="AdSense 2016 de Blog Bitix"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/analytics-2016_hu52b97d14fdb79a9a1e591311aa490e6d_58595_2560x1440_fit_box_3.png" data-gallery="" title="Analytics 2016 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/analytics-2016_hu52b97d14fdb79a9a1e591311aa490e6d_58595_300x200_fit_box_3.png" width="300" height="111" alt="Analytics 2016 de Blog Bitix" title="Analytics 2016 de Blog Bitix"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/gadsense-2016_hu2446445dc01efb419e83d5bf5a4644fa_34745_2560x1440_fit_box_3.png" data-gallery="" title="AdSense 2016 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/gadsense-2016_hu2446445dc01efb419e83d5bf5a4644fa_34745_300x200_fit_box_3.png" width="300" height="89" alt="AdSense 2016 de Blog Bitix" title="AdSense 2016 de Blog Bitix"  class="lozad "></a></p>
 <figcaption>Evolución visitas e ingresos de AdSense en 2016</figcaption>
 </figure>
 </div>
@@ -499,8 +481,7 @@
 <p>¡Felices fiestas! ¡A por el 2017!</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/christmas-tux-2016_hu581dec6841cb818409efe552acb3f337_509006_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="¡Felices fiestas y buen 2017!"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/christmas-tux-2016_hu581dec6841cb818409efe552acb3f337_509006_600x450_fit_q90_box.jpg" width="600" height="338" alt="¡Felices fiestas y buen 2017!" title="¡Felices fiestas y buen 2017!"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/christmas-tux-2016_hu581dec6841cb818409efe552acb3f337_509006_2560x1440_fit_q90_box.jpg" data-gallery="" title="¡Felices fiestas y buen 2017!"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/christmas-tux-2016_hu581dec6841cb818409efe552acb3f337_509006_600x450_fit_q90_box.jpg" width="600" height="338" alt="¡Felices fiestas y buen 2017!" title="¡Felices fiestas y buen 2017!"  class="lozad "></a></p>
 <figcaption>¡Felices fiestas y buen 2017! <br>Fuente: klowner.com</figcaption>
 </figure>
 </div>
@@ -536,8 +517,7 @@
         <content type="html">
         <![CDATA[<p><strong>Los métodos <em>equals</em> y <em>hashCode</em> son esenciales en las colecciones de objetos. Para su correcta implementación es necesario conocer unas cuantas propiedades que han de cumplir estos métodos. Pueden parecer sencillos pero no lo son tanto y una mala implementación posiblemente produzca algún tipo de error o comportamiento anómalo indeseado. En el siguiente artículo comento varias formas de implementarlos de forma sencilla y correcta.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En Java los métodos <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashCode</a> están definidos en la raíz de la jerarquía de clases, esto es en la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>, lo que significa que todas las instancias de objetos los poseen. Estos métodos son especialmente importantes ya que afectan al correcto funcionamiento de las colecciones como <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>, colecciones, listas, conjuntos y mapas que es difícil que cualquier programa no use alguna implementación de ellas.</p>
 <p>El método <em>equals</em> es usado en las colecciones de tipo <em>List</em>, <em>Set</em>, y también <em>Map</em> para determinar si un objeto ya está incluida en la colección, el método <em>hashCode</em> es usado en los <em>Map</em> para encontrar el objeto asociado a la clave. Dado que las colecciones son ampliamente usadas en cualquier programa la correcta implementación implementación de los métodos <em>equals</em> y <em>hashCode</em> es fundamental ya que de lo contrario descubriremos errores poco agradables.</p>
@@ -646,8 +626,7 @@
         <content type="html">
         <![CDATA[<p><strong>Por seguridad, por auditoría o histórico de datos una aplicación puede requerir no solo guardar los valores actuales de los datos que maneja sino también las versiones anteriores y los cambios en cada valor de los mismos. En Java hay una librería llamada Javers que nos proporciona funcionalidades como comparación, <em>snapshots</em>, persistencia y un lenguaje de consulta para hacer búsquedas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Por necesidades de negocio y requerimientos funcionales puede ser necesario guardar un histórico de ciertos datos de una aplicación en vez de solo la última versión de los datos. Tener solo la última versión de algunos datos puede no ser lo que se necesita. Por ejemplo, supongamos que una aplicación maneja una entidad de dominio producto y esta tiene un campo que es el precio y queremos guardar los cambios que se hacen a esta entidad para conocer el cambio de precio que han sufrido los productos. Otras necesidades pueden ser por auditoría o seguridad para saber que usuario ha hecho que cambios en los datos, para disponer de versiones anteriores de una entidad, comparar dos versiones de la misma entidad o lanzar consultas para obtener información de los cambios que se han producido.</p>
 <p>Una librería que en Java nos ofrece toda esta información de auditoría es <a href="https://javers.org/">Javers</a> con la posibilidad de persistirla en diferentes sistemas, en las tradicionales base de datos relacionales o en una base de datos no SQL como <a href="https://www.mongodb.com/">MongoDB</a>. En la documentación encontramos como podemos <a href="http://javers.org/documentation/diff-examples/">comparar dos objetos</a>, <a href="http://javers.org/documentation/repository-examples/">persistir cambios</a> o <a href="http://javers.org/documentation/jql-examples/">lanzar consultas</a>.</p>
@@ -717,22 +696,18 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La librería <a href="https://silviomoreto.github.io/bootstrap-select/">bootstrap-select</a> nos permite crear elementos <em>select</em> enriquecidos con más funcionalidades que las propias ofrecidas por el navegador para seleccionar una única opción o para seleccionar múltiples opciones. Usando esta librería y añadiendo algunos atributos a las etiquetas HTML <em>select</em>, <em>optgroup</em> y <em>option</em> añadirá varias funcionalidades interesantes como comento en <a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/">Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select</a>.</p>
 <p>Una de las opciones que añade es poniendo en la etiqueta <em>select</em> el atributo <em>data-actions-box</em> son dos botones para seleccionar todas las opciones o para deseleccionar todas las opciones.</p>
 <p>Este es el aspecto de un elemento de selección con los botones de seleccionar todas las opciones y ninguna que son muy útiles para el usuario evitándose seleccionar una a una cada una de las opciones.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-todos_huc1aae9ea09a793984ca66ef5b24c9d4d_12332_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Multiselect con opciones Todos y Ninguno"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-todos_huc1aae9ea09a793984ca66ef5b24c9d4d_12332_300x200_fit_box_3.png" width="300" height="148" alt="Multiselect con opciones Todos y Ninguno" title="Multiselect con opciones Todos y Ninguno"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect_hub697a62ce7fc0de6d6f2d6c23d078055_12857_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Opciones seleccionadas de Multiselect"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect_hub697a62ce7fc0de6d6f2d6c23d078055_12857_300x200_fit_box_3.png" width="300" height="103" alt="Opciones seleccionadas de Multiselect" title="Opciones seleccionadas de Multiselect"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-todos_huc1aae9ea09a793984ca66ef5b24c9d4d_12332_2560x1440_fit_box_3.png" data-gallery="" title="Multiselect con opciones Todos y Ninguno"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-todos_huc1aae9ea09a793984ca66ef5b24c9d4d_12332_300x200_fit_box_3.png" width="300" height="148" alt="Multiselect con opciones Todos y Ninguno" title="Multiselect con opciones Todos y Ninguno"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect_hub697a62ce7fc0de6d6f2d6c23d078055_12857_2560x1440_fit_box_3.png" data-gallery="" title="Opciones seleccionadas de Multiselect"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect_hub697a62ce7fc0de6d6f2d6c23d078055_12857_300x200_fit_box_3.png" width="300" height="103" alt="Opciones seleccionadas de Multiselect" title="Opciones seleccionadas de Multiselect"  class="lozad "></a></p>
 <figcaption>MultiSelect con opciones Todos y Ninguno</figcaption>
 </figure>
 </div>
@@ -760,10 +735,8 @@
 <p>Y este sería el aspecto de componente en el navegador.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-europa_hu5297a14999dff36ddae4757ae9b095d6_15189_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Multiselect con opciones Europa"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-europa_hu5297a14999dff36ddae4757ae9b095d6_15189_300x200_fit_box_3.png" width="300" height="188" alt="Multiselect con opciones Europa" title="Multiselect con opciones Europa"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-asia_hue08ad63d2befe4ca6d9f6cf51a45bc95_14395_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Multiselect con opciones Asia"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-asia_hue08ad63d2befe4ca6d9f6cf51a45bc95_14395_300x200_fit_box_3.png" width="300" height="188" alt="Multiselect con opciones Asia" title="Multiselect con opciones Asia"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-europa_hu5297a14999dff36ddae4757ae9b095d6_15189_2560x1440_fit_box_3.png" data-gallery="" title="Multiselect con opciones Europa"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-europa_hu5297a14999dff36ddae4757ae9b095d6_15189_300x200_fit_box_3.png" width="300" height="188" alt="Multiselect con opciones Europa" title="Multiselect con opciones Europa"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-asia_hue08ad63d2befe4ca6d9f6cf51a45bc95_14395_2560x1440_fit_box_3.png" data-gallery="" title="Multiselect con opciones Asia"><img src="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/images/multiselect-asia_hue08ad63d2befe4ca6d9f6cf51a45bc95_14395_300x200_fit_box_3.png" width="300" height="188" alt="Multiselect con opciones Asia" title="Multiselect con opciones Asia"  class="lozad "></a></p>
 <figcaption>MultiSelect con opciones Europa, America y Asia</figcaption>
 </figure>
 </div>
@@ -815,12 +788,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>El <em>framework</em> basado en componentes Apache Tapestry incorpora una amplia <a href="http://tapestry.apache.org/component-reference.html">colección de componentes</a> que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.</p>
 <p>En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. Hay componentes de formulario desde <em>checkboxes</em>, <em>radios</em>, <em>select</em>, <em>inputs</em>, &hellip; con soporte para <abbr title="HyperText Markup Language">HTML</abbr> 5.</p>
@@ -856,20 +827,16 @@
 <p>Este sería el aspecto del <em>select</em> múltiple con sus botones para seleccionar todas las opciones y deseleccionar todas, además de personalizados los textos y una pequeña flecha en el desplegable hacia el componente <em>select</em>, todo esto configurado principalmente a través de atributos <em>data</em> y clases <abbr title="Cascading Stylesheets">CSS</abbr>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect_hu72bf607765942b5b3d2a9725cb171228_10025_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aspecto del componente select múltiple"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect_hu72bf607765942b5b3d2a9725cb171228_10025_300x200_fit_box_3.png" width="300" height="119" alt="Aspecto del componente select múltiple" title="Aspecto del componente select múltiple"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect-2_huef2dae54310e3d5c554c1c2e8d611d38_13940_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Vista con opciones seleccionadas enviadas al servidor"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect-2_huef2dae54310e3d5c554c1c2e8d611d38_13940_300x200_fit_box_3.png" width="300" height="109" alt="Vista con opciones seleccionadas enviadas al servidor" title="Vista con opciones seleccionadas enviadas al servidor"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect_hu72bf607765942b5b3d2a9725cb171228_10025_2560x1440_fit_box_3.png" data-gallery="" title="Aspecto del componente select múltiple"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect_hu72bf607765942b5b3d2a9725cb171228_10025_300x200_fit_box_3.png" width="300" height="119" alt="Aspecto del componente select múltiple" title="Aspecto del componente select múltiple"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect-2_huef2dae54310e3d5c554c1c2e8d611d38_13940_2560x1440_fit_box_3.png" data-gallery="" title="Vista con opciones seleccionadas enviadas al servidor"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/multiselect-2_huef2dae54310e3d5c554c1c2e8d611d38_13940_300x200_fit_box_3.png" width="300" height="109" alt="Vista con opciones seleccionadas enviadas al servidor" title="Vista con opciones seleccionadas enviadas al servidor"  class="lozad "></a></p>
 <figcaption>Componente MultiSelect con bootstrap-select</figcaption>
 </figure>
 </div>
 <p>Si queremos seleccionar múltiples opciones usando <em>checkboxes</em> Tapestry ofrece el componente <a href="https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Checklist.html">Checklist</a> y usando <em>selects</em> otra opción es el componente <a href="https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Palette.html">Palette</a> pero seguramente no sea lo que deseamos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/checklist_hu75dc4db3b4dbea2007ec29f49d905629_56952_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componente Checklist de Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/checklist_hu75dc4db3b4dbea2007ec29f49d905629_56952_300x200_fit_box_3.png" width="300" height="149" alt="Componente Checklist de Tapestry" title="Componente Checklist de Tapestry"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/palette_huea8f72718c98b9e2dd4a8f14ad9bbaea_38513_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componente Palette de Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/palette_huea8f72718c98b9e2dd4a8f14ad9bbaea_38513_300x200_fit_box_3.png" width="300" height="157" alt="Componente Palette de Tapestry" title="Componente Palette de Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/checklist_hu75dc4db3b4dbea2007ec29f49d905629_56952_2560x1440_fit_box_3.png" data-gallery="" title="Componente Checklist de Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/checklist_hu75dc4db3b4dbea2007ec29f49d905629_56952_300x200_fit_box_3.png" width="300" height="149" alt="Componente Checklist de Tapestry" title="Componente Checklist de Tapestry"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/palette_huea8f72718c98b9e2dd4a8f14ad9bbaea_38513_2560x1440_fit_box_3.png" data-gallery="" title="Componente Palette de Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/images/palette_huea8f72718c98b9e2dd4a8f14ad9bbaea_38513_300x200_fit_box_3.png" width="300" height="157" alt="Componente Palette de Tapestry" title="Componente Palette de Tapestry"  class="lozad "></a></p>
 <figcaption>Componentes Checklist y Palette</figcaption>
 </figure>
 </div>
@@ -922,12 +889,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>El selector de opciones implementado en los navegadores es muy simple pudiendo seleccionar un elemento de una lista, mostrar los elementos agrupados por categorías o seleccionar múltiples elementos pero mostrándolos en formato de una lista en vez de como un desplegable. <a href="https://silviomoreto.github.io/bootstrap-select/">bootstrap-select</a> es una librería que utiliza los estilos de <a href="https://getbootstrap.com/">Bootstrap</a> y que añade algunas funcionalidades más a los componentes de selección de opciones de los formularios de una página web.</p>
 <p>Algunas de estas funcionalidades adicionales está explicadas más detalladamente en los <a href="https://silviomoreto.github.io/bootstrap-select/examples/">ejemplos</a>, que son:</p>
@@ -982,10 +947,8 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-1_huea54e05f9d5753b922b38d6939c0cdbc_15559_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componente selector con bootstrap-select"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-1_huea54e05f9d5753b922b38d6939c0cdbc_15559_300x200_fit_box_3.png" width="300" height="186" alt="Componente selector con bootstrap-select" title="Componente selector con bootstrap-select"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-2_hu2f5e5c7660717b7773a03dbd729e0045_20170_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-2_hu2f5e5c7660717b7773a03dbd729e0045_20170_300x200_fit_box_3.png" width="300" height="186"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-1_huea54e05f9d5753b922b38d6939c0cdbc_15559_2560x1440_fit_box_3.png" data-gallery="" title="Componente selector con bootstrap-select"><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-1_huea54e05f9d5753b922b38d6939c0cdbc_15559_300x200_fit_box_3.png" width="300" height="186" alt="Componente selector con bootstrap-select" title="Componente selector con bootstrap-select"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-2_hu2f5e5c7660717b7773a03dbd729e0045_20170_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/images/select-2_hu2f5e5c7660717b7773a03dbd729e0045_20170_300x200_fit_box_3.png" width="300" height="186"  class="lozad "></a></p>
 <figcaption>Componente selector con bootstrap-select</figcaption>
 </figure>
 </div>
@@ -1053,12 +1016,10 @@
         <content type="html">
         <![CDATA[<p><strong>OAuth es un protocolo usado para permitir a una aplicación acceder a los recursos de un usuario sin que este proporcione a la aplicación cliente sus credenciales y manteniendo el control de revocar los permisos concedidos. Es ampliamente usado por los servicios de redes sociales de las empresas más conocidas, también lo podemos usar en nuestras aplicaciones. En el ejemplo usaré Keycloak y una aplicación Java con Spring Boot, Apache Shiro y Apache Tapestry.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png" width="200" height="45" alt="Keycloak" title="Keycloak"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png" width="200" height="45" alt="Keycloak" title="Keycloak"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>El protocolo <a href="https://oauth.net/">OAuth</a> permite a una aplicación cliente acceder a los recursos de un usuario almacenados en otra aplicación sin que el usuario proporcione a la aplicación cliente sus credenciales, además el usuario tiene la capacidad de revocar en caulquier momento los permisos concedidos a la aplicación cliente. El protocolo OAuth es ampliamente usado por empresas como <a href="https://www.google.es/">Google</a>, <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> en sus aplicaciones y servicios. También aplicando una arquitectura de microservicios, al dividir una aplicación en varios módulos o simplemente varias aplicaciones independientes pero que son usadas al mismo tiempo por el mismo usuario para evitar que el usuario se autentique en cada aplicación individualmente y que cada aplicación implemente la funcionalidad de autenticación podemos centralizarla usando OAuth a modo de autenticación única o <a href="https://es.wikipedia.org/wiki/Single_Sign-On"><abbr title="Single Sign-On">SSO</abbr></a>. Usando <a href="https://www.keycloak.org/">Keycloak</a> como servidor de OAuth podemos integrarlo en una aplicación Java que use <a href="https://shiro.apache.org/">Apache Shiro</a> para la autorización, <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> para iniciar la aplicación y <a href="https://tapestry.apache.org/">Apache Tapestry</a> como <em>framework</em> web.</p>
 <p>En el protocolo OAuth se diferencia las aplicaciones cliente que son capaces de mantener seguras sus credenciales como es el caso de una aplicación web ejecutada en el servidor o las aplicaciones que no son capaces de mantener sus credenciales seguras como es el caso de una aplicación cliente ejecutada en el navegador o en algunos casos nativa en el móvil. Independientemente de la aplicación cliente o de los <a href="https://tools.ietf.org/html/rfc6749#page-8">varios flujos de autenticación</a> el acceso a los recursos del usuario se hace mediante la obtención de un <em>token</em> que es una cadena de caracteres opaca de cierta longitud pero que descifrada contiene información del usuario autenticado también está firmada digitalmente por el servidor de OAuth para evitar alteraciones. El protocolo define varios flujos para obtener un <em>token</em>, obtenido el <em>token</em> con cualquiera de ellos el acceso a los recursos es indiferente del flujo que haya sido empleado.</p>
@@ -1089,26 +1050,20 @@
 <p>Para el ejemplo crearé un nuevo <em>realm</em> que contendrá los usuarios y en el que registraremos la aplicación cliente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu1d1fec568cafaf0c4a23e9f295b30ecc_70773_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Keycloak realm"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu1d1fec568cafaf0c4a23e9f295b30ecc_70773_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak realm" title="Keycloak realm"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hud33412f067151d1d2f67a878d1fb164c_79720_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Keycloak client"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hud33412f067151d1d2f67a878d1fb164c_79720_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak client" title="Keycloak client"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu1d1fec568cafaf0c4a23e9f295b30ecc_70773_2560x1440_fit_box_3.png" data-gallery="" title="Keycloak realm"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-realm_hu1d1fec568cafaf0c4a23e9f295b30ecc_70773_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak realm" title="Keycloak realm"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hud33412f067151d1d2f67a878d1fb164c_79720_2560x1440_fit_box_3.png" data-gallery="" title="Keycloak client"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client_hud33412f067151d1d2f67a878d1fb164c_79720_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak client" title="Keycloak client"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hud33412f067151d1d2f67a878d1fb164c_77167_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Keycloak client roles"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hud33412f067151d1d2f67a878d1fb164c_77167_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak client roles" title="Keycloak client roles"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_huc42e6e2008d8cf33b44a24ca8766c23a_73652_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Keycloak roles"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_huc42e6e2008d8cf33b44a24ca8766c23a_73652_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak roles" title="Keycloak roles"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hud33412f067151d1d2f67a878d1fb164c_77167_2560x1440_fit_box_3.png" data-gallery="" title="Keycloak client roles"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-client-roles_hud33412f067151d1d2f67a878d1fb164c_77167_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak client roles" title="Keycloak client roles"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_huc42e6e2008d8cf33b44a24ca8766c23a_73652_2560x1440_fit_box_3.png" data-gallery="" title="Keycloak roles"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-roles_huc42e6e2008d8cf33b44a24ca8766c23a_73652_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak roles" title="Keycloak roles"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu5d853bad32b06a2ad31bca8dfab4cf2c_65165_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Keycloak users"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu5d853bad32b06a2ad31bca8dfab4cf2c_65165_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak users" title="Keycloak users"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu0a5c44eb141b4ccfc2088e9012d1f722_85070_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Keycloak users role mappings"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu0a5c44eb141b4ccfc2088e9012d1f722_85070_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak users role mappings" title="Keycloak users role mappings"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu5d853bad32b06a2ad31bca8dfab4cf2c_65165_2560x1440_fit_box_3.png" data-gallery="" title="Keycloak users"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users_hu5d853bad32b06a2ad31bca8dfab4cf2c_65165_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak users" title="Keycloak users"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu0a5c44eb141b4ccfc2088e9012d1f722_85070_2560x1440_fit_box_3.png" data-gallery="" title="Keycloak users role mappings"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/keycloak-users-role-mappings_hu0a5c44eb141b4ccfc2088e9012d1f722_85070_300x200_fit_box_3.png" width="300" height="173" alt="Keycloak users role mappings" title="Keycloak users role mappings"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Usando uno de los <a href="https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/2.2/topics/overview/supported-platforms.html">adaptadores proporcionados por Keycloak</a> para la integración en servidores y aplicaciones su uso no es complicado, en este caso usaré el adaptador para Spring Boot. Usándolo básicamente deberemos proporcionar en la configuración las credenciales de la aplicación cliente que hemos registrado previamente en Keycloak. Además indicaremos que URLs de la aplicación requiere autenticación y que roles han de poseer los usuarios autenticados. Al acceder a estas URLs el adaptador de Keycloak redirigirá al servidor para que el usuario se autentique, una vez autenticado se redirigirá a la aplicación de nuevo.</p>
@@ -1171,23 +1126,19 @@
 <p>Como la página de inicio no requiere autenticación es accesible por cualquier usuario. Al navegar a la página de usuario o administrador se iniciará el proceso de autenticación primeramente redirigiéndonos al servidor Keycloak para que introduzcamos las credenciales.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu415ca9630e7399f9007d16ba267384ff_60394_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Index"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu415ca9630e7399f9007d16ba267384ff_60394_300x200_fit_box_3.png" width="300" height="185" alt="Index" title="Index"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hud91081120a1e60e7ab23e636a0928ce5_81321_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Login"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hud91081120a1e60e7ab23e636a0928ce5_81321_300x200_fit_box_3.png" width="300" height="185" alt="Login" title="Login"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu415ca9630e7399f9007d16ba267384ff_60394_2560x1440_fit_box_3.png" data-gallery="" title="Index"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-index_hu415ca9630e7399f9007d16ba267384ff_60394_300x200_fit_box_3.png" width="300" height="185" alt="Index" title="Index"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hud91081120a1e60e7ab23e636a0928ce5_81321_2560x1440_fit_box_3.png" data-gallery="" title="Login"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-keycloak-login_hud91081120a1e60e7ab23e636a0928ce5_81321_300x200_fit_box_3.png" width="300" height="185" alt="Login" title="Login"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu0e1ae465e9f38667a2f2180922ea5f7b_59305_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="User"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu0e1ae465e9f38667a2f2180922ea5f7b_59305_300x200_fit_box_3.png" width="300" height="169" alt="User" title="User"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu0e1ae465e9f38667a2f2180922ea5f7b_59305_2560x1440_fit_box_3.png" data-gallery="" title="User"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-user_hu0e1ae465e9f38667a2f2180922ea5f7b_59305_300x200_fit_box_3.png" width="300" height="169" alt="User" title="User"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Si intentamos acceder a la página de usuario o administrador sin estar autenticados se nos mostrará la página de error 403 y al acceder a la página de administración con un usuario sin rol <em>admin</em> se nos mostrará la página de error 401.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_huf74fad06d3e886ca07bb6b96686692df_57636_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Error 403"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_huf74fad06d3e886ca07bb6b96686692df_57636_300x200_fit_box_3.png" width="300" height="169" alt="Error 403" title="Error 403"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_huf74fad06d3e886ca07bb6b96686692df_57636_2560x1440_fit_box_3.png" data-gallery="" title="Error 403"><img src="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/images/tapestry-error403_huf74fad06d3e886ca07bb6b96686692df_57636_300x200_fit_box_3.png" width="300" height="169" alt="Error 403" title="Error 403"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Un buen libro sobre OAuth que he leído es <a href="https://amzn.to/2cUkF9d">Mastering OAuth 2.0</a> que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un <em>token</em> además del mostrado en este artículo usando las credenciales del cliente.</p>
@@ -1243,12 +1194,10 @@
         <content type="html">
         <![CDATA[<p><strong>El tipado seguro y el sistema de tipos es sin duda una de las características más importante del lenguaje de programación Java que han contribuido a su éxito. Cuando no conocemos los tipos en tiempo de compilación el sistema de tipos es una limitación donde los lenguajes dinámicos son capaces de resolver el problema sin necesidad de los tipos pero perdiendo la ayuda del compilador. Usando una librería de generación de código en tiempo de compilación o ejecución tenemos la posibilidad en Java de realizar algunas tareas que los lenguajes dinámicos permiten.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bytebuddy.png" width="200" height="181" alt="Byte Buddy" title="Byte Buddy"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bytebuddy.png" width="200" height="181" alt="Byte Buddy" title="Byte Buddy"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Java posee un sistema de tipos estricto con el que detectar errores de compilación y hace que el código sea más legible, con un <abbr title="Integrated Development Environment">IDE</abbr> los errores de compilación los detectaremos inmediatamente según escribimos código. Este sistema de tipos estricto es deseable en aplicaciones de negocio y empresariales ya que ayuda a que las aplicaciones tengan menos errores o errores de compilación pasen inadvertidos y ser descubiertos incluso semanas después de haber sido desplegados en producción. Su sistema de tipos es uno de los responsables del éxito de Java. Sin embargo, el sistema de tipos estricto impone restricciones en otro tipo de ámbitos como en una biblioteca de propósito general ya que no se conocerán los tipos en tiempo de compilación y no podrán por tanto ser referenciados o alternativamente hayan ser definidos como interfaces o clases abstractas que posteriormente son implementadas o extendidas.</p>
 <p>Para acceder a propiedades e invocar métodos de tipos desconocidos en tiempo de compilación en Java disponemos de la <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/package-summary.html">reflection API</a> o API de introspección aunque tiene los siguientes inconvenientes:</p>
@@ -1356,8 +1305,7 @@
         <content type="html">
         <![CDATA[<p><strong>Teniendo un servicio REST securizado con OAuth2 al invocarlo deberemos realizar el flujo necesario para obtener un <em>access token</em> y posteriormente enviarlo al servicio REST como forma de autenticación y autorización. Usando un cliente programado en el lenguaje Java y usando la librería HttpClient podemos hacer las peticiones HTTP necesarias para la invocación del servicio.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Explicaba como llamar a un servicio REST autenticado con OAuth2 en el artículo <a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a>. Para ello usaba la utilidad <em>curl</em> para hacer las peticiones HTTP <em>get</em> y <em>post</em> necesarias tanto para obtener el <em>access token</em> usando el flujo <em>client_credentials</em> como para una vez obtenido el <em>access token</em> llamar al servicio REST. En una aplicación usaremos un lenguaje de programación para llamar al servicio, en este ejemplo mostraré como llamarlo usando un cliente programado en lenguaje Java que hará las mismas peticiones <em>get</em> y <em>post</em> pero usando la librería <a href="https://hc.apache.org/">HttpComponents</a> en vez de <em>curl</em>.</p>
 <p>Primero añadiremos como dependencia del proyecto la librería HttpComponents. Como en las diferentes llamadas el intercambio de datos se realiza mediante el <a href="https://json.org/">formato JSON</a> añadiremos otro par dependencias para procesar los datos en este formato, en este caso usando la API de <a href="https://javaee.github.io/jsonp/">JSON-P</a> y una implementación.</p>
@@ -1414,12 +1362,10 @@
         <content type="html">
         <![CDATA[<p><strong>Keycloak es un proveedor de OAuth que podemos usar en nuestras aplicaciones y servicios para proporcionar autenticación, autorización, SSO y también añadir seguridad a los servicios REST que desarrollemos como muestro en este artículo. OAuth tiene varias ventajas sobre usar autenticación <em>Basic</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png" width="200" height="45" alt="Keycloak" title="Keycloak"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keycloak.png" width="200" height="45" alt="Keycloak" title="Keycloak"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una forma de autenticar a los clientes de un servicio REST es usar <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">autenticación Basic</a> que se basa en añadir una cabecera en la petición en la que se incluye un usuario y contraseña. La autenticación Basic es sencilla pero para que sea segura ha de <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS</a>.</p>
 <p>Sin embargo, presenta otros inconvenientes y es que si al servicio van a acceder varios clientes y a uno queremos impedirle el acceso no podremos hacerlo sin cambiar el usuario y contraseña lo que obligará al resto de clientes actualizarse para usar las nuevas credenciales si las comparten, que no siempre es posible sobre todo si esos clientes están fuera de nuestro control. Para solventar el segundo problema tenemos la posibilidad de securizar el servicio REST con el <a href="https://oauth.net/">protocolo OAuth</a>.</p>
@@ -1439,23 +1385,19 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu0ec9394193d8bbbf68380a77dba4d5a3_130625_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de sesión de Keycloak"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu0ec9394193d8bbbf68380a77dba4d5a3_130625_300x200_fit_box_3.png" width="300" height="183" alt="Inicio de sesión de Keycloak" title="Inicio de sesión de Keycloak"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu0ec9394193d8bbbf68380a77dba4d5a3_130625_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión de Keycloak"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-login_hu0ec9394193d8bbbf68380a77dba4d5a3_130625_300x200_fit_box_3.png" width="300" height="183" alt="Inicio de sesión de Keycloak" title="Inicio de sesión de Keycloak"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Creamos un <em>realm</em>, en el ejemplo llamado <em>springbootjaxrs</em> y un cliente con id <em>client</em>, además crearemos un rol <em>api</em> y se lo asignaremos al cliente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-client_hu0d578958d6bc77546f209532dc988bf2_70695_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Registro del cliente"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-client_hu0d578958d6bc77546f209532dc988bf2_70695_300x200_fit_box_3.png" width="300" height="164" alt="Registro del cliente" title="Registro del cliente"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-role_huf5ee2852477b4051ac9706654bff3bd2_68986_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Creación de rol"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-role_huf5ee2852477b4051ac9706654bff3bd2_68986_300x200_fit_box_3.png" width="300" height="183" alt="Creación de rol" title="Creación de rol"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-client_hu0d578958d6bc77546f209532dc988bf2_70695_2560x1440_fit_box_3.png" data-gallery="" title="Registro del cliente"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-client_hu0d578958d6bc77546f209532dc988bf2_70695_300x200_fit_box_3.png" width="300" height="164" alt="Registro del cliente" title="Registro del cliente"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-role_huf5ee2852477b4051ac9706654bff3bd2_68986_2560x1440_fit_box_3.png" data-gallery="" title="Creación de rol"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-add-role_huf5ee2852477b4051ac9706654bff3bd2_68986_300x200_fit_box_3.png" width="300" height="183" alt="Creación de rol" title="Creación de rol"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-service-account-roles_hu476d0958a34d6ac0a8cdc494ca9a225f_88309_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Asignación de roles al cliente"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-service-account-roles_hu476d0958a34d6ac0a8cdc494ca9a225f_88309_300x200_fit_box_3.png" width="300" height="183" alt="Asignación de roles al cliente" title="Asignación de roles al cliente"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-service-account-roles_hu476d0958a34d6ac0a8cdc494ca9a225f_88309_2560x1440_fit_box_3.png" data-gallery="" title="Asignación de roles al cliente"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-service-account-roles_hu476d0958a34d6ac0a8cdc494ca9a225f_88309_300x200_fit_box_3.png" width="300" height="183" alt="Asignación de roles al cliente" title="Asignación de roles al cliente"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez realizada la configuración en el servidor de OAuth/Keycloak obtendremos la configuración para el adaptador de Keycloak para el servicio REST desde la pestaña <em>Installation</em> que añadiremos en el fichero de configuración de Spring Boot <em>application.yml</em>. Además, indicaremos que el cliente solo aceptará <em>access tokens</em> mediante la opción <em>bearer-only</em> de modo que no hará redirecciones para autenticar.</p>
@@ -1481,8 +1423,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-access-token_hu3c9c3fd1cd5f0d81ab0d4597529d12ea_278842_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Obtención de un token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-access-token_hu3c9c3fd1cd5f0d81ab0d4597529d12ea_278842_300x200_fit_box_3.png" width="300" height="164" alt="Obtención de un token" title="Obtención de un token"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-access-token_hu3c9c3fd1cd5f0d81ab0d4597529d12ea_278842_2560x1440_fit_box_3.png" data-gallery="" title="Obtención de un token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/keycloak-access-token_hu3c9c3fd1cd5f0d81ab0d4597529d12ea_278842_300x200_fit_box_3.png" width="300" height="164" alt="Obtención de un token" title="Obtención de un token"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Obtenido el <em>access token</em> si no lo proporcionamos en la llamada al servicio REST observaremos que la respuesta que obtenemos es un <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">código de estado HTTP 401</a> indicando que se necesitan proporcionar las credenciales que con OAuth es un <em>token</em>.</p>
@@ -1494,8 +1435,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-no-token_huea5aeabab77440df127b63b74c89a6dc_33962_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Llamada al servicio REST sin token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-no-token_huea5aeabab77440df127b63b74c89a6dc_33962_300x200_fit_box_3.png" width="300" height="195" alt="Llamada al servicio REST sin token" title="Llamada al servicio REST sin token"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-no-token_huea5aeabab77440df127b63b74c89a6dc_33962_2560x1440_fit_box_3.png" data-gallery="" title="Llamada al servicio REST sin token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-no-token_huea5aeabab77440df127b63b74c89a6dc_33962_300x200_fit_box_3.png" width="300" height="195" alt="Llamada al servicio REST sin token" title="Llamada al servicio REST sin token"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Proporcionando el token mediante una cabecera de la petición el servicio nos devolverá los datos que proporciona. Si el <em>token</em> no es válido obtendremos un error HTTP 401.</p>
@@ -1507,10 +1447,8 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-ouath_hu8975a3bd1d49dfd03cc9671f420fb963_127240_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Llamada al servicio REST con token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-ouath_hu8975a3bd1d49dfd03cc9671f420fb963_127240_300x200_fit_box_3.png" width="300" height="164" alt="Llamada al servicio REST con token" title="Llamada al servicio REST con token"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-token-tampered_hu8975a3bd1d49dfd03cc9671f420fb963_126066_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Llamada al servicio REST con token inválido"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-token-tampered_hu8975a3bd1d49dfd03cc9671f420fb963_126066_300x200_fit_box_3.png" width="300" height="164" alt="Llamada al servicio REST con token inválido" title="Llamada al servicio REST con token inválido"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-ouath_hu8975a3bd1d49dfd03cc9671f420fb963_127240_2560x1440_fit_box_3.png" data-gallery="" title="Llamada al servicio REST con token"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-ouath_hu8975a3bd1d49dfd03cc9671f420fb963_127240_300x200_fit_box_3.png" width="300" height="164" alt="Llamada al servicio REST con token" title="Llamada al servicio REST con token"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-token-tampered_hu8975a3bd1d49dfd03cc9671f420fb963_126066_2560x1440_fit_box_3.png" data-gallery="" title="Llamada al servicio REST con token inválido"><img src="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/images/client-token-tampered_hu8975a3bd1d49dfd03cc9671f420fb963_126066_300x200_fit_box_3.png" width="300" height="164" alt="Llamada al servicio REST con token inválido" title="Llamada al servicio REST con token inválido"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir algunas dependencias al proyecto que usando <a href="https://gradle.org/">Gradle</a> como herramienta de construcción serían las siguientes.</p>
@@ -1563,12 +1501,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring Framework" title="Spring Framework"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring Framework" title="Spring Framework"  class=""></p>
 </div>
 <p>En Java a través de JAX-RS, una de entre las varias <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">especificaciones de JavaEE</a>, podemos desarrollar servicios web basados en <a href="https://es.wikipedia.org/wiki/Representational_State_Transfer"><abbr title="Representational State Transfer">REST</abbr></a> y <a href="https://json.org/"><abbr title="JavaScript Object Notation">JSON</abbr></a>. Estos servicios web al usar la infraestructura de la web y el protocolo HTTP podemos hacer uso de facilidades que proporciona como <a href="https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/">cacheo</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">protocolo seguro</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">HTTP/2</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">compresión</a> o autenticación. Usando <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> podemos desarrollar servicios web autocontenidos al igual que podemos hacer con las aplicaciones web tradicionales.</p>
 <p>Para facilitar el inicio de los proyectos podemos usar <a href="https://start.spring.io/">Spring Initializr</a> seleccionando los módulos web y JAX-RS con la implementación de referencia <a href="https://jersey.github.io/">Jersey</a>. Al proyecto creado deberemos añadir los servicios que queramos proporcionar. En el ejemplo añadiré uno muy sencillo que devuelva un nuevo mensaje creado en un servicio inyectado en la clase del recurso del servicio REST.</p>

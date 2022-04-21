@@ -21,12 +21,10 @@
         <content type="html">
         <![CDATA[<p><strong>Spring Cloud Vault facilita la integración con Vault, una de sus usos es utilizarlo para obtener unas credenciales de conexión a la base de datos generadas bajo demanda y con un tiempo de vida limitado en vez de embeberlas en la configuración de la aplicación y con u tiempo de vida indefinido.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="200" height="286" alt="HashiCorp Vault" title="HashiCorp Vault"  class=""></p>
 </div>
 <p>La herramienta <a href="https://www.vaultproject.io/">Vault</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> permite almacenar secretos, otra de sus funcionalidad es ser capaz de generar credenciales de forma dinámica. Habitualmente una aplicación para conectarse a una base de datos incluye en su configuración las credenciales, usuario y contraseña, para autenticarse y crear las conexiones, estas credenciales tiene un tiempo de vida indefinido y comprometidas proporcionan acceso a la base de datos.</p>
 <p>Vault permite centralizar la seguridad, otorgar a cada aplicación los permisos para conectarse a una base de datos a través de la obtención de credenciales (usuario y contraseña), auditar su uso y limitar el tiempo de validez de las credenciales a unas horas en vez de forma indefinida.</p>
@@ -161,12 +159,10 @@
         <content type="html">
         <![CDATA[<p><strong>En una arquitectura basada en microservicios es normal iniciar varias instancias de un mismo servicio, si están en la misma máquina ha de asignarse a cada instancia un puerto diferente. Asignar los puertos manualmente no es recomendable cuando se quieren varias instancias, Spring Boot ofrece la funcionalidad de iniciar la aplicación en un puerto aleatorio.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Mediante configuración se puede especificar el puerto en el que se desea iniciar una aplicación de <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> que ofrece un servicio de red. El puerto por convención suele ser el <em>8080</em> y la propiedad de configuración de Spring Boot para modificarlo es <em>server.port</em>.</p>
 <div class="code">
@@ -231,12 +227,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/resilience4j.png" width="200" height="200" alt="Resilience4j" title="Resilience4j"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/resilience4j.png" width="200" height="200" alt="Resilience4j" title="Resilience4j"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p><a href="https://github.com/Netflix/Hystrix">Hystrix</a> ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es <a href="https://github.com/resilience4j/resilience4j">Resilience4j</a>. Resilience4j proporciona las características similares con algunas ventajas adicionales.</p>
 <p>Los patrones útiles para aumentar la tolerancia a fallos debido a problemas de red o fallo de alguno de los múltiples servicios son:</p>
@@ -300,8 +294,7 @@
         <content type="html">
         <![CDATA[<p><strong>Guava EventBus es una solución simple para la publicación y suscripción de eventos en una misma aplicación y como tal no posee muchas de las capacidades que si tiene JMS o RabbitMQ, sin embargo, en algunos casos puede ser muy útil, una solución sencilla y sin requerimientos adicionales de infraestructura.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En programación los eventos son una buena forma de comunicación que permite desacoplar el emisor del evento del receptor o receptores. Los eventos permiten reaccionar a situaciones que se producen a la aplicación. El emisor los lanza cuando considera adecuado y los receptores se suscriben a los eventos que quieren recibir y actúan según su funcionalidad.</p>
 <p>Hay herramientas especificas para eventos en Java está JMS si la aplicación está basada en <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">la plataforma en Java EE</a>, en caso de necesitar un servidor de mensajes adecuado para múltiples plataformas y lenguajes uno de los más conocidos es <a href="https://www.rabbitmq.com/">RabbitMQ</a>. Estas opciones permiten que el emisor y los receptores estén aplicaciones distintas.</p>
@@ -383,12 +376,10 @@
         <content type="html">
         <![CDATA[<p><strong>Al diferencia de una API REST donde cada recurso posee un <em>endpoint</em> propio en GraphQL los recursos están relacionados y forman un grafo. Por otro lado las propiedades devueltas en una consulta de GraphQL son las que se indiquen en la consulta en vez de prefijadas como en una API REST. Hay que tener en cuenta que GraphQL para recuperar las propiedades de las entidades usa un <em>resolver</em> y las recupera una a una, si se devuelve una lista de elementos y de cada uno de esos elementos otra propiedad para la que hay que generar una consulta adicional a la base de datos el rendimiento no será bueno. Los <em>data loaders</em> permiten recuperar las propiedades relacionadas de una colección de entidades eficientemente evitando el problema 1+N.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una de las dificultades a resolver en GraphQL es evitar los problemas de generar 1+N consultas dado que en algunas peticiones se recupera una lista de elementos para recuperar alguna otra propiedad de esos elementos para la que se realiza otra consulta. Suele ocurrir al navegar las relaciones de las entidades, por ejemplo al solicitar una lista de libros y de cada libro obtener su autor, para obtener los libros se necesita una consulta y hay que evitar que para recuperar el autor de cada libro generar otra consulta, si el número de libros recuperados es grande el número de consultas será grande y la consulta será poco eficiente, lenta y generará una carga a evitar en el servidor de base de datos.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/">Recuperar datos eficientemente en GraphQL usando batching</a> comentaba una estrategia para evitar este problema que consistía en dados una serie de elementos recuperados y si la propiedad estaba presente en la consulta se obtenían los identificativos de esos elementos y se recuperaba la propiedad para todos los elementos en una única consulta.</p>
@@ -447,8 +438,7 @@
         <content type="html">
         <![CDATA[<p><strong>Los módulos de Java dotan a la plataforma de nuevas características. Para garantiza la compatibilidad con las librerías existentes y permitir una transición progresiva de una versión sin módulos a una con módulos la plataforma de módulos de Java define varios tipos de módulos.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Con la <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">publicación de Java 9</a> el 2017 se introdujo la importante novedad de los módulos que proporciona a la plataforma Java varias características como encapsulación fuerte, interfaces bien definidas y dependencias explícitas. Todos las clases se organizan en paquetes y en Java 9 también en módulos para lo cual fue necesario reorganizar en módulos todos los paquetes de los que se compone la API de Java.</p>
 <p>Antes de Java 9 todas las clases se proporcionaban en una lista ordenada de archivos <em>jar</em>, lo que se conocía como el <em>classpath</em> y donde cualquier clase tenía acceso a cualquier otra que se encontrase en él respetando los ámbitos de visibilidad (<em>public</em>, <em>protected</em>, <em>private</em> y <em>package</em>). En la definición de cada módulo en su archivo <em>module-info.java</em> se debe especificar cuales son los módulos requeridos para su funcionamiento no permitiendo la máquina virtual de Java el acceso a ninguna otra clase de otros módulos ni a ninguna clase de los paquetes no exportados.</p>
@@ -485,8 +475,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
 </div>
 <p>Estos seis primeros meses del 2019 han transcurrido como todos los años anteriores, sigo manteniendo la constancia de publicar dos artículos nuevos y únicos, algunas semanas sólo uno las menos tres.</p>
 <p>En cuanto al blog durante este tiempo le he hecho un cambio de diseño para que el contenido quede centrado en la pantalla y tenga más espacio horizontal lo que creo hace más agradable la lectura del texto y los extractos de código se ven mejor con menos necesidad de hacer desplazamiento horizontal.</p>
@@ -591,8 +580,7 @@
         <content type="html">
         <![CDATA[<p><strong>Una API REST no ofrece introspección y por tanto hay que recurrir a un sistema de documentación que puede estar desactualizado y hay que mantener para conocer como usar la API y cuales son sus tipos y parámetros. Por el contrario GraphQL incorpora un sistema de introspección que permite conocer sus tipos y campos, a través del editor GraphiQL o si fuese necesario de forma automatizada con código.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/graphql.svg" width="200" height="200" alt="GraphQL" title="GraphQL"  class=""></p>
 </div>
 <p>Una de las cosas que me gustan de GraphQL sobre REST es que la API de un servicio se define en un esquema. Tanto las operaciones de consulta, de modificación con sus nombres de parámetros, tipos y si son requeridos o no. Esta información es básica para hacer un buen uso de esa API y conocer cual es su contrato. Además con <a href="https://picodotdev.github.io/blog-bitix/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/">la herramienta GraphiQL</a> se pueden crear y realizar consultas con un pequeño IDE con asistencia de código. GraphQL genera los metadatos e ofrece la instrospección a partir únicamente de la definición del esquema del servicio sin ningún esfuerzo adicional por parte del creador del servicio.</p>
 <p>En el ejemplo de esta <a href="https://picodotdev.github.io/blog-bitix/series/graphql/">serie de artículos sobre GraphQL</a> he usado el siguiente esquema que utiliza como modelo de datos el de una librería.</p>
@@ -706,12 +694,10 @@
         <content type="html">
         <![CDATA[<p><strong>Hay múltiples lenguajes y librerías donde cada una publica nuevas versiones. Una vez elegida una esa decisión no tiene que ser para siempre si las circunstancias de un proyecto cambian o una nueva versión incorpora las funcionalidades por las que se eligió otra. Si se reconsideran de nuevo el conjunto de todos los parámetros la decisión puede ser distinta. Esto me ha ocurrido al evaluar de nuevo JUnit comparándolo con Spock, teniendo en cuenta que en JUnit 5 han incorporado los teses parametrizados y el lenguaje que utiliza cada una de ellas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/junit.png" width="200" height="200" alt="JUnit" title="JUnit"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/junit.png" width="200" height="200" alt="JUnit" title="JUnit"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En mis preferencias de herramientas que elegiría para un proyecto basado en la plataforma Java estaba <a href="https://code.google.com/p/spock/">Spock</a>, por la legibilidad de los teses con su lenguaje específico de dominio  o DSL con sus diferentes secciones <em>given</em>, <em>when</em>, <em>then</em>. Otro motivo era la posibilidad de ejercitar un mismo test pero con diferentes parámetros para ejecutar todas las condiciones del sujeto bajo prueba con la sección <em>where</em> y las posibilidades de <em>mocking</em> incorporadas. Pero Spock usa el lenguaje <a href="https://www.groovy-lang.org/">Groovy</a>. Es menos verboso, es dinámico pero que no posee igual la asistencia de código de los IDEs y por su naturaleza dinámica con posibilidad de errores de compilación no detectados hasta en tiempo de ejecución. En mis preferencias está el lenguaje Java así que he revisado si estás características de Spock son ofrecidas por <a href="https://junit.org/junit5/">JUnit</a> desde la última vez que lo use.</p>
 <p>El primer motivo de usar Spock sobre la legibilidad del test se puede suplir añadiendo un comentario de línea con la sección. El segundo motivo es que en JUnit también se pueden crear teses parametrizados con varios casos de prueba. Para los teses parametrizados se puede usar la anotación <a href="https://junit.org/junit5/docs/current/api/org/junit/jupiter/params/ParameterizedTest.html">@ParameterizedTest</a> con una serie de valores que en el test se reciben como un parámetro.</p>
@@ -764,12 +750,10 @@
         <content type="html">
         <![CDATA[<p><strong>Las aplicaciones que muestran listados probablemente necesiten mostrarlos paginados. Sin embargo, implementar la paginación correctamente para que sea eficiente no pasa por emplear las clausulas <em>limit</em> ni <em>offset</em> que habitualmente se utilizan sino con <em>seek</em>. Además de que <em>limit</em> y <em>offset</em> da lugar a resultados no deseados si entre obtención de página y página se insertan filas en páginas anteriores.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La paginación habitualmente se implementa con las palabras reservadas <em>limit</em> y <em>offset</em> del lenguaje SQL pero esto es ineficiente ya que para llegar los resultados de las últimas páginas la base de datos ha de recuperar antes todos los resultados anteriores. Cuando hay varios cientos de miles o millones de filas en una tabla esto es ineficiente y hace que las consultas sean lentas y añadan una importante carga al servidor de base de datos que al final afecta al rendimiento de la aplicación o su capacidad para atender a gran número de peticiones.</p>
 <p>Además del rendimiento, otro problema de la paginación con <em>limit</em> y <em>offset</em> es que si se insertan filas en una página anterior mientras se están recorriendo los resultados, uno o varios resultados al avanzar por las páginas en la típica tabla de resultados en una aplicación web podría aparecer dos veces, en un proceso automatizado sería aún peor ya que un resultado podría procesarse dos veces.</p>
@@ -819,12 +803,10 @@
         <content type="html">
         <![CDATA[<p><strong>Algunas de las causas del bajo rendimiento de una aplicación que utiliza una base de datos son el número de sentencias que se realizan junto con las sentencias lentas por su coste de ejecución. Cada ejecución de una sentencia significa una comunicación por la red y ejecutar muchas de ellas significa un considerable y perceptible tiempo para el usuario. Por ello es conveniente saber que sentencias se ejecutan, si hay algún problema de 1+N o sentencias innecesarias que se repiten. Un <em>log</em> de las sentencias que se ejecutan es muy útil para detectar ineficiencias en la aplicación y corregirlas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="200" alt="jOOQ" title="jOOQ"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La librería <a href="https://www.jooq.org/">jOOQ</a> devuelve al lenguaje SQL de consultas para bases de datos relacionales al primer plano en una aplicación Java. En vez de crear una capa de abstracción como realiza la popular librería <a href="https://hibernate.org/">Hibernate</a> del modelo relacional al modelo orientado a objetos de Java permite construir con un DSL mediante su API fluída avanzadas sentencias SQL que soportan las versiones recientes de <a href="https://www.postgresql.org/">PostgreSQL</a> y <a href="https://www.mysql.com/">MySQL</a>.</p>
 <ul>
@@ -854,8 +836,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/images/pagina-listado_hu3ecc29f36cbb587ee4f6a50927c3fc02_37205_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Listado de elementos"><img src="https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/images/pagina-listado_hu3ecc29f36cbb587ee4f6a50927c3fc02_37205_650x450_fit_box_3.png" width="611" height="450" alt="Listado de elementos" title="Listado de elementos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/images/pagina-listado_hu3ecc29f36cbb587ee4f6a50927c3fc02_37205_2560x1440_fit_box_3.png" data-gallery="" title="Listado de elementos"><img src="https://picodotdev.github.io/blog-bitix/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/images/pagina-listado_hu3ecc29f36cbb587ee4f6a50927c3fc02_37205_650x450_fit_box_3.png" width="611" height="450" alt="Listado de elementos" title="Listado de elementos"  class="lozad "></a></p>
 <figcaption>Listado de elementos</figcaption>
 </figure>
 </div>
@@ -895,8 +876,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>No es una buena práctica al igual que al no recomendado <a href="https://picodotdev.github.io/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">antipatrón de inicialización de variables con dobles llaves</a> pero en el uso de <em>streams</em> que aceptan <em>lambdas</em> es un rodeo a la limitación de no poder lanzar excepciones <em>checked</em> por no estar definida en su API.</p>
 <p>En Java existen dos tipos de excepciones las <em>checked</em> que son de obligada captura o ser lanzadas y las <em>unchecked</em> que no son de obligada captura ni ser declaradas. Al usar <em>streams</em> y algunas interfaces funcionales de Java como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html">Consumer</a> que no lanzan excepciones el compilador generará un error de compilación si la implementación lanza una excepción.</p>
@@ -978,16 +958,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/tomcat.svg" width="200" height="133" alt="Tomcat" title="Tomcat"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/tomcat.svg" width="200" height="133" alt="Tomcat" title="Tomcat"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring-boot.svg" width="200" height="166" alt="Spring Boot" title="Spring Boot"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring-boot.svg" width="200" height="166" alt="Spring Boot" title="Spring Boot"  class=""></p>
 </div>
 <p>El protocolo HTTP es un protocolo sin estado que quiere decir que entre las peticiones no se comparte estado ni se recuerda ningún dato. Por otro lado las <em>cookies</em> es pequeño conjunto de datos que son almacenados en el cliente y son enviados en cada petición que se hace a un sitio web, cada sitio web mantiene su propia colección de <em>cookies</em>, dos sitios distintos no comparten sus <em>cookies</em>. Para mantener estado entre dos peticiones se hace uso de las <em>cookies</em>.</p>
 <p>En Java los servidores web envían al cliente una <em>cookie</em> con simplemente un identificativo de la sesión, el estado se suele mantener en el servidor en memoria, en almacenamiento de disco o <a href="https://picodotdev.github.io/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">persistido en una base de datos como Redis</a>. El identificativo de la sesión por defecto usando un contenedor de <em>servlets</em> como <a href="https://tomcat.apache.org/">Tomcat</a> tiene una longitud de 16 bytes que codificados en hexadecimal da lugar a 32 caracteres o 128 bits. Para aumentar la seguridad por si alguien intenta adivinar el identificativo de cualquier usuario que tenga sesión iniciada por fuerza bruta de casualidad es posible aumentar el número de caracteres para identificar la <em>cookie</em> de sesión. La clase de la API que lo permite en Tomcat es <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html">Manager</a>.</p>
@@ -1015,8 +992,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"><img src="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_600x450_fit_box_3.png" width="600" height="229" alt="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_2560x1440_fit_box_3.png" data-gallery="" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"><img src="https://picodotdev.github.io/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_600x450_fit_box_3.png" width="600" height="229" alt="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"  class="lozad "></a></p>
 <figcaption>Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales</figcaption>
 </figure>
 </div>
@@ -1064,12 +1040,10 @@
         <content type="html">
         <![CDATA[<p><strong>Los microservicios son independientes pero se llaman unos a otros, suele ser muy útil para tareas de depuración y de visibilidad de una petición disponer de la traza completa de una petición a lo largo de las llamadas entre varios microservicios. Spring Cloud Sleuth proporciona la infraestructura para que las peticiones salientes envíen un identificativo de correlación de la petición global y para las peticiones entrantes relacionarlo con la petición global.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En una aplicación distribuida con varios microservicios es imprescindible tener la configuración de forma centralizada que cada microservicio obtiene al iniciarse y disponer de registro y descubrimiento para que los servicios al iniciarse, terminarse, actualizarse o por un fallo se registren o desregistren y obtengan la ubicación de las dependencias que necesitan.</p>
 <p>Otra de <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">las funcionalidades esenciales en una aplicación distribuida</a> es la trazabilidad de una petición, desde que entra por el <em>API gateway</em> pasando por las diferentes peticiones que hacen los microservicios por la red o envío de mensajes. Es necesaria la funcionalidad que relacione las trazas de todos los servicios para depuración o consulta en un futuro para dar visibilidad a las acciones que se realizan en el sistema.</p>
@@ -1152,8 +1126,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Con la <a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/">introducción de los <em>generics</em> en el lenguaje Java</a> en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos <em>wildcard</em> definidos con un <em>?</em>. Una lista definida como <em>List&lt;?&gt;</em> se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como <em>List&lt;?&gt;</em> o <em>List&lt;? extends Object&gt;</em> a partir de Java 5.</p>
 <p>El siguiente código produce un error de compilación con el mensaje <em>capture of</em> ya que el compilador no puede validar que el tipo que se inserta en la lista, <em>Object</em>, como primer elemento si es compatible en tiempo de ejecución con el tipo de elementos que tiene la lista:</p>

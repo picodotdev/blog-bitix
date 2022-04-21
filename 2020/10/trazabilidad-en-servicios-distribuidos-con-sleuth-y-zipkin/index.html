@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -266,12 +266,10 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/zipkin.svg" width="200" height="211" alt="Zipkin" title="Zipkin" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/zipkin.svg" width="200" height="211" alt="Zipkin" title="Zipkin" class="" loading="false"></p>
 </div>
 <p>El un sistema basado en microservicios unos servicios depende de otros y se comunican haciendo llamadas entre ellos. Las llamadas entre los servicios son un punto de fallo y problemas que conviene monitorizar para que el conjunto de la aplicación funcione correctamente. Con un número importante de servicios la monitorización y la trazabilidad es una de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">funcionalidades de las aplicaciones basadas en microservicios</a>, muchas de estas funcionalidades son proporcionadas de forma específica por una herramienta.</p>
 <p>En el caso de <a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">trazabilidad en microservicios con Sleuth</a> proporciona un identificador global que permite correlacionar todas las trazas desencadenadas por una petición en los diferentes servicios, con el identificador global de una traza se puede obtener el resto de trazas del mismo servicio. Con el identificador global es posible acceder al registro de trazas y obtener todas las correlacionadas con el identificador global como sería el caso de <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">guardar las trazas en Elasticsearch, Logstash y Kibana</a>. Pero las trazas emitidas por los microservicios no ofrecen métricas de cuánto tiempo ha tardado cada uno de los microservicios en su ejecución en devolver la respuesta y sin nada adicional no permite correlacionar las trazas de un servicio con las trazas del servicio llamado.</p>
@@ -324,10 +322,8 @@
 <p>Tanto el microservicio cliente como el microservicio servidor tienen Sleuth integrado y envían de forma asíncrona cuando terminan las peticiones HTTP la información de trazabilidad a Zipkin. Con el <em>traceId</em> de una transacción se observa en Zipkin la cadena de llamadas entre los microservicios y sus tiempos de respuesta. En el ejemplo solo hay dos pero podrían en un caso real quizá sean tres, cuatro o más ya sea porque cada servicio utiliza otro o porque un mismo servicio utiliza varios, ver esta información de forma gráfica es mucho más fácil de analizar que solo con las trazas correlacionadas en ELK.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Nomad"><img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Nomad" title="Interfaz web de Nomad" class="" loading="lazy"></a>
-
-<a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Zipkin"><img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Zipkin" title="Interfaz web de Zipkin" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_2560x1440_fit_box_3.png" data-gallery="" title="Interfaz web de Nomad"><img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Nomad" title="Interfaz web de Nomad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_2560x1440_fit_box_3.png" data-gallery="" title="Interfaz web de Zipkin"><img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Zipkin" title="Interfaz web de Zipkin" class="" loading="lazy"></a></p>
 <figcaption>Interfaz web de Nomad y Zipkin</figcaption>
 </figure>
 </div>

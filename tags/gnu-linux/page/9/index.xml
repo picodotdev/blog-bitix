@@ -5,12 +5,72 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-03-24T22:00:00+01:00</updated>
+    <updated>2022-04-19T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/</id>
+        <title>Crear y usar un repositorio en Docker Hub</title>
+        <updated>2015-07-11T01:00:00+02:00</updated>
+        <published>2015-07-10T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>¿Por qué se habla tanto de Docker y despierta tanto interés si la tecnología ya existía desde hace tiempo tanto en otros sistemas operativos como en Linux? Uno de los éxitos que ha contribuido a ellos es Docker Hub, un repositorio de imágenes en el que cualquiera puede contribuir con las suyas. Esto hace que pueda encontrarse cualquier herramienta de las populares y empezar a usarlas en muy pocos minutos.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p>Probablemente uno de los éxitos de Docker más que la propia tecnología de contenedores sea <a href="https://registry.hub.docker.com/">Docker Hub</a> que permite a los usuarios compartir las imágenes construidas, se podría decir que es el <a href="https://github.com/">GitHub</a> de los contenedores docker y quizá por ello el paralelismo en el nombre entre ambos. Docker Hub permite subir imágenes o usar las imágenes oficiales de <a href="https://www.postgresql.org/">postgresql</a>, <a href="https://redis.io/">redis</a>, <a href="https://www.mysql.com/">mysql</a>, <a href="https://www.ubuntu.com/">ubuntu</a>, <a href="https://www.rabbitmq.com/">rabbitmq</a>, &hellip; y otra <a href="https://registry.hub.docker.com/">multitud de proyectos</a>.</p>
+<p>El <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">archivo Dockerfile con el que construimos una imagen</a> podemos hospedarlo en un repositorio de GitHub y que Docker Hub lo obtenga para construir la imagen. Docker Hub ofrece repositorios públicos en los que colocar las imágenes que cualquier otro usuario puede acceder y usar o repositorios privados con cierto coste según el número de repositorios privados, el primer repositorio privado es gratuito.</p>
+<h3 id="otros-artículos-sobre-docker">Otros artículos sobre Docker</h3>
+<p>Este artículo forma parte de otros artículos sobre Docker que ya he escrito si quieres empezar por el principio puedes leer primero la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características sobre Docker</a>, el <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Inicio básico de Docker</a>, <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">Como crear una imagen con un Dockerfile</a> o <a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Como usar docker con Docker Compose</a>. En siguientes artículos hablaré de otras herramientas como Docker Machine y Docker Swarm.</p>
+<p>A continuación explicaré como crear un repositorio en Docker Hub que obtenga los Dockerfile de un repositorio de GitHub y construya las imágenes de los Dockerfile de forma automática cuando haya cambios en los archivos dockerfile de GitHub.</p>
+<h3 id="crear-una-cuenta-en-docker-hub">Crear una cuenta en Docker Hub</h3>
+<p>Primero necesitaremos crear una cuenta en Docker Hub. El nombre de usuario determinará el nombre de las imágenes, siendo mi nombre de usuario <em>picodotdev</em> al usar las imágenes debería usar:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run picodotdev/dockerhub-postgres:9.4&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-run.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_2560x1440_fit_box_3.png" data-gallery="" title="Docker Hub"><img src="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub_hu5b9976776b1cd163218f0599bbd96d6b_66063_300x200_fit_box_3.png" width="269" height="200" alt="Docker Hub" title="Docker Hub"  class="lozad "></a></p>
+<figcaption>Docker Hub</figcaption>
+</figure>
+</div>
+<h3 id="subir-el-archivo-dockerfile-a-un-repositorio-de-github">Subir el archivo Dockerfile a un repositorio de GitHub</h3>
+<p>Posteriormente deberemos crear un repositorio en GitHub para alojar los archivos Dockerfile que usará Docker Hub para construir las imágenes de Docker. En el ejemplo usaré el <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerHub">repositorio blog-ejemplos</a> y dentro de este los dockerfiles los he <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/DockerHub/postgres/9.4">ubicado dentro de una carpeta</a>.</p>
+<p>Una vez que tenemos el repositorio de GitHub subimos un <a href="https://github.com/picodotdev/blog-ejemplos/blob/master/DockerHub/postgres/9.4/Dockerfile">Dockerfile para el ejemplo</a>, usaré el proporcionado de forma <a href="https://registry.hub.docker.com/_/postgres/">oficial de posgresql</a>, y creamos en Docker Hub una <em>build</em> automatizada, se nos solicitará permisos en la cuenta de GitHub para que Docker Hub pueda acceder a nuestros repositorios.</p>
+<h3 id="crear-el-repositorio-en-dockerhub-y-la-_build_-automática">Crear el repositorio en DockerHub y la <em>build</em> automática</h3>
+<p>En la creación del repositorio en Docker Hub con <em>build</em> automatizada seleccionamos el repositorio de GitHub que contiene los repositorios y el archivo DockerFile para el que queremos hacer la build automatizada. Le asignamos un nombre al repositorio y un <em>tag</em> a la <em>build</em> que podremos usar al hacer el <em>pull</em> de la imagen.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_2560x1440_fit_box_3.png" data-gallery="" title="Docker Hub"><img src="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/images/dockerhub-automated-build_hu82559c1d7c01b549f79d8e413e2351ad_42125_300x200_fit_box_3.png" width="300" height="196" alt="Docker Hub" title="Docker Hub"  class="lozad "></a></p>
+<figcaption>Build automatizada de Docker Hub</figcaption>
+</figure>
+</div>
+<p>Docker Hub se encargará de obtener el archivo Dockerfile y construir la imagen, en el proceso podremos ver las trazas generadas.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.docker.com/userguide/dockerrepos/">Get started with Docker Hub</a></li>
+<li><a href="http://docs.docker.com/docker-hub/builds/#the-dockerfile-and-automated-builds">The Dockerfile and Automated Builds</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/</id>
         <title>Aplicaciones multicontenedor con Docker Compose</title>
@@ -21,8 +81,7 @@
         <content type="html">
         <![CDATA[<p><strong>Continuando la serie de artículos sobre Docker, otra de las herramientas disponibles en el ecosistema y que nos facilitará enormemente el administrar aplicaciones compuestas por varios contenedores relacionados entre sí es Docker Compose. Definiendo en un archivo los contenedores que forman parte de una aplicación podemos iniciarlos, pararlos, eliminarlos o ver su estado como si de una unidad se tratara.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>Una vez que ya sabemos que nos puede proporcionar una de las herramientas de la que más se está hablando con la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción a Docker</a>, conocemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">como empezar a usar Docker</a> y sabemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">cómo crear nuestras propias imágenes de Docker</a> para los propósitos específicos que necesitemos nos resultará interesante algunas de las nuevas herramientas que proporciona Docker. El ecosistema de docker ya no solo se compone del entorno de ejecución de los contenedores, explicadas de forma básica son:</p>
 <ul>
@@ -79,8 +138,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/images/docker-compose_hua74a7e9db5f95e72caba74a265683e33_52379_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Docker Compose"><img src="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/images/docker-compose_hua74a7e9db5f95e72caba74a265683e33_52379_300x200_fit_box_3.png" width="300" height="156" alt="Docker Compose" title="Docker Compose"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/images/docker-compose_hua74a7e9db5f95e72caba74a265683e33_52379_2560x1440_fit_box_3.png" data-gallery="" title="Docker Compose"><img src="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/images/docker-compose_hua74a7e9db5f95e72caba74a265683e33_52379_300x200_fit_box_3.png" width="300" height="156" alt="Docker Compose" title="Docker Compose"  class="lozad "></a></p>
 <figcaption>Docker Compose</figcaption>
 </figure>
 </div>
@@ -157,8 +215,7 @@
 <p>Cada mes sigo aumentando ligeramente o manteniendo el número de visitas del mes anterior, la mayoría procedentes del buscador Google. En enero andaba en unas 1125 sesiones y 1400 páginas vistas semanales, hoy en unas 1450 sesiones y 2000 páginas vistas, siguen siendo pocas comparadas con algunos otras bitácoras de temática similar. De vez en cuando tengo algún nuevo seguidor en twitter y son pocos los comentarios que recibo probablemente esté haciendo algo que podría hacer mejor. Los artículos que publico suelen ser para un público de nivel medio y uno a la semana, <a href="http://www.marketingguerrilla.es">recomiendan escribir artículos de un nivel básico</a> y probablemente si siguiese esta recomendación recibiría más visitas o más comentarios pero me suele gustar escribir de algo que incluso yo aprenda algo y que no esté ya en un millardo de sitios y sea medianamente fácil de encontrar con una búsqueda sencilla, aunque igual me planteo de vez en cuando seguir esta recomendación.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/06/hemeroteca-7/images/analytics_hu1ac75864dcb350a7d40e492d9b491358_64582_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Visitas semanales de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2015/06/hemeroteca-7/images/analytics_hu1ac75864dcb350a7d40e492d9b491358_64582_300x200_fit_box_3.png" width="300" height="111" alt="Visitas semanales de Blog Bitix" title="Visitas semanales de Blog Bitix"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/06/hemeroteca-7/images/analytics_hu1ac75864dcb350a7d40e492d9b491358_64582_2560x1440_fit_box_3.png" data-gallery="" title="Visitas semanales de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2015/06/hemeroteca-7/images/analytics_hu1ac75864dcb350a7d40e492d9b491358_64582_300x200_fit_box_3.png" width="300" height="111" alt="Visitas semanales de Blog Bitix" title="Visitas semanales de Blog Bitix"  class="lozad "></a></p>
 <figcaption>Evolución de sesiones semanales en Blog Bitix</figcaption>
 </figure>
 </div>
@@ -196,8 +253,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
 <p><a href="https://www.archlinux.org/">Arch Linux</a> es un distribución <a href="https://en.wikipedia.org/wiki/Rolling_release"><em>rolling release</em></a> en la que los paquetes son actualizados constantemente en cuanto sale una nueva versión. Esto tiene la ventaja de que siempre se tiene el sistema actualizado con las versiones más recientes de los programas, en los que se van añadiendo nuevas características y corrigiendo errores de seguridad y funcionales. Sin embargo, en algún momento puede ocurrir que una actualización de algún paquete nos introduzca algún error, en este caso podemos hacer una desactualización o <em>downgrade</em> de paquete y volver a la última versión estable.</p>
 <p>No es habitual que haya errores pero puede darse el caso, antes de hacer una desactualización es recomendable buscar en los <a href="https://bbs.archlinux.org/">foros de arch linux</a> una respuesta con una alternativa mejor. En todo este tiempo como usuario de Arch Linux, más de 5 años, los <em>downgrades</em> que he tenido que hacer han sido dos, uno para el paquete de <em>subversion</em> y el que voy a comentar.</p>
@@ -257,57 +313,45 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/drupal.svg" width="200" height="218" alt="Drupal" title="Drupal"  class=""></p>
 </div>
 <p>Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">Sistemas de gestión de contenidos</a> (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.</p>
 <p>No soy un experto en CMS ni he usado uno en un proyecto real pero trataré en este artículo hacer una introducción a <a href="https://www.drupal.org/">Drupal</a>. Hay otras opciones como <a href="https://wordpress.org/">Wordpress</a> o <a href="https://www.joomla.org/">Joomla</a> también desarrolladas en <a href="https://secure.php.net/">PHP</a> y en el ámbito <a href="https://www.oracle.com/technetwork/java/index.html">Java</a> otras como <a href="https://www.alfresco.com/">Alfresco</a>, <a href="https://www.nuxeo.com/">Nuxeo</a>, <a href="https://dotcms.com/">dotCMS</a> y <a href="https://www.liferay.com/">Liferay</a> aunque estas en algunos puntos son diferentes ofreciendo gestión documental o <a href="https://es.wikipedia.org/wiki/Portal_%28Internet%29">portales de internet</a>. Wordpress es más simple que Drupal pero si tenemos conocimientos de desarrollo Drupal posiblemente se adapte más a nuestras preferencias. Alfresco y Nuxeo son más bien gestores de contenido y de documentos pero no permiten gestionar como se visualiza el contenido en la web final, Liferay es algo más parecido a lo que ofrece Drupal pero tengo la sensación que es algo más compleja o no exactamente con las mismas opciones y está más destinado a la creación de portales web.</p>
 <p>Drupal como decía está desarrollado sobre PHP pero solo necesitaremos conocer este lenguaje en el momento que queramos desarrollar y personalizarlo. Como usuarios para crear contenido y gestionar la disposición de los elementos en la página web no necesitamos conocer nada de PHP solo necesitaremos conocer como funciona la herramienta de administración que ofrece Drupal. El tipo de los proyectos para los que puede estar indicado Durpal puede ser aquellos en los que los usuarios quieran crear y publicar nuevo contenido y quieran ellos mismos modificar los elementos de las páginas sin necesidad de solicitar un desarrollo. Algunos casos de uso pueden ser instituciones de la administración pública, empresas, tiendas, comercios, &hellip; aquellos que quieran tener una presencia en internet y puedan necesitar añadir, modificar o eliminar en algún momento el contenido de su web. La tarea de los desarrolladores consistirá en personalizar la instalación de Drupal a las necesidades del cliente y sus usuarios ya sea adaptando el aspecto de la web a crear, creando la taxonomía del contenido, definiendo los tipos de contenidos y que información contiene, usuarios y roles, &hellip;</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio Drupal"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_300x200_fit_box_3.png" width="282" height="200" alt="Inicio Drupal" title="Inicio Drupal"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio Drupal (Administración)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_300x200_fit_box_3.png" width="284" height="200" alt="Inicio Drupal (Administración)" title="Inicio Drupal (Administración)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_2560x1440_fit_box_3.png" data-gallery="" title="Inicio Drupal"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio_huf2a00d1862abd088cad08a0e96220a73_29179_300x200_fit_box_3.png" width="282" height="200" alt="Inicio Drupal" title="Inicio Drupal"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_2560x1440_fit_box_3.png" data-gallery="" title="Inicio Drupal (Administración)"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/inicio-administracion_hub35f112cec43233d532972ffb246ef4a_31553_300x200_fit_box_3.png" width="284" height="200" alt="Inicio Drupal (Administración)" title="Inicio Drupal (Administración)"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Por defecto Drupal ofrece dos tipos de contenido páginas y artículos que poseen un título y un cuerpo aunque podemos crear nuevos tipos de contenido con información adicional como podría ser eventos que recojan además una fecha y hora de inicio, fecha y hora de fin, lugar, &hellip;. Podemos crear usuarios y roles y asignarles permisos como poder crear contenidos, crear menús con enlaces a ciertos contenidos que queramos destacar. Podemos usar taxonomía para categorizar el contenido y que este esté organizado y sea fácilmente encontrado por los usuarios. Asociar tipos de contenido con ciertos tipo de taxonomía. Modificar los bloques como menús, formulario de inicio de sesión, &hellip; y hacer que solo se vean en ciertas páginas, para algunos tipos de contenidos, ciertos roles o usuarios. Hacer vistas o listas de los contenidos. Modificar la disposición o layout de las páginas por ejemplo para que tenga dos, tres columnas, una cabecera y un pie, &hellip;. Finalmente también podemos modificar y personalizar el aspecto del sitio web con temas que podemos descargar o desarrollar nosotros mismos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear página"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_300x200_fit_box_3.png" width="268" height="200" alt="Crear página" title="Crear página"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Crear artículo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_300x200_fit_box_3.png" width="268" height="200" alt="Crear artículo" title="Crear artículo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_2560x1440_fit_box_3.png" data-gallery="" title="Crear página"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-pagina_hu7d989873d8b0f756fcd2a2f6d4a5079e_29858_300x200_fit_box_3.png" width="268" height="200" alt="Crear página" title="Crear página"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_2560x1440_fit_box_3.png" data-gallery="" title="Crear artículo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/crear-articulo_hu0014f6dd0073fd8d37aeb94d3751c5dd_27499_300x200_fit_box_3.png" width="268" height="200" alt="Crear artículo" title="Crear artículo"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Tipos de contenido"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_300x200_fit_box_3.png" width="268" height="200" alt="Tipos de contenido" title="Tipos de contenido"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_300x200_fit_box_3.png" width="268" height="200" alt="Taxonomía" title="Taxonomía"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_2560x1440_fit_box_3.png" data-gallery="" title="Tipos de contenido"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/tipos-contenido_huba7f8446c7a2941a4e3617665d20c22c_35127_300x200_fit_box_3.png" width="268" height="200" alt="Tipos de contenido" title="Tipos de contenido"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_2560x1440_fit_box_3.png" data-gallery="" title="Taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia_hu1fcd59d2c1d62e6b49a85ac111a75cce_31161_300x200_fit_box_3.png" width="268" height="200" alt="Taxonomía" title="Taxonomía"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Etiquetas taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_300x200_fit_box_3.png" width="268" height="200" alt="Etiquetas taxonomía" title="Etiquetas taxonomía"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Bloques"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_300x200_fit_box_3.png" width="268" height="200" alt="Bloques" title="Bloques"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_2560x1440_fit_box_3.png" data-gallery="" title="Etiquetas taxonomía"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/taxonomia-etiquetas_hu35632a7f6f6e2d9092b91e8ed8f12db8_32967_300x200_fit_box_3.png" width="268" height="200" alt="Etiquetas taxonomía" title="Etiquetas taxonomía"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_2560x1440_fit_box_3.png" data-gallery="" title="Bloques"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/bloques_hu1f377a72bcf3cbdca8dcadf3f8fd8ee4_51185_300x200_fit_box_3.png" width="268" height="200" alt="Bloques" title="Bloques"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_300x200_fit_box_3.png" width="268" height="200" alt="Personas" title="Personas"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Permisos personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_300x200_fit_box_3.png" width="268" height="200" alt="Permisos personas" title="Permisos personas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_2560x1440_fit_box_3.png" data-gallery="" title="Personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas_huc003da5bd98a62d8b7d13b8ac6eb160e_41340_300x200_fit_box_3.png" width="268" height="200" alt="Personas" title="Personas"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_2560x1440_fit_box_3.png" data-gallery="" title="Permisos personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-permisos_hue055cb0b63d35a77098fdba63fb778f7_58790_300x200_fit_box_3.png" width="268" height="200" alt="Permisos personas" title="Permisos personas"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Roles personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_300x200_fit_box_3.png" width="268" height="200" alt="Roles personas" title="Roles personas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_2560x1440_fit_box_3.png" data-gallery="" title="Roles personas"><img src="https://picodotdev.github.io/blog-bitix/2015/01/introduccion-e-inicio-a-drupal/images/personas-roles_hu45fae67c6210dedb2811f13e5443eade_54247_300x200_fit_box_3.png" width="268" height="200" alt="Roles personas" title="Roles personas"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Drupal es ampliamente <a href="https://www.drupal.org/project/project_module">extensible mediante módulos</a> permitiendo agregarle funcionalidades de diferentes categorías (contenido, administración, integración con terceros, comercio electrónico, &hellip;) si las incorporadas por defecto no nos son suficientes. Algunos de  los módulos más empleados son <a href="https://www.drupal.org/project/panels">Panels</a> que permite definir contenedores (barra izquierda, región contenido, barra derecha, pie, cabecera, &hellip;) en una página y asignar el contenido que queremos que aparezca en cada uno de ellos, <a href="https://www.drupal.org/project/cck">Content Construction Kit (CCK)</a>, <a href="https://www.drupal.org/project/views">Views</a> para definir vistas de una colección de elementos, <a href="https://www.drupal.org/project/pathauto">Pathauto</a> para hacer las URLs amigables al usuario y buscadores mejorando el SEO del sitio, <a href="https://www.drupal.org/project/webform">Webform</a> para crear formularios y recoger información y otros muchos más para infinidad de cosas. Sin embargo, conviene usar los más populares que están ampliamente probados y hayan demostrado su utilidad, los que tenga buen soporte y un mantenimiento activo, estas cosas las podemos seleccionar con el filtro en el formulario de búsqueda de módulos.</p>
@@ -349,15 +393,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="300" height="89" alt="Redmine" title="Redmine"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="300" height="89" alt="Redmine" title="Redmine"  class=""></p>
 </div>
 <p>Las metodologías ágiles para la gestión de proyectos son ya ampliamente usadas, como <a href="https://es.wikipedia.org/wiki/Scrum_%28desarrollo_de_software%29">scrum</a> o <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_extrema">programación extrema</a> (XP). Una diferencia entre las metodologías ágiles y las metodologías empleadas tradicionalmente como el modelo en cascada es que en las metodologías ágiles se tiene en cuenta que se pueden producir cambios en el desarrollo del proyecto y suelen ser más flexibles y adaptables ante estos cambios.</p>
 <p>En el modelo de metodología ágil podemos usar un panel kanban donde ver de un vistazo rápido las tareas terminadas, las que están en progreso y las próximas tareas planificadas reflejando la realidad del equipo de desarrollo. Reorganizándolas según prioridades que pueden cambiar de una semana a otra, en las metodologías ágiles no se realiza una planificación completa inicial sino que se va realizando a medida que el proyecto progresa.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Panel Kanban de Redmine"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_300x200_fit_box_3.png" width="300" height="136" alt="Panel Kanban de Redmine" title="Panel Kanban de Redmine"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_2560x1440_fit_box_3.png" data-gallery="" title="Panel Kanban de Redmine"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/panel-kanban_hu4ef8f81386afd1f4c05942e3239ab438_36051_300x200_fit_box_3.png" width="300" height="136" alt="Panel Kanban de Redmine" title="Panel Kanban de Redmine"  class="lozad "></a></p>
 </figure>
 </div>
 <p>También para la gestión de las tareas de los proyectos se suele usar algún tipo de herramienta que permita recoger y gestionar las peticiones adaptada a la metodología que usemos, una de estas herramientas puede ser <a href="https://www.redmine.org/">Redmine</a>. En la <a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/">introducción sobre Redmine</a> comentaba que es lo nos puede ofrecer para gestionar el proyecto.</p>
@@ -373,17 +415,14 @@
 <p>Finalmente, debemos activar el plugin agile en el proyecto usando la opción Administration&gt; Agile.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Activación panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_300x200_fit_box_3.png" width="300" height="139" alt="Activación panel Kanban" title="Activación panel Kanban"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_2560x1440_fit_box_3.png" data-gallery="" title="Activación panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/configuracion_hue052186d9db87a4a7ddb2d207f6da4d3_32798_300x200_fit_box_3.png" width="300" height="139" alt="Activación panel Kanban" title="Activación panel Kanban"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez activado ya podemos ver el panel kanban mostrado en la primera captura en la pestaña ágil. Por defecto en Redmine solo veremos las columnas New, In progress, Resolved y Feedback pero podemos modificar el flujo de las peticiones adaptándolo a nuestra metodología u organización, podemos hacer esto desde Administración&gt; Estados de peticiones para crear nuevos estados y Administración&gt; Flujo de trabajo para establecer el grafo de estados determinando a que estados puede cambiar una petición desde su estado actual.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estados de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_300x200_fit_box_3.png" width="300" height="139" alt="Estados de peticiones" title="Estados de peticiones"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Flujo de trabajo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_300x200_fit_box_3.png" width="300" height="139" alt="Flujo de trabajo" title="Flujo de trabajo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_2560x1440_fit_box_3.png" data-gallery="" title="Estados de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/estados-peticiones_hu8a2a9674874943501314cb8d2ca16bed_46591_300x200_fit_box_3.png" width="300" height="139" alt="Estados de peticiones" title="Estados de peticiones"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_2560x1440_fit_box_3.png" data-gallery="" title="Flujo de trabajo"><img src="https://picodotdev.github.io/blog-bitix/2015/01/instalar-y-usar-plugin-agil-en-redmine/images/flujo-de-trabajo_hu96763af7a06f0f0b8ba222c218e7f202_64657_300x200_fit_box_3.png" width="300" height="139" alt="Flujo de trabajo" title="Flujo de trabajo"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="reference">
@@ -418,8 +457,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>Seis nuevos meses para el Blog Bitix cumpliendo un año como tal y siendo la continuación de los casi cuatro años de <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a>. Otro año que finaliza y toca hacer <a href="https://picodotdev.github.io/blog-bitix/2014/">recapitulación de los que he escrito durante este tiempo</a>, 26 nuevos artículos escritos con puntualidad uno por semana y publicados el viernes o sábado.</p>
 <p>Aunque aún no puedo usar profesionalmente el <em>framework</em> web <a href="https://tapestry.apache.org/">Apache Tapestry</a> con el realmente me divierto programando sigo escribiendo sobre él con algunos temas interesantes tales que cómo usar un CDN, cómo crear plantillas para dar un aspecto común a todas las páginas de la aplicación, una comparativa entre el modelo «pull» que usa Tapestry y el modelo «push» que normalmente se usa en los <em>framework</em> basados en acciones, cómo crear una doble barra de botones sin duplicar el mismo código, como forzar el uso de https o la anotación Cached. Todo este contenido lo he añadido al <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> y que puedes descargar de forma totalmente libre en varios formatos. No está mal y aún tengo más contenido pendiente por publicar tal que como embeber una aplicación web usando tomcat-embed de forma que la aplicación esté autocontenida y el despliegue sea más sencillo y evitemos problemas, hacer un ejemplo con el componente Grid que muestre sus grandes posibilidades y la gran cantidad de trabajo que nos puede ahorrar, &hellip;</p>
@@ -461,8 +499,7 @@
 <p>Y para finalizar quiero agradecer a <a href="https://twitter.com/fran_mosteiro">Fran Mosteiro</a>, <a href="https://twitter.com/josetesan">Jose Luís Sánchez</a>, <a href="https://twitter.com/jbravo">Joaquín Bravo</a>, <a href="https://twitter.com/mbmerayo">Marcos Bello</a> y algunos otros que esporádicamente también suelen hacer RT o marcar como favoritos los tweets de esta bitácora y que me ayudan un poquito o mucho a difundir lo que escribo ¡muchas gracias!, un saludo y ¡que comencéis bien el nuevo año 2015! :)</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Christmastux 2014"><img src="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmastux 2014" title="Christmastux 2014"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_2560x1440_fit_q90_box.jpg" data-gallery="" title="Christmastux 2014"><img src="https://picodotdev.github.io/blog-bitix/2014/12/hemeroteca-6/images/christmas-tux-2014_huaef2ca66353b2d132c670385d2dd34d4_553762_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmastux 2014" title="Christmastux 2014"  class="lozad "></a></p>
 <figcaption>¡Buen 2015! <br>Fuente: klowner.com</figcaption>
 </figure>
 </div>
@@ -490,48 +527,38 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="200" height="59" alt="Redmine" title="Redmine"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/redmine.png" width="200" height="59" alt="Redmine" title="Redmine"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
 </div>
 <p>Para desarrollar un proyecto de software se hace imprescindible disponer de algunas herramientas que nos permitan realizar las tareas. Una de estas herramientas es un <a href="https://en.wikipedia.org/wiki/Issue_tracking_system">gestor de tareas, peticiones o errores</a>, que nos permite recoger en una herramienta gran parte de la información, conocer el estado, planificar y hacer el seguimiento las tareas necesario para desarrollar de forma ordenada, sin que perdamos nada de información y pudiendo recuperarla en cualquier momento en un futuro.</p>
 <p>Como es habitual herramientas que gestionan tareas disponemos de varias algunas de las más conocidas son <a href="https://www.bugzilla.org/">Bugzilla</a>, <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://www.mantisbt.org/">Mantis</a>, <a href="https://trac.edgewall.org/">Trac</a> y la herramienta de la que hablaré en este artículo, <a href="https://www.redmine.org/">Redmine</a>. Cada una de estas herramientas como gestores de tareas son parecidas pero se diferencian en algunas cosas como la licencia que tiene, el esquema de precios o la funcionalidad que ofrece. Redmine tiene una <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">licencia de software libre GPL</a> y por tanto la podemos usar sin ningún coste, en la siguiente tabla podemos compararla con los <a href="https://www.atlassian.com/software/jira/pricing">precios de JIRA</a> que para pocos usuarios son asumibles pero que a medida que se aumentan los usuarios empiezan a ser notables aunque posiblemente alcanzables en función del tamaño de la empresa. En cualquier siendo JIRA también una herramienta excelente Redmine cumple perfectamente con la misma función. En la wikipedia podemos encontrar <a href="https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems">más opciones y comparar unas con otras</a>.</p>
 <p>Si queremos evaluar Redmine una forma sencilla podemos hacerlo mediante una imagen de Bitnami con VirtualBox. En la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">introducción a Bitnami</a> comento qué es y como nos puede ayudar a disponer de software que en algunos casos no es simple de instalar y que con Bitnami podemos disponer de forma sencilla y rápida, además de como usar con VirtualBox cualquier imagen de Bitnami de las herramientas ofrecidas. Una vez seguidos los pasos de la guía anterior podemos acceder a Redmine con el navegador web y una dirección similar a <em>http://192.168.0.11</em>, el usuario y contraseña para acceder es user y bitnami respectivamente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Proyecto"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_300x200_fit_box_3.png" width="300" height="181" alt="Proyecto" title="Proyecto"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Petición"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_300x200_fit_box_3.png" width="300" height="185" alt="Petición" title="Petición"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_2560x1440_fit_box_3.png" data-gallery="" title="Proyecto"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/proyecto_huc5391f3bb2fe8f890f4052d1e1603f1a_23188_300x200_fit_box_3.png" width="300" height="181" alt="Proyecto" title="Proyecto"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_2560x1440_fit_box_3.png" data-gallery="" title="Petición"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/peticion_huee84518d778088ae20bd387a73d5293d_38867_300x200_fit_box_3.png" width="300" height="185" alt="Petición" title="Petición"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Con Redmine podemos adaptar el flujo de las tareas a la forma de organización que empleemos, podemos personalizar el grafo de estados que siguen las tareas y que personas tiene permisos para hacer cada uno de los cambios de estado. También podemos añadir campos personalizados que queremos recoger para cada petición, por ejemplo, podemos querer dar un tamaño a las tareas en función de si estimamos que es grande, media o pequeña. También podemos crear filtros y guardarlos para encontrar fácilmente tareas.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_300x200_fit_box_3.png" width="300" height="181" alt="Estados" title="Estados"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Propiedades"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_300x200_fit_box_3.png" width="300" height="181" alt="Propiedades" title="Propiedades"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_2560x1440_fit_box_3.png" data-gallery="" title="Estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/estados_hue0e3162886816900263a2154c8ee2e5e_42878_300x200_fit_box_3.png" width="300" height="181" alt="Estados" title="Estados"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_2560x1440_fit_box_3.png" data-gallery="" title="Propiedades"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/propiedades_hua076b1dfa17f61f58d8ee0d6df42ce47_38825_300x200_fit_box_3.png" width="300" height="181" alt="Propiedades" title="Propiedades"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Filtros"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_300x200_fit_box_3.png" width="249" height="200" alt="Filtros" title="Filtros"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Flujo estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_300x200_fit_box_3.png" width="300" height="177" alt="Flujo estados" title="Flujo estados"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_2560x1440_fit_box_3.png" data-gallery="" title="Filtros"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/consulta_hub5bad320ba6632e1084e3f266f937585_41369_300x200_fit_box_3.png" width="249" height="200" alt="Filtros" title="Filtros"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_2560x1440_fit_box_3.png" data-gallery="" title="Flujo estados"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/flujo-estados_hu677460e55ab0aea1e8fac0028295eff7_59509_300x200_fit_box_3.png" width="300" height="177" alt="Flujo estados" title="Flujo estados"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Además de gestionar las tareas Redmine dispone de herramientas que nos pueden ser útiles en el proyecto como una wiki para recoger documentación del proyecto y un repositorio de documentos para aquellos que no queremos incluir en la herramienta de control de versiones por su tamaño pero que queremos que estén disponibles para cualquiera que trabaje con el proyecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Wiki"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_300x200_fit_box_3.png" width="262" height="200" alt="Wiki" title="Wiki"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_300x200_fit_box_3.png" width="300" height="133" alt="Archivos" title="Archivos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_2560x1440_fit_box_3.png" data-gallery="" title="Wiki"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/wiki_huc8ef37bf4091738b82bd6e3b425a7926_26237_300x200_fit_box_3.png" width="262" height="200" alt="Wiki" title="Wiki"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_2560x1440_fit_box_3.png" data-gallery="" title="Archivos"><img src="https://picodotdev.github.io/blog-bitix/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/images/archivos_huf26cedcb4ea27c3a1cb52eb9f4e24372_15256_300x200_fit_box_3.png" width="300" height="133" alt="Archivos" title="Archivos"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Pero Redmine es más que una herramienta de gestión de tareas, los complementos pueden añadirle funcionalidad adicional que permite <a href="http://www.redminecrm.com/projects/crm/pages/1">convertirla en un CRM para gestionar las comunicaciones con clientes</a> o en un <a href="http://www.redminecrm.com/projects/helpdesk/pages/1">helpdesk para atender las tareas de clientes</a>. Además de otros como <a href="http://www.redminecrm.com/projects/people/pages/1">personalizar los usuarios de Redmine</a> o crear <a href="http://www.redminecrm.com/projects/checklist/pages/1">pequeñas listas de tareas</a> que nos evitará crear subtareas.</p>
@@ -571,8 +598,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bitnami.svg" width="200" height="224" alt="Bitnami" title="Bitnami"  class=""></p>
 </div>
 <p>Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados.</p>
 <p><a href="https://bitnami.com/">Bitnami</a> es una amplia colección de servicios populares que permite instalarlos y disponer de ellos rápidamente completamente configurados sin necesidad de dedicar tiempo a conocer como instalarlos, además, si empleamos virtualización con <a href="https://www.virtualbox.org/">VirtualBox</a> se consigue que el equipo quede completamente limpio una vez que el servicio sea desinstalado bastando únicamente eliminar la máquina virtual. Esta colección de servicios se pueden instalar en el propio equipo, en una máquina virtual con VirtualBox, <a href="https://www.vmware.com/">VMware</a>, <a href="https://www.linux-kvm.org/page/Main_Page">KVM</a> o en la nube por ejemplo de <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a>, <a href="https://azure.microsoft.com/es-es/">microsoft-azure</a> o <a href="https://cloud.google.com/">Google Cloud</a> y próximamente usando <a href="https://www.docker.com/">Docker</a>.</p>
@@ -583,10 +609,8 @@
 <p>Teniendo instalado previamente VirtualBox, primeramente necesitaremos descargar la imagen del disco que contiene la <a href="https://bitnami.com/stack/gitlab">aplicación de Bitnami para GitLab</a>. Accedida a la sección <a href="https://bitnami.com/stack/gitlab/virtual-machine"><em>Local Install</em></a> pulsamos el botón <em>Download</em> según la versión del sistema operativo que prefiramos, en este caso usaré la basada en <a href="https://www.debian.org/">Debian</a>. A continuación hay que crear una máquina virtual en VirtualBox mediante la opción <em>Importar servicio virtualizado&hellip;</em> del menú <em>Archivo</em> donde hay que seleccionar el archivo de extensión <em>ova</em> y cambiaremos la memoria asignada a la máquina virtual al menos 2048 MiB.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Importación de servicio virtualizado en VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_300x200_fit_box_3.png" width="300" height="198" alt="Importación de servicio virtualizado en VirtualBox" title="Importación de servicio virtualizado en VirtualBox"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquina virtual de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_300x200_fit_box_3.png" width="296" height="200" alt="Máquina virtual de GitLab" title="Máquina virtual de GitLab"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_2560x1440_fit_box_3.png" data-gallery="" title="Importación de servicio virtualizado en VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-importar-servicio-virtualizado_huea606d4532b9c289e2b465a836172f8b_108509_300x200_fit_box_3.png" width="300" height="198" alt="Importación de servicio virtualizado en VirtualBox" title="Importación de servicio virtualizado en VirtualBox"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_2560x1440_fit_box_3.png" data-gallery="" title="Máquina virtual de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/virtualbox-gitlab_hu8207aa8b5020809288ce6ba68fd9735a_23848_300x200_fit_box_3.png" width="296" height="200" alt="Máquina virtual de GitLab" title="Máquina virtual de GitLab"  class="lozad "></a></p>
 <figcaption>Importación de servicio virtualizado de Bitnami en VirtualBox</figcaption>
 </figure>
 </div>
@@ -594,10 +618,8 @@
 <p>Accediendo con el navegador a la dirección <em>https://192.168.1.3</em> se accede a la aplicación de GitLab que pide un usuario y contraseña para iniciar sesión, el usuario y contraseña están indicados en la página de descarga de la imagen del servicio.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de sesión de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_300x200_fit_box_3.png" width="284" height="200" alt="Inicio de sesión de GitLab" title="Inicio de sesión de GitLab"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_300x200_fit_box_3.png" width="266" height="200" alt="GitLab" title="GitLab"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión de GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab-inicio-sesion_hua827c112ebc0dfe1f95fdf1511ae6469_60472_300x200_fit_box_3.png" width="284" height="200" alt="Inicio de sesión de GitLab" title="Inicio de sesión de GitLab"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_2560x1440_fit_box_3.png" data-gallery="" title="GitLab"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/images/gitlab_hu1c9450aa09534aa8f5ca35bf6de1a0dd_55744_300x200_fit_box_3.png" width="266" height="200" alt="GitLab" title="GitLab"  class="lozad "></a></p>
 <figcaption>Servicio de GitLab</figcaption>
 </figure>
 </div>
@@ -644,12 +666,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>En la <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">introducción de Docker</a> y <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">inicio básico de docker</a> explicaba como usar Docker y en la <a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">introducción a Ansible</a> explicaba las características de Ansible y como usarlo. Podemos usar <a href="https://www.docker.com/">Docker</a> y <a href="https://www.ansible.com/">Ansible</a> de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son <a href="http://docs.ansible.com/docker_module.html">docker</a> y <a href="http://docs.ansible.com/docker_image_module.html">docker_image</a>.</p>
 <p>Usando tareas de ansible podemos automatizar el arranque del servicio de docker, la construcción de las imágenes con los Dokerfile y el inicio o parada de los contenedores de docker. En el ejemplo se construye una imagen base en la que se basarán el resto de imágenes, se crea una imagen con mysql, otra de redis y finalmente la imagen apps donde se ejecutarán las aplicaciones que usarán los servicios de mysql y redis.</p>
@@ -703,8 +723,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ansible.svg" width="200" height="246" alt="Ansible" title="Ansible"  class=""></p>
 </div>
 <p>Siempre que nos sea posible deberíamos automatizar las tareas que realizamos. Automatizar tareas hará sencillo realizarlas permitiéndonos hacer todos los despliegues de una aplicación que queramos con menos posibilidades de cometer errores manuales o nos permitirá disponer de una nueva máquina aprovisionada exactamente como pueda estar la máquina de producción en mucho menos tiempo. En el ámbito del aprovisionamiento de máquinas y administración de la infraestructura IT hay varias opciones, entre ellas están <a href="https://www.getchef.com/">Chef</a>, <a href="https://puppet.com/">Puppet</a> y <a href="https://www.ansible.com/">Ansible</a>.</p>
 <p>En este artículo haré una breve introducción de Ansible que principalmente se emplea en servidores pero también podríamos emplearlo para nuestra propia máquina. Con Ansible podremos:</p>
@@ -730,8 +749,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ansible"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_300x200_fit_box_3.png" width="300" height="155" alt="Ansible" title="Ansible"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_2560x1440_fit_box_3.png" data-gallery="" title="Ansible"><img src="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/images/ansible_hu0ee96d09f68b45023e964e4c0b8ce310_35028_300x200_fit_box_3.png" width="300" height="155" alt="Ansible" title="Ansible"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El parámetro -m indica el módulo de Ansible que usamos y a continuación indicamos los parámetros. Ansible dispone de una amplia <a href="http://docs.ansible.com/list_of_all_modules.html">colección de módulos</a> que nos permiten hacer cantidad de tareas.</p>
@@ -794,8 +812,7 @@
         <content type="html">
         <![CDATA[<p><strong>Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas herramientas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile.</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>Las imágenes de <a href="https://www.docker.com/">Docker</a> son el sistema de archivos que usa el proceso o procesos que se arrancan en los contenedores. Si nos convencen las <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">características de Docker</a> y estamos decididos a usarlo y ya sabemos <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">como administrar de forma básica los contenedores</a> si queremos disponer de una imagen adaptada a los servicios que necesitamos para iniciar contenedores tendremos que crearla, en este artículo explicaré cómo crear una imagen para docker personalizada.</p>
 <p>Antes de crear una imagen para docker podemos buscar en el <a href="https://registry.hub.docker.com/">registro de imágenes de Docker</a> que han creado otros usuarios y los han compartido por si hay alguna que ya se adapte a nuestras necesidades, si nos sirve alguna y es algo popular nos evitaremos tener que modificarla nosotros mismos según salgan nuevas versiones de los servicios que use. El registro de imágenes de docker es un servicio en el que las organizaciones publican versiones oficiales junto a otros usuarios que comparten y colaboran en la creación de las imágenes. Para los servicios más conocidos dispondremos ya de las imágenes como podrían ser: <a href="https://registry.hub.docker.com/_/mysql/">mysql</a>, <a href="https://registry.hub.docker.com/_/redis/">redis</a>, <a href="https://registry.hub.docker.com/_/postgres/">postgresql</a>, <a href="https://registry.hub.docker.com/_/ubuntu/">ubuntu</a>, <a href="https://registry.hub.docker.com/_/wordpress/">wordpress</a>, <a href="https://registry.hub.docker.com/_/nginx/">nginx</a>, <a href="https://registry.hub.docker.com/_/mongo/">mongodb</a>, &hellip;</p>
@@ -880,8 +897,7 @@
 <p>Accediendo con el navegador al servidor nginx del contenedor se devuelve la página por defecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nginx"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_300x200_fit_box_3.png" width="300" height="176" alt="Nginx" title="Nginx"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_2560x1440_fit_box_3.png" data-gallery="" title="Nginx"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/images/nginx_hu98cd059ed574f7206fe0ebc08b9a46f4_50303_300x200_fit_box_3.png" width="300" height="176" alt="Nginx" title="Nginx"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para aprender más sobre Docker es buena idea seguir un manual de referencia como los libros <a href="https://amzn.to/3DgQj7G">Docker: Up &amp; Running</a> y <a href="https://amzn.to/3pH6uEr">Docker in Action</a>.</p>
@@ -923,8 +939,7 @@
         <content type="html">
         <![CDATA[<p><strong>La tecnología de contenedores nos ofrece múltiples ventajas para nuestras aplicaciones. Docker es una de las más nombradas y que está creciendo muy rápidamente. Es muy sencillo empezarla a usar como mostraré en unos pocos comandos a continuación.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p>En el <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">artículo anterior introductorio sobre Docker</a> comentaba cuales son sus principales características, que diferencias tiene con la virtualización y algunos casos y motivos por los que nos puede interesar usarlo. El objetivo de este artículo será a modo de guía rápida como empezar a usar <a href="https://www.docker.com/">Docker</a>. Comentaré cuales son los comandos básicos para manejar Docker, las imágenes y los contenedores.</p>
 <p>Antes de empezar con la guía propiamente hay que tener en cuenta que otra de las características de Docker es que únicamente se inicia un solo proceso, cuando este finaliza finaliza la instancia del contenedor. Aunque en principio un contenedor solo tiene un proceso, podemos usar como proceso inicial uno que arranque otros, la <a href="https://registry.hub.docker.com/u/phusion/baseimage/">imagen pushion</a> tiene un sistema de inicio adaptado al funcionamiento de Docker (no siendo así upstart de las imágenes de ubuntu o systemd usado por otras distribuciones) con el que podemos iniciar otros procesos, en cualquier caso es recomendable que un contenedor sino tiene un solo proceso tenga unos pocos procesos relacionados con el servicio que proporciona la imagen, la recomendación es no proporcionar una imagen con un montón de servicios/procesos sino varias pequeñas cuyos servicios colaboren. Una imagen de un contenedor es básicamente el sistema de archivos que usará el proceso que iniciamos en el contenedor, necesitamos obtener o construir una imagen para iniciar los contenedores y trabajar con Docker.</p>
@@ -958,8 +973,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="docker-images"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_300x200_fit_box_3.png" width="300" height="163" alt="docker-images" title="docker-images"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_2560x1440_fit_box_3.png" data-gallery="" title="docker-images"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-images_hu4f130814d6c33440bf1026f0b7e1b513_32467_300x200_fit_box_3.png" width="300" height="163" alt="docker-images" title="docker-images"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Con los comandos <em>docker rm [contenedor]</em> y <em>docker rmi [imagen]</em> podemos eliminar las instancias de contenedores y las imágenes que no estén siendo usadas por ningún contenedor, si están siendo usadas deberemos eliminar primero el contenedor.</p>
@@ -973,8 +987,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="docker-pull"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_300x200_fit_box_3.png" width="300" height="148" alt="docker-pull" title="docker-pull"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_2560x1440_fit_box_3.png" data-gallery="" title="docker-pull"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-pull_hu073f5b22e1c4ee836c55a2e8954480ce_27567_300x200_fit_box_3.png" width="300" height="148" alt="docker-pull" title="docker-pull"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez descargada la imagen podemos iniciar un contenedor de la imagen con:</p>
@@ -989,8 +1002,7 @@
 <p>Si usamos el comando «uname -a» puede verse que aunque el contenedor usa el sistema de archivos de una distribución debian el kernel empleado es el del sistema anfitrión, esto es así porque los contenedores Docker en esencia no son más que procesos dentro del sistema.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="docker-run"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_300x200_fit_box_3.png" width="300" height="163" alt="docker-run" title="docker-run"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_2560x1440_fit_box_3.png" data-gallery="" title="docker-run"><img src="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/images/docker-run_huad4cd875eaead8a61488f479afd6d4bb_19394_300x200_fit_box_3.png" width="300" height="163" alt="docker-run" title="docker-run"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Continuando esta serie de artículos sobre Docker explicaré como construir una imagen mediante los Dockerfiles con la que podamos usar una base de datos mysql y explicaré en más detalle como podemos conseguir la persistencia que necesitaremos para almacenar los datos de la base de datos usando otro contenedor con este propósito.</p>
@@ -1027,18 +1039,15 @@
         <content type="html">
         <![CDATA[<p><strong>Los contenedores no son una tecnología nueva pero Docker ha reunido las características necesarias para hacerla sencilla y popular en Linux. Suponen un cambio en la infraestructura de las aplicaciones con algunas ventajas sobre la virtualización y la instalación de los servicios directamente en el sistema.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
 </div>
 <p><a href="https://www.docker.com/">Docker</a> es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que <a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">cambian la forma de desarrollar aplicaciones</a>. Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.</p>
 <p>Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.</p>
 <p>La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como <a href="https://openvz.org/">OpenVZ</a> también en Linux, <a href="http://www.freebsd.org/doc/handbook/jails.html">FreeBSD Jails</a> o los <a href="https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html">contenedores de Solaris</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Máquinas virtuales"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_300x200_fit_box_3.png" width="300" height="114" alt="Máquinas virtuales" title="Máquinas virtuales"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Docker"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_300x200_fit_box_3.png" width="300" height="110" alt="Docker" title="Docker"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_2560x1440_fit_box_3.png" data-gallery="" title="Máquinas virtuales"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_300x200_fit_box_3.png" width="300" height="114" alt="Máquinas virtuales" title="Máquinas virtuales"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_2560x1440_fit_box_3.png" data-gallery="" title="Docker"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_300x200_fit_box_3.png" width="300" height="110" alt="Docker" title="Docker"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Docker tiene varias características interesantes. Es ligero ya que no hay virtualización aprovechándose mejor el hardware y únicamente necesitando el sistema de archivos mínimo para que funcionen los servicios. Los contenedores son autosuficientes (aunque pueden depender de otros contenedores, por ejemplo, un wordpress que necesita una base de datos mysql) no necesitando nada más que la imagen del contenedor para que funcionen los servicios que ofrece. Las imágenes de docker son portables entre diferentes plataformas el único requisito es que en el sistema huésped esté disponible docker. Es seguro, pudiendo hacer que los contenedores se comuniquen por un túnel solo disponible para ellos, los contenedores están aislados en el sistema mediante namespaces y control groups.</p>
@@ -1097,8 +1106,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
 <p>Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:</p>
 <ul>
@@ -1119,50 +1127,6 @@
 <ul>
 <li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">Anexo a la guía de instalación de Arch Linux</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="opinion"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/</id>
-        <title>De Arch Linux a Arch Linux</title>
-        <updated>2015-04-10T20:00:00+02:00</updated>
-        <published>2014-08-09T00:07:58+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
-</div>
-<p>Ya llevo usando algo más de 4 años <a href="https://www.archlinux.org/">Arch Linux</a> de forma continuada desde que definitivamente hice el paso desde Windows según comentaba en <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">mi camino de Windows a Arch Linux</a> como sistema de mi ordenador personal. Pasé un poco de tiempo usando <a href="https://www.debian.org/">Debian</a> y evaluando <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, y <a href="https://www.opensuse.org/">openSUSE</a> pero al final la distribución que elegí fue Arch Linux.</p>
-<p>La razón de elegir Arch Linux fue que me dio muchos menos problemas configurar todos los dispositivos, por ser una <a href="https://en.wikipedia.org/wiki/Rolling_release">distribución rolling release</a> con lo que en todo momento tenía las últimas versiones de cada programa y disponía en poco tiempo las nuevas mejoras que se iban incorporando a ellos evitando a los pocos meses estar con la sensación de tener programas que han quedado superados con nuevas versiones y no tener que esperar al siguiente iteración de una nueva versión para disponer de ellas (o usar para cada programa un PPA), además tenía los programas que yo decidía y no los que los desarrolladores de la distribución preinstalaban por mi. Cualquier otra distribución linux de las que he mencionado son de gran calidad y son usadas por mucha gente, simplemente en mi caso Arch Linux se adaptaba mejor a lo que buscaba y no era yo el que me adaptaba a la distribución. También me gustaba <a href="https://wiki.archlinux.org/index.php/Arch_Linux">su filosofía</a> y su <a href="https://wiki.archlinux.org/index.php/The_Arch_Way">«Arch way»</a> de una configuración simple no oculta, los paquetes lo normal es que no lleven modificaciones sobre lo que proporcionan sus desarrolladores aparte de tenerla actualizada en el momento que decidiese.</p>
-<p>Durante este tiempo he estado tan a gusto con esta distribución que ahora incluso la uso como distribución para el ordenador con el que trabajo y nunca me ha entrado el gusanillo del «distro hopping». Alguna vez me ha dado algún problema como cargarme el sistema por actualizar GRUB mal por error mío con desenlace fatal que me obligo a reinstalarla y alguna otra vez algún fallo menor en los iconos de <a href="https://www.gnome.org/">GNOME</a>, pero al contrario de lo que pensaba inicialmente por ser Arch Linux una distribución con los paquetes en constante actualización rara vez da problemas y cuando hay alguno se encuentra en poco tiempo la solución o al menos la pregunta y poco más tarde en los <a href="https://bbs.archlinux.org/">foros de Arch Linux</a>. Si no hubiese sido por este error de GRUB que me obligó a reinstalar ahora tendría un Arch Linux que hubiese instalado hace cuatro años y durante este tiempo ha habido cambios importantes como la migración de SysVinit o las diferentes actualizaciones desde GNOME 3.0 a 3.12, el servidor de las X y otros muchos paquetes vitales del sistema. En el momento que hay que hacer alguna intervención manual al hacer una actualización se publica en la web de Arch Linux con los pasos a realizar, siguiéndolos no suele haber problemas.</p>
-<p>También es la distribución que uso para una <a href="https://www.raspberrypi.org/">Raspberry Pi</a> desde que dispongo de ella y suelo utilizar como sistema para descargar mediante torrent o para escuchar música. La Raspberry Pi es un sistema con procesador ARM a pesar de lo cual no hay diferencia alguna en la administración con al <a href="https://archlinuxarm.org/">distribución de Arch Linux para procesadores ARM</a>. Es otro punto interesante ya que Arch Linux en su versión ARM también esta disponible para multitud de otros SoC como la Raspberry Pi, la distribución es la misma y lo mismo que nos sirve para nuestro ordenador personal x86_64 nos sirve para cualquiera de estos sistemas ARM.</p>
-<p>Alguna gente se ve intimidada por <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">instalar Arch Linux paso a paso y desde la terminal</a>, es un proceso manual pero siguiendo la wiki y alguna guía para cualquier usuario con cierto tiempo usando Linux no debería ser ningún problema. A veces no todas las personas disponen de este poco de tiempo para investigar y hacer la instalación y se opta por otras distribuciones que tienen asistentes y guías en el proceso pero una vez hecho el pequeño esfuerzo se ve compensado por en teoría no tener que volverla a reinstalar nunca más.</p>
-<p>Después de todo este tiempo creo que lo mejor de Arch Linux no es que sea una distribución «rolling release» con siempre las últimas versiones de cada programa, que sea un sistema cuya configuración es simple que no se oculta al usuario, que tenga los programas que yo elija, su comunidad y foros, que también son muy buenos, sino lo mejor me parece que es la wiki. La <a href="https://wiki.archlinux.org/">wiki de Arch Linux</a> tiene cantidad de información oficial actualizada sobre cantidad de temas, fáciles de encontrar y rápidamente, sin ser necesario buscar esta información en foros con google que no siempre tienen la solución, no son exactamente lo que buscamos o no tienen la respuesta correcta además de consumir mucho tiempo hasta encontrar la respuesta y si la encontramos. La wiki de Arch Linux es algo que no he encontrado en otras distribuciones y me parece de lo mejor que tiene incluso puede ser útil para quien no use Arch Linux. Finalmente, comentaré también que a pesar de ser una distribución que está a la última puede ser una muy buena opción para instalar en un sistema antiguo, en otro artículo comentaré la experiencia que tuve al <a href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">instalar un sistema operativo en un Acer Aspire 2000</a> (i686 con 1 GiB de RAM) viejuno, probé muchas opciones Windows XP, <a href="https://www.linuxmint.com/">Linux Mint</a>, <a href="https://www.gnewsense.org/">gNewSense</a>, <a href="https://trisquel.info/es">trisquel</a> y al final Arch Linux fué la que mejor resultado me ofreció con un portátil antiguo pero con software completamente actualizado.</p>
-<p>Aún así Arch Linux puede que no sea lo más adecuado para todo o todas las personas según sus preferencias o requerimientos. Una de las cosas a las que me refiero es a un entorno de servidor donde lo más importante es la seguridad, la estabilidad y el soporte. Con estas necesidades probablemente sea mejor <a href="https://www.debian.org/">Debian</a>, <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RHEL</a> o <a href="https://www.centos.org/">CentOS</a>. Sin embargo para uso personal, Arch Linux mientras mantenga la misma calidad como hasta ahora seguirá siendo la distribución que use.</p>
-<p>¡Larga vida a Linux y a Arch Linux!</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">Experiencia instalando sistema operativo a ordenador viejo</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">Anexo a la guía de instalación de Arch Linux</a></li>
 <li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
 </ul>

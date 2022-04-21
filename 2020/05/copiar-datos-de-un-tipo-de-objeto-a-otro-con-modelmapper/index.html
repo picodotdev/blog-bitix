@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -268,8 +268,7 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En ocasiones es necesario copiar datos de un tipo de objeto a otro tipo, no es una operación complicada basta con llamar al método <em>getter</em> de la propiedad a copiar para obtener su valor del objeto origen y posteriormente llamar al <em>setter</em> para establecer el valor en objeto destino. Aún siendo una operación sencilla es tediosa y puede complicarse si se han de copiar listas de objetos y si esos objetos a copiar tienen referencias a otros objetos que también hay que copiar. Si además esta es una operación común en el código es conveniente utilizar una librería específica para este propósito, una de ellas es <a href="http://modelmapper.org/">ModelMapper</a>.</p>
 <p>ModelMapper es una librería Java para copiar o <em>mapear</em> propiedades de un tipo de objeto a otro tipo de objeto, permitiendo copiar también los datos de las referencias a los objetos que contengan. Soporta diferentes convenciones, copiados explícitos, conversiones y proveedores para construir los objetos destino e integraciones con diferentes librerías, una de ellas <a href="https://www.jooq.org/">jOOQ</a>.</p>

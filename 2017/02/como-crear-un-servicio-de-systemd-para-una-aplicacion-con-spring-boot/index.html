@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -268,12 +268,10 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Habiendo creado una aplicación o microservicio, por ejemplo con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, necesitaremos que se inicie con el sistema y una forma de gestionarlo para detenerlo, reiniciarlo y que se reinicie en caso de salida abrupta.</p>
 <p><a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> es el gestor de servicios que han adoptado la mayoría de distribuciones importantes como <a href="https://www.debian.org/">Debian</a>, <a href="https://www.centos.org/">CentOS</a>, <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RHEL</a>, <a href="https://www.opensuse.org/">openSUSE</a>, incluso <a href="https://www.ubuntu.com/">Ubuntu</a> después de abandonar su propio gestor de servicios <a href="https://es.wikipedia.org/wiki/Upstart">Upstart</a>. Podemos usar systemd para que gestione como servicio una aplicación propia. Para ello deberemos crear un archivo <em>unit</em> que describa el servicio y sus dependencias con otros servicios para que se inicie correctamente, él y sus dependencias.</p>

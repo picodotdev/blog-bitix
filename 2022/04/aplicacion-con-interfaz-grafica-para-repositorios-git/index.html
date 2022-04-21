@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Una herramienta con interfaz gráfica hace más fácil algunas tareas que usar la línea de comandos directamente. Este también es el caso al trabajar con repositorios de código fuente con la herramienta de control de versiones Git. Usar la linea de comandos tiene sus propias ventajas como permitir automatizar tareas con scripts o realizar operaciones sin tener que usar la interfaz gráfica. La interfaz gráfica y la linea de comandos no son excluyentes, se pueden usar según convenga en cada ocasión. Al trabajar con múltiples repositorios de Git, para realizar operaciones comunes como commits, analizar el historial y ver las diferencias en un archivo entre dos versiones una herramienta gráfica también facilita la tarea. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Aplicación con interfaz gráfica para repositorios Git</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/" hreflang="es" title="Aplicación con interfaz gráfica para repositorios Git">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/index-amp.html" hreflang="es" title="Aplicación con interfaz gráfica para repositorios Git">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Aplicación con interfaz gráfica para repositorios Git">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gitg-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Una herramienta con interfaz gráfica hace más fácil algunas tareas que usar la línea de comandos directamente. Este también es el caso al trabajar con repositorios de código fuente con la herramienta de control de versiones Git. Usar la linea de comandos tiene sus propias ventajas como permitir automatizar tareas con scripts o realizar operaciones sin tener que usar la interfaz gráfica. La interfaz gráfica y la linea de comandos no son excluyentes, se pueden usar según convenga en cada ocasión. Al trabajar con múltiples repositorios de Git, para realizar operaciones comunes como commits, analizar el historial y ver las diferencias en un archivo entre dos versiones una herramienta gráfica también facilita la tarea. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gitg-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Aplicación con interfaz gráfica para repositorios Git">
+<meta name="twitter:description" content="Una herramienta con interfaz gráfica hace más fácil algunas tareas que usar la línea de comandos directamente. Este también es el caso al trabajar con repositorios de código fuente con la herramienta de control de versiones Git. Usar la linea de comandos tiene sus propias ventajas como permitir automatizar tareas con scripts o realizar operaciones sin tener que usar la interfaz gráfica. La interfaz gráfica y la linea de comandos no son excluyentes, se pueden usar según convenga en cada ocasión. Al trabajar con múltiples repositorios de Git, para realizar operaciones comunes como commits, analizar el historial y ver las diferencias en un archivo entre dos versiones una herramienta gráfica también facilita la tarea. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/"
+    },
+    "headline": "Aplicación con interfaz gráfica para repositorios Git",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/gitg-750.png"
+        
+      },
+    "datePublished": "2022-04-19T00:00:00+02:00",
+    "dateModified": "2022-04-19T00:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "398",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Una herramienta con interfaz gráfica hace más fácil algunas tareas que usar la línea de comandos directamente. Este también es el caso al trabajar con repositorios de código fuente con la herramienta de control de versiones Git. Usar la linea de comandos tiene sus propias ventajas como permitir automatizar tareas con scripts o realizar operaciones sin tener que usar la interfaz gráfica. La interfaz gráfica y la linea de comandos no son excluyentes, se pueden usar según convenga en cada ocasión. Al trabajar con múltiples repositorios de Git, para realizar operaciones comunes como commits, analizar el historial y ver las diferencias en un archivo entre dos versiones una herramienta gráfica también facilita la tarea."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-12874075-4', 'picodotdev.github.io');
+    ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+<article>
+    <h1>Aplicación con interfaz gráfica para repositorios Git</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>19/04/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Una herramienta con interfaz gráfica hace más fácil algunas tareas que usar la línea de comandos directamente. Este también es el caso al trabajar con repositorios de código fuente con la herramienta de control de versiones Git. Usar la linea de comandos tiene sus propias ventajas como permitir automatizar tareas con <em>scripts</em> o realizar operaciones sin tener que usar la interfaz gráfica. La interfaz gráfica y la linea de comandos no son excluyentes, se pueden usar según convenga en cada ocasión. Al trabajar con múltiples repositorios de Git, para realizar operaciones comunes como <em>commits</em>, analizar el historial y ver las diferencias en un archivo entre dos versiones una herramienta gráfica también facilita la tarea.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux" class="" loading="false"></p>
+</div>
+<p>El sistema de control de versiones <a href="https://git-scm.com/">Git</a> posee una línea de comandos con la que se realizan todas las acciones para clonar repositorios, para hacer commits, para ver diferencias, para explorar el historial, para crear ramas y cualquier otra acción. La línea de comandos es muy potente y además es <a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">automatizable con un <em>script</em></a> pero como cualquier otra línea de comandos no es intuitiva y difícil de aprender y en algún caso lenta al teclear un comando, sus opciones y argumentos.</p>
+<p>Es aconsejable conocer los comandos básicos de línea de comandos pero en el uso diario o para algunas acciones las aplicaciones con interfaz gráfica son más rápidas, más fáciles de aprender y sin necesidad de recordar las opciones de cada comando. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y <a href="https://www.gnome.org/">GNOME</a> una aplicación cliente de Git es <a href="https://wiki.gnome.org/Apps/Gitg">gitg</a>.</p>
+<h3 id="la-aplicación-gitg">La aplicación gitg</h3>
+<p><a href="https://wiki.gnome.org/Apps/Gitg">Gitg</a> es una aplicación de escritorio con interfaz gráfica que permite visualizar un repositorio de Git, su historial y el contenido de los diferentes archivos en sus versiones. No tiene todas las opciones disponibles de la línea de comandos pero si muchos incluyendo los más comunes. Usar una herramienta con interfaz gráfica puede mejorar la productividad al trabajar con varios repositorios de control de versiones en Git y permite a los usuarios que estén empezando a usar Git una forma de usarlo más intuitiva.</p>
+<p>Está adaptada a la guía de estilos de las aplicaciones de GNOME, es una aplicación de software libre, está disponible tanto para GNU/Linux, <a href="https://www.apple.com/macos/">macOS</a> como <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y en GNU/Linux se puede instalar como paquete de la distribución o como <a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">una aplicación en formato Flatpak</a> independiente de la distribución <a href="https://flathub.org/apps/details/org.gnome.gitg">disponible en Flathub con su paquete de gitg</a>.</p>
+<div class="media">
+<figure>
+<p><img src="/blog-bitix/assets/images/logotypes/gitg.svg" width="200" height="150" alt="gitg" title="gitg" class="" loading="lazy"></p>
+</figure>
+</div>
+<p>Las operaciones que permite son:</p>
+<ul>
+<li>Ver el historial.</li>
+<li>Ver el contenido de archivos.</li>
+<li>Gestionar el área de <em>staging</em> para componer el <em>commit</em>.</li>
+<li>Añadir y clonar un repositorio.</li>
+<li>Actualizar la información del usuario.</li>
+<li>Cambiar varias opciones de preferencias.</li>
+</ul>
+<p>En esta capturas se muestran los <em>commits</em>, historial y <em>merges</em> en una linea de tiempo gráfica, además de poder ver las ramas locales, las ramas remotas, los orígenes de las ramas así como los archivos modificados en cada <em>commit</em> y las diferencias y cambios realizados en cada archivo.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-1_hufc6c7212bf1f460f3fa6607e19248b9a_29524_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-2_hu2a9b977282670e3858193850017f09b7_19224_300x200_fit_box_3.png" width="238" height="200" alt="Aplicación gitg" title="Aplicación gitg" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación gitg"><img src="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/images/gitg-3_hu5b15d53ed39308162b8db2645ba363df_242593_650x400_fit_box_3.png" width="419" height="400" alt="Aplicación gitg" title="Aplicación gitg" class="" loading="lazy"></a></p>
+<figcaption>Aplicación gitg</figcaption>
+</figure>
+</div>
+<p>Otras aplicaciones cliente de Git que tiene características similares son <a href="https://github.com/desktop/desktop">Github Desktop</a> y <a href="https://www.syntevo.com/smartgit/">SmartGit</a> esta última tiene una licencia propietaria y no es gratuita, ambas tienen su versión de Flatpak en el repositorio de <a href="https://flathub.org/">Flathub</a>.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/08/37-buenos-libros-sobre-sobre-java-linux-devops-y-desarrollo-que-he-leido/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído" title="37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído" class="" loading="lazy">
+                <h3>37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/hemeroteca-11/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
+                <h3>Hemeroteca #11</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/introduccion-a-la-base-de-datos-nosql-redis/">
+                <img src="/blog-bitix/assets/images/logotypes/redis.svg" width="326" height="125" alt="Introducción a la base de datos NoSQL Redis" title="Introducción a la base de datos NoSQL Redis" class="" loading="lazy">
+                <h3>Introducción a la base de datos NoSQL Redis</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-629';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/04\/aplicacion-con-interfaz-grafica-para-repositorios-git\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

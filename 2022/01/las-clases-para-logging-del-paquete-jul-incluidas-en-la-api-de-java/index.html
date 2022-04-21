@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -266,8 +266,7 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Las trazas o <em>logs</em>  en una aplicación forman parte de la parte del área de trazabilidad, observabilidad, monitorización e incluso en el área de seguridad, una de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">funcionalidades que necesitan las aplicaciones</a>, más imprescindible aún en los microservicios. Las trazas son mensajes con información que emite la aplicación para su análisis, estas se pueden emitir a un destino que puede ser simplemente la salida estándar de la consola, un archivo y en los sistemas más avanzados un sistema ELK para <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">centralizar las trazas en un único sistema compuesto por múltiples aplicaciones</a>. Una buena práctica es emitir las trazas en la salida estándar de la aplicación y que sea un proceso externo el que determina como y donde se guardan las trazas de la aplicación,  lo que proporciona la flexibilidad de cambiar donde se guardan las trazas sin requerir cambios en la aplicación.</p>
 <p>Las trazas permiten ver qué ha ocurrido hace tiempo y conocer qué ocurre en la aplicación en tiempo real. Las trazas incluyen las excepciones que se generan en la aplicación y errores, identificados los errores que se están produciendo las mismas trazas dan pistas de las condiciones en las que se producen, identificar el problema, reproducirlo y con todo ello hacer los cambios en el código necesarios para corregir los errores. Sin las trazas es mucho más difícil conocer qué errores se están produciendo en la aplicación y en qué condiciones se producen para reproducirlo. Hay que tener en cuenta que muchas veces la mayor parte del tiempo que se emplea para corregir un error es en identificar las causas y reproducirlo, la parte de corregirlo haciendo cambios en el código generalmente es una pequeña parte de todo el tiempo empleado. La facilidad y rapidez para corregir un error en gran medida depende de que la aplicación emita una colección de buenas trazas.</p>

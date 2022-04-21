@@ -21,8 +21,7 @@
         <content type="html">
         <![CDATA[<p><strong>Al trabajar con referencias de tipos genéricos, <em>raw</em> y arrays debemos conocer el concepto de <em>Heap Pollution</em> si no queremos que en algún punto del programa Java se produzca una excepción no esperada del tipo <em>ClassCastException</em>. No teniéndolo en cuenta nos encontraremos con un error de los más difíciles de depurar ya que la excepción solo nos dirá donde se produjo no donde se encuentra el código erróneo que lo provocó.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La introducción de los <a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/">tipos genéricos al lenguaje Java</a> en la versión 5 hizo posible que pudiesemos parametrizar los tipos y que el compilador hiciese validaciones sobre ellos, también se permitieron eliminar muchos <em>cast</em> que hasta entonces eran necesarios al usar el <em>framework</em> de colecciones. Los tipos genéricos permiten evitar errores en tiempo de compilación, al mismo tiempo la eliminación de los <em>cast</em> hace el código más legible y más fácilmente refactorizable. Sin embargo, para mantener la compatibilidad con versiones anteriores se optó por hacer algunos sacrificios en la implementación de genéricos en pos de otros beneficios. Una situación potencialmente problemática es el denominado <a href="https://en.wikipedia.org/wiki/Heap_pollution">Heap Pollution</a>.</p>
 <p>El concepto de <em>Heap Pollution</em> consiste de forma breve (quizá inexacta) en que un tipo genérico contiene un objeto con un tipo que no le corresponde según su tipo genérico, con un ejemplo, que una lista del tipo <em>List&lt;String&gt;</em> contenga un <em>Number</em> entre sus elementos. Que un tipo genérico pueda contener un objeto que no sea de su tipo genérico es detectado en tiempo de compilación con los <em>unchecked warning</em> pero bajo algunas circunstancias se produce en tiempo de ejecución una excepción de tipo <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html">ClassCastException</a>, si ignoramos las advertencias y nuestro código no es cuidadoso. Esto es posible porque en Java el tipado de los genéricos sólo está disponible en tiempo de compilación lo que significa que no son <em>reified</em>, el tipado genérico no está disponible en tiempo de ejecución como consecuencia del <a href="https://picodotdev.github.io/blog-bitix/2018/03/que-es-y-como-funciona-el-type-erasure-en-java/">proceso conocido como <em>type erasure</em></a>, al trabajar con referencias de tipo <em>raw</em> y genéricas hay que tener cuidado en las asignaciones y las advertencias del compilador.</p>
@@ -92,8 +91,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Las expresiones regulares son muy útiles para comprobar si una cadena de texto o un subconjunto de ella cumple un determinado patrón. Un uso común de las expresiones regulares es para validar cadenas de texto pero también pueden usarse para obtener coincidencias de la cadena, esto se hace con los grupos de captura.</p>
 <p>Por ejemplo, supongamos que tenemos un código de un producto formateado de la siguiente forma <em>123-123456/1</em>, usando guiones y una barra para separar tres grupos de números. Y ahora aparte de validar el formato correcto del código del producto nos interesa obtener los tres grupos de números. En vez de separar la cadena con un <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-">split</a> por el caracter guión y barra de una forma que sería más laboriosa y difícil de mantener si hay algún cambio, vamos a usar los grupos de captura para obtener los tres grupos de números que forman el código.</p>
@@ -113,8 +111,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/images/java-regex_huf44f86e530e876ab3f0fbcfbcc23fcd6_72080_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Extracción de valores de una cadena usando una expresión regular"><img src="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/images/java-regex_huf44f86e530e876ab3f0fbcfbcc23fcd6_72080_300x200_fit_box_3.png" width="300" height="124" alt="Extracción de valores de una cadena usando una expresión regular" title="Extracción de valores de una cadena usando una expresión regular"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/images/java-regex_huf44f86e530e876ab3f0fbcfbcc23fcd6_72080_2560x1440_fit_box_3.png" data-gallery="" title="Extracción de valores de una cadena usando una expresión regular"><img src="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/images/java-regex_huf44f86e530e876ab3f0fbcfbcc23fcd6_72080_300x200_fit_box_3.png" width="300" height="124" alt="Extracción de valores de una cadena usando una expresión regular" title="Extracción de valores de una cadena usando una expresión regular"  class="lozad "></a></p>
 <figcaption>Extracción de valores de una cadena usando una expresión regular</figcaption>
 </figure>
 </div>
@@ -155,8 +152,7 @@
         <content type="html">
         <![CDATA[<p><strong>En la mayoría de aplicaciones no solo es habitual sino algo muy usado el mostrar listados de elementos de forma tabular con paginación y columnas ordenables. En estos listados el complejo componente internamente <em>Grid</em> de Apache Tapestry pero a la vez muy sencillo de usar puede marcar una diferencia significativa en el número de líneas de código necesarias a escribir, la flexibilidad, funcionalidad ofrecida, la productividad al hacer la implementación o modificarla comparándolo con lo necesario en otros <em>frameworks</em> web en los que no hay nada comparable de serie.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="400" height="400" alt="Apache Tapstry" title="Apache Tapstry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="400" height="400" alt="Apache Tapstry" title="Apache Tapstry"  class=""></p>
 </div>
 <p><a href="https://tapestry.apache.org/">Apache Tapestry</a> es uno de los muchos <em>frameworks</em> disponibles en Java para el desarrollo de aplicaciones y páginas web. A diferencia de la mayoría se basa en componentes y proporciona una larga lista de ellos listos para usar de serie, pero también se pueden crear componentes nuevos basados en los propios de Tapestry o los que desarrollemos nosotros muy fácilmente. Los componentes son piezas reusables de código que se pueden reutilizar bien directamente o para formar nuevos componentes y es uno de los motivos por los que en Tapestry se consigue una alta productividad además de otros beneficios como la encapsulación.</p>
 <p>Uno de los componentes más complejos pero al mismo tiempo muy simple de usar ofrecidos por el <em>framework</em> es el <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Grid.html">componente Grid</a>. El componente <em>Grid</em> muestra en una tabla un listado de datos ofreciendo las funcionalidades de paginación, ordenación, personalización de columnas, filtrado de columnas, personalización en caso de estar vacío y algunas cosas más. Lo único que debemos tener en cuenta para aprovechar al máximo el componente <em>Grid</em> son los parámetros que declara en su documentación su funcionamiento interno nos es irrelevante, será de los componentes más complejos y no por ello no es más difícil de utilizar basta decir que solo tiene un parámetro requerido y que es lo único imprescindible que es la lista de datos a mostrar.</p>
@@ -175,8 +171,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Componente Grid de Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_300x200_fit_box_3.png" width="300" height="195" alt="Componente Grid de Tapestry" title="Componente Grid de Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_2560x1440_fit_box_3.png" data-gallery="" title="Componente Grid de Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid_hudc57d686362064bded7bede661d43988_23776_300x200_fit_box_3.png" width="300" height="195" alt="Componente Grid de Tapestry" title="Componente Grid de Tapestry"  class="lozad "></a></p>
 <figcaption>Componente Grid de Tapestry</figcaption>
 </figure>
 </div>
@@ -205,8 +200,7 @@
 <p>Con el parámetro <em>empty</em> definimos un componente <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/Block.html">Block</a> que se usará cuando el <em>Grid</em> no tenga filas que mostrar, lo que es útil para mostrar un mensaje indicando que la tabla no tiene filas como cuando no hay elementos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Mensaje de un Grid sin elementos"><img src="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_300x200_fit_box_3.png" width="300" height="194" alt="Mensaje de un Grid sin elementos" title="Mensaje de un Grid sin elementos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_2560x1440_fit_box_3.png" data-gallery="" title="Mensaje de un Grid sin elementos"><img src="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/images/grid-sin-elementos_hub6bad543fc5977836e7e1055e60375bd_14325_300x200_fit_box_3.png" width="300" height="194" alt="Mensaje de un Grid sin elementos" title="Mensaje de un Grid sin elementos"  class="lozad "></a></p>
 <figcaption>Mensaje de un Grid sin elementos</figcaption>
 </figure>
 </div>
@@ -266,8 +260,7 @@
         <content type="html">
         <![CDATA[<p><strong>Hace ya más de una década que en Java 5 se introdujeron los <em>generics</em> para dotar al lenguaje de una mejor comprobación de tipos en tiempo de compilación y al mismo tiempo eliminar los <em>cast</em> que hasta entonces eran necesarios al usar las colecciones. Dada la lentitud de adopción que suele haber en la plataforma Java en los grandes entornos empresariales puede que aún no los hayamos usado extensamente o tengamos alguna duda en su uso. Hay unos cuantos conceptos sobre los <em>generics</em> que son convenientes conocer.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Los <em>generics</em> fueron introducidos en la versión 5 de Java en 2004 junto con otras muchas novedades suponiendo en su historia una de las mayores modificaciones o al mismo nivel de las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades introducidas con Java 8</a> más recientemente al lenguaje Java. Los <em>generics</em> son importantes ya que permiten al compilador informar de muchos errores de compilación que hasta el momento solo se descubrirían en tiempo de ejecución, al mismo tiempo permiten eliminar los <em>cast</em> simplificando, reduciendo la repetición y aumentando la legibilidad el código. Los errores por <em>cast</em> inválido son especialmente problemáticos de <em>debuggear</em> ya que el error se suele producir en un sitio alejado del de la causa.</p>
 <p>Los <em>generics</em> permiten usar tipos para parametrizar las clases, interfaces y métodos al definirlas. Los beneficios son:</p>
@@ -363,15 +356,13 @@
 <p>Sin embargo, en el caso de los <em>generics</em>, ¿una referencia de <em>Box&lt;Number&gt;</em> puede aceptar una instancia <em>Box&lt;Integer&gt;</em> or <em>Box&lt;Double&gt;</em> aun siendo <em>Integer</em> y <em>Double</em> subtipos de <em>Number</em>?. La respuesta es no, ya que <em>Box&lt;Integer&gt;</em> y <em>Box&lt;Double&gt;</em> en Java no son subtipos de <em>Box&lt;Number&gt;</em>. La jerarquía de tipos es la siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship_huf0f8138a7604d3c72592b9bb760e792e_12515_2560x1440_fit_box.gif" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship_huf0f8138a7604d3c72592b9bb760e792e_12515_300x200_fit_box.gif" width="300" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship_huf0f8138a7604d3c72592b9bb760e792e_12515_2560x1440_fit_box.gif" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-subtypeRelationship_huf0f8138a7604d3c72592b9bb760e792e_12515_300x200_fit_box.gif" width="300" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que <em>ArrayList&lt;String&gt;</em> es un subtipo de <em>List&lt;String&gt;</em> que a su vez es un subtipo de <em>Collection&lt;String&gt;</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy_hu136c7750ad05a64f333accbffa0dfd4b_5074_2560x1440_fit_box.gif" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy_hu136c7750ad05a64f333accbffa0dfd4b_5074_300x200_fit_box.gif" width="147" height="116"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy_hu136c7750ad05a64f333accbffa0dfd4b_5074_2560x1440_fit_box.gif" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-sampleHierarchy_hu136c7750ad05a64f333accbffa0dfd4b_5074_300x200_fit_box.gif" width="147" height="116"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="code">
@@ -382,8 +373,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy_hu68556269b77cddf9355a722b6efdde47_9359_2560x1440_fit_box.gif" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy_hu68556269b77cddf9355a722b6efdde47_9359_300x200_fit_box.gif" width="300" height="73"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy_hu68556269b77cddf9355a722b6efdde47_9359_2560x1440_fit_box.gif" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-payloadListHierarchy_hu68556269b77cddf9355a722b6efdde47_9359_300x200_fit_box.gif" width="300" height="73"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En los <em>generics</em> un parámetro para un tipo <em>?</em> se denomina <em>wildcard</em> siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de <em>List&lt;Integer&gt;</em>, <em>List&lt;Double&gt;</em> y <em>List&lt;Number&gt;</em>. El término <em>List&lt;Number&gt;</em> es más restrictivo que <em>List&lt;? extends Number&gt;</em> porque el primero solo acepta una lista de <em>Number</em> y el segundo una lista de <em>Number</em> o de sus subtipos. <em>List&lt;? extends Number&gt;</em> es un <em>upper bounded wildcard</em>.</p>
@@ -408,10 +398,8 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent_hu4f050ad813f3c0ae237578f18662e271_5595_2560x1440_fit_box.gif" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent_hu4f050ad813f3c0ae237578f18662e271_5595_300x200_fit_box.gif" width="300" height="91"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping_hub09c5791cfe0482ffc9e9a421ca32136_13642_2560x1440_fit_box.gif" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping_hub09c5791cfe0482ffc9e9a421ca32136_13642_300x200_fit_box.gif" width="300" height="175"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent_hu4f050ad813f3c0ae237578f18662e271_5595_2560x1440_fit_box.gif" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-listParent_hu4f050ad813f3c0ae237578f18662e271_5595_300x200_fit_box.gif" width="300" height="91"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping_hub09c5791cfe0482ffc9e9a421ca32136_13642_2560x1440_fit_box.gif" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2016/04/tutorial-sobre-los-tipos-genericos-de-java/images/generics-wildcardSubtyping_hub09c5791cfe0482ffc9e9a421ca32136_13642_300x200_fit_box.gif" width="300" height="175"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Uno de las mayores confusiones al usar generics es cuando usar <em>upper bounded wildcards</em> o cuando usar <em>lower bounded wildcards</em>. Podemos usar las siguientes reglas:</p>
@@ -495,15 +483,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p><a href="https://twitter.com/">Twitter</a> ofrece una API para realizar las mismas acciones que como usuarios hacemos con su cliente web, desde publicar <em>tweets</em>, hacer <em>retweets</em>, enviar mensajes directos, leer <em>timelines</em>, &hellip; Con la <a href="https://dev.twitter.com/rest/public">API REST de twitter</a> podemos desde un programa de forma automatizada realizar cualquiera de las anteriores acciones. Por ejemplo, en <a href="https://twitter.com/blogstackinfo">Blog Stack</a> cada vez que agrega un artículo de cualquiera de las fuentes se publica un <em>tweet</em> con el título del artículo y el enlace al mismo en la <a href="https://twitter.com/blogstackinfo">cuenta de Twitter de Blog Stack</a>. En este artículo mostraré como desde lenguaje de programación Java podemos usar la API de Twitter para realizar las acciones que deseemos con la librería <a href="https://twitter4j.org/en/index.html">twitter4j</a>.</p>
 <p>twitter4j nos ofrece una API Java para acceder a la API REST de Twitter de forma más cómoda. Primeramente deberemos crear y registrar una aplicación, esto nos proporcionará varios datos que identificarán a la aplicación y <em>tokens</em> privados para que solo nuestra aplicación en nuestra cuenta pueda realizar las acciones, básicamente son unos datos para autenticar al cliente. La creación de la aplicación se realiza desde la [sección de desarrolladores de twitter] (https://apps.twitter.com/), también veremos las aplicaciones con acceso a la cuenta.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Twitter Apps"><img src="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_300x200_fit_box_3.png" width="274" height="200" alt="Twitter Apps" title="Twitter Apps"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_2560x1440_fit_box_3.png" data-gallery="" title="Twitter Apps"><img src="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/images/twitter-apps_hu7ed50134bf3a4459304e2b71528d791d_36711_300x200_fit_box_3.png" width="274" height="200" alt="Twitter Apps" title="Twitter Apps"  class="lozad "></a></p>
 <figcaption>Twitter Apps</figcaption>
 </figure>
 </div>
@@ -549,12 +535,10 @@
         <content type="html">
         <![CDATA[<p><strong>Más lentamente que otras tecnologías Java EE en cada nueva versión sigue adaptándose a las nuevas tendencias en el desarrollo y facilitando la programación de aplicaciones de entidad empresarial. Java EE está formado por un conjunto de especificaciones que resuelven en gran medida muchas de las necesidades funcionales de las aplicaciones ya sean de persistencia, seguridad, mensajería, lógica de negocio, transaccionalidad, inyección de dependencias, presentación HTML, JSON, WebSockets, conexión a base de datos, envío de correos electrónicos o concurrencia. En este artículo mostraré un ejemplo usando varias de estas especificaciones y proporcionaré el código fuente completo.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java-ee.png" width="200" height="213" alt="Java EE" title="Java EE"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java-ee.png" width="200" height="213" alt="Java EE" title="Java EE"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Comentaba las <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">novedades y nuevas características de Java EE 7</a> que en el 2013 trajo esta nueva versión para el desarrollo de aplicaciones empresariales con el lenguaje Java. Hacía una descripción y cuáles eran las especificaciones y versiones de las mismas que proporcionan la funcionalidades comunes a muchas aplicaciones. En este artículo mostraré un ejemplo con código con la implementación de una aplicación usando varias de las especificaciones de Java EE.</p>
 <p>El ejemplo consistirá en una supuesta aplicación sencilla para hacer la lista de la compra de un supermercado usando las siguientes especificaciones <abbr title="Java Server Faces">JSF</abbr>, <abbr title="Java Persistence API">JPA</abbr>, <abbr title="Java Transactions API">JTA</abbr>, Security, <abbr title="Contexts and Dependency Injection">CDI</abbr>, <abbr title="Enterprise Java Bean">EJB</abbr>, <abbr title="Representational State Transfer">REST</abbr>, <abbr title="Java API for RESTful Web Services">JAX-RS</abbr>, <abbr title="JavaScript Object Notation">JSON</abbr>, eventos CDI y WebSockets. El comprador irá seleccionando productos y la cantidad de los mismos de su compra, la aplicación le informará del precio de los productos seleccionados hasta el momento y finalmente para hacer la compra iniciará sesión. En el momento que se realice una compra el <em>stock</em> de productos se actualizará en todos los clientes conectados al supermercado.</p>
@@ -562,8 +546,7 @@
 <p>Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas librerías JavaScript de forma similar al ejemplo de la <a href="https://picodotdev.github.io/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">lista de tareas con Backbone y React junto con RequireJS</a>. Seleccionados los productos, la compra se realizará usando una API REST intercambiando los datos con formato JSON, se persistirá en la base de datos con JPA actualizándose en ese momento el <em>stock</em> de los productos de lo que se encargará un EJB para controlar esta pequeña lógica de negocio, si no hay <em>stock</em> suficiente de un producto se producirá una excepción y devolverá un código de estado adecuado en la petición HTTP, al realizar la compra se generará un mensaje evento CDI que desencadenará la actualización del <em>stock</em> de los usuarios conectados usando WebSockets. La página del listado de productos y el formulario de autenticación se generará usando la tecnología de presentación JSF.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_huebc92a043be474a0bdb9676d0247c0a7_43756_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Supermarket con Java EE 7"><img src="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_huebc92a043be474a0bdb9676d0247c0a7_43756_300x200_fit_box_3.png" width="300" height="200" alt="Supermarket con Java EE 7" title="Supermarket con Java EE 7"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_huebc92a043be474a0bdb9676d0247c0a7_43756_2560x1440_fit_box_3.png" data-gallery="" title="Supermarket con Java EE 7"><img src="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/supermarket-java-ee-7_huebc92a043be474a0bdb9676d0247c0a7_43756_300x200_fit_box_3.png" width="300" height="200" alt="Supermarket con Java EE 7" title="Supermarket con Java EE 7"  class="lozad "></a></p>
 <figcaption>Supermarket con Java EE 7</figcaption>
 </figure>
 </div>
@@ -647,8 +630,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu074f9c617140ef2936441049a67026b1_81676_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación cliente Supermarket"><img src="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu074f9c617140ef2936441049a67026b1_81676_300x200_fit_box_3.png" width="300" height="168" alt="Aplicación cliente Supermarket" title="Aplicación cliente Supermarket"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu074f9c617140ef2936441049a67026b1_81676_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación cliente Supermarket"><img src="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/images/aplicacion-cliente_hu074f9c617140ef2936441049a67026b1_81676_300x200_fit_box_3.png" width="300" height="168" alt="Aplicación cliente Supermarket" title="Aplicación cliente Supermarket"  class="lozad "></a></p>
 <figcaption>Aplicación cliente Supermarket</figcaption>
 </figure>
 </div>
@@ -704,12 +686,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>En el artículo anterior comentaba <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">como cambiar el formato de archivos de música o audio</a>, por ejemplo de <em>wav</em> a <em>mp3</em>, de <em>wav</em> a <em>ogg</em> o de <em>mp3</em> a _ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios.</p>
 <p>Para hacer la conversión usaba la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>, esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. Las conversiones de los archivos de música nos puede interesar para reducir su tamaño, un <em>mp3</em> ocupa mucho menos que un wav y un archivo <em>ogg</em> es un formato libre de patentes no así el formato <em>mp3</em>. En el caso de los vídeos también nos puede interesar hacer una conversión, reducir su tamaño, extraer solo el audio, extraer solo el vídeo u obtener un trozo del vídeo entre varias cosas más que podemos realizar con FFmpeg.</p>
@@ -746,8 +726,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-i_hu7b8b23c8d84aa1a322539edb336af6cc_122367_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Información de un vídeo"><img src="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-i_hu7b8b23c8d84aa1a322539edb336af6cc_122367_650x450_fit_box_3.png" width="433" height="450" alt="Información de un vídeo" title="Información de un vídeo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-i_hu7b8b23c8d84aa1a322539edb336af6cc_122367_2560x1440_fit_box_3.png" data-gallery="" title="Información de un vídeo"><img src="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-i_hu7b8b23c8d84aa1a322539edb336af6cc_122367_650x450_fit_box_3.png" width="433" height="450" alt="Información de un vídeo" title="Información de un vídeo"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="operaciones-comunes-con-archivos-de-vídeo">Operaciones comunes con archivos de vídeo</h3>
@@ -762,8 +741,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-output_hu676e47dd52b03f3b74a3c3eaa8ba485d_78532_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Salida conversión de MKV a MPG"><img src="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-output_hu676e47dd52b03f3b74a3c3eaa8ba485d_78532_650x450_fit_box_3.png" width="650" height="448" alt="Salida conversión de MKV a MPG" title="Salida conversión de MKV a MPG"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-output_hu676e47dd52b03f3b74a3c3eaa8ba485d_78532_2560x1440_fit_box_3.png" data-gallery="" title="Salida conversión de MKV a MPG"><img src="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffmpeg-output_hu676e47dd52b03f3b74a3c3eaa8ba485d_78532_650x450_fit_box_3.png" width="650" height="448" alt="Salida conversión de MKV a MPG" title="Salida conversión de MKV a MPG"  class="lozad "></a></p>
 </figure>
 </div>
 <h4 id="cambiar-la-resolución-del-vídeo">Cambiar la resolución del vídeo</h4>
@@ -798,8 +776,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffplay_huc5e0cb8f6eb3562a0248d441fc36fb28_77311_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="FFplay"><img src="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffplay_huc5e0cb8f6eb3562a0248d441fc36fb28_77311_300x250_fit_q90_box.jpg" width="300" height="242" alt="FFplay" title="FFplay"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffplay_huc5e0cb8f6eb3562a0248d441fc36fb28_77311_2560x1440_fit_q90_box.jpg" data-gallery="" title="FFplay"><img src="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/images/ffplay_huc5e0cb8f6eb3562a0248d441fc36fb28_77311_300x250_fit_q90_box.jpg" width="300" height="242" alt="FFplay" title="FFplay"  class="lozad "></a></p>
 </figure>
 </div>
 <h4 id="extraer-una-imagen-de-un-vídeo">Extraer una imagen de un vídeo</h4>
@@ -858,12 +835,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ffmpeg.svg" width="400" height="98" alt="FFmpeg" title="FFmpeg"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>En algún momento puede que necesitemos o queramos convertir archivos de audio a otro formato individualmente o de forma masiva. Por ejemplo convertir archivos de audio del formato de música más utilizado <a href="https://es.wikipedia.org/wiki/MP3">mp3</a> al formato libre de patentes <a href="https://es.wikipedia.org/wiki/Ogg">ogg</a>, o de mp3 a <a href="https://es.wikipedia.org/wiki/Advanced_Audio_Coding">aac</a> o desde otros formatos y a otros formatos como <a href="https://es.wikipedia.org/wiki/Waveform_Audio_Format">wav</a> o <a href="https://es.wikipedia.org/wiki/Dolby_Digital_%28AC-3%29">ac3</a>. Algunos formatos ofrecen mejor compresión y ocupan menos espacio con la misma calidad y este puede ser un motivo por que queramos hacer la conversión. Aún así hay que tener en cuenta que las conversiones entre formatos con pérdida como de mp3 a ogg aún ocupando menos (o más) la calidad puede empeorar, aunque para un oído no entrenado será imperceptible, para convertir a un formato con pérdida es mejor partir de un archivo sin pérdida como wav.</p>
 <p>Si extraemos las canciones de un CD de música dependiendo del programa obtendremos los archivos en formato wav o quizá directamente en mp3, si no las queremos en mp3 para no perder calidad es mejor extraer las canciones en el formato sin pérdida wav y luego realizar la conversión al formato que queramos. En este artículo explicaré como de forma sencilla desde la línea de comandos y con <a href="https://www.ffmpeg.org/">FFmpeg</a> podemos hacer las conversiones, de forma masiva para múltiples archivos y de forma recursiva en múltiples directorios queremos cambiar el formato de una biblioteca de música entera. Hay páginas que sin necesidad de tener instalar nada en el equipo salvo un navegador ofrecen como servicio hacer las conversiones pero hay que hacerlo para cada archivo de forma individual y es más lento por tener que realizar la transmisión a través de internet de algunos pocos megas.</p>
@@ -899,16 +874,13 @@
 <p>Si preferimos realizar la conversión mediante una interfaz gráfica podemos usar VLC que también nos servirá para hacer la conversión tanto en Windows como en Mac OS además de GNU/Linux. Primeramente en el menu <em>Archivo</em> <em>&gt;</em> <em>Convertir</em> añadimos el archivo a convertir a la lista y pulsamos botón <em>Convertir</em>. En el siguiente diálogo seleccionaremos el perfil de salida, en este caso <em>Audio - Vorbis (OGG)</em> y el nombre del archivo de salida, editando el perfil tendremos opción de modificar la tasa de bits del audio, además de la resolución y la posibilidad de aplicar algunos filtros como el normalizador de volumen.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-input_hu2250867cf2480bad20c4da05f9001581_36638_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Conversión audio de MP3 a OGG"><img src="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-input_hu2250867cf2480bad20c4da05f9001581_36638_300x200_fit_box_3.png" width="251" height="200" alt="Conversión audio de MP3 a OGG" title="Conversión audio de MP3 a OGG"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-codec_hu3f1e2cae022b4f12ceb36cb75f1788d7_39144_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Selección de códec"><img src="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-codec_hu3f1e2cae022b4f12ceb36cb75f1788d7_39144_300x200_fit_box_3.png" width="230" height="200" alt="Selección de códec" title="Selección de códec"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-input_hu2250867cf2480bad20c4da05f9001581_36638_2560x1440_fit_box_3.png" data-gallery="" title="Conversión audio de MP3 a OGG"><img src="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-input_hu2250867cf2480bad20c4da05f9001581_36638_300x200_fit_box_3.png" width="251" height="200" alt="Conversión audio de MP3 a OGG" title="Conversión audio de MP3 a OGG"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-codec_hu3f1e2cae022b4f12ceb36cb75f1788d7_39144_2560x1440_fit_box_3.png" data-gallery="" title="Selección de códec"><img src="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-codec_hu3f1e2cae022b4f12ceb36cb75f1788d7_39144_300x200_fit_box_3.png" width="230" height="200" alt="Selección de códec" title="Selección de códec"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-output_hu5148d4e433fe257a28d089c1c58d5350_36618_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Salida de conversión"><img src="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-output_hu5148d4e433fe257a28d089c1c58d5350_36618_300x200_fit_box_3.png" width="216" height="200" alt="Salida de conversión" title="Salida de conversión"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-output_hu5148d4e433fe257a28d089c1c58d5350_36618_2560x1440_fit_box_3.png" data-gallery="" title="Salida de conversión"><img src="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/images/vlc-output_hu5148d4e433fe257a28d089c1c58d5350_36618_300x200_fit_box_3.png" width="216" height="200" alt="Salida de conversión" title="Salida de conversión"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="reference">
@@ -938,12 +910,10 @@
         <content type="html">
         <![CDATA[<p><strong>El correo electrónico es un medio muy utilizado para realizar ataques de <em>phishing</em>, algunos son muy burdos pero seguramente algunos usuarios sin muchos conocimientos caen víctimas de ellos y aún los usuarios con conocimientos también pueden serlo si están bien realizados y muestran un correo electrónico exactamente igual que el que intentan suplantar. Los usuarios son las víctimas pero si los sitios web que envían los correos electrónicos legítimos los firmasen digitalmente sería una garantía más para proteger a sus usuarios, pudiendo detectar de otra forma el <em>spam</em> y <em>phishing</em>. En este artículo muestro a modo de ejemplo como firmar un correo electrónico con GPG y JavaMail e igualmente podría utilizarse para cifrarlo, aunque usar DKIM sería lo más apropiado.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnupg.svg" width="200" height="262" alt="GnuPG" title="GnuPG"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnupg.svg" width="200" height="262" alt="GnuPG" title="GnuPG"  class=""></p>
 </div>
 <p>Los sitios de comercio electrónico y muchas páginas web utilizan el <a href="https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure">protocolo seguro HTTPS</a> para cifrar los datos intercambiados entre cliente y servidor impidiendo a una tercera persona conocer qué información se está transmitiendo, además impide que puedan ser alterados sin su conocimiento. Es habitual usar HTTPS y certificados en las páginas de compra en las que hay que introducir datos personales junto con la tarjeta de crédito también en las cuentas de usuario como forma de proporcionar seguridad y proteger la información personal. Generando y usando <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">certificados TLS/SSL en el servidor</a> el sitio y el usuario evitan caer en un ataque de <em>phishing</em> en la que una tercera persona con intenciones maliciosas intenta suplantar la identidad del sitio web.</p>
 <p>Pero los <a href="https://es.wikipedia.org/wiki/Phishing">ataques de <em>phishing</em></a> también son realizados a través del correo electrónico, mensajes en los que se incluyen enlaces hacia páginas que suplantan a un sitio. Algunos usuarios quizá no se den cuenta de la suplantación al hacer clic en los enlaces maliciosos. Los motores de búsqueda mantendrán a los usuarios a salvo de enlaces maliciosos en las páginas de resultados que les lleven a páginas de <em>phishing</em>, pero no del correo electrónico que si no es detectado como <em>spam</em> llegará a la bandeja de entrada de los usuarios. El correo electrónico es una vía para llevar a los usuarios hacia esas páginas de <em>phishing</em>. Para evitar este posible peligro no todos los sitios web y de comercio electrónico son los que firman sus mensajes como forma de verificar la autenticidad de los mismos así como evitar que pueda ser modificados sin conocimiento.</p>
@@ -982,8 +952,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Verificación de la firma GPG del correo electrónico"><img src="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_300x200_fit_box_3.png" width="300" height="192" alt="Verificación de la firma GPG del correo electrónico" title="Verificación de la firma GPG del correo electrónico"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_2560x1440_fit_box_3.png" data-gallery="" title="Verificación de la firma GPG del correo electrónico"><img src="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/images/gpg-verify_hu056ea4a4567d07af3605cd2e5c1611b9_26426_300x200_fit_box_3.png" width="300" height="192" alt="Verificación de la firma GPG del correo electrónico" title="Verificación de la firma GPG del correo electrónico"  class="lozad "></a></p>
 <figcaption>Verificación de la firma GPG del correo electrónico</figcaption>
 </figure>
 </div>
@@ -1034,16 +1003,13 @@
         <content type="html">
         <![CDATA[<p><strong>Dada la popularidad de Java es difícil que no encontremos en el propio JDK o librería la funcionalidad que necesitamos y sino en algún comando del sistema de los muchos que tenemos a disposición en un sistema GNU/Linux. Esto nos da acceso a una gran cantidad de funcionalidades también desde los programas Java.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>Java de por sí incluye una amplia colección de clases con las funcionalidades principales que podamos necesitar, si no lo ofrece en la <a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">API</a> es muy posible que haya una librería que lo proporcione. Pero en algún momento quizá se nos dé el caso que un comando del sistema devuelve la información o realiza la acción que necesitamos. Puede ser una un comando del sistema <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, <a href="https://www.microsoft.com/es-es/windows/">Windows</a> o <a href="https://www.apple.com/es/mac/">Mac OS X</a> o un <a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/"><em>script</em> en Java</a>, <a href="https://www.python.org/">Python</a>, <a href="https://www.ruby-lang.org/es/">Ruby</a> u otro lenguaje de programación. A través de las clase <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html">Process</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html">ProcessBuilder</a> nos es posible lanzar un proceso de cualquier comando del sistema y acceder a su entrada estándar, salida estándar y salida de error.</p>
 <p>La clase Process representa el proceso que lancemos, tenemos dos formas de obtener un referencia esta clase, una con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#exec-java.lang.String-">Runtime.getInstance().exec()</a> y otra con la clase ProcessBuilder con ambas nos será posible establecer variables de entorno, el directorio de trabajo o redirigir la entrada y salida. Obtenida la referencia a una instancia de Process con el método <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#getInputStream--">getInputStream()</a> leeremos la salida estándar del proceso, con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#getErrorStream--">getErrorInputStream()</a> la salida de errores y con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#getOutputStream--">getOutputStream()</a> podremos enviar contenido a la entrada estándar. Otros métodos de utilidad nos permitirán conocer si el proceso sigue vivo con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#isAlive--">isAlive()</a>, obtener el código de salida con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#exitValue--">exitValue()</a>, esperar a que termine con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#waitFor--">waitFor()</a>. Finalmente con <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html#destroy--">destroy()</a> podemos terminar de forma abrupta el proceso.</p>
@@ -1107,12 +1073,10 @@
         <content type="html">
         <![CDATA[<p><strong>Java sigue siendo uno de los lenguajes más usado para desarrollar aplicaciones empresariales en entidades públicas o empresas privadas. Proporciona un conjunto de especificaciones que cubren las necesidades funcionales de la mayoría de las aplicaciones y sigue evolucionando, adaptándose a las nuevas tendencias actuales y agregando nuevas funcionalidades de forma estandarizada en la plataforma. Aún así muchas entidades siguen y seguirán usando versiones anteriores a la última tanto de Java EE como de Java.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java-ee.png" width="200" height="213" alt="Java EE" title="Java EE"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java-ee.png" width="200" height="213" alt="Java EE" title="Java EE"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Hace ya unos años, en 2013, fue publicada una nueva versión del conjunto de especificaciones que forman parte de <a href="https://www.oracle.com/technetwork/java/javaee/overview/index.html">Java EE</a> con varias novedades y mejoras que aumentan la productividad. Java EE 7 es el conjunto de especificaciones a disposición de las aplicaciones empresariales que son implementadas por cada servidor de aplicaciones donde se ejecutan las <em>apps</em> Java, estas especificaciones describen la funcionalidad y permiten que una aplicación pueda ser ejecutada en cualquier servidor que las implemente ya sea <a href="https://wildfly.org/">WildFly</a>, <a href="https://www.oracle.com/middleware/weblogic/">WebLogic</a> o <a href="https://www.ibm.com/es-es/marketplace/java-ee-runtime/details">WebSphere</a> sin necesidad de grandes cambios o ninguno en absoluto al proporcionar interoperabilidad entre diferentes implementaciones con el objetivo de no estar encadenado a un determinado vendedor.</p>
 <p>Java EE usa como lenguaje de programación Java que incorporando numerosas <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades en la versión 8</a> lo hacen seguir siendo uno de los mejores lenguajes y más usado para el desarrollo de aplicaciones empresariales. Estos son mis <a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 razones para seguir usando Java</a>.</p>
@@ -1125,8 +1089,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/images/aplicaciones-multicapa-javaee_hu234c12f8c74ea7af04df3c8545c4ce4e_39774_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicaciones multicapa Java EE"><img src="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/images/aplicaciones-multicapa-javaee_hu234c12f8c74ea7af04df3c8545c4ce4e_39774_300x200_fit_box_3.png" width="291" height="200" alt="Aplicaciones multicapa Java EE" title="Aplicaciones multicapa Java EE"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/images/aplicaciones-multicapa-javaee_hu234c12f8c74ea7af04df3c8545c4ce4e_39774_2560x1440_fit_box_3.png" data-gallery="" title="Aplicaciones multicapa Java EE"><img src="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/images/aplicaciones-multicapa-javaee_hu234c12f8c74ea7af04df3c8545c4ce4e_39774_300x200_fit_box_3.png" width="291" height="200" alt="Aplicaciones multicapa Java EE" title="Aplicaciones multicapa Java EE"  class="lozad "></a></p>
 <figcaption>Aplicaciones multicapa Java EE</figcaption>
 </figure>
 </div>
@@ -1256,12 +1219,10 @@
         <content type="html">
         <![CDATA[<p><strong>Eliminar archivos del sistema de ficheros no basta para destruir la información que contuvieran. Con herramientas como <em>Foremost</em> su contenido puede ser recuperado, por ello cuando desechamos una unidad de almacenamiento (disco duro, memoria USB, tarjeta SD, SSD) conviene hacer un borrado seguro de la unidad, si trabajamos con información sensible quizá queramos hacer un borrado seguro de los archivos que eliminemos. Con el comando <code>wipe</code> podemos borrar archivos individuales y con el comando <code>dd</code> una unidad completa.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>Aunque los eliminemos su contenido permanece en el sistema de archivos que con herramientas como <a href="https://wiki.archlinux.org/index.php/Foremost">Foremost</a> pueden recuperarse. Esto es debido a que cuando se elimina un archivo realmente lo que se hace es liberar el espacio ocupado, el contenido mientras no se sobrescriba por el de otro nuevo archivo sigue estando presente en el dispositivo de almacenamiento. Para eliminar de forma segura tal que no sea posible recuperar ni con herramientas como Foremost un archivo del sistema de almacenamiento hay que hacer un borrado seguro del archivo o de la unidad completa, proceso que consiste en sobrescribir la información con datos aleatorios.</p>
 <p>Esto es necesario o recomendable si trabajamos con información sensible como datos personales, contraseñas, claves, &hellip; o si nos deshacemos de la unidad de almacenamiento USB, tarjeta de memoria, disco duro o SSD. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos con Foremost</a> explico cómo recuperar información que podríamos considerar destruida, en mi experiencia aún habiendo eliminado los archivos usando las facilidades del propio entorno de escritorio se puede recuperar el contenido completo de bastantes de los archivos originales sobre todo si la unidad tiene bastante espacio libre y no ha tenido un uso excesivo.</p>
@@ -1334,8 +1295,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-nginx_hu9389785edf4602afc757d66aceb16de8_86825_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="HTTP/2 en Nginx"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-nginx_hu9389785edf4602afc757d66aceb16de8_86825_300x200_fit_box_3.png" width="244" height="200" alt="HTTP/2 en Nginx" title="HTTP/2 en Nginx"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-nginx_hu9389785edf4602afc757d66aceb16de8_86825_2560x1440_fit_box_3.png" data-gallery="" title="HTTP/2 en Nginx"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-nginx_hu9389785edf4602afc757d66aceb16de8_86825_300x200_fit_box_3.png" width="244" height="200" alt="HTTP/2 en Nginx" title="HTTP/2 en Nginx"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="configurar-http2-en-apache-httpd">Configurar HTTP/2 en Apache HTTPD</h3>
@@ -1348,8 +1308,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-httpd_huf92d904a434046ad27c310f0fe53e325_72029_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="HTTP/2 en Apache HTTPD"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-httpd_huf92d904a434046ad27c310f0fe53e325_72029_300x200_fit_box_3.png" width="248" height="200" alt="HTTP/2 en Apache HTTPD" title="HTTP/2 en Apache HTTPD"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-httpd_huf92d904a434046ad27c310f0fe53e325_72029_2560x1440_fit_box_3.png" data-gallery="" title="HTTP/2 en Apache HTTPD"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-httpd_huf92d904a434046ad27c310f0fe53e325_72029_300x200_fit_box_3.png" width="248" height="200" alt="HTTP/2 en Apache HTTPD" title="HTTP/2 en Apache HTTPD"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="configurar-http2-en-wildfly">Configurar HTTP/2 en WildFly</h3>
@@ -1370,8 +1329,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-wildfly_hu22f901619a918dd5dbb507157638c0f8_171255_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="HTTP/2 en WildFly"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-wildfly_hu22f901619a918dd5dbb507157638c0f8_171255_300x200_fit_box_3.png" width="189" height="200" alt="HTTP/2 en WildFly" title="HTTP/2 en WildFly"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-wildfly_hu22f901619a918dd5dbb507157638c0f8_171255_2560x1440_fit_box_3.png" data-gallery="" title="HTTP/2 en WildFly"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-wildfly_hu22f901619a918dd5dbb507157638c0f8_171255_300x200_fit_box_3.png" width="189" height="200" alt="HTTP/2 en WildFly" title="HTTP/2 en WildFly"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="configurar-http2-en-jetty">Configurar HTTP/2 en Jetty</h3>
@@ -1390,8 +1348,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-jetty_hucb49276491e26346854b521f5ae95467_83310_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="HTTP/2 en Jetty"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-jetty_hucb49276491e26346854b521f5ae95467_83310_300x200_fit_box_3.png" width="300" height="200" alt="HTTP/2 en Jetty" title="HTTP/2 en Jetty"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-jetty_hucb49276491e26346854b521f5ae95467_83310_2560x1440_fit_box_3.png" data-gallery="" title="HTTP/2 en Jetty"><img src="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/images/http2-jetty_hucb49276491e26346854b521f5ae95467_83310_300x200_fit_box_3.png" width="300" height="200" alt="HTTP/2 en Jetty" title="HTTP/2 en Jetty"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="reference">
@@ -1424,12 +1381,10 @@
         <content type="html">
         <![CDATA[<p><strong>¿Has perdido alguna vez una memoria USB? ¿sí, aún no? ¿qué datos contenía? Muy posiblemente son varias las memorias USB que tenemos, por su poco tamaño y cada vez mayor capacidad incluso llevaremos alguna en la cartera siempre con nosotros. Si quieres mantener a salvo los datos en caso de pérdida hay varias opciones, una para esta necesidad es cifrar completamente la unidad con dm-crypt junto con LUKS+Ext4 en GNU/Linux. Suena muy técnico pero es muy sencillo usando la aplicación Discos de GNOME y la seguridad de nuestra información aumentará notablemente.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>Seguro que tienes varias memorias USB o discos duros externos con los que transportar información de un sitio a otro o como copia de seguridad. No sería extraño perder alguna de esas unidades en una biblioteca, universidad, aeropuerto, vía pública, metro, &hellip; con toda la información que contengan como fotos y documentos con información personal accesible por cualquier persona que se encuentre esa unidad. Si queremos evitar este posible caso de que al perder la unidad USB que al final es lo de menos ya que se puede sustituir fácilmente toda la información este accesible podemos cifrar su contenido. Hay varias formas una <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">cifrando con GPG archivos individuales</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">cifrando con EncFS ciertas carpetas</a> y varios archivos a la vez o la unidad completa con <a href="https://wiki.archlinux.org/index.php/Dm-crypt">dm-crypt</a> que será el caso de este artículo.</p>
 <p>Usar GPG es incómodo si necesitamos cifrar múltiples archivos como sería el caso de una memoria USB, EncFS requiere introducir un comando para montar el sistema de archivos cifrado y no obligaremos a que todos los archivos estén cifrados, usando dm-crypt el sistema nos preguntará por la clave de cifrado al conectar la unidad USB y se encargará de hacer el cifrado y descifrado de forma automática y transparente, nosotros trabajaremos con los archivos y sus aplicaciones con normalidad sin ninguna necesidad especial. Además, no es complicado inicializar la unidad USB para que su contenido esté cifrado usando la <a href="https://es.wikipedia.org/wiki/GNOME_Disks">aplicación Discos de GNOME</a>.</p>
@@ -1443,25 +1398,20 @@
 <p>Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que queremos cifrar usando el botón con el icono de una rueda dentada hacemos clic en la opción formatear partición. Se abrirá un diálogo emergente donde podremos seleccionar el sistema de archivos con el que queremos formatear la unidad, seleccionamos LUKS+Ext4, formato lento e introducimos una contraseña con cierta fortaleza que deberemos recordar (de longitud 8 o más que contenga letras en mayúsculas, minúsculas, números y símbolos como «!&quot;·$%&amp;/()=^*,.-;:_»). El formateo lento tardará más o menos tiempo dependiendo de la capacidad de la unidad pero es aconsejable realizarlo para evitar que con <a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">herramientas de recuperación de archivos como Foremost</a> alguien pueda extraer algún tipo de documento usándola a pesar de en teoría haber sido eliminado, otra forma de evitarlo es <a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">eliminar ciertos o todos los archivos de forma segura</a>. En una unidad sin cifrar es sorprendente la cantidad de archivos que se puede recuperar usando <a href="https://wiki.archlinux.org/index.php/Foremost">Foremost</a> de los que en algún momento estuvieron.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación Discos de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_300x200_fit_box_3.png" width="231" height="200" alt="Aplicación Discos de GNOME" title="Aplicación Discos de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Opciones formateo unidad"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_300x200_fit_box_3.png" width="285" height="200" alt="Opciones formateo unidad" title="Opciones formateo unidad"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación Discos de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/discos_hu3135568082e17d239e3100be9a4fc173_67669_300x200_fit_box_3.png" width="231" height="200" alt="Aplicación Discos de GNOME" title="Aplicación Discos de GNOME"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_2560x1440_fit_box_3.png" data-gallery="" title="Opciones formateo unidad"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/opciones-formato_hu7551938eb59310a3fc6f034783853c1e_30403_300x200_fit_box_3.png" width="285" height="200" alt="Opciones formateo unidad" title="Opciones formateo unidad"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Formateada la unidad con LUKS+Ext4 al conectarla al equipo o montarla el entorno de escritorio nos preguntará por la contraseña con un diálogo.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo solicitud contraseña"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_300x200_fit_box_3.png" width="300" height="179" alt="Diálogo solicitud contraseña" title="Diálogo solicitud contraseña"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_2560x1440_fit_box_3.png" data-gallery="" title="Diálogo solicitud contraseña"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/contrasena_hu462b04d32f07aaac78ff1c7af741b59f_27270_300x200_fit_box_3.png" width="300" height="179" alt="Diálogo solicitud contraseña" title="Diálogo solicitud contraseña"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Unidad cifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_300x200_fit_box_3.png" width="290" height="127" alt="Unidad cifrada en Nautilus" title="Unidad cifrada en Nautilus"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Unidad BMOVE ROJO descifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_300x200_fit_box_3.png" width="290" height="127" alt="Unidad BMOVE ROJO descifrada en Nautilus" title="Unidad BMOVE ROJO descifrada en Nautilus"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_2560x1440_fit_box_3.png" data-gallery="" title="Unidad cifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-cifrada_hub794a011a1e5de44731af827bcf93591_6995_300x200_fit_box_3.png" width="290" height="127" alt="Unidad cifrada en Nautilus" title="Unidad cifrada en Nautilus"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_2560x1440_fit_box_3.png" data-gallery="" title="Unidad BMOVE ROJO descifrada en Nautilus"><img src="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/images/unidad-descifrada_hu0dac15f2dd7e4763b31472da8db73bc3_6210_300x200_fit_box_3.png" width="290" height="127" alt="Unidad BMOVE ROJO descifrada en Nautilus" title="Unidad BMOVE ROJO descifrada en Nautilus"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Introducida la contraseña veremos los archivos originales y podremos trabajar con ellos con normalidad como si no estuviesen cifrados. En la <a href="https://wiki.archlinux.org/">wiki de Arch Linux</a> hay varios artículos explicando en que consiste dm-crypt y los comandos que deberíamos usar desde la terminal, los artículos en el apartado de referencia del final de este artículo. Cifrar la unidad completamente con cm-crypt y LUKS+Ext4 es perfectamente compatible con usar EncFS, es decir, podemos usar dm-crypt en la unidad y en ella que ya está cifrada <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">almacenar un sistema de archivos también cifrado con EncFS</a>.</p>

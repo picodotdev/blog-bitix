@@ -5,12 +5,233 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-19T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/</id>
+        <title>7&#43; computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM</title>
+        <updated>2019-07-12T12:30:00+02:00</updated>
+        <published>2018-03-10T10:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<p>Una de las tendencias de la tecnología desde sus inicios es que en todo momento está en constante evolución y mejora. Cada vez es más potente, más pequeña y más barata. Hay multitud de ejemplos en cualquier dispositivo electrónico que se use para ver su evolución desde <a href="https://en.wikipedia.org/wiki/History_of_IBM_magnetic_disk_drives#IBM%27s_first_HDD_versus_its_last_HDDs">discos duros de 5 megas que ocupaban un armario y pesaban varias decenas de kilos</a> a ahora las tarjetas microSD del tamaño de una uña con una capacidad de 256 GiB, de procesadores que en los años 70 funcionaban a una frecuencia de unos pocos megahercios a ahora varios gigahercios, de memorias RAM de unos pocos kilobytes a ahora varios gigabytes, de <em>chips</em> con <a href="https://en.wikipedia.org/wiki/Transistor_count">unos miles de transistores</a>, ya no digamos válvulas de vacío, a varios miles de millones de transistores que emplean ahora las GPU de las tarjetas gráficas.</p>
+<p>En poco más de dos décadas ha habido un salto de entre dos y tres órdenes de magnitud. Mi primer ordenador en 1996 fué un Intel Pentium a 120 Mhz con 8 MiB de memoria RAM que luego amplié a 32 MiB y un disco duro de 1 GiB que utilicé en mis años de universidad. En el 2002 cambié a un AMD 1800+ con 512 MiB, 60 GiB de disco duro y una gráfica Nvidia GeForce 2 MX creo que con 32 MiB de memoria gráfica con un monitor de 17&quot; de tubo que pesaba más de 10 kilos seguro. En el 2008 dejé el ordenador de escritorio y pase a un portátil Dell, del que no me quiero acordar mucho por lo malo que resultó, con un Intel Core 2 Duo 8100 fabricado un una litografía de 45 nanómetros, 4 GiB de RAM, un disco duro de 320 GiB y una gráfica Nvidia 8600 con 256 MiB de memoria gráfica. Finalmente ya casi en el 2013 a mi siguiente equipo como portátil con un Intel i3-3210 de 2 núcleos y 4 hilos fabricado a 22 nanómetros, 8 GiB de memoria e inicialmente un disco duro de 500 GiB que posteriormente cambié por un SSD de 250 GiB. Y actualmente si cambiase de equipo optaría seguramente por un AMD basado en la arquitectura Zen que han aumentado de forma significativa los núcleos e hilos de los procesadores, iría a por 32 GiB para virtualizar a gusto o 64 GiB si fuese posible y la memoria DDR4 estuviese a precios más asequibles, un monitor 2K o 4K y un disco SSD basado en NVMe que aumenta más la tasa de transferencia incluso sobre la interfaz SATA. Eso en los computadores tradicionales pero ya algunos modelos de móviles de gama alta poseen más memoria que varios portátiles de la gama básica y en el tamaño de 5 pulgadas.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</a>, finalmente adquirí un Intel NUC</li>
+</ul>
+<p>En otro artículo algo comentaba <a href="https://picodotdev.github.io/blog-bitix/2016/10/sobre-el-rapido-avance-de-la-tecnologia/">Sobre el rápido avance de la tecnología</a> y básicamente sacaba dos conclusiones. Una no merece comprar tecnología hasta que realmente es necesario pero tampoco esperar indefinidamente a lo siguiente mejor y como segunda conclusión que no hace falta tener lo último para hacer lo mismo que ya es posible con lo anterior.</p>
+<p>Una de las últimas adquisiciones que hice fué en 2012, uno de los primeros modelos de la popular computadora del tamaño de una tarjeta de crédito Raspberry Pi con un procesador ARM con el juego de instrucciones <em>armv6h</em> y 256 MiB que he utilizado mayoritariamente para realizar descargas y compartir archivos <em>torrent</em> o algunas pruebas de <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">utilización de sensores y dispositivos de entrada y salida con Java</a> o para <a href="https://picodotdev.github.io/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/">usar un certificador de Let&rsquo;s Encrypt en un servidor Nginx</a>. El siguiente uso que le daré es como <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/">consola de juegos retro</a>, otro uso es utilizarla como <a href="https://picodotdev.github.io/blog-bitix/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/">nube privada de documentos personales con Nextcloud y OnlyOffice</a>.</p>
+<p>Ya había placas de tamaño reducido con un computador completo similares a la Raspberry Pi pero la Raspberry Pi ha sido la placa con más éxito y que sigue teniendo uno de los mejores soportes y comunidad. Su propósito original es el aprendizaje a nivel educativo sin embargo su precio reducido de unos 36 € por los que se puede <a href="http://amzn.to/2EP9mHX">comprar ahora en Amazon</a> ha sido gran parte de su éxito junto con una labor de promoción muy bien realizada en internet que contribuyó a crear gran expectación superando con creces la demanda esperada por los propios creadores en los meses iniciales. Han sido elaborados nuevos modelos más capaces con 4 núcleos a más velocidad y basados en un procesador de arquitectura ARM Cortex-A53 de 64 bits, con WiFi y Bluetooth, pero con solo 1 GiB de memoria y ciertas limitaciones en el ancho de banda de red.</p>
+<p>La Raspberry Pi es la más popular y con mejor soporte pero no es la mini placa más capaz ni incluso la más barata, debido a su éxito han surgido numerosas placas similares. La totalidad de estas placas usan alguna distribución de GNU/Linux y procesadores ARM ya sea <a href="https://www.debian.org/">Debian</a>, <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://www.android.com/">Android</a>, <a href="https://archlinuxarm.org/">Arch Linux ARM</a>, <a href="https://www.armbian.com/">Armbian</a> o algunas distribuciones especializadas como <a href="https://www.lakka.tv/">Lakka</a> para consola de juegos retro y <a href="https://libreelec.tv/">LibreELEC</a> o <a href="https://kodi.tv/">Kodi</a> para centro multimedia de salón.</p>
+<p>El uso que se les puede dar a estas computadores es muy diverso quizá no como para sustituir a un ordenador de escritorio o portátil basado en procesadores <a href="https://www.intel.es">Intel</a> o <a href="https://www.amd.com/es">AMD</a> pero si para otros propósitos como servidor de descargas, centro multimedia, servidor web, cluster de servidores con <a href="https://www.docker.com/">Docker</a>, servicio en la nube propio con <a href="https://owncloud.org/">OwnCloud</a>, servidor de código fuente con <a href="https://about.gitlab.com/">GitLab</a>, servidor de integración continua con <a href="https://jenkins.io/">Jenkins</a>, base de datos <a href="https://www.postgresql.org/">PostgreSQL</a> o los mencionados consola de juegos retro y centro multimedia entre cualesquiera otros usos que queramos mientras el software necesario esté disponible y la cantidad memoria de la computadora sea suficiente.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/arm-powered_hu4e4b4e6e72c77b245b83add14f218f6b_23049_2560x1440_fit_box_3.png" width="277" height="250" alt="ARM Powered" title="ARM Powered"  class="lozad "></p>
+</figure>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="raspberry-pi">Raspberry Pi</h3>
+<p>Cuando apareció en el 2012 ya había placas similares pero su bajo precio y <em>marketing</em> ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo <a href="https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/">Raspberry Pi 3</a> puede quedarse escaso. Su <em>SoC</em> BCM2837 de Broadcom no es el más capaz tanto en CPU (<em>quad-core</em> ARM Cortex-A53 a 1.4 GHz) como en GPU (VideoCore IV) y con su gigabit ethernet compartida con los puertos USB y limitada lo que es un inconveniente importante en las transferencias de datos.</p>
+<ul>
+<li>SoC: CPU Broadcom BCM2837B0, 4 x Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li>
+<li>GPU VideoCore IV</li>
+<li>Memoria 1GB LPDDR2 SDRAM</li>
+<li>WiFi 2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE</li>
+<li>Red Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps)</li>
+<li>Extended 40-pin GPIO header</li>
+<li>Full-size HDMI</li>
+<li>4 USB 2.0 ports</li>
+<li>CSI camera port for connecting a Raspberry Pi camera</li>
+<li>DSI display port for connecting a Raspberry Pi touchscreen display</li>
+<li>4-pole stereo output and composite video port</li>
+<li>Micro SD port for loading your operating system and storing data</li>
+<li>5V/2.5A DC power input</li>
+<li>Power-over-Ethernet (PoE) support (requires separate PoE HAT)</li>
+</ul>
+<p>La <a href="https://www.raspberrypi.org/magpi/raspberry-pi-4-specs-benchmarks/">Raspberry Pi 4</a> ha sido anunciada y comercializada por sorpresa el 2019 cuando pocos se esperaban este nuevo modelo. Mejora sensiblemente varios aspectos y limitaciones de las versiones anteriores y sigue manteniendo un precio reducido. La CPU pasa a estar formada por 4 núcleos ARM Cotex-A72 a 1.5 GHz lo que es alrededor de 3 veces más potente que la CPU de la Raspberry Pi 3. La memoria pasa a tener varias configuraciones de 1, 2, 4 y 8 GiB además de ser más veloz al ser LPDDR4. Se ha eliminado la limitación del puerto Gigabit ethernet y dos puertos USB pasan a ser USB 3.0 con notables aumentos de capacidad de transferencia. La salida de vídeo ahora está compuesta por dos mini HDMI para soportar configuraciones multimonitor en resolución 4K. La GPU es una Video Core VI con soporte de OpenGL ES 3.0.</p>
+<ul>
+<li>SoC: CPU Broadcom BCM2711B0 quad-core A72 (ARMv8-A) 64-bit @ 1.5GHz</li>
+<li>GPU: Broadcom VideoCore VI</li>
+<li>RAM: 1GB, 2GB, 4GB, 8GB LPDDR4 SDRAM</li>
+<li>Red: 2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN</li>
+<li>Bluetooth: Bluetooth 5.0, Bluetooth Low Energy (BLE)</li>
+<li>GPIO: 40-pin GPIO header, populated</li>
+<li>Almacenamiento: microSD</li>
+<li>Puertos: 2 × micro-HDMI 2.0, 3.5 mm analogue audio-video jack, 2 × USB 2.0, 2 × USB 3.0, Gigabit Ethernet, Camera Serial Interface (CSI), Display Serial Interface (DSI)</li>
+</ul>
+<p>El precio del modelo de 1 GiB de memoria se mantiene en $35 y el de 4 GiB llega a $55. Con este nuevo modelo la Raspberry Pi vuelve a posicionarse a la altura de sus equivalentes que con el paso del tiempo habían superado a los modelos anteriores de RPi.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi3b_huf7bddd99ea74c1ddc0c5b8580dd4a8c5_327265_2560x1440_fit_q90_box.jpg" data-gallery="" title="Raspberry Pi 3"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi3b_huf7bddd99ea74c1ddc0c5b8580dd4a8c5_327265_300x200_fit_q90_box.jpg" width="287" height="200" alt="Raspberry Pi 3" title="Raspberry Pi 3"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi4b_hud8137f3457ffc935be8b5b47cc7bb3ae_296533_2560x1440_fit_q90_box.jpg" data-gallery="" title="Raspberry Pi 4"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/raspberrypi4b_hud8137f3457ffc935be8b5b47cc7bb3ae_296533_300x200_fit_q90_box.jpg" width="300" height="200" alt="Raspberry Pi 4" title="Raspberry Pi 4"  class="lozad "></a></p>
+<figcaption>Raspberry Pi 3 y 4</figcaption>
+</figure>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0899VXM8F&amp;linkId=d5f0684371c6b5b8fa5cbd472b276ba4" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07VD5L1VY&amp;linkId=f7a5d402571fb5dd48fa2311dc169469" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01566WOAG&amp;linkId=1c7d89fa46e38c81f0e35cb1518e80ea" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07CXXBTST&amp;linkId=aee5521403e014f5b256191d116ac4b3" title="Amazon" class="lozad"></iframe>
+</div>
+<h3 id="rock64">Rock64</h3>
+<p>El segundo modelo que destacaré es este de <a href="https://www.pine64.org/">PINE64</a> porque posee versiones de 1, 2 y 4 GiB de memoria, gigabit ethernet y 1 puerto USB 3.0 a un precio similar al de una Raspberry Pi, lo único que le falta es WiFi para superar en todo a la RPi. También posee un módulo eMMC más rápido que las tarjetas microSD, SPI de 128 MiB para prescincir de tarjeta microSD en el arranque, salida de audio, otros 2 puertos USB 2.0, salida HDMI con soporte para 4K@60fps HDR10, botones dedicados de encendido y reinicio y los 40 <em>pines</em> para usar sensores. El <em>SoC</em> es un <a href="http://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html">Rockchip RK3328</a> <em>quad-core</em> ARM Cortex-A53 y la GPU <a href="https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-450-gpu">ARM Mali-450MP2</a> con capacidad para OpenGL ES 1.1 / 2.0.</p>
+<ul>
+<li>CPU Rockchip RK3328, 4 x Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li>
+<li>GPU ARM Mali-450MP2</li>
+<li>Memoria 1 / 2 / 4 GiB 1600 MHz LPDDR3 SDRAM</li>
+<li>128 Mb SPI Flash</li>
+<li>eMMC Module Socket, eMMC Jumper</li>
+<li>MicroSD Card Slot (Bottom)</li>
+<li>3.5mm Barrel Power Jack (5V3A)</li>
+<li>4K60P HDR Digital Output</li>
+<li>A/V Jack</li>
+<li>Red Gigabit Ethernet</li>
+<li>2 x USB 2.0 Dedicated Host, 1 x USB 3.0 Dedicated Host</li>
+<li>Pi-P5+ Bus</li>
+<li>Pi-2 Bus</li>
+<li>Power, Reset and Recovery Buttons</li>
+<li>IR Receiver Port</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64_hudfc13bdf91379a00065bee84942df0d9_616068_2560x1440_fit_q90_box.jpg" data-gallery="" title="Rock64"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64_hudfc13bdf91379a00065bee84942df0d9_616068_300x200_fit_q90_box.jpg" width="300" height="196" alt="Rock64" title="Rock64"  class="lozad "></a></p>
+<figcaption>Rock64</figcaption>
+</figure>
+</div>
+<p>Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conectable a un puerto USB, también tienen la posibilidad de comprar el alimentador de corriente, mando a distancia, caja acrílica y un <em>splitter</em> con <em>Power Over Ethernet</em> o <em>PoE</em> que hace innecesario el alimentador de corriente si poseemos o adquirimos un <em>switch</em> con esa función, tarjetas eMMC de 16, 32 y 64 GiB. Su precio de unos $45 para el modelo de 4 GiB.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/ZejkWra-Mfc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor <em>SoC</em> <a href="http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html">Rockchip RK3399</a> <em>hexa-core</em> con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una <a href="https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus">ARM Mali-T860MP4</a> <em>quad-core</em> con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64pro_huac7173302891f5df6b9d7f25e4921bbd_841529_2560x1440_fit_q90_box.jpg" data-gallery="" title="Rock64Pro"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/rock64pro_huac7173302891f5df6b9d7f25e4921bbd_841529_300x200_fit_q90_box.jpg" width="267" height="200" alt="Rock64Pro" title="Rock64Pro"  class="lozad "></a></p>
+<figcaption>Rock64Pro</figcaption>
+</figure>
+</div>
+<p>Estas placas de PINE64 son de lo mejor en la relación características hardware y precio, donde adolecen es en el software y es que aún con un tiempo relativamente corto de un año de vida es en el software donde pueden presentar algún problema. Conforme pase el tiempo mejorarán pero quizá no sea el modelo más adecuado para aquellos usuarios que no deseen encontrase problemas en su uso y no estén dispuestos buscar información o a resolver los que se presenten.</p>
+<p>Aunque no es como los modelos anteriores de placas base este es destacable por ser un portátil basado en un procesador ARM RK3399 a un precio de $200. Pantalla de 14&quot; con una resolución de 1920x1080, 4 GiB de memoria, WiFi, microSD, mini HDMI, 64GB eMMC, dos puertos USB uno 3.0 y otro 2.0, salida de audio, cámara web y batería de 10000mAH, teclado y <em>touchpad</em>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/pinebook-pro_hu3f8af8bce03adffdd63b304c9c9fc947_188030_2560x1440_fit_q90_box.jpg" data-gallery="" title="PineBook Pro"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/pinebook-pro_hu3f8af8bce03adffdd63b304c9c9fc947_188030_300x200_fit_q90_box.jpg" width="233" height="200" alt="PineBook Pro" title="PineBook Pro"  class="lozad "></a></p>
+<figcaption>PineBook Pro <br>Fuente: arstechnica.com</figcaption>
+</figure>
+</div>
+<h3 id="rock-pi-4b">Rock Pi 4B</h3>
+<p>Un modelo de placa mas reciente también basada en el mismo <em>SoC</em> de la Rock64Pro el Rockchip RK3399 con algunas características muy completas. Esta <a href="http://rockpi.org/">Rock Pi</a> no tiene uno de los defectos de la Rock64 y es que tiene WiFi AC y Bluetooth 5.0, su memoria también es de hasta 4 GiB pero LPDDR4, puerto Gigabit Ethernet, tiene dos puertos USB 2.0 y otros dos 3.0, GPIO de 40 <em>pines</em> compatible con la Raspberry Pi, además de conector de 3.5mm para el audio y salida HDMI de hasta 4K, se alimenta mediante conector USB Type-C, tarjeta microSD, tiene <em>socket</em> eMMC pero es que además tiene un conector M.2 lo que le permite tener SSD con esta interfaz y un gran ancho de banda para el almacenamiento.</p>
+<ul>
+<li>CPU Rockchip RK3399, 2 x Cortex-A72, 4 x Cortex-A53</li>
+<li>GPU Mali T860MP4 (OpenGL ES 1.1 /2.0 /3.0 /3.1 /3.2, Vulkan 1.0, Open CL 1.1 1.2, DX11)</li>
+<li>Memory LPDDR4 1GB/2GB/4GB</li>
+<li>Storage eMMC, microSD, M.2 SSD</li>
+<li>Display HDMI 2.0 4K@60, Audio 3.5mm jack</li>
+<li>WiFI 802.11 ac, Bluetooth 5.0, Gigabit Ethernet with PoE</li>
+<li>2 x USB 3.0, 2 x USB 2.0</li>
+<li>IO 40-pin GPIO header</li>
+<li>Power USB Type C, RTC battery connector</li>
+</ul>
+<p>Por si fuera poco tiene un precio razonable y similar al resto de placas que está entre los 70 € y los 107 € según configuración de memoria y accesorios incluidos, además es ofrecido por varias tiendas alemanas. Aunque no tiene el soporte de la Raspberry Pi en cuanto a características técnicas es posiblemente el mejor modelo de los comentados en este artículo.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/C4p9EpjA0ZM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<h3 id="asus-tinker-board">ASUS Tinker Board</h3>
+<p>La <a href="https://www.asus.com/uk/Single-Board-Computer/Tinker-Board/overview/">ASUS Tinker Board</a> también está basada en un <em>SoC</em> de Rockchip pero en este caso el modelo <a href="http://www.rock-chips.com/a/en/products/RK32_Series/2014/0504/484.html">RK3288</a> que como CPU tiene el modelo más potente de 32 bits con una ARM Cortex-A17 <em>quad-core</em> e incorporando una GPU Mali-T764 mejor que la Mali de la Rock64. Tiene 2 GiB de memoria e incorpora de serie WiFi N y Bluetooth 4.0.</p>
+<p>Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que la Raspberry Pi, aún así incorpora de serie WiFi y Bluetooth por lo que no sería necesario comprar elementos adicionales.</p>
+<ul>
+<li>CPU Rockchip Quad-Core RK3288 processor</li>
+<li>Memoria 2GB Dual Channel DDR3</li>
+<li>GPU ARM Mali-T764</li>
+<li>Micro SD(TF) card slot</li>
+<li>Red Gigabit Ethernet</li>
+<li>WiFi 802.11 b/g/n, Bluetooth V4.0 + EDR</li>
+<li>Audio RTL ALC4040 CODEC</li>
+<li>4 x USB 2.0</li>
+<li>GPIO 40-pin header, up to 28 x GPIO pins, up to 2 x SPI bus, up to 2 x I2C bus, up to 4 x UART, up to 2 x PWM, up to 1 x PCM/I2S, 2 x 5V power pins, 2 x 3.3V power pins, 8 x ground pins, 1 x PWM, 1 x S/PDIF, 1 x 15-pin MIPI DSI, 1 x 15-pin MIPI CSI</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/asus-tinker-board_hu26cefdac17f008c08b5b052328b833f9_77329_2560x1440_fit_q90_box.jpg" data-gallery="" title="ASUS Tinker Board"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/asus-tinker-board_hu26cefdac17f008c08b5b052328b833f9_77329_300x200_fit_q90_box.jpg" width="290" height="200" alt="ASUS Tinker Board" title="ASUS Tinker Board"  class="lozad "></a></p>
+<figcaption>ASUS Tinker Board</figcaption>
+</figure>
+</div>
+<h3 id="cubox">Cubox</h3>
+<p>Aunque los modelos de <a href="https://www.solid-run.com/">SolidRun</a> son significativamente más caros poseen buenas especificaciones como el modelo <a href="https://www.solid-run.com/product/cubox-i4x4/">CuBox i4x4</a> con un procesador <em>quad core</em> aunque en si versión ARMv7 de 32 bits pero con 4 GiB de memoria, gigabit ethernet, WiFi y bluetooth incluido en un formato de cubo de 2 pulgadas. Como decía a un precio mas elevado, $170.</p>
+<p>El modelo mas reciente <a href="https://www.solid-run.com/nxp-family/cubox-pulse/">Cubox Pulse</a> incorpora un procesador <a href="https://www.nxp.com/products/processors-and-microcontrollers/applications-processors/i.mx-applications-processors/i.mx-8-processors:IMX8-SERIES">NXP i.MX8M</a> ya a 64 bits pero con el precio igualmente abultado respecto a otras opciones de 170 €.</p>
+<ul>
+<li>CPU i.MX8M Dual/Quad core ARM Cortex A53 up to 1.5Ghz (with ARM M4 GPP)</li>
+<li>Memoria up to 4GB LPDDR4</li>
+<li>MicroSD</li>
+<li>eMMC</li>
+<li>2 x USB 3.0, 1 x HDMI 2.0, 1 x RJ45</li>
+<li>Power on button</li>
+<li>Indication LEDs</li>
+<li>RTC</li>
+<li>IR receiver</li>
+<li>PoE sink support</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox_hu2c855b5894605dc99ee7a60598c9e367_87196_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cubox"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox_hu2c855b5894605dc99ee7a60598c9e367_87196_300x200_fit_q90_box.jpg" width="260" height="200" alt="Cubox" title="Cubox"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox-pulse_hu2f7dfc62d4499ad78ab3f1361dd53ac8_41698_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cubox Pulse"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/cubox-pulse_hu2f7dfc62d4499ad78ab3f1361dd53ac8_41698_300x200_fit_q90_box.jpg" width="189" height="200" alt="Cubox Pulse" title="Cubox Pulse"  class="lozad "></a></p>
+<figcaption>Cubox y Cubox Pulse</figcaption>
+</figure>
+</div>
+<h3 id="odroid">ODROID</h3>
+<p>Otro distribuidor importante es <a href="https://www.hardkernel.com">Hardkernel</a> con sus modelos ODROID de pequeñas computadoras basadas en ARM con varios modelos entre ellos el <a href="http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145457216438">ODROID C2</a> que posee un procesador ARM Cortex-A53 <em>quad-core</em>, 2 GiB de memoria, gigabit ethernet, soporta HDMI 2.0 4K@60fps, eMMC, 4 puertos USB 2.0 pero sin WiFi ni bluetooth. A un precio de $46.</p>
+<p>Están preparando el modelo <a href="https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/">ODROID N1</a> también basada en el <em>SoC</em> Rockchip RK3399.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/odroid-c2_hu3d03a01dcc18bc5be0e67db3d8d209a6_214044_2560x1440_fit_q90_box.jpg" data-gallery="" title="ODROID C2"><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/odroid-c2_hu3d03a01dcc18bc5be0e67db3d8d209a6_214044_300x200_fit_q90_box.jpg" width="282" height="200" alt="ODROID C2" title="ODROID C2"  class="lozad "></a></p>
+<figcaption>ODROID C2</figcaption>
+</figure>
+</div>
+<h3 id="nanopi-orangepi-y-bananapi">NanoPi, OrangePi y BananaPi</h3>
+<p>De <a href="http://nanopi.org/">NanoPi</a> voy a destacar el modelo <a href="http://nanopi.org/NanoPi-K2_Feature.html">NanoPi K2</a> con 2 GiB de memoria, procesador quad core, con WiFi y bluetooth y gigabit ethernet y soporte de 4K@60fps y H.265 10bit, H.264 a un precio de $50.</p>
+<p>Parece que con la costumbre de denominar a estas placas bases el nombre de frutos están <a href="http://www.orangepi.org/orangepiplus2/">OrangePi Plus 2</a> y <a href="http://www.banana-pi.org/m3.html">BananaPi M3</a>, el primero a un precio de 45 € con 2 GiB de memoria y soporte para HDMI 4K además de incluir gigabit ethernet y WiFi. El modelo de Banana Pi se diferencia en tener un procesador <em>octa-core</em>, un puerto SATA y un precio superior de 85 €.</p>
+<h3 id="conclusión">Conclusión</h3>
+<p>Estos no son los únicos modelos que existen pero son algunos de los más destacables. La Raspberry Pi 4 destaca por tener un modelo con 8 GiB de memoria y conectividad con WiFi sin necesidad de adaptadores. A pesar de que las alternativas de placas bases sean tan capaces como la Raspberry Pi esta les gana en mejor soporte del software como distribuciones GNU/Linux y programas como Kodi que también es algo a tener muy en cuenta y este posiblemente es el motivo de que aún siendo menos capaz tiene más éxito e igualmente una muy buena opción. Quizá con algunas de estas placas alternativas hay que leer la documentación que tengan, algún foro y probar más cosas de las que requeriría una Raspberry Pi.</p>
+<p>Estas placas son un logro del avance de la tecnología pero ciertamente no hay ningún modelo que soporte la memoria que un Intel NUC, todas estas placas no incluyen más de 8 GiB de memoria ni es ampliable, los NUC pueden llegar hasta los 32 GiB siendo más capaces. En cuanto al precio quizá los NUC son algo más caros pero la plataforma x86 tiene un gran soporte de software y no está tan fragmentado como la plataforma ARM, por otro lado al precio de las placas hay que añadirles los accesorios como la fuente de alimentación, caja, disipador, microSD o eMMC. A los NUC lo que les falta es el puerto GPIO para <a href="https://picodotdev.github.io/blog-bitix/series/electronica/">trastear con la electrónica como LEDs, <em>displays</em> y otros actuadores</a>. Si el propósito es de software preferiría un NUC, si el propósito es la electrónica o un precio muy ajustado una de estas placas.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.arm.com/products/processors/cortex-a">Procesadores ARM Cortex-A</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Arquitectura_ARM">Arquitectura ARM</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi</a></li>
+<li><a href="https://www.arm.com/products/graphics-and-multimedia/mali-gpu">GPUs ARM Mali</a></li>
+<li><a href="https://www.arm.com/products/graphics-and-multimedia/mali-gpu">GPUs ARM Mali (wkipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/VideoCore">VideoCore</a></li>
+<li><a href="https://www.khronos.org/opengles/">OpenGL ES</a></li>
+<li><a href="https://www.khronos.org/opencl/">OpenCL</a></li>
+<li><a href="https://www.khronos.org/openvg/">OpenVG</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="hardware"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/03/el-problema-de-concurrencia-del-agente-y-los-fumadores-resuelto-en-java/</id>
         <title>El problema de concurrencia del agente y los fumadores resuelto en Java</title>
@@ -21,8 +242,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Junto con los ejemplos de <a href="https://picodotdev.github.io/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/">la cena de los filósofos</a> y <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">la barbería</a> el de los fumadores es otro ejemplo clásico que se estudia en las asignaturas de sistemas operativos. Estos ejemplos necesitan de mecanismos de sincronización y concurrencia para su correcto funcionamiento al haber varios procesos y recursos compartidos que los procesos intentan utilizar de forma concurrente pero que no se debe permitir utilizando notificaciones entre procesos o <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">algunas primitivas de sincronización, concurrencia e hilos que posee Java</a> como <em>mutex</em>, <em>locks</em> o semáforos.</p>
 <p>El caso de los fumadores consiste en un grupo de fumadores que para fumar necesitan los ingredientes que les faltan para hacer un cigarrillo y fumárselo, poseen un ingrediente en cantidades ilimitadas pero les faltan otros dos. El agente posee cantidades ilimitadas de todos los ingredientes que son papel, tabaco y cerillas pero solo deja en una mesa dos de estos ingredientes a la vez. Cada fumador posee un ingrediente distinto de los tres necesarios y según los ingredientes que deje el agente uno de los fumadores podrá fumar con los dos ingredientes que el agente deja.</p>
@@ -110,15 +330,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En un <a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciacion-a-la-programacion-concurrente-en-java/">artículo de introducción sobre la programación concurrente en Java</a> explicaba cuales eran la facilidades que proporciona este lenguaje para la programación concurrente en múltiples hilos. En él exponía dos ejemplos clásicos que se estudian en las asignaturas de sistemas operativos, uno de ellos era el de <a href="https://es.wikipedia.org/wiki/Problema_de_la_cena_de_los_fil%C3%B3sofos">la cena de los filósofos</a> donde varios filósofos sentados en una tabla durante una cena se dedican a pensar y cuando tienen hambre comen usando para ello dos tenedores que comparten con sus compañeros que se sientan a la izquierda y derecha.</p>
 <p>Dado que dos filósofos no puede utilizar el mismo tenedor a la vez hay que implementar sincronización a la hora de utilizarlos. En la realidad un filósofo representa a un proceso y un tenedor representa a un recurso compartido de uso exclusivo.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/images/dining-philosophers_huf96065da3b6879fd5d0ed4f92270ce22_1395015_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="La cena de los filósofos"><img src="https://picodotdev.github.io/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/images/dining-philosophers_huf96065da3b6879fd5d0ed4f92270ce22_1395015_300x200_fit_box_3.png" width="193" height="200" alt="La cena de los filósofos" title="La cena de los filósofos"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/images/dining-philosophers_huf96065da3b6879fd5d0ed4f92270ce22_1395015_2560x1440_fit_box_3.png" data-gallery="" title="La cena de los filósofos"><img src="https://picodotdev.github.io/blog-bitix/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/images/dining-philosophers_huf96065da3b6879fd5d0ed4f92270ce22_1395015_300x200_fit_box_3.png" width="193" height="200" alt="La cena de los filósofos" title="La cena de los filósofos"  class="lozad "></a></p>
 <figcaption>La cena de los filósofos</figcaption>
 </figure>
 </div>
@@ -198,20 +416,17 @@
         <content type="html">
         <![CDATA[<p><strong>El propósito original de las Raspberry Pi era educativo y se ha hecho muy popular debido a su bajo precio y un buen trabajo de <em>marketing</em>. Sin embargo, puede utilizarse para muchos otros propósitos desde aprendizaje a programación, electrónica, servidor de archivos personales, descarga de películas, series y libros con torrent y también como una consola de juegos antiguos de arcade.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/lakka.png" width="200" height="200" alt="Lakka" title="Lakka"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/lakka.png" width="200" height="200" alt="Lakka" title="Lakka"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
 </div>
 <p>Desde que compré la <a href="https://www.raspberrypi.org/">Raspberry Pi</a> en el año 2012, el modelo inicial B con 256 MiB de memoria, me ha dado y me esta dando un estupendo servicio. Principalmente la he estado usando para descargar películas y libros vía <em>torrent</em> con <a href="https://transmissionbt.com/">Transmission</a> usando la distribución <a href="https://archlinuxarm.org/">Arch Linux para ARM</a>. Sin embargo, ya estoy pensando en sustituirla por algo más potente para hacer algunas pruebas con <a href="https://www.docker.com/">Docker</a>, <a href="https://www.ansible.com/">Ansible</a> y algunas pruebas más que se me ocurran aparte de seguir queriendo hacer descargas o en un futuro con la función de SmartTV. De la Raspberry Pi no se lanzará un nuevo modelo, el que sería el 4, hasta el 2019 y cuando salga no creo que sea más potente que una <a href="https://www.pine64.org/?page_id=7147">Rock64</a> que ya a día de hoy incorporan hasta 4 GiB de memoria, tienen Gigabit Ethernet y un puerto USB 3.0 con precio similar a la Raspberry Pi, lo único que le falta respecto al modelo de la RPi 3 es WiFi y Bluetooth pero a cambio se puede tener 4 veces más memoria, Gigabit Ethernet y un puerto USB 3.0. El mayor problema de la Rock64 es su soporte tanto en distribuciones, software y comunidad, en estos es donde la Raspberry Pi no tiene competidor.</p>
 <p>Pero antes estoy pensando en el uso que le puedo dar a la Raspberry Pi para que no se quede en un cajón cogiendo polvo. Y he pensado en utilizarla como consola de juegos retro con <a href="https://www.lakka.tv/">Lakka</a> para mis sobrinos que ahora usan PlayStation 1 pero que ya tiene los cables de los mandos estropeados de tanto doblarlos al guardarlos, de tanto uso ya no funcionan bien.</p>
 <p>Lo primero que he hecho es comprar unos <a href="http://amzn.to/2Cg6035">mandos similares a los de la antigua Super NES</a>, aunque con un teclado USB también se puede jugar es más cómodo con los mandos, además de poder jugar a dos jugadores. En muchos juegos de <em>arcade</em> antiguos es posible incluso a tres o cuatro jugadores.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/retroarch.svg" width="300" height="200" alt="RetroArch" title="RetroArch"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/retroarch.svg" width="300" height="200" alt="RetroArch" title="RetroArch"  class="lozad "></p>
 </figure>
 </div>
 <p>Los elementos necesarios para tener tener una consola retro son los siguientes: una <a href="https://amzn.to/2MXH57Q">Raspberry Pi</a>, un <a href="https://amzn.to/2YvYMRw">cargador USB</a> adecuado, una <a href="https://amzn.to/3ecB3wp">tarjeta microSD de 64 GiB</a> o más, <a href="http://amzn.to/2Cg6035">dos mandos para consola USB</a> o un <a href="http://amzn.to/2ou0QHD">teclado USB</a>, un <a href="http://amzn.to/2sPcjqz">cable HDMI</a> y si se quiere una <a href="http://amzn.to/2Fvtyjy">caja</a>. Por unos 65 € se pueden adquirir los elementos imprescindibles en la tienda de <a href="https://amzn.to/2flFhHA">Amazon</a>.</p>
@@ -238,8 +453,7 @@
 <p>El software para usar la Raspberry Pi como consola retro que he utilizado es Lakka que es una distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> especifica para convertir un ordenador en una consola de juegos retro. Para instalarlo en la tarjeta microSD hay que <a href="http://www.lakka.tv/get/">descargar la imagen de Lakka</a> y una forma simple de grabarla en la tarjeta microSD es utilizando <a href="https://www.balena.io/etcher/">Etcher</a>, basta instalarlo, iniciarlo, seleccionar la imagen de Lakka una vez descomprimido su archivo zip, seleccionar la unidad de la tarjeta SD (si es necesario ya que Etcher puede seleccionarla automáticamente) y pulsar el botón <em>Flash!</em>, después de unos pocos minutos la imagen está grabada y la tarjeta microSD lista para usarla en la Raspberry Pi y efectuar el primer inicio.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/etcher_huf9f2630e663feee1d2eb7938a2d085bb_110546_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Etcher"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/etcher_huf9f2630e663feee1d2eb7938a2d085bb_110546_300x200_fit_box_3.png" width="300" height="162" alt="Etcher" title="Etcher"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/etcher_huf9f2630e663feee1d2eb7938a2d085bb_110546_2560x1440_fit_box_3.png" data-gallery="" title="Etcher"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/etcher_huf9f2630e663feee1d2eb7938a2d085bb_110546_300x200_fit_box_3.png" width="300" height="162" alt="Etcher" title="Etcher"  class="lozad "></a></p>
 <figcaption>Etcher</figcaption>
 </figure>
 </div>
@@ -261,48 +475,38 @@
 <p>En el primer inicio Lakka debe hacer una serie de tareas para inicializar el sistema durante unos minutos, recomiendo no conectar el cable de red  ni ningún mando o teclado en este paso. Una vez se completa este primer inicio el siguiente paso es copiar las ROMs, hay varias formas una de ellas es desde un equipo con GNU/Linux y copiar los archivos al directorio <em>/storage/ROMs/</em> directamente a la tarjeta microSD desde un ordenador. En otros sistemas que no saben como acceder a las particiones <em>ext4</em> de Linux la más sencilla es activando el protocolo SAMBA en Lakka y copiarlos por la red, aunque tarda más. SAMBA se activa desde el menú <em>Settings &gt; Services &gt; SAMBA Enable</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka_hu78451ee42d9f0aae4d1fe724b0e434d2_901934_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Lakka"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka_hu78451ee42d9f0aae4d1fe724b0e434d2_901934_300x200_fit_q90_box.jpg" width="160" height="200" alt="Lakka" title="Lakka"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka_hu78451ee42d9f0aae4d1fe724b0e434d2_901934_2560x1440_fit_q90_box.jpg" data-gallery="" title="Lakka"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka_hu78451ee42d9f0aae4d1fe724b0e434d2_901934_300x200_fit_q90_box.jpg" width="160" height="200" alt="Lakka" title="Lakka"  class="lozad "></a></p>
 <figcaption>Raspberry Pi ejecutando Lakka (La televisión va acorde con los juegos XD)</figcaption>
 </figure>
 </div>
 <p>Con el cable de red conectado a la Raspberry Pi al <em>router</em> y desde un equipo con Windows, macOS o GNU/Linux y probando la dirección IP que el <em>router</em> le ha asignado a la Raspberry Pi se accede a los directorios compartidos por red poniendo en el explorador de archivos <em>\\192.168.0.2</em>, <em>\\192.168.0.3</em> o <em>\\192.168.0.4</em>, &hellip; o posteriores números dependiendo de los dispositivos conectados en la red, también podría ser <em>\\192.168.1.2</em>, <em>\\192.168.1.3</em>, <em>\\192.168.1.4</em>, &hellip; Con acceso en el explorador de archivos ya solo queda copiar las ROMs a la carpeta compartida ROMs. En macOS macOS con <em>Finder</em> en la opción <em>Ir &gt; Conectar al servidor</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-1_hu385d4d54b02ae23fe0c9b8e510fc62d4_197807_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Carpetas compartidas por Lakka mediante SAMBA"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-1_hu385d4d54b02ae23fe0c9b8e510fc62d4_197807_300x200_fit_box_3.png" width="300" height="168" alt="Carpetas compartidas por Lakka mediante SAMBA" title="Carpetas compartidas por Lakka mediante SAMBA"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-2_huf0d9cd3b33c234685afc7cab18a8bffa_194063_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Archivos de ROMs vía SAMBA"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-2_huf0d9cd3b33c234685afc7cab18a8bffa_194063_300x200_fit_box_3.png" width="300" height="169" alt="Archivos de ROMs vía SAMBA" title="Archivos de ROMs vía SAMBA"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-1_hu385d4d54b02ae23fe0c9b8e510fc62d4_197807_2560x1440_fit_box_3.png" data-gallery="" title="Carpetas compartidas por Lakka mediante SAMBA"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-1_hu385d4d54b02ae23fe0c9b8e510fc62d4_197807_300x200_fit_box_3.png" width="300" height="168" alt="Carpetas compartidas por Lakka mediante SAMBA" title="Carpetas compartidas por Lakka mediante SAMBA"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-2_huf0d9cd3b33c234685afc7cab18a8bffa_194063_2560x1440_fit_box_3.png" data-gallery="" title="Archivos de ROMs vía SAMBA"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-samba-2_huf0d9cd3b33c234685afc7cab18a8bffa_194063_300x200_fit_box_3.png" width="300" height="169" alt="Archivos de ROMs vía SAMBA" title="Archivos de ROMs vía SAMBA"  class="lozad "></a></p>
 <figcaption>Carpetas compartidas por Lakka mediante SAMBA</figcaption>
 </figure>
 </div>
 <p>Copiados los archivos de las ROMs a la Raspberry Pi desde la opción <em>Import Content &gt; Scan Directory</em> de Lakka esta detectará todos los juegos que encuentre en su base de datos añadiéndolos en varios menús según el sistema emulado del juego en las últimas opciones del menú horizontal de Lakka.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-games_hu824323f784df132c0c33e217641840f9_818081_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Juegos Lakka"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-games_hu824323f784df132c0c33e217641840f9_818081_300x200_fit_q90_box.jpg" width="160" height="200" alt="Juegos Lakka" title="Juegos Lakka"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-games_hu824323f784df132c0c33e217641840f9_818081_2560x1440_fit_q90_box.jpg" data-gallery="" title="Juegos Lakka"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/lakka-games_hu824323f784df132c0c33e217641840f9_818081_300x200_fit_q90_box.jpg" width="160" height="200" alt="Juegos Lakka" title="Juegos Lakka"  class="lozad "></a></p>
 <figcaption>Juegos Lakka</figcaption>
 </figure>
 </div>
 <p>Detectadas las ROMS iniciar un juego basta con seleccionarlo desde los menús e iniciarlo. La mayoría funcionará con un rendimiento óptimo tanto el fluidez de imagen como en sonido, la Raspberry Pi es mucho más potente que los sistemas antiguos que emula, el modelo Raspberry Pi 3 incluso funcionará mejor. Aún asi algunos pueden ir un poco lentos o el sonido no ser completamente fiel al original.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda_hu39ca57807f5ed283640e80028a620925_139916_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="The Legend of Zelda"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda_hu39ca57807f5ed283640e80028a620925_139916_300x200_fit_box_3.png" width="140" height="200" alt="The Legend of Zelda" title="The Legend of Zelda"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/zelda-II-the-adventure-of-link_hu63f0e922d615f71d9710fba25de4ede9_84794_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Zelda-II: The Adventure of Link"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/zelda-II-the-adventure-of-link_hu63f0e922d615f71d9710fba25de4ede9_84794_300x200_fit_box_3.png" width="146" height="200" alt="Zelda-II: The Adventure of Link" title="Zelda-II: The Adventure of Link"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/super-mario-bros-3_hua1ca64094a72c2e8cf3bf9808d6805a1_110980_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Super Mario Bros 3"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/super-mario-bros-3_hua1ca64094a72c2e8cf3bf9808d6805a1_110980_300x200_fit_box_3.png" width="146" height="200" alt="Super Mario Bros 3" title="Super Mario Bros 3"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda_hu39ca57807f5ed283640e80028a620925_139916_2560x1440_fit_box_3.png" data-gallery="" title="The Legend of Zelda"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda_hu39ca57807f5ed283640e80028a620925_139916_300x200_fit_box_3.png" width="140" height="200" alt="The Legend of Zelda" title="The Legend of Zelda"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/zelda-II-the-adventure-of-link_hu63f0e922d615f71d9710fba25de4ede9_84794_2560x1440_fit_box_3.png" data-gallery="" title="Zelda-II: The Adventure of Link"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/zelda-II-the-adventure-of-link_hu63f0e922d615f71d9710fba25de4ede9_84794_300x200_fit_box_3.png" width="146" height="200" alt="Zelda-II: The Adventure of Link" title="Zelda-II: The Adventure of Link"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/super-mario-bros-3_hua1ca64094a72c2e8cf3bf9808d6805a1_110980_2560x1440_fit_box_3.png" data-gallery="" title="Super Mario Bros 3"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/super-mario-bros-3_hua1ca64094a72c2e8cf3bf9808d6805a1_110980_300x200_fit_box_3.png" width="146" height="200" alt="Super Mario Bros 3" title="Super Mario Bros 3"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/mega-man-5_hua9e290a0024e55d79ec8b3048eaf5dd1_197813_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Mega Man 5"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/mega-man-5_hua9e290a0024e55d79ec8b3048eaf5dd1_197813_300x200_fit_box_3.png" width="142" height="200" alt="Mega Man 5" title="Mega Man 5"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/1943_huaef99bddb12e1c97134ab2fb50de5614_557885_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="1943"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/1943_huaef99bddb12e1c97134ab2fb50de5614_557885_300x200_fit_box_3.png" width="144" height="200" alt="1943" title="1943"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/sonic-the-hedgehog_hub9781e6ba4310f33e0f23e679799bf12_169500_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sonic The Hedgehog"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/sonic-the-hedgehog_hub9781e6ba4310f33e0f23e679799bf12_169500_300x200_fit_box_3.png" width="141" height="200" alt="Sonic The Hedgehog" title="Sonic The Hedgehog"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/mega-man-5_hua9e290a0024e55d79ec8b3048eaf5dd1_197813_2560x1440_fit_box_3.png" data-gallery="" title="Mega Man 5"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/mega-man-5_hua9e290a0024e55d79ec8b3048eaf5dd1_197813_300x200_fit_box_3.png" width="142" height="200" alt="Mega Man 5" title="Mega Man 5"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/1943_huaef99bddb12e1c97134ab2fb50de5614_557885_2560x1440_fit_box_3.png" data-gallery="" title="1943"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/1943_huaef99bddb12e1c97134ab2fb50de5614_557885_300x200_fit_box_3.png" width="144" height="200" alt="1943" title="1943"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/sonic-the-hedgehog_hub9781e6ba4310f33e0f23e679799bf12_169500_2560x1440_fit_box_3.png" data-gallery="" title="Sonic The Hedgehog"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/sonic-the-hedgehog_hub9781e6ba4310f33e0f23e679799bf12_169500_300x200_fit_box_3.png" width="141" height="200" alt="Sonic The Hedgehog" title="Sonic The Hedgehog"  class="lozad "></a></p>
 <figcaption>Varios juegos de la NES y Sega</figcaption>
 </figure>
 </div>
@@ -314,8 +518,7 @@
 <p>Al obtener ROMs de forma individual a veces es difícil dar con una que funcione, de algunos juegos hay varias versiones y es posible que algunas de ellas fallen al cargarse, hay que tener un poco de paciencia para encontrar la correcta.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda-screenshot_hu66fed8df68f46fcc35f3677e2ef44d56_3185_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="The Legend of Zelda"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda-screenshot_hu66fed8df68f46fcc35f3677e2ef44d56_3185_300x200_fit_box_3.png" width="229" height="200" alt="The Legend of Zelda" title="The Legend of Zelda"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda-screenshot_hu66fed8df68f46fcc35f3677e2ef44d56_3185_2560x1440_fit_box_3.png" data-gallery="" title="The Legend of Zelda"><img src="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/images/the-legend-of-zelda-screenshot_hu66fed8df68f46fcc35f3677e2ef44d56_3185_300x200_fit_box_3.png" width="229" height="200" alt="The Legend of Zelda" title="The Legend of Zelda"  class="lozad "></a></p>
 <figcaption>Juego The Legend of Zelda de NES</figcaption>
 </figure>
 </div>
@@ -353,8 +556,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Las expresiones regulares definen un patrón que permite encontrar coincidencias en cadenas de caracteres, reemplazar coincidencias o validar que las cadenas de caracteres cumplen el patrón. Las expresiones regulares son potentes expresiones que resultan útiles en muchos casos pero son expresiones que pueden llegar a ser complejas cuyo uso se aprende con la experiencia. Una de las funcionalidades que poseen es hacer referencia a grupos de captura anteriores en la propia expresión regular o en la cadena de reemplazo.</p>
 <p>Hacer referencia al grupo de captura en las cadenas de reemplazo es especialmente útil ya que sirve no solo para reemplazar coincidencias por cadenas previamente conocidas sino para transformar las coincidencias encontradas por otras expresiones. El caso de las cuentas de correo a continuación es un ejemplo práctico donde se aprecia este uso.</p>
@@ -527,8 +729,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
 </div>
 <p>Hoy se cumplen 8 años desde que creé y empecé a escribir en un blog, primeramente <a href="https://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> y más tarde en Blog Bitix. Durante este tiempo he escrito 485 artículos entre ambos blogs, en Blog Bitix ya tengo más artículos escritos y publicados de los que he tenido en El blog de pico.dev. Ocho años ya son una cifra considerable y requiere gran constancia, dedicación, motivación, perseverancia y gran cantidad de tiempo. Muchos blogs no llegan a esta cifra.</p>
 <p>Trato de compartir el conocimiento que voy aprendiendo según leo libros, uso <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> o me pregunto como se haría tal cosa con el lenguaje que uso principalmente, Java. El tener documentación es vital para un programador o en la tecnología y lo que comparto trato de que para el siguiente que tenga el mismo problema o se pregunte como se hace algo lo tenga más fácil y al mismo tiempo aprenda. Aparte de compartir conocimiento el blog me gustaría que me sirviese en mi vida profesional, ya sea para encontrar un nuevo trabajo o para profundizar aún en algún conocimiento. Por el momento este objetivo no lo considero del todo cumplido ya que a pesar de lo fan que soy de Java realmente trabajo a día de hoy con <a href="https://www.groovy-lang.org/">Groovy</a> y <a href="https://grails.org/">Grails</a>, son un lenguaje de programación y un framework web de la plataforma Java pero salvo la API del JDK tiene poco que ver y no me permiten seguir aprendiendo todo lo que me gustaría de esta plataforma, en el trabajo con otros aspectos tengo alguna otra compensación. Escribo y leo mucho pero por falta de uso una buena parte al cabo de varios meses voy olvidando.</p>
@@ -536,34 +737,29 @@
 <p>Cada cierto tiempo reviso y publico los datos de las visitas mensuales que tengo, lentamente pero de forma constante van aumentando y comprobando la diferencia de año en año por el momento el aumento es significativo para un blog con una temática bastante especializada. Sin embargo hasta el momento no he dado más detalles de estos datos en grandes números. Después de un crecimiento notable en el mes de mayo de 2017 las visitas han vuelto a los números de los meses anteriores y parece que se han estancado, veré como evolucionan en los siguientes meses, diciembre y enero por las vacaciones y días festivos no son de los mejores meses.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/paginas-vistas_hu0474e3e89a22ba548e1721322fbe9ce2_319661_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Páginas vistas"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/paginas-vistas_hu0474e3e89a22ba548e1721322fbe9ce2_319661_300x200_fit_box_3.png" width="300" height="130" alt="Páginas vistas" title="Páginas vistas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/paginas-vistas_hu0474e3e89a22ba548e1721322fbe9ce2_319661_2560x1440_fit_box_3.png" data-gallery="" title="Páginas vistas"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/paginas-vistas_hu0474e3e89a22ba548e1721322fbe9ce2_319661_300x200_fit_box_3.png" width="300" height="130" alt="Páginas vistas" title="Páginas vistas"  class="lozad "></a></p>
 <figcaption>Páginas vistas</figcaption>
 </figure>
 </div>
 <p>Un poco menos de la mitad de los usuarios los recibo desde España y la otra mitad de varios países de latinoamérica ya que por compartir el lenguaje los buscadores devuelven referencias a alguno de mis artículos. A parte de España con un 35% entre los países de latinoamérica están México 17%, Argentina 8%, Colombia 8%, Chile 6%, Perú 5,3%, Ecuador 3%, Venezuela 2,5%, Estados Unidos 1,76% o Bolivia 1,25%.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/pais_hu4c7e441492b16bc7a9a78d85c199aef4_470482_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Ubicación por país"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/pais_hu4c7e441492b16bc7a9a78d85c199aef4_470482_300x200_fit_box_3.png" width="300" height="125" alt="Ubicación por país" title="Ubicación por país"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/pais_hu4c7e441492b16bc7a9a78d85c199aef4_470482_2560x1440_fit_box_3.png" data-gallery="" title="Ubicación por país"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/pais_hu4c7e441492b16bc7a9a78d85c199aef4_470482_300x200_fit_box_3.png" width="300" height="125" alt="Ubicación por país" title="Ubicación por país"  class="lozad "></a></p>
 <figcaption>Ubicación por país</figcaption>
 </figure>
 </div>
 <p>En cuanto al navegador usado por los usuarios la mayor cuota de uso es <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> con un 71%, luego <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> con un 17% y en menores porcentajes Safari con un 3,7% y Edge con un pequeño 2,5% aún con la cuota de mercado de Windows. A pesar de publicar artículos sobre GNU/Linux la mayoría de usuarios usan <a href="https://www.microsoft.com/es-es/windows/">Windows</a> con un 72% pero me sorprende el 10,23% de Android incluso por delante de GNU/Linux con otro 10% y un 4,5% de Macintosh, finalmente está iOS con un 2,76%.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/navegador_hud73fd9cd3a5bd968178bef15d799cd70_445359_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Navegador"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/navegador_hud73fd9cd3a5bd968178bef15d799cd70_445359_300x200_fit_box_3.png" width="300" height="125" alt="Navegador" title="Navegador"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/sistema-operativo_huf20f681e4fd475df1999e14cb5015ad9_438410_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sistema operativo"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/sistema-operativo_huf20f681e4fd475df1999e14cb5015ad9_438410_300x200_fit_box_3.png" width="300" height="124" alt="Sistema operativo" title="Sistema operativo"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/navegador_hud73fd9cd3a5bd968178bef15d799cd70_445359_2560x1440_fit_box_3.png" data-gallery="" title="Navegador"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/navegador_hud73fd9cd3a5bd968178bef15d799cd70_445359_300x200_fit_box_3.png" width="300" height="125" alt="Navegador" title="Navegador"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/sistema-operativo_huf20f681e4fd475df1999e14cb5015ad9_438410_2560x1440_fit_box_3.png" data-gallery="" title="Sistema operativo"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/sistema-operativo_huf20f681e4fd475df1999e14cb5015ad9_438410_300x200_fit_box_3.png" width="300" height="124" alt="Sistema operativo" title="Sistema operativo"  class="lozad "></a></p>
 <figcaption>Navegador y sistema operativo</figcaption>
 </figure>
 </div>
 <p>En un porcentaje aplastante la mayoría de usuarios proviene del buscador Google con un 91% y un 4,8% para el tráfico directo.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/fuente_hu28fe6f95841f6b70a2185090094ece71_495265_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Fuente"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/fuente_hu28fe6f95841f6b70a2185090094ece71_495265_300x200_fit_box_3.png" width="300" height="130" alt="Fuente" title="Fuente"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/fuente_hu28fe6f95841f6b70a2185090094ece71_495265_2560x1440_fit_box_3.png" data-gallery="" title="Fuente"><img src="https://picodotdev.github.io/blog-bitix/2018/02/8-aniversario-del-blog/images/fuente_hu28fe6f95841f6b70a2185090094ece71_495265_300x200_fit_box_3.png" width="300" height="130" alt="Fuente" title="Fuente"  class="lozad "></a></p>
 <figcaption>Fuente</figcaption>
 </figure>
 </div>
@@ -588,8 +784,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/pmd.png" width="300" height="220" alt="PMD" title="PMD"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/pmd.png" width="300" height="220" alt="PMD" title="PMD"  class=""></p>
 </div>
 <p>El mantenimiento de un programa es la parte que más tiempo consume en su desarrollo y realmente son más los proyectos que hay que mantener que los que se empiezan desde cero. Por lo tanto el software se debe diseñar además de para funcionar correctamente y de forma suficientemente eficiente de tal forma que los futuros cambios sean en la medida de lo posible sencillos de realizar. Hay varios motivos por los que un software necesita mantenimiento según sus categorías:</p>
 <ul>
@@ -629,8 +824,7 @@
 <p>Para que en el informe aparezcan datos he cambiado la configuración de longitud a 10 líneas por método como máximo.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/images/pmd-report_hua654f7d7773bcdcb5f9833b3daebe80b_1706200_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Informe de PMD con violaciones a las reglas"><img src="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/images/pmd-report_hua654f7d7773bcdcb5f9833b3daebe80b_1706200_300x200_fit_box_3.png" width="300" height="163" alt="Informe de PMD con violaciones a las reglas" title="Informe de PMD con violaciones a las reglas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/images/pmd-report_hua654f7d7773bcdcb5f9833b3daebe80b_1706200_2560x1440_fit_box_3.png" data-gallery="" title="Informe de PMD con violaciones a las reglas"><img src="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/images/pmd-report_hua654f7d7773bcdcb5f9833b3daebe80b_1706200_300x200_fit_box_3.png" width="300" height="163" alt="Informe de PMD con violaciones a las reglas" title="Informe de PMD con violaciones a las reglas"  class="lozad "></a></p>
 <figcaption>Informe de PMD con violaciones a las reglas</figcaption>
 </figure>
 </div>
@@ -663,18 +857,14 @@
         <![CDATA[<p>A diferencia de los seis años anteriores este la <a href="https://bilbostack.com/">BilboStack</a> ha tenido lugar en el <a href="https://www.euskalduna.eus/">Palacio Euskalduna</a> en vez de la <a href="https://www.deusto.es">Universidad de Deusto</a> permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que igualmente si se ponía atención y luego esfuerzo se aprendían cosas interesantes, muchos hemos pasado varios años en ellas.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-1_hue1f64a941f5a3ba1e32eb76074289836_385158_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-1_hue1f64a941f5a3ba1e32eb76074289836_385158_300x200_fit_q90_box.jpg" width="300" height="194" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-2_hu481cb810c34d0fe683ae61403618c5c0_258124_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-2_hu481cb810c34d0fe683ae61403618c5c0_258124_300x200_fit_q90_box.jpg" width="88" height="200" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-1_hue1f64a941f5a3ba1e32eb76074289836_385158_2560x1440_fit_q90_box.jpg" data-gallery="" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-1_hue1f64a941f5a3ba1e32eb76074289836_385158_300x200_fit_q90_box.jpg" width="300" height="194" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-2_hu481cb810c34d0fe683ae61403618c5c0_258124_2560x1440_fit_q90_box.jpg" data-gallery="" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-2_hu481cb810c34d0fe683ae61403618c5c0_258124_300x200_fit_q90_box.jpg" width="88" height="200" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-3_hudab2cac80d1f9fe5ce2bda5b2d3533be_582530_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-3_hudab2cac80d1f9fe5ce2bda5b2d3533be_582530_300x200_fit_q90_box.jpg" width="267" height="200" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/presentacion_hu417f5cfc388c8cd2afe5e61b3a34f2a4_303863_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Presentación BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/presentacion_hu417f5cfc388c8cd2afe5e61b3a34f2a4_303863_300x200_fit_q90_box.jpg" width="267" height="200" alt="Presentación BilboStack 2018" title="Presentación BilboStack 2018"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-3_hudab2cac80d1f9fe5ce2bda5b2d3533be_582530_2560x1440_fit_q90_box.jpg" data-gallery="" title="BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/bilbostack-3_hudab2cac80d1f9fe5ce2bda5b2d3533be_582530_300x200_fit_q90_box.jpg" width="267" height="200" alt="BilboStack 2018" title="BilboStack 2018"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/presentacion_hu417f5cfc388c8cd2afe5e61b3a34f2a4_303863_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación BilboStack 2018"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/presentacion_hu417f5cfc388c8cd2afe5e61b3a34f2a4_303863_300x200_fit_q90_box.jpg" width="267" height="200" alt="Presentación BilboStack 2018" title="Presentación BilboStack 2018"  class="lozad "></a></p>
 <figcaption>BilboStack 2018</figcaption>
 </figure>
 </div>
@@ -682,10 +872,8 @@
 <p>Hasta el momento siempre se ha mantenido gratuita la entrada previa reserva pero este año con la ayuda de los patrocinadores han podido acceder a este gran recinto y costear el viaje a los ponentes, esto demuestra lo agradecidos que debemos estar a los de los  años anteriores ya que además de hacer la presentación compartiendo su conocimiento se pagaban ellos mismos el viaje.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-1_hu719da7a778c0e82331251ba73817ee94_479072_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Palacio Euskalduna"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-1_hu719da7a778c0e82331251ba73817ee94_479072_300x200_fit_q90_box.jpg" width="267" height="200" alt="Palacio Euskalduna" title="Palacio Euskalduna"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-2_hu6b44b9ef729faf8f4b38c670cfef02e4_538134_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Palacio Euskalduna"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-2_hu6b44b9ef729faf8f4b38c670cfef02e4_538134_300x200_fit_q90_box.jpg" width="267" height="200" alt="Palacio Euskalduna" title="Palacio Euskalduna"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-1_hu719da7a778c0e82331251ba73817ee94_479072_2560x1440_fit_q90_box.jpg" data-gallery="" title="Palacio Euskalduna"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-1_hu719da7a778c0e82331251ba73817ee94_479072_300x200_fit_q90_box.jpg" width="267" height="200" alt="Palacio Euskalduna" title="Palacio Euskalduna"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-2_hu6b44b9ef729faf8f4b38c670cfef02e4_538134_2560x1440_fit_q90_box.jpg" data-gallery="" title="Palacio Euskalduna"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/euskalduna-2_hu6b44b9ef729faf8f4b38c670cfef02e4_538134_300x200_fit_q90_box.jpg" width="267" height="200" alt="Palacio Euskalduna" title="Palacio Euskalduna"  class="lozad "></a></p>
 <figcaption>Palacio Euskalduna</figcaption>
 </figure>
 </div>
@@ -703,10 +891,8 @@
 <p>Por supuesto tener a disposición para la conferencia este recinto y los ponente sin que estos se paguen el viaje ha sido más fácil y posible gracias a los patrocinadores que además han ofrecido algunas pegatinas, cuadernillos, folletos a los asistentes e incluso ofertas laborales.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/patrocinadores_hue51a3baaa91d85f10840c82ab7c4fb3a_344148_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Patrocinadores"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/patrocinadores_hue51a3baaa91d85f10840c82ab7c4fb3a_344148_300x200_fit_box_3.png" width="300" height="120" alt="Patrocinadores" title="Patrocinadores"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/merchandising_hu31a4358e851aec15298dcebddc944b24_347720_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Merchandising"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/merchandising_hu31a4358e851aec15298dcebddc944b24_347720_300x200_fit_q90_box.jpg" width="267" height="200" alt="Merchandising" title="Merchandising"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/patrocinadores_hue51a3baaa91d85f10840c82ab7c4fb3a_344148_2560x1440_fit_box_3.png" data-gallery="" title="Patrocinadores"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/patrocinadores_hue51a3baaa91d85f10840c82ab7c4fb3a_344148_300x200_fit_box_3.png" width="300" height="120" alt="Patrocinadores" title="Patrocinadores"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/merchandising_hu31a4358e851aec15298dcebddc944b24_347720_2560x1440_fit_q90_box.jpg" data-gallery="" title="Merchandising"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/merchandising_hu31a4358e851aec15298dcebddc944b24_347720_300x200_fit_q90_box.jpg" width="267" height="200" alt="Merchandising" title="Merchandising"  class="lozad "></a></p>
 <figcaption>Patrocinadores</figcaption>
 </figure>
 </div>
@@ -797,8 +983,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/lo-que-no-se-vue_hu670e07eb2d467cfd99c03b177cc4864f_340701_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Lo que no se Vue"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/lo-que-no-se-vue_hu670e07eb2d467cfd99c03b177cc4864f_340701_300x200_fit_q90_box.jpg" width="267" height="200" alt="Lo que no se Vue" title="Lo que no se Vue"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/lo-que-no-se-vue_hu670e07eb2d467cfd99c03b177cc4864f_340701_2560x1440_fit_q90_box.jpg" data-gallery="" title="Lo que no se Vue"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/lo-que-no-se-vue_hu670e07eb2d467cfd99c03b177cc4864f_340701_300x200_fit_q90_box.jpg" width="267" height="200" alt="Lo que no se Vue" title="Lo que no se Vue"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="css-grid-layout-en-acción-empor-diana-acevesem">CSS Grid Layout en acción <em>por Diana Aceves</em></h3>
@@ -827,8 +1012,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/css-grid-layout-en-accion_hu7fb0e918ac444a23e2228c30481f71d1_249287_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="CSS Grid Layout en acción"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/css-grid-layout-en-accion_hu7fb0e918ac444a23e2228c30481f71d1_249287_300x200_fit_q90_box.jpg" width="267" height="200" alt="CSS Grid Layout en acción" title="CSS Grid Layout en acción"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/css-grid-layout-en-accion_hu7fb0e918ac444a23e2228c30481f71d1_249287_2560x1440_fit_q90_box.jpg" data-gallery="" title="CSS Grid Layout en acción"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/css-grid-layout-en-accion_hu7fb0e918ac444a23e2228c30481f71d1_249287_300x200_fit_q90_box.jpg" width="267" height="200" alt="CSS Grid Layout en acción" title="CSS Grid Layout en acción"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="camino-a-producción-empor-mario-marinem">Camino a producción <em>por Mario Marin</em></h3>
@@ -844,8 +1028,7 @@
 <p>Echando la vista atrás se ve lo que has mejorado y es satisfactorio, a pesar de que quedan muchas cosas por hacer.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/camino-a-produccion_hu51beb7963aea8019fbcf4bc98296e78f_405386_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Camino a producción"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/camino-a-produccion_hu51beb7963aea8019fbcf4bc98296e78f_405386_300x200_fit_q90_box.jpg" width="267" height="200" alt="Camino a producción" title="Camino a producción"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/camino-a-produccion_hu51beb7963aea8019fbcf4bc98296e78f_405386_2560x1440_fit_q90_box.jpg" data-gallery="" title="Camino a producción"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/camino-a-produccion_hu51beb7963aea8019fbcf4bc98296e78f_405386_300x200_fit_q90_box.jpg" width="267" height="200" alt="Camino a producción" title="Camino a producción"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="evitando-el-efecto-dominó-en-nuestros-micoservicios-empor-javi-ferrer-y-rafa-gómezem">Evitando el efecto dominó en nuestros (mico)servicios <em>por Javi Ferrer y Rafa Gómez</em></h3>
@@ -856,8 +1039,7 @@
 <p>Aunque los microservicios solucionan algunos problemas de los monolitos traen consigo nuevo problemas como una consistencia eventual en las diferentes bases de datos que posee cada microservicio, también puede haber duplicados y no se garantiza el orden de los mensajes.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/evitando-el-efecto-domino-en-nuestros-micoservicios_huc63a958d862ca8a76560a8af20c81eb1_422138_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Evitando el efecto dominó en nuestros (mico)servicios"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/evitando-el-efecto-domino-en-nuestros-micoservicios_huc63a958d862ca8a76560a8af20c81eb1_422138_300x200_fit_q90_box.jpg" width="267" height="200" alt="Evitando el efecto dominó en nuestros (mico)servicios" title="Evitando el efecto dominó en nuestros (mico)servicios"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/evitando-el-efecto-domino-en-nuestros-micoservicios_huc63a958d862ca8a76560a8af20c81eb1_422138_2560x1440_fit_q90_box.jpg" data-gallery="" title="Evitando el efecto dominó en nuestros (mico)servicios"><img src="https://picodotdev.github.io/blog-bitix/2018/01/conferencia-bilbostack-2018/images/evitando-el-efecto-domino-en-nuestros-micoservicios_huc63a958d862ca8a76560a8af20c81eb1_422138_300x200_fit_q90_box.jpg" width="267" height="200" alt="Evitando el efecto dominó en nuestros (mico)servicios" title="Evitando el efecto dominó en nuestros (mico)servicios"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Cuando en diciembre se pusieron las entradas para reserva a no mucho tardar y con las ganas de ir a la conferencia estaba motivado para ir, en los días anteriores siempre da algo de pereza la asistencia ya que después de una semana de trabajo las ganas no son tantas de pasar la mañana o el día también con el mismo tema sin desconectar ni descansar, pero luego después de haber madrugado y las presentaciones queda una buena sensación y de haber merecido la pena el esfuerzo.</p>
@@ -881,8 +1063,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
 </div>
 <p>Una de las cosas que me gustan de <a href="https://about.gitlab.com/">GitLab</a> es que se puede usar en un servidor propio, la otra cosa que me gusta es que incluye varias herramientas casi imprescindibles para cualquier proyecto como gestión de peticiones para recoger las historias, wiki como documentación e información y <em>pages</em> para generar pequeños sitios web además de los repositorios de <a href="https://git-scm.com/">Git</a> o el servidor de integración y entrega continua. Que GitLab incluya por defecto todas estas herramientas hace innecesario recurrir en la mayoría de los casos a varias herramientas especializadas que cubran estas necesidades como <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://jenkins.io/">Jenkins</a>, <a href="https://www.mediawiki.org/">MediaWiki</a> o un servidor web para los sitios web.</p>
 <p>Después de <a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/">instalar GitLab usando Docker</a> o de alguna de sus otras formas, creado un usuario no administrador y un proyecto se puede empezar a usar las herramientas de gestión de incidencias, wiki y <em>pages</em>. Estas son solo tres de sus herramientas incluidas, además incluye <a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/">integración y entrega continua</a>.</p>
@@ -896,26 +1077,21 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-1_hu39cda9bb77c6776898ba6dc3bdb94e84_286600_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva petición A"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-1_hu39cda9bb77c6776898ba6dc3bdb94e84_286600_300x200_fit_box_3.png" width="300" height="163" alt="Nueva petición A" title="Nueva petición A"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-2_hu39cda9bb77c6776898ba6dc3bdb94e84_285620_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva petición B"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-2_hu39cda9bb77c6776898ba6dc3bdb94e84_285620_300x200_fit_box_3.png" width="300" height="163" alt="Nueva petición B" title="Nueva petición B"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-1_hu39cda9bb77c6776898ba6dc3bdb94e84_286600_2560x1440_fit_box_3.png" data-gallery="" title="Nueva petición A"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-1_hu39cda9bb77c6776898ba6dc3bdb94e84_286600_300x200_fit_box_3.png" width="300" height="163" alt="Nueva petición A" title="Nueva petición A"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-2_hu39cda9bb77c6776898ba6dc3bdb94e84_285620_2560x1440_fit_box_3.png" data-gallery="" title="Nueva petición B"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-issue-2_hu39cda9bb77c6776898ba6dc3bdb94e84_285620_300x200_fit_box_3.png" width="300" height="163" alt="Nueva petición B" title="Nueva petición B"  class="lozad "></a></p>
 <figcaption>Nueva petición</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/issues_hua9fb50b63579c6550c6f5d00c5abbfce_218131_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Lista de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/issues_hua9fb50b63579c6550c6f5d00c5abbfce_218131_300x200_fit_box_3.png" width="300" height="163" alt="Lista de peticiones" title="Lista de peticiones"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/labels_hucf4845fc7964e54d76e32fedbafd0a71_293277_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Etiquetas"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/labels_hucf4845fc7964e54d76e32fedbafd0a71_293277_300x200_fit_box_3.png" width="300" height="163" alt="Etiquetas" title="Etiquetas"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/issues_hua9fb50b63579c6550c6f5d00c5abbfce_218131_2560x1440_fit_box_3.png" data-gallery="" title="Lista de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/issues_hua9fb50b63579c6550c6f5d00c5abbfce_218131_300x200_fit_box_3.png" width="300" height="163" alt="Lista de peticiones" title="Lista de peticiones"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/labels_hucf4845fc7964e54d76e32fedbafd0a71_293277_2560x1440_fit_box_3.png" data-gallery="" title="Etiquetas"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/labels_hucf4845fc7964e54d76e32fedbafd0a71_293277_300x200_fit_box_3.png" width="300" height="163" alt="Etiquetas" title="Etiquetas"  class="lozad "></a></p>
 <figcaption>Lista de peticiones y etiquetas</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/board_hubcbec4cba09a225e060715df5c1b7a3b_161725_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/board_hubcbec4cba09a225e060715df5c1b7a3b_161725_300x200_fit_box_3.png" width="300" height="163" alt="Panel Kanban" title="Panel Kanban"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/board_hubcbec4cba09a225e060715df5c1b7a3b_161725_2560x1440_fit_box_3.png" data-gallery="" title="Panel Kanban"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/board_hubcbec4cba09a225e060715df5c1b7a3b_161725_300x200_fit_box_3.png" width="300" height="163" alt="Panel Kanban" title="Panel Kanban"  class="lozad "></a></p>
 <figcaption>Panel Kanban</figcaption>
 </figure>
 </div>
@@ -927,10 +1103,8 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-page_hucf4845fc7964e54d76e32fedbafd0a71_224040_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva página"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-page_hucf4845fc7964e54d76e32fedbafd0a71_224040_300x200_fit_box_3.png" width="300" height="163" alt="Nueva página" title="Nueva página"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/page_hucf4845fc7964e54d76e32fedbafd0a71_160172_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/page_hucf4845fc7964e54d76e32fedbafd0a71_160172_300x200_fit_box_3.png" width="300" height="163" alt="Página" title="Página"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-page_hucf4845fc7964e54d76e32fedbafd0a71_224040_2560x1440_fit_box_3.png" data-gallery="" title="Nueva página"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/new-page_hucf4845fc7964e54d76e32fedbafd0a71_224040_300x200_fit_box_3.png" width="300" height="163" alt="Nueva página" title="Nueva página"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/page_hucf4845fc7964e54d76e32fedbafd0a71_160172_2560x1440_fit_box_3.png" data-gallery="" title="Página"><img src="https://picodotdev.github.io/blog-bitix/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/images/page_hucf4845fc7964e54d76e32fedbafd0a71_160172_300x200_fit_box_3.png" width="300" height="163" alt="Página" title="Página"  class="lozad "></a></p>
 <figcaption>Nueva página y página</figcaption>
 </figure>
 </div>
@@ -968,8 +1142,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
 </div>
 <p><a href="https://about.gitlab.com/">GitLab</a> es una herramienta muy completa, una de las necesidades de los proyectos es tener teses y que estos se ejecuten con cada <em>commit</em> para asegurar que los cambios no introducen errores en las funcionalidades cubiertas por los teses, esto es la integración continua. La entrega inmediata es una vez que los teses se han ejecutado correctamente hacer el despliegue en los servidores de forma pasa el tiempo mínimo entre que una funcionalidad está desarrollada y esta se puede utilizar.</p>
 <p>GitLab proporciona integración continua (<em>Continuos Integration</em>, CI) y entrega continua (<em>Continuos Delivery</em>, CD) sin necesidad de una herramienta externa más especializada como es <a href="https://jenkins.io/">Jenkins</a>. En el siguiente ejemplo muestro como configurar GitLab para crear uno o varios <em>runner</em> que son los que realizan las acciones de integración y entrega continua y el archivo descriptor <em>.gitlab-ci.yml</em> en formato <em>yaml</em> que define las acciones específicas del proyecto que se ejecutarán con cada <em>commit</em> en el repositorio <a href="https://git-scm.com/">Git</a>.</p>
@@ -984,8 +1157,7 @@
 <p>Añadido el archivo del <em>pipeline</em> al código fuente del proyecto hay que definir un <em>runner</em> que se encargará de ejecutarlo con cada <em>commit</em> que se envíe al repositorio de código fuente. Hay que registrarlo y se necesita un <em>token</em> que se puede obtener desde el área de administración en <em>Overview &gt; Runners</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/gitlab-runners_hu4e48bd46d630c15053f13e201276a889_258822_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Runners"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/gitlab-runners_hu4e48bd46d630c15053f13e201276a889_258822_300x200_fit_box_3.png" width="300" height="164" alt="Runners" title="Runners"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/gitlab-runners_hu4e48bd46d630c15053f13e201276a889_258822_2560x1440_fit_box_3.png" data-gallery="" title="Runners"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/gitlab-runners_hu4e48bd46d630c15053f13e201276a889_258822_300x200_fit_box_3.png" width="300" height="164" alt="Runners" title="Runners"  class="lozad "></a></p>
 <figcaption>GitLab Runners</figcaption>
 </figure>
 </div>
@@ -999,10 +1171,8 @@
 <p>En este ejemplo y con este <em>pipeline</em> el artefacto distribuible de la aplicación y el Javadoc se almacena en GitLab estando accesible para su descarga desde el panel lateral una vez finalizado el <em>pipeline</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipelines_hu3f62b1b8d4d7ea188729501f507f909e_98907_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pipelines"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipelines_hu3f62b1b8d4d7ea188729501f507f909e_98907_300x200_fit_box_3.png" width="300" height="164" alt="Pipelines" title="Pipelines"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipeline_huedfef20b9fb22617dbc80afe0102ced6_359504_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pipeline"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipeline_huedfef20b9fb22617dbc80afe0102ced6_359504_300x200_fit_box_3.png" width="281" height="200" alt="Pipeline" title="Pipeline"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipelines_hu3f62b1b8d4d7ea188729501f507f909e_98907_2560x1440_fit_box_3.png" data-gallery="" title="Pipelines"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipelines_hu3f62b1b8d4d7ea188729501f507f909e_98907_300x200_fit_box_3.png" width="300" height="164" alt="Pipelines" title="Pipelines"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipeline_huedfef20b9fb22617dbc80afe0102ced6_359504_2560x1440_fit_box_3.png" data-gallery="" title="Pipeline"><img src="https://picodotdev.github.io/blog-bitix/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/images/pipeline_huedfef20b9fb22617dbc80afe0102ced6_359504_300x200_fit_box_3.png" width="281" height="200" alt="Pipeline" title="Pipeline"  class="lozad "></a></p>
 <figcaption>Pipeline</figcaption>
 </figure>
 </div>
@@ -1055,9 +1225,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/meltdown.svg" width="200" height="200" alt="Meltdown" title="Meltdown"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/meltdown.svg" width="200" height="200" alt="Meltdown" title="Meltdown"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spectre.svg" width="200" height="200" alt="Spectre" title="Spectre"  class="lozad "></p>
 <figcaption>Logotipos de Meltdown y Spectre</figcaption>
 </figure>
@@ -1066,11 +1234,8 @@
 <p>Como usuarios domésticos para estar protegidos conviene descargar únicamente software de fuentes confiables pero para los usuarios empresariales con sus servicios en la nube en donde los sistemas están aislados pero usando infraestructura compartida y con el descubrimiento de este <em>bug</em> es más grave si no se parchea, los proveedores de infraestructura en la nube ya han planificando tareas de mantenimiento y reinicios obligatorios.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/intel.svg" width="200" height="200" alt="Intel" title="Intel"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/intel.svg" width="200" height="200" alt="Intel" title="Intel"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amd.svg" width="200" height="200" alt="AMD" title="AMD"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/arm.svg" width="200" height="200" alt="ARM" title="ARM"  class="lozad "></p>
 </figure>
 </div>
@@ -1194,9 +1359,7 @@
 <p>En esta ocasión los proyectos a los que he hecho una donación han sido <a href="https://lineageos.org/">LineageOS</a> y <a href="https://www.replicant.us/">Replicant</a>, dos distribuciones de <a href="https://www.android.com/">Android</a> que permiten dar una segunda o tercera vida a móviles que desde hace tiempo se han quedado sin soporte oficial del fabricante ni de Google ni parches de seguridad con lo que ello supone en estos dispositivos que se están convirtiendo en cada vez más imprescindibles. Esto genera dispositivos no actualizados, tarde o temprano potencialmente inseguros y la conocida fragmentación en la plataforma Android.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/lineageos.svg" width="200" height="200" alt="Replicant" title="Replicant"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/lineageos.svg" width="200" height="200" alt="Replicant" title="Replicant"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/replicant.svg" width="200" height="200"  class="lozad "></p>
 </figure>
 </div>
@@ -1212,10 +1375,8 @@
 <p>Se ofrece de forma gratuita pero los servidores que son necesarios para el desarrollo y el mantenimiento de los sitios web tienen unos costes, este es el detalle de los <a href="https://wiki.lineageos.org/costs/">costes de LineageOS</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="CynogenMod 10.2"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_300x200_fit_q90_box.jpg" width="113" height="200" alt="CynogenMod 10.2" title="CynogenMod 10.2"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="LineageOS 14.1"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_300x200_fit_q90_box.jpg" width="113" height="200" alt="LineageOS 14.1" title="LineageOS 14.1"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_2560x1440_fit_q90_box.jpg" data-gallery="" title="CynogenMod 10.2"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/cyanogenmod-10.2_huf3a84ec940d0e4a07e9ca5cf0a2732a5_86598_300x200_fit_q90_box.jpg" width="113" height="200" alt="CynogenMod 10.2" title="CynogenMod 10.2"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_2560x1440_fit_q90_box.jpg" data-gallery="" title="LineageOS 14.1"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/lineageos-14.1_hu5d1bf970dbec1af605def033c54a0ed9_87661_300x200_fit_q90_box.jpg" width="113" height="200" alt="LineageOS 14.1" title="LineageOS 14.1"  class="lozad "></a></p>
 <figcaption>CynogenMod 10.2 y LineageOS 14.1</figcaption>
 </figure>
 </div>
@@ -1230,8 +1391,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Replicant 6"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_300x200_fit_box_3.png" width="120" height="200" alt="Replicant 6" title="Replicant 6"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_2560x1440_fit_box_3.png" data-gallery="" title="Replicant 6"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/replicant-6_huf9e3f77883367cad80fcc02422b90b7a_435737_300x200_fit_box_3.png" width="120" height="200" alt="Replicant 6" title="Replicant 6"  class="lozad "></a></p>
 <figcaption>Replicant 6</figcaption>
 </figure>
 </div>
@@ -1239,15 +1399,13 @@
 <p>En ambos casos las donaciones que he hecho han sido de 15 €.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación LineageOS"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_650x450_fit_box_3.png" width="318" height="450" alt="Donación LineageOS" title="Donación LineageOS"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_2560x1440_fit_box_3.png" data-gallery="" title="Donación LineageOS"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-lineageos_hu363323e9a26d548b6782c5dc77f42687_59453_650x450_fit_box_3.png" width="318" height="450" alt="Donación LineageOS" title="Donación LineageOS"  class="lozad "></a></p>
 <figcaption>Donación LineageOS</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Donación Replicant"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_650x450_fit_box_3.png" width="291" height="450" alt="Donación Replicant" title="Donación Replicant"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_2560x1440_fit_box_3.png" data-gallery="" title="Donación Replicant"><img src="https://picodotdev.github.io/blog-bitix/2018/01/articulo-5-de-yo-apoyo-al-software-libre/images/donacion-replicant_hua90b6e38f84426edcfd021dbfc02199c_107406_650x450_fit_box_3.png" width="291" height="450" alt="Donación Replicant" title="Donación Replicant"  class="lozad "></a></p>
 <figcaption>Donación Replicant</figcaption>
 </figure>
 </div>
@@ -1350,10 +1508,8 @@
 <p>Quien crea que es mucho que pruebe a crearse una bitácora, un canal en <a href="https://www.youtube.com/">YouTube</a> o un <em>podcast</em> y verá rápidamente que o se acierta en la temática y se es muy bueno creando contenido que genera interés o primero verá que han de pasar dos años y dedicar una ingente cantidad de horas a crear ese contenido para llegar a estas cifras que tampoco son altas, no en vano muchos de estos proyectos son abandonados al cabo de unos meses, por algo será.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/analytics-2017_hu9673f1dbb4b3f428b854147e70d639bf_62017_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Analytics 2017 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/analytics-2017_hu9673f1dbb4b3f428b854147e70d639bf_62017_300x200_fit_box_3.png" width="300" height="117" alt="Analytics 2017 de Blog Bitix" title="Analytics 2017 de Blog Bitix"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/gadsense-2017_hu3955e30c6b90da6e9f89725e82304470_34878_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="AdSense 2017 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/gadsense-2017_hu3955e30c6b90da6e9f89725e82304470_34878_300x200_fit_box_3.png" width="300" height="91" alt="AdSense 2017 de Blog Bitix" title="AdSense 2017 de Blog Bitix"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/analytics-2017_hu9673f1dbb4b3f428b854147e70d639bf_62017_2560x1440_fit_box_3.png" data-gallery="" title="Analytics 2017 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/analytics-2017_hu9673f1dbb4b3f428b854147e70d639bf_62017_300x200_fit_box_3.png" width="300" height="117" alt="Analytics 2017 de Blog Bitix" title="Analytics 2017 de Blog Bitix"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/gadsense-2017_hu3955e30c6b90da6e9f89725e82304470_34878_2560x1440_fit_box_3.png" data-gallery="" title="AdSense 2017 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/gadsense-2017_hu3955e30c6b90da6e9f89725e82304470_34878_300x200_fit_box_3.png" width="300" height="91" alt="AdSense 2017 de Blog Bitix" title="AdSense 2017 de Blog Bitix"  class="lozad "></a></p>
 <figcaption>Evolución visitas e ingresos en 2017</figcaption>
 </figure>
 </div>
@@ -1427,8 +1583,7 @@
 <p>Espero seguir escribiendo como hasta ahora en el 2018 si el tiempo del que dispongo me lo permite y continuo con motivación. Por lo pronto son unos cuantos artículos que ya tengo escritos a falta de retocar en el momento que los publique. Puedes aprovechar para repasar esta lista y leer alguno si te lo perdiste, por supuesto si aún no lo has hecho, suscríbete con tu lector preferido al <a href="https://picodotdev.github.io/blog-bitix/index.xml"><em>feed</em> a Blog Bitix</a>. Finalmente, ya solo me queda desearos con la siguiente imagen linuxera de <a href="http://www.klowner.com/">Klowner</a>&hellip; ¡Buen <strike>2016</strike> 2018!</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/christmas-tux-2017_hu4666a9b653f218359d1cc8abe813ce9a_529979_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="¡Buen 2018!"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/christmas-tux-2017_hu4666a9b653f218359d1cc8abe813ce9a_529979_600x450_fit_q90_box.jpg" width="600" height="338" alt="¡Buen 2018!" title="¡Buen 2018!"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/christmas-tux-2017_hu4666a9b653f218359d1cc8abe813ce9a_529979_2560x1440_fit_q90_box.jpg" data-gallery="" title="¡Buen 2018!"><img src="https://picodotdev.github.io/blog-bitix/2017/12/hemeroteca-12/images/christmas-tux-2017_hu4666a9b653f218359d1cc8abe813ce9a_529979_600x450_fit_q90_box.jpg" width="600" height="338" alt="¡Buen 2018!" title="¡Buen 2018!"  class="lozad "></a></p>
 <figcaption>¡Buen 2018! <br>Fuente: klowner.com</figcaption>
 </figure>
 </div>
@@ -1464,8 +1619,7 @@
         <content type="html">
         <![CDATA[<p><strong>Al desarrollar software una herramienta de control de versiones como Git y otras como un gestor de peticiones, una herramienta de integración continua o despliegue contínuo o una wiki para documentación son necesarias. Hay productos específicos para cada uno de ellos pero GitLab proporciona en una único producto todas estas facilitando su instalación y administración estando integradas en el mismo producto.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gitlab.svg" width="200" height="184" alt="GitLab" title="GitLab"  class=""></p>
 </div>
 <p>Usar una herramienta de control de versiones para el código fuente de un proyecto o programa es imprescindible para recuperar versiones anteriores de los archivos, comparar y compartir los cambios con el resto de desarrolladores del equipo. Otras herramientas imprescindibles son un gestor de peticiones para documentar cuál es el trabajo a realizar, ver en que se está trabajando, priorizar el trabajo inmediato que se realizará y el estado de cada petición. Por otro lado una herramienta donde recoger documentación del proyecto ayuda a compartir información y hacer que ese conocimiento quede recogido en algún lugar que pueda ser consultado con posterioridad o para futuros desarrolladores. También en estos días es imprescindible una herramienta para automatizar la ejecución de las pruebas unitarias y funcionales en cada <em>commit</em> al repositorio de código fuente.</p>
 <p>Para cada una de estas funcionalidades hay herramientas específicas: <a href="https://git-scm.com/">Git</a> para la herramienta de control de versiones, <a href="https://github.com/">GitHub</a> con algunas funciones colaborativas como <em>pull request</em> y revisiones de código, <a href="https://www.atlassian.com/software/jira">Jira</a> para la gestión de peticiones, <a href="https://www.mediawiki.org/">MediaWiki</a> para documentar cierta información o <a href="https://jenkins.io/">Jenkins</a> para la ejecución de las pruebas automatizadas. Instalar estas herramientas individualmente requiere tiempo y dedicación, además de mantenimiento posterior.</p>
@@ -1480,52 +1634,42 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/change-password_hu3f295538ccf72e0ec99dcad5d4c63996_44191_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Contraseña de root"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/change-password_hu3f295538ccf72e0ec99dcad5d4c63996_44191_300x200_fit_box_3.png" width="281" height="200" alt="Contraseña de root" title="Contraseña de root"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/sing-in_hue89707dcc5c5de11c60f0a85274f050b_42041_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Inicio de sesión"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/sing-in_hue89707dcc5c5de11c60f0a85274f050b_42041_300x200_fit_box_3.png" width="280" height="200" alt="Inicio de sesión" title="Inicio de sesión"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/change-password_hu3f295538ccf72e0ec99dcad5d4c63996_44191_2560x1440_fit_box_3.png" data-gallery="" title="Contraseña de root"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/change-password_hu3f295538ccf72e0ec99dcad5d4c63996_44191_300x200_fit_box_3.png" width="281" height="200" alt="Contraseña de root" title="Contraseña de root"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/sing-in_hue89707dcc5c5de11c60f0a85274f050b_42041_2560x1440_fit_box_3.png" data-gallery="" title="Inicio de sesión"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/sing-in_hue89707dcc5c5de11c60f0a85274f050b_42041_300x200_fit_box_3.png" width="280" height="200" alt="Inicio de sesión" title="Inicio de sesión"  class="lozad "></a></p>
 <figcaption>Contraseña e inicio de sesión</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/welcome_hu2da1e5fdf1b426fa9452872d3bd4a19b_52228_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de bienvenida"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/welcome_hu2da1e5fdf1b426fa9452872d3bd4a19b_52228_300x200_fit_box_3.png" width="300" height="145" alt="Página de bienvenida" title="Página de bienvenida"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/welcome_hu2da1e5fdf1b426fa9452872d3bd4a19b_52228_2560x1440_fit_box_3.png" data-gallery="" title="Página de bienvenida"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/welcome_hu2da1e5fdf1b426fa9452872d3bd4a19b_52228_300x200_fit_box_3.png" width="300" height="145" alt="Página de bienvenida" title="Página de bienvenida"  class="lozad "></a></p>
 <figcaption>Página de bienvenida</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/profile_hu55e86529b7a0f31262c5a2c1b23c311f_100271_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Perfil de usuario"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/profile_hu55e86529b7a0f31262c5a2c1b23c311f_100271_300x200_fit_box_3.png" width="215" height="200" alt="Perfil de usuario" title="Perfil de usuario"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/admin-area_hu2bc627e32bd560de9019a98c885f2cf6_91134_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Área de administración"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/admin-area_hu2bc627e32bd560de9019a98c885f2cf6_91134_300x200_fit_box_3.png" width="300" height="166" alt="Área de administración" title="Área de administración"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/profile_hu55e86529b7a0f31262c5a2c1b23c311f_100271_2560x1440_fit_box_3.png" data-gallery="" title="Perfil de usuario"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/profile_hu55e86529b7a0f31262c5a2c1b23c311f_100271_300x200_fit_box_3.png" width="215" height="200" alt="Perfil de usuario" title="Perfil de usuario"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/admin-area_hu2bc627e32bd560de9019a98c885f2cf6_91134_2560x1440_fit_box_3.png" data-gallery="" title="Área de administración"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/admin-area_hu2bc627e32bd560de9019a98c885f2cf6_91134_300x200_fit_box_3.png" width="300" height="166" alt="Área de administración" title="Área de administración"  class="lozad "></a></p>
 <figcaption>Perfil de usuario y área de administración</figcaption>
 </figure>
 </div>
 <p>Iniciada sesión ya se puede empezar a usar GitLab a crear usuarios con sus claves SSH, repositorios de Git pudiendo importar otros existentes, crear nuevos, páginas de una wiki y peticiones, integración y entrega continua y personalizar el panel <em>kanban</em> con el flujo que deseamos que sigan las peticiones en la organización, por ejemplo, <em>planning</em>, <em>ready</em>, <em>doing</em>, <em>review</em>, <em>merged</em> y <em>deployed</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-proyect_hu551d53ebe6ff130f5283b65bd7d57bcf_146652_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nuevo proyecto"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-proyect_hu551d53ebe6ff130f5283b65bd7d57bcf_146652_300x200_fit_box_3.png" width="300" height="164" alt="Nuevo proyecto" title="Nuevo proyecto"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-proyect_hu551d53ebe6ff130f5283b65bd7d57bcf_146652_2560x1440_fit_box_3.png" data-gallery="" title="Nuevo proyecto"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-proyect_hu551d53ebe6ff130f5283b65bd7d57bcf_146652_300x200_fit_box_3.png" width="300" height="164" alt="Nuevo proyecto" title="Nuevo proyecto"  class="lozad "></a></p>
 <figcaption>Nuevo proyecto</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-issue_hu7402a5aeec834bb2c1b9692593fe6d54_88682_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva petición"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-issue_hu7402a5aeec834bb2c1b9692593fe6d54_88682_300x200_fit_box_3.png" width="300" height="144" alt="Nueva petición" title="Nueva petición"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/issues-board_hu5059f50581f26d8841e090624a928783_64972_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Panel de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/issues-board_hu5059f50581f26d8841e090624a928783_64972_300x200_fit_box_3.png" width="300" height="144" alt="Panel de peticiones" title="Panel de peticiones"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-issue_hu7402a5aeec834bb2c1b9692593fe6d54_88682_2560x1440_fit_box_3.png" data-gallery="" title="Nueva petición"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-issue_hu7402a5aeec834bb2c1b9692593fe6d54_88682_300x200_fit_box_3.png" width="300" height="144" alt="Nueva petición" title="Nueva petición"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/issues-board_hu5059f50581f26d8841e090624a928783_64972_2560x1440_fit_box_3.png" data-gallery="" title="Panel de peticiones"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/issues-board_hu5059f50581f26d8841e090624a928783_64972_300x200_fit_box_3.png" width="300" height="144" alt="Panel de peticiones" title="Panel de peticiones"  class="lozad "></a></p>
 <figcaption>Nueva petición y panel de peticiones</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-wiki-page_hu56ffba61cfee3aad93461a4d9826c6ee_67467_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Nueva página wiki"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-wiki-page_hu56ffba61cfee3aad93461a4d9826c6ee_67467_300x200_fit_box_3.png" width="300" height="156" alt="Nueva página wiki" title="Nueva página wiki"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/wiki-page_hu9d2686a12d158d298665c940d773eac8_48317_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página wiki"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/wiki-page_hu9d2686a12d158d298665c940d773eac8_48317_300x200_fit_box_3.png" width="300" height="144" alt="Página wiki" title="Página wiki"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-wiki-page_hu56ffba61cfee3aad93461a4d9826c6ee_67467_2560x1440_fit_box_3.png" data-gallery="" title="Nueva página wiki"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/new-wiki-page_hu56ffba61cfee3aad93461a4d9826c6ee_67467_300x200_fit_box_3.png" width="300" height="156" alt="Nueva página wiki" title="Nueva página wiki"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/wiki-page_hu9d2686a12d158d298665c940d773eac8_48317_2560x1440_fit_box_3.png" data-gallery="" title="Página wiki"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/wiki-page_hu9d2686a12d158d298665c940d773eac8_48317_300x200_fit_box_3.png" width="300" height="144" alt="Página wiki" title="Página wiki"  class="lozad "></a></p>
 <figcaption>Página wiki</figcaption>
 </figure>
 </div>
@@ -1550,17 +1694,14 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-1_hua47bf6d38b0dd5109067886cedcd51c2_134607_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Detalles de proyecto"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-1_hua47bf6d38b0dd5109067886cedcd51c2_134607_300x200_fit_box_3.png" width="222" height="200" alt="Detalles de proyecto" title="Detalles de proyecto"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-2_hud95fc715f3e235e843f2be32102e7524_152847_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Detalles de proyecto"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-2_hud95fc715f3e235e843f2be32102e7524_152847_300x200_fit_box_3.png" width="289" height="200" alt="Detalles de proyecto" title="Detalles de proyecto"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-1_hua47bf6d38b0dd5109067886cedcd51c2_134607_2560x1440_fit_box_3.png" data-gallery="" title="Detalles de proyecto"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-1_hua47bf6d38b0dd5109067886cedcd51c2_134607_300x200_fit_box_3.png" width="222" height="200" alt="Detalles de proyecto" title="Detalles de proyecto"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-2_hud95fc715f3e235e843f2be32102e7524_152847_2560x1440_fit_box_3.png" data-gallery="" title="Detalles de proyecto"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/project-details-2_hud95fc715f3e235e843f2be32102e7524_152847_300x200_fit_box_3.png" width="289" height="200" alt="Detalles de proyecto" title="Detalles de proyecto"  class="lozad "></a></p>
 <figcaption>Detalles de proyecto</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/source-file_hufc00af2bd9f3dc146f74ce204a45b1ae_76527_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Contenido de archivo código fuente"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/source-file_hufc00af2bd9f3dc146f74ce204a45b1ae_76527_300x200_fit_box_3.png" width="300" height="144" alt="Contenido de archivo código fuente" title="Contenido de archivo código fuente"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/source-file_hufc00af2bd9f3dc146f74ce204a45b1ae_76527_2560x1440_fit_box_3.png" data-gallery="" title="Contenido de archivo código fuente"><img src="https://picodotdev.github.io/blog-bitix/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/images/source-file_hufc00af2bd9f3dc146f74ce204a45b1ae_76527_300x200_fit_box_3.png" width="300" height="144" alt="Contenido de archivo código fuente" title="Contenido de archivo código fuente"  class="lozad "></a></p>
 <figcaption>Contenido de archivo de código fuente</figcaption>
 </figure>
 </div>
@@ -1577,73 +1718,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/</id>
-        <title>Como eliminar metainformación de las fotos en GNU/Linux</title>
-        <updated>2017-12-22T18:00:00+01:00</updated>
-        <published>2017-12-22T18:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>En los archivos de las fotos e imágenes además de su información visual gráfica, los millones de píxeles, se guarda información adicional relacionada con la misma, por ejemplo, con que modelo de cámara se realizó, la fecha y la hora a la que se realizó, e incluso la localización si la cámara dispone de GPS u otro medio de ubicación como posicionamiento mediante la red de datos móvil o WIFI.</p>
-<p>Compartir la foto en redes sociales ya es compartir mucha información y un peligro para la privacidad pero si además va acompañada de esta metainformación lo es algo más. Esta metainformación, información sobre la información, información sobre la imagen, son los <a href="https://es.wikipedia.org/wiki/Exchangeable_image_file_format">datos EXIF</a> y se guardan embebidos en el propio archivo de la foto.</p>
-<p>Podemos obtener la metainformación guardada en la foto de diferentes formas. Una con la herramienta de visualización de imágenes de nuestro entorno de escritorio, en mi caso con el visor de imágenes de <a href="https://www.gnome.org/">GNOME</a> o con las propiedades de archivo de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> (botón derecho del ratón sobre el archivo &gt; Propiedades). Otra es usando la herramienta ImageMagick.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/visor-imagenes_hu4963d27b856a96c5f47e229f55955a16_987189_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Visor de imágenes de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/visor-imagenes_hu4963d27b856a96c5f47e229f55955a16_987189_300x200_fit_box_3.png" width="136" height="200" alt="Visor de imágenes de GNOME" title="Visor de imágenes de GNOME"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/propiedades-imagen_hu70383a2fb948f1bd506ced73d1cb1367_48909_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Propiedades de imagen con metadatos"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/propiedades-imagen_hu70383a2fb948f1bd506ced73d1cb1367_48909_300x200_fit_box_3.png" width="207" height="200" alt="Propiedades de imagen con metadatos" title="Propiedades de imagen con metadatos"  class="lozad "></a></p>
-<figcaption>Imagen y propiedades con metadatos</figcaption>
-</figure>
-</div>
-<p>Instalado el paquete <a href="https://www.imagemagick.org">ImageMagick</a> de nuestra distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, en este caso con <a href="https://www.archlinux.org/">Arch Linux</a> la metainformación de una foto se obtiene con el comando:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ identify -verbose planton-roble.jpg$ identify -verbose planton-roble.jpg&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>identify.sh</span>
-    </div>
-</div>
-<p>Si la foto incluye personas algunas redes sociales como <a href="https://www.facebook.com/">Facebook</a> permiten identificarlas, acompañada de metainformación además informa de con que, con quién, cuando y donde se tomó la foto. Si te importa y quieres proteger tu privacidad un poco es aconsejable eliminar esta metainformación al subir o compartir las fotos en las redes sociales. Con ImageMagick se puede eliminar la metainformación con los siguientes comandos. El primero modifica el archivo original y el segundo crea una copia de la foto sin la metainformación:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mogrify -strip *.jpg&#10;</span></span><span class="line"><span class="cl">$ convert -strip source.jpg destination.jpg &#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>mogrify-convert.sh</span>
-    </div>
-</div>
-<p><a href="https://help.twitter.com/es/using-twitter/tweeting-gifs-and-pictures">Twitter elimina los datos EXIF</a> de las fotos aunque utiliza la ubicación de la foto para realizar sugerencias de ubicaciones. <a href="https://www.facebook.com/">Facebook</a> creo que también elimina los datos EXIF al menos al visualizarlas, también <a href="https://www.whatsapp.com/">WhatsApp</a> y <a href="https://telegram.org/">Telegram</a>. Pero al compartir los archivos de fotos de forma directa como correo electrónico o por algún otro medio los metadatos seguirán estando presentes.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble_hud0fc0db0d78a6f19c535a581fd7f4ddd_615910_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen con datos EXIF"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble_hud0fc0db0d78a6f19c535a581fd7f4ddd_615910_300x200_fit_q90_box.jpg" width="150" height="200" alt="Imagen con datos EXIF" title="Imagen con datos EXIF"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble-noexif_hu1c1e87beb0ed78012360b8f81c258ebb_646306_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Imagen sin datos EXIF"><img src="https://picodotdev.github.io/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/images/planton-roble-noexif_hu1c1e87beb0ed78012360b8f81c258ebb_646306_300x200_fit_q90_box.jpg" width="150" height="200" alt="Imagen sin datos EXIF" title="Imagen sin datos EXIF"  class="lozad "></a></p>
-<figcaption>Imagen izquierda con datos EXIF, imagen derecha sin datos EXIF</figcaption>
-</figure>
-</div>
-<p>¿Puedes averiguar el dispositivo, la fecha en la que hizo la foto y con que software fotográfico se editó?</p>
-<p>Independientemente de los datos EXIF al compartir fotos hay que tener un poco de cuidado, si tu privacidad no te importa mucho y compartes cualquier cosa personal tuya y así lo has decidido, tú mismo, eso sí simplemente se respetuoso y respeta la privacidad de las personas de las que tienes intención de compartir fotos. Ten en cuenta que compartir que estás de vacaciones, amigos, familiares y con el resto del historial de tu red social se puede conocer bastante acerca de la vida de una persona.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
             

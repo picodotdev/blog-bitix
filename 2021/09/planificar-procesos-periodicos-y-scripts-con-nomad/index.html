@@ -124,16 +124,16 @@
     ga('create', 'UA-12874075-4', 'picodotdev.github.io');
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY" async></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9R8XCRGSMY');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
 <script type="text/javascript" defer>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -266,8 +266,7 @@
 
 
       <div class="logotypes">
-<p>
-<img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false"></p>
+<p><img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="200" height="260" alt="HashiCorp Nomad" title="HashiCorp Nomad" class="" loading="false"></p>
 </div>
 <p>Con mucha seguridad surge la necesidad de ejecutar de forma periódica un pequeño proceso o <em>script</em> completamente autónomo con el que no interacciona ningún usuario o administrador pero realiza una función esencial para el funcionamiento de una aplicación u organización. Las funciones o tareas de los <em>scripts</em> son muy diversas desde <a href="https://picodotdev.github.io/blog-bitix/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/">generar informes en formato CSV</a> o <a href="https://picodotdev.github.io/blog-bitix/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/">generador documentos PDF</a> a enviar correos electrónicos, para ello quizá se conecten a bases de datos relacionales o NoSQL o <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">realizar llamadas usando REST a APIs de aplicaciones</a> propias o de otras organizaciones, incluso un <em>script</em> con la complejidad suficiente varias cosas de todo esto.</p>
 <p>Los lenguajes habitualmente usados para realizar tareas de <em>scripting</em> son dinámicos e interpretados por no requerir ser compilados y ejecutables desde el código fuente. En la plataforma Java una opción como lenguaje de <em>scripting</em> es <a href="https://www.groovy-lang.org/">Groovy</a> y en otros lenguajes son propio intérprete de comandos  <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> o <a href="https://www.python.org/">Python</a>, aunque <a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/">el lenguaje Java con JBang o Gradle es una opción para realizar tareas de <em>scripting</em></a> con las ventajas de ser un lenguaje compilado con la asistencia de código de los entornos integrados de desarrollo o IDE.</p>
@@ -308,17 +307,14 @@
 <p>Antes de enviar a Nomad las tareas el panel de administración integrado o <em>dashboard</em> permite ver el estado, está disponible en la dirección <em>http://127.0.0.1:4646/ui/</em>, inicialmente sin ninguna tarea planificada, una vez se envían las tareas aparecen en el panel.</p>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hue2652f930d7fc8b9a9c137481a009998_53682_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hue2652f930d7fc8b9a9c137481a009998_53682_650x450_fit_box_3.png" width="600" height="450" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hue2652f930d7fc8b9a9c137481a009998_53682_2560x1440_fit_box_3.png" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard_hue2652f930d7fc8b9a9c137481a009998_53682_650x450_fit_box_3.png" width="600" height="450" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
 <figcaption>Dashboard de Nomad</figcaption>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_huead3b9d22d7085bb39a7ec8b9e546085_134380_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_huead3b9d22d7085bb39a7ec8b9e546085_134380_300x250_fit_box_3.png" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a>
-
-<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu1e5faf36df214e07015eacddab62315c_111663_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu1e5faf36df214e07015eacddab62315c_111663_300x250_fit_box_3.png" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
+<p><a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_huead3b9d22d7085bb39a7ec8b9e546085_134380_2560x1440_fit_box_3.png" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-busybox_huead3b9d22d7085bb39a7ec8b9e546085_134380_300x250_fit_box_3.png" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a>
+<a href="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu1e5faf36df214e07015eacddab62315c_111663_2560x1440_fit_box_3.png" data-gallery="" title="Dashboard de Nomad"><img src="/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/images/nomad-dashboard-echo-bash_hu1e5faf36df214e07015eacddab62315c_111663_300x250_fit_box_3.png" width="300" height="225" alt="Dashboard de Nomad" title="Dashboard de Nomad" class="" loading="lazy"></a></p>
 <figcaption>Dashboard de Nomad</figcaption>
 </figure>
 </div>

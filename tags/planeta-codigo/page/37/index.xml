@@ -5,12 +5,220 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-07T19:00:00+01:00</updated>
+    <updated>2022-04-19T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/</id>
+        <title>Novedades y nuevas características de Java 8</title>
+        <updated>2016-03-12T12:00:00+01:00</updated>
+        <published>2014-03-21T16:03:27+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La octava versión de Java añade numerosas novedades importantes al lenguaje. Algunas de las más destacadas son las expresiones lambdas y los streams que dotan al lenguaje de características de programación funcional pero también lo hacen en muchas construcciones de código comunes más expresivo, menos extenso y más legible. Pero hay otras novedades relevantes que detallo en el artículo como los métodos por defecto en interfaces o la nueva API para fechas.</strong></p>]]>
+        <![CDATA[<div class="logotypes"> 
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>El 18 de marzo de 2014 se publicó la nueva versión de la plataforma <a href="https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html">Java 8</a>, Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como <em>lambdas</em> o <em>closures</em> o una demandada nueva API para el manejo de fechas entre otras muchas características más. La <a href="http://openjdk.java.net/projects/jdk8/features">lista completa de novedades</a> es bastante amplia, a continuación algunas características de Java explicadas con un poco más de detalle.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="introducción">Introducción</h3>
+<p>Java 8 representa una evolución notable en este lenguaje de programación al mismo nivel o más del que supuso la versión Java 5. Aunque tengas varios años de experiencia quizá aún no has tenido oportunidad de usar todas las novedades que se han incorporado en cada versión en proyectos reales, probablemente porque los caminos de migración de las empresas son lentos y muchas siguen usando versiones antiguas en sus aplicaciones. Para conocer y aprovechar todas estas novedades de Java recomiendo los siguientes libros que son de lo mejor que he encontrado como documentación, el primer libro es <a href="https://amzn.to/2Qt2Mzv">Thinking in Java</a> que nos introduce en este lenguaje de programación desde el inicio, aunque ya conozcas o uses Java el libro <a href="https://amzn.to/39FqX5c">Effective Java</a> contiene gran cantidad de información y consejos para usar Java de una forma más efectiva haciendo un repaso de las características del lenguaje que aunque no esté actualizado con las novedades que introduce Java 8 casi todo sigue siendo aplicable, el último libro es <a href="https://amzn.to/2QNW1XJ">Java 8 in Action</a> que explica en mucho más detalle que lo hecho en este artículo cada una de las nuevas características de Java 8 y complementa el libro Effective Java pero aprovechando las novedades introducidas en el lenguaje.</p>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk8/">Características de Java 8</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/8-relnotes.html">Documentación de Java 8</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/overview-summary.html">Documentación Javadoc de Java 8</a></li>
+</ul>
+<p>La lista de novedades es la siguiente:</p>
+<ul>
+<li>Se añaden las expresiones <em>lambda</em> o closures y se adapta la API para usarlas en los sitios que se pueda.</li>
+<li>Se definen nuevos perfiles compactos para dispositivos que no necesitan toda la API Java, esto es una alternativa a la modularización. Inicialmente la modularización era una característica que estaba planificada para Java 8 pero finalmente se ha aplazado a posteriores versiones.</li>
+<li>Incluido nuevo <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/index.html">motor de JavaScript Nashorn</a> que implementa ECMAscript 5.1 y es más rápido que su predecesor Rhino.</li>
+<li>Eliminación de espacio de memoria Permanent Generation (PermGen) que pasa a llamarse Metaspace. Su tamaño
+será dinámico pero no evitará fugas de memoria.</li>
+<li>Soporte para la creación de una máquina virtual menor a 3 MB.</li>
+<li>Acceso mediante reflection a los nombres de los parámetros. Mejorará la legibilidad del código que use reflection y permitirá mejorar el soporte en los IDE.</li>
+<li>Ordenación en java.util.Arrays de forma paralela.</li>
+<li>Operaciones masivas sobre colecciones tales como filter/map/reduce (streams) de forma serializada o paralela.</li>
+<li>Soporte de forma estándar para la codificación y decodificación Base64.</li>
+<li>Nueva API para Date y Time.</li>
+<li>Varias mejoras de seguridad.</li>
+<li>Se incorporan en la máquina virtual Java HotSpot características que estaban en JRockit, convergiendo ambas máquinas virtuales. Se incorpora Mission Control.</li>
+<li>Mejoras en JDBC la base para el acceso en bases de datos en Java.</li>
+<li><a href="http://openjdk.java.net/projects/jdk8/features">Otras novedades</a>.</li>
+</ul>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=0131872486&amp;linkId=13cd447a466645c3dd9162d935caf076" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B00B8V09HY&amp;linkId=8bb841ba7a877bb075e20d754e9df4fd" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1617291994&amp;linkId=51d39d999467395851bae9f3931e788c" title="Amazon" class="lozad"></iframe>
+</div>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="streams">Streams</h4>
+<p>Los streams no son un nuevo tipo de colección son una nueva forma de recorrer las colecciones distinta a los <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html">Iterator</a>. La ventaja de los streams es que pueden procesarse de forma serializada o paralela y proporcionan un estilo de operaciones más funcionales. Un flujo consiste un una fuente (una colección), varias operaciones intermedias (de filtrado o transformación) y una operación final que produce un resultado (suma, cuenta&hellip;). Los streams son lazy de modo que las operaciones solo se realizan cuando se llama a la operación final, también son eficientes no necesitando en algunos casos procesar todos los elementos del stream para devolver el resultado final.</p>
+<p>Tradicionalmente en la API de colecciones la iteración sobre los elementos debíamos proporcionarla de forma externa. Con Java 8 podemos expresarla de forma interna, de la siguiente manera.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">alturaMedia</span> <span class="o">=</span> <span class="n">personas</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">mapToInt</span><span class="o">((</span><span class="n">Persona</span> <span class="n">p</span><span class="o">)</span> <span class="err">–</span><span class="o">&gt;</span> <span class="o">{</span> <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="na">getAltura</span><span class="o">();</span> <span class="o">})</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">.</span><span class="na">average</span><span class="o">();</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Stream.java</span>
+    </div>
+</div>
+<h4 id="lambda">Lambda</h4>
+<p>Esta es una de las principales novedades y que más se estaba echando de menos en Java de otros lenguajes como <a href="https://www.groovy-lang.org/">Groovy</a> o <a href="https://www.python.org/">Python</a>. Las expresiones <em>lambda</em> son funciones que no está asociadas a un determinado nombre y que pueden pasarse como argumento a otras funciones. Tienen el siguiente aspecto:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">(</span><span class="n">Persona</span> <span class="n">persona</span><span class="o">)</span> <span class="err">–</span><span class="o">&gt;</span> <span class="o">{</span> <span class="k">return</span> <span class="n">persona</span><span class="o">.</span><span class="na">getAltura</span><span class="o">();</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Lambda.java</span>
+    </div>
+</div>
+<p>El uso de expresiones lambdas junto con el stream API proporciona a Java 8 características de programación funcional, pero sobre todo hace el código más sencillo, menos extenso, más expresivo y más legible. En las expresiones <em>lambda</em> de Java podemos seguir aprovechándonos de la compilación estática y del tipado fuerte.</p>
+<h4 id="referencias-de-métodos">Referencias de métodos</h4>
+<p>Todo el código desarrollado previamente a Java 8 no hace uso de las lambdas, pero con las <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html">referencias a métodos</a> podemos usar esos métodos ya implementados como si se tratasen de funciones lambdas. Hay diferentes formas de hacer referencias a métodos:</p>
+<ul>
+<li>A métodos estáticos</li>
+<li>A un método de una instancia concreta</li>
+<li>A un método de instancia de una instancia arbitraria de un tipo</li>
+<li>A un constructor</li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Método estático&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">Persona:</span><span class="o">:</span><span class="n">compareAltura</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Método de una instancia concreta&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">persona:</span><span class="o">:</span><span class="n">getAltura</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Método de instancia de una instancia arbitraria de un tipo&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">Persona:</span><span class="o">:</span><span class="n">getAltura</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Constructor&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">Persona:</span><span class="o">:</span><span class="k">new</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ReferenciaMetodos.java</span>
+    </div>
+</div>
+<h4 id="interfaces-funcionales">Interfaces funcionales</h4>
+<p>Una interfaz funcional es aquella que solo tiene un método abstracto (sin implementación). Algunos ejemplos de interfaces funcionales son <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html">Runnable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html">ActionListener</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html">Callable</a>. Para definir una interfaz funcional se puede usar la anotación <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html">@FunctionalInterface</a> y pueden representarse con una expresión lambda. En el siguiente ejemplo puede apreciarse que con las interfaces funcionales y las lambdas podemos hacer lo mismo de forma más clara, menos verbosa y con código más legible.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personas</span><span class="o">,</span> <span class="k">new</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Persona</span> <span class="n">p1</span><span class="o">,</span> <span class="n">Persona</span> <span class="n">p2</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">p1</span><span class="o">.</span><span class="na">getAltura</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">p2</span><span class="o">.</span><span class="na">getAltura</span><span class="o">());</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">});</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>InterfazFuncional-1.java</span>
+    </div>
+</div>
+<p>En Java 8 podemos hacer:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">personas</span><span class="o">,</span> <span class="o">(</span><span class="n">Persona</span> <span class="n">p1</span><span class="o">,</span> <span class="n">Persona</span> <span class="n">p2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">p2</span><span class="o">.</span><span class="na">getAltura</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">p2</span><span class="o">.</span><span class="na">getAltura</span><span class="o">())</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">});</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>InterfazFuncional-2.java</span>
+    </div>
+</div>
+<p>Java 8 incorpora varias interfaces funcionales que puede ser usadas en expresiones <em>lambda</em>, entre ellas están:</p>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html">Predicate</a>: función que retorna un booleano dado un argumento.</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html">Function</a>: función que retorna un valor dado un argumento.</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Supplier</a>: producen un tipo, al contrario que las funciones no tienen argumento</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a>: representa una operación a realizarse en un argumento.</li>
+</ul>
+<h4 id="métodos-por-defecto-en-interfaces">Métodos por defecto en interfaces</h4>
+<p>Hasta ahora las interfaces en Java solo podían definir métodos pero no sus implementaciones. El problema con las interfaces es que cuando se modifican se rompen todas las clases que las usan. Esto se ha resuelto de tal forma que se puedan añadir nuevos métodos con implementación a las interfaces y ha sido necesario para incorporar las lambdas a interfaces existentes como List. En Java 8 las interfaces podrán incorporar implementaciones para algunos de sus métodos, teniendo así algo parecido a herencia múltiple.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Math</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"> &#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">default</span> <span class="kt">int</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>MetodosDefault.java</span>
+    </div>
+</div>
+<h4 id="métodos-estáticos-en-interfaces">Métodos estáticos en interfaces</h4>
+<p>Además de definir métodos por defecto en las interfaces a partir de ahora podemos definir métodos estáticos. Definiendo métodos estáticos en las interfaces evitaremos tener que crear clases de utilidad. Podremos incluir en un mismo tipo (la interfaz) todos los métodos relacionados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Persona</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="nf">getNombre</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kt">int</span> <span class="nf">getAltura</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">static</span> <span class="n">String</span> <span class="nf">toStringDatos</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">getNombre</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">getAltura</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>MetodosStatic.java</span>
+    </div>
+</div>
+<h4 id="mejoras-en-la-programación-asíncrona">Mejoras en la programación asíncrona</h4>
+<p>Los procesadores actuales están aumentando su capacidad de proceso más a base de concurrencia proporcionando más núcleos que a base de hacerlos más rápidos en Ghz o <a href="https://es.wikipedia.org/wiki/Instrucciones_por_ciclo">instrucciones por ciclo</a>, los lenguajes de programación tienen que adaptarse para facilitar su aprovechamiendo de forma fácil. Desde las primeras versiones de Java ya se incluía soporte para trabajar con hilos o threads sin embargo su programación es propensa a errores y difícil de depurar. Java 7 con el nuevo soporte conocido como <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html">Fork/Join</a> mejoraba la situación.</p>
+<p>Por otra parte para maximizar el aprovechamiento de los recursos disponibles cuando surgen bloqueos de entrada/salida como acceso a disco o comunicación por red surge la programación asíncrona. Para ello Java 8 mejora el soporte existente desde Java 7 con la clase <a href="https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html">Future</a> que permite recoger el resultado de una operación mientras se realiza otra al mismo tiempo, en Java 8 se proporciona la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html">CompletableFuture</a> que implementa la interfaz Future. La clase CompletableFuture soporta el uso de lambdas, hace más fácil la programación concurrente y programación asíncrona que el Fork/Join y el Future respectivamente permitiendo igualmente ejecutar tareas de forma concurrente, combinar el resultado de dos tareas que se ejecutan al mismo tiempo, realizar otra tarea al terminar una prevía o por supuesto esperar a que todas las tareas concurrentes finalicen.</p>
+<h4 id="anotaciones-en-cualquier-uso-de-tipos">Anotaciones en cualquier uso de tipos</h4>
+<p>Con la introducción de anotaciones en Java 5 podemos usar anotaciones en la declaración de los tipos (definición de clases, interfaces, propiedades, métodos, &hellip;). Desde ahora podremos usar las anotaciones en el uso de cualquier tipo como por ejemplo expresiones new, casts, cláusulas implements y cláusulas throws.</p>
+<h4 id="java-time">Java Time</h4>
+<p>Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente ha sido molesto, para tratar de mejorar la situación podíamos usar la librería JodaTime. Finalmente, después de mucho tiempo esperando a que se hiciera se va a proporcionar una mejor <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">API en el JDK 8 para trabajar con fechas, horas y zonas horarias</a>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_300x200_fit_box_3.png" width="282" height="200"  class="lozad "></a></p>
+</figure>
+</div>
+<h3 id="futuro-con-java-9">Futuro con Java 9</h3>
+<p>Viendo el pasado reciente de Java hablar del futuro puede ser precipitado, quizá la característica más comentada sea la modularización con el proyecto conocido como <a href="http://openjdk.java.net/projects/jigsaw/">Jigsaw</a>, pero ha sido abandonada para Java 8 según tengo entendido por ser difícil incorporarla manteniendo la compatibilidad hacia atrás, por el momento dispondremos de una solución intermedia con los compact profiles.</p>
+<p>Otro de los puntos donde parece que se pondrá énfasis es en el soporte para entornos en la nube que son en estos momentos la tendencia hacia la que evolucionan las aplicaciones.</p>
+<h3 id="versiones-anteriores-de-java">Versiones anteriores de Java</h3>
+<p>Las versiones de Java 5, 6 y 7 también incluyeron varias novedades y dado que en el ámbito empresarial la tecnología se adopta de forma lenta es posible que mucha gente (incluido yo mismo) aún desconozca cuales eran algunas de las principales novedades y características de versiones anteriores.</p>
+<h4 id="java-7">Java 7</h4>
+<ul>
+<li>Project coin</li>
+<li>Strings en switchs</li>
+<li>Gestión automática de recursos en sentencias try-catch</li>
+<li>Multicatch</li>
+<li>Rethrow de excepciones más precisos</li>
+<li>Operador diamante &lt;&gt;</li>
+<li>Literales binarios</li>
+<li>Guiones bajos en literales numéricos</li>
+<li>Fork/Join y utilidades de concurrencia</li>
+<li>Mejoras en trabajo con archivos y carpetas</li>
+</ul>
+<p>Más en <a href="https://www.oracle.com/technetwork/java/javase/jdk7-relnotes-418459.html">Java 7 New Features and Enhancements</a> y <a href="https://www.javacodegeeks.com/2013/10/java7-a-look-back.html">Java 7 a look back</a></p>
+<h4 id="java-6">Java 6</h4>
+<ul>
+<li>Lenguajes de scripting</li>
+<li>API para el compilador</li>
+<li>Nuevas anotaciones</li>
+<li>Nueva API para XML (StaX)</li>
+</ul>
+<p>Más en <a href="https://www.oracle.com/technetwork/java/javase/features-141434.html">Java 6 New Features and Enhancements</a> y <a href="https://www.javabeat.net/introduction-to-java-6-0-new-features-part-i/">Introduction to java 6 new features</a></p>
+<h4 id="java-5">Java 5</h4>
+<ul>
+<li>Generics</li>
+<li>Bucle for mejorado</li>
+<li>Autoboxing/unboxing</li>
+<li>Enums</li>
+<li>Varargs</li>
+<li>Static import</li>
+<li>Anotaciones</li>
+</ul>
+<p>Más en <a href="https://docs.oracle.com/javase/1.5.0/docs/relnotes/features.html">Java 5 New Features and Enhancements</a></p>
+<h3 id="presentación">Presentación</h3>
+<p>Finalmente, una presentación muy interesante en forma de <a href="https://www.youtube.com/watch?v=FTfAP29TjUk">vídeo de Youtube</a> en español y la <a href="http://www.javahispano.org/storage/documentacion/2013-JUG-Madrid.pdf">presentación de la que se habla en formato pdf</a> que fue publicada en <a href="http://www.javahispano.org/portada/2014/3/10/video-y-presentacion-de-la-charla-sobre-java-8.html">JavaHispano</a>, en él se habla de muchas de las novedades y de algunas futuras en Java 9.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/FTfAP29TjUk" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<hr>
+<p>En los <a href="https://docs.oracle.com/javase/tutorial/">tutoriales de Java</a> hay algunos de estos puntos más ampliados y algunos apartados no comentados en esta entrada. Otros artículos muy completos son <a href="http://winterbe.com/posts/2014/03/16/java-8-tutorial/">Java 8 Tutorial</a> y <a href="http://www.techempower.com/blog/2013/03/26/everything-about-java-8/">Everything about Java 8</a>, en el apartado de referencia al final de la entrada hay algún enlace más digno de lectura.</p>
+<p>Java es usado ampliamente en entornos empresariales ya sean públicos o privados, pequeños o grandes que con las <a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">especificaciones de Java EE 7</a> proporcionan a las aplicaciones un conjunto de funcionalidades estadarizadas con las que tendremos posibilidad de elegir la implementación que mejor consideremos no encadenándonos a un determinado vendedor.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://openjdk.java.net/projects/jdk8/">JDK 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2013/10/java8.html">Java 8</a></li>
+<li><a href="http://winterbe.com/posts/2014/03/16/java-8-tutorial/">Java 8 Tutorial</a></li>
+<li><a href="http://zeroturnaround.com/rebellabs/java-8-explained-default-methods/">Java 8 Explained Default Methods</a></li>
+<li><a href="https://www.javacodegeeks.com/2013/10/introduction-to-java-lambdas.html">Introduction to Java lambdas</a></li>
+<li><a href="http://zeroturnaround.com/rebellabs/java-8-revealed-lambdas-default-methods-and-bulk-data-operations/">Java 8 revealed, lambdas, default methods and bulk data operations</a></li>
+<li><a href="https://www.javacodegeeks.com/2013/07/lambdas-coming-to-a-java-8-near-you.html">Lambdas coming to a Java 8 near you</a></li>
+<li><a href="http://viralpatel.net/blogs/java-8-default-methods-tutorial/">Java 8 default methods</a></li>
+<li><a href="http://unpocodejava.wordpress.com/2014/01/22/novedades-relevantes-java-8/">Novedades relevantes Java 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/03/the-optional-type-api.html">The optional type API</a></li>
+<li><a href="http://www.techempower.com/blog/2013/03/26/everything-about-java-8/">Everything about Java 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/03/8-new-features-for-java-8.html">8 new features for java 8</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/03/happy-8th-birthday-java.html">Happy 8th birthday Java</a></li>
+<li><a href="https://www.javacodegeeks.com/2014/01/compiling-lambda-expressions-scala-vs-java-8.html">Compiling lambda expressions scala vs Java 8</a></li>
+<li><a href="https://java.dzone.com/articles/java-8-permgen-metaspace">Java 8 PermGen to metaspace</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="programacion"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/</id>
         <title>Guía para la creación de un blog con Octopress</title>
@@ -21,8 +229,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>En la <a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">primera entrada de este blog usando Octopress</a> ya comentaba las razones por las que he pasado de usar <a href="http://www.blogger.com">Blogger</a> a usar <a href="http://octopress.org/">Octopress</a>. Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.</p>
 <p>En esta entrada quiero escribir una guía con los pasos necesarios para crear un blog en Octopress de forma rápida y algunas funcionalidades a tener en cuenta o que deberemos realizar.</p>
@@ -155,8 +362,7 @@
         <content type="html">
         <![CDATA[<p><strong>JMS es una especificación de Java que define en esta plataforma una forma comunicación entre aplicaciones basada en el intercambio de mensajes. Los mensajes permiten a las aplicaciones no conocerse entre sí y comunicarse de forma asíncrona pudiendo hacer que los mensajes de una cola solo sean consumidos por un único receptor o por varios suscriptores interesados en un determinado tema. En el código de ejemplo muestro tanto la comunicación con colas (queues) como con temas (topics)</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p><a href="https://en.wikipedia.org/wiki/Java_Platform">La plataforma Java EE</a> (Java Enterprise Edition) pone a disposición de los desarrolladores varias especificaciones, estas especificaciones describen las funcionalidades y la API que deben proporcionar las implementaciones y proporcionan al desarrollador herramientas para facilitar, hacer mejor las aplicaciones y de forma estándar según estas especificaciones. Haciendo uso de una de estas especificaciones es posible cambiar de una implementación a otra de forma transparente y sin modificar ninguna línea de código de la aplicación (en teoría). Hay especificaciones para persistencia en base de datos (JPA), para transaccionalidad (JTA), para servicios web (JAX-WS ) y REST (JAX-RS) entre otras. En el siguiente enlace puede encontrarse el <a href="https://glassfish.java.net/downloads/ri/">listado completo de especificaciones y sus versiones de JEE 7</a>.</p>
 <p>Una de ellas es el <a href="https://es.wikipedia.org/wiki/Java_Message_Service">servicio de mensajería JMS</a> (Java Message Service). JMS es un sistema de comunicación entre aplicaciones en base a mensajes. El usar mensajes como forma de comunicación entre aplicaciones tiene los siguientes beneficios o ventajas:</p>
@@ -183,8 +389,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultado de Topic.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_300x200_fit_box_3.png" width="300" height="136" alt="Resultado de Topic.java" title="Resultado de Topic.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_2560x1440_fit_box_3.png" data-gallery="" title="Resultado de Topic.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_300x200_fit_box_3.png" width="300" height="136" alt="Resultado de Topic.java" title="Resultado de Topic.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:</p>
@@ -196,8 +401,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultado de Queue.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_300x200_fit_box_3.png" width="300" height="95" alt="Resultado de Queue.java" title="Resultado de Queue.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_2560x1440_fit_box_3.png" data-gallery="" title="Resultado de Queue.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_300x200_fit_box_3.png" width="300" height="95" alt="Resultado de Queue.java" title="Resultado de Queue.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Comentar que los mensajes se procesan en serie por cada MessageListener, esto es, hasta que no termina el consumo de uno no se consume el siguiente. Esto se aplica por MensajeListener y sesión.</p>
@@ -251,8 +455,7 @@
         <content type="html">
         <![CDATA[<p><strong>Tanto en un servidor web como de aplicaciones podemos hacer que la comunicación entre el cliente y el servidor esté cifrada usando un protocolo seguro. La configuración para usar un protocolo seguro en cada servidor es diferente pero todos se basan en lo mismo, usar un certificado y un clave. En este artículo muestro la configuración necesaria en los servidores web y de aplicaciones más populares.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL"  class=""></p>
 </div>
 <p>En entradas anteriores he explicado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">en que consiste la criptografía y GPG</a> y como podemos usarlo a nivel personal para firmar y cifrar archivos y <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">firmar correos electrónicos con el cliente de correo Evolution</a>. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">cómo crear un certificado con OpenSSL y como convertirlo a diferentes formatos</a>. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los <a href="https://picodotdev.github.io/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">Certificados SSL, de empresa, «wildcard» y de validación extendida</a> para proporcionar acceso cifrado al servidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores <a href="http://tomcat.apache.org/">Tomcat</a>, <a href="http://www.lighttpd.net/">Lighttpd</a>, <a href="http://jbossas.jboss.org/">JBoss</a>/<a href="http://wildfly.org/">WildFly</a>, <a href="http://nginx.org/">Nginx</a> y <a href="http://www.apache.org/">Apache</a>.</p>
 <p>Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.</p>
@@ -355,16 +558,14 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el <em>framework</em> <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
 <h3 id="plugin-tapestry">PlugIn Tapestry</h3>
 <p>Apache Tapestry es un <em>framework</em> orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como <a href="http://projects.spring.io/spring-framework/">Spring</a>, <a href="https://grails.org/">Grails</a> y <a href="http://www.playframework.com/">Play!</a> y también de los muchos otros en los que la principal diferencia es el lenguaje como <a href="https://www.djangoproject.com/">Django</a> (Python), <a href="http://symfony.com/">Symfony</a> (PHP), <a href="http://www.asp.net/mvc">ASP.NET MVC</a> (C#) o <a href="http://rubyonrails.org/">Ruby On Rails</a> (Ruby).</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Incluyendo la descripción de las características del <em>framework</em> el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:</p>
@@ -467,14 +668,12 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>El 10 de febrero tuve la oportunidad de dar una charla, la primera, sobre <a href="http://tapestry.apache.org/">Apache Tapestry</a> para el equipo de desarrolladores de la empresa en la que trabajo. Que en el equipo de desarrollo tengamos la posibilidad de vez en cuando dedicar un par de horas para juntarnos y compartir conocimiento es una buena iniciativa ya que siendo ya un equipo bastante grande de personas y con un nivel técnico elevado cada uno tiene un conocimiento que los demás pueden estar interesados en conocer al menos a nivel superficial, es motivador tener estas oportunidades.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Presentación sobre Apache Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_300x200_fit_q90_box.jpg" width="300" height="200" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación sobre Apache Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_300x200_fit_q90_box.jpg" width="300" height="200" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Fue una charla simplemente como cultura general ya que el <em>framework</em> y el lenguaje que usamos como pila tecnológica es <a href="https://grails.org/">Grails</a> y <a href="https://www.groovy-lang.org/">Groovy</a> y eso es complicado que cambie. Otro motivo fue poder compartir el conocimiento de este <em>framework</em> para el desarrollo de aplicaciones y páginas web que a mi me gusta mucho. Si estás suscrito al <a href="http://feeds.feedburner.com/blog-bitix/">feed de mi blog</a> ya conocerás que de vez en cuando publico alguna entrada comentando algún aspecto sobre él (tengo ya algunas preparadas y otras en mente) y si estás suscrito desde hace unos meses conocerás que escribí un libro. La charla fue para comentar los «porque» alguien podría elegir este <em>framework</em> y no tanto el «como» se hacen las cosas en él, para esto último ya esta el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a>, <a href="https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">otra documentación</a> y la propia <a href="http://tapestry.apache.org/documentation.html">documentación del proyecto</a>.</p>
@@ -525,8 +724,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="300" height="300" alt="WildFly" title="WildFly"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="300" height="300" alt="WildFly" title="WildFly"  class=""></p>
 </div>
 <p>Para una pequeña (o no tan pequeña) aplicación web desarrollada en la plataforma Java un servidor como <a href="http://tomcat.apache.org/">Tomcat</a> o <a href="http://www.eclipse.org/jetty/">Jetty</a> es suficiente. Pero una aplicación grande o un entorno empresarial probablemente empiece a requerir funcionalidades que Tomcat no proporciona de por si. En algunos casos una librería puede suplir esta carencia, este podría ser el caso de <a href="http://hibernate.org/">Hibernate</a> para la persistencia o <a href="http://shiro.apache.org/">Apache Shiro</a> para la seguridad de la aplicación. Sin embargo, cuando sea posible y tenga sentido es buena idea seguir alguna de las especificaciones o APIs que proporciona la plataforma <a href="https://en.wikipedia.org/wiki/Java_Platform">Java EE</a> ya que de esta manera podremos cambiar de implementación sin necesidad de modificar el código de la aplicación y permite integrar dos sistemas diferentes si ambos siguen una determinada especificación. Un ejemplo podría ser el caso de Hibernate con la especificación JPA que proporciona una funcionalidad equivalente (de hecho esta especificación se basa en Hibernate y se puede usar Hibernate como implementación a través de la API que define JPA) o de integración de sistemas con JMS.</p>
 <p>Los servidores de aplicaciones se pueden distinguir por la cantidad de especificaciones que implementan, sus versiones, perfiles y la versión de Java EE que cumplen. Por una parte tendríamos los contenedores de <em>servlets</em> y JSP como podrían ser Apache Tomcat y Jetty, estos cumplen con un perfil web e implementan una parte de las especificación que engloba Java EE. Por otra parte están los servidores que cumplen con toda las especificaciones que define Java EE y se les suele denominar <em>full profile</em> o perfil completo. Ejemplos de servidores de aplicaciones full profile son:</p>
@@ -555,16 +753,13 @@
 <p>A continuación unas pocas capturas de pantalla de la página de inicio de WildFly y de la consola de administración:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_300x200_fit_box_3.png" width="293" height="200"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_300x200_fit_box_3.png" width="224" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_300x200_fit_box_3.png" width="293" height="200"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_300x200_fit_box_3.png" width="224" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_300x200_fit_box_3.png" width="257" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_300x200_fit_box_3.png" width="257" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En las <a href="http://wildfly.org/news/2014/02/11/WildFly8-Final-Released/">notas de publicación de WildFly 8</a> pueden consultarse las numerosas e interesantes funcionalidades añadidas. También en el siguiente <a href="http://wildfly.org/news/2013/11/21/WildFly-8-Webinar/">vídeo</a> se explican muchos de los detalles que incorpora.</p>
@@ -604,8 +799,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Un sistema de logging en una aplicación es indispensable para saber lo que está sucediendo en la aplicación en el mismo momento o pasado un tiempo. Es de gran utilidad tanto para en el momento de desarrollar la aplicación como para una vez puesta en producción. Con el registro de las trazas podemos obtener información que nos permitirá descubrir un error o averiguar más fácilmente y rápidamente porque sucede algún comportamiento que no es como se espera.</p>
 <p>En Java hay varios sistemas de logging entre los más utilizados están <a href="https://logging.apache.org/log4j/2.x/">Log4j</a>, <a href="https://logback.qos.ch/">logback</a>, <a href="https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html">java.util.logging</a> y la capa de abstracción <a href="https://www.slf4j.org/">slf4j</a> sobre varios de estas librerías. En estas librerías de logging las trazas se emiten a través de un logger que normalmente se corresponde con el nombre de la clase en la que se emite la traza. De esta forma las trazas se pueden filtrar por el nivel de importancia de la traza (debug, info, warn, &hellip;) y por el nombre del logger de forma que podemos obtener un registro de las trazas emitidas por los loggers que deseamos.</p>
@@ -633,15 +827,13 @@
 <p>Este sería el resultado:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para conseguir solo las trazas de una funcionalidad se pueden utilizar los marcadores («markers») de forma que además de por el nivel del mensaje de traza y el logger podamos filtrar por el marcador asociado a la traza. El marcador de una traza es una etiqueta por la que posteriormente podemos filtrar. Si una funcionalidad estuviese repartida por varias clases podríamos usar el mismo marcador en todas esas trazas de forma que podamos filtrar luego por él. El resultado del ejemplo completo sería el siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En ambos resultados puede verse el nombre del marcador (IMP de importación, PER de persistencia, UTL de utilidad) asociado a la traza, en el segundo solo se muestran las trazas con el marcador IMP de la funcionalidad de importación.</p>
@@ -689,8 +881,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Hasta el momento ya he escrito alguna entrada sobre los <a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">patrones de diseño</a> en general, sobre algunos casos particulares como el <a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">patrón de diseño Command</a> relacionado con la programación concurrente y sobre el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">patrón de diseño State</a> para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.</p>
 <p>En un programa que emplea un lenguaje de programación orientado a objetos estos están constantemente relacionándose entre si a través de llamadas a métodos y a través de las referencias que un objeto posee de otros. Sin embargo, es habitual que un determinado método devuelva un null en vez de una referencia a un objeto. Esta referencia null puede ser un problema ya que nos obliga en el código hacer una comprobación antes de poder llamarlo. Si un método devuelve un null puede dar como resultado un <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html">NullPointerException</a> en otra parte de la aplicación en donde se intente usar esa referencia y no se haga la comprobación.</p>
@@ -761,8 +952,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>El 2013 toca a su fin, el 2014 está llamando a la puerta y como cada medio año en el blog toca hacer una recapitulación con las entradas que he escrito durante estos meses. Durante este año he cumplido con el objetivo de escribir y publicar una entrada por semana, en total han sido 52, casi todas publicadas en <a href="https://elblogdepicodev.blogspot.com.es">elblogdepicodev</a> y las del último més del año publicadas en <a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a>. Esta entrada es un buen momento para leer alguna que te perdiste o releer alguna que te gustó.</p>
 <p>Durante estos 6 meses y <a href="https://picodotdev.github.io/blog-bitix/2013/">este año</a> a destacar ha sido el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro que publiqué sobre Apache Tapestry</a>, un <em>framework</em> para el desarrollo de aplicaciones en Java, del que dentro de no mucho tiempo se publicará la versión 5.4 final. El libro tiene más de 250 páginas escritas en español, un precio de 0.00 € y puedes <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">descargarlo en diferentes formatos</a> entre los que se encuentran los formatos EPUB y MOBI más adecuados para leerlos en un libro electrónico pero también puede descargarse en formato PDF para leer en el ordenador. La página del libro desde la que puede descargarse es <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry</a>. Una buena cantidad de páginas en las que no solo se trata los principales aspectos relacionados con este <em>framework</em> sino que cubre varios aspectos que en muchas aplicaciones deben abordar como seguridad, relaciones jerárquicas en base de datos, doble envío de formularios, DAO genérico, convenciones para archivos i10n, i18n en entidades de dominio, logging, layout de páginas, &hellip;  y a resolver independientemente del <em>framework</em> que se utilice aunque en el libro se aporta la solución desde el punto de vista de Tapestry.</p>
@@ -805,8 +995,7 @@
 <p>El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, tengo apuntados algunos temas interesantes que en las próximas semanas y meses iré publicando. ¡Feliz navidad!</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/hemeroteca-4/images/christmas-tux-2013_hu3d2247b0e4cb48b9c40f0b8d38a2f354_720857_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Christmas Tux 2013"><img src="https://picodotdev.github.io/blog-bitix/2013/12/hemeroteca-4/images/christmas-tux-2013_hu3d2247b0e4cb48b9c40f0b8d38a2f354_720857_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmas Tux 2013" title="Christmas Tux 2013"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/hemeroteca-4/images/christmas-tux-2013_hu3d2247b0e4cb48b9c40f0b8d38a2f354_720857_2560x1440_fit_q90_box.jpg" data-gallery="" title="Christmas Tux 2013"><img src="https://picodotdev.github.io/blog-bitix/2013/12/hemeroteca-4/images/christmas-tux-2013_hu3d2247b0e4cb48b9c40f0b8d38a2f354_720857_600x450_fit_q90_box.jpg" width="600" height="338" alt="Christmas Tux 2013" title="Christmas Tux 2013"  class="lozad "></a></p>
 <figcaption>¡Buen 2014! <br>Fuente: klowner.com</figcaption>
 </figure>
 </div>
@@ -830,12 +1019,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sinadura.png" width="200" height="118" alt="Sinadura" title="Sinadura"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sinadura.png" width="200" height="118" alt="Sinadura" title="Sinadura"  class=""></p>
 </div>
 <p>Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">como instalar un lector de tarjetas inteligentes en linux para usar el DNI electrónico</a> y que una vez instalado podemos darle algún uso útil como por ejemplo <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">autenticarnos con en DNI</a> en las páginas que lo soporten como medio de autenticación y el navegador Firefox. También he comentado <a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/">como usar el DNI con el cliente de correo Evolution para enviar correos firmados digitalmente</a>.</p>
 <p>En esta entrada voy a comentar como firmar digitalmente documentos en cualquier formato electrónico con la aplicación de software libre <a href="http://www.sinadura.net/es/">Sinadura</a>. La firma que hagamos con el DNIe sobre estos documentos puede tener la misma validez legal que la firma manuscrita.</p>
@@ -848,8 +1035,7 @@
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Instalador Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_300x200_fit_box_3.png" width="267" height="200" alt="Instalador Sinadura" title="Instalador Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_2560x1440_fit_box_3.png" data-gallery="" title="Instalador Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/instalador-sinadura_hu68a4d7d461ae60dbd369a797edc59938_25927_300x200_fit_box_3.png" width="267" height="200" alt="Instalador Sinadura" title="Instalador Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez instalado sinadura y también teniendo instalado el lector de tarjetas inteligentes para el DNI y funcionando deberemos conectarlo al ordenador e introducir el DNI. Iniciaremos sinadura con que se encuentra dentro del directorio de instalación de Sinadura:</p>
@@ -862,29 +1048,25 @@
 <p>Inicialmente veremos una pantalla como la siguiente con una lista de archivos vacíos y una serie de botones para realizar varias acciones.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_300x200_fit_box_3.png" width="285" height="200" alt="Sinadura" title="Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_2560x1440_fit_box_3.png" data-gallery="" title="Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura_hu42008127714f391da80af9fdf141e6e0_39793_300x200_fit_box_3.png" width="285" height="200" alt="Sinadura" title="Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Con Sinadura y el DNI podemos firmar digitalmente cualquier tipo de archivo pero entre los archivos de tipo pdf y el resto hay diferencias. En el caso de los pdf la firma se incrusta en el propio documento y en resto se crea un nuevo archivo con la firma y el documento original, el archivo nuevo creado tiene la extensión .sar. Para firmar un documento deberemos añadirlo a la vista con el botón «Añadir documento» y posteriormente firmarlo con el botón «Firmar». Para realizar la firma se nos pedirá que introduzcamos el PIN secreto que nos proporcionaron al emitirnos el DNI en la oficina de expedición.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_300x200_fit_box_3.png" width="300" height="124" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_2560x1440_fit_box_3.png" data-gallery="" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/pin_hub857ad5b36930a2aa7431469900578d7_10148_300x200_fit_box_3.png" width="300" height="124" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En el caso de los archivos pdf Sinadura por defecto incrusta además de la firma una marca de agua en la primera página aunque se pueden cambiar algunas preferencias en «Archivo&gt; Preferencias»:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_300x200_fit_box_3.png" width="277" height="200" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_2560x1440_fit_box_3.png" data-gallery="" title="Preferencias de Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/preferencias-sinadura_hu2740acbab032b8a029971354229041fc_50975_300x200_fit_box_3.png" width="277" height="200" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los archivos .sar creados para archivos que no son pdf tienen el siguiente contenido, además del archivo original una serie de archivos .xml que contendrán la firma (son archivos zip con extensión .sar):</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Documento firmado con Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_300x200_fit_box_3.png" width="259" height="200" alt="Documento firmado con Sinadura" title="Documento firmado con Sinadura"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_2560x1440_fit_box_3.png" data-gallery="" title="Documento firmado con Sinadura"><img src="https://picodotdev.github.io/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/images/sinadura-documento-firmado_hucaedab6d34c4f863070c4a81eee2f5b0_50569_300x200_fit_box_3.png" width="259" height="200" alt="Documento firmado con Sinadura" title="Documento firmado con Sinadura"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez firmados los archivos podemos enviarlos por correo electrónico y la persona que los reciba podrá validarlos también con Sinadura. Para ello se debe añadir el archivo y pulsar el botón «Validar».</p>
@@ -944,12 +1126,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
 </div>
 <p>Otra forma de la que podemos sacar partido al DNI electrónico además de para <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">identificarnos en sitios web</a> que lo soporten como medio de autenticación es usarlo para firmar digitalmente los correos electrónicos que enviamos. Ya he comentado <a href="https://elblogdepicodev.blogspot.com.es/2013/11/como-usar-gpg-con-evolution.html">como firmar correos electrónicos con GPG</a> pero hacerlo con el DNI electrónico tiene la ventaja de que no necesitaremos <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">crear una par de claves GPG</a> sino que con tener el DNI e <a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">instalar un lector de tarjetas inteligentes</a> será suficiente.</p>
 <p>En esta entrada explicaré como usar el DNI electrónico para firmar digitalmente correos usando el cliente de correo <a href="https://projects.gnome.org/evolution/">Evolution</a>. Primeramente necesitaremos hacer una configuración adicional a la que hemos necesitado para poder usar el lector de tarjetas inteligentes y el DNIe en Linux. Y es usar el siguiente comando tal y como está comentado en <a href="https://forja.cenatic.es/plugins/mediawiki/wiki/opendnie/index.php/Documentacion_Aplicaciones_Evolution#Configuraci.C3.B3n_del_DNIe_en_el_cliente_de_correo_Evolution">esta página</a> cambiando el directorio home del usuario por el que corresponda:</p>
@@ -962,25 +1142,20 @@
 <p>A continuación, el proceso es similar a como se configura la firma con claves GPG, con el lector de tarjetas inteligentes conectado al equipo y el DNI electrónico introducido accedemos a las propiedades de la cuenta, a la sección seguridad y en el apartado MIME seguro (S/MIME) seleccionamos nuestro certificado. Si queremos que nuestros mensajes se firmen automaticamente debemos marcar la opción «Firmar siempre los mensajes salientes cuando se use esta cuenta». Habiendo ejecutado el comando <em>modutil</em> cuando pulsemos el botón seleccionar en el apartado S/MIME se nos solicitará el PIN secreto de nuestro DNIe.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_300x200_fit_box_3.png" width="300" height="105" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Selección de certificado digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_300x200_fit_box_3.png" width="300" height="132" alt="Selección de certificado digital con el DNIe" title="Selección de certificado digital con el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_2560x1440_fit_box_3.png" data-gallery="" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/pin_huf0595318f8af9b84115ea581f1130ed5_19486_300x200_fit_box_3.png" width="300" height="105" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_2560x1440_fit_box_3.png" data-gallery="" title="Selección de certificado digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seleccion-certificado_hu4a5cf73c3e77d8aba937a7ed3a5b9903_28518_300x200_fit_box_3.png" width="300" height="132" alt="Selección de certificado digital con el DNIe" title="Selección de certificado digital con el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_300x200_fit_box_3.png" width="247" height="200" alt="Diálogo de preferencias de seguridad de Evolution para el DNIe" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_2560x1440_fit_box_3.png" data-gallery="" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/seguridad-evolution_hu005b504728617080d8e086185b7eff8d_80407_300x200_fit_box_3.png" width="247" height="200" alt="Diálogo de preferencias de seguridad de Evolution para el DNIe" title="Diálogo de preferencias de seguridad de Evolution para el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez con las propiedades de la cuenta configurada para que Evolution use nuestro DNI electrónico, si no hemos marcado la opción «Firmar siempre los mensajes&hellip;» podemos realizarlo al escribir el propio correo marcando la opción «Opciones&gt; Firmar con S/MIME». Al enviar un correo electrónico firmado se añadirá automáticamente un adjunto con la firma de nombre «smime.sp7». Al contrario que GPG la firma está en un formato binario y es dificilmente legible con un lector de texto plano.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Confirmación de firma digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_300x200_fit_box_3.png" width="300" height="121" alt="Confirmación de firma digital con el DNIe" title="Confirmación de firma digital con el DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Mensaje firmado con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_300x200_fit_box_3.png" width="300" height="121" alt="Mensaje firmado con el DNIe" title="Mensaje firmado con el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_2560x1440_fit_box_3.png" data-gallery="" title="Confirmación de firma digital con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/confimacion-firma_hu89b37c564cb38f7de3b5bcbbe9cdca2b_17647_300x200_fit_box_3.png" width="300" height="121" alt="Confirmación de firma digital con el DNIe" title="Confirmación de firma digital con el DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_2560x1440_fit_box_3.png" data-gallery="" title="Mensaje firmado con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/images/mensaje-firmado-dnie_hu58952680ed62c9445c6bc78c98ef82a5_29346_300x200_fit_box_3.png" width="300" height="121" alt="Mensaje firmado con el DNIe" title="Mensaje firmado con el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="reference">
@@ -1017,27 +1192,22 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/dnie.jpg" width="200" height="150" alt="DNIe" title="DNIe"  class=""></p>
 </div>
 <p>Una vez hemos conseguido <a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/">instalar el DNIe en Linux</a> correctamente podemos empezar a darle alguna utilidad más allá de cuando se nos require para acreditar nuestra identidad. Como veremos en esta entrada podemos usar el DNI electrónico para hacer varios trámites administrativos y consultas con la administración pública, empresas o entidades que en su web soporten el DNIe como medio de autenticación.</p>
 <p>En esta entrada explicaré como usar el DNIe electrónico con la combinación del navegador <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> y <a href="https://www.linux.com/">Linux</a>. Para ello primeramente debemos hacer que Firefox detecte el lector de tarjetas inteligentes, desde el menú de Firefox vamos a «Preferencias&gt; Avanzado&gt; Certificados&gt; Dispositivos de seguridad».</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administrador de dispositivos (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_300x200_fit_box_3.png" width="217" height="200" alt="Administrador de dispositivos (1)" title="Administrador de dispositivos (1)"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_300x200_fit_box_3.png" width="300" height="116"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_2560x1440_fit_box_3.png" data-gallery="" title="Administrador de dispositivos (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/preferencias-firefox_hucaf53d7461ae1426dea7330c6a0d1e20_52598_300x200_fit_box_3.png" width="217" height="200" alt="Administrador de dispositivos (1)" title="Administrador de dispositivos (1)"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-1_hu16bb73d37b6f61341e97d45a89d52e7b_43021_300x200_fit_box_3.png" width="300" height="116"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Administrador de dispositivos (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_300x200_fit_box_3.png" width="300" height="100" alt="Administrador de dispositivos (2)" title="Administrador de dispositivos (2)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_2560x1440_fit_box_3.png" data-gallery="" title="Administrador de dispositivos (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/administrador-dispositivos-2_hub53b461256466fa1fcd9787a028f1068_64861_300x200_fit_box_3.png" width="300" height="100" alt="Administrador de dispositivos (2)" title="Administrador de dispositivos (2)"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En esta pantalla pulsamos el botón «Cargar» e introducimos los siguientes datos:</p>
@@ -1048,37 +1218,30 @@
 <p>Pulsamos «Aceptar», salimos del diálogo «Dispositivos de seguridad» y reiniciamos Firefox. Para que Firefox reconozca el lector junto con el DNIe este debe estar introducido al iniciarlo sino no se nos aparecerá el diálogo solicitando el PIN del DNIe en el momento de la autenticación y no podremos usarlo, esto es así posiblemente por algún tipo de circunstancia que impide detectar el DNIe en el momento de introducirlo en Firefox, sabiéndolo no supone mayor problema. Por lo demás, esa es toda la configuración adicional necesaria para usar el DNIe con Firefox.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Lector de tarjetas inteligentes y DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_300x200_fit_q90_box.jpg" width="149" height="200" alt="Lector de tarjetas inteligentes y DNIe" title="Lector de tarjetas inteligentes y DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="DNI electrónico"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_300x200_fit_q90_box.jpg" width="300" height="188" alt="DNI electrónico" title="DNI electrónico"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_2560x1440_fit_q90_box.jpg" data-gallery="" title="Lector de tarjetas inteligentes y DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/lector-dnie_hu9adb103a83278f596d043e76201c9b98_73394_300x200_fit_q90_box.jpg" width="149" height="200" alt="Lector de tarjetas inteligentes y DNIe" title="Lector de tarjetas inteligentes y DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_2560x1440_fit_q90_box.jpg" data-gallery="" title="DNI electrónico"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dnie_hub60523681386791181984ac3bafa2bd6_52757_300x200_fit_q90_box.jpg" width="300" height="188" alt="DNI electrónico" title="DNI electrónico"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para probar que tenemos instalado el DNIe crrectamente y que Firefox es capaz de utilizarlo podemos usar la <a href="http://www.dnielectronico.es/como_utilizar_el_dnie/verificar.html">página preparada para probar el DNI</a>. Al final de la misma hay un enlace «Comprobación de certificados» que deberemos pulsar, se nos pedirá el PIN y si todo es correcto veremos una página con diversa información de nuestro DNI.</p>
 <p>Con el DNI electrónico preparado podemos hacer distintos tipos de trámites o consultas, por ejemplo, muchos bancos ofrecen medios para acceder de forma electrónica, online y mediante un navegador la consulta del saldo de nuestras cuentas y operaciones que se han realizado o para hacer transferencias. Alguno de los que he visto que soportan el DNIe como medio de autenticación son <a href="https://portal.bbk.es">BBK</a>, <a href="https://www.bancosantander.es">Santander</a> y el infame <a href="http://www.bankia.com/es/">Bankia</a>, seguro que hay unos cuantos más. También otro tipo de consulta que podemos hacer es consultar los puntos de carnet de conducir que poseemos.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación BBK con DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_300x200_fit_box_3.png" width="163" height="200" alt="Autenticación BBK con DNIe" title="Autenticación BBK con DNIe"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Consultar puntos cárnet DGT"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_300x200_fit_q90_box.jpg" width="300" height="162" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_2560x1440_fit_box_3.png" data-gallery="" title="Autenticación BBK con DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/bbk-dnie_hu05d4ea0a174af00ccaa42df52620b540_71495_300x200_fit_box_3.png" width="163" height="200" alt="Autenticación BBK con DNIe" title="Autenticación BBK con DNIe"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_2560x1440_fit_q90_box.jpg" data-gallery="" title="Consultar puntos cárnet DGT"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/dgt-puntos-carnet_hu26441261d6317eeaa2f19cc90b1a9243_124837_300x200_fit_q90_box.jpg" width="300" height="162" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio <em>pcscd</em>, manualmente o con el inicio del sistema (<a href="https://elblogdepicodev.blogspot.com.es/2013/11/instalar-un-lector-de-tarjetas-inteligentes-en-arch-linux.html">consultar la guía de instalación del DNIe en Linux</a>).</p>
 <p>En algún momento en el proceso de autenticación se nos pedirá el PIN secreto que posibilita usar el DNIe, apareciéndonos una ventana similar a la siguiente para introducirlo.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_300x200_fit_box_3.png" width="300" height="114" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_2560x1440_fit_box_3.png" data-gallery="" title="Diálogo de solicitud de PIN con el DNIe"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/pin_hu1756a39fa33825d2ad3d5be70a4342e2_13480_300x200_fit_box_3.png" width="300" height="114" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El PIN secreto de nuestro DNI se facilita en el momento de solicitar o renovar el documento nacional de identidad, es proporcionado en un documento como el siguiente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Documento con el PIN del DNIe (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_300x200_fit_q90_box.jpg" width="300" height="184" alt="Documento con el PIN del DNIe (1)" title="Documento con el PIN del DNIe (1)"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Documento con el PIN del DNIe (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_300x200_fit_q90_box.jpg" width="194" height="200" alt="Documento con el PIN del DNIe (2)" title="Documento con el PIN del DNIe (2)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_2560x1440_fit_q90_box.jpg" data-gallery="" title="Documento con el PIN del DNIe (1)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-1_hu00da69e42d40cb03f1ffab5e0b8b16ae_46643_300x200_fit_q90_box.jpg" width="300" height="184" alt="Documento con el PIN del DNIe (1)" title="Documento con el PIN del DNIe (1)"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_2560x1440_fit_q90_box.jpg" data-gallery="" title="Documento con el PIN del DNIe (2)"><img src="https://picodotdev.github.io/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/images/documento-pin-dnie-2_hu589e0ad9bb4e2bc0c3ad396b795f5512_83191_300x200_fit_q90_box.jpg" width="194" height="200" alt="Documento con el PIN del DNIe (2)" title="Documento con el PIN del DNIe (2)"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Al introducir el PIN hay que poner cuidado y atención, suelen ser unos cuantos números, letras y caracteres especiales que hay que teclear correctamente. Disponemos varios intentos para introducirlos correctamente, al tercero fallido el DNIe se bloqueará y tendremos que acudir a la oficina de expedición de nuestra ciudad para desbloquearlo, también podremos acudir a él para cambiar el PIN. Una vez introducido correctamente podremos continuar con nuestra consulta o trámite.</p>
@@ -1117,8 +1280,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>Esta es la última entrada que publicaré en el <a href="https://elblogdepicodev.blogspot.com.es">elblogdepicodev.blogspot.com.es</a> o la primera de <a href="https://picodotdev.github.io/blog-bitix/">picodotdev.github.io/blog-bitix</a> dependiendo del blog al que hayas accedido, es decir, seguiré teniendo un blog y escribiendo sobre la temática alrededor de la tecnología como hasta ahora pero a partir de este momento todo el nuevo contenido que publique lo haré en el nuevo blog <a href="https://picodotdev.github.io/blog-bitix/">picodotdev.github.io/blog-bitix</a>, por lo que si estás suscrito al feed de elblogdepicodev te recomiendo que te suscribas al <a href="https://picodotdev.github.io/blog-bitix/index.xml">feed de bitix</a> para no perderte ninguna de las nuevas entradas que publique.</p>
 <h3 id="que-está-por-venir-en-bitix">Que está por venir en Bitix</h3>

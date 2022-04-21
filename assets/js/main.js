@@ -8,7 +8,7 @@ require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, bluei
         function random(min, max) {
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
-    
+
         var spec = {
             backgrounds: [
                 'asanoha.png',

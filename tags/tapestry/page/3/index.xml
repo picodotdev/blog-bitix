@@ -21,8 +21,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Como he comentado en un artículo anterior sobre los <a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/">modelos push y pull empleados en los motores de plantillas</a> donde comentaba algunas diferencias entre ellos, en el modelo pull es la vista la que pide los datos al controlador y no el controlador el que proporciona los datos a la vista como se hace en el modelo push. Un problema que puede plantear el que la vista pida los datos al controlador es que si la devolución de los datos solicitados son costosos en tiempo del cálculo, carga para el sistema en CPU o memoria, o intensivos en entrada/salida de disco o red y se piden varias veces puede suponer como resultado que el tiempo empleado para generar la página sea elevado o la aplicación consuma recursos innecesarios.</p>
 <p><a href="http://tapestry.apache.org/">Apache Tapestry</a> que emplea el modelo pull dispone de la <a href="http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/annotations/Cached.html">anotación Cached</a> que permite cachear el resultado de un método a nivel de componente y página durante la generación de la misma. Su uso sería el siguiente:</p>
@@ -84,15 +83,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Una página web está formada por un conjunto de páginas enlazadas entre ellas. Cada página está formado por un html diferente pero normalmente todas las páginas de una misma web comparten el mismo aspecto variando solo una sección donde está el contenido propio de la página. La cabecera de la página, el pie de la página o los menús de navegación suelen estar presentes en todas las páginas de la web y suelen ser los mismos.</p>
 <p>En este artículo voy a explicar como crear un componente que nos de a todas las páginas un aspecto común de una aplicación usando apache Tapestry como <em>framework</em> web de tal forma que esa parte común no esté duplicada en la aplicación y pueda ser reutilizada fácilmente. En el caso de <a href="http://www.blogstack.info">Blog Stack</a> las páginas se componen de las siguientes partes.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Plantilla de Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_300x200_fit_box_3.png" width="300" height="138" alt="Plantilla de Blog Stack" title="Plantilla de Blog Stack"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_2560x1440_fit_box_3.png" data-gallery="" title="Plantilla de Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2014/07/plantillas-en-apache-tapestry/images/plantilla-blog-stack_hud86d8d8e1d5b21a1b9287303b7e08493_139843_300x200_fit_box_3.png" width="300" height="138" alt="Plantilla de Blog Stack" title="Plantilla de Blog Stack"  class="lozad "></a></p>
 </figure>
 </div>
 <p>El esquema de la plantilla será una cabecera, una barra de navegación con enlaces a diferentes secciones de la web, un menú lateral con contenido variable según la página, el contenido que variará según la página y un pie de página. Como todo componente de <a href="http://tapestry.apache.org/">Apache Tapestry</a> está formado de una clase Java y una plantilla. El componente puede tener diferentes parámetros, y en el caso del de la plantilla muchos para poder variar el contenido por defecto de las diferentes secciones de la página, estos son aside1, aside2, aside3, aside4.</p>
@@ -166,8 +163,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>En la mayoría de <em>frameworks</em> de desarrollo de aplicaciones o páginas web para producir el contenido HTML que se envía al cliente se emplea un modelo en el que el controlador proporciona los datos que combinados con una plantilla producen el HTML. Este modelo también es el empleado habitualmente en muchos motores de plantillas (<a href="http://www.thymeleaf.org/">thymeleaf</a>, <a href="http://mustache.github.io/">mustache</a>, &hellip;). Sin embargo, hay dos modelos que se pueden seguir para producir un texto como resultado dada una plantilla y datos:</p>
 <ul>
@@ -175,8 +171,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Modelo push"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_300x200_fit_box_3.png" width="300" height="176" alt="Modelo push" title="Modelo push"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_2560x1440_fit_box_3.png" data-gallery="" title="Modelo push"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-push_hu6e494778e33b19912ce2159f71794939_16905_300x200_fit_box_3.png" width="300" height="176" alt="Modelo push" title="Modelo push"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los pasos que se siguen en este modelo son:</p>
@@ -193,8 +188,7 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Modelo pull"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_300x200_fit_box_3.png" width="300" height="185" alt="Modelo pull" title="Modelo pull"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_2560x1440_fit_box_3.png" data-gallery="" title="Modelo pull"><img src="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/images/modelo-pull_hued438e41b6c5cffc6a748be7abce3995_16763_300x200_fit_box_3.png" width="300" height="185" alt="Modelo pull" title="Modelo pull"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:</p>
@@ -275,8 +269,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/octopress.png" width="300" height="300" alt="Octopress" title="Octopress"  class=""></p>
 </div>
 <p>Cada seis meses hago un recopilatorio de los artículos que he publicado durante este periodo de tiempo. En estos seis meses he mantenido mi ritmo de publicación de una entrada a la semana que publico casi siempre los viernes a la tarde, en total han sido 26 nuevos artículos con este. Los temas tratados durante este tiempo han sido en gran medida la programación, un poco de linux y la Raspberry Pi y el análisis de un SSD.</p>
 <p>A destacar durante este semestre ha sido que he publicado un proyecto personal, Blog Stack. <a href="http://www.blogstack.info/">Blog Stack</a> es una agregador o planeta de bitácoras sobre desarrollo, programación, gnu/linux y tecnología. A casi todos los bloggeros que le he propuesto agregarle a Blog Stack me han contestado positivamente. 17 son las bitácoras agregadas actualmente y aunque no son muchas hacen que prácticamente todos los días haya algo nuevo que leer. En un artículo hacía la presentación del proyecto y en otro explicaba cual es el funcionamiento en cuanto a hospedaje y arquitectura (interesante para aquellos que quieran realizar un proyecto en internet con un coste mínimo). Son los siguientes artículos:</p>
@@ -359,8 +352,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura que nos puede llevar un tiempo en crearlos. Normalmente cuando empezamos un nuevo proyecto solemos basarnos en otro existente  copiando y pegando contenido de él. Pero ademas de tiempo podemos cometer errores o no seguir algunas convenciones propias de Java o del <em>framework</em> web que usemos. Para un proyecto grande esa dedicación al inicio del proyecto no nos importará pero para un proyecto pequeño o para hacer una prueba puede que queramos tener algo más rápido y con menos esfuerzo para estar en disposición de empezar a desarrollar en muy poco tiempo.</p>
 <p>Para crear el esqueleto de una aplicación rápidamente en <a href="http://tapestry.apache.org/">Apache Tapestry</a> hay disponible un arquetipo de <a href="http://maven.apache.org/">Maven</a> que puede generar una aplicación en unos pocos minutos. Para usarlo deberemos instalar maven previamente. Una vez instalado Maven basta con que usemos el siguiente comando.</p>
@@ -373,23 +365,19 @@
 <p>El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, <em>org.apache.tapestry:quickstart</em>. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo <em>io.github.picodotdev.bitix</em> y como nombre de artefacto inicio rápido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-maven_hu58ad4778942c6fc9cf18644f90e126a3_88273_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipos-tapestry_hu41cb80674e80833ccfda3c9a1ad7ff49_39056_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/arquetipo-tapestry_hu1a077e1c8fb5484483a1912666519296_70527_300x200_fit_box_3.png" width="300" height="164"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos tanto para trabajar con Maven como con <a href="http://www.gradle.org/">Gradle</a>, una vez que tenemos la aplicación generada podemos usar el que prefiramos, probablemente mejor Gradle. Los archivos generados son los siguientes:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_300x200_fit_box_3.png" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_2560x1440_fit_box_3.png" data-gallery="" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/archivos-generados_hu8535b26c52dbf86b0a5689e0d96993b9_50287_300x200_fit_box_3.png" width="300" height="199" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Una vez generada la aplicación podemos iniciarla con un servidor embebido <a href="http://www.eclipse.org/jetty/">Jetty</a> con la aplicación desplegada en él ya usando <a href="http://www.gradle.org/">Gradle</a>:</p>
@@ -402,10 +390,8 @@
 <p>Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_300x200_fit_box_3.png" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación en el navegador"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_2560x1440_fit_box_3.png" data-gallery="" title="Terminal al iniciar la aplicación"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-terminal_hu7c5178581b57f1717c22305567786a33_51842_300x200_fit_box_3.png" width="294" height="200" alt="Terminal al iniciar la aplicación" title="Terminal al iniciar la aplicación"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación en el navegador"><img src="https://picodotdev.github.io/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/images/inicio-aplicacion-navegador_hubf7c9f485ca430abc168c8d2ce6fd790_82910_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación en el navegador" title="Aplicación en el navegador"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Probablemente necesitaremos configurar muchas cosas adicionales como usar <a href="https://github.com/bmuschko/gradle-tomcat-plugin">Tomcat como servidor embebido</a> en vez de Jetty o añadir la <a href="https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html">configuración necesaria para ejecutar los teses unitarios y de integración</a>, Tapestry no es un <em>framework</em> <em>fullstack</em> y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.</p>
@@ -450,15 +436,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Con la versión 5.4 de Tapestry las <a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">páginas PageCatalog, ServiceStatus e HibernateStaticstis</a> han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de <a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html">informe de error incluso para las peticiones ajax</a>, los mensajes de logging y con estás páginas de información de estado.</p>
 <p>La página <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/pages/T5Dashboard.html">T5Dashboard</a> está incluida en el propio core de <a href="http://tapestry.apache.org/">Apache Tapestry</a> y disponible en todas las aplicaciones en modo desarrollo y accediendo de forma local al servidor de aplicaciones. Si se incluye en la aplicación la dependencia tapestry-hibernate además en T5Dashboard podremos ver estadísticas de uso de Hibernate. La página T5Dashboard nos puede resultar muy útil ya que nos proporciona mucha información y alguna acción interesante.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estado de la aplicación Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_300x200_fit_box_3.png" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_2560x1440_fit_box_3.png" data-gallery="" title="Estado de la aplicación Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_300x200_fit_box_3.png" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Como se ve en la imagen podemos ver las páginas disponibles, cargadas, cuanto tiempo llevó construirlas, que complejidad y por cuantos componentes están formadas. Y algo que nos resultará muy útil es provocar la acción de cargar todas las páginas quizá después de hacer un despliegue para evitar tiempos de inicialización en las primeras peticiones pero tan o más importante nos permitirá descubrir errores en los archivos tml de los componentes ¿cuantas veces te ha ocurrido que en un php, jsp, gsp, &hellip; hasta que no se usa esa plantilla no descubres un error digamos &ldquo;de compilación&rdquo; (variable con nombre que no existe, atributo mal entrecomillado, &hellip;) ? Seguramente como a mi, muchas. Los archivos de plantilla tml son xml válido con lo que si no están bien formados se nos notificará del error, nuevamente ¿te ha ocurrido alguna vez tener un php, jsp o gsp que no genera html bien balanceado? Pero también si se está usando un componente que no existe, varios componentes con el mismo nombre, &hellip; . Aunque parezca que no estos tipos de errores se pueden producir con relativa facilidad tanto en desarrollo y con mayor peligro si tenemos un flujo de trabajo con varias ramas donde vamos mergeando los cambios de trunk a la rama que se despliega en producción y nos ocurren conflictos en los merges que tenemos que resolver manualmente con la posibilidad de cometer un error.</p>
@@ -471,15 +455,13 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_300x200_fit_box_3.png" width="300" height="138"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_300x200_fit_box_3.png" width="300" height="138"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Finalmente, en la sección HibernateStatistics podemos obtener un montón de datos que nos pueden servir para detectar situaciones anómalas en la aplicación como un gran número de sql que se lanzan en una página como podría ser en un problema de carga N+1 en una relación entre dos entidades, el estado de la cache de segundo nivel que nos permitirá optimizar las caches, la cache de queries, número de transacciones realizadas y otra gran cantidad de información.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estadísticas de Hibernate en Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_300x200_fit_box_3.png" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_2560x1440_fit_box_3.png" data-gallery="" title="Estadísticas de Hibernate en Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_300x200_fit_box_3.png" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para que hibernate genere estadísticas es necesario indica en el archivo hibernate.cfg.xml la propiedad hibernate.generate_statistics:</p>
@@ -532,12 +514,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly"  class=""></p>
 </div>
 <p>Los class loaders del <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones JBoss/WildFly</a> habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en <a href="http://jbossas.jboss.org/">JBoss</a> se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el <em>classloader</em> de la aplicación (war). Ya en las últimas versiones como JBoss 7 y <a href="http://wildfly.org/">WildFly</a> la forma de cargar las clases es más parecido al modelo habitual que se sigue en las aplicaciones Java EE y en servidores como Tomcat buscando primero en el directorio classes WEB-INF/classes y entre las librerías de la carpeta WEB-INF/lib del archivo war. Además, con la inclusión de JBoss Modules se puede seguir un esquema OSGi con lo que incluso podríamos usar simultáneamente en el servidor diferentes versiones de la misma librería.</p>
 <p>Sin embargo, a pesar de seguir el esquema estándar de buscar las clases y usar OSGi para que Tapestry encuentre los archivos que necesita, como plantillas, imágenes, literales que pueden estar embebidos en los archivos jar de librerías es necesario hacer algunas modificaciones. En una <a href="http://wiki.apache.org/tapestry/HowToRunTapestry5OnJBoss7Dot1">guía de uso de Tapestry con JBoss</a> se explica como conseguir hacer funcionar una aplicación Tapestry tanto en JBoss 7 como en WildFly 8. La solución consiste en proporcionar una clase para que encuentre correctamente los archivos que Tapestry necesita y esta clase será la que veremos en el siguiente ejemplo.</p>
@@ -614,16 +594,14 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el <em>framework</em> <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
 <h3 id="plugin-tapestry">PlugIn Tapestry</h3>
 <p>Apache Tapestry es un <em>framework</em> orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como <a href="http://projects.spring.io/spring-framework/">Spring</a>, <a href="https://grails.org/">Grails</a> y <a href="http://www.playframework.com/">Play!</a> y también de los muchos otros en los que la principal diferencia es el lenguaje como <a href="https://www.djangoproject.com/">Django</a> (Python), <a href="http://symfony.com/">Symfony</a> (PHP), <a href="http://www.asp.net/mvc">ASP.NET MVC</a> (C#) o <a href="http://rubyonrails.org/">Ruby On Rails</a> (Ruby).</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Incluyendo la descripción de las características del <em>framework</em> el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:</p>
@@ -726,14 +704,12 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>El 10 de febrero tuve la oportunidad de dar una charla, la primera, sobre <a href="http://tapestry.apache.org/">Apache Tapestry</a> para el equipo de desarrolladores de la empresa en la que trabajo. Que en el equipo de desarrollo tengamos la posibilidad de vez en cuando dedicar un par de horas para juntarnos y compartir conocimiento es una buena iniciativa ya que siendo ya un equipo bastante grande de personas y con un nivel técnico elevado cada uno tiene un conocimiento que los demás pueden estar interesados en conocer al menos a nivel superficial, es motivador tener estas oportunidades.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Presentación sobre Apache Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_300x200_fit_q90_box.jpg" width="300" height="200" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación sobre Apache Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_300x200_fit_q90_box.jpg" width="300" height="200" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Fue una charla simplemente como cultura general ya que el <em>framework</em> y el lenguaje que usamos como pila tecnológica es <a href="https://grails.org/">Grails</a> y <a href="https://www.groovy-lang.org/">Groovy</a> y eso es complicado que cambie. Otro motivo fue poder compartir el conocimiento de este <em>framework</em> para el desarrollo de aplicaciones y páginas web que a mi me gusta mucho. Si estás suscrito al <a href="http://feeds.feedburner.com/blog-bitix/">feed de mi blog</a> ya conocerás que de vez en cuando publico alguna entrada comentando algún aspecto sobre él (tengo ya algunas preparadas y otras en mente) y si estás suscrito desde hace unos meses conocerás que escribí un libro. La charla fue para comentar los «porque» alguien podría elegir este <em>framework</em> y no tanto el «como» se hacen las cosas en él, para esto último ya esta el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a>, <a href="https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">otra documentación</a> y la propia <a href="http://tapestry.apache.org/documentation.html">documentación del proyecto</a>.</p>

@@ -21,15 +21,13 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Con la versión 5.4 de Tapestry las <a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">páginas PageCatalog, ServiceStatus e HibernateStaticstis</a> han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de <a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html">informe de error incluso para las peticiones ajax</a>, los mensajes de logging y con estás páginas de información de estado.</p>
 <p>La página <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/pages/T5Dashboard.html">T5Dashboard</a> está incluida en el propio core de <a href="http://tapestry.apache.org/">Apache Tapestry</a> y disponible en todas las aplicaciones en modo desarrollo y accediendo de forma local al servidor de aplicaciones. Si se incluye en la aplicación la dependencia tapestry-hibernate además en T5Dashboard podremos ver estadísticas de uso de Hibernate. La página T5Dashboard nos puede resultar muy útil ya que nos proporciona mucha información y alguna acción interesante.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estado de la aplicación Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_300x200_fit_box_3.png" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_2560x1440_fit_box_3.png" data-gallery="" title="Estado de la aplicación Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-1_hubfb8d8886dece48d49e065fa5374aa71_59968_300x200_fit_box_3.png" width="300" height="138" alt="Estado de la aplicación Tapestry" title="Estado de la aplicación Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Como se ve en la imagen podemos ver las páginas disponibles, cargadas, cuanto tiempo llevó construirlas, que complejidad y por cuantos componentes están formadas. Y algo que nos resultará muy útil es provocar la acción de cargar todas las páginas quizá después de hacer un despliegue para evitar tiempos de inicialización en las primeras peticiones pero tan o más importante nos permitirá descubrir errores en los archivos tml de los componentes ¿cuantas veces te ha ocurrido que en un php, jsp, gsp, &hellip; hasta que no se usa esa plantilla no descubres un error digamos &ldquo;de compilación&rdquo; (variable con nombre que no existe, atributo mal entrecomillado, &hellip;) ? Seguramente como a mi, muchas. Los archivos de plantilla tml son xml válido con lo que si no están bien formados se nos notificará del error, nuevamente ¿te ha ocurrido alguna vez tener un php, jsp o gsp que no genera html bien balanceado? Pero también si se está usando un componente que no existe, varios componentes con el mismo nombre, &hellip; . Aunque parezca que no estos tipos de errores se pueden producir con relativa facilidad tanto en desarrollo y con mayor peligro si tenemos un flujo de trabajo con varias ramas donde vamos mergeando los cambios de trunk a la rama que se despliega en producción y nos ocurren conflictos en los merges que tenemos que resolver manualmente con la posibilidad de cometer un error.</p>
@@ -42,15 +40,13 @@
 </ul>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_300x200_fit_box_3.png" width="300" height="138"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-2_hu8430a9ea5cfa5b5c6124c0efdd80306e_74535_300x200_fit_box_3.png" width="300" height="138"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Finalmente, en la sección HibernateStatistics podemos obtener un montón de datos que nos pueden servir para detectar situaciones anómalas en la aplicación como un gran número de sql que se lanzan en una página como podría ser en un problema de carga N+1 en una relación entre dos entidades, el estado de la cache de segundo nivel que nos permitirá optimizar las caches, la cache de queries, número de transacciones realizadas y otra gran cantidad de información.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estadísticas de Hibernate en Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_300x200_fit_box_3.png" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_2560x1440_fit_box_3.png" data-gallery="" title="Estadísticas de Hibernate en Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/images/tapestry-dashboard-3_huca4080c691f8d3f148defb949f85ee44_64921_300x200_fit_box_3.png" width="300" height="138" alt="Estadísticas de Hibernate en Tapestry" title="Estadísticas de Hibernate en Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para que hibernate genere estadísticas es necesario indica en el archivo hibernate.cfg.xml la propiedad hibernate.generate_statistics:</p>
@@ -103,12 +99,10 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="200" height="200" alt="WildFly" title="WildFly"  class=""></p>
 </div>
 <p>Los class loaders del <a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/">servidor de aplicaciones JBoss/WildFly</a> habitualmente han dado algún problema en la ejecución de las aplicaciones y la carga de clases. En versiones antiguas como la 4 se podían producir conflictos entre las librerías de las aplicaciones y las librerías instaladas en el servidor ya que en <a href="http://jbossas.jboss.org/">JBoss</a> se buscaba las clases por defecto y primero en el class loader del servidor en vez de en el <em>classloader</em> de la aplicación (war). Ya en las últimas versiones como JBoss 7 y <a href="http://wildfly.org/">WildFly</a> la forma de cargar las clases es más parecido al modelo habitual que se sigue en las aplicaciones Java EE y en servidores como Tomcat buscando primero en el directorio classes WEB-INF/classes y entre las librerías de la carpeta WEB-INF/lib del archivo war. Además, con la inclusión de JBoss Modules se puede seguir un esquema OSGi con lo que incluso podríamos usar simultáneamente en el servidor diferentes versiones de la misma librería.</p>
 <p>Sin embargo, a pesar de seguir el esquema estándar de buscar las clases y usar OSGi para que Tapestry encuentre los archivos que necesita, como plantillas, imágenes, literales que pueden estar embebidos en los archivos jar de librerías es necesario hacer algunas modificaciones. En una <a href="http://wiki.apache.org/tapestry/HowToRunTapestry5OnJBoss7Dot1">guía de uso de Tapestry con JBoss</a> se explica como conseguir hacer funcionar una aplicación Tapestry tanto en JBoss 7 como en WildFly 8. La solución consiste en proporcionar una clase para que encuentre correctamente los archivos que Tapestry necesita y esta clase será la que veremos en el siguiente ejemplo.</p>
@@ -185,8 +179,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="200" height="200" alt="Grails" title="Grails"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="200" height="200" alt="Grails" title="Grails"  class=""></p>
 </div>
 <p>Una base de datos relacional guarda los datos de forma diferente al modelo orientado a objetos que utilizamos en lenguajes como <a href="https://www.oracle.com/us/technologies/java/overview/index.html">Java</a>, <a href="https://dotnet.microsoft.com/">C#</a> o <a href="https://www.python.org/">Python</a>. Los <a href="https://en.wikipedia.org/wiki/Object-relational_mapping">ORM (Object-relational mapping)</a> tratan de hacer una correspondencia entre los dos modelos, el relacional de las bases de datos y el orientado a objetos de los lenguajes. Una de las ventajas de usar en una aplicación un ORM para acceder a la base de datos es que podemos hacer una correspondencia entre los datos de una base de datos relacional y trabajar con esos datos utilizando el modelo orientado a objetos del lenguaje de programación que usemos.</p>
 <p>Sin embargo, el ORM envía sentencias SQL para recuperar los datos de la base de datos relacional según vamos navegando con los métodos de acceso a otros objetos y sus relaciones. Depende de como el ORM haga las consultas para recuperar los datos de la base de datos relacional puede generar muchas SQL, producir un bajo rendimiento en la aplicación y una carga de trabajo considerable para la base de datos.</p>
@@ -243,8 +236,7 @@
 <p>El resultado es el siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Estadísticas de Hibernate en Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_300x200_fit_box_3.png" width="175" height="200" alt="Estadísticas de Hibernate en Grails" title="Estadísticas de Hibernate en Grails"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_2560x1440_fit_box_3.png" data-gallery="" title="Estadísticas de Hibernate en Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/images/grails-hibernate-statistics_hu4234a0f49374b7b510e8be551108ae3e_127095_300x200_fit_box_3.png" width="175" height="200" alt="Estadísticas de Hibernate en Grails" title="Estadísticas de Hibernate en Grails"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En la imagen se puede apreciar las consultas lanzadas y que parámetros se han empleado. El método doTest del controlador HibernateController cada vez que es ejecutado persiste una entidad de dominio Autor y posteriormente la borra lanzando una sentencia insert y otra delete, cada vez que es ejecutado las estadísticas cambian acordemente.</p>
@@ -280,8 +272,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grails.svg" width="300" height="300" alt="Grails" title="Grails"  class=""></p>
 </div>
 <p>No es la primera vez que comento algo similar (<a href="https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html">I</a>, <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">II</a>) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.</p>
 <p>La página de error de <a href="https://grails.org/">Grails</a> por defecto da poca información, a poco más da la traza de la excepción y un extracto de los archivos relacionados donde se ha producido, podría ser mejor. Podría informar de los parámetros que se enviaron en la petición, las cabeceras http o las cookies además de los parámetros de sesión, a veces esta información nos puede servir para identificar la causa más rápidamente ya que la excepción puede estar produciéndose con el valor de un determinado parámetro o un determinado navegador, esta información no la tenemos en una simple traza de la excepción.</p>
@@ -302,10 +293,8 @@
 <p>El resultado se puede ver en la siguiente captura de pantalla.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de error por defecto de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_300x200_fit_box_3.png" width="300" height="166" alt="Página de error por defecto de Grails" title="Página de error por defecto de Grails"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página de error personalizada de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_300x200_fit_box_3.png" width="211" height="200" alt="Página de error personalizada de Grails" title="Página de error personalizada de Grails"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_2560x1440_fit_box_3.png" data-gallery="" title="Página de error por defecto de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-por-defecto_hu69b99072b92d39c8c40ae70f45a904b8_89059_300x200_fit_box_3.png" width="300" height="166" alt="Página de error por defecto de Grails" title="Página de error por defecto de Grails"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_2560x1440_fit_box_3.png" data-gallery="" title="Página de error personalizada de Grails"><img src="https://picodotdev.github.io/blog-bitix/2014/05/pagina-de-excepcion-de-grails/images/pagina-excepcion-grails-personalizada_hu63eab4f2b004a7b3e5055c94710b3136_162704_300x200_fit_box_3.png" width="211" height="200" alt="Página de error personalizada de Grails" title="Página de error personalizada de Grails"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Los estilos mostrados en las capturas de pantalla podrían ser mejores pero la esencia está en la información que se muestra. En otro artículo publicaré como <a href="https://picodotdev.github.io/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">obtener estadísticas de Hibernate para detectar problemas de N+1 u obtener las consultas sql que se están realizando en cada página de una aplicación Grails</a>, esta información nos puede ayudar bastante y no es excesivamente complicado hacerla. Con ambas conseguiremos que las aplicaciones que desarrollemos con Grails sean un poco más informativas.</p>
@@ -337,8 +326,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogstack.png" width="300" height="65" alt="Blog Stack" title="Blog Stack"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogstack.png" width="300" height="65" alt="Blog Stack" title="Blog Stack"  class=""></p>
 </div>
 <p>Normalmente en esta bitácora suelo poner ejemplos para explicar como funciona una determinada herramienta, son ejemplos que podrían aprovecharse para algo productivo pero para mantenerlos simples por si mismos no suelen serlo. En esta entrada voy a comentar cual es la arquitectura y como está alojado <a href="http://www.blogstack.info/">Blog Stack</a>, que es un ejemplo de algo práctico y real por si la experiencia de este ejemplo le sirve de ayuda o de inspiración a alguien. En la red he encontrado comentada la experiencia de <del>Planeta Linux</del> y <a href="http://gallir.wordpress.com/2009/12/30/como-montamos-meneame-en-amazon-ec2/">Meneame</a>, otros proyectos web.</p>
 <p>Blog Stack (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología, en definitiva es un servicio que está disponible en una dirección de internet, <a href="http://www.blogstack.info">www.blogstack.info</a>.</p>
@@ -348,15 +336,13 @@
 <p>Con todo la arquitectura de despliegue y hospedaje de Blog Stack es la siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_300x200_fit_box_3.png" width="168" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-blogstack_hub8ff48939ea64d0be3682a25103ad8e4_45194_300x200_fit_box_3.png" width="168" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En cuanto a la aplicación y el código Java en si las partes importantes están en un <a href="https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/IndexerServiceImpl.java">servicio que se encarga de la indexación</a> extrayendo el contenido de las fuentes y guardalo en una base de datos, otro <a href="https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/GeneratorServiceImpl.java">servicio para la generación del contenido</a> del sitio de forma estática (html, css, js, imgs, &hellip;) y finalmente el <a href="https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/cli/Main.java">programa Java principal</a> que sirve para lanzarlo desde la linea de comandos, el resto son las <a href="https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/entities">clases del modelo de datos</a>  y los <a href="https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/services/dao">DAO de persistencia y acceso a dataos</a>. La aplicación sigue el esquema tradicional de 3 capas, la de presentación (páginas y componentes de tapestry), la de lógica de negocio formada por los servicios de indexación, generación y los DAOs (formada por el contenedor de servicios de tapestry y spring) y finalmente la capa de datos formada por una base de datos H2 (donde hibernate interviene). En realidad en BS no hay un servidor de aplicaciones sino que se usa Tapestry en una aplicación «standalone».</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_300x200_fit_box_3.png" width="300" height="123"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/images/arquitectura-aplicacion-blogstack_hu58118d936b2ebf314d48d518f007452c_43298_300x200_fit_box_3.png" width="300" height="123"  class="lozad "></a></p>
 </figure>
 </div>
 <p>La raíz del proyecto fue que quería usar <a href="http://tapestry.apache.org/">Apache Tapestry</a> de alguna forma en algún proyecto que fuese de utilidad para otras personas, al mismo tiempo que meditaba la idea <a href="http://planetalinux.org/">Planeta Linux</a> dejó de funcionar durante unas semanas y tampoco estaba contento del todo con los otros planetas en los que tenía mi bitácora agregada. Con <a href="http://planeta.archlinux-es.org/">Planeta Arch Linux</a> porque después de unos meses seguía sin ni siquiera respuesta a la solicitud de agregación y <a href="http://www.planetacodigo.com/">Planeta Código</a> ya que creía que podría ofrecer mejor funcionalidad, por ejemplo, los gist no se importaban bien (utilizan javascript y por seguridad deben estar excluidos). Ya que empezaba el proyecto creía que podría proporcionar alguna idea que permitiese descubrir contenido a los usuarios a través de como hace <a href="https://stackoverflow.com/">stackoverflow</a> con las etiquetas de modo que una persona se pueda suscribir (mediante rss/atom) a una etiqueta para recibir el contenido de solo el tema que le interese de cualquier bitácora agregada, descubrir nuevas bitácoras con contenido interesante a veces no es fácil. La opción más parecida y mejor que he encontrado es <a href="http://bitacoras.com/">bitacoras.com</a>, salvo las votaciones, el ranking y que tiene un ámbito más amplio al poder incluir bitácoras de más temáticas y que la agregación de bitácoras no está automatizada, BS en lo importante ofrece lo mismo de forma más simple y está más especializado tanto en la temática de las bitácoras como en la suscripción por etiquetas.</p>
@@ -397,8 +383,7 @@
         <content type="html">
         <![CDATA[<p><strong>La octava versión de Java añade numerosas novedades importantes al lenguaje. Algunas de las más destacadas son las expresiones lambdas y los streams que dotan al lenguaje de características de programación funcional pero también lo hacen en muchas construcciones de código comunes más expresivo, menos extenso y más legible. Pero hay otras novedades relevantes que detallo en el artículo como los métodos por defecto en interfaces o la nueva API para fechas.</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>El 18 de marzo de 2014 se publicó la nueva versión de la plataforma <a href="https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html">Java 8</a>, Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como <em>lambdas</em> o <em>closures</em> o una demandada nueva API para el manejo de fechas entre otras muchas características más. La <a href="http://openjdk.java.net/projects/jdk8/features">lista completa de novedades</a> es bastante amplia, a continuación algunas características de Java explicadas con un poco más de detalle.</p>
 <div class="alert alert-warning tableofcontents">
@@ -515,8 +500,7 @@ será dinámico pero no evitará fugas de memoria.</li>
 <p>Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente ha sido molesto, para tratar de mejorar la situación podíamos usar la librería JodaTime. Finalmente, después de mucho tiempo esperando a que se hiciera se va a proporcionar una mejor <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">API en el JDK 8 para trabajar con fechas, horas y zonas horarias</a>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_300x200_fit_box_3.png" width="282" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/images/componentes-jpse8_hue75c3af3f21500b54941dca45968f0dd_53901_300x200_fit_box_3.png" width="282" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <h3 id="futuro-con-java-9">Futuro con Java 9</h3>
@@ -607,8 +591,7 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         <![CDATA[<p><strong>JMS es una especificación de Java que define en esta plataforma una forma comunicación entre aplicaciones basada en el intercambio de mensajes. Los mensajes permiten a las aplicaciones no conocerse entre sí y comunicarse de forma asíncrona pudiendo hacer que los mensajes de una cola solo sean consumidos por un único receptor o por varios suscriptores interesados en un determinado tema. En el código de ejemplo muestro tanto la comunicación con colas (queues) como con temas (topics)</strong></p>]]>
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p><a href="https://en.wikipedia.org/wiki/Java_Platform">La plataforma Java EE</a> (Java Enterprise Edition) pone a disposición de los desarrolladores varias especificaciones, estas especificaciones describen las funcionalidades y la API que deben proporcionar las implementaciones y proporcionan al desarrollador herramientas para facilitar, hacer mejor las aplicaciones y de forma estándar según estas especificaciones. Haciendo uso de una de estas especificaciones es posible cambiar de una implementación a otra de forma transparente y sin modificar ninguna línea de código de la aplicación (en teoría). Hay especificaciones para persistencia en base de datos (JPA), para transaccionalidad (JTA), para servicios web (JAX-WS ) y REST (JAX-RS) entre otras. En el siguiente enlace puede encontrarse el <a href="https://glassfish.java.net/downloads/ri/">listado completo de especificaciones y sus versiones de JEE 7</a>.</p>
 <p>Una de ellas es el <a href="https://es.wikipedia.org/wiki/Java_Message_Service">servicio de mensajería JMS</a> (Java Message Service). JMS es un sistema de comunicación entre aplicaciones en base a mensajes. El usar mensajes como forma de comunicación entre aplicaciones tiene los siguientes beneficios o ventajas:</p>
@@ -635,8 +618,7 @@ será dinámico pero no evitará fugas de memoria.</li>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultado de Topic.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_300x200_fit_box_3.png" width="300" height="136" alt="Resultado de Topic.java" title="Resultado de Topic.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_2560x1440_fit_box_3.png" data-gallery="" title="Resultado de Topic.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/topic_hu56b39483b649e598428d5492a72852dc_134239_300x200_fit_box_3.png" width="300" height="136" alt="Resultado de Topic.java" title="Resultado de Topic.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:</p>
@@ -648,8 +630,7 @@ será dinámico pero no evitará fugas de memoria.</li>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Resultado de Queue.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_300x200_fit_box_3.png" width="300" height="95" alt="Resultado de Queue.java" title="Resultado de Queue.java"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_2560x1440_fit_box_3.png" data-gallery="" title="Resultado de Queue.java"><img src="https://picodotdev.github.io/blog-bitix/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/images/queue_huba3dbeccedc7d2cbd298ae503bd31db0_89085_300x200_fit_box_3.png" width="300" height="95" alt="Resultado de Queue.java" title="Resultado de Queue.java"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Comentar que los mensajes se procesan en serie por cada MessageListener, esto es, hasta que no termina el consumo de uno no se consume el siguiente. Esto se aplica por MensajeListener y sesión.</p>
@@ -703,16 +684,14 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el <em>framework</em> <a href="http://tapestry.apache.org/">Apache Tapestry</a>.</p>
 <h3 id="plugin-tapestry">PlugIn Tapestry</h3>
 <p>Apache Tapestry es un <em>framework</em> orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como <a href="http://projects.spring.io/spring-framework/">Spring</a>, <a href="https://grails.org/">Grails</a> y <a href="http://www.playframework.com/">Play!</a> y también de los muchos otros en los que la principal diferencia es el lenguaje como <a href="https://www.djangoproject.com/">Django</a> (Python), <a href="http://symfony.com/">Symfony</a> (PHP), <a href="http://www.asp.net/mvc">ASP.NET MVC</a> (C#) o <a href="http://rubyonrails.org/">Ruby On Rails</a> (Ruby).</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/images/portada-plugintapestry_hudd958694a9c7fbaaf2a5b065abe3f288_268557_300x200_fit_box_3.png" width="141" height="200"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Incluyendo la descripción de las características del <em>framework</em> el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:</p>
@@ -815,14 +794,12 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry"  class=""></p>
 </div>
 <p>El 10 de febrero tuve la oportunidad de dar una charla, la primera, sobre <a href="http://tapestry.apache.org/">Apache Tapestry</a> para el equipo de desarrolladores de la empresa en la que trabajo. Que en el equipo de desarrollo tengamos la posibilidad de vez en cuando dedicar un par de horas para juntarnos y compartir conocimiento es una buena iniciativa ya que siendo ya un equipo bastante grande de personas y con un nivel técnico elevado cada uno tiene un conocimiento que los demás pueden estar interesados en conocer al menos a nivel superficial, es motivador tener estas oportunidades.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Presentación sobre Apache Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_300x200_fit_q90_box.jpg" width="300" height="200" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación sobre Apache Tapestry"><img src="https://picodotdev.github.io/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/images/presentacion-apache-tapestry_hu5813c80b678e047881b7600768eec1cc_49900_300x200_fit_q90_box.jpg" width="300" height="200" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Fue una charla simplemente como cultura general ya que el <em>framework</em> y el lenguaje que usamos como pila tecnológica es <a href="https://grails.org/">Grails</a> y <a href="https://www.groovy-lang.org/">Groovy</a> y eso es complicado que cambie. Otro motivo fue poder compartir el conocimiento de este <em>framework</em> para el desarrollo de aplicaciones y páginas web que a mi me gusta mucho. Si estás suscrito al <a href="http://feeds.feedburner.com/blog-bitix/">feed de mi blog</a> ya conocerás que de vez en cuando publico alguna entrada comentando algún aspecto sobre él (tengo ya algunas preparadas y otras en mente) y si estás suscrito desde hace unos meses conocerás que escribí un libro. La charla fue para comentar los «porque» alguien podría elegir este <em>framework</em> y no tanto el «como» se hacen las cosas en él, para esto último ya esta el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a>, <a href="https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">otra documentación</a> y la propia <a href="http://tapestry.apache.org/documentation.html">documentación del proyecto</a>.</p>
@@ -873,8 +850,7 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="300" height="300" alt="WildFly" title="WildFly"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/wildfly.svg" width="300" height="300" alt="WildFly" title="WildFly"  class=""></p>
 </div>
 <p>Para una pequeña (o no tan pequeña) aplicación web desarrollada en la plataforma Java un servidor como <a href="http://tomcat.apache.org/">Tomcat</a> o <a href="http://www.eclipse.org/jetty/">Jetty</a> es suficiente. Pero una aplicación grande o un entorno empresarial probablemente empiece a requerir funcionalidades que Tomcat no proporciona de por si. En algunos casos una librería puede suplir esta carencia, este podría ser el caso de <a href="http://hibernate.org/">Hibernate</a> para la persistencia o <a href="http://shiro.apache.org/">Apache Shiro</a> para la seguridad de la aplicación. Sin embargo, cuando sea posible y tenga sentido es buena idea seguir alguna de las especificaciones o APIs que proporciona la plataforma <a href="https://en.wikipedia.org/wiki/Java_Platform">Java EE</a> ya que de esta manera podremos cambiar de implementación sin necesidad de modificar el código de la aplicación y permite integrar dos sistemas diferentes si ambos siguen una determinada especificación. Un ejemplo podría ser el caso de Hibernate con la especificación JPA que proporciona una funcionalidad equivalente (de hecho esta especificación se basa en Hibernate y se puede usar Hibernate como implementación a través de la API que define JPA) o de integración de sistemas con JMS.</p>
 <p>Los servidores de aplicaciones se pueden distinguir por la cantidad de especificaciones que implementan, sus versiones, perfiles y la versión de Java EE que cumplen. Por una parte tendríamos los contenedores de <em>servlets</em> y JSP como podrían ser Apache Tomcat y Jetty, estos cumplen con un perfil web e implementan una parte de las especificación que engloba Java EE. Por otra parte están los servidores que cumplen con toda las especificaciones que define Java EE y se les suele denominar <em>full profile</em> o perfil completo. Ejemplos de servidores de aplicaciones full profile son:</p>
@@ -903,16 +879,13 @@ será dinámico pero no evitará fugas de memoria.</li>
 <p>A continuación unas pocas capturas de pantalla de la página de inicio de WildFly y de la consola de administración:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_300x200_fit_box_3.png" width="293" height="200"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_300x200_fit_box_3.png" width="224" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly_hu028109b5fde6d9cd9802c988bf410dd2_83141_300x200_fit_box_3.png" width="293" height="200"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-1_hu3328fa2dcca4cbbd92a324da2dfb7f4c_85243_300x200_fit_box_3.png" width="224" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_300x200_fit_box_3.png" width="257" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_2560x1440_fit_box_3.png" data-gallery="" title="Consola de administración"><img src="https://picodotdev.github.io/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/images/wildfly-admin-2_hu1134111a04d890440a675659779ddb69_108507_300x200_fit_box_3.png" width="257" height="200" alt="Consola de administración" title="Consola de administración"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En las <a href="http://wildfly.org/news/2014/02/11/WildFly8-Final-Released/">notas de publicación de WildFly 8</a> pueden consultarse las numerosas e interesantes funcionalidades añadidas. También en el siguiente <a href="http://wildfly.org/news/2013/11/21/WildFly-8-Webinar/">vídeo</a> se explican muchos de los detalles que incorpora.</p>
@@ -952,8 +925,7 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Un sistema de logging en una aplicación es indispensable para saber lo que está sucediendo en la aplicación en el mismo momento o pasado un tiempo. Es de gran utilidad tanto para en el momento de desarrollar la aplicación como para una vez puesta en producción. Con el registro de las trazas podemos obtener información que nos permitirá descubrir un error o averiguar más fácilmente y rápidamente porque sucede algún comportamiento que no es como se espera.</p>
 <p>En Java hay varios sistemas de logging entre los más utilizados están <a href="https://logging.apache.org/log4j/2.x/">Log4j</a>, <a href="https://logback.qos.ch/">logback</a>, <a href="https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html">java.util.logging</a> y la capa de abstracción <a href="https://www.slf4j.org/">slf4j</a> sobre varios de estas librerías. En estas librerías de logging las trazas se emiten a través de un logger que normalmente se corresponde con el nombre de la clase en la que se emite la traza. De esta forma las trazas se pueden filtrar por el nivel de importancia de la traza (debug, info, warn, &hellip;) y por el nombre del logger de forma que podemos obtener un registro de las trazas emitidas por los loggers que deseamos.</p>
@@ -981,15 +953,13 @@ será dinámico pero no evitará fugas de memoria.</li>
 <p>Este sería el resultado:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/sin-filtro_hu439f1dbb077c8cb8cf0057f867dacf86_68405_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
 </figure>
 </div>
 <p>Para conseguir solo las trazas de una funcionalidad se pueden utilizar los marcadores («markers») de forma que además de por el nivel del mensaje de traza y el logger podamos filtrar por el marcador asociado a la traza. El marcador de una traza es una etiqueta por la que posteriormente podemos filtrar. Si una funcionalidad estuviese repartida por varias clases podríamos usar el mismo marcador en todas esas trazas de forma que podamos filtrar luego por él. El resultado del ejemplo completo sería el siguiente:</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_2560x1440_fit_box_3.png" data-gallery="data-gallery"><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2014/01/logging-usando-marcadores-con-slf4j-y-logback/images/con-filtro_huc90cfb2c4bb3573bace522560d85b989_47046_300x200_fit_box_3.png" width="300" height="80"  class="lozad "></a></p>
 </figure>
 </div>
 <p>En ambos resultados puede verse el nombre del marcador (IMP de importación, PER de persistencia, UTL de utilidad) asociado a la traza, en el segundo solo se muestran las trazas con el marcador IMP de la funcionalidad de importación.</p>
@@ -1037,8 +1007,7 @@ será dinámico pero no evitará fugas de memoria.</li>
         <content type="html">
         
         <![CDATA[<div class="logotypes"> 
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Hasta el momento ya he escrito alguna entrada sobre los <a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">patrones de diseño</a> en general, sobre algunos casos particulares como el <a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">patrón de diseño Command</a> relacionado con la programación concurrente y sobre el <a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">patrón de diseño State</a> para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.</p>
 <p>En un programa que emplea un lenguaje de programación orientado a objetos estos están constantemente relacionándose entre si a través de llamadas a métodos y a través de las referencias que un objeto posee de otros. Sin embargo, es habitual que un determinado método devuelva un null en vez de una referencia a un objeto. Esta referencia null puede ser un problema ya que nos obliga en el código hacer una comprobación antes de poder llamarlo. Si un método devuelve un null puede dar como resultado un <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html">NullPointerException</a> en otra parte de la aplicación en donde se intente usar esa referencia y no se haga la comprobación.</p>

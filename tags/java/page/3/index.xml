@@ -21,8 +21,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada <em>final</em>.</p>
 <p>La palabra <em>final</em> tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como <em>final</em>, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente.</p>
@@ -111,8 +110,7 @@
         <content type="html">
         <![CDATA[<p><strong>La internacionalización y localización son funcionalidades habitualmente necesarias de implementar en una aplicación. La localización ha de tener en cuenta los diferentes literales para cada idioma y no <em>hardcodearlos</em> en el código fuente de la aplicación, las diferentes formas plurales de los lenguajes, el formato de números e importes, fechas e incluso utilizar la forma correcta para ordenar cadenas alfabéticamente.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Muchas aplicaciones necesitan soportar múltiples idiomas, es imprescindible en aquellas multinacionales dirigidas a usuarios con diferentes idiomas, país, cultura o región. Aunque la aplicación no sea multinacional también se necesita si en el mismo país hay múltiples idiomas oficiales en diferentes regiones como en España que el idioma oficial es el español pero comparte oficialidad con Euskera en el País Vasco, con el catalán en Catalunya y el gallego en Galicia. Y aunque no sea imprescindible soportar múltiples idiomas es aconsejable usar las facilidades del lenguaje, librerías o <em>framework</em> para no <em>hardcodear</em> en el código cadenas de literales, no cuesta mucho hacerlo si es desde un principio pero que añadirlo con posterioridad significa revisar el código fuente completo de la aplicación.</p>
 <p>Añadir la funcionalidad de internacionalización (i18n) a una aplicación requiere de código específico, la internacionalización genera uno o varios archivos de recursos que posteriormente con el proceso de localización (l10n) genera archivos de recursos adicionales para los diferentes idiomas, países, culturas y regiones. Por otro lado, la funcionalidad de localización está relacionada con la funcionalidad de dar formato a cadenas, números, importes y fechas.</p>
@@ -306,8 +304,7 @@
         <content type="html">
         <![CDATA[<p><strong>El patrón <em>Singleton</em> es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son <em>thread-safe</em> o con evaluación <em>lazy</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Los lenguajes orientados a objetos modelan los programas utilizando clases, estas clases contienen tanto los datos como las operaciones que tratan esos datos que solo pueden ser modificados a través de esas operaciones. Este principio de encapsulación tiene como beneficio garantizar que los datos no sean modificados por cualquier otro código distinto a las operaciones y que los datos no queden en un estado inconsistente.</p>
 <p>En un lenguaje orientado a objetos de cada clase se crean tantas instancias u objetos como se necesiten en el programa. En algunos casos de una clase en concreto sólo se desea que haya una única instancia, normalmente hacer que de una clase en concreto haya una única instancia se implementa con el patrón <em>Singleton</em>.</p>
@@ -321,8 +318,7 @@
 <p>Los casos de uso de las clases <em>singleton</em> son mantener un estado compartido, permitir inicialización bajo demanda o <em>lazy</em>, también es usado en otros patrones como el patrón <em>abstract factory</em>, <em>factory method</em>, <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">el patrón <em>builder</em></a> o <em>facade</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Diagrama de clases del patrón de diseño Singleton"><img src="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_650x450_fit_box_3.png" width="650" height="390" alt="Diagrama de clases del patrón de diseño Singleton" title="Diagrama de clases del patrón de diseño Singleton"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_2560x1440_fit_box_3.png" data-gallery="" title="Diagrama de clases del patrón de diseño Singleton"><img src="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_650x450_fit_box_3.png" width="650" height="390" alt="Diagrama de clases del patrón de diseño Singleton" title="Diagrama de clases del patrón de diseño Singleton"  class="lozad "></a></p>
 <figcaption>Diagrama de clases del patrón de diseño Singleton</figcaption>
 </figure>
 </div>
@@ -408,12 +404,10 @@
         <content type="html">
         <![CDATA[<p><strong>La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o <em>legacy</em> en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o <em>single-sing-on</em> a varias aplicaciones. El servidor web Nginx tiene <em>proxys</em> que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>La funcionalidad de autenticación y autorización es básica en la mayoría de aplicaciones web y servicios REST. La forma de implementar la autenticación y autorización es posible de varias formas. Sin embargo, con los métodos anteriores las aplicaciones gestionan sus propios usuarios y cada aplicación ha de implementar la autenticación y autorización. Otras formas comunes de autenticación son emplear <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">autenticación básica en el servidor web</a>, <a href="https://picodotdev.github.io/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/">autenticación mutua entre el servidor y el cliente</a> o con una implementación específica en la que una parte importante es <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">guardar las contraseña de forma segura con salted-password-hashing</a>.</p>
 <p>Gestionar los usuarios de en cada una aplicación se convierte en un problema cuando el número de aplicaciones y servicios son varios, ya que a lo largo del tiempo hay que dar de alta a los usuarios nuevos y de baja a los usuarios que ya no deben acceder a la aplicación por ejemplo porque ya no forman parte de una organización. Por otro, lado hay aplicaciones heredadas o <em>legacy</em> que no se pueden modificar para añadirles la autenticación que necesitan.</p>
@@ -429,8 +423,7 @@
 <p>Para añadir autenticación OpenId Connect en una aplicación web se suele configurar con el servidor web actuando de <em>proxy</em> y un <em>proxy</em> de OAuth. La función del servidor web y el <em>proxy</em> es requerir que el usuario esté autenticado en el proveedor de autenticación. De este modo entre el usuario y la página web están el servidor web, el intermediario de OAuth y el proveedor de autenticación, el esquema es el siguiente.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_300x200_fit_box_3.png" width="300" height="192" alt="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_2560x1440_fit_box_3.png" data-gallery="" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/oauth2-proxy_hu603f079a424ac97f6e7f6d862854d024_27502_300x200_fit_box_3.png" width="300" height="192" alt="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" title="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"  class="lozad "></a></p>
 <figcaption>Modos de funcionamiento de oauth2-proxy (con y sin Nginx)</figcaption>
 </figure>
 </div>
@@ -474,20 +467,16 @@
 <p>Al acceder a la página en el dominio <em>nginx.127.0.0.1.xip.io</em> se solicita el inicio de sesión o selección de cuenta.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación con cuenta de Google"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_300x200_fit_box_3.png" width="259" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Autenticación con cuenta de Google"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_300x200_fit_box_3.png" width="269" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_2560x1440_fit_box_3.png" data-gallery="" title="Autenticación con cuenta de Google"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_300x200_fit_box_3.png" width="259" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_2560x1440_fit_box_3.png" data-gallery="" title="Autenticación con cuenta de Google"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-2_hu635721abba76b76948522330ef1a0fb8_58216_300x200_fit_box_3.png" width="269" height="200" alt="Autenticación con cuenta de Google" title="Autenticación con cuenta de Google"  class="lozad "></a></p>
 <figcaption>Autenticación con cuenta de Google</figcaption>
 </figure>
 </div>
 <p>Una vez autenticado el usuario se permite el acceso a la página web, en este caso la página por defecto de Nginx, también se observa la creación de la <em>cookie</em> que mantiene la sesión.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página web y cookie de sesión"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Página web y cookie de sesión"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_2560x1440_fit_box_3.png" data-gallery="" title="Página web y cookie de sesión"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-1_hub4b5c06dc3e935800f8b36f482c08147_52146_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_2560x1440_fit_box_3.png" data-gallery="" title="Página web y cookie de sesión"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/nginx-2_hu3c12a4e79c3d921577dead10dd160106_89631_300x200_fit_box_3.png" width="269" height="200" alt="Página web y cookie de sesión" title="Página web y cookie de sesión"  class="lozad "></a></p>
 <figcaption>Página web y cookie de sesión</figcaption>
 </figure>
 </div>
@@ -538,8 +527,7 @@
 <p>Al acceder a una de las URLs del cliente se solicita la autenticación con una cuenta de Google, una vez autenticado se accede a la página que en este caso obtiene la información del usuario como el nombre y correo electrónico.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Aplicación de Spring autenticada con una cuenta de Google"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación de Spring autenticada con una cuenta de Google" title="Aplicación de Spring autenticada con una cuenta de Google"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_2560x1440_fit_box_3.png" data-gallery="" title="Aplicación de Spring autenticada con una cuenta de Google"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/spring-boot-google_hub1a6190955157553723ccf685746f840_23891_300x200_fit_box_3.png" width="255" height="200" alt="Aplicación de Spring autenticada con una cuenta de Google" title="Aplicación de Spring autenticada con una cuenta de Google"  class="lozad "></a></p>
 <figcaption>Aplicación de Spring autenticada con una cuenta de Google</figcaption>
 </figure>
 </div>
@@ -559,8 +547,7 @@
 <p>Al crear las credenciales para el cliente se indican las URL de retorno permitidas a las que se retorna al <em>proxy</em> o a la aplicación después del inicio de sesión.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Pasos para la creación de credenciales en Google para la autenticación OAuth"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_300x200_fit_box_3.png" width="226" height="200" alt="Pasos para la creación de credenciales en Google para la autenticación OAuth" title="Pasos para la creación de credenciales en Google para la autenticación OAuth"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_2560x1440_fit_box_3.png" data-gallery="" title="Pasos para la creación de credenciales en Google para la autenticación OAuth"><img src="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/google-client_hud68abf3fa98a906fbdd68adae287a444_128651_300x200_fit_box_3.png" width="226" height="200" alt="Pasos para la creación de credenciales en Google para la autenticación OAuth" title="Pasos para la creación de credenciales en Google para la autenticación OAuth"  class="lozad "></a></p>
 <figcaption>Pasos para la creación de credenciales en Google para la autenticación OAuth</figcaption>
 </figure>
 </div>
@@ -605,8 +592,7 @@
         <content type="html">
         
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Desde las primeras versiones de Java en el JDK se incluyen clases en el paquete <em>java.util.zip</em> que heredan de las del paquete <em>java.io</em> del sistema de entrada y salida con las que crear archivos comprimidos en formato Zip y comprimir datos en este formato. Comprimir los archivos que permite reducir sensiblemente el tamaño de algunos tipos de archivos como los basados en texto o ciertos archivos que de por si no están comprimidos. En otros tipos de archivo que en su formato ya están comprimidos como las imágenes JPEG o WebP la reducción de tamaño no es tan grande. Al contrario que los los algoritmos de compresión para imágenes JPEG y WebP que son com pérdida de datos, los algoritmos de compresión de archivos son sin pérdida, esto quiere decir que los datos obtenidos al comprimirlos y posteriormente descomprimirlos son exactamente los mismos que los originales.</p>
 <p>Los archivos de texto o binarios no comprimidos comprimirlos supone un considerable reducción respecto del tamaño del archivo original no comprimido, un archivo XML del 20 MiB se puede quedar en 1.5 MiB, es decir, una tasa de compresión de 13 o lo que es lo mismo el fichero comprimido ocupa 13 veces menos.</p>
@@ -664,8 +650,7 @@
 <p>Usando la aplicación integrada en el entorno de escritorio o sistema operativo para visualizar el contenido del archivo Zip se observa que contiene comprimidos el conjunto de archivos añadidos en él.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/images/archivo-zip_huf32f76c788411ab6480194366fcb1c87_65356_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Contenido de archivo Zip"><img src="https://picodotdev.github.io/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/images/archivo-zip_huf32f76c788411ab6480194366fcb1c87_65356_300x200_fit_box_3.png" width="300" height="167" alt="Contenido de archivo Zip" title="Contenido de archivo Zip"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/images/archivo-zip_huf32f76c788411ab6480194366fcb1c87_65356_2560x1440_fit_box_3.png" data-gallery="" title="Contenido de archivo Zip"><img src="https://picodotdev.github.io/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/images/archivo-zip_huf32f76c788411ab6480194366fcb1c87_65356_300x200_fit_box_3.png" width="300" height="167" alt="Contenido de archivo Zip" title="Contenido de archivo Zip"  class="lozad "></a></p>
 <figcaption>Contenido de archivo Zip</figcaption>
 </figure>
 </div>
@@ -713,8 +698,7 @@
         <content type="html">
         <![CDATA[<p><strong>En las peticiones HTTP que se hacen unos microservicios a otros o a recursos externos son varias las cosas por las que una petición HTTP es capaz de fallar. El fallo es un código de estado distinto al correcto 200, ya sea petición invalida 400, un recurso no encontrado 404, credenciales requeridas 401, credenciales inválidas 403 o un error interno de servidor 500 entre otros códigos de estado, otras posibilidades son fallos de conexión de red. Añadir trazas de las peticiones que hacen los microservicios permite obtener información con la que averiguar cual es el motivo de fallo, si además emiten las trazas con las cabeceras y parámetros en formato de la herramienta <em>curl</em> es fácil probar y reproducir el mismo error o la misma acción.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Hay varios aspectos de la aplicación en los que es muy útil añadir trazas, los más comunes son añadir trazas en determinados puntos del código que permiten averiguar cuál ha sido el camino seguido en el procesamiento, también ciertos valores de variables. Las trazas es un aspecto importante en la monitorización de una aplicación.</p>
 <p>Otra información interesante a emitir en las trazas son las sentencias SQL que genera una aplicación ya sea en el momento de desarrollo para detectar problemas de rendimiento ocasionados por un 1+N al usar algún ORM como JPA o Hibernate. También por una consulta que tiene mal rendimiento ya que no hace uso de índices lo que hace que el motor de la base de datos tenga acceder a demasiados registros o hace demasiadas <em>joins</em>. Conocer la SQL exacta o consultas con mal rendimiento que se están ejecutando permite optimizarlas.</p>
@@ -841,8 +825,7 @@
         <content type="html">
         <![CDATA[<p><strong>La depuración de un programa o <em>debug</em> permite ejecutar un programa de forma interactiva, paso a paso y examinar los valores de las variables. Esto proporciona valiosa información que permite comprobar el correcto funcionamiento de un programa o descubrir la causa de un error del que las trazas no proporcionan información suficiente. Los depuradores o <em>debuggers</em> son las aplicaciones que ejecutan el programa en modo depuración, permiten establecer puntos de ruptura, continuar la ejecución paso a paso o hasta el siguiente punto de ruptura e inspeccionar los valores de las variables. Los entornos integrados de desarrollo o IDE de Java como IntelliJ IDEA y eclipse ofrecen soporte para hacer depuración.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Pocos programas están libres de errores, algunos errores se producen cuando se cumplen ciertas condiciones en los datos que maneja una aplicación. En ocasiones descubrir la causa de un error es suficiente si la aplicación emite trazas pero en los errores más complicados o con poca información se requiere depurar el programa.</p>
 <ul>
@@ -908,8 +891,7 @@
 <p>Arrancada la máquina virtual en modo depuración hay que configurar <a href="https://www.jetbrains.com/idea/">IntelliJ</a> para que se conecte a la máquina virtual ya sea con una configuración de inicio de la aplicación o uniendo el IDE a un proceso local de la máquina virtual en modo depuración desde el menú <em>Run &gt; Attach to Process</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu6974b8f2106ab7f5552794ced458dd93_67824_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de depuración remota"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu6974b8f2106ab7f5552794ced458dd93_67824_300x200_fit_box_3.png" width="300" height="190" alt="Configuración de depuración remota" title="Configuración de depuración remota"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu6974b8f2106ab7f5552794ced458dd93_67824_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de depuración remota"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu6974b8f2106ab7f5552794ced458dd93_67824_300x200_fit_box_3.png" width="300" height="190" alt="Configuración de depuración remota" title="Configuración de depuración remota"  class="lozad "></a></p>
 <figcaption>Configuración de depuración remota</figcaption>
 </figure>
 </div>
@@ -930,8 +912,7 @@
 <p>El programa se detiene en el punto de ruptura, los valores de las variables en el contexto donde se ha detenido la ejecución se pueden inspeccionar, en este caso el valor del <em>array</em> con los argumentos del programa.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Depuración de un programa en IntelliJ IDEA"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_300x200_fit_box_3.png" width="246" height="200" alt="Depuración de un programa en IntelliJ IDEA" title="Depuración de un programa en IntelliJ IDEA"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_2560x1440_fit_box_3.png" data-gallery="" title="Depuración de un programa en IntelliJ IDEA"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_300x200_fit_box_3.png" width="246" height="200" alt="Depuración de un programa en IntelliJ IDEA" title="Depuración de un programa en IntelliJ IDEA"  class="lozad "></a></p>
 <figcaption>Depuración de un programa en IntelliJ IDEA</figcaption>
 </figure>
 </div>
@@ -939,8 +920,7 @@
 <p>El entorno de desarrollo integrado <a href="https://eclipse.org">eclipse</a> también ofrece un depurador para aplicaciones Java. Permite iniciar una aplicación en modo depuración, conectarse a una máquina virtual externa configurada con soporte para depuración, establecer puntos de ruptura con la combinación de teclas <kbd>Ctrl+Shift+B</kbd>, continuar la ejecución cuando se ha suspendido e inspeccionar los valores de las variables.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu1c0f6e385374dcdc1d23d76092d13eed_77566_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Configuración de depuración remota"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu1c0f6e385374dcdc1d23d76092d13eed_77566_300x200_fit_box_3.png" width="273" height="200" alt="Configuración de depuración remota" title="Configuración de depuración remota"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu1c0f6e385374dcdc1d23d76092d13eed_77566_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de depuración remota"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu1c0f6e385374dcdc1d23d76092d13eed_77566_300x200_fit_box_3.png" width="273" height="200" alt="Configuración de depuración remota" title="Configuración de depuración remota"  class="lozad "></a></p>
 <figcaption>Configuración de depuración remota</figcaption>
 </figure>
 </div>
@@ -954,8 +934,7 @@
 <p>Los puntos de ruptura se crean con la tecla Ctrl+Shift+B o con el botón derecho desde el espacio vertical del editor del código fuente al inicio de cada línea.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu5e4bda6d1fd04f69eaf9a20d507bc70a_93363_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Depuración de un programa en eclipse"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu5e4bda6d1fd04f69eaf9a20d507bc70a_93363_300x200_fit_box_3.png" width="300" height="187" alt="Depuración de un programa en eclipse" title="Depuración de un programa en eclipse"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu5e4bda6d1fd04f69eaf9a20d507bc70a_93363_2560x1440_fit_box_3.png" data-gallery="" title="Depuración de un programa en eclipse"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu5e4bda6d1fd04f69eaf9a20d507bc70a_93363_300x200_fit_box_3.png" width="300" height="187" alt="Depuración de un programa en eclipse" title="Depuración de un programa en eclipse"  class="lozad "></a></p>
 <figcaption>Depuración de un programa en eclipse</figcaption>
 </figure>
 </div>
@@ -995,8 +974,7 @@
         <content type="html">
         <![CDATA[<p><strong>El entorno de desarrollo son la colección de herramientas necesarias para editar código fuente, compilarlo y ejecutar sus programas. El primer paso para aprender a programar en Java es disponer de un entorno de desarrollo con las herramientas mínimas necesarias para practicar y aplicar los conocimientos aprendidos de un curso de formación o utilizando algún libro sobre el lenguaje Java. El entorno mínimo necesario consta del JDK que incluye el compilador Java, otras herramientas que facilitan la programación son un editor avanzado o IDE con asistencia de código y una herramienta de construcción para automatizar tareas.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Java es un lenguaje ya con 25 años de vida, desarrollado originalmente por <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a> y adquirida por <a href="https://www.oracle.com/">Oracle</a> con toda su propiedad intelectual incluyendo la plataforma y lenguaje Java. Es uno de los lenguajes de programación que ha mantenido durante muchos años la primera posición como el lenguaje más utilizado. Algunas de sus características que han contribuido a su éxito son independencia del entorno de ejecución y <em>bytecode</em>, recolección de basura, clases de la API y documentación Javadoc, legibilidad del código y compatibilidad hacia atrás además de ser un lenguaje fuertemente tipado y orientado a objetos.</p>
 <p>El lenguaje de programación Java es un lenguaje compilado, eso tiene sus ventajas y algunos inconvenientes, la mayoría son ventajas. Uno de sus inconvenientes es que ejecutar un programa Java requiere el paso de compilación, a diferencia de los lenguajes dinámicos e interpretados que pueden ejecutarse desde el código fuente pero a riesgo de que en tiempo de ejecución se produzcan errores que en los lenguajes compilados se detectan en tiempo de compilación.</p>
@@ -1070,8 +1048,7 @@
 <p>La herramienta <a href="https://sdkman.io/">SDKMAN</a> sirve para administrar los JDK, además de diferentes versiones hay diferentes distribuciones del JDK, todas parten del código fuente del proyecto OpenJDK y diferentes organizaciones proporcionan su distribución compilada y usable del JDK  sin cambios o con algunos cambios adicionales. También sirve para instalar otras herramientas como una herramienta de construcción de proyectos como <a href="https://gradle.org/">Gradle</a> o los lenguajes <a href="https://kotlinlang.org/">Kotlin</a> y <a href="https://www.groovy-lang.org/">Groovy</a>.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sdkman.svg" width="100" height="100" alt="SDKMAN" title="SDKMAN"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/sdkman.svg" width="100" height="100" alt="SDKMAN" title="SDKMAN"  class="lozad "></p>
 </figure>
 </div>
 <p>La herramienta SDKMAN se instala y usa con los siguientes comandos.</p>
@@ -1097,8 +1074,7 @@
 <p>En programas y proyectos grandes con muchas clases no se usa el compilador del JDK directamente y su comando para compilar las clases sino que se suele utilizar una herramienta de construcción, una de ellas es <a href="https://maven.apache.org/">Maven</a> que con un archivo de descripción del proyecto en formato XML y siguiendo varias convenciones compila el programa, otra herramienta es Gradle que a diferencia de Maven su archivo descriptor de proyecto es con el lenguaje Groovy o Kotlin menos verboso y propenso a errores que el XML.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gradle.svg" width="100" height="100" alt="Gradle" title="Gradle"  class="lozad "></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gradle.svg" width="100" height="100" alt="Gradle" title="Gradle"  class="lozad "></p>
 </figure>
 </div>
 <p>Además de para compilar un proyecto, una herramienta de construcción proporciona otras funcionalidades como ejecutar las pruebas unitarias o de integración, <a href="https://picodotdev.github.io/blog-bitix/2017/09/como-generar-la-documentacion-javadoc-con-gradle/">generar la documentación de las clases</a> de la documentación incluida en el código fuente con <a href="https://picodotdev.github.io/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">la herramienta Javadoc</a>, descargar las dependencias de librerías definidas por el proyecto, empaquetar las clases del proyecto en una librería <em>jar</em> y distribuir ese artefacto en los repositorios de librerías para otros proyectos.</p>
@@ -1154,8 +1130,7 @@
 <p>Sin embargo, en la plataforma Java la mayor parte de los programadores utilizamos un editor especializado para editar código fuente con un entorno integrado de desarrollo o IDE. En la plataforma Java los IDE más populares son <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> que tiene una licencia comercial pero una versión para la comunidad gratuita muy completa, <a href="https://eclipse.org">eclipse</a> y <a href="https://netbeans.apache.org/">NetBeans</a> tienen una licencia de software libre y son gratuitos aún así por sus características y buen funcionamiento IntelliJ se ha convertido en una de los preferidos de los programadores Java.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/images/intellij-holamundo_hu749dadd6616532031c371d440a984d75_104314_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="IntelliJ IDEA"><img src="https://picodotdev.github.io/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/images/intellij-holamundo_hu749dadd6616532031c371d440a984d75_104314_300x200_fit_box_3.png" width="267" height="200" alt="IntelliJ IDEA" title="IntelliJ IDEA"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/images/intellij-holamundo_hu749dadd6616532031c371d440a984d75_104314_2560x1440_fit_box_3.png" data-gallery="" title="IntelliJ IDEA"><img src="https://picodotdev.github.io/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/images/intellij-holamundo_hu749dadd6616532031c371d440a984d75_104314_300x200_fit_box_3.png" width="267" height="200" alt="IntelliJ IDEA" title="IntelliJ IDEA"  class="lozad "></a></p>
 <figcaption>IntelliJ IDEA</figcaption>
 </figure>
 </div>
@@ -1167,19 +1142,14 @@
 <p>El primer paso para usar GNU/Linux es <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">elegir una distribución GNU/Linux</a> según nuestras preferencias, una de las más populares y recomendadas para usuarios que dan el salto desde Windows es Ubuntu. El siguiente paso es <a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">descargar e instalar Ubuntu paso a paso desde cero</a> con un instalador guiado con varios pasos en los que hay que hacer poco más que seleccionar el idioma, la disposición del teclado y nombre de usuario, en menos de una hora se instala <a href="https://www.ubuntu.com/">Ubuntu</a>. Uno de los motivos por el que muchos usuarios siguen usando Windows son los juegos, con <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/">Wine para ejecutar programas de Windows en GNU/Linux</a> y <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/">la plataforma de juegos Steam</a> la mayoría de los juegos desarrollados para Windows funcionan en GNU/Linux.</p>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="100" height="100" alt="Ubuntu" title="Ubuntu"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="100" height="100" alt="Ubuntu" title="Ubuntu"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora.svg" width="100" height="100" alt="Fedora" title="Fedora"  class="lozad ">
-
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="100" height="100" alt="Arch Linux" title="Arch Linux"  class="lozad "></p>
 </figure>
 </div>
 <div class="media">
 <figure>
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="100" height="100" alt="GNU" title="GNU"  class="lozad ">
-
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="100" height="100" alt="GNU" title="GNU"  class="lozad ">
 <img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="100" height="100" alt="Linux" title="Linux"  class="lozad "></p>
 </figure>
 </div>
@@ -1208,8 +1178,7 @@
         <content type="html">
         <![CDATA[<p><strong>Las aplicaciones distribuidas utilizan la comunicación de mensajes para notificar de la ocurrencia de ciertos eventos en el sistema que los interesados reciben. En el envío y recepción de mensajes pueden ocurrir dos situaciones que hay que manejar, una es garantizar que cada mensaje se envíe al menos una vez para lo que se emplea el patrón <em>outbox pattern</em> y la segunda es no procesar un evento recibido por duplicado para lo que se emplea deduplicación de mensajes.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>El patrón <em>outbox pattern</em> garantiza que los eventos de dominio se envíen al menos una vez, pero que se envíe una vez no impide que sean enviados varias veces. La deduplicación de eventos permite evitar procesar el mismo evento varias veces si se envía repetido. Una forma de conseguir de duplicación de eventos es asignando a cada evento un identificativo único y que la parte receptora de los eventos compruebe si el evento recibido ha sido ya procesado. La parte receptora para determinar si un evento ha sido ya procesado guarda los identificativos de los ya procesados.</p>
 <p>Los servicios de una aplicación pueden <a href="https://picodotdev.github.io/blog-bitix/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/">utilizar comunicación con mensajes mediante RabbitMQ</a>. La parte receptora lee los mensajes y los procesa en la misma transacción que el resto de operaciones guardando en la base de datos el identificativo del evento procesado, de modo que si es recibido varias veces la parte receptora lo deduplica. Si la transacción falla el evento no se marca como recibido y el sistema de mensajería lo mantiene para enviarlo de nuevo hasta que se procese correctamente, si la transacción se completa pero el mensaje del evento no se notifica como procesado correctamente en el sistema de mensajería el sistema de mensajería lo enviará de nuevo pero la parte receptora lo deduplica. Si la parte receptora completa la transacción y notifica como procesado el mensaje en el sistema de mensajería el sistema de mensajería ya no lo enviará de nuevo.</p>
@@ -1306,8 +1275,7 @@
         <content type="html">
         <![CDATA[<p><strong>Un bus de comandos y consultas permite separar en una aplicación las operaciones de modificación y operaciones de obtención de datos. Esto permite si es requerido dos bases de datos diferentes utilizando CQRS, una base de datos para operaciones de modificación y una base de datos para operaciones de consulta. Aún teniendo solo una base de datos para ambas operaciones un bus de comandos y eventos permite independizar a la aplicación de las interfaces con las que se use ya sea REST, GraphQL, línea de comandos o mensajería como RabbitQM y crear manejadores de operaciones siguiendo los principios SOLID de diseño.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Las aplicaciones entre sus tareas están la de realizar operaciones de modificación y operaciones de lectura de la base de datos. Un comando representa la solicitud de una operación de modificación, tiene la característica de que no devuelven datos pero modifican datos. Las consultas representan la solicitud de información de la base de datos, a diferencia de los comandos devuelven datos pero no realizan cambios en la base de datos de modo que son idempotentes y se pueden repetir cuantas veces se quiera.</p>
 <p>A medida que una aplicación crece necesita nuevos comandos y consultas, estando en una o varias clases de servicio estas requieren modificarse al añadir nuevos comandos o consultas, al mismo tiempo las clases de servicio tendrán el conjunto completo de todas las dependencias que necesiten todas las operaciones cuando muchas de las operaciones solo necesitan un pequeño conjunto de dependencias. La organización del código con servicios suele originar clases con múltiples responsabilidades convirtiéndose en un potencial problema de mantenimiento.</p>
@@ -1471,8 +1439,7 @@
         <content type="html">
         <![CDATA[<p><strong>Un bus de eventos es el mecanismo por el que los eventos de dominio de DDD son publicados, son tratados y enviados a sus receptores de forma directa, mediante un <em>middleware</em> u de otra forma. El concepto bus de eventos para eventos de dominio se materializa de forma muy sencilla en código, simplemente una interfaz con un método. Cambiando la implementación de la interfaz un bus de eventos envía los eventos a un sistema de mensajería como RabbitMQ, persiste los eventos en base de datos como parte del <em>outbox pattern</em> o simplemente los imprime en la consola como en el ejemplo del artículo.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En la teoría de <em>Domain Driven Design</em> o DDD se mencionan los eventos de dominio. Un evento de dominio es una notificación de algo que ha sucedido en el sistema en lo que algunas partes del mismo están interesadas en ser notificadas. Dado que un evento es algo que ha sucedido suelen tener un nombre con un verbo en pasado como <em>OrderCreated</em>, otra de sus propiedades es que no indican que acción se ha de realizar como sería el caso de un nombre con <em>SendBuyerOrderEmail</em>. Las mismas características de las aplicaciones que se comunican con mensajes se aplican a las aplicaciones que generan eventos de dominio, la comunicación en el sistema se realiza de forma desacoplada, el emisor y el receptor no se conocen y de forma desincronizada ni el emisor ni el receptor necesitan de la disponibilidad del otro si se realiza con un <em>middleware</em>.</p>
 <p>En la teoría de <em>Domain Driven Design</em> esta forma de comunicación es útil para comunicar diferentes <em>bounded context</em>. Un <em>bounded context</em> se encarga de una área funcional de la aplicación con alta cohesión y su propio lenguaje de dominio. El lenguaje de dominio son los conceptos que aplican en un <em>bounded context</em> y cuales son las propiedades relevantes dentro del mismo, el término usuario en un supuesto <em>bounded context</em> de registro y adminisitración de la cuenta es probable no sea el mismo que en el <em>bounded context</em> de órdenes de compra, en el primero el usuario puede tener varias direcciones y en el segundo solo interesa una, por otro lado en el <em>bounded context</em> de inventario ni siquiera exista el término usuario o signifique otra cosa totalmente diferente.</p>
@@ -1487,8 +1454,7 @@
 <p>Una solución es utilizar únicamente la base de datos. Los eventos se guardan en una tabla en la misma transacción que el resto de datos, de tal modo que si la transacción finaliza correctamente los eventos generados están almacenados y si la transacción falla no se guarda ninguno. Una vez los eventos están guardados otro proceso se encarga de emitirlos. Nuevamente este proceso que emite los eventos puede fallar y ocasionar que un evento sea lanzado dos veces pero al menos garantiza que si se ha generado un evento se emita al menos una vez en el sistema. Este es el patón <em>outbox pattern</em>.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Outbox Pattern"><img src="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_650x450_fit_box_3.png" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_2560x1440_fit_box_3.png" data-gallery="" title="Outbox Pattern"><img src="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_650x450_fit_box_3.png" width="650" height="405" alt="Outbox Pattern" title="Outbox Pattern"  class="lozad "></a></p>
 <figcaption>Outbox Pattern</figcaption>
 </figure>
 </div>
@@ -1663,8 +1629,7 @@
         <content type="html">
         <![CDATA[<p><strong>El lenguaje de programación C utiliza códigos de retorno como forma de gestionar errores, Java con excepciones y Go y Rust de forma similar a C códigos de retorno pero con la posibilidad de devolver varios valores, uno para el valor en caso correcto y un valor en caso de error. La gestión de errores es parte esencial de los programas para que funcionen correctamente estando preparados en los casos error posibles.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Una parte importante de los programas está dedicada a la gestión de errores y a tratar los posibles errores. Los posibles errores son desde una entrada de datos con un formato inesperado, datos no válidos, si el programa se comunica por red que la comunicación falle, que ocurra que un archivo no existe y no se pueda abrir o ya exista y no se pueda crear.</p>
 <p>Dado que las condiciones de error son numerosas es importante al usar un código ya sea función o método que condiciones de error se pueden producir al ejecutarlo. Algunos lenguajes catalogan los errores como recuperables como sería que un archivo ya existe pudiendo informar al usuario o irrecuperables como falta de memoria en el sistema, un fallo del hardware o por un fallo de programación con el acceso a una posición fuera de rango en un <em>array</em>.</p>
@@ -1739,12 +1704,10 @@
         <content type="html">
         <![CDATA[<p><strong>En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/zipkin.svg" width="200" height="211" alt="Zipkin" title="Zipkin"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/zipkin.svg" width="200" height="211" alt="Zipkin" title="Zipkin"  class=""></p>
 </div>
 <p>El un sistema basado en microservicios unos servicios depende de otros y se comunican haciendo llamadas entre ellos. Las llamadas entre los servicios son un punto de fallo y problemas que conviene monitorizar para que el conjunto de la aplicación funcione correctamente. Con un número importante de servicios la monitorización y la trazabilidad es una de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">funcionalidades de las aplicaciones basadas en microservicios</a>, muchas de estas funcionalidades son proporcionadas de forma específica por una herramienta.</p>
 <p>En el caso de <a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/">trazabilidad en microservicios con Sleuth</a> proporciona un identificador global que permite correlacionar todas las trazas desencadenadas por una petición en los diferentes servicios, con el identificador global de una traza se puede obtener el resto de trazas del mismo servicio. Con el identificador global es posible acceder al registro de trazas y obtener todas las correlacionadas con el identificador global como sería el caso de <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">guardar las trazas en Elasticsearch, Logstash y Kibana</a>. Pero las trazas emitidas por los microservicios no ofrecen métricas de cuánto tiempo ha tardado cada uno de los microservicios en su ejecución en devolver la respuesta y sin nada adicional no permite correlacionar las trazas de un servicio con las trazas del servicio llamado.</p>
@@ -1797,10 +1760,8 @@
 <p>Tanto el microservicio cliente como el microservicio servidor tienen Sleuth integrado y envían de forma asíncrona cuando terminan las peticiones HTTP la información de trazabilidad a Zipkin. Con el <em>traceId</em> de una transacción se observa en Zipkin la cadena de llamadas entre los microservicios y sus tiempos de respuesta. En el ejemplo solo hay dos pero podrían en un caso real quizá sean tres, cuatro o más ya sea porque cada servicio utiliza otro o porque un mismo servicio utiliza varios, ver esta información de forma gráfica es mucho más fácil de analizar que solo con las trazas correlacionadas en ELK.</p>
 <div class="media">
 <figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Nomad" title="Interfaz web de Nomad"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_2560x1440_fit_box_3.png" data-gallery="data-gallery" title="Interfaz web de Zipkin"><img src="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Zipkin" title="Interfaz web de Zipkin"  class="lozad "></a></p>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_2560x1440_fit_box_3.png" data-gallery="" title="Interfaz web de Nomad"><img src="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Nomad" title="Interfaz web de Nomad"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_2560x1440_fit_box_3.png" data-gallery="" title="Interfaz web de Zipkin"><img src="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_300x200_fit_box_3.png" width="300" height="180" alt="Interfaz web de Zipkin" title="Interfaz web de Zipkin"  class="lozad "></a></p>
 <figcaption>Interfaz web de Nomad y Zipkin</figcaption>
 </figure>
 </div>
@@ -1857,8 +1818,7 @@
         <content type="html">
         <![CDATA[<p><strong>Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las <em>lambdas</em> de Java 8 o los módulos de Java 9, en Java 15 se añaden las <em>sealed classes</em>.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>En septiembre del 2020 se ha publicado la versión 15 de Java siguiendo el calendario propuesto desde la versión de Java 9 de una nueva versión cada seis meses y de una versión de soporte a largo plazo cada tres años, la primera LTS ha sido Java 11 a la que sucederá Java 17 cómo LTS en septiembre de 2021.</p>
 <p>Con este calendario de publicaciones tan frecuente las novedades son varias en cada nueva versión aunque algunas son simplemente versiones preliminares que pueden cambiar ligeramente en siguientes versiones destinadas a evaluar y probar las funcionalidades que se incorporarán de forma definitiva con posterioridad. Aunque sean versiones preliminares se pueden usar con normalidad, simplemente hay que tener en cuenta que en versiones posteriores requieran modificaciones en el código fuente o lo que es lo mismo no se garantiza la compatibilidad hacia atrás hasta que sean declaradas como una versión definitiva.</p>
@@ -1989,12 +1949,10 @@
         <content type="html">
         <![CDATA[<p><strong>Para crear una API expuesta de forma externa o para ofrecer un servicio a otros servicios en una arquitectura de microservicios ha varias opciones. Tres de las opciones son REST, GraphQL y gRPC cada una con sus características que la hacen mas adecuadas según los requerimientos de la aplicación. gRPC es especialmente adecuada para servicios que requieran un alto rendimiento y solo necesite consumirse de forma interna. gRPC es una implementación de llamada a procedimiento remoto o RPC agnóstica del lenguaje de programación de alto rendimiento al emplear un formato de intercambio de datos binario más eficiente que JSON.</strong></p>]]>
         <![CDATA[<div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grpc.png" width="300" height="128" alt="gRPC" title="gRPC"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/grpc.png" width="300" height="128" alt="gRPC" title="gRPC"  class=""></p>
 </div>
 <div class="logotypes">
-<p>
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
 </div>
 <p>Desarrollar una API con interfaz REST o <a href="https://graphql.org/">GraphQL</a> es la opción empleada mayoritariamente en los casos que hay que proporcionar datos y acceso a operaciones de forma programática a otra aplicación. Las API REST se basan en los elementos sobre los cuales está construida la web como el protocolo HTTP y su semántica junto con las operaciones de creación, modificación, lectura y eliminación organizando las operaciones alrededor de los recursos que se exponen mediante URLs utilizando JSON como formato de intercambio de datos basado en texto. GraphQL tiene importantes diferencias con REST al utilizar un esquema para definir el formato de los datos y la posibilidad de realizar varias consultas en la misma petición pero igualmente se basa en el protocolo HTTP y JSON.</p>
 <ul>
