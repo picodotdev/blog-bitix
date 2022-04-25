@@ -121,10 +121,7 @@
 <figcaption>Página web de Clouding.io</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="infraestructura-_cloud_-de-clouding">Infraestructura <em>cloud</em> de Clouding</h3>
 <p>Algunas de las características de Clouding.io algo más detalladas en su página web es que ofrecen soporte en español y discos SSD rápidos para el almacenamiento además de las siguientes:</p>
 <ul>
@@ -570,7 +567,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/102785" target="_blank"><amp-img src="https://asciinema.org/a/102785.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/102785.js" id="asciicast-102785" async></script>
+<noscript><a href="https://asciinema.org/a/102785" target="_blank"><img src="https://asciinema.org/a/102785.png" width="650" height="450"></a></noscript>
 </div>
 <p>La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.</p>
 <p>Los archivos <em>unit</em> propios deben ser ubicados en el directorio <em>/etc/systemd/system/</em>, siendo el directorio <em>/usr/lib/systemd/system/</em> donde se ubican los instalados por los paquetes del sistema. Iniciado el servicio con el comando <code>sudo systemctl start spring-boot-jaxrs.service</code>, si queremos habilitarlo con el inicio del sistema usamos el comando <code>sudo systemctl enable spring-boot-jaxrs.service</code>. Para ver el estado del servicio usamos el comando <code>sudo systemctl status spring-boot-jaxrs.service</code>.</p>
@@ -1085,10 +1083,7 @@
 <p>It is targeted at the proficient GNU/Linux user, or anyone with a do-it-yourself attitude who is
 willing to read the documentation, and solve their own problems.</p>
 </blockquote>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="la-instalación-del-sistena-con-arch-linux">La instalación del sistena con Arch Linux</h3>
 <p>En Arch Linux con su <a href="https://wiki.archlinux.org/index.php/Arch_Linux">forma de hacer las cosas</a> deja al usuario el poder de personalizar el sistema completamente a sus necesidades y preferencias únicamente limitado por su determinación de conseguirlo. Solo proporciona <a href="https://www.archlinux.org/download/">el medio con el que iniciar la instalación</a> que comienza con una terminal y un <em>prompt</em> del sistema, una <a href="https://wiki.archlinux.org/index.php/Installation_guide">guía de instalación</a> junto con las <a href="https://wiki.archlinux.org/index.php/General_recommendations">recomendaciones generales</a> y <a href="https://wiki.archlinux.org/">una de las mejores fuentes de información en GNU/Linux</a> además de completa de cada aspecto que necesitemos en la instalación. Después de haber leído las páginas relevantes de la wiki de Arch Linux, seguramente más de una y dos veces, hasta comprenderla en su mayor parte se empieza a realizar la receta que contenga los comandos necesarios hasta completar la instalación.</p>
 <p>En multitud de blogs y vídeos de YouTube hay guías que contienen los comandos y las explicaciones necesarias. Cualquier usuario de Arch Linux con un blog seguramente ha publicado un artículo con su guía de instalación (sí, <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">yo también publiqué la mía</a>). Un usuario que quiera instalar Arch Linux debe leer varios de esos artículos además de la guía oficial de instalación. Según la filosofía de Arch Linux este proceso de aprendizaje se considera necesario y permite una mayor comprensión del sistema.</p>
@@ -1178,7 +1173,8 @@ willing to read the documentation, and solve their own problems.</p>
 <h3 id="vídeo-de-instalación-del-sistema-base-con-alis">Vídeo de instalación del sistema base con alis</h3>
 <p>El siguiente vídeo capturado con <a href="https://asciinema.org/">asciinema</a> muestra como utilizando alis se instala Arch Linux en una computadora con el proceso completo de la instalación base del sistema.</p>
 <div class="media">
-<a href="https://asciinema.org/a/418524" target="_blank"><amp-img src="https://asciinema.org/a/418524.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
+<noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
 </div>
 <h3 id="código-fuente-de-alis">Código fuente de alis</h3>
 <p>El código del instalador no es muy complicado y mucho más sencillo que otros <em>scripts</em> interactivos similares, al no mezclar los comandos de la instalación con los mensajes interactivos que hacen preguntas y esperan respuestas, además después de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario introduzca más datos de forma interactiva.</p>

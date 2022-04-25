@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Las 6&#43;2 formas normales de las bases de datos relacionales</h1>
     <p class="information">
@@ -265,6 +267,10 @@
       
 
 
+      
+        
+        
+      
       <p>Las bases de datos relacionales desarrolladas en los años 70 son la forma más utilizada aún en la actualidad para almacenar la información en la mayoría de las aplicaciones informáticas de cualquier ámbito. Los datos se guardan en tablas separadas en campos y con un tipo, los datos almacenados en cada tabla están relacionados entre sí, por ejemplo, podría ser la información de una persona, nombre, apellidos, fecha de nacimiento, ciudad de residencia, teléfono, &hellip; Además las tablas pueden relacionarse con otras tablas. Siguiendo el ejemplo podríamos tener una tabla de películas o libros y relacionarlas con la tabla de personas de forma que conozcamos que películas ha visto o libros ha leído una persona, de cada película podemos guardar su director, de los libros el autor y de cada uno de ellos los actores o personajes.</p>
 <p>Al almacenar la información en la base de datos debemos evitar las redundancias e inconsistencias de forma que la información que obtengamos al consultarla esté libre de inconsistencias. Por ejemplo, guardando la ciudad de residencia en la tabla persona deberemos actualizar todos los registros de las personas que residan en ella al cambiar de nombre a una ciudad o acabaremos con que la misma ciudad está referida por varios términos. Para evitar inconsistencias en las bases de datos se definieron las formas normales, hay seis formas normales y dos adicionales aunque normalmente con aplicar hasta la tercera es suficiente ya que por las relaciones de los datos no es necesario aplicar formas normales superiores.</p>
 <p>Las formas normales son las siguientes:</p>
@@ -281,9 +287,9 @@
 <li><a href="https://es.wikipedia.org/wiki/Denormalizaci%C3%B3n_%28base_de_datos%29">Desnormalización</a></li>
 </ul>
 <p>En los enlaces de la wikipedia está incluida una explicación más detallada de cada forma normal, a continuación solo haré un breve resumen. En anexo final del libro <a href="https://amzn.to/2G2oRN1" rel="sponsored">SQL Antipatterns</a> también hay una explicación muy detallada de las diferentes formas normales, que problemas pueden ocasionar y como corregirlos. En el libro se tratan varias recomendaciones al trabajar con bases de datos relacionales y evitar emplear prácticas consideradas como malas, un uno de sus capítulos se trata <a href="https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">como guardar relaciones jerárquicas en una base de datos relacional</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#primera-forma-normal-1fn">Primera forma normal, 1FN</a></li>
     <li><a href="#segunda-forma-normal-2fn">Segunda forma normal, 2FN</a></li>
@@ -299,8 +305,7 @@
     </li>
     <li><a href="#desnormalización">Desnormalización</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="primera-forma-normal-1fn">Primera forma normal, 1FN</h3>
 <p>No hay grupos repetidos de columnas, ni una columna guarda múltiples valores. Por ejemplo, si de una persona queremos guardar varios teléfonos deberíamos crear una tabla de teléfonos y relacionarla con la tabla de usuarios.</p>
 <p>En el caso del ejemplo los grupos repetidos de columnas implica que de una persona solo se pueden guardar hasta tres teléfonos como máximo, han de crearse las columnas por adelantado aunque no se usen y si hay que actualizar un teléfono no sabríamos en que campo de la tabla está obligando a realizar una consulta de actualización en los tres campos.</p>
@@ -401,6 +406,7 @@
 </div>
 
 
+        
         
     
     

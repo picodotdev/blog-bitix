@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Tareas programadas de forma periódica con Quartz y Spring en Java</h1>
     <p class="information">
@@ -256,6 +258,10 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
@@ -264,9 +270,9 @@
 <p><a href="https://spring.io/">Spring</a> también integra una solución sencilla para ejecutar tareas de forma programada disponible para las aplicaciones que usen <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> sin necesidad de dependencias adicionales.</p>
 <p>El propio JDK desde la versión 5 incorpora varias clases para ejecutar tareas programadas sin ninguna dependencia en el proyecto ni siquiera de Spring.</p>
 <p>La programación de las tareas también se puede realizar a nivel de sistema operativo. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> con la utilidad <a href="https://wiki.archlinux.org/index.php/Cron">cron</a> y con <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> se puede programar tareas. Sin embargo, realizar la programación a nivel de sistema operativo se crean nuevos procesos y la configuración está externalizada de la aplicación. Utilizar Quartz, Spring o las clases del JDK tiene la ventaja de que la configuración de la programación de las tareas está más en el ámbito de la programación que en la de configuración de sistemas, el primer caso los cambios los hace el programador, en el segundo los hace la persona a cargo de los sistemas.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#tareas-programadas-con-quartz-y-spring-boot">Tareas programadas con Quartz y Spring Boot</a></li>
     <li><a href="#tareas-programadas-con-spring">Tareas programadas con Spring</a></li>
@@ -274,8 +280,7 @@
     <li><a href="#elegir-entre-usar-quartz-usar-spring-o-usar-las-clases-del-jdk">Elegir entre usar Quartz, usar Spring o usar las clases del JDK</a></li>
     <li><a href="#ejemplo-de-tareas-programadas-con-quartz-spring-y-las-clases-del-jdk">Ejemplo de tareas programadas con Quartz, Spring y las clases del JDK</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="tareas-programadas-con-quartz-y-spring-boot">Tareas programadas con Quartz y Spring Boot</h3>
 <p>Entre las muchas itegraciones que ofrece Spring una de ellas es para Quartz. Las clases importantes que ofrece Quartz son:</p>
 <ul>
@@ -396,6 +401,7 @@
 </div>
 
 
+        
         
     
     

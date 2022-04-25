@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Comandos para crear una autoridad de certificación (CA) con OpenSSL</h1>
     <p class="information">
@@ -265,14 +267,18 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="400" height="124" alt="OpenSSL" title="OpenSSL" class="" loading="false"></p>
 </div>
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</a></li>
     <li><a href="#crear-la-clave-y-certificado-de-la-autoridad-de-certificación-intermedia">Crear la clave y certificado de la autoridad de certificación intermedia</a></li>
@@ -280,8 +286,7 @@
     <li><a href="#añadir-el-certificado-de-la-ca-en-el-navegador-firefox">Añadir el certificado de la CA en el navegador Firefox</a></li>
     <li><a href="#revocar-y-renovar-un-certificado">Revocar y renovar un certificado</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</h3>
 <p>El certificado de una autoridad de certificación es un certificado autofirmado que se utilizar para comprobar que la firma de los certificados que emite la entidad es válida. Es necesario crear un par de claves asimétricas privada y pública y posteriormente generar su certificado.</p>
 <div class="code">
@@ -481,6 +486,7 @@
 </div>
 
 
+        
         
     
     

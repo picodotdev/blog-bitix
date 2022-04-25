@@ -30,10 +30,7 @@
 <p>SSH es un protocolo seguro y cifrado que utiliza como método de autenticación un usuario y contraseña o para mayor seguridad una clave SSH, también se puede configurar para añadir adicionalmente un segundo factor de autenticación o 2FA para mayor seguridad.</p>
 <p>En el artículo específico comento como <a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">configurar SSH con autenticación mediante clave pública y privada</a>, en otro artículo comento como tener <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">acceso simple y seguro a sistemas remotos con Boundary</a>.</p>
 <p>Es recomendable <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">usar segundo factor de autenticación en servicios como Google, Amazon y Paypal</a> y otros relevantes que lo ofrezcan. También es recomendable utilizar un <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">gestor de contraseñas como KeePassXC</a> para guardar las contraseñas únicas y como aplicación para generar los <em>tokens</em> de 2FA.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="instalar-el-módulo-ssh-de-google-2fa">Instalar el módulo SSH de Google 2FA</h3>
 <p>Usar 2FA con SSH requiere instalar un módulo de autenticación que valide el proceso de autenticación. El módulo permite usar los <em>tokens</em> de un solo uso en el proceso de autenticación adicionalmente a la contraseña o clave SSH.</p>
 <p>En los sistemas basados en <a href="https://www.debian.org/">Debian</a> como <a href="https://www.ubuntu.com/">Ubuntu</a> hay que instalar el siguiente paquete que añade un nuevo módulo de PAM para 2FA.</p>
@@ -185,10 +182,7 @@
 <p>El acceso de forma remota a sistemas es necesario y útil más cuando las máquinas ya no son máquinas físicas sino que están en centros de datos en diferentes ubicaciones en el mundo e incluso son máquinas lógicas como las máquinas virtuales ejecutadas en la computación de la nube.</p>
 <p>El acceso a las máquinas no solo se requiere para las aplicaciones de forma automatizada sino que en algunas situaciones se requiere acceso manual para realizar tareas administrativas o conexión con clientes específicos como escritorio remoto o clientes de bases de datos.</p>
 <p>Permitir el acceso remoto es necesario, sin embargo, requiere seguridad de forma que únicamente los usuarios autorizados accedan únicamente a los sistemas autorizados.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="funcionamiento-acceso-remoto-tradicional">Funcionamiento acceso remoto tradicional</h3>
 <p>La forma habitual de proporcionar acceso remoto a sistemas de una red privada es mediante una VPN o a través de un sistema intermediario denominado bastión. Estos conceptos proporcionan acceso remoto en ciertos aspectos de forma segura pero no están exentas de problemas e inconvenientes.</p>
 <p>El primer problema es que una vez conectado a una VPN o un bastión se tiene acceso a cualquier ordenador de la red privada a la que uno se ha conectado. Un usuario que necesite acceso a una máquina potencialmente tiene conectividad con otros sistemas en esa red, lo que es riesgo de seguridad por permitir la posibilidad de accesos a sistemas no autorizados.</p>
@@ -430,10 +424,7 @@
 <p>La seguridad de los datos es muy importante, ciertos datos personales sensibles y que permiten identificar a personas están protegidos por leyes. El no cumplimiento de las leyes implica potencialmente a una empresa recibir importantes multas o descrédito que afecte a la viabilidad del negocio o suponga una reducción de facturación. Algunos datos candidatos a ser cifrados o transformados al guardarse en base de datos son, datos personales e identificativos como nombre y apellidos, DNI, dirección, tarjetas de crédito, bancarios u otros datos que estén regulados por las leyes de protección de datos.</p>
 <p>Los datos protegidos incluso no es deseable que sean accesibles por cualesquiera trabajadores de la propia empresa, solo debería tener acceso a ellos aquellos trabajadores que los necesitan para desempeñar su trabajo y ofrecer el servicio que proporciona la empresa. Para el desarrollo de una aplicación los programadores necesitan una base de datos con el mismo esquema de la base de datos de producción y un conjunto de datos, una opción es <a href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/">obtener una copia de la base de datos</a> de producción, sin embargo, obtener una copia de la base de datos de producción otorga acceso a los programadores acceso a los datos, al hacer la copia es posible aplicar un proceso que ofusque los datos sin embargo esto sigue sin solventar el problema de mantener seguros los datos en la propia base de datos de producción o sus réplicas. Si algunos datos se guardan cifrados aunque se tenga acceso a la base de datos los datos cifrados siguen protegidos.</p>
 <p>Una de las funcionalidades que ofrece <a href="https://www.vaultproject.io/">Vault</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> es ofrecer el cifrado y descifrado como servicio. Este artículo está basado en la <a href="https://learn.hashicorp.com/tutorials/vault/eaas-spring-demo?in=vault/encryption-as-a-service">guía de Vault sobre la funcionalidad de cifrado y descifrado</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</h3>
 <p>Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar credenciales de acceso bajo demanda a recursos como bases de datos</a> entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.</p>
 <p>Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplicaciones no han de mantener credenciales para el acceso a una base de datos sino que es Vault el que crea las credenciales válidas únicamente por un periodo de tiempo corto con posibilidad de renovación. Esto aumenta la seguridad ya que una aplicación no ha de mantener unas credenciales para la base de datos válidas por un tiempo indefinido, al mismo tiempo las claves de cifrado están centralizadas en vez estar incluidas en cada aplicación. En caso necesario Vault es capaz de revocar las credenciales de cualquier aplicación.</p>
@@ -606,10 +597,7 @@
 <p>Hay herramientas que usando un sintetizador de voz permiten transformar un texto en un audio, dando solución a dos de los problemas de la grabación de voz a partir de texto. Al convertir un texto a voz es más fácil la edición ya que basta simplemente cambiar el texto y generar de nuevo el audio y es más rápido ya que la generación del audio es más rápido que grabarlo en tiempo real. Algunos sintetizadores y herramientas además permiten seleccionar el idioma de la voz o ser una voz masculina o femenina.</p>
 <p>Una de estas herramientas es <a href="https://github.com/mozilla/TTS">TTS: Text-to-Speech</a>, un proyecto de <a href="https://www.mozilla.org/">Mozilla</a> y las ofrecidas por Amazon, Google y Microsoft. Esta y otras herramientas alternativas de conversión de texto a voz producen audios de voz bastante fieles a la voz humana natural. Para ayudar en la interpretación del texto se enriquece con un lenguaje de marcado que indica a la computadora como entonar e interpretar el texto.</p>
 <p>En la actualidad hay herramientas de conversión de texto a voz natural que producen resultados difícilmente indisinguibles de si la voz ha sido producida por un humano por una computadora. Otra tarea para la que hay herramientas que producen buenos resultados es <a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">reconocimiento de texto en imágenes con OCR</a>. Estas son tareas aparentemente simples pero significativamente complejas para una computadora que a pesar de su rapidez y capacidad enorme de cálculo no posee la inteligencia humana.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="convertir-texto-a-voz-natural">Convertir texto a voz natural</h3>
 <h4 id="herramientas-web">Herramientas web</h4>
 <p>Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio sin necesidad de software adicional a un navegador web. Algunas con limitaciones de número de caracteres pero suficiente para un uso básico. También algunas permiten descargar el archivo de audio, en caso de que no ofrezcan la descargar se puede reproducir y capturar con el <a href="https://www.videolan.org/vlc/">reproductor multimedia VLC</a> en la opción <em>Captura de audio &gt; Monitor de audio interno (HDMI) &gt; Guardar</em>.</p>
@@ -751,10 +739,7 @@
 <p>El propósito original de la Raspberry Pi es el educativo y la electrónica, en cualquier caso es capaz de utilizarse para multitud de propósitos como servidor NAS, descargas torrent, centro multimedia, servidor <a href="https://nextcloud.com/">NextCloud</a> como alternativa a las herramientas de <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a> o <a href="https://www.google.com/photos/about/">Photos</a> o evitar anuncios con AdGuard, consola de juegos retro con <a href="https://retropie.org.uk/">RetroPie</a> o <a href="https://www.lakka.tv/">Lakka</a>.</p>
 <p>Desde su aparición en el año 2010 han surgido <a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/">numerosas alternativas de la Raspberry Pi</a> en formato y características similares. Algunas incluso más potentes, sin embargo, dada la popularidad de la RPi es la que mejor soporte de software ofrece y de la que hay más información en caso de buscarla.</p>
 <p>La <a href="https://magpi.raspberrypi.org/">revista MagPi</a> en PDF se puede descargar de forma gratuita y contiene numerosos artículos sobre como realizar proyectos de programación y electrónica con esta computadora. También puede adquirirse en formato impreso, se solicita pagar un pequeño importe  para mantener la publicación así que si la sueles obtener todos los números considera hacer un pago de vez en cuando.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="cómo-instalar-gnulinux-en-la-raspberry-pi">Cómo instalar GNU/Linux en la Raspberry Pi</h3>
 <p>Una vez en posesión de una Raspberry Pi y elementos imprescindibles, cargador de alimentación y tarjeta SD o microSD y opcionalmente teclado y monitor, el primer paso es realizar la instalación del sistema operativo. El sistema operativo oficial es <a href="https://www.raspberrypi.org/software/">Raspberry Pi OS</a>.</p>
 <p>La instalación se hace en una tarjeta de memoria microSD o una memoria USB, para la instalación se requiere de otra computadora en la que utilizar la aplicación <em>Raspberry Pi Image</em> que descarga la imagen del sistema operativo y formatea la unidad de almacenamiento. Dispone de una versión para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> y como aplicación <a href="https://flatpak.org/">Flatpak</a> para cualquier distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>.</p>
@@ -968,10 +953,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="servicios-de-hashicorp">Servicios de HashiCorp</h3>
 <div class="media">
 <figure>
@@ -1367,10 +1349,7 @@
 </div>
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</h3>
 <p>El certificado de una autoridad de certificación es un certificado autofirmado que se utilizar para comprobar que la firma de los certificados que emite la entidad es válida. Es necesario crear un par de claves asimétricas privada y pública y posteriormente generar su certificado.</p>
 <div class="code">
@@ -1815,10 +1794,7 @@
 </div>
 <p>La necesidad puede ser hacer una copia de seguridad periódicas para conservar el historial del sitio web, descargar el contenido para procesarlo de alguna forma, para consultarlo sin conexión a internet u <em>offline</em> si nuestra conexión es lenta o inestable o el servidor está caído, migrar un sitio web de un servidor web a otro o descargar los archivos de vídeo, audio, imágenes o multimedia.</p>
 <p>Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de descargar y guardar en el sistema de archivos la página que se está visualizando, está es la opción más simple ya que no se necesitan herramientas adicionales si solo se quiere guardar una página de las muchas de un sitio web. Su desventaja es que no sirve para guardar un sitio web completo por requerir hacer la operación manualmente por cada página, de forma que para realizar la operación de forma másiva y automatizada para el sitio web completo hay que utilizar alguna herramienta especializada.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="cómo-descargar-un-sitio-web-desde-la-línea-de-comandos-con-wget">Cómo descargar un sitio web desde la línea de comandos con wget</h3>
 <p>La herramienta de línea de comandos <a href="https://www.gnu.org/software/wget/">wget</a> permite descargar un sitio web completo con un comando ejecutado desde la terminal incluyendo los archivos HTML y de recursos como imágenes, vídeos, contenido multimedia como audio o música, de estilos CSS o archivos JavaScript. El contenido que descarga wget es el referenciado a través de los enlaces presentes en el propio contenido, wget explora los archivos HTML en busca de enlaces a recursos u otras páginas HTML y de forma recursiva descarga el contenido completo al sistema de archivos local. Está disponible para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y <a href="https://www.apple.com/macos/">macOS</a> y es una herramienta de software libre y gratuita.</p>
 <p>Basta indicar el o los dominios del sitio web de los que se quiere descargar el contenido y la URL de rastreo de inicio u otras URLs adicionales que se desean descargar. Este comando con las opciones indicadas solo descarga los enlaces del sitio web puesto como argumento, los enlaces a sitios web externos no indicados expresamente en la opción <em>&ndash;domain</em> son ignorados. El comando wget soporta numerosas opciones para personalizar la descarga explicadas en su <a href="https://www.gnu.org/software/wget/manual/wget.html">página de manual</a>.</p>
@@ -1879,10 +1855,7 @@
 <figcaption>Mascotas de Linux, BSD y GNU</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="diferencias-en-el-modelo-de-desarrollo">Diferencias en el modelo de desarrollo</h3>
 <p>Lo que conocemos como Linux es simplemente el núcleo del sistema operativo de las distribuciones GNU/Linux. Las distribuciones GNU/Linux están compuestas por otra multitud de programas de usuario que forman el sistema operativo completo y lo hacen usable, estos programas son muchos de los programados bajo los proyectos de la fundación GNU. Este es el motivo de que las distribuciones GNU/Linux incluyan los términos de ambos proyectos. Las distribuciones GNU/Linux son una recopilación de programas de terceras partes, todos estos programas GNU y no GNU incluidos en los sistemas GNU/Linux están desarrollados por diferentes programadores ajenos a Linux y los creadores de la distribución. Los creadores de las distribuciones GNU/Linux son los encargados de juntar los diferentes programas de cada fuente y empaquetarlas como un sistema usable, estable y libre de errores.</p>
 <p>Las distribuciones BSD son muy diferentes en este aspecto ya que los desarrolladores del núcleo son los mismos que desarrollan los programas de usuario que hacen el sistema operativo completo.</p>

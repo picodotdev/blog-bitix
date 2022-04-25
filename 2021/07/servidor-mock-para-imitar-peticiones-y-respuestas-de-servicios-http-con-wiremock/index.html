@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Servidor mock para imitar peticiones y respuestas de servicios HTTP con WireMock</h1>
     <p class="information">
@@ -265,15 +267,19 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Una aplicación diseñada como una colección de microservicios se compone de múltiples de ellos, unos microservicios son consumidos por otros y a su vez un microservicio consume otros uno o varios.</p>
 <p>Algunas aplicaciones son diseñadas para ofrecer su funcionalidad a través de un API desde el primer momento por su independencia de los clientes que hagan uso de ella. Tener un API permite dar soporte a los múltiples clientes ya sean directamente desde el navegador web, una aplicación nativa de un dispositivo como un teléfono inteligente o incluso para ofrecer a tercera partes de modo que realicen integraciones y automatizaciones según sus necesidades.</p>
 <p>Las ventajas de los microservicios son varios como los anteriores junto a algunos otros adicionales, sin embargo, añaden otros problemas, principalmente el mayor número de elementos que los hacen más complejos comparado con una aplicación monolítica.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#el-servidor-_mock_">El servidor <em>mock</em></a></li>
     <li><a href="#opciones-de-servidores-_mock_">Opciones de servidores <em>mock</em></a></li>
@@ -285,8 +291,7 @@
       </ul>
     </li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="el-servidor-_mock_">El servidor <em>mock</em></h3>
 <p>Muchas aplicaciones se basan en <a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">microservicios REST haciendo uso del protocolo HTTP y JSON</a> como formato de datos. Un servidor <em>mock</em> es simplemente un servidor web que en caso de los microservicios es utilizado para programar las respuestas para las peticiones que se le hagan según el <em>endpoint</em> invocado, variables en el <em>path</em>, parámetros o cabeceras. Las respuestas programadas incluyen el código de estado, cabeceras devueltas y datos del cuerpo.</p>
 <p>Un servidor de imitación o <em>mock</em> facilita el desarrollo de los microservicios de forma independiente y las pruebas. El servidor <em>mock</em> elimina la dependencia de un servicio real junto con todo el entorno de ejecución que necesite que en el caso de algunos llega a ser notablemente complejo si incluye base de datos, sistemas de mensajería u otros servicios. El servicio es sustituido por una imitación que devuelve las respuestas programadas para cada una de las peticiones.</p>
@@ -402,6 +407,7 @@
 </div>
 
 
+        
         
     
     

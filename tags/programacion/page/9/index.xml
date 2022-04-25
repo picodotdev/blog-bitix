@@ -103,10 +103,7 @@
 <li><a href="https://es.wikipedia.org/wiki/Denormalizaci%C3%B3n_%28base_de_datos%29">Desnormalización</a></li>
 </ul>
 <p>En los enlaces de la wikipedia está incluida una explicación más detallada de cada forma normal, a continuación solo haré un breve resumen. En anexo final del libro <a href="https://amzn.to/2G2oRN1">SQL Antipatterns</a> también hay una explicación muy detallada de las diferentes formas normales, que problemas pueden ocasionar y como corregirlos. En el libro se tratan varias recomendaciones al trabajar con bases de datos relacionales y evitar emplear prácticas consideradas como malas, un uno de sus capítulos se trata <a href="https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">como guardar relaciones jerárquicas en una base de datos relacional</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="primera-forma-normal-1fn">Primera forma normal, 1FN</h3>
 <p>No hay grupos repetidos de columnas, ni una columna guarda múltiples valores. Por ejemplo, si de una persona queremos guardar varios teléfonos deberíamos crear una tabla de teléfonos y relacionarla con la tabla de usuarios.</p>
 <p>En el caso del ejemplo los grupos repetidos de columnas implica que de una persona solo se pueden guardar hasta tres teléfonos como máximo, han de crearse las columnas por adelantado aunque no se usen y si hay que actualizar un teléfono no sabríamos en que campo de la tabla está obligando a realizar una consulta de actualización en los tres campos.</p>

@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Autenticación con segundo factor de autenticación en SSH</h1>
     <p class="information">
@@ -267,6 +269,10 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU" class="" loading="false"></p>
 </div>
@@ -277,17 +283,16 @@
 <p>SSH es un protocolo seguro y cifrado que utiliza como método de autenticación un usuario y contraseña o para mayor seguridad una clave SSH, también se puede configurar para añadir adicionalmente un segundo factor de autenticación o 2FA para mayor seguridad.</p>
 <p>En el artículo específico comento como <a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">configurar SSH con autenticación mediante clave pública y privada</a>, en otro artículo comento como tener <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">acceso simple y seguro a sistemas remotos con Boundary</a>.</p>
 <p>Es recomendable <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">usar segundo factor de autenticación en servicios como Google, Amazon y Paypal</a> y otros relevantes que lo ofrezcan. También es recomendable utilizar un <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">gestor de contraseñas como KeePassXC</a> para guardar las contraseñas únicas y como aplicación para generar los <em>tokens</em> de 2FA.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#instalar-el-módulo-ssh-de-google-2fa">Instalar el módulo SSH de Google 2FA</a></li>
     <li><a href="#configurar-el-módulo-ssh-de-google-2fa">Configurar el módulo SSH de Google 2FA</a></li>
     <li><a href="#usar-autenticación-2fa-con-claves-ssh">Usar autenticación 2FA con claves SSH</a></li>
     <li><a href="#probar-la-autenticación-ssh">Probar la autenticación SSH</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="instalar-el-módulo-ssh-de-google-2fa">Instalar el módulo SSH de Google 2FA</h3>
 <p>Usar 2FA con SSH requiere instalar un módulo de autenticación que valide el proceso de autenticación. El módulo permite usar los <em>tokens</em> de un solo uso en el proceso de autenticación adicionalmente a la contraseña o clave SSH.</p>
 <p>En los sistemas basados en <a href="https://www.debian.org/">Debian</a> como <a href="https://www.ubuntu.com/">Ubuntu</a> hay que instalar el siguiente paquete que añade un nuevo módulo de PAM para 2FA.</p>
@@ -438,6 +443,7 @@
 </div>
 
 
+        
         
     
     

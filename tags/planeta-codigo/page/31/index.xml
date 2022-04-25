@@ -174,10 +174,7 @@
 <p>Java puede emplearse para cualquier propósito desde aplicaciones web en la parte servidora, aplicaciones de escritorio como escribí en dos <a href="https://picodotdev.github.io/blog-bitix/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/">artículos introductorios sobre JavaFX</a>, juegos con alta calidad gráfica incluso para dispositivos de capacidades más reducidas como <abbr title="Internet of Things">IoT</abbr> o embebidos y verdaderamente limitados. Para cualquier plataforma en la que haya disponible una <abbr title="Java Virtual Machine">JVM</abbr> se pueden ejecutar aplicaciones programadas con el lenguaje Java. Sin embargo, hay multitud de otros lenguajes aunque solo una docena con un porcentaje de uso significativo que tratan de ocupar nichos de funcionalidades específicas. Unos pueden ser el análisis de datos como con el <a href="https://www.r-project.org/">lenguaje R</a> y otro la programación de pequeñas tareas, los <em>scripts</em> o lenguajes de <em>scripting</em>.</p>
 <p>Para los <em>scripts</em> normalmente se han utilizado intérpretes como <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> por su disponibilidad en cualquier sistema GNU/Linux o si se necesita un lenguaje más avanzado <a href="https://www.python.org/">Python</a>, <a href="https://www.ruby-lang.org/es/">Ruby</a> o <a href="https://www.groovy-lang.org/">Groovy</a>. Cualquiera de estas opciones son empleadas para realizar tareas de <em>scripting</em> que involucran desde generación de informes o archivos, envío de correos electrónicos hasta actualización de una base de datos relacional o nosql, cualquier cosa que se desee automatizar. Al no necesitar compilarse ni generar un artefacto extraño como los archivos <em>.class</em> o <em>.jar</em> de Java basta con escribir el código fuente del <em>script</em> con cualquier editor de texto y ejecutarlo con el intérprete correspondiente directamente desde el código fuente sin una compilación previa.</p>
 <p>El despliegue en un entorno de pruebas o producción de un <em>script</em> es sencillo, basta con copiar el código fuente a la máquina correspondiente donde se vaya a ejecutar y ejecutarlos, únicamente es necesario instalar la versión del intérprete adecuado y las dependencias adicionales del <em>script</em> si necesita alguna como en Python posiblemente en un <a href="https://virtualenv.readthedocs.io/en/latest/">virtualenv</a>. En entornos más avanzados es posible <a href="https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/">realizar la planificación de las tareas de <em>scripting</em> con Nomad y Docker</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="java-para-tareas-de-_scripting_">Java para tareas de <em>scripting</em></h3>
 <p>Pero al contrario de lo que piensa mucha gente Java puede ser usado perfectamente como lenguaje de <em>scripting</em> con igual simpleza o más que Python, Ruby o Groovy. Java es más verboso sí pero en mi opinión estas son <a href="https://picodotdev.github.io/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">10 razones para seguir usando Java</a> entre ellas el compilador, en el artículo <a href="https://www.teamten.com/lawrence/writings/java-for-everything.html">Java for everything</a> dan una buena extensa descripción de porque usar Java también para los <em>scripts</em> y donde se expone una forma de usarlo, en este artículo mostraré otras dos creo que mejores.</p>
 <p>El compilador de Java validará al menos que el código no tienen errores léxicos o de sintaxis que en un lenguaje interpretado son fáciles de introducir cuando hace meses que no modificas el <em>script</em> olvidando gran parte del código, cuando no has escrito tú el <em>script</em>, cuando hay prisa y presión para hacer las modificaciones por un error en producción apremiante, cuando el tamaño del código empieza a ser considerable, es modificado por varias personas o cuando no se domina el lenguaje profundamente. ¿Qué prefieres, algo más verbosidad (ahora menos con varias de las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades introducidas en Java 8</a>) o evitar que un <em>script</em> importante en producción se quede a medio ejecutar por un error de compilación al interpretarlo y provoque alguna catástrofe? Yo lo tengo claro, que el compilador me salve el culo.</p>
@@ -262,7 +259,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/29509" target="_blank"><amp-img src="https://asciinema.org/a/29509.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/29509.js" id="asciicast-29509" async></script>
+<noscript><a href="https://asciinema.org/a/29509" target="_blank"><img src="https://asciinema.org/a/29509.png" width="650" height="450"></a></noscript>
 </div>
 <div class="alert alert-secondary sourcecode">
     <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
@@ -301,10 +299,7 @@
         <![CDATA[<p><strong>Hay numerosos y diferentes lenguajes de programación pero solo una docena tienen una cuota de uso significativa. Muchos comparten características y algunos lenguajes las van incorporando a medida que se demuestra que sus beneficios son mayores que la complejidad que pueden añadir. Veamos algunas de sus propiedades.</strong></p>]]>
         <![CDATA[<p>Hay cantidad de lenguajes de programación, algunas diferencias entre ellos se encuentran en su propósito (general o específico para cierto tipo de tareas), en la sintaxis, el sistema de tipos, por los paradigmas de programación que soporta (<abbr title="Programación orientada a objetos">POO</abbr>, imperativo, declarativo, orientado a objetos, funcional, &hellip;), otras diferencias están en la librerías disponibles, <em>frameworks</em> o comunidad, sin embargo, la mayoría comparten algunas características por las que se pueden catalogar los lenguajes. En este artículo comentaré algunas de estas características por las que podemos catalogar y agrupar los lenguajes de programación.</p>
 <p>Describiré brevemente cada una de las características ya que están muy bien explicadas en cada una de sus páginas de la wikipedia.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="principales-características-de-un-lenguaje-de-programación">Principales características de un lenguaje de programación</h3>
 <h4 id="compilado">Compilado</h4>
 <p>En un lenguaje compilado el código fuente fuente antes de ser ejecutado es convertido a lenguaje máquina (C, C++) aunque también puede ser convertido a representación intermedia que posteriormente es interpretada y convertida a lenguaje máquina <abbr title="Just in Time">JIT</abbr> (Java, C#). El compilador puede detectar una gran cantidad de errores que en un lenguaje interpretado o de tipado dinámico se descubrirían en tiempo de ejecución. <a href="https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_compilado">Wikipedia</a>.</p>
@@ -477,7 +472,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/28856" target="_blank"><amp-img src="https://asciinema.org/a/28856.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/28856.js" id="asciicast-28856" async></script>
+<noscript><a href="https://asciinema.org/a/28856" target="_blank"><img src="https://asciinema.org/a/28856.png" width="650" height="450"></a></noscript>
 </div>
 <p>Si quieres obtener más información sobre varias de las herramientas como jOOQ, Liquibase, Gradle o Spring Boot que forman en el momento de escribir este artículo el actual estado del arte en Java puedes leer los diferentes artículos que he he escrito sobre ellos de forma específica:</p>
 <ul>
@@ -692,7 +688,8 @@
 </div>
 <p>En el siguiente vídeo puede verse como es la salida en la terminal cuando la aplicación se arranca con Gradle y con el comando <code>java -jar</code>.</p>
 <div class="media">
-<a href="https://asciinema.org/a/27694" target="_blank"><amp-img src="https://asciinema.org/a/27694.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/27694.js" id="asciicast-27694" async></script>
+<noscript><a href="https://asciinema.org/a/27694" target="_blank"><img src="https://asciinema.org/a/27694.png" width="650" height="450"></a></noscript>
 </div>
 <p>Añadiendo la dependencia <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> podemos <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">obtener información de estado y métricas en las aplicaciones Spring Boot</a>.</p>
 <p>En un repositorio de GitHub de Spring hay muchos más <a href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples">ejemplos sobre Spring Boot</a>.</p>
@@ -1201,7 +1198,8 @@
 </div>
 <p>Y este es el resultado de un vídeo en el que muestro un <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a>.</p>
 <div class="media">
-<a href="https://asciinema.org/a/418524" target="_blank"><amp-img src="https://asciinema.org/a/418524.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
+<noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
 </div>
 <div class="reference">
     Referencia:<br>
@@ -1266,7 +1264,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/26292" target="_blank"><amp-img src="https://asciinema.org/a/26292.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/26292.js" id="asciicast-26292" async></script>
+<noscript><a href="https://asciinema.org/a/26292" target="_blank"><img src="https://asciinema.org/a/26292.png" width="650" height="450"></a></noscript>
 </div>
 <p>En los proyectos web incluiremos como dependencias las propias de Apache Tapestry, el proyecto <em>library</em> y <em>core</em>, también aplicaremos el <em>plugin</em> de <a href="https://tomcat.apache.org/">Tomcat</a> para poder iniciar los proyectos con Gradle configurándolos para que cada uno se inicie en un puerto distinto 8080/8443 para web y 9080/9443 para back.</p>
 <div class="code">
@@ -1310,7 +1309,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/26293" target="_blank"><amp-img src="https://asciinema.org/a/26293.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/26293.js" id="asciicast-26293" async></script>
+<noscript><a href="https://asciinema.org/a/26293" target="_blank"><img src="https://asciinema.org/a/26293.png" width="650" height="450"></a></noscript>
 </div>
 <p>Creando un producto desde la consola de PostgreSQL y refrescando la página en el proyecto de <em>web</em> o <em>back</em> veremos que se visualizan sus datos.</p>
 <div class="code">

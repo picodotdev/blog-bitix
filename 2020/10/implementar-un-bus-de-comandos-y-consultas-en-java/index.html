@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Implementar un bus de comandos y consultas en Java</h1>
     <p class="information">
@@ -267,6 +269,10 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
@@ -274,15 +280,14 @@
 <p>A medida que una aplicación crece necesita nuevos comandos y consultas, estando en una o varias clases de servicio estas requieren modificarse al añadir nuevos comandos o consultas, al mismo tiempo las clases de servicio tendrán el conjunto completo de todas las dependencias que necesiten todas las operaciones cuando muchas de las operaciones solo necesitan un pequeño conjunto de dependencias. La organización del código con servicios suele originar clases con múltiples responsabilidades convirtiéndose en un potencial problema de mantenimiento.</p>
 <p>Separar los comandos y consultas permite aplicar <a href="https://en.wikipedia.org/wiki/Command%e2%80%93query_separation">CQRS</a>, en el que las operaciones de consulta se lanzan contra una base de datos especializada en consultas y los comandos se lanzan contra otra base de datos. Tener dos base de datos permite escalar a cada base de datos de forma independiente según sus necesidades pero añade una gran complejidad al sistema ya que la base de datos que recibe los comandos ha de ser replicada en la base de datos de consultas. Una forma de replicar los datos en las bases de datos es mediante <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">eventos de dominio con un bus de eventos</a> y consistencia eventual e <a href="https://picodotdev.github.io/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">implementando deduplicación de eventos de dominio</a>.</p>
 <p>Un bus de comandos y consultas es una infraestructura que permite añadir nuevos comandos y consultas aplicando dos de los <a href="https://en.wikipedia.org/wiki/SOLID">principios SOLID</a>. La <em>S</em> de responsabilidad única haciendo que cada comando y consulta tenga una única responsabilidad y la <em>O</em> de abierto a extensión y cerrado a modificación.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#interfaces-del-bus-de-comandos-y-consultas">Interfaces del bus de comandos y consultas</a></li>
     <li><a href="#implementación-de-bus-de-comandos-y-consultas">Implementación de bus de comandos y consultas</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="interfaces-del-bus-de-comandos-y-consultas">Interfaces del bus de comandos y consultas</h3>
 <p>Un bus de comandos y un bus de eventos son simplemente la definición de esta interfaz que tiene un único método a implementar. La interfaz del bus de comandos no devuelve datos y la interfaz del bus de consultas si devuelve datos.</p>
 <div class="code">
@@ -448,6 +453,7 @@
 </div>
 
 
+        
         
     
     

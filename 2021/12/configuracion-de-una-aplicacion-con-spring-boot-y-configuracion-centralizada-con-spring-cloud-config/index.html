@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Configuración de una aplicación con Spring Boot y configuración centralizada con Spring Cloud Config</h1>
     <p class="information">
@@ -265,6 +267,10 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring" class="" loading="false"></p>
 </div>
@@ -275,9 +281,9 @@
 <p>La configuración permite cambiar el comportamiento de la aplicación sin cambiar el código ni generar un nuevo artefacto. No hardcodear los valores en el código y extraer la configuración permite utilizar el mismo artefacto en cualquier entorno, ya sea desarrollo, pruebas o producción. Utilizar el mismo artefacto para todos los entornos tiene la ventaja de no introducir un error en la construcción del artefacto como cabría la posibilidad generando un artefacto binario para cada uno de los entornos, usar el mismo artefacto es necesario para que las pruebas realizadas sobre el artefacto en el entorno de desarrollo o pruebas se consideren válidas para producción.</p>
 <p>Aunque en algunos sitios se recomienda que la configuración de la aplicación esté separada de artefacto de despliegue, en realidad más que la configuración esté separada es necesario poder tener un mecanismo de orden de preferencia de los valores de configuración. La aplicación puede tener unos valores de configuración por defecto pero es necesario poder sobreescribirlos debido a que algunos no se desean incluir en el código fuente o en el propio artefacto, también es necesario para cambiar los valores por defecto incluidos en el artefacto si se desea corregir un error sin necesidad de generar un nuevo artefacto.</p>
 <p>Por otro lado es aconsejable tener bajo el control de versiones los archivos de configuración como cualquier otro archivo de código fuente de la aplicación, para con el historial del control de versiones ver los cambios que se han hecho o volver a versiones anteriores.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#necesidades-según-el-rol">Necesidades según el rol</a></li>
     <li><a href="#configuración-en-una-aplicación-de-spring-boot">Configuración en una aplicación de Spring Boot</a>
@@ -296,8 +302,7 @@
     <li><a href="#ejemplo-de-configuración-en-aplicación-de-spring-boot">Ejemplo de configuración en aplicación de Spring Boot</a></li>
     <li><a href="#ejemplo-de-configuración-centralizada-con-spring-cloud-config-server">Ejemplo de configuración centralizada con Spring Cloud Config Server</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="necesidades-según-el-rol">Necesidades según el rol</h3>
 <p>Las diferentes personas cada una con su rol desea tener la capacidad de configurar la aplicación. A los desarrolladores nos interesa para poder externalizar ciertas variables del código de la aplicación para tener la capacidad de cambiar los valores sin modificar el código. Esto es más fácil que encontrar donde están los valores hardcodeados y modificar las diferentes coincidencias, y evitando tener que recompilar.</p>
 <p>Aunque los archivos de configuración no son código ejecutable forman parte del código de la aplicación si la configuración se incluye dentro del artefacto, también por comodidad el desarrollador desea cambiarlos al mismo tiempo que el código para mantener la consistencia entre el código y la configuración, ya que todas la variables de configuración que requiere el código deben tener un valor sino se produce un error en tiempo de ejecución.</p>
@@ -692,6 +697,7 @@
 </div>
 
 
+        
         
         <div class="row">
           <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">

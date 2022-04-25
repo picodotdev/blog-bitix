@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Anexo a la guía de instalación y del principiante de Arch Linux</h1>
     <p class="information">
@@ -271,6 +273,10 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux" class="" loading="false"></p>
 </div>
@@ -278,9 +284,9 @@
 <p>Dado que Arch Linux es una distribución <a href="https://en.wikipedia.org/wiki/Rolling_release">«rolling release»</a> hacer una guía de instalación detallada para ella haría que se quedase obsoleta en ciertos aparatados al cabo de un tiempo. Por ello y aunque a continuación escribiré una guía de instalación es muy recomendable leer la <a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">guía oficial de Arch Linux</a> y la <a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">guía de principiante</a> más detallada y en cualquier caso entendamos las acciones que estamos haciendo con cada comando.</p>
 <p>Arch Linux no tiene un asistente de instalación y la misma se hace desde la terminal introduciendo comandos, además no hay una guía oficial única que sirva para todos los sistemas ya que algunas cosas cambian dependiendo de las características de nuestro sistema o preferencias, deberemos dedicar algo de tiempo a leer las guías oficiales y alguna otra guía en alguna bitácora como esta, quizá también alguna sección de la wiki. A cambio de este tiempo tendremos un sistema tal y como nosotros queremos y no como los desarrolladores del instalador quisieron. Una vez sabemos que pasos hay que realizar y que comandos hay que introducir y en que orden la instalación no es complicada, lo difícil está en que comandos son dependiendo de nuestro sistema, si tiene BIOS o EFI, si tiene una gráfica AMD, Intel o NVIDIA, si tiene un disco mecánico o SSD, y de nuestras preferencias si queremos una partición swap, el formato de las particiones (ext4, btrfs, &hellip;) y tamaño para cada una.</p>
 <p>A pesar de que la guía oficial de Arch Linux está muy bien hay que leer varias páginas de la wiki y hay algunas cosas importantes que hay que tener en cuenta. Lo que aportará esta guía sobre la oficial son esos pequeños detalles a tener en cuenta y mi experiencia con la instalación en mi ordenador.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#1-instalación-base">1. Instalación base</a>
       <ul>
@@ -310,8 +316,7 @@
       </ul>
     </li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="1-instalación-base">1. Instalación base</h3>
 <p>Sin más, comencemos con la guía. Lo primero que deberemos hacer es <a href="https://www.archlinux.org/download/">descargar el medio de instalación</a> de algún espejo de la red. Los medios con la coletilla -dual nos servirán tanto para sistemas de x86 (32 bits) como para sistemas x86_64 (64 bits). Una vez descargado deberemos grabarlo en un CD o más recomendable en una memoria USB.</p>
 <p>Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/sdx por el dispositivo de la memoria USB en la que queramos grabar el medio cosa que en linux podemos conocer usando el comando lsblk:</p>
@@ -697,6 +702,7 @@
 </div>
 
 
+        
         
     
     

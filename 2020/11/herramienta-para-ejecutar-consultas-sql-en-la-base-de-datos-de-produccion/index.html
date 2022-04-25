@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Herramienta para ejecutar consultas SQL en la base de datos de producción</h1>
     <p class="information">
@@ -265,20 +267,23 @@
       
 
 
+      
+        
+        
+      
       <p>Sí, es cierto, lanzar consultas SQL directamente en la base de datos de producción o una réplica no es lo ideal ni debería ser habitual, sin embargo, a veces tener acceso a los datos de la base de datos de producción es la forma más rápida y sencilla de obtener información para resolver un <em>bug</em> del que ni siquiera un <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">sistema centralizado de almacenamiento de trazas como ELK</a> proporciona información relevante o simplemente porque alguien del departamento financiero, <em>marketing</em> u otro departamento solicita una información que necesita.</p>
 <p>En ambos casos del <em>bug</em> o de alguien que necesita información en ocasiones tienen la mala costumbre de necesitar ser atendidos con rapidez. Si para obtener la información se necesita un proceso que involucra a varias personas, cada una con sus propias tareas y prioridades, el proceso es lento y el demandante de esa información acabará poco contento quejándose del departamento de IT. El proceso también será lento si es complicado o sólo determinadas personas tienen los permisos necesarios pare realizarlo o con riesgos si las herramientas que se usan otorgan gran poder pero requieren gran responsabilidad.</p>
 <p>Proporcionando una herramienta a modo de sírvete tú mismo uno se sorprende de las consultas que alguien del departamento financiero o de <em>marketing</em> son capaces de hacer ellos mismos para obtener la información que necesitan si tienen el interés de aprender algo de SQL. Lo cual es beneficioso en varios sentidos, ellos son más autónomos en su trabajo y las personas de IT no se ven interrumpidas para atender este tipo de tareas, sólo cuando la consulta tiene cierta dificultad.</p>
 <p>Si además como en los microservicios hay múltiples bases de datos para varios de ellos tener acceso a todas las bases de datos es más complicado de gestionar. Por otro lado, al decir la base de datos de producción también es válido para tener acceso a las bases de datos del entorno de QA.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#herramienta-para-obtener-y-modificar-datos-de-una-base-de-datos-relacional">Herramienta para obtener y modificar datos de una base de datos relacional</a></li>
     <li><a href="#herramientas-para-visualizar-datos">Herramientas para visualizar datos</a></li>
     <li><a href="#cómo-proteger-los-datos">Cómo proteger los datos</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="herramienta-para-obtener-y-modificar-datos-de-una-base-de-datos-relacional">Herramienta para obtener y modificar datos de una base de datos relacional</h3>
 <p><a href="https://sqlpad.github.io/sqlpad/#/">SQLPad</a> es una pequeña herramienta que actúa como cliente de una base de datos relacional con la que es posible lanzar consultas SQL mediante una interfaz web. Esta herramienta hace muy sencillo el acceso a la base de datos de producción, entorno de QA o a una de sus réplicas, dado que utiliza una interfaz web no es necesario instalar ni configurar ninguna herramienta adicional, solo requiere un navegador web que todo ordenador ya posee.</p>
 <p>Simplemente es necesario seleccionar la base de datos de la que se quieren los datos y ejecutar la consulta SQL deseada para obtener los datos como resultado. Permite explorar los esquemas de la base de datos, las tablas, los campos y cuales son sus tipos.</p>
@@ -394,6 +399,7 @@
 </div>
 
 
+        
         
     
     

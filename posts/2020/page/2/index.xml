@@ -29,10 +29,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</a></li>
 </ul>
 <p>La depuración se emplea en el momento de desarrollo o para reproducir y descubrir en el entorno de desarrollo local un error que se está produciendo en producción. Por la utilidad de la depuración todos los lenguajes ofrecen alguna posibilidad de hacer depuración. En Java la depuración se realiza configurando la máquina virtual con ciertos argumentos y el entorno integrado de desarrollo o IDE para conectarse a la máquina virtual.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</h3>
 <p>La depuración o <em>debug</em> es una forma de ejecución de un programa con la que el programador puede observar de forma interactiva la ejecución línea a línea del código fuente con el objetivo de eliminar algún error. El depurador o <em>debugger</em> es una aplicación que permite añadir puntos de ruptura o <em>breakpoints</em> donde el depurador para la ejecución, inspeccionar los valores de las variables, continuar la ejecución hasta la siguiente línea o hasta el siguiente punto de ruptura, continuar la ejecución entrando en una función o sin entrar en la función.</p>
 <h3 id="configurar-la-máquina-virtual-java-para-hacer-_debug_">Configurar la máquina virtual Java para hacer <em>debug</em></h3>
@@ -180,10 +177,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/series/java-platform/">Novedades y nuevas características del lenguaje Java en cada nueva versión</a></li>
 </ul>
 <p>Este artículo contiene las herramientas básicas para disponer del entorno mínimo para editar, compilar y ejecutar programas escritos con el lenguaje de programación Java.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="libros-sobre-java-para-aprender">Libros sobre Java para aprender</h3>
 <p>Una buena forma de aprender a programar en un lenguaje es utilizando un libro específico sobre el lenguaje, un libro que comience si es necesario por los fundamentos del lenguaje considerando que el lector no tiene conocimientos previos en el lenguaje ni en la programación. Los libros tienen un contenido bien estructurado y son más didácticos que artículos individuales.</p>
 <p>De Java hay mucha documetación y libros con los que aprender a programar, desde básicos hasta más avanzados o temas específicos como la concurrencia. Tres de los mejores libros sobre Java son <a href="https://amzn.to/2sNCizu">Thinking in Java</a>, <a href="https://amzn.to/31GZwFF">Effective Java</a> y <a href="https://amzn.to/2MXMTi3">Java 8 in Action</a> sin olvidar otros <a href="https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/">buenos libros para mejorar como programadores</a>.</p>
@@ -477,10 +471,7 @@
 <p>A medida que una aplicación crece necesita nuevos comandos y consultas, estando en una o varias clases de servicio estas requieren modificarse al añadir nuevos comandos o consultas, al mismo tiempo las clases de servicio tendrán el conjunto completo de todas las dependencias que necesiten todas las operaciones cuando muchas de las operaciones solo necesitan un pequeño conjunto de dependencias. La organización del código con servicios suele originar clases con múltiples responsabilidades convirtiéndose en un potencial problema de mantenimiento.</p>
 <p>Separar los comandos y consultas permite aplicar <a href="https://en.wikipedia.org/wiki/Command%e2%80%93query_separation">CQRS</a>, en el que las operaciones de consulta se lanzan contra una base de datos especializada en consultas y los comandos se lanzan contra otra base de datos. Tener dos base de datos permite escalar a cada base de datos de forma independiente según sus necesidades pero añade una gran complejidad al sistema ya que la base de datos que recibe los comandos ha de ser replicada en la base de datos de consultas. Una forma de replicar los datos en las bases de datos es mediante <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">eventos de dominio con un bus de eventos</a> y consistencia eventual e <a href="https://picodotdev.github.io/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">implementando deduplicación de eventos de dominio</a>.</p>
 <p>Un bus de comandos y consultas es una infraestructura que permite añadir nuevos comandos y consultas aplicando dos de los <a href="https://en.wikipedia.org/wiki/SOLID">principios SOLID</a>. La <em>S</em> de responsabilidad única haciendo que cada comando y consulta tenga una única responsabilidad y la <em>O</em> de abierto a extensión y cerrado a modificación.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="interfaces-del-bus-de-comandos-y-consultas">Interfaces del bus de comandos y consultas</h3>
 <p>Un bus de comandos y un bus de eventos son simplemente la definición de esta interfaz que tiene un único método a implementar. La interfaz del bus de comandos no devuelve datos y la interfaz del bus de consultas si devuelve datos.</p>
 <div class="code">
@@ -660,10 +651,7 @@
     <p>Este artículo contiene información de estrategias para completar más fácilmente el juego, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
     <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="inicio-de-la-historia-y-argumento">Inicio de la historia y argumento</h3>
 <p>El juego empieza con Aloy de niña y Rost como tutor y mentor en una tribu pero que están apartados ya que son unos parias, la tribu está regida una religión que adora a la diosa Madre y es temerosa del mundo de los antiguos. Enseguida Aloy se hace preguntas de porque es una paria, el juego se desarrolla con la intención de buscar esas respuestas, a medida que avanza el juego se desarrolla una historia con nuevas preguntas a las que buscar respuestas con las que se comprende que es lo que ha pasado en el mundo, cuál es el origen de las máquinas y que les está afectando para cada que cada vez sean más agresivas o de donde surgen nuevos tipos de máquinas aún más peligrosas.</p>
 <div class="media">
@@ -854,10 +842,7 @@
 <p>Aún ya habiendo noticias de la nueva generación <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/">decidí compra una PlayStation 4</a> por su amplio catálogo, porque prefiero el modelo <em>slim</em> que en las nueva generación no saldrá pasados unos años e igualmente en los primeros meses falta de juegos de la nueva generación.</p>
 <p>Las consolas no son los únicos productos nuevos sino que en poco tiempo coincide con una importante renovación también su competencia del PC destinado a juegos y las plataformas de juego mediante <em>streaming</em> que están presentando las compañías más importantes del sector tecnológico de consumo que quizá dificulte la existencia de una siguiente generación de consolas a esta próxima.</p>
 <p>Aún así a pocas semanas de sus lanzamientos quedan muchas dudas por resolver que no serán despejadas hasta pasado unos meses o algún año.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="el-hardware-de-las-consolas-xbox-series-y-playstation-5">El hardware de las consolas Xbox Series y PlayStation 5</h3>
 <p>Ambas consolas tienen un hardware similar, incorporan almacenamiento SSD y nuevamente el procesador y la gráfica está basado en un diseño personalizado por AMD para consolas de sus procesadores y gráficas para PC.</p>
 <p>Las consolas de ambas marcas ofrecen una versión solo digital junto a otro modelo con lector de discos para los amantes de lo físico y coleccionistas, con todo la transición a lo digital parece claro. Si el juego en <em>streaming</em> no se impone en los siguientes años y hay una nueva Xbox y PlayStation es muy posible que ya sea solo digital.</p>
@@ -1397,10 +1382,7 @@
 <p>En la teoría de <em>Domain Driven Design</em> o DDD se mencionan los eventos de dominio. Un evento de dominio es una notificación de algo que ha sucedido en el sistema en lo que algunas partes del mismo están interesadas en ser notificadas. Dado que un evento es algo que ha sucedido suelen tener un nombre con un verbo en pasado como <em>OrderCreated</em>, otra de sus propiedades es que no indican que acción se ha de realizar como sería el caso de un nombre con <em>SendBuyerOrderEmail</em>. Las mismas características de las aplicaciones que se comunican con mensajes se aplican a las aplicaciones que generan eventos de dominio, la comunicación en el sistema se realiza de forma desacoplada, el emisor y el receptor no se conocen y de forma desincronizada ni el emisor ni el receptor necesitan de la disponibilidad del otro si se realiza con un <em>middleware</em>.</p>
 <p>En la teoría de <em>Domain Driven Design</em> esta forma de comunicación es útil para comunicar diferentes <em>bounded context</em>. Un <em>bounded context</em> se encarga de una área funcional de la aplicación con alta cohesión y su propio lenguaje de dominio. El lenguaje de dominio son los conceptos que aplican en un <em>bounded context</em> y cuales son las propiedades relevantes dentro del mismo, el término usuario en un supuesto <em>bounded context</em> de registro y adminisitración de la cuenta es probable no sea el mismo que en el <em>bounded context</em> de órdenes de compra, en el primero el usuario puede tener varias direcciones y en el segundo solo interesa una, por otro lado en el <em>bounded context</em> de inventario ni siquiera exista el término usuario o signifique otra cosa totalmente diferente.</p>
 <p>Los <em>bounded context</em> y eventos de dominio se adaptan especialmente bien a las aplicaciones con arquitectura basada en microservicios. Cada microservicio puede ser uno o varios <em>bounded context</em> con un área funcional bien definida y estos comunicarse mediante eventos con eventos de dominio. La forma de emitir estos eventos de dominio es con un bus de eventos. La <a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">implementación un bus de comandos y consultas</a> para <a href="https://en.wikipedia.org/wiki/Command%e2%80%93query_separation">CQRS</a> es muy similar a la implementación de un bus de eventos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="transaccionalidad-y-eventos-de-dominio">Transaccionalidad y eventos de dominio</h3>
 <p>En las aplicaciones un concepto importante es la transaccionalidad, es un requerimiento que se impone al sistema para su buen funcionamiento. Una transacción consiste en que un conjunto de acciones o cambios funciona todo de forma completa o no funciona nada pero nunca de forma parcial. Si la lógica de una aplicación emite varios eventos según se ejecuta y en la mitad del proceso algo falla las acciones desencadenadas por los eventos emitidos deben deshacerse o de lo contrario posiblemente se produzca un mal funcionamiento o una inconsistencia de datos.</p>
 <p>Las aplicaciones suelen trabajar con bases de datos y estas son las que proporcionan la transaccionalidad pero si los eventos se envían con un <em>middleware</em> de mensajería la transaccionalidad ya no afecta a un único sistema sino que afecta a dos, la base de datos relacional y el <em>middleware</em> de mensajería. Alguna solución a la transaccionalidad de dos sistemas diferentes como una <a href="https://es.wikipedia.org/wiki/Commit_de_dos_fases">transacción en dos fases</a> tiene sus propios problemas en cuanto a escalabilidad y complejidad.</p>
@@ -1587,10 +1569,7 @@
 <p>Una parte importante de los programas está dedicada a la gestión de errores y a tratar los posibles errores. Los posibles errores son desde una entrada de datos con un formato inesperado, datos no válidos, si el programa se comunica por red que la comunicación falle, que ocurra que un archivo no existe y no se pueda abrir o ya exista y no se pueda crear.</p>
 <p>Dado que las condiciones de error son numerosas es importante al usar un código ya sea función o método que condiciones de error se pueden producir al ejecutarlo. Algunos lenguajes catalogan los errores como recuperables como sería que un archivo ya existe pudiendo informar al usuario o irrecuperables como falta de memoria en el sistema, un fallo del hardware o por un fallo de programación con el acceso a una posición fuera de rango en un <em>array</em>.</p>
 <p>A lo largo de la historia los lenguajes han implementado varias formas de gestionar los errores.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="códigos-de-retorno">Códigos de retorno</h3>
 <p>En el lenguaje C la gestión de errores se hace con códigos de retorno. Al llamar a una función esta devuelve un retorno y según sea su valor se indica que la función se ha ejecutado correctamente o por el contrario se ha producido algún error que ha de ser tratado.</p>
 <p>Los códigos de retorno tienen dos problemas. El primer problema es que comprobar el código de retorno puede ser ignorado haciendo que el programa no trate adecuadamente las condiciones de error y fallar o terminar de forma abrupta cuando alguna función no se ejecuta correctamente. El segundo problema es que el código del flujo en el que todo funciona correctamente está mezclado con el código de gestión de errores lo que hace a los programas algo menos legibles.</p>
@@ -1896,10 +1875,7 @@
 <figcaption>Colección de herramientas nativas para la nube</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="base-de-datos">Base de datos</h3>
 <p>Los datos son una de las partes más importantes para el correcto funcionamiento de un negocio. Una parte importante de las aplicaciones consiste tanto en persistir datos como recuperarlos cuando se necesitan. Una de las ventajas de los microservicios es que cada uno de ellos puede utilizar el tipo de base de datos que más adecuado considere para almacenar los datos. Puede ser una base de datos relacional como <a href="https://www.postgresql.org/">PostgreSQL</a>, clave-valor como <a href="https://redis.io/">Redis</a>, de documentos con <a href="https://www.mongodb.com/">MongoDB</a> o incluso una combinación de varios.</p>
 <ul>
@@ -2004,10 +1980,7 @@
 <p>En septiembre del 2020 se ha publicado la versión 15 de Java siguiendo el calendario propuesto desde la versión de Java 9 de una nueva versión cada seis meses y de una versión de soporte a largo plazo cada tres años, la primera LTS ha sido Java 11 a la que sucederá Java 17 cómo LTS en septiembre de 2021.</p>
 <p>Con este calendario de publicaciones tan frecuente las novedades son varias en cada nueva versión aunque algunas son simplemente versiones preliminares que pueden cambiar ligeramente en siguientes versiones destinadas a evaluar y probar las funcionalidades que se incorporarán de forma definitiva con posterioridad. Aunque sean versiones preliminares se pueden usar con normalidad, simplemente hay que tener en cuenta que en versiones posteriores requieran modificaciones en el código fuente o lo que es lo mismo no se garantiza la compatibilidad hacia atrás hasta que sean declaradas como una versión definitiva.</p>
 <p>Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se hace más necesario utilizar <a href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">la herramienta SDKMAN</a> para instalar al mismo tiempo varias versiones del JDK de Java y poder cambiar de una a otra con facilidad.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="introducción">Introducción</h3>
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/15/">Características de Java 15</a></li>
@@ -2134,10 +2107,7 @@
 </div>
 <p>El sistema operativo más utilizado en ordenadores personales para uso doméstico y en los equipos informáticos de las empresas es <a href="https://www.microsoft.com/es-es/windows/">Windows 10</a> de <a href="https://www.microsoft.com/">Microsoft</a>. Muchos de los fabricantes de ordenadores de escritorio de marcas como HP o Dell pero también muchos de los ensambladores de ordenadores montados por piezas y prácticamente todos los fabricantes de portátiles incluyen preinstalado Windows 10 como sistema operativo junto con otro software, en estos casos no es necesario comprar una licencia de Windows pues ya que está está incluida en el importe del producto.</p>
 <p>A través de vendedores distintos a Microsoft es posible comprar una licencia barata y completamente legal con la que activar estos productos y eliminar los mensajes que solicitan la activación para tener acceso a todas sus funciones sin que pasado un tiempo después de su instalación se deshabiliten.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="versiones-y-tipos-de-licencia-de-windows-10">Versiones y tipos de licencia de Windows 10</h3>
 <p>Windows 10 tiene diferentes versiones, las diferencias entre ellas está en las características que soportan.</p>
 <ul>

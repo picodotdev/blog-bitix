@@ -119,10 +119,7 @@
 <p>El acceso de forma remota a sistemas es necesario y útil más cuando las máquinas ya no son máquinas físicas sino que están en centros de datos en diferentes ubicaciones en el mundo e incluso son máquinas lógicas como las máquinas virtuales ejecutadas en la computación de la nube.</p>
 <p>El acceso a las máquinas no solo se requiere para las aplicaciones de forma automatizada sino que en algunas situaciones se requiere acceso manual para realizar tareas administrativas o conexión con clientes específicos como escritorio remoto o clientes de bases de datos.</p>
 <p>Permitir el acceso remoto es necesario, sin embargo, requiere seguridad de forma que únicamente los usuarios autorizados accedan únicamente a los sistemas autorizados.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="funcionamiento-acceso-remoto-tradicional">Funcionamiento acceso remoto tradicional</h3>
 <p>La forma habitual de proporcionar acceso remoto a sistemas de una red privada es mediante una VPN o a través de un sistema intermediario denominado bastión. Estos conceptos proporcionan acceso remoto en ciertos aspectos de forma segura pero no están exentas de problemas e inconvenientes.</p>
 <p>El primer problema es que una vez conectado a una VPN o un bastión se tiene acceso a cualquier ordenador de la red privada a la que uno se ha conectado. Un usuario que necesite acceso a una máquina potencialmente tiene conectividad con otros sistemas en esa red, lo que es riesgo de seguridad por permitir la posibilidad de accesos a sistemas no autorizados.</p>
@@ -364,10 +361,7 @@
 <p>La seguridad de los datos es muy importante, ciertos datos personales sensibles y que permiten identificar a personas están protegidos por leyes. El no cumplimiento de las leyes implica potencialmente a una empresa recibir importantes multas o descrédito que afecte a la viabilidad del negocio o suponga una reducción de facturación. Algunos datos candidatos a ser cifrados o transformados al guardarse en base de datos son, datos personales e identificativos como nombre y apellidos, DNI, dirección, tarjetas de crédito, bancarios u otros datos que estén regulados por las leyes de protección de datos.</p>
 <p>Los datos protegidos incluso no es deseable que sean accesibles por cualesquiera trabajadores de la propia empresa, solo debería tener acceso a ellos aquellos trabajadores que los necesitan para desempeñar su trabajo y ofrecer el servicio que proporciona la empresa. Para el desarrollo de una aplicación los programadores necesitan una base de datos con el mismo esquema de la base de datos de producción y un conjunto de datos, una opción es <a href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/">obtener una copia de la base de datos</a> de producción, sin embargo, obtener una copia de la base de datos de producción otorga acceso a los programadores acceso a los datos, al hacer la copia es posible aplicar un proceso que ofusque los datos sin embargo esto sigue sin solventar el problema de mantener seguros los datos en la propia base de datos de producción o sus réplicas. Si algunos datos se guardan cifrados aunque se tenga acceso a la base de datos los datos cifrados siguen protegidos.</p>
 <p>Una de las funcionalidades que ofrece <a href="https://www.vaultproject.io/">Vault</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> es ofrecer el cifrado y descifrado como servicio. Este artículo está basado en la <a href="https://learn.hashicorp.com/tutorials/vault/eaas-spring-demo?in=vault/encryption-as-a-service">guía de Vault sobre la funcionalidad de cifrado y descifrado</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</h3>
 <p>Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar credenciales de acceso bajo demanda a recursos como bases de datos</a> entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.</p>
 <p>Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplicaciones no han de mantener credenciales para el acceso a una base de datos sino que es Vault el que crea las credenciales válidas únicamente por un periodo de tiempo corto con posibilidad de renovación. Esto aumenta la seguridad ya que una aplicación no ha de mantener unas credenciales para la base de datos válidas por un tiempo indefinido, al mismo tiempo las claves de cifrado están centralizadas en vez estar incluidas en cada aplicación. En caso necesario Vault es capaz de revocar las credenciales de cualquier aplicación.</p>
@@ -580,10 +574,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="servicios-de-hashicorp">Servicios de HashiCorp</h3>
 <div class="media">
 <figure>
@@ -2035,7 +2026,8 @@ configurada. En este caso se actualiza la versión de <em>nginx</em> de la versi
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/241669" target="_blank"><amp-img src="https://asciinema.org/a/241669.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/241669.js" id="asciicast-241669" async></script>
+<noscript><a href="https://asciinema.org/a/241669" target="_blank"><img src="https://asciinema.org/a/241669.png" width="650" height="450"></a></noscript>
 </div>
 <p>El proceso de despliegue también se puede monitorizar desde la interfaz web que ofrece Nomad.</p>
 <div class="media">

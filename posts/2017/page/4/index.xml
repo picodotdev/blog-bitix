@@ -984,10 +984,7 @@
 <p>Muchos desarrolladores conocemos las opciones básicas del lenguaje SQL, las sentencias <em>insert</em>, <em>update</em>, <em>delete</em> y <em>select</em>, sin embargo las últimas versiones del lenguaje SQL añade muchas posibilidades que quizá desconozcamos. PostgreSQL por ejemplo soporta inserciones de múltiples filas en una misma sentencia, actualización o inserción con la sentencia <em>upsert</em>, <em>window functions</em>, <em>common table expressions</em> o consultas recursivas. PostgreSQL además tiene un sistema de tipos avanzado pudiendo definir tipos de datos personalizados y funciones sobre esos tipos asi como herencia que son motivos por los cuales se autodenomina una base de datos <em>object-relational</em>.</p>
 <p>Veamos algunos ejemplos de estas características del lenguaje SQL y que PostgreSQL soporta siendo una de las bases de datos relacionales más <em>ANSI-SQL compliant</em>. Para los casos demostrativos de las sentencias SQL usaré una base de datos de ejemplo con unas pocas tablas y datos sobre ciudades, países, población y lenguajes obtenida de <a href="http://pgfoundry.org/projects/dbsamples/">PgFoundry Sample Databases</a>, hay varias en concreto usaré la base de datos <em>world</em>. En la página de <a href="https://wiki.postgresql.org/wiki/Sample_Databases">bases de datos ejemplo para PostgreSQL</a> hay otras.</p>
 <p>Para una fácil instalación de una instancia de la base de datos PostgreSQL usaré <a href="https://www.docker.com/">Docker</a> con la que una vez terminados los ejemplos se puede eliminar sin dejar ningún rastro. Si aún no has usado Docker puedes leer la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> que he escrito.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="instalación-postgresql-con-docker">Instalación PostgreSQL con Docker</h3>
 <p>Una vez instalado Docker e iniciado su servicio y con el comando <code>docker-compose</code> y el archivo <em>docker-compose.yml</em> que contiene la definición del contenedor lo iniciamos con el comando <code>docker-compose up</code>. El comando <code>docker ps</code> lista los contenedores en ejecución y con el comando <code>docker exec</code> iniciamos un proceso bash en el contenedor indicado con su identificativo.</p>
 <div class="code">
@@ -1238,16 +1235,14 @@
 <li><a href="https://www.redeszone.net/2017/05/13/recomendaciones-para-hacer-frente-a-un-ransomware/">Recomendaciones para hacer frente a un ransomware</a></li>
 </ul>
 <div class="media">
-    <amp-twitter width="650" height="550" data-tweetid="863364192316735488"></amp-twitter>
-    <blockquote placeholder>
+    <blockquote class="twitter-tweet tw-align-center" data-partner="tweetdeck">
 <p lang="en" dir="ltr">The release of the patch probably isn&#39;t going to help that £15m MRI machine that runs XP embedded whose maker went bankrupt 10 years ago.</p>&mdash; Barry Dorrans (@blowdart) <a href="https://twitter.com/blowdart/status/863364192316735488">13 de mayo de 2017</a>
 </blockquote>
 </div>
 <p>Quizá alguien piense que un sistema con <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hubiese sido distinto pero no, un sistema GNU/Linux desactualizado es igual de vulnerable, por el hecho de ser GNU/Linux no es más seguro. Lo que hay que implementar son procedimientos y aplicar medidas para evitar estos fallos de seguridad y para minimizar las vulnerabilidades de los sistemas cualquiera que sea el sistema utilizado. A pesar de lo anterior una muestra de la seguridad que ofrece GNU/Linux que hay que destacar es que es un sistema utilizado en una gran mayoría de servidores importantes de los que ofrecen servicios en internet u otros servicios críticos, correctamente configurados y mantenidos funcionando de forma segura.</p>
 <p>En unas empresas y sociedad cada vez más dependientes de la tecnología un ataque como este puede causar importantes daños como ha sido en el caso del sistema de salud británico, en empresas como en el mismo caso de Telefonica ha obligado a apagar sistemas para evitar la propagación y preventivamente males mayores impidiendo trabajar con normalidad a un importante número de empleados de la empresa. El ataque de <em>WannaCry</em> es una advertencia de lo que puede provocar un caso peor en el futuro, y este ransomware cuando actúa es evidente que se está sufriendo, otros ataques menos notorios pueden pasar inadvertidos. Algo que ocasionará lo sucedido es que <a href="http://www.publico.es/internacional/industria-ciberseguridad-coge-musculo-oleada.html">se dedicarán más recursos a la seguridad</a>.</p>
 <div class="media">
-    <amp-twitter width="650" height="550" data-tweetid="863563517898747904"></amp-twitter>
-    <blockquote placeholder>
+    <blockquote class="twitter-tweet tw-align-center" data-partner="tweetdeck">
 <p lang="en" dir="ltr">Windows XP was released in 2001, every Linux kernel before 2013 is out of support, more CVEs reported for Linux in 2016, 2017 than Windows <a href="https://t.co/QzTPSFp0Pr">pic.twitter.com/QzTPSFp0Pr</a></p>&mdash; Ben Adams (@ben_a_adams) <a href="https://twitter.com/ben_a_adams/status/863563517898747904">14 de mayo de 2017</a>
 </blockquote>
 </div>
@@ -1404,10 +1399,7 @@
 <p>Ubuntu es una de las muchas distribuciones de GNU/Linux existentes y una de las recomendadas para los usuarios principiantes y con más conocimientos por su buen funcionamiento. Las versiones LTS de Ubuntu tienen <a href="https://ubuntu.com/about/release-cycle">ciclo de desarrollo</a> con un soporte de largo plazo de 5 años para corrección de errores y fallos de seguridad. Las versiones LTS se publican cada dos años. Salvo que estés afectado por <em>versionitis</em> y quieras tener las últimas versiones de los programas la versión LTS más reciente es la recomendable y suficiente en vez de la última versión no LTS.</p>
 <p>Para instalar Ubuntu solo se necesita una memoria USB de 4 GiB de capacidad, el medio de instalación y unos 30 minutos para completar el proceso de instalación. Ubuntu instalado ocupa unos 10 GiB de espacio pero dependiendo de las aplicaciones que se quieran instalar, los documentos personales, fotos, vídeos y otros archivos el espacio recomendado es mayor.</p>
 <p>En este artículo explicaré como instalar Ubuntu en su versión 20.04 <abbr title="Long Term Support">LTS</abbr>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="requisitos-mínimos">Requisitos mínimos</h3>
 <p>Los <a href="https://help.ubuntu.com/community/Installation/SystemRequirements">requisitos mínimos de Ubuntu</a> son bastante bajos para cualquier sistema de unos pocos años, menores que los requeridos para instalar Windows. Aunque en la memoria es recomendable tener al menos 2 GiB o incluso 4 GiB. Cualquier equipo medio de de la última década cumple estos requisitos.</p>
 <ul>
@@ -1584,10 +1576,7 @@
 </div>
 <p>Prácticamente la totalidad de portátiles que se venden en las grandes superficies comerciales más conocidas están con el sistema operativo Windows preinstalado. Pero los fabricantes con la intención dotar de más capacidades y funcionalidades que las que incorpora <a href="https://www.microsoft.com/es-es/windows/">Windows</a> instalan numerosos programas que conforman el conocido <em>bloatware</em> que en muchas ocasiones hacen que un equipo completamente nuevo sea más lento de lo normal al iniciar el sistema, al arrancar programas o trabajar con ellos. Entre los programas que suelen preinstalar los fabricantes están los antivirus que al cabo de un tiempo se desactivan ya que suelen ser versiones de evaluación pudiendo dejar al equipo desprotegido ante virus y software malicioso, Windows 10 ya incorpora uno, Windows Defender, y para la mayoría de usuarios es suficiente por su efectividad aceptable. Otros programas que los fabricantes suelen instalar son reproductores de vídeo o software multimedia en la mayoría de casos innecesario ya que Windows  de por si ya incorpora las capacidades de trabajar con archivos multimedia como fotografías o vídeos. También puede darse el caso que tras una actualización o la instalación de un programa el equipo empiece a presentar fallos.</p>
 <p>En los casos anteriores realizar una reinstalación de Windows desde cero es necesaria. Muchos usuarios no tienen conocimientos avanzados de tecnología o informática y no conocen los pasos para realizar una reinstalación. En este artículo explicaré detalladamente, paso a paso y desde cero cuales son los pasos que hay que realizar para instalar Windows 10.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="requisitos-mínimos">Requisitos mínimos</h3>
 <p>Lo primero es conocer que Windows 10 para funcionar correctamente posee unos requisitos mínimos para el equipo en el que vaya a ser instalado, fue comercializado en julio del 2015 y cualquier equipo posterior a esa fecha ya cumplirá con los requisitos mínimos y también los equipos que cumpliesen con los de Windows 7 o viniesen preinstalados con esta versión anterior. En la página de <a href="https://www.microsoft.com/es-es/windows/windows-10-specifications">Especificaciones y requisitos del sistema para Windows</a> están detalladas una buena cantidad de notas informativas y los requerimientos que son los siguientes:</p>
 <ul>

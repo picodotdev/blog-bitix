@@ -29,10 +29,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/">Análisis estático de código con PMD y un ejemplo</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="base-de-datos-de-fallos-de-seguridad">Base de datos de fallos de seguridad</h3>
 <p>Los fallos de seguridad descubiertos se identifican, definen y catalogan con un nombre y se añaden a una <a href="https://www.cve.org/">base de datos pública de vulnerabilidades de seguridad</a>. Al definir los fallos de seguridad se les asigna un nivel orientativo de gravedad, dos propiedades importantes que sirven para asignar la gravedad son como es la forma de explotar el fallo de seguridad, si requiere acceso físico al sistema o es posible explotarlo de forma remota, y que permite el fallo de seguridad, como ejecución de código remoto o obtención de información confidencial.</p>
 <p>Aunque algunos fallos de seguridad permiten la ejecución remota de código no se consideran tan importantes si requieren acceso físico al sistema. Los más graves son aquellos que concurren ambas circunstancias, permiten explotar los fallos de seguridad de forma remota y permite realizar acciones graves como ejecución de código remoto, escalar privilegios u obtener información confidencial.</p>
@@ -168,10 +165,7 @@
         <![CDATA[<p>Los ataques informáticos ya no se producen solo por descargar de una una fuente no confiable y ejecutar un programa en el ordenador, ni siquiera estos son los más peligrosos. Un virus informático requiere conocimientos avanzados de programación, tiempo para desarrollar un programa con la función maliciosa que no sea bloqueada por las medidas de seguridad del sistema operativo y distribuirla de alguna forma entre las potenciales víctimas para que se lo descarguen, los virus informáticos son una forma muy elaborada de realizar un ataque informático.</p>
 <p>Aparte de los virus hay otras formas de ataque informático mucho más sencillas de desarrollar y de distribuir. Una ataque de <em>phishing</em> simplemente requiere desarrollar una página en la que la víctima introduzca los datos que se deseen robar que van desde información personal hasta credenciales de inicio de sesión en la banca online, servicios como <a href="https://www.google.com/intl/es/gmail/about/">Gmail</a> o <a href="https://www.paypal.com/">PayPal</a> o los datos de la tarjeta de crédito con los que robar el límite de saldo diariamente que la tarjeta permita hasta que el usuario o el banco la bloqueen.</p>
 <p>Una vez está desarrollada la página de <em>phising</em> el siguiente paso es hacer que las víctimas accedan a ella, tan simple como enviar un enlace por algún medio como un mensaje de correo electrónico, mensaje SMS o una aplicación de mensajería instantánea a través del móvil.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="el-caso-de-el-gatico-biever">El caso de El Gatico Biever</h3>
 <p>En este artículo comento un potencial caso como ejemplo y una vez leído me puedes comentar si crees que este era un ataque informático. En el que denominaré El caso del Gatico Biever está basado en una conversación real que mantuve por correo electrónico a la que he cambiado el nombre real del contacto y comentado los hechos relevantes del contenido de los mensajes.</p>
 <p>Sin más, os dejo con la narración de El caso del Gatico Biever.</p>
@@ -308,10 +302,7 @@
 <p>Los informáticos tenemos una gran responsabilidad para diseñar sistemas seguros aplicando las mejores prácticas de seguridad no solo como algo adicional a la finalización de una funcionalidad, sino involucrando al rol de <em>security operations</em>  o <em>SecOps</em> desde el inicio, al igual que no se deben dejar las pruebas de aseguramiento de calidad para el final la seguridad tampoco debería.
 Los bancos utilizan medidas adicionales para realizar operaciones pero algunas medidas de seguridad dejan que desear en varios aspectos como requerir para todas las cuentas bancarias  iniciar sesión en la banca <em>online</em> con el número del DNI y un código de seis dígitos, no implementar medidas de notificación de pagos, transferencias o falta un registro de actividad completo en la cuenta digital.</p>
 <p>Sin embargo, me da miedo que un banco que debería ser un referente en medidas de seguridad incluyan en la página donde los usuarios introducen sus credenciales para el acceso a la banca online recursos JavaScript de <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> y de dominios ajenos al banco que no controlan para hacer analítica web de seguimiento de usuarios.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="inyección-de-sql-xss-_tabnabbing_-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</h3>
 <p>Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.</p>
 <p>La fundación OWASP mantiene un registro detallado de los diferentes tipos de seguridad, explicando el problema de seguridad y cómo evitarlos. También publicar cada ciertos años una lista de los 10 errores más comunes durante ese año.</p>
@@ -425,10 +416,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
         <![CDATA[<p><strong>Las compañías realizan importantes esfuerzos para implementar medidas de seguridad pero aún con ellas si el usuario no toma las medidas oportunas muchas de las medidas de seguridad de una organización, computadora o de un dispositivo electrónico son inútiles. En vez de atacar la seguridad de los servicios o dispositivos los delincuentes pueden atacar una parte que suele ser más débil, el usuario. Para evitar ser víctima de un ataque informático conviene conocer unas pocas medidas preventivas que son sencillas para detectar la mayoría de potenciales ataques.</strong></p>]]>
         <![CDATA[<p>La informática ha dejado de ser la de los ordenadores personales aislados para trabajos ofimáticos. La evolución de la tecnología informática por un lado llegando hasta los teléfonos inteligentes y la tecnología de internet permitiendo comunicaciones electrónicas a nivel mundial es una de las siguientes revoluciones a la revolución industrial en el siglo pasado. La informática hace tan solo unos pocos lustros era algo adoptado por personas interesadas en la tecnología, hoy quien no tiene un ordenador personal o portátil tiene un teléfono inteligente o <em>smartphone</em>. La tecnología se ha masificado y democratizado.</p>
 <p>Al mismo tiempo que la tecnología informática ofrece gran cantidad de beneficios para personas y empresas pueden ser utilizadas por personas sin escrúpulos para hacer el mal de forma intencionada y totalmente consciente de lo que hacen. A través de internet quizá los delincuentes no amenacen tu integridad física en la calle de las personas pero el daño psicológico o estafa económica tiene el potencial de ser igual de dañino.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="cuales-son-los-peligros-de-los-ataques-informáticos">Cuales son los peligros de los ataques informáticos</h3>
 <p>Los peligros y consecuencias de sufrir un ataque informático están a la misma altura de las tareas que hacemos de la informática, que ya son muchas y cada vez serán más.</p>
 <p>En el caso personal muchas cosas se puede hacer ya a través de internet, dos de ellas son especialmente sensibles. Una son las que involucran dinero como compras por internet con tarjeta de crédito o acceso a cuentas bancarias a través de la oficina digital que ya ofrecen y exigen todos los bancos para realizar transferencias y pagos. La segunda es aquellas que tienen que ver con datos personales dónde las redes sociales como <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> o <a href="https://www.linkedin.com/">LinkedIn</a> recopilan y cualquier persona tiene acceso. En el ámbito profesional existen los mismos peligros con graves consecuencias para la empresa  que sea víctima de un ataque.</p>
@@ -564,10 +552,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>SSH es un protocolo seguro y cifrado que utiliza como método de autenticación un usuario y contraseña o para mayor seguridad una clave SSH, también se puede configurar para añadir adicionalmente un segundo factor de autenticación o 2FA para mayor seguridad.</p>
 <p>En el artículo específico comento como <a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/">configurar SSH con autenticación mediante clave pública y privada</a>, en otro artículo comento como tener <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">acceso simple y seguro a sistemas remotos con Boundary</a>.</p>
 <p>Es recomendable <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">usar segundo factor de autenticación en servicios como Google, Amazon y Paypal</a> y otros relevantes que lo ofrezcan. También es recomendable utilizar un <a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">gestor de contraseñas como KeePassXC</a> para guardar las contraseñas únicas y como aplicación para generar los <em>tokens</em> de 2FA.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="instalar-el-módulo-ssh-de-google-2fa">Instalar el módulo SSH de Google 2FA</h3>
 <p>Usar 2FA con SSH requiere instalar un módulo de autenticación que valide el proceso de autenticación. El módulo permite usar los <em>tokens</em> de un solo uso en el proceso de autenticación adicionalmente a la contraseña o clave SSH.</p>
 <p>En los sistemas basados en <a href="https://www.debian.org/">Debian</a> como <a href="https://www.ubuntu.com/">Ubuntu</a> hay que instalar el siguiente paquete que añade un nuevo módulo de PAM para 2FA.</p>
@@ -715,10 +700,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 </div>
 <p>La autenticación es el mecanismo de seguridad que permite identificar a un usuario y es quien dice ser. Para comprobar que el usuario es quien dice ser se utiliza una contraseña que solo conoce el usuario. Pero las contraseñas como medida de seguridad no son perfectas, ya que algunos de los usuarios utilizan contraseñas débiles con pocos caracteres, con palabras de diccionario o conocidas y utilizan la misma contraseña en varias cuentas de modo que si un servicio sufre un problema de seguridad las cuentas de otros servicios con la misma contraseña quedan vulnerables.</p>
 <p>Toda la seguridad de las contraseñas depende de que solo sea conocida por el propietario de la cuenta, las contraseñas son un factor de seguridad de algo que sólo el legítimo propietario conoce. Otro mecanismo de seguridad es basar la seguridad adicionalmente en algo que se tiene, esto es el segundo factor de autenticación.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="qué-es-un-segundo-factor-de-autenticación-o-2fa">Qué es un segundo factor de autenticación o 2FA</h3>
 <p>El segundo factor de autenticación o 2FA es un mecanismo de seguridad que se suele utilizar adicionalmente al mecanismo de seguridad de contraseña. Adicionalmente a la contraseña el usuario ha de proporcionar un código generado con el segundo factor de autenticación.</p>
 <p>El generador de segundo factor de autenticación puede ser de diferentes formas, una de ellas es una aplicación para móvil y otra una aplicación de escritorio, también hay dispositivos hardware específicos de 2FA que se conectan por USB al ordenador. También se denomina doble factor de autenticación o autenticación de dos factores.</p>

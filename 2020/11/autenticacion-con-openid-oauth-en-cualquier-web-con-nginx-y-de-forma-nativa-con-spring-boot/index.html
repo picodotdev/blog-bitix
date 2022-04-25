@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h1>
     <p class="information">
@@ -269,6 +271,10 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/oauth.svg" width="200" height="200" alt="OAuth" title="OAuth" class="" loading="false"></p>
 </div>
@@ -278,9 +284,9 @@
 <p>La funcionalidad de autenticación y autorización es básica en la mayoría de aplicaciones web y servicios REST. La forma de implementar la autenticación y autorización es posible de varias formas. Sin embargo, con los métodos anteriores las aplicaciones gestionan sus propios usuarios y cada aplicación ha de implementar la autenticación y autorización. Otras formas comunes de autenticación son emplear <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">autenticación básica en el servidor web</a>, <a href="https://picodotdev.github.io/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/">autenticación mutua entre el servidor y el cliente</a> o con una implementación específica en la que una parte importante es <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">guardar las contraseña de forma segura con salted-password-hashing</a>.</p>
 <p>Gestionar los usuarios de en cada una aplicación se convierte en un problema cuando el número de aplicaciones y servicios son varios, ya que a lo largo del tiempo hay que dar de alta a los usuarios nuevos y de baja a los usuarios que ya no deben acceder a la aplicación por ejemplo porque ya no forman parte de una organización. Por otro, lado hay aplicaciones heredadas o <em>legacy</em> que no se pueden modificar para añadirles la autenticación que necesitan.</p>
 <p>Para administrar de forma centralizada los usuarios o credenciales de las aplicaciones y que el sistema de autenticación y autorización sea uno compartido para cualesquiera usuarios y aplicaciones una forma de implementarlo es usando un proveedor que implemente el estándar <a href="https://openid.net/connect/">OpenID Connect</a>. Para las aplicaciones heredadas la opción es añadir un <em>proxy</em> que proteja la aplicación con autenticación y en el caso de una aplicación Java con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> el proyecto de <a href="https://spring.io/projects/spring-security">Spring Security</a> permite añadir autenticación fácilmente para cualquier proveedor de OpenID.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#qué-es-openid-connect">Qué es OpenID Connect</a></li>
     <li><a href="#autenticación-openidoauth-con-nginx">Autenticación OpenID/OAuth con Nginx</a></li>
@@ -288,8 +294,7 @@
     <li><a href="#autenticación-openid-en-una-aplicación-spring-boot">Autenticación OpenID en una aplicación Spring Boot</a></li>
     <li><a href="#configuración-de-autenticación-con-cuentas-de-google">Configuración de autenticación con cuentas de Google</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="qué-es-openid-connect">Qué es OpenID Connect</h3>
 <p>OpenID Connect es una capa de identidad que funciona sobre el <a href="https://oauth.net/">protocolo OAuth</a> 2.0. Permite a los clientes verificar la identidad del usuario basándose en la autenticación realizada por el servidor de autorización, así como obtener información básica del perfil del usuario. El protocolo funciona con principios similares a REST lo que lo hace interoperable con cualquier sistema.</p>
 <p>Son varios los proveedores que ofrecen autenticación con sus cuentas, algunos de ellos son <a href="https://www.google.es/">Google</a>, <a href="https://github.com/">GitHub</a>, <a href="https://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>, <a href="https://aws.amazon.com/es/cognito/">AWS Cognito</a> u <a href="https://www.okta.com/">Okta</a>. Para implementar el servicio de autenticación y autorización OAuth gestionando sin depender de esas otras organizaciones está <a href="https://www.keycloak.org/">Keycloak</a>.</p>
@@ -471,6 +476,7 @@
 </div>
 
 
+        
         
     
     

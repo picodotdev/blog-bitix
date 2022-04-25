@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Introducción a la base de datos relacional PostgreSQL</h1>
     <p class="information">
@@ -267,6 +269,10 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="206" alt="PostgreSQL" title="PostgreSQL" class="" loading="false"></p>
 </div>
@@ -275,9 +281,9 @@
 <p>Muchos desarrolladores conocemos las opciones básicas del lenguaje SQL, las sentencias <em>insert</em>, <em>update</em>, <em>delete</em> y <em>select</em>, sin embargo las últimas versiones del lenguaje SQL añade muchas posibilidades que quizá desconozcamos. PostgreSQL por ejemplo soporta inserciones de múltiples filas en una misma sentencia, actualización o inserción con la sentencia <em>upsert</em>, <em>window functions</em>, <em>common table expressions</em> o consultas recursivas. PostgreSQL además tiene un sistema de tipos avanzado pudiendo definir tipos de datos personalizados y funciones sobre esos tipos asi como herencia que son motivos por los cuales se autodenomina una base de datos <em>object-relational</em>.</p>
 <p>Veamos algunos ejemplos de estas características del lenguaje SQL y que PostgreSQL soporta siendo una de las bases de datos relacionales más <em>ANSI-SQL compliant</em>. Para los casos demostrativos de las sentencias SQL usaré una base de datos de ejemplo con unas pocas tablas y datos sobre ciudades, países, población y lenguajes obtenida de <a href="http://pgfoundry.org/projects/dbsamples/">PgFoundry Sample Databases</a>, hay varias en concreto usaré la base de datos <em>world</em>. En la página de <a href="https://wiki.postgresql.org/wiki/Sample_Databases">bases de datos ejemplo para PostgreSQL</a> hay otras.</p>
 <p>Para una fácil instalación de una instancia de la base de datos PostgreSQL usaré <a href="https://www.docker.com/">Docker</a> con la que una vez terminados los ejemplos se puede eliminar sin dejar ningún rastro. Si aún no has usado Docker puedes leer la <a href="https://picodotdev.github.io/blog-bitix/series/docker/">serie de artículos sobre Docker</a> que he escrito.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#instalación-postgresql-con-docker">Instalación PostgreSQL con Docker</a></li>
     <li><a href="#comandos-básicos-del-_shell_-psql">Comandos básicos del <em>shell</em> psql</a></li>
@@ -297,8 +303,7 @@
     <li><a href="#plpgsql">PL/pgSQL</a></li>
     <li><a href="#otras">Otras</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="instalación-postgresql-con-docker">Instalación PostgreSQL con Docker</h3>
 <p>Una vez instalado Docker e iniciado su servicio y con el comando <code>docker-compose</code> y el archivo <em>docker-compose.yml</em> que contiene la definición del contenedor lo iniciamos con el comando <code>docker-compose up</code>. El comando <code>docker ps</code> lista los contenedores en ejecución y con el comando <code>docker exec</code> iniciamos un proceso bash en el contenedor indicado con su identificativo.</p>
 <div class="code">
@@ -524,6 +529,7 @@
 </div>
 
 
+        
         
     
     

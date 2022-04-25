@@ -41,10 +41,7 @@
 <p><img src="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/images/arm-powered_hu4e4b4e6e72c77b245b83add14f218f6b_23049_2560x1440_fit_box_3.png" width="277" height="250" alt="ARM Powered" title="ARM Powered"  class="lozad "></p>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="raspberry-pi">Raspberry Pi</h3>
 <p>Cuando apareció en el 2012 ya había placas similares pero su bajo precio y <em>marketing</em> ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo <a href="https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/">Raspberry Pi 3</a> puede quedarse escaso. Su <em>SoC</em> BCM2837 de Broadcom no es el más capaz tanto en CPU (<em>quad-core</em> ARM Cortex-A53 a 1.4 GHz) como en GPU (VideoCore IV) y con su gigabit ethernet compartida con los puertos USB y limitada lo que es un inconveniente importante en las transferencias de datos.</p>
 <ul>
@@ -292,7 +289,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/167230" target="_blank"><amp-img src="https://asciinema.org/a/167230.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/167230.js" id="asciicast-167230" async></script>
+<noscript><a href="https://asciinema.org/a/167230" target="_blank"><img src="https://asciinema.org/a/167230.png" width="650" height="450"></a></noscript>
 </div>
 <p>En el siguiente <a href="https://cse.yeditepe.edu.tr/~kserdaroglu/spring2014/cse331/labnotes/WEEK%205%20-%20SEMAPHORES/mysemaphoreexamplesMOE.pdf">documento con varios de los problemas de concurrencia y sincronización</a> está muy bien explicado la solución a este problema de los fumadores y de los otros casos. En algunos otros sitios este caso lo convierten en un problema de sincronización en vez de uno de concurrencia.</p>
 <div class="alert alert-secondary sourcecode">
@@ -379,7 +377,8 @@
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/165278" target="_blank"><amp-img src="https://asciinema.org/a/165278.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/165278.js" id="asciicast-165278" async></script>
+<noscript><a href="https://asciinema.org/a/165278" target="_blank"><img src="https://asciinema.org/a/165278.png" width="650" height="450"></a></noscript>
 </div>
 <div class="alert alert-secondary sourcecode">
     <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
@@ -636,10 +635,7 @@
 <li><a href="https://es.wikipedia.org/wiki/Denormalizaci%C3%B3n_%28base_de_datos%29">Desnormalización</a></li>
 </ul>
 <p>En los enlaces de la wikipedia está incluida una explicación más detallada de cada forma normal, a continuación solo haré un breve resumen. En anexo final del libro <a href="https://amzn.to/2G2oRN1">SQL Antipatterns</a> también hay una explicación muy detallada de las diferentes formas normales, que problemas pueden ocasionar y como corregirlos. En el libro se tratan varias recomendaciones al trabajar con bases de datos relacionales y evitar emplear prácticas consideradas como malas, un uno de sus capítulos se trata <a href="https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">como guardar relaciones jerárquicas en una base de datos relacional</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="primera-forma-normal-1fn">Primera forma normal, 1FN</h3>
 <p>No hay grupos repetidos de columnas, ni una columna guarda múltiples valores. Por ejemplo, si de una persona queremos guardar varios teléfonos deberíamos crear una tabla de teléfonos y relacionarla con la tabla de usuarios.</p>
 <p>En el caso del ejemplo los grupos repetidos de columnas implica que de una persona solo se pueden guardar hasta tres teléfonos como máximo, han de crearse las columnas por adelantado aunque no se usen y si hay que actualizar un teléfono no sabríamos en que campo de la tabla está obligando a realizar una consulta de actualización en los tres campos.</p>

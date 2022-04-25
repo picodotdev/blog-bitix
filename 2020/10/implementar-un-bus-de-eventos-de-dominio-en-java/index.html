@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Implementar un bus de eventos de dominio en Java</h1>
     <p class="information">
@@ -267,15 +269,19 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En la teoría de <em>Domain Driven Design</em> o DDD se mencionan los eventos de dominio. Un evento de dominio es una notificación de algo que ha sucedido en el sistema en lo que algunas partes del mismo están interesadas en ser notificadas. Dado que un evento es algo que ha sucedido suelen tener un nombre con un verbo en pasado como <em>OrderCreated</em>, otra de sus propiedades es que no indican que acción se ha de realizar como sería el caso de un nombre con <em>SendBuyerOrderEmail</em>. Las mismas características de las aplicaciones que se comunican con mensajes se aplican a las aplicaciones que generan eventos de dominio, la comunicación en el sistema se realiza de forma desacoplada, el emisor y el receptor no se conocen y de forma desincronizada ni el emisor ni el receptor necesitan de la disponibilidad del otro si se realiza con un <em>middleware</em>.</p>
 <p>En la teoría de <em>Domain Driven Design</em> esta forma de comunicación es útil para comunicar diferentes <em>bounded context</em>. Un <em>bounded context</em> se encarga de una área funcional de la aplicación con alta cohesión y su propio lenguaje de dominio. El lenguaje de dominio son los conceptos que aplican en un <em>bounded context</em> y cuales son las propiedades relevantes dentro del mismo, el término usuario en un supuesto <em>bounded context</em> de registro y adminisitración de la cuenta es probable no sea el mismo que en el <em>bounded context</em> de órdenes de compra, en el primero el usuario puede tener varias direcciones y en el segundo solo interesa una, por otro lado en el <em>bounded context</em> de inventario ni siquiera exista el término usuario o signifique otra cosa totalmente diferente.</p>
 <p>Los <em>bounded context</em> y eventos de dominio se adaptan especialmente bien a las aplicaciones con arquitectura basada en microservicios. Cada microservicio puede ser uno o varios <em>bounded context</em> con un área funcional bien definida y estos comunicarse mediante eventos con eventos de dominio. La forma de emitir estos eventos de dominio es con un bus de eventos. La <a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">implementación un bus de comandos y consultas</a> para <a href="https://en.wikipedia.org/wiki/Command%e2%80%93query_separation">CQRS</a> es muy similar a la implementación de un bus de eventos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#transaccionalidad-y-eventos-de-dominio">Transaccionalidad y eventos de dominio</a></li>
     <li><a href="#deduplicación-de-eventos">Deduplicación de eventos</a></li>
@@ -284,8 +290,7 @@
     <li><a href="#como-generar-y-lanzar-un-evento-de-dominio">Como generar y lanzar un evento de dominio</a></li>
     <li><a href="#otras-preguntas">Otras preguntas</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="transaccionalidad-y-eventos-de-dominio">Transaccionalidad y eventos de dominio</h3>
 <p>En las aplicaciones un concepto importante es la transaccionalidad, es un requerimiento que se impone al sistema para su buen funcionamiento. Una transacción consiste en que un conjunto de acciones o cambios funciona todo de forma completa o no funciona nada pero nunca de forma parcial. Si la lógica de una aplicación emite varios eventos según se ejecuta y en la mitad del proceso algo falla las acciones desencadenadas por los eventos emitidos deben deshacerse o de lo contrario posiblemente se produzca un mal funcionamiento o una inconsistencia de datos.</p>
 <p>Las aplicaciones suelen trabajar con bases de datos y estas son las que proporcionan la transaccionalidad pero si los eventos se envían con un <em>middleware</em> de mensajería la transaccionalidad ya no afecta a un único sistema sino que afecta a dos, la base de datos relacional y el <em>middleware</em> de mensajería. Alguna solución a la transaccionalidad de dos sistemas diferentes como una <a href="https://es.wikipedia.org/wiki/Commit_de_dos_fases">transacción en dos fases</a> tiene sus propios problemas en cuanto a escalabilidad y complejidad.</p>
@@ -478,6 +483,7 @@
 </div>
 
 
+        
         
     
     

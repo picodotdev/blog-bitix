@@ -225,6 +225,8 @@
           </div>
         </div>
         
+
+
 <article>
     <h1>Crear un archivo Zip con Java, comprimir y descomprimir datos</h1>
     <p class="information">
@@ -258,15 +260,19 @@
       
 
 
+      
+        
+        
+      
       <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Desde las primeras versiones de Java en el JDK se incluyen clases en el paquete <em>java.util.zip</em> que heredan de las del paquete <em>java.io</em> del sistema de entrada y salida con las que crear archivos comprimidos en formato Zip y comprimir datos en este formato. Comprimir los archivos que permite reducir sensiblemente el tamaño de algunos tipos de archivos como los basados en texto o ciertos archivos que de por si no están comprimidos. En otros tipos de archivo que en su formato ya están comprimidos como las imágenes JPEG o WebP la reducción de tamaño no es tan grande. Al contrario que los los algoritmos de compresión para imágenes JPEG y WebP que son com pérdida de datos, los algoritmos de compresión de archivos son sin pérdida, esto quiere decir que los datos obtenidos al comprimirlos y posteriormente descomprimirlos son exactamente los mismos que los originales.</p>
 <p>Los archivos de texto o binarios no comprimidos comprimirlos supone un considerable reducción respecto del tamaño del archivo original no comprimido, un archivo XML del 20 MiB se puede quedar en 1.5 MiB, es decir, una tasa de compresión de 13 o lo que es lo mismo el fichero comprimido ocupa 13 veces menos.</p>
 <p>Aparte del ahorro de espacio, crear un archivo Zip que agrupe varios es útil en ciertos casos. Las aplicaciones web como respuesta solo pueden devolver un archivo o documento por petición, un documento HTML, un recurso o un archivo. Para devolver varios archivos a la vez como una exportación de varios documentos dada la limitación del protocolo HTTP de petición y respuesta no es posible. Para dar solución a esta limitación normalmente se crea un archivo Zip que contenga los varios a devolver. <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">Configurar los servidores web Nginx y Apache para comprimir los recursos</a> minimiza los datos transferidos desde el servidor al cliente.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <nav id="TableOfContents">
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#clases-de-java-para-comprimir-y-descomprimir">Clases de Java para comprimir y descomprimir</a></li>
     <li><a href="#cómo-crear-un-archivo-zip-con-java">Cómo crear un archivo Zip con Java</a></li>
@@ -274,8 +280,7 @@
     <li><a href="#listar-el-contenido-de-un-archivo-zip-con-java">Listar el contenido de un archivo Zip con Java</a></li>
     <li><a href="#otros-formatos-de-archivos-comprimidos">Otros formatos de archivos comprimidos</a></li>
   </ul>
-</nav>
-</div>
+</nav></div> 
 <h3 id="clases-de-java-para-comprimir-y-descomprimir">Clases de Java para comprimir y descomprimir</h3>
 <p>Las clases del paquete <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/zip/package-summary.html">java.util.zip</a> permiten comprimir y descomprimir datos utilizando diferentes algoritmos. Se proporcionan soporte para el formato <a href="https://en.wikipedia.org/wiki/ZIP_%28file_format%29">archivo Zip</a>, <a href="https://en.wikipedia.org/wiki/Gzip">GZIP</a>, el algoritmo de compresión <a href="https://en.wikipedia.org/wiki/DEFLATE">DEFLATE</a> usando la librería <a href="https://es.wikipedia.org/wiki/Zlib">ZLIB</a> y otras clases para la corrección de errores o <em>checksums</em>.</p>
 <p>Para la creación de archivos Zip las clases básicas son <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/zip/ZipEntry.html">ZipEntry</a> que representa un flujo de datos comprimido o archivo en un archivo Zip, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/zip/ZipFile.html">ZipFile</a> representa un archivo Zip, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/zip/ZipInputStream.html">ZipInputStream</a> que permite descomprimir los flujos de datos al leerlos y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/zip/ZipOutputStream.html">ZipOutputStream</a> que permite comprimir flujos de datos.</p>
@@ -380,6 +385,7 @@
 </div>
 
 
+        
         
     
     

@@ -81,10 +81,7 @@
 <p>La legibilidad afecta a la facilidad de cambio del código fuente y a la facilidad de corrección de errores y tiempo que se tarda en resolverlos. En realidad la mayor parte del tiempo dedicado a la programación no es a la escritura de nuevas líneas de código fuente si no a la lectura de las existentes, por ello al escribir código este debería ser optimizado para la lectura para la mayoría de ámbitos y aplicaciones más que a la eficiencia. Que un programa tenga menos líneas de código fuente o un lenguaje necesite menos líneas para expresar lo mismo no implica que sea más legible.</p>
 <p>A veces para escribir un buen código fuente y código legible no es necesario ni tiene que ver con utilizar patrones de diseño que en realidad añaden complejidad o complejas arquitecturas de software por capas o hexagonal, para escribir buen código fuente bastan unas pocas técnicas y prácticas  muy sencillas y fácilmente comprensibles. Además, estas prácticas son aplicables a cualquier lenguaje de programación, los patrones de diseño y las arquitecturas de software aunque útiles resuelven problemas de complejidad y extensibilidad que son problemas en primera instancia diferentes a la legibilidad del código fuente.</p>
 <p>Estás prácticas son simplemente recomendaciones a seguir como normal general, no son reglas estrictas que si no se aplican en todos los casos y siempre significa que el código esté completamente mal. Todas estas prácticas son sencillas y aplicables a cualquier lenguaje de programación.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="un-nivel-de-indentación-por-método">Un nivel de indentación por método</h3>
 <p>Que un método tenga varios niveles de indentación anidados normalmente significa que las varias anidaciones realizan una tarea cuyo objetivo hay que inferir analizando el código. Además, los varios niveles de anidación al leer el código exige recordar la tarea de cada uno de los bloques. Un simple bucle anidado con dos <em>for</em> ya exige un esfuerzo significativo para analizar qué hace. Para facilitar la lectura y evitar los niveles de anidación se recomienda que cada método tenga como máximo un único nivel de anidación.</p>
 <div class="code">
@@ -222,10 +219,7 @@
 <p>Los informáticos tenemos una gran responsabilidad para diseñar sistemas seguros aplicando las mejores prácticas de seguridad no solo como algo adicional a la finalización de una funcionalidad, sino involucrando al rol de <em>security operations</em>  o <em>SecOps</em> desde el inicio, al igual que no se deben dejar las pruebas de aseguramiento de calidad para el final la seguridad tampoco debería.
 Los bancos utilizan medidas adicionales para realizar operaciones pero algunas medidas de seguridad dejan que desear en varios aspectos como requerir para todas las cuentas bancarias  iniciar sesión en la banca <em>online</em> con el número del DNI y un código de seis dígitos, no implementar medidas de notificación de pagos, transferencias o falta un registro de actividad completo en la cuenta digital.</p>
 <p>Sin embargo, me da miedo que un banco que debería ser un referente en medidas de seguridad incluyan en la página donde los usuarios introducen sus credenciales para el acceso a la banca online recursos JavaScript de <a href="https://www.facebook.com/">Facebook</a>, <a href="https://twitter.com/">Twitter</a> y de dominios ajenos al banco que no controlan para hacer analítica web de seguimiento de usuarios.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="inyección-de-sql-xss-_tabnabbing_-y-otras-vulnerabilidades-básicas">Inyección de SQL, XSS, <em>tabnabbing</em> y otras vulnerabilidades básicas</h3>
 <p>Hay errores de seguridad comunes identificados hace ya tiempo que aún no están obsoletos, no son errores de seguridad complejos de explotar y tampoco son errores complejos de evitar usando las técnicas adecuadas de programación o evitando utilizar ciertas operaciones en la manipulación de datos. Varios de los errores de seguridad son por usar datos provenientes de fuentes no confiables sin aplicar el tratamiento adecuado. Aún siendo errores simples son peligrosos en una aplicación vulnerable.</p>
 <p>La fundación OWASP mantiene un registro detallado de los diferentes tipos de seguridad, explicando el problema de seguridad y cómo evitarlos. También publicar cada ciertos años una lista de los 10 errores más comunes durante ese año.</p>
@@ -345,10 +339,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>El código fuente de una aplicación contiene el conocimiento más detallado y fiel de una aplicación , sin embargo, tratar de comprender un sistema complejo compuesto por unas cuantas decenas de miles de líneas de código aún usando un lenguaje de alto nivel ya sea Java , Python o C# es una tarea complicada o al menos que requiere mucho tiempo de investigación y esfuerzo de comprensión. Una breve descripción en prosa y un esquema del sistema permite obtener la misma información que analizando el código de forma mucho más rápida.</p>
 <p>Si en una organización cuando una persona la abandona deja un vacío importante de conocimiento en las reglas de negocio implementadas o en la incorporación de una nueva persona a un equipo toma demasiado tiempo y dedicación adquirir el mismo conocimiento que el resto de miembros del equipo un problema de la organización quizá sea la falta de documentación. Con el paso del tiempo a medida que una aplicación es más compleja y dado que las personas en una organización se van con el conocimiento que posean y otras vienen pero necesitan adquirir conocimiento, la documentación es una forma de transferencia de conocimiento que está disponible de forma permanente y en forma de autoservicio.</p>
 <p>Una buena documentación ha de se concisa y transmitir su información de forma rápida, una forma es utilizar diagramas que esquematizan el sujeto que se trata de describir complementados descripciones en texto. El lenguaje unificado de modelado o UML describe una notación estándar para los diagramas y varios tipos de diagramas.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="el-lenguaje-unificado-de-modelado-o-uml">El lenguaje unificado de modelado o UML</h3>
 <p><a href="https://es.wikipedia.org/wiki/Lenguaje_unificado_de_modelado">El lenguaje unificado de desarrollo</a> o UML estandariza las convenciones y elementos utilizados en los diagramas además de identificar y describir varios tipos de diagramas para describir un sistema desde varios puntos de vista. Cada uno de estos diagramas describen un sistema a alto nivel de forma esquematizada los conceptos fundamentales.</p>
 <p>Los diagramas UML son de dos tipos estructurales que describen la parte estática del sistema y de comportamiento que describen la parte dinámica.</p>
@@ -430,10 +421,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
         <![CDATA[<p>Una fábrica que manufactura objetos físicos en una cadena de montaje en varios pasos, pueden ser coches o mesas de escritorio, puede parecer que no tiene mucho que ver con el desarrollo de software ya que en este último no se fabrican objetos físicos sino software que es algo intangible que no tiene una representación física.</p>
 <p>Sin embargo, en realidad una cadena de montaje de objetos físicos tiene muchos puntos en común al desarrollo de software, en ambos casos se siguen una secuencia de pasos o cadena de valor desde que llega una orden hasta que ésta es entregada al cliente. En el caso de una fábrica de coches se producen coches y en un desarrollo de software se producen funcionalidades en una aplicación.</p>
 <p>Los mismos principios que se aplican en una cadena de valor en una cadena de montaje de una fábrica también se pueden aplicar al desarrollo de software para producir software, esos principios y metodologías permiten fabricar de forma eficiente y evitar problemas en la cadena de valor. Estos principios y metodologías identificados en varias organizaciones que tienen un gran rendimiento en su cadena de valor se resumen en <em>The three ways</em> y <em>The five ideals</em>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="_the-three-ways_"><em>The three ways</em></h3>
 <p><em>The three ways</em> son tres principios que se centran en el aspecto productivo, estos principios son explicados en el libro <a href="https://amzn.to/2UFmLzB">The DevOps Handbook</a> de una forma teórica, detallada y extensa y en el libro <a href="https://amzn.to/3zcYDDC">The Phoenix Project</a> que son el argumento subyacente de una historia de ficción sobre una empresa con problemas en sus proyectos de software, algunos son reconocibles a los que uno pueda tener en su organización.</p>
 <p>El libro empieza con los personajes de una empresa con multitud de problemas en el desarrollo que hacen peligrar la viabilidad de la empresa en una época en la que la tecnología está transformando su negocio, a lo largo del libro y con la guía de un cierto personaje misterioso van aplicando varias mejoras de forma paulatina que les permite recuperar el control.</p>
@@ -533,10 +521,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
         <![CDATA[<p><strong>Reescribir partiendo desde cero una aplicación grande que tiene sus defectos pero que ha sido desarrollada durante mucho tiempo y su funcionalidad más importante opera mayormente bien no es una estrategia que esté exenta de riesgo ni garantiza que el el nuevo sistema tenga defectos parecidos, más graves o incluso la reescritura fracase. Si la reescritura tiene riesgos pero existe la necesidad de sustituir la aplicación heredada para solventar algunos de sus problemas es necesaria otra estrategia diferente a partir de cero. Una estrategia que se utiliza en estos casos es aplicar el patrón de estrangulación que reemplaza el sistema antiguo de forma incremental cada una de sus piezas.</strong></p>]]>
         <![CDATA[<p>Algunas aplicaciones tienen un tiempo de vida de uso muy prolongado que ofrecen una funcionalidad esencial en una empresa u organización, muchas son mantenidas durante todo este tiempo de vida añadiendo funcionalidades, modificando las existentes, corrigiendo errores, fallos de seguridad o modestas modernizaciones. Otras aplicaciones finalmente dejan de mantenerse completamente salvo errores graves. Pasado un lustro o una década con una cantidad importante de líneas de código implementadas por un equipo grande de personas probablemente las aplicaciones pueden considerarse heredadas presentando problemas en su base de código o tecnologías ya consideradas obsoletas.</p>
 <p>Quizá llegue un momento que surge el interés de sustituir la aplicación, una opción es reescribir completamente la aplicación heredada con sus propios inconvenientes y riesgos otra opción es reemplazarla de forma incremental, en este último caso se suele utilizar el patrón de estrangulación. Los proyectos que se empiezan desde un inicio son los menos, lo habitual es tener que mantener sistemas existentes y cuando es necesario migrarlos a nuevos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="el-problema-de-las-aplicaciones-heredadas">El problema de las aplicaciones heredadas</h3>
 <p>Algunos de los motivos para desear sustituir una aplicación son los siguientes.</p>
 <ul>
@@ -624,10 +609,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de <a href="https://es.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a> publicado en 1970 y la hormiga de Langton de <a href="https://es.wikipedia.org/wiki/Christopher_Langton">Chris Langton</a> publicado en 1986.</strong></p>]]>
-        <![CDATA[<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+        <![CDATA[<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="el-juego-de-la-vida-de-conway">El juego de la vida de Conway</h3>
 <p>El juego de la vida de Conway es un autómata con unas reglas muy simples que da lugar a múltiples y variados comportamientos. Es un autómata de cero jugadores que se desarrolla por sí mismo en base al estado inicial y las reglas del juego.</p>
 <p>El juego es un tablero bidimensional formado por cuadrados o células que poseen dos estados, células muertas o encendidas o células vivas o apagadas. Cada célula está rodeada por 8 células vecinas. El estado de las células evoluciona a lo largo de unidades de tiempo discretas, el estado de todas las células se tiene en cuenta para calcular el estado en el turno siguiente aplicando las reglas del juego. Todas las células se actualizan simultáneamente en cada turno.</p>
@@ -789,10 +771,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 </div>
 <p>El patrón de diseño factoría o <em>Factory</em> es uno de los más empleados en multitud de ocasiones en el código propio y aunque no se implemente al ser usado en multitud de librerías también en muchos casos conviene conocer sus principios y ventajas frente a otros métodos.</p>
 <p>El patrón de diseño <em>Factory</em> es uno de patrones ya identificados como útiles en los que su aplicación es adecuada. Los patrones de diseño se clasifican en las áreas funcionales de creacionales dedicados a la creación de objetos, de comportamiento centrados en la comunicación entre objetos, estructurales para mantener de forma sencilla relaciones entre entidades y finalmente los patrones de concurrencia empleados en la aplicación concurrente con múltiples hilos de ejecución.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="las-limitaciones-de-instanciar-objetos-con-la-palabra-reservada-_new_">Las limitaciones de instanciar objetos con la palabra reservada <em>new</em></h3>
 <p>Los lenguajes de programación orientada a objetos modelan los conceptos que trata una aplicación mediante clases que define las propiedades del objeto y los métodos que permiten el acceso o modifican el estado del objeto, esto proporciona encapsulación y es uno de los <a href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">conceptos fundamentales de la programación orientada a objetos</a> entre los que también se encuentran el polimorfismo, herencia y composición.</p>
 <div class="code">
@@ -896,10 +875,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>Los buscadores rastrean la web en busca de páginas que una vez indexadas les permite mostrarlas en la página de resultados las más relevantes para las palabras clave introducidas al realizar la búsqueda.</p>
 <p>Los <a href="https://developers.google.com/search/docs/advanced/sitemaps/overview?hl=es">archivos <em>sitemap.xml</em></a> permiten a los buscadores conocer todas páginas de las que se compone un sitio web. Los rastreadores los descargan cada cierto tiempo, de forma paulatina analizan los enlaces proporcionados en el <em>sitemap.xml</em> y los indexa para mostrarlos como resultados si es un contenido relevante para las búsquedas de los usuarios.</p>
 <p>Mostrar los enlaces más relevantes de una búsqueda no es una tarea sencilla, el algoritmo de indexación y del motor de búsqueda han de conocer qué es lo que trata de buscar el usuario y han de conocer cúal es el contenido de cada página. Conocer el contenido de una página no es sencillo ya que las páginas están en formato HTML que ofrece poca ayuda a los buscadores de la información que contienen.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="qué-son-los-datos-estructurados-en-una-página-web">Qué son los datos estructurados en una página web</h3>
 <p>Los buscadores hacen el mejor esfuerzo por entender el contenido de las páginas, los datos estructurados facilitan en gran medida el análisis del contenido. Los datos estructurados son un formato estandarizado que permite proporcionar de forma más precisa cuál es el contenido e información de una página. Para los buscadores obtener la información de la página es más sencillo y preciso obtener de los datos estructurados que analizando el texto del contenido HTML sin ninguna estructura.</p>
 <p>Además, en las páginas de resultados los buscadores para las páginas que proporcionan datos estructurados son capaces de mostrar los resultados enriquecidos, por ejemplo, incluyendo una imagen, una descripción, una imagen o ciertos datos específicos del dato estructurado como ubicación o fecha.</p>
@@ -1002,10 +978,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>Los primeros lenguajes de programación utilizaban un paradigma imperativo con un conjunto de instrucciones ejecutadas de forma secuencial y organizado en funciones que manipulan datos. Posteriormente, surge el paradigma de programación orientado a objetos en el que el código se organiza en objetos que encapsulan los datos y las funciones que los manipulan. Otro paradigma es la programación funcional donde el código se organiza en funciones puras que dados unos datos de entrada genera un resultado y en vez de cambiar de estado a los datos existentes genera nuevos datos haciendo a los datos inmutables.</p>
 <p>Muchos de los lenguajes de programación hacen uso u ofrecen formas de aplicar al mismo tiempo varios de estos paradigmas de programación. Por ejemplo, el lenguaje de programación C aún siendo un lenguaje de programación que hace uso del paradigma imperativo también es posible utilizar conceptos de la programación orientada a objetos o funcionales, aunque el lenguaje en sí no ofrezca abstracciones propias de orientación a objetos o funcionales. El lenguaje de programación Java es orientado a objetos aunque también en el código de los métodos utiliza programación imperativa y con las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades incluidas en Java 8</a> con las <em>lambdas</em>, <em>streams</em>, o <a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/">los records en Java 16</a> y el soporte en las estructuras de datos de las colecciones permite utilizar conceptos de la programación funcional.</p>
 <p>En la programación orientada a objetos hay varios conceptos que definen este paradigma de programación, la encapsulación de datos, abstracciones de los modelos en los programas, los objetos, clases e instancias, herencia, polimorfismo y composición.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="conceptos-de-la-programación-orientada-a-objetos">Conceptos de la programación orientada a objetos</h3>
 <p>Los lenguajes de programación orientados a objetos se diferencian de los imperativos en que el propio lenguaje incluye abstracciones y sintaxis específica para el soporte de la programación orientada a objetos.</p>
 <p>El lenguaje de programación Java considerado como un lenguaje de programación a objetos incluye palabras reservadas para la definición de clases e interfaces e implementa los conceptos de herencia y polimorfismo.</p>
@@ -1204,10 +1177,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <p>Para reutilizar las librerías los proyectos declaran las librerías de las que dependen, la herramienta de construcción se encargan de descargarlas y almacenarlas en un repositorio local para evitar una nueva descargacon su transferencia de red en usos posteriores. En Java las herramientas de construcción <a href="https://gradle.org/">Gradle</a> y <a href="https://maven.apache.org/">Maven</a> automatizan la descarga y enlazado de las dependencias declaradas con el código del proyecto. Para JavaScript una herramienta de dependencias es <a href="https://www.npmjs.com/">npm</a>.</p>
 <p>Las librerías requieren de la funcionalidad de un repositorio de librerías o artefactos que permite descargarlas cuando un proyecto las declare como dependencias. En Java el repositorio más popular es <a href="https://search.maven.org/">Maven Central</a>, las imágenes para iniciar un contenedor de Docker también tienen su propio repositorio de imágenes de Docker con <a href="https://registry.hub.docker.com/">Docker Hub</a> o el repositorio de librerías JavaScript que utiliza  npm.</p>
 <p>Los repositorios anteriores son públicos donde los desarrolladores suben sus artefactos cada vez que publican una nueva versión de sus librerías o <em>frameworks</em>. Una organización en sus proyectos utiliza numerosas dependencias de los repositorios oficiales de cada lenguaje o herramienta pero también con seguridad desarrollará sus propias librerías que necesita compartir en diferentes proyectos de forma interna sin compartirlos en los repositorios públicos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="repositorio-de-artefactos-con-nexus">Repositorio de artefactos con Nexus</h3>
 <p><a href="https://www.sonatype.com/nexus/repository-oss">Nexus</a> es un software que ofrece la funcionalidad de repositorio de artefactos. Permite a una organización compartir de forma privada los artefactos entre los diferentes proyectos. Soporta diferentes tipos de repositorios según el tipo de artefactos, librerías <em>jar</em> para Java, paquetes npm para JavaScript, imágenes de contenedores para Docker, paquetes de <a href="https://www.python.org/">Python</a> y <a href="https://golang.org/">Go</a>.</p>
 <p>Nexus OSS es la versión de código abierto que permite su uso sin coste, la versión <a href="https://www.sonatype.com/nexus/repository-pro">Nexus Pro</a> tiene características empresariales como autenticación SSO.</p>
@@ -1379,10 +1349,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/">Tipos de arquitecturas de aplicaciones de software</a></li>
 </ul>
 <p>Posteriormente, apareció el concepto de inyección de dependencias e inversión de control que se usa actualmente en la mayoría de los casos con independencia del lenguaje de programación, transformando la arquitectura por capas en la arquitectura hexagonal. Por otro lado, en aplicaciones complejas con mucha lógica de negocio se suele aplicar <em>Domain Driven Design</em> o DDD dividiendo la aplicación en <em>bounded context</em> y utilizando otros conceptos. La arquitectura hexagonal se complementa muy bien con DDD ya que sirve para independizar el dominio de los detalles externos de infraestructura tanto los que son usados para acceder al dominio como los usados por el dominio para acceder al exterior.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="_domain-driven-design_"><em>Domain-Driven Design</em></h3>
 <p><em>Domain-driven design o DDD</em> es un concepto que propone que la estructura y lenguaje en el código del software (nombres de clases, métodos y variables) debería reflejar el dominio de negocio. Por ejemplo, en un software de eventos debería haber clases para el concepto de evento, recinto, tipos de entrada métodos como crear evento, cambiar fecha de evento, cancelar o posponer entre otros. DDD intenta evitar la existencia de modelos anémicos con poca lógica de negocio o conceptos exclusivamente técnicos. DDD define dos tipos de patrones, los estratégicos que hacen referencia a aspectos de negocio y los patrones tácticos más relacionados con detalles de implementación.</p>
 <p>Patrones estratégicos:</p>
@@ -1705,10 +1672,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
 </ul>
 <p>En los puntos anteriores también hay que tener en cuenta que las traducciones y localización han de realizarlas múltiples personas o traductores, quizá tantos traductores como idiomas haya de soportar la aplicación que entiendan tanto el idioma original en el que se entregan las cadenas para traducir como el idioma, región y cultura a la que hay que localizar.</p>
 <p>Para coordinar y facilitar el proceso de localización de una aplicación a los múltiples idiomas se suele utilizar una herramienta específica para esta tarea de traducción y localización. Los recursos localizados son utilizados en la aplicación para <a href="https://picodotdev.github.io/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">localizar y formatear cadenas, cadenas con múltiples formas plurales, fechas, números e importes en un idioma</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="cómo-funciona-el-proceso-de-internacionalización-i18n">Cómo funciona el proceso de internacionalización (i18n)</h3>
 <p>El proceso de internacionalización realiza cambios en el código fuente de la aplicación para que la aplicación pueda ser localizada a múltiples lenguajes, países, regiones o culturas. Se ha de tener en cuenta los números aspectos de la internacionalización y localización de la lista anterior como formas plurales, formato de fechas, formatos monetarios, formato de números, etc.</p>
 <p>El proceso de internacionalización genera como resultado un archivo fuente de cadenas originales que es proporcionado a la herramienta de traducción para su localización por los traductores. A lo largo del tiempo habrá cadenas que se modifiquen y requieran una nueva traducción, nuevas cadenas que se añadan y cadenas que se eliminen. Las cadenas originales suelen estar en inglés por ser el lenguaje compartido en los lenguajes de programación y el más común entendido por los posibles traductores.</p>
@@ -1880,10 +1844,7 @@ Los bancos utilizan medidas adicionales para realizar operaciones pero algunas m
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Con el paso de los años las arquitectura recomendadas han cambiado. En el caso de las aplicaciones web pasando por la arquitectura <em>spaghetti</em>, a la por capas y finalmente con una mezcla de hexagonal, <em>domain-driven-design</em> o DDD y dependiendo del caso siendo RESTful, utilizando CQRS, estándo dirigida por eventos o <em>event-driven</em> y en los casos en los que su aplicación es útil usando <em>event sourcing</em>.</strong></p>]]>
-        <![CDATA[<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+        <![CDATA[<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="qué-es-arquitectura-en-una-aplicación-de-software">¿Qué es arquitectura en una aplicación de software?</h3>
 <p>La arquitectura en una aplicación de software son los aspectos comunes a las diferentes implementaciones concretas. La arquitectura de software define la estructura y comportamiento de los elementos relevantes, balanceando las necesidades de sus interesados, aplica decisiones de forma racional, definiendo estilos de arquitectura aplicables a múltiples aplicaciones con necesidades similares, está influenciada por su entorno de aplicación, influencia la estructura de los equipos, está presente en cada sistema y tiene un ámbito particular.</p>
 <ul>

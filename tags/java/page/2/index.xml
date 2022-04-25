@@ -33,10 +33,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Introducción a gRPC y ejemplo con Java</a></li>
 </ul>
 <p>Utilizar el protocolo HTTP no es suficiente para que en servicio se considere que implementa REST de forma completa, al implementar un servicio basado en la semántica del protocolo HTTP y la web hay varios niveles de madurez. <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> ofrece soporte para implementar servicios web que cumplan con todos los niveles de madurez de REST y <a href="https://springdoc.org/">Springdoc</a> crear la documentación a partir de las anotaciones de <a href="https://swagger.io/">Swagger</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="los-niveles-de-madurez-rest">Los niveles de madurez REST</h3>
 <p>REST se basa en los mismos estándares que se utilizan para las páginas web, estos son el protocolo HTTP y los hiperenlaces que construyen la web. El protocolo HTTP tiene una semántica para cada una de sus operaciones que incluyen las diferentes operaciones básicas de CRUD (crear, leer, actualizar y eliminar), códigos de estado para el resultado de la operación y direcciones de los recursos. Las páginas web devuelven HTML, los servicios REST como formato de datos suelen emplear JSON. Los servicios REST son la aplicación de los mismos conceptos de la web a integración de servicios para computadoras, en vez de a humanos o navegadores web.</p>
 <p>Los niveles de madurez de REST son la aplicación de la semántica del protocolo HTTP y la web a los servicios web. Cada uno de estos niveles incluye una aplicación del protocolo HTTP y la web que el servicio REST debe seguir.</p>
@@ -244,10 +241,7 @@
 </ul>
 <p>No tener una especificación de la API es un inconveniente porque un cambio en la interfaz de la API puede provocar errores de compatibilidad, no tener su documentación para revisar la API dificulta su uso al implementar un cliente. No tener documentación es un inconveniente pero tener documentación no generada a partir del código fuente o de la especificación de la API también lo es porque la documentación corre el riesgo de no estar actualizada y sincronizada con la implementación en el código fuente. Además de quedar la documentación desactualizada respecto al código fuente requiere tiempo de mantenimiento que no se dedica a otras tareas.</p>
 <p>Hay iniciativas y herramientas para suplir la carencia de las API REST de no obligar a proporcionar una especificación de la API REST y generar la documentación documentación a partir del código fuente. También es importante poder probar la API de forma sencilla, una de las formas más habituales de probar una API es que la documentación incluya el comando de la herramienta de línea de comandos <em>curl</em> por su sencillez ni requerimientos adicionales que tener el comando instalado en sistema para ejecutarlo.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="documentación-de-un-api-con-openapi-swagger-y-springdoc">Documentación de un API con OpenAPI, Swagger y Springdoc</h3>
 <p><a href="https://www.openapis.org/">OpenAPI</a> trata de proporcionar una especificación para definir esquemas de APIs agnósticas de la tecnología y la implementación de las APIs. Definida la interfaz de la API es posible crear un cliente o servidor que cumpla esa API. La definición de la API incluye sus <em>endpoints</em>, métodos HTTP, cuales son sus parámetros, el esquema de los cuerpos de la petición y de los resultados, los tipos de los datos y sus formatos, los códigos de retorno devueltos, las cabeceras y su autenticación.</p>
 <p>Por otro lado las herramientas de <a href="https://swagger.io/">Swagger</a> permiten generar la documentación a partir de la especificación de la API y si se desea generar una implementación básica inicial de cliente y servidor para diferentes lenguajes de programación. La documentación de Swagger no solo incluye información sino que permite probar la API directamente desde la documentación u obtener el comando <em>curl</em> a ejecutar desde la línea de comandos.</p>
@@ -357,10 +351,7 @@
         <author><name>picodotdev</name></author>
         <content type="html">
         <![CDATA[<p><strong>Algunos procesos que aparentemente son complejos siguen reglas muy simples, y aún siguiendo reglas muy simples dan lugar a muchos posibles comportamientos diferentes. Los sistemas que implementan y aplican estas reglas simples se les conoce como autómatas. Los autómatas no poseen inteligencia artificial, no aprenden ni toman decisiones en base a anteriores resultados, los autómatas simplemente siguen sus reglas de comportamiento en el estado del sistema. Dos autómatas conocidos son el juego de la vida de <a href="https://es.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a> publicado en 1970 y la hormiga de Langton de <a href="https://es.wikipedia.org/wiki/Christopher_Langton">Chris Langton</a> publicado en 1986.</strong></p>]]>
-        <![CDATA[<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+        <![CDATA[<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="el-juego-de-la-vida-de-conway">El juego de la vida de Conway</h3>
 <p>El juego de la vida de Conway es un autómata con unas reglas muy simples que da lugar a múltiples y variados comportamientos. Es un autómata de cero jugadores que se desarrolla por sí mismo en base al estado inicial y las reglas del juego.</p>
 <p>El juego es un tablero bidimensional formado por cuadrados o células que poseen dos estados, células muertas o encendidas o células vivas o apagadas. Cada célula está rodeada por 8 células vecinas. El estado de las células evoluciona a lo largo de unidades de tiempo discretas, el estado de todas las células se tiene en cuenta para calcular el estado en el turno siguiente aplicando las reglas del juego. Todas las células se actualizan simultáneamente en cada turno.</p>
@@ -523,10 +514,7 @@
 <p>Por norma general no es necesario implementar ningún algoritmo de ordenación, estos ya están implementados en las bibliotecas y en el caso de Java en las clases de su JDK. Lo único que es necesario implementar es una clase que implemente la interfaz <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html">Comparable</a> o <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a>, esto es suficiente para <a href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">ordenar arrays y colecciones de objetos en Java</a>.</p>
 <p>Sin embargo, por temas didácticos los algoritmos de ordenación son utilizados como ejemplo para aprender a programar, no son complejos una vez entendido su funcionamiento.</p>
 <p>Entre los algoritmos más conocidos están el de ordenación burbuja o <em>bubble sort</em>, <em>merge sort</em>  y <em>quicksort</em>. Cada uno tiene diferentes propiedades.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="propiedades-de-los-algoritmos-de-ordenación">Propiedades de los algoritmos de ordenación</h3>
 <p>En función de las propiedades del algoritmo y el conjunto de datos a ordenar o su número un algoritmo es más adecuado que otro. Por ejemplo, el algoritmo <em>bubble sort</em> no es el más rápido pero es estable y funciona por intercambio no requiriendo más memoria adicional que una variable temporal. Sin embargo, el algoritmo <em>bubble sort</em> no es paralelizable y hay algoritmos más rápidos.</p>
 <p>Teniendo en cuenta las propiedades de los algoritmos para colecciones pequeñas el algoritmo <em>bubble sort</em> puede ser el más adecuado pero para colecciones de datos grandes los algoritmos <em>merge sort</em> y <em>quicksort</em> son más adecuados.</p>
@@ -656,10 +644,7 @@
 <figcaption>Algoritmo de ordenación bubble-sort y merge-sort</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="la-interfaz-_comparator_">La interfaz <em>Comparator</em></h3>
 <p>La interfaz <em>Comprator</em> es una interfaz funcional, por tener un único método a implementar, que recibe dos argumentos y devuelve un entero. Los argumentos son los dos objetos a comparar y el resultado indica cual es el orden de los elementos entre sí.</p>
 <p>Si el resultado es un <em>-1</em> se indica que el argumento <em>a</em> tiene un orden menor que <em>b</em>, si devuelve un <em>0</em> el orden de los elementos es el mismo y si devuelve un <em>1</em> el argumento <em>a</em> tiene
@@ -773,10 +758,7 @@ un orden superior a <em>b</em>.</p>
 </div>
 <p>El patrón de diseño factoría o <em>Factory</em> es uno de los más empleados en multitud de ocasiones en el código propio y aunque no se implemente al ser usado en multitud de librerías también en muchos casos conviene conocer sus principios y ventajas frente a otros métodos.</p>
 <p>El patrón de diseño <em>Factory</em> es uno de patrones ya identificados como útiles en los que su aplicación es adecuada. Los patrones de diseño se clasifican en las áreas funcionales de creacionales dedicados a la creación de objetos, de comportamiento centrados en la comunicación entre objetos, estructurales para mantener de forma sencilla relaciones entre entidades y finalmente los patrones de concurrencia empleados en la aplicación concurrente con múltiples hilos de ejecución.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="las-limitaciones-de-instanciar-objetos-con-la-palabra-reservada-_new_">Las limitaciones de instanciar objetos con la palabra reservada <em>new</em></h3>
 <p>Los lenguajes de programación orientada a objetos modelan los conceptos que trata una aplicación mediante clases que define las propiedades del objeto y los métodos que permiten el acceso o modifican el estado del objeto, esto proporciona encapsulación y es uno de los <a href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">conceptos fundamentales de la programación orientada a objetos</a> entre los que también se encuentran el polimorfismo, herencia y composición.</p>
 <div class="code">
@@ -879,10 +861,7 @@ un orden superior a <em>b</em>.</p>
 </div>
 <p>En el lenguaje de programación Java hay varias librerías que permiten hacer peticiones a un servicio que utilice el protocolo HTTP. Varias de las librerías más conocidas son <a href="https://square.github.io/okhttp/">OkHttp</a>, <a href="https://hc.apache.org/">Apache HttpComponents</a> e incluso <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/">en el JDK en la versión 11 se ha incorporado un cliente HTTP que soporta HTTP/2</a>.</p>
 <p>Estas librerías cumplen su función y ofrecen total flexibilidad en su uso, sin embargo, requieren hacer las peticiones HTTP de forma explícita lo que supone un código repetitivo y tedioso incluyendo hacer las <a href="https://picodotdev.github.io/blog-bitix/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/">conversiones de objetos a JSON y de JSON a objetos Java</a> en las peticiones y respuestas.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="la-librería-retrofit-para-crear-un-cliente-de-un-servicio-rest-o-http">La librería Retrofit para crear un cliente de un servicio REST o HTTP</h3>
 <p><a href="https://square.github.io/retrofit/">Retrofit</a> es una librería que simplifica en gran medida el construir clientes HTTP de una API REST o realizar un cliente de un servicio REST. Con Retrofit basta con crear una interfaz Java que represente el servicio y decorarla con las anotaciones que proporciona Retrofit. También es posible utilizar Retrofit para <a href="https://picodotdev.github.io/blog-bitix/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/">servicios implementados con GraphQL</a> que aunque no están basados en REST si utilizan el protocolo HTTP.</p>
 <p>Retrofit utiliza como librería para realizar las peticiones OkHttp y es compatible con varias librerías para realizar las conversiones de datos de JSON a objetos y de objetos a JSON, entre ellas <a href="https://github.com/FasterXML/jackson">Jackson</a>, <a href="https://github.com/google/gson">Gson</a> y JSON-B. También soporta realizar las peticiones de forma síncrona o asíncrona.</p>
@@ -981,10 +960,7 @@ un orden superior a <em>b</em>.</p>
 <p>El problema de reconocimiento de caracteres es una tarea simple para un humano pero no es una tarea sencilla para una computadora que no posee la inteligencia y experiencia de un humano sino simplemente la que los programadores le han dotado dentro de sus posibilidades. La ventaja de usar una computadora, al igual que en muchas otras tareas posibles con una computadora, es que con el software adecuado es capaz de hacer el reconocimiento de caracteres de manera mucho más rápida y bastante efectiva aunque requiera cierto trabajo de revisión y edición posterior del texto obtenido. La <a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">conversión de texto a voz natural</a> es otra tarea simple para un humano pero difícil para una computadora si el resultado deseado ha de ser natural o difícilmente indistinguible de la entonación de un humana.</p>
 <p>El texto de una imagen no es extraíble de forma directa ya que por el formato de las imágenes el texto es visiblemente únicamente por la disposición de los pixeles. Para extraer el texto es necesario aplicar un algoritmo que utilizando varias heurísticas es capaz de reconocer el texto de la imagen, el software de reconocimiento de caracteres se le denomina <em>Optical Character Recognition</em> o OCR.</p>
 <p>El reconocimiento de caracteres en una imagen es útil y necesario cuando el texto está insertado en una imagen o fotografía, por ejemplo cuando se toma una fotografía de un coche con su número de matrícula o cuando se toma una fotografía de una página de un libro y se quiere extraer el texto de la imagen, los teléfonos inteligentes con cámara son capaces de sustituir para usos básicos a dispositivos hardware como escáneres ópticos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="programas-de-reconocimiento-de-caracteres-con-ocr">Programas de reconocimiento de caracteres con OCR</h3>
 <p>Para extraer el texto de una imagen es necesario un programa OCR, un programa OCR es un software especializado en reconocer patrones de caracteres en una imagen aún cuando los caracteres y texto de la imagen tiene cierta distorsión, baja calidad o defectos. Por supuesto, a mejor calidad de la imagen origen el programa OCR es capaz de ser más preciso en el reconocimiento del texto. Aunque los programas OCR no son siempre perfectos son bastante fiables con una imagen de buena calidad y son capaces de extraer el texto con un éxito cercano al cien por cien.</p>
 <p>Los usos de OCR son múltiples, como digitalización de libros, páginas de un libro, periódico, documento, reconocimiento de matrículas de vehículos o direcciones postales entre otros muchos usos.</p>
@@ -1107,10 +1083,7 @@ un orden superior a <em>b</em>.</p>
 </div>
 <p>La mayoría de las aplicaciones usan una base de datos para guardar persistir, consultar datos o guardar el estado de la aplicación. Las bases de datos son los sistemas especializados en guardar la información de las aplicaciones.</p>
 <p>Dentro de la categoría de bases de datos las relacionales son unas de las más utilizadas por sus propiedades <a href="https://es.wikipedia.org/wiki/ACID">ACID</a> y el potente lenguaje de consultas SQL. Las bases de datos relacionales siguen siendo adecuadas para muchos usos y propósitos aún con la aparición de las bases de datos NoSQL también útiles cuando existe ciertos requerimientos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="clases-del-jdk-para-acceso-a-base-de-datos-relacionales">Clases del JDK para acceso a base de datos relacionales</h3>
 <p>Java ofrece soporte para las bases de datos relacionales desde prácticamente las primeras versiones del JDK hasta día de hoy incorporando un conjunto de clases en el paquete <em>java.sql</em> en la denominada API en Java de <a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity">Java Database Connectivity</a> o JDBC.</p>
 <p>Las principales clases de la API de JDBC son las clases <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Statement.html">Statement</a> y <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html">PreparedStatement</a> que representan la sentencia SQL ya sea de inserción, actualización, eliminación o consulta así como las sentencias DDL para la creación de tablas, índices, campos o procedimientos almacenados. Normalmente se utiliza la clase <em>PreparedStatement</em> ya que tiene beneficios en cuanto a rendimiento al ejecutarse de forma repetida y utilizada correctamente permite evitar el grave problema de seguridad de <em>SQL injection</em> común en las aplicaciones que construyen de forma dinámica con concatenaciones sentencias SQL utilizando datos procedentes de fuentes no confiables como parámetros de una petición HTTP, de JSON u otras fuentes externas a la aplicación.</p>
@@ -1326,10 +1299,7 @@ un orden superior a <em>b</em>.</p>
 <p>Los primeros lenguajes de programación utilizaban un paradigma imperativo con un conjunto de instrucciones ejecutadas de forma secuencial y organizado en funciones que manipulan datos. Posteriormente, surge el paradigma de programación orientado a objetos en el que el código se organiza en objetos que encapsulan los datos y las funciones que los manipulan. Otro paradigma es la programación funcional donde el código se organiza en funciones puras que dados unos datos de entrada genera un resultado y en vez de cambiar de estado a los datos existentes genera nuevos datos haciendo a los datos inmutables.</p>
 <p>Muchos de los lenguajes de programación hacen uso u ofrecen formas de aplicar al mismo tiempo varios de estos paradigmas de programación. Por ejemplo, el lenguaje de programación C aún siendo un lenguaje de programación que hace uso del paradigma imperativo también es posible utilizar conceptos de la programación orientada a objetos o funcionales, aunque el lenguaje en sí no ofrezca abstracciones propias de orientación a objetos o funcionales. El lenguaje de programación Java es orientado a objetos aunque también en el código de los métodos utiliza programación imperativa y con las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades incluidas en Java 8</a> con las <em>lambdas</em>, <em>streams</em>, o <a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/">los records en Java 16</a> y el soporte en las estructuras de datos de las colecciones permite utilizar conceptos de la programación funcional.</p>
 <p>En la programación orientada a objetos hay varios conceptos que definen este paradigma de programación, la encapsulación de datos, abstracciones de los modelos en los programas, los objetos, clases e instancias, herencia, polimorfismo y composición.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="conceptos-de-la-programación-orientada-a-objetos">Conceptos de la programación orientada a objetos</h3>
 <p>Los lenguajes de programación orientados a objetos se diferencian de los imperativos en que el propio lenguaje incluye abstracciones y sintaxis específica para el soporte de la programación orientada a objetos.</p>
 <p>El lenguaje de programación Java considerado como un lenguaje de programación a objetos incluye palabras reservadas para la definición de clases e interfaces e implementa los conceptos de herencia y polimorfismo.</p>
@@ -1517,10 +1487,7 @@ un orden superior a <em>b</em>.</p>
         <![CDATA[<p><strong>En Java 16 los cambios en el lenguaje no son tan notables que en versiones anteriores, aún así  el calendario se sigue manteniendo y en cada versión se incluyen mejoras incrementales destacables. Se publica la versión final y lista para producción de algunas características y se añaden nuevas en forma de vista previa.</strong></p>]]>
         <![CDATA[<p>Las nuevas versiones se van sucediendo de forma periódica y puntual según la cadencia de seis meses del adoptado calendario de publicación. En esta ocasión la versión 16 de Java publicada el 16 de marzo de 2021, que incluye mejoras incrementales destacando soporte para nuevas plataformas, inclusión de forma final de características que anteriormente estaban marcadas como vista previa y algunas nuevas características destacables que entran en forma de vista previa y nuevas revisiones de vistas previas anteriores.</p>
 <p>La versión 16 de Java será la última antes de la siguiente versión de soporte a largo plazo o LTS, la versión 17 será una versión LTS que sucederá a la anterior LTS publicada de Java 11. La versión 11 fue publicada en septiembre de 2018 y la 17 será publicada en septiembre de 2021.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="introducción">Introducción</h3>
 <p>No hay cambios importantes en el lenguaje, el más destacado es la inclusión de <em>pattern matching</em> para el operador <em>instanceof</em>, la incorporación de forma final de los <em>Records</em>, soporte para las plataformas Windows/AArch64, distribuciones como Alpine basadas en <em>musl</em> y soporte para la comunicación mediante canales <em>Unix-Domain Socket</em>.</p>
 <p>En los cambios que entran en modo vista previa destacan la Vector API que permite la computación en paralelo aprovechando las instrucciones vectoriales en los procesadores como AVX en x86 y Neon en ARM para acelerar las operaciones de una instrucción múltiples datos o SIMD. Aparte de los destacados hay números cambios más realizados en las APIs de las clases y el añadido de algunas funcionalidades menores, que en las notas de publicación están documentados.</p>
@@ -1721,10 +1688,7 @@ un orden superior a <em>b</em>.</p>
 <p>Para reutilizar las librerías los proyectos declaran las librerías de las que dependen, la herramienta de construcción se encargan de descargarlas y almacenarlas en un repositorio local para evitar una nueva descargacon su transferencia de red en usos posteriores. En Java las herramientas de construcción <a href="https://gradle.org/">Gradle</a> y <a href="https://maven.apache.org/">Maven</a> automatizan la descarga y enlazado de las dependencias declaradas con el código del proyecto. Para JavaScript una herramienta de dependencias es <a href="https://www.npmjs.com/">npm</a>.</p>
 <p>Las librerías requieren de la funcionalidad de un repositorio de librerías o artefactos que permite descargarlas cuando un proyecto las declare como dependencias. En Java el repositorio más popular es <a href="https://search.maven.org/">Maven Central</a>, las imágenes para iniciar un contenedor de Docker también tienen su propio repositorio de imágenes de Docker con <a href="https://registry.hub.docker.com/">Docker Hub</a> o el repositorio de librerías JavaScript que utiliza  npm.</p>
 <p>Los repositorios anteriores son públicos donde los desarrolladores suben sus artefactos cada vez que publican una nueva versión de sus librerías o <em>frameworks</em>. Una organización en sus proyectos utiliza numerosas dependencias de los repositorios oficiales de cada lenguaje o herramienta pero también con seguridad desarrollará sus propias librerías que necesita compartir en diferentes proyectos de forma interna sin compartirlos en los repositorios públicos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="repositorio-de-artefactos-con-nexus">Repositorio de artefactos con Nexus</h3>
 <p><a href="https://www.sonatype.com/nexus/repository-oss">Nexus</a> es un software que ofrece la funcionalidad de repositorio de artefactos. Permite a una organización compartir de forma privada los artefactos entre los diferentes proyectos. Soporta diferentes tipos de repositorios según el tipo de artefactos, librerías <em>jar</em> para Java, paquetes npm para JavaScript, imágenes de contenedores para Docker, paquetes de <a href="https://www.python.org/">Python</a> y <a href="https://golang.org/">Go</a>.</p>
 <p>Nexus OSS es la versión de código abierto que permite su uso sin coste, la versión <a href="https://www.sonatype.com/nexus/repository-pro">Nexus Pro</a> tiene características empresariales como autenticación SSO.</p>
@@ -1896,10 +1860,7 @@ un orden superior a <em>b</em>.</p>
 </div>
 <p>Las anotaciones fueron añadidas en Java 5 como una forma de enriquecer con información el código. Tienen varios casos de uso, algunas están incorporadas en el propio JDK y las utiliza el compilador como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Override.html">@Override</a>, otras son meramente informativas como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html">@Deprecated</a>, también se utilizan en la <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">generación de documentación Javadoc con <em>taglets</em></a>, otras se procesan en tiempo de compilación para generar código o archivos dinámicamente al compilar, otras se procesan en tiempo de ejecución. Entre las <a href="https://docs.oracle.com/javase/tutorial/java/annotations/predefined.html">anotaciones predefinidas incorporadas en el JDK</a> hay algunas más.</p>
 <p>En este artículo muestro cómo crear anotaciones para generar errores de compilación propios, como generar código dinámico en tiempo de compilación e integrarlo con un IDE como <a href="https://www.jetbrains.com/idea/">IntelliJ</a> y con la herramienta de construcción <a href="https://gradle.org/">Gradle</a>.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="qué-es-una-anotación-en-java">Qué es una anotación en Java</h3>
 <p>Las anotaciones es una metainformación que se añade en el código fuente. Por sí mismas no hacen nada, es al procesarlas cuando se añade su comportamiento, sirve desde para añadir documentación, realizar comprobaciones de compilación, generar código o programar funcionalidades transversales.</p>
 <p>Si se crea directamente una instancia de una clase anotada sin procesar las anotaciones esta no incluye el comportamiento que las anotaciones tienen intención de añadir, es el creador de la instancia el que ha de encargarse de añadirles el comportamiento en el momento de instanciarlas, el procesado de las anotaciones se puede hacer en tiempo de compilación o en tiempo de ejecución.</p>

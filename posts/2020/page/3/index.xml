@@ -255,10 +255,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="servicios-de-hashicorp">Servicios de HashiCorp</h3>
 <div class="media">
 <figure>
@@ -668,10 +665,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="configurar-un-servidor-web-virtual-en-nginx">Configurar un servidor web virtual en Nginx</h3>
 <p>En el servidor web <a href="https://nginx.org/">Nginx</a> añadir un servidor web virtual consiste en añadir la configuración del sitio web en el directorio <em>/etc/nginx/conf.d</em>. La directiva relevante es <em>server_name</em> que asocia el servidor web virtual con el nombre del dominio. En base al nombre del dominio por el que se accede al servidor web se utiliza su configuración.</p>
 <div class="code">
@@ -751,10 +745,7 @@
 </div>
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</h3>
 <p>El certificado de una autoridad de certificación es un certificado autofirmado que se utilizar para comprobar que la firma de los certificados que emite la entidad es válida. Es necesario crear un par de claves asimétricas privada y pública y posteriormente generar su certificado.</p>
 <div class="code">
@@ -959,10 +950,7 @@
 <figcaption>Solicitud de credenciales por el navegador con autenticación básica</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="configurar-autenticación-básica-en-el-servidor-web-nginx">Configurar autenticación básica en el servidor web Nginx</h3>
 <p>La autenticación básica en <a href="https://nginx.org/">Nginx</a> se activan añadiendo dos directivas, <em>auth_basic</em> y <em>auth_basic_user_file</em>, en el archivo de configuración del sitio web y recurso a proteger. En este caso con la raíz del sitio web <em>/</em> cualquier ruta está protegida con autenticación básica.</p>
 <div class="code">
@@ -1352,10 +1340,7 @@
 </div>
 <p>La necesidad puede ser hacer una copia de seguridad periódicas para conservar el historial del sitio web, descargar el contenido para procesarlo de alguna forma, para consultarlo sin conexión a internet u <em>offline</em> si nuestra conexión es lenta o inestable o el servidor está caído, migrar un sitio web de un servidor web a otro o descargar los archivos de vídeo, audio, imágenes o multimedia.</p>
 <p>Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de descargar y guardar en el sistema de archivos la página que se está visualizando, está es la opción más simple ya que no se necesitan herramientas adicionales si solo se quiere guardar una página de las muchas de un sitio web. Su desventaja es que no sirve para guardar un sitio web completo por requerir hacer la operación manualmente por cada página, de forma que para realizar la operación de forma másiva y automatizada para el sitio web completo hay que utilizar alguna herramienta especializada.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="cómo-descargar-un-sitio-web-desde-la-línea-de-comandos-con-wget">Cómo descargar un sitio web desde la línea de comandos con wget</h3>
 <p>La herramienta de línea de comandos <a href="https://www.gnu.org/software/wget/">wget</a> permite descargar un sitio web completo con un comando ejecutado desde la terminal incluyendo los archivos HTML y de recursos como imágenes, vídeos, contenido multimedia como audio o música, de estilos CSS o archivos JavaScript. El contenido que descarga wget es el referenciado a través de los enlaces presentes en el propio contenido, wget explora los archivos HTML en busca de enlaces a recursos u otras páginas HTML y de forma recursiva descarga el contenido completo al sistema de archivos local. Está disponible para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y <a href="https://www.apple.com/macos/">macOS</a> y es una herramienta de software libre y gratuita.</p>
 <p>Basta indicar el o los dominios del sitio web de los que se quiere descargar el contenido y la URL de rastreo de inicio u otras URLs adicionales que se desean descargar. Este comando con las opciones indicadas solo descarga los enlaces del sitio web puesto como argumento, los enlaces a sitios web externos no indicados expresamente en la opción <em>&ndash;domain</em> son ignorados. El comando wget soporta numerosas opciones para personalizar la descarga explicadas en su <a href="https://www.gnu.org/software/wget/manual/wget.html">página de manual</a>.</p>
@@ -1412,10 +1397,7 @@
 <p>Los navegadores web modernos ofrecen tres formas diferentes de almacenar o persistir datos en lado del cliente cada una siendo más apropiada según las necesidades, estas tres formas de guardar datos son con las <em>cookies</em>, LocalStorage o SessionStorage y finalmente IndexedDB. Los datos están accesibles aún sin conexión con el servidor desde donde se descargó la página siguiendo la <a href="https://www.w3.org/Security/wiki/Same_Origin_Policy">política de mismo origen</a> para mantener la seguridad y que solo la página origen tenga acceso a los datos almacenados. Una aplicación puede utilizar una o varias de estas formas de guardar datos al mismo tiempo que perduran al cierre del navegador y de las páginas estando disponible en futuras sesiones.</p>
 <p>En los navegadores se pueden inspeccionar estos datos almacenados en el lado del cliente utilizando las herramientas para desarrolladores, en el navegador <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> en la sección <em>Almacenamiento</em> de las herramientas para desarrolladores.</p>
 <p>Dado que los datos se almacenan en el navegador del usuario hay que tener en cuenta en que el propio usuario tiene acceso a ellos y es capaz de modificarlos, de modo que si estos datos se envían al servidor hay que tratarlos como una fuente de datos no confiable y validarlos en el lado del servidor si es necesario para evitar fallos de seguridad ni ser datos que comprometan la seguridad.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="guardar-datos-en-el-navegador-con-cookies">Guardar datos en el navegador con cookies</h3>
 <p>El protocolo HTTP es un protocolo sin estado, esto significa que cada petición al servidor es independiente y no comparten información. Las <em>cookies</em> son la forma de convertir el protocolo HTTP a un protocolo con estado identificando al usuario en las diferentes peticiones. Las <em>cookies</em> son unos pequeños datos guardados por el navegador y enviados al servidor en cada petición al servidor.</p>
 <p>Las <em>cookies</em> se utilizan para mantener la sesión, para ofrecer personalización o para realizar seguimiento de usuarios. Cuando se realiza la autenticación en un servidor la sesión se mantiene creado una <em>cookie</em> que contiene un identificativo de sesión y en el lado del servidor el identificativo de la sesión se mantiene en memoria o externalizada del servidor en una base de datos como <a href="https://redis.io/">Redis</a> o relacional. El identificativo de la sesión guardado en una <em>cookie</em> no es más que al menos 128 bits aleatorios únicos para cada usuario.</p>
@@ -1730,10 +1712,7 @@
 <figcaption>Mascotas de Linux, BSD y GNU</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="diferencias-en-el-modelo-de-desarrollo">Diferencias en el modelo de desarrollo</h3>
 <p>Lo que conocemos como Linux es simplemente el núcleo del sistema operativo de las distribuciones GNU/Linux. Las distribuciones GNU/Linux están compuestas por otra multitud de programas de usuario que forman el sistema operativo completo y lo hacen usable, estos programas son muchos de los programados bajo los proyectos de la fundación GNU. Este es el motivo de que las distribuciones GNU/Linux incluyan los términos de ambos proyectos. Las distribuciones GNU/Linux son una recopilación de programas de terceras partes, todos estos programas GNU y no GNU incluidos en los sistemas GNU/Linux están desarrollados por diferentes programadores ajenos a Linux y los creadores de la distribución. Los creadores de las distribuciones GNU/Linux son los encargados de juntar los diferentes programas de cada fuente y empaquetarlas como un sistema usable, estable y libre de errores.</p>
 <p>Las distribuciones BSD son muy diferentes en este aspecto ya que los desarrolladores del núcleo son los mismos que desarrollan los programas de usuario que hacen el sistema operativo completo.</p>
@@ -1869,10 +1848,7 @@
 <p><a href="https://spring.io/">Spring</a> también integra una solución sencilla para ejecutar tareas de forma programada disponible para las aplicaciones que usen <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> sin necesidad de dependencias adicionales.</p>
 <p>El propio JDK desde la versión 5 incorpora varias clases para ejecutar tareas programadas sin ninguna dependencia en el proyecto ni siquiera de Spring.</p>
 <p>La programación de las tareas también se puede realizar a nivel de sistema operativo. En <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> con la utilidad <a href="https://wiki.archlinux.org/index.php/Cron">cron</a> y con <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> se puede programar tareas. Sin embargo, realizar la programación a nivel de sistema operativo se crean nuevos procesos y la configuración está externalizada de la aplicación. Utilizar Quartz, Spring o las clases del JDK tiene la ventaja de que la configuración de la programación de las tareas está más en el ámbito de la programación que en la de configuración de sistemas, el primer caso los cambios los hace el programador, en el segundo los hace la persona a cargo de los sistemas.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
+<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="tareas-programadas-con-quartz-y-spring-boot">Tareas programadas con Quartz y Spring Boot</h3>
 <p>Entre las muchas itegraciones que ofrece Spring una de ellas es para Quartz. Las clases importantes que ofrece Quartz son:</p>
 <ul>
