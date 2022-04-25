@@ -32,6 +32,9 @@
         </div>
         {{ partial "series.html" . }}
         {{ partial "share-this.html" . }}
+        {{ if not (in .Content "<toc></toc>") }}
+          {{ partial "videoo.html" . }}
+        {{ end }}
         {{ partial "related.html" . }}
         <div class="row">
           <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">

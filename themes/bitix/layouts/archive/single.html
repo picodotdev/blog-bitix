@@ -49,6 +49,7 @@
               </li>
             {{ end }}
             </ul>
+            {{ partial "videoo.html" . }}
             <h3>{{ i18n "archive_title" }}</h3>
             <p>{{ i18n "archive_description" }}</p>
             {{ range (where .Site.Pages "Section" "in" (split "posts" ",")).GroupByDate "2006" "desc" -}}

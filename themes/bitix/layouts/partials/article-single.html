@@ -1,4 +1,6 @@
 {{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
+{{ $videoo := partial "videoo.html" . }}
+{{ $content := .Content }}
 <article>
     <h1>{{ .Title }}</h1>
     <p class="information">
@@ -37,7 +39,11 @@
 
     <div class="content">
       {{ partial "share-this-begin.html" . }}
-      {{ replace .Content "<toc></toc>" .TableOfContents | safeHTML }}
+      {{ if in $content "<toc></toc>" }}
+        {{ $content = replaceRE "(.*<toc></toc>.*)" (print $videoo "$1 ") $content 1 }}
+        {{ $content = replace $content "<toc></toc>" .TableOfContents  }}
+      {{ end }}
+      {{ $content | safeHTML }}
     </div>
 
     <p class="information">
