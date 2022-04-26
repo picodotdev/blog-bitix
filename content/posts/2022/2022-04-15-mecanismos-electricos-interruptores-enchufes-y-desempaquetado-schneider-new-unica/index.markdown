@@ -478,6 +478,7 @@ Además de los elementos eléctricos puede que sea necesario comprar otros produ
 {{< image
     gallery="true"
     image1="image:marca-suciedad.jpg" optionsthumb1="300x200" title1="Marca de suciedad"
+    image2="image:marca-suciedad-arreglada.jpg" optionsthumb2="300x200" title2="Marca de suciedad arreglada"
     caption="Marca de suciedad en la pared" >}}
 
 Otro productos puede ser algo de escayola para arreglar algún desperfecto en la pared o la caja del registro eléctrico. Unas tapas de enchufes _schuko_ para que no se les acumule polvo mientras no se usan, cable eléctrico en caso de tener que sustituir alguno que puentea mecanismos, pintura, pinceles o brochas junto con disolvente. De todo estos productos están disponibles en tiendas especializadas y en [Amazon][amazon-affiliate] también se ofrecen.
