@@ -1,0 +1,12 @@
+$ git log --pretty=oneline 63575c4f1824c360dbf60aafaaec17401ea604bd..master
+022c1b295804bf810743f175358607a0a3bb7307 (HEAD -> master, origin/master) Remove Universal Analytics
+a07d1af345907016e19778feb064e08d17f36ed9 Add print_step for display_manager step
+39320076b996e4d582bf535f74d1f0b238b3768a Reorder packages
+d5233aa726c2626d52de8981bee65dcfbf69ae61 Merge pull request #209 from shuriken1812/master
+f7a4790992f859aac6fde86b3b18a72e259545bd Added pipewire-alsa and wireplumber
+0b0a1ddca33814e254b3bc395af476156559aac4 Allow to choose display manager
+0aeacbab0fe55b71b272d670c76ab52fa2b206c4 Support LightDM autologin
+ff01de4f91ff10c6b99b5b6275623ea93ec412ba Update Hugo  ndadd Google Analytics 4
+f3038ae0195dddcd98660ebd81721aa5645a8597 Merge pull request #194 from MauroSoli/patch-1
+20c5f7a12bbbc372e77187cae7ccd4a1c64c8a1b Change provision configuration description
+219f4ab9232b5537364d8b9a0e969520917f3230 add !tpm module
