@@ -5,12 +5,76 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-19T00:00:00+02:00</updated>
+    <updated>2022-04-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/</id>
+        <title>Controlar un servomotor con la Raspberry Pi y Java</title>
+        <updated>2017-05-13T11:40:00+02:00</updated>
+        <published>2017-05-07T11:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Otro de los elementos que incluye el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la Raspberry Pi</a> es un <a href="https://es.wikipedia.org/wiki/Servomotor">servomotor</a>, en concreto uno del modelo SG90. En la <a href="http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf">especificación del servomotor SG90</a> está detallado cual es el código de colores de los cables. Rojo para la corriente de 5V, marrón para tierra y naranja para el <em>pin</em> <abbr title="Pulse Width Modulated">PWM</abbr> con el que se controlará el servo motor, el diodo led es simplemente para saber que cuando se enciende el programa Java se ha iniciado. La Raspberry Pi tiene algunos <em>pines</em> con soporte hardware para realizar PWM.</p>
+<p>Un servomotor es un elemento distinto de un motor, un motor usa dos cables uno para mover el motor hacia adelante y otro cable para mover el motor hacia atrás. Los servomotores además de utilizar un único cable para controlarlo su funcionalidad es distinta usándose para posicionar el motor en un determinado ángulo que en el caso del SG90 tiene un ángulo de funcionamiento de 180º. Además el servomotor es más complejo, como se explica en el siguiente artículo de título <a href="http://handyboard.com/hb/faq/hardware-faqs/dc-vs-servo/">¿Cual es la diferencia entre un motor DC y servo motor?</a> el servomotor se compone de varios elementos empaquetados como una pieza. Se compone de un motor DC normal, una unidad de reducción, un sensor de posicionamiento y un circuito de control.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/servomotor_hu6764442dc229d274d15e84357470d3d3_154925_2560x1440_fit_q90_box.jpg" data-gallery="" title="Servomotor"><img src="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/servomotor_hu6764442dc229d274d15e84357470d3d3_154925_300x200_fit_q90_box.jpg" width="300" height="103" alt="Servomotor" title="Servomotor"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/cableado_hu61c0e41b06d1f9f4477c5ed3a6a8630c_260206_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cableado en la breadboard"><img src="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/cableado_hu61c0e41b06d1f9f4477c5ed3a6a8630c_260206_300x200_fit_q90_box.jpg" width="300" height="128" alt="Cableado en la breadboard" title="Cableado en la breadboard"  class="lozad "></a></p>
+<figcaption>Servomotor y cableado</figcaption>
+</figure>
+</div>
+<p>La función del servomotor es recibir la señal de control y aplicar corriente al motor hasta que que esté en la posición indicada por la señal. Un servomotor no rota libremente sino que como he comentado en el caso del SG90 tiene un ángulo de funcionamiento de entre 0º y 180º. La señal de control es un pulso de anchura modulada o PWM.</p>
+<p>Usando la librería <a href="http://rtd.diozero.com/en/latest/">Diozero</a> es sencillo controlar un servomotor a través de la clase <a href="http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/Servo.html">Servo</a>. El constructor recibe tres datos el <em>pin</em> de la Raspberry Pi que controlará el servomotor, según la nomenclatura Broadcom que usa la librería Diozero, la frecuencia del pulso PWD que sirve para controlar la velocidad de rotación y finalmente la posición inicial a establecer. Con el método <a href="http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/Servo.html#getPulseWidthMs--">pulseWidthMs</a> y un rango de un valor <em>float</em> entre 0.6 y 2.4 controlaremos la posición o ángulo del servomotor.</p>
+<p>El siguiente programa Java cambia en un bucle la posición del servo desde la posición mínima a la máxima. En él he utilizado el <em>pin</em> 18 que en la Raspberry Pi 1 soporta PWD, en las versiones 2 y 3 podríamos haber usado los <em>pines</em> 18 o 19.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.sandpit.Servo</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Servomotor</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">21</span><span class="o">);</span> <span class="n">Servo</span> <span class="n">servo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Servo</span><span class="o">(</span><span class="n">18</span><span class="o">,</span> <span class="n">50</span><span class="o">,</span> <span class="n">1</span><span class="o">.</span><span class="na">45F</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">5</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">3000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">servo</span><span class="o">.</span><span class="na">setPulseWidthMs</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">6F</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">3000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">servo</span><span class="o">.</span><span class="na">setPulseWidthMs</span><span class="o">(</span><span class="n">2</span><span class="o">.</span><span class="na">3F</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">servo</span><span class="o">.</span><span class="na">setPulseWidthMs</span><span class="o">(</span><span class="n">1</span><span class="o">.</span><span class="na">45F</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Servomotor.java</span>
+    </div>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/g8RsvZ26Cqg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>Aunque he conseguido hacer funcionar el servomotor con este programa no ha sido exento de problemas. Y es que cuando el programa finaliza la Raspberry Pi se me bloquea o se pierde la conectividad de red. No se si por algún <em>bug</em> en la librería Diozero o alguna incompatibilidad con la Raspberry Pi 1 B, quizá en otro modelo de la Raspberry Pi no dé los problemas que a mi me da.</p>
+<p>En otros artículos de la serie puedes consultar cómo usar otros <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">elementos de kit con Java y la Raspberry Pi</a>.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeServomotor</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf">Especificación SG90 servomotor</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Servomotor">Servomotor</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/</id>
         <title>Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java</title>
@@ -1521,67 +1585,6 @@ willing to read the documentation, and solve their own problems.</p>
                 <category term="tapestry"/>
             
                 <category term="gnu-linux"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/</id>
-        <title>Guardar contraseñas de forma segura con KeePassXC</title>
-        <updated>2018-10-07T13:45:00+01:00</updated>
-        <published>2016-11-26T11:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keepassxc.svg" width="200" height="200" alt="KeePassXC" title="KeePassXC"  class=""></p>
-</div>
-<p>La mayor parte de servicios usan aún como forma de autenticación el método de usuario y contraseña. Si la contraseña proporcionada conocida solo por su usuario es correcta el sistema confía en que el usuario es quien dice ser. Las contraseñas deberían ser difíciles de averiguar, se recomienda que tenga una longitud mínima de 8 caracteres y que contenga letras en minúscula y mayúscula, números y símbolos. Sin embargo, cuanto más larga, fuerte y difícil sea de averiguar más difícil es recordarla.</p>
-<p>Además, es muy recomendable utilizar una contraseña distinta en cada servicio para evitar que descubierta la contraseña por un fallo de seguridad en cualquiera en los que se use pueda accederse a todos los otros servicios que utilice ese usuario, por lo que el número de contraseñas a recordar son numerosas. Muchos usuarios terminan usando la misma contraseña en varios servicios con el riesgo que conlleva. Dado que recordar una contraseña única fuerte para cada servicio es difícil y mantenerlas guardadas en un archivo de texto o en un papel no es lo más recomendable se puede usar un programa que las almacene cifradas de forma segura.</p>
-<p>Uno de estos programas es <a href="https://keepass.info/">KeePass</a>, básicamente es una base de datos de contraseñas que se almacenan de forma segura y cifrada y protegidas por una contraseña maestra o para mayor seguridad con un archivo a modo de contraseña maestra. La información básica que se puede guardar es el nombre del servicio y su URL, el usuario en ese servicio y la contraseña. Se pueden agrupar y buscarlas con un campo que va encontrando las coincidencias a medida que se escribe.</p>
-<p>En realidad de KeePass hay varias implementaciones, la original es KeePass implementada en C# y el <em>framework</em> .NET. Para evitar el framework .NET y hacerla multiplataforma se reimplementó con C++ y las librerías Qt, la nueva versión se denominó <a href="https://www.keepassx.org/">KeePassX</a>. Sin embargo, el desarrollo de KeePassX es lento y no incorpora las mejoras que algunos usuarios proponían de modo que decidieron hacer un nuevo <em>fork</em> dando lugar <a href="https://keepassxc.org/">KeePassXC</a>.</p>
-<p>KeePassXC es una aplicación de escritorio gestor de contraseñas que tiene las funcionalidades adicionales de un generador de contraseñas seguras, la posibilidad de realizar la funcionalidad de <em>authenticator</em> para <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">activar la verificación en dos pasos en servicios</a> que lo ofrecen como <a href="https://www.google.es/">Google</a>, <a href="https://amzn.to/2flFhHA">Amazon</a> o <a href="https://www.paypal.com/">PayPal</a>. También guarda un historial de las contraseñas antiguas usadas para cada servicio que permite recuperar una contraseñas antigua en caso de ser necesario o por algún error al hacer el cambio de contraseña.</p>
-<p>Instalado el <a href="https://www.archlinux.org/packages/community/x86_64/keepassxc/">paquete de KeePassXC</a> de nuestra distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> o el binario para nuestro sistema operativo lo primero que deberemos hacer es crear una base de datos que protegeremos con una contraseña maestra, se puede guardar la base de datos en un archivo en cualquier ubicación.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -Syu keepassxc</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-1_hu030f9c3e11ba844bc808c78e5772f5fa_93184_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-1_hu030f9c3e11ba844bc808c78e5772f5fa_93184_300x200_fit_box_3.png" width="257" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-2_hud1fa7fd8854780db506305ec0ad498f3_93939_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-2_hud1fa7fd8854780db506305ec0ad498f3_93939_300x200_fit_box_3.png" width="258" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Lo siguiente será crear una entrada con el usuario y contraseña de un servicio.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-4_huc7c5286702f50956d5e4425a982685d0_128374_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-4_huc7c5286702f50956d5e4425a982685d0_128374_300x200_fit_box_3.png" width="257" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-3_huc24d016303ae6985850ecc6583ddb53e_138442_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-3_huc24d016303ae6985850ecc6583ddb53e_138442_300x200_fit_box_3.png" width="257" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Una vez almacenada la credencial se puede copiar al portapapeles el usuario y contraseña para usarlas en la página de autenticación del servicio con unos botones en la parte superior a tal efecto. También se puede ver la contraseña no protegida con asteriscos sino los caracteres originales. Otra funcionalidad muy útil es la de realizar autoescritura que automatiza el introducir el usuario y contraseña en la página que solicita autenticación. Normalmente consiste en escribir la contraseña en un campo de entrada, pulsar la tecla tabulador para cambiar al campo de entrada de la contraseña, introducir la contraseña y pulsar la tecla <em>return</em>. Con KeePassXC se puede realizar todo esto con un par de pulsaciones de ratón.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-6_hu2eb62dae2dba8c7f68b3f28d73d67750_146711_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de autoescritura"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-6_hu2eb62dae2dba8c7f68b3f28d73d67750_146711_300x200_fit_box_3.png" width="257" height="200" alt="Configuración de autoescritura" title="Configuración de autoescritura"  class="lozad "></a></p>
-</figure>
-</div>
-<p>KeePassXC es una herramienta que no tiene más complejidad, podemos asociar alguna información más a la credencial con atributos adicionales y archivos adjuntos pero no es imprescindible. Por supuesto, tiene un generador de contraseñas muy útil con el que obtener contraseñas únicas para cada servicio con las propiedades de seguridad que se requiera en cuanto a longitud, caracteres especiales, mayúsculas, minúsculas y números.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-5_hu7f8da3136f9b239740bd9615662d9bdd_113790_2560x1440_fit_box_3.png" data-gallery="" title="Nueva contraseña"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-5_hu7f8da3136f9b239740bd9615662d9bdd_113790_300x200_fit_box_3.png" width="257" height="200" alt="Nueva contraseña" title="Nueva contraseña"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Si somos nosotros los que implementamos un servicio con el método de autenticación de usuario y contraseña deberíamos <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">almacenar las contraseñas de forma segura usando «Salted Password Hashing»</a> e <a href="https://picodotdev.github.io/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">implementar un segundo factor de autenticación en una aplicación web Java con Spring</a>.</p>
-<p>Otras formas de guardar las contraseñas es en un <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">archivo cifrado con GPG</a> que desciframos cuando queramos usar alguna contraseña o en un <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">sistema de archivos cifrado como con EncFS</a> que lo montamos para acceder a archivo de texto con las contraseñas. <a href="https://strongpasswordgenerator.com/">Strong Password Generator</a> en una página web con la que podemos generar contraseñas usando estas mismas preferencias desde el navegador.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

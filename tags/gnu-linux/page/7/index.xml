@@ -5,12 +5,73 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-19T00:00:00+02:00</updated>
+    <updated>2022-04-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/</id>
+        <title>Guardar contraseñas de forma segura con KeePassXC</title>
+        <updated>2018-10-07T13:45:00+01:00</updated>
+        <published>2016-11-26T11:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keepassxc.svg" width="200" height="200" alt="KeePassXC" title="KeePassXC"  class=""></p>
+</div>
+<p>La mayor parte de servicios usan aún como forma de autenticación el método de usuario y contraseña. Si la contraseña proporcionada conocida solo por su usuario es correcta el sistema confía en que el usuario es quien dice ser. Las contraseñas deberían ser difíciles de averiguar, se recomienda que tenga una longitud mínima de 8 caracteres y que contenga letras en minúscula y mayúscula, números y símbolos. Sin embargo, cuanto más larga, fuerte y difícil sea de averiguar más difícil es recordarla.</p>
+<p>Además, es muy recomendable utilizar una contraseña distinta en cada servicio para evitar que descubierta la contraseña por un fallo de seguridad en cualquiera en los que se use pueda accederse a todos los otros servicios que utilice ese usuario, por lo que el número de contraseñas a recordar son numerosas. Muchos usuarios terminan usando la misma contraseña en varios servicios con el riesgo que conlleva. Dado que recordar una contraseña única fuerte para cada servicio es difícil y mantenerlas guardadas en un archivo de texto o en un papel no es lo más recomendable se puede usar un programa que las almacene cifradas de forma segura.</p>
+<p>Uno de estos programas es <a href="https://keepass.info/">KeePass</a>, básicamente es una base de datos de contraseñas que se almacenan de forma segura y cifrada y protegidas por una contraseña maestra o para mayor seguridad con un archivo a modo de contraseña maestra. La información básica que se puede guardar es el nombre del servicio y su URL, el usuario en ese servicio y la contraseña. Se pueden agrupar y buscarlas con un campo que va encontrando las coincidencias a medida que se escribe.</p>
+<p>En realidad de KeePass hay varias implementaciones, la original es KeePass implementada en C# y el <em>framework</em> .NET. Para evitar el framework .NET y hacerla multiplataforma se reimplementó con C++ y las librerías Qt, la nueva versión se denominó <a href="https://www.keepassx.org/">KeePassX</a>. Sin embargo, el desarrollo de KeePassX es lento y no incorpora las mejoras que algunos usuarios proponían de modo que decidieron hacer un nuevo <em>fork</em> dando lugar <a href="https://keepassxc.org/">KeePassXC</a>.</p>
+<p>KeePassXC es una aplicación de escritorio gestor de contraseñas que tiene las funcionalidades adicionales de un generador de contraseñas seguras, la posibilidad de realizar la funcionalidad de <em>authenticator</em> para <a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">activar la verificación en dos pasos en servicios</a> que lo ofrecen como <a href="https://www.google.es/">Google</a>, <a href="https://amzn.to/2flFhHA">Amazon</a> o <a href="https://www.paypal.com/">PayPal</a>. También guarda un historial de las contraseñas antiguas usadas para cada servicio que permite recuperar una contraseñas antigua en caso de ser necesario o por algún error al hacer el cambio de contraseña.</p>
+<p>Instalado el <a href="https://www.archlinux.org/packages/community/x86_64/keepassxc/">paquete de KeePassXC</a> de nuestra distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> o el binario para nuestro sistema operativo lo primero que deberemos hacer es crear una base de datos que protegeremos con una contraseña maestra, se puede guardar la base de datos en un archivo en cualquier ubicación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -Syu keepassxc</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-1_hu030f9c3e11ba844bc808c78e5772f5fa_93184_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-1_hu030f9c3e11ba844bc808c78e5772f5fa_93184_300x200_fit_box_3.png" width="257" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-2_hud1fa7fd8854780db506305ec0ad498f3_93939_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-2_hud1fa7fd8854780db506305ec0ad498f3_93939_300x200_fit_box_3.png" width="258" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Lo siguiente será crear una entrada con el usuario y contraseña de un servicio.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-4_huc7c5286702f50956d5e4425a982685d0_128374_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-4_huc7c5286702f50956d5e4425a982685d0_128374_300x200_fit_box_3.png" width="257" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-3_huc24d016303ae6985850ecc6583ddb53e_138442_2560x1440_fit_box_3.png" data-gallery="" title="KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-3_huc24d016303ae6985850ecc6583ddb53e_138442_300x200_fit_box_3.png" width="257" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Una vez almacenada la credencial se puede copiar al portapapeles el usuario y contraseña para usarlas en la página de autenticación del servicio con unos botones en la parte superior a tal efecto. También se puede ver la contraseña no protegida con asteriscos sino los caracteres originales. Otra funcionalidad muy útil es la de realizar autoescritura que automatiza el introducir el usuario y contraseña en la página que solicita autenticación. Normalmente consiste en escribir la contraseña en un campo de entrada, pulsar la tecla tabulador para cambiar al campo de entrada de la contraseña, introducir la contraseña y pulsar la tecla <em>return</em>. Con KeePassXC se puede realizar todo esto con un par de pulsaciones de ratón.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-6_hu2eb62dae2dba8c7f68b3f28d73d67750_146711_2560x1440_fit_box_3.png" data-gallery="" title="Configuración de autoescritura"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-6_hu2eb62dae2dba8c7f68b3f28d73d67750_146711_300x200_fit_box_3.png" width="257" height="200" alt="Configuración de autoescritura" title="Configuración de autoescritura"  class="lozad "></a></p>
+</figure>
+</div>
+<p>KeePassXC es una herramienta que no tiene más complejidad, podemos asociar alguna información más a la credencial con atributos adicionales y archivos adjuntos pero no es imprescindible. Por supuesto, tiene un generador de contraseñas muy útil con el que obtener contraseñas únicas para cada servicio con las propiedades de seguridad que se requiera en cuanto a longitud, caracteres especiales, mayúsculas, minúsculas y números.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-5_hu7f8da3136f9b239740bd9615662d9bdd_113790_2560x1440_fit_box_3.png" data-gallery="" title="Nueva contraseña"><img src="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/images/keepassxc-5_hu7f8da3136f9b239740bd9615662d9bdd_113790_300x200_fit_box_3.png" width="257" height="200" alt="Nueva contraseña" title="Nueva contraseña"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Si somos nosotros los que implementamos un servicio con el método de autenticación de usuario y contraseña deberíamos <a href="https://picodotdev.github.io/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">almacenar las contraseñas de forma segura usando «Salted Password Hashing»</a> e <a href="https://picodotdev.github.io/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">implementar un segundo factor de autenticación en una aplicación web Java con Spring</a>.</p>
+<p>Otras formas de guardar las contraseñas es en un <a href="https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html">archivo cifrado con GPG</a> que desciframos cuando queramos usar alguna contraseña o en un <a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">sistema de archivos cifrado como con EncFS</a> que lo montamos para acceder a archivo de texto con las contraseñas. <a href="https://strongpasswordgenerator.com/">Strong Password Generator</a> en una página web con la que podemos generar contraseñas usando estas mismas preferencias desde el navegador.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/</id>
         <title>Mi primer Mac, yo usuario de GNU/Linux</title>
@@ -1647,98 +1708,6 @@ el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash<
                 <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/07/hemeroteca-9/</id>
-        <title>Hemeroteca #9</title>
-        <updated>2016-07-02T12:00:00+02:00</updated>
-        <published>2016-07-01T13:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/07/hemeroteca-9/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>6 meses más y 35 nuevos artículos escritos sobre temas de programación, java, software libre y opinión. No son muchos artículos pero tampoco son artículos breves sobre noticias efímeras, en cada artículo trato de compartir no solo información sino conocimiento en los que además suelo incluir el código completo de un ejemplo totalmente funcional.</strong></p>]]>
-        <![CDATA[<p>Como cada seis meses en Blog Bitix hago una recopilación de los artículos que he publicado durante este tiempo, comento sobre que he escrito y comparto cómo ha evolucionado esta bitácora. Durante estas 26 primeras semanas del año he escrito 35 nuevos artículos siguiendo mi ritmo de publicación no muy prolífico pero muy constante al ritmo de uno por semana, algunas publicando dos artículos casi siempre durante el fin de semana.</p>
-<p>Los temas de los artículos han sido los habituales programación, GNU/Linux, Java, JavaScript, unos pocos de opinión y algún desempaquetado de producto que he comprado y he usado.</p>
-<p>En la categoría de programación están los siguientes:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/introduccion-y-ejemplo-basico-sobre-vertx/">Introducción y ejemplo básico sobre Vert.x</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/aplicacion-web-con-spark-framework-y-java/">Aplicación web con Spark <em>framework</em> y Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/">Introducción al protocolo HTTP/2</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/">Configurar HTTP/2 en nginx, Apache HTTPD, WildFly o Jetty</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/">Introducción y nuevas características de Java EE 7</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-ejecutar-un-proceso-del-sistema-con-java/">Cómo ejecutar un proceso del sistema con Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/">Cómo firmar correos electrónicos con GPG y JavaMail</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/">Aplicación de ejemplo usando varias especificaciones de Java EE 7</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/04/usar-twitter-desde-java-con-twitter4j/">Usar Twitter desde Java con twitter4j</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/04/el-componente-grid-de-apache-tapestry/">El componente Grid de Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/">Extraer elementos de una cadena con una expresión regular</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/que-es-el-concepto-de-heap-pollution-en-java/">Qué es el concepto de Heap Pollution en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/la-clase-threadlocal-de-java-y-usos-practicos/">La clase ThreadLocal de Java y usos prácticos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/">Incluir información de la versión en el artefacto distribuible con Gradle</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/">Ejemplo sencillo de como crear un excel en Java con Apache POI</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/">Ofrecer contenido personalizado al usuario basado en su ubicación</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/moment-js-libreria-javascript-para-fechas/">Moment.js, librería JavaScript para fechas</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly</a></li>
-</ul>
-<p>En la categoría de GNU/Linux y software libre están los siguientes artículos:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/">Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">Cifrar archivos con EncFS en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/">Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">Cambiar el formato de archivos de vídeo o películas en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/">4 opciones ofimáticas alternativas gratuitas a Microsoft Office</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">Cómo realizar copias de seguridad en Windows con FreeFileSync</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/atajos-de-teclado-basicos-de-la-terminal-en-gnu-linux/">Atajos de teclado básicos de la terminal en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/combinacion-de-teclas-para-copiar-y-pegar-en-la-terminal/">Combinación de teclas para copiar y pegar en la terminal</a></li>
-</ul>
-<p>Un trío de artículos de opinión:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/la-siguiente-disrupcion-tecnologica-la-convergencia/">La siguiente disrupción tecnológica, la convergencia</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/06/el-lenguaje-de-programacion-framework-y-librerias-importan/">El lenguaje de programación, <em>framework</em> y librerías importan</a></li>
-</ul>
-<p>Finalmente, un desempaquetado de una aspiradora que compré, un resumen de las presentaciones a las que asistí de la conferencia BilboStack y el sexto aniversario desde que empecé la bitácora:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/desempaquetado-y-analisis-de-aspiradora-dyson-dc37c-advanced-allergy/">Desempaquetado y análisis de aspiradora Dyson DC37c Advanced Allergy</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/01/conferencia-bilbostack-2016/">Conferencia BilboStack 2016</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/02/6-aniversario-del-blog/">6º aniversario del blog</a></li>
-</ul>
-<p>Acabo de empezar dos series de artículos una <a href="https://picodotdev.github.io/blog-bitix/series/terminal/">serie sobre la terminal de GNU/Linux</a> y completando con otros cuantos artículos otra serie sobre varios temas de <a href="https://picodotdev.github.io/blog-bitix/series/web/">servidores y desarrollo web</a> que aún tengo pendiente de continuar con algunos más. Además y aunque no he escrito ningún artículo hablando sobre ellos publiqué una nueva actualización del <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> con nuevo contenido y otro tanto revisado y actualizado.</p>
-<p>Con algunos artículos he quedado bastante satisfecho como en los que he hablado de Microsoft Windows y Microsoft Office pero también varios sobre Java, Java EE y HTTP/2. Sin embargo, algo que no falla es escribir algo de JavaScript y recibir unos cuantos <em>retweets</em> y favoritos cuando lo publico en Twitter aunque tenga la sensación de no ser lo de lo mejor que haya escrito parece que es lo que más llama la atención posiblemente ya que la mayoría de la gente lo usa de una u otra forma. Por otro lado tengo la sensación de que escribo para Google ya que recibo pocos comentarios seguramente por la forma en la que escribo ya que no suelo personalizar los artículos poniendo información personal o intercalando algunos chistes, más bien me centro en el aspecto técnico del que estoy escribiendo pero tampoco pasa nada, compartir el poco o más conocimiento que tengo y otro que voy aprendiendo ya es suficiente recompensa para mi si además veo que cuanto más tiempo pasa el número de visitas crecen algo me mantiene con motivación para seguir escribiendo y publicando contenido.</p>
-<p>En cuanto a como han evolucionado las visitas siempre es motivante ver que con el nuevo contenido añadido y poco a poco las visitas y número de páginas vistas aumentan algo, en cualquier caso siguen siendo pocas con las que seguramente tengan otras bitácoras de temática similar pero también seguramente más que otros cuantas. De casi aproximadamente 7000 sesiones al mes que tenía en enero ahora en junio Analytics me contabiliza unas 11000, en el mismo periodo de tiempo he pasado de 9000 páginas vistas a casi 13500. La mayor parte de esta mejora ha sido por unos pocos artículos que se habrán posicionado bien en los primeros meses del año en el buscador Google fuente de la que provienen la mayor parte de las visitas.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/hemeroteca-9/images/analytics_hua428655850c84d6e227cc12cef1d388e_61923_2560x1440_fit_box_3.png" data-gallery="" title="Evolución de sesiones mensuales en Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/07/hemeroteca-9/images/analytics_hua428655850c84d6e227cc12cef1d388e_61923_300x200_fit_box_3.png" width="300" height="113" alt="Evolución de sesiones mensuales en Blog Bitix" title="Evolución de sesiones mensuales en Blog Bitix"  class="lozad "></a></p>
-<figcaption>Evolución de sesiones mensuales en Blog Bitix</figcaption>
-</figure>
-</div>
-<p>Durante este tiempo en la bitácora he realizado algunos cambios haciendo el tamaño de letra más pequeña de las secciones de referencia y series de artículos así como en las series de artículos numerar los artículos. He añadido publicidad a nivel de página para los dispositivos móviles soportados que desde no hace mucho ofrece Google AdSense. He añadido un buscador con la tecnología de Google para buscar contenido en Blog Bitix y he minimizado el HTML con la intención de que la cantidad de datos descargados al acceder al <em>blog</em> sean unos cuantos kilobytes menos. También he añadido un mensaje para aquellos usuarios que usen AdBlock y lo tengan activado instándolos a considerar que lo desactiven en Blog Bitix ya que la publicidad que incluyo en el <em>blog</em> es amable y poco intrusiva.</p>
-<p>Con la publicidad que incluyo y los enlaces de afiliación para Amazon de mayoritariamente libros haré alguna nueva donación a algún proyecto de software libre que use o me resulte de interés. Con las enlaces de Amazon recibí una nueva transferencia de unos 25 € y con la publicidad de AdSense estoy a punto de recibir la correspondiente transferencia de aproximadamente 70 € al superar el límite mínimo, cuando la reciba me plantearé hacer la o las donaciones. No serán muy elevadas pero con ellas espero contribuir y devolver algo al software libre que uso a diario tanto de forma personal como en el trabajo. La primera donación que hice fue <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">comprando una par de camisetas a la FSFE</a>.</p>
-<p>Tengo muchos artículos escritos pero pendientes de publicar y muchas ideas de artículos que me permitirían seguir escribiendo a mi ritmo de publicación durante más de un año o dos sin ocurrírseme ninguna nueva idea de artículo aunque algunas ideas que he apuntado más tarde las deseche. Más que tiempo para escribir me falta tiempo para editar y publicar los artículos, compaginarlo con el trabajo me absorbe gran parte del tiempo libre que me queda.</p>
-<p>Y por mi esto ha sido todo durante estos seis meses pasados. ¡A por los siguientes 6 meses con nuevos artículos!</p>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-                <category term="tapestry"/>
-            
-                <category term="gnu-linux"/>
             
         
     </entry>

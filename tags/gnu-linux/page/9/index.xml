@@ -5,12 +5,91 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-19T00:00:00+02:00</updated>
+    <updated>2022-04-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/</id>
+        <title>Usar docker con Docker Machine en Linux, Windows o Mac</title>
+        <updated>2015-07-18T21:00:00+02:00</updated>
+        <published>2015-07-18T12:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Aunque no usemos Linux podemos hacer uso de docker a través de una máquina virtual de VirtualBox y con Docker Machine. Docker Machine permite crear un sistema con la misión de albergar contenedores de docker, puede ser en VirtualBox pero también en Amazon EC2 o Digital Ocean además de otras muchas opciones.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p><a href="https://www.docker.com/">Docker</a> ha dejado de ser únicamente una tecnología de contenedores formando un ecosistema alrededor de docker más completo, <a href="https://docs.docker.com/compose/">Docker Compose</a> que permite <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">definir un grupo de contenedores en un archivo</a>, por supuesto parte importante de este ecosistema es <a href="https://registry.hub.docker.com/">Docker Hub</a> para <a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">compartir imágenes de contenedores</a> y <a href="https://docs.docker.com/swarm/">Docker Swarm</a> que permite formar un <em>cluster</em> de máquinas. En este artículo comentaré cómo usar <a href="https://docs.docker.com/machine/">Docker Machine</a> y dejaré para un futuro <a href="https://docs.docker.com/swarm/">Docker Swarm</a> (ya que por el momento las pruebas que he hecho no han sido exitosas).</p>
+<p>Antes de nada decir que tanto Docker Machine en el momento de escribir este artículo están en las fases iniciales de desarrollo y pueden cambiar significativamente antes de lanzar una versión 1.0, ahora Docker Machine está en las version 0.3.0. La combinación de Docker Machine y Docker Swarm en algunos puntos son parecidos a los que se ofrecen en <a href="https://coreos.com/">CoreOS</a>.</p>
+<p>Si has usado <a href="https://www.vagrantup.com/">Vagrant</a> te resultará Docker Machine muy similar ya que permite crear máquinas virtuales en diferentes proveedores en una máquina anfitrión con <a href="https://www.virtualbox.org/">VirtualBox</a> hasta <a href="https://aws.amazon.com/es/ec2/">Amazon EC2</a> o <a href="https://www.digitalocean.com/">Digital Ocean</a>, la <a href="https://docs.docker.com/machine/#drivers">lista de controladores soportados</a> es bastante amplia. Estas máquinas que creamos con Docker Machine están destinadas como único objetivo a albergar contenedores docker usando el sistema operativo <a href="https://github.com/boot2docker/boot2docker">boot2docker</a>.</p>
+<p>Para usar Docker Machine debemos <a href="https://github.com/docker/machine/releases">descargar el binario</a>, darle permisos de ejecución y si queremos añadirlo a la variable <em>PATH</em> del sistema.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine --version&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-machine-version.sh</span>
+    </div>
+</div>
+<p>Con los siguientes comandos podemos crear una máquina virtual para los contenedores docker, listar las máquinas virtuales creadas, hacer SSH a ella, ejecutar un contenedor en ella, pararla y eliminar una máquina virtual además de obtener la <em>IP</em> asignada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine create --driver virtualbox dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine ls&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-machine-create.sh</span>
+    </div>
+</div>
+<p>Estableciendo las variables de entorno de la máquina virtual podemos usar el comando docker como si de la máquina anfitrión fuera, todos los comandos de docker que lancemos se ejecutarán contra el contenedor docker de la máquina virtual. En el siguiente caso se ejecuta el contenedor de <em>busybox</em> en la máquina virtual <em>dev</em>. Con <em>--unset</em> podemos reiniciar la configuración a la máquina anfitrión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine env dev&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>docker-machine env dev<span class="k">)</span><span class="s2">&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ docker run busybox <span class="nb">echo</span> <span class="s2">&#34;hello world&#34;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>docker-machine env --unset<span class="k">)</span><span class="s2">&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-machine-run.sh</span>
+    </div>
+</div>
+<p>Podemos detener, volver a iniciar, hacer SSH y eliminar la máquina virtual con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine start dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine ssh dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine stop dev&#10;</span></span><span class="line"><span class="cl">$ docker-machine rm dev</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-machine-manage.sh</span>
+    </div>
+</div>
+<div class="media">
+<script type="text/javascript" src="https://asciinema.org/a/23600.js" id="asciicast-23600" async></script>
+<noscript><a href="https://asciinema.org/a/23600" target="_blank"><img src="https://asciinema.org/a/23600.png" width="650" height="450"></a></noscript>
+</div>
+<p>El directorio por defecto donde se guardarán los archivos de las máquinas virtuales es <em>~/.docker/machine</em>, si queremos cambiarlo podemos utilizar el parámetro <em>--storage-path</em> en cada uno de los comandos anteriores de la siguiente forma, el orden de los parámetros es importante:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker-machine --storage-path <span class="s2">&#34;/run/media/picodotdev/BMOVE_ROJO/docker/machine&#34;</span> create --driver virtualbox dev&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-machine-storage-path.sh</span>
+    </div>
+</div>
+<p>En el administrador de VirtualBox veremos que se ha creado la máquina virtual <em>dev</em> además de poder cambiar la configuración de memoria y otros parámetros de la máquina virtual.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/images/virtualbox_hudd2a5a18303e22b8bb6f9e8594255a23_110586_2560x1440_fit_box_3.png" data-gallery="" title="Máquina de Docker Machine ne VirtualBox"><img src="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/images/virtualbox_hudd2a5a18303e22b8bb6f9e8594255a23_110586_300x200_fit_box_3.png" width="284" height="200" alt="Máquina de Docker Machine ne VirtualBox" title="Máquina de Docker Machine ne VirtualBox"  class="lozad "></a></p>
+<figcaption>Máquina de Docker Machine en VirtualBox</figcaption>
+</figure>
+</div>
+<p>Dado que los contenedores se ejecutan en una máquina virtual de VirtualBox y VirtualBox está disponible en Windows y Mac OS además del binario de Docker Machine para estas plataformas podemos usar docker en cualquiera de estos. Aunque no sea de forma nativa como en Linux para un entorno de desarrollo donde las personas trabajan con cualquiera de estos sistemas operativos puede sernos de utilidad.</p>
+<p>Como nota final diré que después de crear una máquina virtual las siguientes veces al crear una nueva Docker Machine se me quedaba indefinidamente en el mensaje <em>Starting VM&hellip;</em>, algún problema con Docker Machine o VirtualBox que en una futura versión podría solucionarse, la única forma de resolverlo que se es reiniciando el ordenador pero seguro que hay alguna mejor.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.docker.com/machine/">Docker Machine</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/</id>
         <title>Crear y usar un repositorio en Docker Hub</title>
@@ -1090,55 +1169,6 @@
                 <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/</id>
-        <title>Experiencia instalando sistema operativo a ordenador viejo</title>
-        <updated>2015-04-10T20:00:00+02:00</updated>
-        <published>2014-08-15T09:18:07+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
-</div>
-<p>Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:</p>
-<ul>
-<li>CPU: Intel Pentium M (i686)</li>
-<li>Memoria: 1 GiB</li>
-<li>Pantalla: 15.4&quot;, 1280 x 800</li>
-<li>Tarjeta gráfica: ATI Radeon 9200 (64 MiB)</li>
-<li>WiFi: 802.11b</li>
-<li><a href="http://www.miniputer.com/Acer/Aspire_2000.html">Características Acer Aspire 2000 completas</a></li>
-</ul>
-<p>Como puede verse por las características no es un ordenador muy potente para los días de hoy pero que puede ser suficiente para navegar por internet, ver vídeos, escuchar música y realizar tareas ofimáticas.</p>
-<p>Teniendo claro las características del ordenador y el uso que se le iba a dar me tocaba decidir que sistema operativo le iba a instalar. La primera opción que consideré por ser la opción que usaba el portátil de fábrica fue instalarle Windows XP (por supuesto usando una copia sin la correspondiente licencia) pero una vez instalado comenzaron los problemas para que todo funcionase correctamente, la gráfica no era detectada y la pantalla se mostraba en una resolución menor que la que ofrecía la pantalla, la conexión WiFi no funcionaba por no tener los controladores necesarios y tampoco el sonido por el mismo motivo. A pesar de haber buscado no conseguí encontrar los controladores adecuados tanto para la tarjeta gráfica como para la WiFi con lo que el sistema resultante iba a quedar menos aprovechado de lo que pudiera.</p>
-<p>Viendo que el resultado con Windows no era nada satisfactorio y que estoy convencido del uso del software libre empecé a buscar alguna distribución ligera que pudiese usar. Algunas de las que probé fueron <a href="https://www.gnewsense.org/">gNewSense</a>, luego <a href="https://trisquel.info/es">trisquel</a>, también <a href="https://www.linuxmint.com/">Mint</a> pero gNewSense usaba versiones de software algo antiguas y trisquel y Mint Xfce requería del procesador que tuviese PAE (o no lo detectaba). Al final pensé algo que antes de hacerlo me pareció descabellado, instalar <a href="https://www.archlinux.org/">Arch Linux</a>. Al ser Arch Linux una distribución rolling release y con el software siempre actualizado a las últimas versiones no sabía si iba a funcionar correctamente en un equipo antiguo. Pero sorprendentemente el CD de instalación de Arch no se me quejó por el PAE y aunque la instalación me fue lenta al tener que descargar los paquetes de internet y se descargaban a baja velocidad por algún motivo finalmente completé la instalación sin ningún problema. Después de la instalación base le instalé <a href="https://xfce.org/">Xfce</a> y como gestor de entorno de escritorio e inicio de sesión le puse <a href="https://en.wikipedia.org/wiki/SLiM">SLiM</a>. Una vez con el entorno de escritorio Xfce le instalé los programas: el navegador firefox, geary como gestor de correo, VLC para reproducir vídeos y música. Todo sin ningún problema incluso la WiFi B funcionaba, me bastó seguir lo <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration#Intel">indicado en la wiki</a> para el caso de una WiFi intel.</p>
-<p>El equipo es viejo pero con Arch Linux tiene las versiones de los últimos programas en el momento que se los instalé, al contrario de windows no tuve que buscar los controladores y no malgasté tiempo en ello aparte de no usar un copia de windows sin licencia. El equipo era para un usuario con pocos conocimientos de informática que por supuesto no ha visto ni usado linux en ningún momento, hasta el momento no he recibido ninguna queja en cuanto al uso o que le haya dado problemas. Asi que al contrario de lo que pensé al principio Arch Linux fue una distribución adecuada para lo que quería, era lo que más conocía y más documentación tenía como en el caso de instalar la WiFi. Instalar la WiFI quizá en <a href="https://www.debian.org/">Debian</a> u otra distribución también lo hubiese conseguido pero la información para estas distribuciones probablemente la hubiese obtenido en un foro y no de una forma más oficial como la wiki de Arch Linux. Más que el rolling release lo que más me gusta de Arch es su <a href="https://wiki.archlinux.org/">wiki</a> por estas cosas con las que uno puede obtener información un poco más oficial y con un poco más de seguridad de que va a funcionar que en la respuesta de un foro que además cuesta tiempo encontrarla.</p>
-<p>También puedes leer los pasos que he seguido <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">desde Windows a Arch Linux</a> con algunos motivos y características de Arch explicados más detalladamente y <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a> donde comento ya con más conocimiento porque después de 4 años sigo usando Arch Linux y no he cambiado de distribución GNU/Linux. En el siguiente <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">anexo a la guía de instalación</a> puedes encontrar los pasos que sigo para instalar Arch Linux.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">Anexo a la guía de instalación de Arch Linux</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="opinion"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

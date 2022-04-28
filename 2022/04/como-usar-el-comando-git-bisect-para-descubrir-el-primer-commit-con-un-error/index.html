@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El comando git bisect es muy útil cuando se desea encontrar en que commit se ha introducido un error en un rango de commits ya que permite automatizar la búsqueda sin tener que hacerlo manualmente el desarrollador que simplemente se limita a indicar a Git si el commit a analizar en cada prueba es correcto o incorrecto. Una vez descubierto en que commit se ha introducido el error es cuestión de revisar los cambios de ese commit, analizar sus cambios e identificadas las líneas de código erróneas aplicar la solución. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Cómo usar el comando git bisect para descubrir el primer commit con un error</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/" hreflang="es" title="Cómo usar el comando git bisect para descubrir el primer commit con un error">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/index-amp.html" hreflang="es" title="Cómo usar el comando git bisect para descubrir el primer commit con un error">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Cómo usar el comando git bisect para descubrir el primer commit con un error">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/git-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El comando git bisect es muy útil cuando se desea encontrar en que commit se ha introducido un error en un rango de commits ya que permite automatizar la búsqueda sin tener que hacerlo manualmente el desarrollador que simplemente se limita a indicar a Git si el commit a analizar en cada prueba es correcto o incorrecto. Una vez descubierto en que commit se ha introducido el error es cuestión de revisar los cambios de ese commit, analizar sus cambios e identificadas las líneas de código erróneas aplicar la solución. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/git-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Cómo usar el comando git bisect para descubrir el primer commit con un error">
+<meta name="twitter:description" content="El comando git bisect es muy útil cuando se desea encontrar en que commit se ha introducido un error en un rango de commits ya que permite automatizar la búsqueda sin tener que hacerlo manualmente el desarrollador que simplemente se limita a indicar a Git si el commit a analizar en cada prueba es correcto o incorrecto. Una vez descubierto en que commit se ha introducido el error es cuestión de revisar los cambios de ese commit, analizar sus cambios e identificadas las líneas de código erróneas aplicar la solución. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/"
+    },
+    "headline": "Cómo usar el comando git bisect para descubrir el primer commit con un error",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/git-750.png"
+        
+      },
+    "datePublished": "2022-04-28T19:00:00+02:00",
+    "dateModified": "2022-04-28T19:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "690",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El comando git bisect es muy útil cuando se desea encontrar en que commit se ha introducido un error en un rango de commits ya que permite automatizar la búsqueda sin tener que hacerlo manualmente el desarrollador que simplemente se limita a indicar a Git si el commit a analizar en cada prueba es correcto o incorrecto. Una vez descubierto en que commit se ha introducido el error es cuestión de revisar los cambios de ese commit, analizar sus cambios e identificadas las líneas de código erróneas aplicar la solución."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Cómo usar el comando git bisect para descubrir el primer commit con un error</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>28/04/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/programacion/">programacion</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El comando <em>git bisect</em> es muy útil cuando se desea encontrar en que <em>commit</em> se ha introducido un error en un rango de <em>commits</em> ya que permite automatizar la búsqueda sin tener que hacerlo manualmente el desarrollador que simplemente se limita a indicar a Git si el <em>commit</em> a analizar en cada prueba es correcto o incorrecto. Una vez descubierto en que <em>commit</em> se ha introducido el error es cuestión de revisar los cambios de ese <em>commit</em>, analizar sus cambios e identificadas las líneas de código erróneas aplicar la solución.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/git.svg" width="200" height="200" alt="Git" title="Git" class="" loading="false"></p>
+</div>
+<p>Una herramienta de control de versiones para el código fuente de las aplicaciones es esencial, para guardar todos los cambios realizados en el código y permitir compartir código entre los desarrolladores aparte de otras funcionalidades proporcionadas. Una de las herramientas de control de versiones más populares es <a href="https://git-scm.com/">Git</a>, desarrollado por <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> también autor original de núcleo <a href="https://www.linux.com/">Linux</a> entre otros colaboradores.</p>
+<p>Una situación habitual al realizar cambios en el código fuente de un programa es pasado un tiempo descubrir un error y no conocer en que cambio lo ha producido y en que <em>commit</em>. Si no se tiene una pista de cual es el cambio que ha introducido error una solución es probar cada <em>commit</em> y para ver si esa versión de la aplicación tiene el error o no. Una vez probados varios <em>commit</em> al final se descubre que <em>commit</em> es el que ha introducido el error. Conociendo el <em>commit</em> que introduce el error hay que revisar los cambios de ese <em>commit</em> para conocer y cambiar las líneas de código erróneas.</p>
+<h3 id="el-comando-_git-bisect_">El comando <em>git bisect</em></h3>
+<p>Una de las funcionalidades que proporciona la herramienta de control de versiones Git es el subcomando <em>bisect</em>. <a href="https://git-scm.com/docs/git-bisect">El comando <em>git bisect</em></a> automatiza encontrar que <em>commit</em> ha introducido un error dado un rango de <em>commits</em> en el que se sospecha está el <em>commit</em> con el error.</p>
+<p>El comando <em>git bisect</em> aplica un algoritmo de búsqueda al rango de <em>commits</em>, en función de la indicación que se le proporcione de si el commit tiene o no el error al final del número de comprobaciones que sean necesarias proporciona el primer <em>commit</em> con el error en el rango analizado.</p>
+<p>El comando <em>git bisect</em> no se utiliza tan habitualmente como <em>git stash</em> o <em>git commit</em> pero cuando cuando es necesario es muy útil conocer como se usa y usarlo.</p>
+<p>El primer paso del comando <em>git bisect</em> es iniciar la bisección y proporcionar el rango de <em>commits</em> a analizar. Una vez proporcionado el rango de <em>commits</em> <em>git</em> cambia el <em>commit</em> del espacio de trabajo según su algoritmo de búsqueda. El siguiente paso suele consistir en arrancar la aplicación y comprobar si el <em>commit</em> tiene o no el error. Una vez conocido si el <em>commit</em> es correcto o tiene el error se le indica a Git con el comando <em>git bisect good</em> o <em>git bisect bad</em> respectivamente. Git a continuación selecciona otro <em>commit</em> teniendo que comprobar de nuevo si el nuevo <em>commit</em> seleccionado es correcto o incorrecto. Después de varias repeticiones de estos pasos se descubre el <em>commit</em> en el que se introdujo el error.</p>
+<p>Una vez terminada la bisección o en cualquier momento se puede dar por terminada con el comando <em>git bisect reset</em> y volver a un espacio de trabajo fuera del <em>bisect</em>. El comando <em>git bisect view</em> permite ver el estado de la bisección y los <em>commits</em> analizados.</p>
+<p>Estos con los comandos básicos y un ejemplo de uso.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git bisect start&#10;</span></span><span class="line"><span class="cl">$ git bisect good&#10;</span></span><span class="line"><span class="cl">$ git bisect bad&#10;</span></span><span class="line"><span class="cl">$ git bisect reset&#10;</span></span><span class="line"><span class="cl">$ git bisect <span class="o">(</span>visualize<span class="p">|</span>view<span class="o">)</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>git-bisect-1.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git log --pretty<span class="o">=</span>oneline 63575c4f1824c360dbf60aafaaec17401ea604bd..master&#10;</span></span><span class="line"><span class="cl">022c1b295804bf810743f175358607a0a3bb7307 <span class="o">(</span>HEAD -&gt; master, origin/master<span class="o">)</span> Remove Universal Analytics&#10;</span></span><span class="line"><span class="cl">a07d1af345907016e19778feb064e08d17f36ed9 Add print_step <span class="k">for</span> display_manager step&#10;</span></span><span class="line"><span class="cl">39320076b996e4d582bf535f74d1f0b238b3768a Reorder packages&#10;</span></span><span class="line"><span class="cl">d5233aa726c2626d52de8981bee65dcfbf69ae61 Merge pull request <span class="c1">#209 from shuriken1812/master</span>&#10;</span></span><span class="line"><span class="cl">f7a4790992f859aac6fde86b3b18a72e259545bd Added pipewire-alsa and wireplumber&#10;</span></span><span class="line"><span class="cl">0b0a1ddca33814e254b3bc395af476156559aac4 Allow to choose display manager&#10;</span></span><span class="line"><span class="cl">0aeacbab0fe55b71b272d670c76ab52fa2b206c4 Support LightDM autologin&#10;</span></span><span class="line"><span class="cl">ff01de4f91ff10c6b99b5b6275623ea93ec412ba Update Hugo  ndadd Google Analytics <span class="m">4</span>&#10;</span></span><span class="line"><span class="cl">f3038ae0195dddcd98660ebd81721aa5645a8597 Merge pull request <span class="c1">#194 from MauroSoli/patch-1</span>&#10;</span></span><span class="line"><span class="cl">20c5f7a12bbbc372e77187cae7ccd4a1c64c8a1b Change provision configuration description&#10;</span></span><span class="line"><span class="cl">219f4ab9232b5537364d8b9a0e969520917f3230 add !tpm module</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>git-log.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux alis <span class="o">(</span>master $<span class="o">=)]</span>$ git bisect start master 63575c4f1824c360dbf60aafaaec17401ea604bd&#10;</span></span><span class="line"><span class="cl">Biseccionando: faltan <span class="m">5</span> revisiones por probar después de esta <span class="o">(</span>aproximadamente <span class="m">3</span> pasos<span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>0aeacbab0fe55b71b272d670c76ab52fa2b206c4<span class="o">]</span> Support LightDM autologin&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux alis <span class="o">((</span>0aeacba...<span class="o">)</span> $<span class="p">|</span>BISECTING<span class="o">)]</span>$ git bisect good&#10;</span></span><span class="line"><span class="cl">Biseccionando: faltan <span class="m">2</span> revisiones por probar después de esta <span class="o">(</span>aproximadamente <span class="m">2</span> pasos<span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>d5233aa726c2626d52de8981bee65dcfbf69ae61<span class="o">]</span> Merge pull request <span class="c1">#209 from shuriken1812/master</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux alis <span class="o">((</span>d5233aa...<span class="o">)</span> $<span class="p">|</span>BISECTING<span class="o">)]</span>$ git bisect bad&#10;</span></span><span class="line"><span class="cl">Biseccionando: faltan <span class="m">0</span> revisiones por probar después de esta <span class="o">(</span>aproximadamente <span class="m">1</span> paso<span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>f7a4790992f859aac6fde86b3b18a72e259545bd<span class="o">]</span> Added pipewire-alsa and wireplumber&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux alis <span class="o">((</span>f7a4790...<span class="o">)</span> $<span class="p">|</span>BISECTING<span class="o">)]</span>$ git bisect bad&#10;</span></span><span class="line"><span class="cl">Biseccionando: faltan <span class="m">0</span> revisiones por probar después de esta <span class="o">(</span>aproximadamente <span class="m">0</span> pasos<span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>0b0a1ddca33814e254b3bc395af476156559aac4<span class="o">]</span> Allow to choose display manager&#10;</span></span><span class="line"><span class="cl"><span class="o">[</span>picodotdev@archlinux alis <span class="o">((</span>0b0a1dd...<span class="o">)</span> $<span class="p">|</span>BISECTING<span class="o">)]</span>$ git bisect bad&#10;</span></span><span class="line"><span class="cl">0b0a1ddca33814e254b3bc395af476156559aac4 is the first bad commit&#10;</span></span><span class="line"><span class="cl">commit 0b0a1ddca33814e254b3bc395af476156559aac4&#10;</span></span><span class="line"><span class="cl">Author: pico.dev &lt;pico.dev@gmail.com&gt;&#10;</span></span><span class="line"><span class="cl">Date:   Sat Apr <span class="m">23</span> 14:48:22 <span class="m">2022</span> +0200&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;Allow to choose display manager&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"> alis.conf <span class="p">|</span>   <span class="m">4</span> +-&#10;</span></span><span class="line"><span class="cl"> alis.sh   <span class="p">|</span> <span class="m">148</span> +++++++++++++++++++++++++++++++++++++++++++++-----------------&#10;</span></span><span class="line"><span class="cl"> <span class="m">2</span> files changed, <span class="m">112</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">40</span> deletions<span class="o">(</span>-<span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"> <span class="o">[</span>picodotdev@archlinux alis <span class="o">((</span>0b0a1dd...<span class="o">)</span> $<span class="p">|</span>BISECTING<span class="o">)]</span>$ git bisect reset&#10;</span></span><span class="line"><span class="cl"> <span class="o">[</span>picodotdev@archlinux alis <span class="o">(</span>master $<span class="o">=)]</span>$ </span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>git-bisect-example.sh</span>
+    </div>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+          <div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div>
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/">
+                <img src="/blog-bitix/assets/images/logotypes/gitg.svg" width="326" height="125" alt="Aplicación con interfaz gráfica para repositorios Git" title="Aplicación con interfaz gráfica para repositorios Git" class="" loading="lazy">
+                <h3>Aplicación con interfaz gráfica para repositorios Git</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="" loading="lazy">
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/08/37-buenos-libros-sobre-sobre-java-linux-devops-y-desarrollo-que-he-leido/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído" title="37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído" class="" loading="lazy">
+                <h3>37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/hemeroteca-11/">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
+                <h3>Hemeroteca #11</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-630';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/04\/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>
