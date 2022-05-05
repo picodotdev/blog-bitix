@@ -5,12 +5,49 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-04-28T19:00:00+02:00</updated>
+    <updated>2022-05-05T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/</id>
+        <title>Los tipos de módulos de JPMS añadidos a partir de Java 9</title>
+        <updated>2019-07-07T12:00:00+02:00</updated>
+        <published>2019-07-07T12:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los módulos de Java dotan a la plataforma de nuevas características. Para garantiza la compatibilidad con las librerías existentes y permitir una transición progresiva de una versión sin módulos a una con módulos la plataforma de módulos de Java define varios tipos de módulos.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Con la <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">publicación de Java 9</a> el 2017 se introdujo la importante novedad de los módulos que proporciona a la plataforma Java varias características como encapsulación fuerte, interfaces bien definidas y dependencias explícitas. Todos las clases se organizan en paquetes y en Java 9 también en módulos para lo cual fue necesario reorganizar en módulos todos los paquetes de los que se compone la API de Java.</p>
+<p>Antes de Java 9 todas las clases se proporcionaban en una lista ordenada de archivos <em>jar</em>, lo que se conocía como el <em>classpath</em> y donde cualquier clase tenía acceso a cualquier otra que se encontrase en él respetando los ámbitos de visibilidad (<em>public</em>, <em>protected</em>, <em>private</em> y <em>package</em>). En la definición de cada módulo en su archivo <em>module-info.java</em> se debe especificar cuales son los módulos requeridos para su funcionamiento no permitiendo la máquina virtual de Java el acceso a ninguna otra clase de otros módulos ni a ninguna clase de los paquetes no exportados.</p>
+<p>Para mantener la compatibilidad hacia atrás y hacer más sencillo la transición hacía los módulos, algunas librerías puede que ya no tengan mantenimiento, se pueden dar tres tipos de módulos.</p>
+<ul>
+<li>Módulos con nombre: están compuestos por las librerías que tienen su definición de módulo en el archivo <em>module-info.java</em> y son colocados en el <em>modulepath</em> al iniciar la aplicación. Únicamente leen los módulos que explícitamente se ha indicado en la definición del módulo con la palabra <em>requires</em> y tiene acceso a los paquetes y sus clases exportados de los módulos requeridos.</li>
+<li>Módulos automáticos: son las librerías que no tienen una definición de módulo pero que son colocadas en el <em>modulepath</em>. La máquina virtual de Java le asigna un nombre de módulo de forma automática según el nombre de la librería o según la propiedad <em>Automatic-Module-Name</em> del archivo de manifiesto. Leen todos los otros módulos del sistema, los que se encuentren en el <em>modulepath</em> (incluidos todos los otros automáticos) y de la imagen del JDK, y todas las clases del módulo anónimo. Los módulos automáticos son necesarios para que no requerir convertir una librería a un módulo, esto es no requerir convertir a un módulo todo el código ya existente lo cual es un problema ya que muchas librerías ya no tienen mantenimiento. Ya que no tienen una definición de módulo se exportan todos los paquetes.</li>
+<li>Módulo anónimo: todas las librerías (incluso las que tienen su definición del módulo) que se colocan el <em>classpath</em> forman el módulo anónimo. Leen todos los módulos del sistema y tienen acceso a todos sus paquetes exportados.</li>
+</ul>
+<p>Ya se han publicado varios libros que explican detalladamente la modularidad introducida en Java 9. Cualquiera de ellos es una guía completa de la modularidad de Java.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1484225910&amp;linkId=9c7874501bb32fa3318e285022e0207a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1484227123&amp;linkId=59d96101c25f9c16c4427b8ee9daef1a" title="Amazon" class="lozad"></iframe>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/</id>
         <title>¿Donde comprar un ordenador sin Windows o con GNU/Linux?</title>
@@ -965,81 +1002,6 @@
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/</id>
-        <title>Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky</title>
-        <updated>2019-05-13T20:00:00+02:00</updated>
-        <published>2019-05-12T14:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>He cambiado ligeramente el diseño del blog con la intención de mejorar la experiencia de usuario haciendo que el contenido quede centrado en la pantalla en vez de estar desplazado un poco a la izquierda por un panel lateral. Pero más espacio horizontal para el contenido podría afectar negativamente al rendimiento de los <em>banners</em> de publicidad laterales si tenía que quitarlos con lo que he tenido que buscar una solución para ambos requerimientos. También he experimentado con la disposición de la publicidad, incluido un <em>billboard</em> y publicidad lateral <em>sticky</em> para que permanezca más tiempo visible y quizá mejorar su rendimiento.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
-</div>
-<p>En el último <a href="https://picodotdev.github.io/blog-bitix/2015/05/nuevo-diseno-en-blog-bitix/">diseño significativo que hice en el 2015</a> cambié a un tema más claro, la posición de varios <em>banners</em> de publicidad además de quitar algunas secciones, otros cambios de menor importancia han sido quitar el justificado del texto o la posición del título en la cabecera, además de generar de forma estática el contenido del blog con <a href="https://gohugo.io/">Hugo</a> en vez de <a href="http://octopress.org/">Octopress</a>.</p>
-<p>Hacía tiempo que como mejora para el diseño del blog quería que el contenido de los artículos estuviese centrado en la pantalla y tuviese más espacio horizontal, ambas cosas porque considero que mejoraría un poco la experiencia de lectura de los usuarios. Un panel a la derecha que ocupaba cierto espacio hacía que el contenido del artículo no estuviese centrado y quedase escorado un poco hacia la izquierda, además en ciertos artículos donde incluyo código por el espacio ocupaban requería de una barra de desplazamiento horizontal para ver la parte derecha de los listados.</p>
-<p>Este deseo me obligaba a quitar el panel lateral donde tenía un <em>banner</em> de publicidad fijo estilo <em>large-skycraper</em> de 300px de ancho por 600px de alto junto a otro debajo <em>large-rectangle</em> de 336px por 280px, una imagen con un enlace de <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">Yo apoyo al software libre, tu también</a> con los artículos de donaciones que he hecho y un enlace al <a href="https://picodotdev.github.io/blog-bitix/archive/">Archivo y hemeroteca</a>. Pero perder esos <em>banners</em> de publicidad para dejar más espacio al contenido posiblemente afectaría al rendimiento de los anuncios.</p>
-<p>Querer que el contenido estuviese centrado y ocupase más espacio horizontal y querer publicidad lateral competían entre sí así que tenía que buscar una solución que cumpliese ambos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-antes_hu99ce55195660f9e2198292b5b3f31dd2_871066_2560x1440_fit_box_3.png" data-gallery="" title="Diseño de Blog Bitix antes de hacer cambios"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-antes_hu99ce55195660f9e2198292b5b3f31dd2_871066_300x200_fit_box_3.png" width="267" height="200" alt="Diseño de Blog Bitix antes de hacer cambios" title="Diseño de Blog Bitix antes de hacer cambios"  class="lozad "></a></p>
-<figcaption>Diseño de Blog Bitix antes de hacer cambios</figcaption>
-</figure>
-</div>
-<p>Hacer que el contenido estuviese centrado y ocupase más espacio horizontal obligaba poner la publicidad lateral más a la derecha, fuera del espacio del contenido central. Como mejora para esa publicidad lateral también quería que permaneciese visible aún haciendo desplazamiento vertical, ya que antes la publicidad siempre permanecía en la misma posición al inicio del artículo y se dejaba de ver en la parte inferior del artículo posiblemente quedando desaprovechada alguna oportunidad. Para hacer que la publicidad se desplace verticalmente he usado el <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">posicionamiento <em>sticky</em></a> que ya soportan los navegadores. Con los primeros cambios el diseño queda como deseaba.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1_hu39421a32a7156c34972e8bb79eebe70a_806765_2560x1440_fit_box_3.png" data-gallery="" title="Diseño de Blog Bitix después de hacer algunos cambios"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1_hu39421a32a7156c34972e8bb79eebe70a_806765_300x200_fit_box_3.png" width="300" height="197" alt="Diseño de Blog Bitix después de hacer algunos cambios" title="Diseño de Blog Bitix después de hacer algunos cambios"  class="lozad "></a></p>
-<figcaption>Primer diseño de Blog Bitix después de hacer algunos cambios</figcaption>
-</figure>
-</div>
-<p>Sin embargo, hacer que el contenido ocupe todo el espacio horizontal de lo que tenía anteriormente y poner la publicidad más a la derecha requiere que los usuarios tengan una pantalla con suficientemente resolución para que quepa todo. Yo <a href="https://picodotdev.github.io/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/">tengo una pantalla de resolución 2560x1440</a> y lo veía todo bien pero <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a> me indicaba que un porcentaje importante del los usuarios, un 32%, tienen una resolución habitual en los portátiles de 1366x768 píxeles. Con esa resolución los 1140 píxeles requeridos para el contenido más los 300 del <em>banner</em> horizontal en la parte derecha no entraba. También agravado si para algunas páginas deseaba en la parte lateral izquierda otro panel <em>sticky</em> de publicidad.</p>
-<p>Mantener la publicidad lateral <em>sticky</em> hace que no entre un <em>skycraper</em> y un <em>large-rectangle</em> verticalmente en una resolución de 768px de alto de modo que he dejado solo un espacio para publicidad. Como idea para el futuro quizá haga que al llegar a cierto desplazamiento vertical se cambiar el espacio de publicidad por otro.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/resolucion-usuarios_hu6c2fc9b1b5e5693edaba0e098b6027c2_48562_2560x1440_fit_box_3.png" data-gallery="" title="Resolución de pantalla de los usuarios"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/resolucion-usuarios_hu6c2fc9b1b5e5693edaba0e098b6027c2_48562_300x200_fit_box_3.png" width="200" height="200" alt="Resolución de pantalla de los usuarios" title="Resolución de pantalla de los usuarios"  class="lozad "></a></p>
-<figcaption>Resolución de pantalla de los usuarios</figcaption>
-</figure>
-</div>
-<p>Ocupando 1140 píxeles el contenido poco espacio queda en los laterales en una resolución de 1366 de ancho. La solución que he aplicado para poder poner publicidad en ambos laterales es reducir un poco el ancho para el contenido central, a 1080px, y que la publicidad lateral se adapte al espacio que queda, no entran <em>banners</em> de 300px en los laterales pero si dos <em>skycraper</em> de 120px de ancho al menos, con la que en buena medida la experiencia de usuario se mantiene igual que en resoluciones mayores.</p>
-<p>La página es ahora un poco menos ancha que antes 1080px frente a 1140px pero el contenido ocupa más espacio horizontal, 1080px frente a unos 840px. Haciendo que la publicidad lateral se adapte al espacio restante según la resolución que quede me ha permitido cumplir los dos objetivos de hacer que el contenido quede centrado y con más espacio horizontal sin perder la publicidad lateral y haciendo que esta permanezca visible en la pantalla aún con desplazamiento vertical y en ambos laterales en algunas páginas.</p>
-<p>En resoluciones menores de 1366 he optado por quitar completamente la publicidad lateral ya que aún aplicando un diseño adaptativo en cualquier caso no aparecería en los laterales porque físicamente no hay espacio suficiente.</p>
-<p>Así queda en las resoluciones habituales de 2560 píxeles, 1920, 1600, 1440, 1366 y 1200.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-2560_huedf0efadfecec55769b50c9ecf8140a9_897237_2560x1440_fit_box_3.png" data-gallery="" title="Diseño después con resolución 2560"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-2560_huedf0efadfecec55769b50c9ecf8140a9_897237_300x200_fit_box_3.png" width="300" height="157" alt="Diseño después con resolución 2560" title="Diseño después con resolución 2560"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1920_hud1e83883e999674e1b635811b50bec5c_578883_2560x1440_fit_box_3.png" data-gallery="" title="Diseño después con resolución 1920"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1920_hud1e83883e999674e1b635811b50bec5c_578883_300x200_fit_box_3.png" width="300" height="175" alt="Diseño después con resolución 1920" title="Diseño después con resolución 1920"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1600_hub5795fdf3af4442b701e63aff38f91f6_430851_2560x1440_fit_box_3.png" data-gallery="" title="Diseño después con resolución 1600"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1600_hub5795fdf3af4442b701e63aff38f91f6_430851_300x200_fit_box_3.png" width="285" height="200" alt="Diseño después con resolución 1600" title="Diseño después con resolución 1600"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1440_hu3b54ee66f9b6ea3593ed09b22c0e9f54_442295_2560x1440_fit_box_3.png" data-gallery="" title="Diseño después con resolución 1440"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1440_hu3b54ee66f9b6ea3593ed09b22c0e9f54_442295_300x200_fit_box_3.png" width="256" height="200" alt="Diseño después con resolución 1440" title="Diseño después con resolución 1440"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1366_hu0e6b49fb900a5c2f7aeed64ea4244053_405070_2560x1440_fit_box_3.png" data-gallery="" title="Diseño después con resolución 1366"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1366_hu0e6b49fb900a5c2f7aeed64ea4244053_405070_300x200_fit_box_3.png" width="243" height="200" alt="Diseño después con resolución 1366" title="Diseño después con resolución 1366"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1200_hua796edd138dd723bd937a49f132922ff_262914_2560x1440_fit_box_3.png" data-gallery="" title="Diseño después con resolución 1200"><img src="https://picodotdev.github.io/blog-bitix/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/images/diseno-blogbitix-despues-1200_hua796edd138dd723bd937a49f132922ff_262914_300x200_fit_box_3.png" width="214" height="200" alt="Diseño después con resolución 1200" title="Diseño después con resolución 1200"  class="lozad "></a></p>
-<figcaption>Diseño después de los cambios a diferentes resoluciones (2560, 1920, 1600, 1440, 1366 y 1200)</figcaption>
-</figure>
-</div>
-<p>Podría hacer algún experimento o test <em>a/b</em> de que diseño resulta mejor si el anterior o el contenido más ancho y medirlo por el porcentaje de rebote, tiempo medio de permanencia en la página o retorno de usuarios pero dudo que esas métricas fuesen suficientemente buenas como para determinar que un diseño sea mejor que otro, es dedicar un tiempo y esfuerzo a medir algo que considero claramente es mejor. En lo que si podría hacer algún experimento es medir que disposición de anuncios, en ubicación y tamaño da mejor resultado pero prefiero dedicar el tiempo a escribir artículos, no creo que los cambios que he hecho en los anuncios impacten muy negativamente o quizá se compense con la posición <em>sticky</em> de los <em>banners</em> laterales.</p>
-<p>También he introducirlo un <em>banner</em> <em>billboard</em> en la cabecera de la página a ver que tal resultado da, el <em>leaderboard</em> del inicio de los artículos tenía buen rendimiento aún siendo bastante pequeño, lo he mantenido en los artículos que incluyo un resumen. En los que no tienen un resumen lo he sustituido por el <em>billboard</em> ya que mantener ambos me resutlaba un exceso de publicidad. Dentro de unos meses compararé con los anteriores o del año pasado si los cambios que he hecho dan buen resultado.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2013/12/hola-nuevo-mundo/">Hola nuevo mundo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/nuevo-diseno-en-blog-bitix/">Nuevo diseño en Blog Bitix</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
             
                 <category term="planeta-codigo"/>
             
