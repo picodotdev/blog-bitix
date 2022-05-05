@@ -30,6 +30,9 @@ Este artículo y análisis aunque puede decirse que es patrocinado no es pagado 
 
 El [teclado mecánico DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard) se trata de un teclado mecánico de formato compacto 60%. Como ocurre en los teclados mecánicos compactos para reducir su tamaño han de prescindir de algunas teclas en el caso de los de 60% este tiene únicamente 61 teclas prescindiendo de las teclas del teclado numérico, teclas de función, de desplazamiento y el bloque superior de insertar, eliminar, inicio, fin, página arriba, página abajo e imprimir pantalla. Aunque no tiene ciertas teclas que los modelos TKL o completos más grandes tienen se siguen pudiendo usar a través de una segunda capa de teclado en combinación con la tecla de función. Por ejemplo, la tecla retroceso página se introduce con la combinación _FN+L_ y el reto que no tiene dedicadas de forma similar incluyendo las teclas multimedia para silenciar, bajar o subir el volumen además controlar la reproducción.
 
+* [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
+* [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
+
 El cuerpo del teclado es completamente de plástico, no es regulable en altura y en la base incluye varios soportes de goma. Es un teclado premontado que incluye tanto las tapas de las teclas o _keycaps_ como los interruptores o _switches_. Los _keycaps_ son de material PBT de doble disparo o _double shot_ y los interruptores son de la marca [Gateron][gateron] y ópticos, en el modelo que me han proporcionado los interruptores son del tipo táctiles _brown_ aunque también se ofrece en interruptores lineales y _clicky_. Además, los interruptores son intercambiables o _hot swappable_.
 
 El teclado tiene un formato ANSI y la serigrafía de las teclas es de una disposición en inglés. Tiene iluminación RGB con varios efectos de luz configurables directamente con el teclado, también es posible configurar la velocidad de los efectos como la intensidad de la iluminación y en algunos efectos de luz el color.
@@ -51,16 +54,20 @@ En resumen estas son las especificaciones técnicas del DIERYA DK61E:
 * Conexión por cable USB, incluye cable mallado y acodado desmontable USB-C y reversible ambos extremos. Conexión USB nativa 3.0 compatible con USB 2.0.
 * Aplicación para Windows para configuración y macros.
 
-El [teclado mecánico DIERYA DK61E se vende en Amazon][amazon-dierya-dk61] a un precio de 70 € con la posibilidad de elegir entre varios tipos de _switches_ según preferencia. En periodos en los que está en oferta se encuentra con un descuento sobre el precio original. El modelo [DIERYA DK61 Pro][amazon-dierya-dk61-pro] es exactamente igual pero ofreciendo conexión inalámbrica adicionalmente a la cableada, el modelo [DIERYA DK63][amazon-dierya-dk63] es similar pero adicionalmente de la conexión con cable ofrece conexión inalámbrica por bluetooth y teclas dedicadas de flechas de desplazamiento.
+#### Dónde comprar
+
+El [teclado mecánico DIERYA DK61E se vende en Amazon][amazon-dierya-dk61] a un precio de 70 € con la posibilidad de elegir entre varios tipos de _switches_ según preferencia. En periodos en los que está en oferta se encuentra con un descuento sobre el precio original. El modelo [DIERYA DK61 Pro][amazon-dierya-dk61-pro] es exactamente igual pero ofreciendo conexión inalámbrica adicionalmente a la cableada, el modelo [DIERYA DK63][amazon-dierya-dk63] es similar pero adicionalmente de la conexión con cable ofrece conexión inalámbrica por bluetooth y teclas dedicadas de flechas de desplazamiento. El [KEMOVE DK61][amazon-kemove-dk61] es otra buena opción que aunque con un precio un poco mayor combina varias de las mejores cosas de los DIERYA y con mejor calidad.
+
+Si después de leer el artículo decides comprar uno de estos teclados y en el momento que vas a hacerlo no tiene algún descuento envíame un correo electrónico que puedes encontrar en la página [Acerca de][blogbitix-page-p2] y le pido a la marca un cupón descuento para que puedas aplicarlo en el momento de realizar la compra.
 
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
+* [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/)
 * [Manual de usuario del teclado DIERYA DK61](https://www.kemovebbs.com/usermanuel/DIERYADK61.pdf)
-* [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
 
 {{< amazon
-    tags="keyboard-dierya" >}}
+    tags="keyboard-kemove-dierya" >}}
 
 #### Consideraciones a tener en cuenta
 
@@ -279,11 +286,11 @@ Si al cabo de un tiempo se quieren probar otros _switches_ a los originales del 
 
 Otro producto interesante es una alfombrilla de gran tamaño que permite colocar tanto el teclado como el ratón, permite evitar el desgaste de la mesa o ensuciarla. Algunas [alfombrillas incluso con iluminación RGB](https://amzn.to/3Aztewq) que aparte de su efecto estético puede resultar también útil en condiciones de baja iluminación.
 
-Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://amzn.to/3AIbLSQ) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
+Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://www.kemove.com/product/keyboard-case/) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
 
 {{< amazon
     tags="storage-usb-hub" >}}
 {{< amazon
-    tags="dierya-keyboard-related" >}}
+    tags="keyboard-kemove-dierya-related" >}}
 
 {{% /post %}}

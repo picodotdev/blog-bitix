@@ -31,6 +31,7 @@ Continuo con la colaboración con la marca [DIERYA][dierya] dedicada a la comerc
 El [teclado mecánico DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard) en varios aspectos es igual que el teclado mecánico DIERYA DK61E, mucho de lo que comenté para el DK61E es también aplicable al DK63, sin embargo tienen algunas diferencias importantes que pueden ser determinantes para elegir comprar un modelo u otro según el uso que se le desee dar al teclado.
  
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
+* [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
 
 Ambos, son teclados compactos de formato 60%, el DK63 tiene 63 teclas y el DK61E tiene 61 teclas pero ambos tienen las mismas dimensiones a pesar de la diferencia en el número de teclas que tiene cada uno. A diferencia de los teclados completos con teclado numérico, los teclados compactos de 60% prescinden de varios grupos de teclas, por ejemplo no tienen las teclas del teclado numérico ni tienen las teclas especiales de función de insertar, suprimir, inicio, fin, retroceder página, avanzar página, las teclas de función y algunas más.
 
@@ -56,15 +57,20 @@ Se puede usar tanto con cable como en modo inalámbrico con conexión Bluetooth,
 
 Para conocer más detalles sobre los teclados mecánicos y en qué se diferencia de los teclados de membrana con una guía de introducción escribí el siguiente artículo comentando los principales características de los teclados mecánicos, así como varios desempaquetados y análisis de teclados mecánicos con la que comparar con otros modelos más en detalle. Escribí una [introducción a los conceptos básicos de los teclados mecánicos][blogbitix-536] puedes visitar la guía de ese artículo y si quieres compararlo con un tecla de otra marca y tipo para saber cual te conviene según tus necesidades o preferencias escribí un [Desempaquetado de teclado mecánico Glorious GMMK TKL][blogbitix-609] junto con otros buenos modelos de teclados a considerar.
 
-El [teclado mecánico DIERYA DK63 se puede comprar en Amazon][amazon-dierya-dk63] a un precio de unos 70 € y algo más barato en los momentos en tiene aplicado un descuento en el precio. Aparte de este modelo la marca tiene disponibles otros modelos de teclado compactos como el [DIERYA DK61E][amazon-dierya-dk61] y el [DIERYA DK61 Pro][amazon-dierya-dk61-pro], ambos DK61 son iguales pero el Pro tiene con conexión inalámbrica también por Bluetooth.
+#### Dónde comprar
+
+El [teclado mecánico DIERYA DK63 se puede comprar en Amazon][amazon-dierya-dk63] a un precio de unos 70 € y algo más barato en los momentos en tiene aplicado un descuento en el precio. Aparte de este modelo la marca tiene disponibles otros modelos de teclado compactos como el [DIERYA DK61E][amazon-dierya-dk61] y el [DIERYA DK61 Pro][amazon-dierya-dk61-pro], ambos DK61 son iguales pero el Pro tiene con conexión inalámbrica también por Bluetooth. El [KEMOVE DK61][amazon-kemove-dk61] es otra buena opción que aunque con un precio un poco mayor combina varias de las mejores cosas de los DIERYA y con mejor calidad.
+
+Si después de leer el artículo decides comprar uno de estos teclados y en el momento que vas a hacerlo no tiene algún descuento envíame un correo electrónico que puedes encontrar en la página [Acerca de][blogbitix-page-p2] y le pido a la marca un cupón descuento para que puedas aplicarlo en el momento de realizar la compra.
 
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
+* [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/)
 * [Manual de usuario del teclado DIERYA DK63](https://www.kemovebbs.com/usermanuel/DIERYA63-new-version-before-z-is-5-in-sn.pdf)
 
 {{< amazon
-    tags="keyboard-dierya" >}}
+    tags="keyboard-kemove-dierya" >}}
 
 #### Diferencias entre el teclado DK63 y DK61E
 
@@ -172,12 +178,12 @@ Los _switches_ del teclado son de la marca TMKB que son montados en algunos tecl
 
 {{< image
     gallery="true"
-    image1="image:dierya-dk63-switches-1.jpg" optionsthumb1="300x200" title1="Swicthes electricos TMKB y etabilizador del DIERYA DK63"
-    caption="Swicthes electricos TMKB y etabilizador del DIERYA DK63" >}}
+    image1="image:dierya-dk63-switches-1.jpg" optionsthumb1="300x200" title1="Swicthes eléctricos TMKB y estabilizador del DIERYA DK63"
+    caption="Swicthes eléctricos TMKB y estabilizador del DIERYA DK63" >}}
 
 #### Los _keycaps_
 
-Los _keycaps_ son de plástico ABS de _double shoot_ para la serigrafía principal de la tecla y con serigrafía por _pad printing_ para el indicativo de función en aquellas teclas que se puede usar en combinación con la tecla de función. Las teclas son compatibles con la iluminación RGB dejando pasar la luz a través de la serigrafía de doble disparo.
+Los _keycaps_ son de plástico ABS de _double shot_ para la serigrafía principal de la tecla y con serigrafía por _pad printing_ para el indicativo de función en aquellas teclas que se puede usar en combinación con la tecla de función. Las teclas son compatibles con la iluminación RGB dejando pasar la luz a través de la serigrafía de doble disparo.
 
 Las _keycaps_ sí se pueden reemplazar pero teniendo en cuenta que algunas tienen un tamaño especial y teniendo en cuenta que al reemplazarlas se pierde la serigrafía de la parte de función.
 
@@ -250,12 +256,12 @@ En páginas como [AliExpreses][aliexpress] hay multitud de vendedores que venden
 
 Otro producto interesante es una alfombrilla de gran tamaño que permite colocar tanto el teclado como el ratón, permite evitar el desgaste de la mesa o ensuciarla. Algunas [alfombrillas incluso con iluminación RGB](https://amzn.to/3Aztewq) que aparte de su efecto estético puede resultar también útil en condiciones de baja iluminación.
 
-Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://amzn.to/3AIbLSQ) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
+Finalmente, en caso de querer transportar el teclado es aconsejable comprar una [funda para protegerlo en el transporte](https://www.kemove.com/product/keyboard-case/) y evitar que sufra algún deterioro en el transporte principalmente para proteger los _keycaps_, la marca de KEMOVE vende una funda para los teclados de tamaño 60%.
 
 {{< amazon
     tags="storage-usb-hub" >}}
 {{< amazon
-    tags="dierya-keyboard-related" >}}
+    tags="keyboard-kemove-dierya-related" >}}
 
 {{< reference >}}
 * [Bluetooth Specifications Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/)

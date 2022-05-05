@@ -54,6 +54,7 @@ El Viewsonic es un modelo del 2015 con dos HDMI 1.3 y DisplayPort 1.2. El BenQ P
 Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200 € a 700+€. Dos modelos en 4K de los anteriores son el [BenQ PD2700U](https://amzn.to/2Pik820) que es el que hubiese elegido en caso de haber optado por UHD, el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UHD no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tienen una pantalla retina. Otras opciones son optar por 32" UHD y en formato panorámico. Los otros candidatos destacables son estos alguno en formato panorámico.
 
 * [BenQ PD2700U](https://amzn.to/3Fb5gc7)
+* [BenQ PD2705U](https://amzn.to/39uDEEa)
 * [BenQ PD3200U](https://amzn.to/2YLe1dq)
 * [LG 34WN750-B](https://amzn.to/3kyG4nW)
 * [Samsung LU32J592UQRXEN](https://amzn.to/3ooWHne)
@@ -275,7 +276,7 @@ Para probar la calidad del monitor (o televisor) en cuanto a colores o resoluci�
 
 {{< youtube video="LXb3EKWsInQ" >}}
 
-### Switch HDMI y cables, monitor con el ordenador y consola
+### _Switch_ HDMI y cables, monitor con el ordenador y consola
 
 Si el monitor es compartido tanto por el [ordenador como un Intel NUC][blogbitix-363] como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada y se cambia automáticamente.
 

@@ -120,7 +120,7 @@ Más tarde he podido probar un teclado compacto DIERYA DK61E, un teclado mecáni
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
 
 {{< amazon
-    tags="keyboard-dierya" >}}
+    tags="keyboard-kemove-dierya" >}}
 
 #### DREVO Calibur V2 TE
 

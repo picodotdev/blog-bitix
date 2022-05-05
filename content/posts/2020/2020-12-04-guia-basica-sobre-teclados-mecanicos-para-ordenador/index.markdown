@@ -267,7 +267,7 @@ La marca tiene otros modelos como el [DIERYA DK61 Pro][amazon-dierya-dk61-pro] q
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
 
 {{< amazon
-    tags="keyboard-dierya" >}}
+    tags="keyboard-kemove-dierya" >}}
 
 {{< youtube
     video="2siY3SO3ATY" >}}
