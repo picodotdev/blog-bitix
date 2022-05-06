@@ -44,6 +44,8 @@ Además, algunos canales de televisión ofrecen a sus suscriptores un servicio d
 
 Existen dos formas en las que puede evitar este tipo de limitaciones, en primer lugar, el uso de _proxies_, y en segundo lugar el uso de VPNs.
 
+{{< comment >}}Sponsored link: expressvpn{{< /comment >}}
+
 No es el objetivo de este artículo entrar en detalles sobre [qué es una VPN](https://www.expressvpn.com/es/what-is-vpn,rel=nofollow) o [qué es un proxy](https://es.wikipedia.org/wiki/Servidor_proxy), si lo deseas puedes seguir los vínculos para leer con más detalle acerca de ambos elementos, la VPN introduce un nivel adicional de seguridad al encriptar todo el tráfico de extremo a extremo, lo que evita que pueda inyectarse código malicioso, cosa que es más difícil de garantizar en un servidor proxy. Adicionalmente, las VPNs, al crear un túnel privado, suelen ofrecer mayor estabilidad en la conexión, cosa que os será muy útil si vais conectar a un servicio de _streaming_.
 
 ### Cosas a tener en cuenta al evaluar un servicio de VPN

@@ -22,6 +22,8 @@ Con la **capturadora** que compró y el **micrófono** tiene todo preparado y ho
 
 ### Discos duros externos
 
+{{< comment >}}Sponsored link: ereferer{{< /comment >}}
+
 Sale a toda velocidad en busca de una fuente de armas. El [disco externo](https://mercadoactual.es/marca/seagate/discos-duros-externos) está encendido y graba de manera automática sus avances y también sus emociones.  Se relaja en el momento en que observa por la mirilla y ve a su oponente que está en el campanario, pero falla el disparo dejando una estela de humo que puede localizarle.
 
 Su perro Duty, se le ha subido a las piernas y le ladra, mete el hocico entre sus manos y tiene que dejar de jugar, no puede huir y le disparan, se salva por los pelos, se enfada, grita, «Mira lo que has hecho. Duty».

@@ -61,7 +61,7 @@ Clouding ofrece una infraestructura de alta disponibilidad, con servicios de cop
     image3="image:clouding-caracteristicas-6.png" optionsthumb3="200x150" title3="Características de Clouding"
     caption="Características de Clouding" >}}
 
-Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos SSD NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energia 100% renovable.
+Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos SSD NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energía 100% renovable.
 
 {{< image
     gallery="true"
