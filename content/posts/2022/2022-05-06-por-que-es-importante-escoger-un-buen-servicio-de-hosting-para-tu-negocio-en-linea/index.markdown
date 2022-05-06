@@ -6,7 +6,7 @@ url: "/2022/05/por-que-es-importante-escoger-un-buen-servicio-de-hosting-para-tu
 date: 2022-05-06T00:00:00+02:00
 language: "es"
 index: true
-rss: true
+rss: false
 sharing: true
 comments: true
 promoted: "external"
