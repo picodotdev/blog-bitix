@@ -49,6 +49,9 @@ En cuanto a portátil optaría sin mucho dudar por un [Slimbook][slimbook]. Son 
 
 Un teclado inalámbrico permite eliminar un cable de la mesa y desplazarlo sin molestias o ataduras del cable, con dos pilas AAA tiene una duración de más de una año sin necesidad de cambiarlas o recargarlas si se usan recargables. [Los teclados mecánicos][blogbitix-536] ofrecen mayor calidad que las opciones más económicas, son más difíciles de encontrar con disposición de teclas en español pero ofrecen más opciones de ajustarse a las preferencias del usuario no los que no tienen teclado numérico o TKL.
 
+* [Desempaquetado de teclado mecánico Glorious GMMK TKL][blogbitix-609]
+* [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
+
 {{< amazon
     tags="keyboard-basic" >}}
 {{< amazon
@@ -60,7 +63,9 @@ Los monitores 2K y 4K tiene mayor definición mostrando el texto con más clarid
 
 Son utilizables tanto para el ordenador como para una consola y con un adaptador de múltiples entradas y una salida usar ambos al mismo tiempo sin necesidad de conectar y desconectar cables.
 
-Junto con el Intel NUC compré un [monitor Benq PD2700Q de 27" y resolución QHD de panl IPS][blogbitix-356], tiene una buena calidad y estoy contento con la compra, para lo que ofrece y calidad que ofrece su precio está bastante ajustado.
+Junto con el Intel NUC compré un monitor Benq PD2700Q de 27" y resolución QHD de panel IPS, tiene una buena calidad y estoy contento con la compra, para lo que ofrece y calidad que ofrece su precio está bastante ajustado.
+
+* [Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas][blogbitix-356]
 
 {{< amazon
     tags="monitor-benq" >}}
@@ -77,6 +82,8 @@ Seguramente los teléfonos móviles tabletas y libros electrónicos son de los a
 Varios móviles destacados son el [Xiaomi Mi 11i 5G](https://amzn.to/3uCXNyh) con 8 GiB de memoria, procesador _octa-core_ Qualcomm Snapdragon 888 a 5nm y una cámara de 108 megapixeles, pantalla de 6.67" con resolución 2340x1080, el [Samsung Galaxy M32](https://amzn.to/3B8FAuW) con pantalla Full HD de 6.4" 2340x1080, 6 GiB de memoria, procesador _octa-core_ y cámara principal de 64 megapixles. El [Samsung Galaxy A52](https://amzn.to/3BkMJc1) en la gama media con una pantalla de 6.5” y resolución 2340 x 1080, 6 GiB de memoria y 128 ROM y cámara principal de 64 MP. Todos destacan por incorporar ya la tendencia en el diseño de los móviles con un frontal sin apenas marcos y una pantalla grande pero sin aumentar por ello el tamaño del móvil.
 
 En la gama alta están el [Samsung Galaxy S21](https://amzn.to/3BapC3B) y el [iPhone 13](https://amzn.to/3lbE1qV) aunque no hace falta irse a estos modelos para tener un buen móvil.
+
+* [Desempaquetado y análisis del smartphone Samsung Galaxy S21 FE][blogbitix-633]
 
 {{< amazon
     tags="smartphone" >}}
@@ -114,7 +121,9 @@ Las consolas son otro de los regalos más populares, entre ellas están la [Sony
 {{< amazon
     tags="playstation-4,nintendo-switch" >}}
 
-[Yo acabé comprando una PlayStation 4][blogbitix-432], aún estando en su fase final de vida tiene un gran catálogo de juegos y aún saliendo la PlayStation 5 a finales del 2020 durante varios años de transición se seguirán viendo juegos físicos en las tiendas o digitales en la propia PlayStation Store, además en los primeros años la PS5 será mas cara y están las dudas si las primeras versiones estarán libres de fallos además de su limitado catálogo de juegos inicial hechos de forma especifica para aprovechar completamente sus capacidades.
+Yo acabé comprando una PlayStation 4, aún estando en su fase final de vida tiene un gran catálogo de juegos y aún saliendo la PlayStation 5 a finales del 2020 durante varios años de transición se seguirán viendo juegos físicos en las tiendas o digitales en la propia PlayStation Store, además en los primeros años la PS5 será mas cara y están las dudas si las primeras versiones estarán libres de fallos además de su limitado catálogo de juegos inicial hechos de forma especifica para aprovechar completamente sus capacidades.
+
+* [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 
 ### Televisión 4K, HDR, Smart TV
 
