@@ -31,7 +31,7 @@
 <p>La seguridad de los datos es muy importante, ciertos datos personales sensibles y que permiten identificar a personas están protegidos por leyes. El no cumplimiento de las leyes implica potencialmente a una empresa recibir importantes multas o descrédito que afecte a la viabilidad del negocio o suponga una reducción de facturación. Algunos datos candidatos a ser cifrados o transformados al guardarse en base de datos son, datos personales e identificativos como nombre y apellidos, DNI, dirección, tarjetas de crédito, bancarios u otros datos que estén regulados por las leyes de protección de datos.</p>
 <p>Los datos protegidos incluso no es deseable que sean accesibles por cualesquiera trabajadores de la propia empresa, solo debería tener acceso a ellos aquellos trabajadores que los necesitan para desempeñar su trabajo y ofrecer el servicio que proporciona la empresa. Para el desarrollo de una aplicación los programadores necesitan una base de datos con el mismo esquema de la base de datos de producción y un conjunto de datos, una opción es <a href="https://picodotdev.github.io/blog-bitix/2020/05/copia-de-seguridad-restauracion-y-carga-de-datos-en-postgresql-y-mysql/">obtener una copia de la base de datos</a> de producción, sin embargo, obtener una copia de la base de datos de producción otorga acceso a los programadores acceso a los datos, al hacer la copia es posible aplicar un proceso que ofusque los datos sin embargo esto sigue sin solventar el problema de mantener seguros los datos en la propia base de datos de producción o sus réplicas. Si algunos datos se guardan cifrados aunque se tenga acceso a la base de datos los datos cifrados siguen protegidos.</p>
 <p>Una de las funcionalidades que ofrece <a href="https://www.vaultproject.io/">Vault</a> de <a href="https://www.hashicorp.com/">HashiCorp</a> es ofrecer el cifrado y descifrado como servicio. Este artículo está basado en la <a href="https://learn.hashicorp.com/tutorials/vault/eaas-spring-demo?in=vault/encryption-as-a-service">guía de Vault sobre la funcionalidad de cifrado y descifrado</a>.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="vault-como-servicio-de-cifrado-y-descifrado">Vault como servicio de cifrado y descifrado</h3>
 <p>Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar credenciales de acceso bajo demanda a recursos como bases de datos</a> entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.</p>
 <p>Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplicaciones no han de mantener credenciales para el acceso a una base de datos sino que es Vault el que crea las credenciales válidas únicamente por un periodo de tiempo corto con posibilidad de renovación. Esto aumenta la seguridad ya que una aplicación no ha de mantener unas credenciales para la base de datos válidas por un tiempo indefinido, al mismo tiempo las claves de cifrado están centralizadas en vez estar incluidas en cada aplicación. En caso necesario Vault es capaz de revocar las credenciales de cualquier aplicación.</p>
@@ -205,7 +205,7 @@
 </div>
 <p>Las anotaciones fueron añadidas en Java 5 como una forma de enriquecer con información el código. Tienen varios casos de uso, algunas están incorporadas en el propio JDK y las utiliza el compilador como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Override.html">@Override</a>, otras son meramente informativas como <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html">@Deprecated</a>, también se utilizan en la <a href="https://picodotdev.github.io/blog-bitix/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/">generación de documentación Javadoc con <em>taglets</em></a>, otras se procesan en tiempo de compilación para generar código o archivos dinámicamente al compilar, otras se procesan en tiempo de ejecución. Entre las <a href="https://docs.oracle.com/javase/tutorial/java/annotations/predefined.html">anotaciones predefinidas incorporadas en el JDK</a> hay algunas más.</p>
 <p>En este artículo muestro cómo crear anotaciones para generar errores de compilación propios, como generar código dinámico en tiempo de compilación e integrarlo con un IDE como <a href="https://www.jetbrains.com/idea/">IntelliJ</a> y con la herramienta de construcción <a href="https://gradle.org/">Gradle</a>.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="qué-es-una-anotación-en-java">Qué es una anotación en Java</h3>
 <p>Las anotaciones es una metainformación que se añade en el código fuente. Por sí mismas no hacen nada, es al procesarlas cuando se añade su comportamiento, sirve desde para añadir documentación, realizar comprobaciones de compilación, generar código o programar funcionalidades transversales.</p>
 <p>Si se crea directamente una instancia de una clase anotada sin procesar las anotaciones esta no incluye el comportamiento que las anotaciones tienen intención de añadir, es el creador de la instancia el que ha de encargarse de añadirles el comportamiento en el momento de instanciarlas, el procesado de las anotaciones se puede hacer en tiempo de compilación o en tiempo de ejecución.</p>
@@ -343,7 +343,7 @@
 <p>Hay herramientas que usando un sintetizador de voz permiten transformar un texto en un audio, dando solución a dos de los problemas de la grabación de voz a partir de texto. Al convertir un texto a voz es más fácil la edición ya que basta simplemente cambiar el texto y generar de nuevo el audio y es más rápido ya que la generación del audio es más rápido que grabarlo en tiempo real. Algunos sintetizadores y herramientas además permiten seleccionar el idioma de la voz o ser una voz masculina o femenina.</p>
 <p>Una de estas herramientas es <a href="https://github.com/mozilla/TTS">TTS: Text-to-Speech</a>, un proyecto de <a href="https://www.mozilla.org/">Mozilla</a> y las ofrecidas por Amazon, Google y Microsoft. Esta y otras herramientas alternativas de conversión de texto a voz producen audios de voz bastante fieles a la voz humana natural. Para ayudar en la interpretación del texto se enriquece con un lenguaje de marcado que indica a la computadora como entonar e interpretar el texto.</p>
 <p>En la actualidad hay herramientas de conversión de texto a voz natural que producen resultados difícilmente indisinguibles de si la voz ha sido producida por un humano por una computadora. Otra tarea para la que hay herramientas que producen buenos resultados es <a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">reconocimiento de texto en imágenes con OCR</a>. Estas son tareas aparentemente simples pero significativamente complejas para una computadora que a pesar de su rapidez y capacidad enorme de cálculo no posee la inteligencia humana.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="convertir-texto-a-voz-natural">Convertir texto a voz natural</h3>
 <h4 id="herramientas-web">Herramientas web</h4>
 <p>Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio sin necesidad de software adicional a un navegador web. Algunas con limitaciones de número de caracteres pero suficiente para un uso básico. También algunas permiten descargar el archivo de audio, en caso de que no ofrezcan la descargar se puede reproducir y capturar con el <a href="https://www.videolan.org/vlc/">reproductor multimedia VLC</a> en la opción <em>Captura de audio &gt; Monitor de audio interno (HDMI) &gt; Guardar</em>.</p>
@@ -415,27 +415,27 @@
     </div>
 </div>
 <p>Utilizando el servicio Microsoft Text to Speech.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-alvaro.mp3" type="audio/mpeg">
-</audio>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</amp-audio>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/microsoft-elvira.mp3" type="audio/mpeg">
-</audio>
+</amp-audio>
 <p>Utilizando el servicio Free TTS.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-enrique.mp3" type="audio/mpeg">
-</audio>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</amp-audio>
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/freetts-lucia.mp3" type="audio/mpeg">
-</audio>
+</amp-audio>
 <p>Utilizando Mozilla TTS.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/mozilla-tts.mp3" type="audio/mpeg">
-</audio>
+</amp-audio>
 <p>Utilizando espeak.</p>
-<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="audios/espeak.mp3" type="audio/mpeg">
-</audio>
+</amp-audio>
 <h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
 <p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
 <p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
@@ -485,7 +485,7 @@
 <p>El propósito original de la Raspberry Pi es el educativo y la electrónica, en cualquier caso es capaz de utilizarse para multitud de propósitos como servidor NAS, descargas torrent, centro multimedia, servidor <a href="https://nextcloud.com/">NextCloud</a> como alternativa a las herramientas de <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a> o <a href="https://www.google.com/photos/about/">Photos</a> o evitar anuncios con AdGuard, consola de juegos retro con <a href="https://retropie.org.uk/">RetroPie</a> o <a href="https://www.lakka.tv/">Lakka</a>.</p>
 <p>Desde su aparición en el año 2010 han surgido <a href="https://picodotdev.github.io/blog-bitix/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/">numerosas alternativas de la Raspberry Pi</a> en formato y características similares. Algunas incluso más potentes, sin embargo, dada la popularidad de la RPi es la que mejor soporte de software ofrece y de la que hay más información en caso de buscarla.</p>
 <p>La <a href="https://magpi.raspberrypi.org/">revista MagPi</a> en PDF se puede descargar de forma gratuita y contiene numerosos artículos sobre como realizar proyectos de programación y electrónica con esta computadora. También puede adquirirse en formato impreso, se solicita pagar un pequeño importe  para mantener la publicación así que si la sueles obtener todos los números considera hacer un pago de vez en cuando.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="cómo-instalar-gnulinux-en-la-raspberry-pi">Cómo instalar GNU/Linux en la Raspberry Pi</h3>
 <p>Una vez en posesión de una Raspberry Pi y elementos imprescindibles, cargador de alimentación y tarjeta SD o microSD y opcionalmente teclado y monitor, el primer paso es realizar la instalación del sistema operativo. El sistema operativo oficial es <a href="https://www.raspberrypi.org/software/">Raspberry Pi OS</a>.</p>
 <p>La instalación se hace en una tarjeta de memoria microSD o una memoria USB, para la instalación se requiere de otra computadora en la que utilizar la aplicación <em>Raspberry Pi Image</em> que descarga la imagen del sistema operativo y formatea la unidad de almacenamiento. Dispone de una versión para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> y como aplicación <a href="https://flatpak.org/">Flatpak</a> para cualquier distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>.</p>
@@ -619,7 +619,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/">Tipos de arquitecturas de aplicaciones de software</a></li>
 </ul>
 <p>Posteriormente, apareció el concepto de inyección de dependencias e inversión de control que se usa actualmente en la mayoría de los casos con independencia del lenguaje de programación, transformando la arquitectura por capas en la arquitectura hexagonal. Por otro lado, en aplicaciones complejas con mucha lógica de negocio se suele aplicar <em>Domain Driven Design</em> o DDD dividiendo la aplicación en <em>bounded context</em> y utilizando otros conceptos. La arquitectura hexagonal se complementa muy bien con DDD ya que sirve para independizar el dominio de los detalles externos de infraestructura tanto los que son usados para acceder al dominio como los usados por el dominio para acceder al exterior.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="_domain-driven-design_"><em>Domain-Driven Design</em></h3>
 <p><em>Domain-driven design o DDD</em> es un concepto que propone que la estructura y lenguaje en el código del software (nombres de clases, métodos y variables) debería reflejar el dominio de negocio. Por ejemplo, en un software de eventos debería haber clases para el concepto de evento, recinto, tipos de entrada métodos como crear evento, cambiar fecha de evento, cancelar o posponer entre otros. DDD intenta evitar la existencia de modelos anémicos con poca lógica de negocio o conceptos exclusivamente técnicos. DDD define dos tipos de patrones, los estratégicos que hacen referencia a aspectos de negocio y los patrones tácticos más relacionados con detalles de implementación.</p>
 <p>Patrones estratégicos:</p>
@@ -853,7 +853,7 @@
         <![CDATA[<p>Todo software tiene una licencia. Una <a href="https://es.wikipedia.org/wiki/Licencia_de_software">licencia de software</a> es el contrato formal entre el desarrollador del software, los intermediarios y el usuario del mismo, este contrato especifica los derechos que pertenecen al desarrollador y los derechos que otorga al usuario del software. La licencia de software es un documento con jerga legal que especifica los derechos y obligaciones de cada una de las partes.</p>
 <p>Es el desarrollador o desarrolladores como autores de la obra intelectual de creación del software el que determina que licencia aplican a su obra. Incluso tienen la capacidad de en versiones posteriores del software cambiar la licencia en función de sus intereses.</p>
 <p>Hay múltiples licencias de software que se catalogan principalmente en tres grupos: licencias de software privativo, licencias de software libre y licencias de código abierto.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="software-privativo">Software privativo</h3>
 <p>Para entender las licencias de software libre o código abierto se puede empezar por entender que son las licencias de software privativo. Las licencias de software privativo se denominan así porque privan al usuario de ciertos derechos en el uso o propósito de uso, acceso al código fuente, modificación, distribución o distribución de modificaciones.</p>
 <p>Este suele ser el tipo de licencias que emplean muchas empresas en su software comercial del cual obtienen sus ingresos a través de la venta de licencias de uso. Las limitaciones del software privativo permite a las empresas proteger sus programas de la competencia y les otorga exclusividad en la venta u oferta de servicios.</p>
@@ -1001,7 +1001,7 @@
 </div>
 <p>Las funciones de un preprocesador y algunas nativas como variables, funciones, <em>mixis</em>, operaciones matemáticas o anidaciones de estilos no son garantía para escribir código CSS bien organizado pero no son garantía para escribir código CSS con menos líneas de código, más mantenible y legible.</p>
 <p>Por otro lado, en un proyecto en el que trabajan varias personas es recomendable seguir alguna metodología o convenciones como guía para editar los estilos y mantener la uniformidad del código. Para CSS hay varias metodologías entre las más utilizadas están OOCSS, BEM y SMACSS. Cada una de estas metodologías son independientes pero a veces se aplican varios de los principios y varias metodologías al mismo tiempo.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="oocss">OOCSS</h3>
 <p>La metodología <em>Object-Oriented CSS</em> o OOCSS se basa en los siguientes dos principios:</p>
 <ul>
@@ -1177,7 +1177,7 @@
 </div>
 <p>A finales del 2018 después de <a href="https://picodotdev.github.io/blog-bitix/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/">evaluar múltiples opciones para mi nuevo ordenador</a> decidí por <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">comprar un Intel NUC Bean Canyon i5-8259</a>. Estuve esperando unos cuantos meses a que saliera ya que respecto a la generación anterior el Bean Canyon tenía 2 núcleos más para un total de 4 con <em>HyperThreading</em> 8 hilos, lo que era duplicar la potencia del procesador. Otros componentes que compré fueron un <a href="https://picodotdev.github.io/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/">monitor BenQ PD2700Q</a> y un <a href="https://picodotdev.github.io/blog-bitix/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200/">teclado y ratón inalámbrico económicos de V7</a>.</p>
 <p>Pasados dos años desde que compré todo este equipo informático quiero hacer una revisión de sí a día de hoy cambiaría algo y que querría en el futuro conociendo más en detalle mis necesidades, preferencias y la posible situación en el futuro para el siguiente equipo cuando llegue el momento de renovar el Intel NUC.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="evaluación-intel-nuc">Evaluación Intel NUC</h3>
 <p>El principal motivo por el que compré un Intel NUC es que son ordenadores extremadamente pequeños pero con las capacidades de un ordenador de gama media. Dentro de unos cuantos años cuando la potencia del Intel NUC, memoria o almacenamiento se me quede escasa lo podré seguir dando un uso como centro multimedia o servidor web casero, o en caso contrario no me costará tanto deshacerme de él que de un equipo de torre ATX.</p>
 <p>El Intel NUC i5-8259 tiene 4 núcleos físicos y 8 hilos con <em>HyperThreading</em> que en el año 2021 sigue siendo lo mínimo para un ordenador, los procesadores de 2 núcleos físicos ya son de gama baja. Admite hasta 32 GiB de memoria que son los que le puse, más memoria que muchos ordenadores de gama alta, en el 2021 lo habitual en equipos nuevos serán los 16 GiB.</p>
@@ -1525,7 +1525,7 @@
 </div>
 <p>La analítica web es una funcionalidad imprescindible en la mayoría de sitios públicos accesibles desde internet web incluso en aquellos privados. La analítica web es una funcionalidad que proporciona valiosa información acerca del sitio web, desde número de visitas en determinados periodos de tiempo así como información de los usuarios y la interacción de estos con el sitio web.</p>
 <p>La información proporcionada por la analítica web ayuda a la toma de decisiones basadas en datos observando el comportamiento de los usuarios en el sitio web con métricas que permiten conocer cuales son las páginas más visitas, en cuales permanecen más tiempo, que versión de navegador web usan, cuales son los países de los usuarios, cuál es el tráfico por hora del día, las fuentes del tráfico, sitios web de referencia, tráfico según días de la semana, ciertas fechas señaladas, periodos de vacaciones u cualesquiera otras formas de conocimiento interesantes para el negocio.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="google-analytics-la-herramienta-más-utilizada-para-hace-analítica-web">Google Analytics, la herramienta más utilizada para hace analítica web</h3>
 <p>La herramienta más utilizada para hacer analítica web es <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>, es gratuita, fácil de instalar en un sitio web y tiene gran cantidad de funcionalidades básicas y avanzadas que cubren las necesidades de cualesquiera usuarios. Almacena la información recogida a lo largo del tiempo que es consultable con posterioridad incluso pasados varios años de forma muy flexible con diferentes criterios de búsqueda y filtros, también ofrece varios paneles para observar el tráfico en tiempo real.</p>
 <div class="media">
@@ -1693,7 +1693,7 @@
 <p>No recibo muchos, aunque algunos que recibo son <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">como en este artículo con un comentario de agradecimiento</a> que me alegra y me anima a seguir escribiendo. Algunos blogueros y más <em>youtubers</em> comentan que en sus comentarios tiene algún <em>troll</em> que comenta para criticar, que recuerde solo una persona me criticó algo por twitter con cierta parte de razón pero por otra no sobre algo del pirateo de Windows que comenté.</p>
 <p>Todavía no tengo un <em>troll</em> ni lo deseo, será que mi blog no es de política ni hablo de los fascistas dirigentes de V🤮X o los corruptos dirigentes del PP los de ambos miserables, hipócritas y mentirosos igual que sus lacayos mercenarios en las redes sociales u otros que se hacen llamar periodistas.</p>
 <p>Como cada año hago un repaso del <em>blog</em> con los artículos que he publicado, cifras de visitas, ingresos de AdSense y algunos otros asuntos.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="retrospectiva-2020">Retrospectiva 2020</h3>
 <h4 id="evolución-visitas">Evolución visitas</h4>
 <p>Durante este año atípico de confinamiento y en muchos casos trabajo desde casa las visitas se han mantenido constantes, alrededor de unas 50K visitas mensuales. A pesar de escribir nuevo contenido que debería añadir aún más tráfico el caso es que algunos artículos antiguos también lo pierden con lo que el tráfico de los nuevos artículos solo compensan la pérdida del tráfico de los antiguos. Algunos artículos van perdiendo visitas, porque hay otros <em>blogs</em> que también crean contenido y los artículos van perdiendo posiciones en la clasificación de los buscadores.</p>

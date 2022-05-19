@@ -25,7 +25,7 @@
 </div>
 <p>El patrón de diseño factoría o <em>Factory</em> es uno de los más empleados en multitud de ocasiones en el código propio y aunque no se implemente al ser usado en multitud de librerías también en muchos casos conviene conocer sus principios y ventajas frente a otros métodos.</p>
 <p>El patrón de diseño <em>Factory</em> es uno de patrones ya identificados como útiles en los que su aplicación es adecuada. Los patrones de diseño se clasifican en las áreas funcionales de creacionales dedicados a la creación de objetos, de comportamiento centrados en la comunicación entre objetos, estructurales para mantener de forma sencilla relaciones entre entidades y finalmente los patrones de concurrencia empleados en la aplicación concurrente con múltiples hilos de ejecución.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="las-limitaciones-de-instanciar-objetos-con-la-palabra-reservada-_new_">Las limitaciones de instanciar objetos con la palabra reservada <em>new</em></h3>
 <p>Los lenguajes de programación orientada a objetos modelan los conceptos que trata una aplicación mediante clases que define las propiedades del objeto y los métodos que permiten el acceso o modifican el estado del objeto, esto proporciona encapsulación y es uno de los <a href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">conceptos fundamentales de la programación orientada a objetos</a> entre los que también se encuentran el polimorfismo, herencia y composición.</p>
 <div class="code">
@@ -129,7 +129,7 @@
 <p>Los lenguajes orientados a objetos modelan los programas utilizando clases, estas clases contienen tanto los datos como las operaciones que tratan esos datos que solo pueden ser modificados a través de esas operaciones. Este principio de encapsulación tiene como beneficio garantizar que los datos no sean modificados por cualquier otro código distinto a las operaciones y que los datos no queden en un estado inconsistente.</p>
 <p>En un lenguaje orientado a objetos de cada clase se crean tantas instancias u objetos como se necesiten en el programa. En algunos casos de una clase en concreto sólo se desea que haya una única instancia, normalmente hacer que de una clase en concreto haya una única instancia se implementa con el patrón <em>Singleton</em>.</p>
 <p>En Java hay varias formas de implementar el patrón <em>Singleton</em>, aunque todas son posibles cada una tiene diferentes propiedades, algunas tiene más beneficios sin las debilidades de otras. En este artículo incluyo 5 formas de cómo implementar el patrón <em>Singleton</em> con un ejemplo de código de cada una de ellas e indico cuales de ellas son las mejores opciones de entre estas.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="qué-es-el-patrón-singleton">Qué es el patrón Singleton</h3>
 <p>El <a href="https://en.wikipedia.org/wiki/Singleton_pattern">patrón Singleton</a> es un patrón de diseño que restringe a una única instancia de objeto el número instancias de una clase que se pueden crear durante la ejecución del programa. Es útil en ciertas clases donde su única instancia es compartida en todo el código como si de una variable global se tratase. Si el método que permite obtener la referencia a la instancia es un método estático la instancia es como si fuese una variable global dado que es posible acceder a ella desde cualquier parte del programa siempre que lo permitan <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">los modificadores de acceso</a>.</p>
 <p>Los casos de uso de las clases <em>singleton</em> son mantener un estado compartido, permitir inicialización bajo demanda o <em>lazy</em>, también es usado en otros patrones como el patrón <em>abstract factory</em>, <em>factory method</em>, <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">el patrón <em>builder</em></a> o <em>facade</em>.</p>
@@ -563,10 +563,10 @@
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">Patrones de diseño en la programación orientada a objetos</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">Ejemplo del patrón de diseño State</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.htmlindex-amp.html">Patrones de diseño en la programación orientada a objetos</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño State</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">Implementación de máquina de estados finita (FSM) con Java 8</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.htmlindex-amp.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/01/ejemplo-del-patron-de-diseno-no-operation/">Ejemplo del patrón de diseño No Operation</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/">8+ libros para mejorar como programadores</a></li>
 </ul>
@@ -660,9 +660,9 @@
     Referencia:<br>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/">8+ libros para mejorar como programadores</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">Patrones de diseño en la programación orientada a objetos</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">Ejemplo del patrón de diseño <em>Command</em></a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">Ejemplo del patrón de diseño <em>State</em></a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.htmlindex-amp.html">Patrones de diseño en la programación orientada a objetos</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.htmlindex-amp.html">Ejemplo del patrón de diseño <em>Command</em></a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño <em>State</em></a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/">Patrón múltiples vistas de un mismo dato en Tapestry</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
 </ul>
@@ -732,9 +732,9 @@
     Referencia:<br>
 <ul>
 <li><a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PatronNoOperation">Código fuente del ejemplo del patrón de diseño No Operation</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html">Patrones de diseño en la programación orientada a objetos</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html">Ejemplo del patrón de diseño State</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.htmlindex-amp.html">Patrones de diseño en la programación orientada a objetos</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.htmlindex-amp.html">Ejemplo del patrón de diseño Command y programación concurrente en Java</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño State</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a></li>
 </ul>
 </div>

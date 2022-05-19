@@ -26,7 +26,7 @@
 <p>En la teoría de <em>Domain Driven Design</em> o DDD se mencionan los eventos de dominio. Un evento de dominio es una notificación de algo que ha sucedido en el sistema en lo que algunas partes del mismo están interesadas en ser notificadas. Dado que un evento es algo que ha sucedido suelen tener un nombre con un verbo en pasado como <em>OrderCreated</em>, otra de sus propiedades es que no indican que acción se ha de realizar como sería el caso de un nombre con <em>SendBuyerOrderEmail</em>. Las mismas características de las aplicaciones que se comunican con mensajes se aplican a las aplicaciones que generan eventos de dominio, la comunicación en el sistema se realiza de forma desacoplada, el emisor y el receptor no se conocen y de forma desincronizada ni el emisor ni el receptor necesitan de la disponibilidad del otro si se realiza con un <em>middleware</em>.</p>
 <p>En la teoría de <em>Domain Driven Design</em> esta forma de comunicación es útil para comunicar diferentes <em>bounded context</em>. Un <em>bounded context</em> se encarga de una área funcional de la aplicación con alta cohesión y su propio lenguaje de dominio. El lenguaje de dominio son los conceptos que aplican en un <em>bounded context</em> y cuales son las propiedades relevantes dentro del mismo, el término usuario en un supuesto <em>bounded context</em> de registro y adminisitración de la cuenta es probable no sea el mismo que en el <em>bounded context</em> de órdenes de compra, en el primero el usuario puede tener varias direcciones y en el segundo solo interesa una, por otro lado en el <em>bounded context</em> de inventario ni siquiera exista el término usuario o signifique otra cosa totalmente diferente.</p>
 <p>Los <em>bounded context</em> y eventos de dominio se adaptan especialmente bien a las aplicaciones con arquitectura basada en microservicios. Cada microservicio puede ser uno o varios <em>bounded context</em> con un área funcional bien definida y estos comunicarse mediante eventos con eventos de dominio. La forma de emitir estos eventos de dominio es con un bus de eventos. La <a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">implementación un bus de comandos y consultas</a> para <a href="https://en.wikipedia.org/wiki/Command%e2%80%93query_separation">CQRS</a> es muy similar a la implementación de un bus de eventos.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="transaccionalidad-y-eventos-de-dominio">Transaccionalidad y eventos de dominio</h3>
 <p>En las aplicaciones un concepto importante es la transaccionalidad, es un requerimiento que se impone al sistema para su buen funcionamiento. Una transacción consiste en que un conjunto de acciones o cambios funciona todo de forma completa o no funciona nada pero nunca de forma parcial. Si la lógica de una aplicación emite varios eventos según se ejecuta y en la mitad del proceso algo falla las acciones desencadenadas por los eventos emitidos deben deshacerse o de lo contrario posiblemente se produzca un mal funcionamiento o una inconsistencia de datos.</p>
 <p>Las aplicaciones suelen trabajar con bases de datos y estas son las que proporcionan la transaccionalidad pero si los eventos se envían con un <em>middleware</em> de mensajería la transaccionalidad ya no afecta a un único sistema sino que afecta a dos, la base de datos relacional y el <em>middleware</em> de mensajería. Alguna solución a la transaccionalidad de dos sistemas diferentes como una <a href="https://es.wikipedia.org/wiki/Commit_de_dos_fases">transacción en dos fases</a> tiene sus propios problemas en cuanto a escalabilidad y complejidad.</p>
@@ -213,7 +213,7 @@
 <p>Una parte importante de los programas está dedicada a la gestión de errores y a tratar los posibles errores. Los posibles errores son desde una entrada de datos con un formato inesperado, datos no válidos, si el programa se comunica por red que la comunicación falle, que ocurra que un archivo no existe y no se pueda abrir o ya exista y no se pueda crear.</p>
 <p>Dado que las condiciones de error son numerosas es importante al usar un código ya sea función o método que condiciones de error se pueden producir al ejecutarlo. Algunos lenguajes catalogan los errores como recuperables como sería que un archivo ya existe pudiendo informar al usuario o irrecuperables como falta de memoria en el sistema, un fallo del hardware o por un fallo de programación con el acceso a una posición fuera de rango en un <em>array</em>.</p>
 <p>A lo largo de la historia los lenguajes han implementado varias formas de gestionar los errores.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="códigos-de-retorno">Códigos de retorno</h3>
 <p>En el lenguaje C la gestión de errores se hace con códigos de retorno. Al llamar a una función esta devuelve un retorno y según sea su valor se indica que la función se ha ejecutado correctamente o por el contrario se ha producido algún error que ha de ser tratado.</p>
 <p>Los códigos de retorno tienen dos problemas. El primer problema es que comprobar el código de retorno puede ser ignorado haciendo que el programa no trate adecuadamente las condiciones de error y fallar o terminar de forma abrupta cuando alguna función no se ejecuta correctamente. El segundo problema es que el código del flujo en el que todo funciona correctamente está mezclado con el código de gestión de errores lo que hace a los programas algo menos legibles.</p>
@@ -519,7 +519,7 @@
 <figcaption>Colección de herramientas nativas para la nube</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="base-de-datos">Base de datos</h3>
 <p>Los datos son una de las partes más importantes para el correcto funcionamiento de un negocio. Una parte importante de las aplicaciones consiste tanto en persistir datos como recuperarlos cuando se necesitan. Una de las ventajas de los microservicios es que cada uno de ellos puede utilizar el tipo de base de datos que más adecuado considere para almacenar los datos. Puede ser una base de datos relacional como <a href="https://www.postgresql.org/">PostgreSQL</a>, clave-valor como <a href="https://redis.io/">Redis</a>, de documentos con <a href="https://www.mongodb.com/">MongoDB</a> o incluso una combinación de varios.</p>
 <ul>
@@ -624,7 +624,7 @@
 <p>En septiembre del 2020 se ha publicado la versión 15 de Java siguiendo el calendario propuesto desde la versión de Java 9 de una nueva versión cada seis meses y de una versión de soporte a largo plazo cada tres años, la primera LTS ha sido Java 11 a la que sucederá Java 17 cómo LTS en septiembre de 2021.</p>
 <p>Con este calendario de publicaciones tan frecuente las novedades son varias en cada nueva versión aunque algunas son simplemente versiones preliminares que pueden cambiar ligeramente en siguientes versiones destinadas a evaluar y probar las funcionalidades que se incorporarán de forma definitiva con posterioridad. Aunque sean versiones preliminares se pueden usar con normalidad, simplemente hay que tener en cuenta que en versiones posteriores requieran modificaciones en el código fuente o lo que es lo mismo no se garantiza la compatibilidad hacia atrás hasta que sean declaradas como una versión definitiva.</p>
 <p>Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se hace más necesario utilizar <a href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">la herramienta SDKMAN</a> para instalar al mismo tiempo varias versiones del JDK de Java y poder cambiar de una a otra con facilidad.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="introducción">Introducción</h3>
 <ul>
 <li><a href="https://openjdk.java.net/projects/jdk/15/">Características de Java 15</a></li>
@@ -751,7 +751,7 @@
 </div>
 <p>El sistema operativo más utilizado en ordenadores personales para uso doméstico y en los equipos informáticos de las empresas es <a href="https://www.microsoft.com/es-es/windows/">Windows 10</a> de <a href="https://www.microsoft.com/">Microsoft</a>. Muchos de los fabricantes de ordenadores de escritorio de marcas como HP o Dell pero también muchos de los ensambladores de ordenadores montados por piezas y prácticamente todos los fabricantes de portátiles incluyen preinstalado Windows 10 como sistema operativo junto con otro software, en estos casos no es necesario comprar una licencia de Windows pues ya que está está incluida en el importe del producto.</p>
 <p>A través de vendedores distintos a Microsoft es posible comprar una licencia barata y completamente legal con la que activar estos productos y eliminar los mensajes que solicitan la activación para tener acceso a todas sus funciones sin que pasado un tiempo después de su instalación se deshabiliten.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="versiones-y-tipos-de-licencia-de-windows-10">Versiones y tipos de licencia de Windows 10</h3>
 <p>Windows 10 tiene diferentes versiones, las diferencias entre ellas está en las características que soportan.</p>
 <ul>
@@ -1254,7 +1254,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">Generar credenciales de conexión a base de datos bajo demanda con Vault</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="servicios-de-hashicorp">Servicios de HashiCorp</h3>
 <div class="media">
 <figure>
@@ -1664,7 +1664,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/">Introducción y características de Docker</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">Cómo instalar y guía de inicio básica de Docker</a></li>
 </ul>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="configurar-un-servidor-web-virtual-en-nginx">Configurar un servidor web virtual en Nginx</h3>
 <p>En el servidor web <a href="https://nginx.org/">Nginx</a> añadir un servidor web virtual consiste en añadir la configuración del sitio web en el directorio <em>/etc/nginx/conf.d</em>. La directiva relevante es <em>server_name</em> que asocia el servidor web virtual con el nombre del dominio. En base al nombre del dominio por el que se accede al servidor web se utiliza su configuración.</p>
 <div class="code">
@@ -1744,7 +1744,7 @@
 </div>
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</h3>
 <p>El certificado de una autoridad de certificación es un certificado autofirmado que se utilizar para comprobar que la firma de los certificados que emite la entidad es válida. Es necesario crear un par de claves asimétricas privada y pública y posteriormente generar su certificado.</p>
 <div class="code">
@@ -1949,7 +1949,7 @@
 <figcaption>Solicitud de credenciales por el navegador con autenticación básica</figcaption>
 </figure>
 </div>
-<div class="alert alert-warning tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
 <h3 id="configurar-autenticación-básica-en-el-servidor-web-nginx">Configurar autenticación básica en el servidor web Nginx</h3>
 <p>La autenticación básica en <a href="https://nginx.org/">Nginx</a> se activan añadiendo dos directivas, <em>auth_basic</em> y <em>auth_basic_user_file</em>, en el archivo de configuración del sitio web y recurso a proteger. En este caso con la raíz del sitio web <em>/</em> cualquier ruta está protegida con autenticación básica.</p>
 <div class="code">
