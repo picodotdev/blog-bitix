@@ -70,6 +70,7 @@ Pero la saga tiene otros títulos adicionales.
 
 * [Uncharted 4: El desenlace del ladrón](https://www.igdb.com/games/uncharted-4-a-thief-s-end)
 * [Uncharted: El legado perdido](https://www.igdb.com/games/uncharted-the-lost-legacy)
+* [Análisis del juego de aventuras Uncharted 4][blogbitix-634]
 
 Los juegos Uncharted son juegos lineales con una historia de aventuras y tesoros en la que los protagonistas principales son Nathan Drake y su compañero de aventuras Sully, una de las series de juegos detacadas y más conocidas de la consola de juegos PlayStation, que además hace poco han dado el salto de las consolas al cine con [la película Uncharted](https://www.imdb.com/title/tt1464335/). Al ser juegos lineales es recomendable jugarlos en orden para empezar la historia desde el principio, aunque cada juego es una historia totalmente independiente y se pueden jugar en cualquier orden algunos puntos de la historia y personajes se entiende mejor después de haber jugado a los anteriores.
 
@@ -179,19 +180,6 @@ Remasterizar un juego aporta mejoras visuales para aprovechar la mayor capacidad
 {{< youtube
     video="vZc0-K7wOSs" >}}
 
-### Banda sonora original
-
-La banda sonora del juego está a la altura de una de las series de juegos más reconocibles de la PlayStation.
-
-{{< youtube
-    video="s8dXQcMR9pQ" >}}
-{{< youtube
-    video="aUrvKpCbrp4" >}}
-{{< youtube
-    video="fyV52iLjB_c" >}}
-{{< youtube
-    video="MPdWbDhL7i0" >}}
-
 ### Ubicación de todos los tesoros
 
 Cómo suele ocurrir en los juegos que tienen coleccionables es muy difícil encontrar todos los tesoros en la primera partida, si se quieren conseguir todos salvo que se quiera invertir mucho tiempo en conseguirlos hay que consultar alguna guía para saber dónde están esos que están especialmente escondidos y en sitios poco intuitivos.
@@ -210,5 +198,27 @@ Cómo suele ocurrir en los juegos que tienen coleccionables es muy difícil enco
     video="5GqIUw2svRQ" >}}
 {{< youtube
     video="ZPRU9u0zKvI" >}}
+
+### Película
+
+{{< youtube
+    video="dkZ6zdUCgqI" >}}
+{{< youtube
+    video="YvJSoNG3E2k" >}}
+{{< youtube
+    video="zUg4TAYIS_o" >}}
+
+### Banda sonora original
+
+La banda sonora del juego está a la altura de una de las series de juegos más reconocibles de la PlayStation.
+
+{{< youtube
+    video="s8dXQcMR9pQ" >}}
+{{< youtube
+    video="aUrvKpCbrp4" >}}
+{{< youtube
+    video="fyV52iLjB_c" >}}
+{{< youtube
+    video="MPdWbDhL7i0" >}}
 
 {{% /post %}}

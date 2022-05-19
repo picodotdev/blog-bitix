@@ -95,10 +95,10 @@ Las [características principales del Samsung Galaxy S21 FE](https://www.gsmaren
 * Sistema operativo de salida Android 12 y One UI 4.
 * Procesador Qualcomm Snapdragon 888 5G y gráfica Adreno 660.
 * Cámara principal 12 MP, gran angular 12 MP y telefoto 8 MP, cámara delantera 32 MP.
-* Comunicaciones Wi-Fi 802.11 a/b/g/n/ac/6, Bluetooth 5, GPS, NFC, USB-C.
+* Comunicaciones 5G, Wi-Fi 802.11 a/b/g/n/ac/6, Bluetooth 5, GPS, NFC, USB-C.
 * Sensores lector huella digital (bajo la pantalla, óptica), acelerómetro, giroscopio, proximidad, brújula.
 * Batería 4500 mAh, carga rápida de 25 W, inalámbrica de 15 W.
-* Sin led de notificación.
+* Sin led de notificaciones.
 * Sin puerto _jack_ 3.5mm.
 * Sin microSD.
 * No incluye el cargador, ni funda ni protector de pantalla.
