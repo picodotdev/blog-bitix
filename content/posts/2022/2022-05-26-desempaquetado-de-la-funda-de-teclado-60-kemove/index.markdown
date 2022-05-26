@@ -2,7 +2,7 @@
 pid: 635
 type: "post"
 title: "Desempaquetado de la funda de teclado tamaño 60% KEMOVE"
-url: "/2022/05/desempaquetado-de-la-funda-de-teclado-60-kemove/"
+url: "/2022/05/desempaquetado-de-la-funda-de-teclado-tamano-60-kemove/"
 date: 2022-05-26T18:30:00+02:00
 language: "es"
 index: true
