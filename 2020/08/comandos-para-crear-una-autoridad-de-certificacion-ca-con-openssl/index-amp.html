@@ -406,7 +406,7 @@
     </div>
 </div>
 <p>Los certificados se emiten con una de caducidad, llegado en el tiempo a la fecha de caducidad el certificado ya no se considera válido. En este caso hay que renovarlo. El servidor, cliente o usuario genera una nueva solicitud de certificado a partir de las mismas u otras nuevas claves privada y pública, la autoridad intermedia la recibe y realiza dos acciones: revoca el certificado anterior y genera un nuevo certificado a partir de la nueva solicitud de certificado. El comando de OpenSSL de la autoridad de certificados no permite que haya dos certificados con el mismo <em>Subject</em> válidos de modo que primero hay que revocar el certificado anterior. Los comandos son los mismos que los mostrados anteriormente para cada una de las acciones.</p>
-<div class="alert alert-secondary sourcecode">
+<div class="alert alert-secondary sourcecode fs-6">
     <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/CertificateAuthority">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./ca.sh &amp;&amp; ./server-certs.sh</code></p>

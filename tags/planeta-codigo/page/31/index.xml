@@ -5,97 +5,12 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-05-05T19:00:00+02:00</updated>
+    <updated>2022-04-28T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/</id>
-        <title>Información y métricas de la aplicación con Spring Boot Actuator</title>
-        <updated>2015-12-11T23:25:00+01:00</updated>
-        <published>2015-12-04T17:30:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Desarrollar una aplicación no solo implica implementar su funcionalidad, esa aplicación ha de mantenerse funcionando en su entorno de producción. Monitorizar y disponer de información sobre el estado ayuda a mantenerla funcionando sin ninguna caída de servicio u obtener métricas para mejorar su funcionamiento. Entre las numerosas funcionalidades ofrecidas por Spring para las aplicaciones Java está Spring Boot Actuator que precisamente nos proporcionará métricas e información interesantes de serie pudiendo implementar nueva según la necesidades.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="200" alt="Spring" title="Spring"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Es conveniente tener monitorizado el estado de una aplicación para conocer si el servicio que ofrece está funcionando o en caso de que no conocerlo cuanto antes para restaurarlo además de conocer otra serie de métricas básicas como la cantidad de <abbr title="Central Processing Unit">CPU</abbr> que se está usando, la cantidad de memoria usada y libre, número de <em>threads</em> instanciados, espacio ocupado y libre en disco, actividad de entrada y salida ya sea de red o de disco, tiempo de inicio del sistema y de la aplicación. Otras métricas a nivel de aplicación que puede interesarnos conocer es número de usuarios conectados, número de sesiones, páginas vistas, sentencias SQL o transacciones ejecutadas, &hellip; que podemos obtener directamente desde la aplicación o combinándolo con otras herramientas como <a href="https://www.google.es/intl/es/analytics/">Google Analytics</a>.</p>
-<p>Monitorizar el estado de la aplicación nos permitirá conocer en poco tiempo si hay algo que va mal con la intención de restaurar el servicio con el menor tiempo de caída, también nos permitirá conociendo las métricas normales del servicio si hay algún parámetro fuera de los valores típicos como un consumo excesivo de CPU, memoria o disco, conociendo la normalidad podremos descubrir la anormalidad y después corregirla, cuanto antes sea descubierta más sencillo será determinar el cambio que la ha provocado.</p>
-<p>Continuando la serie de artículos sobre <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> y <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> comentaré la utilidad <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> que precisamente proporciona métricas y permite monitorizar una aplicación. En un aplicación que use Spring Boot simplemente incluyendo la dependencia <em>org.springframework.boot:spring-boot-starter-actuator</em> se añadirán a la aplicación varios <em>endpoints</em> para consultar información. Hay varios, estos son solo algunos de la <a href="https://docs.spring.io/spring-boot/docs/1.5.x/reference/htmlsingle/#production-ready-endpoints">lista completa</a>:</p>
-<ul>
-<li><em>beans</em>: permite conocer los <em>beans</em> de la aplicación.</li>
-<li><em>configprops</em>: muestra las propiedades de configuración.</li>
-<li><em>env</em>: muestra información de la clase <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html">ConfigurableEnvironment</a> que incluye propiedades del sistema.</li>
-<li><em>health</em>: permite conocer si la aplicación está en funcionamiento.</li>
-<li><em>info</em>: muestra información arbitraria sobre la aplicación.</li>
-<li><em>metrics</em>: permite obtener los valores de las métricas.</li>
-<li><em>trace</em>: información de las últimas peticiones a la aplicación.</li>
-</ul>
-<p>Salvo <em>health</em> e <em>info</em> los demás <em>endpoints</em> contienen información sensible y no son accesibles pudiendo requerir un usuario/contraseña según como se configure el permiso para su acceso. Con las propiedades de configuración booleanas <code>endpoints.[endpoint].sensitive</code> y <code>endpoints.[endpoint].enabled</code> se puede cambiar si el servicio se considera sensible y si está activado respectivamente. Para permitir el acceso sin restricciones a las métricas y habilitar el <em>endpoint</em> para detener la aplicación necesitaríamos establecer las siguientes propiedades de configuración:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">endpoints</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">metrics</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">sensitive</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">shutdown</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">management</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8090</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">context-path</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;/management&#39;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>application.yml</span>
-    </div>
-</div>
-<p>El <em>endpoint</em> <em>info</em> mostrará todas las propiedades con el patrón <code>info.\*</code> y con el <em>plugin</em> de <a href="https://gradle.org/">Gradle</a> <a href="https://plugins.gradle.org/plugin/com.gorylenko.gradle-git-properties">com.gorylenko.gradle-git-properties</a> también podremos conocer el <em>commit</em> y rama del código fuente del archivo <em>.jar</em> en ejecución. Se pueden implementar nuevos indicadores de salud escribiendo un componente de Spring que implemente la interfaz <a href="https://docs.spring.io/spring-boot/docs/1.5.x/api/org/springframework/boot/actuate/health/HealthIndicator.html">HealthIndicator</a>. Con la propiedad de configuración <code>management.context-path</code> se puede cambiar el <em>path</em> usado para todos los <em>endpoint</em> de forma que no colisione con los propios de la aplicación. También se puede cambiar el puerto y dirección <abbr title="Internet Protocol">IP</abbr> de la aplicación en el que se ofrecen los <em>endpoints</em> con las propiedad de configuración <code>management.port</code> y <code>management.address</code> y protegerlos con un cortafuegos. Dependiendo de la combinación de seguridad requerida y consideración de sensibilidad se muestra más información o solo información de estado.</p>
-<p>Las métricas ofrecidas en el <em>endpoint</em> <em>metrics</em> por Spring Boot Actuator muestran información del sistema (memoria total, procesadores, tipo de inicio de aplicación y sistema, carga media, memoria usada, <em>threads</em>, clases cargadas y información del recolector de basura de Java), información de los <em>datasource</em> (número de conexiones establecidas y uso actual), métricas de las caches, usando <a href="https://tomcat.apache.org/">Tomcat</a> de las sesiones (actuales y máximas). Haciendo uso de los servicios de Spring <a href="https://docs.spring.io/spring-boot/docs/1.5.x/api/org/springframework/boot/actuate/metrics/CounterService.html">CounterService</a> y <a href="https://docs.spring.io/spring-boot/docs/1.5.x/api/org/springframework/boot/actuate/metrics/GaugeService.html">GaugeService</a> se pueden establecer métricas relativas y absolutas en cualquier punto de la aplicación con la lógica que deseemos.</p>
-<p>En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator en el archivo <em>build.gradle</em> del proyecto podemos acceder a los <em>endpoints</em> comentados en las <abbr title="Uniform Resource Locator">URL</abbr> según el puerto y contexto de la interfaz de administración.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;eclipse&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;java&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;application&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;spring-boot&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.springboot.Main&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Spring&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span> <span class="s2">&#34;org.springframework:spring-context:$versions.spring&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span> <span class="s2">&#34;org.springframework:spring-jdbc:$versions.spring&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span> <span class="s2">&#34;org.springframework:spring-tx:$versions.spring&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter:$versions.spring_boot&#34;</span><span class="o">)</span> <span class="o">{</span> <span class="n">exclude</span><span class="o">(</span><span class="nl">group:</span> <span class="s1">&#39;ch.qos.logback&#39;</span><span class="o">)</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter-web:$versions.spring_boot&#34;</span><span class="o">)</span> <span class="o">{</span> <span class="n">exclude</span><span class="o">(</span><span class="nl">group:</span> <span class="s1">&#39;ch.qos.logback&#39;</span><span class="o">)</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span><span class="o">(</span><span class="s2">&#34;org.springframework.boot:spring-boot-starter-actuator:$versions.spring_boot&#34;</span><span class="o">)</span> <span class="o">{</span> <span class="n">exclude</span><span class="o">(</span><span class="nl">group:</span> <span class="s1">&#39;ch.qos.logback&#39;</span><span class="o">)</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">compile</span> <span class="s2">&#34;org.hibernate:hibernate-validator:$versions.hibernate_validator&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build.gradle</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-health_hu4152e54d63dd7680fcaaba498c5772a0_29287_2560x1440_fit_box_3.png" data-gallery="" title="Spring Boot Actuator endpoint Health"><img src="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-health_hu4152e54d63dd7680fcaaba498c5772a0_29287_300x200_fit_box_3.png" width="207" height="200" alt="Spring Boot Actuator endpoint Health" title="Spring Boot Actuator endpoint Health"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-env_hub198920ad2f59e283f3d3049409deee7_67456_2560x1440_fit_box_3.png" data-gallery="" title="Spring Boot Actuator endpoint Env"><img src="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-env_hub198920ad2f59e283f3d3049409deee7_67456_300x200_fit_box_3.png" width="207" height="200" alt="Spring Boot Actuator endpoint Env" title="Spring Boot Actuator endpoint Env"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-metrics_huddade05cce73bf166d4aaf86a04cc3d8_53760_2560x1440_fit_box_3.png" data-gallery="" title="Spring Boot Actuator endpoint Metrics"><img src="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/images/spring-boot-actuator-metrics_huddade05cce73bf166d4aaf86a04cc3d8_53760_300x200_fit_box_3.png" width="207" height="200" alt="Spring Boot Actuator endpoint Metrics" title="Spring Boot Actuator endpoint Metrics"  class="lozad "></a></p>
-<figcaption>Spring Boot Actuator endpoints health, env y metrics </figcaption>
-</figure>
-</div>
-<p>Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro <a href="https://amzn.to/2SVtJNU">Spring Boot in Action</a> lo explica bastante bien, otro libro sobre Spring Boot es <a href="https://amzn.to/3kxG3kh">Spring Boot: Up and Running</a>.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492076988&amp;linkId=09aa02ea0fe2a0a34dfd52a894557d39" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1617292540&amp;linkId=61b49fc8ef6bdf7c80975908df76d4af" title="Amazon" class="lozad"></iframe>
-</div>
-<p>De cualquier modo conviene también tener automatizada la monitorización de las métricas. Con estos <em>endpoints</em> y una herramienta como <a href="https://prometheus.io/">Prometheus</a> podemos visualizar gráficas generadas con los datos a lo largo del tiempo, con los datos visualizados de forma gráfica podremos ver rápidamente picos, cambios bruscos y tendencias en alguno de ellos o compararlos con tiempos pasados. Esta misma herramienta nos puede servir para enviar alertas y notificaciones o hacer consultas sobre los datos recolectados.</p>
-<p>Con Uptime Robot y el <em>endpoint</em> <em>health</em> podemos <a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/">monitorizar la aplicación y recibir notificaciones</a> si en algún momento la aplicación deja de responder.</p>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBoot">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/">Configuración de una aplicación en diferentes entornos con Spring Cloud Config</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/">Monitorizar estado de sitios web con Uptime Robot</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="spring"/>
-            
-        
-    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/</id>
         <title>Configuración de una aplicación en diferentes entornos con Spring Cloud Config</title>
@@ -1367,6 +1282,78 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
+            
+        
+    </entry>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/09/grabar-y-compartir-video-de-la-terminal-con-asciinema/</id>
+        <title>Grabar y compartir vídeo de la terminal con Asciinema</title>
+        <updated>2015-11-11T19:00:00+02:00</updated>
+        <published>2015-09-20T13:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/09/grabar-y-compartir-video-de-la-terminal-con-asciinema/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Asciinema es una herramienta que nos permite grabar un vídeo de texto con la salida de la terminal. El vídeo de texto es mucho mejor que una foto estática de la salida en un determinado punto o un vídeo de imágenes del que no podemos seleccionar y copiar su texto.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/asciinema.png" width="200" height="200" alt="Asciinema" title="Asciinema"  class=""></p>
+</div>
+<p>Si queremos compartir las acciones en una terminal y su salida tenemos varias opciones, la más simple es ejecutar el comando y copiar la salida en un archivo de texto, correo electrónico o artículo de una bitácora. Sin embargo, con esta opción solo tenemos el contenido final del comando y a veces en donde se usan varios comandos o que limpian la terminal (como por ejemplo con ssh) es difícil seguir en esa foto final la salida que se ha ido produciendo en la terminal. Otra opción es crear un vídeo tradicional de imágenes que podamos reproducir con <a href="https://www.videolan.org/vlc/">VLC</a> para ver la evolución de la salida tal y como se produce, sin embargo, en esta opción perdemos el poder copiar y pegar texto, es habitual que tengamos que parar el vídeo y escribir el comando o la salida que vemos en el vídeo, esto es lento y propenso a errores ya que podemos confundirnos varias veces al teclear lo que vemos en el vídeo. Otra opción mejor es usar <a href="https://asciinema.org/">Asciinema</a> que captura el texto de la terminal y crea un vídeo de texto que representa la sesión de terminal que hemos tenido.</p>
+<p>Asciinema es como un vídeo pero de texto que además podemos compartir para que otras personas lo vean y que podemos incrustar en páginas web como artículos de bitácoras. Además permite seleccionar y copiar texto y seguro que necesita mucho menos ancho de banda que un vídeo de <a href="https://www.youtube.com/">YouTube</a>. Empezar a crear vídeos de texto es tan sencillo como <a href="https://github.com/asciinema/asciinema/releases">descargar el binario de Asciinema</a> o <a href="https://asciinema.org/docs/installation">instalarlo con el gestor de paquetes</a> de la distribución GNU/Linux que usemos, también se puede usar en <a href="https://www.apple.com/macos/">Mac OS</a> y <a href="https://www.freebsd.org/es/">FreeBSD</a>.</p>
+<p>Una vez instalado, podemos iniciar una grabación de la terminal, esto creará un archivo <em>video.asciinema</em>. Podremos parar la grabación con la combinación de teclas <kbd>ctrl+d</kbd> o tecleando el comando <code>exit</code>:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema rec --max-wait<span class="o">=</span><span class="m">2</span> video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>asciinema-rec.sh</span>
+    </div>
+</div>
+<p>Reproducir el vídeo creado con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema play video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>asciinema-play.sh</span>
+    </div>
+</div>
+<p>Y compartirlo con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema upload video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>asciinema-upload.sh</span>
+    </div>
+</div>
+<p>Para compartir los vídeos solo necesitaremos una cuenta de correo, no necesitaremos una clave ya que la autenticación en Asciinema se hace mediante un enlace que se nos envían a nuestra cuenta de correo cada vez que queremos acceder a nuestra cuenta. Si instalamos Asciinema por segunda vez o en otro ordenador y queremos asociarlo con la cuenta que ya tenemos podemos hacerlo con:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema auth&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>asciinema-auth.sh</span>
+    </div>
+</div>
+<p>En la <a href="https://asciinema.org/docs">documentación de Asciinema</a> están las opciones completas que podemos usar por ejemplo para añadir un título al vídeo o para ejecutar un comando directamente. Una vez que tenemos subido el vídeo a la web de Asciinema podemos compartirlo ya sea enviando en enlace del vídeo o con un reproductor embebido en una página web o artículo de un <em>blog</em>. Para esto último deberemos incluir un <em>script</em> de JavaScript para el reproductor de la siguiente forma, con el atributo id indicamos el vídeo que queremos reproducir, en la <a href="https://asciinema.org/docs/embedding">documentación de las opciones para embeber los vídeos</a> podemos ver las opciones completas que podemos emplear:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://asciinema.org/a/17648.js&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;asciicast-17648&#34;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>asciinema-embed.html</span>
+    </div>
+</div>
+<p>Y este es el resultado de un vídeo en el que muestro un <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a>.</p>
+<div class="media">
+<script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
+<noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://asciinema.org/">Asciinema</a></li>
+<li><a href="https://asciinema.org/docs">Documentación de Asciinema</a></li>
+<li><a href="https://asciinema.org/docs/embedding">Documentación para embeber vídeos</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
             
         
     </entry>
