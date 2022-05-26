@@ -48,19 +48,19 @@
 
     <p class="information">
       {{ if eq .Params.promoted true }}
-        <div class="alert alert-info" role="alert">
-          <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}</small>
+        <div class="alert alert-info fs-6" role="alert">
+          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}
         </div>
       {{ else if eq .Params.promoted "external" }}
-        <div class="alert alert-info" role="alert">
-          <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_external_info" | markdownify | htmlUnescape | safeHTML }}</small>
+        <div class="alert alert-info fs-6" role="alert">
+          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_external_info" | markdownify | htmlUnescape | safeHTML }}
         </div>
       {{ end }}
     </p>
 
     {{ if findRE .Site.Params.misc.sponsoredlink .Content }}
-      <div class="alert alert-info" role="alert">
-        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "affiliates_info" | markdownify | htmlUnescape | safeHTML }}</small>
+      <div class="alert alert-info fs-6" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "affiliates_info" | markdownify | htmlUnescape | safeHTML }}
       </div>
     {{ end }}
   </article>

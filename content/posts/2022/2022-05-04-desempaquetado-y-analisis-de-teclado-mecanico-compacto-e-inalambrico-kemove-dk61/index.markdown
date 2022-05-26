@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imageHead: "image:kemove-dk61-2.jpg"
 imagePost: "image:kemove-dk61-2.jpg"
-tags: ["planeta-codigo"]
+tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "El KEMOVE DK61 es un teclado mecánico que mejora en varios aspectos y aúna varias de las mejores cosas que tienen los DIERYA DK61E y DK63 sin incrementar demasiado su precio con lo que si no se quiere ajustar el presupuesto al máximo compensa por las características mejoradas. El KEMOVE DK61 es muy compacto, de formato 60% con con la ventaja de tener un tamaño reducido y el inconveniente de no tener algunas teclas. Similar al DIERYA DK61E pero que incorpora la conexión inalámbrica del DK63 e incrementa su autonomía con una batería de mayor capacidad y conservando la iluminación RGB. En otras características como _switches_ y _keycaps_ está a la altura de un buen teclado de gama alta pero que en este caso el KEMOVE a un precio por debajo de los 100€."
 ---
@@ -33,6 +33,7 @@ El [KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17)
 
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
+* [Desempaquetado de la funda de teclado tamaño 60% KEMOVE][blogbitix-635]
 
 En cuanto a formato el KEMOVE DK61 es igual que el DIERYA DK61E, un teclado en formato 60% compacto de 61 teclas que prescinde de las teclas del teclado numérico, las teclas de función, las teclas de flechas y las del bloque superior como insertar, suprimir, inicio, fin, retroceder página, avanzar página, las teclas de función y algunas más.
 

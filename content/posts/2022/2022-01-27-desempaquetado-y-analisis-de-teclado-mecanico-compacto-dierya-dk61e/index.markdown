@@ -32,6 +32,7 @@ El [teclado mecánico DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-
 
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
+* [Desempaquetado de la funda de teclado tamaño 60% KEMOVE][blogbitix-635]
 
 El cuerpo del teclado es completamente de plástico, no es regulable en altura y en la base incluye varios soportes de goma. Es un teclado premontado que incluye tanto las tapas de las teclas o _keycaps_ como los interruptores o _switches_. Los _keycaps_ son de material PBT de doble disparo o _double shot_ y los interruptores son de la marca [Gateron][gateron] y ópticos, en el modelo que me han proporcionado los interruptores son del tipo táctiles _brown_ aunque también se ofrece en interruptores lineales y _clicky_. Además, los interruptores son intercambiables o _hot swappable_.
 

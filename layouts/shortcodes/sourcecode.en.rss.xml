@@ -3,7 +3,7 @@
 {{ $imgtagclose := $tags.imgtagclose }}
 {{ $imgtagsrc := $tags.imgtagsrc }}
 
-<div class="alert alert-secondary sourcecode">
+<div class="alert alert-secondary sourcecode fs-6">
     {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ "assets/images/icons/terminal.svg" | absURL }}" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">{{ $imgtagclose | safeHTML }}
     <p>
         {{- if .Params.git }}

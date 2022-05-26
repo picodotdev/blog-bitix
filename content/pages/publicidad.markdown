@@ -26,6 +26,7 @@ Estos son algunos artículos patrocinados que he publicado.
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
 * [¿Por qué es importante escoger un buen servicio de hosting para tu negocio en línea?][blogbitix-632]
+* [Desempaquetado de la funda de teclado 60% KEMOVE][blogbitix-635]
 
 Mi dirección de correo electrónico es [pico.dev@gmail.com](mailto:pico.dev@gmail.com) mediante la cual me puedes contactar sin compromiso, ¡consúltame!.
 

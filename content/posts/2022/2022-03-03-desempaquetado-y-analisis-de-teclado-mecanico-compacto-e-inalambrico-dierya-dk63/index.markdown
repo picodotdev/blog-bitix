@@ -12,6 +12,7 @@ comments: true
 promoted: false
 imageHead: "image:dierya-dk63.jpg"
 imagePost: "image:dierya-dk63.jpg"
+tags: ["hardware"]
 series: ["desempaquetado-tecnologia"]
 summary: "Al elegir un teclado para un ordenador como un teclado mecánico hay varias características a tener en cuenta. Quizá la principal es el factor de forma que determina su tamaño y el número de teclas que tiene, pero en el ámbito de teclados mecánicos hay otra buena colección de características importantes a considerar como por ejemplo si ofrece conexión inalámbrica además de por cable, y en los inalámbricos si es de batería recargable o utiliza pilas y si es por radiofrecuencia o por Bluetooth. El teclado mecánico DIERYA es un teclado mecánico en formato de 60% de 63 teclas y con la posibilidad de funcionamiento por cable y de forma inalámbrica por Bluetooth según conveniencia, un  teclado en la gama media con unas características destacables y con un precio adecuado por lo que ofrece."
 ---
@@ -32,6 +33,7 @@ El [teclado mecánico DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless
  
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
+* [Desempaquetado de la funda de teclado tamaño 60% KEMOVE][blogbitix-635]
 
 Ambos, son teclados compactos de formato 60%, el DK63 tiene 63 teclas y el DK61E tiene 61 teclas pero ambos tienen las mismas dimensiones a pesar de la diferencia en el número de teclas que tiene cada uno. A diferencia de los teclados completos con teclado numérico, los teclados compactos de 60% prescinden de varios grupos de teclas, por ejemplo no tienen las teclas del teclado numérico ni tienen las teclas especiales de función de insertar, suprimir, inicio, fin, retroceder página, avanzar página, las teclas de función y algunas más.
 
