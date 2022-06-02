@@ -51,25 +51,21 @@ La funda teclado no es un elemento de alta tecnología pero muy útil en su func
     gallery="true"
     image1="image:kemove-funda-1.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
     image2="image:kemove-funda-2.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
-    image3="image:kemove-funda-3.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE"
-    caption="" >}}
+    image3="image:kemove-funda-3.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
     image1="image:kemove-funda-4.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
     image2="image:kemove-funda-5.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
-    image3="image:kemove-funda-6.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE"
-    caption="" >}}
+    image3="image:kemove-funda-6.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
     image1="image:kemove-funda-7.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
     image2="image:kemove-funda-8.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
-    image3="image:kemove-funda-9.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE"
-    caption="" >}}
+    image3="image:kemove-funda-9.jpg" optionsthumb3="200x150" title3="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
     image1="image:kemove-funda-10.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
-    image2="image:kemove-funda-11.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE"
-    caption="" >}}
+    image2="image:kemove-funda-11.jpg" optionsthumb2="200x150" title2="Funda de teclado KEMOVE" >}}
 {{< image
     gallery="true"
     image1="image:kemove-funda-12.jpg" optionsthumb1="200x150" title1="Funda de teclado KEMOVE"
