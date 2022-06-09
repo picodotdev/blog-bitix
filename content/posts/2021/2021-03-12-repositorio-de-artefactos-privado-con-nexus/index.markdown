@@ -39,6 +39,8 @@ Nexus OSS es la versión de código abierto que permite su uso sin coste, la ver
 
 [Github Packages][github-packages] permite hacer las funcionalidades de repositorio de artefactos pero no soporta todos los tipos de artefactos de todos los lenguajes. [Google Artifact Registry][google-artifact-registry] también ofrece un servicio para almacenar los artefactos resultado de compilación, [Amazon][amazon-affiliate] con [AWS CodeArtifact][amazon-codeartifact] también tiene su servicio administrado de artefactos.
 
+* [Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages][blogbitix-637]
+
 {{< image
     gallery="true"
     image1="image:nexus.jpg" optionsthumb1="650x450" title1="Nexus"
