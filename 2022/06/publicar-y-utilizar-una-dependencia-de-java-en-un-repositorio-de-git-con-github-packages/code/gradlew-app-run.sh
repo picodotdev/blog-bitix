@@ -1,0 +1,2 @@
+$ ./gradlew app:run
+He****

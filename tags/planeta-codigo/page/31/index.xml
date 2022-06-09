@@ -5,12 +5,78 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-06-02T19:00:00+02:00</updated>
+    <updated>2022-06-09T19:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/</id>
+        <title>Monitorizar estado de sitios web con Uptime Robot</title>
+        <updated>2015-12-15T18:00:00+01:00</updated>
+        <published>2015-12-11T17:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes"> 
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/uptime-robot.png" width="300" height="86" alt="Uptime Robot" title="Uptime Robot"  class=""></p>
+</div>
+<p>Los sitios web que ofrecen su servicio de forma ininterrumpida por diferentes causas pueden dejar de funcionar ya sea porque se ha perdido la conexión con la base de datos, se ha llenado el disco de la máquina impidiendo su normal funcionamiento u otras causas. En algunos tipos de servicio como páginas de presencia en internet puede dar una mala imagen pero en los sitios de comercio electrónico la pérdida del servicio es especialmente importante ya que además implica perder ventas o clientes. Para conocer de la forma más inmediata posible el mal funcionamiento y poder restaurar el servicio podemos usar alguna herramienta que monitorice su estado. Para monitorizar el funcionamiento de sitios web una de ellas muy sencilla es <a href="https://uptimerobot.com/">Uptime Robot</a>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/uptime-robot_hue0333c5e8a33fb512ab44af0591f643c_165908_2560x1440_fit_box_3.png" data-gallery="" title="Uptime Robot"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/uptime-robot_hue0333c5e8a33fb512ab44af0591f643c_165908_300x200_fit_box_3.png" width="300" height="187" alt="Uptime Robot" title="Uptime Robot"  class="lozad "></a></p>
+<figcaption>Uptime Robot</figcaption>
+</figure>
+</div>
+<p>Una vez registrados y con acceso al panel de control podemos crear un <em>monitor</em>. Tenemos la posibilidad de crear diferentes tipos:</p>
+<ul>
+<li><abbr title="Hypertext Transfer Protocol">HTTP</abbr>: que comprueba que la respuesta obtenida sea un código de estado 200.</li>
+<li><em>keyword</em>: que comprueba que en la respuesta obtenida esté presente una palabra clave.</li>
+<li><em>ping</em>: que simplemente comprueba que la máquina que ofrece el servicio responda (aunque el servicio web puede que no).</li>
+<li><em>port</em>: comprueba que un determinado puerto esté accesible. En la <a href="https://uptimerobot.com/faq">página de preguntas frecuentes</a> están comentados los diferentes tipos de monitores.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/nuevo-monitor_hu9c2737217dc8c4c1904809d1ca6205fc_47725_2560x1440_fit_box_3.png" data-gallery="" title="Nuevo monitor HTTP"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/nuevo-monitor_hu9c2737217dc8c4c1904809d1ca6205fc_47725_300x200_fit_box_3.png" width="300" height="182" alt="Nuevo monitor HTTP" title="Nuevo monitor HTTP"  class="lozad "></a></p>
+<figcaption>Nuevo monitor HTTP</figcaption>
+</figure>
+</div>
+<p>En el momento que un monitor detecte una caída de servicio podemos establecer que nos notifique por correo electrónico, <a href="https://twitter.com/">Twitter</a>, <em>web-hook</em>, <a href="https://slack.com/">Slack</a>, <abbr title="Short Message Service">SMS</abbr> o alguna más de forma que nos enteremos de la circunstancia inmediatamente. También podemos establecer el intervalo de tiempo de la monitorización desde como mínimo cada 5 minutos. En el panel de control podemos ver algunas estadísticas de cada monitor y de la cuenta, también se pueden reiniciar las estadísticas de cada monitor.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/dashboard_huc29035de7f83fd767594c92ff5f27042_239953_2560x1440_fit_box_3.png" data-gallery="" title="Dashboard"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/dashboard_huc29035de7f83fd767594c92ff5f27042_239953_300x200_fit_box_3.png" width="300" height="134" alt="Dashboard" title="Dashboard"  class="lozad "></a></p>
+<figcaption>Dashboard</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/blogstack_huc756c62d73e8d527d9a8a0d4b1a83990_219472_2560x1440_fit_box_3.png" data-gallery="" title="Monitor Blog Stack"><img src="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/images/blogstack_huc756c62d73e8d527d9a8a0d4b1a83990_219472_300x200_fit_box_3.png" width="300" height="130" alt="Monitor Blog Stack" title="Monitor Blog Stack"  class="lozad "></a></p>
+<figcaption>Monitor Blog Stack</figcaption>
+</figure>
+</div>
+<p>En el plan gratuito de Uptime Robot podemos crear 50 monitores, en el <a href="http://uptimerobot.com/pricing">plan de pago</a> se pueden establecer tiempos de monitorización a partir de 1 minuto en vez de 5 y crear más monitores.</p>
+<p>Hay otras herramientas de monitorización similares pero la mayoría son de pago. También hay herramientas que se pueden instalar en el navegador o como una aplicación de escritorio pero no las recomiendo ya que las alertas solo nos llegarían cuando los estemos usando.</p>
+<p>Perfectamente podemos usar Uptime Robot sobre el <em>endpoint</em> <em>health</em> de una <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">aplicación que usa Spring Boot Actuator</a> para proporcionar información y métricas.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://uptimerobot.com/">Uptime Robot</a></li>
+<li><a href="http://www.herramientas10.com/10-servicios-gratuitos-monitorizar-sitios-web_155.html">Los 10 mejores servicios gratuitos para monitorizar sitios web</a></li>
+<li><a href="http://papelesdeinteligencia.com/como-puedes-monitorizar-una-pagina-web/">Cómo puedes monitorizar una página web</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/</id>
         <title>Información y métricas de la aplicación con Spring Boot Actuator</title>
@@ -1308,49 +1374,6 @@
 <li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño <em>State</em></a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/">Patrón múltiples vistas de un mismo dato en Tapestry</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">Novedades y nuevas características de Java 8</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/</id>
-        <title>Generar recursos estáticos con wro4j</title>
-        <updated>2015-09-25T17:00:00+02:00</updated>
-        <published>2015-09-25T17:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Con nuevas tecnologías como less, Sass o CoffeeScript el desarrollo y mantenimiento de una página web medianamente compleja mejora notablemente. Con la librería wro4j en una aplicación Java podemos procesar este tipo de recursos y convertirlos a los equivalentes que saben interpretar los navegadores de forma nativa CSS y JavaScript además de optimizar su tamaño u ofuscarlos.</strong></p>]]>
-        <![CDATA[<div class="logotypes"> 
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>El desarrollo y las tecnologías de las páginas web sigue evolucionando, HTML 5, JavaScript, CSS 3, <a href="https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable">diseño adaptable</a> (<em>responsive</em>), &hellip; Y también surgen nuevas herramientas que hacen el desarrollo más simple o hace que las aplicaciones sean más eficientes. Algunas de estas nuevas tecnologías son <a href="https://lesscss.org/">less</a> o <a href="https://sass-lang.com/">Sass</a> que permiten producir hojas de estilo CSS utilizando una mejor notación, si la hoja de estilos es grande usar una tecnología como esta puede reducir considerablemente su tamaño, hacerla más legible y de más fácil mantenimiento, <a href="https://coffeescript.org/">CoffeeScript</a> también puede hacer más simple el desarrollo de la parte cliente de una aplicación, proporciona una sintaxis más clara (para algunos) que la ofrecida por el propio lenguaje JavaScript, que compilados generan su equivalente en JavaScript.</p>
-<p>También hay herramientas para optimizar los recursos eliminando los espacios innecesarios reduciendo su tamaño, la reducción conseguida variará en función del tamaño del archivo. En los archivos JavaScript la reducción puede ser mayor ya que aparte de eliminar los espacios en blanco se pueden renombrar los nombres de las variables, funciones y argumentos por otros más cortos consiguiendo una mayor reducción de tamaño. Esta minificación puede servirnos para ofuscar el código si queremos dificultar su lectura para las personas.</p>
-<p>En Java disponemos de la librería <a href="https://github.com/wro4j/wro4j/">wro4j</a> (<em>Web Resource Optimizer for Java</em>) para hacer este procesado de conversión y optimización desde nuestra aplicación. Puede interesarnos si el <em>framework</em> web no ofrece esta funcionalidad o en una aplicación <em>standalone</em> como ha sido el caso de <a href="https://twitter.com/blogstackinfo">Blog Stack</a> donde la he usado para en vez de usar CSS directamente usar un archivo less y luego transformarlo a CSS. Su uso no es complicado y puede mejorar nuestra aplicación o el desarrollo de la misma notablemente:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Resource</span> <span class="n">resource</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="s">&#34;script.coffee&#34;</span><span class="o">,</span> <span class="n">ResourceType</span><span class="o">.</span><span class="na">JS</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Reader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;path/to/script.coffee&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Writer</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;path/to/script.js&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Transforming a CoffeeScript file into a JavaScript file&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">new</span> <span class="n">CoffeeScriptProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">reader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Using UglifyJs&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">new</span> <span class="n">UglifyJsProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">reader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">//&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Resource</span> <span class="n">resource</span> <span class="o">=</span> <span class="n">Resource</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="s">&#34;style.css&#34;</span><span class="o">,</span> <span class="n">ResourceType</span><span class="o">.</span><span class="na">CSS</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Reader</span> <span class="n">lessReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;path/to/style.less&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Reader</span> <span class="n">sassReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;path/to/style.sass&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="n">Writer</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;path/to/style.css&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Using Less&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">new</span> <span class="n">LessCssProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">lessReader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Using Sass&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">new</span> <span class="n">SassCssProcessor</span><span class="o">().</span><span class="na">process</span><span class="o">(</span><span class="n">resource</span><span class="o">,</span> <span class="n">sassReader</span><span class="o">,</span> <span class="n">writer</span><span class="o">);</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Wro4j.java</span>
-    </div>
-</div>
-<p>Aparte de los procesadores de este ejemplo wro4j tiene <a href="https://code.google.com/p/wro4j/wiki/AvailableProcessors">disponibles muchos otros</a>. Este procesado es algo costoso en cuanto a tiempo pero el archivo producido podemos cachearlo al inicio de la aplicación o después de compilarlo.</p>
-<p>Si queremos usarlo en una aplicación web Java y el <em>framework</em> que usemos no lo usa internamente o no proporciona algo parecido podemos <a href="http://wro4j.github.io/wro4j/">seguir 3 para emplear wro4j</a>, añadir un filtro, una configuración en XML y una etiqueta <em>link</em> y otra <em>script</em> para incluirlos en las páginas, por supuesto habrá que añadir la dependencia de la librería con <a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">la herramienta de construcción automatizada Gradle</a> u otra.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://github.com/wro4j/wro4j/">wro4j</a></li>
-<li><a href="https://lesscss.org/">less</a></li>
-<li><a href="https://sass-lang.com/">sass</a></li>
 </ul>
 </div>
 ]]>
