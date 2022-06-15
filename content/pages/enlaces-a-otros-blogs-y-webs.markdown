@@ -4,7 +4,7 @@ title: "Enlaces a otros blogs y webs"
 url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
-updated: 2021-12-04T13:00:00+01:00
+updated: 2022-06-15T19:00:00+01:00
 index: true
 rss: true
 sharing: true
@@ -19,6 +19,8 @@ footer: true
 En esta página quiero poner la selección de páginas web y blogs personales o compartidos por varios usuarios que tengo añadidas en mi lector de _feeds_ y que considero que publican artículos interesantes y lo siguen haciendo actualmente con cierta regularidad acerca de la programación, el desarrollo de aplicaciones, la tecnología o la informática. Estos enlaces son parte de los que he ido recopilando a lo largo de mucho tiempo y que creo que al que tenga interés en estos temas a su vez les resulten interesantes.
 
 [El blog de pico.dev](https://elblogdepicodev.blogspot.com.es) es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de _blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](https://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
+
+{{< tableofcontents >}}
 
 ### Arch Linux
 
@@ -138,6 +140,11 @@ Sobre matemáticas.
 Sobre informática.
 
 * [Dot CSV](https://www.youtube.com/channel/UCy5znSnfMsDwaLlROnZ7Qbg)
+
+### Política
+
+* [David Saavedra](https://www.youtube.com/c/DavidSaavedra): el canal de YouTube de un antiguo radicalizado neonazi que al contrario del esteriotipo que podemos tener de los nazis de incultos, paletos y poco ilusrados demuestra en su canal con solo ver unos pocos vídeos de su canal que este en concreto ha leído bastante y seguramente mucho más que muchas personas. El problema es que aún ilustrado debido sus sesgos está ilutrado en propaganda nazi y argumentos nacionalistas muy tóxicos. Por fortuna pora él finalmente se ha dado cuenta de su propio radicalismoa y ahora en su canal da importantes y valiasas lecciones sobre como funciona el fanatistmo y radcalismo que quizá ayuden a alguien a no caer en el radicalismo, radicalismo que incluso hace pensar a personas y actuar de tal forma que va en contra de sus propios intereses, por ejemplo al votar en unas elecciones.
+* [La Base](https://www.youtube.com/watch?v=DM0vt3dMwE0&list=PLAJPOTilSSeLQIVQKFIPTtmFCoI0R7FTD): el canal de Pablo Iglesias para el periódico [Diario Público](https://www.publico.es/) después de dejar la política como político y de la presión mediatica que ha sufrido en su persona. Ahora en La Base analiza la actualdad política y como funciona la política y los medios estando fuera de ella, otra forma de activismo estando fuera de la política y sin estar tanto en el punto de mira del poder formado por políticos y empresarios que tiene la capacidad de cancelar a quién les interese si va en contra de sus intereses, Pablo Iglesias no ha sido el primero y posiblemente no sea el último cancelado.
 
 ### Otros
 
