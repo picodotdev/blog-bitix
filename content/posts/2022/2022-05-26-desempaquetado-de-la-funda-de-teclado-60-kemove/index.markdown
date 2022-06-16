@@ -91,6 +91,7 @@ Los teclados mecánicos con cuerpo de aluminio utilizan un material que se consi
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
+* [Desempaquetado y análisis del teclado mecánico compacto e inalámbrico KEMOVE ARES][blogbitix-638]
 
 {{< youtube
     video="" >}}
