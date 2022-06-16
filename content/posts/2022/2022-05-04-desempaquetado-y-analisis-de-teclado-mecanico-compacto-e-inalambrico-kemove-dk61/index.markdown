@@ -34,6 +34,7 @@ El [KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17)
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
 * [Desempaquetado de la funda de teclado tamaño 60% KEMOVE][blogbitix-635]
+* [Desempaquetado y análisis del teclado mecánico compacto e inalámbrico KEMOVE ARES][blogbitix-638]
 
 En cuanto a formato el KEMOVE DK61 es igual que el DIERYA DK61E, un teclado en formato 60% compacto de 61 teclas que prescinde de las teclas del teclado numérico, las teclas de función, las teclas de flechas y las del bloque superior como insertar, suprimir, inicio, fin, retroceder página, avanzar página, las teclas de función y algunas más.
 
@@ -95,6 +96,7 @@ Si después de leer el artículo decides comprar uno de estos teclados y en el m
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
+* [Página del fabricante del teclado KEMOVE ARES](https://www.kemove.com/product/k64-ares/?wpam_id=17)
 * [Manual de usuario del teclado DIERYA DK63](https://www.kemovebbs.com/usermanuel/DIERYA63-new-version-before-z-is-5-in-sn.pdf)
 
 {{< amazon

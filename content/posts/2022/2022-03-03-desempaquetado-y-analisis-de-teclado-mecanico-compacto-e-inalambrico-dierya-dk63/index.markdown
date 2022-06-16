@@ -34,6 +34,7 @@ El [teclado mecánico DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless
 * [Desempaquetado y análisis de teclado mecánico compacto DIERYA DK61E][blogbitix-619]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
 * [Desempaquetado de la funda de teclado tamaño 60% KEMOVE][blogbitix-635]
+* [Desempaquetado y análisis del teclado mecánico compacto e inalámbrico KEMOVE ARES][blogbitix-638]
 
 Ambos, son teclados compactos de formato 60%, el DK63 tiene 63 teclas y el DK61E tiene 61 teclas pero ambos tienen las mismas dimensiones a pesar de la diferencia en el número de teclas que tiene cada uno. A diferencia de los teclados completos con teclado numérico, los teclados compactos de 60% prescinden de varios grupos de teclas, por ejemplo no tienen las teclas del teclado numérico ni tienen las teclas especiales de función de insertar, suprimir, inicio, fin, retroceder página, avanzar página, las teclas de función y algunas más.
 
@@ -69,6 +70,7 @@ Si después de leer el artículo decides comprar uno de estos teclados y en el m
 * [Página del fabricante del teclado DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17)
+* [Página del fabricante del teclado KEMOVE ARES](https://www.kemove.com/product/k64-ares/?wpam_id=17)
 * [Manual de usuario del teclado DIERYA DK63](https://www.kemovebbs.com/usermanuel/DIERYA63-new-version-before-z-is-5-in-sn.pdf)
 
 {{< amazon

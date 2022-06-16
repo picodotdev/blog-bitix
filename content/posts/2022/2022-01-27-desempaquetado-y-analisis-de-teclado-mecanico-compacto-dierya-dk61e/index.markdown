@@ -33,6 +33,7 @@ El [teclado mecánico DIERYA DK61E](https://www.dieryatech.com/item/dk61e-wired-
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico DIERYA DK63][blogbitix-623]
 * [Desempaquetado y análisis de teclado mecánico compacto e inalámbrico KEMOVE DK61][blogbitix-631]
 * [Desempaquetado de la funda de teclado tamaño 60% KEMOVE][blogbitix-635]
+* [Desempaquetado y análisis del teclado mecánico compacto e inalámbrico KEMOVE ARES][blogbitix-638]
 
 El cuerpo del teclado es completamente de plástico, no es regulable en altura y en la base incluye varios soportes de goma. Es un teclado premontado que incluye tanto las tapas de las teclas o _keycaps_ como los interruptores o _switches_. Los _keycaps_ son de material PBT de doble disparo o _double shot_ y los interruptores son de la marca [Gateron][gateron] y ópticos, en el modelo que me han proporcionado los interruptores son del tipo táctiles _brown_ aunque también se ofrece en interruptores lineales y _clicky_. Además, los interruptores son intercambiables o _hot swappable_.
 
@@ -65,6 +66,7 @@ Si después de leer el artículo decides comprar uno de estos teclados y en el m
 * [Página del fabricante del teclado DIERYA DK61 Pro](https://www.dieryatech.com/item/dk61-pro-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado DIERYA DK63](https://www.dieryatech.com/item/dk63-wireless-wired-mechanical-keyboard)
 * [Página del fabricante del teclado KEMOVE DK61](https://www.kemove.com/product/dk61-snowfox-shadow/?wpam_id=17)
+* [Página del fabricante del teclado KEMOVE ARES](https://www.kemove.com/product/k64-ares/?wpam_id=17)
 * [Manual de usuario del teclado DIERYA DK61](https://www.kemovebbs.com/usermanuel/DIERYADK61.pdf)
 
 {{< amazon
