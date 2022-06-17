@@ -12,7 +12,8 @@ comments: true
 promoted: false
 imageHead: "image:kemove-ares-caja-1.jpg"
 imagePost: "image:kemove-ares-caja-1.jpg"
-tags: ["blog", "planeta-codigo"]
+tags: ["hardware"]
+series: ["desempaquetado-tecnologia"]
 summary: "El teclado mecánico KEMOVE ARES está en la gama alta de teclados para los usuarios que desean lo mejor sin tener en cuenta tanto el precio. Compacto en formato 60%, inalámbrico, RGB, _keycaps_ con disposición ANSI y serigrafía de la disposición en inglés. Siendo similar en muchos aspectos al KEMOVE DK61 el ARES tiene un cuerpo de metal y mejores materiales de construcción que se notan en los _keycaps_, estabilidad de las teclas y en el sonido de tecleo. Al ser de metal aluminio ofrece mayor durabilidad, por otro lado por su diseño lo hace único y está disponible en varios colores, tipos y marcas de _switches_."
 ---
 
