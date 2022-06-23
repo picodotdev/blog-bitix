@@ -5,12 +5,67 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-28T19:00:00+02:00</updated>
+    <updated>2022-06-23T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/</id>
+        <title>Cambiar la ruta raíz del entorno de Docker</title>
+        <updated>2015-11-14T12:00:00+02:00</updated>
+        <published>2015-07-24T20:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p>Por defecto el directorio donde se guardan las imágenes y los contenedores junto con otros metadatos de <a href="https://www.docker.com/">Docker</a> es <em>/var/lib/docker</em>. En mi caso hace un tiempo me compre un <a href="https://picodotdev.github.io/blog-bitix/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/">disco de estado sólido Samsung 840 EVO de 250 GiB</a> y comenté en el artículo del anterior enlace. Aunque probablemente un disco SSD sea suficientemente fiable como para que antes de que falle cambiémos de ordenador porque ya es antiguo, yo trato de evitar hacer muchas escrituras al disco. Al trabajar con Docker ya sea descargando imágenes, <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/">construyendo imágenes propias con archivos Dockerfile</a> y al arrancar contenedores cuyos procesos escriben en disco prefiero externalizar esas escrituras en una unidad USB ya sea un <em>pendrive</em> o un disco duro. En este artículo comentaré como modificar Docker para que las imágenes y los contenedores estén almacenados en una memoria USB o en otra localización de la por defecto.</p>
+<p>En Arch Linux el proceso de docker se arranca con un servicio de systemd:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl start docker.service&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-start.sh</span>
+    </div>
+</div>
+<p>En la definición del servicio de docker se establecen los parámetros de inicio del demonio de docker y deberemos cambiarlo para cambiar la localización de las imágenes y contenedores. En la información de ayuda del comando de docker podemos ver que si queremos cambiar la localización por defecto de las imágenes y contenedores de docker debemos emplear la opción <em>-g &ldquo;/var/lib/docker&rdquo;</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker --help&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Usage: docker <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>arg...<span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">A self-sufficient runtime <span class="k">for</span> linux containers.&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">-g, --graph<span class="o">=</span><span class="s2">&#34;/var/lib/docker&#34;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Path to use as the root of the Docker runtime&#10;</span></span><span class="line"><span class="cl">...</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-help.sh</span>
+    </div>
+</div>
+<p>En Arch Linux el servicio de systemd de docker se guarda en <em>/usr/lib/systemd/system/docker.service</em>. Modificando el parámetro <em>ExecStart</em> de la sección <em>[Service]</em> para añadir el parámetro <em>-g</em> nos quedaría algo como:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-systemd" data-lang="systemd"><span class="line"><span class="cl"><span class="k">[Unit]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Docker Application Container Engine</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Documentation</span><span class="o">=</span><span class="s">http://docs.docker.com</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target docker.socket</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">Requires</span><span class="o">=</span><span class="s">docker.socket</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/docker -d -H fd:// -g /run/media/picodotdev/BMOVE_ROJO/docker/root</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">MountFlags</span><span class="o">=</span><span class="s">slave</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">LimitNOFILE</span><span class="o">=</span><span class="s">1048576</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">LimitNPROC</span><span class="o">=</span><span class="s">1048576</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>&#10;</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker.service</span>
+    </div>
+</div>
+<p>Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos elegido se crean los metadatos y si hacemos un <em>pull</em> de una imagen se guardará en esta localización.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_2560x1440_fit_box_3.png" data-gallery="" title="Directorio raíz de docker"><img src="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/images/docker-root_huf301198ed05a6799a7c84e4217e4eb0f_47801_300x200_fit_box_3.png" width="300" height="143" alt="Directorio raíz de docker" title="Directorio raíz de docker"  class="lozad "></a></p>
+<figcaption>Directorio raíz de docker</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning">
+    <p>Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobrescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.</p>
+</div>
+<p>Este artículo es uno de otros que he publicado, en otros artículos he escrito sobre otras cosas relacionadas con docker.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/</id>
         <title>Usar docker con Docker Machine en Linux, Windows o Mac</title>
@@ -1093,73 +1148,6 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
 <li><a href="https://registry.hub.docker.com/">Docker Hub Registry</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/</id>
-        <title>Introducción y características de Docker</title>
-        <updated>2017-05-02T23:00:00+02:00</updated>
-        <published>2014-10-25T10:52:34+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Los contenedores no son una tecnología nueva pero Docker ha reunido las características necesarias para hacerla sencilla y popular en Linux. Suponen un cambio en la infraestructura de las aplicaciones con algunas ventajas sobre la virtualización y la instalación de los servicios directamente en el sistema.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
-</div>
-<p><a href="https://www.docker.com/">Docker</a> es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que <a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">cambian la forma de desarrollar aplicaciones</a>. Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.</p>
-<p>Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.</p>
-<p>La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como <a href="https://openvz.org/">OpenVZ</a> también en Linux, <a href="http://www.freebsd.org/doc/handbook/jails.html">FreeBSD Jails</a> o los <a href="https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html">contenedores de Solaris</a>.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_2560x1440_fit_box_3.png" data-gallery="" title="Máquinas virtuales"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_300x200_fit_box_3.png" width="300" height="114" alt="Máquinas virtuales" title="Máquinas virtuales"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_2560x1440_fit_box_3.png" data-gallery="" title="Docker"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_300x200_fit_box_3.png" width="300" height="110" alt="Docker" title="Docker"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Docker tiene varias características interesantes. Es ligero ya que no hay virtualización aprovechándose mejor el hardware y únicamente necesitando el sistema de archivos mínimo para que funcionen los servicios. Los contenedores son autosuficientes (aunque pueden depender de otros contenedores, por ejemplo, un wordpress que necesita una base de datos mysql) no necesitando nada más que la imagen del contenedor para que funcionen los servicios que ofrece. Las imágenes de docker son portables entre diferentes plataformas el único requisito es que en el sistema huésped esté disponible docker. Es seguro, pudiendo hacer que los contenedores se comuniquen por un túnel solo disponible para ellos, los contenedores están aislados en el sistema mediante namespaces y control groups.</p>
-<p>Para los desarrolladores tiene las siguientes ventajas:</p>
-<ul>
-<li>Podemos disponer de un entorno de desarrollo (devbox) o servicio en varios minutos/horas en vez de algún día. Esto es así porque la configuración y los servicios necesarios están automatizados en la construcción de las imágenes de los contenedores mediante <a href="https://docs.docker.com/reference/builder/">Dockerfiles</a>.</li>
-<li>Al estar los servicios en contenedores no hace falta instalarlos en la máquina en la que son alojados, de forma que podemos disponer de los servicios y después eliminarlos de forma sencilla sin &ldquo;ensuciar&rdquo; el sistema huésped.</li>
-<li>Nos permite tener versiones más parecidas o iguales a las usadas en producción. Por ejemplo, en Arch Linux nos permite tener un mysql de la distribución <a href="https://www.ubuntu.com/">Ubuntu</a> usando la misma versión.</li>
-</ul>
-<p>El <a href="https://registry.hub.docker.com/">registro de contenedores de Docker</a> es una forma colaborativa de ofrecer imágenes. Hay disponibles multitud de contenedores con los servicios más populares: <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.postgresql.org/">PostgreSQL</a>, <a href="https://redis.io/">Redis</a>, <a href="https://nginx.org/">Nginx</a>, <a href="https://wordpress.org/">WordPress</a>, &hellip;</p>
-<p>Para los administradores de sistemas tiene las siguientes ventajas:</p>
-<ul>
-<li>Pueden proporcionar entornos similares o iguales a los entornos de pruebas, QA o producción independientemente de la distribución que se use.</li>
-<li>Es posible desplegar un contenedor en cualquier infraestructura Linux.</li>
-<li>La creación de los contenedores puede ponerse bajo un sistema de control de versiones.</li>
-</ul>
-<p>En la siguiente presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.</p>
-<div class="media">
-    <script async class="speakerdeck-embed" data-id="c02e6030ee52013165c72a37516b560d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-    <noscript>$TODO</noscript>
-</div>
-<p>Una vez conocidos los aspectos básicos y en que se diferencia docker de la virtualización así como el caso de uso de por ejemplo un <em>devbox</em> o disponer de entornos similares a los de producción de una aplicación, en el siguiente artículo comentaré <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">cómo instalar docker, cómo empezar a usarlo, cómo obtener imágenes de servicios y pararlos y administrarlos</a>. En la siguiente <a href="http://www.nkode.io/2014/08/24/valuable-docker-links.html">lista de enlaces sobre Docker</a> se puede encontrar mucha información reunida dispersa en la red, desde introducciones, opiniones, como usarlo, como empaquetar las aplicaciones, como monitorizar o como usarlo en microservicios.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492036730&amp;linkId=666d0aff3a2629cd87c205370bc5ae87" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1633430235&amp;linkId=9d344246cd59cd65a952305379c2556a" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.docker.com/">Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
-<li><a href="https://docs.docker.com/articles/security/">Seguridad Docker</a></li>
-<li><a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">Four ways Docker fundamentally changes application development</a></li>
-<li><a href="https://openwebinars.net/docker-que-es-sus-principales-caracteristicas/">Docker, qué es y sus principales características</a></li>
 </ul>
 </div>
 ]]>

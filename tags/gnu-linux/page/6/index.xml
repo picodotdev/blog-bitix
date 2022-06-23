@@ -5,12 +5,198 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-28T19:00:00+02:00</updated>
+    <updated>2022-06-23T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/</id>
+        <title>Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</title>
+        <updated>2020-07-03T19:00:00+02:00</updated>
+        <published>2017-05-13T09:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Pasar de usar Windows a usar una distribución GNU/Linux es un paso difícil para muchos usuarios, algunos usuarios desconocen incluso que tienen la posibilidad de usar un sistema operativo alternativo a Windows. O si lo conocen pueden creer erróneamente que instalar una distribución GNU/Linux es muy complicado&hellip; sabiendo algunas casas por lo demás es tan sencillo instalar como el sistema operativo Windows ya que muchas distribuciones incluyen una interfaz gráfica en su instalador y el proceso consiste en responder unas pocas preguntas, introducir algunos datos y pulsar varios botones siguiente.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="200" height="200" alt="Ubuntu" title="Ubuntu"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<p>Quizá hayas oído hablar de Linux o <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como alternativa al sistema operativo de Microsoft <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y sientes curiosidad por probarlo y adentrarte con ello en el mundo del software libre. Si estás leyendo esta guía y te es necesaria para instalar una de las muchas distribuciones de GNU/Linux entiendo que necesitas ayuda para saber como instalarlo desde cero, paso a paso y empezando desde lo más básico.</p>
+<p>En GNU/Linux para cada tarea que un usuario quiera realizar hay múltiples opciones entre las que elegir, desde tareas ofimáticas como <a href="https://www.libreoffice.org/">LibreOffice</a>, navegadores web como <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> o <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a>, mensajería instantánea como <a href="https://wiki.gnome.org/action/show/Apps/Empathy">Empathy</a>, correo electrónico como <a href="https://wiki.gnome.org/Apps/Evolution/">Evolution</a>, <a href="https://www.thunderbird.net/es-ES/">Thunderbird</a> o <a href="https://wiki.gnome.org/Apps/Geary">Geary</a>, reproductores de música o vídeo como <a href="https://www.videolan.org/vlc/">VLC</a>, visor de imágenes y archivos PDF, edición fotográfica como <a href="https://www.gimp.org/">GIMP</a>, edición de vídeo como <a href="https://www.openshot.org/">OpenShot</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">algunos juegos destacables</a>, &hellip; en todos los casos hay un programa de software libre por el que no hay que pagar una licencia ni buscar <em>cracks</em> para activar el software que son fuente de virus y problemas de seguridad. Y ya desde hace mucho tiempo en GNU/Linux el hardware es reconocido y usable en su mayor parte desde el primer momento incluyendo la tarjeta gráfica, sonido, red, bluetooth, wifi, HDMI, USB, &hellip; aunque alguno puede necesitar instalar sus controladores de dispositivo.</p>
+<p>Debes saber es en GNU/Linux hay muchas versiones o distribuciones, muchas desarrolladas por personas sin ánimo de lucro que se agrupan formando comunidades y otras que tienen el soporte de una empresa pero que a los usuarios les ofrece la distribución sin ningún coste ni necesidad de adquirir licencias. Una distribución está formada por el conjunto de programas de software o paquetes, repositorios de paquetes y gestor de paquetes. Hay muchas distribuciones, y muchas son cientos, pero no más de 10 con una cuota de uso dentro de las distros significativa.</p>
+<p>El paso de Windows a GNU/Linux significa usar un nuevo entorno y es algo que muchos de los usuarios que hoy somos de GNU/Linux hemos dado en algún momento, yo empecé por pasar <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a> y aún me mantengo <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a>. GNU/Linux tiene sus puntos fuertes y algunos para los usuarios de escritorio menos fuertes, principalmente debido a no ser el sistema mayoritario los fabricantes tienen más en cuenta a Windows cuando lanzan un nuevo producto, en el caso de los juegos triple A o la excesiva fragmentación por la cantidad de opciones. En cualquier caso muchas distribuciones GNU/Linux son tan fáciles de usar como Windows o <a href="https://www.apple.com/macos/">macOS</a> y tan o más capaces que estos.</p>
+<p>Lo primero que debes hacer es <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">decidir la distribución que quieres instalar</a>, según tus preferencias y necesidades. Para los usuarios que van a tener su primer contacto con GNU/Linux algunas de las recomendadas son <a href="https://www.ubuntu.com/">Ubuntu</a> o <a href="https://elementary.io/es/">elementaryOS</a>.</p>
+<p>Ubuntu es una de las muchas distribuciones de GNU/Linux existentes y una de las recomendadas para los usuarios principiantes y con más conocimientos por su buen funcionamiento. Las versiones LTS de Ubuntu tienen <a href="https://ubuntu.com/about/release-cycle">ciclo de desarrollo</a> con un soporte de largo plazo de 5 años para corrección de errores y fallos de seguridad. Las versiones LTS se publican cada dos años. Salvo que estés afectado por <em>versionitis</em> y quieras tener las últimas versiones de los programas la versión LTS más reciente es la recomendable y suficiente en vez de la última versión no LTS.</p>
+<p>Para instalar Ubuntu solo se necesita una memoria USB de 4 GiB de capacidad, el medio de instalación y unos 30 minutos para completar el proceso de instalación. Ubuntu instalado ocupa unos 10 GiB de espacio pero dependiendo de las aplicaciones que se quieran instalar, los documentos personales, fotos, vídeos y otros archivos el espacio recomendado es mayor.</p>
+<p>En este artículo explicaré como instalar Ubuntu en su versión 20.04 <abbr title="Long Term Support">LTS</abbr>.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="requisitos-mínimos">Requisitos mínimos</h3>
+<p>Los <a href="https://help.ubuntu.com/community/Installation/SystemRequirements">requisitos mínimos de Ubuntu</a> son bastante bajos para cualquier sistema de unos pocos años, menores que los requeridos para instalar Windows. Aunque en la memoria es recomendable tener al menos 2 GiB o incluso 4 GiB. Cualquier equipo medio de de la última década cumple estos requisitos.</p>
+<ul>
+<li>Procesador 2 GHz con dos núcleos o mejor</li>
+<li>Memoria RAM del sistema de 4 GiB</li>
+<li>25 GB de espacio de almacenamiento</li>
+<li>Gráficos con resolución de al menos 1024x768</li>
+<li>Unidad USB o CD/DVD</li>
+<li>Acceso a internet es recomendable</li>
+</ul>
+<h3 id="crear-una-copia-de-seguridad">Crear una copia de seguridad</h3>
+<p>Al instalar Ubuntu todos los datos que tuviese el equipo se perderán por lo que si quieres conservarlos debes copiarlos previamente a un disco duro externo o memoria USB de la capacidad que necesiten tus archivos, una vez finalizada la instalación de Ubuntu puedes recuperarlos y copiarlos al equipo de nuevo.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">Cómo realizar copias de seguridad en Windows con FreeFileSync</a></li>
+</ul>
+<h3 id="descargar-el-medio-de-instalación-de-ubuntu">Descargar el medio de instalación de Ubuntu</h3>
+<p>Antes de iniciar la instalación hay que <a href="https://ubuntu.com/download/desktop">descargar la imágen ISO</a> de la versión de Ubuntu que queramos instalar desde la <a href="https://www.ubuntu.com/">página oficial de la distribución</a>, solo es necesario un navegador web para descargar de forma directa el archivo que es la imagen del medio de instalación, un archio de extensión <em>iso</em> que ocupa casi 3 GiB. El archivo también es descargable mediante la red de compartición de archivos entre usuarios <em>torrent</em>. Ubuntu proporciona <a href="https://ubuntu.com/download/flavours">varias versiones de su distribución</a> donde varía principalmente el entorno de escritorio que también debes elegir según tus preferencias, hay varias posibilidades entre ellas dos de las más preferidas están <a href="https://www.gnome.org/">GNOME</a> y <a href="https://www.kde.org/">KDE</a>. Cualquiera de ellas con un aspecto gráfico muy cuidado, intuitivas y fáciles de usar. La opción más similar al entorno de escritorio de Windows es KDE con la que te encontrarás bastante cómodo al usarla si provienes de Windows.</p>
+<ul>
+<li><a href="https://www.ubuntu.com/">Ubuntu</a></li>
+<li><a href="https://ubuntu.com/download/flavours">Más sabores de Ubuntu</a></li>
+</ul>
+<h3 id="crear-el-medio-de-instalación-usb">Crear el medio de instalación USB</h3>
+<p>Para una mayor velocidad de instalación es mejor usar una memoria USB de al menos 8 GiB de capacidad en vez un disco CD o DVD que son más lentos y algunos equipos nuevos ya ni siquiera incorporan estas unidades porque están en desuso con la aparición de las memorias USB más rápidas, fiables, de mayor capacidad y más pequeñas. La memoria debe estar vacía ya que se perderán todos sus datos. Con el <a href="https://rufus.akeo.ie/">programa Rufus para Windows</a> seleccionado el archivo de la imagen ISO descargada y la unidad USB se crea el medio de instalación, en la siguiente página está explicado como <a href="https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-windows">crear una memoria USB arrancable en Windows</a>.</p>
+<p>Hay que conectar una memoria USB, seleccionarla, seleccionar el archivo de la imagen ISO de Ubuntu y pulsar el botón <em>Empezar</em>, al cabo de unos minutos la memoria estará lista para empezar a instalar Ubuntu.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/rufus_hud9b0e05f6272fca4d03a6a3ac68655b9_30106_2560x1440_fit_box_3.png" data-gallery="" title="Creación de medio de instalación en memoria USB desde Windows"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/rufus_hud9b0e05f6272fca4d03a6a3ac68655b9_30106_300x200_fit_box_3.png" width="143" height="200" alt="Creación de medio de instalación en memoria USB desde Windows" title="Creación de medio de instalación en memoria USB desde Windows"  class="lozad "></a></p>
+<figcaption>Creación de medio de instalación en memoria USB dese Windows</figcaption>
+</figure>
+</div>
+<h3 id="iniciar-el-sistema-con-el-medio-de-instalación">Iniciar el sistema con el medio de instalación</h3>
+<p>Con el equipo apagado y la memoria USB contactada a un puerto hay que iniciar el equipo para que se inicie desde la memoria USB. La forma de hacer que el equipo arranque desde la memoria USB depende de cual sea el fabricante. Pulsando una tecla dependiendo de caso como F2, F8, F10, F12, ESC u otra se puede entrar en la BIOS o seleccionar el medio de instalación. La BIOS es una zona de configuración donde se modifican algunos parámetros del equipo muy importantes con lo que hay que tener cuidado de que se modifica para evitar comportamientos anómalos, a pesar de todo suele ser bastante intuitiva y si es un equipo reciente incluso con interfaz gráfica.</p>
+<p>Según el fabricante e incluso modelos de la misma fabricante la tecla de acceso para iniciar desde el medio de instalación varía:</p>
+<ul>
+<li>Acer: F2 o Delete</li>
+<li>Asus: F2 o F10</li>
+<li>Dell: F2, F1, Delete, F12 o F3</li>
+<li>HP: F10 o Esc</li>
+<li>Lenovo: F1 o F2</li>
+<li>Sony: F2, F3, F1 o tecla assist</li>
+<li>Toshiba: F2, F1, Esc</li>
+</ul>
+<p>En las siguientes páginas puedes encontrar varias posibles teclas para entrar en la BIOS y cambiar la unidad de inicio del sistema según la marca, <a href="http://www.makeuseof.com/tag/enter-bios-computer/">I</a>, <a href="https://www.lifewire.com/bios-setup-utility-access-keys-for-major-bios-manufacturers-2624461">II</a> y <a href="https://www.lifewire.com/bios-setup-utility-access-keys-for-popular-computer-systems-2624463">III</a>.</p>
+<p>Puede ser el caso de que cuando se inicia el equipo muestre un mensaje con la tecla que hay que pulsar si hay que probar hasta dar con ella. Después de pulsar la tecla de encendido poco después o según se muestra un logotipo es cuando hay que pulsar la tecla.</p>
+<p>Si tu sistema tiene una BIOS de tipo UEFI, cualquier equipo del último lustro su BIOS será de este tipo, se debe <a href="https://help.ubuntu.com/community/UEFI">desactivar la opción llamada <em>Secure Boot</em></a> que utiliza Windows como medida de seguridad pero que no está soportada aún en GNU/Linux.</p>
+<h3 id="instalar-ubuntu">Instalar Ubuntu</h3>
+<p>Al iniciar el instalador al principio de todo se ofrece la posibilidad de probar Ubuntu sin realizar ningún cambio al equipo, esto permite comprobar que funciona correctamente y no hay problemas de compatibilidad con el hardware importantes. La mayoría de hardware es reconocido sin necesidad de instalar controladores específicos. Una vez realizada la prueba se puede iniciar la instalación.</p>
+<p>El instalador que guía en la instalación de Ubuntu realiza varias preguntas a responder por el usuario e introducir algunos pocos datos y en cuestión de menos de una hora el equipo ya está listo para empezar a usarse. En el artículo he utilizado la versión 20.04 LTS.</p>
+<p>El asistente de instalación pregunta:</p>
+<ul>
+<li>El idioma.</li>
+<li>Si se quieren descargar las actualizaciones (recomendable) y software para reproducir mp3, flash así como controladores para la tarjeta gráfica y wifi.</li>
+<li>Borrar el contenido del disco duro y si se quieren cifrar los datos del dispositivo de almacenamiento.</li>
+<li>La clave para cifrar los datos del dispositivo de almacenamiento.</li>
+<li>Una confirmación para proceder a borrar el disco duro e iniciar la instalación.</li>
+<li>La zona horaria del usuario y la disposición del teclado.</li>
+<li>El nombre del equipo, del usuario y la contraseña para iniciar sesión.</li>
+</ul>
+<p>Inicio del asistente.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-01_hu80b54ae6d26ed74c8ff630b97e4e1a59_7536_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-01_hu80b54ae6d26ed74c8ff630b97e4e1a59_7536_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-02_hue61c454da241ba3b9f34aabd0a3426c9_25965_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-02_hue61c454da241ba3b9f34aabd0a3426c9_25965_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-03_hu55c148391a13d866cca89aa9443502ac_16789_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-03_hu55c148391a13d866cca89aa9443502ac_16789_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Pasos en los que solicitan unos pocos datos como el idioma, la disposición del teclado, tipo de instalación, ubicación y el usuario y contraseña de inicio de sesión.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-04_huc76ead5dbdf5b1de7cf5125c303ac8ad_171153_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-04_huc76ead5dbdf5b1de7cf5125c303ac8ad_171153_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-05_huc76ead5dbdf5b1de7cf5125c303ac8ad_183562_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-05_huc76ead5dbdf5b1de7cf5125c303ac8ad_183562_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-06_huc76ead5dbdf5b1de7cf5125c303ac8ad_177997_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-06_huc76ead5dbdf5b1de7cf5125c303ac8ad_177997_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-07_hu381a470e33f4c2bfbf820a7503983527_167587_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-07_hu381a470e33f4c2bfbf820a7503983527_167587_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-08_hu71ffffd1791dada8be6e27259b5aae1f_264576_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-08_hu71ffffd1791dada8be6e27259b5aae1f_264576_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-09_hu7297958323b89f21231a1636f9932ae6_171082_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-09_hu7297958323b89f21231a1636f9932ae6_171082_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
+</figure>
+</div>
+<p>El resto de la instalación Ubuntu copia los archivos necesarios al dispositivo de almacenamiento.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-10_hu7297958323b89f21231a1636f9932ae6_537592_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-10_hu7297958323b89f21231a1636f9932ae6_537592_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-11_huc1426316a4ed6f2012682e7c075d3d85_465000_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-11_huc1426316a4ed6f2012682e7c075d3d85_465000_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-12_huc1426316a4ed6f2012682e7c075d3d85_557165_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-12_huc1426316a4ed6f2012682e7c075d3d85_557165_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-13_huc1426316a4ed6f2012682e7c075d3d85_587499_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-13_huc1426316a4ed6f2012682e7c075d3d85_587499_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-14_huc1426316a4ed6f2012682e7c075d3d85_541738_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-14_huc1426316a4ed6f2012682e7c075d3d85_541738_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-15_huc1426316a4ed6f2012682e7c075d3d85_466681_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-15_huc1426316a4ed6f2012682e7c075d3d85_466681_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-16_huc1426316a4ed6f2012682e7c075d3d85_456501_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-16_huc1426316a4ed6f2012682e7c075d3d85_456501_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-17_hufa7c092d7c9aa209a34bd5ca12e3d152_543631_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-17_hufa7c092d7c9aa209a34bd5ca12e3d152_543631_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-18_huff631f4c20736869f4fb89d6e13c0c71_545095_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-18_huff631f4c20736869f4fb89d6e13c0c71_545095_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Al final de la instalación se solicita reiniciar para realizar el primer arranque.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-19_hu084d7f6229b142343d723a9a8664c9f2_570056_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-19_hu084d7f6229b142343d723a9a8664c9f2_570056_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-20_hu0c56d68ee1f731dc74618ca35c91b523_18266_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-20_hu0c56d68ee1f731dc74618ca35c91b523_18266_300x200_fit_box_3.png" width="267" height="200"  class="lozad "></a></p>
+<figcaption>Instalación de Ubuntu</figcaption>
+</figure>
+</div>
+<h3 id="primer-inicio-de-sesión-ubuntu">Primer inicio de sesión Ubuntu</h3>
+<p>Si se ha elegido cifrar el contenido del dispositivo de almacenamiento al realizar la instalación en el inicio del sistema Ubuntu pregunta por la contraseña para descifrar su contenido. Por seguridad se solicita el usuario y contraseña introducir en los pasos de la instalación.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-01_hu83ba0553d32bfef8f287514a9f51ac52_16759_2560x1440_fit_box_3.png" data-gallery="" title="Ubuntu 20.04"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-01_hu83ba0553d32bfef8f287514a9f51ac52_16759_300x200_fit_box_3.png" width="267" height="200" alt="Ubuntu 20.04" title="Ubuntu 20.04"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-02_hu455d48947f641dde79fe0e60cc6a4df7_17472_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-02_hu455d48947f641dde79fe0e60cc6a4df7_17472_300x200_fit_box_3.png" width="267" height="200"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-03_hu1516d9e7cb3580cf7f58f2a80fa637e8_21310_2560x1440_fit_box_3.png" data-gallery="" title="Ubuntu 20.04 con entorno de escritorio Unity"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-03_hu1516d9e7cb3580cf7f58f2a80fa637e8_21310_300x200_fit_box_3.png" width="267" height="200" alt="Ubuntu 20.04 con entorno de escritorio Unity" title="Ubuntu 20.04 con entorno de escritorio Unity"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Este es el aspecto del entorno de escritorio con GNOME de Ubuntu 20.04. En la parte izquierda se encuentra el lanzador de aplicaciones con varios iconos. En la parte superior izquierda está a acción actividades con la que buscar el resto de aplicaciones instaladas, el la parte superior derecha el menú del sistema desde donde se puede apagar, reiniciar el equipo o variar el volumen del sistema entre otras opciones de configuración.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-04_hu688947c873613f770b8fce072759e364_634897_2560x1440_fit_box_3.png" data-gallery="" title="Ubuntu 20.04 con entorno de escritorio GNOME"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-04_hu688947c873613f770b8fce072759e364_634897_300x200_fit_box_3.png" width="267" height="200" alt="Ubuntu 20.04 con entorno de escritorio GNOME" title="Ubuntu 20.04 con entorno de escritorio GNOME"  class="lozad "></a></p>
+<figcaption>Ubuntu 20.04 con entorno de escritorio GNOME</figcaption>
+</figure>
+</div>
+<h3 id="realizar-tareas-básicas-para-instalar-programas-obtener-actualizaciones-y-mantenimiento">Realizar tareas básicas para instalar programas, obtener actualizaciones y mantenimiento</h3>
+<p>Después de instalar Ubuntu es necesario conocer como realizar algunas tareas básicas de mantenimiento para tener actualizado el sistema, para obtener importantes actualizaciones de seguridad, correcciones de errores, nuevas funcionalidades, instalar nuevos programas y desinstalar los programas que se dejan de usar además empezar a conocer la terminal.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/">Tareas básicas después de instalar una distribución GNU/Linux</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones del entorno de escritorio de GNOME</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">Listado de programas esenciales según categoría para GNU/Linux</a></li>
+</ul>
+<p>Ubuntu por defecto ya incorpora una buena cantidad de software preinstalado. En cualquier caso con la aplicación <em>Software de Ubuntu</em> se puede instalar más. Al cabo de un tiempo de haber instalado Ubuntu se publicarán actualizaciones del software que tengas instalado con mejoras y correcciones de seguridad que son recomendables instalarlas usando la aplicación <em>Ubuntu Software</em>. Ubuntu comprueba periódicamente si hay nuevas actualizaciones, si las hay muestra una notificación con cuales son y permite realizar la actualización a conveniencia del usuario. Una vez instaladas las actualizaciones algunas requieren reiniciar el sistema para que surtan efecto.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-software_hubdb830f2826f6688b0b8fa1e5f87f040_158219_2560x1440_fit_box_3.png" data-gallery="" title="Instalar y desinstalar software"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-software_hubdb830f2826f6688b0b8fa1e5f87f040_158219_300x200_fit_box_3.png" width="267" height="200" alt="Instalar y desinstalar software" title="Instalar y desinstalar software"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-actualizaciones_hu3b9a8ab8614b95a6f0f7f998145f0351_538937_2560x1440_fit_box_3.png" data-gallery="" title="Notificación de actualizaciones de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-actualizaciones_hu3b9a8ab8614b95a6f0f7f998145f0351_538937_300x200_fit_box_3.png" width="267" height="200" alt="Notificación de actualizaciones de Ubuntu" title="Notificación de actualizaciones de Ubuntu"  class="lozad "></a></p>
+<figcaption>Instalar software y notificación de actualizaciones de seguridad</figcaption>
+</figure>
+</div>
+<h3 id="obtener-ayuda">Obtener ayuda</h3>
+<p>En internet hay gran cantidad de artículos en blogs o foros con ayuda que puedes encontrar con un buscador web como <a href="https://www.google.es/">Google</a> o <a href="https://duckduckgo.com/">DuckDuckGo</a>. En ellos seguramente encontrarás una respuesta que te resuelva o ayude en cualquier problema que se te presente o duda que te surja.</p>
+<p>Si has leído este artículo y te decides a dar el salto a GNU/Linux deja un comentario, me gusta leer que he ayudado a alguien y si tienes alguna duda y no encuentras una respuesta en la web pregúntame en un comentario e intentaré darle respuesta.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/</id>
         <title>Controlar un servomotor con la Raspberry Pi y Java</title>
@@ -1308,7 +1494,7 @@
 <p>Habitualmente se comenta que los sistemas con alguna distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> son más seguros que los sistemas <a href="https://www.microsoft.com/es-es/windows/">Windows</a>. Probablemente bien configurados y debidamente actualizados ambas opciones sean muy seguras. Sin embargo, desde el punto de vista de un usuario es común que Windows se vea infectado con virus o <em>malware</em> aún con un antivirus instalado.</p>
 <p>Las razones de que Windows se vea más amenazado son varias, una es que es una plataforma con una cuota de uso enorme por tanto muy atractiva de atacar. Otra es que instalar programas o software en las distribuciones GNU/Linux se realiza en su mayor parte desde los repositorios oficiales, es decir, de una fuente confiable. En Windows hay que buscar la página oficial del programa y en los resultados de Google no siempre es la primera opción si se busca por «windows reproductor de vídeo», «windows programa para descargar películas» o segundas o terceras opciones es software dudoso. Esas páginas no oficiales de los programas pueden realmente hospedar programas con virus. Quizá ahora que <a href="https://www.microsoft.com/">Microsoft</a> ha añadido en sus últimas versiones de Windows <a href="https://www.microsoft.com/en-us/windows/windows-10-apps">una tienda de aplicaciones</a> se podrán instalar desde ella con más garantías de forma similar a lo que desde hace mucho tiempo en GNU/Linux son los repositorios de paquetes.</p>
 <p>Otro motivo es que <a href="https://picodotdev.github.io/blog-bitix/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/">muchos usuarios de Windows y Office los usan sin licencia</a> y no hay mayor problema ya que incluso Microsoft ofrece la descarga de la <a href="https://www.microsoft.com/es-es/software-download/windows10ISO">imagen ISO de Windows 10</a> desde su propia página pero para realizar la activación sin la correspondiente licencia hay que usar un programa que puede contener un virus y en un buen caso obligar a reinstalar Windows para deshacerse de él, un peor caso es que el virus no muestre síntomas de su presencia y pase desapercibido pero recolectando datos (contraseñas, fotos, documentos, &hellip;) del usuario sin que este lo sepa. La lista de programas que los usuarios de Windows usan sin licencia es mucho más extensa <a href="https://www.adobe.com/es/products/photoshop.html">Photoshop</a>, <a href="https://www.adobe.com/es/products/illustrator.html">Illustrator</a>, <a href="https://www.adobe.com/es/products/indesign.html">InDesign</a>, <a href="https://www.adobe.com/es/products/premiere.html">Premiere Pro</a>, <a href="https://www.adobe.com/es/products/aftereffects.html">After Effects</a>, <a href="https://www.adobe.com/es/products/photoshop-lightroom.html">Lightroom</a>, <a href="https://acrobat.adobe.com/es/es/acrobat.html">Acrobat</a>, <a href="https://www.adobe.com/es/creativecloud/catalog/desktop.html">otro software de Adobe</a>, <a href="https://www.autodesk.es/products/autocad/overview">AutoCAD</a>, <a href="https://www.winzip.com/win/es/">Winzip</a>, &hellip; que igualmente al <em>crackearlos</em> para usarlos después de su periodo de prueba, con la que la seguridad de los sistemas Windows se ve comprometida. Para cada uno de estos programas hay otros <a href="https://alternativeto.net/">alternativos con licencias de software libre</a> mejores o las suficientes funciones para la mayoría de usuarios. Los juegos también son muy pirateados y los <em>cracks</em> usados también pueden contener funciones maliciosas y es otra fuente de entrada para comprometer la seguridad.</p>
-<p>Con la cuota de uso que tiene Windows serán muchos usuarios con muchos conocimientos que lo usan pero es mayor el número de sus usuarios que tienen pocos conocimientos informáticos y que a la mayoría les vino con el ordenador preinstalado con <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.htmlindex-amp.html">el impuesto Windows</a> con lo que la seguridad de los sistemas Windows queda inutilizada. Algunas páginas de reputación dudosa muestran mensajes o correos electrónicos fraudulentos contienen <em>banners</em> advirtiendo que se debe descargar y ejecutar un programa, un usuario con conocimientos simplemente los ignoraría pero algunos usuarios sin conocimientos pueden hacerles caso. E incluso los usuarios con conocimientos si no usan el software con su licencia y usan activadores pueden comprometer la seguridad de sus sistemas.</p>
+<p>Con la cuota de uso que tiene Windows serán muchos usuarios con muchos conocimientos que lo usan pero es mayor el número de sus usuarios que tienen pocos conocimientos informáticos y que a la mayoría les vino con el ordenador preinstalado con <a href="https://elblogdepicodev.blogspot.com.es/2011/05/impuesto-windows.html">el impuesto Windows</a> con lo que la seguridad de los sistemas Windows queda inutilizada. Algunas páginas de reputación dudosa muestran mensajes o correos electrónicos fraudulentos contienen <em>banners</em> advirtiendo que se debe descargar y ejecutar un programa, un usuario con conocimientos simplemente los ignoraría pero algunos usuarios sin conocimientos pueden hacerles caso. E incluso los usuarios con conocimientos si no usan el software con su licencia y usan activadores pueden comprometer la seguridad de sus sistemas.</p>
 <p>Descargar y ejecutar un programa en GNU/Linux de una fuente externa a los repositorios oficiales igualmente puede comprometer la seguridad pero dado que todo el software normalmente se encuentra en los repositorios no suele haber necesidad. Sin embargo, también hay que tener precauciones de <em>scritps</em> como estos dos que pueden destruir de forma catastrófica un sistema GNU/Linux.</p>
 <p><strong>ADVERTENCIA: no los ejecutes!</strong>. El primero elimina todos los archivos del sistema y el segundo por mucho que parezcan unos extraños inocentes emoticonos crea procesos hasta que agota los recursos del sistema. Un usuario de GNU/Linux precavido y con conocimientos antes revisaría el contenido de cualquier <em>script</em> o binario ejecutable y no ejecutaría nada en caso de duda.</p>
 <div class="code">
@@ -1476,115 +1662,6 @@ willing to read the documentation, and solve their own problems.</p>
                 <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/</id>
-        <title>Hemeroteca #10</title>
-        <updated>2016-12-24T12:00:00+01:00</updated>
-        <published>2016-12-24T12:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Echando un vistazo a estos seis últimos meses han sido buenos, en número de artículos que he escrito y publicado como en el aumento de número de páginas vistas mensuales con respecto a inicios de 2016 y en similar proporción los ingresos mensuales por publicidad AdSense. De esta forma el esfuerzo en tiempo que supone escribir los artículos me es recompensado de alguna forma.</strong></p>]]>
-        <![CDATA[<p>Otros seis meses acumulados de vida, ya son poco menos de 7 años desde que tengo un blog y 3 desde que empecé a escribir en Blog Bitix. A pesar de la gran cantidad de tiempo que me requiere escribir y publicar artículos, tanto como entre 3 y 10 horas de dedicación por artículo, es una de las cosas que más me alegro de haber empezado en el año 2010. Lo que aprendo con cada artículo de las cosas que me motivan y compartirlo por si a alguien más le resultan interesantes me resulta muy satisfactorio.</p>
-<p>En estos seis meses en vez de publicar un solo artículo por semana he estado publicando dos artículos y algunas semanas incluso 3. El número de páginas vistas mensuales han aumentado hasta el punto de multiplicar por cuatro las páginas vistas que tenía a inicios de año siendo ahora unas 26K/mes. Y no son muchas, otros blogs personales tienen muchas más, dos o tres veces más. La mala noticia es que un porcentaje importante de las visitas provienen de unos pocos artículos bien posicionados en Google. En cualquier caso en una proporción similar que han aumentado las páginas vistas han aumentado los ingresos por publicidad de <a href="https://www.google.com/adsense/">Google AdSense</a> que incluyo en el blog, e incluso los últimos meses los ingresos han sido de alrededor de 20 € y 25 €, con lo que podré hacer más <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">donaciones al software libre</a> y más frecuentemente. En definitiva este ha sido un buen año en este aspecto, si el siguiente fuera similar sería estupendo.</p>
-<p>A pesar de la gran mejora en número de visitas mensuales durante este año cuesta un horror hacer crecer al blog y escribir y publicar al ritmo que lo he estado haciendo durante estos últimos meses. Hay que tener un poco de intuición y algo de suerte para acertar con artículos que se posicionen bien en los buscadores si lo que queremos es aumentar las visitas.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/analytics-2016_hu52b97d14fdb79a9a1e591311aa490e6d_58595_2560x1440_fit_box_3.png" data-gallery="" title="Analytics 2016 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/analytics-2016_hu52b97d14fdb79a9a1e591311aa490e6d_58595_300x200_fit_box_3.png" width="300" height="111" alt="Analytics 2016 de Blog Bitix" title="Analytics 2016 de Blog Bitix"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/gadsense-2016_hu2446445dc01efb419e83d5bf5a4644fa_34745_2560x1440_fit_box_3.png" data-gallery="" title="AdSense 2016 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/gadsense-2016_hu2446445dc01efb419e83d5bf5a4644fa_34745_300x200_fit_box_3.png" width="300" height="89" alt="AdSense 2016 de Blog Bitix" title="AdSense 2016 de Blog Bitix"  class="lozad "></a></p>
-<figcaption>Evolución visitas e ingresos de AdSense en 2016</figcaption>
-</figure>
-</div>
-<p>Una de las cosas que me estoy arrepintiendo ahora es no de tener dominio propio, no lo hice porque con <a href="https://pages.github.com/">GitHub Pages</a> me ofrecía el hospedaje gratis y sin complicaciones. Ahora me plantearía hospedar el blog en una máquina de <a href="https://www.linode.com/">Linode</a>, <a href="https://www.digitalocean.com/">Digital Ocean</a> o en la reciente competencia de estos con <a href="https://amazonlightsail.com/">Amazon Lightsail</a>. Mas que por necesidad por practicar con <a href="https://www.ansible.com/">Ansible</a> e implementar en el blog HTTPS/2 o usar <a href="https://letsencrypt.org/">Let&rsquo;s encrypt</a> asi como aprender sobre esos servicios en la nube. La migración es posible pero posiblemente no perfecta.</p>
-<p>Durante este periodo de tiempo he realizado algunos cambios a nivel de diseño en el blog como el buscador de contenido con <a href="https://duckduckgo.com/">DuckDuckGo</a>, he quitado del panel lateral los artículos recientes, he creado una nueva página por si alguna organización quisiera contactarme por publicidad e incluido un mensaje para aquellos que tengan un bloqueador de anuncios. Para tratar de monetizar algo más el blog también he estado considerando en inscribirme en páginas como <a href="https://www.publisuites.com/">Publisuites</a> o <a href="https://coobis.com/">Coobis</a> para escribir artículos patrocinados esporádicamente y siempre con artículos escritos por mi, con mi opinión y de la forma más honesta que pueda. Finalmente, me decidí por Publisuites pero aún no he recibido ninguna proposición de artículo patrocinado.</p>
-<p>Esta es la recapitulación de <a href="https://picodotdev.github.io/blog-bitix/2016/">artículos que he escrito durante el año 2016</a> y estos seis últimos meses organizados por temática empezando por unos pocos artículos más de la <a href="https://picodotdev.github.io/blog-bitix/series/web/">serie web</a>, algunos sobre <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> con varios artículos sobre juegos y otro sobre varias de las distribuciones más importantes y usadas, otros cuantos sobre programación relacionados con el lenguaje Java, por supuesto y de los que más gratificantes me resultan aunque no sean muy visitados relacionados de alguna forma con <a href="https://tapestry.apache.org/">Apache Tapestry</a> o algunos de opinión como repaso a las motivaciones que me llevaron a elegir a <a href="http://www.pepephone.com/">Pepephone</a> como proveedor de internet y otro de opinión sobre el rápido avance de la tecnología. En total han sido 47 artículos cuando en otros periodos de tiempo solo hubiese publicado unos 26.</p>
-<p>He añadido a la serie de artículos sobre desarrollo web varios interesantes que forman parte de lo esencial a conocer.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/">Configurar Nginx como balanceador de carga</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/">Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/">Las cabeceras de cache del protocolo HTTP</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/">Configurar Nginx para cachear respuestas del servidor de aplicaciones</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/como-y-por-que-redirigir-trafico-web-del-dominio-raiz-al-subdominio-www/">Cómo y por que redirigir tráfico web del dominio raíz al subdominio www (o viceversa)</a></li>
-</ul>
-<p>La sección de artículos sobre GNU/Linux destaca la <a href="https://picodotdev.github.io/blog-bitix/series/juegos/">serie sobre juegos</a> en el sistema del pingüino. He empezado a usar por obligación en el trabajo macOS que me ha servido como excusa para escribir un par de artículos sobre el sistema operativo de Apple.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">Guía básica del intérprete de comandos Bash</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/">Jugar al ajedrez en GNU/Linux con GNOME</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/">Cómo crear miniaturas o vistas previas de imágenes con ImageMagick</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/">Juegos incluidos en el entorno de escritorio GNOME</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/descargar-paquetes-a-actualizar-sin-instalarlos-en-arch-linux/">Descargar paquetes a actualizar sin instalarlos en Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">22+ buenos juegos en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/">Varios juegos de culto con ScummVM en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/">Cómo configurar una impresora HP en red en Arch Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/localizacion-de-un-comando-y-paquete-propietario-de-un-archivo-en-gnu-linux/">Localización de un comando y paquete propietario de un archivo en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/">Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">Elegir una distribución GNU/Linux según el usuario, uso o equipo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassX</a></li>
-</ul>
-<p>He escrito otros cuantos artículos de programación en algunos casos relacionados de alguna forma con <a href="https://tapestry.apache.org/">Apache Tapestry</a>, Java y JavaScript.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/">No, un tag JSP o un tag de Grails no es equivalente a un componente de Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Por qué guardar las fechas en UTC en la base de datos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/">Ejemplo de API REST en Java con JAX-RS y Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/monitorizar-con-eventos-de-google-analytics-una-pagina-web/">Monitorizar con eventos de Google Analytics una página web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth2-en-java/">Cliente de un servicio REST autenticado con OAuth en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/generacion-de-codigo-en-tiempo-de-ejecucion-con-byte-buddy/">Generación de código en tiempo de ejecución con Byte Buddy</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/">Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/">Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/">Componente select múltiple en Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/">Añadir botones selectores de opciones a select múltiple de bootstrap-select</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/historico-de-datos-auditoria-y-diferencias-entre-objetos-con-javers-en-java/">Histórico de datos, auditoría y diferencias entre objetos con Javers en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/">Usar una imagen de fondo aleatoria al cargar una página web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/12/introduccion-al-javascript-de-ecmascript-6/">Introducción al JavaScript de ECMAScript 6</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/">Cómo implementar correctamente y por qué los métodos equals y hashCode de los objetos Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/12/transpiling-de-ecmascript-6-a-5-uglify-y-eslint-con-gulp/">Transpiling de ECMAScript 6 a 5, Uglify y ESLint con Gulp</a></li>
-</ul>
-<p>En la categoría de artículos de opinion junto con otros de teḿatica variada han sido los siguientes:</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/eligiendo-proveedor-de-internet-finalmente-pepephone/">Eligiendo proveedor de internet, finalmente Pepephone</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/sobre-los-infimos-impuestos-que-paga-apple/">Sobre los ínfimos impuestos que paga Apple</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/articulo-2-de-yo-apoyo-al-software-libre/">Artículo #2 de Yo apoyo al software libre</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/09/gestionar-los-enlaces-de-una-bitacora-con-hugo/">Gestionar los enlaces de una bitácora con Hugo</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/10/sobre-el-rapido-avance-de-la-tecnologia/">Sobre el rápido avance de la tecnología</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/3-formas-sencillas-de-monetizar-un-blog/">3 formas sencillas de monetizar un blog</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/">Mi primer Mac, yo usuario de GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/">Instalar programas con Homebrew en macOS</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/desempaquetado-bombillas-led-de-philips/">Desempaquetado bombillas LED de PHILIPS</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/12/la-fabrica-de-blog-bitix/">La fábrica de Blog Bitix</a></li>
-</ul>
-<p>¡Felices fiestas! ¡A por el 2017!</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/christmas-tux-2016_hu581dec6841cb818409efe552acb3f337_509006_2560x1440_fit_q90_box.jpg" data-gallery="" title="¡Felices fiestas y buen 2017!"><img src="https://picodotdev.github.io/blog-bitix/2016/12/hemeroteca-10/images/christmas-tux-2016_hu581dec6841cb818409efe552acb3f337_509006_600x450_fit_q90_box.jpg" width="600" height="338" alt="¡Felices fiestas y buen 2017!" title="¡Felices fiestas y buen 2017!"  class="lozad "></a></p>
-<figcaption>¡Felices fiestas y buen 2017! <br>Fuente: klowner.com</figcaption>
-</figure>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-                <category term="tapestry"/>
-            
-                <category term="gnu-linux"/>
             
         
     </entry>

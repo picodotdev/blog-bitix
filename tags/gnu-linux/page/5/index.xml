@@ -5,12 +5,72 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-28T19:00:00+02:00</updated>
+    <updated>2022-06-23T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/</id>
+        <title>Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</title>
+        <updated>2018-04-14T00:30:00+02:00</updated>
+        <published>2018-04-14T00:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Uno de los sistemas de control de versiones más utilizado es <a href="https://git-scm.com/">Git</a>. <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> es el intérprete de comandos por defecto en la mayoría de distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o <em>prompt</em>.</p>
+<p>El intérprete <a href="https://zsh.sourceforge.net/">Zsh</a> y <a href="https://ohmyz.sh/">Oh-My-Zsh</a> ofrece mediante sus temas soporte para los repositorios de git modificando el símbolo del sistema para mostrar más información acerca del estado. En Bash también es posible añadir soporte para que muestre información como la rama actual en la que se está trabajando, si hay archivos modificados o no añadidos al control de versiones, si hay archivos en el <em>stash</em> y una comparación entre la rama actual y la del origen o <em>upstream</em>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal por defecto"><img src="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/terminal_hu6d4cd90f7258a5b4f3fa9ff1cd70710c_8935_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal en carpeta git"><img src="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal en carpeta git" title="Prompt de la terminal en carpeta git"  class="lozad "></a></p>
+<figcaption>Prompt de la terminal por defecto y en carpeta de git</figcaption>
+</figure>
+</div>
+<ul>
+<li>* la presencia de este caracter indica que hay cambios en alguno de los archivos bajo el control de versiones.</li>
+<li>+ indica que hay archivos añadidos al <em>stash</em></li>
+<li><em>=</em> indica que la rama está en el mismo estado que en <em>upstream</em>, en su lugar puede mostrarse el caracter <em>&gt;</em> para indicar que la rama en local está por delante de la rama en remoto o mostrarse <em>&lt;</em> para lo contrario.</li>
+</ul>
+<p>El <em>script</em> necesario para añadir el soporte a repositorios git en Bash es <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh">git-prompt.sh</a>. Una vez descargado su funcionalidad se personaliza con varias variables de entorno tal y como está documentado en el comentario al inicio de este <em>script</em> que se añaden en el archivo de perfil del usuario de inicio <em>.bashrc</em>. Añadidas unas variables de entorno que empiezan por <em>GIT_PS1</em> y hecho el <em>source</em> del script junto con la utilización de la variable <em>PROMPT_COMMAND</em> en lugar de <em>PS1</em> para posibilitar la información de estado con colores al estar en un directorio git se muestra el <em>prompt</em> del ejemplo anterior.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ wget -O ~/.git-prompt.sh https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install.sh</span>
+    </div>
+</div>
+<p>Este es el archivo <em>.bashrc</em> completo de la distribución <a href="https://www.archlinux.org/">Arch Linux</a> con el soporte para el <em>script</em> <em>git-prompt.sh</em> y algunas opciones personalizadas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">#&#10;</span></span><span class="line"><span class="cl"># ~/.bashrc&#10;</span></span><span class="line"><span class="cl">#&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"># If not running interactively, don&#39;t do anything&#10;</span></span><span class="line"><span class="cl">[[ $- != *i* ]] &amp;&amp; return&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">alias ls=&#39;ls --color=auto&#39;&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">#&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWDIRTYSTATE=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWSTASHSTATE=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWUNTRACKEDFILES=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWUPSTREAM=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWCOLORHINTS=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">source ~/.git-prompt.sh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">PS1=&#39;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W]\$ &#39;&#10;</span></span><span class="line"><span class="cl">PROMPT_COMMAND=&#39;__git_ps1 &#34;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>bashrc</span>
+    </div>
+</div>
+<p>La documentación completa con todas las opciones de personalización están en las primeras líneas de comentario del <em>script</em>.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/</id>
         <title>Tú con tu Mac, yo con mi GNU/Linux</title>
@@ -850,8 +910,8 @@
 </div>
 <p><a href="https://gradle.org/">Gradle</a> es una herramienta de construcción de proyectos y gestión de dependencias que adopta las mejores características de <a href="https://ant.apache.org/">Ant</a> y <a href="https://maven.apache.org/">Maven</a> con pocas o ninguna de sus deficiencias. <a href="https://amzn.to/2uY2naN">Gradle in Action</a> explica en profundidad esta herramienta de construcción para llegar a dominarla.</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.htmlindex-amp.html">Herramienta de construcción Gradle</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.htmlindex-amp.html">Usar Gradle mediante Gradle wrapper</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">Herramienta de construcción Gradle</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/usar-gradle-mediante-gradle-wrapper.html">Usar Gradle mediante Gradle wrapper</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/">Incluir información de la versión en el artefacto distribuible con Gradle</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr</a></li>
@@ -1577,16 +1637,14 @@
 <li><a href="https://www.redeszone.net/2017/05/13/recomendaciones-para-hacer-frente-a-un-ransomware/">Recomendaciones para hacer frente a un ransomware</a></li>
 </ul>
 <div class="media">
-    <amp-twitter width="650" height="550" data-tweetid="863364192316735488"></amp-twitter>
-    <blockquote placeholder>
+    <blockquote class="twitter-tweet tw-align-center" data-partner="tweetdeck">
 <p lang="en" dir="ltr">The release of the patch probably isn&#39;t going to help that £15m MRI machine that runs XP embedded whose maker went bankrupt 10 years ago.</p>&mdash; Barry Dorrans (@blowdart) <a href="https://twitter.com/blowdart/status/863364192316735488">13 de mayo de 2017</a>
 </blockquote>
 </div>
 <p>Quizá alguien piense que un sistema con <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> hubiese sido distinto pero no, un sistema GNU/Linux desactualizado es igual de vulnerable, por el hecho de ser GNU/Linux no es más seguro. Lo que hay que implementar son procedimientos y aplicar medidas para evitar estos fallos de seguridad y para minimizar las vulnerabilidades de los sistemas cualquiera que sea el sistema utilizado. A pesar de lo anterior una muestra de la seguridad que ofrece GNU/Linux que hay que destacar es que es un sistema utilizado en una gran mayoría de servidores importantes de los que ofrecen servicios en internet u otros servicios críticos, correctamente configurados y mantenidos funcionando de forma segura.</p>
 <p>En unas empresas y sociedad cada vez más dependientes de la tecnología un ataque como este puede causar importantes daños como ha sido en el caso del sistema de salud británico, en empresas como en el mismo caso de Telefonica ha obligado a apagar sistemas para evitar la propagación y preventivamente males mayores impidiendo trabajar con normalidad a un importante número de empleados de la empresa. El ataque de <em>WannaCry</em> es una advertencia de lo que puede provocar un caso peor en el futuro, y este ransomware cuando actúa es evidente que se está sufriendo, otros ataques menos notorios pueden pasar inadvertidos. Algo que ocasionará lo sucedido es que <a href="http://www.publico.es/internacional/industria-ciberseguridad-coge-musculo-oleada.html">se dedicarán más recursos a la seguridad</a>.</p>
 <div class="media">
-    <amp-twitter width="650" height="550" data-tweetid="863563517898747904"></amp-twitter>
-    <blockquote placeholder>
+    <blockquote class="twitter-tweet tw-align-center" data-partner="tweetdeck">
 <p lang="en" dir="ltr">Windows XP was released in 2001, every Linux kernel before 2013 is out of support, more CVEs reported for Linux in 2016, 2017 than Windows <a href="https://t.co/QzTPSFp0Pr">pic.twitter.com/QzTPSFp0Pr</a></p>&mdash; Ben Adams (@ben_a_adams) <a href="https://twitter.com/ben_a_adams/status/863563517898747904">14 de mayo de 2017</a>
 </blockquote>
 </div>
@@ -1714,192 +1772,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/</id>
-        <title>Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</title>
-        <updated>2020-07-03T19:00:00+02:00</updated>
-        <published>2017-05-13T09:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Pasar de usar Windows a usar una distribución GNU/Linux es un paso difícil para muchos usuarios, algunos usuarios desconocen incluso que tienen la posibilidad de usar un sistema operativo alternativo a Windows. O si lo conocen pueden creer erróneamente que instalar una distribución GNU/Linux es muy complicado&hellip; sabiendo algunas casas por lo demás es tan sencillo instalar como el sistema operativo Windows ya que muchas distribuciones incluyen una interfaz gráfica en su instalador y el proceso consiste en responder unas pocas preguntas, introducir algunos datos y pulsar varios botones siguiente.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="200" height="200" alt="Ubuntu" title="Ubuntu"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<p>Quizá hayas oído hablar de Linux o <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> como alternativa al sistema operativo de Microsoft <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y sientes curiosidad por probarlo y adentrarte con ello en el mundo del software libre. Si estás leyendo esta guía y te es necesaria para instalar una de las muchas distribuciones de GNU/Linux entiendo que necesitas ayuda para saber como instalarlo desde cero, paso a paso y empezando desde lo más básico.</p>
-<p>En GNU/Linux para cada tarea que un usuario quiera realizar hay múltiples opciones entre las que elegir, desde tareas ofimáticas como <a href="https://www.libreoffice.org/">LibreOffice</a>, navegadores web como <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> o <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a>, mensajería instantánea como <a href="https://wiki.gnome.org/action/show/Apps/Empathy">Empathy</a>, correo electrónico como <a href="https://wiki.gnome.org/Apps/Evolution/">Evolution</a>, <a href="https://www.thunderbird.net/es-ES/">Thunderbird</a> o <a href="https://wiki.gnome.org/Apps/Geary">Geary</a>, reproductores de música o vídeo como <a href="https://www.videolan.org/vlc/">VLC</a>, visor de imágenes y archivos PDF, edición fotográfica como <a href="https://www.gimp.org/">GIMP</a>, edición de vídeo como <a href="https://www.openshot.org/">OpenShot</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/">algunos juegos destacables</a>, &hellip; en todos los casos hay un programa de software libre por el que no hay que pagar una licencia ni buscar <em>cracks</em> para activar el software que son fuente de virus y problemas de seguridad. Y ya desde hace mucho tiempo en GNU/Linux el hardware es reconocido y usable en su mayor parte desde el primer momento incluyendo la tarjeta gráfica, sonido, red, bluetooth, wifi, HDMI, USB, &hellip; aunque alguno puede necesitar instalar sus controladores de dispositivo.</p>
-<p>Debes saber es en GNU/Linux hay muchas versiones o distribuciones, muchas desarrolladas por personas sin ánimo de lucro que se agrupan formando comunidades y otras que tienen el soporte de una empresa pero que a los usuarios les ofrece la distribución sin ningún coste ni necesidad de adquirir licencias. Una distribución está formada por el conjunto de programas de software o paquetes, repositorios de paquetes y gestor de paquetes. Hay muchas distribuciones, y muchas son cientos, pero no más de 10 con una cuota de uso dentro de las distros significativa.</p>
-<p>El paso de Windows a GNU/Linux significa usar un nuevo entorno y es algo que muchos de los usuarios que hoy somos de GNU/Linux hemos dado en algún momento, yo empecé por pasar <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">De Windows a Arch Linux</a> y aún me mantengo <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a>. GNU/Linux tiene sus puntos fuertes y algunos para los usuarios de escritorio menos fuertes, principalmente debido a no ser el sistema mayoritario los fabricantes tienen más en cuenta a Windows cuando lanzan un nuevo producto, en el caso de los juegos triple A o la excesiva fragmentación por la cantidad de opciones. En cualquier caso muchas distribuciones GNU/Linux son tan fáciles de usar como Windows o <a href="https://www.apple.com/macos/">macOS</a> y tan o más capaces que estos.</p>
-<p>Lo primero que debes hacer es <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">decidir la distribución que quieres instalar</a>, según tus preferencias y necesidades. Para los usuarios que van a tener su primer contacto con GNU/Linux algunas de las recomendadas son <a href="https://www.ubuntu.com/">Ubuntu</a> o <a href="https://elementary.io/es/">elementaryOS</a>.</p>
-<p>Ubuntu es una de las muchas distribuciones de GNU/Linux existentes y una de las recomendadas para los usuarios principiantes y con más conocimientos por su buen funcionamiento. Las versiones LTS de Ubuntu tienen <a href="https://ubuntu.com/about/release-cycle">ciclo de desarrollo</a> con un soporte de largo plazo de 5 años para corrección de errores y fallos de seguridad. Las versiones LTS se publican cada dos años. Salvo que estés afectado por <em>versionitis</em> y quieras tener las últimas versiones de los programas la versión LTS más reciente es la recomendable y suficiente en vez de la última versión no LTS.</p>
-<p>Para instalar Ubuntu solo se necesita una memoria USB de 4 GiB de capacidad, el medio de instalación y unos 30 minutos para completar el proceso de instalación. Ubuntu instalado ocupa unos 10 GiB de espacio pero dependiendo de las aplicaciones que se quieran instalar, los documentos personales, fotos, vídeos y otros archivos el espacio recomendado es mayor.</p>
-<p>En este artículo explicaré como instalar Ubuntu en su versión 20.04 <abbr title="Long Term Support">LTS</abbr>.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="requisitos-mínimos">Requisitos mínimos</h3>
-<p>Los <a href="https://help.ubuntu.com/community/Installation/SystemRequirements">requisitos mínimos de Ubuntu</a> son bastante bajos para cualquier sistema de unos pocos años, menores que los requeridos para instalar Windows. Aunque en la memoria es recomendable tener al menos 2 GiB o incluso 4 GiB. Cualquier equipo medio de de la última década cumple estos requisitos.</p>
-<ul>
-<li>Procesador 2 GHz con dos núcleos o mejor</li>
-<li>Memoria RAM del sistema de 4 GiB</li>
-<li>25 GB de espacio de almacenamiento</li>
-<li>Gráficos con resolución de al menos 1024x768</li>
-<li>Unidad USB o CD/DVD</li>
-<li>Acceso a internet es recomendable</li>
-</ul>
-<h3 id="crear-una-copia-de-seguridad">Crear una copia de seguridad</h3>
-<p>Al instalar Ubuntu todos los datos que tuviese el equipo se perderán por lo que si quieres conservarlos debes copiarlos previamente a un disco duro externo o memoria USB de la capacidad que necesiten tus archivos, una vez finalizada la instalación de Ubuntu puedes recuperarlos y copiarlos al equipo de nuevo.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">Cómo realizar copias de seguridad en Windows con FreeFileSync</a></li>
-</ul>
-<h3 id="descargar-el-medio-de-instalación-de-ubuntu">Descargar el medio de instalación de Ubuntu</h3>
-<p>Antes de iniciar la instalación hay que <a href="https://ubuntu.com/download/desktop">descargar la imágen ISO</a> de la versión de Ubuntu que queramos instalar desde la <a href="https://www.ubuntu.com/">página oficial de la distribución</a>, solo es necesario un navegador web para descargar de forma directa el archivo que es la imagen del medio de instalación, un archio de extensión <em>iso</em> que ocupa casi 3 GiB. El archivo también es descargable mediante la red de compartición de archivos entre usuarios <em>torrent</em>. Ubuntu proporciona <a href="https://ubuntu.com/download/flavours">varias versiones de su distribución</a> donde varía principalmente el entorno de escritorio que también debes elegir según tus preferencias, hay varias posibilidades entre ellas dos de las más preferidas están <a href="https://www.gnome.org/">GNOME</a> y <a href="https://www.kde.org/">KDE</a>. Cualquiera de ellas con un aspecto gráfico muy cuidado, intuitivas y fáciles de usar. La opción más similar al entorno de escritorio de Windows es KDE con la que te encontrarás bastante cómodo al usarla si provienes de Windows.</p>
-<ul>
-<li><a href="https://www.ubuntu.com/">Ubuntu</a></li>
-<li><a href="https://ubuntu.com/download/flavours">Más sabores de Ubuntu</a></li>
-</ul>
-<h3 id="crear-el-medio-de-instalación-usb">Crear el medio de instalación USB</h3>
-<p>Para una mayor velocidad de instalación es mejor usar una memoria USB de al menos 8 GiB de capacidad en vez un disco CD o DVD que son más lentos y algunos equipos nuevos ya ni siquiera incorporan estas unidades porque están en desuso con la aparición de las memorias USB más rápidas, fiables, de mayor capacidad y más pequeñas. La memoria debe estar vacía ya que se perderán todos sus datos. Con el <a href="https://rufus.akeo.ie/">programa Rufus para Windows</a> seleccionado el archivo de la imagen ISO descargada y la unidad USB se crea el medio de instalación, en la siguiente página está explicado como <a href="https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-windows">crear una memoria USB arrancable en Windows</a>.</p>
-<p>Hay que conectar una memoria USB, seleccionarla, seleccionar el archivo de la imagen ISO de Ubuntu y pulsar el botón <em>Empezar</em>, al cabo de unos minutos la memoria estará lista para empezar a instalar Ubuntu.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/rufus_hud9b0e05f6272fca4d03a6a3ac68655b9_30106_2560x1440_fit_box_3.png" data-gallery="" title="Creación de medio de instalación en memoria USB desde Windows"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/rufus_hud9b0e05f6272fca4d03a6a3ac68655b9_30106_300x200_fit_box_3.png" width="143" height="200" alt="Creación de medio de instalación en memoria USB desde Windows" title="Creación de medio de instalación en memoria USB desde Windows"  class="lozad "></a></p>
-<figcaption>Creación de medio de instalación en memoria USB dese Windows</figcaption>
-</figure>
-</div>
-<h3 id="iniciar-el-sistema-con-el-medio-de-instalación">Iniciar el sistema con el medio de instalación</h3>
-<p>Con el equipo apagado y la memoria USB contactada a un puerto hay que iniciar el equipo para que se inicie desde la memoria USB. La forma de hacer que el equipo arranque desde la memoria USB depende de cual sea el fabricante. Pulsando una tecla dependiendo de caso como F2, F8, F10, F12, ESC u otra se puede entrar en la BIOS o seleccionar el medio de instalación. La BIOS es una zona de configuración donde se modifican algunos parámetros del equipo muy importantes con lo que hay que tener cuidado de que se modifica para evitar comportamientos anómalos, a pesar de todo suele ser bastante intuitiva y si es un equipo reciente incluso con interfaz gráfica.</p>
-<p>Según el fabricante e incluso modelos de la misma fabricante la tecla de acceso para iniciar desde el medio de instalación varía:</p>
-<ul>
-<li>Acer: F2 o Delete</li>
-<li>Asus: F2 o F10</li>
-<li>Dell: F2, F1, Delete, F12 o F3</li>
-<li>HP: F10 o Esc</li>
-<li>Lenovo: F1 o F2</li>
-<li>Sony: F2, F3, F1 o tecla assist</li>
-<li>Toshiba: F2, F1, Esc</li>
-</ul>
-<p>En las siguientes páginas puedes encontrar varias posibles teclas para entrar en la BIOS y cambiar la unidad de inicio del sistema según la marca, <a href="http://www.makeuseof.com/tag/enter-bios-computer/">I</a>, <a href="https://www.lifewire.com/bios-setup-utility-access-keys-for-major-bios-manufacturers-2624461">II</a> y <a href="https://www.lifewire.com/bios-setup-utility-access-keys-for-popular-computer-systems-2624463">III</a>.</p>
-<p>Puede ser el caso de que cuando se inicia el equipo muestre un mensaje con la tecla que hay que pulsar si hay que probar hasta dar con ella. Después de pulsar la tecla de encendido poco después o según se muestra un logotipo es cuando hay que pulsar la tecla.</p>
-<p>Si tu sistema tiene una BIOS de tipo UEFI, cualquier equipo del último lustro su BIOS será de este tipo, se debe <a href="https://help.ubuntu.com/community/UEFI">desactivar la opción llamada <em>Secure Boot</em></a> que utiliza Windows como medida de seguridad pero que no está soportada aún en GNU/Linux.</p>
-<h3 id="instalar-ubuntu">Instalar Ubuntu</h3>
-<p>Al iniciar el instalador al principio de todo se ofrece la posibilidad de probar Ubuntu sin realizar ningún cambio al equipo, esto permite comprobar que funciona correctamente y no hay problemas de compatibilidad con el hardware importantes. La mayoría de hardware es reconocido sin necesidad de instalar controladores específicos. Una vez realizada la prueba se puede iniciar la instalación.</p>
-<p>El instalador que guía en la instalación de Ubuntu realiza varias preguntas a responder por el usuario e introducir algunos pocos datos y en cuestión de menos de una hora el equipo ya está listo para empezar a usarse. En el artículo he utilizado la versión 20.04 LTS.</p>
-<p>El asistente de instalación pregunta:</p>
-<ul>
-<li>El idioma.</li>
-<li>Si se quieren descargar las actualizaciones (recomendable) y software para reproducir mp3, flash así como controladores para la tarjeta gráfica y wifi.</li>
-<li>Borrar el contenido del disco duro y si se quieren cifrar los datos del dispositivo de almacenamiento.</li>
-<li>La clave para cifrar los datos del dispositivo de almacenamiento.</li>
-<li>Una confirmación para proceder a borrar el disco duro e iniciar la instalación.</li>
-<li>La zona horaria del usuario y la disposición del teclado.</li>
-<li>El nombre del equipo, del usuario y la contraseña para iniciar sesión.</li>
-</ul>
-<p>Inicio del asistente.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-01_hu80b54ae6d26ed74c8ff630b97e4e1a59_7536_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-01_hu80b54ae6d26ed74c8ff630b97e4e1a59_7536_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-02_hue61c454da241ba3b9f34aabd0a3426c9_25965_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-02_hue61c454da241ba3b9f34aabd0a3426c9_25965_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-03_hu55c148391a13d866cca89aa9443502ac_16789_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-03_hu55c148391a13d866cca89aa9443502ac_16789_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Pasos en los que solicitan unos pocos datos como el idioma, la disposición del teclado, tipo de instalación, ubicación y el usuario y contraseña de inicio de sesión.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-04_huc76ead5dbdf5b1de7cf5125c303ac8ad_171153_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-04_huc76ead5dbdf5b1de7cf5125c303ac8ad_171153_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-05_huc76ead5dbdf5b1de7cf5125c303ac8ad_183562_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-05_huc76ead5dbdf5b1de7cf5125c303ac8ad_183562_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-06_huc76ead5dbdf5b1de7cf5125c303ac8ad_177997_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-06_huc76ead5dbdf5b1de7cf5125c303ac8ad_177997_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-07_hu381a470e33f4c2bfbf820a7503983527_167587_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-07_hu381a470e33f4c2bfbf820a7503983527_167587_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-08_hu71ffffd1791dada8be6e27259b5aae1f_264576_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-08_hu71ffffd1791dada8be6e27259b5aae1f_264576_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-09_hu7297958323b89f21231a1636f9932ae6_171082_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-09_hu7297958323b89f21231a1636f9932ae6_171082_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
-</figure>
-</div>
-<p>El resto de la instalación Ubuntu copia los archivos necesarios al dispositivo de almacenamiento.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-10_hu7297958323b89f21231a1636f9932ae6_537592_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-10_hu7297958323b89f21231a1636f9932ae6_537592_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-11_huc1426316a4ed6f2012682e7c075d3d85_465000_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-11_huc1426316a4ed6f2012682e7c075d3d85_465000_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-12_huc1426316a4ed6f2012682e7c075d3d85_557165_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-12_huc1426316a4ed6f2012682e7c075d3d85_557165_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-13_huc1426316a4ed6f2012682e7c075d3d85_587499_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-13_huc1426316a4ed6f2012682e7c075d3d85_587499_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-14_huc1426316a4ed6f2012682e7c075d3d85_541738_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-14_huc1426316a4ed6f2012682e7c075d3d85_541738_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-15_huc1426316a4ed6f2012682e7c075d3d85_466681_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-15_huc1426316a4ed6f2012682e7c075d3d85_466681_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-16_huc1426316a4ed6f2012682e7c075d3d85_456501_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-16_huc1426316a4ed6f2012682e7c075d3d85_456501_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-17_hufa7c092d7c9aa209a34bd5ca12e3d152_543631_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-17_hufa7c092d7c9aa209a34bd5ca12e3d152_543631_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-18_huff631f4c20736869f4fb89d6e13c0c71_545095_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-18_huff631f4c20736869f4fb89d6e13c0c71_545095_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Al final de la instalación se solicita reiniciar para realizar el primer arranque.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-19_hu084d7f6229b142343d723a9a8664c9f2_570056_2560x1440_fit_box_3.png" data-gallery="" title="Instalación de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-19_hu084d7f6229b142343d723a9a8664c9f2_570056_300x200_fit_box_3.png" width="267" height="200" alt="Instalación de Ubuntu" title="Instalación de Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-20_hu0c56d68ee1f731dc74618ca35c91b523_18266_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/instalacion-ubuntu-20_hu0c56d68ee1f731dc74618ca35c91b523_18266_300x200_fit_box_3.png" width="267" height="200"  class="lozad "></a></p>
-<figcaption>Instalación de Ubuntu</figcaption>
-</figure>
-</div>
-<h3 id="primer-inicio-de-sesión-ubuntu">Primer inicio de sesión Ubuntu</h3>
-<p>Si se ha elegido cifrar el contenido del dispositivo de almacenamiento al realizar la instalación en el inicio del sistema Ubuntu pregunta por la contraseña para descifrar su contenido. Por seguridad se solicita el usuario y contraseña introducir en los pasos de la instalación.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-01_hu83ba0553d32bfef8f287514a9f51ac52_16759_2560x1440_fit_box_3.png" data-gallery="" title="Ubuntu 20.04"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-01_hu83ba0553d32bfef8f287514a9f51ac52_16759_300x200_fit_box_3.png" width="267" height="200" alt="Ubuntu 20.04" title="Ubuntu 20.04"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-02_hu455d48947f641dde79fe0e60cc6a4df7_17472_2560x1440_fit_box_3.png" data-gallery=""><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-02_hu455d48947f641dde79fe0e60cc6a4df7_17472_300x200_fit_box_3.png" width="267" height="200"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-03_hu1516d9e7cb3580cf7f58f2a80fa637e8_21310_2560x1440_fit_box_3.png" data-gallery="" title="Ubuntu 20.04 con entorno de escritorio Unity"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-03_hu1516d9e7cb3580cf7f58f2a80fa637e8_21310_300x200_fit_box_3.png" width="267" height="200" alt="Ubuntu 20.04 con entorno de escritorio Unity" title="Ubuntu 20.04 con entorno de escritorio Unity"  class="lozad "></a></p>
-</figure>
-</div>
-<p>Este es el aspecto del entorno de escritorio con GNOME de Ubuntu 20.04. En la parte izquierda se encuentra el lanzador de aplicaciones con varios iconos. En la parte superior izquierda está a acción actividades con la que buscar el resto de aplicaciones instaladas, el la parte superior derecha el menú del sistema desde donde se puede apagar, reiniciar el equipo o variar el volumen del sistema entre otras opciones de configuración.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-04_hu688947c873613f770b8fce072759e364_634897_2560x1440_fit_box_3.png" data-gallery="" title="Ubuntu 20.04 con entorno de escritorio GNOME"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-04_hu688947c873613f770b8fce072759e364_634897_300x200_fit_box_3.png" width="267" height="200" alt="Ubuntu 20.04 con entorno de escritorio GNOME" title="Ubuntu 20.04 con entorno de escritorio GNOME"  class="lozad "></a></p>
-<figcaption>Ubuntu 20.04 con entorno de escritorio GNOME</figcaption>
-</figure>
-</div>
-<h3 id="realizar-tareas-básicas-para-instalar-programas-obtener-actualizaciones-y-mantenimiento">Realizar tareas básicas para instalar programas, obtener actualizaciones y mantenimiento</h3>
-<p>Después de instalar Ubuntu es necesario conocer como realizar algunas tareas básicas de mantenimiento para tener actualizado el sistema, para obtener importantes actualizaciones de seguridad, correcciones de errores, nuevas funcionalidades, instalar nuevos programas y desinstalar los programas que se dejan de usar además empezar a conocer la terminal.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/">Tareas básicas después de instalar una distribución GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">Las aplicaciones del entorno de escritorio de GNOME</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">Listado de programas esenciales según categoría para GNU/Linux</a></li>
-</ul>
-<p>Ubuntu por defecto ya incorpora una buena cantidad de software preinstalado. En cualquier caso con la aplicación <em>Software de Ubuntu</em> se puede instalar más. Al cabo de un tiempo de haber instalado Ubuntu se publicarán actualizaciones del software que tengas instalado con mejoras y correcciones de seguridad que son recomendables instalarlas usando la aplicación <em>Ubuntu Software</em>. Ubuntu comprueba periódicamente si hay nuevas actualizaciones, si las hay muestra una notificación con cuales son y permite realizar la actualización a conveniencia del usuario. Una vez instaladas las actualizaciones algunas requieren reiniciar el sistema para que surtan efecto.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-software_hubdb830f2826f6688b0b8fa1e5f87f040_158219_2560x1440_fit_box_3.png" data-gallery="" title="Instalar y desinstalar software"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-software_hubdb830f2826f6688b0b8fa1e5f87f040_158219_300x200_fit_box_3.png" width="267" height="200" alt="Instalar y desinstalar software" title="Instalar y desinstalar software"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-actualizaciones_hu3b9a8ab8614b95a6f0f7f998145f0351_538937_2560x1440_fit_box_3.png" data-gallery="" title="Notificación de actualizaciones de Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/images/ubuntu-actualizaciones_hu3b9a8ab8614b95a6f0f7f998145f0351_538937_300x200_fit_box_3.png" width="267" height="200" alt="Notificación de actualizaciones de Ubuntu" title="Notificación de actualizaciones de Ubuntu"  class="lozad "></a></p>
-<figcaption>Instalar software y notificación de actualizaciones de seguridad</figcaption>
-</figure>
-</div>
-<h3 id="obtener-ayuda">Obtener ayuda</h3>
-<p>En internet hay gran cantidad de artículos en blogs o foros con ayuda que puedes encontrar con un buscador web como <a href="https://www.google.es/">Google</a> o <a href="https://duckduckgo.com/">DuckDuckGo</a>. En ellos seguramente encontrarás una respuesta que te resuelva o ayude en cualquier problema que se te presente o duda que te surja.</p>
-<p>Si has leído este artículo y te decides a dar el salto a GNU/Linux deja un comentario, me gusta leer que he ayudado a alguien y si tienes alguna duda y no encuentras una respuesta en la web pregúntame en un comentario e intentaré darle respuesta.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

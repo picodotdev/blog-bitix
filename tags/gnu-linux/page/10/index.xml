@@ -5,12 +5,79 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-28T19:00:00+02:00</updated>
+    <updated>2022-06-23T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/</id>
+        <title>Introducción y características de Docker</title>
+        <updated>2017-05-02T23:00:00+02:00</updated>
+        <published>2014-10-25T10:52:34+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los contenedores no son una tecnología nueva pero Docker ha reunido las características necesarias para hacerla sencilla y popular en Linux. Suponen un cambio en la infraestructura de las aplicaciones con algunas ventajas sobre la virtualización y la instalación de los servicios directamente en el sistema.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p><a href="https://www.docker.com/">Docker</a> es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que <a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">cambian la forma de desarrollar aplicaciones</a>. Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.</p>
+<p>Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.</p>
+<p>La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como <a href="https://openvz.org/">OpenVZ</a> también en Linux, <a href="http://www.freebsd.org/doc/handbook/jails.html">FreeBSD Jails</a> o los <a href="https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html">contenedores de Solaris</a>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_2560x1440_fit_box_3.png" data-gallery="" title="Máquinas virtuales"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/virtual-machines_hu36dbd3e9a6507dbf52b85dcf00883824_27419_300x200_fit_box_3.png" width="300" height="114" alt="Máquinas virtuales" title="Máquinas virtuales"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_2560x1440_fit_box_3.png" data-gallery="" title="Docker"><img src="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/images/docker_hu42f46de04f57b3d5bef570e2161e1676_25641_300x200_fit_box_3.png" width="300" height="110" alt="Docker" title="Docker"  class="lozad "></a></p>
+</figure>
+</div>
+<p>Docker tiene varias características interesantes. Es ligero ya que no hay virtualización aprovechándose mejor el hardware y únicamente necesitando el sistema de archivos mínimo para que funcionen los servicios. Los contenedores son autosuficientes (aunque pueden depender de otros contenedores, por ejemplo, un wordpress que necesita una base de datos mysql) no necesitando nada más que la imagen del contenedor para que funcionen los servicios que ofrece. Las imágenes de docker son portables entre diferentes plataformas el único requisito es que en el sistema huésped esté disponible docker. Es seguro, pudiendo hacer que los contenedores se comuniquen por un túnel solo disponible para ellos, los contenedores están aislados en el sistema mediante namespaces y control groups.</p>
+<p>Para los desarrolladores tiene las siguientes ventajas:</p>
+<ul>
+<li>Podemos disponer de un entorno de desarrollo (devbox) o servicio en varios minutos/horas en vez de algún día. Esto es así porque la configuración y los servicios necesarios están automatizados en la construcción de las imágenes de los contenedores mediante <a href="https://docs.docker.com/reference/builder/">Dockerfiles</a>.</li>
+<li>Al estar los servicios en contenedores no hace falta instalarlos en la máquina en la que son alojados, de forma que podemos disponer de los servicios y después eliminarlos de forma sencilla sin &ldquo;ensuciar&rdquo; el sistema huésped.</li>
+<li>Nos permite tener versiones más parecidas o iguales a las usadas en producción. Por ejemplo, en Arch Linux nos permite tener un mysql de la distribución <a href="https://www.ubuntu.com/">Ubuntu</a> usando la misma versión.</li>
+</ul>
+<p>El <a href="https://registry.hub.docker.com/">registro de contenedores de Docker</a> es una forma colaborativa de ofrecer imágenes. Hay disponibles multitud de contenedores con los servicios más populares: <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.postgresql.org/">PostgreSQL</a>, <a href="https://redis.io/">Redis</a>, <a href="https://nginx.org/">Nginx</a>, <a href="https://wordpress.org/">WordPress</a>, &hellip;</p>
+<p>Para los administradores de sistemas tiene las siguientes ventajas:</p>
+<ul>
+<li>Pueden proporcionar entornos similares o iguales a los entornos de pruebas, QA o producción independientemente de la distribución que se use.</li>
+<li>Es posible desplegar un contenedor en cualquier infraestructura Linux.</li>
+<li>La creación de los contenedores puede ponerse bajo un sistema de control de versiones.</li>
+</ul>
+<p>En la siguiente presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.</p>
+<div class="media">
+    <script async class="speakerdeck-embed" data-id="c02e6030ee52013165c72a37516b560d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+    <noscript>$TODO</noscript>
+</div>
+<p>Una vez conocidos los aspectos básicos y en que se diferencia docker de la virtualización así como el caso de uso de por ejemplo un <em>devbox</em> o disponer de entornos similares a los de producción de una aplicación, en el siguiente artículo comentaré <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">cómo instalar docker, cómo empezar a usarlo, cómo obtener imágenes de servicios y pararlos y administrarlos</a>. En la siguiente <a href="http://www.nkode.io/2014/08/24/valuable-docker-links.html">lista de enlaces sobre Docker</a> se puede encontrar mucha información reunida dispersa en la red, desde introducciones, opiniones, como usarlo, como empaquetar las aplicaciones, como monitorizar o como usarlo en microservicios.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1492036730&amp;linkId=666d0aff3a2629cd87c205370bc5ae87" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=1633430235&amp;linkId=9d344246cd59cd65a952305379c2556a" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-ansible/">Introducción a Ansible</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/integracion-entre-ansible-y-docker/">Integración entre Ansible y Docker</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2014/11/introduccion-a-bitnami/">Introducción a Bitnami</a></li>
+<li><a href="https://docs.docker.com/articles/security/">Seguridad Docker</a></li>
+<li><a href="https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html">Four ways Docker fundamentally changes application development</a></li>
+<li><a href="https://openwebinars.net/docker-que-es-sus-principales-caracteristicas/">Docker, qué es y sus principales características</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/</id>
         <title>Experiencia instalando sistema operativo a ordenador viejo</title>
@@ -36,14 +103,14 @@
 <p>Teniendo claro las características del ordenador y el uso que se le iba a dar me tocaba decidir que sistema operativo le iba a instalar. La primera opción que consideré por ser la opción que usaba el portátil de fábrica fue instalarle Windows XP (por supuesto usando una copia sin la correspondiente licencia) pero una vez instalado comenzaron los problemas para que todo funcionase correctamente, la gráfica no era detectada y la pantalla se mostraba en una resolución menor que la que ofrecía la pantalla, la conexión WiFi no funcionaba por no tener los controladores necesarios y tampoco el sonido por el mismo motivo. A pesar de haber buscado no conseguí encontrar los controladores adecuados tanto para la tarjeta gráfica como para la WiFi con lo que el sistema resultante iba a quedar menos aprovechado de lo que pudiera.</p>
 <p>Viendo que el resultado con Windows no era nada satisfactorio y que estoy convencido del uso del software libre empecé a buscar alguna distribución ligera que pudiese usar. Algunas de las que probé fueron <a href="https://www.gnewsense.org/">gNewSense</a>, luego <a href="https://trisquel.info/es">trisquel</a>, también <a href="https://www.linuxmint.com/">Mint</a> pero gNewSense usaba versiones de software algo antiguas y trisquel y Mint Xfce requería del procesador que tuviese PAE (o no lo detectaba). Al final pensé algo que antes de hacerlo me pareció descabellado, instalar <a href="https://www.archlinux.org/">Arch Linux</a>. Al ser Arch Linux una distribución rolling release y con el software siempre actualizado a las últimas versiones no sabía si iba a funcionar correctamente en un equipo antiguo. Pero sorprendentemente el CD de instalación de Arch no se me quejó por el PAE y aunque la instalación me fue lenta al tener que descargar los paquetes de internet y se descargaban a baja velocidad por algún motivo finalmente completé la instalación sin ningún problema. Después de la instalación base le instalé <a href="https://xfce.org/">Xfce</a> y como gestor de entorno de escritorio e inicio de sesión le puse <a href="https://en.wikipedia.org/wiki/SLiM">SLiM</a>. Una vez con el entorno de escritorio Xfce le instalé los programas: el navegador firefox, geary como gestor de correo, VLC para reproducir vídeos y música. Todo sin ningún problema incluso la WiFi B funcionaba, me bastó seguir lo <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration#Intel">indicado en la wiki</a> para el caso de una WiFi intel.</p>
 <p>El equipo es viejo pero con Arch Linux tiene las versiones de los últimos programas en el momento que se los instalé, al contrario de windows no tuve que buscar los controladores y no malgasté tiempo en ello aparte de no usar un copia de windows sin licencia. El equipo era para un usuario con pocos conocimientos de informática que por supuesto no ha visto ni usado linux en ningún momento, hasta el momento no he recibido ninguna queja en cuanto al uso o que le haya dado problemas. Asi que al contrario de lo que pensé al principio Arch Linux fue una distribución adecuada para lo que quería, era lo que más conocía y más documentación tenía como en el caso de instalar la WiFi. Instalar la WiFI quizá en <a href="https://www.debian.org/">Debian</a> u otra distribución también lo hubiese conseguido pero la información para estas distribuciones probablemente la hubiese obtenido en un foro y no de una forma más oficial como la wiki de Arch Linux. Más que el rolling release lo que más me gusta de Arch es su <a href="https://wiki.archlinux.org/">wiki</a> por estas cosas con las que uno puede obtener información un poco más oficial y con un poco más de seguridad de que va a funcionar que en la respuesta de un foro que además cuesta tiempo encontrarla.</p>
-<p>También puedes leer los pasos que he seguido <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">desde Windows a Arch Linux</a> con algunos motivos y características de Arch explicados más detalladamente y <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a> donde comento ya con más conocimiento porque después de 4 años sigo usando Arch Linux y no he cambiado de distribución GNU/Linux. En el siguiente <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">anexo a la guía de instalación</a> puedes encontrar los pasos que sigo para instalar Arch Linux.</p>
+<p>También puedes leer los pasos que he seguido <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">desde Windows a Arch Linux</a> con algunos motivos y características de Arch explicados más detalladamente y <a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a> donde comento ya con más conocimiento porque después de 4 años sigo usando Arch Linux y no he cambiado de distribución GNU/Linux. En el siguiente <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">anexo a la guía de instalación</a> puedes encontrar los pasos que sigo para instalar Arch Linux.</p>
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">De Windows a Arch Linux</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">Anexo a la guía de instalación de Arch Linux</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.htmlindex-amp.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
 </ul>
 </div>
 ]]>
@@ -72,7 +139,7 @@
         <![CDATA[<div class="logotypes">
 <p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="250" height="186" alt="Arch Linux" title="Arch Linux"  class=""></p>
 </div>
-<p>Ya llevo usando algo más de 4 años <a href="https://www.archlinux.org/">Arch Linux</a> de forma continuada desde que definitivamente hice el paso desde Windows según comentaba en <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">mi camino de Windows a Arch Linux</a> como sistema de mi ordenador personal. Pasé un poco de tiempo usando <a href="https://www.debian.org/">Debian</a> y evaluando <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, y <a href="https://www.opensuse.org/">openSUSE</a> pero al final la distribución que elegí fue Arch Linux.</p>
+<p>Ya llevo usando algo más de 4 años <a href="https://www.archlinux.org/">Arch Linux</a> de forma continuada desde que definitivamente hice el paso desde Windows según comentaba en <a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">mi camino de Windows a Arch Linux</a> como sistema de mi ordenador personal. Pasé un poco de tiempo usando <a href="https://www.debian.org/">Debian</a> y evaluando <a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, y <a href="https://www.opensuse.org/">openSUSE</a> pero al final la distribución que elegí fue Arch Linux.</p>
 <p>La razón de elegir Arch Linux fue que me dio muchos menos problemas configurar todos los dispositivos, por ser una <a href="https://en.wikipedia.org/wiki/Rolling_release">distribución rolling release</a> con lo que en todo momento tenía las últimas versiones de cada programa y disponía en poco tiempo las nuevas mejoras que se iban incorporando a ellos evitando a los pocos meses estar con la sensación de tener programas que han quedado superados con nuevas versiones y no tener que esperar al siguiente iteración de una nueva versión para disponer de ellas (o usar para cada programa un PPA), además tenía los programas que yo decidía y no los que los desarrolladores de la distribución preinstalaban por mi. Cualquier otra distribución linux de las que he mencionado son de gran calidad y son usadas por mucha gente, simplemente en mi caso Arch Linux se adaptaba mejor a lo que buscaba y no era yo el que me adaptaba a la distribución. También me gustaba <a href="https://wiki.archlinux.org/index.php/Arch_Linux">su filosofía</a> y su <a href="https://wiki.archlinux.org/index.php/The_Arch_Way">«Arch way»</a> de una configuración simple no oculta, los paquetes lo normal es que no lleven modificaciones sobre lo que proporcionan sus desarrolladores aparte de tenerla actualizada en el momento que decidiese.</p>
 <p>Durante este tiempo he estado tan a gusto con esta distribución que ahora incluso la uso como distribución para el ordenador con el que trabajo y nunca me ha entrado el gusanillo del «distro hopping». Alguna vez me ha dado algún problema como cargarme el sistema por actualizar GRUB mal por error mío con desenlace fatal que me obligo a reinstalarla y alguna otra vez algún fallo menor en los iconos de <a href="https://www.gnome.org/">GNOME</a>, pero al contrario de lo que pensaba inicialmente por ser Arch Linux una distribución con los paquetes en constante actualización rara vez da problemas y cuando hay alguno se encuentra en poco tiempo la solución o al menos la pregunta y poco más tarde en los <a href="https://bbs.archlinux.org/">foros de Arch Linux</a>. Si no hubiese sido por este error de GRUB que me obligó a reinstalar ahora tendría un Arch Linux que hubiese instalado hace cuatro años y durante este tiempo ha habido cambios importantes como la migración de SysVinit o las diferentes actualizaciones desde GNOME 3.0 a 3.12, el servidor de las X y otros muchos paquetes vitales del sistema. En el momento que hay que hacer alguna intervención manual al hacer una actualización se publica en la web de Arch Linux con los pasos a realizar, siguiéndolos no suele haber problemas.</p>
 <p>También es la distribución que uso para una <a href="https://www.raspberrypi.org/">Raspberry Pi</a> desde que dispongo de ella y suelo utilizar como sistema para descargar mediante torrent o para escuchar música. La Raspberry Pi es un sistema con procesador ARM a pesar de lo cual no hay diferencia alguna en la administración con al <a href="https://archlinuxarm.org/">distribución de Arch Linux para procesadores ARM</a>. Es otro punto interesante ya que Arch Linux en su versión ARM también esta disponible para multitud de otros SoC como la Raspberry Pi, la distribución es la misma y lo mismo que nos sirve para nuestro ordenador personal x86_64 nos sirve para cualquiera de estos sistemas ARM.</p>
@@ -83,10 +150,10 @@
 <div class="reference">
     Referencia:<br>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">De Windows a Arch Linux</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/">Experiencia instalando sistema operativo a ordenador viejo</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">Anexo a la guía de instalación de Arch Linux</a></li>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.htmlindex-amp.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html">Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)</a></li>
 </ul>
 </div>
 ]]>

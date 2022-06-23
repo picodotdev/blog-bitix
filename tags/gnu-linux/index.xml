@@ -5,12 +5,114 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-04-28T19:00:00+02:00</updated>
+    <updated>2022-06-23T21:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/</id>
+        <title>Los intérpretes de líneas de comandos, instalar y cambiar a otro</title>
+        <updated>2022-06-23T21:00:00+02:00</updated>
+        <published>2022-06-23T21:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>La terminal es una herramienta muy utilizada por usuarios avanzados aún habiendo sistemas operativos en los que prácticamente todo se puede realizar desde un programa con interfaz gráfica. La linea de comandos es menos amigable ya que no ofrece apenas ayuda que guíe al usuario pero cuando un usuario conoce como realizar una tarea desde la línea de comandos es mucho más rápido que usar un programa con interfaz gráfica además de otras ventajas. El intérprete de comandos es la pieza que proporciona un entorno dese el que se introducen los comandos y con el que interacciona el usuario desde la terminal con una interfaz basada en texto.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/bash.svg" width="300" height="126" alt="bash" title="bash"  class=""></p>
+</div>
+<p>El sistema operativo es una pieza fundamental de software que hace usable el hardware y proporciona una abstracción y servicios más lógicos para los programas sin que estos se tengan que preocupar de detalles de bajo nivel relativos al hardware ni específicos de cada dispositivo hardware.</p>
+<p>Una de las piezas fundamentales de un sistema operativo y la más conocida es el núcleo o <em>kernel</em>, dos núcleos con licencia de software libre son <a href="https://www.linux.com/">Linux</a> y <a href="https://www.freebsd.org/es/">FreeBSD</a> pero hay muchos otros menos conocidos como <a href="https://www.minix3.org/">Minix</a>, <a href="https://www.gnome.org/">Genode</a> o <a href="https://www.haiku-os.org/">Haiku</a> y distribuciones derivadas de estos. Sistemas operativos con núcleo privativos son el de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de los sistemas de escritorio de <a href="https://www.microsoft.com/">Microsoft</a> y comerciales son el de <a href="https://www.apple.com/macos/">macOS</a> de los ordenadores de <a href="https://www.apple.com/">Apple</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">Guía de instalación y uso básico de FreeBSD</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></li>
+</ul>
+<p>Sin embargo, el núcleo sólo es una parte de lo que se considera un sistema operativo ya que aunque tiene muchas funcionalidades un usuario no interacciona directamente con el sistema operativo sino que lo hace a través de una colección de herramientas y programas de línea de comandos, entre ellas se encuentra en un intérprete de comandos. Generalmente en las distribuciones Linux la colección de herramientas son las proporcionadas por <a href="https://www.gnu.org/">el proyecto GNU</a> que es un proyecto distinto al núcleo de Linux, y por eso muchas veces nos referimos a Linux por el término GNU/Linux cuando se desea dar crédito a ambos proyectos.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="qué-hace-un-intérprete-de-comandos">Qué hace un intérprete de comandos</h3>
+<p>Un intérprete de comandos es una interfaz basada en texto que permite introducir los comandos a ejecutar compuestos por el nombre del programa, opciones de invocación y sus argumentos. El intérprete de comandos también permite establecer variables de entorno para almacenar valores e incluirlos en el comando así como redirigir la salida a archivos y crear tuberías para redirigir la salida de un programa a la entrada de otros que permiten realizar una funcionalidad compleja a partir de comandos más simples.</p>
+<p>Los sistemas operativos actuales tienen una interfaz gráfica pero todos proporcionan una terminal virtual en la que interactuar con el sistema operativo mediante comandos y texto, se ejecutan desde una terminal virtual, cada entorno de escritorio también proporciona su propia entre su colección de aplicaciones gráficas integradas. En <a href="https://www.gnome.org/">GNOME</a> es <a href="https://help.gnome.org/users/gnome-terminal/stable/">Terminal</a> y <a href="https://apps.gnome.org/es/app/org.gnome.Console/">Console</a> y en <a href="https://www.kde.org/">KDE</a> es <a href="https://konsole.kde.org/">Konsole</a>.</p>
+<p>Aún con las interfaces gráficas las terminales y la línea de comandos siguen siendo muy utilizadas por su posibilidad de automatización y conociendo el comando es más sencillo que utilizar una herramienta gráfica. Además, para la administración de servidores siguen siendo la interfaz de administración principal incluso antes que las interfaces gráficas.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_2560x1440_fit_box_3.png" data-gallery="" title="Emulador de terminal de GNOME Terminal"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/gnome-terminal_huaca422df68cfe9fbd3622448370807d0_17492_650x450_fit_box_3.png" width="615" height="450" alt="Emulador de terminal de GNOME Terminal" title="Emulador de terminal de GNOME Terminal"  class="lozad "></a></p>
+<figcaption>Emulador de terminal de GNOME Terminal</figcaption>
+</figure>
+</div>
+<h3 id="funcionalidades-del-intérprete-de-comandos">Funcionalidades del intérprete de comandos</h3>
+<p>Las funcionalidades de introducir comandos y ejecutarlos, variables de entorno, redirecciones y tuberías son funcionalidades básicas que los intérpretes de comandos actuales poseen. Algunas funcionalidades no están presentes en todos los intérprete de comandos y otras en función del inteŕprete funciona de forma ligeramente diferente o con algún añadido adicional.</p>
+<p>Una funcionalidad que cambia en función del intérprete es qué ocurre cuando se pulsa la tecla tabulador. Al pulsar esta tecla los intérpretes suelen proporcionar autocompletado para el nombre del directorio o nombre de comando pero algunos son capaces de hacerlo incluso de forma recursiva en múltiples directorios o aplicando correcciones de fallos de tipografía aplicando la corrección cuando se introduce una letra mal.</p>
+<p>Otra variación en función del intérprete es el tipo de expansión comodín o <em>wildcard expansion</em> que se soporta. Las expansiones comodín son una versión simplificada de las expresiones regulares que permiten encontrar múltiples coincidencias, estos es muy utilizado por ejemplo para seleccionar múltiples archivos o cierto tipo de archivos como todos los archivos de música o vídeo con <em>*.mp3</em> o <em>*.mp4</em> respectivamente, estas expresiones con un comodín del caracter asterisco seleccionan todos los archivos con cualquier nombre y de extensión <em>mp3</em> o <em>mp4</em>.</p>
+<p>Otra funcionalidad es la posibilidad de personalizar el aspecto del símbolo del sistema o <em>prompt</em> para que muestre la información que se desee en texto y con los colores deseados. Los símbolos del sistema por defecto incluyen el directorio de trabajo actual, el nombre de usuario y el nombre del sistema en el que se está trabajando.</p>
+<h3 id="intérpretes-de-comandos">Intérpretes de comandos</h3>
+<p>Dado que el intérprete de comandos es simplemente un programa más hay varios disponibles con ligeras variaciones sobre las funcionalidades básicas pero suficientes para que algunos desarrolladores según sus ideales hayan creado varios.</p>
+<p>En las distribuciones GNU/Linux generalmente el intérprete de comandos preinstalado por defecto es <a href="https://es.wikipedia.org/wiki/Bash">bash</a> y otro popular es <a href="https://zsh.sourceforge.net/">zsh</a> que se ha convertido en el por defecto en el sistema operativo macOS en sustitución de bash. Otros intérprete de comandos menos conocidos son <a href="https://fishshell.com/">fish</a> y <a href="https://wiki.archlinux.org/index.php/Dash">dash</a> pero no son los únicos.</p>
+<p>Las funcionalidades principales de todo intérprete de comandos las soportan todos, casi la mayor diferencia entre ellos aparte de su popularidad es su nivel de personalización y en menor medida algunas mejoras y rendimiento pero que estas dos últimas no suelen ser determinantes para cambiar de uno a otro.</p>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Command-line_shell">Command-line shell</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">Guía básica del intérprete de comandos Bash</a></li>
+<li><a href="https://apple.stackexchange.com/questions/361870/what-are-the-practical-differences-between-bash-and-zsh">What are the practical differences between Bash and Zsh?</a></li>
+<li><a href="https://hands-on.cloud/which-terminal-is-better-bash-vs-zsh/#h-features-comparison">Which terminal is better: Bash vs Zsh</a></li>
+<li><a href="https://wiki.archlinux.org/title/Bash">Bash Arc Linux Wiki</a></li>
+<li><a href="https://wiki.archlinux.org/title/Zsh">Zsh Arc Linux Wiki</a></li>
+<li><a href="https://www.gnu.org/software/bash/manual/bash.html">Bash Manual</a></li>
+<li><a href="https://zsh.sourceforge.io/Doc/Release/zsh_toc.html">Zsh Manual</a></li>
+</ul>
+<h3 id="como-cambiar-el-intérprete-de-comandos-del-usuario">Como cambiar el intérprete de comandos del usuario</h3>
+<p>Independientemente del intérprete de comandos que preinstale la distribución GNU/Linux este se puede cambiar instalando el paquete de otro intérprete y ejecutándolo como un comando más. También es posible cambiar el intérprete por defecto al abrir una terminal.</p>
+<p>Este comando permiten instalar el intérprete de comandos zsh.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S zsh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman-install-zsh.sh</span>
+    </div>
+</div>
+<p>Los siguientes permiten listar los intérpretes de comandos instalados en el sistema y cambiar el por defecto del usuario a otro.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chsh -l&#10;</span></span><span class="line"><span class="cl">$ chsh -s <span class="o">[</span>path-to-shell<span class="o">]</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>chsh.sh</span>
+    </div>
+</div>
+<p>El aspecto por defecto de los <em>prompts</em> de bash y zsh son los siguientes.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos bash"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/bash_hud1ce7affd186b95d0d02b737e662d43b_16005_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos bash" title="Intérprete de comandos bash"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_2560x1440_fit_box_3.png" data-gallery="" title="Intérprete de comandos zsh"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_300x200_fit_box_3.png" width="273" height="200" alt="Intérprete de comandos zsh" title="Intérprete de comandos zsh"  class="lozad "></a></p>
+<figcaption>Intérprete de comandos bash y zsh</figcaption>
+</figure>
+</div>
+<h3 id="configurar-el-_prompt_-del-símbolo-del-sistema">Configurar el <em>prompt</em> del símbolo del sistema</h3>
+<p>Uno de los motivos de cambiar de un intérprete de comandos por otro es cambiar el aspecto del símbolo del sistema. bash con la variable de entorno <em>PS1</em> permite personalizar en cierta medida <em>prompt</em> y si se usa el sistema de control de versiones Git este ofrece una utilidad para que el símbolo del sistema indique el estado de cambios cuando el directorio de trabajo actual es un repositorio de Git. Sin embargo, estas personalizaciones son limitadas y específicas de cada <em>shell</em>.</p>
+<p>En mi caso este es el aspecto que utilizo con bash, en el que he cambiado los colores y usado la utilidad para mostrar información del repositorio Git. La segunda image es la potente personalización e independiente del <em>shell</em> ofrecida por <a href="https://starship.rs/">Starship</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</a></li>
+<li><em>Personalizar el símbolo del sistema con Starship</em></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_2560x1440_fit_box_3.png" data-gallery="" title="Terminal de bash personalizada"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/bash-custom_hu45818392a957f07fad0e4fd34f7b01f7_15742_300x200_fit_box_3.png" width="272" height="200" alt="Terminal de bash personalizada" title="Terminal de bash personalizada"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_2560x1440_fit_box_3.png" data-gallery="" title="Terminal personalizada con Starship"><img src="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-lineas-de-comandos-instalar-y-cambiar-a-otro/images/starship_hu8f9add5d06d60afa99989e628b6a2ea9_27834_300x200_fit_box_3.png" width="272" height="200" alt="Terminal personalizada con Starship" title="Terminal personalizada con Starship"  class="lozad "></a></p>
+<figcaption>Terminal de bash personalizada</figcaption>
+</figure>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/</id>
         <title>Cómo usar el comando git bisect para descubrir el primer commit con un error</title>
@@ -787,7 +889,7 @@
 <p>En el caso de Windows la razón de muchos usuarios de usarlo es sencillamente por ser el sistema operativo preinstalado en la computadora al comprarla, en el caso de los ordenadores mac por ser la única opción ofrecida por Apple para sus equipos. GNU/Linux domina el software de servidor por su flexibilidad y de los <em>smartphones</em> con <a href="https://www.android.com/">Android</a>, con el paso de los años GNU/Linux se ha convertido también en una alternativa perfectamente viable para la mayoría de usuarios tambien en el escritorio que simplemente necesitan un uso ofimático como para los más avanzados de desarrollo y de forma profesional. Hace varios lustros faltaba soporte hardware, era difícil de instalar o requería acceder a la línea de comandos para tareas básicas, hoy en día GNU/Linux es tán fácil de instalar como Windows y sus varios entornos de escritorio tan amigables como los de Windows o macOS.</p>
 <p>En octubre del 2021 se ha lanzado al mercado Windows 11 que equiparán los equipos comerciales vendidos a partir de este momento. Como cada nueva versión los requisitos mínimos son más exigentes y dejan a muchos equipos vendidos con anterioridad sin poder actualizarse a la última versión de Windows.  En Windows 11 muchos ordenadores no serán compatibles por el requerimiento del módulo TPM requerido en aras de la seguridad, por lo menos hasta que vean que mucha gente no se actualiza y se mantiene en Windows 10, Windows sufra de fragmentación y Microsoft decida relajar este u otros requerimientos.</p>
 <ul>
-<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.htmlindex-amp.html">De Windows a Arch Linux</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2010/03/de-windows-arch-linux.html">De Windows a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/08/de-arch-linux-a-arch-linux/">De Arch Linux a Arch Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/">Mi primer Mac, yo usuario de GNU/Linux</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2018/03/tu-con-mac-yo-con-mi-gnu-linux/">Tú con tu Mac, yo con mi GNU/Linux</a></li>
@@ -2253,133 +2355,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/</id>
-        <title>Herramientas de reconocimiento de texto en imágenes con OCR</title>
-        <updated>2021-04-16T16:30:00+02:00</updated>
-        <published>2021-04-16T16:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Un programa de reconocimiento de caracteres o OCR permite obtener el texto de una imagen o fotografía tomada con la cámara de un teléfono inteligente, captura de pantalla, <em>scanner</em> u otro medio. Al programa OCR se le proporciona la imagen y este genera como resultado el texto reconocido, si la imagen es de buena calidad el reconocimiento de caracteres es bastante preciso. Hay programas OCR de línea de comandos, con interfaz gráfica, en línea sin necesidad de instalar software y también es posible realizar OCR desde en un programa con un lenguaje de programación como Java.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>El problema de reconocimiento de caracteres es una tarea simple para un humano pero no es una tarea sencilla para una computadora que no posee la inteligencia y experiencia de un humano sino simplemente la que los programadores le han dotado dentro de sus posibilidades. La ventaja de usar una computadora, al igual que en muchas otras tareas posibles con una computadora, es que con el software adecuado es capaz de hacer el reconocimiento de caracteres de manera mucho más rápida y bastante efectiva aunque requiera cierto trabajo de revisión y edición posterior del texto obtenido. La <a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">conversión de texto a voz natural</a> es otra tarea simple para un humano pero difícil para una computadora si el resultado deseado ha de ser natural o difícilmente indistinguible de la entonación de un humana.</p>
-<p>El texto de una imagen no es extraíble de forma directa ya que por el formato de las imágenes el texto es visiblemente únicamente por la disposición de los pixeles. Para extraer el texto es necesario aplicar un algoritmo que utilizando varias heurísticas es capaz de reconocer el texto de la imagen, el software de reconocimiento de caracteres se le denomina <em>Optical Character Recognition</em> o OCR.</p>
-<p>El reconocimiento de caracteres en una imagen es útil y necesario cuando el texto está insertado en una imagen o fotografía, por ejemplo cuando se toma una fotografía de un coche con su número de matrícula o cuando se toma una fotografía de una página de un libro y se quiere extraer el texto de la imagen, los teléfonos inteligentes con cámara son capaces de sustituir para usos básicos a dispositivos hardware como escáneres ópticos.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="programas-de-reconocimiento-de-caracteres-con-ocr">Programas de reconocimiento de caracteres con OCR</h3>
-<p>Para extraer el texto de una imagen es necesario un programa OCR, un programa OCR es un software especializado en reconocer patrones de caracteres en una imagen aún cuando los caracteres y texto de la imagen tiene cierta distorsión, baja calidad o defectos. Por supuesto, a mejor calidad de la imagen origen el programa OCR es capaz de ser más preciso en el reconocimiento del texto. Aunque los programas OCR no son siempre perfectos son bastante fiables con una imagen de buena calidad y son capaces de extraer el texto con un éxito cercano al cien por cien.</p>
-<p>Los usos de OCR son múltiples, como digitalización de libros, páginas de un libro, periódico, documento, reconocimiento de matrículas de vehículos o direcciones postales entre otros muchos usos.</p>
-<p>Hay programas OCR que se invocan desde la línea de comandos, programas con interfaz gráfica y herramientas en línea sin necesidad de programas adicionales.</p>
-<h4 id="reconocimiento-de-caracteres-desde-línea-de-comandos">Reconocimiento de caracteres desde línea de comandos</h4>
-<p>La ventaja de una herramienta de línea de comandos es que permite automatizar la tarea de extracción de texto de un conjunto de imágenes, o también permite hacer la tarea más rápido sin necesidad de usar de forma interactiva con una aplicación de interfaz gráfica.</p>
-<p>En el sistema operativo <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> una herramienta de OCR es <a href="https://github.com/tesseract-ocr/tesseract">tesseract</a>. Basta con instalar el paquete de distribución para usarlo, en este caso también es posible instalar un diccionario con las palabras del idioma para un mejor reconocimiento del texto.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S tesseract tesseract-data-eng tesseract-data-spa&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>pacman-install.sh</span>
-    </div>
-</div>
-<p>Su uso desde la línea de comandos es el siguiente, se ha de proporcionar la imagen origen y el identificador del idioma en su código de tres letras. El comando no perite especificar un rectángulo de la imagen donde se desea reconocer el texto con lo que es necesario recorgar la imagen al área deseada con una herramienta de manipulación de imágenes como <a href="https://www.gimp.org/">GIMP</a>. El resultado se genera en un archivo de nombre <em>output.txt</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tesseract image.jpg output -l spa&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>tesseract.sh</span>
-    </div>
-</div>
-<p>Para el ejemplo he usado la siguiente imagen tomada con la cámara de fotos del móvil a partir de una página de un libro electrónico. El mismo caso es posible aplicarlo a la fotografía tomada de un periódico o de un documento puesto en una pared, lo importante es que que la imagen tenga la mejor calidad posible en cuanto a definición de caracteres, si es una fotografía que esté bien enfocada y sin brillos para que todo el texto sea reconocible. El reconocimiento del texto se realiza con efectividad mientras los caracteres tengan el formato tipográfico impreso en vez de escritura realizada a mano. Aún teniendo la imagen una leve rotación el texto se sigue reconociendo.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-1_huf50b1b388f7ef31aacae5ba86c026a4e_1190912_2560x1440_fit_q90_box.jpg" data-gallery="" title="Imagen original con texto"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-1_huf50b1b388f7ef31aacae5ba86c026a4e_1190912_300x250_fit_q90_box.jpg" width="179" height="250" alt="Imagen original con texto" title="Imagen original con texto"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_2560x1440_fit_q90_box.jpg" data-gallery="" title="Imagen rotada con texto horizontal"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-2_hu3673d89bfe730e92bf67a0c97d5ad7b7_1128608_300x250_fit_q90_box.jpg" width="181" height="250" alt="Imagen rotada con texto horizontal" title="Imagen rotada con texto horizontal"  class="lozad "></a></p>
-<figcaption>Imagen original y rotada con texto horizontal</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-3_hu57982401b3b19b54a02579dc8d1c81d4_549098_2560x1440_fit_q90_box.jpg" data-gallery="" title="Imagen recortada al área deseada"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/image-3_hu57982401b3b19b54a02579dc8d1c81d4_549098_650x450_fit_q90_box.jpg" width="325" height="450" alt="Imagen recortada al área deseada" title="Imagen recortada al área deseada"  class="lozad "></a></p>
-<figcaption>Imagen recortada al área deseada</figcaption>
-</figure>
-</div>
-<p>El texto es reconocido con bastante efectividad, el formato no es completamente fiel al original y algunos signos de puntuación pequeños no son reconocidos, sin embargo si la tarea es extrael el texto de un soporte la herramienta es bastante efectiva aunque requiera un revisión y edición posterior.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Pasaron por debajo de un arco e Igor se puso a abrir una&#10;</span></span><span class="line"><span class="cl">puerta que tenía muchas más tachuelas de lo que era respetable.&#10;</span></span><span class="line"><span class="cl">Así llegaron a un pasillo.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">—¿Estás segura de que quieres venir? —le preguntó Vimes a&#10;</span></span><span class="line"><span class="cl">Jovial—. Es una vampira.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">—Los vampiros no me preocupan, señor.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">—Qué suerte tienes. —Vimes miró a Pelele, que estaba en&#10;</span></span><span class="line"><span class="cl">silencio. El hombre parecía agobiado—. Dile a nuestro amigo&#10;</span></span><span class="line"><span class="cl">aquí presente que no lo necesitamos y que puede esperarnos en&#10;</span></span><span class="line"><span class="cl">el carruaje, el cabrón con suerte —dijo—. Pero no traduzcas eso&#10;</span></span><span class="line"><span class="cl">último.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Igor abrió una puerta interior mientras Pelele se alejaba casi&#10;</span></span><span class="line"><span class="cl">corriendo por el pasillo.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">—Zu eccelentízima eccelencia...&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">—Ah, sir Samuel —dijo lady Margolotta—. Entre, por favor.&#10;</span></span><span class="line"><span class="cl">Sé que no le gusta ser una excelencia. Esto se le hace muy&#10;</span></span><span class="line"><span class="cl">pesado, ¿verdad? Pero se tiene que hacer, ¿no?&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Aquello no era lo que él había esperado. En teoría los&#10;</span></span><span class="line"><span class="cl">vampiros no llevaban perlas, ni jerséis de color rosa. Y en el&#10;</span></span><span class="line"><span class="cl">mundo de Vimes tampoco llevaban zapatos cómodos y sin tacón.&#10;</span></span><span class="line"><span class="cl">Ni tenían una sala de estar en la que hasta el último mueble&#10;</span></span><span class="line"><span class="cl">estaba tapizado con tela de chintz.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Lady Margolotta parecía la típica madre, aunque tal vez la&#10;</span></span><span class="line"><span class="cl">típica madre de alguien que hubiera tenido una educación cara y&#10;</span></span><span class="line"><span class="cl">un poni llamado Saltitos. Se movía como alguien muy&#10;</span></span><span class="line"><span class="cl">acostumbrado a su propio cuerpo, y en general tenía un aspecto&#10;</span></span><span class="line"><span class="cl">que Vimes había oído describir como de «mujer de cierta edad».&#10;</span></span><span class="line"><span class="cl">Nunca había estado muy seguro de qué edad era aquella.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">Pero... había ciertos detalles raros. Lady Margolotta llevaba&#10;</span></span><span class="line"><span class="cl">murciélagos bordados en el jersey de color rosa, y el dibujo del&#10;</span></span><span class="line"><span class="cl">chintz de los muebles se parecía un poco a... murciélagos. El&#10;</span></span><span class="line"><span class="cl">perrito con un lazo alrededor del cuello que había tumbado y&#10;</span></span><span class="line"><span class="cl">encogido sobre un cojín tenía más aspecto de rata que de perro.&#10;</span></span><span class="line"><span class="cl">Vimes no estaba seguro de que esto último fuera raro, sin&#10;</span></span><span class="line"><span class="cl">embbrgo ya que los perros de aquella naturaleza siempre solían&#10;</span></span><span class="line"><span class="cl"></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>output.txt</span>
-    </div>
-</div>
-<h4 id="reconocimiento-de-texto-con-un-programa-con-interfaz-gráfica">Reconocimiento de texto con un programa con interfaz gráfica</h4>
-<p>Para usos esporádicos, realizar de forma más intuitiva o con alguna funcionalidad adicional también hay disponibles programas con interfaz gráfica.</p>
-<p>Una herramienta con interfaz gráfica en GNU/Linux es <a href="https://github.com/manisandro/gImageReader">gImageReader</a>. Es un programa que utiliza el reconocimiento de caracteres de <em>tesseract</em> que como funcionalidad adicional permite seleccionar el área o áreas de la imagen de las que se desea reconocer el texto.</p>
-<p>El reconocimiento de texto se realiza de forma rápida y se proporciona en forma de texto que se puede copiar y pegar en otro programa o documento. Es posible seleccionar las diferentes áreas de la imagen en las que realizar el reconocimiento de texto. También es posible realizar cierta edición en la imagen para rotarla y que las líneas de texto estén lo más horizontales posible, también es posible instalar un diccionario del idioma del texto para en las palabras en las que haya errores de reconocimiento utilizando un diccionario sean corregidos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-1_hu3bcdbab8fb805b488c42952b17312ea1_1168581_2560x1440_fit_box_3.png" data-gallery="" title="Programa con interfaz gráfica para OCR en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-1_hu3bcdbab8fb805b488c42952b17312ea1_1168581_650x450_fit_box_3.png" width="561" height="450" alt="Programa con interfaz gráfica para OCR en GNU/Linux" title="Programa con interfaz gráfica para OCR en GNU/Linux"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-2_hu9a1a7e9b8625fc708b4bf329fd7084fa_1289849_2560x1440_fit_box_3.png" data-gallery="" title="Programa con interfaz gráfica para OCR en GNU/Linux"><img src="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/images/gimagereader-2_hu9a1a7e9b8625fc708b4bf329fd7084fa_1289849_650x450_fit_box_3.png" width="561" height="450" alt="Programa con interfaz gráfica para OCR en GNU/Linux" title="Programa con interfaz gráfica para OCR en GNU/Linux"  class="lozad "></a></p>
-<figcaption>Programa con interfaz gráfica para OCR en GNU/Linux</figcaption>
-</figure>
-</div>
-<h4 id="herramientas-en-línea-de-reconocimiento-de-texto-sin-instalar-software">Herramientas en línea de reconocimiento de texto sin instalar software</h4>
-<p>También hay disponibles herramientas en internet que proporcionan la funcionalidad de reconocimiento de texto proporcionando la imagen de la que se quiere reconocer el texto. Por privacidad y seguridad, la imagen proporcionada a estas herramientas en línea no ha de contener información personal o con información privada importante es más conveniente instalar la herramienta de línea de comandos o con interfaz gráfica anteriores.</p>
-<p>Dos herramientas en línea de OCR que aceptan diferentes formatos de imagen son:</p>
-<ul>
-<li><a href="https://www.newocr.com/">Free Online OCR </a></li>
-<li><a href="https://onlineocr.org/">Online OCR</a>.</li>
-</ul>
-<h3 id="ocr-con-java">OCR con Java</h3>
-<p>Para automatizar el reconocimiento de caracteres en un programa propio hay una librería que permite invocar la funcionalidad de <em>tesseract</em> desde un programa implementado con el lenguaje de programación Java.</p>
-<p>La librería requiere instalar el paquete de <em>tesseract</em> en el sistema o en <a href="https://www.microsoft.com/es-es/windows/">Windows</a> extraer y cargar su librería <em>dll</em> incluída en el propio archivo <em>jar</em> de la librería. También para mayor efectividad requiere descargar los <a href="https://github.com/tesseract-ocr/tessdata_best">modelos entrenados para mayor efectividad</a> o los <a href="https://github.com/tesseract-ocr/tessdata_fast">modelos para mayor rapided</a> según el idioma para los caracteres del texto.</p>
-<p>Por defecto, la librería procesa la imagen entera, sin embargo al igual que en la aplicación con interfaz gráfica es posible aplicar el reconocimiento de texto a un área especifica de la imagen usando un objeto <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Rectangle.html">java.awt.Rectangle</a> al invocar el método sobrecargado <em>doOCR</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javatesseract</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.awt.*</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">net.sourceforge.tess4j.Tesseract</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Tesseract</span> <span class="n">tesseract</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Tesseract</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tesseract</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">&#34;spa&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tesseract</span><span class="o">.</span><span class="na">setDatapath</span><span class="o">(</span><span class="s">&#34;src/main/resources/tesseract&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tesseract</span><span class="o">.</span><span class="na">setOcrEngineMode</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">BufferedImage</span> <span class="n">image</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getResourceAsStream</span><span class="o">(</span><span class="s">&#34;/image.jpg&#34;</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">tesseract</span><span class="o">.</span><span class="na">doOCR</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="o">(</span><span class="n">275</span><span class="o">,</span> <span class="n">375</span><span class="o">,</span> <span class="n">1287</span> <span class="o">-</span> <span class="n">275</span><span class="o">,</span> <span class="n">1796</span> <span class="o">-</span> <span class="n">375</span><span class="o">));</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Main.java</span>
-    </div>
-</div>
-<p>En el archivo de construcción del programa se ha de añadir la dependencia sobre la librería Java.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;application&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;net.sourceforge.tess4j:tess4j:4.5.4&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">application</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.javatesseract.Main&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build.gradle</span>
-    </div>
-</div>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaTesseract">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.howtogeek.com/682389/how-to-do-ocr-from-the-linux-command-line-using-tesseract/">How to Do OCR from the Linux Command Line Using Tesseract</a></li>
-<li><a href="https://wiki.gnome.org/action/show/Apps/OCRFeeder?action=show&amp;redirect=OCRFeeder">OCRFeeder</a></li>
-<li><a href="https://www.gnu.org/software/ocrad/">Ocrad - The GNU OCR</a></li>
-<li><a href="https://www.archlinux.org/packages/community/x86_64/gocr/">GOCR: open-source character recognition</a></li>
-<li><a href="https://www.javacodegeeks.com/2020/08/ocr-in-java-with-tess4j.html">OCR in Java with Tess4J</a></li>
-<li><a href="https://www.baeldung.com/java-ocr-tesseract">Optical Character Recognition with Tesseract</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
