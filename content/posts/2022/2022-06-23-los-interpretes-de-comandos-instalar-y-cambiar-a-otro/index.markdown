@@ -64,7 +64,7 @@ En las distribuciones GNU/Linux generalmente el intérprete de comandos preinsta
 Las funcionalidades principales de todo intérprete de comandos las soportan todos, casi la mayor diferencia entre ellos aparte de su popularidad es su nivel de personalización y en menor medida algunas mejoras y rendimiento pero que estas dos últimas no suelen ser determinantes para cambiar de uno a otro.
 
 * [Command-line shell](https://wiki.archlinux.org/title/Command-line_shell)
-* [Guía básica del intérprete de comandos Bash](https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/)
+* [Guía básica del intérprete de comandos Bash][blogbitix-158]
 * [What are the practical differences between Bash and Zsh?](https://apple.stackexchange.com/questions/361870/what-are-the-practical-differences-between-bash-and-zsh)
 * [Which terminal is better: Bash vs Zsh](https://hands-on.cloud/which-terminal-is-better-bash-vs-zsh/#h-features-comparison)
 * [Bash Arc Linux Wiki](https://wiki.archlinux.org/title/Bash)
@@ -100,7 +100,7 @@ En mi caso este es el aspecto que utilizo con bash, en el que he cambiado los co
 
 * [Personalizar el prompt del sistema del intérprete de comandos Bash][blogbitix-316]
 * [Prompt de la terminal personalizado en carpetas de git con el intérprete Bash][blogbitix-312]
-* _Personalizar el símbolo del sistema con Starship_
+* [Personalizar el símbolo del sistema de la línea de comandos con Starship][blogbitix-640]
 
 {{< image
     gallery="true"

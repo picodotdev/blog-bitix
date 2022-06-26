@@ -1,0 +1,61 @@
+format = """
+[ ](bg:#000000)\
+$username\
+$hostname\
+[ ](bg:#000000 fg:#000000)\
+[](bg:#DA627D fg:#000000)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#86BBD8)\
+$java\
+[](fg:#86BBD8 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#000000)\
+[ ](fg:white bg:#000000)\
+"""
+
+add_newline = false
+
+[username]
+show_always = true
+style_user = "blue bold"
+style_root = "red bold"
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+style="purple bold"
+format = '[@](bg:#000000 fg:white)[$hostname]($style)'
+
+[directory]
+style = "bg:#DA627D fg:white"
+format = "[ $path ]($style)"
+truncation_length = 1
+truncation_symbol = ""
+
+[directory.substitutions]
+"Documentos" = ""
+"Descargas" = ""
+"Música" = ""
+"Imágenes" = ""
+
+[docker_context]
+symbol = ""
+style = "bg:#06969A fg:white"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+
+[git_branch]
+symbol = ""
+style = "bg:#FCA17D fg:white"
+format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
+
+[git_status]
+style = "bg:#FCA17D fg:white bold"
+format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+
+[java]
+symbol = "J"
+style = "bg:#86BBD8 fg:white bold"
+format = '[ $symbol ]($style)'
