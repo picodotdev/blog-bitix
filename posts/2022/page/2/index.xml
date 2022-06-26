@@ -5,12 +5,75 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/posts/2022/</id>
-    <updated>2022-06-23T21:00:00+02:00</updated>
+    <updated>2022-06-26T04:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/</id>
+        <title>Detectar errores y comprobar la sintaxis de los scripts de Bash</title>
+        <updated>2022-03-24T22:00:00+01:00</updated>
+        <published>2022-03-24T22:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>El lenguaje de <em>scripting</em> Bash permite crear sencillos y no tan sencillos <em>scripts</em> para automatizar tareas del sistema o funciones. Dado que un <em>script</em> de Bash se interpreta no se compila un error no se detecta hasta llegar a la línea con el error que puede ser en la mitad del <em>script</em> dejando la tarea sin finalizar correctamente. Para evitar errores antes de la ejecución del <em>script</em> Bash ofrece varias opciones.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>A pesar de los lenguajes interpretados como <a href="https://www.python.org/">Python</a> o <a href="https://www.groovy-lang.org/">Groovy</a>, los <em>scripts</em> de <a href="https://es.wikipedia.org/wiki/Bash">Bash</a> siguen siendo muy útiles e incluso más adecuados como herramienta en algunas tareas. Python y Groovy son lenguajes de programación de propósito general capaces de realizar tareas muy complejas al mismo tiempo que su código sigue siendo mantenible y legible. Ambos lenguajes son interpretados por lo que no requieren realizar un paso previo de compilación que hacen fácil tener un <em>script</em> sencillo en poco tiempo pero que suponen un problema al realizar modificaciones por introducir errores de compilación que no se manifiestan hasta llegar a la línea de código errónea.</p>
+<p>Bash es un intérprete de comandos que permite ejecutar <em>scripts</em>, Bash está orientado al propósito de ejecutar comandos del sistema, obtener sus códigos de retorno, la salida de los comandos, y permitir ciertas expresiones que aunque no llegan a la capacidad de los lenguajes de propósito general permite realizar bucles, condicionales, crear funciones con argumentos y tener variables.</p>
+<p>Un <em>script</em> de Bash grande es un problema ya que al ser interpretado también ocurre que hasta no se ejecuta la línea del <em>script</em> se manifieste el error. Si la tarea se queda a medias y no termina correctamente sobretodo cuando hay acciones que realizan modificaciones dejan el sistema en un estado inconsistente que no permiten reejecutar el <em>script</em> una vez corregido su error.</p>
+<p>Bash ofrece varias opciones para capturar algunos de los errores en la ejecución de los <em>scripts</em>. Algunas de estas opciones las he utilizado en el <a href="https://github.com/picodotdev/alis/"><em>script</em> de instalación de Arch Linux</a> que está basado en Bash. El <em>script</em> tiene un tamaño de unas 3K+ líneas de código es fácil introducir un error, ya que no tengo tiempo para probar y menos justo el caso en el que se produce el error por la cantidad de opciones posibles que permite de configuración.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="opciones-para-detectar-errores">Opciones para detectar errores</h3>
+<p>Bash permite establecer varias opciones de ejecución. La opción <em>-e</em> permite detener el <em>script</em> en cuanto un comando se ejecuta y devuelve un código de error distinto de cero que como convención indica que el comando se ejecutó con algún error, un valor distinto de cero significa un código de error o código de estado que tiene un significado que indica el motivo. Otra opción, con <em>-u</em> permite detener el <em>script</em> cuando una variable de entorno intenta evaluar su valor y la variable aún no está definida, continuar sin el valor adecuado supone probablemente que el <em>script</em> realiza acciones incorrectas.</p>
+<p>Por defecto al ejecutar un <em>script</em> este solo genera como resultado la salida de los comandos que ejecuta, para depurar los <em>scripts</em> o ver que comandó están ejecutando la opción <em>-x trace</em> emite el comando ejecutado que permite ver el valor de los argumentos del comando y ver qué valores han tomado los argumentos de las variables de ese comando.</p>
+<h3 id="opciones-de-bash-para-comprobar-un-_script_">Opciones de Bash para comprobar un <em>script</em></h3>
+<p>Otra forma de probar un <em>script</em> es ejecutar las líneas del <em>script</em> pero sin ejecutar los comandos de esas líneas. La opción <em>-n</em> permite ejecutar un <em>script</em> sin ejecutar los comandos. Esto tiene la parte buena de que los comandos no se ejecutan con las posibles acciones de modificación. Para algunos <em>scripts</em> esto es una forma de probarlos con ciertas garantías de que funciona, para los complejos no es suficiente.</p>
+<p>Dado que la opción <em>-n</em> no ejecuta los comandos tampoco se obtienen los valores correctos de modo que la línea de ejecución seguramente no sea la misma en el caso de haber sentencias condicionales, bucles o llamadas a funciones. En realidad, lo ideal para probar un <em>script</em> es establecer la opción <em>-n</em> solo para aquellos comandos que realizan acciones de modificación, los comandos que realizan acciones para obtener datos al no realizar modificaciones y ser inocuos se pueden ejecutar sin nin problema. De este modo, desactivando la ejecución únicamente de los comandos de modificación es posible probar una mayor parte del <em>script</em>.</p>
+<p>La opción se puede activar en la ejecución del <em>script</em> dentro del <em>script</em> cambiando el valor de la opción para desactivar la ejecución de los comandos con <em>set -n</em> o volver a activar la ejecución de los comandos <em>set +n</em>. En este ejemplo el comando que emite el se ejecuta y su salida en la consola pero el comando <em>ls</em> no se ejecuta, ni siquiera sale en las trazas que genera <em>-x xtrace</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash&#10;</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -eu&#10;</span></span><span class="line"><span class="cl"><span class="nb">set</span> -x xtrace&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">pwd</span>&#10;</span></span><span class="line"><span class="cl"><span class="nb">set</span> -n&#10;</span></span><span class="line"><span class="cl">ls&#10;</span></span><span class="line"><span class="cl"><span class="nb">set</span> +n</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>test.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">+ pwd&#10;</span></span><span class="line"><span class="cl">/home/picodotdev/Descargas/Backup&#10;</span></span><span class="line"><span class="cl">+ set -n</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>test.out</span>
+    </div>
+</div>
+<h3 id="programa-para-validar-la-sintaxis-de-un-_script_-de-bash">Programa para validar la sintaxis de un <em>script</em> de Bash</h3>
+<p>Las opciones anteriores permiten validar los <em>scripts</em> de Bash en buena parte pero tienen limitaciones y dependiendo del código del <em>script</em> quizá no generen ningún error un <em>script</em> que en realidad tiene errores. Para una validación más completa la utilidad <a href="https://www.shellcheck.net/">shellcheck</a> realiza una validación que es capaz de detectar una mayor cantidad de errores, de forma más precisa y más sencilla. <em>shellcheck</em> realiza comprobaciones adicionales que se basan en entender la sintaxis de Bash y comprobar que el <em>script</em> tiene una sintaxis válida acorde a la definición del lenguaje.</p>
+<p>Incluso en la web de <em>shellcheck</em> es posible realizar la validación sin necesidad de instalar el comando en el sistema local. Aún con el mejor esfuerzo que hace <em>shellcheck</em> por detectar errores algunos errores se deben a argumentos, opciones de comandos que son erróneas o argumentos con valores inválidos, <em>shellcheck</em> comprueba que la sintaxis del <em>script</em> sea válido pero sigue habiendo casos que en tiempo de ejecución se manifiestan como errores que en tiempo de validación no es posible detectar.</p>
+<p>Para usarlo como comando en el sistema local se usa el siguiente comando para lo que es necesario instalar el correspondiente paquete de la distribución usada, en <a href="https://www.archlinux.org/">Arch Linux</a> el paquete es <a href="https://archlinux.org/packages/community/x86_64/shellcheck/">shellcheck</a>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ shellcheck alis.sh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>shellcheck.sh</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html">Bash The Set Builtin</a></li>
+<li><a href="https://www.baeldung.com/linux/validate-bash-script">Check the Syntax of a Bash</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/03/cambiar-el-comportamiento-de-la-aplicacion-con-configuracion-anotaciones-y-condicionales-en-spring-boot/</id>
         <title>Cambiar el comportamiento de la aplicación con configuración, anotaciones y condicionales en Spring Boot</title>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El símbolo del sistema o prompt en la línea de comandos de la terminal precede a la introducción del comando a ejecutar. Los intérpretes de comandos o shells ofrecen un símbolo del sistema por defecto que muestran cierta información y con el formato que sus desarrolladores han elegido. Además de que cada intérprete de comandos tenga uno propio estos son bastante limitados en cuanto a personalización además de utilizar una configuración poco intuitiva. Starship es un personalizador del símbolo del sistema independiente del intérprete de comandos, que ofrece una gran cantidad de módulos para personalizar el símbolo del sistema según el directorio de trabajo actual y cuya configuración es muy intuitiva y está bien documentada. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Personalizar el símbolo del sistema de la línea de comandos con Starship</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/" hreflang="es" title="Personalizar el símbolo del sistema de la línea de comandos con Starship">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/index-amp.html" hreflang="es" title="Personalizar el símbolo del sistema de la línea de comandos con Starship">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Personalizar el símbolo del sistema de la línea de comandos con Starship">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_750x750_fit_box_3.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El símbolo del sistema o prompt en la línea de comandos de la terminal precede a la introducción del comando a ejecutar. Los intérpretes de comandos o shells ofrecen un símbolo del sistema por defecto que muestran cierta información y con el formato que sus desarrolladores han elegido. Además de que cada intérprete de comandos tenga uno propio estos son bastante limitados en cuanto a personalización además de utilizar una configuración poco intuitiva. Starship es un personalizador del símbolo del sistema independiente del intérprete de comandos, que ofrece una gran cantidad de módulos para personalizar el símbolo del sistema según el directorio de trabajo actual y cuya configuración es muy intuitiva y está bien documentada. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_750x750_fit_box_3.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Personalizar el símbolo del sistema de la línea de comandos con Starship">
+<meta name="twitter:description" content="El símbolo del sistema o prompt en la línea de comandos de la terminal precede a la introducción del comando a ejecutar. Los intérpretes de comandos o shells ofrecen un símbolo del sistema por defecto que muestran cierta información y con el formato que sus desarrolladores han elegido. Además de que cada intérprete de comandos tenga uno propio estos son bastante limitados en cuanto a personalización además de utilizar una configuración poco intuitiva. Starship es un personalizador del símbolo del sistema independiente del intérprete de comandos, que ofrece una gran cantidad de módulos para personalizar el símbolo del sistema según el directorio de trabajo actual y cuya configuración es muy intuitiva y está bien documentada. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/"
+    },
+    "headline": "Personalizar el símbolo del sistema de la línea de comandos con Starship",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_750x750_fit_box_3.png"
+        
+      },
+    "datePublished": "2022-06-26T04:00:00+02:00",
+    "dateModified": "2022-06-26T04:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1270",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "El símbolo del sistema o prompt en la línea de comandos de la terminal precede a la introducción del comando a ejecutar. Los intérpretes de comandos o shells ofrecen un símbolo del sistema por defecto que muestran cierta información y con el formato que sus desarrolladores han elegido. Además de que cada intérprete de comandos tenga uno propio estos son bastante limitados en cuanto a personalización además de utilizar una configuración poco intuitiva. Starship es un personalizador del símbolo del sistema independiente del intérprete de comandos, que ofrece una gran cantidad de módulos para personalizar el símbolo del sistema según el directorio de trabajo actual y cuya configuración es muy intuitiva y está bien documentada."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Personalizar el símbolo del sistema de la línea de comandos con Starship</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>26/06/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">El símbolo del sistema o <em>prompt</em> en la línea de comandos de la terminal precede a la introducción del comando a ejecutar. Los intérpretes de comandos o <em>shells</em> ofrecen un símbolo del sistema por defecto que muestran cierta información y con el formato que sus desarrolladores han elegido. Además de que cada intérprete de comandos tenga uno propio estos son bastante limitados en cuanto a personalización además de utilizar una configuración poco intuitiva. Starship es un personalizador del símbolo del sistema independiente del intérprete de comandos, que ofrece una gran cantidad de módulos para personalizar el símbolo del sistema según el directorio de trabajo actual y cuya configuración es muy intuitiva y está bien documentada.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="bash.svg" title="bash.svg" class="" loading="false"></p>
+</div>
+<p>Para los usuarios avanzados la línea de comandos sigue siendo la forma más rápida de hacer ciertas tareas y a veces es la única forma de hacerlo ya que no se dispone de la aplicación equivalente. La línea de comandos no solo no ha desaparecido con las interfaces gráficas sino que se sigue usando mucho. Con algunas aplicaciones gráficas la línea de comandos no es necesaria y hay muchas aplicaciones gráficas para multitud de necesidades pero para algunas cosas especializadas no las hay y la mejor opción es un programa de línea de comandos.</p>
+<p>Dada la utilidad de la línea de comandos esta se usa y se seguirá usando. En la línea de comandos un elemento destacado es el símbolo del sistema o <em>prompt</em> que muestra una información básica como el nombre de usuario, directorio y cierta información de estado. Hay varias utilidades para personalizar el símbolo del sistema según las preferencias del usuario.</p>
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#formas-de-personalizar-el-símbolo-del-sistema-de-la-línea-de-comandos">Formas de personalizar el símbolo del sistema de la línea de comandos</a></li>
+    <li><a href="#el-configurador-del-símbolo-del-sistema-starship">El configurador del símbolo del sistema Starship</a></li>
+    <li><a href="#configuración-de-starship">Configuración de Starship</a></li>
+  </ul>
+</nav></div> 
+<h3 id="formas-de-personalizar-el-símbolo-del-sistema-de-la-línea-de-comandos">Formas de personalizar el símbolo del sistema de la línea de comandos</h3>
+<p>La información y formato del símbolo del sistema por defecto depende del intérprete de comandos usado, <a href="https://es.wikipedia.org/wiki/Bash">bash</a> tiene un formato diferente de <a href="https://zsh.sourceforge.net/">zsh</a>. Sin utilidades adicionales tanto bash como zsh permiten personalizar el símbolo del sistema cambiando la información que muestra, el formato y los colores.</p>
+<p>En bash el cambiar el formato del símbolo del sistema consiste en cambiar el valor de la variable de entorno <em>PS1</em> en el archivo <em>~/.bashrc</em> del usuario. El formato es un tanto críptico tanto para símbolos que permiten incluir los datos como el formato para los colores. Leyendo el contenido de una variable <em>PS1</em> no es fácil saber como es el aspecto final del símbolo del sistema. zsh también se puede personalizar y dispone de herramientas específicas para la personalización como <a href="https://ohmyz.sh/">Oh my zsh</a>.</p>
+<p>Por otro lado, <a href="https://git-scm.com/">Git</a> por ejemplo ofrece una utilidad con la que personalizar el símbolo del sistema para mostrar cierta información según información del sistema, el directorio actual de trabajo contiene un repositorio Git u otro tipo de contenido.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/">Los intérpretes de comandos, instalar y cambiar a otro</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">Guía básica del intérprete de comandos Bash</a></li>
+</ul>
+<p>Aún así las personalizaciones que ofrecen tanto bash como zsh son propias de cada uno de esos intérpretes, diferentes entre sí y limitadas en cuanto a elementos de personalización. En la siguiente configuración el <em>prompt</em> está personalizado con la variable <em>PS1</em> modificando los colores para el nombre del usuario y <em>host</em> además del <em>git prompt</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># ~/.bashrc</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1"># If not running interactively, don&#39;t do anything</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[[</span> <span class="nv">$-</span> !<span class="o">=</span> *i* <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;[\u@\h \W]\$ &#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span><span class="line"><span class="cl"><span class="nb">complete</span> -cf sudo&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nv">GIT_PS1_SHOWDIRTYSTATE</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">GIT_PS1_SHOWSTASHSTATE</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">GIT_PS1_SHOWUNTRACKEDFILES</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">GIT_PS1_SHOWUPSTREAM</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">GIT_PS1_SHOWCOLORHINTS</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.git-prompt.sh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W]\$ &#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">&#39;__git_ps1 &#34;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>vim&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SDKMAN_DIR</span><span class="o">=</span><span class="s2">&#34;/home/picodotdev/.sdkman&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[[</span> -s <span class="s2">&#34;/home/picodotdev/.sdkman/bin/sdkman-init.sh&#34;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> <span class="s2">&#34;/home/picodotdev/.sdkman/bin/sdkman-init.sh&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>.bashrc-1</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/bash-prompt-1_hub9aa1f81796a12160d430303811ef951_15311_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema de bash"><img src="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/bash-prompt-1_hub9aa1f81796a12160d430303811ef951_15311_650x450_fit_box_3.png" width="614" height="450" alt="Símbolo del sistema de bash" title="Símbolo del sistema de bash" class="" loading="lazy"></a></p>
+<figcaption>Símbolo del sistema de bash</figcaption>
+</figure>
+</div>
+<h3 id="el-configurador-del-símbolo-del-sistema-starship">El configurador del símbolo del sistema Starship</h3>
+<p><a href="https://starship.rs/">Starship</a> es una utilidad para configurar el símbolo del sistema fácil de instalar, sencillo de configurar, muchas opciones y elementos de configuración, moderno, tiene numerosos módulos que soportan múltiples tecnologías de las cuales mostrar información y compatible tanto con bash como zsh entre muchos otros intérpretes de comandos.</p>
+<p>Está escrito en el lenguaje de programación <a href="https://www.rust-lang.org/">Rust</a> que se caracteriza por ofrecer un alto rendimiento y ser eficiente, aunque la diferencia para el usuario no va a ser apreciable para el usuario.</p>
+<p>Starship permite aplicar misma configuración y tener el mismo símbolo del sistema independientemente del intérprete de comandos que es útil por ejemplo si se usa equipos diferentes, uno con <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en las que generalmente utilizan por defecto el intérprete de comandos bash y otro con <a href="https://www.apple.com/macos/">macOS</a> en el que el intérprete de comandos por defecto es zsh.</p>
+<div class="media">
+<figure>
+<p><img src="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship_hu08a1c7f5139027bf84c059a744666286_63046_2560x1440_fit_box_3.png" width="300" height="80" alt="Starship" title="Starship" class="" loading="lazy"></p>
+</figure>
+</div>
+<p>En <a href="https://www.archlinux.org/">Arch Linux</a> se instala con el comando del gestor de paquetes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S starship&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman-install-starship.sh</span>
+    </div>
+</div>
+<h3 id="configuración-de-starship">Configuración de Starship</h3>
+<p>Además de ofrecer un alto grado de personalización la configuración de Starship es muy sencilla con la ayuda de su <a href="https://starship.rs/config/">documentación para cada módulo de configuración</a>. Dado que tiene una buena cantidad de opciones lo más rápido es partir de una configuración ya creada y adaptarla ligeramente a las necesidades o preferencias personales.</p>
+<p>En la sección de <a href="https://starship.rs/presets/">Presets</a> hay varios ejemplos de configuración. Para el caso de este ejemplo parto de la configuración <a href="https://starship.rs/presets/pastel-powerline.html">Pastel Powerline</a>. La configuración de Starship consiste en un archivo de texto en formato <em>toml</em>, cada uno de los ejemplos de preconfiguraciones se puede descargar su archivo.</p>
+<p>Editar el archivo es bastante intuitivo tanto por el nombre de las variables como por su contenido, consiste en un conjunto de variables cuyos valores modifican un aspecto de la línea de comandos. La configuración consiste en cambiar los valores de las variables cuya descripción está documentada en la sección de configuración. El archivo de configuración es un archivo <em>dotfile</em> en la carpeta del directorio del usuario <em>~/.config/starship.toml</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1"># ~/.bashrc</span>&#10;</span></span><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1"># If not running interactively, don&#39;t do anything</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[[</span> <span class="nv">$-</span> !<span class="o">=</span> *i* <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;[\u@\h \W]\$ &#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">#</span>&#10;</span></span><span class="line"><span class="cl"><span class="nb">complete</span> -cf sudo&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W]\$ &#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>vim&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SDKMAN_DIR</span><span class="o">=</span><span class="s2">&#34;/home/picodotdev/.sdkman&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">[[</span> -s <span class="s2">&#34;/home/picodotdev/.sdkman/bin/sdkman-init.sh&#34;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> <span class="s2">&#34;/home/picodotdev/.sdkman/bin/sdkman-init.sh&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>starship init bash<span class="k">)</span><span class="s2">&#34;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>.bashrc-2</span>
+    </div>
+</div>
+<p>Este es un archivo de configuración de ejemplo en el que algunos símbolos no se muestran correctamente por faltar la fuente que los incluye. La variable <em>format</em> determina el formato e información del símbolo del sistema.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s2">&#34;&#34;&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[ ](bg:#000000)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">$username\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">$hostname\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[ ](bg:#000000 fg:#000000)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[](bg:#DA627D fg:#000000)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">$directory\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[](fg:#DA627D bg:#FCA17D)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">$git_branch\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">$git_status\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[](fg:#FCA17D bg:#86BBD8)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">$java\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[](fg:#86BBD8 bg:#06969A)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">$docker_context\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[](fg:#06969A bg:#000000)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">[ ](fg:white bg:#000000)\&#10;</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="nx">add_newline</span> <span class="p">=</span> <span class="kc">false</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">username</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">show_always</span> <span class="p">=</span> <span class="kc">true</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style_user</span> <span class="p">=</span> <span class="s2">&#34;blue bold&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style_root</span> <span class="p">=</span> <span class="s2">&#34;red bold&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s1">&#39;[$user]($style)&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">hostname</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">ssh_only</span> <span class="p">=</span> <span class="kc">false</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style</span><span class="p">=</span><span class="s2">&#34;purple bold&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s1">&#39;[@](bg:#000000 fg:white)[$hostname]($style)&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">directory</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style</span> <span class="p">=</span> <span class="s2">&#34;bg:#DA627D fg:white&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s2">&#34;[ $path ]($style)&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">truncation_length</span> <span class="p">=</span> <span class="mi">1</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">truncation_symbol</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">directory</span><span class="p">.</span><span class="nx">substitutions</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="s2">&#34;Documentos&#34;</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="s2">&#34;Descargas&#34;</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="s2">&#34;Música&#34;</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="s2">&#34;Imágenes&#34;</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">docker_context</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">symbol</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style</span> <span class="p">=</span> <span class="s2">&#34;bg:#06969A fg:white&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s1">&#39;[[ $symbol $context ](bg:#06969A)]($style) $path&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">git_branch</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">symbol</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style</span> <span class="p">=</span> <span class="s2">&#34;bg:#FCA17D fg:white&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s1">&#39;[[ $symbol $branch ](bg:#FCA17D)]($style)&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">git_status</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style</span> <span class="p">=</span> <span class="s2">&#34;bg:#FCA17D fg:white bold&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s1">&#39;[[($all_status$ahead_behind )](bg:#FCA17D)]($style)&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">java</span><span class="p">]</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">symbol</span> <span class="p">=</span> <span class="s2">&#34;J&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">style</span> <span class="p">=</span> <span class="s2">&#34;bg:#86BBD8 fg:white bold&#34;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nx">format</span> <span class="p">=</span> <span class="s1">&#39;[ $symbol ]($style)&#39;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>starship.toml</span>
+    </div>
+</div>
+<p>Utilizando colores el símbolo del sistema casi tiene un aspecto gráfico y al estar cada información separada por diferentes colores hace que sea fácilmente identificable.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-1_hu6bfdba881ddb1d0d6e7ab73029e91741_18565_650x450_fit_box_3.png" width="614" height="450" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship" class="" loading="lazy"></a></p>
+</figure>
+</div>
+<p>Las siguientes capturas muestran información en el símbolo del sistema de una carpeta que es un repositorio de Git que incluye información del estado del espacio de trabajo y en otra además en que la carpeta es un proyecto en el lenguaje Java.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-2_hu73bbcc25a35801511f708f70fc58899a_23759_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-2_hu73bbcc25a35801511f708f70fc58899a_23759_300x200_fit_box_3.png" width="273" height="200" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship" class="" loading="lazy"></a>
+<a href="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-3_hu827b43744287322c43f0015d1dffad37_23854_2560x1440_fit_box_3.png" data-gallery="" title="Símbolo del sistema personalizado con Starship"><img src="/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/images/starship-3_hu827b43744287322c43f0015d1dffad37_23854_300x200_fit_box_3.png" width="273" height="200" alt="Símbolo del sistema personalizado con Starship" title="Símbolo del sistema personalizado con Starship" class="" loading="lazy"></a></p>
+<figcaption>Símbolo del sistema personalizado con Starship</figcaption>
+</figure>
+</div>
+<p>La variable principal <em>format</em> incluye el contenido y estilos del símbolo del sistema, por ejemplo el nombre del usuario y el directorio actual, hasta aquí es lo mismo que ofrecen bash y zsh por defecto, pero además permite mostrar información de estado según el contenido de del directorio de trabajo actual como Git, múltiples lenguajes de programación y tecnologías.</p>
+<p>Si el directorio de trabajo actual es un repositorio de Git se muestra la rama y el estado de cambios, si es una carpeta de un proyecto muestra de que tipo de proyecto es por ejemplo un proyecto de Java y la versión actual de Java soportando muchos otros tipos de proyectos y tecnologías, también puede mostrar información de <a href="https://www.docker.com/">Docker</a>.</p>
+<p>Otra información que puede mostrar es la hora actual que permite registrar a qué hora se ha ejecutado un determinado comando en caso de revisar la sesión de línea de comandos.</p>
+<p>Una vez configurado Starship con <a href="https://github.com/twpayne/chezmoi">Chezmoi</a> es posible guardar este <em>dotfile</em> en un repositorio de Git en caso de querer aplicarlo en una nueva instalación o en otro equipo y mantener sincronizado el contenido entre varios equipos.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2022/02/que-son-y-como-gestionar-archivos-dotfiles-con-chezmoi/">Qué son los archivos dotfiles y cómo gestionarlos con chezmoi</a></li>
+</ul>
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/SKtauGe0d3I" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://kruschecompany.com/zsh-vs-bash-unix-shell/">https://kruschecompany.com/zsh-vs-bash-unix-shell/</a></li>
+<li><a href="https://linuxhint.com/differences_between_bash_zsh/">https://linuxhint.com/differences_between_bash_zsh/</a></li>
+<li><a href="https://www.youtube.com/watch?v=SKtauGe0d3I">https://www.youtube.com/watch?v=SKtauGe0d3I</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/">
+                <img src="/blog-bitix/2022/06/los-interpretes-de-comandos-instalar-y-cambiar-a-otro/images/zsh_hud7b5a1c1d64d347f44201dacd637097b_17129_875x0_resize_box_3.png" width="326" height="125" alt="Los intérpretes de comandos, instalar y cambiar a otro" title="Los intérpretes de comandos, instalar y cambiar a otro" class="" loading="lazy">
+                <h3>Los intérpretes de comandos, instalar y cambiar a otro</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/04/como-usar-el-comando-git-bisect-para-descubrir-el-primer-commit-con-un-error/">
+                <img src="/blog-bitix/assets/images/logotypes/git.svg" width="326" height="125" alt="Cómo usar el comando git bisect para descubrir el primer commit con un error" title="Cómo usar el comando git bisect para descubrir el primer commit con un error" class="" loading="lazy">
+                <h3>Cómo usar el comando git bisect para descubrir el primer commit con un error</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/04/aplicacion-con-interfaz-grafica-para-repositorios-git/">
+                <img src="/blog-bitix/assets/images/logotypes/gitg.svg" width="326" height="125" alt="Aplicación con interfaz gráfica para repositorios Git" title="Aplicación con interfaz gráfica para repositorios Git" class="" loading="lazy">
+                <h3>Aplicación con interfaz gráfica para repositorios Git</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/03/detectar-errores-y-comprobar-la-sintaxis-de-los-scripts-de-bash/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Detectar errores y comprobar la sintaxis de los scripts de Bash" title="Detectar errores y comprobar la sintaxis de los scripts de Bash" class="" loading="lazy">
+                <h3>Detectar errores y comprobar la sintaxis de los scripts de Bash</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/02/que-son-los-archivos-dotfiles-y-como-gestionarlos-con-chezmoi/">
+                <img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Qué son los archivos dotfiles y cómo gestionarlos con chezmoi" title="Qué son los archivos dotfiles y cómo gestionarlos con chezmoi" class="" loading="lazy">
+                <h3>Qué son los archivos dotfiles y cómo gestionarlos con chezmoi</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/12/aprovisionar-un-servidor-en-la-infraestructura-cloud-de-clouding-con-ubuntu-y-nginx-usando-ansible-y-protocolo-seguro-https-con-lets-encrypt/">
+                <img src="/blog-bitix/assets/images/logotypes/clouding.svg" width="326" height="125" alt="Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let&#39;s Encrypt" title="Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let&#39;s Encrypt" class="" loading="lazy">
+                <h3>Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let&#39;s Encrypt</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-640';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/06\/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

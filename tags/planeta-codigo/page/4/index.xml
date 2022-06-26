@@ -5,12 +5,105 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-06-23T21:00:00+02:00</updated>
+    <updated>2022-06-26T04:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/</id>
+        <title>Cómo crear y poner subtítulos a un vídeo</title>
+        <updated>2021-06-05T12:00:00+02:00</updated>
+        <published>2021-06-05T12:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los subtítulos permiten mostrar una transcripción en texto del audio y diálogos en vídeos, películas y series. Algunos reproductores de vídeo permiten seleccionar la pista de subtítulos embebidos en los propios vídeos o añadir nuevas pistas de subtítulos a los vídeos. Hay programas editores que permiten crear y modificar los archivos de subtítulos. También hay algunas páginas de las que descargar los archivos subtítulos.</strong></p>]]>
+        <![CDATA[<p>Los formatos de vídeo como películas o vídeos de <a href="https://www.youtube.com/">YouTube</a> ofrecen la posibilidad de poner subtítulos con la transcripción en texto del audio y diálogos. YouTube es capaz de crear subtítulos de forma automática reconociendo las palabras habladas pero es bastante impreciso y en la transcripción contiene numerosos errores. Algunas películas contienen además del audio el texto con los subtítulos, algunos reproductores de vídeo permiten mostrar los subtítulos.</p>
+<p>Los subtítulos son muy útiles en diferentes situaciones, para personas con incapacidades auditivas como una forma de accesibilidad, si el audio está en un idioma que no se domina tener los subtítulos en algún idioma entendido permite comprender los diálogos, para ver películas en la pista original de audio tal como se grabó con las voces originales de los actores y no las del doblaje a otros idiomas y también para aquellas personas que quieren aprender un idioma escuchando el audio y con los subtítulos.</p>
+<p>Para mostrar subtítulos en un vídeo o película es necesario el archivo de subtítulos en el idioma que se quieran mostrar los subtítulos. Los archivos de subtítulos son archivos de texto que contienen el texto de los subtítulos e información de tiempos en los que se muestran y cuando se ocultan.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="cómo-crear-archivos-de-subtítulos-para-vídeos">Cómo crear archivos de subtítulos para vídeos</h3>
+<p>Los archivos de subtítulos se crean con aplicaciones editores de subtítulos con una interfaz gráfica adaptada para facilitar la creación de subtítulos, además de soportar múltiples formatos de archivos de subtítulos. Estas aplicaciones muestran el vídeo con la capacidad de reproducirlo a diferentes velocidades, cada uno de los subtítulos y permiten especificar en que tiempo exacto se muestran y se ocultan.</p>
+<p>Una aplicación editor de subtítulos en <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> es <a href="http://www.gnomesubtitles.org/">GNOME Subtitles</a> otra es <a href="https://otsaloma.io/gaupol/">Gaupol</a>, en <a href="https://www.microsoft.com/es-es/windows/">Windows</a> dos de las aplicaciones de software libre disponibles son <a href="https://www.nikse.dk/subtitleedit/">Subtitle Edit</a> y <a href="http://www.uruworks.net/inicio.html">Subtitle Workshop</a>.</p>
+<p>Estos editores muestran una previsualización del vídeo, un área para introducir el texto de los subtítulos y los tiempos en los que se muestran y ocultan. Además, tiene modos de traducción para crear subtítulos a partir de los archivos de subtítulos existentes de otros idiomas.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6e011cae91d9fec5bc7576cde312e803_167910_2560x1440_fit_box_3.png" data-gallery="" title="Editor de subtítulos de GNOME Subtitles"><img src="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/gnome-subtitles_hu6e011cae91d9fec5bc7576cde312e803_167910_650x450_fit_box_3.png" width="650" height="444" alt="Editor de subtítulos de GNOME Subtitles" title="Editor de subtítulos de GNOME Subtitles"  class="lozad "></a></p>
+<figcaption>Editor de subtítulos de GNOME Subtitles</figcaption>
+</figure>
+</div>
+<p>Este es el contenido de un archivo de subtítulos en formato <em>srt</em>, para vídeos embebidos en una página web hay que usar el formato <em>vtt</em> que es muy similar de modo que en este caso hay que convertir el <em>srt</em> a <em>vtt</em> si el programa editor de subtítulos no lo permite exportar directamente. También es posible editar el archivo de texto de subtítulos y transformar un <em>srt</em> en un <em>vtt</em> ya que son muy similares salvo una línea de cabecera.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">﻿1&#10;</span></span><span class="line"><span class="cl">00:00:03,500 --&gt; 00:00:06,400&#10;</span></span><span class="line"><span class="cl">La ruína ha llegado a nuestra familia.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">2&#10;</span></span><span class="line"><span class="cl">00:00:09,250 --&gt; 00:00:11,700&#10;</span></span><span class="line"><span class="cl">Recuerdas nuestra casa venerable,&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">3&#10;</span></span><span class="line"><span class="cl">00:00:12,750 --&gt; 00:00:14,900&#10;</span></span><span class="line"><span class="cl">opulenta e imperial.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">4&#10;</span></span><span class="line"><span class="cl">00:00:15,100 --&gt; 00:00:18,500&#10;</span></span><span class="line"><span class="cl">Mirando con orgullo desde su&#10;</span></span><span class="line"><span class="cl">posición estoíca sobre el páramo.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">5&#10;</span></span><span class="line"><span class="cl">00:00:19,500 --&gt; 00:00:24,400&#10;</span></span><span class="line"><span class="cl">He vivido toda mi vida en esa&#10;</span></span><span class="line"><span class="cl">mansión ancestral repleta de rumores.</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>darkest-dungeon-intro.srt</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">WEBVTT Kind: captions; Language: es&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">1&#10;</span></span><span class="line"><span class="cl">00:00:03.500 --&gt; 00:00:06.400&#10;</span></span><span class="line"><span class="cl">La ruína ha llegado a nuestra familia.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">2&#10;</span></span><span class="line"><span class="cl">00:00:09.250 --&gt; 00:00:11.700&#10;</span></span><span class="line"><span class="cl">Recuerdas nuestra casa venerable,&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">3&#10;</span></span><span class="line"><span class="cl">00:00:12.750 --&gt; 00:00:14.900&#10;</span></span><span class="line"><span class="cl">opulenta e imperial.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">4&#10;</span></span><span class="line"><span class="cl">00:00:15.100 --&gt; 00:00:18.500&#10;</span></span><span class="line"><span class="cl">Mirando con orgullo desde su&#10;</span></span><span class="line"><span class="cl">posición estoíca sobre el páramo.&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">5&#10;</span></span><span class="line"><span class="cl">00:00:19.500 --&gt; 00:00:24.400&#10;</span></span><span class="line"><span class="cl">He vivido toda mi vida en esa&#10;</span></span><span class="line"><span class="cl">mansión ancestral repleta de rumores.</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>darkest-dungeon-intro.vtt</span>
+    </div>
+</div>
+<p>En este vídeo se pueden activar los subtítulos con la transcripción del audio, aunque en este caso el vídeo original ya incluye los subtítulos.</p>
+<div class="media">
+<figure>
+<video src="videos/darkest-dungeon.mp4" controls width="640" height="360" autoplay="false" poster="images/darkest-dungeon.jpg">
+    <track label="Español" kind="subtitles" srclang="es" src="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/videos/darkest-dungeon-intro-es.vtt">
+</video>
+<figcaption>Vídeo subtitulado</figcaption>
+</figure>
+</div>
+<h3 id="cómo-descargar-pistas-de-subtítulos">Cómo descargar pistas de subtítulos</h3>
+<p>Algunas páginas permiten descargar archivos de subtítulos de películas y series en diferentes idiomas ya creados por otras personas, dos de ellas son <a href="#ZgotmplZ">Audio-Track</a> y <a href="https://subscene.com/">Subscene</a>. Tiene un buscador para buscar por el título de la película o serie.</p>
+<p>Un formato de archivo de subtítulos es <em>srt</em>, estos archivos hay que cargarlos en el programa reproductor usado para visualizar la película.</p>
+<h3 id="cómo-poner-archivos-de-subtítulos-en-el-reproductor-vlc">Cómo poner archivos de subtítulos en el reproductor VLC</h3>
+<p>El <a href="https://www.videolan.org/vlc/">reproductor VLC</a> permite cargar archivos de subtítulos específicos de diferentes formatos, aunque algunos vídeos incluyen embebidos varias pistas de subtítulos en diferentes idiomas. En el menú <em>Subtítulos &gt; Pista de subtítulos</em> se muestran las pistas disponibles en el vídeo.</p>
+<p>Si el vídeo no tiene pistas de subtítulos se pueden cargar archivos de subtítulos también desde el menú <em>Subtítulos &gt; Añadir archivo de subtítulos&hellip;</em>. Una vez cargado el archivo de subtítulos y seleccionada la pista de subtítulos al reproducir el vídeo se irán mostrando los subtítulos en la parte inferior del vídeo con la transcripción.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/vlc-subtitles_hu5b97c8cc15acceaddc322b73b11b9e8c_314447_2560x1440_fit_box_3.png" data-gallery="" title="Subtítulos en el reproductor de vídeo VLC"><img src="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/vlc-subtitles_hu5b97c8cc15acceaddc322b73b11b9e8c_314447_650x450_fit_box_3.png" width="650" height="447" alt="Subtítulos en el reproductor de vídeo VLC" title="Subtítulos en el reproductor de vídeo VLC"  class="lozad "></a></p>
+<figcaption>Subtítulos en el reproductor de vídeo VLC</figcaption>
+</figure>
+</div>
+<p>El reproductor VLC también permite modificar la apariencia de los subtítulos como su posición, fuente de texto, el tamaño de la fuente y el color de la fuente, su opacidad para que los subtítulos no oculten completamente la imagen sobre la que se muestran, el grosor del borde y su color, este borde permite que los bordes del texto no se confundan con la imagen si hay alguna escena en que tengan colores similares.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/vlc-subtitles-preferences_hu1c2641ed3eaaf0e9252be31c1493f918_113522_2560x1440_fit_box_3.png" data-gallery="" title="Preferencias de subtítulos de VLC"><img src="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/vlc-subtitles-preferences_hu1c2641ed3eaaf0e9252be31c1493f918_113522_650x450_fit_box_3.png" width="505" height="450" alt="Preferencias de subtítulos de VLC" title="Preferencias de subtítulos de VLC"  class="lozad "></a></p>
+<figcaption>Preferencias de subtítulos de VLC</figcaption>
+</figure>
+</div>
+<h3 id="crear-y-poner-subtítulos-con-el-editor-de-youtube">Crear y poner subtítulos con el editor de YouTube</h3>
+<p>Los vídeos de YouTube también se pueden subtitular con unos propios mejores que las transcripciones que hace el YouTube convirtiendo el audio del vídeo en texto. Se pueden crear desde <a href="https://studio.youtube.com/">YouTube</a> o subir un archivo de subtítulos creados con alguna de las aplicaciones anteriores.</p>
+<p>En la <a href="https://support.google.com/youtube/">sección de ayuda</a> hay información de cómo añadir subtítulos en los vídeos de YouTube y los <a href="https://support.google.com/youtube/answer/2734698">tipos de archivos soportados</a>. Hay algunos <a href="https://support.google.com/youtube/answer/9861599?hl=en&amp;ref_topic=7296214">servicios que permiten obtener los subtítulos</a> de vídeos sin subtítulos aunque no son gratuitos.</p>
+<p>Las ventajas de añadir subtítulos en vídeos de YouTube son una mayor audiencia, mejor retención de visualización, mejor accesibilidad, mejor SEO y mejor entendimiento al prescindir de las pronunciaciones.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/youtube-subtitles_hua6e0b203884a37296d3e4cdd08001f9a_448570_2560x1440_fit_box_3.png" data-gallery="" title="Editor de subtítulos de YouTube"><img src="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/images/youtube-subtitles_hua6e0b203884a37296d3e4cdd08001f9a_448570_650x450_fit_box_3.png" width="650" height="336" alt="Editor de subtítulos de YouTube" title="Editor de subtítulos de YouTube"  class="lozad "></a></p>
+<figcaption>Editor de subtítulos de YouTube</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.ilovefreesoftware.com/21/windows-10/free-subtitle-editor-windows-10.html">5 Free Subtitle Editor Software for Windows 10</a></li>
+<li><a href="https://www.debugpoint.com/2015/08/3-great-subtitle-editors-in-linux-systems/">5 Great Subtitle Editors in Linux Systems in 2021</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/</id>
         <title>Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java</title>
@@ -2107,196 +2200,6 @@ un orden superior a <em>b</em>.</p>
         
             
                 <category term="juegos"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/</id>
-        <title>Novedades de Java 16</title>
-        <updated>2021-03-18T19:00:00+01:00</updated>
-        <published>2021-03-18T19:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>En Java 16 los cambios en el lenguaje no son tan notables que en versiones anteriores, aún así  el calendario se sigue manteniendo y en cada versión se incluyen mejoras incrementales destacables. Se publica la versión final y lista para producción de algunas características y se añaden nuevas en forma de vista previa.</strong></p>]]>
-        <![CDATA[<p>Las nuevas versiones se van sucediendo de forma periódica y puntual según la cadencia de seis meses del adoptado calendario de publicación. En esta ocasión la versión 16 de Java publicada el 16 de marzo de 2021, que incluye mejoras incrementales destacando soporte para nuevas plataformas, inclusión de forma final de características que anteriormente estaban marcadas como vista previa y algunas nuevas características destacables que entran en forma de vista previa y nuevas revisiones de vistas previas anteriores.</p>
-<p>La versión 16 de Java será la última antes de la siguiente versión de soporte a largo plazo o LTS, la versión 17 será una versión LTS que sucederá a la anterior LTS publicada de Java 11. La versión 11 fue publicada en septiembre de 2018 y la 17 será publicada en septiembre de 2021.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="introducción">Introducción</h3>
-<p>No hay cambios importantes en el lenguaje, el más destacado es la inclusión de <em>pattern matching</em> para el operador <em>instanceof</em>, la incorporación de forma final de los <em>Records</em>, soporte para las plataformas Windows/AArch64, distribuciones como Alpine basadas en <em>musl</em> y soporte para la comunicación mediante canales <em>Unix-Domain Socket</em>.</p>
-<p>En los cambios que entran en modo vista previa destacan la Vector API que permite la computación en paralelo aprovechando las instrucciones vectoriales en los procesadores como AVX en x86 y Neon en ARM para acelerar las operaciones de una instrucción múltiples datos o SIMD. Aparte de los destacados hay números cambios más realizados en las APIs de las clases y el añadido de algunas funcionalidades menores, que en las notas de publicación están documentados.</p>
-<ul>
-<li><a href="https://openjdk.java.net/projects/jdk/16/">Características de Java 16</a></li>
-<li><a href="https://www.oracle.com/java/technologies/javase/16-all-relnotes.html">Notas de publicación de Java 16</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/16/">Documentación de Java 16</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/index.html">Documentación Javadoc de Java 16</a></li>
-<li><a href="https://blogs.oracle.com/javamagazine/java-champion-favorite-java16-records-vector-arm64-github">JavaMagazine: From the vector API to records to elastic metaspace, there’s a lot packed into Java 16</a></li>
-</ul>
-<p>Las mejoras incluídas en esta versión son:</p>
-<ul>
-<li>338: <a href="https://openjdk.java.net/jeps/338">Vector API (Incubator)</a></li>
-<li>347: <a href="https://openjdk.java.net/jeps/347">Enable C++14 Language Features</a></li>
-<li>357: <a href="https://openjdk.java.net/jeps/357">Migrate from Mercurial to Git</a></li>
-<li>369: <a href="https://openjdk.java.net/jeps/369">Migrate to GitHub</a></li>
-<li>376: <a href="https://openjdk.java.net/jeps/376">ZGC: Concurrent Thread-Stack Processing</a></li>
-<li>380: <a href="https://openjdk.java.net/jeps/380">Unix-Domain Socket Channels</a></li>
-<li>386: <a href="https://openjdk.java.net/jeps/386">Alpine Linux Port</a></li>
-<li>387: <a href="https://openjdk.java.net/jeps/387">Elastic Metaspace</a></li>
-<li>388: <a href="https://openjdk.java.net/jeps/388">Windows/AArch64 Port</a></li>
-<li>389: <a href="https://openjdk.java.net/jeps/389">Foreign Linker API (Incubator)</a></li>
-<li>390: <a href="https://openjdk.java.net/jeps/390">Warnings for Value-Based Classes</a></li>
-<li>392: <a href="https://openjdk.java.net/jeps/392">Packaging Tool</a></li>
-<li>393: <a href="https://openjdk.java.net/jeps/393">Foreign-Memory Access API (Third Incubator)</a></li>
-<li>394: <a href="https://openjdk.java.net/jeps/394">Pattern Matching for instanceof</a></li>
-<li>395: <a href="https://openjdk.java.net/jeps/395">Records</a></li>
-<li>396: <a href="https://openjdk.java.net/jeps/396">Strongly Encapsulate JDK Internals by Default</a></li>
-<li>397: <a href="https://openjdk.java.net/jeps/397">Sealed Classes (Second Preview)</a></li>
-</ul>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/L0tOTN7Dkso" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="nuevas-características">Nuevas características</h3>
-<h4 id="habilitar-características-de-c14">Habilitar características de C++14</h4>
-<p>Hasta el JDK 15, las características usadas por el código C++ en el JDK ha estado limitado a los estándares de C++98/02. Con el JDK 11, el código fué actualizado para soportar nuevas versiones del estándar C++, aunque hasta ahora no han sido usadas nuevas características. Esto incluye poder construirse con versiones recientes de varios compiladores que soportan características de C++11/14.</p>
-<p>Ahora se permiten formalmente cambios en el código C++ del JDK para aprovechar las características del lenguaje C++14.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/C%2B%2B14">C++14 wikipedia</a></li>
-<li><a href="https://isocpp.org/wiki/faq/cpp14">C++14</a></li>
-</ul>
-<h4 id="migración-de-mercurial-a-git">Migración de Mercurial a Git</h4>
-<p>Se migra como herramienta de control de versiones de <a href="https://www.mercurial-scm.org/">Mercurial</a> a <a href="https://git-scm.com/">Git</a>. Esto incluye todos los repositorio de los proyectos de OpenJDK preservando el historial, incluyendo las etiquetas y formateando los mensajes de <em>commits</em> según las convenciones de Git.</p>
-<h4 id="migración-a-github">Migración a GitHub</h4>
-<p>Relacionada con la migración de Mercurial a Git es la migración a la plataforma <a href="https://github.com/">GitHub</a> como proveedor de hospedaje para los repositorios. Los diferentes proyectos del OpenJDK están accesibles en GiHub.</p>
-<ul>
-<li><a href="https://github.com/openjdk/">OpenJDK GitHub</a></li>
-</ul>
-<p>Los beneficios de esta migración son tiempos más reducidos en el clonado y obtención de cambios, mayor disponibilidad de los repositorios, posibilidad de interactuar con los repositorios mediante listas de correo, herramientas de línea de comandos y navegadores web.</p>
-<p>Usar un proveedor de hospedaje externo libera a los contribuidores de implementar y administrar el servicio. Las tres razones principales de usar un proveedor externo son el rendimiento, acceso a una API para automatizar las tareas y acceso a una mayor comunidad que proporcione incorpore nuevos contribuidores.</p>
-<p>La razón de usar GitHub es que destaca en las tres razones principales de usar un proveedor externo.</p>
-<h4 id="zgc-procesado-concurrente-de-pila-del-_thread_">ZGC: procesado concurrente de pila del <em>thread</em></h4>
-<p>El recolector de basura ZGC tiene como objetivo hacer que las pausas de recolección de basura sean una cosa del pasado. Muchas de las operaciones del recolector de basura ya se han hecho ya escalables al tamaño de la memoria y del <em>metaespace</em>.</p>
-<p>Las únicas tareas que son realizadas en puntos seguros del recolector de basura son un subconjunto de procesado raíz. Una de ellas son las pilas de trazas de excepciones. Estas tareas de procesado raíz son problemáticas escalan con el número de hilos, en sistemas con muchos hilos estas tareas se convierten en un problema.</p>
-<p>Para conseguir el objetivo de que las pausas seguras del recolector de basura no excedan de un milisegundo, incluso en máquinas grandes, se ha de mover este procesado por hilo incluyendo la inspección de la pila de trazas a una fase concurrente.</p>
-<p>Después de los cambios nada significativo se hará dentro de las pausas seguras del recolector de basura.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">El recolector de basura de Java, qué hace y cómo funciona en cada versión</a></li>
-</ul>
-<h4 id="canales-de-comunicación-unix">Canales de comunicación Unix</h4>
-<p>Se ha añadido soporte para la comunicación mediante <em>sockets</em> Unix a las APIs del paquete <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/nio/channels/package-summary.html">java.nio.channels</a>. Los <em>sockets</em> Unix con una forma de comunicación entre procesos o IPC en la misma máquina. Son similares a los <em>sockets</em> TCP/IP en la mayoría de aspectos excepto que son resueltos por nombres del sistema de archivos en vez de direcciones IP y números de puertos. La comunicación mediante <em>sockets</em> Unix es más segura y eficiente que las conexiones TCP/IP.</p>
-<ul>
-<li>Las comunicaciones son para procesos en el mismo sistema, las aplicaciones que no tiene intención de aceptar conexiones remotas pueden mejorar la seguridad con los <em>sockets</em> Unix.</li>
-<li>Los <em>sockets</em> Unix están protegidos por los mecanismo de seguridad del sistema de archivos.</li>
-<li>Los <em>sockets</em> Unix son más rápidos de establecer y ofrecen mayor tasa de transferencia.</li>
-</ul>
-<p>Los <em>sockets</em> Unix son una característica implementada en la mayoría de sistemas Unix y son soportados en Windows 10 y Windows Server 2019.</p>
-<p>Los elementos de la API son <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/UnixDomainSocketAddress.html">java.net.UnixDomainSocketAddress</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/StandardProtocolFamily.html">java.net.StandardProtocolFamily</a>, <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/nio/channels/SocketChannel.html">SocketChannel</a> y <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/nio/channels/ServerSocketChannel.html">ServerSocketChannel</a>.</p>
-<p>Más detalles en <a href="https://inside.java/2021/02/03/jep380-unix-domain-sockets-channels/">JEP-380: Unix domain socket channels</a></p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/images/unix-sockets_hu4da9fcbe4c523ba10cac3597857560ec_33429_2560x1440_fit_q90_box.jpg" data-gallery="" title="Unix Sockets"><img src="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/images/unix-sockets_hu4da9fcbe4c523ba10cac3597857560ec_33429_650x450_fit_q90_box.jpg" width="650" height="371" alt="Unix Sockets" title="Unix Sockets"  class="lozad "></a></p>
-<figcaption>Unix Sockets</figcaption>
-</figure>
-</div>
-<h4 id="portado-a-alpine-linux">Portado a Alpine Linux</h4>
-<p>Se ha portado el JDK a Alpine Linux y otras distribuciones que usan <a href="https://www.musl-libc.org/">musl</a> como librería C en las arquitecturas x64 y AArch64. <em>musl</em> es una implementación para los sistemas basados en Linux de la librería estándar con su funcionalidad descrita en los estándares de ISO C y POSIX. Varias distribuciones Linux incluyendo <a href="https://www.alpinelinux.org/">Alpine Linux</a> y <a href="https://openwrt.org/">OpenWrt</a> están basadas en <em>musl</em>, mientras que otras proporcionan soporte de forma opcional como <a href="https://www.archlinux.org/">Arch Linux</a>.</p>
-<p>La distribución Alpine Linux es una distribución ampliamente adoptada en los entornos en la nube, microservicios y contenedores debido a su pequeño tamaño de imagen. La imagen base de Alpine Linux por ejemplo es de unos 6 MB lo que la hace atractiva por sus tiempos de arranque, ancho de banda más bajos y mayor seguridad al incluir menos componentes. Habilitar Java para funcionar en estos entornos permite ejecutar de forma nativa <a href="https://tomcat.apache.org/">Tomcat</a>, <a href="https://eclipse.org/jetty/">Jetty</a>, <a href="https://spring.io/">Spring</a> y otros <em>frameworks</em> populares.</p>
-<p>Complementandlo con <em>jlink</em> para reducir el tamaño en tiempo de ejecución del JDK un usuario puede crear imágenes más pequeñas. Por ejemplo, si la aplicación depende solo del módulo <em>java.base</em> entonces una imagen de <a href="https://www.docker.com/">Docker</a> con Alpine Linux y un <em>runtime</em> de Java con solo ese módulo y la máquina virtual de servidor cabe en tan solo 38 MB.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/04/imagenes-de-docker-con-alpine-linux/">Imágenes de Docker con Alpine Linux</a></li>
-</ul>
-<h4 id="metaspace-elásctico">Metaspace elásctico</h4>
-<p>La memoria no usada de <em>metaespace</em> es retornada al sistema operativo con más rapidez reduciendo el tamaño del <em>metaspace</em> y simplificando el código de <em>metaspace</em> con la intención de reducir los costes de mantenimiento.</p>
-<h4 id="portado-a-windowsaarch64">Portado a Windows/AArch64</h4>
-<p>Con la disponibilidad del nuevo hardware de consumo y servidor basado en la arquitectura AArch64 (ARM64), Windows/AArch64 se ha convertido en una plataforma importante debido a la demanda de los usuarios. Se ha portado el JDK a Windows/AArch64 continuando el trabajo anterior para la portabilidad de Linux/AArch64 (JEP 237) y en un futuro se hará lo equivalente para macOS.</p>
-<h4 id="mensajes-de-advertencias-para-clases-valor">Mensajes de advertencias para clases valor</h4>
-<p>Las clases envoltorio o <em>wrapper</em> de los tipos primitivos se designan como <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/doc-files/ValueBased.html">clases valor</a>, ahora se emiten nuevos mensajes de advertencia en sus constructores marcados como <em>deprecated</em> desde Java 9 y candidatos a ser eliminados en futuras versiones.</p>
-<p>Las clases <em>wrapper</em> de primitivos incluyen las <em>Integer</em>, <em>Float</em>, <em>Double</em>, etc., estas clases satisfacen la mayor parte de los requerimientos de las clases valor con la excepción de que exponen los constructores marcados como obsoletos.</p>
-<p>Esto es un objetivo para el <a href="https://openjdk.java.net/projects/valhalla/">proyecto Valhalla</a> de implementar clases primitivas que mejoran el modelo de programación de Java.</p>
-<ul>
-<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/doc-files/ValueBased.html">Value-based Classes</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/16/docs/api/https">Integer(int value)</a></li>
-</ul>
-<h4 id="_packaging-tool_"><em>Packaging Tool</em></h4>
-<p>Se proporciona una herramienta para empaquetar aplicaciones Java que genera instaladores nativos para las diferentes plataformas. La herramienta <em>jpackage</em> fue incorporada en Java 14 y ahora pasa a considerarse con la categoría de listo para producción, su API está en el <a href="https://docs.oracle.com/en/java/javase/16/docs/api/jdk.jpackage/module-summary.html">jdk.jpackage</a>.</p>
-<p>Soporta los formatos de empaquetado nativos de la plataforma para tener una experiencia de instalación natural. Estos formatos incluyen archivos <em>msi</em> y <em>exe</em> en windows, <em>pkg</em> y <em>dmg</em> en macOS, <em>deb</em> y <em>rpm</em> en Linux. Permite especificar en tiempo de empaquetado parámetros a usar en tiempo de ejecución. Se puede invocar de forma directa desde la línea de comandos y de forma programática mediante su API.</p>
-<h4 id="_pattern-matching_-para-_instanceof_"><em>Pattern Matching</em> para <em>instanceof</em></h4>
-<p>Se mejora el soporte del lenguaje para soportar <em>pattern matching</em> en el operador <em>instanceof</em>. Esto evita la necesidad de realizar <em>cast</em> de forma explícita simplificando el código, más legible y seguro.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Antes&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Ahora, con pattern matching&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;jdk&#34;</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>instanceof-pattern-matching-1.java</span>
-    </div>
-</div>
-<p>El uso de <em>pattern matching</em> reduce la necesidad de hacer <em>cast</em> de forma explícita siendo particularmente útil en los métodos de igualdad con <em>equals</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Antes&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="o">(!(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span><span class="o">))</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="n">Point</span> <span class="n">other</span> <span class="o">=</span> <span class="o">(</span><span class="n">Point</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">x</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">y</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="c1">// Ahora, con pattern matching&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span> <span class="n">other</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">x</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="na">y</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>instanceof-pattern-matching-2.java</span>
-    </div>
-</div>
-<h4 id="_records_"><em>Records</em></h4>
-<p>Las clases <em>Record</em>  son un nuevo tipo de clases en el lenguaje Java, ayudan a modelar agregados de datos con menos ceremonia que las clases normales. Son clases que actúan como contenedores para datos inmutables, pueden ser considerados como tuplas. La declaración de un <em>record</em> mayormente consiste en la declaración de su estado. No es su objetivo resolver los problemas de las clases mutables que usan las convenciones de nombres de los JavaBeans.</p>
-<p>Se publicaron como primera vista previa en Java 14 y una segunda versión en Java 15.</p>
-<p>Las siguientes dos versiones de la clase <em>Point</em> son equivalentes.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>records-1.java</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">x</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">y</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="n">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="nf">x</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">x</span><span class="o">;</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="nf">y</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">y</span><span class="o">;</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">if</span> <span class="o">(!(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Point</span><span class="o">))</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">Point</span> <span class="n">other</span> <span class="o">=</span> <span class="o">(</span><span class="n">Point</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="na">x</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="o">.</span><span class="na">y</span> <span class="o">==</span> <span class="n">y</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">Objects</span><span class="o">.</span><span class="na">hash</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Point[x=%d, y=%d]&#34;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>records-2.java</span>
-    </div>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/tLHUqXeiC4w" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="encapsulación-fuerte-del-clases-internas-del-jdk-por-defecto">Encapsulación fuerte del clases internas del JDK por defecto</h4>
-<p>Se cambia el comportamiento por defecto de la encapsulación de permitido a fuerte para las clases internas del JDK aunque siguiendo posible relajar el comportamiento de la encapsulación con la opción de línea de comandos <em>&ndash;illegal-access=permit</em>, la encapsulación fuerte hace una excepción para ciertas clases internas como <em>sun.misc.Unsafe</em>  que siguen siendo posible utilizarlas. Esto permite continuar con la encapsulación y mantenibilidad del JDK que era el objetivo del proyecto <em>Jigsaw</em> materializado en la incorporación de los módulos en Java 9. Se promueve el uso de APIs estándares para actualizaciones a futuras versiones sin problemas.</p>
-<p>A lo largo de los años los desarrolladores han estado usando clases internas del JDK de los paquetes <em>java.*</em>, <em>sun.*</em>. Nunca se ha aconsejado pero nada impedía su uso hasta la aparición de los módulos. El uso de las clases de estos paquetes supone un problema de seguridad y mantenibilidad en el JDK pero impedir de forma drástica su uso haría que muchas librerías y aplicaciones que las usan dejasen de funcionar.</p>
-<p>Ahora se encapsula de forma más fuerte las API internas que aplica tanto en tiempo de compilación como de ejecución, incluyendo los intentos del código de acceder a elementos mediante <em>reflection</em>.</p>
-<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
-<h4 id="vector-api">Vector API</h4>
-<p>El objetivo es proporcionar una API para aprovechar las instrucciones vectoriales hardware de las arquitecturas de CPU que permiten conseguir un mejor rendimiento a las computaciones equivalentes escalares. Las instrucciones vectoriales son conocidas como <a href="https://en.wikipedia.org/wiki/SIMD">Single Instruction Multiple Data</a> (SIMD) que permiten mayor paralelismo al aplicar la misma operación a múltiples datos en un único ciclo de reloj de la CPU.</p>
-<p>Su objetivo es proporcionar una API clara y concisa, agnóstica de la plataforma, de alto rendimiento para las arquitecturas x64 y AArch64 y con soporte de degradado en caso de no estar las instrucciones disponibles.</p>
-<p>La API de vectorial es muy útil para funcionalidases como procesado de imágenes, procesado de sonido, gráficos inteligencia artificial que necesitan realizar la misma operación sobre muchos datos.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/HARDCbSog0c" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="foreign-linker-api">Foreign Linker API</h4>
-<p>El objetivo es ofrecer una API con tipado estático y código Java para acceso a código nativo. Junto con <em>Foreign-Memory Access API</em> simplifica considerablemente el proceso propenso a errores de enlazado a una librería nativa.</p>
-<p>Sus objetivos son facilidad de uso reemplazando JNI con un modelo de desarrollo superior basado puramente en Java, soportar C en las plataformas x64 y AArch64, soportar otras plataformas como 32-bit x86 y otros lenguajes distintos de C como C++ o Fortran y ofrecer un alto rendimiento comparable o mejor que JNI.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/">Ejemplo de JNI, usar código en C desde Java</a></li>
-</ul>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/DjiKlOE9ibY" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="foreign-memory-access-api">Foreign-Memory Access API</h4>
-<p>Su objetivo es proporcionar a los programas Java una forma segura y eficiente de acceder a memoria fuera de la memoria de la máquina virtual de Java.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/Edls8HIREk4" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="_sealed-classes_"><em>Sealed Classes</em></h4>
-<p>Las clases selladas o <em>sealed classes</em> permiten al autor de la clase o interfaz controlar que código es responsable de implementarlo. Proporcionan una forma de restringir el uso de la superclase distinta de los modificadores de acceso. En un futuro puede ser la base para implementar <em>pattern matching</em> para un análisis exhaustivo de patrones.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">Los modificadores de acceso de clases, propiedades y métodos en Java</a></li>
-</ul>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="n">sealed</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="n">permits</span> <span class="n">Circle</span><span class="o">,</span> <span class="n">Rectangle</span><span class="o">,</span> <span class="n">Square</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>sealed-classes.java</span>
-    </div>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
             
                 <category term="planeta-codigo"/>
             

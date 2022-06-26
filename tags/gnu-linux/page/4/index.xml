@@ -5,12 +5,68 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-06-23T21:00:00+02:00</updated>
+    <updated>2022-06-26T04:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/</id>
+        <title>Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux</title>
+        <updated>2019-11-01T17:00:00+01:00</updated>
+        <published>2019-11-01T17:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Los comandos <a href="https://github.com/dylanaraps/neofetch">neofetch</a> y <a href="https://github.com/KittyKatt/screenFetch/">screenfetch</a> permiten obtener una información básica del sistema desde la terminal. Esta información permite saber la distribución GNU/Linux que se está usando, la versión del <em>kernel</em> de Linux, el número de paquetes instalados, que intérprete de comandos se usa y su versión, la resolución de la pantalla, el gestor de ventanas y su tema, la colección de iconos, terminal y fuente de la terminal, CPU, GPU y cantidad de memoria usada y total del sistema.</p>
+<p>Al realizar una captura de pantalla del escritorio es muy interesante mostrar una terminal con esta información. Es habitual hacerlo al mostrar la personalización del escritorio con su tema de iconos, que entorno de escritorio es el usado, la configuración de colores de la terminal, etc. que permite a otros usuarios que vean esa captura obtener mucha información para obtener la misma personalización. O conocer la CPU, GPU y <em>kernel</em> del sistema en que se tomó la captura.</p>
+<p>Los comandos <em>neofetch</em> y <em>screenfetch</em> son muy similares en la salida que producen, quizá prefiero <em>neofetch</em> porque tiene menos dependencias sobre otros paquetes y ocupa menos. Con la opción <em>--help</em> de cada uno de ellos muestran las opciones de personalización que poseen.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ neofetch&#10;</span></span><span class="line"><span class="cl">$ screenfetch&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ neofetch -help&#10;</span></span><span class="line"><span class="cl">$ screenfetch -help</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>commands.sh</span>
+    </div>
+</div>
+<p>En las imágenes se aprecia que mi distribución es <a href="https://www.archlinux.org/">Arch Linux</a>, <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">mi equipo es un Intel NUC8i5BEK</a>, en el momento de escribir el artículo tengo la versión 5.3.7 del núcleo de Linux, un millar de paquetes instalados y unos pocos de <a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">paquetes de Flatpak</a>, mi interprete de comandos es <a href="https://es.wikipedia.org/wiki/Bash">Bash</a>, mi entorno de escritorio es <a href="https://www.gnome.org/">GNOME</a> sin apenas personalización, la CPU del NUC es una <a href="https://ark.intel.com/products/135935/Intel-Core-i5-8259U-Processor-6M-Cache-up-to-3_80-GHz">Intel i5-8259</a> de 4 núcleos y 8 hilos que tiene una GPU integrada <a href="https://en.wikipedia.org/wiki/Intel_Graphics_Technology#Kaby_Lake_Refresh_/_Coffee_Lake">Intel Iris Plus Graphics 655</a>, con algunos programas abiertos que está consumiendo unos 3 GiB de los 32 GiB disponibles.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/images/neofetch-1_hufc0eb32c5c911b9872950627e8a1a7b7_57869_2560x1440_fit_box_3.png" data-gallery="" title="Información del sistema proporcionada por neofetch"><img src="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/images/neofetch-1_hufc0eb32c5c911b9872950627e8a1a7b7_57869_300x250_fit_box_3.png" width="300" height="221" alt="Información del sistema proporcionada por neofetch" title="Información del sistema proporcionada por neofetch"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/images/neofetch-2_hu98ceba14622f819279fe2844fd2b15bf_4489149_2560x1440_fit_box_3.png" data-gallery="" title="Información del sistema proporcionada por neofetch"><img src="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/images/neofetch-2_hu98ceba14622f819279fe2844fd2b15bf_4489149_300x250_fit_box_3.png" width="300" height="169" alt="Información del sistema proporcionada por neofetch" title="Información del sistema proporcionada por neofetch"  class="lozad "></a></p>
+<figcaption>Información del sistema proporcionada por neofetch</figcaption>
+</figure>
+</div>
+<p><a href="https://code.google.com/p/inxi/">Inxi</a> es otra herramienta de línea de comandos que permite obtener información del sistema. Al pedir ayuda en un foro no está demás dar esta información básica de nuestro equipo para que nos puedan ayudar mejor a encontrar una solución al problema por el que preguntamos por si el error se debe a algún componente de nuestro equipo, del <em>kernel</em> o la versión del servidor gráfico.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ inxi -Fpur -c <span class="m">7</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>inxi.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/images/inxi-c7_hu9720c2203f62590fe5194c539fd87701_139945_2560x1440_fit_box_3.png" data-gallery="" title="Información del sistema proporcionada por inxi"><img src="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/images/inxi-c7_hu9720c2203f62590fe5194c539fd87701_139945_300x250_fit_box_3.png" width="300" height="152" alt="Información del sistema proporcionada por inxi" title="Información del sistema proporcionada por inxi"  class="lozad "></a></p>
+<figcaption>Información del sistema proporcionada por inxi</figcaption>
+</figure>
+</div>
+<p>Los comandos están disponibles en los repositorios de paquetes de la distribución que se esté usando.</p>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/</id>
         <title>Guía de inicio del gestor de terminales y sesiones tmux</title>
@@ -1320,80 +1376,6 @@
                 <category term="tapestry"/>
             
                 <category term="gnu-linux"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/</id>
-        <title>Personalizar el prompt del sistema del intérprete de comandos Bash</title>
-        <updated>2018-04-29T21:30:00+02:00</updated>
-        <published>2018-04-29T10:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>El <em>prompt</em> de la terminal es el símbolo del sistema que precede al comando que introducimos en la terminal y por defecto indica el directorio de trabajo que utilizarán los comandos y el directorio que utilizarán las rutas relativas. El <em>prompt</em> del intérprete de comandos <em>Bash</em> se puede personalizar para por ejemplo modificar el color de su texto y la información que incluye con las preferencias del usuario.</p>
-<p>El <em>prompt</em> se configura con la variable de entorno <em>PS1</em> que en <em>Bash</em> está en el directorio personal definido en el archivo <em>.bashrc</em>. Los colores se especifican con una secuencia de caracteres y números que forman códigos de escape que son interpretados de forma especial, estas secuencias están mezclados con las secuencias de la información a mostrar. Como conocer las secuencias de caracteres con los códigos de escape ANSI para los colores y letras para la información es complicado de escribir o conocer al detalle en la web <a href="https://www.kirsle.net/wizards/ps1.html">Bash $PS1 Generator</a> hay un asistente que facilita el crear un <em>prompt</em> a nuestro gusto de forma sencilla y correcta.</p>
-<p>El siguiente es el que utilizo en mi sistema con colores, el nombre del usuario, el nombre sistema y el directorio de trabajo actual.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal personalizado"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-personalizado_hu9d8ea0e92ec202a66f2573bf5c6472ac_8224_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado" title="Prompt de la terminal personalizado"  class="lozad "></a></p>
-<figcaption>Prompt de la terminal personalizado</figcaption>
-</figure>
-</div>
-<p>Según se edita el <em>prompt</em> el asistente previsualiza como queda en la sección <em>Preview</em>, una vez que el <em>prompt</em> es el que deseamos en la sección <em>Result</em> el asistente ofrece el contenido de la variable de entorno <em>PS1</em> que hay que añadir o cambiar en el archivo <em>~/.bashrc</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">#&#10;</span></span><span class="line"><span class="cl"># ~/.bashrc&#10;</span></span><span class="line"><span class="cl">#&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"># If not running interactively, don&#39;t do anything&#10;</span></span><span class="line"><span class="cl">[[ $- != *i* ]] &amp;&amp; return&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">alias ls=&#39;ls --color=auto&#39;&#10;</span></span><span class="line"><span class="cl">#PS1=&#39;[\u@\h \W$ &#39;&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">#&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWDIRTYSTATE=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWSTASHSTATE=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWUNTRACKEDFILES=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWUPSTREAM=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">GIT_PS1_SHOWCOLORHINTS=&#34;true&#34;&#10;</span></span><span class="line"><span class="cl">source ~/.git-prompt.sh&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">PS1=&#39;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W]\$ &#39;&#10;</span></span><span class="line"><span class="cl">PROMPT_COMMAND=&#39;__git_ps1 &#34;[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>bashrc</span>
-    </div>
-</div>
-<p>Si quieres mostrar alguna información que sea el resultado de algún comando también se puede añadir al <em>prompt</em>. Por ejemplo, supón que se desea añadir la hora del sistema al <em>prompt</em> útil si se quiere a modo de registro para conocer posteriormente a que hora se lanzó un comando, la información de la hora entre otras posibles cosas relacionadas con la fecha la devuelve el comando <em>date</em>. El siguiente <em>script</em> de <em>Bash</em> usando el comando <em>date</em> proporciona la información de la hora a añadir en este caso.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ date +%H:%M&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>date.sh</span>
-    </div>
-</div>
-<p>Ahora hay que incluir esta información en el <em>prompt</em> de la siguiente forma.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">PROMPT_COMMAND=&#39;__git_ps1 &#34;($(date +%H:%M))[\[\033[01;34m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] \W&#34; &#34;]\$ &#34;&#39;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>bashrc-date</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal personalizado con el resultado de un comando"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/prompt-bash-date_hud4a1d03f3ab4a9cb27abe1f1606be98d_8996_300x200_fit_box_3.png" width="300" height="161" alt="Prompt de la terminal personalizado con el resultado de un comando" title="Prompt de la terminal personalizado con el resultado de un comando"  class="lozad "></a></p>
-<figcaption>Prompt de la terminal personalizado con el resultado de un comando</figcaption>
-</figure>
-</div>
-<p>Otro caso habitual es añadir la rama de git del directorio actual de trabajo y si esta tiene cambios como comento en <a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Prompt de la terminal personalizado en carpetas de git con el intérprete Bash</a>. El <em>script</em> necesario que proporciona <a href="https://git-scm.com/">Git</a> es más complejo que el caso anterior pero con la misma finalidad, el <em>script</em> está en <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh">git-prompt.sh</a> y requiere modificar la variable de entorno <em>PS1</em> o bien <em>PROMPT_COMMAND</em>.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_2560x1440_fit_box_3.png" data-gallery="" title="Prompt de la terminal por defecto"><img src="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/images/git-bash_hu4332dbb3d900d0136c532c59777fc2b2_50870_300x200_fit_box_3.png" width="300" height="191" alt="Prompt de la terminal por defecto" title="Prompt de la terminal por defecto"  class="lozad "></a></p>
-<figcaption>Prompt de la terminal personalizado en carpeta de git</figcaption>
-</figure>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://stackoverflow.com/questions/9200862/short-date-in-bash-ps1-prompt">Short date in bash PS1 prompt</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

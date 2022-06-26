@@ -5,12 +5,69 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-06-23T21:00:00+02:00</updated>
+    <updated>2022-06-26T04:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/</id>
+        <title>Jugar al ajedrez en GNU/Linux con GNOME</title>
+        <updated>2016-07-16T12:00:00+02:00</updated>
+        <published>2016-07-16T12:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnome.svg" width="200" height="243" alt="GNOME" title="GNOME"  class=""></p>
+</div>
+<p><a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> no es la plataforma primaria de los juegos triple A, pero existen multitud de juegos libres y gratuitos que igualmente nos hacen pasar muy buenos ratos. Hoy en día los juegos tienen unos gráficos en tres dimensiones espectaculares cada vez más realistas para lo que hasta hace unos pocos años atrás era posible. Aún así algunos juegos no tan avanzados gráficamente son tan o más adictivos y divertidos que cualquier juego triple A y con la ventaja de que no requieren tener la última tarjeta gráfica con al última tecnología, gran cantidad de memoria y se pueden jugar en un portátil sin el riesgo de sobrecalentarlo.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess_hua891d357448f8c855f54d7c0cebc0c5a_44982_2560x1440_fit_box_3.png" data-gallery="" title="Icono del juego de ajedrez de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess_hua891d357448f8c855f54d7c0cebc0c5a_44982_300x200_fit_box_3.png" width="200" height="200" alt="Icono del juego de ajedrez de GNOME" title="Icono del juego de ajedrez de GNOME"  class="lozad "></a></p>
+<figcaption>Icono del juego de ajedrez de GNOME</figcaption>
+</figure>
+</div>
+<p>Un juego clásico es el ajedrez y en GNU/Linux y con el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a> podemos jugar contra un oponente humano o la propia computadora que en el nivel fácil ya nos pondrá en muchas dificultades si es que conseguimos ganarla. Para instalar el juego de ajedrez deberemos instalar el <a href="https://www.archlinux.org/packages/extra/x86_64/gnome-chess/">paquete gnome-chess</a> y si queremos que el oponente sea la computadora instalar el <a href="https://www.archlinux.org/packages/community/x86_64/gnuchess/">paquete gnuchess</a>. Usando <a href="https://www.archlinux.org/">Arch Linux</a> y su gestor de paquetes los instalamos de la siguiente forma:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># pacman -S gnome-chess gnuchess</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pacman.sh</span>
+    </div>
+</div>
+<p>Iniciado el juego veremos el tablero de 8 por 8 casillas con las fichas posicionadas en las casillas de inicio.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess-tablero_hubbe885730450091cb1400539f604646b_45643_2560x1440_fit_box_3.png" data-gallery="" title="Juego de ajedrez de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess-tablero_hubbe885730450091cb1400539f604646b_45643_300x200_fit_box_3.png" width="235" height="200" alt="Juego de ajedrez de GNOME" title="Juego de ajedrez de GNOME"  class="lozad "></a></p>
+<figcaption>Juego de ajedrez de GNOME</figcaption>
+</figure>
+</div>
+<p>En la sección de preferencias del juego configuramos si el oponente es otro humano o la computadora, en caso de ser la computadora su nivel de inteligencia o dificultad, si queremos jugar con las fichas blancas o negras si queremos establecer un tiempo límite para la partida para cada jugador y el tipo de reloj para el tiempo límite. En el apartado del aspecto podemos cambiar la apariencia de las fichas, el formato de la última jugada, la orientación del tablero, si queremos numeración y si queremos sugerencias.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess-preferencias-juego_hu1011da7fac410ad49f87d2194b7a4299_24890_2560x1440_fit_box_3.png" data-gallery="" title="Preferencias de juego de ajedrez de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess-preferencias-juego_hu1011da7fac410ad49f87d2194b7a4299_24890_300x200_fit_box_3.png" width="221" height="200" alt="Preferencias de juego de ajedrez de GNOME" title="Preferencias de juego de ajedrez de GNOME"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess-preferencias-aspecto_hu5aef004cab90a9b42d002761955e69fa_20829_2560x1440_fit_box_3.png" data-gallery="" title="Preferencias de aspecto de ajedrez de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/images/gnome-chess-preferencias-aspecto_hu5aef004cab90a9b42d002761955e69fa_20829_300x200_fit_box_3.png" width="221" height="200" alt="Preferencias de aspecto de ajedrez de GNOME" title="Preferencias de aspecto de ajedrez de GNOME"  class="lozad "></a></p>
+<figcaption>Preferencias del juego</figcaption>
+</figure>
+</div>
+<p>También podemos guardar la partida para continuarla con posterioridad. Solo nos queda practicar la diferentes aperturas que forman una parte esencial de juego seguir alguna estrategia para el juego medio y como finalizar la partida con las piezas que no hayan sido eliminadas por el oponente. En la wikipedia hay algún <a href="https://es.wikipedia.org/wiki/Ajedrez">buen artículo introductorio al ajedrez</a> y <a href="https://es.wikipedia.org/wiki/Apertura_%28ajedrez%29">algunos artículos sobre las aperturas</a> donde encontraremos las más conocidas y seguro que otras muchas que no conocíamos e incluso si estamos aprendiendo la <a href="https://es.wikipedia.org/wiki/Leyes_del_ajedrez">reglas del juego</a>.</p>
+<p>En Amazon hay varios libros que serán más didácticos sobre estrategia para el juego del ajedrez como <a href="https://amzn.to/29Cj30T">Ajedrez para niños</a> o <a href="https://amzn.to/29CiOTD">El ajedrez de torneo</a> y en la biblioteca libre <a href="https://openlibra.com">OpenLibra</a> hay algunos de libre acceso como <a href="https://openlibra.com/es/book/ajedrez-y-su-ensenanza-libro-de-aperturas">Ajedrez y su Enseñanza: Libro de Aperturas</a>. Leyendo alguno de estos libros obtendremos pautas y tácticas que podemos emplear para mejorar nuestras jugadas.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=8425517893&amp;linkId=c1e1fc606e2606fec91e2db08cadcfa7&amp;internal=1" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=842450397X&amp;linkId=b78575ac7587361ca5bb1405a9a2de99&amp;internal=1" title="Amazon" class="lozad"></iframe>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/</id>
         <title>Guía básica del intérprete de comandos Bash</title>
@@ -1282,78 +1339,6 @@ el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash<
                 <category term="tapestry"/>
             
                 <category term="gnu-linux"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2015/09/grabar-y-compartir-video-de-la-terminal-con-asciinema/</id>
-        <title>Grabar y compartir vídeo de la terminal con Asciinema</title>
-        <updated>2015-11-11T19:00:00+02:00</updated>
-        <published>2015-09-20T13:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2015/09/grabar-y-compartir-video-de-la-terminal-con-asciinema/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Asciinema es una herramienta que nos permite grabar un vídeo de texto con la salida de la terminal. El vídeo de texto es mucho mejor que una foto estática de la salida en un determinado punto o un vídeo de imágenes del que no podemos seleccionar y copiar su texto.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/asciinema.png" width="200" height="200" alt="Asciinema" title="Asciinema"  class=""></p>
-</div>
-<p>Si queremos compartir las acciones en una terminal y su salida tenemos varias opciones, la más simple es ejecutar el comando y copiar la salida en un archivo de texto, correo electrónico o artículo de una bitácora. Sin embargo, con esta opción solo tenemos el contenido final del comando y a veces en donde se usan varios comandos o que limpian la terminal (como por ejemplo con ssh) es difícil seguir en esa foto final la salida que se ha ido produciendo en la terminal. Otra opción es crear un vídeo tradicional de imágenes que podamos reproducir con <a href="https://www.videolan.org/vlc/">VLC</a> para ver la evolución de la salida tal y como se produce, sin embargo, en esta opción perdemos el poder copiar y pegar texto, es habitual que tengamos que parar el vídeo y escribir el comando o la salida que vemos en el vídeo, esto es lento y propenso a errores ya que podemos confundirnos varias veces al teclear lo que vemos en el vídeo. Otra opción mejor es usar <a href="https://asciinema.org/">Asciinema</a> que captura el texto de la terminal y crea un vídeo de texto que representa la sesión de terminal que hemos tenido.</p>
-<p>Asciinema es como un vídeo pero de texto que además podemos compartir para que otras personas lo vean y que podemos incrustar en páginas web como artículos de bitácoras. Además permite seleccionar y copiar texto y seguro que necesita mucho menos ancho de banda que un vídeo de <a href="https://www.youtube.com/">YouTube</a>. Empezar a crear vídeos de texto es tan sencillo como <a href="https://github.com/asciinema/asciinema/releases">descargar el binario de Asciinema</a> o <a href="https://asciinema.org/docs/installation">instalarlo con el gestor de paquetes</a> de la distribución GNU/Linux que usemos, también se puede usar en <a href="https://www.apple.com/macos/">Mac OS</a> y <a href="https://www.freebsd.org/es/">FreeBSD</a>.</p>
-<p>Una vez instalado, podemos iniciar una grabación de la terminal, esto creará un archivo <em>video.asciinema</em>. Podremos parar la grabación con la combinación de teclas <kbd>ctrl+d</kbd> o tecleando el comando <code>exit</code>:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema rec --max-wait<span class="o">=</span><span class="m">2</span> video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-rec.sh</span>
-    </div>
-</div>
-<p>Reproducir el vídeo creado con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema play video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-play.sh</span>
-    </div>
-</div>
-<p>Y compartirlo con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema upload video.asciinema&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-upload.sh</span>
-    </div>
-</div>
-<p>Para compartir los vídeos solo necesitaremos una cuenta de correo, no necesitaremos una clave ya que la autenticación en Asciinema se hace mediante un enlace que se nos envían a nuestra cuenta de correo cada vez que queremos acceder a nuestra cuenta. Si instalamos Asciinema por segunda vez o en otro ordenador y queremos asociarlo con la cuenta que ya tenemos podemos hacerlo con:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ asciinema auth&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-auth.sh</span>
-    </div>
-</div>
-<p>En la <a href="https://asciinema.org/docs">documentación de Asciinema</a> están las opciones completas que podemos usar por ejemplo para añadir un título al vídeo o para ejecutar un comando directamente. Una vez que tenemos subido el vídeo a la web de Asciinema podemos compartirlo ya sea enviando en enlace del vídeo o con un reproductor embebido en una página web o artículo de un <em>blog</em>. Para esto último deberemos incluir un <em>script</em> de JavaScript para el reproductor de la siguiente forma, con el atributo id indicamos el vídeo que queremos reproducir, en la <a href="https://asciinema.org/docs/embedding">documentación de las opciones para embeber los vídeos</a> podemos ver las opciones completas que podemos emplear:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://asciinema.org/a/17648.js&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;asciicast-17648&#34;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>asciinema-embed.html</span>
-    </div>
-</div>
-<p>Y este es el resultado de un vídeo en el que muestro un <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a>.</p>
-<div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/418524.js" id="asciicast-418524" async></script>
-<noscript><a href="https://asciinema.org/a/418524" target="_blank"><img src="https://asciinema.org/a/418524.png" width="650" height="450"></a></noscript>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://asciinema.org/">Asciinema</a></li>
-<li><a href="https://asciinema.org/docs">Documentación de Asciinema</a></li>
-<li><a href="https://asciinema.org/docs/embedding">Documentación para embeber vídeos</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
