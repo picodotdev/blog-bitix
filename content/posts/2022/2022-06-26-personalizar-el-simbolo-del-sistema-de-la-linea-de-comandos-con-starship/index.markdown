@@ -3,7 +3,7 @@ pid: 640
 type: "post"
 title: "Personalizar el símbolo del sistema de la línea de comandos con Starship"
 url: "/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/"
-date: 2022-06-26T09:00:00+02:00
+date: 2022-06-26T04:00:00+02:00
 language: "es"
 index: true
 rss: true
