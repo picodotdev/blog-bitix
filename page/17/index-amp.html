@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html amp lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.99.1" />
+	<meta name="generator" content="Hugo 0.101.0" />
   <meta charset="utf-8">
   <meta name="base" content="/blog-bitix/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -220,7 +220,7 @@
         </span>
         <p>
           
-            El protocolo HTTP es un protocolo sin estado que quiere decir que entre las peticiones no se comparte estado ni se recuerda ningún dato. Por otro lado las cookies es pequeño conjunto de datos que son almacenados en el cliente y son enviados en cada petición que se hace a un sitio web, cada sitio web mantiene su propia colección de cookies, dos sitios distintos no comparten sus cookies.
+            El protocolo HTTP es un protocolo sin estado que quiere decir que entre las peticiones no se comparte estado ni se recuerda ningún dato. Por otro lado las cookies es pequeño conjunto de datos que son almacenados en el cliente y son enviados en cada petición que se hace a un sitio web, cada sitio web mantiene su propia colección de cookies, dos sitios distintos no comparten sus cookies. Para mantener estado entre dos peticiones se hace uso de las cookies.
           
           <br>
           <a href="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/index-amp.html">Continuar leyendo...</a>
@@ -264,7 +264,7 @@
         </span>
         <p>
           
-            Con la introducción de los generics en el lenguaje Java en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos wildcard definidos con un ?. Una lista definida como List&lt;?&gt; se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como List&lt;?&gt; o List&lt;?
+            Con la introducción de los generics en el lenguaje Java en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos wildcard definidos con un ?. Una lista definida como List&lt;?&gt; se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como List&lt;?&gt; o List&lt;? extends Object&gt; a partir de Java 5.
           
           <br>
           <a href="/blog-bitix/2019/04/el-concepto-de-wildcard-capture-en-java/index-amp.html">Continuar leyendo...</a>
@@ -399,7 +399,7 @@
         <p>
           
             Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
- Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10.
+Por qué guardar fechas con UTC en la base de datos Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10.
           
           <br>
           <a href="/blog-bitix/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/index-amp.html">Continuar leyendo...</a>

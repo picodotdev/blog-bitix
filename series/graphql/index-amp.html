@@ -283,7 +283,7 @@
           
             En GraphQL construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.
 Por ejemplo, si de un libro solo se requieren las propiedades el id, title y date de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
-&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;queryBooks{&#10;books{&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10;}&#10;}&#10;&#10; query-1.graphql   Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente.
+&#10;&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;&#10;&#10;query Books {&#10; books {&#10;&nbsp;&nbsp;&nbsp;&nbsp;id&#10;&nbsp;&nbsp;&nbsp;&nbsp;title&#10;&nbsp;&nbsp;&nbsp;&nbsp;date&#10; }&#10;}&#10;&#10; query-1.graphql Si se desea recuperar solo el id y title sin el date la consulta debe ser diferente.
           
           <br>
           <a href="/blog-bitix/2018/08/usando-directivas-en-graphql/index-amp.html">Continuar leyendo...</a>
