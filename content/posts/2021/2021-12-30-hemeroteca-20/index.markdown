@@ -13,6 +13,7 @@ promoted: false
 imagePost: "logotype:blogbitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
+library: "true"
 summary: "El número de visitas aunque crece muy ligeramente ya no lo hace al ritmo de los primeros años y los ingresos se mantienen en cifras similares a los de los años anteriores, aunque suficientes para alguna necesidad, juego de consola o donación a algún proyecto de software libre que uso. Este 2021 han sido 73 artículos nuevos escribiendo al menos un artículo a la semana, mi intención es que siga siendo parecido durante el 2022."
 ---
 

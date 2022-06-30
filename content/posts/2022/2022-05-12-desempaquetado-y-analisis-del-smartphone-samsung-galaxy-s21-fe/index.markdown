@@ -71,7 +71,7 @@ Los móviles Android suelen bajar de precio o a aparecer momentos de oferta al d
 
 ### Especificaciones técnicas del Samsung Galaxy S21 FE
 
-El [Samsung Galaxy S21 FE][samsung-galaxy-s21-fe]  al igual que otros móviles se ofrece en dos configuraciones de memoria y almacenamiento, algunos móviles incluso tienen diferentes versiones según la región en la que varía el procesador o SoC que emplea. La mayoría de los móviles tienen ocho núcleos incluso los de gama baja, sin embargo la diferencia de rendimiento entre los móviles de gama alta y los de gama baja es significativa. La diferencia de rendimiento está principalmente en el tipo de los núcleos en los que se basan esos ocho núcleos.
+El [Samsung Galaxy S21 FE][samsung-galaxy-s21-fe] al igual que otros móviles se ofrece en dos configuraciones de memoria y almacenamiento, algunos móviles incluso tienen diferentes versiones según la región en la que varía el procesador o SoC que emplea. La mayoría de los móviles tienen ocho núcleos incluso los de gama baja, sin embargo la diferencia de rendimiento entre los móviles de gama alta y los de gama baja es significativa. La diferencia de rendimiento está principalmente en el tipo de los núcleos en los que se basan esos ocho núcleos.
 
 Los diseñadores de procesadores tienen a su disposición los tipos de núcleos que ofrece ARM pero que luego las marcas en algunos casos personalizan. Algunos procesadores montan dos A78 de alto rendimiento y seis A55 con menor rendimiento pero más eficientes, otros procesadores montan cuatro A78 y cuatro A55. En el caso del Samsung Galaxy S21 FE el procesador incorpora un X1 que ofrece mayor rendimiento incluso que el A78, tiene tres A78 y cuatro A55 que sumando da lugar al procesador de ocho núcleos u _octa-core_.
 
