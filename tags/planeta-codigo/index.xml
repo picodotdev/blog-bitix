@@ -5,12 +5,90 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-06-30T23:00:00+02:00</updated>
+    <updated>2022-07-08T16:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/</id>
+        <title>Generar releases de un proyecto Java con Gradle</title>
+        <updated>2022-07-08T16:00:00+02:00</updated>
+        <published>2022-07-08T16:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o <em>commits</em> importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay <em>plugins</em> tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>La generación de <em>releases</em> es una tarea habitual en un proyecto, la <em>release</em> es una forma de identificar de forma exacta la versión que se utiliza para desplegar en un entorno o en producción o es la versión que utilizan otros proyectos para utilizarla como una dependencia.</p>
+<p>Hay varias nomenclaturas para denominar a las versiones. En Java hay varios <em>plugins</em> para las herramientas de construcción <a href="https://maven.apache.org/">Maven</a> o <a href="https://gradle.org/">Gradle</a> para los proyectos Java que permite generar <em>releases</em>.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="las-_releases_-de-un-proyecto-o-artefacto">Las <em>releases</em> de un proyecto o artefacto</h3>
+<p>En el ciclo de vida de un proyecto o repositorio hay ciertos hitos importantes como cómo son los momentos en los que se desea generar una nueva versión a partir de un <em>commit</em> ya sea para ser desplegada en un servidor o ser usada por otros proyectos como una dependencia.</p>
+<p>Las <em>releases</em> son los <em>commits</em> a los que se les asigna una versión y a partir de los cuales se generan los artefactos del repositorio o proyecto. Una forma de recordar esos hitos en el repositorio de control de versiones como <a href="https://git-scm.com/">Git</a> es creando un <em>tag</em>. Un <em>tag</em> es simplemente asignar una etiqueta con un nombre más semántico y fácilmente identificable que el <em>hash</em> del <em>commit</em>.</p>
+<p>Una forma habitual para los nombres de las versiones o <em>releases</em> es utilizar una nomenclatura compuesta de tres números separados por un punto, por ejemplo 1.2.6, un número mayor en esta versiones implica una versión más reciente y seguramente con más funcionalidades y mejorada. Cada uno de estos números se denominan <em>major.minor.patch</em> donde por norma general el <em>major</em> se incrementa en cada versión destacada o incompatible respecto a las versiones anteriores, <em>minor</em> se incrementa cuando hay cambios importantes con alguna funcionalidad destacada añadida pero que siguen siendo compatibles con versiones anteriores y <em>patch</em> se incrementa cuando los cambios de la nueva versión son menores como corrección de errores o fallos de seguridad pero sin nuevas funcionalidades.</p>
+<p>Dado que la construcción y ciclo de vida del proyecto se gestiona generalmente con una herramienta de construcción la generación de <em>releases</em> se automatiza con Maven o Gradle en el caso de proyectos Java.</p>
+<h3 id="_plugin_-de-_release_-para-gradle"><em>Plugin</em> de <em>release</em> para Gradle</h3>
+<p>Gradle no dispone de un <em>plugin</em> oficial para generar <em>releases</em> de un proyectos y hay que recurrir a <em>plugins</em> desarrollados por un tercero. En Gradle hay dos <em>plugins</em> destacables que permiten automatizar la generación de <em>releases</em> en un proyecto. El segundo no ha generado una nueva versión desde hace cinco años con lo que parece más recomendable el primero por estar mejor mantenido actualmente</p>
+<ul>
+<li><a href="https://axion-release-plugin.readthedocs.io/en/latest/">axion-release-plugin</a></li>
+<li><a href="https://github.com/researchgate/gradle-release">gradle-release</a></li>
+</ul>
+<p>El <a href="https://axion-release-plugin.readthedocs.io/en/latest/"><em>plugin</em> de Axion</a> para generar <em>releases</em> la forma que utiliza para generar una <em>release</em> es creando un <em>tag</em> en el repositorio de código fuente siguiendo la nomenclatura <em>major.minor.patch</em> según las etiquetas ya creadas e incrementando el número de uno de estos tres elementos.</p>
+<p>Que la release consista simplemente en crear una etiqueta tiene la ventaja de que no es necesario crear <em>commits</em> adicionales en el repositorio de código fuente lo que potencialmente invalida la versión probada en un proceso de aseguramiento de calidad.</p>
+<h3 id="_plugin_-de-_release_-para-maven"><em>Plugin</em> de <em>release</em> para Maven</h3>
+<p>El <a href="https://github.com/researchgate/gradle-release"><em>plugin</em> de <em>release</em> de Maven</a> es ofrecido de forma oficial por los desarrolladores de esta herramienta de construcción.</p>
+<p>Su forma de funcionamiento también incrementa las versiones siguiendo la nomenclatura <em>major.minor.patch</em> pero dado que en Maven la versión del proyecto se especifica en los archivos descriptores de construcción <em>pom.xml</em> implica que el proceso de <em>release</em> crea <em>commits</em> en el repositorio de código fuente.</p>
+<h3 id="ejemplo-usando-el-_plugin_-de-_release_-para-gradle">Ejemplo usando el <em>plugin</em> de <em>release</em> para Gradle</h3>
+<p>Usar el <em>plugin</em> de Axion en Gradle requiere añadir el <em>plugin</em> en la lista de <em>plugins</em> del proyecto. El <em>plugin</em> ofrece una sección en la que personalizar algunas opciones de configuración según las preferencias que se deseen en la sección <em>scmVersion</em>. Para diferenciar las etiquetas de <em>releases</em> del resto de etiquetas se puede establecer en prefijo, en el ejemplo con la letra <em>v</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;java-gradle-plugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;maven-publish&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;pl.allegro.tech.build.axion-release&#39;</span> <span class="n">version</span> <span class="s1">&#39;1.13.14&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">scmVersion</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tag</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;v&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">project</span><span class="o">.</span><span class="na">with</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.build.gradle.plugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">version</span> <span class="o">=</span> <span class="n">scmVersion</span><span class="o">.</span><span class="na">version</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">gradlePluginPortal</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;net.sourceforge.pmd:pmd:6.44.0&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.puppycrawl.tools:checkstyle:10.1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.6&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.owasp.dependencycheck:org.owasp.dependencycheck.gradle.plugin:7.1.0.1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.owasp.dependencycheck:org.owasp.dependencycheck.gradle.plugin:7.1.0.1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;pl.allegro.tech.build:axion-release-plugin:1.13.14&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testImplementation</span> <span class="s1">&#39;org.junit.jupiter:junit-jupiter:5.8.1&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">publishing</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">maven</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;ArtifactsRespotiry&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">url</span> <span class="o">=</span> <span class="n">uri</span><span class="o">(</span><span class="s2">&#34;https://maven.pkg.github.com/picodotdev/artifacts-repository&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">credentials</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">username</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="na">findProperty</span><span class="o">(</span><span class="s2">&#34;gpr.user&#34;</span><span class="o">)</span> <span class="o">?:</span> <span class="n">System</span><span class="o">.</span><span class="na">getenv</span><span class="o">(</span><span class="s2">&#34;USERNAME&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">password</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="na">findProperty</span><span class="o">(</span><span class="s2">&#34;gpr.key&#34;</span><span class="o">)</span> <span class="o">?:</span> <span class="n">System</span><span class="o">.</span><span class="na">getenv</span><span class="o">(</span><span class="s2">&#34;TOKEN&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">gradlePlugin</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">javaGradlePlugin</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.build.gradle.plugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementationClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.build.gradle.plugin.JavaGradlePluginPlugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">tasks</span><span class="o">.</span><span class="na">named</span><span class="o">(</span><span class="s1">&#39;test&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">useJUnitPlatform</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>El comando principal para generar una nueva versión es tan simple como utilizar una tarea ofrecida por el <em>plugin</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew release&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-release.sh</span>
+    </div>
+</div>
+<p>En la versión actual del proyecto se obtiene con otra tarea añadida por el proyecto. En esencia busca entre los <em>tags</em> en el repositorio y según el <em>commit</em> actual devuelve la versión actual.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew currentVersion&#10;</span></span><span class="line"><span class="cl">Project version: 0.1.1&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-currentversion.sh</span>
+    </div>
+</div>
+<p>Dado que las releases son simplemente etiquetas en el repositorio de código fuente estas pueden verse con el comando de Git para listar las etiquetas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git tag&#10;</span></span><span class="line"><span class="cl">v0.1.0&#10;</span></span><span class="line"><span class="cl">v0.1.1</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>git-tag.sh</span>
+    </div>
+</div>
+<p>El comportamiento por defecto de la tarea <em>release</em> es incrementar el componente menos significativo es incrementado que estando la versión compuesta de tres elementos significa que se incrementa el número de <em>patch</em>, el <em>plugin</em> ofrece también la posibilidad de especificar el número de versión que se desea o incrementar otro elemento.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.version<span class="o">=</span>2.0.0&#10;</span></span><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.incrementer<span class="o">=</span>incrementMajor&#10;</span></span><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.incrementer<span class="o">=</span>incrementMinor&#10;</span></span><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.incrementer<span class="o">=</span>incrementPatch</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-marknextversion.sh</span>
+    </div>
+</div>
+<p>En caso de utilizar GitHub al generar la versión y etiqueta y subirla al repositorio lo añade en la sección de <em>releases</em> en la página de GitHub del proyecto.</p>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/06/hemeroteca-21/</id>
         <title>Hemeroteca #21</title>
@@ -36,7 +114,7 @@
 <p>Como novedad desde hace unas semanas he incluido otra plataforma de publicidad, es <a href="http://videoo.tv/">Videoo.tv</a> que ofrece otra forma de anuncios complementarios a los ofrecidos por AdSense, al igual que AdSense no es muy intrusiva ni molesta. En el poco tiempo que la tengo me está generando más ingresos que AdSense, he estado dejando de ganar dinero. Ha sido alrededor de duplicar ingresos de AdSense que si normalmente los de AdSense estaban entre 20 y 30€ ahora pasarán a estar entre 40 y 50€ de forma regular, lo que es una mejora muy significativa. Aún pendiente de que me hagan el primer ingreso, espero que al finalizar este mes me emitan la primera factura.</p>
 <p>Me contactaron los de Videoo e insertar su red publicitaria es apenas un <em>script</em> poco más que lo necesario para AdSense. La publicidad de Videoo que he insertado son vídeos que dependiendo del artículo he colocado a lado de la tabla de contenidos, si ese área está visible se muestra ahí el vídeo de publicidad y si no está visible el anuncio se muestra de forma flotante en la parte inferior derecha. Son anuncios en formato vídeo pero sin audio con lo que no son demasiado molestos.</p>
 <p>Además, cuando no se muestra un vídeo de publicidad el área del anuncio hace las funciones de carrusel de artículos lo que permite mostrar en todos los artículos artículos ya publicados que quizá le interesen al lector de contenido relacionado.</p>
-<h3 id="alis">ALIS</h3>
+<h3 id="alis">alis</h3>
 <p>Hace ya un tiempo que no hago ninguna modificación importante al <a href="https://github.com/picodotdev/alis/">script para instalar Arch Linux</a>. Al sitio web le he actualizado los estilos y le he añadido un par de páginas de contenido a su sitio web.</p>
 <p>En cuanto a cambios ahora permite establecer puntos de montaje completamente configurables, autodetecta si el dispositivo de instalación es <em>sda</em> o <em>vda</em> según los dispositivos disponibles con lo que en máquinas virtuales es una opción menos de configuración a establecer, al sitio web también le he cambiado de Universal Analytics a Google Analytics 4, para terminar en la lista de cambios ahora permite descargar una versión en concreto del <em>script</em> en vez de siempre la última para aquellos usuarios que quieran una versión que sepan funciona.</p>
 <ul>
@@ -1585,134 +1663,6 @@
                 <category term="java"/>
             
                 <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/</id>
-        <title>Artículo #9 de Yo apoyo al software libre</title>
-        <updated>2022-01-13T23:00:00+01:00</updated>
-        <published>2022-01-13T23:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Con los ingresos por publicidad de AdSense, afiliado de Amazon y artículos patrocinados desde hace unos años hago una donación a los programas que utilizo habitualmente o me resultan interesantes. El gestor de contraseñas KeePassXC es uno de los programas que utilizo y me es muy útil para guardar de forma segura las credenciales de inicio de sesión en varios servicios.</strong></p>]]>
-        <![CDATA[<p>Mucho del software libre además de libre que proporciona a los usuarios varios derechos sobre el programa generalmente es gratuito. Y mucho del software libre es desarrollado sin el objetivo principal de monetizarlo en el tiempo de ocio de sus desarrolladores. Al contrario del software comercial que suelen tener una licencia privativa que entre otras cosas no permite acceso al código fuente para estudiarlo, modificarlo no compartir los cambios con otros usuarios también el software comercial suele tener el objetivo de monetizarlo, requieren pagar una licencia anual y habitualmente cuenta con el soporte de una empresa.</p>
-<p>Los desarrolladores de software libre recurren a un modelo de donaciones en el que instan a los usuarios a realizar una pequeña donación según lo que consideren. En algunos casos estas donaciones sirven para cubrir los gastos que tienen como la compra del dominio o el hospedaje para la página web del proyecto.</p>
-<p>El problema de los desarrolladores surge cuando hay empresas que se basan y lucran con el trabajo de los desarrolladores de software libre y código abierto sin proporcionar ayuda económica a los desarrolladores ni devuelven nada a cambio, los desarrolladores pueden llegar a cansarse de trabajar gratuitamente.</p>
-<p>Desde hace un tiempo y con una pequeña parte de los ingresos del blog tengo la costumbre de hacer una donación al menos cada año a alguno de los programas que uso y que me resultan muy útiles, la donación que hago es sin lugar a dudas mucho menor que si usase una alternativa equivalente comercial pero al menos espero contribuir un poco a que estos programas sigan teniendo nuevas versiones con nuevas características y corrigiendo errores.</p>
-<h3 id="keepassxc">KeePassXC</h3>
-<p><a href="https://keepassxc.org/">KeePassXC</a> es una aplicación que proporciona la funcionalidad de generar y almacenar las credenciales de inicio de sesión de cualquier servicio en una base de datos cifrada protegida por una contraseña o archivo de clave maestro. Esta aplicación de gestor de contraseñas permite mantener varias buenas prácticas de seguridad como generar contraseñas fuertes del número de caracteres que se desee utilizando una combinación de letras, números y símbolos, utilizar una contraseña única para cada servicio, soporta generar códigos del segundo factor de autenticación que hace mucho más difícil ser víctima de un ataque de <em>phishing</em> y permite asociar a cada apunte notas y archivos adjuntos que también se guardan cifrados entre otras funcionalidades.</p>
-<p>En vez de utilizar una única contraseña para todos los servicios o guardar las contraseñas en un archivo de texto sin cifrar es recomendable utilizar una aplicación de gestor de contraseñas como KeePassXC. Es una aplicación de software libre y dispone de versiones para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y <a href="https://www.apple.com/macos/">macOS</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/">Guardar contraseñas de forma segura con KeePassXC</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/10/manual-basico-sobre-ataques-informaticos-peligros-tipos-como-detectarlos-como-evitarlos-y-medidas-de-prevencion/">Manual básico sobre ataques informáticos, peligros, tipos, cómo detectarlos, cómo evitarlos y medidas de prevención</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</a></li>
-</ul>
-<p>Ya colaboro realizando la traducción de la aplicación al español, ya he escrito un artículo sobre esa aplicación para describirla con las ventajas de seguridad que proporciona y es el gestor de contraseñas que utilizo para guardar las credenciales, generar contraseñas y generar los códigos de segundo factor de autenticación de varias cuentas.</p>
-<p>Como es una aplicación muy útil para mi y uso de forma habitual hago una pequeña donación que no es muy grande pero seguro que los desarrolladores lo agradecen y espero que sirva como motivación para que sigan manteniendo este programa que se suma a las donaciones que he realizado con anterioridad a otros programas que utilizo o proyectos que me resultan interesantes.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/keepassxc.svg" width="300" height="200" alt="KeePassXC" title="KeePassXC"  class="lozad "></p>
-</figure>
-</div>
-<h3 id="comprobante-de-la-donación">Comprobante de la donación</h3>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/images/donacion-keepassxc_hu6ffb71ed032fd03b92dd518bf7384ec0_116758_2560x1440_fit_box_3.png" data-gallery="" title="Donación KeePassXC"><img src="https://picodotdev.github.io/blog-bitix/2022/01/articulo-9-de-yo-apoyo-al-software-libre/images/donacion-keepassxc_hu6ffb71ed032fd03b92dd518bf7384ec0_116758_650x450_fit_box_3.png" width="258" height="450" alt="Donación KeePassXC" title="Donación KeePassXC"  class="lozad "></a></p>
-<figcaption>Donación KeePassXC</figcaption>
-</figure>
-</div>
-<table class="table">
-    <thead>
-        <tr class="thead-dark">
-            <th colspan="4">Donaciones que he realizado hasta la última fecha</th>
-        </tr>
-        <tr class="thead-light">
-            <th>#</th>
-            <th>Fecha</th>
-            <th>Proyecto</th>
-            <th>Donación</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>2015/12</td>
-            <td>Free Software Foundation Europe (FSFE)</td>
-            <td>40 €</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>2016/09</td>
-            <td>Wikipedia, Mozilla/Firefox</td>
-            <td>10 €, 10 €</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>2017/01</td>
-            <td>elementaryOS, Libre Office, Arch Linux ARM</td>
-            <td>10 €, 10 €, 10 €</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>2017/05</td>
-            <td>GNOME, VideoLAN (VLC), Arch Linux</td>
-            <td>15,31 €, 10 €, 0,31 €</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>2018/01</td>
-            <td>LineageOS, Replicant</td>
-            <td>15 €, 15 €</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>2018/12</td>
-            <td>Wine</td>
-            <td>$20</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>2019/12</td>
-            <td>Calibre</td>
-            <td>$10</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>2020/12</td>
-            <td>Phoronix, Mozilla/Firefox, GnuPG</td>
-            <td>$12, 10 €, 10 €</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>2022/01</td>
-            <td>KeePassXC</td>
-            <td>15 €</td>
-        </tr>
-        <tr>
-            <td colspan="3">Total</td>
-            <td>180 €, $42</td>
-        </tr>
-    </tbody>
-</table>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://staltz.com/software-below-the-poverty-line.html">Software below the poverty line</a></li>
-<li><a href="https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc">Your free trial version of &ldquo;open-source&rdquo; has expired, please update to a commercial plan</a></li>
-<li><a href="https://github.com/chrisdutz/blog/blob/main/plc4x/success-stories.adoc">Success stories</a></li>
-<li><a href="https://www.xataka.com/aplicaciones/piropos-aplausos-no-suficientes-otro-desarrollador-open-source-se-harta-trabajar-amor-al-arte-destapa-realidad-injusta">&ldquo;Los piropos y los aplausos no son suficientes&rdquo;: otro desarrollador Open Source se harta de trabajar por amor al arte y destapa una realidad injusta</a></li>
-<li><a href="https://www.genbeta.com/desarrollo/programadores-open-source-estan-hartos-quieren-que-empresas-que-se-benefician-su-trabajo-gratuito-empiecen-a-pagar">Los programadores open source están hartos: quieren que las empresas que se benefician de su trabajo gratuito empiecen a pagar</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>

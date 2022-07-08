@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="base" href="/blog-bitix/">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o commits importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay plugins tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+
+  <title>Generar releases de un proyecto Java con Gradle</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/" hreflang="es">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://picodotdev.github.io/blog-bitix/index.xml" hreflang="es" title="Blog Bitix">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/" hreflang="es" title="Generar releases de un proyecto Java con Gradle">
+  
+  <link rel="amphtml" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/index-amp.html" hreflang="es" title="Generar releases de un proyecto Java con Gradle">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Social -->
+<meta property="og:title" content="Generar releases de un proyecto Java con Gradle">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o commits importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay plugins tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Generar releases de un proyecto Java con Gradle">
+<meta name="twitter:description" content="Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o commits importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay plugins tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/"
+    },
+    "headline": "Generar releases de un proyecto Java con Gradle",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/java-750.png"
+        
+      },
+    "datePublished": "2022-07-08T16:00:00+02:00",
+    "dateModified": "2022-07-08T16:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "890",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+        }
+    },
+    "description": "Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o commits importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay plugins tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso."
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg"
+    }
+}
+  </script>
+
+  <!-- css -->
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.1.3-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.6.1/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.4.0/css/blueimp-gallery.min.css" media="all">
+  <!-- theme -->
+  <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/main.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/css/cookieconsent.min.css" as="style">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
+
+  <!-- javascript -->
+  <link rel="preload" href="/blog-bitix/assets/js/require-config.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/libs/require.js" as="script">
+  <link rel="preload" href="/blog-bitix/assets/js/main.js" as="script">
+  <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
+  <script type="text/javascript" src="/blog-bitix/assets/libs/require.js" data-main="/blog-bitix/assets/js/main" defer></script>
+
+  
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R8XCRGSMY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R8XCRGSMY"></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
+<script type="text/javascript" defer>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: 'ca-pub-3533636310991304',
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/blog-bitix/assets/js/app.js" defer></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+        
+        
+        
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <form name="query" class="form-inline search" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
+        </div>
+      </form>
+      <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
+        <input type="hidden" name="q" value="">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+        <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-container-sidebar">
+          <div class="adblock-container-sidebar-left"></div>
+          <div class="adblock-container-sidebar-right">
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:600px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="7450235768"></ins>
+          </div>
+        </div>
+        
+
+
+<article>
+    <h1>Generar releases de un proyecto Java con Gradle</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>08/07/2022</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2022/07/generar-releases-de-un-proyecto-java-con-gradle/#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Utilizar las etiquetas de las herramientas de control de versiones permite conservar ciertos hitos o <em>commits</em> importantes para consultarlos en el futuro. Generar una versión de un proyecto suele implicar generar una etiqueta en la herramienta de control de versiones. Dado que la generación de nuevas versiones es parte del ciclo de vida de un proyecto hay <em>plugins</em> tanto para Maven como para Gradle que ofrecen como funcionalidad automatizar esta proceso.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard mt-3 mb-3 p-0">
+      <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:90px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="8238629013"></ins>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      
+        
+        
+      
+      <div class="logotypes">
+<p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
+</div>
+<p>La generación de <em>releases</em> es una tarea habitual en un proyecto, la <em>release</em> es una forma de identificar de forma exacta la versión que se utiliza para desplegar en un entorno o en producción o es la versión que utilizan otros proyectos para utilizarla como una dependencia.</p>
+<p>Hay varias nomenclaturas para denominar a las versiones. En Java hay varios <em>plugins</em> para las herramientas de construcción <a href="https://maven.apache.org/">Maven</a> o <a href="https://gradle.org/">Gradle</a> para los proyectos Java que permite generar <em>releases</em>.</p>
+<div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#las-_releases_-de-un-proyecto-o-artefacto">Las <em>releases</em> de un proyecto o artefacto</a></li>
+    <li><a href="#_plugin_-de-_release_-para-gradle"><em>Plugin</em> de <em>release</em> para Gradle</a></li>
+    <li><a href="#_plugin_-de-_release_-para-maven"><em>Plugin</em> de <em>release</em> para Maven</a></li>
+    <li><a href="#ejemplo-usando-el-_plugin_-de-_release_-para-gradle">Ejemplo usando el <em>plugin</em> de <em>release</em> para Gradle</a></li>
+  </ul>
+</nav></div> 
+<h3 id="las-_releases_-de-un-proyecto-o-artefacto">Las <em>releases</em> de un proyecto o artefacto</h3>
+<p>En el ciclo de vida de un proyecto o repositorio hay ciertos hitos importantes como cómo son los momentos en los que se desea generar una nueva versión a partir de un <em>commit</em> ya sea para ser desplegada en un servidor o ser usada por otros proyectos como una dependencia.</p>
+<p>Las <em>releases</em> son los <em>commits</em> a los que se les asigna una versión y a partir de los cuales se generan los artefactos del repositorio o proyecto. Una forma de recordar esos hitos en el repositorio de control de versiones como <a href="https://git-scm.com/">Git</a> es creando un <em>tag</em>. Un <em>tag</em> es simplemente asignar una etiqueta con un nombre más semántico y fácilmente identificable que el <em>hash</em> del <em>commit</em>.</p>
+<p>Una forma habitual para los nombres de las versiones o <em>releases</em> es utilizar una nomenclatura compuesta de tres números separados por un punto, por ejemplo 1.2.6, un número mayor en esta versiones implica una versión más reciente y seguramente con más funcionalidades y mejorada. Cada uno de estos números se denominan <em>major.minor.patch</em> donde por norma general el <em>major</em> se incrementa en cada versión destacada o incompatible respecto a las versiones anteriores, <em>minor</em> se incrementa cuando hay cambios importantes con alguna funcionalidad destacada añadida pero que siguen siendo compatibles con versiones anteriores y <em>patch</em> se incrementa cuando los cambios de la nueva versión son menores como corrección de errores o fallos de seguridad pero sin nuevas funcionalidades.</p>
+<p>Dado que la construcción y ciclo de vida del proyecto se gestiona generalmente con una herramienta de construcción la generación de <em>releases</em> se automatiza con Maven o Gradle en el caso de proyectos Java.</p>
+<h3 id="_plugin_-de-_release_-para-gradle"><em>Plugin</em> de <em>release</em> para Gradle</h3>
+<p>Gradle no dispone de un <em>plugin</em> oficial para generar <em>releases</em> de un proyectos y hay que recurrir a <em>plugins</em> desarrollados por un tercero. En Gradle hay dos <em>plugins</em> destacables que permiten automatizar la generación de <em>releases</em> en un proyecto. El segundo no ha generado una nueva versión desde hace cinco años con lo que parece más recomendable el primero por estar mejor mantenido actualmente</p>
+<ul>
+<li><a href="https://axion-release-plugin.readthedocs.io/en/latest/">axion-release-plugin</a></li>
+<li><a href="https://github.com/researchgate/gradle-release">gradle-release</a></li>
+</ul>
+<p>El <a href="https://axion-release-plugin.readthedocs.io/en/latest/"><em>plugin</em> de Axion</a> para generar <em>releases</em> la forma que utiliza para generar una <em>release</em> es creando un <em>tag</em> en el repositorio de código fuente siguiendo la nomenclatura <em>major.minor.patch</em> según las etiquetas ya creadas e incrementando el número de uno de estos tres elementos.</p>
+<p>Que la release consista simplemente en crear una etiqueta tiene la ventaja de que no es necesario crear <em>commits</em> adicionales en el repositorio de código fuente lo que potencialmente invalida la versión probada en un proceso de aseguramiento de calidad.</p>
+<h3 id="_plugin_-de-_release_-para-maven"><em>Plugin</em> de <em>release</em> para Maven</h3>
+<p>El <a href="https://github.com/researchgate/gradle-release"><em>plugin</em> de <em>release</em> de Maven</a> es ofrecido de forma oficial por los desarrolladores de esta herramienta de construcción.</p>
+<p>Su forma de funcionamiento también incrementa las versiones siguiendo la nomenclatura <em>major.minor.patch</em> pero dado que en Maven la versión del proyecto se especifica en los archivos descriptores de construcción <em>pom.xml</em> implica que el proceso de <em>release</em> crea <em>commits</em> en el repositorio de código fuente.</p>
+<h3 id="ejemplo-usando-el-_plugin_-de-_release_-para-gradle">Ejemplo usando el <em>plugin</em> de <em>release</em> para Gradle</h3>
+<p>Usar el <em>plugin</em> de Axion en Gradle requiere añadir el <em>plugin</em> en la lista de <em>plugins</em> del proyecto. El <em>plugin</em> ofrece una sección en la que personalizar algunas opciones de configuración según las preferencias que se deseen en la sección <em>scmVersion</em>. Para diferenciar las etiquetas de <em>releases</em> del resto de etiquetas se puede establecer en prefijo, en el ejemplo con la letra <em>v</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;java-gradle-plugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;maven-publish&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;pl.allegro.tech.build.axion-release&#39;</span> <span class="n">version</span> <span class="s1">&#39;1.13.14&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">scmVersion</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">tag</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;v&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">project</span><span class="o">.</span><span class="na">with</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.build.gradle.plugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">version</span> <span class="o">=</span> <span class="n">scmVersion</span><span class="o">.</span><span class="na">version</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mavenCentral</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">gradlePluginPortal</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;net.sourceforge.pmd:pmd:6.44.0&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.puppycrawl.tools:checkstyle:10.1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.6&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.owasp.dependencycheck:org.owasp.dependencycheck.gradle.plugin:7.1.0.1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;org.owasp.dependencycheck:org.owasp.dependencycheck.gradle.plugin:7.1.0.1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span> <span class="s1">&#39;pl.allegro.tech.build:axion-release-plugin:1.13.14&#39;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">testImplementation</span> <span class="s1">&#39;org.junit.jupiter:junit-jupiter:5.8.1&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">publishing</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">repositories</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">maven</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;ArtifactsRespotiry&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">url</span> <span class="o">=</span> <span class="n">uri</span><span class="o">(</span><span class="s2">&#34;https://maven.pkg.github.com/picodotdev/artifacts-repository&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">credentials</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">username</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="na">findProperty</span><span class="o">(</span><span class="s2">&#34;gpr.user&#34;</span><span class="o">)</span> <span class="o">?:</span> <span class="n">System</span><span class="o">.</span><span class="na">getenv</span><span class="o">(</span><span class="s2">&#34;USERNAME&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">password</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="na">findProperty</span><span class="o">(</span><span class="s2">&#34;gpr.key&#34;</span><span class="o">)</span> <span class="o">?:</span> <span class="n">System</span><span class="o">.</span><span class="na">getenv</span><span class="o">(</span><span class="s2">&#34;TOKEN&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">gradlePlugin</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">javaGradlePlugin</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.build.gradle.plugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementationClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.blogbitix.build.gradle.plugin.JavaGradlePluginPlugin&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">tasks</span><span class="o">.</span><span class="na">named</span><span class="o">(</span><span class="s1">&#39;test&#39;</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">useJUnitPlatform</span><span class="o">()</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>El comando principal para generar una nueva versión es tan simple como utilizar una tarea ofrecida por el <em>plugin</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew release&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-release.sh</span>
+    </div>
+</div>
+<p>En la versión actual del proyecto se obtiene con otra tarea añadida por el proyecto. En esencia busca entre los <em>tags</em> en el repositorio y según el <em>commit</em> actual devuelve la versión actual.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew currentVersion&#10;</span></span><span class="line"><span class="cl">Project version: 0.1.1&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-currentversion.sh</span>
+    </div>
+</div>
+<p>Dado que las releases son simplemente etiquetas en el repositorio de código fuente estas pueden verse con el comando de Git para listar las etiquetas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git tag&#10;</span></span><span class="line"><span class="cl">v0.1.0&#10;</span></span><span class="line"><span class="cl">v0.1.1</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>git-tag.sh</span>
+    </div>
+</div>
+<p>El comportamiento por defecto de la tarea <em>release</em> es incrementar el componente menos significativo es incrementado que estando la versión compuesta de tres elementos significa que se incrementa el número de <em>patch</em>, el <em>plugin</em> ofrece también la posibilidad de especificar el número de versión que se desea o incrementar otro elemento.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.version<span class="o">=</span>2.0.0&#10;</span></span><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.incrementer<span class="o">=</span>incrementMajor&#10;</span></span><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.incrementer<span class="o">=</span>incrementMinor&#10;</span></span><span class="line"><span class="cl">$ ./gradlew markNextVersion -Prelease.incrementer<span class="o">=</span>incrementPatch</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>gradlew-marknextversion.sh</span>
+    </div>
+</div>
+<p>En caso de utilizar GitHub al generar la versión y etiqueta y subirla al repositorio lo añade en la sección de <em>releases</em> en la página de GitHub del proyecto.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        <div>
+          <hr>
+        </div>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/">
+                <img src="/blog-bitix/2022/06/publicar-y-utilizar-una-dependencia-de-java-en-un-repositorio-de-git-con-github-packages/images/github-packages-artifact_hu97b93db2bef39782052a9530fbd4c21e_190216_875x0_resize_box_3.png" width="326" height="125" alt="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" title="Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages" class="" loading="lazy">
+                <h3>Publicar y utilizar una dependencia de Java en un repositorio de Git con GitHub Packages</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/04/por-que-y-ejemplo-de-como-desarrollar-un-plugin-de-gradle/">
+                <img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="326" height="125" alt="Por qué y ejemplo de cómo desarrollar un plugin de Gradle" title="Por qué y ejemplo de cómo desarrollar un plugin de Gradle" class="" loading="lazy">
+                <h3>Por qué y ejemplo de cómo desarrollar un plugin de Gradle</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/03/novedades-de-java-18/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Novedades de Java 18" title="Novedades de Java 18" class="" loading="lazy">
+                <h3>Novedades de Java 18</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/03/cambiar-el-comportamiento-de-la-aplicacion-con-configuracion-anotaciones-y-condicionales-en-spring-boot/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Cambiar el comportamiento de la aplicación con configuración, anotaciones y condicionales en Spring Boot" title="Cambiar el comportamiento de la aplicación con configuración, anotaciones y condicionales en Spring Boot" class="" loading="lazy">
+                <h3>Cambiar el comportamiento de la aplicación con configuración, anotaciones y condicionales en Spring Boot</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/02/validar-las-propiedades-de-configuracion-de-spring-boot-al-iniciar-la-aplicacion/">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Validar las propiedades de configuración de Spring Boot al iniciar la aplicación" title="Validar las propiedades de configuración de Spring Boot al iniciar la aplicación" class="" loading="lazy">
+                <h3>Validar las propiedades de configuración de Spring Boot al iniciar la aplicación</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2022/01/las-clases-para-logging-del-paquete-jul-incluidas-en-la-api-de-java/">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las clases para logging del paquete JUL incluidas en la API de Java" title="Las clases para logging del paquete JUL incluidas en la API de Java" class="" loading="lazy">
+                <h3>Las clases para logging del paquete JUL incluidas en la API de Java</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard mt-3 mb-3 p-0">
+            <span id="pageBottom"></span>
+            <ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:280px"
+    data-ad-client="ca-pub-3533636310991304"
+    data-ad-slot="4052324337"></ins>
+          </div>
+        </div>
+        
+  <div class="row">
+    <div class="col-md-12">
+      <span id="comments"></span>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" async>
+    var disqus_shortname = 'blog-bitix';
+    var disqus_identifier = 'blog-bitix-642';
+    var disqus_url = 'https:\/\/picodotdev.github.io\/blog-bitix\/2022\/07\/generar-releases-de-un-proyecto-java-con-gradle\/';
+    var disqus_script = 'embed.js';
+  </script>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Advertising</a></li>
+        <li><a href="/blog-bitix/pages/advertising/">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2022 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
+</div>
+
+  
+  
+</body>
+</html>

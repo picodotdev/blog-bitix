@@ -5,12 +5,140 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2022-06-09T19:00:00+02:00</updated>
+    <updated>2022-07-08T16:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/</id>
+        <title>Novedades de Java 15</title>
+        <updated>2020-09-18T14:00:00+02:00</updated>
+        <published>2020-09-18T14:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las <em>lambdas</em> de Java 8 o los módulos de Java 9, en Java 15 se añaden las <em>sealed classes</em>.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>En septiembre del 2020 se ha publicado la versión 15 de Java siguiendo el calendario propuesto desde la versión de Java 9 de una nueva versión cada seis meses y de una versión de soporte a largo plazo cada tres años, la primera LTS ha sido Java 11 a la que sucederá Java 17 cómo LTS en septiembre de 2021.</p>
+<p>Con este calendario de publicaciones tan frecuente las novedades son varias en cada nueva versión aunque algunas son simplemente versiones preliminares que pueden cambiar ligeramente en siguientes versiones destinadas a evaluar y probar las funcionalidades que se incorporarán de forma definitiva con posterioridad. Aunque sean versiones preliminares se pueden usar con normalidad, simplemente hay que tener en cuenta que en versiones posteriores requieran modificaciones en el código fuente o lo que es lo mismo no se garantiza la compatibilidad hacia atrás hasta que sean declaradas como una versión definitiva.</p>
+<p>Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se hace más necesario utilizar <a href="https://picodotdev.github.io/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">la herramienta SDKMAN</a> para instalar al mismo tiempo varias versiones del JDK de Java y poder cambiar de una a otra con facilidad.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="introducción">Introducción</h3>
+<ul>
+<li><a href="https://openjdk.java.net/projects/jdk/15/">Características de Java 15</a></li>
+<li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html">Notas de publicación de Java 15</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/15/">Documentación de Java 15</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/15/docs/api/index.html">Documentación Javadoc de Java 15</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets">JavaMagazine: Inside Java 15: Fourteen JEPs in five buckets</a></li>
+</ul>
+<p>Esta es la lista de novedades de Java 15, algunas son cambios que no tiene gran impacto en el lenguaje ni la plataforma al ser más cambios internos que reimplementan y modernizan código existente, otras son versiones preliminares y segundas versiones preliminares no definitivas, algunas características en versiones anteriores se marcan como públicas dejando de ser preliminares, otras que se marcan como obsoletas desaconsejándose su uso y otras ya marcadas como obsoletas anteriormente son eliminadas.</p>
+<ul>
+<li>339: <a href="https://openjdk.java.net/jeps/339">Edwards-Curve Digital Signature Algorithm (EdDSA)</a></li>
+<li>360: <a href="https://openjdk.java.net/jeps/360">Sealed Classes (Preview)</a></li>
+<li>371: <a href="https://openjdk.java.net/jeps/371">Hidden Classes</a></li>
+<li>372: <a href="https://openjdk.java.net/jeps/372">Remove the Nashorn JavaScript Engine</a></li>
+<li>373: <a href="https://openjdk.java.net/jeps/373">Reimplement the Legacy DatagramSocket API</a></li>
+<li>374: <a href="https://openjdk.java.net/jeps/374">Disable and Deprecate Biased Locking</a></li>
+<li>375: <a href="https://openjdk.java.net/jeps/375">Pattern Matching for instanceof (Second Preview)</a></li>
+<li>377: <a href="https://openjdk.java.net/jeps/377">ZGC: A Scalable Low-Latency Garbage Collector</a></li>
+<li>378: <a href="https://openjdk.java.net/jeps/378">Text Blocks</a></li>
+<li>379: <a href="https://openjdk.java.net/jeps/379">Shenandoah: A Low-Pause-Time Garbage Collector</a></li>
+<li>381: <a href="https://openjdk.java.net/jeps/381">Remove the Solaris and SPARC Ports</a></li>
+<li>383: <a href="https://openjdk.java.net/jeps/383">Foreign-Memory Access API (Second Incubator)</a></li>
+<li>384: <a href="https://openjdk.java.net/jeps/384">Records (Second Preview)</a></li>
+<li>385: <a href="https://openjdk.java.net/jeps/385">Deprecate RMI Activation for Removal</a></li>
+</ul>
+<h3 id="nuevas-características">Nuevas características</h3>
+<h4 id="algoritmo-de-firma-digital-edwards-curve-eddsa">Algoritmo de firma digital Edwards-Curve (EdDSA)</h4>
+<p>El algoritmo de firma digital EdDSA o <em>Edwards-Curve Digital Signature Algorithm</em> (EdDSA) es demandado por mejorar la seguridad y el rendimiento comparado con otros algoritmos de firma, ya está implementado en otras librerías de criptografía como <a href="https://www.openssl.org/">OpenSSL</a>. Este esquema de firma es opcional en TLS 1.3 pero es uno de los tres permitidos. Añadir este algoritmo permite usar EdDSA en Java sin recurrir a librerías de terceras partes.</p>
+<h4 id="bloques-de-texto">Bloques de texto</h4>
+<p>En Java embeber en el código un trozo de código HTML, XML, SQL o JSON en un literal como un String requiere editarlo de forma significativa con caracteres de escape y concatenación para que el código compile. La cadena transformada resultante es poco legible y difícil de mantener.</p>
+<p>Un bloque de texto HTML en código Java requiere de múltiples caracteres de escape y concatenaciones de cadenas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&lt;html&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Hello, world&lt;/p&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="s">&#34;&lt;/html&gt;\n&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlocks-1.java</span>
+    </div>
+</div>
+<p>Usando bloques de texto se eliminan los caracteres de escape y las concatenaciones. El código resultante es mucho más legible y fácil de mantener.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;html&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p&gt;Hello, world&lt;/p&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;/body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;/html&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &#34;&#34;&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>TextBlocks-2.java</span>
+    </div>
+</div>
+<h4 id="clases-ocultas">Clases ocultas</h4>
+<p>Se añaden clases ocultas o <em>hidden classes</em> que son clases que no pueden usarse directamente por otras clases. Su intención es que sean usadas por <em>frameworks</em> que generan clases en tiempo de ejecución y las usan de forma indirecta con <em>reflection</em>.</p>
+<h4 id="reimplementación-de-la-antigua-api-datagramsocket">Reimplementación de la antigua API DatagramSocket</h4>
+<p>Se reemplazan las implementaciones de bajo nivel para la comunicación por red <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/net/DatagramSocket.html">java.net.DatagramSocket</a> y <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/net/MulticastSocket.html">java.net.MulticastSocket</a> con una implementación mas simple y moderna que es más fácil de mantener, depurar y fácil de adaptar a <a href="https://picodotdev.github.io/blog-bitix/2020/05/la-concurrencia-en-la-plataforma-java-con-project-loom/">los <em>threads</em> virtuales del proyecto Loom</a>.</p>
+<h4 id="recolectores-de-basura-zgc-y-shenandoah">Recolectores de basura ZGC y Shenandoah</h4>
+<p>Se califican como versión de producción los recolectores de basura <em>ZGC</em> y <em>Shenandoah</em> que ofrecen tiempos de pausa bajos aunque se mantiene como recolector de basura por defecto <em>G1</em>. Se soportan todas las plataformas comunes, Linux/x86_64, Linux/aarch64, Windows y macOS. El recolector de basura <em>ZGC</em> se activa con la opción de la máquina virtual <em>-XX:+UseZGC</em> y <em>Shenandoah</em> con <em>-XX:+UseShenandoahGC</em>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">El recolector de basura de Java, qué hace y cómo funciona en cada versión</a></li>
+</ul>
+<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
+<h4 id="_sealed-classes_"><em>Sealed Classes</em></h4>
+<p>En Java las clases permiten la reutilización de código mediante la herencia, los métodos de una clase son heredados por las subclases que la extiendan. Sin embargo, en ocasiones la jerarquía de clases sirve para modelar el dominio sin querer permitir que sea extendido por cuales quiera otras clases.</p>
+<p>En Java toda clase puede ser extendida por defecto la única forma de no permitir extender una clase es utilizando la palabra reservada <em>final</em>. Sin embargo, esto impide la extensión de la clase completamente.</p>
+<p>Las clases <em>sealed</em> especifican de forma explícita que clases tiene permitido la extensión y herencia. Las clases <em>sealed</em> son más restrictivas que el comportamiento por defecto de permitir a cualquier clase la extensión pero más permisivo que si se utiliza la palabra clave <em>final</em> que impide a cualquier clase la extensión.</p>
+<p>Se introduce una nueva palabra reservada <em>sealed</em>. La declaración de la clase <em>sealed</em> se realiza con el siguiente sintaxis, en este ejemplo la clase <em>Shape</em> solo puede ser extendida por las clases <em>Circle</em>, <em>Rectangle</em> y <em>Square</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="n">sealed</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="n">permits</span> <span class="n">Circle</span><span class="o">,</span> <span class="n">Rectangle</span><span class="o">,</span> <span class="n">Square</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Circle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Square</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>SealedClasses.java</span>
+    </div>
+</div>
+<h4 id="_pattern-matching_-para-_instanceof_"><em>Pattern Matching</em> para <em>instanceof</em></h4>
+<p>Se mantiene en la categoría de funcionalidad preliminar esta funcionalidad ya publicada en Java 14 que permite eliminar algunos <em>cast</em> de tipos explícitos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// use s&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>IfPatternMatching-1.java</span>
+    </div>
+</div>
+<p>El operador <em>instanceof</em> permite renombrar la variable y dentro de la rama usarla sin necesidad de realizar el <em>cast</em>, esto simplifica el código y evita posibles errores.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// use s&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>IfPatternMatching-2.java</span>
+    </div>
+</div>
+<h4 id="_records_"><em>Records</em></h4>
+<p>Los <em>records</em> son clases inmutables con unas convenciones implícitas que no requieren escribir mucho del código considerado ceremonial en las clases de datos Java que hacen al lenguaje <em>verboso</em> para estas clases simples.</p>
+<p>Escribir clases portadoras de datos en Java requieren una buena cantidad de código de bajo valor, repetitivo, propenso a errores para especificar constructores, métodos de acceso a propiedades e <a href="https://picodotdev.github.io/blog-bitix/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/">implementar correctamente los métodos <em>equals</em>, <em>hashCode</em> y <em>toString</em></a>.</p>
+<p>La siguiente clase <em>record</em> es equivalente al POJO tradicional de muchas más líneas de código.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">record</span> <span class="nf">PhoneNumber</span><span class="o">(</span><span class="n">Integer</span> <span class="n">lineNumber</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">prefix</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">areaCode</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Records.java</span>
+    </div>
+</div>
+<h3 id="otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</h3>
+<p>Otras especificaciones que no tienen tanto impacto desde el punto de vista del programador y en el lenguaje son las siguientes. Algunas eliminan y marcan como desaconsejado su uso.</p>
+<p>Entre las más destacables está <em>Foreign-Memory Access</em> que permite a los programas Java acceder de forma segura y eficiente a memoria externa fuera de la memoria <em>heap</em> de Java. También a destacar el soporte de Unicode 13.0 que añade unos 5K nuevos caracteres o el soporte para el algoritmo de <em>hash</em> SHA-3 en el apartado de seguridad.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://jdk.java.net/15/release-notes">JDK 15 Release Notes</a></li>
+<li><a href="https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets">Inside Java 15: Fourteen JEPs in five buckets</a></li>
+<li><a href="https://blogs.oracle.com/java-platform-group/the-arrival-of-java-15">The Arrival of Java 15</a></li>
+<li><a href="https://blog.jetbrains.com/idea/2020/09/java-15-and-intellij-idea/">Java 15 and IntelliJ IDEA </a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/</id>
         <title>Introducción a gRPC y ejemplo con Java</title>
@@ -1607,67 +1735,6 @@
 <li><a href="https://blogs.oracle.com/javamagazine/records-come-to-java">Records Come to Java</a></li>
 <li><a href="https://www.azul.com/whats-new-in-jdk14-latest-release/">What’s New In JDK 14 Latest Release? 80 New Features &amp; APIs</a></li>
 <li><a href="https://medium.com/@youngty1997/jdk-14-foreign-memory-access-api-overview-70951fe221c9">JDK 14 Foreign-Memory Access API Overview</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/02/cambiar-los-niveles-de-log-de-forma-dinamica-sin-reiniciar-la-aplicacion-con-log4j/</id>
-        <title>Cambiar los niveles de log de forma dinámica sin reiniciar la aplicación con Log4j</title>
-        <updated>2020-02-28T19:00:00+01:00</updated>
-        <published>2020-02-28T19:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/02/cambiar-los-niveles-de-log-de-forma-dinamica-sin-reiniciar-la-aplicacion-con-log4j/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Ocurre un bug en producción o en un entorno de pruebas se desea obtener más información. Actualizar el archivo de trazas para obtener más información requiere modificar el archivo de configuración, desplegarlo en el entorno y reiniciar la aplicación, este proceso consume tiempo dependiendo del nivel de automatización de la organización. Para reducir el tiempo necesario para obtener la información con Log4j hay dos posibilidades para cambiar dinámicamente los niveles de trazas de la aplicación sin necesidad de reiniciarla.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Las trazas son muy útiles para tener un registro de lo que ha realizado una aplicación, también son muy útiles en tiempo de desarrollo y para depurar la aplicación. Cada traza se emite con un nivel de prioridad, en el momento de desarrollo puede que nos interese las trazas de más bajo nivel de <em>debug</em>, <em>trace</em> o <em>info</em>, en el entorno de producción donde la aplicación debe funcionar correctamente las trazas de <em>debug</em> e <em>info</em> se omiten y las aplicaciones se suele configuran con un nivel mínimo de <em>warn</em> o <em>error</em> para que las trazas sean registradas.</p>
-<p>Sin embargo, cuando se descubre un error en producción o se quiere obtener más información con los niveles de <em>info</em> de qué es lo que está ocurriendo la aplicación requiere al menos cambiar el archivo de configuración de las trazas con su <em>commit</em> al un repositorio de control de versiones, la actualización del archivo de configuración desplegado en el entorno de producción y un reinicio de la aplicación. Este proceso de desarrollo y operaciones requiere tiempo más o menos dependiendo del nivel de automatización que posee la aplicación, en cualquier caso consume tiempo de personas y retrasa el tiempo necesario para obtener información y por tanto para resolver el problema.</p>
-<p>¿Te imaginas lo bueno que sería que cuando hay un <em>bug</em> en producción o se necesita poder reconfigurar los niveles de trazas de dinámicamente sin reiniciar la aplicación ni despliegues? Una de las librerías más populares en Java para emitir trazas <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> permite cambiar de forma dinámica el nivel de las trazas para cada <em>logger</em>.</p>
-<p>El requisito para que cambiar el nivel de las trazas sea útil es que deben estar incluidas previamente en la aplicación, con un nivel de traza y mensaje adecuado.</p>
-<p>Hay dos posibilidades:</p>
-<ul>
-<li>Utilizar la opción <em>monitorInterval</em> con la que Log4j monitoriza según el tiempo configurado el archivo de configuración de las trazas para conocer si ha tenido cambios y reconfigurar los niveles de trazas cuando detecta cambios.</li>
-<li>Utilizar la clase <a href="https://logging.apache.org/log4j/2.x/log4j-core/apidocs/org/apache/logging/log4j/core/config/Configurator.html">Configurator</a>. Esta clase no es parte de la API pública lo que implica que puede cambiar pero permite cambiar los niveles de trazas de forma programática.</li>
-</ul>
-<p>En este ejemplo de código se utiliza la clase <em>Configurator</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.log4j</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LogManager</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Main</span><span class="o">.</span><span class="na">changeLogLevelDynamically</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeLogLevelDynamically</span><span class="o">()</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Configurator</span><span class="o">.</span><span class="na">setLevel</span><span class="o">(</span><span class="n">logger</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">Level</span><span class="o">.</span><span class="na">ERROR</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;info trace&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;error trace&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Configurator</span><span class="o">.</span><span class="na">setLevel</span><span class="o">(</span><span class="n">logger</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">Level</span><span class="o">.</span><span class="na">INFO</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;info trace&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;error trace&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Main.java</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">configuration</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l">warn</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">...</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">loggers</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">root</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l">info</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">appenderRef</span><span class="p">:</span><span class="w">&#10;</span></span></span><span class="line"><span class="cl"><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">STDOUT</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>log4j2.yaml</span>
-    </div>
-</div>
-<p>El nivel de trazas según se inicia la aplicación para el <em>logger</em> es <em>info</em> por configuración, según se ejecuta el programa se cambia el nivel de trazas a <em>error</em> y finalmente se restablece el nivel de trazas a <em>info</em>. Se observa que cuando el nivel de las trazas está a nivel <em>error</em> la traza de nivel <em>info</em> no se emite, como es lo esperado. Al restablecer el nivel a <em>info</em> se emiten ambas trazas.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">2020-02-28 19:43:38,465  ERROR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;io.github.picodotdev.blogbitix.log4j.Main error trace&#10;</span></span><span class="line"><span class="cl">2020-02-28 19:43:38,465  ERROR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;io.github.picodotdev.blogbitix.log4j.Main &#10;</span></span><span class="line"><span class="cl">2020-02-28 19:43:38,465  INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; io.github.picodotdev.blogbitix.log4j.Main info trace&#10;</span></span><span class="line"><span class="cl">2020-02-28 19:43:38,466  ERROR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;io.github.picodotdev.blogbitix.log4j.Main error trace</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>System.out</span>
-    </div>
-</div>
-<p>Para cambiar el nivel de trazas de una aplicación de forma programática se puede <a href="https://picodotdev.github.io/blog-bitix/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/">ofrecer una interfaz JMX en la aplicación</a> o si se trata de una aplicación web una página de configuración que ofrezca la funcionalidad.</p>
-<p>La reconfiguración de los niveles de trazas deben ser temporales ya que la aplicación dependiendo de su carga emite más trazas que con los niveles <em>warn</em> y <em>error</em>. Si las trazas se guardan en un archivo, guardar mayor cantidad de ellas hace que su tamaño pueda ser significativo e incluso llenar el almacenamiento provocando malfuncionamiento en la aplicación. Para evitar que el archivo de trazas llene el almacenamiento persistente es posible <a href="https://picodotdev.github.io/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/">limitar por tamaño, por fecha y rotar los archivos de trazas</a>.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">Log4j Configuration</a></li>
-<li><a href="https://logging.apache.org/log4j/2.x/faq.html#reconfig_level_from_code">How do I set a logger’s level programmatically?</a></li>
-<li><a href="https://stackoverflow.com/questions/4598702/dynamically-changing-log4j-log-level">Dynamically Changing log4j log level</a></li>
 </ul>
 </div>
 ]]>

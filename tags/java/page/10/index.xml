@@ -5,12 +5,92 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/java/</id>
-    <updated>2022-06-09T19:00:00+02:00</updated>
+    <updated>2022-07-08T16:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/</id>
+        <title>Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java</title>
+        <updated>2018-06-01T21:00:00+02:00</updated>
+        <published>2018-06-01T17:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/webjars.png" width="250" height="250" alt="Webjars" title="Webjars"  class=""></p>
+</div>
+<p>Una aplicación web se compone de código de lado de servidor, en el caso de utilizar el lenguaje de programación Java de código Java normalmente utilizando algún de los muchos <em>framework</em> web, por otra parte se compone de código de lado de cliente con una gran variedad de librerías de JavaScript como <a href="https://jquery.com/">jQuery</a>, <a href="https://reactjs.org/">React</a>, <a href="https://underscorejs.org/">Underscore</a> o <a href="https://getbootstrap.com/">Bootstrap</a> para los estilos. En las aplicaciones Java las librerías de lado de servidor se gestionan como dependencias del proyecto y con herramientas como <a href="https://gradle.org/">Gradle</a> se puede automatizar el descargar la librería de repositorios como <a href="https://search.maven.org/">Maven Central</a> y la versión que se necesite así como hacer sencillo actualizar a una nueva. En el caso de las librerías de lado del cliente con <a href="https://www.webjars.org/">Webjars</a> se consiguen los mismos beneficios.</p>
+<p>Los <em>webjars</em> son librerías de extensión <em>jar</em> con los recursos de lado del cliente empaquetados en ellos que en el momento de ser requeridos pueden ser devueltos como un recurso estático por la aplicación, incluyen los archivos JavaScript sin minimizar y minimizados, los archivos <em>map</em> para depuración si minimizados están ofuscados, recursos de estilos CSS o imágenes. Se gestionan como cualquier otra dependencia del proyecto Java lo que proporciona las mismas ventajas de obtener las dependencias de forma automática y hace fácil actualizar a una nueva versión. Por si fuera poco es muy sencillo utilizar <em>webjars</em>, para los <em>frameworks</em> más populares se ofrece una pequeña guía de uso en la <a href="https://www.webjars.org/documentation">documentación</a>.</p>
+<p>Las librerías más populares de JavaScript o CSS están empaquetadas como <em>webjars</em> en las diferentes versiones y han sido publicadas de forma que es posible añadir la dependencia en la versión concreta que necesite la aplicación. Dado que los <em>webjars</em> se gestionan como una dependencia Java si estos a su vez tiene alguna dependencia sobre otra librería está se incluyen en el proyecto de forma transitiva. El contenido del <em>webjar</em> para <em>jQuery</em> es el siguiente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">$ tree&#10;</span></span><span class="line"><span class="cl">.&#10;</span></span><span class="line"><span class="cl">├── META-INF&#10;</span></span><span class="line"><span class="cl">│   ├── MANIFEST.MF&#10;</span></span><span class="line"><span class="cl">│   ├── maven&#10;</span></span><span class="line"><span class="cl">│   │   └── org.webjars&#10;</span></span><span class="line"><span class="cl">│   │  &nbsp;&nbsp;&nbsp;&nbsp; └── jquery&#10;</span></span><span class="line"><span class="cl">│   │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── pom.properties&#10;</span></span><span class="line"><span class="cl">│   │  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── pom.xml&#10;</span></span><span class="line"><span class="cl">│   └── resources&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp; └── webjars&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── jquery&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── 3.3.1-1&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── jquery.js&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── jquery.min.js&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── jquery.min.map&#10;</span></span><span class="line"><span class="cl">│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── webjars-requirejs.js&#10;</span></span><span class="line"><span class="cl">└── jquery-3.3.1-1.jar</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>jquery-webjar.out</span>
+    </div>
+</div>
+<p>En el caso del <em>framework</em> web <a href="https://tapestry.apache.org/">Apache Tapestry</a> basado en componentes para el desarrollo de aplicaciones web Java tan solo hay que incluir la dependencia en el proyecto y un poco de configuración en el módulo de la aplicación para el contenedor de dependencias como se indica en la <a href="https://www.webjars.org/documentation#tapestry">guía de uso</a> con el objetivo que los recursos de los <em>webjars</em> sean servidos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.plugintapestry.services</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppModule</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">contributeClasspathAssetAliasManager</span><span class="o">(</span><span class="n">MappedConfiguration</span> <span class="n">configuration</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">configuration</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;webjars&#34;</span><span class="o">,</span> <span class="s">&#34;META-INF/resources/webjars&#34;</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>AppModule.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Webjars&#10;</span></span></span><span class="line"><span class="cl"><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtime</span> <span class="s1">&#39;org.webjars:requirejs:2.3.5&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtime</span> <span class="s1">&#39;org.webjars:jquery:3.3.1-1&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">runtime</span> <span class="s1">&#39;org.webjars.bower:underscore:1.9.0&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<p>Inspeccionando el código fuente de la página devuelta se observa que en el caso de Tapestry la URL generada al solicitar en un <em>webjar</em> es del estilo <em>https://localhost:8443/assets/webjars/z941c28a3/requirejs/2.3.5/require.js</em>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/images/tapestry-webjars_hu48db32848ea69c233c28d50d292a5a09_470668_2560x1440_fit_box_3.png" data-gallery="" title="Apache Tapestry con Webjars"><img src="https://picodotdev.github.io/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/images/tapestry-webjars_hu48db32848ea69c233c28d50d292a5a09_470668_650x450_fit_box_3.png" width="650" height="392" alt="Apache Tapestry con Webjars" title="Apache Tapestry con Webjars"  class="lozad "></a></p>
+<figcaption>Apache Tapestry con Webjars</figcaption>
+</figure>
+</div>
+<p>Los <em>webjars</em> muy útiles para gestionar las librerías de lado cliente que hacen innecesario descargar manualmente las dependencias, automatizan la descarga, hacen muy sencillo actualizar a nuevas versiones y es muy fácil de usar al no requerir mucha configuración ni ser invasiva. Además, al estar como una dependencia en el archivo de construcción del proyecto queda indicado de forma explícita que el proyecto utiliza y necesita esa librería. Para mi son una herramienta imprescindible.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
+</div>
+<div class="alert alert-warning">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
+    <h3>Libro PlugIn Tapestry</h3>
+    <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
+    <br style="clear: both;">
+    <div class="buttons">
+        <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">PDF</a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Código fuente ejemplos</a>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.baeldung.com/maven-webjars">Introduction to WebJars</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+                <category term="tapestry"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/</id>
         <title>Empaquetar una aplicación Java en un archivo jar ejecutable incluyendo sus dependencias</title>
@@ -1065,77 +1145,6 @@
 <li><a href="https://stackoverflow.com/questions/415580/regex-named-groups-in-java">Regex Named Groups in Java</a></li>
 <li><a href="https://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address">Using a regular expression to validate an email address</a></li>
 </ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/</id>
-        <title>Análisis estático de código con PMD y un ejemplo</title>
-        <updated>2018-02-05T17:00:00+01:00</updated>
-        <published>2018-02-03T22:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/pmd.png" width="300" height="220" alt="PMD" title="PMD"  class=""></p>
-</div>
-<p>El mantenimiento de un programa es la parte que más tiempo consume en su desarrollo y realmente son más los proyectos que hay que mantener que los que se empiezan desde cero. Por lo tanto el software se debe diseñar además de para funcionar correctamente y de forma suficientemente eficiente de tal forma que los futuros cambios sean en la medida de lo posible sencillos de realizar. Hay varios motivos por los que un software necesita mantenimiento según sus categorías:</p>
-<ul>
-<li>Correctivo: por la necesidad de corregir errores.</li>
-<li>Adaptativo: por adaptación a un nuevo entorno o mejora con un nuevo sistema operativo o tecnologías.</li>
-<li>Perfeccionamiento: corrección de errores o adición de nuevas funcionalidades.</li>
-<li>Preventivo: para mejorar la calidad o prevenir futuros errores.</li>
-</ul>
-<p>En el libro <a href="http://amzn.to/2BSalVR">Building Maintable Software (Java Edition)</a> en varios capítulos repasan varios aspectos y proporciona consejos sobre cómo desarrollar software más fácilmente mantenible. Algunos son tan sencillos como evitar métodos con muchas líneas de código, con muchos parámetros, con muchas bifurcaciones por sentencias condicionales o de retorno. Estos aspectos influyen en la facilidad de realizar teses, la facilidad de reutilizar el código siendo más fácil probar y reutilizar métodos que hacen pocas cosas que otros que hacen muchas o son complejos. Estos aspectos del código requiere analizar el código.</p>
-<p>Otra forma de análisis estático de código posible es comprobar que los fallos de seguridad conocidos en las dependencias usadas en el proyecto para en caso de detectarse alguna actualizar la versión de la dependencia a una versión sin errores.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">Analizar y detectar fallos de seguridad en las dependencias de Java</a></li>
-</ul>
-<h3 id="qué-es-pmd-y-para-qué-sirve">Qué es PMD y para qué sirve</h3>
-<p>Si la base de código del software es grande será tedioso y costoso revisarlo manualmente sin embargo hay herramientas como <a href="https://pmd.github.io/">PMD</a> que nos permite automatizar la tarea de análisis. PMD es una herramienta de análisis estático de código que sirve para  comprobar que el código sigue las normas de estilo definidas para el proyecto o en una organización además de esos otros aspectos que afectan a la facilidad de mantenimiento del software también útil cuando se incorpora una nueva persona a un proyecto para que siga las normas ya establecidas. Al igual que se deben tener teses unitarios y de integración para comprobar el correcto funcionamiento del software con PMD se obtiene un informe con las violaciones de las reglas que quieran aplicar al analizar el código.</p>
-<p>En la documentación del proyecto PMD en la sección <em>Rule Reference</em> están la reglas que se puede aplicar y configurar en el análisis, hay una buena cantidad de ellas que en algunos casos permiten modificar los umbrales u otras propiedades para adaptar la validación a lo deseado. Desde convenciones al formatear el código, uso de llaves, tamaño de código, comentarios, de diseño, bloques de código vacíos en sentencias <em>try-catch</em>, <em>if</em>, &hellip;, <em>imports</em> duplicados, no usados o del mismo paquete y por tanto innecesarios, usos innecesarios de nombres completamente cualificados, de nomenclatura de variables por ejemplo si son demasiado cortas o largas, optimizaciones, código innecesario o no usado que se puede eliminar.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/">Las convenciones y guía de estilos para el código fuente de Java</a></li>
-</ul>
-<p>Al heredar un nuevo proyecto cuyo mantenimiento es complicado y grande por no cumplir varias de las reglas anteriores no es posible revisar todo el código completamente manualmente, se puede intuir cuales son algunos de los problemas haciendo una revisión a algunas partes y suponer que en el resto también están. Un buen paso es utilizar PMD para detectar de forma precisa una buena cantidad e ir corrigiéndolas a medida que se van haciendo cambios al código, con el paso del tiempo el mantenimiento si sigue siendo difícil no será por que hay código innecesario, no usado bloques de código vacíos o <em>imports</em> no usados que son completamente innecesarios y eliminables sin riesgo.</p>
-<h3 id="ejemplo-de-análisis-con-pmd">Ejemplo de análisis con PMD</h3>
-<p>Usando la <a href="https://elblogdepicodev.blogspot.com.es/2012/03/herramienta-de-construccion-gradle.html">herramienta de construcción Gradle</a> y su <a href="https://docs.gradle.org/current/userguide/pmd_plugin.html"><em>plugin</em> de PMD</a> es posible realizar el análisis automatizado del código. Hay una serie de reglas predefinidas que se pueden aplicar con valores generalmente aceptados pero que es posible personalizar.</p>
-<p>Suponiendo que con la intención de hacer el software más mantenible se define que el código debe seguir las normas de estilo de Java, en el caso del ejemplo que los métodos no tengan más de 50 líneas, en un informe en formato HTML o XML PMD genera las violaciones a las reglas que encuentre y posteriormente corregirlas si se considera adecuado. Este es un ejemplo de archivo de Gradle del que solo pongo la parte relevante para el ejemplo de cómo usar PMD aplicando unas pocas reglas ya incorporadas en PMD y la de la longitud de los métodos personalizada a una valor de 50 líneas:</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">id</span> <span class="s1">&#39;pmd&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">application</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;PlugInTapestry application&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.plugintapestry&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;1.8&#39;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;io.github.picodotdev.plugintapestry.Main&#39;</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="n">pmd</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">  <span class="n">ruleSets</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&#34;bestpractices&#34;</span><span class="o">]</span>&#10;</span></span><span class="line"><span class="cl">  <span class="n">ruleSetFiles</span> <span class="o">=</span> <span class="n">files</span><span class="o">(</span><span class="s2">&#34;misc/ruleset.xml&#34;</span><span class="o">)</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="o">...</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build.gradle</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nt">&lt;ruleset</span> <span class="na">name=</span><span class="s">&#34;Custom ruleset&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">xmlns=</span><span class="s">&#34;http://pmd.sf.net/ruleset/1.0.0&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd&#34;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&#34;http://pmd.sf.net/ruleset_xml_schema.xsd&#34;</span><span class="nt">&gt;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="nt">&lt;description&gt;</span>&#10;</span></span><span class="line"><span class="cl">  PMD Custom Rule Set Example&#10;</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/description&gt;</span>&#10;</span></span><span class="line"><span class="cl">  &#10;</span></span><span class="line"><span class="cl">  <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">&#34;rulesets/java/codesize.xml/ExcessiveMethodLength&#34;</span><span class="nt">&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;properties&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;minimum&#34;</span> <span class="na">value=</span><span class="s">&#34;50&#34;</span><span class="nt">/&gt;</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/properties&gt;</span>&#10;</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/rule&gt;</span>&#10;</span></span><span class="line"><span class="cl"><span class="nt">&lt;/ruleset&gt;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>ruleset.xml</span>
-    </div>
-</div>
-<p>Aplicado el <em>plugin</em> y definidas las reglas en las construcción del proyecto se revisarán y generará un informe con el comando <code>./gradlew check</code>. En el directorio <em>build/reports/pmd/</em> relativo a la raíz del proyecto se genera un conjunto de archivos HTML y XML con los informes del análisis del código. En el informe se indica la clase, la linea y el error que se ha encontrado, con esta información es sencillo modificar el código para que en la siguiente ejecución de la validación el error desaparezca del informe, la mayoría de reglas son fáciles de corregir.</p>
-<p>Para que en el informe aparezcan datos he cambiado la configuración de longitud a 10 líneas por método como máximo.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/images/pmd-report_hua654f7d7773bcdcb5f9833b3daebe80b_1706200_2560x1440_fit_box_3.png" data-gallery="" title="Informe de PMD con violaciones a las reglas"><img src="https://picodotdev.github.io/blog-bitix/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/images/pmd-report_hua654f7d7773bcdcb5f9833b3daebe80b_1706200_300x200_fit_box_3.png" width="300" height="163" alt="Informe de PMD con violaciones a las reglas" title="Informe de PMD con violaciones a las reglas"  class="lozad "></a></p>
-<figcaption>Informe de PMD con violaciones a las reglas</figcaption>
-</figure>
-</div>
-<div class="alert alert-secondary sourcecode">
-    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew check</code></p>
 </div>
 ]]>
         </content>

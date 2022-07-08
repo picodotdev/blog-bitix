@@ -1,0 +1,58 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+    id 'pl.allegro.tech.build.axion-release' version '1.13.14'
+}
+
+scmVersion {
+    tag {
+        prefix = 'v'
+    }
+}
+
+project.with {
+    group = 'io.github.picodotdev.blogbitix.build.gradle.plugin'
+    version = scmVersion.version
+}
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation 'net.sourceforge.pmd:pmd:6.44.0'
+    implementation 'com.puppycrawl.tools:checkstyle:10.1'
+    implementation 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.6'
+    implementation 'org.owasp.dependencycheck:org.owasp.dependencycheck.gradle.plugin:7.1.0.1'
+    implementation 'org.owasp.dependencycheck:org.owasp.dependencycheck.gradle.plugin:7.1.0.1'
+    implementation 'pl.allegro.tech.build:axion-release-plugin:1.13.14'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "ArtifactsRespotiry"
+            url = uri("https://maven.pkg.github.com/picodotdev/artifacts-repository")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
+}
+
+gradlePlugin {
+    plugins {
+        javaGradlePlugin {
+            id = 'io.github.picodotdev.blogbitix.build.gradle.plugin'
+            implementationClass = 'io.github.picodotdev.blogbitix.build.gradle.plugin.JavaGradlePluginPlugin'
+        }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
