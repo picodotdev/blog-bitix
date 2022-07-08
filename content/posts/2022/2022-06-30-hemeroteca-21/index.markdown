@@ -47,7 +47,7 @@ Me contactaron los de Videoo e insertar su red publicitaria es apenas un *script
 
 Además, cuando no se muestra un vídeo de publicidad el área del anuncio hace las funciones de carrusel de artículos lo que permite mostrar en todos los artículos artículos ya publicados que quizá le interesen al lector de contenido relacionado.
 
-### ALIS
+### alis
 
 Hace ya un tiempo que no hago ninguna modificación importante al [script para instalar Arch Linux][alis]. Al sitio web le he actualizado los estilos y le he añadido un par de páginas de contenido a su sitio web.
 
