@@ -270,15 +270,15 @@
 <p>Bash es un intérprete de comandos que permite ejecutar <em>scripts</em>, Bash está orientado al propósito de ejecutar comandos del sistema, obtener sus códigos de retorno, la salida de los comandos, y permitir ciertas expresiones que aunque no llegan a la capacidad de los lenguajes de propósito general permite realizar bucles, condicionales, crear funciones con argumentos y tener variables.</p>
 <p>Un <em>script</em> de Bash grande es un problema ya que al ser interpretado también ocurre que hasta no se ejecuta la línea del <em>script</em> se manifieste el error. Si la tarea se queda a medias y no termina correctamente sobretodo cuando hay acciones que realizan modificaciones dejan el sistema en un estado inconsistente que no permiten reejecutar el <em>script</em> una vez corregido su error.</p>
 <p>Bash ofrece varias opciones para capturar algunos de los errores en la ejecución de los <em>scripts</em>. Algunas de estas opciones las he utilizado en el <a href="https://github.com/picodotdev/alis/"><em>script</em> de instalación de Arch Linux</a> que está basado en Bash. El <em>script</em> tiene un tamaño de unas 3K+ líneas de código es fácil introducir un error, ya que no tengo tiempo para probar y menos justo el caso en el que se produce el error por la cantidad de opciones posibles que permite de configuración.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#opciones-para-detectar-errores">Opciones para detectar errores</a></li>
     <li><a href="#opciones-de-bash-para-comprobar-un-_script_">Opciones de Bash para comprobar un <em>script</em></a></li>
     <li><a href="#programa-para-validar-la-sintaxis-de-un-_script_-de-bash">Programa para validar la sintaxis de un <em>script</em> de Bash</a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="opciones-para-detectar-errores">Opciones para detectar errores</h3>
 <p>Bash permite establecer varias opciones de ejecución. La opción <em>-e</em> permite detener el <em>script</em> en cuanto un comando se ejecuta y devuelve un código de error distinto de cero que como convención indica que el comando se ejecutó con algún error, un valor distinto de cero significa un código de error o código de estado que tiene un significado que indica el motivo. Otra opción, con <em>-u</em> permite detener el <em>script</em> cuando una variable de entorno intenta evaluar su valor y la variable aún no está definida, continuar sin el valor adecuado supone probablemente que el <em>script</em> realiza acciones incorrectas.</p>
 <p>Por defecto al ejecutar un <em>script</em> este solo genera como resultado la salida de los comandos que ejecuta, para depurar los <em>scripts</em> o ver que comandó están ejecutando la opción <em>-x trace</em> emite el comando ejecutado que permite ver el valor de los argumentos del comando y ver qué valores han tomado los argumentos de las variables de ese comando.</p>

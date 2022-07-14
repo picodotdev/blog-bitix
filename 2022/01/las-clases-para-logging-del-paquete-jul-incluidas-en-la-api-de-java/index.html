@@ -270,9 +270,7 @@
 <p>Las trazas permiten ver qué ha ocurrido hace tiempo y conocer qué ocurre en la aplicación en tiempo real. Las trazas incluyen las excepciones que se generan en la aplicación y errores, identificados los errores que se están produciendo las mismas trazas dan pistas de las condiciones en las que se producen, identificar el problema, reproducirlo y con todo ello hacer los cambios en el código necesarios para corregir los errores. Sin las trazas es mucho más difícil conocer qué errores se están produciendo en la aplicación y en qué condiciones se producen para reproducirlo. Hay que tener en cuenta que muchas veces la mayor parte del tiempo que se emplea para corregir un error es en identificar las causas y reproducirlo, la parte de corregirlo haciendo cambios en el código generalmente es una pequeña parte de todo el tiempo empleado. La facilidad y rapidez para corregir un error en gran medida depende de que la aplicación emita una colección de buenas trazas.</p>
 <p>En Java la librería <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> es la más utilizada para la funcionalidad de trazas, es una librería muy completa que tiene todas las funcionalidades relativas a trazas que requiera una aplicación en el momento actual o en el futuro. Otra librería muy popular en Java es <a href="https://www.slf4j.org/">SLF4</a> que permite independizar a la aplicación de la implementación de la traza pudiendo cambiar de una u otra según se desee.</p>
 <p>Otra alternativa es usar las clases que se incluyen en él la propia API de Java para <em>logging</em> en el paquete <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/package-summary.html">java.util.logging</a>. No son tan avanzadas como las de Log4j pero son suficientes para muchos casos de uso. Dado a un <a href="https://picodotdev.github.io/blog-bitix/2022/01/analizar-y-detectar-fallos-de-seguridad-en-las-dependencias-de-java/">grave fallo de seguridad en Log4j</a> qué ha afectado a muchas empresas, y raíz de esta situación quizá alguna persona considere utilizar o revisar las clases de <em>logging</em> de Java como alternativa a incluir una dependencia para algo que con lo que ofrece la API quizá sea suficiente para una aplicación.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#las-clases-de-_logging_-de-java">Las clases de <em>logging</em> de Java</a></li>
     <li><a href="#motivos-para-usar-jul">Motivos para usar JUL</a></li>
@@ -283,7 +281,9 @@
       </ul>
     </li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="las-clases-de-_logging_-de-java">Las clases de <em>logging</em> de Java</h3>
 <p>Al ofrecer Java en su API clases para realizar tareas de <em>logging</em> significa que cualquier aplicación las pueda utilizar sin ninguna dependencia adicional a partir de la versión 1.4 en la que fueron incluidas. A las clases y sistema de <em>logging</em> de Java se le denomina JUL por las primeras letras de los paquetes en las que están, <em>java.util.logging</em>.</p>
 <p>Las clases principales de JUL son equivalentes a las que se encuentran en otras librerías ya que en definitiva en cualquier librería representan los mismos conceptos del área de dominio de <em>logging</em>.</p>

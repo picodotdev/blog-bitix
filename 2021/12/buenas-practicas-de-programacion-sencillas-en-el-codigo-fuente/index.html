@@ -269,9 +269,7 @@
 <p>La legibilidad afecta a la facilidad de cambio del código fuente y a la facilidad de corrección de errores y tiempo que se tarda en resolverlos. En realidad la mayor parte del tiempo dedicado a la programación no es a la escritura de nuevas líneas de código fuente si no a la lectura de las existentes, por ello al escribir código este debería ser optimizado para la lectura para la mayoría de ámbitos y aplicaciones más que a la eficiencia. Que un programa tenga menos líneas de código fuente o un lenguaje necesite menos líneas para expresar lo mismo no implica que sea más legible.</p>
 <p>A veces para escribir un buen código fuente y código legible no es necesario ni tiene que ver con utilizar patrones de diseño que en realidad añaden complejidad o complejas arquitecturas de software por capas o hexagonal, para escribir buen código fuente bastan unas pocas técnicas y prácticas  muy sencillas y fácilmente comprensibles. Además, estas prácticas son aplicables a cualquier lenguaje de programación, los patrones de diseño y las arquitecturas de software aunque útiles resuelven problemas de complejidad y extensibilidad que son problemas en primera instancia diferentes a la legibilidad del código fuente.</p>
 <p>Estás prácticas son simplemente recomendaciones a seguir como normal general, no son reglas estrictas que si no se aplican en todos los casos y siempre significa que el código esté completamente mal. Todas estas prácticas son sencillas y aplicables a cualquier lenguaje de programación.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#un-nivel-de-indentación-por-método">Un nivel de indentación por método</a></li>
     <li><a href="#no-usar-la-palabra-clave-del-condicional-_else_">No usar la palabra clave del condicional <em>else</em></a></li>
@@ -284,7 +282,9 @@
     <li><a href="#revisar-las-dependencias-de-las-clases">Revisar las dependencias de las clases</a></li>
     <li><a href="#segregar-los-cambios-en-los-_commits_">Segregar los cambios en los <em>commits</em></a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="un-nivel-de-indentación-por-método">Un nivel de indentación por método</h3>
 <p>Que un método tenga varios niveles de indentación anidados normalmente significa que las varias anidaciones realizan una tarea cuyo objetivo hay que inferir analizando el código. Además, los varios niveles de anidación al leer el código exige recordar la tarea de cada uno de los bloques. Un simple bucle anidado con dos <em>for</em> ya exige un esfuerzo significativo para analizar qué hace. Para facilitar la lectura y evitar los niveles de anidación se recomienda que cada método tenga como máximo un único nivel de anidación.</p>
 <div class="code">

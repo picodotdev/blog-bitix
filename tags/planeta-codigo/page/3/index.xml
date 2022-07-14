@@ -5,12 +5,151 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-07-08T16:00:00+02:00</updated>
+    <updated>2022-07-14T00:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/</id>
+        <title>Contenedores en macOS con Lima y minikube</title>
+        <updated>2021-09-25T23:00:00+02:00</updated>
+        <published>2021-09-25T23:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Para ejecutar contenedores en macOS hay dos opciones entre las posibles, una usar minikube que aunque su objetivo es ejecutar un <em>cluster</em> de Kubernetes permite usarlo para ejecutar contenedores de Docker directamente, la segunda opción es lime que es una opción similar que usa containerd en vez de Docker. La empresa encargada del desarrollo de Docker ha anunciado que el producto Docker Desktop pasa a requerir una licencia de pago para organizaciones empresariales grandes. Docker Desktop es usado tanto en Windows como en macOS para ejecutar contenedores de Docker con la opción también de ejecutar un <em>cluster</em> de Kubernetes, minikube y lima para macOS son una alternativa a Docker Desktop.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/minikube.svg" width="200" height="194" alt="minikube" title="minikube"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/containerd.svg" width="350" height="93" alt="containerd" title="containerd"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/docker.svg" width="200" height="167" alt="Docker" title="Docker"  class=""></p>
+</div>
+<p><a href="https://www.docker.com/">Docker</a> es una tecnología para ejecutar procesos en contenedores nativa de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, los contenedores en Linux son simplemente un proceso más del sistema no utilizan virtualización con lo que requieren menos recursos, se inicia mucho más rápido que una máquina virtual y están aislados de otros procesos de sistema. Al usar tecnologías específicas de Linux no es posible ejecutarlo de forma nativa ni en <a href="https://www.microsoft.com/es-es/windows/">Windows</a> ni en <a href="https://www.apple.com/macos/">macOS</a>, en estos para usar contenedores hay que recurrir a la virtualización. Aún siendo una tecnología de GNUL/Linux hay necesidad de ejecutarlo en otros sistemas operativos para obtener los mismos beneficios aún siendo con virtualización.</p>
+<p>La empresa propietaria y encargada del desarrollo de Docker ha anunciado que <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> usada para ejecutar Docker en Windows y macOS va a ser una opción de pago si se usa en un ámbito profesional en grandes organizaciones, para uso personal continúa siendo gratuito en su versión <a href="https://www.docker.com/products/personal">Docker Personal</a>.</p>
+<ul>
+<li><a href="https://www.docker.com/blog/updating-product-subscriptions/">Docker Updating Product Subscription</a></li>
+</ul>
+<blockquote>
+<p>Docker Desktop is free to use, as part of the Docker Personal subscription, for individuals, non-commercial open source developers, students and educators, and small businesses of less than 250 employees AND less than $10 million in revenue. Commercial use of Docker Desktop at a company of more than 250 employees OR more than $10 million in annual revenue requires a paid subscription (Pro, Team, or Business) to use Docker Desktop.</p>
+</blockquote>
+<p>Mucho del software de código abierto y libre es gratuito, sin embargo, es mantenido en algunos casos por personas en su propio tiempo personal con poco soporte económico. En el caso de Docker Desktop la empresa propietaria seguramente ha tomado esta medida como una vía para monetizar y financiar el desarrollo de Docker. Dada la popularidad que Docker ha adquirido en los últimos años muchas empresas basan de forma importante sus entornos de producción o desarrollo en Docker.</p>
+<p>Docker Desktop permite ejecutar contenedores de Docker en sistemas distintos a GNU/Linux como macOS y Windows, incluye otras herramientas como <a href="https://docs.docker.com/compose/">Docker Compose</a> y se integra con <a href="https://registry.hub.docker.com/">Docker Hub</a> para almacenar imágenes, también integra una versión de <a href="https://kubernetes.io/">Kuberntes</a> para orquestar contenedores.</p>
+<p>El cambio en el acuerdo de uso de Docker Desktop obliga a los usuarios de Apple macOS que no cumplan los criterios para usar la suscripción <em>Personal</em> han de pagar por su uso o buscar una alternativa. Para uso personal uso la distribución <a href="https://www.archlinux.org/">Arch Linux</a> pero por política de empresa en el trabajo estoy obligado a usar macOS con lo que he tenido que buscar una alternativa para seguir usando Docker. En el caso de macOS dos de las opciones como alternativa a Docker Desktop son <a href="https://kubernetes.io/docs/setup/minikube/">minikube</a> y <a href="https://github.com/lima-vm/lima">Lima</a>.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="contenedores-de-docker-y-kuberntes-con-minikube-en-macos">Contenedores de Docker y Kuberntes con Minikube en macOS</h3>
+<p>minikube tiene el objetivo de crear un <em>cluster</em> de Kubernetes rápidamente en GNU/Linux, Windows y macOS, pero dado que usa Docker el comando <em>docker</em> puede interaccionar con la instancia de minikube. Docker es una herramienta nativa de GNU/Linux en el caso de macOS y Windows usa virtualización, en estos dos sistemas operativos Docker se ejecuta en una máquina virtual con GNU/Linux y se proporcionan una serie de integraciones para el reenvío de puertos entre la máquina anfitrión y la máquina virtual con los contenedores.</p>
+<ul>
+<li><a href="https://minikube.sigs.k8s.io/docs/">Documentación de minikube</a></li>
+</ul>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/11/instalar-programas-con-homebrew-en-macos/">El gestor de paquetes homebrew para macOS</a> permite instalar fácilmente minikube simplemente con un comando. minikube y Kubernetes utilizan Docker para la ejecución de contenedores, aunque el propósito de minikube es ejecutar aplicaciones en contenedores permite el uso de las herramientas de línea de comandos <em>docker</em> y <em>docker-compose</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew install minikube&#10;</span></span><span class="line"><span class="cl">$ brew install docker docker-compose&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>minikube-install.sh</span>
+    </div>
+</div>
+<p>Una vez instalado minikube hay que iniciar la máquina virtual con el siguiente comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ minikube start&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>minikube-start.sh</span>
+    </div>
+</div>
+<p>Para que la herramienta de línea de comandos interaccione con el servidor de Docker en la máquina virtual de minikube el siguiente comando permite establecer varias variables de entorno.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">eval</span> <span class="k">$(</span>minikube docker-env<span class="k">)</span>&#10;</span></span><span class="line"><span class="cl">$ docker images&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>minikube-docker-env.sh</span>
+    </div>
+</div>
+<p>Hecha la configuración previa iniciar un contenedor de Docker es exactamente igual que en GNU/Linux de forma nativa, en realidad el comando docker interacciona con el servidor de Docker en la máquina virtual. Por otro lado dado que los contenedores de Docker se ejecutan dentro de la máquina virtual y los puertos se exponen en ella es necesario acceder a la máquina virtual es con su dirección IP, dirección IP proporcionada por el siguiente comando y si se desea añadirla al archivo <em>/etc/hosts</em> con un nombre de dominio.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ docker run --rm -p 8080:80 nginx:latest&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>minikube-docker-run.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ minikube ip&#10;</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;`minikube ip` docker.local&#34;</span> <span class="p">|</span> sudo tee -a /etc/hosts &gt; /dev/null&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>minikube-ip.sh</span>
+    </div>
+</div>
+<p>Para destruir la máquina virtual que usa minikube hay otro comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ minikube stop&#10;</span></span><span class="line"><span class="cl">$ minikube delete&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>minikube-delete.sh</span>
+    </div>
+</div>
+<h3 id="contenedores-de-docker-con-lima-en-macos">Contenedores de Docker con Lima en macOS</h3>
+<p>Aunque minikube permite ejecutar contenedores de Docker directamente su propósito es ejecutar recursos de Kubernetes como <em>pods</em> en vez de directamente contenedores. Para el caso de simplemente contenedores de Docker minikube no ofrece reenvío de puertos y compartición de archivos entre la máquina virtual y local que requiere hacer el paso adicional del comando <em>minikube-ip.sh</em>.</p>
+<p>Otra opción en macOS alternativa a Docker en macOS es Lima, denominada a sí misma como <em>macOS subsystem for Linux</em> parafraseando el <em>Windows subsystem for Linux</em> o WSL de Windows. El funcionamiento de Lima es también a través de una máquina virtual en la que se ejecutan los contenedores, la ventaja de Lima es que ofrece compartición de archivos entre la máquina local y la virtual y reenvío de puertos de forma automática de modo que la experiencia de uso es similar a Docker en GNU/Linux.</p>
+<p>Lima como entorno de ejecución de contenedores utiliza <a href="https://containerd.io/">containerd</a>, pero dado que las imágenes de los contenedores de Docker de DockerHub siguen el estándar OCI son compatibles con <em>containerd</em> lo que permite usar exactamente las mismas imágenes.</p>
+<p>Lima se instala también con un comando usando homebrew.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew install lima&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lima-install.sh</span>
+    </div>
+</div>
+<p>La máquina virtual con GNU/Linux y docker en la que se ejecutan los contenedores con el siguiente comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ limactl start&#10;</span></span><span class="line"><span class="cl">$ lima uname -a&#10;</span></span><span class="line"><span class="cl">Linux lima-default 5.11.0-34-generic <span class="c1">#36-Ubuntu SMP Thu Aug 26 19:22:09 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lima-start.sh</span>
+    </div>
+</div>
+<p>Para ejecutar un contenedor el comando a usar es <em>lima nerdctl</em>, el resto de opciones y parámetros son los mismos a los habituales a los del comando <em>docker</em> están en la <a href="https://github.com/containerd/nerdctl#command-reference">documentación de comandos de nerdctl</a>. En este caso se inicia un contenedor del servidor web <a href="https://nginx.org/">Nginx</a> que se se accede con la dirección <em>http://localhost:8080</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ lima nerdctl run --rm -p 8080:80 nginx:latest&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lima-run.sh</span>
+    </div>
+</div>
+<p>Para destruir la máquina virtual que usa lima hay otro comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ limactl stop&#10;</span></span><span class="line"><span class="cl">$ limactl delete&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>lima-delete.sh</span>
+    </div>
+</div>
+<p><em>nerdctl</em> soporta muchos de los subcomandos de <em>docker</em> tanto para la ejecución de contenedores, gestión, construcción, gestión de imágenes, gestión de volúmenes y de Docker Compose.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/images/lima-nerd-images_hu539e279d41f20278c1d094319c7c11fb_177953_2560x1440_fit_box_3.png" data-gallery="" title="Imágenes de contenedores con lima en macOS"><img src="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/images/lima-nerd-images_hu539e279d41f20278c1d094319c7c11fb_177953_300x200_fit_box_3.png" width="231" height="200" alt="Imágenes de contenedores con lima en macOS" title="Imágenes de contenedores con lima en macOS"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/images/lima-nerd-run_hu14125b7cf9138cd7ce0e1b4cf0e76280_598552_2560x1440_fit_box_3.png" data-gallery="" title="Ejecución de un contenedor con lima en macOS"><img src="https://picodotdev.github.io/blog-bitix/2021/09/contenedores-en-macos-con-lima-y-minikube/images/lima-nerd-run_hu14125b7cf9138cd7ce0e1b4cf0e76280_598552_300x200_fit_box_3.png" width="231" height="200" alt="Ejecución de un contenedor con lima en macOS" title="Ejecución de un contenedor con lima en macOS"  class="lozad "></a></p>
+<figcaption>Ejecución de un contenedor con lima en macOS</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.docker.com/products/developer-tools">Docker Developer Tools</a></li>
+<li><a href="https://medium.com/nttlabs/containerd-and-lima-39e0b64d2a59">containerd &amp; Lima: Open source alternative to Docker for Mac</a></li>
+<li><a href="https://dhwaneetbhatt.com/blog/run-docker-without-docker-desktop-on-macos">Run Docker without Docker Desktop on macOS</a></li>
+<li><a href="https://www.docker.com/products/kubernetes">Docker Kubernetes</a></li>
+<li><a href="https://devopstales.github.io/home/docker-desktop-alternatives/">Free Docker Desktop Alternative For Mac And Windows</a></li>
+<li><a href="https://www.javacodegeeks.com/2021/09/replacing-docker-desktop-with-hyperkit-minikube.html">Replacing Docker Desktop with hyperkit + minikube</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="apple"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/09/planificar-procesos-periodicos-y-scripts-con-nomad/</id>
         <title>Planificar procesos periódicos y scripts con Nomad</title>
@@ -1805,88 +1944,6 @@
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/06/hemeroteca-19/</id>
-        <title>Hemeroteca #19</title>
-        <updated>2021-06-24T20:00:00+02:00</updated>
-        <published>2021-06-24T20:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/06/hemeroteca-19/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
-</div>
-<p>Ya son casi 600 artículos los que he escrito en el blog, con este número de artículos en alguna ocasión al escribir un nuevo artículo a veces tengo que mirar si ya he escrito sobre ello o algo muy similar para no escribir lo mismo con otras palabras. Estos últimos meses muchas semanas solo he escrito un artículo en vez de dos, un poco por no dedicar tanto tiempo al blog pero más por falta de ideas que no me requieran mucho tiempo de investigación, ideas sobre cosas que me gustaría aprender y compartir tengo pero algunas de ellas para poder escribir me requerirían primero una buena cantidad de tiempo de investigación. Y algunos de esos temas sobre los que me gustaría aprender más son cosas muy específicas ni demasiado populares con lo que para el objetivo de seguir haciendo que el blog tenga más visitas no son los más adecuados.</p>
-<p>El trabajo de meses anteriores en los que escrito artículos con ese objetivo de hacer que el blog tenga más visitas se está notando ahora, este marzo ha sido el mejor mes en cuanto a visitas del blog hasta el momento, algunos artículos se han posicionado bien y son artículos sobre los que se hacen muchas búsquedas, ambas cosas combinadas hace que esos artículos contribuyan a aumentar el número de visitas. Haber estado publicando dos artículos durante buena parte del 2020 se ve recompensado ahora. Estos meses han sido el mejor registro de visitas y de ingresos en un mes de época no navideña, los meses de octubre, noviembre y diciembre. Los meses vacacionales siempre suelen bajar algo las visitas con lo que hasta septiembre la métrica de las visitas solo es comparable con los mismos meses de años anteriores.</p>
-<p>Los ingresos por publicidad de AdSense se han recuperado también e incluso superado comparado con los primeros meses de pandemia llegando a casi un 1 € diario lo que al final de mes llega a algo más de 30 € de forma holgada. Comparado con los 3 primeros años de vida del blog que no llegaba a los 5 € al mes es un aumento significativo, aún así seguro que es una cifra baja comparada con otros sitios. En el caso de mi blog en gran medida los ingresos dependen de AdSense y esto depende del número de visitas.</p>
-<p>Una cosas que me sorprende es que no son pocos los correos electrónicos que recibo con la intención de preguntar, querer insertar enlaces patrocinados en algún artículo o publicar un artículo ya redactado. Aunque no todos llegan a materializarse, también es otra forma de ingreso, aunque más esporádica e irregular que AdSense que continúa siendo la forma principal de ingresos. Sin embargo, alguno ya he rechazado también directamente, si el artículo patrocinado trata sobre apuestas o juegos azar son temas que tengo en mi lista de rechazados por el tema controvertido en sí y porque no están relacionados con los temas principales del blog. Aún así quizá en la siguiente solicitud de estos temas tantee a ver cuánto están dispuestos a ofrecer.</p>
-<p>No solo ha sido escribir nuevos artículos, también he realizado algunas pequeñas mejoras en el blog para mantenerlo actualizado. Para cargar las imágenes bajo demanda usaba la librería <a href="https://apoorv.pro/lozad.js/">lozad</a>, lo he cambiado para usar la forma estandarizada que ofrece HTML con el atributo <em>loading=&ldquo;lazy&rdquo;</em>. He actualizado las librerías con las que está construido el blog, principalmente <a href="https://getbootstrap.com/">Bootstrap</a> para los estilos y <a href="https://jquery.com/">jQuery</a> para cierta lógica pasando a las versiones 5 y 3.6. También he realizado mejoras en la accesibilidad, alguna corrección de errores de los que informa Google Console como <em>content layout shift</em>. He añadido una nota informativa a los artículos en aquellos que tienen enlaces de afiliación para informar del hecho.</p>
-<p>Como ya comenté en hemerotecas anteriores tengo pendiente comprar un dominio propio y migrar a un <em>hosting</em> distinto de <a href="https://pages.github.com/">GitHub Pages</a>. En caso de tener que migrar ya tengo más o menos analizado cual sería la opción, en este momento me decantaría por un servidor <em>cloud</em> en <a href="https://www.linode.com/">Linode</a> con <a href="https://nginx.org/">Nginx</a> más <a href="https://www.cloudflare.com/es-es/">Cloudflare</a> como CDN. Esta infraestructura me permitiría aprender algunas cosas de administración de servidores, <a href="https://www.ansible.com/">Ansible</a>, <a href="https://www.terraform.io/">Terraform</a> y <a href="https://letsencrypt.org/">Lets Encrypt</a>, quizá algo más. Pero de momento no he llegado al límite de GitHub Pages ni he recibido ninguna notificación de que deba cambiar, aún no tengo ninguna necesidad de cambiar con lo que quizá siga en GitHub Pages hasta que me lo notifiquen.</p>
-<p>También he seguido haciendo algunas mejoras en el <a href="https://github.com/picodotdev/alis/"><em>script</em> de instalación de Arch Linux</a>. A petición de un usuario que quería soporte para el entorno de escritorio <a href="https://www.deepin.org/en/dde/">Deepin</a> y como no es mucho esfuerzo añadir un nuevo escritorio lo he añadido. Ahora es posible configurar los módulos de <em>mkinitcipio</em>. Con la versión 6.0.0 del gestor de paquetes <em>pacman</em> de <a href="https://www.archlinux.org/">Arch Linux</a> se le ha añadido el soporte para la descarga en paralelo de paquetes, <em>alis</em> ya lo soporta. Añadido <a href="https://github.com/morganamilo/paru">paru</a> como utilidad para los paquetes de AUR. También algunas corrección de errores y <em>typos</em>.</p>
-<p>Esta es la lista de los artículos que he publicado durante los seis primeros meses del 2021.</p>
-<p>Artículos sobre Java y programación.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/documentacion-para-registrar-las-decisiones-de-arquitectura-en-software-e-infraestructura/">Documentación para registrar las decisiones de arquitectura en software e infraestructura</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/">En Java, ¿los argumentos se pasan por valor o por referencia?</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/las-metodologias-oocss-bem-y-smacss-para-organizar-los-estilos-css/">Las metodologías OOCSS, BEM y SMACSS para organizar los estilos CSS</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/introduccion-a-ddd-y-arquitectura-hexagonal-con-un-ejemplo-de-aplicacion-en-java/">Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/las-anotaciones-de-java-y-ejemplo-de-procesador-de-anotaciones-en-tiempo-de-compilacion/">Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/novedades-de-java-16/">Novedades de Java 16</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/los-conceptos-de-encapsulacion-herencia-polimorfismo-y-composicion-de-la-programacion-orientada-a-objetos/">Los conceptos de encapsulación, herencia, polimorfismo y composición de la programación orientada a objetos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">Programas basados en consola con Java usando Lanterna</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/las-clases-y-librerias-basicas-de-java-para-bases-de-datos-relacionales/">Las clases y librerías básicas de Java para bases de datos relacionales</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/crear-de-forma-sencilla-un-cliente-de-un-servicio-rest-o-http-con-retrofit/">Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/que-son-los-datos-estructurados-y-para-que-sirven-con-ejemplos/">Qué son los datos estructurados y para que sirven con ejemplos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-para-mejorar-una-pagina-web-en-seo-conformidad-estandares-y-rendimiento/">Herramientas para mejorar una página web en SEO, conformidad estándares y rendimiento</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/como-ordenar-arrays-y-colecciones-de-objetos-en-java/">Cómo ordenar arrays y colecciones de objetos en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/">Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/06/los-automatas-del-juego-de-la-vida-de-conway-y-la-hormiga-langton-con-su-implementacion-en-java/">Los autómatas del juego de la vida de Conway y la hormiga Langton con su implementación en Java</a></li>
-</ul>
-<p>Artículos sobre juegos.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/">Análisis y guía del juego de rol For the King</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/estrategia-de-batalla-basica-en-el-juego-world-of-warships-legends/">Estrategia de batalla básica en el juego World of Warships Legends</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/">Análisis de la serie de juegos de plataformas Trine</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/los-mejores-juegos-gratuitos-o-free-to-play-de-pc-consolas-y-movil/">Los mejores juegos gratuitos o free to play de PC, consolas y móvil</a></li>
-</ul>
-<p>Artículos sobre GNU/Linux o software libre.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/">Analítica web en el servidor sin JavaScript en el cliente con GoAccess</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/analitica-web-con-matomo-como-alternativa-a-google-analytics/">Analítica web con Matomo como alternativa a Google Analytics</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/">Qué es la variable PATH del sistema y cómo cambiarla en GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/licencias-de-software-libre-y-diferencias-con-software-privativo-y-de-codigo-abierto/">Licencias de software libre y diferencias con software privativo y de código abierto</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/">Guía de instalación de GNU/Linux para la Raspberry Pi</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/">Cifrado y descifrado como servicio con Vault</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/">Acceso simple y seguro a sistemas remotos con Boundary</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">Repositorio de artefactos privado con Nexus</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/">Autenticación con segundo factor de autenticación en SSH</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/">Convertir texto o imagen a arte de caracteres ASCII</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/herramientas-de-reconocimiento-de-texto-en-imagenes-con-ocr/">Herramientas de reconocimiento de texto en imágenes con OCR</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/">Guía de instalación y uso básico de FreeBSD</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/">Herramientas de línea de comandos para monitorizar GNU/Linux</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/">Cómo crear y poner subtítulos a un vídeo</a></li>
-</ul>
-<p>Otros.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/01/despues-de-dos-anos-de-comprar-un-intel-nuc-cambiaria-algo-en-el-futuro/">Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/">Herramientas para convertir texto a audio de voz natural</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/04/historias-de-un-streamer-un-nuevo-reto/">Historias de un streamer, «Un nuevo reto»</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/la-tinta-electronica-y-los-mejores-lectores-de-libros-electronicos/">La tinta electrónica y los mejores lectores de libros electrónicos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/">Conceptos teóricos generales de los procesadores de computadora</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/06/me-cambio-del-adsl-a-la-fibra-de-pepephone/">Me cambio del ADSL a la fibra de Pepephone</a></li>
-</ul>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
             
                 <category term="planeta-codigo"/>
             

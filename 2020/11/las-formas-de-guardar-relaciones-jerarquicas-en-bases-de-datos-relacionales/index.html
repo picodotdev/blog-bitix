@@ -269,9 +269,7 @@
 <p>Las bases de datos relacionales guardan los datos en tablas, filas y columnas. Los datos de unas tablas se relacionan con los de otras a través de las claves primarias y claves foráneas. Este modelo relacional permite guardar datos y es suficiente para muchos casos, habitualmente utilizando la tercera forma normal de <a href="https://picodotdev.github.io/blog-bitix/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/">las 6+2 formas normales de las bases de datos relacionales</a>.</p>
 <p>Sin embargo, el modelo relacional en principio no se ajusta a guardar relaciones jerárquicas, hay varias soluciones para implementar este tipo de relaciones en los datos en una base de datos relacional. Algunas soluciones aunque válidas en la teoría tiene importantes limitaciones en su uso práctico. Algunas solución depende de que la base de datos ofrezcan el soporte para implementarla en caso contrario hay que elegir otra opción.</p>
 <p>En el libro <a href="https://amzn.to/2G2oRN1" rel="sponsored">SQL Antipatterns</a> se trata con detalle las diferentes las formas de guardar relaciones jerárquicas en bases de datos relacionales entre otros diversos aspectos y buenas prácticas.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#ejemplo-de-relación-jerárquica">Ejemplo de relación jerárquica</a></li>
     <li><a href="#formas-de-guardar-relaciones-jerárquicas">Formas de guardar relaciones jerárquicas</a>
@@ -289,7 +287,9 @@
     </li>
     <li><a href="#cúal-es-la-mejor-solución-para-estructuras-jerárquicas-en-bases-de-datos-relacionales">¿Cúal es la mejor solución para estructuras jerárquicas en bases de datos relacionales?</a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="ejemplo-de-relación-jerárquica">Ejemplo de relación jerárquica</h3>
 <p>Las relaciones jerárquicas establecen unas normas en las relaciones de los elementos, los elementos se organizan en niveles en el que los elementos se relacionan como nivel por encima, por debajo o en el mismo nivel que otro. El número de niveles que tiene una estructura jerárquica es indefinido pudiendo tener cualquier profundidad.</p>
 <p>Esta es una estructura pequeña jerárquica de productos con dos niveles de profundidad.</p>

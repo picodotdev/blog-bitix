@@ -275,9 +275,7 @@
 </div>
 <p>Las últimas versiones de los navegadores <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> y <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> ya soportan todo lo que describo a continuación y que está más detalladamente explicado en el libro. Para los navegadores que aún no soportan todo como en los dispositivos móviles hay compiladores o <em>transpilers</em> para <a href="https://picodotdev.github.io/blog-bitix/2016/12/transpiling-de-ecmascript-6-a-5-uglify-y-eslint-con-gulp/">traducir de ECMAScript 6 a ECMAScript 5</a>. En un entorno en el que sepamos se usa solo Chrome o Firefox como en una intranet o una aplicación de uso interno en una organización podemos utilizar estas novedades y si es una aplicación accesible por cualquier usuario desde internet podemos hacer la conversión de ECMAScript 6 a ECMAScript 5 con <a href="https://gulpjs.com/">gulp</a> o <a href="https://gruntjs.com/">grunt</a>.</p>
 <p>Estas son gran parte de las novedades que he anotado al leer el libro Learning JavaScript. Para profundizar sobre JavaScript la documentación de <a href="https://developer.mozilla.org/es/">Mozilla Developer Network</a> está muy bien como manual de referencia donde hay más ejemplos y comentarios más extensos de los que hago en cada sección.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#definición-de-variables">Definición de variables</a></li>
     <li><a href="#interpolación-de-variables-en-cadenas">Interpolación de variables en cadenas</a></li>
@@ -297,7 +295,9 @@
     <li><a href="#manipulación-dom">Manipulación DOM</a></li>
     <li><a href="#eventos">Eventos</a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="definición-de-variables">Definición de variables</h3>
 <p>Para solventar las deficiencias de las variables declaradas con <em>var</em> hay dos nuevas palabras reservadas <em>let</em> para <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Declarations">declarar variables</a> que cambian de valor y <em>const</em> para constantes. También se pueden declarar símbolos que son identificadores de tipos únicos e inmutables.</p>
 <p>El problema de las variables declaradas con <em>var</em> está en que tienen ámbito de función con <em>let</em> no existe hasta que es declarada. Las variables con <em>var</em> son declaradas al principio del ámbito de la función o en el ámbito global.</p>

@@ -271,15 +271,15 @@
 <p>Una parte importante de los programas está dedicada a la gestión de errores y a tratar los posibles errores. Los posibles errores son desde una entrada de datos con un formato inesperado, datos no válidos, si el programa se comunica por red que la comunicación falle, que ocurra que un archivo no existe y no se pueda abrir o ya exista y no se pueda crear.</p>
 <p>Dado que las condiciones de error son numerosas es importante al usar un código ya sea función o método que condiciones de error se pueden producir al ejecutarlo. Algunos lenguajes catalogan los errores como recuperables como sería que un archivo ya existe pudiendo informar al usuario o irrecuperables como falta de memoria en el sistema, un fallo del hardware o por un fallo de programación con el acceso a una posición fuera de rango en un <em>array</em>.</p>
 <p>A lo largo de la historia los lenguajes han implementado varias formas de gestionar los errores.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#códigos-de-retorno">Códigos de retorno</a></li>
     <li><a href="#excepciones">Excepciones</a></li>
     <li><a href="#retorno-de-valor-y-error">Retorno de valor y error</a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="códigos-de-retorno">Códigos de retorno</h3>
 <p>En el lenguaje C la gestión de errores se hace con códigos de retorno. Al llamar a una función esta devuelve un retorno y según sea su valor se indica que la función se ha ejecutado correctamente o por el contrario se ha producido algún error que ha de ser tratado.</p>
 <p>Los códigos de retorno tienen dos problemas. El primer problema es que comprobar el código de retorno puede ser ignorado haciendo que el programa no trate adecuadamente las condiciones de error y fallar o terminar de forma abrupta cuando alguna función no se ejecuta correctamente. El segundo problema es que el código del flujo en el que todo funciona correctamente está mezclado con el código de gestión de errores lo que hace a los programas algo menos legibles.</p>

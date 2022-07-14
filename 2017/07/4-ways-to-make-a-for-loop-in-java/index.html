@@ -273,9 +273,7 @@
 <p>Until Java 5 to make a loop from 0 to N elements you had to use a variable to keep a counter, do a comparison to check if the limit had been reached and increase the variable in the next execution. The code was quite verbose and since loops are a basic construction of any programming language it is used many times in any algorithm.</p>
 <p>Some of these examples of loops are usable from Java 5, in more recent versions many other new features have been added such as <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/"><em>lambdas</em>, <em>streams</em>, methods in interfaces and new API for dates</a> in Java 8, <a href="https://picodotdev.github.io/blog-bitix/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/">the modularity, improved <em>try-with-resource</em>, jlink or a new publishing model</a> in Java 9, <a href="https://picodotdev.github.io/blog-bitix/2018/03/novedades-de-java-10/">type inference for local variables</a> in Java 10, <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/">an HTTP client</a> in Java 11 and other <a href="https://picodotdev.github.io/blog-bitix/series/java-platform/">novelties in the Java language and platform</a>.</p>
 <p>Loops are one of <a href="https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">Java&rsquo;s basic flow control structures and statement types</a> that allow repeating the execution of a block of statements as long as the repetition condition expression is met, in each iteration of the loop the condition expression is evaluated and when it is not fulfilled, it continues with the next sentence of the program.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Article content</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Article content</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#for-loop">for loop</a></li>
     <li><a href="#foreach-loop">foreach loop</a></li>
@@ -283,7 +281,9 @@
     <li><a href="#loop-with-streams">Loop with streams</a></li>
     <li><a href="#example-with-the-different-types-of-loop">Example with the different types of loop</a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="for-loop">for loop</h3>
 <p>Before Java 5, a <em>for</em> loop from 0 to 5 and a collection was done in the following way, maintaining a variable normally named <em>i</em> that acts as a counter and <em>j</em> if the <em>for</em> loop is nested in another. In addition to the counter variable, it requires setting the condition that allows to exit the loop when the end of the iteration is reached, the condition is very important not to create an infinite loop.</p>
 <div class="code">

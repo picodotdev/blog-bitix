@@ -274,9 +274,7 @@
 <p>Los repositorios de dependencias se almacenan en un servidor que se encarga de permitir acceder y agregar nuevos artefactos. <a href="https://picodotdev.github.io/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">El software de servidor Nexus como repositorio de artefactos</a>  tiene una versión <em>open source</em> que se puede descargar e instalar para ofrecer el servicio.</p>
 <p>Aunque Nexus permite disponer de un software de servidor para guardar artefactos de un repositorio Maven es un servidor que tiene los inconvenientes de un servidor administrado por uno mismo. Administrar el servidor que no debería fallar pero ocasionalmente requiere dedicación para aplicar actualizaciones de seguridad, actualizaciones a nuevas versiones o cuando deja de funcionar. Un servidor administrado por uno mismo requiere dedicarle tiempo del que a veces no se dispone. Para no tener que dedicar tiempo a mantener un servidor la opción de los software como servicio o los servicios gestionados son interesantes. Los software como servicio suelen tener un coste pero puede compensar teniendo en cuenta el coste de dedicarle a administrar uno mismo el servicio, el coste de la infraestructura en la que alojarlo, además se tiene más garantías de que el software administrado tenga mayor disponibilidad y fiabilidad.</p>
 <p>Una alternativa a Nexus es el servicio <a href="https://github.com/features/packages">GitHub Packages</a> que permite almacenar artefactos para distintos repositorios entre ellos artefactos de Maven, imágenes de <a href="https://www.docker.com/">Docker</a> y paquetes de <a href="https://www.npmjs.com/">npm</a>.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#el-servicio-de-github-packages">El servicio de Github Packages</a></li>
     <li><a href="#crear-y-publicar-una-librería-de-maven-en-github-packages">Crear y publicar una librería de Maven en GitHub Packages</a>
@@ -288,7 +286,9 @@
       </ul>
     </li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="el-servicio-de-github-packages">El servicio de Github Packages</h3>
 <p>GitHub Packages es un servicio de GitHub que permite almacenar artefactos de distintos tipos y paquetes de las principales plataformas de programación como librerías <em>jar</em> de Java, paquetes npm de JavaScript e imágenes de contenedores de Docker. Un repositorio de GitHub Packages se almacena en un repositorio de git de GitHub.</p>
 <p>Los artefactos de Java se pueden publicar como en cualquier otro repositorio de Maven teniendo las credenciales de autenticación y los repositorios se pueden utilizar para descargar de ellos las dependencias al incluirlas en el archivo de construcción del proyecto.</p>

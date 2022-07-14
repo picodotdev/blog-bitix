@@ -276,9 +276,7 @@
 </div>
 <p>La tendencia de desarrollo es utilizar microservicios, contenedores y computación en la nube. Una característica de este tipo de aplicaciones es que se componen de múltiples elementos muy dinámicos que se crean, eliminan o cambia el número de instancias. La configuración de las herramientas nativas para la nube ha de ser dinámica en vez de estática.</p>
 <p>Una herramienta específica para hacer de <em>proxy</em> inverso adaptada a la nube es Traefik.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</a></li>
     <li><a href="#casos-de-uso-y-características">Casos de uso y características</a></li>
@@ -293,7 +291,9 @@
     </li>
     <li><a href="#otras-funcionalidades">Otras funcionalidades</a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="el-_proxy_-inverso-traefik">El <em>proxy</em> inverso Traefik</h3>
 <p><a href="https://traefik.io/">Traefik</a> es un <em>proxy</em> inverso y balanceador de carga adaptado a la computación en la nube mediante microservicios. Traefik se integra con los principales componentes de infraestructura configurándose a sí mismo automáticamente y de forma dinámica. Traefik es simple de operar pero capaz de manejar sistemas complejos y grandes en entornos diversos y diferentes capas de la pila de red como HTTP, TCP o UDP. Proporciona funcionalidades de intermediario que aumenta sus capacidades para realizar balanceo de carga o servir como <em>gateway</em> API.</p>
 <p>Como <em>proxy</em> inverso intercepta las peticiones entrantes y las redirige a los servicios adecuados. A diferencia de <em>proxys</em> inversos configurados de forma estática, Traefik usa descubrimiento de servicios para configurarse a sí mismo según los servicios en ejecución. Puede hacer de <em>proxy</em> en diferentes capas de la pila de red proporcionando funcionalidades como balanceo de carga, limitación de peticiones, <em>circuit breaker</em>, duplicación o <em>mirroring</em>, autenticación y más. También soporta terminación de SSL y puede usar un proveedor ACME como <a href="https://letsencrypt.org/">Let’s Encrypt</a> para la generación automática de certificados.</p>

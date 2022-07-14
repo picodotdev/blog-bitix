@@ -272,14 +272,14 @@
 <p>Al recibir datos los programas tienen varias opciones. Una es ser estricto, validar los datos y en caso de que no sean válidos emitir un mensaje y devolver un error impidiendo continuar. Otra opción es ser flexible para validar los datos y en caso de que sean incorrectos tomar valores por defecto para al menos realizar la tarea aunque sea en un modo degradado. La opción final es no validar los datos y dar por supuesto que son correctos.</p>
 <p>No validar los datos tiene varios problemas que se pueden manifestar en la aplicación de diferentes formas, fallando en el procesado de los datos quizá habiendo realizado parte de la tarea, ocasionando algún fallo de seguridad o generando resultados incorrectos o inconsistencias en otros datos. Cualquiera de estas formas de errores son manifestaciones que pueden tener como causa unos datos no válidos de entrada, errores cuya causa raíz pueden no ser fácilmente identificable al intentar depurar el programa y que suelen requerir muchas horas de investigación. Por ello validar los datos es una buena práctica al crear aplicaciones, sobre todo validar datos que provienen de fuentes no confiables como información introducida por el usuario o programas externos.</p>
 <p>La configuración de una aplicación es otra forma de datos que un programa utiliza, en este caso para variar su comportamiento en tiempo de ejecución sin necesidad de recompilar la aplicación o generar un nuevo artefacto binario para su ejecución. Sobre las variables de configuración también es posible realizar validaciones y en caso de que las variables de configuración sean incorrectas fallar de forma temprana en vez de fallar más tarde cuando se realiza una acción.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</a></li>
     <li><a href="#ejemplo-de-código">Ejemplo de código</a></li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="cómo-validar-propiedades-de-configuración">Cómo validar propiedades de configuración</h3>
 <p>La configuración de una aplicación son simplemente variables a la que se les da un nombre y a través del cual se recupera un valor. El programa no tiene hardcodeado en el código el valor e incluyéndose en un archivo de configuración permite cambiarlo sin cambiar el código.</p>
 <p>Por ejemplo, si un programa necesita conectarse a una base de datos seguramente necesite unas credenciales compuestas por el <em>host</em> del servidor de base de datos, un usuario y una contraseña de conexión. Estos datos de configuración para el programa son requeridos ya que quizá sin poder conectarse a la base de datos va a fallar. Otros datos quizá deban ser numéricos, no vacíos, deban tener un valor mínimo o máximo o deban cumplir una expresión regular.</p>

@@ -268,9 +268,7 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/">Tipos de arquitecturas de aplicaciones de software</a></li>
 </ul>
 <p>Posteriormente, apareció el concepto de inyección de dependencias e inversión de control que se usa actualmente en la mayoría de los casos con independencia del lenguaje de programación, transformando la arquitectura por capas en la arquitectura hexagonal. Por otro lado, en aplicaciones complejas con mucha lógica de negocio se suele aplicar <em>Domain Driven Design</em> o DDD dividiendo la aplicación en <em>bounded context</em> y utilizando otros conceptos. La arquitectura hexagonal se complementa muy bien con DDD ya que sirve para independizar el dominio de los detalles externos de infraestructura tanto los que son usados para acceder al dominio como los usados por el dominio para acceder al exterior.</p>
-<div class="videoo">
-    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
-</div><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+<div class="row"><div class="col-12 col-lg-6"><div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#_domain-driven-design_"><em>Domain-Driven Design</em></a></li>
     <li><a href="#arquitectura-hexagonal">Arquitectura hexagonal</a></li>
@@ -285,7 +283,9 @@
       </ul>
     </li>
   </ul>
-</nav></div> 
+</nav></div> </div><div class="col-12 col-lg-6"><div class="videoo">
+    <script defer id="videoo-library" data-id="7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0" src="https://static.videoo.tv/7f85ad782c7554f1b30d1496af3608d5e0484ccc25f7450c72c0c1412bf140e0.js"></script>
+</div></div></div>
 <h3 id="_domain-driven-design_"><em>Domain-Driven Design</em></h3>
 <p><em>Domain-driven design o DDD</em> es un concepto que propone que la estructura y lenguaje en el código del software (nombres de clases, métodos y variables) debería reflejar el dominio de negocio. Por ejemplo, en un software de eventos debería haber clases para el concepto de evento, recinto, tipos de entrada métodos como crear evento, cambiar fecha de evento, cancelar o posponer entre otros. DDD intenta evitar la existencia de modelos anémicos con poca lógica de negocio o conceptos exclusivamente técnicos. DDD define dos tipos de patrones, los estratégicos que hacen referencia a aspectos de negocio y los patrones tácticos más relacionados con detalles de implementación.</p>
 <p>Patrones estratégicos:</p>
