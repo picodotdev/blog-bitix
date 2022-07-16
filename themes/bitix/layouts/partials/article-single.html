@@ -40,7 +40,7 @@
     <div class="content">
       {{ partial "share-this-begin.html" . }}
       {{ if in $content "<toc></toc>" }}
-        {{ $content = replaceRE "(.*<toc></toc>.*)" (print "<div class=\"row\"><div class=\"col-12 col-lg-6\">" "$1 " "</div><div class=\"col-12 col-lg-6\">" $videoo "</div></div>") $content 1 }}
+        {{ $content = replaceRE "(.*<toc></toc>.*)" (print "<div class=\"row toc\"><div class=\"col-12 col-lg-6\">" "$1 " "</div><div class=\"col-12 col-lg-6\">" $videoo "</div></div>") $content 1 }}
         {{ $content = replace $content "<toc></toc>" .TableOfContents  }}
       {{ end }}
       {{ $content | safeHTML }}
