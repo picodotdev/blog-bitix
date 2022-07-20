@@ -19,7 +19,7 @@ public class Utils {
 
   public static Map<String, String> properties(String resource) throws IOException {
     Properties properties = new Properties();
-    properties.load(Utils.class.getResourceAsStream("/muzooka-id-mapping.properties"));
+    properties.load(Utils.class.getResourceAsStream(resource));
     return properties.entrySet().stream().collect(Collectors.toMap(it -> it.getKey().toString(), it -> it.getValue().toString()));
   }
 
