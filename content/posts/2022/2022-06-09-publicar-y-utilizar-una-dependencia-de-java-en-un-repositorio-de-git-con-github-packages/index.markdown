@@ -71,7 +71,7 @@ Con el PAT y cambiando la configuración de la definición del proyecto de la he
 
 {{< code file="gradlew-publish.sh" language="bash" options="" >}}
 
-Para no guardar el PAT en el repositorio de código fuente en el archivo de construcción Gradle permite externalizar las propiedades en el archivo de configuración de Gradle en un archivo _dotfile_ ubicado en _~/./gradle/gradle.properties_.
+Para no guardar el PAT en el repositorio de código fuente en el archivo de construcción Gradle permite externalizar las propiedades en el archivo de configuración de Gradle en un archivo _dotfile_ ubicado en _~/.gradle/gradle.properties_.
 
 {{< code file=".gradle/gradle.properties" language="plain" options="" >}}
 
