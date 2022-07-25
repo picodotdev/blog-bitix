@@ -147,7 +147,7 @@ Las especificaciones técnicas completas del micrófono MAONO HD300T son las sig
 {{< image
     gallery="true"
     image1="image:maono-hd300-specs.png" optionsthumb1="650x450" title1="Especificaciones del micrófono MAONO HD300 SERIES"
-    caption="Especificaciones del micrófono MAONO HD300T SERIES" >}}
+    caption="Especificaciones del micrófono MAONO HD300 SERIES" >}}
 
 #### Dónde comprar
 
