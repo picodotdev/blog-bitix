@@ -5,12 +5,102 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-07-14T00:00:00+02:00</updated>
+    <updated>2022-07-28T19:30:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/05/sobre-el-futuro-de-las-distribuciones-gnu-linux-y-los-sistemas-operativos/</id>
+        <title>Sobre el futuro de las distribuciones GNU/Linux y los sistemas operativos</title>
+        <updated>2020-05-03T11:00:00+02:00</updated>
+        <published>2020-05-03T09:30:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/05/sobre-el-futuro-de-las-distribuciones-gnu-linux-y-los-sistemas-operativos/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Linux es uno de los mejores sistemas operativos actuales y sobre todo usable y completo. Eso no quiere decir que en el futuro no tan lejano haya cambios importantes en como hemos conocido las distribuciones de GNU/Linux hasta hoy. Ya se están produciendo cambios y surgiendo nuevas basadas en tecnologías y principios significativamente diferentes que mejoran algunas deficiencias de la actual generación en la que están basadas la mayoría de las distribuciones más populares actuales.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Las distribuciones <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> tal y como las conocemos hoy es muy posible que cambien en el futuro en varios aspectos, ya lo están haciendo.</p>
+<p>Uso <a href="https://www.archlinux.org/">Arch Linux</a> y estoy muy contento con ella por su excelente <a href="https://wiki.archlinux.org/">documentación con su wiki</a>, es rápida y bastante estable, el tener siempre el sistema junto con sus aplicaciones actualizadas y un sistema con únicamente las aplicaciones que necesito, pero eso no quiere decir que algunos de sus aspectos sean mejorables.</p>
+<p>Un aspecto mejorable es que el gestor de paquetes <em>pacman</em> no descarga los paquetes de forma paralela con esto los usuarios que tengan una velocidad de descarga rápida reducirían el tiempo de descarga sensiblemente. Otro aspecto mejorable es que una actualización es susceptible de dejar el sistema roto en algún aspecto, puede ser simplemente que el sonido no funciona hasta en el caso más grave que el sistema no se inicie y haya arrancar el sistema en modo recuperación y hacer el <a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/"><em>downgrade</em> del paquete que causa el error</a>. Por suerte, lo normal es que las actualizaciones funcionen correctamente sin introducir ningún error.</p>
+<p>En cualquier caso las actualizaciones son frágiles tal como las conocemos, esto es algo que ni siquiera han resuelto <a href="https://www.microsoft.com/es-es/windows/">Windows</a> ni <a href="https://www.apple.com/macos/">macOS</a> que seguramente tendrán los mejores ingenieros de software de sistemas que el dinero puede pagar.</p>
+<p>Hay cuatro puntos en los que es muy posible que los sistemas operativos cambien tal y como los conocemos: actualizaciones, aplicaciones, lenguaje de programación y <em>kernel</em>. Otros cambios que ya se han producido es la sustitución del antiguo sistema de inicio y gestor de servicios <a href="https://es.wikipedia.org/wiki/System_V">System V</a> por <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a> y del servidor gráfico <a href="https://www.x.org/wiki/">Xorg</a> por <a href="https://es.wikipedia.org/wiki/Wayland_%28protocolo%29">Wayland</a> pero estos no son los únicos cambios que próximamente llegarán a algunas distribuciones GNU/Linux o surgirán nuevas basadas en estos nuevos principios y herramientas.</p>
+<h3 id="actualizaciones">Actualizaciones</h3>
+<p>Dada la fragilidad de las actualizaciones es deseable que en caso de que una produzca algún error sea posible volver a un estado anterior bueno conocido.</p>
+<p>Ya se están produciendo cambios y surgiendo nuevas distribuciones. <a href="https://silverblue.fedoraproject.org/">Fedora Silverblue</a> es un sistema inmutable que utiliza <a href="https://en.wikipedia.org/wiki/OSTree">OSTree</a> como sistema para versionar las actualizaciones en los sistemas Linux, <a href="#ZgotmplZ">Toolbox</a> basado en contenedores donde instalar las herramientas de desarrollo sin afectar al sistema operativo inmutable y Flatpak para instalar aplicaciones de usuario. <a href="https://endlessos.com/es/">endless OS</a> también utiliza OSTree y Flatpak, cada instalación es exactamente igual que en cualquier otro equipo de modo que no hay ninguna diferencia lo que proporciona mayor estabilidad y menos errores. Por otro lado las actualizaciones son muy rápidas y el sistema está preparado para volver a una versión anterior si algo no funciona.</p>
+<p><a href="https://guix.gnu.org/">GNU Guix</a> es una distribución que usa un gestor de paquetes transaccional de modo que en una actualización se actualizan todos los paquetes correctamente o no se actualiza ninguno evitando dejar un sistema inconsistente por algún error que se produzcan en el proceso de la actualización.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/fedora-silverblue.svg" width="200" height="150" alt="Fedora Silverblue" title="Fedora Silverblue"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/endlessos.svg" width="200" height="150" alt="endless OS" title="endless OS"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu-guix.svg" width="200" height="150" alt="GNU Guix" title="GNU Guix"  class="lozad "></p>
+<figcaption>Tres des las distribuciones de la siguiente generación</figcaption>
+</figure>
+</div>
+<h3 id="aplicaciones">Aplicaciones</h3>
+<p>Hasta hoy una parte característica de cada distribución es que tiene su propio repositorio de paquetes con el software que ofrece. Cada paquete de cada distribución es compilado y probado específicamente para cada distribución, cada paquete de cada distribución es mantenido por una persona lo que requiere mucho tiempo del escaso tiempo que tienen estos mantenedores más teniendo en cuenta que muchos de ellos lo hacen en su tiempo libre y no están respaldados económicamente por ninguna organización.</p>
+<p>Otro problema de los paquetes de cada distribución es que algunas anteponen la estabilidad a las nuevas versiones lo que hace que incluyan software que está por detrás en varias versiones de la última. Al mismo tiempo para corregir problemas del software de algunos paquetes por fallos o errores de seguridad los mantenedores aplican parches y cambios adicionales que no son los del software original, a veces con buenos motivos pero que hacen que no todas las distribuciones se beneficien de esos cambios.</p>
+<p>Han surgido varias formas de distribuir software y aplicaciones de usuario distintas a los paquetes de las distribuciones, tres de ellas son <a href="https://flatpak.org/">Flatpak</a>, <a href="https://snapcraft.io/">Snapcraft</a> y <a href="https://appimage.org/">AppImage</a>.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux</a></li>
+</ul>
+<p>Estas tres opciones son independientes de la distribución, el software es distribuido por los autores originales de la aplicación y permiten tener software actualizado incluso en distribuciones que sus paquetes equivalentes están desactualizados. No necesitan de un mantenedor en cada distribución ya que son los propios autores originales del software los que se encargan de la distribución de su software.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/flatpak.svg" width="200" height="150" alt="Flatpak" title="Flatpak"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/snapcraft.svg" width="200" height="150" alt="Snapcraft" title="Snapcraft"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/appimage.svg" width="200" height="150" alt="AppImage" title="AppImage"  class="lozad "></p>
+<figcaption>Diferentes gestores de aplicaciones para instalar software y programas</figcaption>
+</figure>
+</div>
+<h3 id="lenguaje-de-programación">Lenguaje de programación</h3>
+<p>Mucho del software actual y sobre todo el de sistemas y los sistemas operativos ha sido desarrollado en el lenguaje de programación C por su abstracción del lenguaje máquina en un lenguaje de alto nivel pero conservando la proximidad al modo del funcionamiento de las máquinas. Bien empleado es capaz de obtener el máximo rendimiento de una máquina.</p>
+<p>Pero el lenguaje C también tiene algunos inconvenientes uno de ellos es que delega en el programador algunas tareas. Dos de ellas son la solicitud y liberación de la memoria del sistema, un error en esta lógica hace que un programa no libere memoria que ha solicitado y cada vez ocupe más, degradando el sistema con el uso lo que afecta al resto de aplicaciones y el rendimiento del sistema además de requerir al programador dedicar tiempo a implementar esta lógica. El segundo problema de C es que por sí mismo no impone restricciones en el acceso a la memoria, muchos errores de seguridad provienen de que cierto código no comprueba correctamente los límites de memoria de una estructura de datos, esto provoca que cierta zona de memoria contigua pueda ser sobrescrita con datos no deseados o leer datos como claves. Incluso un programador experimentado dada la naturaleza compleja del software cometen estos errores.</p>
+<p>Lenguajes más recientes como <a href="https://golang.org/">Go</a> o <a href="https://www.rust-lang.org/">Rust</a> los más conocidos es posible que sustituyan a C como lenguaje de sistemas. En Rust ya hay alguna implementación de sistema operativo, <a href="https://www.redox-os.org/">Redox</a> y es posible que si Google construye un sistema alternativo a <a href="https://www.android.com/">Andoid</a> esté basado en Go.</p>
+<p>Es difícil que surja un nuevo sistema operativo que sustituya rápidamente a los existentes pero es posible que los existentes vayan cambiando su lenguaje de programación o surjan nuevos con esos lenguajes.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/rust.svg" width="200" height="150" alt="Rust" title="Rust"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/go.svg" width="200" height="150" alt="Go" title="Go"  class="lozad "></p>
+<figcaption>Lenguajes de sistemas que pueden reemplazar a C</figcaption>
+</figure>
+</div>
+<h3 id="kernel">Kernel</h3>
+<p>El kernel de Linux es monolítico no porque sea lo mejor sino porque como <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> considera es lo más pragmático por su mayor facilidad de desarrollo. Pero un fallo en cualquier parte de su gran cantidad de código sobre todo el los controladores de dispositivos hace que el sistema produzca un volcado del sistema y deje de funcionar completamente. También es más inseguro ya que cualquier código que el kernel cargue y funcione en modo superusuario supone un potencial problema ya que es capaz de realizar cualquier cosa.</p>
+<p>Los kernels basados en microkernels son más seguros al ser su núcleo mucho más pequeños, de unos pocos miles de líneas de código contra los millones de Linux, el resto de funcionalidades se implementan en modo de usuario. También son más seguros y fiables. Una parte del sistema no tiene por que hacer que el sistema completo colapse, el kernel puede reiniciar esa parte sin ni siquiera el usuario ser consciente de que ha habido un error, Minix tiene un servicio de reencarnación que reinicia otros servicios en caso de fallo. Dado que la mayor parte del sistema se ejecuta en modo usuario son más seguros ya que los procesos no tienen permisos para hacer cualquier cosa.</p>
+<p>Ejemplos de kernels basados en microkernel son <a href="https://www.minix3.org/">Minix</a>, <a href="#ZgotmplZ">GNU/Hurd</a>, el propio Redox o <a href="https://genode.org/">Genode</a>. A pesar de todo ninguno de ellos ha tomado suficiente relevancia para hacer no ya sombra a Linux sino tampoco a los BSD. Sus desventajas es que hasta ahora no han demostrado alcanzar el mismo rendimiento que los kernels monolíticos y como en el caso de GNU/Hurd su desarrollo esté muy lejos de completarse por su mayor dificultad de desarrollo.</p>
+<p>Si a Linux le surge una alternativa no será porque es malo sino porque no tiene algunas características. Un ámbito puede ser el de coches autónomos en los que un fallo puede suponer un accidente con víctimas mortales o algún sistema que necesite gran fiabilidad como operaciones bursátiles.</p>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/minix.jpg" width="200" height="150" alt="Minix" title="Minix"  class="lozad ">
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/hurd.svg" width="200" height="150" alt="GNU/hurd" title="GNU/hurd"  class="lozad "></p>
+<figcaption>Sistemas operativos basados en microkernel</figcaption>
+</figure>
+</div>
+<h3 id="sistema-de-archivos">Sistema de archivos</h3>
+<p>Aún ext4 sigue siendo el sistema de archivos mayoritariamente empleado por la distribuciones GNU/Linux. Pero hay algunos otros sistemas que pretenden reemplazarlo, uno de ellos es <a href="https://en.wikipedia.org/wiki/ZFS">ZFS</a> y su reencarnación <a href="https://en.wikipedia.org/wiki/OpenZFS">openzfs</a> originario de la extinta <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a> que como características destacadas tiene <em>snapshoting</em>, evitar corrupción de datos en metadatos y un mayor límite de espacio de almacenamiento máximo teórico que puede considerarse hoy en día infinito y únicamente relevante para superordenadores.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_file_systems">Comparison of file systems</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/openzfs.svg" width="200" height="150" alt="OpenZFS" title="OpenZFS"  class="lozad "></p>
+<figcaption>Sistema de archivos avanzado OpenZFS</figcaption>
+</figure>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/05/tres-contribuciones-al-proyecto-apache-tapestry-actualizacion-de-la-pagina-web-artwork-del-logotipo-y-arquetipo-maven-quickstart/</id>
         <title>Tres contribuciones al proyecto Apache Tapestry, actualización de la página web, artwork del logotipo y arquetipo Maven quickstart</title>
@@ -2050,176 +2140,6 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
         
             
                 <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/</id>
-        <title>Tareas básicas de administración y uso después de instalar una distribución GNU/Linux</title>
-        <updated>2020-02-09T10:00:00+01:00</updated>
-        <published>2020-02-09T10:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Para utilizar de forma efectiva y eficiente una distribución GNU/Linux es necesario conocer las tareas básicas que hay que realizar en todo sistema. Estas son actualizar los paquetes instalados del sistema a nuevas versiones con correcciones de seguridad, correcciones de errores y mejoras, instalar y desinstalar nuevos paquetes y programas. Conocer el uso básico de la terminal permite automatizar y realizar de forma masiva algunas tareas además de también permitir actualizar el sistema e instalar y desinstalar programas.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
-</div>
-<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>Si has instalado recientemente o piensas instalar una distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> después de <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/">elegir la distribución GNU/Linux</a> que más se adapte a tus preferencias y de seguir los pasos para <a href="https://picodotdev.github.io/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/">instalar una como Ubuntu</a>, después es necesario conocer unas pocas <a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/">tareas de administración del sistema</a>, <a href="https://picodotdev.github.io/blog-bitix/2020/02/las-aplicaciones-integradas-del-entorno-de-escritorio-gnome/">las aplicaciones del entorno de escritorio de GNOME</a> y un <a href="https://picodotdev.github.io/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/">listado de programas esenciales según categoría para GNU/Linux</a>. En cada distribución varía ligeramente pero en todas hay que realizar unas tareas básicas de mantenimiento.</p>
-<p>Estas tareas básicas de mantenimiento son:</p>
-<ul>
-<li><strong>Actualizar los paquetes instalados del sistema</strong>. Los paquetes actualizados incluyen correcciones de seguridad por lo que es importante actualizar el sistema de forma regular. También, pueden incluir nuevas versiones de los paquetes con nuevas funcionalidades y correcciones de errores. Una programa que es necesario mantener actualizado es el navegador web, también el núcleo o <em>kernel</em> de Linux.</li>
-<li><strong>Instalar y desinstalar nuevos paquetes y programas</strong>. Dependiendo de las tareas que se deseen realizar hay que instalar los programas que permitan realizarlas. Para editar documentos ofimáticos, un navegador web, retocar imágenes, correo electrónico, descarga de <em>torrents</em>, reproductor de vídeo, reproductor de música, captura de imágenes, captura vídeo del escritorio, programas para el desarrollo y programación, virtualización, &hellip; Cada programa tienen su paquete en la distribución que es necesario instalar para usarlo y desinstalar cuando el programa ya no se va a usar más. Es difícil que no encuentres un programa que realice lo que se desea.</li>
-<li><strong>Uso básico de la terminal</strong>. Hay programas con interfaz gráfica pero para algunas tareas es más rápido hacerlas desde la línea de comandos con la ventaja que con un <em>script</em> es posible automatizar en caso de ser repetitiva. Desde la línea de comandos hay numerosos programas útiles que además se pueden combinar de forma que la salida de uno sea la entrada de otro.</li>
-</ul>
-<p>Dependiendo de la distribución cada una de estas tareas puede variar el comando en concreto pero en general en todas se realizan de forma similar. A continuación comento como realizar las tareas en dos de las distribuciones más populares como son <a href="https://www.ubuntu.com/">Ubuntu</a> y <a href="https://www.archlinux.org/">Arch Linux</a> pero en <a href="https://fedoraproject.org/">Fedora</a>, <a href="https://www.debian.org/">Debian</a>, <a href="https://elementary.io/es/">elementary OS</a> se realizan de forma similar.</p>
-<div class="media">
-<figure>
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/ubuntu.svg" width="200" height="150" alt="Ubuntu" title="Ubuntu"  class="lozad ">
-<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/archlinux.svg" width="200" height="150" alt="Arch Linux" title="Arch Linux"  class="lozad "></p>
-</figure>
-</div>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="actualizar-los-paquetes-instalados-del-sistema">Actualizar los paquetes instalados del sistema</h3>
-<p>En todas las distribuciones hay un gestor de paquetes que se encarga de forma automatizada de descargar desde los repositorios las nuevas versiones y actualizar los paquetes. Cada paquete tiene unas dependencias que el gestor de paquetes también se encarga de descargar, instalar y actualizar. Es importante realizar la actualización regularmente, todas las semanas o cada dos semanas, dado que estos incluyen importantes correcciones de seguridad, correcciones de errores o mejoras con nuevas opciones.</p>
-<p>En Ubuntu el gestor de paquetes es <em>apt</em>, la actualización de los paquetes instalados a la última versión disponible en los repositorios con las correcciones de seguridad y de errores se realiza con el siguiente comando. Arch Linux también tiene su comando para realizar la actualización de todos los paquetes del sistema.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt update&#10;</span></span><span class="line"><span class="cl">$ sudo apt upgrade&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>actualizar-sistema-ubuntu.sh</span>
-    </div>
-</div>
-<p>Dado que Ubuntu no es una distribución <em>rolling release</em> sino que tiene un calendario de publicación basado en fechas planificadas cada 6 meses y de dos años para las versiones de soporte largo o LTS cuando se lanza una nueva versión de la distribución hay que actualizar la versión del sistema. Se puede instalar el sistema completo desde cero en la nueva versión o actualizar la versión instalada en el sistema a la nueva versión. En ambos casos es recomendable previamente <a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">realizar una copia de seguridad</a> por si en el proceso se produce algún tipo de error inesperado en el raro caso de que el sistema no llegue ni siquiera a entrar al entorno de escritorio.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt update&#10;</span></span><span class="line"><span class="cl">$ sudo apt upgrade&#10;</span></span><span class="line"><span class="cl">$ sudo apt full-upgrade</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>actualizar-version-ubuntu.sh</span>
-    </div>
-</div>
-<p>En Arch Linux la actualización de los paquetes se realiza con el el siguiente comando. Dado que Arch Linux es una distribución <em>rolling release</em> en la que en todo momento se disponen de las últimas versiones de los paquetes y programas no hay que hacer actualizaciones a nuevas versiones de la distribución sino que esta se mantiene en constante actualización. Lo importante en Arch Linux es hacer siempre actualizaciones completas del sistema y no parciales o de un programa individualmente dado que en algún caso es posible que la versiones de los paquetes de diferentes versiones de diferentes paquetes sean incompatibles.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -Syu&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>actualizar-sistema-archlinux.sh</span>
-    </div>
-</div>
-<p>En el raro caso de que al actualizar un paquete en Arch Linux haya algún error se puede <a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/">desactualizar a la versión anterior o hacer un <em>downgrade</em></a>.</p>
-<h3 id="instalar-y-desinstalar-nuevos-paquetes-y-programas">Instalar y desinstalar nuevos paquetes y programas</h3>
-<p>Los programas y comandos permiten realizar las tareas de productividad que se deseen realizar. Para instalar nuevos programas también se utiliza el gestor de paquetes. Se puede realizar desde la linea de comandos o de forma gráfica usando el centro de software de GNOME. Basta con buscar el programa deseado y pulsar el botón instalar, la desinstalación se realiza también desde el centro de Software de GNOME con el botón desinstalar.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/centro-de-software-gnome-1_huec65b16040d7937933c84bc415833e7a_158817_2560x1440_fit_box_3.png" data-gallery="" title="Centro de software de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/centro-de-software-gnome-1_huec65b16040d7937933c84bc415833e7a_158817_300x200_fit_box_3.png" width="279" height="200" alt="Centro de software de GNOME" title="Centro de software de GNOME"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/centro-de-software-gnome-2_hu180f9e8a9b9197a9edeb9295435dda7d_216711_2560x1440_fit_box_3.png" data-gallery="" title="Programas en el centro de software"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/centro-de-software-gnome-2_hu180f9e8a9b9197a9edeb9295435dda7d_216711_300x200_fit_box_3.png" width="279" height="200" alt="Programas en el centro de software" title="Programas en el centro de software"  class="lozad "></a></p>
-<figcaption>Centro de software de GNOME</figcaption>
-</figure>
-</div>
-<p>Si en algún momento se deja de usar un programa o se reemplaza por otro que que se considere mejor es recomendable desinstalar el antiguo lo que permite recuperar el espacio en el almacenamiento persistente que ocupe y evitar la necesidad de descargar las actualizaciones de seguridad de un programa que no se usa.</p>
-<p>Si se trata de un programa gráfico al instalar el programa se añade un acceso directo en el lanzador de programas del entorno de escritorio como en <a href="https://www.gnome.org/">GNOME</a>, el entorno de escritorio <a href="https://www.kde.org/">KDE</a> también tiene el suyo.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/gnome-dash_hucd1f8571e217950d123169a14a74a748_1463857_2560x1440_fit_box_3.png" data-gallery="" title="Lanzador de aplicaciones de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/gnome-dash_hucd1f8571e217950d123169a14a74a748_1463857_300x200_fit_box_3.png" width="300" height="188" alt="Lanzador de aplicaciones de GNOME" title="Lanzador de aplicaciones de GNOME"  class="lozad "></a></p>
-<figcaption>Lanzador de aplicaciones de GNOME</figcaption>
-</figure>
-</div>
-<p>Los programas se pueden usar inmediatamente después de completar su instalación sin necesidad de reiniciar el sistema, las actualizaciones de componentes clave del sistema como el <em>kernel</em> se instalan pero requieren un reinicio para que sean efectivas, este reinicio se puede realizar a conveniencia del usuario sin interrumpir de manera forzosa las tareas que esté realizando.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-4_hu30c53a27e4bdf1075ae226ab5da099be_429721_2560x1440_fit_box_3.png" data-gallery="" title="Lanzador de aplicaciones de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-4_hu30c53a27e4bdf1075ae226ab5da099be_429721_300x200_fit_box_3.png" width="300" height="188" alt="Lanzador de aplicaciones de GNOME" title="Lanzador de aplicaciones de GNOME"  class="lozad "></a></p>
-<figcaption>Reinicio del sistema después de una actualización de software</figcaption>
-</figure>
-</div>
-<p>Ubuntu tiene un proceso que se ejecuta periódicamente y notifica al usuario si hay nuevas actualizaciones en la distribución, si las hay muestra un diálogo para aplicarlas. En Arch Linux las actualizaciones se inician a petición del usuario.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-1_hu2273343b9bca237f38ef85298dc53a87_427933_2560x1440_fit_box_3.png" data-gallery="" title="Actualizar Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-1_hu2273343b9bca237f38ef85298dc53a87_427933_200x150_fit_box_3.png" width="200" height="125" alt="Actualizar Ubuntu" title="Actualizar Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-2_hub85f9a88542518fcfa9d27570edce88e_431480_2560x1440_fit_box_3.png" data-gallery="" title="Actualizar Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-2_hub85f9a88542518fcfa9d27570edce88e_431480_200x150_fit_box_3.png" width="200" height="125" alt="Actualizar Ubuntu" title="Actualizar Ubuntu"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-3_hu4e59970a91479907b2ac5119f38296f0_488003_2560x1440_fit_box_3.png" data-gallery="" title="Actualizar Ubuntu"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/actualizar-ubuntu-3_hu4e59970a91479907b2ac5119f38296f0_488003_200x150_fit_box_3.png" width="200" height="125" alt="Actualizar Ubuntu" title="Actualizar Ubuntu"  class="lozad "></a></p>
-<figcaption>Actualizar Ubuntu</figcaption>
-</figure>
-</div>
-<p>Desde la línea de comandos el gestor de paquetes también permite instalar y desinstalar programas, basta con conocer el nombre del paquete. La <a href="https://packages.ubuntu.com/">base de datos de paquetes de Ubuntu</a> y de <a href="https://www.archlinux.org/packages/">base de datos de Arch Linux</a> permiten hacer búsquedas por nombre, en el caso de Ubuntu hay varias bases de datos una por versión de la distribución de modo que hay que buscar en la que se tenga instalada.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ apt install libreoffice libreoffice-l10n-es&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>instalar-programas-ubuntu.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S libreoffice-fresh libreoffice-fresh-es&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>instalar-programas-archlinux.sh</span>
-    </div>
-</div>
-<p>El centro de software de GNOME instala los <a href="https://picodotdev.github.io/blog-bitix/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/">programas empaquetados con Flatpak</a> en vez de usando los paquetes de la distribución.</p>
-<h3 id="uso-básico-de-la-terminal">Uso básico de la terminal</h3>
-<p>La línea de comandos de GNU/Linux al principio es difícil de utilizar dado que no es muy amigable al tener que conocer los comandos y sus parámetros para realizar la acción, las interfaces gráficas son más simples de utilizar dado que ofrecen una guía al usuario sin necesidad de que tenga un conocimiento previo de cómo utilizarlo.</p>
-<p>Sin embargo, para tareas repetitivas o masivas es mas rápido y sencillo utilizar la linea de comandos conociendo el comando y los parámetros a utilizar. Un ejemplo de tarea para que se puede utilizar la línea de comandos es para <a href="https://picodotdev.github.io/blog-bitix/2019/12/comando-para-convertir-imagenes-jpeg-y-png-a-webp/">convertir de forma masiva el formato de imágenes de JPEG y PNG a WebP</a>, <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">música</a> o <a href="https://picodotdev.github.io/blog-bitix/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/">vídeos</a>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="k">for</span> f in *.wav<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -acodec libmp3lame <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.wav</span><span class="si">}</span><span class="s2">.mp3&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.wav<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -acodec libvorbis <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.wav</span><span class="si">}</span><span class="s2">.ogg&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.mp3<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -acodec libvorbis <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.mp3</span><span class="si">}</span><span class="s2">.ogg&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>audio-masive-convert.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="k">for</span> f in *.mkv<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -c:v mpeg2video -c:a libmp3lame -b:v 2500K -b:a 192K -vf <span class="nv">scale</span><span class="o">=</span>720x406,setdar<span class="o">=</span>16:9 <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.mkv</span><span class="si">}</span><span class="s2">.mpg&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>video-masive-convert.sh</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="k">for</span> f in *.png<span class="p">;</span> <span class="k">do</span> convert -define webp:lossless<span class="o">=</span><span class="nb">true</span> <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.webp&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.jpg<span class="p">;</span> <span class="k">do</span> convert -define webp:lossless<span class="o">=</span><span class="nb">false</span> <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.webp&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>convert-to-webp.sh</span>
-    </div>
-</div>
-<p>Además, los comandos se pueden componer de modo que la salida de un comando sea la entrada de otro. En este ejemplo un archivo de texto con una serie de palabras si se desea ordenar de forma ascendente y eliminar las palabras duplicadas. El comando <em>cat</em> lee un archivo y lo emite en su salida, <em>sort</em> realiza la ordenación y <em>uniq</em> que elimina las líneas duplicadas. La salida de un programa se conecta a la entrada de otro usando una barra vertical, |.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Lorem&#10;</span></span><span class="line"><span class="cl">ipsum&#10;</span></span><span class="line"><span class="cl">dolor&#10;</span></span><span class="line"><span class="cl">sit&#10;</span></span><span class="line"><span class="cl">amet&#10;</span></span><span class="line"><span class="cl">consectetur&#10;</span></span><span class="line"><span class="cl">adipiscing&#10;</span></span><span class="line"><span class="cl">elit&#10;</span></span><span class="line"><span class="cl">sed&#10;</span></span><span class="line"><span class="cl">eiusmod&#10;</span></span><span class="line"><span class="cl">tempor&#10;</span></span><span class="line"><span class="cl">incidunt&#10;</span></span><span class="line"><span class="cl">ut&#10;</span></span><span class="line"><span class="cl">labore&#10;</span></span><span class="line"><span class="cl">et&#10;</span></span><span class="line"><span class="cl">dolore&#10;</span></span><span class="line"><span class="cl">magna&#10;</span></span><span class="line"><span class="cl">aliqua&#10;</span></span><span class="line"><span class="cl">aliqua&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>texto.txt</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat texto.txt <span class="p">|</span> sort <span class="p">|</span> uniq&#10;</span></span><span class="line"><span class="cl">adipiscing&#10;</span></span><span class="line"><span class="cl">aliqua&#10;</span></span><span class="line"><span class="cl">amet&#10;</span></span><span class="line"><span class="cl">consectetur&#10;</span></span><span class="line"><span class="cl">dolor&#10;</span></span><span class="line"><span class="cl">dolore&#10;</span></span><span class="line"><span class="cl">eiusmod&#10;</span></span><span class="line"><span class="cl">elit&#10;</span></span><span class="line"><span class="cl">et&#10;</span></span><span class="line"><span class="cl">incidunt&#10;</span></span><span class="line"><span class="cl">ipsum&#10;</span></span><span class="line"><span class="cl">labore&#10;</span></span><span class="line"><span class="cl">Lorem&#10;</span></span><span class="line"><span class="cl">magna&#10;</span></span><span class="line"><span class="cl">sed&#10;</span></span><span class="line"><span class="cl">sit&#10;</span></span><span class="line"><span class="cl">tempor&#10;</span></span><span class="line"><span class="cl">ut</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>sort.sh</span>
-    </div>
-</div>
-<p>La parte de GNU de GNU/Linux incluye una colección importante y numerosa de comandos algunos de estos son: <em>cal, date, at, head, tail, vim, nano, sort, alias, grep, cd, chmod, chown, curl, diff, echo, find, history, kill, less, ls, man, mkdir, rmdir, mv, rm, cp, ping, pwd, ssh, sudo, tail, tar, gzip, top, iotp, uname, awk, xargs, unzip, crontab, systemd, mount, whatis, locate, uniq, seq, jq, traceroute</em>. No es necesario conocerlos todos y sus opciones pero es muy util que existen y saber al menos que hacen, al necesitar usarlos basta con hacer una búsqueda en internet para evr un ejemplo de uso con sus opciones.</p>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/">50+ comandos básicos y útiles de GNU/Linux</a></p>
-<p>Los programas de línea de comandos ofrecen páginas de manual para aprender qué hacen, cuáles son sus parámetros y cómo utilizarlos con el comando <em>man</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ man cat&#10;</span></span><span class="line"><span class="cl">$ man sort&#10;</span></span><span class="line"><span class="cl">$ man uniq</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>man.sh</span>
-    </div>
-</div>
-<p>Cada entorno de escritorio ofrece un programa gráfico de una terminal virtual.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/terminal-gnome_hu00955011043d4c7cf0a1c6dbb55776b2_12648_2560x1440_fit_box_3.png" data-gallery="" title="Terminal de GNOME"><img src="https://picodotdev.github.io/blog-bitix/2020/02/tareas-basicas-de-administracion-y-uso-despues-de-instalar-una-distribucion-gnu-linux/images/terminal-gnome_hu00955011043d4c7cf0a1c6dbb55776b2_12648_300x200_fit_box_3.png" width="265" height="200" alt="Terminal de GNOME" title="Terminal de GNOME"  class="lozad "></a></p>
-<figcaption>Terminal de GNOME</figcaption>
-</figure>
-</div>
-<p>El intérprete de comandos es el encargado de entender las sintaxis de los comandos además de interpretar los <em>scripts</em> para automatizar las tareas con pequeños programas de <em>script</em> en vez de tener que introducir los comandos manualmente en la terminal. <a href="https://picodotdev.github.io/blog-bitix/2016/07/guia-basica-del-interprete-de-comandos-bash/">El intérprete de comandos Bash</a> es un intérprete que es instalado por defecto en la mayoría de distribuciones GNU/Linux.</p>
-<h3 id="que-no-hacer">Que no hacer</h3>
-<p>Por muchas medidas de seguridad que implemente un sistema no son suficientes si el usuario no es consciente de algunos peligros y cosas que no se deben hacer sin saber que se está haciendo.</p>
-<p>Lo primero es no ejecutar cualquier comando que se encuentre en internet sin saber que hace por muy curioso que sea. Un ejemplo es <a href="https://picodotdev.github.io/blog-bitix/2018/09/el-comando-fork-bomb-explicado/">el comando <em>fork bomb</em></a>, este hace que pasados unos pocos segundos el sistema agote todos sus recursos, lo hace inusable y obliga ha hacer un reinicio. Y este comando no es un comando de las peores maldades que se pueden hacer.</p>
-<blockquote>
-<p>:(){ :|:&amp; };:</p>
-</blockquote>
-<p>Al igual que los comandos es conveniente no ejecutar programas que no provenga de una fuente de confianza, normalmente los repositorios de software de la distribución o el centro de software. En Windows es común ejecutar <em>cracks</em> y activadores para usar Windows, Microsoft Office u otros programas que requieren comprar una licencia de uso. Estos programas activadores es habitual que contengan virus y una fuente de infección del sistema con un peligro para la seguridad, ya solo acceder a las páginas de baja reputación desde la que descargarlos es un peligro.</p>
-<p>En GNU/Linux la mayor parte del software no tiene coste y está disponible en los repositorios de software, puede ser necesario descargar un programa que no se encuentre ahí pero en caso necesario hay que hacerlo siempre desde la página oficial y prestando especial atención si para ejecutarlo requiere concederle permisos de superusuario.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
             
                 <category term="planeta-codigo"/>
             
