@@ -61,6 +61,8 @@ Un buen ejemplo de _Architecture Decision Records_ son los documentos de [especi
 
 ### Decisiones de arquitectura tomadas en mi blog
 
+Emitir trazas en una aplicación parece algo simple sin embargo hay unas pocas decisiones que tomar, el enlace es un [ejemplo de ADR para decidir como emitir las trazas][blogbitix-645] en una aplicación o como normativa en una organización según las posibilidades analizadas.
+
 Utilizando como ejemplo mi blog a lo largo de los años he tenido que tomar varias decisiones que podrían ser de arquitectura. Entre Blogger, el generador estático de sitios web con Hugo y quizá en un futuro con AWS las cosas han cambiado mucho en mi blog, sin embargo, no he recogido en ningún documento específico cuáles son las decisiones en cada uno de esos cambios y los motivos.
 
 El siguiente no sigue ninguna plantilla en concreto en los enlaces de referencia se incluyen algunas de ejemplo. Cualquier cosa relevante en la arquitectura es candidato a ser incluido en el ADR.
