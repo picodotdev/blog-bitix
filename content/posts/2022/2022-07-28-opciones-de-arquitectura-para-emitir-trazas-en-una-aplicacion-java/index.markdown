@@ -59,9 +59,9 @@ La forma habitual que ponen de ejemplo las librerías de _logging_ para inyectar
 
 {{< code file="Service-3.java" language="java" options="" >}}
 
-#### Inyección de dependencia del _logger_
+#### Inyección por constructor del _logger_
 
-En vez de inyectar de forma estática el *logger, la instancia* se inyecta en el constructor como cualquier otro colaborador de la clase.
+En vez de inyectar de forma estática el _logger_, la instancia se inyecta en el constructor como cualquier otro colaborador de la clase.
 
 {{< code file="Service-4.java" language="java" options="" >}}
 
