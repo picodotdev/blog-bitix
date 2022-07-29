@@ -105,7 +105,7 @@ Si tienes un amigo al que aprecias con Holaluz pídele su código e introdúcelo
 
 Holaluz además de ser una compañía comercializadora de electricidad ofrece la instalación de placas solas en el tejado ayudando al autoconsumo, la generación y consumo de electricidad 100% renovable, y el excedente aportarlo a la red. Es un gran opción para las personas que tiene una casa unifamiliar, ellos se encargan de la instalación en un par de días y con una financiación que supone únicamente el coste del 50% de la instalación contratada con garantías de servicio de los diferentes elementos instalados de varios años con la posibilidad de instalar al mismo tiempo un cargador para coche eléctrico. En la página de [instalación de placas solas de Holaluz](https://www.holaluz.com/placas-solares/) ofrecen todos los detalles. Usando también mi **código de Holaluz o código amigo** que es **3R9L6I** ofrecen un abono de 200 € directo al contratar la instalación.
 
-* [Formulario del proceso de alta para nuevo cliente](https://alta.holaluz.com/es/tu-tarifa)
+* [Formulario del proceso de alta para nuevo cliente](https://alta.holaluz.com/es)
 
 {{< image
     gallery="true"
