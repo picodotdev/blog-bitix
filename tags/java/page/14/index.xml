@@ -721,8 +721,7 @@
     </div>
 </div>
 <div class="media">
-<script type="text/javascript" src="https://asciinema.org/a/102785.js" id="asciicast-102785" async></script>
-<noscript><a href="https://asciinema.org/a/102785" target="_blank"><img src="https://asciinema.org/a/102785.png" width="650" height="450"></a></noscript>
+<a href="https://asciinema.org/a/102785" target="_blank"><amp-img src="https://asciinema.org/a/102785.png" width="650" height="563" class="lozad"></amp-img></a>
 </div>
 <p>La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.</p>
 <p>Los archivos <em>unit</em> propios deben ser ubicados en el directorio <em>/etc/systemd/system/</em>, siendo el directorio <em>/usr/lib/systemd/system/</em> donde se ubican los instalados por los paquetes del sistema. Iniciado el servicio con el comando <code>sudo systemctl start spring-boot-jaxrs.service</code>, si queremos habilitarlo con el inicio del sistema usamos el comando <code>sudo systemctl enable spring-boot-jaxrs.service</code>. Para ver el estado del servicio usamos el comando <code>sudo systemctl status spring-boot-jaxrs.service</code>.</p>
