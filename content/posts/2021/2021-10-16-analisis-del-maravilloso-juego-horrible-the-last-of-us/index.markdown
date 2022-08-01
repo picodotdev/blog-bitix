@@ -169,7 +169,6 @@ En YouTube se encuentran vídeos de la historia de los juegos como si de una pel
     video="GrBr5_TCLUw" >}}
 {{< youtube
     video="8X6DDyjMS5Y" >}}
-https://www.youtube.com/watch?v=GBitxFoYNoE
 
 ### Ubicación de los coleccionables y artefactos
 
@@ -177,8 +176,6 @@ Los coleccionables y artefactos no son difíciles de encontrar porque no están 
 
 {{< youtube
     video="ViCZnYaBVlo" >}}
-{{< youtube
-    video="Y3M9KyFRqKc" >}}
 {{< youtube
     video="Y3M9KyFRqKc" >}}
 
