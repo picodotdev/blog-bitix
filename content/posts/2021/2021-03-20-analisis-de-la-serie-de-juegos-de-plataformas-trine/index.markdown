@@ -42,8 +42,10 @@ Debido a que son juegos ya con varios años en las diferentes tiendas digitales 
     image3="image:trine-3-menu-2.jpg" optionsthumb3="200x150" title3="Pantalla inicial y menú"
     caption="Pantalla inicial y menú" >}}
 
-{{< game-spoiler >}}
+{{< amazon
+    tags="game-console" >}}
 
+{{< game-spoiler >}}
 {{< tableofcontents >}}
 
 ### El juego

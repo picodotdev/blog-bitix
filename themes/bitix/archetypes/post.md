@@ -25,6 +25,9 @@ draft: true
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
@@ -61,7 +64,13 @@ draft: true
 ![](url=resource:playstation-1.png,size=200x200,gallery=true "Página PlayStation")
 [![](url=asset:/assets/images/misc/open-with-smallpdf-es.svg,size=200x40 "Abrir con Smallpdf")](https://smallpdf.com/es/editar-pdf#open={{< resourceurl name="document.pdf" >}},target=_blank)
 
+http://thecoverproject.net
+https://www.igdb.com
+https://www.ign.com/wikis/
+
 {{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
+
+{{% /post %}}
 
 ---
 
@@ -95,5 +104,3 @@ draft: true
     image2="" options2="2560x1440" optionsthumb2="300x200" title2=""
     image3="" options3="2560x1440" optionsthumb3="300x200" title3=""
     caption="" >}}
-
-{{% /post %}}

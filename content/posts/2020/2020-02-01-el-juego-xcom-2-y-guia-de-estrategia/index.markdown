@@ -52,8 +52,10 @@ En un momento de oferta en la [PlayStation Store][playstation-store] en formato 
 
 Esta es mi guía de estrategia del juego para que he seguido para acabar el juego. Algunos aspectos pueden variar según la preferencia o gusto de juego aunque en ciertas partes importantes será muy parecida.
 
-{{< game-spoiler >}}
+{{< amazon
+    tags="game-console" >}}
 
+{{< game-spoiler >}}
 {{< tableofcontents >}}
 
 ### Recursos

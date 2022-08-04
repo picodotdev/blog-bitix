@@ -25,7 +25,7 @@ Esta es otra ventaja de llegar tarde a la generación de las consolas, que está
 
 {{< image
     gallery="true"
-    image1="image:uncharted-the-nathan-drake-collection.jpg" optionsthumb1="300x250" title1="Pantalla inicial" >}}
+    image1="image:uncharted-the-nathan-drake-collection.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
 {{< image
     gallery="true"
     image1="image:uncharted-the-nathan-drake-collection-menu-1.jpg" optionsthumb1="200x150" title1="Menú"
@@ -42,6 +42,9 @@ Esta es otra ventaja de llegar tarde a la generación de las consolas, que está
     image2="image:uncharted-the-nathan-drake-collection-menu-8.jpg" optionsthumb2="200x150" title2="Menú"
     image3="image:uncharted-the-nathan-drake-collection-menu-9.jpg" optionsthumb3="200x150" title3="Menú"
     caption="Pantalla inicial y menú" >}}
+
+{{< amazon
+    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}

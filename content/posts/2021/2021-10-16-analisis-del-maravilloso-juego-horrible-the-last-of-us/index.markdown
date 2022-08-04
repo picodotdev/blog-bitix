@@ -35,8 +35,10 @@ A veces me cuesta encender la Play y ponerme a jugar pero este al igual o más q
 
 {{< image
     gallery="true"
-    image1="image:the-last-of-us.jpg" optionsthumb1="300x200" title1="Pantalla inicial"
-    image2="image:the-last-of-us-menu.jpg" optionsthumb2="300x200" title2="Menú"
+    image1="image:the-last-of-us.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+{{< image
+    gallery="true"
+    image1="image:the-last-of-us-menu.jpg" optionsthumb1="300x200" title2="Menú"
     caption="Pantalla inicial y menú del juego The Last of Us" >}}
 {{< image
     gallery="true"
@@ -44,6 +46,9 @@ A veces me cuesta encender la Play y ponerme a jugar pero este al igual o más q
     image2="image:left-behind.jpg" optionsthumb2="200x150" title2="Portada"
     image3="image:naughty-dog.jpg" optionsthumb3="200x150" title3="Portada"
     caption="Portada" >}}
+
+{{< amazon
+    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}

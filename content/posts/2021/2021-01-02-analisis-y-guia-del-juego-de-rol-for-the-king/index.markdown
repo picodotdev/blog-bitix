@@ -35,13 +35,18 @@ Si For the King es sencillo y no muy difícil [el juego Darkest Dungeon][blogbit
 
 {{< image
     gallery="true"
-    image1="image:for-the-king.jpg" optionsthumb1="300x250" title1="Pantalla inicial"
-    image2="image:for-the-king-menu.jpg" optionsthumb2="300x250" title2="Menú"
+    image1="image:for-the-king.jpg" optionsthumb1="650x550" title1="Pantalla inicial" >}}
+{{< image
+    gallery="true"
+    image1="image:for-the-king-menu.jpg" optionsthumb1="300x250" title2="Menú"
     caption="Pantalla inicial y menú del juego For de King" >}}
 {{< image
     gallery="true"
     image1="image:for-the-king-cover.jpg" optionsthumb1="200x150" title1="Portada del juego For The King"
     caption="Portada del juego For The King" >}}
+
+{{< amazon
+    tags="game-console" >}}
 
 {{< game-spoiler >}}
 {{< tableofcontents >}}

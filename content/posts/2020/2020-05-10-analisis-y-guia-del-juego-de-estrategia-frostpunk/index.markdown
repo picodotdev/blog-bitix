@@ -10,8 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: "image:Frostpunk.jpg"
-imagePost: "image:Frostpunk.jpg"
+imageHead: "image:frostpunk.jpg"
+imagePost: "image:frostpunk.jpg"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
 summary: "Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo."
@@ -27,7 +27,10 @@ No es un juego complicado pero requiere plantear bien las prioridades y construc
 
 {{< image
     gallery="true"
-    image1="image:Frostpunk.jpg" optionsthumb1="200x150" title1="Pantalla inicial"
+    image1="image:frostpunk.jpg" optionsthumb1="650x450" title1="Pantalla inicial" >}}
+{{< image
+    gallery="true"
+    image1="image:frostpunk.jpg" optionsthumb1="200x150" title1="Pantalla inicial"
     image2="image:frostpunk-intro.jpg" optionsthumb2="200x150" title2="Pantalla inicial"
     image3="image:frostpunk-menu.jpg" optionsthumb3="200x150" title3="Menú"
     caption="Pantalla inicial y menú" >}}
@@ -42,8 +45,10 @@ Ha sido lanzado para PC y consolas, yo lo he jugado en la PlayStation 4. Los tex
 
 * [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 
-{{< game-spoiler >}}
+{{< amazon
+    tags="game-console" >}}
 
+{{< game-spoiler >}}
 {{< tableofcontents >}}
 
 ### Estrategia inicial
