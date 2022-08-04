@@ -25,6 +25,8 @@ draft: true
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
+{{< amazon
+    tags="game-console" >}}
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
@@ -63,6 +65,8 @@ draft: true
 
 {{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
 
+{{% /post %}}
+
 ---
 
 {{< amazon
@@ -95,5 +99,3 @@ draft: true
     image2="" options2="2560x1440" optionsthumb2="300x200" title2=""
     image3="" options3="2560x1440" optionsthumb3="300x200" title3=""
     caption="" >}}
-
-{{% /post %}}

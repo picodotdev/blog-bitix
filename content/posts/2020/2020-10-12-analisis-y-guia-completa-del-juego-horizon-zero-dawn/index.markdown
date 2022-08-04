@@ -46,8 +46,10 @@ Al final del juego te queda la sensación de todas las aventuras, toda la histor
     image1="image:horizon-zero-dawn-cover.jpg" optionsthumb1="200x150" title1="Portada del juego Horizon Zero Dawn"
     caption="Portada del juego Horizon Zero Dawn" >}}
 
-{{< game-spoiler >}}
+{{< amazon
+    tags="game-console" >}}
 
+{{< game-spoiler >}}
 {{< tableofcontents >}}
 
 ### Inicio de la historia y argumento

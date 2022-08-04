@@ -42,8 +42,10 @@ Ha sido lanzado para PC y consolas, yo lo he jugado en la PlayStation 4. Los tex
 
 * [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 
-{{< game-spoiler >}}
+{{< amazon
+    tags="game-console" >}}
 
+{{< game-spoiler >}}
 {{< tableofcontents >}}
 
 ### Estrategia inicial

@@ -46,6 +46,9 @@ Un juego similar a Darkest Dungeon es [el juego de rol For the King][blogbitix-5
 {{< youtube
     video="LMDLiNDAOQw" >}}
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 

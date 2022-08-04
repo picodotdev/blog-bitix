@@ -45,6 +45,9 @@ A veces me cuesta encender la Play y ponerme a jugar pero este al igual o más q
     image3="image:naughty-dog.jpg" optionsthumb3="200x150" title3="Portada"
     caption="Portada" >}}
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 

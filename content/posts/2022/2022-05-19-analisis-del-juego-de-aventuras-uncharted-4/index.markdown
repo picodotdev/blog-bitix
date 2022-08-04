@@ -48,6 +48,9 @@ El juego Uncharted 4 es uno de los juegos imprescindibles de la consola PlayStat
     image2="image:uncharted-4-naugthy-dog.jpg" optionsthumb2="200x150" title2="Naugthy Dog"
     caption="Pantalla inicial, personajes y menú" >}}
 
+{{< amazon
+    tags="game-console" >}}
+
 {{< game-spoiler >}}
 {{< tableofcontents >}}
 
