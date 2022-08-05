@@ -23,7 +23,7 @@ El [God of War](https://www.igdb.com/games/god-of-war--1) desarrollado por [Sant
 
 Lanzado al final del ciclo de vida de la generación de PS4 y más reciente que Uncharted 4 exige a la consola su máximo potencial y se nota en el ventilador que se pone con frecuencia a mayores revoluciones que en otros juegos.
 
-Antes de empezar el juego God of War sabía que iba a ser un buen juego sin embargo una vez empezado me ha sorprendido para mejor en varios aspectos, tanto que no me ha costado tanto ponerme a jugar como en otros juegos. Otro de los grandes juegos de de PlayStation 4, por favor, no me hagáis elegir entre God of War y The Last of Us ya que posiblemente me quedase con el último por su mayor carga emocional, en el apartado de combates épicos y su también parte emocional el God of War es otro juego imprescindible y referente de la del catálogo de juegos de la PS4.
+Antes de empezar el juego God of War sabía que iba a ser un buen juego sin embargo una vez empezado me ha sorprendido para mejor en varios aspectos, tanto que no me ha costado tanto ponerme a jugar como en otros juegos. Otro de los grandes juegos de de PlayStation 4, por favor, no me hagáis elegir entre God of War y The Last of Us, posiblemente me quedase con el último por su mayor carga emocional pero en el apartado de combates épicos es de mo mejor y también  tiene su también parte emocional, el God of War es otro juego imprescindible y referente en el catálogo de juegos de la PS4.
 
 * [Análisis y guía completa del juego Horizon Zero Dawn][blogbitix-522]
 * [Análisis del maravilloso juego horrible The Last of Us][blogbitix-604]
