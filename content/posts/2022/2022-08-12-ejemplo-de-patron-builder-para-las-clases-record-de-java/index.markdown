@@ -2,7 +2,7 @@
 pid: 647
 type: "post"
 title: "Ejemplo de patrón Builder para las clases Record de Java"
-url: "/2022/08/ejemplo-de-patrón-builder-para-las-clases-record-de-java/"
+url: "/2022/08/ejemplo-de-patron-builder-para-las-clases-record-de-java/"
 date: 2022-08-12T18:30:00+02:00
 language: "es"
 index: true
