@@ -5,12 +5,76 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/planeta-codigo/</id>
-    <updated>2022-07-28T19:30:00+02:00</updated>
+    <updated>2022-08-12T18:30:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/</id>
+        <title>Controlar un servomotor con la Raspberry Pi y Java</title>
+        <updated>2017-05-13T11:40:00+02:00</updated>
+        <published>2017-05-07T11:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/raspberrypi.svg" width="200" height="255" alt="Raspberry Pi" title="Raspberry Pi"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
+</div>
+<p>Otro de los elementos que incluye el <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">kit de iniciación a la Raspberry Pi</a> es un <a href="https://es.wikipedia.org/wiki/Servomotor">servomotor</a>, en concreto uno del modelo SG90. En la <a href="http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf">especificación del servomotor SG90</a> está detallado cual es el código de colores de los cables. Rojo para la corriente de 5V, marrón para tierra y naranja para el <em>pin</em> <abbr title="Pulse Width Modulated">PWM</abbr> con el que se controlará el servo motor, el diodo led es simplemente para saber que cuando se enciende el programa Java se ha iniciado. La Raspberry Pi tiene algunos <em>pines</em> con soporte hardware para realizar PWM.</p>
+<p>Un servomotor es un elemento distinto de un motor, un motor usa dos cables uno para mover el motor hacia adelante y otro cable para mover el motor hacia atrás. Los servomotores además de utilizar un único cable para controlarlo su funcionalidad es distinta usándose para posicionar el motor en un determinado ángulo que en el caso del SG90 tiene un ángulo de funcionamiento de 180º. Además el servomotor es más complejo, como se explica en el siguiente artículo de título <a href="http://handyboard.com/hb/faq/hardware-faqs/dc-vs-servo/">¿Cual es la diferencia entre un motor DC y servo motor?</a> el servomotor se compone de varios elementos empaquetados como una pieza. Se compone de un motor DC normal, una unidad de reducción, un sensor de posicionamiento y un circuito de control.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/servomotor_hu6764442dc229d274d15e84357470d3d3_154925_2560x1440_fit_q90_box.jpg" data-gallery="" title="Servomotor"><img src="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/servomotor_hu6764442dc229d274d15e84357470d3d3_154925_300x200_fit_q90_box.jpg" width="300" height="103" alt="Servomotor" title="Servomotor"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/cableado_hu61c0e41b06d1f9f4477c5ed3a6a8630c_260206_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cableado en la breadboard"><img src="https://picodotdev.github.io/blog-bitix/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/images/cableado_hu61c0e41b06d1f9f4477c5ed3a6a8630c_260206_300x200_fit_q90_box.jpg" width="300" height="128" alt="Cableado en la breadboard" title="Cableado en la breadboard"  class="lozad "></a></p>
+<figcaption>Servomotor y cableado</figcaption>
+</figure>
+</div>
+<p>La función del servomotor es recibir la señal de control y aplicar corriente al motor hasta que que esté en la posición indicada por la señal. Un servomotor no rota libremente sino que como he comentado en el caso del SG90 tiene un ángulo de funcionamiento de entre 0º y 180º. La señal de control es un pulso de anchura modulada o PWM.</p>
+<p>Usando la librería <a href="http://rtd.diozero.com/en/latest/">Diozero</a> es sencillo controlar un servomotor a través de la clase <a href="http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/Servo.html">Servo</a>. El constructor recibe tres datos el <em>pin</em> de la Raspberry Pi que controlará el servomotor, según la nomenclatura Broadcom que usa la librería Diozero, la frecuencia del pulso PWD que sirve para controlar la velocidad de rotación y finalmente la posición inicial a establecer. Con el método <a href="http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/Servo.html#getPulseWidthMs--">pulseWidthMs</a> y un rango de un valor <em>float</em> entre 0.6 y 2.4 controlaremos la posición o ángulo del servomotor.</p>
+<p>El siguiente programa Java cambia en un bucle la posición del servo desde la posición mínima a la máxima. En él he utilizado el <em>pin</em> 18 que en la Raspberry Pi 1 soporta PWD, en las versiones 2 y 3 podríamos haber usado los <em>pines</em> 18 o 19.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.javaraspberrypi</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.LED</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.diozero.sandpit.Servo</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Servomotor</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">LED</span> <span class="n">led</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LED</span><span class="o">(</span><span class="n">21</span><span class="o">);</span> <span class="n">Servo</span> <span class="n">servo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Servo</span><span class="o">(</span><span class="n">18</span><span class="o">,</span> <span class="n">50</span><span class="o">,</span> <span class="n">1</span><span class="o">.</span><span class="na">45F</span><span class="o">))</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">led</span><span class="o">.</span><span class="na">on</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">5</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">3000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">servo</span><span class="o">.</span><span class="na">setPulseWidthMs</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">6F</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">3000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">servo</span><span class="o">.</span><span class="na">setPulseWidthMs</span><span class="o">(</span><span class="n">2</span><span class="o">.</span><span class="na">3F</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">servo</span><span class="o">.</span><span class="na">setPulseWidthMs</span><span class="o">(</span><span class="n">1</span><span class="o">.</span><span class="na">45F</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">}</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Servomotor.java</span>
+    </div>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/g8RsvZ26Cqg" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<p>Aunque he conseguido hacer funcionar el servomotor con este programa no ha sido exento de problemas. Y es que cuando el programa finaliza la Raspberry Pi se me bloquea o se pierde la conectividad de red. No se si por algún <em>bug</em> en la librería Diozero o alguna incompatibilidad con la Raspberry Pi 1 B, quizá en otro modelo de la Raspberry Pi no dé los problemas que a mi me da.</p>
+<p>En otros artículos de la serie puedes consultar cómo usar otros <a href="https://picodotdev.github.io/blog-bitix/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/">elementos de kit con Java y la Raspberry Pi</a>.</p>
+<div class="alert alert-secondary sourcecode">
+    <img src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <p>
+            El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaRaspberryPi">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew executeServomotor</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf">Especificación SG90 servomotor</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Servomotor">Servomotor</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2017/05/articulo-4-de-yo-apoyo-al-software-libre/</id>
         <title>Artículo #4 de Yo apoyo al software libre</title>
@@ -1345,177 +1409,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/</id>
-        <title>Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web</title>
-        <updated>2017-11-06T20:00:00+01:00</updated>
-        <published>2017-02-28T22:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Al escribir este artículo patrocinado sobre Clouding.io he podido probar de primera mano el crear un servidor virtual basado en la computación en la nube. Después de probarlo me parece una opción sencilla y sin complicaciones, adecuada y más que suficiente desde el rango de proyectos más pequeños de presencia en internet, blogs o servicios web y con capacidad suficiente hasta los proyectos más grandes y exigentes de cualquier empresa. Además, con la característica diferenciadora de ofrecer soporte en español en caso de necesitar algún tipo de asistencia o ayuda.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/clouding.svg" width="300" height="222" alt="Clouding.io" title="Clouding.io"  class=""></p>
-</div>
-<p>Toda página web, blog y servicio que está accesible en internet ha de ser hospedado en algún servidor. Por motivos de fiabilidad, también coste y flexibilidad se suele contratar un servicio de hospedaje de los muchos que hay en internet. Desde no hace tanto tiempo ha surgido una modalidad de hospedaje que permite mayor flexibilidad, la llamada <a href="https://en.wikipedia.org/wiki/Cloud_computing">cloud computing</a> o computación en la nube, cuya características diferenciadoras son permitir variar de forma elástica, aumentando o reduciendo, los recursos de computación utilizados ya sea de procesador, memoria, almacenamiento o transferencia de datos. Otra característica de la computación en la nube es que es inmediata (en cuestión de minutos) sin necesidad de trámites administrativos o tiempos de espera, los servicios de computación en la nube incluyen paneles de administración para los servidores accesibles a través de un navegador con aplicaciones sencillas o incluso interfaces basadas en linea de comandos de modo que es posible automatizar las tareas de sistemas con <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>.</p>
-<p>Hay múltiples opciones de computación en la nube algunas con más servicios y funcionalidades pero también más complejas y no necesarias para proyectos sencillos y no muy grandes. Una de las opciones de computación en la nube sencilla pero suficiente en muchos casos es <a href="https://clouding.io/">Clouding.io</a> que en la opción más básica ofrece un servidor con <strong>1/2 núcleo de CPU, 1 GiB de memoria, 5 GiB de almacenamiento persistente de estado sólido o SSD y 2 TiB de datos de transferencia a un precio de 3 € + IVA al mes</strong> (unos 3.5 € con IVA incluido), precio incluso más económica que otras opciones de servidores en la nube.</p>
-<p>Para un página web con archivos estáticos de presencia en internet o un blog como Blog Bitix que solo utiliza recursos estáticos (HTML, CSS, JavaScript e imágenes) lo más básico ya sería suficiente y para un blog con <a href="https://wordpress.org/">Wordpress</a> utilizando 2 GiB y un precio de 9 € al mes también debería ser más que suficiente para un tráfico respetable en cantidad.</p>
-<p>Una de las ventajas del <em>cloud computing</em> es la elasticidad que permite cambiar en cualquier momento los recursos reservados según las necesidades como la cantidad de memoria, núcleos de procesador o espacio en disco, tanto para reservar más recursos o para disminuir los recursos utilizados y también el coste. En la página de Clouding.io está la simple política de precios según los recursos reservados. <strong>Desde 1 GiB hasta 192 GiB de memoria, desde 1 hasta 48 cores de CPU y desde 5 GiB hasta 1900 GiB de almacenamiento SSD</strong> por servidor cubriendo las necesidades hasta de las aplicaciones más exigentes.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-web_hu6d459e25f76ec896873005b1fc0287df_217640_2560x1440_fit_box_3.png" data-gallery="" title="Página web de Clouding.io"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-web_hu6d459e25f76ec896873005b1fc0287df_217640_650x450_fit_box_3.png" width="650" height="442" alt="Página web de Clouding.io" title="Página web de Clouding.io"  class="lozad "></a></p>
-<figcaption>Página web de Clouding.io</figcaption>
-</figure>
-</div>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="infraestructura-_cloud_-de-clouding">Infraestructura <em>cloud</em> de Clouding</h3>
-<p>Algunas de las características de Clouding.io algo más detalladas en su página web es que ofrecen soporte en español y discos SSD rápidos para el almacenamiento además de las siguientes:</p>
-<ul>
-<li>Potente: procesadores de última generación, redes de alta velocidad y baja latencia, almacenamiento redundante, virtualización de alto rendimiento con KVM, cache inteligente y discos SSD.</li>
-<li>Estable: Triple Réplica, Auto Reparación, Datacenter Tier 4, Calidad Empresarial, Protección de Red, Hosting DNS.</li>
-<li>Flexible: Cloud Hosting por Horas, Windows Cloud, Linux Cloud, Configuración a medida, Ampliaciones temporales, Activación inmediata.</li>
-<li>Fácil: Soporte de Calidad, Cloud Pros, Teclado y Monitor Remoto, Como y cuando quieras, DIY: Hazlo tú mismo, Comunidad.</li>
-</ul>
-<p>En el blog de Clouding.io hay artículos interesantes y tiene una comunidad con una base de conocimiento y una sección de preguntas y respuestas para resolver cualquier duda que nos surja, todo en español. Las imágenes de sistemas operativos que ofrecen son las siguientes en las que se incluyen la opción de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> aunque siendo este un blog más afín al software libre recomiendo una de las versiones de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>, una ventaja es que el precio es más barato. De <a href="https://www.ubuntu.com/">Ubuntu</a> hay múltiples versiones aunque siendo el propósito prestar un servicio durante periodos de tiempo largos lo recomendable es utilizar una versión <abbr title="Long Term Support">LTS</abbr> o de soporte prolongado. También es posible otras distribuciones populares como sistema operativo como <a href="https://www.debian.org/">Debian</a> y <a href="https://www.centos.org/">CentOS</a>.</p>
-<p>Clouding ofrece una infraestructura de alta disponibilidad, con servicios de copias de seguridad para preservar datos y restauración, toma de instantáneas como medida de seguridad y recuperación, archivado de servidores para ahorrar costes, redimensionado de servidores gracias a la computación <em>cloud</em>, configuración de red privada para mayor seguridad. En el panel de administración de los servidores también se ofrecen detalles para la monitorización y observabilidad con los que comprobar el buen estado de funcionamiento del servidor.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-1_hu47cae0a478570364adf19f84fbfbe4d4_94578_2560x1440_fit_box_3.png" data-gallery="" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-1_hu47cae0a478570364adf19f84fbfbe4d4_94578_200x150_fit_box_3.png" width="200" height="115" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-2_hud8f3f8d7341ef400d32f1a50a52163e9_95722_2560x1440_fit_box_3.png" data-gallery="" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-2_hud8f3f8d7341ef400d32f1a50a52163e9_95722_200x150_fit_box_3.png" width="200" height="114" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-3_hu5696f2a73e44764296c3694618fa04a5_92878_2560x1440_fit_box_3.png" data-gallery="" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-3_hu5696f2a73e44764296c3694618fa04a5_92878_200x150_fit_box_3.png" width="200" height="114" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-4_hu141d7784ad9fac9f3ec5f057f7862247_99197_2560x1440_fit_box_3.png" data-gallery="" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-4_hu141d7784ad9fac9f3ec5f057f7862247_99197_200x150_fit_box_3.png" width="200" height="115" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-5_hu36c7e1637319c262e9aab10087164207_92561_2560x1440_fit_box_3.png" data-gallery="" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-5_hu36c7e1637319c262e9aab10087164207_92561_200x150_fit_box_3.png" width="200" height="118" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-6_hua7694af4fd912997d20e00b13a1244ee_90902_2560x1440_fit_box_3.png" data-gallery="" title="Características de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-caracteristicas-6_hua7694af4fd912997d20e00b13a1244ee_90902_200x150_fit_box_3.png" width="200" height="117" alt="Características de Clouding" title="Características de Clouding"  class="lozad "></a></p>
-<figcaption>Características de Clouding</figcaption>
-</figure>
-</div>
-<p>Para garantizar un buen servicio utilizan una infraestructura moderna y de alto rendimiento, redundante y tolerante a fallos compuesta por hardware, software, red, imágenes y centros de datos. Almacenamiento con discos SSD NVMe de alta velocidad, RAM con corrección de errores ECC, consola de emergencia y monitorización, red de alto rendimiento baja velocidad con protecciones frente ataques DDOS y con dirección IP pública, imágenes para servidores basados en Linux o Windows, paneles de control y aplicaciones preinstaladas, finalmente sus centros de datos ubicados en España son redundantes y con energía 100% renovable.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-1_hua0b71a493c7e0f9a963194c3eecb131d_129895_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-1_hua0b71a493c7e0f9a963194c3eecb131d_129895_200x150_fit_box_3.png" width="161" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-2_hu26a10119971413dd8558a72c1e104fed_135238_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-2_hu26a10119971413dd8558a72c1e104fed_135238_200x150_fit_box_3.png" width="160" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-3_huee52e53912c36303bac457dd7e3703da_127867_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-3_huee52e53912c36303bac457dd7e3703da_127867_200x150_fit_box_3.png" width="158" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-4_hu5cd5cc7fdf3eed52fa514d1d014559e6_123773_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-4_hu5cd5cc7fdf3eed52fa514d1d014559e6_123773_200x150_fit_box_3.png" width="159" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-5_hu407ad9e63341590400f3617a98a4b99b_124760_2560x1440_fit_box_3.png" data-gallery="" title="Infraestructura de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-infraestructura-5_hu407ad9e63341590400f3617a98a4b99b_124760_200x150_fit_box_3.png" width="158" height="150" alt="Infraestructura de Clouding" title="Infraestructura de Clouding"  class="lozad "></a></p>
-<figcaption>Infraestructura de Clouding</figcaption>
-</figure>
-</div>
-<p>Son muchas las empresas que confían en Clouding como proveedor de servicios para sus necesidades tecnológicas. Dado el tamaño de estas empresas es garantía de que el servicio de Clouding está a la altura para tenerlos como clientes.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-clientes_hub824dfca607c3f0a0eb0c96ed75b2a20_126653_2560x1440_fit_box_3.png" data-gallery="" title="Clientes de Clouding"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/clouding-clientes_hub824dfca607c3f0a0eb0c96ed75b2a20_126653_200x150_fit_box_3.png" width="188" height="150" alt="Clientes de Clouding" title="Clientes de Clouding"  class="lozad "></a></p>
-<figcaption>Clientes de Clouding</figcaption>
-</figure>
-</div>
-<h3 id="crear-un-servidor-_cloud_-en-clouding">Crear un servidor <em>cloud</em> en Clouding</h3>
-<p>Para probar su servicio ofrecen un cupón de 5 €, que con la opción más básica son unos 45 días de uso continuado en su configuración más básica para evaluar su servicio sin compromiso. El registro requiere validar una cuenta de correo electrónico, móvil y tarjeta de crédito. Requerir el móvil y la tarjeta de crédito para probar el servicio es algo excesivo pero quizá necesario para evitar <em>spam</em> y usos no deseados. Realizado el registro ya está disponible el acceso al panel de administración desde el que crear nuevos servidores, arrancarlos, modificarlos, pararlos o eliminarlos.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/registro_huae5c4934c92475d27870cebea28f77ff_60890_2560x1440_fit_box_3.png" data-gallery="" title="Pasos de verificación del registro"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/registro_huae5c4934c92475d27870cebea28f77ff_60890_300x200_fit_box_3.png" width="300" height="143" alt="Pasos de verificación del registro" title="Pasos de verificación del registro"  class="lozad "></a></p>
-<figcaption>Registro</figcaption>
-</figure>
-</div>
-<p>Completado el registro accediendo al panel de administración en la sección servidores podremos crear las instancias y con que cantidad de recursos reservados, para ajustar el precio y dada la elasticidad de los servidores se puede empezar por las opciones mínimas e ir subiendo hasta que los recursos sean suficientes para el correcto funcionamiento de servidor según los recursos necesarios.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/panel-administracion_hua8cc9f49dd164b7b495598d82a88e5ea_30889_2560x1440_fit_box_3.png" data-gallery="" title="Panel de administración"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/panel-administracion_hua8cc9f49dd164b7b495598d82a88e5ea_30889_300x200_fit_box_3.png" width="300" height="143" alt="Panel de administración" title="Panel de administración"  class="lozad "></a></p>
-<figcaption>Panel de administración</figcaption>
-</figure>
-</div>
-<p>Como utilidad Clouding.io ofrece un panel donde gestionar los registros DNS del dominio que contratemos y conocer los nombre de <em>host</em> y direcciones IP de los servidores de DNS de Clouding.io. Casi seguro que la entidad registradora del dominio que le asignemos al servicio para su acceso también tenga la opción de administrar los registros DNS, usar el de Clouding.io es más por unificar en un solo sitio toda la administración del servidor. En las opciones avanzadas se pueden administrar multitud de tipos de registro DNS.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/dns_hu41e10548ff765daddec6c6cb902f451b_53127_2560x1440_fit_box_3.png" data-gallery="" title="Administración DNS"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/dns_hu41e10548ff765daddec6c6cb902f451b_53127_300x200_fit_box_3.png" width="300" height="143" alt="Administración DNS" title="Administración DNS"  class="lozad "></a></p>
-<figcaption>Administración DNS</figcaption>
-</figure>
-</div>
-<p>La sección principal es la de <em>Servidores</em> donde hay tres pestañas: una para los servidores, otra para las reglas de <em>firewall</em> para controlar el tráfico entrante y saliente de cada servidor y otra para las <em>llaves SSH</em> que usaremos para conectarnos desde nuestro equipo de forma segura. Seleccionado las características del servidor (memoria, procesadores y espacio en disco) al cabo de unos momentos el servidor se iniciará y estará disponible para que nos conectemos mediante SSH o desde la terminal con interfaz web ofrecida. Desde el listado de servidores podremos pararlo, reiniciarlo, redimensionarlo o eliminarlo. En la pestaña <em>Acceso</em> obtendremos el nombre de <em>host</em> asignado y la dirección IP privada y pública asignada, así como la contraseña del usuario <em>root</em>. En la pestaña <em>Estadísticas</em> monitorizaremos el estado del servidor y conoceremos si es necesario redimiensionarlo en algún parámetro.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/servidor_hu3131f9c01206c90471248ec20a9654a7_37137_2560x1440_fit_box_3.png" data-gallery="" title="Parámetros de acceso de un servidor"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/servidor_hu3131f9c01206c90471248ec20a9654a7_37137_300x200_fit_box_3.png" width="300" height="143" alt="Parámetros de acceso de un servidor" title="Parámetros de acceso de un servidor"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/acceso_huc8456af10ea1e5396a7fdc1b23cabe2c_91973_2560x1440_fit_box_3.png" data-gallery="" title="Parámetros de acceso de un servidor"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/acceso_huc8456af10ea1e5396a7fdc1b23cabe2c_91973_300x200_fit_box_3.png" width="255" height="200" alt="Parámetros de acceso de un servidor" title="Parámetros de acceso de un servidor"  class="lozad "></a></p>
-<figcaption>Un servidor y sus parámetros de acceso</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nuevo-servidor_hu6fae8938a73c88b555c9f18a38a80ffa_82256_2560x1440_fit_box_3.png" data-gallery="" title="Nuevo servidor"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nuevo-servidor_hu6fae8938a73c88b555c9f18a38a80ffa_82256_300x200_fit_box_3.png" width="290" height="200" alt="Nuevo servidor" title="Nuevo servidor"  class="lozad "></a></p>
-<figcaption>Nuevo servidor</figcaption>
-</figure>
-</div>
-<p>Las reglas del <em>firewall</em> por defecto son demasiado permisivas, si solo necesitamos que el puerto 80, el del servidor web, esté abierto el resto de reglas para otros puertos se pueden eliminar para evitar posibles agujeros de seguridad. Una cosa buena es que se pueden crear múltiples reglas de seguridad y aplicar a cada servidor la más conveniente.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/firewall_hu9d750e187604d5487e9e11027a30a400_116554_2560x1440_fit_box_3.png" data-gallery="" title="Reglas de firewall"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/firewall_hu9d750e187604d5487e9e11027a30a400_116554_300x200_fit_box_3.png" width="210" height="200" alt="Reglas de firewall" title="Reglas de firewall"  class="lozad "></a></p>
-<figcaption>Reglas de firewall</figcaption>
-</figure>
-</div>
-<h3 id="conexión-mediante-línea-de-comandos-con-ssh">Conexión mediante línea de comandos con SSH</h3>
-<p>Las llaves SSH son necesarias para conectarnos al servidor y lanzar comandos desde la terminal. Generada una llave SSH desde el apartado <em>Llaves SSH</em> descargaremos la clave privada, la añadiremos al directorio <em>~/.ssh</em> y configuraremos el archivo <em>~/.ssh/config</em> para acceder al servidor.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/llaves-ssh_huea62ffdec855ca869e85cc274ad4d7d3_30472_2560x1440_fit_box_3.png" data-gallery="" title="Claves SSH"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/llaves-ssh_huea62ffdec855ca869e85cc274ad4d7d3_30472_300x200_fit_box_3.png" width="300" height="143" alt="Claves SSH" title="Claves SSH"  class="lozad "></a></p>
-<figcaption>Claves SSH</figcaption>
-</figure>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Host 6ff66804-d8f0-4b4e-a176-1e30a40a0672.clouding.host&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;HostName 6ff66804-d8f0-4b4e-a176-1e30a40a0672.clouding.host&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;User root&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/clouding.pem</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>config</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">-----BEGIN RSA PRIVATE KEY-----&#10;</span></span><span class="line"><span class="cl">MIIEpQIBAAKCAQEA2kXDUI1E8VcfPUf6YLju2bBPAjy3Y8+GTJMHmDikpPt+uTp4&#10;</span></span><span class="line"><span class="cl">gt5miCFYnZYJB4g3/o/sUPLHBqnQN23jlXn4s0xe/20hKc6iDPSoJEjurqCrpRPj&#10;</span></span><span class="line"><span class="cl">eYwfnes3xdPXJujgAUXodTtPhoQMfmKHvw9mgEwHA6QKRyU83/ZXKldywBDet3Vh&#10;</span></span><span class="line"><span class="cl">NcNayFEzBsLWR1niI0/SKu903XLszS2l93tsB+hhQzD44G57AKJgpQZ+wPkXD4yB&#10;</span></span><span class="line"><span class="cl">KWVUjLodOGSLm00S5EqyQDPZb1QosFu/eFGnriOlA1CY2+Ef+EkQ6ydBRGrS6kY7&#10;</span></span><span class="line"><span class="cl">uharn+9wZNUAXc+542iUlW7GNfVijd1sAZVxfQIDAQABAoIBAFkVuA2cWtMVd86P&#10;</span></span><span class="line"><span class="cl">HgVz9Sgr6VNEbKT0AiAmsibSl4AulR4MWzsugjJ1SbGnlq/YTOI843p2W/zAOhcl&#10;</span></span><span class="line"><span class="cl">ZomPao3jUbJ2W96wUztub2G/0oq7UNLjNyhYpF7TrcO0Hk/nI+XhHmsade603lSG&#10;</span></span><span class="line"><span class="cl">6lh0dKVQYlx+CyPWcu4FoLXLUy5H80+s40oAbGi4Cd/Ldozcno7ael3CmmAfqc3N&#10;</span></span><span class="line"><span class="cl">r2xSxZregTEbBtl4vV3a0T4YONgsj6qW9rXj3asC6lu9ndXhzOlTt/yc+uU4/VND&#10;</span></span><span class="line"><span class="cl">f5oxT/oariimRlH+YAE0hJHcfltsvDAn/XBhndbBb3aIThcoreWHEYeq/TiCR+KO&#10;</span></span><span class="line"><span class="cl">hPOYEAECgYEA9CRLr3uT1VbOAtjrcnziitI2iJMMqo4W/PXZMBUeWOccBp+bQUQc&#10;</span></span><span class="line"><span class="cl">vR7gYy605iIh413ytDIbZE8rvR4XVi+DU9S38GO1Wa1NorTUym3LqA2GhzCeaY5F&#10;</span></span><span class="line"><span class="cl">eeb085SwK7cqha1ye4h+1eHh1jTJcn+6oCcnl0oeUeBvvlCtiQ8s0QECgYEA5N/N&#10;</span></span><span class="line"><span class="cl">...&#10;</span></span><span class="line"><span class="cl">-----END RSA PRIVATE KEY-----</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>clouding.pem</span>
-    </div>
-</div>
-<p>En los ajustes veremos el saldo disponible que se irá descontando según los recursos consumidos durante el periodo de tiempo utilizados. Una cosa importante es que aunque el servidor esté apagado seguirá contabilizándose en la facturación. Podemos elegir recibir notificaciones cuando el saldo de la cuenta sea bajo para realizar una recarga.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ajustes_hu3abe75b398785d9c4d59314317679cd1_110183_2560x1440_fit_box_3.png" data-gallery="" title="Ajustes, facturación e informes"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ajustes_hu3abe75b398785d9c4d59314317679cd1_110183_300x200_fit_box_3.png" width="217" height="200" alt="Ajustes, facturación e informes" title="Ajustes, facturación e informes"  class="lozad "></a></p>
-<figcaption>Ajustes, facturación e informes</figcaption>
-</figure>
-</div>
-<p>Una de las primeras cosas aconsejables realizar es tener acceso mediante SSH descargando la clave privada desde le apartado <em>Llaves SSH</em>, con GNU/Linux no se necesita mucho más para conectarse al servidor, en Windows se puede utilizar un programa como <a href="https://www.putty.org/">PuTTY</a>. En cualquier caso siempre está disponible el acceso vía web. Otra de las cosas que a realizar es acceder al servidor SSH mediante un dominio propio que también con anterioridad hay que registrar. Y también es recomendable actualizar todos los paquetes o actualizaciones de seguridad del sistema.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ssh_hu496b30201e505a3438bf4a6b41205b72_78898_2560x1440_fit_box_3.png" data-gallery="" title="Acceso mediante SSH"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/ssh_hu496b30201e505a3438bf4a6b41205b72_78898_300x200_fit_box_3.png" width="300" height="164" alt="Acceso mediante SSH" title="Acceso mediante SSH"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/consola-vnc_hu7a23f71cd1c51143e57e920da827f002_49236_2560x1440_fit_box_3.png" data-gallery="" title="Acceso mediante consola VNC"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/consola-vnc_hu7a23f71cd1c51143e57e920da827f002_49236_300x200_fit_box_3.png" width="300" height="143" alt="Acceso mediante consola VNC" title="Acceso mediante consola VNC"  class="lozad "></a></p>
-<figcaption>Acceso mediante SSH y consola VNC</figcaption>
-</figure>
-</div>
-<p>Con acceso vía SSH al servidor ya es posible administrarlo con una herramienta como <a href="https://www.ansible.com/">Ansible</a> instalando paquetes, actualizar el servidor y configurar servicios como los servidores web <a href="https://nginx.org/">nginx</a> o <a href="https://httpd.apache.org/">Apache</a>, <a href="https://www.docker.com/">Docker</a> y otra multitud de tareas que permite esta herramienta. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2021/12/aprovisionar-un-servidor-en-la-infraestructura-cloud-de-clouding-con-ubuntu-y-nginx-usando-ansible-y-protocolo-seguro-https-con-lets-encrypt/">Aprovisionar un servidor en la infraestructura cloud de Clouding con Ubuntu y Nginx usando Ansible y protocolo seguro HTTPS con Let&rsquo;s Encrypt</a> muestro como aprovisionar de forma automatizada un servidor <em>cloud</em> de Clouding.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nginx_hua6e3fe23dbf811bd6c8adc84847a8465_43808_2560x1440_fit_box_3.png" data-gallery="" title="Servidor NGINX"><img src="https://picodotdev.github.io/blog-bitix/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/images/nginx_hua6e3fe23dbf811bd6c8adc84847a8465_43808_300x200_fit_box_3.png" width="300" height="143" alt="Servidor NGINX" title="Servidor NGINX"  class="lozad "></a></p>
-<figcaption>Servidor NGINX</figcaption>
-</figure>
-</div>
-<p>He encontrado en su blog algunos artículos interesantes y base de conocimiento. Otros artículos de interés son los que escribí en la <a href="https://picodotdev.github.io/blog-bitix/series/web/">serie web</a> en la que comentaba aspectos como HTTP/2, HTTPS, redirecciones o GZIP.</p>
-<p>En definitiva Clouding.io es una opción de computación en la nube sencilla, con una política de precios simple y adecuada para proyectos desde pequeños de páginas web y presencia en internet hasta medianos que requieren una base de datos y tenga un tráfico ya notable, con soporte en español y que se puede probar sin compromiso. Al ser computación en la nube ofrece gran flexibilidad y ajustar el precio a los recursos consumidos, al usar discos SSD el buen rendimiento ya lo he notado al probar su servicio cuando he actualizado los paquetes del servidor e instalado el de nginx. Según las características anunciadas de redundancia la fiabilidad es destacable para que no haya caídas de servicio.</p>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="patrocinado"/>
-            
-                <category term="software-libre"/>
             
         
     </entry>
