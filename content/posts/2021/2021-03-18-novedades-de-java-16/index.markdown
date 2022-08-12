@@ -97,7 +97,6 @@ Para conseguir el objetivo de que las pausas seguras del recolector de basura no
 
 Después de los cambios nada significativo se hará dentro de las pausas seguras del recolector de basura.
 
-
 * [El recolector de basura de Java, qué hace y cómo funciona en cada versión][blogbitix-463]
 
 #### Canales de comunicación Unix
