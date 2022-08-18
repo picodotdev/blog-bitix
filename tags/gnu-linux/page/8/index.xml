@@ -5,12 +5,94 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-06-26T04:00:00+02:00</updated>
+    <updated>2022-08-18T18:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/</id>
+        <title>Cómo crear miniaturas o vistas previas de imágenes con ImageMagick</title>
+        <updated>2020-04-12T18:00:00+01:00</updated>
+        <published>2016-07-17T12:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/gnu.svg" width="200" height="196" alt="GNU" title="GNU"  class=""></p>
+</div>
+<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>En una página web es útil utilizar imágenes más pequeñas en tamaño que las originales para reducir la cantidad de kilobytes transferidos al acceder a una página consiguiendo además que cargue más rápido en conexiones lentas. Algunas imágenes en alta calidad pueden ocupar varios <em>megas</em>, es poco eficiente cargar una imagen que posteriormente en el navegador se visualizará en un tamaño más pequeño, ya que la imagen se descargará en su tamaño original pero posteriormente el navegador al visualizarla la escalará al tamaño en que la muestre.</p>
+<p>Si con antelación hacemos el escalado podremos ahorrar una buena cantidad de ancho de banda que se notará en mayor medida en los dispositivos móviles que usen las redes de operadores de telefonía y ahorrará datos en aquellos usuarios que tengan algún límite de transferencia mensual en su tarifa. También afecta al SEO, el tiempo de carga de una página Google es un criterio que tiene en cuenta su algoritmo para ordenar los resultados en su página, para mejorar el tiempo de carga de una página otra cosa a considerar es <a href="https://picodotdev.github.io/blog-bitix/2020/01/mejorar-el-tiempo-de-carga-de-una-pagina-web-usando-lazy-load/">cargar las imágenes cuando se visualizan</a> y no al cargar la página.</p>
+<p>Si tenemos unas pocas imágenes y no es algo que hagamos a menudo podemos usar una herramienta de retoque fotográfico como <a href="https://www.gimp.org/">GIMP</a> pero si tenemos muchas imágenes o es algo que hacemos de forma regular es conveniente automatizar la tarea, nos ahorraremos bastante tiempo de algo que es tedioso hacer de forma manual.</p>
+<h3 id="crear-una-miniatura-o-vista-previa">Crear una miniatura o vista previa</h3>
+<p>Al igual que podemos <a href="https://elblogdepicodev.blogspot.com.es/2012/11/convertir-imagenes-entre-formatos-y.htmlindex-amp.html">convertir imágenes entre diferentes formatos</a> o <a href="https://elblogdepicodev.blogspot.com.es/2011/05/anadir-marcas-de-agua-con-imagemagick.htmlindex-amp.html">añadir marcas de agua a imágenes</a> de forma automatizada con <a href="https://www.imagemagick.org">Image Magick</a> podemos escalar imágenes para generar miniaturas o <em>thumbnails</em> más pequeñas para que ocupen menos. El comando para escalar todas las imágenes de una extensión <em>jpg</em> en este caso a un tamaño original de 1600 de ancho y 1067 de alto en pixeles conservando la proporción de la imagen es el siguiente:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ convert -resize 300x200 201607.jpg -strip 201607-thumb.jpg&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.jpg<span class="p">;</span> <span class="k">do</span> convert -resize 300x200 <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -strip -set filename:f <span class="s2">&#34;%t-thumb.%e&#34;</span> <span class="s2">&#34;%[filename:f]&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.png<span class="p">;</span> <span class="k">do</span> convert -resize 300x200 <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -strip -set filename:f <span class="s2">&#34;%t-thumb.%e&#34;</span> <span class="s2">&#34;%[filename:f]&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.jpg<span class="p">;</span> <span class="k">do</span> convert -resize 650x450 <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -strip -set filename:f <span class="s2">&#34;%t-thumb.%e&#34;</span> <span class="s2">&#34;%[filename:f]&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.png<span class="p">;</span> <span class="k">do</span> convert -resize 650x4500 <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -strip -set filename:f <span class="s2">&#34;%t-thumb.%e&#34;</span> <span class="s2">&#34;%[filename:f]&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>convert.sh</span>
+    </div>
+</div>
+<p>El primero de los comandos sirve para hacer cambios de tamaño de forma individual a cada foto y el segundo de forma masiva usando <a href="https://es.wikipedia.org/wiki/Bash">Bash</a>. Crean nuevos archivos con las miniaturas añadiendo al nombre de cada vista previa la terminación <em>_thumb</em>, además con la opción <em>-strip</em> elimina la metainformación de la foto o imagen que se hubiera almacenado junto con ella como hacen los teléfonos móviles y cámaras.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_2560x1440_fit_q90_box.jpg" data-gallery="" title="Previsualización de imagen en tamaño 450x300"><img src="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_450x300_fit_q90_box.jpg" width="450" height="300" alt="Previsualización de imagen en tamaño 450x300" title="Previsualización de imagen en tamaño 450x300"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_2560x1440_fit_q90_box.jpg" data-gallery="" title="Previsualización de imagen en tamaño 300x200"><img src="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/201607_hu155add02d6c6e28845a8452d31796ba4_1042102_300x200_fit_q90_box.jpg" width="300" height="200" alt="Previsualización de imagen en tamaño 300x200" title="Previsualización de imagen en tamaño 300x200"  class="lozad "></a></p>
+<figcaption>Previsualización de imagen en tamaño 450x300 y 300x200 del original 1600x1067</figcaption>
+</figure>
+</div>
+<p>Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tamaño original ocupa 1 MB, la vista previa aproximadamente 210 KB en tamaño 650x450 y 50 KB en tamaño de 300x200. Una reducción de tamaño considerable.</p>
+<p>Los ahorros de espacio conseguidos anteriores son consecuencia de reducir el tamaño de la imagen, <a href="https://picodotdev.github.io/blog-bitix/2019/12/comando-para-convertir-imagenes-jpeg-y-png-a-webp/">utilizar el formato de imagen WebP en vez de <em>jpg</em> y <em>png</em></a> además permite conseguir importantes reducciones de tamaño del espacio ocupado por las fotografías e imágenes originales, en torno al 20% y 60%.</p>
+<h3 id="escala-de-grises">Escala de grises</h3>
+<p>Los siguientes comandos permiten crear imágenes en escala de grises.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ convert -colorspace Gray -strip 201607.jpg 201607-grayscale.jpg&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.png<span class="p">;</span> <span class="k">do</span> convert -colorspace Gray -strip <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -set filename:f <span class="s2">&#34;%t-grayscale.%e&#34;</span> %<span class="o">[</span>filename:f<span class="o">]</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.jpg<span class="p">;</span> <span class="k">do</span> convert -colorspace Gray -strip <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -set filename:f <span class="s2">&#34;%t-grayscale.%e&#34;</span> %<span class="o">[</span>filename:f<span class="o">]</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>convert-grayscale.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/201607-grayscale_hue8d2e8676336d3e683f83c1cad0c5c68_777197_2560x1440_fit_q90_box.jpg" data-gallery="" title="Imagen en escala de grises"><img src="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/201607-grayscale_hue8d2e8676336d3e683f83c1cad0c5c68_777197_300x200_fit_q90_box.jpg" width="300" height="200" alt="Imagen en escala de grises" title="Imagen en escala de grises"  class="lozad "></a></p>
+<figcaption>Imagen en escala de grises</figcaption>
+</figure>
+</div>
+<h3 id="convertir-svg-a-jpg-o-png">Convertir svg a jpg o png</h3>
+<p>Si la imagen original está en el formato escalar <em>svg</em> para convertir a formatos <em>jpg</em>, <em>png</em>, o generar vistas previas el comando es similar indicando también el tamaño de la imagen deseada.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="k">for</span> f in *.svg<span class="p">;</span> <span class="k">do</span> convert -size 750x750 -resize 750x750 <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.jpg&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span><span class="line"><span class="cl">$ <span class="k">for</span> f in *.svg<span class="p">;</span> <span class="k">do</span> convert -size 750x750 -resize 750x750 <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.png&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>convert-svg.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/linux.svg" data-gallery="" title="Imagen en formato svg"><img src="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/linux.svg" width="300" height="200" alt="Imagen en formato svg" title="Imagen en formato svg"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/linux_hud5f503d22f4edce3a84c965f12d594f3_119982_2560x1440_fit_box_3.png" data-gallery="" title="Imagen en formato png"><img src="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-miniaturas-o-vistas-previas-de-imagenes-con-imagemagick/images/linux_hud5f503d22f4edce3a84c965f12d594f3_119982_300x200_fit_box_3.png" width="172" height="200" alt="Imagen en formato png" title="Imagen en formato png"  class="lozad "></a></p>
+<figcaption>Imagen en formato svg y en formato png</figcaption>
+</figure>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2011/05/anadir-marcas-de-agua-con-imagemagick.htmlindex-amp.html">Añadir marcas de agua a imágenes con ImageMagick</a></li>
+<li><a href="https://elblogdepicodev.blogspot.com.es/2012/11/convertir-imagenes-entre-formatos-y.htmlindex-amp.html">Convertir imágenes entre formatos y cambiar tamaño con ImageMagick</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="software-libre"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/</id>
         <title>Jugar al ajedrez en GNU/Linux con GNOME</title>
@@ -1110,7 +1192,8 @@ el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash<
     </div>
 </div>
 <div class="media">
-<a href="https://asciinema.org/a/36852" target="_blank"><amp-img src="https://asciinema.org/a/36852.png" width="650" height="563" class="lozad"></amp-img></a>
+<script type="text/javascript" src="https://asciinema.org/a/36852.js" id="asciicast-36852" async></script>
+<noscript><a href="https://asciinema.org/a/36852" target="_blank"><img src="https://asciinema.org/a/36852.png" width="650" height="450"></a></noscript>
 </div>
 <p>Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.</p>
 <div class="media">
@@ -1229,115 +1312,6 @@ el siguiente <a href="http://bash.cyberciti.biz/guide/Main_Page">manual de Bash<
                 <category term="seguridad"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/</id>
-        <title>Hemeroteca #8</title>
-        <updated>2016-01-04T22:00:00+01:00</updated>
-        <published>2016-01-02T13:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>Seis meses más de artículos la mayoría sobre programación en Java tratando algunas de las nuevas tendencias de programación con las posibilidades de la plataforma de la JVM. Unos pocos artículos más continuando la serie sobre Docker y uno de opinión sobre las licencias de Microsoft.</strong></p>]]>
-        <![CDATA[<p>El 2015 pasó, a mi muy rápido. En cuanto a la bitácora toca recapitular cuáles han sido los artículos que he escrito, de que temas principales he hablado, un poco cómo han evolucionado las visitas y que tengo preparado para publicar durante los siguientes meses ya de 2016.</p>
-<p>Muchos de los <a href="https://picodotdev.github.io/blog-bitix/2015/">artículos que he escrito durante el año 2015</a> han estado relacionados con la programación en la plataforma Java, en los que destacaría prácticamente todos empezando por los relacionados con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>, <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a> y <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready">Spring Boot Actuator</a> que forman parte del actual de la tendencia a la hora de desarrollar aplicaciones en Java pero también otros cuantos relacionados con <a href="https://www.jooq.org/">jOOQ</a> que ya es una alternativa a <a href="https://hibernate.org/">Hibernate</a> y su uso probablemente se extienda y aumente, también otro artículo sobre <a href="https://gradle.org/">Gradle</a> que ya es la herramienta de automatización de construcción ampliamente usada.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">Aplicación Java autocontenida con Spring Boot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/">Múltiples esquemas o bases de datos con jOOQ y Spring en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/obtener-datos-de-multiples-tablas-con-jooq/">Obtener datos de múltiples tablas con jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/validar-objetos-con-spring-validation-ejemplo-registros-de-jooq/">Validar objetos con Spring Validation, ejemplo registros de jOOQ</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/">Configuración de una aplicación en diferentes entornos con Spring Cloud Config</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">Información y métricas de la aplicación con Spring Boot Actuator</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">Ejemplo de multiproyecto con Gradle</a></li>
-</ul>
-<p>Un par de artículos comentando la nueva forma de construir aplicaciones de escritorio tradicionales en Java con [JavaFX][javafx]. También algunos artículos más sobre patrones de diseño con ejemplos en código bastante ilustrativos de sus conceptos y posibles usos. O Java para tareas de <em>scripting</em> con la misma facilidad de un lenguaje interpretado o dinámico pero con las ventajas de un lenguaje compilado.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/">Introducción a JavaFX, aplicaciones de escritorio en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/javafx-scene-builder-editor-para-crear-archivos-fxml/">JavaFX Scene Builder, editor para crear archivos FXML</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/java-para-tareas-de-scripting-con-jbang-y-gradle/">Java para tareas de scripting con JBang y Gradle</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/como-crear-clases-factoria-sin-usar-if-else/">Cómo crear clases factoría sin usar if-else</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/">El patrón de diseño Observer y una forma de implementarlo en Java</a></li>
-</ul>
-<p>Otros artículos sobre Java de varios temas independientes sobre herramientas como <a href="https://github.com/wro4j/wro4j/">wro4j</a>, cómo trabajar con importes, ratios y divisas en las aplicaciones Java que lo necesiten o una forma incorporada en el propio JDK para hacer las aplicaciones extensibles.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/">Implementación de máquina de estados finita (FSM) con Java 8</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/">Aplicación Java extensible con la clase ServiceLoader</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-practico-de-serviceloader-con-serviceprovider-de-java-money/">Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/">Cómo trabajar con importes, ratios y divisas en Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/">Generar recursos estáticos con wro4j</a></li>
-</ul>
-<p>Un par de artículos de opinión, uno con motivo del lanzamiento de <a href="https://www.microsoft.com/es-es/windows/">Windows</a> 10 que se produjo en julio del 2015 y otro comentando las similitudes que tienen un par de librerías <a href="https://es.wikipedia.org/wiki/JavaScript">JavaScript</a> (<a href="https://reactjs.org/">React</a> y <a href="https://www.polymer-project.org/1.0/">Polymer</a>) de las que mucha gente está hablando con el <em>framework</em> <a href="https://tapestry.apache.org/">Apache Tapestry</a> para desarrollo de aplicaciones y páginas web en Java.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/">A Microsoft no le importa que uses Windows u Office sin licencia</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/similitudes-entre-react-y-polymer-con-apache-tapestry/">Similitudes entre React y Polymer con Apache Tapestry</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/10/caracteristicas-de-los-lenguajes-de-programacion/">Características de los lenguajes de programación</a></li>
-</ul>
-<p>Y otro artículo un poco fuera de tema sobre una compra que hice por internet comentando mi experiencia pero en la que comento algunos consejos para los vendedores y para los compradores.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/11/mi-experiencia-comprando-unos-estores-en-cortinadecor/">Comprando por internet, unos estores en CortinaDecor</a></li>
-</ul>
-<p>Lo más cercano que escrito de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> ha sido otra serie de artículos sobre <a href="https://www.docker.com/">Docker</a> continuación de otros anteriores.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/aplicaciones-multicontenedor-con-docker-compose/">Aplicaciones multicontenedor con Docker Compose</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/crear-y-usar-un-repositorio-en-docker-hub/">Crear y usar un repositorio en Docker Hub</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/">Usar docker con Docker Machine en Linux, Windows o Mac</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/">Cambiar la ruta raíz del entorno de Docker</a></li>
-</ul>
-<p>Los últimos artículos del año, no por ello menos interesantes. Finalmente se publicó la versión 5.4 de Apache Tapestry que ya era usable desde su estado beta con numerosas mejoras en la parte cliente de las aplicaciones. También cumplí mi propósito de hacer una donación a algún proyecto de software libre cuando recibiese la trasferencia por la publicidad AdSense, fue a la <a href="https://fsfe.org/index.en.html">FSFE</a>.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/">Monitorizar estado de sitios web con Uptime Robot</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/">Cómo buscar los enlaces rotos de un sitio web</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/publicado-apache-tapestry-5-4/">Publicado Apache Tapestry 5.4</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">Yo apoyo al software libre, tú también</a></li>
-</ul>
-<p>En otro orden de cosas he seguido haciendo algunos cambios en Blog Bitix como que pueda ser accedido por el protocolo seguro <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> sin que el navegador informe de ningún tipo de advertencia de seguridad, este blog se genera con el generador estático <a href="https://gohugo.io/">Hugo</a> y está alojado en <a href="https://pages.github.com/">GitHub Pages</a> de modo que solo hay ficheros estáticos HTML, CSS y JavaScript pero que permite mayor privacidad y más seguridad. Si yo en una bitácora como esta que solo es contenido estático y algo de JavaScript me preocupo por la seguridad y privacidad de los usuarios me resulta sorprendente que páginas de comercio electrónico que recopilan información personal y datos de tarjetas de crédito o cuantas bancarias mucho más susceptibles de ser atacadas no lo hagan de forma completa y no solo en las áreas de la cuenta del usuario y la página de compra, más ahora que Google lo tiene en cuenta para el <a href="https://en.wikipedia.org/wiki/Search_engine_optimization"><abbr title="Search Engine Optimization">SEO</abbr></a>.</p>
-<p>También he empezado a incluir en los artículos vídeos de texto con <a href="https://asciinema.org/">Asciinema</a> que creo hacen que los ejemplos sean mucho más ilustrativos mostrando la salida real de los comandos de los cuales además se puede copiar y pegar texto.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/09/grabar-y-compartir-video-de-la-terminal-con-asciinema/">Grabar y compartir vídeo de la terminal con Asciinema</a></li>
-</ul>
-<p>Durante este segundo semestre de 2015 he publicado varios artículos entre semana con lo que al final la media ha sido algo mayor de uno por semana. Para el 2016 ya tengo escritos una buena cantidad de artículos suficientes para seguir publicando al ritmo de un artículo por semana durante unos cuantos meses, por supuesto sobre Java pero alguno también sobre GNU/Linux. Uno de ellos espero que sea el de la conferencia <a href="https://bilbostack.com/">BilboStack</a> 2016 que se celebrará a finales de enero para la que escribiré un <a href="https://picodotdev.github.io/blog-bitix/2015/01/conferencia-bilbostack-2015/">artículo similar al que hice el año pasado</a> resumiendo las charlas a las que asista. También estoy en proceso de realizar una nueva actualización del <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PlugIn Tapestry</a> en el que incorporaré mucho del contenido que he escrito desde su última publicación.</p>
-<p>El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo tremendo tratando de escribir y publicar artículos con cierta calidad, los ingresos por publicidad AdSense siguen siendo prácticamente los mismos, entre 6 y 11 € al mes, como el alojamiento y el dominio me es gratuito es suficiente para hacer alguna <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/">donación a un proyecto relacionado con el software libre</a> por lo que tú visitando este blog en cierta forma también podrás sentirte contribuidor del software libre ya uses productos <a href="https://www.microsoft.com/">Microsoft</a> o <a href="https://www.apple.com/">Apple</a>. Una de las cosas que dicen para aumentar visitas es casi más importante la cantidad que la calidad pero no puedo dedicar más tiempo a escribir así que opto por que lo que escriba no esté ya en varios otros cientos de sitios para alguien con el mismo interés le resulte aprovechable, además trato de que los artículos incluyan un ejemplo funcional con su código fuente completo que se pueda probar de manera simple descargándolo.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/analytics-2015_hu2e45f8b2b5f12313f49ee6d57175de05_64277_2560x1440_fit_box_3.png" data-gallery="" title="Analytics 2015 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/analytics-2015_hu2e45f8b2b5f12313f49ee6d57175de05_64277_300x200_fit_box_3.png" width="300" height="112" alt="Analytics 2015 de Blog Bitix" title="Analytics 2015 de Blog Bitix"  class="lozad "></a></p>
-<figcaption>Analytics 2015 de Blog Bitix</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/gadsense-2015_hu47d99b4d8540d2424ce3b09c9b76ded9_44102_2560x1440_fit_box_3.png" data-gallery="" title="AdSense 2015 de Blog Bitix"><img src="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/gadsense-2015_hu47d99b4d8540d2424ce3b09c9b76ded9_44102_300x200_fit_box_3.png" width="300" height="84" alt="AdSense 2015 de Blog Bitix" title="AdSense 2015 de Blog Bitix"  class="lozad "></a></p>
-<figcaption>AdSense 2015 de Blog Bitix</figcaption>
-</figure>
-</div>
-<p>Ya solo me queda decir&hellip; ¡gracias por leer, compartir y comentar esta bitácora!, no recibo muchos comentarios pero algunos como <a href="https://twitter.com/josetesan/status/669434170221928449">este</a> me anima a seguir escribiendo y compartiendo, ¡que os vaya bien el 2016!.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/christmas-tux-2015_hu9e0bfd41e2bd0872eef6fc5bc9fd63e0_481724_2560x1440_fit_q90_box.jpg" data-gallery="" title="Christmas Tux 2016"><img src="https://picodotdev.github.io/blog-bitix/2016/01/hemeroteca-8/images/christmas-tux-2015_hu9e0bfd41e2bd0872eef6fc5bc9fd63e0_481724_300x200_fit_q90_box.jpg" width="267" height="200" alt="Christmas Tux 2016" title="Christmas Tux 2016"  class="lozad "></a></p>
-<figcaption>¡Buen 2016! <br>Fuente: klowner.com</figcaption>
-</figure>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="blog"/>
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
-            
-                <category term="software"/>
-            
-                <category term="software-libre"/>
-            
-                <category term="tapestry"/>
-            
-                <category term="gnu-linux"/>
             
         
     </entry>

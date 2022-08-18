@@ -5,12 +5,215 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2022-08-12T18:30:00+02:00</updated>
+    <updated>2022-08-18T18:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/</id>
+        <title>Prueba de velocidad de unidad de almacenamiento en GNU/Linux</title>
+        <updated>2022-08-18T18:00:00+02:00</updated>
+        <published>2022-08-18T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>En un dispositivo de almacenamiento hay que tener en cuenta el tipo de la interfaz del dispositivo que determina la tasa de transferencia máxima teórica, el tipo de almacenamiento que determina en qué rangos de tasa de transferencia ofrecen la mayoría de dispositivos, el dispositivo en concreto que dependiendo del fabricante y calidad determina en qué parte del rango está la tasa de transferencia el modelo usado, la capacidad de almacenamiento y finalmente el precio que está en función de todo lo anterior.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Dependiendo del tipo de interfaz y el tipo de almacenamiento de un dispositivo la tasa de transferencia de un dispositivo varía. Una buena tasa de transferencia permite un óptimo rendimiento y finalizar las tareas en menos tiempo principalmente al copiar archivos de una unidad a otra lo que incluye <a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">hacer copias de seguridad</a> para tener una segunda copia de los datos y sincronizada de forma regular para no perder ningún dato en caso de fallo.</p>
+<p>Más que el procesador las dos mejoras que se le pueden realizar a algunos equipos para mejorar el rendimiento y prolongar su uso es la ampliación de la memoria RAM y cambiar el tipo de almacenamiento. Si es el caso de pasar de un disco duro a un SSD la diferencia será más que significativa y casi parecerá un equipo nuevo siempre y cuando la cantidad de memoria RAM sea suficiente para la tarea.</p>
+<p>A fecha del 2022 tener un SSD y 8 GiB de memoria RAM es lo menos que se le puede exigir a un equipo para usarlo en unas condiciones suficientes que de un rendimiento aceptable para tareas de navegar por internet y ofimática.</p>
+<p>Las tasas de transferencia anunciadas por los fabricantes en algunos casos distan significativamente de las reales al hacer uso de ellas con lo que es recomendable si es posible un análisis del rendimiento de la unidad sobre todo para las memorias USB y tarjetas micro SD.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#tipos-de-interfaces">Tipos de interfaces</a></li>
+    <li><a href="#tipos-de-almacenamiento">Tipos de almacenamiento</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#pruebas-de-velocidad">Pruebas de velocidad</a></li>
+  </ul>
+</nav></div>
+<h3 id="tipos-de-interfaces">Tipos de interfaces</h3>
+<p>A lo largo de los años los ordenadores han ido adoptando varios tipos de interfaces como estándar que todos los fabricantes de equipos incorporan en sus productos. Cada nueva interfaz ha ofrecido un ancho de banda mayor y mayores tasas de transferencia que la interfaz anterior reemplazada. Dentro de los tipos de interfaces se puede diferenciar entre los empleados para el almacenamiento interno donde se instala el sistema operativo y las interfaces empleadas para conectividad de dispositivos externos extraíbles como memorias USB.</p>
+<p>Para el almacenamiento interno se suele utilizar la interfaz SATA que está siendo reemplazada por la interfaz NVMe. Para el almacenamiento externo y dispositivos extraíbles que se pueden conectar y desconectar con el equipo encendido se utiliza la interfaz USB. Cada interfaz también ha evolucionado en diferentes versiones así la última versión de SATA es la 3 que duplicó la tasa de transferencia de la anterior y USB tiene varias versiones como 2.0, 3.0, 3.1/3.2, 4.0 e igualmente para NVMe que tiene 3.0, 4.0 y más adelante 5.0.</p>
+<p>Cada interfaz ofrece un ancho de banda máximo teórico, los dispositivos que son capaces de saturar la interfaz llegan casi al máximo teórico aunque normalmente suelen quedarse cerca y algo por debajo.</p>
+<p>Las tasas de transferencia máximas teóricas para cada una de las interfaces son las siguientes. NVMe que es la más reciente y sustituye a SATA ofrece una tasa de transferencia varias veces mayor que la última versión de SATA. dado que el acceso al almacenamiento una de los motivos en la rapidez de un ordenador el paso de SATA a NVMe supone una gran mejora cuando se usa de forma intensa, cada nueva versión de NVMe está duplicando la tasa de transferencia de la versión anterior. En las diferentes versiones de USB las tasas de transferencia también aumentan en varias veces la ofrecida por la versión anterior además de tener otras ventajas como soportar una mayor capacidad de alimentación a los dispositivos conectados.</p>
+<table class="table">
+    <thead class="table-light">
+        <th width="300px">Tipo de interfaz</th>
+        <th width="300px" colspan="2">Tasa de transferencia</th>
+        <th>Año</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>USB 1.0</td>
+            <td>12 Mbit/s</td>
+            <td>1.5 MB/s</td>
+            <td>1996</td>
+        </tr>
+        <tr>
+            <td>USB 2.0</td>
+            <td>480 Mbit/s</td>
+            <td>60 MB/s</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>USB 3.0</td>
+            <td>5 Gbit/s</td>
+            <td>500 MB/s</td>
+            <td>2010</td>
+        </tr>
+        <tr>
+            <td>USB 3.1</td>
+            <td>10 Gbit/s</td>
+            <td>1.212 GB/s</td>
+            <td>2013</td>
+        </tr>
+        <tr>
+            <td>USB 3.2</td>
+            <td>20 Gbit/s</td>
+            <td>2.424 GB/s</td>
+            <td>2017</td>
+        </tr>
+        <tr>
+            <td>USB 4.0</td>
+            <td>40 Gbit/s</td>
+            <td>5 GB/s</td>
+            <td>2019</td>
+        </tr>
+        <tr>
+            <td>UHS-I <small>(SDHC, SDXC, SDUC)</small></td>
+            <td>400 Mbit/s</td>
+            <td colspan="2">50 MB/s</td>
+        </tr>
+        <tr>
+            <td>SATA 1</td>
+            <td>1.500 Gbit/s</td>
+            <td>150 MB/s</td>
+            <td>2003</td>
+        </tr>
+        <tr>
+            <td>SATA 2</td>
+            <td>3 Gbit/s</td>
+            <td>300 MB/s</td>
+            <td>2004</td>
+        </tr>
+        <tr>
+            <td>SATA 3</td>
+            <td>6 Gbit/s</td>
+            <td>600 MB/s</td>
+            <td>2008</td>
+        </tr>
+        <tr>
+            <td>NVMe 3.0</td>
+            <td>32 Gbit/s</td>
+            <td>3.938 GB/s</td>
+            <td>2013</td>
+        </tr>
+        <tr>
+            <td>NVMe 4.0</td>
+            <td>64 Gbit/s</td>
+            <td>7.876 GB/s</td>
+            <td>2017</td>
+        </tr>
+        <tr>
+            <td>NVMe 5.0</td>
+            <td>128 Gbit/s</td>
+            <td>15.754 GB/s</td>
+            <td>2019</td>
+        </tr>
+    </tbody>
+</table>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_interface_bit_rates">List of interface bit rates</a></li>
+</ul>
+<h3 id="tipos-de-almacenamiento">Tipos de almacenamiento</h3>
+<p>El tipo de almacenamiento es la tecnología que se emplea en los dispositivos de almacenamiento, los discos duros con platos circulares en cuya superficie magnética se guarda la información, han sido ya reemplazados por las unidades SSD sin partes móviles que ofrece un tiempo de acceso mucho menor y una tasa de transferencia mucho mayor. Si hay que actualizar un equipo que tiene un disco duro sustituir este componente por un SSD seguramente suponga una gran mejora en el rendimiento de equipo más que cualquier otra actuación salvo quizá la cantidad de memoria.</p>
+<p>Un disco duro que normalmente utiliza la interfaz SATA queda muy lejos de ofrecer una tasa de transferencia cercana a la que es capaz de soportar la interfaz SATA. Un dispositivo de almacenamiento SSD con interfaz SATA si se queda cerca del máximo teórico de la interfaz.</p>
+<p>La tasa de transferencia máxima teórica de la interfaz es una cosa pero la real que observa el usuario al copiar archivos puede ser muy distinta en la que influye el tipo de almacenamiento y la calidad del dispositivo. Las tasas de transferencia que se observa al copiar archivos suelen ser algo inferiores a la máximas teóricas.</p>
+<h3 id="precios">Precios</h3>
+<p>Los precios varían según los diferentes tipos de almacenamiento, el tipo de interfaz y la cantidad de almacenamiento. En el caso del almacenamiento y dado el avance de la tecnología es cuestión de tiempo de que o bien los precios se reduzcan paulatinamente o por el contrario se ofrezca el mayor cantidad de almacenamiento por el mismo precio.</p>
+<p>Por este avance de la tecnología es una buena idea comprar un producto que ofrezca una cantidad de espacio suficiente para el uso actual y de unos pocos años posteriores pero no es recomendable comprar una cantidad desorbitada de almacenamiento si no se le va a dar uso, por el paso del tiempo su coste se reducirá o bien surgirá una nueva interfaz de almacenamiento que deje obsoleta a una unidad actual.</p>
+<p>En los siguientes enlaces hay una muestra de los precios actuales de varios tipos de almacenamiento e interfaces desde una tarjeta microSD hasta un SSD con interfaz NVMe que ofrece las mayores tasas de transferencia pero a un precio más caro por GB de almacenamiento.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07P9W5HJV&amp;linkId=94d207e03eb06aae1e957b8ea9fd541a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07H1231S8&amp;linkId=a34fdc7896b0bd98cca4bffe8d532f81" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFS5657&amp;linkId=186319e6ae3e35777b9412d236a46297" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFHQGB9&amp;linkId=69626bf45c9c279219546f122fd33a06" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06VVS7S94&amp;linkId=b3935c0c943be983bce3ceb803928e62" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06W55K9N6&amp;linkId=6abae8dc406222e745a56e1405eb282b" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XG892ZH&amp;linkId=54661b04f99360148ebed3b5528fa2ed" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0713WPGLL&amp;linkId=3f06bc3776d19ba91f5ab5660781d247" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B083ZS4HYD&amp;linkId=56990d2fedd9adcebc7b4d5b42e0ddfb" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07HPX38XC&amp;linkId=df0fb3936a8db66682dd9f1c56bc8865" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08PC5DKZQ&amp;linkId=dcd291ad706e925f4dfca3c39045a54f" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B077SF8KMG&amp;linkId=30e60238410c4c1f9584f13e067e8cca" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08THW4S3T&amp;linkId=4ab585ee143e7c9927e41dc57033f7f5" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08TJ2649W&amp;linkId=a72e8460040ec9d269761918de53ecca" title="Amazon" class="lozad"></iframe>
+</div>
+<h3 id="pruebas-de-velocidad">Pruebas de velocidad</h3>
+<p>La transferencia de una unidad depende de la combinación de la interfaz y tipo de almacenamiento. El máximo teórico de la interfaz de conexión y dependiendo del tipo de almacenamiento el dispositivo está limitado por la interfaz, cercano a la interfaz o por debajo de la interfaz.</p>
+<p>Un dispositivo SSD conectado mediante la interfaz SATA 3 llega a los límites teóricos de la interfaz cercano a los 600 MB/s. Un disco duro conectado en una interfaz SATA se queda en apenas 80 MB/s muy por debajo del máximo teórico de la interfaz, un disco duro no es capaz de saturar la interfaz SATA.</p>
+<p>No dispongo de todos los tipos de almacenamiento, ni de todas las interfaces. Para conocer una medida aproximada de las tasas de transferencia de una marca o tipo de almacenamiento es recomendable consultar un vídeo para conocer si la tasa de transferencia real y si cumple con el mínimo exigido según la tarea a la que se vaya a dedicar el dispositivo de almacenamiento antes de comprarlo.</p>
+<p>Estas son las tasas de transferencia que he obtenido para un disco duro externo con interfaz USB 2.0 y conectado a un concentrador USB 2.0, también de una memoria USB 2.0 y de una tarjeta microSD de tipo SDXC conectado con la interfaz UHS-I al ordenador.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/opciones-prueba-de-rendimiento_hu4e9d7a29d93e145457c6fb8b020cbd67_47495_2560x1440_fit_box_3.png" data-gallery="" title="Opciones de la pruebas de rendimiento"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/opciones-prueba-de-rendimiento_hu4e9d7a29d93e145457c6fb8b020cbd67_47495_300x200_fit_box_3.png" width="271" height="200" alt="Opciones de la pruebas de rendimiento" title="Opciones de la pruebas de rendimiento"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-hdd_huabe7d480a1f47512e874c22c61b72297_203497_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de HDD"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-hdd_huabe7d480a1f47512e874c22c61b72297_203497_300x200_fit_box_3.png" width="228" height="200" alt="Prueba de velocidad de HDD" title="Prueba de velocidad de HDD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-memory_hu5f3ef0956119e635fb11c005f7ce85af_236818_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de memoria USB"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-memory_hu5f3ef0956119e635fb11c005f7ce85af_236818_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de memoria USB" title="Prueba de velocidad de memoria USB"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sd_hua013f99ed60192ccacb4ec5b9e4b6253_85525_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de tarjeta micro SD"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sd_hua013f99ed60192ccacb4ec5b9e4b6253_85525_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de tarjeta micro SD" title="Prueba de velocidad de tarjeta micro SD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sdxc_huab2d8cd2d2a9697e0386dd4018a5caf3_204197_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de tarjeta SDXC"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sdxc_huab2d8cd2d2a9697e0386dd4018a5caf3_204197_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de tarjeta SDXC" title="Prueba de velocidad de tarjeta SDXC"  class="lozad "></a></p>
+<figcaption>Pruebas de velocidad de HDD, memoria USB, tarjeta SD y SDXC</figcaption>
+</figure>
+</div>
+<p>El uso que le iba a dar a una tarjeta micro SD de tipo SDXC era como almacenamiento para un <em>smartphone</em> pero como finalmente <a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/">compré un Samsung Galaxy S21 FE</a> que no dispone memoria ampliable con tarjeta micro SD he tenido que reutilizar la tarjeta para otro propósito.</p>
+<p>La tarjeta micro SD Samsung de 512 GB ofrece una transferencia de 85 MB/s en lectura y 55 MB/s en escritura que ha sido suficiente para realizar virtualización y usar la micro SD como unidad de almacenamiento externo en el que hacer copias de seguridad. Para virtualizar es más apropiado utilizar la unidad interna NVMe o al menos un SSD con interfaz SATA interno o USB 3.0 pero aunque tenía dudas si iba a ser suficiente la micro SD permite usarla como unidad de almacenamiento al virtualizar con un rendimiento aceptable.</p>
+<p>Las diferencias entre dos dispositivos con la misma interfaz y tipo de almacenamiento también varía y es recomendable consultar algún vídeo donde ver el rendimiento real que observa el usuario y no el anunciado por el fabricante para comprar el mejor producto. Un programa que permite analizar el rendimiento de un dispositivo es <a href="https://crystalmark.info/en/">CrystalMark</a> para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y la aplicación <em>Discos</em> con su opción <em>Probar rendimiento de la partición</em> para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> usando el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a>.</p>
+<p>En los siguientes vídeos se muestra la tasa de transferencia de varios de los diferentes tipos de memoria e interfaces.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/kJ5qljYa4aM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/aazprXilyxY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/7VuxTnKEKic" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/mVLlPIyvxkY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://linoxide.com/measure-disk-performance-fio/">How to Measure Disk Performance using Fio in Linux</a></li>
+<li><a href="https://www.youtube.com/watch?v=TASYaWTkg0U">Linux Storage Benchmarking With FIO</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="hardware"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/08/ejemplo-de-patron-builder-para-las-clases-record-de-java/</id>
@@ -2194,452 +2397,6 @@
         
             
                 <category term="juegos"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/</id>
-        <title>Desempaquetado y análisis del smartphone Samsung Galaxy S21 FE</title>
-        <updated>2022-05-12T19:00:00+02:00</updated>
-        <published>2022-05-12T19:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>He estado usando un Samsung Galaxy S6 lanzado en el 2015 durante unos tres años hasta el 2022 de segunda mano cuando ya alguien lo consideraba obsoleto. A día de hoy la cámara y la batería dan muestras de agotamiento y dejan que desear comparado con un móvil más reciente. Adicionalmente, aunque funcionase perfectamente ya no recibe actualizaciones de software ni de seguridad y la última versión de Android que ha recibido ha sido la 7, ni siquiera Lineage OS ofrece soporte para el S6. Aunque no uso el teléfono de forma intensa la cámara y la versión de Android si son dos cosas que he buscado mejorar al comprar y cambiar a un nuevo móvil que sin ser lo más avanzado del momento si es una mejora muy apreciable en muchos apartados. Después de evaluar no muchas pocas opciones el móvil al que he cambiado es al Samsung Galaxy S21 FE.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/samsung.svg" width="350" height="116" alt="Samsung" title="Samsung"  class=""></p>
-</div>
-<p>La tecnología y los componentes electrónicos incorporan mejoras graduales cada año, que no hace imprescindible cambiar de dispositivo electrónico cada año ya que las mejoras no son tan significativas entre dos dispositivos de generaciones anuales adyacentes pero que dependiendo del dispositivo electrónico al cabo de unos pocos años ya se dejan notar de forma apreciable. Los dispositivos pueden mejorar en cada uno de los elementos electrónicos que se componen uno de los principales es el procesador pero también en la cantidad de memoria, capacidad de almacenamiento, pantalla, batería o incorporando tecnologías más recientes y generalmente mejores en algún aspecto, aparte de las mejoras de las especificaciones la mejora también puede ser simplemente en el precio pasados unos meses.</p>
-<p>Dado el avance de la tecnología muchos dispositivos que en un año se consideran lo mejor de ese momento pasados unos pocos años son superados incluso por dispositivos de la gama media y a un precio significativamente menor. El teléfono inteligente o <em>smartphone</em> que tenía era el tope de gama de su momento y pasados tan pocos como 3 años de su lanzamiento su propietario original decidió cambiar a otro, durante 3 años más le he estado dando un segundo uso y podría haber seguido usándolo en parte durante algún tiempo más pero incluso a mi ya en algún apartado necesitaba algo mejor. Ha llegado el momento de cambiar de móvil.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><nav id="TableOfContents">
-  <ul>
-    <li><a href="#mis-necesidades-anterior-móvil-y-opciones">Mis necesidades, anterior móvil y opciones</a>
-      <ul>
-        <li><a href="#otras-alternativas-y-la-opción-que-he-elegido">Otras alternativas y la opción que he elegido</a></li>
-      </ul>
-    </li>
-    <li><a href="#especificaciones-técnicas-del-samsung-galaxy-s21-fe">Especificaciones técnicas del Samsung Galaxy S21 FE</a>
-      <ul>
-        <li><a href="#dónde-comprar">Dónde comprar</a></li>
-      </ul>
-    </li>
-    <li><a href="#desempaquetado-de-samsung-galaxy-s21-fe">Desempaquetado de Samsung Galaxy S21 FE</a>
-      <ul>
-        <li><a href="#la-caja">La caja</a></li>
-        <li><a href="#el-contenido">El contenido</a></li>
-        <li><a href="#el-móvil">El móvil</a></li>
-        <li><a href="#el-cargador">El cargador</a></li>
-        <li><a href="#complementos">Complementos</a></li>
-      </ul>
-    </li>
-    <li><a href="#análisis-y-primeras-impresiones">Análisis y primeras impresiones</a>
-      <ul>
-        <li><a href="#pruebas-de-rendimiento">Pruebas de rendimiento</a></li>
-      </ul>
-    </li>
-    <li><a href="#migración-de-dispositivo-y-configuración-inicial">Migración de dispositivo y configuración inicial</a>
-      <ul>
-        <li><a href="#artículos-y-análisis-en-vídeo-del-s21-fe">Artículos y análisis en vídeo del S21 FE</a></li>
-        <li><a href="#artículos-y-análisis-en-vídeo-de-otros-móviles-y-comparaciones">Artículos y análisis en vídeo de otros móviles y comparaciones</a></li>
-        <li><a href="#sobre-las-pantallas-amoled">Sobre las pantallas AMOLED</a></li>
-      </ul>
-    </li>
-    <li><a href="#complementos-para-el-móvil">Complementos para el móvil</a></li>
-  </ul>
-</nav></div>
-<h3 id="mis-necesidades-anterior-móvil-y-opciones">Mis necesidades, anterior móvil y opciones</h3>
-<p>En mi caso no uso de forma intensiva el móvil poco más que la aplicación de mensajería instantánea, consultar el correo electrónico cuando no estoy con el ordenador y el reproductor de música. Uno de los usos que más le doy al móvil es como cámara de fotos cuando publico algún artículo de desempaquetado.</p>
-<p>En el apartado de cámara de fotos el anterior móvil <a href="https://es.wikipedia.org/wiki/Samsung_Galaxy_S6">Samsung Galaxy S6</a> lanzado al mercado en el 2015 al precio de 749 € me dejaba bastante que desear y por su antigüedad se ha quedado en la versión 7 de <a href="https://www.android.com/">Android</a> sin parches de seguridad y algunas aplicaciones dejando de dar soporte para esta versión del sistema operativo. Ni siquiera la ROM personalizada de <a href="https://lineageos.org/">Lineage OS</a> ofrece una versión para el S6 que permite mantener a algunos dispositivos actualizados a una versión más reciente durante algún año más de la que ofrecen sus marcas.</p>
-<p>El S6 no es un mal teléfono y es perfectamente usable pero a día de hoy está en la gama media o baja e independientemente de todo la batería da síntomas de que a poco que se usa el teléfono se descarga bastante rápido y no funciona ya del todo bien. El S6 es un teléfono con un procesador <em>octa-core</em>, 3 GB de RAM, 32 GB de almacenamiento y una cámara de fotos de 16 megapíxeles, por supuesto no admite 5G ni la última versión de WIFI ni de Bluetooth. A la cámara de fotos se le saltó una pieza y las fotos que toma en buenas condiciones de luz y cuando enfoca bien son aceptables, sin embargo, las fotos parece que tuviesen una película blanca y no refleja los colores reales además me obligaba a hacer tres fotos, luego revisarlas y quedarme con la mejor toma, aparte de la calidad de la mejor deja que desea y me requiere una cantidad de tiempo significativa de revisión. Para un usuario que no use el móvil de forma intensiva es utilizable aún con sus limitaciones y aunque cambie de móvil no lo desecharé completamente y le seguiré dando algunos usos como despertador o cronómetro.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/">De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6</a></li>
-</ul>
-<p>Decidido a cambiar de móvil empiezo a evaluar opciones. Esta vez no miro muchos modelos ni marcas aunque no obtenga el mejor móvil por euro gastado. He tenido el S6 y anteriormente un S3 ambos teléfonos suficientemente satisfecho con su uso asi que la marca por la que por la que me decido es <a href="https://www.samsung.com/es/">Samsung</a> que comparado con otras marcas tiene modelos para todos los segmentos de precios, suelen ofrecer mejor soporte y para los últimos móviles anuncia que los soportará durante 4 años con actualizaciones y 5 con parches de seguridad que da garantía que al menos durante ese tiempo el móvil no se va a quedar obsoleto al menos por el software. Quizá si hubiese visto y analizado un poco más teléfonos de otras marcas en vez de Samsung no hubiera optado por Samsung.</p>
-<p>Los móviles de <a href="https://www.apple.com/">Apple</a> aunque les eche un vistazo ni me planteo comprar uno de ellos por diferentes motivos pero uno de ellos el precio que si suelen ser móviles cuidados y de calidad y en algunos aspectos lo mejor pero a un precio considerablemente superior a opciones en Android y menos opciones entre las que elegir. Mi presupuesto para un móvil no va más allá de 650 €, hay móviles decentes por 300 € y seguramente más que suficientes para mí. No soy un usuario de cambiar de móvil cada pocos años así que espero mantenerlo durante más de un lustro con lo que tampoco me importa gastarme 100 € más en un móvil si se que va a cubrir con solvencia mis necesidades y durante un periodo de tiempo más largo. Dado que uno de mis usos principales es la cámara mi intención es optar por uno que cubra suficientemente bien mis necesidades en este apartado.</p>
-<p>Aún así quizá lo más inteligente sea comprar un móvil de 250 € cada tres años que gastarse 1000 € o más en uno hoy. Un móvil de 250 € a día de hoy es bastante decente y como los de año anterior bajan de precio rápido sin comprar la última novedad es posible encontrar los del año anterior en esos rangos de precio. Seguro que un móvil dentro de 6 o 9 años de 250 € supera o no es muy inferior a uno de 1000 € de hoy aunque solo sea porque la batería está en mejor estado. Eso sí, la cantidad de desechos electrónicos generados no creo que sea sostenible si cada persona cambia de terminal cada tres años.</p>
-<h4 id="otras-alternativas-y-la-opción-que-he-elegido">Otras alternativas y la opción que he elegido</h4>
-<p>Teniendo decidida la marca para el siguiente móvil lo más que he visto en algo más detalle ha sido las varias gamas de dispositivos que tiene Samsung en diferentes rangos de precios y gamas. Dispositivos que casi se hacen competencia entre ellos aún siendo de la misma marca. Mi primera opción era la serie A5x y he estado esperando a que saliese el A53 que correspondía a este año que se suelen lanzar aproximadamente en el mes de abril cada año. Pero también tiene la gama M53 y dispositivos A33 y M33 que son opciones perfectamente candidatas. Así que toca ver un poco ver un poco más en detalle cuales son sus especificaciones y que es lo principal que les diferencia si es que hay algo más allá del precio.</p>
-<ul>
-<li><a href="https://www.gsmarena.com/samsung_galaxy_a53_5g-11268.php">Especificaciones del Samsung Galaxy A53</a></li>
-<li><a href="https://www.gsmarena.com/samsung_galaxy_a52s_5g-11039.php">Especificaciones del Samsung Galaxy A52s</a></li>
-<li><a href="https://www.gsmarena.com/samsung_galaxy_m53-11439.php">Especificaciones del Samsung Galaxy M53</a></li>
-<li><a href="https://www.gsmarena.com/samsung_galaxy_a33_5g-11429.php">Especificaciones del Samsung Galaxy A33</a></li>
-<li><a href="https://www.gsmarena.com/samsung_galaxy_m33-11404.php">Especificaciones del Samsung Galaxy M33</a></li>
-<li><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Especificaciones del Samsung Galaxy S6</a></li>
-<li><a href="https://www.gsmarena.com/samsung_i9300_galaxy_s_iii-4238.php">Especificaciones del Samsung Galaxy S3</a></li>
-</ul>
-<p>Yo venía de un S6 así que seguramente cualquier móvil nuevo suponga una mejora que aprecie de forma notable. Pero antes de decidirme por cualquiera que sobre sus especificaciones parecen interesantes empiezo a ver algunos análisis, comparativas de rendimiento del procesador, comparativas de fotos y opiniones. Sobre las especificaciones el Samsung A53 me parece raro que solo tenga 2 núcleos A78 y 6 núcleos A55 cuando el A52s anterior tiene 4 núcleos A78 y 4 núcleos A55 con lo que parece un paso a atrás en cuanto rendimiento bruto al menos. Después de ver algunos vídeos y opiniones incluyendo algunas comparativas con el iPhone muchos coinciden que el A53 no es una mejora destacable en ningún apartado sobre el A52 salvo en la batería, por otro lado varios análisis coinciden en que el A53 deja dudas sobre el rendimiento del procesador en algunas tareas.</p>
-<p>Dadas las opiniones que muchos coinciden sobre el A53 y dado que su precio es elevado para lo que ofrece al menos con el precio de salida aunque era mi primera opción finalmente lo descarto. Finalmente, me decido por el Samsung Galaxy S21 FE aún teniendo que gastar algunos euros más dado que opto por la versión con 8 GB y 256 GB de almacenamiento. El S21 FE es más caro que el A53 pero dependiendo de la versión según la cantidad de memoria y almacenamiento la versión menor del S21 FE está en el mismo rango que la versión mayor del A53. Sin embargo, el S21 FE tiene un procesador sensiblemente mejor y motivo por el cual en las opiniones consideran al S21 FE una opción mejor que el A53.</p>
-<p>Los móviles Android suelen bajar de precio o a aparecer momentos de oferta al de pocos meses de lanzarse al mercado, aprovechando un momento de oferta en la tienda donde lo he comprado finalmente compro el Samsung Galaxy S21 FE. Quizá <a href="https://www.mi.com/es/">Xiaomi</a> y otras marcas de móviles tiene modelos que en cuanto a especificaciones hardware igualan a las de Samsung y con precios incluso menores pero por el soporte y la confianza que me da la marca junto con el anuncio de incorporar actualizaciones durante 4 años y 5 para actualizaciones de seguridad me da algo más de garantía de que no van a quedarse obsoletos al cabo de dos como ocurre en algunos modelos de estas otras marcas.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09TLF14V6&amp;linkId=1dc256247f38fafc0d44abb97b3fe64a" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09GVZBYM2&amp;linkId=17ea4019cda7a715f6c96d81fe74b107" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09TL9V25Q&amp;linkId=f825150e4cc32cd001c715855e09f878" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09QH4ZDSM&amp;linkId=de22e50575c9f8a79bb1452839a80786" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09SGFGG94&amp;linkId=c95fb6289c9b6f7831d27f3807f3f953" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09G9LDMCX&amp;linkId=1d97d4136faea6511dfc03d413481640" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08L5Q5CMZ&amp;linkId=a9abd7fc3c087993a11fbcc4924ecf0e" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08L6Z31C1&amp;linkId=8d2fb678a431cfc341415542f014d255" title="Amazon" class="lozad"></iframe>
-</div>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09BVKZGHL&amp;linkId=199b100e5abee25c505b22d230e55b08" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09BK5PSPH&amp;linkId=6d783bd14c5ec563eb9992141778e26b" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B092ZTDBG3&amp;linkId=d125d3cbcb2b64ae1124dbbd2c07ca77" title="Amazon" class="lozad"></iframe>
-</div>
-<h3 id="especificaciones-técnicas-del-samsung-galaxy-s21-fe">Especificaciones técnicas del Samsung Galaxy S21 FE</h3>
-<p>El <a href="https://www.samsung.com/es/smartphones/galaxy-s21-5g/galaxy-s21-fe-5g/">Samsung Galaxy S21 FE</a> al igual que otros móviles se ofrece en dos configuraciones de memoria y almacenamiento, algunos móviles incluso tienen diferentes versiones según la región en la que varía el procesador o SoC que emplea. La mayoría de los móviles tienen ocho núcleos incluso los de gama baja, sin embargo la diferencia de rendimiento entre los móviles de gama alta y los de gama baja es significativa. La diferencia de rendimiento está principalmente en el tipo de los núcleos en los que se basan esos ocho núcleos.</p>
-<p>Los diseñadores de procesadores tienen a su disposición los tipos de núcleos que ofrece ARM pero que luego las marcas en algunos casos personalizan. Algunos procesadores montan dos A78 de alto rendimiento y seis A55 con menor rendimiento pero más eficientes, otros procesadores montan cuatro A78 y cuatro A55. En el caso del Samsung Galaxy S21 FE el procesador incorpora un X1 que ofrece mayor rendimiento incluso que el A78, tiene tres A78 y cuatro A55 que sumando da lugar al procesador de ocho núcleos u <em>octa-core</em>.</p>
-<p>ARM a lo largo del tiempo va publicando revisiones menores de los núcleos que ofrecen algo de mayor rendimiento o menor consumo, el A76 es una versión anterior del A78 y el A53 es una versión anterior del A55. Un móvil nuevo suele incorporar las últimas versiones de los núcleos pero móviles de hace unos pocos años o los de gama baja pueden tener todavía núcleos de generaciones anteriores, aún siendo más antiguos estos núcleos siguen siendo válidos y con un rendimiento suficiente. En función de la gama del procesador los móviles incorporan un procesador acorde teniendo en cuenta el coste del procesador, rendimiento y consumo.</p>
-<ul>
-<li><a href="https://www.arm.com/product-filter?families=cortex-a&amp;showall=true">Familia de procesadores ARM Cortex</a></li>
-<li><a href="https://en.wikipedia.org/wiki/ARM_Cortex-X1">ARM Cortex X1</a></li>
-<li><a href="https://en.wikipedia.org/wiki/ARM_Cortex-A78">ARM Cortex A78</a></li>
-<li><a href="https://en.wikipedia.org/wiki/ARM_Cortex-A55">ARM Cortex A55</a></li>
-<li><a href="https://en.wikipedia.org/wiki/ARM_Cortex-X2">ARM ARM Cortex X2</a></li>
-<li><a href="https://en.wikipedia.org/wiki/ARM_Cortex-A710">ARM Cortex A710</a></li>
-<li><a href="https://en.wikipedia.org/wiki/ARM_Cortex-A510">ARM Cortex A510</a></li>
-</ul>
-<p>Las <a href="https://www.gsmarena.com/samsung_galaxy_s21_fe_5g-10954.php">características principales del Samsung Galaxy S21 FE</a> son las siguientes:</p>
-<ul>
-<li>Fecha de lanzamiento enero 2022.</li>
-<li>Precio de salida 760 € y 830 €, unos meses más tarde 500 € y 600 €.</li>
-<li>Conexión 5G y anteriores.</li>
-<li>Dos versiones 6/128 y 8/256 GB para la RAM y almacenamiento.</li>
-<li>Pantalla 6.4&quot; (155.7 x 74.5 mm).</li>
-<li>Sistema operativo de salida Android 12 y One UI 4.</li>
-<li>Procesador Qualcomm Snapdragon 888 5G y gráfica Adreno 660.</li>
-<li>Cámara principal 12 MP, gran angular 12 MP y telefoto 8 MP, cámara delantera 32 MP.</li>
-<li>Comunicaciones 5G, Wi-Fi 802.11 a/b/g/n/ac/6, Bluetooth 5, GPS, NFC, USB-C.</li>
-<li>Sensores lector huella digital (bajo la pantalla, óptica), acelerómetro, giroscopio, proximidad, brújula.</li>
-<li>Batería 4500 mAh, carga rápida de 25 W, inalámbrica de 15 W.</li>
-<li>Sin led de notificaciones.</li>
-<li>Sin puerto <em>jack</em> 3.5mm.</li>
-<li>Sin microSD.</li>
-<li>No incluye el cargador, ni funda ni protector de pantalla.</li>
-</ul>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-1_hu7331a83f8e7cf23bc697d0c70ba74078_200408_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-1_hu7331a83f8e7cf23bc697d0c70ba74078_200408_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-2_hu5d9c98eb3a4820c825e453f0629a0dbd_206438_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-2_hu5d9c98eb3a4820c825e453f0629a0dbd_206438_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-3_hu5b951c18da1c9e475e71e42901487aad_179876_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-3_hu5b951c18da1c9e475e71e42901487aad_179876_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-4_hubadf35b504d8a12b8a580fd02129e7f0_285558_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-4_hubadf35b504d8a12b8a580fd02129e7f0_285558_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-5_hucb9bd0e51391794dcee955cbcdf1bc71_448546_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-5_hucb9bd0e51391794dcee955cbcdf1bc71_448546_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-6_hu5c18d107e49814313899dc9da165885b_304380_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-6_hu5c18d107e49814313899dc9da165885b_304380_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-7_hu772b0fa30745efc292c39cb65f24278a_417315_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-7_hu772b0fa30745efc292c39cb65f24278a_417315_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-8_hu1e0c5b0157d17c268a819ebf90f92456_282232_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-8_hu1e0c5b0157d17c268a819ebf90f92456_282232_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-9_huea464191960a1673ebfbf31116467bba_218169_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-9_huea464191960a1673ebfbf31116467bba_218169_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-10_hu63668aa985ad10ef54c4e1ae00aab71c_174003_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-10_hu63668aa985ad10ef54c4e1ae00aab71c_174003_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-11_hu9ba4cd533f4552a28c8956806e976e9f_387458_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-11_hu9ba4cd533f4552a28c8956806e976e9f_387458_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-12_hu43b14df12c2d4419cbe1a5ea833e6c03_249425_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-12_hu43b14df12c2d4419cbe1a5ea833e6c03_249425_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-13_hudb477d6457cb7d71dfa55449337f6bff_437415_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-13_hudb477d6457cb7d71dfa55449337f6bff_437415_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-14_hu2fd06e7bd0008fe03844a04baf860019_324363_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-14_hu2fd06e7bd0008fe03844a04baf860019_324363_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-15_hu3389472c9a0bfb03db615e5d9745fe54_329426_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-15_hu3389472c9a0bfb03db615e5d9745fe54_329426_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-16_hu36a80df4202fa0316bf2704e65404406_161137_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-16_hu36a80df4202fa0316bf2704e65404406_161137_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-17_hu883ee04cac5906b40efb0136f45ed0f1_195027_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-17_hu883ee04cac5906b40efb0136f45ed0f1_195027_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-18_hu957a35b427758a2e57300f1e70918478_196722_2560x1440_fit_q90_box.jpg" data-gallery="" title="Presentación del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-presentacion-18_hu957a35b427758a2e57300f1e70918478_196722_200x150_fit_q90_box.jpg" width="200" height="104" alt="Presentación del Samsung Galaxy S21 FE" title="Presentación del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Presentación del Samsung Galaxy S21 FE</figcaption>
-</figure>
-</div>
-<h4 id="dónde-comprar">Dónde comprar</h4>
-<p>El precio de los móviles Android debido a la competencia suelen bajar de precio al cabo de unos pocos meses, por ejemplo este mismo S21 FE lanzado en enero del 2022 a un precio de 760 €. Al cabo de unos meses se encuentra de forma puntual en el rango de los 480 € para la versión de 6/128 GB y desde los 580 € para la versión de 8/256 GB. Seguramente a medida que pasen los meses y se sigan lanzado móviles se pueda encontrar incluso con alguna rebaja adicional.</p>
-<p>El A52s 5G está en los 300 € en la versión 6/128 GB e incluyendo el cargador que sigue siendo un móvil igual e incluso mejor en algunos aspectos que la nueva versión del A53 que en el momento de salida está en los 450 € pero que pasados unos meses seguro que baja de forma notable de precio porque a ese precio compensa más el S21 FE por unos pocos euros más o modelos de otras marcas.</p>
-<p>El Samsung Galaxy S21 FE lo he comprado en <a href="https://amzn.to/2flFhHA">Amazon</a> y también está disponible en tiendas físicas y sus respectivas páginas webs de <a href="https://www.elcorteingles.es/">El Corte Inglés</a>, <a href="https://www.mediamarkt.es/">Mediamarkt</a>, <a href="https://www.phonehouse.es/">The Phone House</a> o <a href="https://www.pccomponentes.com/">PcComponentes</a>.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09NMBJSCL&amp;linkId=acbdf1561e7094a69dfa54f4582235e1" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09NM91VML&amp;linkId=f4bfaa49ab9080d6c06253a256f60689" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08P95B5FR&amp;linkId=548f6e809b052c45f5053c5b7efd8115" title="Amazon" class="lozad"></iframe>
-</div>
-<h3 id="desempaquetado-de-samsung-galaxy-s21-fe">Desempaquetado de Samsung Galaxy S21 FE</h3>
-<h4 id="la-caja">La caja</h4>
-<p>La caja es bastante pequeña al no incluir el cargador, aparte del móvil únicamente incluye un cable USB-C en ambos extremos para el cargador y una herramienta extractor de la bandeja para insertar la tarjeta SIM. Una caja blanca en la mayoría de su totalidad con dibujos estampados y unas letras plateadas con una S grande en la parte delantera junto al modelo de móvil en letras más pequeñas, el nombre de la marca en un lateral y en el otro el modelo de móvil de nuevo. La caja está precintada por dos sellos que garantizan no ha sido abierto conservando el estado original de fábrica.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-1_hu70a455d92f1b463eabc8fd54cff61414_318199_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-1_hu70a455d92f1b463eabc8fd54cff61414_318199_200x150_fit_q90_box.jpg" width="81" height="150" alt="Caja del Samsung Galaxy S21 FE" title="Caja del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-2_hu493b037966dedaa8325059edcf708ac2_297758_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-2_hu493b037966dedaa8325059edcf708ac2_297758_200x150_fit_q90_box.jpg" width="81" height="150" alt="Caja del Samsung Galaxy S21 FE" title="Caja del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-3_hu6edaeb96b1f532a8461343889f247aa1_626438_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-3_hu6edaeb96b1f532a8461343889f247aa1_626438_200x150_fit_q90_box.jpg" width="125" height="150" alt="Caja del Samsung Galaxy S21 FE" title="Caja del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-4_hu4513867480e46cba9bf626d7d7352393_386796_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-4_hu4513867480e46cba9bf626d7d7352393_386796_200x150_fit_q90_box.jpg" width="200" height="39" alt="Caja del Samsung Galaxy S21 FE" title="Caja del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-5_huff48f6146d7415c877d9f2b4bbc7ac8e_331161_2560x1440_fit_q90_box.jpg" data-gallery="" title="Caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-caja-5_huff48f6146d7415c877d9f2b4bbc7ac8e_331161_200x150_fit_q90_box.jpg" width="200" height="38" alt="Caja del Samsung Galaxy S21 FE" title="Caja del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Caja del Samsung Galaxy S21 FE</figcaption>
-</figure>
-</div>
-<h4 id="el-contenido">El contenido</h4>
-<p>Además del propio móvil la caja incluye un cable USB-C por ambos extremos, unos manuales de instrucciones y el extractor de la bandeja para insertar la tarjeta SIM.</p>
-<p>El móvil con una película de plástico está protegido en su totalidad de arañazos en el transporte o de cualquier daño potencial que el móvil pueda tener antes de abrir la caja.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-1_hu4f3622e5ec959c7bdb5ed4d0f4709041_251379_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-1_hu4f3622e5ec959c7bdb5ed4d0f4709041_251379_200x150_fit_q90_box.jpg" width="81" height="150" alt="Contenido caja del Samsung Galaxy S21 FE" title="Contenido caja del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-2_hu20176a7a8e406714417bef4c5905f8fb_217267_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-2_hu20176a7a8e406714417bef4c5905f8fb_217267_200x150_fit_q90_box.jpg" width="81" height="150" alt="Contenido caja del Samsung Galaxy S21 FE" title="Contenido caja del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-3_huacb424f55dc508af68d880cecd7c9db3_848131_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-3_huacb424f55dc508af68d880cecd7c9db3_848131_200x150_fit_q90_box.jpg" width="200" height="101" alt="Contenido caja del Samsung Galaxy S21 FE" title="Contenido caja del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-4_huff1c0bc07143717267d58d452eaefb0c_603067_2560x1440_fit_q90_box.jpg" data-gallery="" title="Contenido caja del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-contenido-4_huff1c0bc07143717267d58d452eaefb0c_603067_200x150_fit_q90_box.jpg" width="160" height="150" alt="Contenido caja del Samsung Galaxy S21 FE" title="Contenido caja del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Contenido caja del Samsung Galaxy S21 FE</figcaption>
-</figure>
-</div>
-<h4 id="el-móvil">El móvil</h4>
-<p>El S21 FE se comercializa en varios colores de carcasa posterior, en total 4 entre los que están en negro, blanco, oliva con un tono verdoso claro y lavanda con un tomo morado claro según la preferencia. El color no diferencia en nada más a los diferentes modelos salvo la disponibilidad de alguno de ellos y ligeramente el precio también según la disponibilidad y unidades comercializadas de cada uno.</p>
-<p>La pantalla ocupa la práctica totalidad del frontal salvo unos pequeños márgenes laterales muy reducidos sobre todo comparándolo con un móvil como el S6. La cámara frontal está integrada en la pantalla en de perforación. Las tres cámaras traseras están dispuestas de forma vertical, en un lateral y con una pequeña protuberancia, el led se encuentra al lado de las cámaras. Tanto los botones de volumen como el de encendido y apagado se encuentran en el lateral derecho visto el móvil frontalmente.</p>
-<p>Salvo los teléfonos de Apple el resto de móviles de otras marcas entre ellas Samsung utilizan como sistema operativo Android en alguna de sus versiones. En el momento de lanzamiento incorpora <a href="https://www.android.com/intl/es_es/android-12/">Android 12</a> junto con la capa de personalización de Samsung en su versión <a href="https://www.samsung.com/es/one-ui/">One UI 4</a>. Según la política de soporte anunciada por Samsung se actualizará a las siguientes versiones, posiblemente hasta Android 15 o 16.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-1_hu36f5b1edca5421879498f6d8d2c2e35f_315970_2560x1440_fit_q90_box.jpg" data-gallery="" title="Móvil Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-1_hu36f5b1edca5421879498f6d8d2c2e35f_315970_200x150_fit_q90_box.jpg" width="96" height="150" alt="Móvil Samsung Galaxy S21 FE" title="Móvil Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-2_hue9482e938871839de5b8218584dff42b_615966_2560x1440_fit_q90_box.jpg" data-gallery="" title="Móvil Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-2_hue9482e938871839de5b8218584dff42b_615966_200x150_fit_q90_box.jpg" width="200" height="68" alt="Móvil Samsung Galaxy S21 FE" title="Móvil Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-3_hu54e49f38494e920666e569c04266fdea_426227_2560x1440_fit_q90_box.jpg" data-gallery="" title="Móvil Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-3_hu54e49f38494e920666e569c04266fdea_426227_200x150_fit_q90_box.jpg" width="200" height="49" alt="Móvil Samsung Galaxy S21 FE" title="Móvil Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-4_hu7637d1b74b8bed96b368d38dbc0547b0_571337_2560x1440_fit_q90_box.jpg" data-gallery="" title="Móvil Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-4_hu7637d1b74b8bed96b368d38dbc0547b0_571337_200x150_fit_q90_box.jpg" width="200" height="58" alt="Móvil Samsung Galaxy S21 FE" title="Móvil Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-5_huf1bb02643cc16bbe2a995ed47808ca4c_483724_2560x1440_fit_q90_box.jpg" data-gallery="" title="Móvil Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-5_huf1bb02643cc16bbe2a995ed47808ca4c_483724_200x150_fit_q90_box.jpg" width="200" height="51" alt="Móvil Samsung Galaxy S21 FE" title="Móvil Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-6_hu839a8b4650afe3edf3af5278e22c1bbe_239913_2560x1440_fit_q90_box.jpg" data-gallery="" title="Móvil Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-6_hu839a8b4650afe3edf3af5278e22c1bbe_239913_200x150_fit_q90_box.jpg" width="76" height="150" alt="Móvil Samsung Galaxy S21 FE" title="Móvil Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-7_huf4cf927e745e9635d735d3e955a92e0a_324647_2560x1440_fit_q90_box.jpg" data-gallery="" title="Móvil Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-telefono-7_huf4cf927e745e9635d735d3e955a92e0a_324647_200x150_fit_q90_box.jpg" width="98" height="150" alt="Móvil Samsung Galaxy S21 FE" title="Móvil Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Móvil Samsung Galaxy S21 FE</figcaption>
-</figure>
-</div>
-<h4 id="el-cargador">El cargador</h4>
-<p>El S21 FE se comercializa sin cargador de modo que se tiene uno o se ha de comprar aparte. El móvil soporta tanto la carga con cable de 25 W e inalámbrica de 15 W. En oferta no es demasiado caro, únicamente unos 12 €. No es imprescindible usar el cargador de Samsung y hay de marcas menores que ofrecen más puertos para cargar varios dispositivos simultáneamente con un único cargador. La ventaja del cargador de Samsung es que da más garantías de que va a funcionar correctamente con el móvil.</p>
-<p>El empaquetado del cargador precintado con sellos de plástico es muy pequeño, no incluye nada más que el cargador y un folleto con normas de uso.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-cargador-1_huc1afc57208445942117d1eb990ee1c6c_352185_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cargador Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-cargador-1_huc1afc57208445942117d1eb990ee1c6c_352185_200x150_fit_q90_box.jpg" width="81" height="150" alt="Cargador Samsung Galaxy S21 FE" title="Cargador Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-cargador-2_hubfc28a2e087ffddce2ae069ae228935a_428478_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cargador Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-cargador-2_hubfc28a2e087ffddce2ae069ae228935a_428478_200x150_fit_q90_box.jpg" width="80" height="150" alt="Cargador Samsung Galaxy S21 FE" title="Cargador Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-cargador-3_hu569f60103f122485ada86d80dd877b82_604557_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cargador Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-cargador-3_hu569f60103f122485ada86d80dd877b82_604557_200x150_fit_q90_box.jpg" width="135" height="150" alt="Cargador Samsung Galaxy S21 FE" title="Cargador Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Cargador Samsung Galaxy S21 FE</figcaption>
-</figure>
-</div>
-<h4 id="complementos">Complementos</h4>
-<p>Para cuidar el teléfono lo mejor posible un complemento habitual suele ser una funda para evitar algún golpe, caída o arañazo. La funda protege gran parte del móvil pero la pantalla y cámaras no quedan cubiertas, una funda con cremallera lo protege completamente a la hora de guardarlo junto a otros elementos por ejemplo junto a unas llaves que podrían rayar de otro modo la pantalla.</p>
-<p>Dado que el móvil no tiene puerto <em>jack</em> 3.5mm para seguir usando los cascos con cable hay adaptadores de USB-C del móvil al <em>jack</em> 3.5mm.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-1_hu124b194aa9b33bbfa67e44ba3b11864a_422357_2560x1440_fit_q90_box.jpg" data-gallery="" title="Complementos Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-1_hu124b194aa9b33bbfa67e44ba3b11864a_422357_200x150_fit_q90_box.jpg" width="74" height="150" alt="Complementos Samsung Galaxy S21 FE" title="Complementos Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-2_hua1c236048bb3c00c1b8932e69d6df70b_975247_2560x1440_fit_q90_box.jpg" data-gallery="" title="Complementos Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-2_hua1c236048bb3c00c1b8932e69d6df70b_975247_200x150_fit_q90_box.jpg" width="187" height="150" alt="Complementos Samsung Galaxy S21 FE" title="Complementos Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-3_hu7d9f402854626471641a53cd6aa84849_515545_2560x1440_fit_q90_box.jpg" data-gallery="" title="Complementos Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-3_hu7d9f402854626471641a53cd6aa84849_515545_200x150_fit_q90_box.jpg" width="78" height="150" alt="Complementos Samsung Galaxy S21 FE" title="Complementos Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-4_hu073e4cf77fd41ef15ef9aa27aea483ab_420724_2560x1440_fit_q90_box.jpg" data-gallery="" title="Complementos Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-4_hu073e4cf77fd41ef15ef9aa27aea483ab_420724_200x150_fit_q90_box.jpg" width="76" height="150" alt="Complementos Samsung Galaxy S21 FE" title="Complementos Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-5_hua20217055a1ac40a065caa8b4dd822a8_847678_2560x1440_fit_q90_box.jpg" data-gallery="" title="Complementos Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-5_hua20217055a1ac40a065caa8b4dd822a8_847678_200x150_fit_q90_box.jpg" width="90" height="150" alt="Complementos Samsung Galaxy S21 FE" title="Complementos Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-6_hu5a98e310529a924bf51f694fdeeef96e_341998_2560x1440_fit_q90_box.jpg" data-gallery="" title="Complementos Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-complementos-6_hu5a98e310529a924bf51f694fdeeef96e_341998_200x150_fit_q90_box.jpg" width="94" height="150" alt="Complementos Samsung Galaxy S21 FE" title="Complementos Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Complementos Samsung Galaxy S21 FE</figcaption>
-</figure>
-</div>
-<h3 id="análisis-y-primeras-impresiones">Análisis y primeras impresiones</h3>
-<p>En mi caso mi anterior móvil ha sido un Samsung Galaxy S6 que ya no estaba en sus mejores momentos en los aspectos de batería y cámara. La diferencia con el Samsung Galaxy S21 FE es muy apreciable en multitud de aspectos. Un aspecto muy visible es que la pantalla ocupa la práctica totalidad de la parte frontal.</p>
-<p>Es normal la diferencia por ser el S21 FE un móvil 7 años más reciente más siendo un móvil que se considera no el modelo más potente del momento pero si uno de la parte alta. El precio original del S21 FE en su momento de lanzamiento ha sido de unos 760 y 830 €, sin embargo a tan solo unos meses de lanzamiento ya hay ofertas por menos de 500 € y 600 € respectivamente para los modelos de 6/128 y 8/256.</p>
-<p>El procesador del S6 aún siendo también de 8 núcleos al usar la aplicación de <a href="https://twitter.com/">Twitter</a> se notaba poco fluido al hacer desplazamiento cosa que en el S21 funciona perfectamente fluido y las aplicaciones se abren mucho más rápido. Las pruebas de rendimiento muestran que el procesador del S21 es varias veces más potente que el del S6, y se nota claramente. El modelo que tengo es el que incorpora el procesador Qualcomm 888 con la gráfica Adreno 666 siendo la versión española del móvil.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_processors">Procesadores Qualcomm</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Adreno">Gráficas Qualcomm Adreno</a></li>
-</ul>
-<p>La pantalla AMOLED del S21 muestra unos colores mucho más intensos que la del S6 siendo uno de los apartados en la que suelen destacar todos los móviles de Samsung.</p>
-<p>La diferencia de las fotos tomadas con la cámara es abismal, y una muestra de que más píxeles no significa en todos los casos mejores fotos, el S6 tiene 16 megapíxeles y el S21 solo 12 megapíxeles pero las fotos del S21 son mucho mejores tanto con buenas condiciones de luz como en condiciones bajas de luz.</p>
-<p>La cantidad de los megapixeles no son lo único determinante para tomar buenas fotos, los megapixeles son un factor y deseados pero no es lo más importante ni lo primero en lo que fijarse. Lo importante es la calidad final de la foto y hay otras variables a tener en cuenta como el tamaño del receptor sensible a la luz de cada uno de esos pixeles. En una cámara con más megapíxeles puede significar fotorreceptores más pequeños.</p>
-<p>La cámara es tanto mejor que ya no tengo que estar sacando varias fotos y luego quedarme con la mejor ya que en el primer intento el S21 toma una buena foto. El estabilizador óptico en los vídeos se nota un poco pero no hace milagros ante grandes movimientos o mal pulso. Al ampliar las fotos se nota el ruido en los píxeles, pero una foto de 4000x3000 pixeles son casi tantos píxeles como una pantalla 4K, sin ampliar las fotos se ven muy bien. Principalmente quería un móvil con mejor cámara para esos artículos del blog en los que hago desempaquetados y la cámara de este sin tampoco tomar fotos perfectas si toma fotos buenas y mucho mejores que antes.</p>
-<ul>
-<li><a href="https://thesmartphonephotographer.com/truth-about-phone-megapixels/">Phone Camera Megapixels Explained: The REAL TRUTH</a></li>
-<li><a href="https://www.cnet.com/tech/mobile/camera-megapixels-why-more-isnt-always-better-smartphones-unlocked/">Camera megapixels: Why more isn&rsquo;t always better (Smartphones Unlocked)</a></li>
-</ul>
-<p>Las diferencias son notables entre la cámara del S6 que no solo es que será peor sino que quizá tenga algún defecto por el uso que parece tomar las fotos con una película blanca sobre las fotos. La mejora de calidad entre una y otra es notable.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-1_hu316f32b5bf94931741e7494ea1af5d4a_645059_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cámara del Samsung Galaxy S6"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-1_hu316f32b5bf94931741e7494ea1af5d4a_645059_300x250_fit_q90_box.jpg" width="300" height="110" alt="Cámara del Samsung Galaxy S6" title="Cámara del Samsung Galaxy S6"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-2_hu3a0d2afdf59964dbbbd8c1019657c392_733581_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cámara del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-2_hu3a0d2afdf59964dbbbd8c1019657c392_733581_300x250_fit_q90_box.jpg" width="300" height="109" alt="Cámara del Samsung Galaxy S21 FE" title="Cámara del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Comparación entre cámara del S6 y S21 FE</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-3_huaade6df0ccbd632199a401acc670b331_1422723_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cámara del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-3_huaade6df0ccbd632199a401acc670b331_1422723_200x150_fit_q90_box.jpg" width="200" height="150" alt="Cámara del Samsung Galaxy S21 FE" title="Cámara del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-4_hu12a29cf8722f0fff7ffb4f5591d229fe_1508408_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cámara del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-4_hu12a29cf8722f0fff7ffb4f5591d229fe_1508408_200x150_fit_q90_box.jpg" width="200" height="150" alt="Cámara del Samsung Galaxy S21 FE" title="Cámara del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-5_hue98fe5d6162a6a0271750411d323da2c_1267777_2560x1440_fit_q90_box.jpg" data-gallery="" title="Cámara del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-camara-5_hue98fe5d6162a6a0271750411d323da2c_1267777_200x150_fit_q90_box.jpg" width="200" height="150" alt="Cámara del Samsung Galaxy S21 FE" title="Cámara del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-<figcaption>Fotos tomadas con el S21 FE</figcaption>
-</figure>
-</div>
-<p>Otro de sus aspectos muy a tener en cuenta de los móviles Samsung es que la marca ha anunciado la intención de proporcionar actualizaciones durante 4 años y 5 de parches de seguridad, tiempo durante el cual se mantendrá actualizado a la última versión de Android. 5 años de vida para un producto tampoco es tanto y seguro que al cabo de ese tiempo el móvil sigue siendo un producto perfectamente usable, quizá con alguna distribución de Android como Lineage OS el móvil pueda tener durante algunos años más la última versión de Android.</p>
-<p>El móvil tiene la huella dactilar bajo la pantalla que lo hace más cómodo de usar que sobre un botón. Tiene carga rápida de 25 W cuando otros móviles que ofrecen cargas de 60 y 100 W que más que una ventaja puede ser algo desaconsejado de usar en todo momento ya que para conservar la durabilidad de la batería es mejor cargar a baja velocidad, cargar rápido estresa la batería, la calienta y se degrada. Por ello aún en los móviles con carga rápida Android permite configurar el móvil para que se cargue de forma lenta.</p>
-<p>La mayor crítica que puedo hacerle al S21 no es en absoluto a su hardware sino a la capa de personalización de Samsung que añade a Android y la cantidad de aplicaciones preinstaladas que incorpora que muchas he desinstalado y otras no se puede y únicamente he podido desactivar, aplicaciones de terceros y algunas de la propia Samsung. En mi caso preferiría menos personalizaciones y una experiencia más pura de Android. La interfaz y el diseño de One UI no me gustan mucho, me resulta realmente complicado encontrar las configuraciones entre la gran cantidad de ellas en el apartado de ajustes que si no fuera por el buscador serían mucho más difíciles de encontrar.</p>
-<p>¿El <em>bloatware</em> es uno de los motivos por los que muchos usuarios optan por Apple/iOS? Entiendo que alguien se compre móviles Apple aún su precio, prefieren pagar con a una marca reconocida con la confianza que les da y suponiendo que por el precio que paga van a tener un producto capaz, fiable y sin los problemas de terminales más baratos o de otras marcas, y sin tener que analizar tantas opciones que comprar. Pero a veces Apple también se aprovecha del nombre de su marca para lanzar productos a un precio insensato. Y no es que los móviles de Samsung valgan poco, sino que por el precio que valen debería ser un producto como para que no intenten añadirte sus aplicaciones.</p>
-<p>Muchas personas se quejan de que los últimos modelos de móviles dejan de incorporar el puerto <em>jack</em> 3.5 mm para conectar unos cascos de música o unos cascos con micrófono para hacer llamadas, como alternativa es posible utilizar unos cascos inalámbricos por USB o un adaptador que se conecta al puerto USB-C y proporciona un puerto <em>jack</em> 3.5 mm. La ventaja de no tener el puerto <em>jack</em> 3.5 mm es que los móviles pueden ofrecer mayor <a href="https://es.wikipedia.org/wiki/Grado_de_protecci%C3%B3n_IP">grado protección</a> frente a suciedad con las normativas IP67 e IP68.</p>
-<p>Otra queja que hacen algunos usuarios es que no incluye el cargador, mucha gente seguramente ya tenga uno y no necesite que la caja lo incluya. A mi no me parece mal que no lo incluya si el precio los descuenta y luego que cada usuario decida si lo necesita comprar a parte de modo que el precio debería ser parecido y eso que uno se ahorra. El precio del cargador en oferta es de 12 €, en un móvil de 600 € o más pero incluso en uno de 300 € quejarse por 12 € más no le veo sentido.</p>
-<p>En la página <a href="https://www.samsung.com/es/support/model/SM-G990BLGDEUB/#downloads">descargas y soporte de Samsung</a> ofrece un par de manuales de usuario del móvil que explican con bastante detalle algunas opciones que de otro modo pasan desapercibidas o sin saber que hacen junto a una guía para tener unas mínimas nociones de seguridad importantes.</p>
-<p>El móvil por el que ho optado es el de 256 GB pero disponibles para el usuario quedan unos 216 GB de fábrica y unos 200 GB una vez desinstaladas algunas aplicaciones qu no deseaba, instaladas otras que sí y copiada una colección de música de uno 9 GB.</p>
-<p>Este es el primer encendido del teléfono y su estado original una vez completados los varios pasos de configuración. Acetar varios terminos y condiciones y realizar varias configuraciones entre ellas la WIFI y PIN de seguridad para desbloquear el móvil.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-1_hudf91c2cc14e82d0c565ffc8730dc12df_307897_2560x1440_fit_q90_box.jpg" data-gallery="" title="Primer inicio y configuración inicial"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-1_hudf91c2cc14e82d0c565ffc8730dc12df_307897_200x150_fit_q90_box.jpg" width="94" height="150" alt="Primer inicio y configuración inicial" title="Primer inicio y configuración inicial"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-2_hu6d2f8b384f75d0b15845ab3a31b04694_258132_2560x1440_fit_q90_box.jpg" data-gallery="" title="Primer inicio y configuración inicial"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-2_hu6d2f8b384f75d0b15845ab3a31b04694_258132_200x150_fit_q90_box.jpg" width="98" height="150" alt="Primer inicio y configuración inicial" title="Primer inicio y configuración inicial"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-3_hua2a64f3bd396706874f395827b05b6bd_293031_2560x1440_fit_q90_box.jpg" data-gallery="" title="Primer inicio y configuración inicial"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-3_hua2a64f3bd396706874f395827b05b6bd_293031_200x150_fit_q90_box.jpg" width="92" height="150" alt="Primer inicio y configuración inicial" title="Primer inicio y configuración inicial"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-4_hu3e73a9e020d34fa70f40ddf2e7c99d02_263129_2560x1440_fit_q90_box.jpg" data-gallery="" title="Primer inicio y configuración inicial"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-4_hu3e73a9e020d34fa70f40ddf2e7c99d02_263129_200x150_fit_q90_box.jpg" width="75" height="150" alt="Primer inicio y configuración inicial" title="Primer inicio y configuración inicial"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-5_hu1c34dcab95764b542f45be2cb5a45547_194964_2560x1440_fit_q90_box.jpg" data-gallery="" title="Primer inicio y configuración inicial"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-inicio-5_hu1c34dcab95764b542f45be2cb5a45547_194964_200x150_fit_q90_box.jpg" width="75" height="150" alt="Primer inicio y configuración inicial" title="Primer inicio y configuración inicial"  class="lozad "></a></p>
-<figcaption>Primer inicio y configuración inicial</figcaption>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-1_hu66c848ed1779fd77fd831fd6d7a1f9b8_544478_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-1_hu66c848ed1779fd77fd831fd6d7a1f9b8_544478_200x150_fit_q90_box.jpg" width="74" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-2_huc6ad686a889e86d1abd9c7705e8d28a6_535872_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-2_huc6ad686a889e86d1abd9c7705e8d28a6_535872_200x150_fit_q90_box.jpg" width="74" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-3_hu2355b8dd213370d77a3ea96b1764f86d_443793_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-3_hu2355b8dd213370d77a3ea96b1764f86d_443793_200x150_fit_q90_box.jpg" width="74" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-4_huee8f3b9583d9d15f018ceba8f83cc41a_355127_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-4_huee8f3b9583d9d15f018ceba8f83cc41a_355127_200x150_fit_q90_box.jpg" width="75" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-5_hu01c726f57b16f14e3076a3d0a8af2395_365116_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-5_hu01c726f57b16f14e3076a3d0a8af2395_365116_200x150_fit_q90_box.jpg" width="75" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-6_hu891ffb8a0bbe99772641ba44eda8b3f9_326548_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-6_hu891ffb8a0bbe99772641ba44eda8b3f9_326548_200x150_fit_q90_box.jpg" width="75" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-7_hufb457f84d9373c419385ecc71613459b_302073_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-7_hufb457f84d9373c419385ecc71613459b_302073_200x150_fit_q90_box.jpg" width="75" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-8_hu8c63f4b6cdb66fd1636df3cbc6b125ef_299890_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-8_hu8c63f4b6cdb66fd1636df3cbc6b125ef_299890_200x150_fit_q90_box.jpg" width="74" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-9_hu2ea2a80f335ae7a4b7255fd6e641e032_159572_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-9_hu2ea2a80f335ae7a4b7255fd6e641e032_159572_200x150_fit_q90_box.jpg" width="66" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-10_hu2e8041030cd9bf0dbe079fbf9b8e18d6_163794_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-10_hu2e8041030cd9bf0dbe079fbf9b8e18d6_163794_200x150_fit_q90_box.jpg" width="49" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-11_hufc728078bf426a5a9b8c101604f913c6_149192_2560x1440_fit_q90_box.jpg" data-gallery="" title="Estado inicial del teléfono"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-inicial-11_hufc728078bf426a5a9b8c101604f913c6_149192_200x150_fit_q90_box.jpg" width="58" height="150" alt="Estado inicial del teléfono" title="Estado inicial del teléfono"  class="lozad "></a></p>
-<figcaption>Estado inicial del teléfono</figcaption>
-</figure>
-</div>
-<h4 id="pruebas-de-rendimiento">Pruebas de rendimiento</h4>
-<p>Las pruebas sintéticas de rendimiento son una guía del rendimiento bruto de un procesador tanto en su parte de cómputo como en su parte gráfica. La aplicación <a href="https://www.geekbench.com/">Geekbench</a> disponible para Android da una medida de ambas para cualquier dispositivo y en su base de datos se encuentran las pruebas de rendimiento de un procesador determinado o modelo de móvil.</p>
-<p>Estas son las pruebas de rendimiento de los diferentes móviles que he considerado hasta finalmente decidirme por el S21 FE. Hay que tener en cuenta que los valores de rendimiento no son rigurosos ya que son realizadas por los usuarios sin conocer con exactitud en que condiciones y configuraciones se han realizado, unicamente dan una media aproximada. Por otro lado unicamente proporcionan el rendimiento bruto sin considerar otros aspectos importantes como el precio del dispositivo.</p>
-<ul>
-<li><a href="https://browser.geekbench.com/v5/cpu/14259649">Geekbech Samsung Galaxy S21 FE</a>, 936 y 2733 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Samsung Galaxy S20 FE</a>, 873 y 3008 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Samsung Galaxy A53</a>, 743 y 1887 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Samsung Galaxy A52s</a>, 714 y 2636 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Samsung Galaxy A52</a>, 518 y 1580 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Samsung Galaxy S6</a>, 204 y 949 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Apple 13</a>, 1660 y 4285 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Apple 12</a>, 1581 y 3963 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Apple 11</a>, 1332 y 3231 single y multi core.</li>
-<li><a href="https://browser.geekbench.com/v5/cpu/14269501">Geekbech Apple 10</a>, 904 y 2114 single y multi core.</li>
-</ul>
-<p>Comparando el rendimiento según los números ofrecidos por la herramienta Geekbench la mejora de rendimiento entre el S6 y el S21 es notable.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-1_hu30bdb8590d16615a32700e6f106622a5_171551_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de rendimiento del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-1_hu30bdb8590d16615a32700e6f106622a5_171551_200x150_fit_box_3.png" width="69" height="150" alt="Prueba de rendimiento del Samsung Galaxy S21 FE" title="Prueba de rendimiento del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-2_hueb2a56b6d41dedda26cf86031af7251d_164998_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de rendimiento del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-2_hueb2a56b6d41dedda26cf86031af7251d_164998_200x150_fit_box_3.png" width="69" height="150" alt="Prueba de rendimiento del Samsung Galaxy S21 FE" title="Prueba de rendimiento del Samsung Galaxy S21 FE"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-3_hub6c5234b6ab02990214035e6f57e8b9b_207466_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de rendimiento del Samsung Galaxy S21 FE"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-3_hub6c5234b6ab02990214035e6f57e8b9b_207466_200x150_fit_box_3.png" width="43" height="150" alt="Prueba de rendimiento del Samsung Galaxy S21 FE" title="Prueba de rendimiento del Samsung Galaxy S21 FE"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-4_hu581623f77ce8ad9e06a09621fc9c0c3f_200357_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de rendimiento del Samsung Galaxy S6"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-4_hu581623f77ce8ad9e06a09621fc9c0c3f_200357_200x150_fit_box_3.png" width="84" height="150" alt="Prueba de rendimiento del Samsung Galaxy S6" title="Prueba de rendimiento del Samsung Galaxy S6"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-5_hu624d4f62f279f2b72bfe346e745f7469_197467_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de rendimiento del Samsung Galaxy S6"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-5_hu624d4f62f279f2b72bfe346e745f7469_197467_200x150_fit_box_3.png" width="84" height="150" alt="Prueba de rendimiento del Samsung Galaxy S6" title="Prueba de rendimiento del Samsung Galaxy S6"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-6_hu50df7d11c8aec8641a15de6a1b75df59_501307_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de rendimiento del Samsung Galaxy S6"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-geekbench-6_hu50df7d11c8aec8641a15de6a1b75df59_501307_200x150_fit_box_3.png" width="46" height="150" alt="Prueba de rendimiento del Samsung Galaxy S6" title="Prueba de rendimiento del Samsung Galaxy S6"  class="lozad "></a></p>
-<figcaption>Prueba de rendimiento del Samsung Galaxy S21 FE y del Samsung Galaxy S6</figcaption>
-</figure>
-</div>
-<h3 id="migración-de-dispositivo-y-configuración-inicial">Migración de dispositivo y configuración inicial</h3>
-<p>A estas alturas seguramente ya no es el primer móvil que se tiene con lo que es necesario migrar del móvil anterior al nuevo. Android permite realizar una copia de seguridad de los datos del dispositivo anterior y migrar al nuevo utilizando la copia de seguridad utilizando la misma cuenta de Google. La mayoría de datos se copian y algunas opciones de configuración también. Sin embargo, conviene conservar el móvil anterior hasta haber migrado de forma completa al nuevo dispositivo.</p>
-<p>Una vez migrado al nuevo dispositivo al móvil anterior en el momento de deshacerse de él hay que hacerle una reinicialización de fábrica para eliminar los datos personales que contenga. Por supuesto, hay que sacar la tarjeta SIM del móvil anterior e insertarla en el nuevo que es lo que permite hacer llamadas y conectarse a la red móvil al teléfono. El móvil sin tarjeta SIM puede funcionar pero sin la posibilidad de conectarse a la red móvil de los operadores de telefonía, sin SIM la única conexión posible a internet y de comunicación es mediante una red WIFI.</p>
-<p>Se realizan una buena cantidad de preguntas para configurar el móvil que llevan más de media hora completarlas. Cuando se termina después una de las primeras cosas a hacer es obtener el IMEI del móvil que identifica al dispositivo y activar las opciones de bloqueo y localización remota que resulta útil en caso de pérdida o robo y un inventario de las aplicaciones que contiene el móvil de forma original por si surge algún problema al desinstalar alguna. Seguramente en la primera carga se obtengan las primeras actualizaciones del sistema y parches de seguridad que conviene instalarlas. Luego es aconsejable desinstalar y desactivar las aplicaciones que no se vayan a usar para recuperar algo de espacio de almacenamiento, por motivos de seguridad y evitar que alguno consuma batería aún no usándose.</p>
-<p>Varios términos y condiciones solicitados para aceptar, de Google, de Samsung y otras aplicaciones, se aceptan al final por agotamiento, no hay ninguna opción de rechazar todo y para todas las aplicaciones por defecto o por lo menos con las opciones mínimas. Un móvil es un infierno de privacidad.</p>
-<p>Por seguridad hay que configurar un PIN y si se quiere algo más de comodidad para desbloquear el teléfono usar las huellas dactilares o reconocimiento facial.</p>
-<p>Para evitar en la medida de lo posible los defectos de las pantallas AMOLED se puede activar el modo oscuro del móvil ni activar la función para mantener la pantalla siempre activa. Para conservar el estado de la batería se puede cargar únicamente hasta el 85% y sin utilizar la función de carga rápida del móvil, en los ajustes se ofrecen opciones para ambas cosas.</p>
-<p>En el apartado de ajustes hay gran cantidad de opciones de configuración algunas importantes son configurar las redes WIFI si no se recuperan desde la copia de seguridad del dispositivo anterior y otras muchas opciones de apariencia y personalización así como la disposición de los iconos en las diferentes pantallas del escritorio.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-1_hu7ddaf65b1225e7112c276e4b434b935a_1367651_2560x1440_fit_box_3.png" data-gallery="" title="Estado del teléfono una vez configurado"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-1_hu7ddaf65b1225e7112c276e4b434b935a_1367651_200x150_fit_box_3.png" width="72" height="150" alt="Estado del teléfono una vez configurado" title="Estado del teléfono una vez configurado"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-2_hu7f06e4bca456193c352c1d522ce45b20_182028_2560x1440_fit_box_3.png" data-gallery="" title="Estado del teléfono una vez configurado"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-2_hu7f06e4bca456193c352c1d522ce45b20_182028_200x150_fit_box_3.png" width="72" height="150" alt="Estado del teléfono una vez configurado" title="Estado del teléfono una vez configurado"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-3_hud8cb19d090fab58d0e134fa260f52e92_173527_2560x1440_fit_box_3.png" data-gallery="" title="Estado del teléfono una vez configurado"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-3_hud8cb19d090fab58d0e134fa260f52e92_173527_200x150_fit_box_3.png" width="63" height="150" alt="Estado del teléfono una vez configurado" title="Estado del teléfono una vez configurado"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-4_hu60eb2aed7fad346f26c15cd95630f2a7_118939_2560x1440_fit_box_3.png" data-gallery="" title="Estado del teléfono una vez configurado"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-4_hu60eb2aed7fad346f26c15cd95630f2a7_118939_200x150_fit_box_3.png" width="49" height="150" alt="Estado del teléfono una vez configurado" title="Estado del teléfono una vez configurado"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-5_hufc56836164f89aba089e8b16dee4629f_384588_2560x1440_fit_box_3.png" data-gallery="" title="Estado del teléfono una vez configurado"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-5_hufc56836164f89aba089e8b16dee4629f_384588_200x150_fit_box_3.png" width="72" height="150" alt="Estado del teléfono una vez configurado" title="Estado del teléfono una vez configurado"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-6_hu53ea069ebf372b4b571c9b308f0be334_217874_2560x1440_fit_box_3.png" data-gallery="" title="Estado del teléfono una vez configurado"><img src="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/images/samsung-galaxy-s21-fe-sistema-configurado-6_hu53ea069ebf372b4b571c9b308f0be334_217874_200x150_fit_box_3.png" width="67" height="150" alt="Estado del teléfono una vez configurado" title="Estado del teléfono una vez configurado"  class="lozad "></a></p>
-<figcaption>Estado del teléfono una vez configurado</figcaption>
-</figure>
-</div>
-<h4 id="artículos-y-análisis-en-vídeo-del-s21-fe">Artículos y análisis en vídeo del S21 FE</h4>
-<p>En YouTube hay numerosos vídeos analizando el teléfono que permite obtener unas primeras impresiones y opiniones del teléfono o teléfonos comentados. Conviene ver varios vídeos y varias opiniones para obtener una idea más formada del teléfono y evitar las críticas o halagos de un único usuario. Los vídeos son interesantes ya que las personas que los comentan suelen tener uno de estos móviles para analizar y se pueden obtener detalles que sin probar el móvil pasan desapercibidos como algún defecto o una alternativa mejor al modelo de móvil que en principio se tenía interés.</p>
-<p>Estos son varios <a href="https://www.youtube.com/results?search_query=samsung&#43;galaxy&#43;s21&#43;fe">vídeos con análisis y opiniones sobre el Samsung Galaxy S21 FE</a> tanto del móvil en general como de forma más específica de sus cámaras.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/_gacoEj1-Lo" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/hAhgy8NlI-s" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="artículos-y-análisis-en-vídeo-de-otros-móviles-y-comparaciones">Artículos y análisis en vídeo de otros móviles y comparaciones</h4>
-<p>También hay análisis de otros móviles que pueden considerarse candidatos en una posible decisión y su comparación con terminales similares. En los siguientes se comentan varios móviles que he considerado en un principio incluso antes que el S21 FE como el A53, A52 o algún iPhone.</p>
-<p>Estos son varios <a href="https://www.youtube.com/results?search_query=samsung&#43;galaxy&#43;s21&#43;fe">vídeos con análisis y opiniones sobre los Samsung Galaxy A53</a>, <a href="https://www.youtube.com/results?search_query=Samsung&#43;Galaxy&#43;A52s">A52s</a>, <a href="https://www.youtube.com/results?search_query=Samsung&#43;Galaxy&#43;S21&#43;FE&#43;vs&#43;A53">S21 FE vs A53</a>, <a href="https://www.youtube.com/results?search_query=Samsung&#43;Galaxy&#43;A53&#43;vs&#43;A52s">A53 vs A52s</a>, <a href="https://www.youtube.com/results?search_query=samsung&#43;galaxy&#43;S21&#43;FE&#43;vs&#43;iphone">iPhone</a> y <a href="https://www.youtube.com/results?search_query=samsung&#43;galaxy&#43;A53&#43;vs&#43;iphone">A53 vs iPhone</a> tanto del móvil en general como de forma más específica de sus cámaras.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/og7vac2GcPE" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/mbFnldgbNuI" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h4 id="sobre-las-pantallas-amoled">Sobre las pantallas AMOLED</h4>
-<p>La mayoría de móviles de gama alta ofrecen ya pantallas con tecnología AMOLED ya que ofrece negros puros y colores más intensos que las pantallas IPS. En cuanto a calidad de imagen las pantallas AMOLED son mejores que las pantallas IPS. El problema de las pantallas AMOLED está en que se basan en en un compuesto orgánico que se degrada con el uso y más aquellas zonas que mantienen siempre la misma imagen como en el área de notificaciones, botones en pantalla o algunos icono de la barra de estado. En los casos más extremos o al cabo de un tiempo las pantallas OLED y las AMOLED, que son otra forma de pantallas OLED propietaria de Samsung, sufren de quemado o retención de imagen.</p>
-<p>El quemado de la pantalla o retención de imagen consiste en que en la pantalla se aprecia una sombra del gráfico que se ha usado en esa posición. El quemado se nota más con colores planos como el blanco. Al cabo del tiempo según el uso el compuesto orgánico se degrada en cualquier caso aún sin mantener la misma imagen durante mucho tiempo y los colores pierden fidelidad respecto a la salida de fábrica. En casos graves tomando la imagen un tono rosado en toda la pantalla. Las pantallas IPS no tienen este problema de las pantallas AMOLED y aunque quizá no ofrezcan la mejor calidad tienen una durabilidad mayor, de modo que algunos las prefieren y las consideran mejor por el aspecto de la durabilidad.</p>
-<p>Una forma de conservar mejor las pantallas AMOLED en los móviles es usar el tema oscuro tanto para el sistema Android como para las aplicaciones que lo ofrezcan. En un dispositivo Android el tema oscuro se puede configurar de forma global, muchas aplicaciones adaptan su tema a la preferencia establecida en el sistema. El tema oscuro aparte de conservar mejor las pantallas protege la vista de luz intensa que en periodos de uso prolongados de las pantallas resultan dañinos.</p>
-<p>Además de usar el tema oscuro es recomendable no usar la función <em>always on display</em> que mantiene encendida la pantalla en todo momento mostrando las notificaciones y otra información, útil en los móviles que no tiene led de notificación pero malo para la pantalla y batería. También es posible eliminar los botones navegación que se muestran siempre en la misma posición y usar gestos para sus funciones, aún siendo los gestos son más incómodos de usar.</p>
-<h3 id="complementos-para-el-móvil">Complementos para el móvil</h3>
-<p>Después de gastar entre 300 y 1400 € en el propio móvil hay otros productos complementarios para el teléfono. Uno de ellos es una funda para evitar que en caso de una caída se raye o tenga menos probabilidades sufrir alguna rotura en la carcasa o en la pantalla. Las fundas son específicas para cada modelo de móvil ya que requieren adaptarse a la perfección de cada uno, tanto en la posición de las cámaras, botones, micrófonos y cargador. Son de un material de goma que absorbe en pequeña medida el golpe de un impacto y lo protege de rayaduras al guardarlo. Las fundas pueden ser una bolsa para cubrirlo de forma entera al móvil.</p>
-<p>Si el móvil no tiene salida de conector de <em>jack</em> 3.5 mm una opción es comprar unos auriculares inalámbricos por Bluetooth que aparte de no tener cables algunos incorporan cancelación de ruido. Amazon tiene los de su propia marca y Samsung tiene los Bud que en un momento ha vendido junto a sus móviles. Su batería dura varias horas y su caja de almacenamiento les proporciona cargas adicionales. Si se prefiere unos cascos con cable hay adaptadores de USB-C a <em>jack</em> 3.5mm compatibles con los móviles que permite seguir usando cascos de 3.5mm.</p>
-<p>Los móviles con capacidades de 128 GB y 256 GB salvo que se usen de forma muy intensiva y se guarden todas las fotos en el móvil sin traspasarlas a un almacenamiento externo tiene más que capacidad suficiente para todas las aplicaciones que se necesiten. Varios de gama alta no permiten tarjetas microSD pero estos incorporan grandes capacidades de almacenamiento. Algunos móviles de gama media y baja si permiten tarjetas microSD que permiten hasta 1 TB adicional siendo de las tarjetas de 512 GB más asequibles.</p>
-<p>La duración de la batería suele dar para un día o un par de días dependiendo del uso. Para tener hacer un uso prologado de un teléfono u otros dispositivos hay baterías externas que permiten incluso un par de cargas de móvil con una carga suya. Durando la batería de un móvil con un cierto uso al menos un día con una batería externa se puede tener el móvil con batería suficiente para varios días si durante ese tiempo no se tiene acceso a cargar el móvil.</p>
-<p>Usar el teclado del móvil es incómodo para escribir textos largos como un correo electrónico o un documento, los móviles con su conexión Bluetooth permite conectarse a un teclado inalámbrico con esta conexión e incluso los teclados inalámbricos por Bluetooth permite configurarse para utilizar varios dispositivos combinado de uno a otro. Los teclados 60% por su reducido tamaño son una buen opción para un móvil en caso de que emplear un móvil para escribir mucho texto.</p>
-<div class="media media-amazon">
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09PRCJWDT&amp;linkId=02fb9ca0467f64b24b24bec34bae6efd" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07T46MYRV&amp;linkId=e76bcc7046912c38f69c18b266c75987" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08TR7LWQH&amp;linkId=48682a269e31eaba9c0411c3e96ec72f" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09D3NPKKD&amp;linkId=cfe746d2f8776585a92f45dd9e095fc3" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B085WV7HJR&amp;linkId=dedf09e03619d5e92324af4780cecd51" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B09B9YJRZJ&amp;linkId=a2e5681d8bad7e56cac9d38c3e38aec7" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08372Y4KT&amp;linkId=042f2202bb53923a4114d40d672f0f8d" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07R4YVBND&amp;linkId=b90174d6bc0bbc2a89595e3df1b7043b" title="Amazon" class="lozad"></iframe>
-  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0968C4QYP&amp;linkId=3f8f1bca0abfb9397243e3bf3f642e63" title="Amazon" class="lozad"></iframe>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="hardware"/>
             
         
     </entry>

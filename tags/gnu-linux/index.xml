@@ -5,12 +5,207 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/gnu-linux/</id>
-    <updated>2022-06-26T04:00:00+02:00</updated>
+    <updated>2022-08-18T18:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/</id>
+        <title>Prueba de velocidad de unidad de almacenamiento en GNU/Linux</title>
+        <updated>2022-08-18T18:00:00+02:00</updated>
+        <published>2022-08-18T18:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>En un dispositivo de almacenamiento hay que tener en cuenta el tipo de la interfaz del dispositivo que determina la tasa de transferencia máxima teórica, el tipo de almacenamiento que determina en qué rangos de tasa de transferencia ofrecen la mayoría de dispositivos, el dispositivo en concreto que dependiendo del fabricante y calidad determina en qué parte del rango está la tasa de transferencia el modelo usado, la capacidad de almacenamiento y finalmente el precio que está en función de todo lo anterior.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Dependiendo del tipo de interfaz y el tipo de almacenamiento de un dispositivo la tasa de transferencia de un dispositivo varía. Una buena tasa de transferencia permite un óptimo rendimiento y finalizar las tareas en menos tiempo principalmente al copiar archivos de una unidad a otra lo que incluye <a href="https://picodotdev.github.io/blog-bitix/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/">hacer copias de seguridad</a> para tener una segunda copia de los datos y sincronizada de forma regular para no perder ningún dato en caso de fallo.</p>
+<p>Más que el procesador las dos mejoras que se le pueden realizar a algunos equipos para mejorar el rendimiento y prolongar su uso es la ampliación de la memoria RAM y cambiar el tipo de almacenamiento. Si es el caso de pasar de un disco duro a un SSD la diferencia será más que significativa y casi parecerá un equipo nuevo siempre y cuando la cantidad de memoria RAM sea suficiente para la tarea.</p>
+<p>A fecha del 2022 tener un SSD y 8 GiB de memoria RAM es lo menos que se le puede exigir a un equipo para usarlo en unas condiciones suficientes que de un rendimiento aceptable para tareas de navegar por internet y ofimática.</p>
+<p>Las tasas de transferencia anunciadas por los fabricantes en algunos casos distan significativamente de las reales al hacer uso de ellas con lo que es recomendable si es posible un análisis del rendimiento de la unidad sobre todo para las memorias USB y tarjetas micro SD.</p>
+<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
+<h3 id="tipos-de-interfaces">Tipos de interfaces</h3>
+<p>A lo largo de los años los ordenadores han ido adoptando varios tipos de interfaces como estándar que todos los fabricantes de equipos incorporan en sus productos. Cada nueva interfaz ha ofrecido un ancho de banda mayor y mayores tasas de transferencia que la interfaz anterior reemplazada. Dentro de los tipos de interfaces se puede diferenciar entre los empleados para el almacenamiento interno donde se instala el sistema operativo y las interfaces empleadas para conectividad de dispositivos externos extraíbles como memorias USB.</p>
+<p>Para el almacenamiento interno se suele utilizar la interfaz SATA que está siendo reemplazada por la interfaz NVMe. Para el almacenamiento externo y dispositivos extraíbles que se pueden conectar y desconectar con el equipo encendido se utiliza la interfaz USB. Cada interfaz también ha evolucionado en diferentes versiones así la última versión de SATA es la 3 que duplicó la tasa de transferencia de la anterior y USB tiene varias versiones como 2.0, 3.0, 3.1/3.2, 4.0 e igualmente para NVMe que tiene 3.0, 4.0 y más adelante 5.0.</p>
+<p>Cada interfaz ofrece un ancho de banda máximo teórico, los dispositivos que son capaces de saturar la interfaz llegan casi al máximo teórico aunque normalmente suelen quedarse cerca y algo por debajo.</p>
+<p>Las tasas de transferencia máximas teóricas para cada una de las interfaces son las siguientes. NVMe que es la más reciente y sustituye a SATA ofrece una tasa de transferencia varias veces mayor que la última versión de SATA. dado que el acceso al almacenamiento una de los motivos en la rapidez de un ordenador el paso de SATA a NVMe supone una gran mejora cuando se usa de forma intensa, cada nueva versión de NVMe está duplicando la tasa de transferencia de la versión anterior. En las diferentes versiones de USB las tasas de transferencia también aumentan en varias veces la ofrecida por la versión anterior además de tener otras ventajas como soportar una mayor capacidad de alimentación a los dispositivos conectados.</p>
+<table class="table">
+    <thead class="table-light">
+        <th width="300px">Tipo de interfaz</th>
+        <th width="300px" colspan="2">Tasa de transferencia</th>
+        <th>Año</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>USB 1.0</td>
+            <td>12 Mbit/s</td>
+            <td>1.5 MB/s</td>
+            <td>1996</td>
+        </tr>
+        <tr>
+            <td>USB 2.0</td>
+            <td>480 Mbit/s</td>
+            <td>60 MB/s</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>USB 3.0</td>
+            <td>5 Gbit/s</td>
+            <td>500 MB/s</td>
+            <td>2010</td>
+        </tr>
+        <tr>
+            <td>USB 3.1</td>
+            <td>10 Gbit/s</td>
+            <td>1.212 GB/s</td>
+            <td>2013</td>
+        </tr>
+        <tr>
+            <td>USB 3.2</td>
+            <td>20 Gbit/s</td>
+            <td>2.424 GB/s</td>
+            <td>2017</td>
+        </tr>
+        <tr>
+            <td>USB 4.0</td>
+            <td>40 Gbit/s</td>
+            <td>5 GB/s</td>
+            <td>2019</td>
+        </tr>
+        <tr>
+            <td>UHS-I <small>(SDHC, SDXC, SDUC)</small></td>
+            <td>400 Mbit/s</td>
+            <td colspan="2">50 MB/s</td>
+        </tr>
+        <tr>
+            <td>SATA 1</td>
+            <td>1.500 Gbit/s</td>
+            <td>150 MB/s</td>
+            <td>2003</td>
+        </tr>
+        <tr>
+            <td>SATA 2</td>
+            <td>3 Gbit/s</td>
+            <td>300 MB/s</td>
+            <td>2004</td>
+        </tr>
+        <tr>
+            <td>SATA 3</td>
+            <td>6 Gbit/s</td>
+            <td>600 MB/s</td>
+            <td>2008</td>
+        </tr>
+        <tr>
+            <td>NVMe 3.0</td>
+            <td>32 Gbit/s</td>
+            <td>3.938 GB/s</td>
+            <td>2013</td>
+        </tr>
+        <tr>
+            <td>NVMe 4.0</td>
+            <td>64 Gbit/s</td>
+            <td>7.876 GB/s</td>
+            <td>2017</td>
+        </tr>
+        <tr>
+            <td>NVMe 5.0</td>
+            <td>128 Gbit/s</td>
+            <td>15.754 GB/s</td>
+            <td>2019</td>
+        </tr>
+    </tbody>
+</table>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_interface_bit_rates">List of interface bit rates</a></li>
+</ul>
+<h3 id="tipos-de-almacenamiento">Tipos de almacenamiento</h3>
+<p>El tipo de almacenamiento es la tecnología que se emplea en los dispositivos de almacenamiento, los discos duros con platos circulares en cuya superficie magnética se guarda la información, han sido ya reemplazados por las unidades SSD sin partes móviles que ofrece un tiempo de acceso mucho menor y una tasa de transferencia mucho mayor. Si hay que actualizar un equipo que tiene un disco duro sustituir este componente por un SSD seguramente suponga una gran mejora en el rendimiento de equipo más que cualquier otra actuación salvo quizá la cantidad de memoria.</p>
+<p>Un disco duro que normalmente utiliza la interfaz SATA queda muy lejos de ofrecer una tasa de transferencia cercana a la que es capaz de soportar la interfaz SATA. Un dispositivo de almacenamiento SSD con interfaz SATA si se queda cerca del máximo teórico de la interfaz.</p>
+<p>La tasa de transferencia máxima teórica de la interfaz es una cosa pero la real que observa el usuario al copiar archivos puede ser muy distinta en la que influye el tipo de almacenamiento y la calidad del dispositivo. Las tasas de transferencia que se observa al copiar archivos suelen ser algo inferiores a la máximas teóricas.</p>
+<h3 id="precios">Precios</h3>
+<p>Los precios varían según los diferentes tipos de almacenamiento, el tipo de interfaz y la cantidad de almacenamiento. En el caso del almacenamiento y dado el avance de la tecnología es cuestión de tiempo de que o bien los precios se reduzcan paulatinamente o por el contrario se ofrezca el mayor cantidad de almacenamiento por el mismo precio.</p>
+<p>Por este avance de la tecnología es una buena idea comprar un producto que ofrezca una cantidad de espacio suficiente para el uso actual y de unos pocos años posteriores pero no es recomendable comprar una cantidad desorbitada de almacenamiento si no se le va a dar uso, por el paso del tiempo su coste se reducirá o bien surgirá una nueva interfaz de almacenamiento que deje obsoleta a una unidad actual.</p>
+<p>En los siguientes enlaces hay una muestra de los precios actuales de varios tipos de almacenamiento e interfaces desde una tarjeta microSD hasta un SSD con interfaz NVMe que ofrece las mayores tasas de transferencia pero a un precio más caro por GB de almacenamiento.</p>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07P9W5HJV&amp;linkId=94d207e03eb06aae1e957b8ea9fd541a" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07H1231S8&amp;linkId=a34fdc7896b0bd98cca4bffe8d532f81" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFS5657&amp;linkId=186319e6ae3e35777b9412d236a46297" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XFHQGB9&amp;linkId=69626bf45c9c279219546f122fd33a06" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06VVS7S94&amp;linkId=b3935c0c943be983bce3ceb803928e62" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06W55K9N6&amp;linkId=6abae8dc406222e745a56e1405eb282b" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B06XG892ZH&amp;linkId=54661b04f99360148ebed3b5528fa2ed" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B0713WPGLL&amp;linkId=3f06bc3776d19ba91f5ab5660781d247" title="Amazon" class="lozad"></iframe>
+</div>
+<div class="media media-amazon">
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B083ZS4HYD&amp;linkId=56990d2fedd9adcebc7b4d5b42e0ddfb" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B07HPX38XC&amp;linkId=df0fb3936a8db66682dd9f1c56bc8865" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08PC5DKZQ&amp;linkId=dcd291ad706e925f4dfca3c39045a54f" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B077SF8KMG&amp;linkId=30e60238410c4c1f9584f13e067e8cca" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08THW4S3T&amp;linkId=4ab585ee143e7c9927e41dc57033f7f5" title="Amazon" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=blobit-21&amp;language=es_ES&amp;o=30&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08TJ2649W&amp;linkId=a72e8460040ec9d269761918de53ecca" title="Amazon" class="lozad"></iframe>
+</div>
+<h3 id="pruebas-de-velocidad">Pruebas de velocidad</h3>
+<p>La transferencia de una unidad depende de la combinación de la interfaz y tipo de almacenamiento. El máximo teórico de la interfaz de conexión y dependiendo del tipo de almacenamiento el dispositivo está limitado por la interfaz, cercano a la interfaz o por debajo de la interfaz.</p>
+<p>Un dispositivo SSD conectado mediante la interfaz SATA 3 llega a los límites teóricos de la interfaz cercano a los 600 MB/s. Un disco duro conectado en una interfaz SATA se queda en apenas 80 MB/s muy por debajo del máximo teórico de la interfaz, un disco duro no es capaz de saturar la interfaz SATA.</p>
+<p>No dispongo de todos los tipos de almacenamiento, ni de todas las interfaces. Para conocer una medida aproximada de las tasas de transferencia de una marca o tipo de almacenamiento es recomendable consultar un vídeo para conocer si la tasa de transferencia real y si cumple con el mínimo exigido según la tarea a la que se vaya a dedicar el dispositivo de almacenamiento antes de comprarlo.</p>
+<p>Estas son las tasas de transferencia que he obtenido para un disco duro externo con interfaz USB 2.0 y conectado a un concentrador USB 2.0, también de una memoria USB 2.0 y de una tarjeta microSD de tipo SDXC conectado con la interfaz UHS-I al ordenador.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/opciones-prueba-de-rendimiento_hu4e9d7a29d93e145457c6fb8b020cbd67_47495_2560x1440_fit_box_3.png" data-gallery="" title="Opciones de la pruebas de rendimiento"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/opciones-prueba-de-rendimiento_hu4e9d7a29d93e145457c6fb8b020cbd67_47495_300x200_fit_box_3.png" width="271" height="200" alt="Opciones de la pruebas de rendimiento" title="Opciones de la pruebas de rendimiento"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-hdd_huabe7d480a1f47512e874c22c61b72297_203497_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de HDD"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-hdd_huabe7d480a1f47512e874c22c61b72297_203497_300x200_fit_box_3.png" width="228" height="200" alt="Prueba de velocidad de HDD" title="Prueba de velocidad de HDD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-memory_hu5f3ef0956119e635fb11c005f7ce85af_236818_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de memoria USB"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/usb-20-memory_hu5f3ef0956119e635fb11c005f7ce85af_236818_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de memoria USB" title="Prueba de velocidad de memoria USB"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sd_hua013f99ed60192ccacb4ec5b9e4b6253_85525_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de tarjeta micro SD"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sd_hua013f99ed60192ccacb4ec5b9e4b6253_85525_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de tarjeta micro SD" title="Prueba de velocidad de tarjeta micro SD"  class="lozad "></a>
+<a href="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sdxc_huab2d8cd2d2a9697e0386dd4018a5caf3_204197_2560x1440_fit_box_3.png" data-gallery="" title="Prueba de velocidad de tarjeta SDXC"><img src="https://picodotdev.github.io/blog-bitix/2022/08/prueba-de-velocidad-de-unidad-de-almacenamiento-en-gnu-linux/images/uhs-sdxc_huab2d8cd2d2a9697e0386dd4018a5caf3_204197_300x200_fit_box_3.png" width="214" height="200" alt="Prueba de velocidad de tarjeta SDXC" title="Prueba de velocidad de tarjeta SDXC"  class="lozad "></a></p>
+<figcaption>Pruebas de velocidad de HDD, memoria USB, tarjeta SD y SDXC</figcaption>
+</figure>
+</div>
+<p>El uso que le iba a dar a una tarjeta micro SD de tipo SDXC era como almacenamiento para un <em>smartphone</em> pero como finalmente <a href="https://picodotdev.github.io/blog-bitix/2022/05/desempaquetado-y-analisis-del-smartphone-samsung-galaxy-s21-fe/">compré un Samsung Galaxy S21 FE</a> que no dispone memoria ampliable con tarjeta micro SD he tenido que reutilizar la tarjeta para otro propósito.</p>
+<p>La tarjeta micro SD Samsung de 512 GB ofrece una transferencia de 85 MB/s en lectura y 55 MB/s en escritura que ha sido suficiente para realizar virtualización y usar la micro SD como unidad de almacenamiento externo en el que hacer copias de seguridad. Para virtualizar es más apropiado utilizar la unidad interna NVMe o al menos un SSD con interfaz SATA interno o USB 3.0 pero aunque tenía dudas si iba a ser suficiente la micro SD permite usarla como unidad de almacenamiento al virtualizar con un rendimiento aceptable.</p>
+<p>Las diferencias entre dos dispositivos con la misma interfaz y tipo de almacenamiento también varía y es recomendable consultar algún vídeo donde ver el rendimiento real que observa el usuario y no el anunciado por el fabricante para comprar el mejor producto. Un programa que permite analizar el rendimiento de un dispositivo es <a href="https://crystalmark.info/en/">CrystalMark</a> para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y la aplicación <em>Discos</em> con su opción <em>Probar rendimiento de la partición</em> para <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> usando el entorno de escritorio <a href="https://www.gnome.org/">GNOME</a>.</p>
+<p>En los siguientes vídeos se muestra la tasa de transferencia de varios de los diferentes tipos de memoria e interfaces.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/kJ5qljYa4aM" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/aazprXilyxY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/7VuxTnKEKic" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/mVLlPIyvxkY" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://linoxide.com/measure-disk-performance-fio/">How to Measure Disk Performance using Fio in Linux</a></li>
+<li><a href="https://www.youtube.com/watch?v=TASYaWTkg0U">Linux Storage Benchmarking With FIO</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="hardware"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2022/06/personalizar-el-simbolo-del-sistema-de-la-linea-de-comandos-con-starship/</id>
         <title>Personalizar el símbolo del sistema de la línea de comandos con Starship</title>
@@ -1855,292 +2050,6 @@
                 <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/</id>
-        <title>Herramientas de línea de comandos para monitorizar GNU/Linux</title>
-        <updated>2021-05-29T18:00:00+02:00</updated>
-        <published>2021-05-29T18:00:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>A veces un proceso del sistema consume gran cantidad de procesador, memoria o realiza muchas operaciones de lectura o escritura en el almacenamiento, simplemente se desea obtener o monitorizar cierta información del sistema. Hay varias herramientas en GNU/Linux para monitorizar los procesos del sistema, en almacenamiento, la red y temperatura de componentes, otros comandos permiten obtener información de los principales componentes hardware y software de la computadora.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
-</div>
-<p>En GNU/Linux hay una colección de herramientas de línea de comandos para obtener información y monitorizar el estado del sistema. Estas herramientas permiten dar respuesta a las preguntas ¿qué porcentaje del procesador están usando los procesos?, ¿cuánta memoria están usando los procesos y cuanta queda libre?, ¿cual es el espacio de almacenamiento usado y cuanto espacio de almacenamiento queda libre?, ¿cual es la tasa de transferencia para el disco y red? o ¿que temperatura tiene el procesador?.</p>
-<p>Otra información que es posible conocer es cuanta memoria tiene el sistema, cuánto almacenamiento tiene el sistema en total, cual es el modelo de procesador, cuál es el modelo de tarjeta gráfica o cual es el entorno de escritorio.</p>
-<p>Las siguientes herramientas permiten monitorizar en tiempo real el estado del sistema y obtener información del mismo, tanto para los procesos, almacenamiento y red.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="monitorizar-procesos-del-sistema">Monitorizar procesos del sistema</h3>
-<p>Estas herramientas permiten monitorizar los procesos del sistema, principalmente en consumo de procesador y memoria.</p>
-<h4 id="top">top</h4>
-<p>Esta herramienta permite monitorizar los procesos del sistema en tiempo real, ver cuánto porcentaje de procesador se está usando, cuanta memoria se está usando y qué procesos lo están haciendo además de conocer qué cantidad de memoria total tiene el sistema.</p>
-<p>Es una herramienta que está entre la colección de herramientas instaladas por defecto en la mayoría de sistema GNU/Linux.</p>
-<p>Com la tecla <em>h</em> se accede al panel de configuración en el que es posible personalizar los colores, ver las teclas de acceso para mostrar información y otras opciones de configuración que se mantienen entre diferentes ejecuciones del programa.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ top -u picodotdev&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>top.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top_hue9710ca91e02327bf802c761716f5ec1_203517_2560x1440_fit_box_3.png" data-gallery="" title="Comando top"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top_hue9710ca91e02327bf802c761716f5ec1_203517_300x200_fit_box_3.png" width="269" height="200" alt="Comando top" title="Comando top"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-help_hu9e677f7fe4b799df0f9dbfe2409f0978_97340_2560x1440_fit_box_3.png" data-gallery="" title="Comando top"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-help_hu9e677f7fe4b799df0f9dbfe2409f0978_97340_300x200_fit_box_3.png" width="269" height="200" alt="Comando top" title="Comando top"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-colors_hu7e3765eea234a2e285c86c2974ebf809_82511_2560x1440_fit_box_3.png" data-gallery="" title="Comando top"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/top-colors_hu7e3765eea234a2e285c86c2974ebf809_82511_300x200_fit_box_3.png" width="269" height="200" alt="Comando top" title="Comando top"  class="lozad "></a></p>
-<figcaption>Comando top</figcaption>
-</figure>
-</div>
-<h4 id="htop">htop</h4>
-<p><em>htop</em> es una herramienta con el mismo propósito que <em>top</em> pero un poco más avanzada mostrando algo más de información, permite ver los procesos del sistema, consumo de procesador y memoria que están usando. Permite ver el uso del procesador por núcleo de CPU.</p>
-<p>Al igual que <em>top</em> permite ordenar la lista de procesos por uso de procesador, uso de memoria, o tipos de CPU consumidos en orden descendente o en orden ascendente. Ofrece integración con el comando <em>lsof</em>.</p>
-<p>Con la tecla <em>F1</em> es posible ver las opciones de configuración de la utilidad.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S htop&#10;</span></span><span class="line"><span class="cl">$ htop&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>htop.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop_hu793f246a7cc441c11462ba65d90c374b_287755_2560x1440_fit_box_3.png" data-gallery="" title="Comando htop"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop_hu793f246a7cc441c11462ba65d90c374b_287755_300x200_fit_box_3.png" width="269" height="200" alt="Comando htop" title="Comando htop"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop-help_hu2e8e77427d12dc26d3cad60c03088e8f_103873_2560x1440_fit_box_3.png" data-gallery="" title="Comando htop"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/htop-help_hu2e8e77427d12dc26d3cad60c03088e8f_103873_300x200_fit_box_3.png" width="269" height="200" alt="Comando htop" title="Comando htop"  class="lozad "></a></p>
-<figcaption>Comando htop</figcaption>
-</figure>
-</div>
-<h4 id="ps">ps</h4>
-<p>El comando <em>ps</em> permite obtener información del estado de los procesos del sistema en el instante que se ejecuta. Posee varias opciones para filtrar los procesos que devuelve y su información de estado.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ps&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>ps.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/ps_hucb0d0e84f3fb2311cc2a3691f621d8fc_26125_2560x1440_fit_box_3.png" data-gallery="" title="Comando ps"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/ps_hucb0d0e84f3fb2311cc2a3691f621d8fc_26125_300x200_fit_box_3.png" width="285" height="200" alt="Comando ps" title="Comando ps"  class="lozad "></a></p>
-<figcaption>Comando ps</figcaption>
-</figure>
-</div>
-<h4 id="btop">btop</h4>
-<p><a href="https://github.com/aristocratos/btop">btop</a>, antiguamente <a href="https://github.com/aristocratos/bpytop">bpytop</a> y <a href="https://github.com/aristocratos/bashtop">bashtop</a>, es una herramienta similar a <em>top</em> y <em>htop</em> que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.</p>
-<p>Con la tecla <em>M</em> se accede al menu del programa donde configurar los diferentes paneles de información que muestra el programa. Además de ofrecer información de varios aspectos esenciales del sistema otra de sus grandes ventajas es que las teclas de acceso rápido para cambiar las opciones están visibles  en la interfaz general con lo que no hace falta recordar las teclas para cada opción.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S btop&#10;</span></span><span class="line"><span class="cl">$ btop&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>btop.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_2560x1440_fit_box_3.png" data-gallery="" title="Comando btop"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop_hu361184c2af3ca82dc7bf99775b736d3f_247379_300x200_fit_box_3.png" width="265" height="200" alt="Comando btop" title="Comando btop"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-menu_hudc7caefd03026ee3bf07ce1263b12fc4_164081_2560x1440_fit_box_3.png" data-gallery="" title="Comando btop"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-menu_hudc7caefd03026ee3bf07ce1263b12fc4_164081_300x200_fit_box_3.png" width="265" height="200" alt="Comando btop" title="Comando btop"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-options_hu7c13b2a09508227b314b7b0a27ab0584_172463_2560x1440_fit_box_3.png" data-gallery="" title="Comando btop"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/btop-options_hu7c13b2a09508227b314b7b0a27ab0584_172463_300x200_fit_box_3.png" width="265" height="200" alt="Comando btop" title="Comando btop"  class="lozad "></a></p>
-<figcaption>Comando btop</figcaption>
-</figure>
-</div>
-<h4 id="free">free</h4>
-<p>El comando <em>free</em> permite ver la memoria física del sistema y la cantidad de memoria virtual o <em>swap</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ free -h&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>free.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/free_hu69d495e9683a97090df82479adb3a74a_26564_2560x1440_fit_box_3.png" data-gallery="" title="Comando free"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/free_hu69d495e9683a97090df82479adb3a74a_26564_300x200_fit_box_3.png" width="289" height="200" alt="Comando free" title="Comando free"  class="lozad "></a></p>
-<figcaption>Comando free</figcaption>
-</figure>
-</div>
-<h3 id="monitorizar-almacenamiento">Monitorizar almacenamiento</h3>
-<p>Las siguientes herramientas permiten monitorizar el almacenamiento del sistema. Permiten ver cuál es la capacidad de todas las unidades conectadas, cuanto espacio de almacenamiento queda libre en cada una de ellas y cual es la tasa de transferencia de almacenamiento que está utilizando el sistema tanto en lectura como en escritura.</p>
-<h4 id="df">df</h4>
-<p>El comando <em>df</em> permite ver información del almacenamiento de las unidades conectadas al sistema en el momento de ejecutar el comando. Permite ver en cada una de ellas su capacidad total y espacio libre restante que le queda, dispositivo hardware, sus particiones y puntos de montaje. Con la opción <em>-h</em> muestra los datos en unidades más comprensibles como KiB, MiB y GiB en vez de en <em>bytes</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ df -h&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>df.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/df_huc614b3df353af1d27dc35fdf84eb2cf0_50416_2560x1440_fit_box_3.png" data-gallery="" title="Comando df"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/df_huc614b3df353af1d27dc35fdf84eb2cf0_50416_300x200_fit_box_3.png" width="285" height="200" alt="Comando df" title="Comando df"  class="lozad "></a></p>
-<figcaption>Comando df</figcaption>
-</figure>
-</div>
-<h4 id="iotop">iotop</h4>
-<p>El comando <em>iotop</em> permite ver en tiempo real la tasa de transferencia de lectura y escritura que están empleando los procesos del sistema. Se puede ordenar los procesos por cantidad de lectura o cantidad de escritura.</p>
-<p>Esta herramienta requiere permisos de superusuario en su ejecución.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/">Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux</a></li>
-</ul>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S iotop&#10;</span></span><span class="line"><span class="cl">$ sudo iotop&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>iotop.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iotop_hu449a229f1934b609cf8a4e762e7a7eb2_165483_2560x1440_fit_box_3.png" data-gallery="" title="Comando iotop"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iotop_hu449a229f1934b609cf8a4e762e7a7eb2_165483_300x200_fit_box_3.png" width="269" height="200" alt="Comando iotop" title="Comando iotop"  class="lozad "></a></p>
-<figcaption>Comando iotop</figcaption>
-</figure>
-</div>
-<h4 id="lsof">lsof</h4>
-<p>El comando <em>lsof</em> permite conocer cuales son los archivos abiertos por los procesos del sistema en el momento de ejecutar el comando.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S lsof&#10;</span></span><span class="line"><span class="cl">$ lsof&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>lsof.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/lsof_hufaf7eda6f24e0239145d3d27b9cc6674_138392_2560x1440_fit_box_3.png" data-gallery="" title="Comando lsof"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/lsof_hufaf7eda6f24e0239145d3d27b9cc6674_138392_300x200_fit_box_3.png" width="273" height="200" alt="Comando lsof" title="Comando lsof"  class="lozad "></a></p>
-<figcaption>Comando lsof</figcaption>
-</figure>
-</div>
-<h3 id="monitorizar-red">Monitorizar red</h3>
-<p>Las siguientes herramientas permite monitorizar la entrada y salida del trafico red.</p>
-<h4 id="netstat">netstat</h4>
-<p>El comando <em>netstat</em> permite ver cuales son las conexiones de red establecidas por los procesos del sistema y su estado. Con la opción <em>-c</em> monitoriza el tráfico de red en tiempo real o de forma continua.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S netstat-nat&#10;</span></span><span class="line"><span class="cl">$ netstat-nat&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>netstat.sh</span>
-    </div>
-</div>
-<h4 id="tcpdump">tcpdump</h4>
-<p>El comando <em>tcpdump</em> permite capturar el tráfico de red de una interfaz de red, para un puerto de red o para un nombre de <em>host</em> como origen o destino específico. Con la opción <em>-c</em> se limita la captura a un número de paquetes determinado. También es posible guardar la captura a un archivo para analizarlo una vez terminada la captura con la opción <em>-w</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S tcpdump&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c5 -nn port <span class="m">80</span>&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c5 -nn src 192.168.1.6&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c5 -nn dst 192.168.1.6&#10;</span></span><span class="line"><span class="cl">&#10;</span></span><span class="line"><span class="cl">$ sudo tcpdump -i any -c10 -nn -w webserver.pcap port <span class="m">80</span>&#10;</span></span><span class="line"><span class="cl">$ tcpdump -nn -r webserver.pcap</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>tcpdump.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/tcpdump_hu02e1adf060aca51fc885c3d4a643ccac_142205_2560x1440_fit_box_3.png" data-gallery="" title="Comando tcpdump"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/tcpdump_hu02e1adf060aca51fc885c3d4a643ccac_142205_300x200_fit_box_3.png" width="272" height="200" alt="Comando tcpdump" title="Comando tcpdump"  class="lozad "></a></p>
-<figcaption>Comando tcpdump</figcaption>
-</figure>
-</div>
-<h3 id="otras-herramientas-de-monitorización">Otras herramientas de monitorización</h3>
-<h4 id="uptime">uptime</h4>
-<p>El comando <em>uptime</em> permite ver cuánto tiempo lleva en funcionamiento el sistema desde su último apagado o reinicio.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ uptime&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>uptime.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/uptime_hu099b590243c3f4c8b8a672c8f820ab27_24564_2560x1440_fit_box_3.png" data-gallery="" title="Comando uptime"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/uptime_hu099b590243c3f4c8b8a672c8f820ab27_24564_300x200_fit_box_3.png" width="285" height="200" alt="Comando uptime" title="Comando uptime"  class="lozad "></a></p>
-<figcaption>Comando uptime</figcaption>
-</figure>
-</div>
-<h4 id="iostat">iostat</h4>
-<p>El comando <em>iostat</em> muestra información de entrada y salida del sistema agrupando la información por dispositivo de almacenamiento. A diferencia de <em>iotop</em> no muestra cual es el proceso que está realizando la operación de entrada y salida.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S sysstat&#10;</span></span><span class="line"><span class="cl">$ iostat&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>iostat.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iostat_huade58eb63f8a7287837ebc089793c7bf_41728_2560x1440_fit_box_3.png" data-gallery="" title="Comando iostat"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/iostat_huade58eb63f8a7287837ebc089793c7bf_41728_300x200_fit_box_3.png" width="300" height="175" alt="Comando iostat" title="Comando iostat"  class="lozad "></a></p>
-<figcaption>Comando iostat</figcaption>
-</figure>
-</div>
-<h4 id="sensors">sensors</h4>
-<p>El comando <em>sensors</em> permite obtener información de la temperatura que incorporan varios de los componente de las computadoras. Este comando muestra la temperatura del procesador para cada uno de sus núcleos, también del dispositivo de almacenamiento NVMe.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sensors&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>sensors.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/sensors_hu6a59db204b0f87373c0d1a91561ebfc0_79657_2560x1440_fit_box_3.png" data-gallery="" title="Comando sensors"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/sensors_hu6a59db204b0f87373c0d1a91561ebfc0_79657_300x200_fit_box_3.png" width="227" height="200" alt="Comando sensors" title="Comando sensors"  class="lozad "></a></p>
-<figcaption>Comando sensors</figcaption>
-</figure>
-</div>
-<h4 id="watch">watch</h4>
-<p>El comando <em>sensors</em> no muestra la temperatura en tiempo real, únicamente en el momento de su ejecución. El comando <em>watch</em> permite ejecutar un comando según el intervalo de tiempo deseado, utilizado con el comando <em>sensors</em> permite dotarle a este de monitorización casi en tiempo real configurando el intervalo de ejecución cada un segundo.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ watch -n <span class="m">1</span> sensors&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>watch.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/watch_hu81be446d9980787a8e00ba05c2693d45_78049_2560x1440_fit_box_3.png" data-gallery="" title="Comando watch"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/watch_hu81be446d9980787a8e00ba05c2693d45_78049_300x200_fit_box_3.png" width="227" height="200" alt="Comando watch" title="Comando watch"  class="lozad "></a></p>
-<figcaption>Comando watch</figcaption>
-</figure>
-</div>
-<h4 id="neofetch">neofetch</h4>
-<p>El comando <em>neofetch</em> muestra la información básica del sistema en el que se ejecuta. Aunque la información no es muy detallada contiene la descripción del los componentes de hardware y software principales del sistema como procesador, memoria, tarjeta gráfica, <em>kernel</em>, distribución de GNU/Linux, entorno de escritorio, número de paquetes instalados y algunas informaciones adicionales menos relevantes.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/">Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux</a></li>
-</ul>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S neofetch&#10;</span></span><span class="line"><span class="cl">$ neofetch&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>neofetch.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/neofetch_hu24d53025913e97820fb59ebb162457a0_77205_2560x1440_fit_box_3.png" data-gallery="" title="Comando neofetch"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/neofetch_hu24d53025913e97820fb59ebb162457a0_77205_300x200_fit_box_3.png" width="275" height="200" alt="Comando neofetch" title="Comando neofetch"  class="lozad "></a></p>
-<figcaption>Comando neofetch</figcaption>
-</figure>
-</div>
-<h4 id="hwinfo">hwinfo</h4>
-<p>Aunque el comando <em>hwinfo</em> no es un comando de monitorización permite conocer diversa y detallada información del hardware del sistema. La información incluye datos sobre el modelo de procesador, modelo de placa base, unidad de almacenamiento y tarjeta gráfica. Esta información es útil en caso de necesitar algún paquete ya que algunos son específicos según el hardware del sistema por ejemplo los controladores de la tarjeta gráfica.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S hwinfo&#10;</span></span><span class="line"><span class="cl">$ hwinfo --cpu&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>hwinfo.sh</span>
-    </div>
-</div>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo_hu19e68f27b9be385c86cd8cdf8f2c247a_152125_2560x1440_fit_box_3.png" data-gallery="" title="Comando hwinfo"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo_hu19e68f27b9be385c86cd8cdf8f2c247a_152125_300x200_fit_box_3.png" width="272" height="200" alt="Comando hwinfo" title="Comando hwinfo"  class="lozad "></a>
-<a href="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo-help_hu4ca6279f055077ddb40bb7c33b70404b_132013_2560x1440_fit_box_3.png" data-gallery="" title="Comando hwinfo"><img src="https://picodotdev.github.io/blog-bitix/2021/05/herramientas-de-linea-de-comandos-para-monitorizar-gnu-linux/images/hwinfo-help_hu4ca6279f055077ddb40bb7c33b70404b_132013_300x200_fit_box_3.png" width="272" height="200" alt="Comando hwinfo" title="Comando hwinfo"  class="lozad "></a></p>
-<figcaption>Comando hwinfo</figcaption>
-</figure>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.terminalbytes.com/common-linux-commands-system-monitoring/">6 Common Linux Commands for System Monitoring</a></li>
-<li><a href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">20 Command Line Tools to Monitor Linux Performance</a></li>
-<li><a href="https://opensource.com/article/18/10/introduction-tcpdump">An introduction to using tcpdump at the Linux command line</a></li>
-<li><a href="https://www.techrepublic.com/article/how-to-use-the-linux-iostat-command-to-check-on-your-storage-subsystem/">How to use the Linux iostat command to check on your storage subsystem</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="gnu-linux"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
