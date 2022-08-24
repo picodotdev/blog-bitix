@@ -29,7 +29,7 @@ Actualmente una persona en su casa que quiera montar en su casa un pequeño estu
 
 Los principales productos dedicados de un pequeño estudio audiovisual que mejoran la calidad final del contenido son un micrófono, una cámara web, una interfaz de audio, unos cascos y un segundo monitor. Algunos de estos no son indispensables y pueden suplirse con alternativas como un portátil o un _smartphone_ pero al ser productos dedicados la mejora si es significativa.
 
-La marca [MAONO][maono] me ha proporcionado un ejemplar del micrófono para analizar y crear este artículo, aunque el artículo puede considerarse patrocinado en cierta forma, el contenido y opinión del artículo es completamente propio sin ninguna indicación por parte de la marca.
+La marca [MAONO][maono] me ha proporcionado un ejemplar del micrófono para analizar y crear este artículo, aunque el artículo puede considerarse patrocinado en cierta forma, el contenido y opinión del artículo es completamente propio sin ninguna indicación por parte de la marca. En otro artículo he hecho el [Desemapqueetado y análisis de la interfaz de audio Maonocaster E2][blogbitix-649], una interfaz de audio es un producto complementario para un micrófono que proporciona una serie de funciones muy útiles en un dispositivo hardware dedicado a la función.
 
 En la prueba de audio se nota que la calidad de sonido que ofrece el MAONO HD300T es notablemente diferente y mejor que el micrófono integrado de [mi Intel NUC Bean Canyon][blogbitix-363]. Hasta ahora solo he creado contenido en formato de texto en el _blog_ quizá con este micrófono pruebe a crear y compartir contenido en vídeo en un canal de [YouTube][youtube].
 
@@ -347,7 +347,7 @@ Otro producto es un brazo articulado que permite mover el micrófono y ajustarlo
 
 Unos cascos conectados al _jack_ 3.5mm directamente al micrófono o a la interfaz de audio permiten aislarse del ruido externo sobre todo si tienen cancelación de ruido y oir en tiempo real el audio capturado pudiendo ajustar algún parámetro en caso de que el resultado no sea el deseado.
 
-MAONO como marca especializada en audio ofrece aparte de micrófonos varias interfaces de audioa desde algunos modelos más básicos a otros más completos, brazos articulados y cascos. Adquirir todos los elementos de la misma marca da mayor seguridad de que todos van a ser compatibles entre sí.
+MAONO como marca especializada en audio ofrece aparte de micrófonos varias interfaces de audio desde algunos modelos más básicos a otros más completos, brazos articulados y cascos. Adquirir todos los elementos de la misma marca da mayor seguridad de que todos van a ser compatibles entre sí.
 
 Si la estancia donde se realiza la grabación ofrece eco hay espumas que permiten amortiguar los rebotes del sonido y evitar efectos en el audio capturado.
 
@@ -357,8 +357,8 @@ Finalmente, si además de grabar audio se graba vídeo un segundo monitor permit
 * [Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas][blogbitix-356]
 
 {{< amazon
-    linkids="8a22822b7a2b8773353cf7a504a58560,6ed2315c9a05ed8f4f5dd2a5cf93db1f,431ee1436d90139b6ef311f06790dff2"
-    asins="B085XRGSWV,B097TRJCGJ,B0973DV11T" >}}
+    linkids="8a22822b7a2b8773353cf7a504a58560,6ed2315c9a05ed8f4f5dd2a5cf93db1f,431ee1436d90139b6ef311f06790dff2,4ece93a4493313ff15aeb319f5bf7d94,966f9b4d697e23918b8680d5fc29db3f,4417aacbe6fa260739ee969dde401776"
+    asins="B085XRGSWV,B097TRJCGJ,B0973DV11T,B09V1KJ3J4,B086R61LN9,B00IZEJFPE" >}}
 {{< amazon
     tags="monitor-benq" >}}
 
