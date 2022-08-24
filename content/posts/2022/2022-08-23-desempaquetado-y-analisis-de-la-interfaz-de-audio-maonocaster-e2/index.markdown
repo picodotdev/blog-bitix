@@ -211,7 +211,7 @@ No es imprescindible pero si un producto muy conveniente junto a el sí impresci
 
 Su precio no es excesivo para cualquier usuario y en aquellos creadores de contenido que monetizan su contenido es fácilmente el caso que los propios ingresos del canal permitan la compra del producto.
 
-La interfaz es muy completa tanto en conectividad y puertos de conexión como en funciones. Su batería de varias horas de duración la hace portable y puede grabar sin necesidad de estar conectada a un ordenador.
+La interfaz es muy completa tanto en conectividad y puertos de conexión como en funciones. Su batería de varias horas de duración la hace portable y puede grabar sin necesidad de estar conectada a un ordenador. Hay interfaces con una profundidad de 24 bits en vez de 16 pero algunas tiene un precio similar y no todas las funciones que posee la Maonocaster E2, los 24 bits en teoría ofrecen mejor calidad de sonido aún así 16 bits ofrece buena más que aceptable y quizá solo los usuarios con mejor audición noten una diferencia apreciable en la calidad del sonido. En cualquier caso junto al micrófono HD300T la calidad de sonido es muy buena y más que suficiente para las necesidades de los usuarios a los que está dirigido para un uso por afición o un uso profesional a nivel de entrada.
 
 Por algún motivo la interfaz tiene dos puertos USB tipo C separados, uno para la conexión de energía y otro para los datos, en principio no debería ser necesario ya que un puerto USB ya proporciona alimentación, en su parte buena tener los dos puertos separados es útil para controlar si se desea cargar la batería o no cosa que con uno solo se haría de forma automática.
 
