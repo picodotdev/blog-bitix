@@ -28,6 +28,7 @@ Estos son algunos artículos patrocinados que he publicado.
 * [¿Por qué es importante escoger un buen servicio de hosting para tu negocio en línea?][blogbitix-632]
 * [Desempaquetado de la funda de teclado 60% KEMOVE][blogbitix-635]
 * [Desempaquetado y análisis del micrófono MAONO HD300T][blogbitix-644]
+* [Desempaquetado y análisis de la interfaz de audio Maonocaster E2][blogbitix-649]
 
 Mi dirección de correo electrónico es [pico.dev@gmail.com](mailto:pico.dev@gmail.com) mediante la cual me puedes contactar sin compromiso, ¡consúltame!.
 
