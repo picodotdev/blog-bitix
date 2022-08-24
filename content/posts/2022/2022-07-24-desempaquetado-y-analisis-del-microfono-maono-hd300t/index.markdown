@@ -157,12 +157,11 @@ El micrófono es todo lo que se necesita para capturar audio ya sea de voz o mú
 
 * [MAONO HD300T en Amazon](https://amzn.to/3cBc5uu)
 
-Una ventaja de comprar directamente en la página de MAONO es que en ella está el catálogo completo de sus productos cuando en Amazon solo hay una parte de ellos, por ejemplo en la página de MAONO es posible comprar las interfaces de audio independientemente de los micrófonos cuando en la página de Amazon solo están las versiones que incluyen micrófono además de cualquier accesorio que se necesite para la grabación de audio.
+Una ventaja de comprar directamente en la página de MAONO es que en ella está el catálogo completo de sus productos que incluye una amplia variedad de micrófonos cuando en Amazon solo hay una parte de ellos, por ejemplo en la página de MAONO es posible comprar las interfaces de audio independientemente de los micrófonos cuando en la página de Amazon solo están las versiones que incluyen micrófono además de cualquier accesorio que se necesite para la grabación de audio.
 
 {{< amazon
     linkids="6249bfcd3e3285aeaa56f1f345a1bf14"
     asins="B09GTMFRGB" >}}
-
 
 ### Desempaquetado del micrófono MAONO HD300T
 
@@ -355,6 +354,7 @@ Finalmente, si además de grabar audio se graba vídeo un segundo monitor permit
 
 * [Accesorios de MAONO](https://www.maono.com/collections/mic-accessories)
 * [Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas][blogbitix-356]
+* [Desempaquetado y análisis de la interfaz de audio Maonocaster E2][blogbitix-649]
 
 {{< amazon
     linkids="8a22822b7a2b8773353cf7a504a58560,6ed2315c9a05ed8f4f5dd2a5cf93db1f,431ee1436d90139b6ef311f06790dff2,4ece93a4493313ff15aeb319f5bf7d94,966f9b4d697e23918b8680d5fc29db3f,4417aacbe6fa260739ee969dde401776"

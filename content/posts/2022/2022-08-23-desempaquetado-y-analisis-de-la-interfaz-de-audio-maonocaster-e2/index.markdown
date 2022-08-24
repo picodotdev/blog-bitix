@@ -261,6 +261,7 @@ La interfaz de MAONO dispone de batería que permite realizar grabaciones sin un
 
 * [Accesorios de MAONO](https://www.maono.com/collections/mic-accessories)
 * [Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas][blogbitix-356]
+* [Desempaquetado y análisis del micrófono MAONO HD300T][blogbitix-644]
 
 {{< amazon
     linkids="8a22822b7a2b8773353cf7a504a58560,6ed2315c9a05ed8f4f5dd2a5cf93db1f,431ee1436d90139b6ef311f06790dff2,4ece93a4493313ff15aeb319f5bf7d94,966f9b4d697e23918b8680d5fc29db3f,4417aacbe6fa260739ee969dde401776"
