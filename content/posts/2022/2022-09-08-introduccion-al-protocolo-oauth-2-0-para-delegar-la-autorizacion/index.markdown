@@ -40,7 +40,7 @@ Esta definición se compone de cuatro elementos:
 {{< image
     gallery="true"
     image1="image:oauth-components.png" optionsthumb1="650x450" title1="Componentes de OAuth 2.0"
-    caption="Componentes de OAuth 2.0" source="Libro OAuth in Action">}}
+    caption="Componentes de OAuth 2.0" source="Libro OAuth 2 in Action">}}
 
 El protocolo OAuth define varios flujos de autorización que un cliente puede emplear para obtener un _token_ pero deja otros aspectos sin definir como cuál es el formato o contenido del _token_, tampoco define como el servidor de autorización debe realizar la autenticación del usuario. Esta no definición de algunos aspectos del protocolo le permite ser flexible y adaptarse a diferentes contextos.
 
@@ -226,7 +226,7 @@ Al igual que Spring proporciona soporte para la utilización de OpenID Connect e
 
 Las especificaciones de OAuth y OpenID Connect son cortas y explican el protocolo en detalle con descripciones fáciles de entender, incluso a veces es mejor leer las especificaciones directamente que cualquier otro material.
 
-Aún así, los libros explican de otra forma más guiada y paso a paso el funcionamiento del protocolo, dos libros que he leído y me han parecido una buena introducción al protoclo ha sido por un lado [OAuth 2.0 in Action](https://amzn.to/3D444JO) que explica la teoría de OAuth con varios ejemplos de código y aplicaciones con el que probar el protocolo, por otro lado el libro [Keycloak - Identity and Access Management for Modern Applications](https://amzn.to/3RGHriy) que explica el uso y repasa la teoría de OAuth de la implementación del protocolo OpenID Connect y OAuth en el servidor Keycloak.
+Aún así, los libros explican de otra forma más guiada y paso a paso el funcionamiento del protocolo, dos libros que he leído y me han parecido una buena introducción al protoclo ha sido por un lado [OAuth 2 in Action](https://amzn.to/3D444JO) que explica la teoría de OAuth con varios ejemplos de código y aplicaciones con el que probar el protocolo, por otro lado el libro [Keycloak - Identity and Access Management for Modern Applications](https://amzn.to/3RGHriy) que explica el uso y repasa la teoría de OAuth de la implementación del protocolo OpenID Connect y OAuth en el servidor Keycloak.
 
 * [Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring][blogbitix-382]
 
