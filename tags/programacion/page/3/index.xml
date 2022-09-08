@@ -5,12 +5,192 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/programacion/</id>
-    <updated>2022-07-28T19:30:00+02:00</updated>
+    <updated>2022-09-08T11:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/blog-bitix.svg</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/</id>
+        <title>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</title>
+        <updated>2020-07-10T16:15:00+02:00</updated>
+        <published>2020-07-10T16:15:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<p>Las expresiones <em>cron</em> son el equivalente de expresiones regulares para seleccionar fechas, instantes de tiempo o periodos. Normalmente se utilizan para <a href="https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/">planificar la ejecución de tareas automatizadas en librerías como Spring o Quartz</a> o <em>cron</em> de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> en los momentos seleccionados llegando a la precisión del segundo. Algunas expresiones de fechas pueden ser sencillas como a las 10:15 AM de todos los días o tan complejas como a las 10:15 de cada tercer viernes de cada mes.</p>
+<p>Los propósitos de planificar tareas con expresiones <em>cron</em> son ejecutar procesos automatizados, por ejemplo enviar un correo electrónico a un determinada hora de cada día o generar un informe a las 3:00 de la noche de cada viernes.</p>
+<h3 id="formato-y-posibles-valores-en-cada-campo">Formato y posibles valores en cada campo</h3>
+<p>El formato de las expresiones <em>cron</em> se compone de varios campos separados por un espacios.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">second minute hour day-of-month month day-of-week [year]&#10;</span></span><span class="line"><span class="cl">&#10;</span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>formato-cron.txt</span>
+    </div>
+</div>
+<p>Según el campo hay varios valores posibles. En los valores numéricos de <em>day-of-week</em> los días empiezan por domingo, el valor 1 es domingo, el lunes es 2 y el 7 es el sábado.</p>
+<table class="table">
+   <thead class="table-light">
+       <th>Campo</th>
+       <th>Requerido</th>
+       <th>Valores permitidos</th>
+       <th>Caracteres especiales permitidos</th>
+   </thead>
+   <tbody>
+       <tr>
+           <td>Seconds</td>
+           <td>Sí</td>
+           <td>0-59</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Minutes</td>
+           <td>Sí</td>
+           <td>0-59</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Hours</td>
+           <td>Sí</td>
+           <td>0-23</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Day of month</td>
+           <td>Sí</td>
+           <td>1-31</td>
+           <td>, - * / L W</td>
+       </tr>
+       <tr>
+           <td>Month</td>
+           <td>Sí</td>
+           <td>0-11 o JAN-DEC</td>
+           <td>, - * /</td>
+       </tr>
+       <tr>
+           <td>Day of week</td>
+           <td>Sí</td>
+           <td>1-7 o SUN-SAT</td>
+           <td>, - * ? / L #</td>
+       </tr>
+       <tr>
+           <td>Year</td>
+           <td>No</td>
+           <td>vacío o 1970-2099</td>
+           <td>, - * /</td>
+       </tr>
+   </tbody>
+</table>
+<p>Los significados de los valores son:</p>
+<ul>
+<li><code>*</code> (todos): es usado para seleccionar cada unidad de tiempo. Por ejemplo, <em>*</em> en el campo minuto significa cada minuto.</li>
+<li><code>?</code> (cualquiera): es utilizando en los campos <em>day-of-month</em> y <em>day-of -week</em> para denotar un valor arbitrario. Por ejemplo, si se quiere seleccionar las fechas de <em>el quinto día de cada mes</em> independientemente del día de la semana, entonces se especifica un <em>?</em> en el campo <em>day-of-week</em>.</li>
+<li><code>–</code> (rango): es usado para seleccionar rangos de valores. Por ejemplo, <em>7-11</em> en el campo <em>hour</em> significa entre las 7 y las 11.</li>
+<li><code>,</code> (valores): es usado para especificar varios valores. Por ejemplo, <em>MON,WED,FRI</em> en el campo <em>day-of-week</em> significa el lunes, miércoles y viernes.</li>
+<li><code>/</code> (incrementos): es usado para especificar valores en incrementos. Por ejemplo, el valor <em>5/15</em> en el campo <em>minute</em> significa en el minuto 5 y con incrementos de 15 minutos siendo los minutos de cada hora seleccionados 5, 20, 35 y 50.</li>
+<li><code>L</code> (último): tiene diferentes significados según el campo en el que se usa. Por ejemplo, si es aplicado al campo <em>day-of-month</em>, entonces significa el último día de cada mes, el día 31 para enero o anterior en otros meses con menos días. Puede usarse con un desplazamiento como <em>L-3</em>, esto significa <em>3 días antes del último día del mes</em>. En el campo <em>day-of-week</em> significa el <em>último día de la semana</em>. También puede usarse con otro valor en el campo <em>day-of-week</em>, como <em>6L</em> lo que significa el <em>último viernes</em> del mes.</li>
+<li><code>W</code> (día entre semana): es usado para especificar en día entre semana (de lunes a viernes) más cercano dado un día del mes. Por ejemplo, si se especifica <em>10W</em> en el campo <em>day-of-month</em> significa <em>el día entre semana más cercano al 10 de cada mes</em>. De modo que si el día 10 del més es sábado se selecciona el viernes 9 y si el día 10 es domingo se selecciona el lunes 11. Si se especifica 1W en en <em>day-of-month</em> y el día 1 es sábado, entonces se selecciona el dia lunes 3, esto es, no se salta al mes anterior.</li>
+<li><code>#</code> (ocurrencia): es usado para especificar el cardinal de la ocurrencia de una semana del mes. Por ejemplo, <em>el tercer viernes del mes</em> se indica con <em>6#3</em> en el campo <em>day-of-week</em>.</li>
+</ul>
+<p>Los valores <code>/</code>, <code>L</code>, <code>W</code> y <code>#</code> son caracteres no estándares, para comprobar si están soportados hay que consultar la documentación de la implementación de las expresiones <em>cron</em>, varía según la herramienta.</p>
+<h3 id="ejemplos-y-generador-de-expresiones-cron">Ejemplos y generador de expresiones cron</h3>
+<p>Las expresiones <em>cron</em> complejas son dífíciles de crear, para asegurar que la expresión cron está bien construida o para generarlas de forma sencilla hay alguna utilidad en internet, una de ellas es este <a href="https://freeformatter.com/cron-expression-generator-quartz.html">generador y explicador de expresiones cron</a>.</p>
+<p>Algunos ejemplos de expresiones con su explicación son los siguientes.</p>
+<table class="table">
+   <thead class="table-light">
+       <th width="300px">Expresión cron</th>
+       <th>Explicación</th>
+   </thead>
+   <tbody>
+       <tr>
+           <td>0 0 12 * * ?</td>
+           <td>Cada día a las 12:00 PM (12 del medio día)</td>
+       </tr>
+       <tr>
+           <td>0 15 10 * * *</td>
+           <td>Cada día a las 10:15 AM</td>
+       </tr>
+       <tr>
+           <td>0 15 10 * * ? 2005</td>
+           <td>Cada día a las 10:15 AM durante el año 2005</td>
+       </tr>
+       <tr>
+           <td>0 * 14 * * ?</td>
+           <td>Cada minuto de la hora 14, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 0/5 14 * * ?</td>
+           <td>Cada 5 minutos de la hora 14 empezando en el minuto 0, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 0/5 14,18 * * ?</td>
+           <td>Cada 5 minutos de las horas 14 y 18 empezando en el minuto 0, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 0-5 14 * * ?</td>
+           <td>Cada minuto entre 0 y 5 de la hora 14, de cada día</td>
+       </tr>
+       <tr>
+           <td>0 10,44 14 ? 3 WED</td>
+           <td>A las 14:10 y 14:44 de cada miércoles de marzo</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * MON-FRI</td>
+           <td>A las 10:15 AM de cada lunes, martes, miércoles, jueves y viernes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 15 * ? </td>
+           <td>A las 10:15 AM del día 15 de cada mes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 L * ?</td>
+           <td>A las 10:15 AM del último día del mes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * 6L</td>
+           <td>A las 10:15 AM del último viernes del mes</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * 6L 2002-2005</td>
+           <td>A las 10:15 AM de cada viernes del mes de los años 2002, 2003, 2004 y 2005</td>
+       </tr>
+       <tr>
+           <td>0 15 10 ? * 6#3</td>
+           <td>A las 10:15 AM del tercer viernes de cada mes</td>
+       </tr>
+       <tr>
+           <td>0 0 12 1/5 * ?</td>
+           <td>A las 12 PM (12 del medio día) cada cinco días del mes, empezando desde el primer día del mes</td>
+       </tr>
+       <tr>
+           <td>0 11 11 11 11 ?</td>
+           <td>Cada 11 de noviembre a las 11:11 AM</td>
+       </tr>
+   </tbody>
+</table>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm">Cron Expressions</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cron#CRON_expression">Cron expression</a></li>
+<li><a href="https://riptutorial.com/spring/example/21209/cron-expression">Cron expression</a></li>
+<li><a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html">Cron Trigger Tutorial</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="java"/>
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="programacion"/>
+            
+        
+    </entry>
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/</id>
         <title>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</title>
@@ -1708,102 +1888,6 @@
                 <category term="software"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/</id>
-        <title>Novedades de Java 13</title>
-        <updated>2019-10-22T19:00:00+02:00</updated>
-        <published>2019-09-27T16:30:00+02:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2019/09/novedades-de-java-13/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Continuando las mejoras incrementales cada seis meses el 17 de septiembre se publico Java 13. Java 13 incorpora algunas nuevas características interesantes que mejoran un facilitan la lectura del código, entre las más destacadas están los bloques de texto y las expresiones <em>switch</em> mejoradas.</p>
-<div class="alert alert-warning pt-0 pb-0 tableofcontents"><h2>Contenido del artículo</h2><toc></toc></div>
-<h3 id="introducción">Introducción</h3>
-<p>Casi coincidiendo con la publicación de Java 13 se publicado <a href="https://jakarta.ee/">Jakarta EE</a> 8 que únicamente tiene como novedad que su propiedad ha pasado a estar baja la fundación Eclipse, es totalmente compatible con <a href="https://picodotdev.github.io/blog-bitix/2018/11/novedades-de-java-ee-8/">Java EE 8 y sus últimas mejoras</a>, las novedades vendrán en versiones posteriores de Jakarta EE en las que se dará importancia a la tendencia de las aplicaciones para su funcionamiento en entornos orientados a la nube. Casi al mismo tiempo se ha publicado <a href="https://openjfx.io/">JavaFX</a> 13 ya fuera del JDK en onde puede seguir su propio ciclo de publicaciones independiente del JDK.</p>
-<ul>
-<li><a href="https://openjdk.java.net/projects/jdk/13/">Características de Java 13</a></li>
-<li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html">Notas de publicación de Java 13</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/13/">Documentación de Java 13</a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/13/docs/api/index.html">Documentación Javadoc de Java 13</a></li>
-<li><a href="https://blogs.oracle.com/javamagazine/october-2019-v2">JavaMagazine: Inside Java 13</a></li>
-</ul>
-<p>Las mejoras incluídas en esta versión son:</p>
-<ul>
-<li>JEP 350: <a href="https://openjdk.java.net/jeps/350">Dynamic CDS Archives</a></li>
-<li>JEP 351: <a href="https://openjdk.java.net/jeps/351">ZGC: Uncommit Unused Memory</a></li>
-<li>JEP 353: <a href="https://openjdk.java.net/jeps/353">Reimplement the Legacy Socket API</a></li>
-<li>JEP 354: <a href="https://openjdk.java.net/jeps/354">Switch Expressions (Preview)</a></li>
-<li>JEP 355: <a href="https://openjdk.java.net/jeps/355">Text Blocks (Preview)</a></li>
-</ul>
-<h3 id="nuevas-características-en-vista-previa">Nuevas características en vista previa</h3>
-<h4 id="bloques-de-texto">Bloques de texto</h4>
-<p>Para definir una cadena de caracteres que tuviese varias lineas en Java había que emplear concatenación de cadenas, si esa cadena contiene el caracter comilla doble <em>&quot;</em> de inicio de cadena había que escaparlo, si esa cadena contenía saltos de línea había que emplear el caracter de escape de salto de línea <em>\n</em>. El resultado es una cadena con problemas de legibilidad por los caracteres de escape que incluye en el código fuente del lenguaje. Esto podría se al definir una cadena de texto que tuviese elementos HTML, JSON, sentencias SQL o expresiones regulares.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&lt;html&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;   &lt;body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p class=\&#34;text\&#34;&gt;Hello, Escapes&lt;/p&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;   &lt;/body&gt;\n&#34;</span> <span class="o">+</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">&#34;&lt;/html&gt;\n&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>TextBlock-1.java</span>
-    </div>
-</div>
-<p>Con los bloques de texto se emplean una triple comilla doble <em>&quot;</em> para la apertura y cierre de la cadena.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">&#34;&#34;&#34;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class=&#34;</span><span class="n">text</span><span class="s">&#34;&gt;Hello, Text Blocks&lt;/p&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;&#10;</span></span></span><span class="line"><span class="cl"><span class="s">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/html&gt;&#34;&#34;&#34;</span><span class="o">;</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>TextBlock-2.java</span>
-    </div>
-</div>
-<p>Como ayuda a las cadenas de texto en la clase <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html">String</a> se han añadido varios métodos para eliminar la indentación (<em>String::stripIndent</em>), traducir los caracteres secuencia de escape (<em>String::translateEscapes</em>) y formatear una cadena usando un método de instancia (<em>String::formatted</em>).</p>
-<ul>
-<li><a href="https://blogs.oracle.com/javamagazine/text-blocks-come-to-java">Text Blocks Come to Java</a></li>
-</ul>
-<h4 id="expresiones-_switch_-mejoradas">Expresiones <em>switch</em> mejoradas</h4>
-<p>En las <a href="https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/">novedades de Java 12</a> se añadió la posibilidad de los <em>switch</em> fueran expresiones que retornan un valor en vez de sentencias y se evita el uso de la palabra reservada <em>break</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">numericString</span> <span class="o">=</span> <span class="k">switch</span><span class="o">(</span><span class="n">integer</span><span class="o">)</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">0</span> <span class="o">-&gt;</span> <span class="s">&#34;zero&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">9</span> <span class="o">-&gt;</span> <span class="s">&#34;odd&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">2</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">6</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">10</span> <span class="o">-&gt;</span> <span class="s">&#34;even&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">default</span> <span class="o">-&gt;</span> <span class="s">&#34;N/A&#34;</span><span class="o">;</span> &#10;</span></span><span class="line"><span class="cl"><span class="o">};</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Switch-1.java</span>
-    </div>
-</div>
-<p>En Java 13 en vez únicamente el valor a retornar se permite crear bloques de sentencias para cada rama <em>case</em> y retornar el valor con la palabra reservada <em>yield</em>. En los bloques de sentencias puede haber algún cálculo más complejo que directamente retornar el valor deseado.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre tabindex="0" class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">numericString</span> <span class="o">=</span> <span class="k">switch</span><span class="o">(</span><span class="n">integer</span><span class="o">)</span> <span class="o">{</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">0</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateZero</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">}</span> <span class="o">;</span> &#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">9</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateOdd</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">};</span>&#10;</span></span><span class="line"><span class="cl">   <span class="k">case</span> <span class="n">2</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">6</span><span class="o">,</span> <span class="n">8</span><span class="o">,</span> <span class="n">10</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateEven</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">};</span>&#10;</span></span><span class="line"><span class="cl">   <span class="k">default</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">calculateDefault</span><span class="o">();</span>&#10;</span></span><span class="line"><span class="cl">&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">yield</span> <span class="n">value</span><span class="o">;</span>&#10;</span></span><span class="line"><span class="cl">   <span class="o">};</span>&#10;</span></span><span class="line"><span class="cl"><span class="o">};</span></span></span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Switch-2.java</span>
-    </div>
-</div>
-<ul>
-<li><a href="https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api">Inside Java 13’s switch Expressions and Reimplemented Socket API</a></li>
-</ul>
-<h4 id="otras-características-incorporadas-y-cambios">Otras características incorporadas y cambios</h4>
-<p>Las las otras tres características destacadas <em>Dynamic CDS Archives</em>, <em>ZGC: Uncommit Unused Memory</em> para la mejora del recolector de basura y <em>Reimplement the Legacy Socket API</em> reescribiendo el código para los <em>sockets</em> en lenguaje Java son cambios internos que afectan a la plataforma Java pero no al lenguaje.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.mkyong.com/java/what-is-new-in-java-13/">What is new in Java 13</a></li>
-<li><a href="https://blog.codefx.org/java/java-13-guide/">Definitive Guide To Java 13</a></li>
-<li><a href="https://jaxenter.com/java-13-jdk-deep-dive-new-features-162272.html">Java 13 – a deep dive into the JDK’s new features</a></li>
-<li><a href="https://jaxenter.com/java-13-text-blocks-162278.html">Java 13 – why text blocks are worth the wait</a></li>
-<li><a href="https://jaxenter.com/jakarta-ee-8-future-enterprise-java-161984.html">Jakarta EE 8 is sprinting towards an exciting future for enterprise Java</a></li>
-<li><a href="https://dzone.com/articles/the-differences-between-java-ee-jakarta-ee-and-mic"> The Differences Between Java EE, Jakarta EE, and MicroProfile</a></li>
-<li><a href="https://jakarta.ee/documents/insights/cloud_native_java_ebook.pdf">Cloud Native Java</a></li>
-<li><a href="https://jaxenter.com/openjfx-13-interview-dirk-lemmermann-161967.html">OpenJFX 13 – &ldquo;JavaFX gets its own identity&rdquo;</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
-            
-                <category term="programacion"/>
             
         
     </entry>

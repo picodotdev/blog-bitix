@@ -1,0 +1,23 @@
++----------+                                +----------------+
+|          |>---(A)-- Client Identifier --->|                |
+|          |                                |                |
+|          |<---(B)-- Device Code,      ---<|                |
+|          |          User Code,            |                |
+|  Device  |          & Verification URI    |                |
+|  Client  |                                |                |
+|          |  [polling]                     |                |
+|          |>---(E)-- Device Code       --->|                |
+|          |          & Client Identifier   |                |
+|          |                                |  Authorization |
+|          |<---(F)-- Access Token      ---<|     Server     |
++----------+   (& Optional Refresh Token)   |                |
+      v                                     |                |
+      :                                     |                |
+     (C) User Code & Verification URI       |                |
+      :                                     |                |
+      v                                     |                |
++----------+                                |                |
+| End User |                                |                |
+|    at    |<---(D)-- End user reviews  --->|                |
+|  Browser |          authorization request |                |
++----------+                                +----------------+
