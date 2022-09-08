@@ -1,8 +1,9 @@
 ---
 pid: 651
 type: "post"
-title: "Introducción al protocolo OAuth 2.0 para delegar la autorización"
-url: "/2022/09/introduccion-al-protocolo-oauth-2-0-para-delegar-la-autorizacion/"
+title: "Introducción al protocolo OAuth 2 para delegar la autorización"
+url: "/2022/09/introduccion-al-protocolo-oauth-2-para-delegar-la-autorizacion/"
+aliases: ["/2022/09/introduccion-al-protocolo-oauth-2-0-para-delegar-la-autorizacion/"]
 date: 2022-09-08T11:00:00+02:00
 language: "es"
 index: true
