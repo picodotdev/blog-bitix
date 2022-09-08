@@ -32,22 +32,22 @@ mediaTypes:
 outputs:
   home:
   - HTML
-  - AMP
+# - AMP
   - RSS
   page:
   - HTML
-  - AMP
+# - AMP
   section:
   - HTML
-  - AMP
+# - AMP
   - RSS
   taxonomy:
   - HTML
-  - AMP
+# - AMP
   - RSS
   taxonomyTerm:
   - HTML
-  - AMP
+# - AMP
   - RSS
 
 outputFormats:
@@ -68,6 +68,13 @@ markup:
     startLevel: 3
     endLevel: 4
     ordered: false
+
+imaging:
+  exif:
+    disableDate: true
+    disableLatLong: true
+    excludeFields: "*"
+    includeFields: ""
 
 pygmentsUseClasses: true
 pygmentsOptions: linenos=table,linenostart=1
